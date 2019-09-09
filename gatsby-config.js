@@ -1,9 +1,13 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
+  plugins: [
+    {
+      resolve: "gatsby-source-apiserver",
+      options: {
+        typePrefix: "api__",
+        url: `http://live.random.studio/api/projects`,
+        method: "get",
+        name: `projects`,
+      },
+    },
+  ],
 }

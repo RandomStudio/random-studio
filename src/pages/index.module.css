@@ -1,0 +1,19 @@
+.thumbnail {
+  margin-bottom: 15vw;
+  display: block;
+	text-decoration: none;
+}
+
+.media {
+  width: 100%;
+	background: #eee;
+	position: relative;
+	margin-bottom: .5em;
+}
+
+.media img,
+.media video {
+  position: absolute;
+	width: 100%;
+	height: 100%;
+}

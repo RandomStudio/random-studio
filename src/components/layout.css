@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Random Regular";
+  src: url("https://random.studio/fonts/Random-Regular.woff2") format("woff2");
+}
+
+body {
+  margin: 0;
+  font-family: "Random Regular";
+  font-size: 27px;
+  line-height: 1.3em;
+  letter-spacing: 0.01em;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.nav {
+  position: fixed;
+  padding: 40px;
+  line-height: 1;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 15em;
+  pointer-events: all;
+  z-index: 999;
+}
+
+.nav a {
+  text-decoration: none;
+}

@@ -1,0 +1,78 @@
+.project {
+  width: 100%;
+	font-size: 40px;
+	line-height: 1.3em;
+  font-weight: 100;
+  max-width: 1920px;
+  margin: 0 auto;
+	background: rgb(191, 191, 191);
+	padding-top: 10vh;
+}
+
+.back {
+  display: block;
+  padding: 10vw 0.25em;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.66);
+  text-decoration: none;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+}
+.back:hover {
+  background: black;
+}
+
+.item {
+  font-size: 27px;
+  line-height: 1.3em;
+  letter-spacing: 0.5px;
+}
+
+
+.media {
+  width: 100%;
+	position: relative;
+}
+
+.item video,
+.item img {
+	position: absolute;
+  background: rgba(0, 0, 0, 0.05);
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.title,
+.intro {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.title {
+  margin-bottom: 1.2931578947em;
+}
+
+.intro {
+  margin-top: 1.2931578947em;
+}
+
+.text {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  width: auto;
+}
+
+.caption {
+  font-size: 16px;
+  line-height: 1.3em;
+  max-width: 24em;
+  padding: 0.5em;
+}
