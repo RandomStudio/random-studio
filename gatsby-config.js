@@ -5,12 +5,9 @@ require("dotenv").config({
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        spaceId: `vxytqh4rzdza`,
-        // Learn about environment variables: https://gatsby.app/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
+        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
   ],
