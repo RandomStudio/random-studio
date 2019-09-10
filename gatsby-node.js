@@ -1,38 +1,33 @@
 const { createFilePath } = require("gatsby-source-filesystem")
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
-exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  const result = await graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              intro
-              title
+exports.createPages = async ({ actions, graphql }) =>
+  Promise.all(
+    (await graphql(`
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                intro
+                title
+              }
             }
           }
         }
       }
-    }
-  `)
-
-  return Promise.all(
-    result.data.allMarkdownRemark.edges.map(edge =>
-      createPage({
-        path: `/projects${edge.node.fields.slug}`,
+    `)).data.allMarkdownRemark.edges.map(({ node: { id, fields: {slug }) =>
+      actions.createPage({
+        path: `/projects${slug}`,
         component: require.resolve(`./src/templates/project.js`),
-        context: { id: edge.node.id },
+        context: { id },
       })
     )
   )
-}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   fmImagesToRelative(node) // convert image paths for gatsby images

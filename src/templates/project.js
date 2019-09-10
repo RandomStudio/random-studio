@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import styles from "./project.module.css"
+import Img from "gatsby-image"
 
 export const pageQuery = graphql`
   query ProjectBySlug($id: String!) {
@@ -11,7 +12,13 @@ export const pageQuery = graphql`
         title
         content {
           caption
-          image
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
           marginLeft
           ratio
           video
@@ -48,7 +55,7 @@ export default ({
                   <video src={item.video} loop muted autoPlay playsInline />
                 </div>
               ) : (
-                <img alt="" src={item.image} />
+                <Img fluid={item.image.childImageSharp.fluid} />
               )}
               {item.caption && (
                 <div className={styles.caption}>{item.caption}</div>
