@@ -4,27 +4,9 @@ import Layout from "../components/layout"
 import styles from "./index.module.css"
 import Img from "gatsby-image"
 
-// export const query = graphql`
-//   {
-//     allContentfulProject {
-//       edges {
-//         node {
-//           title
-//           slug
-//           thumbnail {
-//             fluid(maxWidth: 1920, background: "rgb:000000") {
-//               ...GatsbyContentfulFluid_tracedSVG
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
 export default ({ data }) => (
   <Layout>
-    {data.allContentfulProject.edges.map(
+    {[].map(
       ({ node }) =>
         console.log(node) || (
           <Link

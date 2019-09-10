@@ -4,36 +4,7 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import styles from "./project.module.css"
 
-// export const pageQuery = graphql`
-//   query ProjectBySlug($slug: String!) {
-//     contentfulProject(slug: { eq: $slug }) {
-//       title
-//       intro {
-//         intro
-//       }
-//       content {
-//         caption {
-//           caption
-//         }
-//         marginLeft
-//         marginTop
-//         ratio
-//         width
-//         media {
-//           file {
-//             contentType
-//             url
-//           }
-//           fluid(maxWidth: 1920, background: "rgb:000000") {
-//             ...GatsbyContentfulFluid_tracedSVG
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
-export default ({ data: { contentfulProject: project } }) =>
+export default (project) =>
   console.log(project) || (
     <Layout>
       <div className={styles.project}>
