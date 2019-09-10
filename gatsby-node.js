@@ -20,7 +20,7 @@ exports.createPages = async ({ actions, graphql }) =>
           }
         }
       }
-    `)).data.allMarkdownRemark.edges.map(({ node: { id, fields: {slug }) =>
+    `)).data.allMarkdownRemark.edges.map(({ node: { id, fields: { slug } } }) =>
       actions.createPage({
         path: `/projects${slug}`,
         component: require.resolve(`./src/templates/project.js`),
