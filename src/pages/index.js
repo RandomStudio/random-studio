@@ -4,21 +4,39 @@ import Layout from "../components/layout"
 import styles from "./index.module.css"
 import Img from "gatsby-image"
 
-export default ({ data }) => (
+export const query = graphql`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            intro
+            title
+          }
+        }
+      }
+    }
+  }
+`
+
+export default ({ data }) => console.log(data) || (
   <Layout>
-    {[].map(
+    {data.allMarkdownRemark.edges.map(
       ({ node }) =>
         console.log(node) || (
           <Link
             className={styles.thumbnail}
-            key={node.slug}
-            id={node.slug}
-            to={`/projects/${node.slug}`}
+            key={node.fields.slug}
+            id={node.fields.slug}
+            to={`/projects${node.fields.slug}`}
           >
             <div className={styles.media}>
-              <Img fluid={node.thumbnail.fluid} alt="" />
+              {/* <Img fluid={node.thumbnail.fluid} alt="" /> */}
             </div>
-            <div>{node.title}</div>
+            <div>{node.frontmatter.title}</div>
           </Link>
         )
     )}

@@ -4,12 +4,27 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import styles from "./project.module.css"
 
-export default (project) =>
+export const pageQuery = graphql`
+  query ProjectBySlug($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        intro
+        title
+      }
+    }
+  }
+`
+
+export default ({
+  data: {
+    markdownRemark: { frontmatter: project },
+  },
+}) =>
   console.log(project) || (
     <Layout>
       <div className={styles.project}>
         <h1 className={styles.title}>{project.title}</h1>
-        <div className={styles.intro}>{project.intro.intro}</div>
+        <div className={styles.intro}>{project.intro}</div>
         {(project.content || []).map((item, index) => (
           <div
             key={index}
