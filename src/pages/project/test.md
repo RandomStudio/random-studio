@@ -9,7 +9,7 @@ intro: >
 thumnail: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
 content:
   - marginLeft: 15
-    ratio: 565
+    ratio: 56.25
     video: >-
       https://player.vimeo.com/external/315657115.hd.mp4?s=2c7ef7d81570e7789ba2e6e4141fe416027a3c0b&profile_id=175
     width: 70

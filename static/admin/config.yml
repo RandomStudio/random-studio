@@ -22,7 +22,7 @@ collections:
           - {label: Image, name: image, required: false, widget: image}
           - {label: "Video URL", name: "video", required: false, widget: "text"}
           - {label: "Caption", name: "caption", required: false, widget: "text"}
-          - {label: "Ratio", name: "ratio", required: false, widget: "number"}
-          - {label: "Width", name: "width", required: false, widget: "number"}
-          - {label: "Margin Top", name: "marginTop", required: false, widget: "number"}
-          - {label: "Margin Left", name: "marginLeft", required: false, widget: "number"}
+          - {label: "Ratio", name: "ratio", required: false, valueType: "float", widget: "number"}
+          - {label: "Width", name: "width", required: false, valueType: "float", widget: "number"}
+          - {label: "Margin Top", name: "marginTop", required: false, valueType: "float", widget: "number"}
+          - {label: "Margin Left", name: "marginLeft", required: false, valueType: "float", widget: "number"}

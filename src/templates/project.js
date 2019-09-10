@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import Img from "gatsby-image"
 import styles from "./project.module.css"
 
 export const pageQuery = graphql`
@@ -10,6 +9,14 @@ export const pageQuery = graphql`
       frontmatter {
         intro
         title
+        content {
+          caption
+          image
+          marginLeft
+          ratio
+          video
+          width
+        }
       }
     }
   }
@@ -19,52 +26,47 @@ export default ({
   data: {
     markdownRemark: { frontmatter: project },
   },
-}) =>
-  console.log(project) || (
-    <Layout>
-      <div className={styles.project}>
-        <h1 className={styles.title}>{project.title}</h1>
-        <div className={styles.intro}>{project.intro}</div>
-        {(project.content || []).map((item, index) => (
-          <div
-            key={index}
-            className={styles.item}
-            style={{
-              marginTop: `${item.marginTop}%`,
-              marginLeft: `${item.marginLeft}%`,
-              width: `${item.width}%`,
-            }}
-          >
-            {item.media ? (
-              <div style={{ paddingBottom: `${item.ratio}%` }}>
-                {item.media.file.contentType === "video/mp4" ? (
-                  <video
-                    src={item.media.file.url}
-                    loop
-                    muted
-                    autoPlay
-                    playsInline
-                  />
-                ) : (
-                  <Img fluid={item.media.fluid} />
-                )}
-                {item.caption && (
-                  <div className={styles.caption}>{item.caption.caption}</div>
-                )}
-              </div>
-            ) : (
-              <div className={styles.text} key={index}>
-                {item.caption && item.caption.caption}
-              </div>
-            )}
-          </div>
-        ))}
-        <Link to={`/#${project.slug}`} className={styles.back}>
-          Back to projects
-        </Link>
-      </div>
-    </Layout>
-  )
+}) => (
+  <Layout>
+    <div className={styles.project}>
+      <h1 className={styles.title}>{project.title}</h1>
+      <div className={styles.intro}>{project.intro}</div>
+      {(project.content || []).map((item, index) => (
+        <div
+          key={index}
+          className={styles.item}
+          style={{
+            marginTop: `${item.marginTop}%`,
+            marginLeft: `${item.marginLeft}%`,
+            width: `${item.width}%`,
+          }}
+        >
+          {item.video || item.image ? (
+            <>
+              {item.video ? (
+                <div style={{ paddingBottom: `${item.ratio}%` }}>
+                  <video src={item.video} loop muted autoPlay playsInline />
+                </div>
+              ) : (
+                <img alt="" src={item.image} />
+              )}
+              {item.caption && (
+                <div className={styles.caption}>{item.caption}</div>
+              )}
+            </>
+          ) : (
+            <div className={styles.text} key={index}>
+              {item.caption}
+            </div>
+          )}
+        </div>
+      ))}
+      <Link to={`/#${project.slug}`} className={styles.back}>
+        Back to projects
+      </Link>
+    </div>
+  </Layout>
+)
 
 /* {item.type === "video" ? (
                 <video src={item.content} loop muted autoPlay playsInline />
