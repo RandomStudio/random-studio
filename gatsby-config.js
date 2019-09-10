@@ -1,12 +1,16 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-source-apiserver",
+      resolve: `gatsby-source-contentful`,
       options: {
-        typePrefix: "api__",
-        url: `http://live.random.studio/api/projects`,
-        method: "get",
-        name: `projects`,
+        spaceId: `vxytqh4rzdza`,
+        // Learn about environment variables: https://gatsby.app/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
   ],

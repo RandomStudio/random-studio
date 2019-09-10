@@ -2,24 +2,20 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import styles from "./index.module.css"
+import Img from "gatsby-image"
 
 export const query = graphql`
   {
-    allApiProjects(filter: { slug: { ne: null } }) {
+    allContentfulProject {
       edges {
         node {
-          id
-          slug
-          tags
           title
-          thumbnailType
-          thumbnailContent
-          thumbnailAlt
-          base_image_url
-          thumbnailMarginLeft
-          thumbnailMarginTop
-          thumbnailWidth
-          thumbnailRatio
+          slug
+          thumbnail {
+            fluid(maxWidth: 1920, background: "rgb:000000") {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
         }
       }
     }
@@ -28,39 +24,21 @@ export const query = graphql`
 
 export default ({ data }) => (
   <Layout>
-    {data.allApiProjects.edges.map(({ node }) => (
-      <Link
-        className={styles.thumbnail}
-        key={node.id}
-        id={node.slug}
-        to={`/projects/${node.slug}`}
-        style={{
-          marginTop: `${node.thumbnailMarginTop}vw`,
-          marginLeft: `${node.thumbnailMarginLeft}vw`,
-          width: `${node.thumbnailWidth}%`,
-        }}
-      >
-        <div
-          className={styles.media}
-          style={{ paddingBottom: `${node.thumbnailRatio}%` }}
-        >
-          {node.thumbnailType === "video" ? (
-            <video
-              src={node.thumbnailContent}
-              loop
-              muted
-              autoPlay
-              playsInline
-            />
-          ) : (
-            <img
-              src={`${node.base_image_url}${node.thumbnailContent}`}
-              alt={node.thumbnailAlt}
-            />
-          )}
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: node.title }} />
-      </Link>
-    ))}
+    {data.allContentfulProject.edges.map(
+      ({ node }) =>
+        console.log(node) || (
+          <Link
+            className={styles.thumbnail}
+            key={node.slug}
+            id={node.slug}
+            to={`/projects/${node.slug}`}
+          >
+            <div className={styles.media}>
+              <Img fluid={node.thumbnail.fluid} alt="" />
+            </div>
+            <div>{node.title}</div>
+          </Link>
+        )
+    )}
   </Layout>
 )

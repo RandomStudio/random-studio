@@ -38,3 +38,23 @@ a:hover {
 .nav a {
   text-decoration: none;
 }
+
+.reveal {
+  background: red;
+	animation: fadeOut 0.5s forwards;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
