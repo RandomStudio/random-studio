@@ -17,8 +17,11 @@ collections:
         widget: string
       -
         label: Intro
-        name: intro
-        widget: text
+        name: body
+        buttons:
+          -
+            link
+        widget: markdown
       -
         label: 'Priority on homepage'
         name: priority
@@ -83,7 +86,7 @@ collections:
             label: Caption
             name: caption
             required: false
-            widget: text
+            widget: markdown
           -
             label: Ratio
             name: ratio

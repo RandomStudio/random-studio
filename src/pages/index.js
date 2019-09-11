@@ -13,7 +13,6 @@ export const query = graphql`
             slug
           }
           frontmatter {
-            intro
             title
             thumbnail {
               marginLeft

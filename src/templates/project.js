@@ -11,7 +11,6 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
-        intro
         title
         content {
           caption
@@ -28,6 +27,7 @@ export const pageQuery = graphql`
           width
         }
       }
+      html
     }
   }
 `
@@ -36,14 +36,15 @@ export default ({
   data: {
     markdownRemark: {
       fields: { slug },
-      frontmatter: project,
+			frontmatter: project,
+			html: intro,
     },
   },
 }) => (
   <Layout>
     <div className={styles.project}>
       <h1 className={styles.title}>{project.title}</h1>
-      <div className={styles.intro}>{project.intro}</div>
+      <div className={styles.intro} dangerouslySetInnerHTML={{__html: intro}} />
       {(project.content || []).map((item, index) => (
         <div
           key={index}
