@@ -10,36 +10,41 @@ const ProjectDetail = ({ title, intro, content = [] }) =>
       <div className={styles.intro}>
         <ReactMarkdown escapeHtml={false} source={intro} />
       </div>
-      {content.map((item, index) => (
-        <div
-          key={index}
-          className={styles.item}
-          style={{
-            marginTop: `${item.marginTop}%`,
-            marginLeft: `${item.marginLeft}%`,
-            width: `${item.width}%`,
-          }}
-        >
-          {item.video || item.image ? (
-            <>
-              {item.video ? (
-                <div style={{ paddingBottom: `${item.ratio}%` }}>
-                  <video src={item.video} loop muted autoPlay playsInline />
-                </div>
-              ) : (
-                <Img fluid={item.image.childImageSharp.fluid} />
-              )}
-              {item.caption && (
-                <div className={styles.caption}>{item.caption}</div>
-              )}
-            </>
-          ) : (
-            <div className={styles.text} key={index}>
-              {item.caption}
-            </div>
-          )}
-        </div>
-      ))}
+      {content.map(
+        (
+          { caption, image, marginLeft, marginTop, ratio, video, width },
+          index
+        ) => (
+          <div
+            key={index}
+            className={styles.item}
+            style={{
+              marginTop: `${marginTop}%`,
+              marginLeft: `${marginLeft}%`,
+              width: `${width}%`,
+            }}
+          >
+            {video || image ? (
+              <>
+                {video ? (
+                  <div style={{ paddingBottom: `${ratio}%` }}>
+                    <video src={video} loop muted autoPlay playsInline />
+                  </div>
+                ) : image.childImageSharp ? (
+                  <Img fluid={image.childImageSharp.fluid} />
+                ) : (
+                  <img alt="" src={image} />
+                )}
+                {caption && <div className={styles.caption}>{caption}</div>}
+              </>
+            ) : (
+              <div className={styles.text} key={index}>
+                {caption}
+              </div>
+            )}
+          </div>
+        )
+      )}
     </div>
   )
 

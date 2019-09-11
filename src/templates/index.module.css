@@ -22,7 +22,7 @@
 
 .featured-author {
   text-align: right;
-  font-size: 16px;
+  font-size: .6em;
   line-height: 1em;
   position: absolute;
   bottom: 0;
@@ -34,9 +34,9 @@
 
 .statement {
   margin: 0 auto;
-  font-size: 40px;
+  font-size: 1.5em;
   line-height: 1.3em;
-  padding: 0 40px;
+  padding: 0 1em;
   box-sizing: border-box;
   max-width: 17em;
   margin-bottom: 15vw;

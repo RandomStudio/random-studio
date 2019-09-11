@@ -1,14 +1,12 @@
 .project {
   background: rgb(191, 191, 191);
   width: 100%;
-  font-size: 40px;
   line-height: 1.3em;
   font-weight: 100;
   padding: 5vh 0;
 }
 
 .item {
-  font-size: 27px;
   line-height: 1.3em;
   letter-spacing: 0.5px;
   position: relative;
@@ -31,7 +29,8 @@
   margin-right: 15vw;
   margin-top: 10vw;
   margin-bottom: 10vw;
-  font-size: 1em;
+  font-size: 1.5em;
+  line-height: 1.3em;
   font-weight: normal;
 }
 

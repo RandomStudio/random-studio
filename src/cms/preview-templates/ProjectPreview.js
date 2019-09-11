@@ -1,14 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
+import Layout from "../../components/layout"
 import ProjectDetail from "../../components/projectDetail"
 
-const ProjectPreview = props => <ProjectDetail {...props.entry.toJSON().data} />
-
-ProjectPreview.propTypes = {
-  entry: PropTypes.shape({
-    getIn: PropTypes.func,
-  }),
-  widgetFor: PropTypes.func,
-}
-
-export default ProjectPreview
+export default ({ entry }) => (
+  <Layout>
+    <ProjectDetail {...entry.toJSON().data} />
+  </Layout>
+)

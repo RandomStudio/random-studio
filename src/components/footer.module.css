@@ -2,8 +2,8 @@
   width: 100%;
   max-width: 25em;
   display: flex;
-  font-size: 16px;
   line-height: 1.375em;
-  padding: 40px;
+  padding: 1.5em;
   justify-content: space-between;
+  box-sizing: border-box;
 }
