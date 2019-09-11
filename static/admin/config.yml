@@ -1,28 +1,104 @@
 backend:
   name: git-gateway
   branch: master
-
 media_folder: static/img
 public_folder: /img
-
 collections:
-  - name: "project"
-    label: "Project"
-    folder: "src/pages/project"
+  -
+    name: project
+    label: Project
+    folder: src/pages/project
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Intro", name: "intro", widget: "text"}
-      - {label: "Thumbnail", name: "thumnail", widget: "image"}
-      - label: "Content"
-        name: "content"
-        widget: "list"
+      -
+        label: Title
+        name: title
+        widget: string
+      -
+        label: Intro
+        name: intro
+        widget: text
+      -
+        label: Thumbnail
+        name: thumbnail
+        widget: object
         fields:
-          - {label: Image, name: image, required: false, widget: image}
-          - {label: "Video URL", name: "video", required: false, widget: "text"}
-          - {label: "Caption", name: "caption", required: false, widget: "text"}
-          - {label: "Ratio", name: "ratio", required: false, valueType: "float", widget: "number"}
-          - {label: "Width", name: "width", required: false, valueType: "float", widget: "number"}
-          - {label: "Margin Top", name: "marginTop", required: false, valueType: "float", widget: "number"}
-          - {label: "Margin Left", name: "marginLeft", required: false, valueType: "float", widget: "number"}
+          -
+            label: Image
+            name: image
+            required: false
+            widget: image
+          -
+            label: 'Video URL'
+            name: video
+            required: false
+            widget: text
+          -
+            label: Ratio
+            name: ratio
+            required: false
+            valueType: float
+            widget: number
+          -
+            label: Width
+            name: width
+            required: false
+            valueType: float
+            widget: number
+          -
+            label: 'Margin Top'
+            name: marginTop
+            required: false
+            valueType: float
+            widget: number
+          -
+            label: 'Margin Left'
+            name: marginLeft
+            required: false
+            valueType: float
+            widget: number
+      -
+        label: Content
+        name: content
+        widget: list
+        fields:
+          -
+            label: Image
+            name: image
+            required: false
+            widget: image
+          -
+            label: 'Video URL'
+            name: video
+            required: false
+            widget: text
+          -
+            label: Caption
+            name: caption
+            required: false
+            widget: text
+          -
+            label: Ratio
+            name: ratio
+            required: false
+            valueType: float
+            widget: number
+          -
+            label: Width
+            name: width
+            required: false
+            valueType: float
+            widget: number
+          -
+            label: 'Margin Top'
+            name: marginTop
+            required: false
+            valueType: float
+            widget: number
+          -
+            label: 'Margin Left'
+            name: marginLeft
+            required: false
+            valueType: float
+            widget: number
