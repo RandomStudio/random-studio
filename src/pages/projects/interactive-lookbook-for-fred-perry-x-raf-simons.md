@@ -19,9 +19,11 @@ priority: 0
 thumbnail:
   image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
   marginLeft: 8
+  marginTop: 0
   width: 36
 content:
   - marginLeft: 15
+    marginTop: 0
     ratio: 56.25
     video: >-
       https://player.vimeo.com/external/353969796.hd.mp4?s=d5892522f7944b0161e7ca701f9cdd30369168b3&profile_id=175
@@ -34,4 +36,14 @@ content:
       navigates through an intimate setting of friends talking, dancing and
       eventually extending their stay, all wearing the new Fred Perry x Raf
       Simons collaboration.
+    marginLeft: 0
+    marginTop: 0
+credits:
+  - key: For
+    value: Fred Perry
+  - key: Role
+    value: >-
+      Concept Development, Creative Direction, Art Direction, 3D and
+      Photography, Animation, Web Development, Retail Fixture Concept & Design
 ---
+
