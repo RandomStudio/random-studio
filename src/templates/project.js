@@ -7,6 +7,9 @@ import Img from "gatsby-image"
 export const pageQuery = graphql`
   query ProjectBySlug($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      fields {
+        slug
+      }
       frontmatter {
         intro
         title
@@ -31,7 +34,10 @@ export const pageQuery = graphql`
 
 export default ({
   data: {
-    markdownRemark: { frontmatter: project },
+    markdownRemark: {
+      fields: { slug },
+      frontmatter: project,
+    },
   },
 }) => (
   <Layout>
@@ -68,7 +74,7 @@ export default ({
           )}
         </div>
       ))}
-      <Link to={`/#${project.slug}`} className={styles.back}>
+      <Link to={`/#${slug}`} className={styles.back}>
         Back to projects
       </Link>
     </div>

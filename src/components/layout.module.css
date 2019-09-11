@@ -1,6 +1,10 @@
 @font-face {
   font-family: "Random Regular";
-  src: url("https://random.studio/fonts/Random-Regular.woff2") format("woff2");
+  src: url("/fonts/Random-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Larish Neue";
+  src: url("/fonts/LarishNeueSemibold-Regular.woff2") format("woff2");
 }
 
 body {
@@ -15,7 +19,7 @@ body {
 }
 
 a {
-  color: black;
+  color: inherit;
 }
 
 a:hover {
@@ -33,13 +37,15 @@ a:hover {
   max-width: 15em;
   pointer-events: all;
   z-index: 999;
+  mix-blend-mode: difference;
+  color: white;
 }
 
 .nav a {
   text-decoration: none;
 }
 
-.reveal {
+.background-transition {
   background: red;
 	animation: fadeOut 0.5s forwards;
 	position: fixed;

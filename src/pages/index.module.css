@@ -1,19 +1,68 @@
+.video {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: block;
+}
+
+.video:hover {
+	opacity: 1;
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-author {
+  text-align: right;
+  font-size: 16px;
+  line-height: 1em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.projects {
+  padding-top: 5vw;
+}
+
 .thumbnail {
   margin-bottom: 15vw;
   display: block;
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .media {
   width: 100%;
-	background: #eee;
-	position: relative;
-	margin-bottom: .5em;
+  background: #eee;
+  position: relative;
+  margin-bottom: 0.5em;
 }
 
 .media img,
 .media video {
   position: absolute;
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  font-family: "Larish Neue", serif;
+  letter-spacing: -0.01em;
+}
+
+h1.logo {
+	font-weight: normal;
+	font-size: 90px;
+	line-height: 1.1em;
+	position: absolute;
+	left: 4vw;
+	top: 40vw;
+	mix-blend-mode: difference;
+	color: white;
 }
