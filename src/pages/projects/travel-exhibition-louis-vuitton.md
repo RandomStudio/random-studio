@@ -1,5 +1,6 @@
 ---
-title: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
+templateKey: project
+title: "Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton"
 priority: 10
 thumbnail:
   image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
@@ -27,7 +28,7 @@ content:
 ---
 
 Louis Vuitton’s traveling exhibition “Volez, Voguez, Voyagez” (Fly, Sail,
-  Travel) retraces the adventure of the House of Louis Vuitton from 1854 to the
-  present. For the Seoul, New York City and Shanghai editions of this
-  exhibition, we created high-impact entrance statements to welcome guests into
-  Louis Vuitton's world of travel.
+Travel) retraces the adventure of the House of Louis Vuitton from 1854 to the
+present. For the Seoul, New York City and Shanghai editions of this
+exhibition, we created high-impact entrance statements to welcome guests into
+Louis Vuitton's world of travel.

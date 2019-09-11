@@ -23,38 +23,19 @@ a {
 }
 
 a:hover {
-	opacity: 0.5;
-	text-decoration: none;
-}
-
-.nav {
-  position: fixed;
-  padding: 40px;
-  line-height: 1;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 15em;
-  pointer-events: all;
-  z-index: 999;
-  mix-blend-mode: difference;
-  color: white;
-}
-
-.nav a {
+  opacity: 0.5;
   text-decoration: none;
 }
 
 .background-transition {
   background: red;
-	animation: fadeOut 0.5s forwards;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	pointer-events: none;
+  animation: fadeOut 0.5s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
 }
 
 @keyframes fadeOut {
@@ -64,14 +45,4 @@ a:hover {
   to {
     opacity: 0;
   }
-}
-
-.footer {
-	width: 100%;
-	max-width: 25em;
-	display: flex;
-	font-size: 16px;
-	line-height: 1.375em;
-	padding: 40px;
-	justify-content: space-between;
 }

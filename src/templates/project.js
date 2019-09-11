@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Navigation from "../components/navigation"
 import styles from "./project.module.css"
 import Img from "gatsby-image"
 
@@ -36,15 +37,19 @@ export default ({
   data: {
     markdownRemark: {
       fields: { slug },
-			frontmatter: project,
-			html: intro,
+      frontmatter: project,
+      html: intro,
     },
   },
 }) => (
   <Layout>
+    <Navigation />
     <div className={styles.project}>
       <h1 className={styles.title}>{project.title}</h1>
-      <div className={styles.intro} dangerouslySetInnerHTML={{__html: intro}} />
+      <div
+        className={styles.intro}
+        dangerouslySetInnerHTML={{ __html: intro }}
+      />
       {(project.content || []).map((item, index) => (
         <div
           key={index}

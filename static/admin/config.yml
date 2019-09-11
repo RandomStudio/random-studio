@@ -7,10 +7,15 @@ collections:
   -
     name: project
     label: Project
-    folder: src/pages/project
+    folder: src/pages/projects
     create: true
     slug: '{{slug}}'
     fields:
+      -
+        label: 'Template Key'
+        name: templateKey
+        widget: hidden
+        default: project
       -
         label: Title
         name: title
@@ -19,8 +24,7 @@ collections:
         label: Intro
         name: body
         buttons:
-          -
-            link
+          - link
         widget: markdown
       -
         label: 'Priority on homepage'
@@ -111,15 +115,33 @@ collections:
             required: false
             valueType: float
             widget: number
-
-  - name: "pages"
-    label: "Pages"
+  -
+    name: pages
+    label: Pages
     files:
-      - file: "src/pages/index.md"
-        label: "Home Page"
-        name: "index"
+      -
+        file: src/pages/index.md
+        label: 'Home Page'
+        name: index
         fields:
-          - {label: Intro, name: intro, widget: markdown}
-          - {label: Middle, name: middle, widget: markdown}
-          - {label: Address, name: address, widget: markdown}
-          - {label: "Contact Info", name: contact, widget: markdown}
+          -
+            label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: index
+          -
+            label: Intro
+            name: intro
+            widget: markdown
+          -
+            label: Middle
+            name: middle
+            widget: markdown
+          -
+            label: Address
+            name: address
+            widget: markdown
+          -
+            label: 'Contact Info'
+            name: contact
+            widget: markdown

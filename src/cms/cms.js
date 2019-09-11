@@ -1,1 +1,1 @@
-import 'netlify-cms-app'
+import "netlify-cms-app"

@@ -1,4 +1,5 @@
 ---
+templateKey: project
 title: Interactive lookbook  for Fred Perry x Raf Simons
 priority: 0
 thumbnail:

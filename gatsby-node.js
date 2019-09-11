@@ -12,16 +12,26 @@ exports.createPages = async ({ actions, graphql }) =>
               fields {
                 slug
               }
+              frontmatter {
+                templateKey
+              }
             }
           }
         }
       }
-    `)).data.allMarkdownRemark.edges.map(({ node: { id, fields: { slug } } }) =>
-      actions.createPage({
-        path: `/projects${slug}`,
-        component: require.resolve(`./src/templates/project.js`),
-        context: { id },
-      })
+    `)).data.allMarkdownRemark.edges.map(
+      ({
+        node: {
+          id,
+          fields: { slug },
+          frontmatter: { templateKey },
+        },
+      }) =>
+        actions.createPage({
+          path: slug,
+          component: require.resolve(`./src/templates/${templateKey}.js`),
+          context: { id },
+        })
     )
   )
 
@@ -35,8 +45,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: createFilePath({
         node,
         getNode,
-        basePath: "project/",
-        trailingSlash: false,
       }),
     })
   }

@@ -32,8 +32,23 @@
   color: white;
 }
 
+.statement {
+  margin: 0 auto;
+  font-size: 40px;
+  line-height: 1.3em;
+  padding: 0 40px;
+  box-sizing: border-box;
+  max-width: 17em;
+  margin-bottom: 15vw;
+}
+
 .projects {
-  padding-top: 5vw;
+  padding: 15vw 0;
+  background: white;
+}
+
+.title {
+  max-width: 17em;
 }
 
 .thumbnail {
