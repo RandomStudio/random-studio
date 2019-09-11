@@ -74,20 +74,3 @@ export default ({
     </div>
   </Layout>
 )
-
-/* {item.type === "video" ? (
-                <video src={item.content} loop muted autoPlay playsInline />
-              ) : item.type === "image" && item.content ? (
-                <>
-                  <img
-                    src={`${project.base_image_url}${item.content}`}
-                    alt={item.alt}
-                  />
-                </>
-              ) : (
-                <div
-                  className={styles.text}
-                  dangerouslySetInnerHTML={{ __html: item.content }}
-                  key={index}
-                />
-              )} */
