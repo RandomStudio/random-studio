@@ -8,7 +8,6 @@
 
 .item {
   line-height: 1.3em;
-  letter-spacing: 0.5px;
   position: relative;
 }
 
@@ -55,4 +54,24 @@
   line-height: 1.3em;
   max-width: 24em;
   padding: 0.5em;
+}
+
+.credits {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0 15vw;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.credits td {
+  vertical-align: baseline;
+}
+
+.key {
+  padding-right: 50px;
+}
+
+.key::after {
+  content: ":";
 }

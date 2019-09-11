@@ -115,6 +115,19 @@ collections:
             default: 0
             valueType: float
             widget: number
+      -
+        label: Credits
+        name: credits
+        widget: list
+        fields:
+          -
+            label: Key
+            name: key
+            widget: text
+          -
+            label: Value
+            name: value
+            widget: text
   -
     name: pages
     label: Pages

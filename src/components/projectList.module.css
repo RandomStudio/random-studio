@@ -1,3 +1,8 @@
+.projects {
+  padding: 15vw 0;
+  background: #f8f8f8;
+}
+
 .statement {
   margin: 0 auto;
   font-size: 1.5em;
@@ -8,11 +13,6 @@
   margin-bottom: 15vw;
 }
 
-.projects {
-  padding: 15vw 0;
-  background: white;
-}
-
 .title {
   max-width: 17em;
 }
@@ -21,6 +21,10 @@
   margin-bottom: 15vw;
   display: block;
   text-decoration: none;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
 }
 
 .media {

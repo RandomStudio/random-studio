@@ -24,6 +24,10 @@ export const pageQuery = graphql`
           video
           width
         }
+        credits {
+          key
+          value
+        }
       }
     }
   }
