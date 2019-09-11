@@ -19,7 +19,9 @@ body {
 }
 
 @media (min-width: 600px) {
-  font-size: 27px;
+  body {
+    font-size: 27px;
+  }
 }
 
 a {
