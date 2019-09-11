@@ -1,6 +1,6 @@
 ---
 templateKey: project
-title: "Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton"
+title: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
 intro: >-
   Louis Vuitton’s traveling exhibition “Volez, Voguez, Voyagez” (Fly, Sail,
   Travel) retraces the adventure of the House of Louis Vuitton from 1854 to the
@@ -11,9 +11,11 @@ priority: 10
 thumbnail:
   image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
   marginLeft: 20
+  marginTop: 1
   width: 60
 content:
   - marginLeft: 15
+    marginTop: -1
     ratio: 56.25
     video: >-
       https://player.vimeo.com/external/315657115.hd.mp4?s=2c7ef7d81570e7789ba2e6e4141fe416027a3c0b&profile_id=175
@@ -25,10 +27,44 @@ content:
       embedded with LED panel with synchronised scrolling messages and graphics,
       welcoming visitors. Overhead, we installed an ever-shifting digital
       ‘skylight’, animated by moving clouds and glowing colours.
+    marginLeft: -1
+    marginTop: 0
   - image: /img/e2fbc4e07e3fbcb16864246249628322-1-.v-vvv-shanghai-22-jpg.jpg
+    marginLeft: 0
+    marginTop: 0
     width: 55
   - image: /img/60d251d8be1402f20c3682d28a36e918-2-.v-vvv-shanghai-25-jpg.jpg
     marginLeft: 65
     marginTop: -15
     width: 30
+  - caption: >-
+      In Seoul, we developed an interactive LED wall on a massive scale (90m2),
+      inviting visitors to fly a plane over world cities using their own bodies
+      to control the movement.
+    marginLeft: 0
+    marginTop: 0
+  - caption: >-
+      In our custom-built 3D environment, a classic plane (which mimics a real
+      version displayed in the exhibition) encounters famous world monuments as
+      it makes a seemingly endless journey soaring above the clouds.
+    marginLeft: 0
+    marginTop: 0
+  - caption: >-
+      For the New York edition of the exhibition, our space was a long corridor
+      rather than an entranceway. Here we presented a digital subway station,
+      crafted with Louis Vuitton styling. A 22m long video wall allowed a
+      life-size train to enter the space at set intervals, accompanied by an
+      immersive 6-speaker soundscape.
+    marginLeft: 0
+    marginTop: 0
+credits:
+  - key: For
+    value: Louis Vuitton
+  - key: Role
+    value: >-
+      Concept Development, Creative Direction, Design, Software Development,
+      Installation
+  - key: With
+    value: Naivi — Unreal development
 ---
+
