@@ -18,5 +18,29 @@ export default ({ children }) => (
           ],
       }}
     />
+    <footer className={styles.footer}>
+      <div>
+        Westzaanstraat 10
+        <br />
+        1013 NG Amsterdam
+        <br />
+        The Netherlands
+        <br />
+        <a
+          href="https://goo.gl/maps/7rGuGBBfhms"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Directions
+        </a>
+      </div>
+
+      <div>
+        <a href="tel://+31 20 779 7735">+31 20 779 7735</a>
+        <br />
+        <a href="mailto:hello@random.studio">hello@random.studio</a>
+        <br />
+      </div>
+    </footer>
   </>
 )

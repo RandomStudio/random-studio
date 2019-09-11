@@ -20,7 +20,7 @@ export const query = graphql`
               width
               image {
                 childImageSharp {
-                  fluid {
+                  fluid(maxWidth: 1920) {
                     ...GatsbyImageSharpFluid_tracedSVG
                   }
                 }
@@ -43,12 +43,14 @@ export default ({ data }) => (
         autoPlay
         playsInline
       />
-      <a href="/#projects" className={styles.videoOverlay} />
       <h1 className={styles.logo}>
         Random
         <br />
         Studio
       </h1>
+      <a href="/#projects" className={styles.videoOverlay}>
+        Projects
+      </a>
       <div className={styles.featuredAuthor}>
         <span className={styles.logo}>Random Studio</span>
         <span> × </span>

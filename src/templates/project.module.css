@@ -7,20 +7,6 @@
 	padding-top: 10vh;
 }
 
-.back {
-  display: block;
-  padding: 10vw 0.25em;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.66);
-  text-decoration: none;
-  text-align: center;
-  font-size: 22px;
-  color: white;
-}
-.back:hover {
-  background: black;
-}
-
 .item {
   font-size: 27px;
   line-height: 1.3em;

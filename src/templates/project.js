@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import styles from "./project.module.css"
 import Img from "gatsby-image"
@@ -17,7 +17,7 @@ export const pageQuery = graphql`
           caption
           image {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_tracedSVG
               }
             }
@@ -74,9 +74,6 @@ export default ({
           )}
         </div>
       ))}
-      <Link to={`/#${slug}`} className={styles.back}>
-        Back to projects
-      </Link>
     </div>
   </Layout>
 )
