@@ -35,4 +35,3 @@ content:
       eventually extending their stay, all wearing the new Fred Perry x Raf
       Simons collaboration.
 ---
-
