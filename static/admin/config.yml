@@ -62,13 +62,13 @@ collections:
           -
             label: 'Margin Top'
             name: marginTop
-            required: false
+            default: 0
             valueType: float
             widget: number
           -
             label: 'Margin Left'
             name: marginLeft
-            required: false
+            default: 0
             valueType: float
             widget: number
       -
@@ -106,13 +106,13 @@ collections:
           -
             label: 'Margin Top'
             name: marginTop
-            required: false
+            default: 0
             valueType: float
             widget: number
           -
             label: 'Margin Left'
             name: marginLeft
-            required: false
+            default: 0
             valueType: float
             widget: number
   -
