@@ -35,7 +35,7 @@ export const query = graphql`
 
 export default ({ data }) => (
   <Layout>
-    <a className={styles.video} href="/#projects">
+    <div className={styles.video}>
       <video
         src="https://player.vimeo.com/external/219822090.hd.mp4?s=9fcbf6bfec731604e4b4d29e278e676848c2ac20&profile_id=119"
         muted
@@ -43,6 +43,7 @@ export default ({ data }) => (
         autoPlay
         playsInline
       />
+      <a href="/#projects" className={styles.videoOverlay} />
       <h1 className={styles.logo}>
         Random
         <br />
@@ -61,7 +62,7 @@ export default ({ data }) => (
           </a>
         </span>
       </div>
-    </a>
+    </div>
     <div id="projects" className={styles.projects}>
       {data.allMarkdownRemark.edges.map(
         ({
