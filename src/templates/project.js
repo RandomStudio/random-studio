@@ -5,7 +5,7 @@ import styles from "./project.module.css"
 import Img from "gatsby-image"
 
 export const pageQuery = graphql`
-  query ProjectBySlug($id: String!) {
+  query ProjectById($id: String!) {
     markdownRemark(id: { eq: $id }) {
       fields {
         slug

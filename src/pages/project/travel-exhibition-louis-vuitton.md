@@ -6,6 +6,7 @@ intro: >
   present. For the Seoul, New York City and Shanghai editions of this
   exhibition, we created high-impact entrance statements to welcome guests into
   Louis Vuitton's world of travel.
+priority: 10
 thumbnail:
   image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
   marginLeft: 20

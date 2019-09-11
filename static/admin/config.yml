@@ -20,6 +20,12 @@ collections:
         name: intro
         widget: text
       -
+        label: 'Priority on homepage'
+        name: priority
+        required: false
+        valueType: float
+        widget: number
+      -
         label: Thumbnail
         name: thumbnail
         widget: object

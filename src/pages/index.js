@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {fields: frontmatter___priority, order: DESC}) {
       edges {
         node {
           fields {
