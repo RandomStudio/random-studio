@@ -37,18 +37,35 @@ content:
     marginLeft: 65
     marginTop: -15
     width: 30
+  - image: /img/c0217b2244479322e143452769e15a67.v-vvv-shanghai-12-jpg.jpg
+    marginLeft: 10
+    marginTop: -10
+    width: 45
   - caption: >-
       In Seoul, we developed an interactive LED wall on a massive scale (90m2),
       inviting visitors to fly a plane over world cities using their own bodies
       to control the movement.
     marginLeft: 0
     marginTop: 0
+  - marginLeft: 15
+    marginTop: 0
+    ratio: 56.25
+    video: >-
+      https://player.vimeo.com/external/245174032.hd.mp4?s=c778e9e64671d104fcc643832c8a45ef92d54a2b&profile_id=175
+    width: 70
   - caption: >-
       In our custom-built 3D environment, a classic plane (which mimics a real
       version displayed in the exhibition) encounters famous world monuments as
       it makes a seemingly endless journey soaring above the clouds.
     marginLeft: 0
     marginTop: 0
+  - caption: >-
+      A display with architectural scale: visitors are bathed in light emitted
+      by the LED wall as they enter the exhibition.
+    image: /img/9ebaa1e79f39e9509588a6170a0ac25a-1-.sc03108-jpg.jpg
+    marginLeft: 40
+    marginTop: 0
+    width: 58
   - caption: >-
       For the New York edition of the exhibition, our space was a long corridor
       rather than an entranceway. Here we presented a digital subway station,
@@ -57,6 +74,12 @@ content:
       immersive 6-speaker soundscape.
     marginLeft: 0
     marginTop: 0
+  - marginLeft: 18
+    marginTop: 10
+    ratio: 56.25
+    video: >-
+      https://player.vimeo.com/external/245185336.hd.mp4?s=174ef918bb1f27274628cf1f56e328a9acd69a69&profile_id=175
+    width: 45
 credits:
   - key: For
     value: Louis Vuitton
