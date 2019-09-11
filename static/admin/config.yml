@@ -111,3 +111,15 @@ collections:
             required: false
             valueType: float
             widget: number
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home Page"
+        name: "index"
+        fields:
+          - {label: Intro, name: intro, widget: markdown}
+          - {label: Middle, name: middle, widget: markdown}
+          - {label: Address, name: address, widget: markdown}
+          - {label: "Contact Info", name: contact, widget: markdown}
