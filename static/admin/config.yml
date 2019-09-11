@@ -22,7 +22,7 @@ collections:
         widget: string
       -
         label: Intro
-        name: body
+        name: intro
         buttons:
           - link
         widget: markdown
