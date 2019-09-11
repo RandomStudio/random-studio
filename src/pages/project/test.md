@@ -6,7 +6,10 @@ intro: >
   present. For the Seoul, New York City and Shanghai editions of this
   exhibition, we created high-impact entrance statements to welcome guests into
   Louis Vuitton's world of travel.
-thumnail: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
+thumbnail:
+  image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
+  marginLeft: 20
+  width: 60
 content:
   - marginLeft: 15
     ratio: 56.25
@@ -22,5 +25,9 @@ content:
       ‘skylight’, animated by moving clouds and glowing colours.
   - image: /img/e2fbc4e07e3fbcb16864246249628322-1-.v-vvv-shanghai-22-jpg.jpg
     width: 55
+  - image: /img/60d251d8be1402f20c3682d28a36e918-2-.v-vvv-shanghai-25-jpg.jpg
+    marginLeft: 65
+    marginTop: -15
+    width: 30
 ---
 
