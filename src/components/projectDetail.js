@@ -37,9 +37,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => (
               {caption && <div className={styles.caption}>{caption}</div>}
             </>
           ) : (
-            <div className={styles.text} key={index}>
-              {caption}
-            </div>
+            <div className={styles.text}>{caption}</div>
           )}
         </div>
       )
@@ -47,7 +45,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => (
     <table className={styles.credits}>
       <tbody>
         {(credits || []).map(({ key, value }) => (
-          <tr>
+          <tr key={`${key}-${value}`}>
             <td className={styles.key}>{key}</td>
             <td>{value}</td>
           </tr>

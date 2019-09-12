@@ -5,7 +5,7 @@ const backgroundTransitionColors = ["#0000FF", "#FFFF00", "#00FFFF", "#FF00FF"]
 
 export default ({ children }) => (
   <>
-    {children}
+    <div className={styles.container}>{children}</div>
     <div
       className={styles.backgroundTransition}
       style={{

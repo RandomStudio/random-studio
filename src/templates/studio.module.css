@@ -1,0 +1,35 @@
+h1.logo {
+  margin: 0;
+  font-weight: normal;
+  font-size: 90px;
+  line-height: 1.1em;
+  padding-left: 4vw;
+  padding-top: 40vh;
+  color: black;
+  font-family: "Larish Neue", serif;
+  letter-spacing: -0.01em;
+}
+
+.intro {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  font-size: 1.5em;
+  line-height: 1.3em;
+  font-weight: normal;
+}
+
+.intro .address {
+  font-size: 0.667em;
+  line-height: 1.3em;
+  float: left;
+  margin-right: 1.3em;
+  margin-bottom: 1.3em;
+  padding-top: .25em;
+}
+
+.intro .address p {
+    margin: 0;
+    margin-bottom: 1.3em;
+}

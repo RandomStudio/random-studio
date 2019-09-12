@@ -1,5 +1,6 @@
 .nav {
   position: fixed;
+  top: 0;
   padding: 40px;
   line-height: 1;
   box-sizing: border-box;

@@ -38,6 +38,7 @@
   }
 
   h1.logo {
+    margin: 0;
     font-weight: normal;
     font-size: 90px;
     line-height: 1.1em;
