@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Navigation from "../components/navigation"
-import Footer from "../components/footer"
+import Layout from "../components/Layout/layout"
+import Navigation from "../components/Layout/navigation"
+import Footer from "../components/Layout/footer"
 import styles from "./studio.module.css"
 import ReactMarkdown from "react-markdown"
 
@@ -34,11 +34,17 @@ export default ({ data }) =>
       <div className={styles.intro}>
         <div className={styles.address}>
           <div>
-            <ReactMarkdown escapeHtml={false} source={data.indexPage.frontmatter.address} />
+            <ReactMarkdown
+              escapeHtml={false}
+              source={data.indexPage.frontmatter.address}
+            />
           </div>
 
           <div>
-            <ReactMarkdown escapeHtml={false} source={data.indexPage.frontmatter.contact} />
+            <ReactMarkdown
+              escapeHtml={false}
+              source={data.indexPage.frontmatter.contact}
+            />
           </div>
         </div>
         <ReactMarkdown
