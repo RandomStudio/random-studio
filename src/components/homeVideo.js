@@ -27,7 +27,7 @@ export default () => (
           rel="noopener noreferrer"
           href="https://www.instagram.com/prendswash/"
         >
-          Mark Prendergast
+          Kevin
         </a>
       </span>
     </div>
