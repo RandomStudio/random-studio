@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./homeVideo.module.css"
+import styles from "./homeVideo.module.scss"
 
 export default () => (
   <div className={styles.video}>
