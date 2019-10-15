@@ -120,8 +120,8 @@ collections:
             name: video
             required: true
             widget: text
-          - label: Collaboration Credit
-            name: collaborationCredit
+          - label: Collaboration Credits
+            name: collaborationCredits
             required: false
             widget: object
             fields:
