@@ -112,6 +112,8 @@ content:
     marginLeft: 55
     marginTop: -50
     width: 35
+  - marginLeft: 0
+    marginTop: 36
 credits:
   - key: For
     value: Louis Vuitton
