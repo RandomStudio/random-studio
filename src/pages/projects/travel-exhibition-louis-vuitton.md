@@ -67,6 +67,19 @@ content:
     marginTop: 0
     width: 58
   - caption: >-
+      The installation rewarded exploration, causing the plane to pull special
+      maneuvers around the monuments when steered close enough.
+    image: >-
+      /img/4a4efa9d7ab8fd2119b33f2b1ff43bbe.andomstudio-louisvuitton-vvv-seoul-03-jpg.jpg
+    marginLeft: 0
+    marginTop: 0
+    ratio: 67
+    width: 60
+  - image: >-
+      /img/2c308614002eeb4cd17e649586abd5e2.andomstudio-louisvuitton-vvv-seoul-02-jpg.jpg
+    marginLeft: 0
+    marginTop: 2
+  - caption: >-
       For the New York edition of the exhibition, our space was a long corridor
       rather than an entranceway. Here we presented a digital subway station,
       crafted with Louis Vuitton styling. A 22m long video wall allowed a
@@ -80,6 +93,8 @@ content:
     video: >-
       https://player.vimeo.com/external/245185336.hd.mp4?s=174ef918bb1f27274628cf1f56e328a9acd69a69&profile_id=175
     width: 45
+  - marginLeft: 0
+    marginTop: 0
 credits:
   - key: For
     value: Louis Vuitton
