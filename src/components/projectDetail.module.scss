@@ -7,7 +7,7 @@
 }
 
 .item {
-  line-height: 1.3;
+  line-height: 1.375;
   position: relative;
   padding: 1.2rem 0;
 
@@ -15,7 +15,6 @@
     display: block;
     position: absolute;
     width: 100%;
-    // height: 100%;
   }
 
   img {
@@ -26,9 +25,10 @@
 .title,
 .intro,
 .text {
-  line-height: 1.3em;
+  line-height: 1.375;
   font-weight: normal;
-  margin: 10vw 1.4rem;
+  margin: 10vw 0;
+  padding: 0 1.4rem;
 }
 
 .title,
@@ -44,43 +44,88 @@
   margin-top: 1.2931578947em;
 }
 
-.text {
-  // margin-left: 15vw;
-  // margin-right: 15vw;
-  // margin-top: 10vw;
-  // margin-bottom: 10vw;
-  width: auto;
-}
-
 .caption {
   font-size: 1rem;
-  line-height: 1.3;
-  // max-width: 24em;
+  line-height: 1.375;
   padding: 1.4rem;
 }
 
 .credits {
-  // padding-left: 50px;
-  // padding-right: 50px;
-  // margin: 0 15vw;
-  // border-collapse: collapse;
-  // border-spacing: 0;
-  padding: 4rem 1.4rem 0;
+  padding: 8rem 1.4rem 0;
+  max-width: 60rem;
 
   ul {
     padding-bottom: 1.6rem;
+    line-height: 1.375;
+
+    li:first-of-type {
+      max-width: 6rem;
+      padding-right: 2.4rem;
+    }
   }
 }
 
 @media (min-width: 30rem) {
   .title,
+  .intro,
+  .text {
+    margin: 8vw 0;
+    padding: 0 4.8rem;
+  }
+
+  .title,
   .intro {
-    margin: 10vw 2rem;
+    font-size: 2rem;
+  }
+
+  .text,
+  .credits {
+    font-size: 1.4rem;
   }
 
   .item {
     margin-top: var(--marginTop);
     margin-left: var(--marginLeft);
     width: var(--width);
+  }
+
+  .caption {
+    padding: 0.4rem 0 0;
+  }
+
+  .credits {
+    margin: 0 4.8rem;
+    padding-right: 4.8rem;
+    padding-left: 4.8rem;
+
+    ul {
+      display: flex;
+      li {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: 50rem) {
+  .title,
+  .intro,
+  .text {
+    max-width: 60rem;
+    margin: 8vw auto;
+  }
+
+  .title,
+  .intro {
+    font-size: 2.4rem;
+  }
+
+  .text,
+  .credits {
+    font-size: 1.7rem;
+  }
+
+  .credits {
+    margin: 0 auto;
   }
 }
