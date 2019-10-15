@@ -19,6 +19,7 @@ export const pageQuery = graphql`
               }
             }
           }
+          marginTop
           marginLeft
           ratio
           video
