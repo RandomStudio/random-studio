@@ -65,20 +65,21 @@ content:
     image: /img/9ebaa1e79f39e9509588a6170a0ac25a-1-.sc03108-jpg.jpg
     marginLeft: 40
     marginTop: 0
-    width: 58
+    width: 60
+  - image: >-
+      /img/2c308614002eeb4cd17e649586abd5e2.andomstudio-louisvuitton-vvv-seoul-02-jpg.jpg
+    marginLeft: 0
+    marginTop: -20
+    width: 30
   - caption: >-
       The installation rewarded exploration, causing the plane to pull special
       maneuvers around the monuments when steered close enough.
     image: >-
       /img/4a4efa9d7ab8fd2119b33f2b1ff43bbe.andomstudio-louisvuitton-vvv-seoul-03-jpg.jpg
-    marginLeft: 0
-    marginTop: 0
-    ratio: 67
-    width: 60
-  - image: >-
-      /img/2c308614002eeb4cd17e649586abd5e2.andomstudio-louisvuitton-vvv-seoul-02-jpg.jpg
-    marginLeft: 0
-    marginTop: 2
+    marginLeft: 50
+    marginTop: -20
+    ratio: ''
+    width: 40
   - caption: >-
       For the New York edition of the exhibition, our space was a long corridor
       rather than an entranceway. Here we presented a digital subway station,
