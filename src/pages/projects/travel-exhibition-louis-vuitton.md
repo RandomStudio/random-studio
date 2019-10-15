@@ -93,7 +93,7 @@ content:
     marginLeft: 15
     marginTop: 0
     width: 70
-  - marginLeft: 17
+  - marginLeft: 18
     marginTop: 10
     ratio: 56.25
     video: >-
