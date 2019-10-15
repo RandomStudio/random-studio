@@ -93,7 +93,17 @@ content:
     video: >-
       https://player.vimeo.com/external/245185336.hd.mp4?s=174ef918bb1f27274628cf1f56e328a9acd69a69&profile_id=175
     width: 45
-  - marginLeft: 0
+  - image: >-
+      /img/7d102ce5d3b8f3e90c72d9719086c4c7.andomstudio-louisvuitton-vvv-nyc-02-crop-jpg.jpg
+    marginLeft: 0
+    marginTop: 0
+  - image: >-
+      /img/9cdb5b913ea032ff4ca5b7a0a162099c.andomstudio-louisvuitton-vvv-nyc-03-jpg.jpg
+    marginLeft: 0
+    marginTop: 0
+  - image: >-
+      /img/52f854eca91995c272d693dcc5bb1682.andomstudio-louisvuitton-vvv-nyc-04-jpg.jpg
+    marginLeft: 0
     marginTop: 0
 credits:
   - key: For
