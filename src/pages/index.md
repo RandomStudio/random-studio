@@ -2,7 +2,7 @@
 templateKey: index
 video: >-
   https://player.vimeo.com/external/219822090.hd.mp4?s=9fcbf6bfec731604e4b4d29e278e676848c2ac20&profile_id=119
-credits:
+collaborationCredits:
   collaborator: Mark Prendergast
   url: 'https://www.instagram.com/prendswash/'
 intro: >-
@@ -21,4 +21,3 @@ contact: >
   [+31 20 779 7735](tel://+31207797735)<br />
   [hello@random.studio](mailto:hello@random.studio)
 ---
-
