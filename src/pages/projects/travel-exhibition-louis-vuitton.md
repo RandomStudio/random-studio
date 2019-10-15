@@ -97,7 +97,10 @@ content:
       /img/7d102ce5d3b8f3e90c72d9719086c4c7.andomstudio-louisvuitton-vvv-nyc-02-crop-jpg.jpg
     marginLeft: 0
     marginTop: 0
-  - image: >-
+  - caption: >-
+      The installation combined digital and physical elements, connected by the
+      same design language.
+    image: >-
       /img/9cdb5b913ea032ff4ca5b7a0a162099c.andomstudio-louisvuitton-vvv-nyc-03-jpg.jpg
     marginLeft: 0
     marginTop: 0
