@@ -143,6 +143,26 @@ collections:
             widget: hidden
             default: index
           -
+            label: 'Video URL'
+            name: video
+            required: true
+            widget: text
+          - 
+            label: Credits
+            name: credits
+            required: false
+            widget: object
+            fields:
+                - 
+                  label: Collaborator
+                  name: collaborator
+                  widget: text
+                - 
+                  label: 'Referral URL'
+                  name: url
+                  required: false
+                  widget: text
+          -
             label: Intro
             name: intro
             widget: markdown
