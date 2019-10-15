@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./projectDetail.module.css"
+import styles from "./projectDetail.module.scss"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 
@@ -18,9 +18,9 @@ const ProjectDetail = ({ title, intro, content, credits }) => (
           key={index}
           className={styles.item}
           style={{
-            marginTop: `${marginTop}%`,
-            marginLeft: `${marginLeft}%`,
-            width: `${width}%`,
+            "--marginTop": `${marginTop}%`,
+            "--marginLeft": `${marginLeft}%`,
+            "--width": `${width}%`,
           }}
         >
           {video || image ? (
@@ -42,16 +42,15 @@ const ProjectDetail = ({ title, intro, content, credits }) => (
         </div>
       )
     )}
-    <table className={styles.credits}>
-      <tbody>
-        {(credits || []).map(({ key, value }) => (
-          <tr key={`${key}-${value}`}>
-            <td className={styles.key}>{key}</td>
-            <td>{value}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+
+    <footer className={styles.credits}>
+      {(credits || []).map(({ key, value }) => (
+        <ul key={`${key}-${value}`} className="">
+          <li>{key}</li>
+          <li>{value}</li>
+        </ul>
+      ))}
+    </footer>
   </div>
 )
 
