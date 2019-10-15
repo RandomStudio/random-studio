@@ -22,14 +22,13 @@
 
 .featured-author {
   position: absolute;
-  text-align: right;
-  font-size: 0.6rem;
-  line-height: 1;
   bottom: 0;
-  right: 0;
-  padding: 1em;
-  mix-blend-mode: difference;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1;
   color: white;
+  padding: 1rem 1.4rem;
+  mix-blend-mode: difference;
 }
 
 .logo {
@@ -50,6 +49,10 @@ h1.logo {
 }
 
 @media (min-width: 30rem) {
+  .featured-author {
+    text-align: right;
+  }
+
   h1.logo {
     left: calc(12vw + 1.2rem);
     font-size: 5.4rem;
