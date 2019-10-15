@@ -35,11 +35,11 @@ content:
     width: 55
   - image: /img/60d251d8be1402f20c3682d28a36e918-2-.v-vvv-shanghai-25-jpg.jpg
     marginLeft: 65
-    marginTop: -15
+    marginTop: -19
     width: 30
   - image: /img/c0217b2244479322e143452769e15a67.v-vvv-shanghai-12-jpg.jpg
     marginLeft: 10
-    marginTop: -10
+    marginTop: -12
     width: 45
   - caption: >-
       In Seoul, we developed an interactive LED wall on a massive scale (90m2),
