@@ -1,0 +1,90 @@
+.projects {
+  padding: 15vw 0;
+  background: #f8f8f8;
+}
+
+.statement,
+.intermittentStatement {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 10vw auto 25vw;
+  padding: 0 1.4rem;
+}
+
+.statement {
+  max-width: 17em;
+}
+
+.intermittentStatement {
+  max-width: 21em;
+  p {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.title {
+  max-width: 17em;
+  line-height: 1.375;
+  padding: 1rem 1.4rem 0;
+}
+
+.thumbnail {
+  display: block;
+  margin-bottom: 15vw;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  background: #eee;
+
+  & img,
+  & video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 30rem) {
+  .statement,
+  .intermittentStatement {
+    font-size: 2rem;
+    padding: 0 2rem;
+  }
+
+  .statement {
+    margin: 0 auto 15vw;
+  }
+
+  .intermittentStatement {
+    margin-bottom: 0;
+  }
+
+  .thumbnail {
+    width: var(--width);
+    margin-top: var(--marginTop);
+    margin-left: var(--marginLeft);
+  }
+
+  .title {
+    padding: 0.6rem 0;
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 72rem) {
+  .statement,
+  .intermittentStatement {
+    font-size: 2.6rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+}
