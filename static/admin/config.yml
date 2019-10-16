@@ -85,24 +85,22 @@ collections:
               - label: "Show controls"
                 name: hasControls
                 required: false
-                default: false
-                widget: boolean
-              - label: "Loop video"
-                name: loops
-                required: false
-                default: true
-                widget: boolean
-              - label: Muted
-                name: isMuted
-                required: false
-                default: true
-                widget: boolean
-          - label: Caption
-            name: caption
-            required: false
-            widget: markdown
-          - label: Ratio
-            name: ratio
+              required: false
+              default: true
+              widget: boolean
+            - label: Muted
+              name: isMuted
+              required: false
+              default: true
+              widget: boolean
+        - label: Caption
+          name: caption
+          required: false
+          widget: markdown
+        - label: Ratio
+        name:
+        widget: markdown
+          name: ratio
             required: false
             valueType: float
             default: 0.00
@@ -171,3 +169,47 @@ collections:
           - label: "Contact Info"
             name: contact
             widget: markdown
+      - file: src/pages/studio.md
+        label: "Studio Page"
+        name: studio
+        fields:
+          - label: "Template Key"
+            name: templateKey
+            widget: hidden
+            default: studio
+          - label: Intro
+            name: intro
+            widget: markdown
+          - label: "Info block"
+            name: infoBlock
+            widget: list
+            fields:
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    required: true
+                    widget: image
+                  - label: Caption
+                    name: caption
+                    widget: markdown
+                    required: false
+              - label: Info
+                name: info
+                widget: markdown
+          - label: "Studio impression"
+            name: studioImpression
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                default: "Studio Impressions"
+                widget: text
+              - label: Image
+                name: image
+                widget: image
+                media_library:
+                  config:
+                    multiple: true
