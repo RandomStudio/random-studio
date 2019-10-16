@@ -188,18 +188,23 @@ collections:
             fields:
               - label: Images
                 name: images
+                required: false
                 widget: list
                 fields:
                   - label: Image
                     name: image
-                    required: true
+                    required: false
                     widget: image
+                    media_library:
+                      config:
+                        multiple: true
                   - label: Caption
                     name: caption
                     widget: markdown
                     required: false
               - label: Info
                 name: info
+                required: false
                 widget: markdown
           - label: "Studio impression"
             name: studioImpression
@@ -209,9 +214,13 @@ collections:
                 name: title
                 default: "Studio Impressions"
                 widget: text
-              - label: Image
-                name: image
-                widget: image
-                media_library:
-                  config:
-                    multiple: true
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    widget: image
+                    media_library:
+                      config:
+                        multiple: true
