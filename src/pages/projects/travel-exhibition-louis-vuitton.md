@@ -18,8 +18,10 @@ content:
     marginTop: -1
     ratio: 56.25
     video:
-      autoplay: ''
+      autoplay: false
       hasControls: false
+      isMuted: false
+      loops: false
       url: >-
         https://player.vimeo.com/external/315657115.hd.mp4?s=2c7ef7d81570e7789ba2e6e4141fe416027a3c0b&profile_id=175
     width: 70
@@ -133,3 +135,4 @@ credits:
   - key: With
     value: Naivi — Unreal development
 ---
+
