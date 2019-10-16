@@ -84,7 +84,7 @@ content:
       /img/4a4efa9d7ab8fd2119b33f2b1ff43bbe.andomstudio-louisvuitton-vvv-seoul-03-jpg.jpg
     marginLeft: 50
     marginTop: -20
-    ratio: ''
+    ratio: 0
     width: 40
   - caption: >-
       For the New York edition of the exhibition, our space was a long corridor
