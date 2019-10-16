@@ -56,8 +56,10 @@ content:
     marginTop: 0
     ratio: 56.25
     video:
-      autoplay: ''
+      autoplay: false
       hasControls: false
+      isMuted: false
+      loops: false
       url: >-
         https://player.vimeo.com/external/245174032.hd.mp4?s=c778e9e64671d104fcc643832c8a45ef92d54a2b&profile_id=175
     width: 70
@@ -105,8 +107,10 @@ content:
     marginTop: 10
     ratio: 56.25
     video:
-      autoplay: ''
+      autoplay: false
       hasControls: false
+      isMuted: false
+      loops: false
       url: >-
         https://player.vimeo.com/external/245185336.hd.mp4?s=174ef918bb1f27274628cf1f56e328a9acd69a69&profile_id=175
     width: 45
@@ -135,4 +139,3 @@ credits:
   - key: With
     value: Naivi — Unreal development
 ---
-
