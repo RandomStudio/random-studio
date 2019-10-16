@@ -80,7 +80,7 @@ collections:
               widget: boolean
             - label: 'Show controls'
               name: hasControls
-              false: false
+              default: false
               widget: boolean
           - label: Caption
             name: caption
