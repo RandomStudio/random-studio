@@ -43,6 +43,7 @@ collections:
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
           - label: Width
             name: width
@@ -94,6 +95,7 @@ collections:
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
           - label: Width
             name: width
