@@ -15,6 +15,100 @@ intro: >-
 
   We have a holistic, research-led approach that can be applied to products,
   experiences and platforms where spatial and digital design are integrated.
+infoBlock:
+  - images:
+      - image: /img/connected-space-02-lv-2x.jpg
+    showIndicator: true
+  - info: >-
+      Human-Centered Products
+
+
+      <br>
+
+
+      <br>
+
+
+      Drawing on in-depth research and technical expertise, we craft holistic
+      global platforms for businesses and consumers that are both relevant and
+      enduring. Extending beyond their primary function, the digital tools we
+      build are experiential and boundary-pushing: they rethink and adapt to the
+      way brands work today.
+
+
+      <br>
+
+
+      <br>
+
+
+      * Consumer and B2B platforms
+
+      * Omnichannel services
+    showIndicator: false
+  - images:
+      - image: /img/human-centered-products-02-gigi-shopwall-2x.jpg
+    showIndicator: true
+  - info: >-
+      Communication Formats
+
+
+      <br>
+
+
+      <br>
+
+
+      Sparking new conversations between brands and their audiences, we disrupt
+      existing formats to develop unique ways of communicating. Each project
+      needs its own voice: we play with radical forms that capture the energy
+      and many layers of a story in imaginative and surprising ways.
+
+
+      <br>
+
+
+      <br>
+
+
+      * Conceptualising new formats
+
+      * Social engagement
+
+      * Film direction and editing
+    showIndicator: false
+  - images:
+      - caption: '[Website for Raf Simons](https://random.studio/projects/rafsimons)'
+        image: /img/communication-design-01-raf-simons-2x.jpg
+    showIndicator: true
+  - info: >-
+      Connected Spaces
+
+
+      <br>
+
+
+      <br>
+
+
+      Blending digital and physical space, we create immersive, sensory
+      experiences that open new worlds and evoke a sense of wonder. Our
+      interactive environments are shaped by connectivity: they use technology
+      in a tactile way, inviting people to play, reflect and explore.
+
+
+      <br>
+
+
+      <br>
+
+
+      * Experiental installations
+
+      * Exhibitions
+
+      * In-store experiences
+    showIndicator: false
 studioImpression:
   images:
     - image: /img/studio_01.jpg
