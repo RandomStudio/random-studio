@@ -186,6 +186,11 @@ collections:
             name: infoBlock
             widget: list
             fields:
+              - label: "Show carousel indicator"
+                name: showIndicator
+                widget: boolean
+                required: false
+                default: true
               - label: Images
                 name: images
                 required: false
@@ -214,6 +219,11 @@ collections:
                 name: title
                 default: "Studio Impressions"
                 widget: text
+              - label: "Show carousel indicator"
+                name: showIndicator
+                widget: boolean
+                required: false
+                default: true
               - label: Images
                 name: images
                 widget: list
