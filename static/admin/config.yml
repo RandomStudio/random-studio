@@ -206,7 +206,7 @@ collections:
                 name: showIndicator
                 widget: boolean
                 required: false
-                default: true
+                default: false
               - label: Info
                 name: info
                 required: false
@@ -223,7 +223,7 @@ collections:
                 name: showIndicator
                 widget: boolean
                 required: false
-                default: true
+                default: false
               - label: Images
                 name: images
                 widget: list
