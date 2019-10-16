@@ -28,7 +28,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
             {video || image ? (
               <>
                 {video ? (
-                  <ProjectVideo video={video} />
+                  <ProjectVideo video={video} ratio={ratio} />
                 ) : image.childImageSharp ? (
                   <Img fluid={image.childImageSharp.fluid} />
                 ) : (

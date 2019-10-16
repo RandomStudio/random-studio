@@ -1,18 +1,19 @@
 import styles from "./projectVideo.module.scss"
 import React, { useRef, useState } from "react"
 
-const ProjectVideo = ({ video }) => {
+const ProjectVideo = ({
+  video: { autoplay, hasControls, isMuted, loops, url },
+  ratio,
+}) => {
   const videoRef = useRef(null)
 
-  // TODO: Change when cms is updated
-  const [isMuted, setIsMuted] = useState(true)
-  const [isPlaying, setIsPlaying] = useState(false)
-
-  // TODO: Add hasControls from CMS
-  const hasControls = true
+  const [videoIsMuted, setVideoIsMuted] = useState(
+    (autoplay && isMuted) || isMuted
+  )
+  const [isPlaying, setIsPlaying] = useState(autoplay)
 
   const handleMutedState = e => {
-    setIsMuted(prevState => !prevState)
+    setVideoIsMuted(prevState => !prevState)
     e.stopPropagation()
   }
 
@@ -33,14 +34,15 @@ const ProjectVideo = ({ video }) => {
     <div
       className={styles.videoWrapper}
       onClick={handlePlayingState}
-      style={{ paddingBottom: `${56.25}%` }}
+      style={{ paddingBottom: `${ratio}%` }}
     >
       <video
         ref={videoRef}
-        src={video}
-        loop
-        muted={isMuted}
-        // autoPlay={autoplay}
+        src={url}
+        loop={loops}
+        muted={videoIsMuted}
+        autoPlay={isPlaying}
+        playsInline
       />
       {hasControls && (
         <div className={styles.videoControls}>
