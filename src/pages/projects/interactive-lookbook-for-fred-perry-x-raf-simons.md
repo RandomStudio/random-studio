@@ -25,8 +25,10 @@ content:
     marginTop: 0
     ratio: 56.25
     video:
-      autoplay: ''
+      autoplay: false
       hasControls: false
+      isMuted: false
+      loops: false
       url: >-
         https://player.vimeo.com/external/353969796.hd.mp4?s=d5892522f7944b0161e7ca701f9cdd30369168b3&profile_id=175
     width: 70
@@ -48,4 +50,3 @@ credits:
       Concept Development, Creative Direction, Art Direction, 3D and
       Photography, Animation, Web Development, Retail Fixture Concept & Design
 ---
-
