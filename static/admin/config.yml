@@ -67,26 +67,25 @@ collections:
             name: image
             required: false
             widget: image
-          - label: "Video"
+          - label: Video
             name: video
             required: false
             widget: object
             fields:
               - label: "Video URL"
                 name: url
+                required: false
                 widget: text
-              - {
-                  label: "Will autoplay",
-                  name: autoplay,
-                  default: false,
-                  widget: boolean,
-                }
-              - {
-                  label: "Show controls",
-                  name: hasControls,
-                  default: false,
-                  widget: boolean,
-                }
+              - label: "Will autoplay"
+                name: autoplay
+                default: false
+                required: false
+                widget: boolean
+              - label: "Show controls"
+                name: hasControls
+                required: false
+                default: false
+                widget: boolean
           - label: Caption
             name: caption
             required: false
