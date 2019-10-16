@@ -43,6 +43,7 @@ collections:
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
           - label: Width
             name: width
@@ -67,10 +68,35 @@ collections:
             name: image
             required: false
             widget: image
-          - label: "Video URL"
+          - label: Video
             name: video
             required: false
-            widget: text
+            widget: object
+            fields:
+              - label: "Video URL"
+                name: url
+                required: false
+                widget: text
+              - label: "Will autoplay"
+                name: autoplay
+                required: false
+                default: false
+                widget: boolean
+              - label: "Show controls"
+                name: hasControls
+                required: false
+                default: false
+                widget: boolean
+              - label: "Loop video"
+                name: loops
+                required: false
+                default: true
+                widget: boolean
+              - label: Muted
+                name: isMuted
+                required: false
+                default: true
+                widget: boolean
           - label: Caption
             name: caption
             required: false
@@ -79,6 +105,7 @@ collections:
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
           - label: Width
             name: width
