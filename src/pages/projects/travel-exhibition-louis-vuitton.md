@@ -20,7 +20,7 @@ content:
     video:
       autoplay: false
       hasControls: false
-      isMuted: false
+      isMuted: true
       loops: false
       url: >-
         https://player.vimeo.com/external/315657115.hd.mp4?s=2c7ef7d81570e7789ba2e6e4141fe416027a3c0b&profile_id=175
@@ -58,7 +58,7 @@ content:
     video:
       autoplay: false
       hasControls: false
-      isMuted: false
+      isMuted: true
       loops: false
       url: >-
         https://player.vimeo.com/external/245174032.hd.mp4?s=c778e9e64671d104fcc643832c8a45ef92d54a2b&profile_id=175
@@ -109,7 +109,7 @@ content:
     video:
       autoplay: false
       hasControls: false
-      isMuted: false
+      isMuted: true
       loops: false
       url: >-
         https://player.vimeo.com/external/245185336.hd.mp4?s=174ef918bb1f27274628cf1f56e328a9acd69a69&profile_id=175
@@ -139,3 +139,4 @@ credits:
   - key: With
     value: Naivi — Unreal development
 ---
+
