@@ -79,14 +79,22 @@ collections:
                 widget: text
               - label: "Will autoplay"
                 name: autoplay
-                default: false
                 required: false
+                default: false
                 widget: boolean
               - label: "Show controls"
                 name: hasControls
                 required: false
                 default: false
                 widget: boolean
+              - label: "Loop video"
+                name: loops
+                required: false
+                default: true
+              - label: Muted
+                name: isMuted
+                required: false
+                default: true
           - label: Caption
             name: caption
             required: false
