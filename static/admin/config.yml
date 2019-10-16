@@ -71,17 +71,18 @@ collections:
             name: video
             required: false
             widget: object
-            - label: 'Video URL'
-              name: url
-              widget: text
-            - label: 'Will autoplay'
-              name: autoplay
-              default: false
-              widget: boolean
-            - label: 'Show controls'
-              name: hasControls
-              default: false
-              widget: boolean
+            fields:
+              - label: "Video URL"
+                name: url
+                widget: text
+              - label: "Will autoplay"
+                name: autoplay
+                default: false
+                widget: boolean
+              - label: "Show controls"
+                name: hasControls
+                default: false
+                widget: boolean
           - label: Caption
             name: caption
             required: false
