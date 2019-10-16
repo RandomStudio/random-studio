@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React from "react"
 import styles from "./projectDetail.module.scss"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"

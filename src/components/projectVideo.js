@@ -11,11 +11,12 @@ const ProjectVideo = ({ video }) => {
   // TODO: Add hasControls from CMS
   const hasControls = true
 
-  const handleMutedState = () => {
+  const handleMutedState = e => {
     setIsMuted(prevState => !prevState)
+    e.stopPropagation()
   }
 
-  const handlePlayingState = () => {
+  const handlePlayingState = e => {
     setIsPlaying(prevState => {
       if (isPlaying) {
         videoRef.current.pause()
@@ -25,10 +26,15 @@ const ProjectVideo = ({ video }) => {
 
       return !prevState
     })
+    e.stopPropagation()
   }
 
   return (
-    <div className={styles.videoWrapper} style={{ paddingBottom: `${56.25}%` }}>
+    <div
+      className={styles.videoWrapper}
+      onClick={handlePlayingState}
+      style={{ paddingBottom: `${56.25}%` }}
+    >
       <video
         ref={videoRef}
         src={video}
