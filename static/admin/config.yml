@@ -186,11 +186,6 @@ collections:
             name: infoBlock
             widget: list
             fields:
-              - label: "Show carousel indicator"
-                name: showIndicator
-                widget: boolean
-                required: false
-                default: true
               - label: Images
                 name: images
                 required: false
@@ -207,6 +202,11 @@ collections:
                     name: caption
                     widget: markdown
                     required: false
+              - label: "Show carousel indicator"
+                name: showIndicator
+                widget: boolean
+                required: false
+                default: true
               - label: Info
                 name: info
                 required: false
