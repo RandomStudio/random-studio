@@ -42,6 +42,9 @@ content:
       Simons collaboration.
     marginLeft: 0
     marginTop: 0
+    video:
+      isMuted: true
+      loops: true
 credits:
   - key: For
     value: Fred Perry
@@ -50,3 +53,4 @@ credits:
       Concept Development, Creative Direction, Art Direction, 3D and
       Photography, Animation, Web Development, Retail Fixture Concept & Design
 ---
+
