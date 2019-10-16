@@ -91,10 +91,12 @@ collections:
                 name: loops
                 required: false
                 default: true
+                widget: boolean
               - label: Muted
                 name: isMuted
                 required: false
                 default: true
+                widget: boolean
           - label: Caption
             name: caption
             required: false
