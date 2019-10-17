@@ -186,21 +186,36 @@ collections:
             name: infoBlock
             widget: list
             fields:
-              - label: Images
-                name: images
+              - label: Collection
+                name: collection
+                required: false
                 widget: list
                 fields:
-                  - label: Image
-                    name: image
-                    required: true
-                    widget: image
-                  - label: Caption
-                    name: caption
-                    widget: markdown
+                  - label: Images
+                    name: images
                     required: false
-              - label: Info
-                name: info
-                widget: markdown
+                    widget: list
+                    fields:
+                      - label: Image
+                        name: image
+                        required: false
+                        widget: image
+                        media_library:
+                          config:
+                            multiple: true
+                      - label: Caption
+                        name: caption
+                        widget: markdown
+                        required: false
+                  - label: "Show carousel indicator"
+                    name: showIndicator
+                    widget: boolean
+                    required: false
+                    default: false
+                  - label: Info
+                    name: info
+                    required: false
+                    widget: markdown
           - label: "Studio impression"
             name: studioImpression
             widget: object
@@ -209,9 +224,18 @@ collections:
                 name: title
                 default: "Studio Impressions"
                 widget: text
-              - label: Image
-                name: image
-                widget: image
-                media_library:
-                  config:
-                    multiple: true
+              - label: "Show carousel indicator"
+                name: showIndicator
+                widget: boolean
+                required: false
+                default: false
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    widget: image
+                    media_library:
+                      config:
+                        multiple: true
