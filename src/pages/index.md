@@ -8,9 +8,9 @@ collaborationCredits:
 intro: >-
   How can we reimagine the digital as a living, breathing part of our physical
   world?
-middle: >
+middle: >-
   We create spaces where the physical and non-physical merge; environments that
-  invite people to play, reflect and connect.
+  invite people to play, reflect and connect. 
 
 
   [More about our studio](/studio)

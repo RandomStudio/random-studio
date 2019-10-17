@@ -43,6 +43,7 @@ collections:
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
           - label: Width
             name: width
@@ -67,10 +68,35 @@ collections:
             name: image
             required: false
             widget: image
-          - label: "Video URL"
+          - label: Video
             name: video
             required: false
-            widget: text
+            widget: object
+            fields:
+              - label: "Video URL"
+                name: url
+                required: false
+                widget: text
+              - label: "Will autoplay"
+                name: autoplay
+                required: false
+                default: false
+                widget: boolean
+              - label: "Show controls"
+                name: hasControls
+                required: false
+                default: false
+                widget: boolean
+              - label: "Loop video"
+                name: loops
+                required: false
+                default: true
+                widget: boolean
+              - label: Muted
+                name: isMuted
+                required: false
+                default: true
+                widget: boolean
           - label: Caption
             name: caption
             required: false
@@ -79,6 +105,7 @@ collections:
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
           - label: Width
             name: width
@@ -144,3 +171,71 @@ collections:
           - label: "Contact Info"
             name: contact
             widget: markdown
+      - file: src/pages/studio.md
+        label: "Studio Page"
+        name: studio
+        fields:
+          - label: "Template Key"
+            name: templateKey
+            widget: hidden
+            default: studio
+          - label: Intro
+            name: intro
+            widget: markdown
+          - label: "Info block"
+            name: infoBlock
+            widget: list
+            fields:
+              - label: Collection
+                name: collection
+                required: false
+                widget: list
+                fields:
+                  - label: Images
+                    name: images
+                    required: false
+                    widget: list
+                    fields:
+                      - label: Image
+                        name: image
+                        required: false
+                        widget: image
+                        media_library:
+                          config:
+                            multiple: true
+                      - label: Caption
+                        name: caption
+                        widget: markdown
+                        required: false
+                  - label: "Show carousel indicator"
+                    name: showIndicator
+                    widget: boolean
+                    required: false
+                    default: false
+                  - label: Info
+                    name: info
+                    required: false
+                    widget: markdown
+          - label: "Studio impression"
+            name: studioImpression
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                default: "Studio Impressions"
+                widget: text
+              - label: "Show carousel indicator"
+                name: showIndicator
+                widget: boolean
+                required: false
+                default: false
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    widget: image
+                    media_library:
+                      config:
+                        multiple: true
