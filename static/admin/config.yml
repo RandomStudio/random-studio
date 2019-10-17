@@ -207,6 +207,11 @@ collections:
                         name: caption
                         widget: markdown
                         required: false
+                      - label: Width
+                        name: width
+                        required: false
+                        valueType: float
+                        widget: number
                   - label: "Show carousel indicator"
                     name: showIndicator
                     widget: boolean
