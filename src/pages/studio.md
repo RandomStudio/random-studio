@@ -57,8 +57,6 @@ infoBlock:
           rethink and adapt to the way brands work today.
 
 
-          * 
-
           * Consumer and B2B platforms
 
           * Omnichannel services
