@@ -4,157 +4,238 @@ backend:
 media_folder: static/img
 public_folder: /img
 collections:
-  -
-    name: project
+  - name: project
     label: Project
     folder: src/pages/projects
     create: true
-    slug: '{{slug}}'
+    slug: "{{slug}}"
     fields:
-      -
-        label: 'Template Key'
+      - label: "Template Key"
         name: templateKey
         widget: hidden
         default: project
-      -
-        label: Title
+      - label: Title
         name: title
         widget: string
-      -
-        label: Intro
+      - label: Intro
         name: intro
         buttons:
           - link
         widget: markdown
-      -
-        label: 'Priority on homepage'
+      - label: "Priority on homepage"
         name: priority
         required: false
         valueType: float
         widget: number
-      -
-        label: Thumbnail
+      - label: Thumbnail
         name: thumbnail
         widget: object
         fields:
-          -
-            label: Image
+          - label: Image
             name: image
             required: false
             widget: image
-          -
-            label: 'Video URL'
+          - label: "Video URL"
             name: video
             required: false
             widget: text
-          -
-            label: Ratio
+          - label: Ratio
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
-          -
-            label: Width
+          - label: Width
             name: width
             required: false
             valueType: float
             widget: number
-          -
-            label: 'Margin Top'
+          - label: "Margin Top"
             name: marginTop
             default: 0
             valueType: float
             widget: number
-          -
-            label: 'Margin Left'
+          - label: "Margin Left"
             name: marginLeft
             default: 0
             valueType: float
             widget: number
-      -
-        label: Content
+      - label: Content
         name: content
         widget: list
         fields:
-          -
-            label: Image
+          - label: Image
             name: image
             required: false
             widget: image
-          -
-            label: 'Video URL'
+          - label: Video
             name: video
             required: false
-            widget: text
-          -
-            label: Caption
+            widget: object
+            fields:
+              - label: "Video URL"
+                name: url
+                required: false
+                widget: text
+              - label: "Will autoplay"
+                name: autoplay
+                required: false
+                default: false
+                widget: boolean
+              - label: "Show controls"
+                name: hasControls
+                required: false
+                default: false
+                widget: boolean
+              - label: "Loop video"
+                name: loops
+                required: false
+                default: true
+                widget: boolean
+              - label: Muted
+                name: isMuted
+                required: false
+                default: true
+                widget: boolean
+          - label: Caption
             name: caption
             required: false
             widget: markdown
-          -
-            label: Ratio
+          - label: Ratio
             name: ratio
             required: false
             valueType: float
+            default: 0.00
             widget: number
-          -
-            label: Width
+          - label: Width
             name: width
             required: false
             valueType: float
             widget: number
-          -
-            label: 'Margin Top'
+          - label: "Margin Top"
             name: marginTop
             default: 0
             valueType: float
             widget: number
-          -
-            label: 'Margin Left'
+          - label: "Margin Left"
             name: marginLeft
             default: 0
             valueType: float
             widget: number
-      -
-        label: Credits
+      - label: Credits
         name: credits
         widget: list
         fields:
-          -
-            label: Key
+          - label: Key
             name: key
             widget: text
-          -
-            label: Value
+          - label: Value
             name: value
             widget: text
-  -
-    name: pages
+  - name: pages
     label: Pages
     files:
-      -
-        file: src/pages/index.md
-        label: 'Home Page'
+      - file: src/pages/index.md
+        label: "Home Page"
         name: index
         fields:
-          -
-            label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: index
-          -
-            label: Intro
+          - label: "Video URL"
+            name: video
+            required: true
+            widget: text
+          - label: Collaboration Credits
+            name: collaborationCredits
+            required: false
+            widget: object
+            fields:
+              - label: Collaborator
+                name: collaborator
+                widget: text
+              - label: "Referral URL"
+                name: url
+                required: false
+                widget: text
+          - label: Intro
             name: intro
             widget: markdown
-          -
-            label: Middle
+          - label: Middle
             name: middle
             widget: markdown
-          -
-            label: Address
+          - label: Address
             name: address
             widget: markdown
-          -
-            label: 'Contact Info'
+          - label: "Contact Info"
             name: contact
             widget: markdown
+      - file: src/pages/studio.md
+        label: "Studio Page"
+        name: studio
+        fields:
+          - label: "Template Key"
+            name: templateKey
+            widget: hidden
+            default: studio
+          - label: Intro
+            name: intro
+            widget: markdown
+          - label: "Info block"
+            name: infoBlock
+            widget: list
+            fields:
+              - label: Collection
+                name: collection
+                required: false
+                widget: list
+                fields:
+                  - label: Images
+                    name: images
+                    required: false
+                    widget: list
+                    fields:
+                      - label: Image
+                        name: image
+                        required: false
+                        widget: image
+                        media_library:
+                          config:
+                            multiple: true
+                      - label: Caption
+                        name: caption
+                        widget: markdown
+                        required: false
+                  - label: "Show carousel indicator"
+                    name: showIndicator
+                    widget: boolean
+                    required: false
+                    default: false
+                  - label: Info
+                    name: info
+                    required: false
+                    widget: markdown
+          - label: "Studio impression"
+            name: studioImpression
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                default: "Studio Impressions"
+                widget: text
+              - label: "Show carousel indicator"
+                name: showIndicator
+                widget: boolean
+                required: false
+                default: false
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    widget: image
+                    media_library:
+                      config:
+                        multiple: true

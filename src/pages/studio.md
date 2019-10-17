@@ -1,13 +1,101 @@
 ---
 templateKey: studio
 intro: >-
-  Random is an independent experience design studio.<br />
-  We are strategists, designers and engineers from all over the world, collaborating with brands to trigger curiosity and use technology to spark new, unexpected connections between people and the space around them.
+  Random is an independent experience design studio.<br /> We are strategists,
+  designers and engineers from all over the world, collaborating with brands to
+  trigger curiosity and use technology to spark new, unexpected connections
+  between people and the space around them.
 
 
-  How can we make the digital a living, breathing part of our world? We think and make as bodies.<br />
-  We explore how technology can be integrated into the very foundations of a space; as part of our physical world, engaging us to explore, play and wonder.
+  How can we make the digital a living, breathing part of our world? We think
+  and make as bodies.<br /> We explore how technology can be integrated into the
+  very foundations of a space; as part of our physical world, engaging us to
+  explore, play and wonder.
 
 
-  We have a holistic, research-led approach that can be applied to products, experiences and platforms where spatial and digital design are integrated.
+  We have a holistic, research-led approach that can be applied to products,
+  experiences and platforms where spatial and digital design are integrated.
+infoBlock:
+  - collection:
+      - images:
+          - caption: >-
+              [Exhibition for Louis
+              Vuitton](https://random.studio/projects/travel-exhibition-louis-vuitton)
+            image: /img/connected-space-02-lv-2x.jpg
+        info: ''
+        showIndicator: true
+      - info: >-
+          Connected Spaces
+
+
+          Blending digital and physical space, we create immersive, sensory
+          experiences that open new worlds and evoke a sense of wonder. Our
+          interactive environments are shaped by connectivity: they use
+          technology in a tactile way, inviting people to play, reflect and
+          explore.
+
+
+          * Experiental installations
+
+          * Exhibitions
+
+          * In-store experiences
+        showIndicator: false
+  - collection:
+      - info: >-
+          Human-Centered Products
+
+
+          Drawing on in-depth research and technical expertise, we craft
+          holistic global platforms for businesses and consumers that are both
+          relevant and enduring. Extending beyond their primary function, the
+          digital tools we build are experiential and boundary-pushing: they
+          rethink and adapt to the way brands work today.
+
+
+          * 
+
+          * Consumer and B2B platforms
+
+          * Omnichannel services
+        showIndicator: false
+      - images:
+          - image: /img/human-centered-products-02-gigi-shopwall-2x.jpg
+        showIndicator: true
+  - collection:
+      - images:
+          - caption: '[Website for Raf Simons](https://random.studio/projects/rafsimons)'
+            image: /img/communication-design-01-raf-simons-2x.jpg
+        showIndicator: true
+      - info: >-
+          Communication Formats
+
+
+          Sparking new conversations between brands and their audiences, we
+          disrupt existing formats to develop unique ways of communicating. Each
+          project needs its own voice: we play with radical forms that capture
+          the energy and many layers of a story in imaginative and surprising
+          ways.
+
+
+          * 
+
+          * Conceptualising new formats
+
+          * Social engagement
+
+          * Film direction and editing
+        showIndicator: false
+studioImpression:
+  images:
+    - image: /img/studio_01.jpg
+    - image: /img/studio_02.jpg
+    - image: /img/studio_03.jpg
+    - image: /img/studio_04.jpg
+    - image: /img/studio_05.jpg
+    - image: /img/studio_06.jpg
+    - image: /img/studio_07.jpg
+  showIndicator: true
+  title: Studio Impressions
 ---
+

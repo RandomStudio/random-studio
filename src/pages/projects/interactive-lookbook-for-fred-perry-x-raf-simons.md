@@ -2,7 +2,6 @@
 templateKey: project
 title: Interactive lookbook  for Fred Perry x Raf Simons
 intro: >-
-
   The experience invites you to step into multiple narratively connected
   three-dimensional photographs, that display the evening of a regular house
   party - familiar to all of us.
@@ -25,8 +24,13 @@ content:
   - marginLeft: 15
     marginTop: 0
     ratio: 56.25
-    video: >-
-      https://player.vimeo.com/external/353969796.hd.mp4?s=d5892522f7944b0161e7ca701f9cdd30369168b3&profile_id=175
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: false
+      loops: false
+      url: >-
+        https://player.vimeo.com/external/353969796.hd.mp4?s=d5892522f7944b0161e7ca701f9cdd30369168b3&profile_id=175
     width: 70
   - caption: >-
       The visitor is welcomed as a guest into a virtual house unfolding
@@ -38,6 +42,9 @@ content:
       Simons collaboration.
     marginLeft: 0
     marginTop: 0
+    video:
+      isMuted: true
+      loops: true
 credits:
   - key: For
     value: Fred Perry
