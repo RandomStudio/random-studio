@@ -1,0 +1,30 @@
+.carousel {
+  // The gatsby generated image wrapper & img fallback
+  & > div > div,
+  img {
+    margin-bottom: 0.8rem;
+  }
+
+  p,
+  span {
+    margin-left: 1.4rem;
+  }
+
+  p a {
+  }
+
+  span {
+  }
+}
+
+@media (min-width: 30rem) {
+  .carousel {
+    p,
+    span {
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media (min-width: 72rem) {
+}

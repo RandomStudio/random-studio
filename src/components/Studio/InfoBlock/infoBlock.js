@@ -4,24 +4,31 @@ import ReactMarkdown from "react-markdown"
 import ImageCarousel from "../../General/ImageCarousel/imageCarousel"
 
 const InfoBlock = ({ collection }) => {
-  console.log(collection)
-
   return (
-    <section>
-      {collection.map(({ showIndicator, info, images }, index) => (
-        <>
-          {images && images.length ? (
-            <ImageCarousel
-              info={info}
-              key={index}
-              images={images}
-              showIndicator={showIndicator}
-            />
-          ) : (
-            <ReactMarkdown key={index} escapeHtml={false} source={info} />
-          )}
-        </>
-      ))}
+    <section className={styled.infoBlock}>
+      {collection.map(({ showIndicator, info, images }, index) => {
+        return (
+          <>
+            {images && images.length ? (
+              <div className={styled.imageStyle}>
+                <ImageCarousel
+                  images={images}
+                  info={info}
+                  key={index}
+                  showIndicator={showIndicator}
+                />
+              </div>
+            ) : (
+              <ReactMarkdown
+                className={styled.info}
+                key={index}
+                escapeHtml={false}
+                source={info}
+              />
+            )}
+          </>
+        )
+      })}
     </section>
   )
 }

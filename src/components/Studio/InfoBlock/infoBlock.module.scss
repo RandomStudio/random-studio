@@ -1,0 +1,118 @@
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  order: 2;
+  margin-bottom: 20vh;
+  padding: 1.4rem;
+
+  p {
+    margin-bottom: 1.2rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li::before {
+      content: "- ";
+    }
+  }
+}
+
+.imageStyle {
+  font-size: 1rem;
+}
+
+@media (min-width: 30rem) {
+  .infoBlock {
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      .imageStyle {
+        width: 60%;
+      }
+    }
+
+    &:nth-of-type(2) {
+      .imageStyle {
+        align-self: flex-end;
+
+        p,
+        span {
+          margin: 0;
+        }
+
+        .info {
+          max-width: 48rem;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+      .imageStyle {
+        width: 100%;
+      }
+    }
+  }
+
+  .info {
+    margin: 0;
+    padding: 4.8rem 2rem 7.2rem;
+
+    p {
+      margin-bottom: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: 72rem) {
+  .infoBlock {
+    flex-direction: row;
+    margin: 0 auto;
+
+    margin-bottom: 20vh;
+    font-size: 1.7rem;
+
+    &:nth-of-type(1) {
+      .imageStyle {
+        min-width: 30%;
+        width: 30%;
+      }
+
+      .info {
+        max-width: 53rem;
+      }
+    }
+
+    &:nth-of-type(2) {
+      max-width: 72rem;
+
+      .imageStyle {
+        min-width: 43%;
+        width: 43%;
+      }
+    }
+
+    &:nth-of-type(3) {
+      flex-direction: column;
+      .imageStyle {
+        min-width: 65%;
+        width: 65%;
+      }
+
+      .info {
+        max-width: 72rem;
+        margin: 3.2rem auto 0;
+      }
+    }
+  }
+
+  .info {
+    order: 0;
+    padding: 0 3.2rem;
+  }
+}

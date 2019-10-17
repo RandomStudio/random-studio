@@ -3,12 +3,11 @@ import React from "react"
 import ReactMarkdown from "react-markdown"
 import Img from "gatsby-image"
 
-const ImageCarousel = ({ images, showIndicator, info }) => {
-  console.log(images ? "wel" : "niks", images, info)
+const ImageCarousel = ({ images, showIndicator }) => {
   if (!images) return null
 
   return (
-    <div>
+    <div className={styled.carousel}>
       {images.map(({ image, caption }, index) => (
         <div key={index}>
           {image.childImageSharp ? (
