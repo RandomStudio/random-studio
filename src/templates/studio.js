@@ -5,13 +5,31 @@ import Navigation from "../components/Layout/navigation"
 import Footer from "../components/Layout/footer"
 import Intro from "../components/Studio/Intro/intro"
 import Recruitee from "../components/Studio/Recruitee/recruitee"
-import InfoBlock from "../components/Studio/InfoBlock/InfoBlock"
+import ImageCarousel from "../components/General/ImageCarousel/imageCarousel"
+import InfoBlock from "../components/Studio/InfoBlock/infoBlock"
 
 export const query = graphql`
   {
     studioPage: markdownRemark(frontmatter: { templateKey: { eq: "studio" } }) {
       frontmatter {
         intro
+        infoBlock {
+          collection {
+            showIndicator
+            info
+            images {
+              caption
+              image
+            }
+          }
+        }
+        studioImpression {
+          title
+          showIndicator
+          images {
+            image
+          }
+        }
       }
     }
     indexPage: markdownRemark(frontmatter: { templateKey: { eq: "index" } }) {
@@ -23,12 +41,16 @@ export const query = graphql`
   }
 `
 
-export default ({ data: { indexPage, studioPage } }) => (
-  <Layout>
-    <Navigation />
-    <Intro data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }} />
-    <Recruitee />
-    <InfoBlock />
-    <Footer {...indexPage.frontmatter} />
-  </Layout>
-)
+export default ({ data: { indexPage, studioPage } }) =>
+  console.log(studioPage) || (
+    <Layout>
+      <Navigation />
+      <Intro data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }} />
+      <Recruitee />
+      {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
+        <InfoBlock key={index} collection={collection} />
+      ))}
+      <ImageCarousel />
+      <Footer {...indexPage.frontmatter} />
+    </Layout>
+  )
