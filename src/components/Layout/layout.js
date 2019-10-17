@@ -1,3 +1,5 @@
+import "./reset.css"
+import "./global.css"
 import React from "react"
 import styles from "./layout.module.css"
 
