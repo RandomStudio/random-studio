@@ -19,6 +19,7 @@ export const pageQuery = graphql`
               }
             }
           }
+          marginTop
           marginLeft
           ratio
           video {
@@ -41,10 +42,9 @@ export default ({
   data: {
     markdownRemark: { frontmatter: project },
   },
-}) =>
-  console.log(project) || (
-    <Layout>
-      <Navigation />
-      <ProjectDetail {...project} />
-    </Layout>
-  )
+}) => (
+  <Layout>
+    <Navigation />
+    <ProjectDetail {...project} />
+  </Layout>
+)
