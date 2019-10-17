@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 28rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.375;
+  padding: 1.4rem;
+}
+
+@media (min-width: 30rem) {
+  .footer {
+    padding: 2rem;
+  }
+}

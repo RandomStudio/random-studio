@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Navigation from "../components/navigation"
-import Footer from "../components/footer"
+import Layout from "../components/Layout/layout"
+import Navigation from "../components/Layout/navigation"
+import Footer from "../components/Layout/footer"
 import ProjectList from "../components/projectList"
 import HomeVideo from "../components/homeVideo"
 

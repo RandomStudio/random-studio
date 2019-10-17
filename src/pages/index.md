@@ -17,8 +17,6 @@ middle: >-
 address: >
   Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
-contact: >
-  [+31 20 779 7735](tel://+31207797735)<br />
-  [hello@random.studio](mailto:hello@random.studio)
+contact: '[+31 20 779 7735](tel://+31207797735)<br /> <mailto:hello@random.studio>'
 ---
 
