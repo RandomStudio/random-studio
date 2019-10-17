@@ -19,7 +19,13 @@ export const query = graphql`
             info
             images {
               caption
-              image
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1920) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                  }
+                }
+              }
             }
           }
         }
@@ -27,7 +33,13 @@ export const query = graphql`
           title
           showIndicator
           images {
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
           }
         }
       }

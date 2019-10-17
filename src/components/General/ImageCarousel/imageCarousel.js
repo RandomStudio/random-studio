@@ -1,6 +1,7 @@
 import styled from "./imageCarousel.module.scss"
 import React from "react"
 import ReactMarkdown from "react-markdown"
+import Img from "gatsby-image"
 
 const ImageCarousel = ({ images, showIndicator, info }) => {
   console.log(images ? "wel" : "niks", images, info)
@@ -10,7 +11,11 @@ const ImageCarousel = ({ images, showIndicator, info }) => {
     <div>
       {images.map(({ image, caption }, index) => (
         <div key={index}>
-          <img src={image}></img>
+          {image.childImageSharp ? (
+            <Img fluid={image.childImageSharp.fluid} />
+          ) : (
+            <img alt="" src={image} />
+          )}
           {caption && <ReactMarkdown escapeHtml={false} source={caption} />}
         </div>
       ))}
