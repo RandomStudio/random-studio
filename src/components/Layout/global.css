@@ -27,7 +27,7 @@ body {
   overflow-x: hidden;
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 30rem) {
   body {
     font-size: 1.4rem;
   }
