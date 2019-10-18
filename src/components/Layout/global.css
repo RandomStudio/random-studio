@@ -46,3 +46,7 @@ a:hover {
   background: rgba(255, 255, 0, 0.3);
   filter: invert(100%);
 }
+
+.prevent-scroll {
+  overflow: hidden;
+}
