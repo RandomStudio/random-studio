@@ -3,6 +3,8 @@
   & > div > div,
   img {
     margin-bottom: 0.8rem;
+    cursor: e-resize;
+    object-fit: contain;
   }
 
   p,
@@ -15,6 +17,11 @@
 
   span {
   }
+}
+
+.image {
+  height: 100%;
+  width: 100%;
 }
 
 @media (min-width: 30rem) {

@@ -5,8 +5,8 @@ import Navigation from "../components/Layout/navigation"
 import Footer from "../components/Layout/footer"
 import Intro from "../components/Studio/Intro/intro"
 import Recruitee from "../components/Studio/Recruitee/recruitee"
-import ImageCarousel from "../components/General/ImageCarousel/imageCarousel"
 import InfoBlock from "../components/Studio/InfoBlock/infoBlock"
+import Impression from "../components/Studio/Impression/impression"
 
 export const query = graphql`
   {
@@ -62,7 +62,7 @@ export default ({ data: { indexPage, studioPage } }) =>
       {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
         <InfoBlock key={index} collection={collection} />
       ))}
-      <ImageCarousel />
+      <Impression data={studioPage.frontmatter.studioImpression} />
       <Footer {...indexPage.frontmatter} />
     </Layout>
   )

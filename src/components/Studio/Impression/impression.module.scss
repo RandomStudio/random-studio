@@ -1,0 +1,62 @@
+.impression {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+
+  // Package specific class
+  [class=" gatsby-image-wrapper"] {
+    height: 70vh;
+  }
+
+  // Target the indicator wrapper with title - Will alsways be last in markdown
+  & > div > div:last-of-type {
+    position: absolute;
+    top: -0.8rem;
+    bottom: 0;
+    font-size: 1.5rem;
+    color: #fff;
+    mix-blend-mode: difference;
+  }
+}
+
+@media (min-width: 30rem) {
+  .carouselWrapper {
+    & > div > div:last-of-type {
+      font-size: 2rem;
+      top: 50%;
+      bottom: initial;
+      left: 0;
+      right: 0;
+      max-width: 44rem;
+      width: 100%;
+      margin: auto;
+      transform: translateY(-50%);
+
+      p,
+      span {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 82rem) {
+  .carouselWrapper {
+    & > div > div:last-of-type {
+      max-width: 58rem;
+      padding: 1.4rem;
+
+      p,
+      span {
+        margin: 0;
+      }
+    }
+  }
+}
