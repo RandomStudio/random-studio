@@ -4,7 +4,6 @@ import Layout from "../components/Layout/layout"
 import Navigation from "../components/Layout/navigation"
 import Footer from "../components/Layout/footer"
 import Intro from "../components/Studio/Intro/intro"
-import Recruitee from "../components/Studio/Recruitee/recruitee"
 import InfoBlock from "../components/Studio/InfoBlock/infoBlock"
 import Impression from "../components/Studio/Impression/impression"
 
@@ -53,15 +52,14 @@ export const query = graphql`
   }
 `
 
-export default ({ data: { indexPage, studioPage } }) =>
-  console.log(studioPage) || (
-    <Layout>
-      <Navigation />
-      <Intro data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }} />
-      {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
-        <InfoBlock key={index} collection={collection} />
-      ))}
-      <Impression data={studioPage.frontmatter.studioImpression} />
-      <Footer {...indexPage.frontmatter} />
-    </Layout>
-  )
+export default ({ data: { indexPage, studioPage } }) => (
+  <Layout>
+    <Navigation />
+    <Intro data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }} />
+    {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
+      <InfoBlock key={index} collection={collection} />
+    ))}
+    <Impression data={studioPage.frontmatter.studioImpression} />
+    <Footer {...indexPage.frontmatter} />
+  </Layout>
+)
