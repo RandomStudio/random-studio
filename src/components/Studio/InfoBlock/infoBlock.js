@@ -1,16 +1,16 @@
-import styled from "./infoBlock.module.scss"
+import styles from "./infoBlock.module.scss"
 import React from "react"
 import ReactMarkdown from "react-markdown"
 import ImageCarousel from "../../General/ImageCarousel/imageCarousel"
 
 const InfoBlock = ({ collection }) => {
   return (
-    <section className={styled.infoBlock}>
+    <section className={styles.infoBlock}>
       {collection.map(({ showIndicator, info, images }, index) => {
         return (
           <>
             {images && images.length ? (
-              <div className={styled.imageStyle}>
+              <div className={styles.imageStyle}>
                 <ImageCarousel
                   images={images}
                   info={info}
@@ -20,7 +20,7 @@ const InfoBlock = ({ collection }) => {
               </div>
             ) : (
               <ReactMarkdown
-                className={styled.info}
+                className={styles.info}
                 key={index}
                 escapeHtml={false}
                 source={info}

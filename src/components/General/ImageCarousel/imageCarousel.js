@@ -1,4 +1,4 @@
-import styled from "./imageCarousel.module.scss"
+import styles from "./imageCarousel.module.scss"
 import React, { useState } from "react"
 import ReactMarkdown from "react-markdown"
 // import Img from "gatsby-image"
@@ -14,11 +14,11 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
   if (!images) return null
 
   return (
-    <div className={styled.carousel}>
+    <div className={styles.carousel}>
       {images.map(({ image, caption }, index) => (
         <div
-          className={`${styled.image} ${index === currentIndex &&
-            styled.imageVisible}`}
+          className={`${styles.image} ${index === currentIndex &&
+            styles.imageVisible}`}
           key={image.childImageSharp.fluid.src}
           style={
             index === currentIndex
