@@ -19,4 +19,3 @@ address: >
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
 contact: '[+31 20 779 7735](tel://+31207797735)<br /> <mailto:hello@random.studio>'
 ---
-
