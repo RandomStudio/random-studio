@@ -2,7 +2,6 @@
   font-family: "Larish Neue", serif;
   font-weight: normal;
   font-size: 3.2rem;
-  line-height: 1.1;
   color: black;
   margin: 0;
   padding-top: 40vh;
@@ -11,20 +10,18 @@
 }
 
 .intro {
+  margin: 15.4rem 0 0;
+  padding: 0 1.4rem;
+}
+
+.introHeader {
+  margin-bottom: 6.4rem;
   font-size: 1.5rem;
   font-weight: normal;
-  margin: 15.4rem 0 0;
-  line-height: 1.375;
-  padding: 0 1.4rem;
-
-  header {
-    margin-bottom: 6.4rem;
-  }
 }
 
 .address {
   font-size: 1rem;
-  line-height: 1.375;
   margin-bottom: 3.2rem;
 
   p {
@@ -39,12 +36,12 @@
   }
 
   .intro {
-    font-size: 2rem;
     padding: 4rem;
+  }
 
-    header {
-      margin-bottom: 9.6rem;
-    }
+  .introHeader {
+    font-size: 2rem;
+    margin-bottom: 9.6rem;
   }
 
   .address {

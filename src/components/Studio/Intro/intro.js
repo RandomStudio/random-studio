@@ -11,7 +11,7 @@ const Intro = ({ data: { address, contact, intro } }) => (
       Studio
     </h1>
     <div className={styles.intro}>
-      <header>
+      <header className={styles.introHeader}>
         <div className={styles.address}>
           <div>
             <ReactMarkdown escapeHtml={false} source={address} />
