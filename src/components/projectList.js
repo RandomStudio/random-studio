@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styles from "./projectList.module.css"
+import styles from "./projectList.module.scss"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 
@@ -17,19 +17,19 @@ export default ({ intro, middle, projects }) => (
           id={slug}
           to={slug}
           style={{
-            marginTop: `${thumbnail.marginTop}%`,
-            marginLeft: `${thumbnail.marginLeft}%`,
-            width: `${thumbnail.width}%`,
+            "--marginTop": `${thumbnail.marginTop}%`,
+            "--marginLeft": `${thumbnail.marginLeft}%`,
+            "--width": `${thumbnail.width}%`,
           }}
         >
           <div className={styles.media}>
             <Img fluid={thumbnail.image.childImageSharp.fluid} alt="" />
           </div>
-          <div className={styles.title}>{title}</div>
+          <p className={styles.title}>{title}</p>
         </Link>
         {(index === 5 ||
           (projects.length < 5 && index === projects.length - 1)) && (
-          <div className={styles.statement}>
+          <div className={styles.intermittentStatement}>
             <ReactMarkdown escapeHtml={false} source={middle} />
           </div>
         )}

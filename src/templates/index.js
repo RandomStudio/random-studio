@@ -38,28 +38,39 @@ export const query = graphql`
       frontmatter {
         address
         contact
+        collaborationCredits {
+          collaborator
+          url
+        }
         intro
         middle
+        video
       }
     }
   }
 `
 
-export default ({ data }) => (
-  <Layout>
-    <Navigation />
-    <HomeVideo />
-    <ProjectList
-      {...data.markdownRemark.frontmatter}
-      projects={data.allMarkdownRemark.edges.map(
-        ({
-          node: {
-            fields: { slug },
-            frontmatter: { title, thumbnail },
-          },
-        }) => ({ slug, title, thumbnail })
-      )}
-    />
-    <Footer {...data.markdownRemark.frontmatter} />
-  </Layout>
-)
+export default ({ data }) =>
+  console.log(data) || (
+    <Layout>
+      <Navigation />
+      <HomeVideo
+        videoUrl={data.markdownRemark.frontmatter.video}
+        collaborationCredits={
+          data.markdownRemark.frontmatter.collaborationCredits
+        }
+      />
+      <ProjectList
+        {...data.markdownRemark.frontmatter}
+        projects={data.allMarkdownRemark.edges.map(
+          ({
+            node: {
+              fields: { slug },
+              frontmatter: { title, thumbnail },
+            },
+          }) => ({ slug, title, thumbnail })
+        )}
+      />
+      <Footer {...data.markdownRemark.frontmatter} />
+    </Layout>
+  )
