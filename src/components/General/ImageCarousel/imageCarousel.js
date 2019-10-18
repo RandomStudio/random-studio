@@ -17,7 +17,8 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
     <div className={styled.carousel}>
       {images.map(({ image, caption }, index) => (
         <div
-          className={styled.image}
+          className={`${styled.image} ${index === currentIndex &&
+            styled.imageVisible}`}
           key={image.childImageSharp.fluid.src}
           style={
             index === currentIndex

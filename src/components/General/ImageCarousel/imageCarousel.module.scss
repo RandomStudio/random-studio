@@ -22,6 +22,10 @@
 .image {
   height: 100%;
   width: 100%;
+
+  &.imageVisible {
+    animation: showSlide 1.2s;
+  }
 }
 
 @media (min-width: 30rem) {
@@ -33,5 +37,13 @@
   }
 }
 
-@media (min-width: 72rem) {
+@keyframes showSlide {
+  from {
+    display: block;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
