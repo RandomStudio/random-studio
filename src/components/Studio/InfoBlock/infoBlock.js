@@ -10,7 +10,7 @@ const InfoBlock = ({ collection }) => {
         return (
           <>
             {images && images.length ? (
-              <div className={styles.imageStyle}>
+              <div className={styles.carouselWrapper}>
                 <ImageCarousel
                   images={images}
                   info={info}
