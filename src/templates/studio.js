@@ -58,7 +58,6 @@ export default ({ data: { indexPage, studioPage } }) =>
     <Layout>
       <Navigation />
       <Intro data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }} />
-      <Recruitee />
       {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
         <InfoBlock key={index} collection={collection} />
       ))}

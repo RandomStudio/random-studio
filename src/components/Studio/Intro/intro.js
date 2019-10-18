@@ -1,6 +1,7 @@
 import styles from "./intro.module.scss"
 import React from "react"
 import ReactMarkdown from "react-markdown"
+import Recruitee from "../Recruitee/recruitee"
 
 const Intro = ({ data: { address, contact, intro } }) => (
   <>
@@ -10,16 +11,19 @@ const Intro = ({ data: { address, contact, intro } }) => (
       Studio
     </h1>
     <div className={styles.intro}>
-      <div className={styles.address}>
-        <div>
-          <ReactMarkdown escapeHtml={false} source={address} />
+      <header>
+        <div className={styles.address}>
+          <div>
+            <ReactMarkdown escapeHtml={false} source={address} />
+          </div>
+          <div>
+            <ReactMarkdown escapeHtml={false} source={contact} />
+          </div>
         </div>
-        <div>
-          <ReactMarkdown escapeHtml={false} source={contact} />
-        </div>
-      </div>
 
-      <ReactMarkdown escapeHtml={false} source={intro} />
+        <ReactMarkdown escapeHtml={false} source={intro} />
+      </header>
+      <Recruitee />
     </div>
   </>
 )
