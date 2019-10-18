@@ -76,8 +76,6 @@ infoBlock:
           ways.
 
 
-          * 
-
           * Conceptualising new formats
 
           * Social engagement
