@@ -27,12 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-@media (min-width: 30rem) {
-  body {
-    font-size: 1.4rem;
-  }
-}
-
 a {
   color: inherit;
 }
@@ -49,4 +43,15 @@ a:hover {
 
 .prevent-scroll {
   overflow: hidden;
+}
+
+button,
+[type="submit"] {
+  cursor: pointer;
+}
+
+@media (min-width: 30rem) {
+  body {
+    font-size: 1.4rem;
+  }
 }

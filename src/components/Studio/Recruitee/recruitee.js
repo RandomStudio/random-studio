@@ -16,16 +16,13 @@ const Recruitee = () => {
   }, [])
 
   const handleOpenOffer = offer => {
-    if (openOffer) {
-      setOpenOffer(null)
-      document.body.classList.remove("prevent-scroll")
-      return
-    }
+    document.body.classList.add("prevent-scroll")
+    setOpenOffer(offer)
+  }
 
-    if (offer) {
-      document.body.classList.add("prevent-scroll")
-      setOpenOffer(offer)
-    }
+  const handleCloseOffer = () => {
+    setOpenOffer(null)
+    document.body.classList.remove("prevent-scroll")
   }
 
   if (!recruiteeData.offers || !recruiteeData.offers.length) return null
@@ -46,7 +43,7 @@ const Recruitee = () => {
       </aside>
 
       {openOffer && (
-        <JobOffer closeOpenOffer={handleOpenOffer} offer={openOffer} />
+        <JobOffer closeOpenOffer={handleCloseOffer} offer={openOffer} />
       )}
     </>
   )
