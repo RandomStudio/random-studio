@@ -13,9 +13,13 @@
 .intro {
   font-size: 1.5rem;
   font-weight: normal;
-  margin: 15.2rem 0 5.2rem;
+  margin: 15.4rem 0 0;
   line-height: 1.375;
   padding: 0 1.4rem;
+
+  header {
+    margin-bottom: 6.4rem;
+  }
 }
 
 .address {
@@ -28,7 +32,7 @@
   }
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 36rem) {
   .logo {
     padding-left: 4rem;
     font-size: 5.4rem;
@@ -37,6 +41,10 @@
   .intro {
     font-size: 2rem;
     padding: 4rem;
+
+    header {
+      margin-bottom: 9.6rem;
+    }
   }
 
   .address {
