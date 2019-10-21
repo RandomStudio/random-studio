@@ -16,6 +16,7 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
