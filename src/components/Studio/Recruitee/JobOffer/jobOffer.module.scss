@@ -9,6 +9,7 @@
   z-index: 999;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  pointer-events: all;
 
   & * {
     font-weight: normal;

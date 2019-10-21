@@ -39,6 +39,7 @@ a:hover {
 
 .prevent-scroll {
   overflow: hidden;
+  pointer-events: none;
 }
 
 button,
