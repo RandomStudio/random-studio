@@ -25,7 +25,9 @@ export const pageQuery = graphql`
           video {
             url
             autoplay
+            isMuted
             hasControls
+            loops
           }
           width
         }

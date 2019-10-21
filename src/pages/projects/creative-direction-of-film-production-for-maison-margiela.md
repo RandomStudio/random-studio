@@ -46,7 +46,7 @@ content:
     marginTop: 0
     ratio: 56.25
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
@@ -67,7 +67,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+  - marginLeft: 10
     marginTop: 0
     ratio: 56.25
     video:
@@ -94,7 +94,7 @@ content:
   - image: /img/93329ef8a50c1ae92159783fd2275f58-1-.m-dogs-jpg.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: ''
+    ratio: 0
     video:
       autoplay: false
       hasControls: false
