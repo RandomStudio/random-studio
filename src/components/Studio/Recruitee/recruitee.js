@@ -1,5 +1,5 @@
 import styles from "./recruitee.module.scss"
-import React, { useEffect, useState, useLayoutEffect } from "react"
+import React, { useEffect, useState } from "react"
 import JobOffer from "./JobOffer/jobOffer"
 
 const Recruitee = ({ location }) => {
@@ -27,6 +27,10 @@ const Recruitee = ({ location }) => {
       .catch(err => {
         throw new Error(`Failed to fetch open job offers: ${err}`)
       })
+
+    // react-hooks/exhaustive-deps about location.hash
+    // Should only check it once on render, so disabled eslint for it
+    // eslint-disable-next-line
   }, [])
 
   const handleOpenOffer = offer => {
