@@ -31,13 +31,6 @@ body {
   overflow-x: hidden;
 }
 
-@media (min-width: 600px) {
-  body {
-    /* font-size: 27px; */
-    font-size: 1.4rem;
-  }
-}
-
 a {
   color: inherit;
 }
@@ -50,4 +43,20 @@ a:hover {
 ::selection {
   background: rgba(255, 255, 0, 0.3);
   filter: invert(100%);
+}
+
+.prevent-scroll {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+button,
+[type="submit"] {
+  cursor: pointer;
+}
+
+@media (min-width: 30rem) {
+  body {
+    font-size: 1.4rem;
+  }
 }

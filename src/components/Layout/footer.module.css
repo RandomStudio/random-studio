@@ -9,7 +9,7 @@
   padding: 1.4rem;
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 36rem) {
   .footer {
     padding: 2rem;
   }

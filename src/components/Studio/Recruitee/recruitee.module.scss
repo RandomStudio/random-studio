@@ -1,0 +1,62 @@
+.recruitee {
+  color: #ff0000;
+  font-size: 1.4rem;
+  margin: 0 -1.4rem 6rem;
+  padding: 3.2rem 1.6rem;
+
+  ul {
+    margin: 0;
+    padding: 0.8rem 0 0.6rem;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    a {
+      transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+        border 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+      background: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+        linear-gradient(red, red);
+      background-size: 0.05em 1px, 0.05em 1px, 1px 0.07em;
+      background-repeat: no-repeat, no-repeat, repeat-x;
+      background-position: 0 87%, 100% 87%, 0 100%;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.5;
+        transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 36rem) {
+  .recruitee {
+    font-size: 2rem;
+    margin: 0 auto 8rem;
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 50rem) {
+  .recruitee {
+    display: flex;
+    max-width: 60rem;
+    margin: 8rem auto;
+
+    p {
+      flex: 1;
+      max-width: 45%;
+    }
+
+    ul {
+      flex: 1;
+      padding: 0;
+    }
+  }
+}
