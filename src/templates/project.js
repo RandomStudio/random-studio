@@ -3,11 +3,17 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout/layout"
 import ProjectDetail from "../components/projectDetail"
 import Navigation from "../components/Layout/navigation"
+import SEO from "../components/Layout/seo"
 
 export const pageQuery = graphql`
   query ProjectById($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
+        thumbnail {
+          image {
+            publicURL
+          }
+        }
         title
         intro
         content {
@@ -46,6 +52,11 @@ export default ({
   },
 }) => (
   <Layout>
+    <SEO
+      title={project.title}
+      description={project.intro}
+      image={project.thumbnail.image.publicURL}
+    />
     <Navigation />
     <ProjectDetail {...project} />
   </Layout>

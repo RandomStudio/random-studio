@@ -6,6 +6,7 @@ import Footer from "../components/Layout/footer"
 import Intro from "../components/Studio/Intro/intro"
 import InfoBlock from "../components/Studio/InfoBlock/infoBlock"
 import Impression from "../components/Studio/Impression/impression"
+import SEO from "../components/Layout/seo"
 
 export const query = graphql`
   {
@@ -54,6 +55,7 @@ export const query = graphql`
 
 export default ({ location, data: { indexPage, studioPage } }) => (
   <Layout>
+    <SEO title="studio" />
     <Navigation />
     <Intro
       data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}

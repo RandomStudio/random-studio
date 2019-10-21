@@ -3,11 +3,6 @@ import { Helmet } from "react-helmet"
 
 const defaultMeta = [
   {
-    name: "description",
-    content:
-      "Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.",
-  },
-  {
     name: "author",
     content: "Random Studio",
   },
@@ -47,8 +42,52 @@ const favicons = [
   <link rel="shortcut icon" href="/favicons/favicon.ico" />,
 ]
 
-const SEO = () => {
-  return <Helmet meta={[...defaultMeta]}>{favicons}</Helmet>
+const SEO = ({ title, description, image = "/og-image.jpg" }) => {
+  const metaTitle = title ? `Random Studio - ${title}` : "Random Studio"
+
+  return (
+    <Helmet
+      htmlAttributes={{ lang: "en" }}
+      title={metaTitle}
+      meta={[
+        ...defaultMeta,
+        {
+          name: "description",
+          content:
+            description ||
+            "Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.",
+        },
+        // OG
+        { property: "og:title", content: `${metaTitle}` },
+        { property: "og:site_name", content: "Random Studio" },
+        {
+          property: "og:description",
+          content: description,
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:locale", content: "en_US" },
+        { property: "og:url", content: `${window.location.href}` },
+        {
+          property: "og:image",
+          content: `${window.location.origin}${image}`,
+        },
+        // Twitter
+        { name: "twitter:title", content: `${metaTitle}` },
+        {
+          name: "twitter:description",
+          content: description,
+        },
+        {
+          name: "twitter:image",
+          content: `${window.location.origin}${image}`,
+        },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@random_studio" },
+      ]}
+    >
+      {favicons}
+    </Helmet>
+  )
 }
 
 export default SEO
