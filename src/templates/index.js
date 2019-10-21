@@ -5,6 +5,7 @@ import Navigation from "../components/Layout/navigation"
 import Footer from "../components/Layout/footer"
 import ProjectList from "../components/projectList"
 import HomeVideo from "../components/homeVideo"
+import SEO from "../components/Layout/seo"
 
 export const query = graphql`
   {
@@ -56,6 +57,7 @@ export const query = graphql`
 export default ({ data }) =>
   console.log(data) || (
     <Layout>
+      <SEO />
       <Navigation />
       <HomeVideo
         videoUrl={data.markdownRemark.frontmatter.video}
