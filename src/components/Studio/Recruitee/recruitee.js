@@ -1,3 +1,4 @@
+import styles from "./recruitee.module.scss"
 import React, { useEffect, useState, useLayoutEffect } from "react"
 import JobOffer from "./JobOffer/jobOffer"
 
@@ -5,7 +6,7 @@ const Recruitee = ({ location }) => {
   const [recruiteeData, setRecruiteeData] = useState({})
   const [openOffer, setOpenOffer] = useState()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     fetch("https://career.recruitee.com/api/c/23038/widget/?widget=true")
       .then(res => res.json())
       .then(json => {
