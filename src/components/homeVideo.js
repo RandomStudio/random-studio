@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styles from "./homeVideo.module.scss"
 
 export default ({ collaborationCredits, videoUrl }) => (
@@ -9,9 +10,9 @@ export default ({ collaborationCredits, videoUrl }) => (
       <br />
       Studio
     </h1>
-    <a href="/#projects" className={styles.videoOverlay}>
+    <Link to="/#projects" className={styles.videoOverlay}>
       Projects
-    </a>
+    </Link>
     {collaborationCredits && (
       <div className={styles.featuredAuthor}>
         <span className={styles.logo}>Random Studio</span>
