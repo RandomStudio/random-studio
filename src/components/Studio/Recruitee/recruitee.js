@@ -1,15 +1,28 @@
-import styles from "./recruitee.module.scss"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useLayoutEffect } from "react"
 import JobOffer from "./JobOffer/jobOffer"
 
-const Recruitee = () => {
+const Recruitee = ({ location }) => {
   const [recruiteeData, setRecruiteeData] = useState({})
   const [openOffer, setOpenOffer] = useState()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     fetch("https://career.recruitee.com/api/c/23038/widget/?widget=true")
       .then(res => res.json())
-      .then(json => setRecruiteeData(json))
+      .then(json => {
+        setRecruiteeData(json)
+
+        if (location.hash && (json.offers && json.offers.length)) {
+          const openOffer = json.offers.find(
+            offer =>
+              offer.id ===
+              parseInt(location.hash.substring(1, location.hash.length), 10)
+          )
+
+          if (openOffer) {
+            handleOpenOffer(openOffer)
+          }
+        }
+      })
       .catch(err => {
         throw new Error(`Failed to fetch open job offers: ${err}`)
       })
@@ -34,7 +47,9 @@ const Recruitee = () => {
         <ul>
           {recruiteeData.offers.map(offer => (
             <li key={offer.id}>
-              <span onClick={() => handleOpenOffer(offer)}>{offer.title}</span>
+              <a href={`#${offer.id}`} onClick={() => handleOpenOffer(offer)}>
+                {offer.title}
+              </a>
             </li>
           ))}
         </ul>

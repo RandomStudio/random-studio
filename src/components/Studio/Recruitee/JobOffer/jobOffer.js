@@ -1,29 +1,29 @@
 import styles from "./jobOffer.module.scss"
-import React, { useState, useRef } from "react"
+import React from "react"
 
 const JobOffer = ({
   closeOpenOffer,
-  offer: { title, description, requirements },
+  offer: { title, description, requirements, careers_apply_url },
 }) => {
-  const handleFormSwitch = () => {
-    setIsSubmitForm(prevState => !prevState)
-  }
-
   return (
     <section className={styles.jobOffer}>
       <div>
         <header>
+          <strong>{title}</strong>
           <button className={styles.closeButton} onClick={closeOpenOffer}>
             &times;
           </button>
-          <strong>{title}</strong>
         </header>
 
         <div dangerouslySetInnerHTML={{ __html: description }}></div>
         <div dangerouslySetInnerHTML={{ __html: requirements }}></div>
-        <button className={styles.applyButton} onClick={handleFormSwitch}>
+        <a
+          target="blank"
+          href={careers_apply_url}
+          className={styles.applyButton}
+        >
           Apply for this position
-        </button>
+        </a>
       </div>
     </section>
   )

@@ -3,7 +3,7 @@ import React from "react"
 import ReactMarkdown from "react-markdown"
 import Recruitee from "../Recruitee/recruitee"
 
-const Intro = ({ data: { address, contact, intro } }) => (
+const Intro = ({ data: { address, contact, intro }, location }) => (
   <>
     <h1 className={styles.logo}>
       Random
@@ -23,7 +23,7 @@ const Intro = ({ data: { address, contact, intro } }) => (
 
         <ReactMarkdown escapeHtml={false} source={intro} />
       </header>
-      <Recruitee />
+      <Recruitee location={location} />
     </div>
   </>
 )

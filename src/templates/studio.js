@@ -52,10 +52,13 @@ export const query = graphql`
   }
 `
 
-export default ({ data: { indexPage, studioPage } }) => (
+export default ({ location, data: { indexPage, studioPage } }) => (
   <Layout>
     <Navigation />
-    <Intro data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }} />
+    <Intro
+      data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
+      location={location}
+    />
     {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
       <InfoBlock key={index} collection={collection} />
     ))}

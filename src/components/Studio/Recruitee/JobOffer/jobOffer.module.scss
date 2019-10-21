@@ -16,6 +16,8 @@
   }
 
   header {
+    display: flex;
+    position: relative;
     margin-bottom: 0.8rem;
     strong {
       font-size: 1.5rem;
@@ -52,58 +54,33 @@
     }
   }
 
-  button,
-  [type="submit"] {
+  button {
     border: none;
     border-radius: 0;
     background: none;
   }
 
-  label {
-    span {
-      margin-bottom: 0.6rem;
-    }
-  }
-
-  input,
-  textarea {
-    margin-bottom: 1.6rem;
-    border-radius: 0;
-    padding: 1rem;
-    inset: unset;
-  }
-
-  textarea {
-    height: 14rem;
-  }
-
-  [type="file"] {
-    font-size: 1rem;
+  .closeButton,
+  .applyButton {
+    outline: none;
   }
 
   .closeButton {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 3rem;
-    height: 3rem;
+    width: 2.4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: end;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
   }
 
   .applyButton {
+    display: inline-block;
     margin: 2rem auto 0rem;
     border: 1px solid #000;
     padding: 1rem;
-  }
-}
-
-.jobOffer {
-}
-
-.applyForm {
-  div,
-  label {
-    display: flex;
-    flex-direction: column;
+    text-decoration: none;
   }
 }
 
@@ -123,7 +100,8 @@
       }
     }
 
-    .applyForm {
+    .closeButton {
+      font-size: 2rem;
     }
   }
 }
