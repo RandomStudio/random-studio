@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet"
+
 exports.onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
   const helmet = Helmet.renderStatic()
 
