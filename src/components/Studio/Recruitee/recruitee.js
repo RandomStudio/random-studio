@@ -11,7 +11,7 @@ const Recruitee = () => {
       .then(res => res.json())
       .then(json => setRecruiteeData(json))
       .catch(err => {
-        throw new Error(`Failed to feetch open job offers: ${err}`)
+        throw new Error(`Failed to fetch open job offers: ${err}`)
       })
   }, [])
 
@@ -26,8 +26,6 @@ const Recruitee = () => {
   }
 
   if (!recruiteeData.offers || !recruiteeData.offers.length) return null
-
-  console.log(openOffer)
 
   return (
     <>
