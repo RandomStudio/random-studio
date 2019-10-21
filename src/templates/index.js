@@ -20,7 +20,10 @@ export const query = graphql`
           frontmatter {
             title
             thumbnail {
+              ratio
               marginLeft
+              marginTop
+              video
               width
               image {
                 childImageSharp {
