@@ -1,5 +1,22 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+// import PropTypes from "prop-types"
+// import { StaticQuery, useStaticQuery, graphql } from "gatsby"
+
+// const query = graphql`
+//   query SEO {
+//     site {
+//       siteMetadata {
+//         defaultTitle: title
+//         # titleTemplate
+//         defaultDescription: description
+//         # siteUrl: url
+//         defaultImage: image
+//         # twitterUsername
+//       }
+//     }
+//   }
+// `
 
 const defaultMeta = [
   {
@@ -42,8 +59,9 @@ const favicons = [
   <link rel="shortcut icon" href="/favicons/favicon.ico" />,
 ]
 
-const SEO = ({ title, description, image = "/og-image.jpg" }) => {
+const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
   const metaTitle = title ? `Random Studio - ${title}` : "Random Studio"
+  const url = `https://random.studio${pathName}`
 
   return (
     <Helmet
@@ -66,10 +84,10 @@ const SEO = ({ title, description, image = "/og-image.jpg" }) => {
         },
         { property: "og:type", content: "website" },
         { property: "og:locale", content: "en_US" },
-        { property: "og:url", content: `${window.location.href}` },
+        { property: "og:url", content: `${url}` },
         {
           property: "og:image",
-          content: `${window.location.origin}${image}`,
+          content: `random.studio${image}`,
         },
         // Twitter
         { name: "twitter:title", content: `${metaTitle}` },
@@ -79,7 +97,7 @@ const SEO = ({ title, description, image = "/og-image.jpg" }) => {
         },
         {
           name: "twitter:image",
-          content: `${window.location.origin}${image}`,
+          content: `random.studio${image}`,
         },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: "@random_studio" },

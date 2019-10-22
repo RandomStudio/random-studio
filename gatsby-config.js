@@ -1,7 +1,12 @@
 module.exports = {
+  siteMetadata: {
+    title: "Random Studio",
+    description:
+      "Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.",
+    image: "/og-image.jpg",
+  },
   plugins: [
     "gatsby-plugin-sass",
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -52,6 +57,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
 }

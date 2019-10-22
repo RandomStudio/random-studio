@@ -39,6 +39,9 @@ export const query = graphql`
       }
     }
     markdownRemark(frontmatter: { templateKey: { eq: "index" } }) {
+      fields {
+        slug
+      }
       frontmatter {
         address
         contact
@@ -57,7 +60,7 @@ export const query = graphql`
 export default ({ data }) =>
   console.log(data) || (
     <Layout>
-      <SEO />
+      <SEO pathName={data.markdownRemark.fields.slug} />
       <Navigation />
       <HomeVideo
         videoUrl={data.markdownRemark.frontmatter.video}
