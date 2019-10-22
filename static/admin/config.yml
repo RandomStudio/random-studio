@@ -27,6 +27,10 @@ collections:
             name: twitterHandle
             widget: string
             default: "@random.studio"
+          - label: "Site URL (base url)"
+            name: siteUrl
+            widget: string
+            default: "https://random.studio"
   - name: project
     label: Project
     folder: src/pages/projects
