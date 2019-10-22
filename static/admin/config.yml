@@ -74,7 +74,8 @@ collections:
             widget: number
           - label: Width
             name: width
-            required: false
+            default: 0
+            required: true
             valueType: float
             widget: number
           - label: "Margin Top"
@@ -136,7 +137,8 @@ collections:
             widget: number
           - label: Width
             name: width
-            required: false
+            default: 0
+            required: true
             valueType: float
             widget: number
           - label: "Margin Top"
