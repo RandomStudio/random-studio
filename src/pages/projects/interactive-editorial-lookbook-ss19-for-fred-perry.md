@@ -78,5 +78,13 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+  - marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
 ---
 
