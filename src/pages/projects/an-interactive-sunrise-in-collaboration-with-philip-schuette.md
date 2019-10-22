@@ -66,15 +66,17 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - image: /img/cropped.png
-    marginLeft: 0
-    marginTop: 0
-    ratio: 0
+  - caption: ''
+    image: ''
+    marginLeft: 10
+    marginTop: 10
+    ratio: ''
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: ''
 credits: []
 ---
 
