@@ -1,4 +1,5 @@
 ---
+key: settings
 title: Random Studio
 description: >-
   Random Studio is an experience design studio. We are an international team of
@@ -6,4 +7,3 @@ description: >-
   design and technology.
 twitterHandle: '@random.studio'
 ---
-
