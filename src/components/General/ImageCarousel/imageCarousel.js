@@ -40,7 +40,7 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
       ))}
       <div>
         {title && <p>{title}</p>}
-        {showIndicator && (
+        {showIndicator && images.length > 1 && (
           <span>
             {currentIndex + 1} of {images.length}
           </span>
