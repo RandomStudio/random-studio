@@ -15,7 +15,7 @@ const defaultMeta = [
   },
   { name: "msapplication-config", content: "/favicons/browserconfig.xml" },
   { name: "theme-color", content: "#ffffff" },
-  { name: "msapplication-TileColor", content: "#da532c" },
+  { name: "msapplication-TileColor", content: "#ffffff" },
 ]
 
 const favicons = [
@@ -53,22 +53,31 @@ const favicons = [
 ]
 
 const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
-  const metaTitle = title ? `Random Studio - ${title}` : "Random Studio"
-  const url = `https://random.studio${pathName}`
-
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      site {
-        siteMetadata {
+      markdownRemark(frontmatter: { key: { eq: "settings" } }) {
+        frontmatter {
           title
           description
-          image
+          twitterHandle
+          siteUrl
         }
       }
     }
   `)
 
-  console.log("static query", data)
+  const {
+    markdownRemark: {
+      frontmatter: {
+        title: defaultTitle,
+        description: defaultDescription,
+        twitterHandle,
+      },
+    },
+  } = data
+
+  const metaTitle = title ? `${defaultTitle} - ${title}` : defaultTitle
+  const url = `${siteUrl}${pathName}`
 
   return (
     <Helmet
@@ -78,16 +87,15 @@ const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
         ...defaultMeta,
         {
           name: "description",
-          content:
-            description ||
-            "Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.",
+          content: description || defaultDescription,
         },
+
         // OG
         { property: "og:title", content: `${metaTitle}` },
         { property: "og:site_name", content: "Random Studio" },
         {
           property: "og:description",
-          content: description,
+          content: description || defaultDescription,
         },
         { property: "og:type", content: "website" },
         { property: "og:locale", content: "en_US" },
@@ -100,14 +108,14 @@ const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
         { name: "twitter:title", content: `${metaTitle}` },
         {
           name: "twitter:description",
-          content: description,
+          content: description || defaultDescription,
         },
         {
           name: "twitter:image",
           content: `random.studio${image}`,
         },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@random_studio" },
+        { name: "twitter:site", content: twitterHandle },
       ]}
     >
       {favicons}
