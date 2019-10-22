@@ -68,7 +68,7 @@ collections:
             widget: text
           - label: Ratio
             name: ratio
-            required: false
+            required: true
             valueType: float
             default: 0.00
             widget: number
@@ -124,13 +124,13 @@ collections:
                 required: false
                 default: true
                 widget: boolean
-          - label: Caption
+          - label: Text/Caption
             name: caption
             required: false
             widget: markdown
           - label: Ratio
             name: ratio
-            required: false
+            required: true
             valueType: float
             default: 0.00
             widget: number

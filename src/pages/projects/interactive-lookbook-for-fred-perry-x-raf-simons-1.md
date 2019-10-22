@@ -84,7 +84,7 @@ content:
     image: /img/9794e60b7b6160b3cdf6ec727781aafc.jpg
     marginLeft: 7
     marginTop: 0
-    ratio: ''
+    ratio: 0
     video:
       autoplay: false
       hasControls: false
