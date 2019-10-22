@@ -1,22 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 // import PropTypes from "prop-types"
-// import { StaticQuery, useStaticQuery, graphql } from "gatsby"
-
-// const query = graphql`
-//   query SEO {
-//     site {
-//       siteMetadata {
-//         defaultTitle: title
-//         # titleTemplate
-//         defaultDescription: description
-//         # siteUrl: url
-//         defaultImage: image
-//         # twitterUsername
-//       }
-//     }
-//   }
-// `
+import { useStaticQuery, graphql } from "gatsby"
 
 const defaultMeta = [
   {
@@ -62,6 +47,20 @@ const favicons = [
 const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
   const metaTitle = title ? `Random Studio - ${title}` : "Random Studio"
   const url = `https://random.studio${pathName}`
+
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          image
+        }
+      }
+    }
+  `)
+
+  console.log("static query", data)
 
   return (
     <Helmet
