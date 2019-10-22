@@ -57,28 +57,27 @@ export const query = graphql`
   }
 `
 
-export default ({ data }) =>
-  console.log(data) || (
-    <Layout>
-      <SEO pathName={data.markdownRemark.fields.slug} />
-      <Navigation />
-      <HomeVideo
-        videoUrl={data.markdownRemark.frontmatter.video}
-        collaborationCredits={
-          data.markdownRemark.frontmatter.collaborationCredits
-        }
-      />
-      <ProjectList
-        {...data.markdownRemark.frontmatter}
-        projects={data.allMarkdownRemark.edges.map(
-          ({
-            node: {
-              fields: { slug },
-              frontmatter: { title, thumbnail },
-            },
-          }) => ({ slug, title, thumbnail })
-        )}
-      />
-      <Footer {...data.markdownRemark.frontmatter} />
-    </Layout>
-  )
+export default ({ data }) => (
+  <Layout>
+    <SEO pathName={data.markdownRemark.fields.slug} />
+    <Navigation />
+    <HomeVideo
+      videoUrl={data.markdownRemark.frontmatter.video}
+      collaborationCredits={
+        data.markdownRemark.frontmatter.collaborationCredits
+      }
+    />
+    <ProjectList
+      {...data.markdownRemark.frontmatter}
+      projects={data.allMarkdownRemark.edges.map(
+        ({
+          node: {
+            fields: { slug },
+            frontmatter: { title, thumbnail },
+          },
+        }) => ({ slug, title, thumbnail })
+      )}
+    />
+    <Footer {...data.markdownRemark.frontmatter} />
+  </Layout>
+)
