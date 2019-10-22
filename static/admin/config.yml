@@ -1,9 +1,36 @@
 backend:
   name: git-gateway
   branch: master
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 collections:
+  - name: siteInformation
+    label: "Site Information"
+    files:
+      - file: src/site/settings.md
+        label: "Site settings"
+        name: siteSettings
+        fields:
+          - label: Key
+            name: key
+            widget: hidden
+            default: settings
+          - label: "Site title"
+            name: title
+            widget: string
+            default: "Random Studio"
+          - label: "Description"
+            name: description
+            widget: text
+          - label: "Twitter handle"
+            name: twitterHandle
+            widget: string
+            default: "@random.studio"
+          - label: "Site URL (base url)"
+            name: siteUrl
+            widget: string
+            default: "https://random.studio"
   - name: project
     label: Project
     folder: src/pages/projects
