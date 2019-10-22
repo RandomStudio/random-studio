@@ -41,13 +41,13 @@ content:
       nonchalance.
     marginLeft: 0
     marginTop: 0
-    ratio: ''
+    ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
-    width: ''
+    width: 0
   - marginLeft: 0
     marginTop: 0
     ratio: 56.25
