@@ -26,12 +26,17 @@ exports.createPages = async ({ actions, graphql }) =>
           fields: { slug },
           frontmatter: { templateKey },
         },
-      }) =>
-        actions.createPage({
-          path: slug,
-          component: require.resolve(`./src/templates/${templateKey}.js`),
-          context: { id },
-        })
+      }) => {
+        if (templateKey) {
+          actions.createPage({
+            path: slug,
+            component: require.resolve(`./src/templates/${templateKey}.js`),
+            context: { id },
+          })
+        }
+
+        return templateKey
+      }
     )
   )
 
