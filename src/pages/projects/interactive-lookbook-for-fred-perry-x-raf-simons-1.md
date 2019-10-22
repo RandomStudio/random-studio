@@ -46,5 +46,101 @@ content:
       isMuted: true
       loops: true
     width: 35
+  - marginLeft: 54
+    marginTop: -15
+    ratio: 100
+    video:
+      autoplay: true
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/353981290.hd.mp4?s=925cef8f8bc61799e5a613282950f911f247ceb5&profile_id=175
+  - marginLeft: 15
+    marginTop: 10
+    ratio: 56.25
+    video:
+      autoplay: true
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/353970629.hd.mp4?s=1d4881eab64d04937ae407e97e1d9f5010f422d8&profile_id=175
+    width: 50
+  - caption: >-
+      As an extension of the concept in the physical world, retail fixtures
+      created from the closet in one of the bedrooms of the experience is
+      materialised in stores in London, Tokyo and Berlin, in which the
+      collection is hanging.
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - caption: The retail fixture that brings part of the digital world into the store.
+    image: /img/9794e60b7b6160b3cdf6ec727781aafc.jpg
+    marginLeft: 7
+    marginTop: 0
+    ratio: ''
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: ''
+    width: 47
+  - caption: >-
+      Inside one of the digital bedrooms was a wardrobe that was brought to life
+      in the actual store space.
+    image: /img/6ee80f5bb3e1fe6aac71fb234e60a10a.jpg
+    marginLeft: 63
+    marginTop: -15
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 30
+  - image: /img/c16cad212e2faeddcb486ad3dcc0d7e2.jpg
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 33
+  - image: /img/89cc32f552f626abf45611d9ee92f562.jpg
+    marginLeft: 55
+    marginTop: -10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 30
+  - image: /img/fb5da838fa9d1548bb6f1a9e2494b22e.jpg
+    marginLeft: 0
+    marginTop: 10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 100
+credits:
+  - key: 'For:'
+    value: Fred Perry
+  - key: 'Role:'
+    value: >-
+      Concept Development, Creative Direction, Art Direction, 3D and
+      Photography, Animation, Web Development, Retail Fixture Concept & Design
 ---
 
