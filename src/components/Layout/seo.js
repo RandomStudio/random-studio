@@ -15,6 +15,7 @@ const defaultMeta = [
   },
   { name: "msapplication-config", content: "/favicons/browserconfig.xml" },
   { name: "theme-color", content: "#ffffff" },
+  { name: "msapplication-TileColor", content: "#da532c" },
 ]
 
 const favicons = [
@@ -26,21 +27,28 @@ const favicons = [
   <link
     rel="icon"
     type="image/png"
-    href="/favicons/favicon-32x32.png"
     sizes="32x32"
+    href="/favicons/favicon-32x32.png"
   />,
   <link
     rel="icon"
     type="image/png"
-    href="/favicons/favicon-16x16.png"
     sizes="16x16"
+    href="/favicons/favicon-16x16.png"
   />,
-  <link rel="manifest" href="/favicons/manifest.json" />,
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="/favicons/android-chrome-192x192.png"
+  />,
+  <link rel="manifest" href="/favicons/site.webmanifest" />,
   <link
     rel="mask-icon"
     href="/favicons/safari-pinned-tab.svg"
     color="#0000ff"
   />,
+  <link rel="manifest" href="/favicons/manifest.json" />,
   <link rel="shortcut icon" href="/favicons/favicon.ico" />,
 ]
 
