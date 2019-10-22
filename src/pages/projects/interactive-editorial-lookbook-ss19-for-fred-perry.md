@@ -47,7 +47,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-    width: 0
+    width: ''
   - marginLeft: 0
     marginTop: 0
     ratio: 56.25
@@ -70,6 +70,31 @@ content:
       loops: true
     width: 30
   - image: /img/digitalmaps.jpeg
+    marginLeft: 20
+    marginTop: -20
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 25
+  - image: /img/digitalmaps3.jpeg
+    marginLeft: 0
+    marginTop: 10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 100
+  - caption: >-
+      Each garment can be examined up-close, with options to view it in situ or
+      in the shop. Location URLs of found garments, sound snippets or visual
+      frames can be shared on social media. The entire campaign can also be
+      viewed as a series of semi-accidental screenshots.
+    image: ''
     marginLeft: 0
     marginTop: 0
     ratio: 0
@@ -78,13 +103,54 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+    width: ''
+  - marginLeft: 45
     marginTop: 0
+    ratio: 56.25
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/317996812.hd.mp4?s=e5a77825ac1fe2d2072a984ae525f64262d7c42b&profile_id=175
+    width: 55
+  - image: /img/digitalmaps4.jpeg
+    marginLeft: 0
+    marginTop: -15
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 30
+  - image: /img/digitalmaps5.jpeg
+    marginLeft: 40
+    marginTop: -15
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 25
+  - image: /img/digitalmaps6.jpeg
+    marginLeft: 0
+    marginTop: 10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 100
+credits:
+  - key: 'For: '
+    value: 'Fred Perry '
+  - key: 'Role: '
+    value: >-
+      Concept Development, Creative Direction, Art Direction, Videography and
+      Photography, Animation, Web Development.
 ---
 
