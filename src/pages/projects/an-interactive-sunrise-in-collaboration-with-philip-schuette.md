@@ -67,10 +67,10 @@ content:
       isMuted: true
       loops: true
   - caption: ''
-    image: ''
+    image: /img/screenshot-2019-09-06-at-12.54.08.png
     marginLeft: 10
     marginTop: 10
-    ratio: ''
+    ratio: 0
     video:
       autoplay: false
       hasControls: false
