@@ -20,7 +20,7 @@ collections:
             name: description
             widget: text
           - label: "Twitter handle"
-            name: twitterHandle,
+            name: twitterHandle
             widget: string
             default: "@random.studio"
   - name: project
