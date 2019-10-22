@@ -17,9 +17,9 @@ thumbnail:
 content:
   - marginLeft: 0
     marginTop: 0
-    ratio: 0
+    ratio: 56.25
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
