@@ -66,17 +66,6 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - caption: ''
-    image: ''
-    marginLeft: 10
-    marginTop: 10
-    ratio: ''
-    video:
-      autoplay: false
-      hasControls: false
-      isMuted: true
-      loops: true
-    width: ''
 credits: []
 ---
 
