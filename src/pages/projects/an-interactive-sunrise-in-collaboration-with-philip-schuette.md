@@ -58,8 +58,18 @@ content:
       physical space, the addictive experience of playing somewhere in-between
       the two triggers a split-second of awe when you realise what is in your
       power.
+    image: ''
     marginLeft: 0
     marginTop: 40
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - image: /img/ball.jpg
+    marginLeft: 0
+    marginTop: 0
     ratio: 0
     video:
       autoplay: false
