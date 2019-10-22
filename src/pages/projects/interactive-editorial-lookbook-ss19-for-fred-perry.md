@@ -46,8 +46,7 @@ content:
       autoplay: false
       hasControls: false
       isMuted: true
-      loops: true
-    width: ''
+      loops: true    
   - marginLeft: 0
     marginTop: 0
     ratio: 56.25
@@ -103,7 +102,6 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-    width: ''
   - marginLeft: 45
     marginTop: 0
     ratio: 56.25
