@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-// import PropTypes from "prop-types"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 const defaultMeta = [
@@ -52,7 +52,7 @@ const favicons = [
   <link rel="shortcut icon" href="/favicons/favicon.ico" />,
 ]
 
-const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
+const SEO = ({ title, description, image, pathName }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       markdownRemark(frontmatter: { key: { eq: "settings" } }) {
@@ -72,12 +72,14 @@ const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
         title: defaultTitle,
         description: defaultDescription,
         twitterHandle,
+        siteUrl,
       },
     },
   } = data
 
   const metaTitle = title ? `${defaultTitle} - ${title}` : defaultTitle
   const url = `${siteUrl}${pathName}`
+  const imageUrl = `${siteUrl}${image}`
 
   return (
     <Helmet
@@ -102,7 +104,7 @@ const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
         { property: "og:url", content: `${url}` },
         {
           property: "og:image",
-          content: `random.studio${image}`,
+          content: imageUrl,
         },
         // Twitter
         { name: "twitter:title", content: `${metaTitle}` },
@@ -112,7 +114,7 @@ const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
         },
         {
           name: "twitter:image",
-          content: `random.studio${image}`,
+          content: imageUrl,
         },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: twitterHandle },
@@ -121,6 +123,19 @@ const SEO = ({ title, description, image = "/og-image.jpg", pathName }) => {
       {favicons}
     </Helmet>
   )
+}
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  pathName: PropTypes.string.isRequired,
+}
+
+SEO.defaultProps = {
+  title: "",
+  description: "",
+  image: "/og-image.jpg",
 }
 
 export default SEO

@@ -16,7 +16,6 @@ export const pageQuery = graphql`
           image {
             publicURL
           }
-          video
         }
         title
         intro
@@ -63,7 +62,9 @@ export default ({
       pathName={slug}
       title={project.title}
       description={project.intro}
-      image={project.thumbnail.image ? project.thumbnail.image.publicURL : ""}
+      image={
+        project.thumbnail.image ? project.thumbnail.image.publicURL : undefined
+      }
     />
     <Navigation />
     <ProjectDetail {...project} />
