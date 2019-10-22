@@ -6,4 +6,6 @@ description: >-
   visual artists, strategists and engineers who blur the boundaries between art,
   design and technology.
 twitterHandle: '@random.studio'
+siteUrl: 'https://random.studio'
 ---
+
