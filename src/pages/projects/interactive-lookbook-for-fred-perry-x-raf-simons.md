@@ -1,6 +1,6 @@
 ---
 templateKey: project
-title: Interactive lookbook  for Fred Perry x Raf Simons
+title: Interactive lookbook  for Fred Perry x Raf Simons (TEST ONLY)
 intro: >-
   The experience invites you to step into multiple narratively connected
   three-dimensional photographs, that display the evening of a regular house
