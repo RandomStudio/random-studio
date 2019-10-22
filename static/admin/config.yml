@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
   branch: master
-publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 collections:
@@ -68,14 +67,13 @@ collections:
             widget: text
           - label: Ratio
             name: ratio
-            required: true
+            required: false
             valueType: float
             default: 0.00
             widget: number
           - label: Width
             name: width
-            default: 0
-            required: true
+            required: false
             valueType: float
             widget: number
           - label: "Margin Top"
@@ -125,20 +123,19 @@ collections:
                 required: false
                 default: true
                 widget: boolean
-          - label: Text/Caption
+          - label: Caption
             name: caption
             required: false
             widget: markdown
           - label: Ratio
             name: ratio
-            required: true
+            required: false
             valueType: float
             default: 0.00
             widget: number
           - label: Width
             name: width
-            default: 0
-            required: true
+            required: false
             valueType: float
             widget: number
           - label: "Margin Top"
