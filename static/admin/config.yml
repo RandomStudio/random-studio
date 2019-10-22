@@ -9,9 +9,13 @@ collections:
     label: "Site Information"
     files:
       - file: src/site/settings.md
-        label: Metadata
-        name: metadata
+        label: "Site settings"
+        name: siteSettings
         fields:
+          - label: Key
+            name: key
+            widget: hidden
+            default: settings
           - label: "Site title"
             name: title
             widget: string
