@@ -5,7 +5,7 @@
   color: black;
   margin: 0;
   padding-top: 40vh;
-  padding-left: 1.2rem;
+  padding-left: 1.4rem;
   letter-spacing: -0.01em;
 }
 
@@ -18,11 +18,14 @@
   margin-bottom: 6.4rem;
   font-size: 1.5rem;
   font-weight: normal;
+  letter-spacing: 0.01em;
 }
 
 .address {
   font-size: 1rem;
   margin-bottom: 3.2rem;
+  padding-top: 0.3rem;
+  letter-spacing: 0.02em;
 
   p {
     margin-bottom: 1.3em;
@@ -46,16 +49,16 @@
 
   .address {
     float: left;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 0;
-    margin-right: 2.4rem;
+    margin-right: 2rem;
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 54rem) {
   .logo,
   .intro {
-    max-width: 60rem;
+    max-width: 48rem;
     margin: 0 auto;
   }
 
@@ -66,11 +69,34 @@
   .intro {
     margin-top: 7.2vw;
   }
+
+  .introHeader {
+    font-size: 2rem;
+    // font-size: 40px;
+  }
+
+  .address {
+    padding-top: 0.5rem;
+  }
 }
 
 @media (min-width: 72rem) {
+  .logo,
+  .intro {
+    max-width: 63rem;
+  }
+
   .logo {
     max-width: 72rem;
     font-size: 5.4rem;
+  }
+
+  .introHeader {
+    font-size: 2.5rem;
+  }
+
+  .address {
+    margin-right: 2.4rem;
+    font-size: 1.6rem;
   }
 }
