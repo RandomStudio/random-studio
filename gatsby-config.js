@@ -1,4 +1,4 @@
-module.exports = {
+const gatsbyConfig = {
   plugins: [
     "gatsby-plugin-sass",
     {
@@ -61,3 +61,25 @@ module.exports = {
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
 }
+
+console.log("BEFORREEEE")
+if (process.env.CONTEXT === "production") {
+  console.log("CONTEXXXXT")
+
+  const gaConfig = {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: "UA-9384788-13",
+      // Defines where to place the tracking script - `true` in the head and `false` in the body
+      head: true,
+      // Setting this parameter is optional
+      anonymize: true,
+      // Setting this parameter is also optional
+      respectDNT: true,
+    },
+  }
+
+  gatsbyConfig.plugins.push(gaConfig)
+}
+
+module.exports = gatsbyConfig
