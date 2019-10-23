@@ -72,5 +72,39 @@ content:
       isMuted: true
       loops: true
     width: 38
+  - image: /img/chanel5.jpg
+    marginLeft: 25
+    marginTop: 10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 50
+  - caption: >-
+      Guests travelled through the camelia-shaped heart of the watch where the
+      highly detailed mechanics and intrinsic aesthetics can be observed that
+      are normally invisible to the naked eye. A shareable video of the journey
+      was offered to each participant afterwards.
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - marginLeft: 0
+    marginTop: 0
+    ratio: 29
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/221734975.hd.mp4?s=e3648ce5f661f3b6da62d0d2c17020846180b57f&profile_id=174
+    width: 100
 ---
 
