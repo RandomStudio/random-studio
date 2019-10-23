@@ -28,6 +28,10 @@
   font-weight: normal;
   margin: 10vw 0;
   padding: 0 1.4rem;
+
+  p + p {
+    margin-top: 1.375em;
+  }
 }
 
 .title,
@@ -63,9 +67,6 @@
       padding-right: 2.4rem;
     }
   }
-}
-.text p + p {
-  margin-top: 1.375em;
 }
 
 @media (min-width: 36rem) {
