@@ -7,6 +7,8 @@ const ProjectVideo = ({
 }) => {
   const videoRef = useRef(null)
 
+  const [hasPlayed, setHasPlayed] = useState(autoplay)
+
   const [isCurrentlyMuted, setVideoIsCurrentlyMuted] = useState(
     autoplay || isStartingMuted
   )
@@ -18,6 +20,7 @@ const ProjectVideo = ({
   }
 
   const handleTapPlayPause = e => {
+    setHasPlayed(true)
     setIsPlaying(prevState => {
       if (isPlaying) {
         videoRef.current.pause()
@@ -44,16 +47,19 @@ const ProjectVideo = ({
         autoPlay={isPlaying}
         playsInline
       />
-      {hasControls && (
-        <div className={styles.videoControls}>
-          <button onClick={handleTapPlayPause}>
-            {isPlaying ? "Pause" : "Play"}
-          </button>
-          <button onClick={handleTapVolumeToggle}>
-            {isStartingMuted ? "Unmute" : "Mute"}
-          </button>
-        </div>
-      )}
+      {hasControls &&
+        (hasPlayed ? (
+          <div className={styles.videoControls}>
+            <button onClick={handleTapPlayPause}>
+              {isPlaying ? "Pause" : "Play"}
+            </button>
+            <button onClick={handleTapVolumeToggle}>
+              {isStartingMuted ? "Unmute" : "Mute"}
+            </button>
+          </div>
+        ) : (
+          <div className={styles.beforeFirstPlay}>Play video</div>
+        ))}
     </div>
   )
 }

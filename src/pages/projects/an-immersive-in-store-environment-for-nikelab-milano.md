@@ -19,9 +19,9 @@ content:
     marginTop: 0
     ratio: 56.25
     video:
-      autoplay: true
-      hasControls: false
-      isMuted: true
+      autoplay: false
+      hasControls: true
+      isMuted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/293518292.hd.mp4?s=b11e4290593a62d2912567e3b343954c1d93356b&profile_id=175
@@ -62,6 +62,52 @@ content:
       isMuted: true
       loops: true
     width: 30
+  - marginLeft: 5
+    marginTop: 0
+    ratio: 56.25
+    width: 95
+    video:
+      autoplay: true
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/293523956.hd.mp4?s=60079e02fd585595b28119ac617854f3af4a5ad6&profile_id=175
+  - caption: >-
+      On the first floor, a conveyor belt scanned items from the collection, triggering product content on the screens above. A series of screens on the other side streamed and analysed live footage from the floor below.
+    marginLeft: 0
+    marginTop: -10
+    ratio: 56.25
+    width: 40
+    video:
+      autoplay: true
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/293521607.hd.mp4?s=75f4eb0c83c54d3769dadb33918260ec588ae9c7&profile_id=174
+  - image: /img/39150f647860ae4507bf8cd37ad0e0ce.ike-milaan-18-jpg.jpg
+    caption: A series of screens on the other side streamed and analysed live footage from the floor below.
+    width: 45
+    marginLeft: 50
+    marginTop: -10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - image: /img/46ed7dce04a766dda23738a9873fc8c8.ike-milaan-28-jpg.jpg
+    caption: A series of screens on the other side streamed and analysed live footage from the floor below.
+    width: 30
+    marginLeft: 10
+    marginTop: -28
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
   - caption: >-
       The vaults celebrated the creativity behind the Tech Pack: all three
       product collaborations – designed with a handful of Milan’s top
