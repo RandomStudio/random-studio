@@ -56,8 +56,8 @@ content:
     marginTop: 0
     ratio: 56.25
     video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       isMuted: true
       loops: false
       url: >-
@@ -107,28 +107,26 @@ content:
     marginTop: 10
     ratio: 56.25
     video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       isMuted: true
-      loops: false
+      loops: true
       url: >-
         https://player.vimeo.com/external/245185336.hd.mp4?s=174ef918bb1f27274628cf1f56e328a9acd69a69&profile_id=175
     width: 45
+  - image: >-
+      /img/52f854eca91995c272d693dcc5bb1682.andomstudio-louisvuitton-vvv-nyc-04-jpg.jpg
+    marginLeft: 55
+    marginTop: 16
+    width: 35
   - caption: >-
       The installation combined digital and physical elements, connected by the
       same design language.
     image: >-
       /img/9cdb5b913ea032ff4ca5b7a0a162099c.andomstudio-louisvuitton-vvv-nyc-03-jpg.jpg
     marginLeft: 4
-    marginTop: 10
+    marginTop: -30
     width: 36
-  - image: >-
-      /img/52f854eca91995c272d693dcc5bb1682.andomstudio-louisvuitton-vvv-nyc-04-jpg.jpg
-    marginLeft: 55
-    marginTop: -50
-    width: 35
-  - marginLeft: 0
-    marginTop: 10
 credits:
   - key: For
     value: Louis Vuitton
