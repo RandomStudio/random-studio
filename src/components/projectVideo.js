@@ -2,22 +2,22 @@ import styles from "./projectVideo.module.scss"
 import React, { useRef, useState } from "react"
 
 const ProjectVideo = ({
-  video: { autoplay, hasControls, isMuted, loops, url },
+  video: { autoplay, hasControls, isMuted: isStartingMuted, loops, url },
   ratio,
 }) => {
   const videoRef = useRef(null)
 
-  const [videoIsMuted, setVideoIsMuted] = useState(
-    (autoplay && isMuted) || isMuted
+  const [isCurrentlyMuted, setVideoIsCurrentlyMuted] = useState(
+    autoplay || isStartingMuted
   )
   const [isPlaying, setIsPlaying] = useState(autoplay)
 
-  const handleMutedState = e => {
-    setVideoIsMuted(prevState => !prevState)
+  const handleTapVolumeToggle = e => {
+    setVideoIsCurrentlyMuted(prevState => !prevState)
     e.stopPropagation()
   }
 
-  const handlePlayingState = e => {
+  const handleTapPlayPause = e => {
     setIsPlaying(prevState => {
       if (isPlaying) {
         videoRef.current.pause()
@@ -33,24 +33,24 @@ const ProjectVideo = ({
   return (
     <div
       className={styles.videoWrapper}
-      onClick={handlePlayingState}
+      onClick={handleTapPlayPause}
       style={{ paddingBottom: `${ratio}%` }}
     >
       <video
         ref={videoRef}
         src={url}
         loop={loops}
-        muted={videoIsMuted}
+        muted={isCurrentlyMuted}
         autoPlay={isPlaying}
         playsInline
       />
       {hasControls && (
         <div className={styles.videoControls}>
-          <button onClick={handlePlayingState}>
+          <button onClick={handleTapPlayPause}>
             {isPlaying ? "Pause" : "Play"}
           </button>
-          <button onClick={handleMutedState}>
-            {isMuted ? "Unmute" : "Mute"}
+          <button onClick={handleTapVolumeToggle}>
+            {isStartingMuted ? "Unmute" : "Mute"}
           </button>
         </div>
       )}
