@@ -9,13 +9,13 @@ const ProjectVideo = ({
 
   const [hasPlayed, setHasPlayed] = useState(autoplay)
 
-  const [isCurrentlyMuted, setVideoIsCurrentlyMuted] = useState(
+  const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
     autoplay || isStartingMuted
   )
   const [isPlaying, setIsPlaying] = useState(autoplay)
 
   const handleTapVolumeToggle = e => {
-    setVideoIsCurrentlyMuted(prevState => !prevState)
+    setIsCurrentlyMuted(prevState => !prevState)
     e.stopPropagation()
   }
 
@@ -54,7 +54,7 @@ const ProjectVideo = ({
               {isPlaying ? "Pause" : "Play"}
             </button>
             <button onClick={handleTapVolumeToggle}>
-              {isStartingMuted ? "Unmute" : "Mute"}
+              {isCurrentlyMuted ? "Unmute" : "Mute"}
             </button>
           </div>
         ) : (
