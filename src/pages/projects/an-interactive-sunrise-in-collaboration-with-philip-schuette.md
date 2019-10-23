@@ -50,17 +50,15 @@ content:
         https://player.vimeo.com/external/294742595.hd.mp4?s=c639be9f6d3b8c5215705054d25b1b77c76a48f2&profile_id=175
     width: 70
   - caption: >-
-      Developed in WebGL using the 3D framework Three.js and custom shaders, the
-      manmade sun in the piece interacts with the atmosphere and scatters light
-      across the crisp, digital horizon based on how you move the ball. SUN is
-      projected on a big screen, summoning both the spectacular feeling of the
-      sun whilst revelling in its own artificiality. Shifting across digital and
-      physical space, the addictive experience of playing somewhere in-between
-      the two triggers a split-second of awe when you realise what is in your
-      power.
-    image: ''
+      The idea for SUN was born from seeing development prototypes of a computer
+      game that uses algorithms to created infinite, unique universes. Struck by
+      the starry-eyed possibility of discovering these familiar yet totally
+      self-generated landscapes, Schütte began to wonder what would be an
+      immediate way of feeling like you were in control of the sun. One of the
+      most basic and universal human experiences, and also the most widely
+      photographed, placed in your hands in the shape of a giant bouncy ball.
     marginLeft: 0
-    marginTop: 40
+    marginTop: 35
     ratio: 0
     video:
       autoplay: false
@@ -76,6 +74,49 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-credits: []
+  - caption: >-
+      Developed in WebGL using the 3D framework Three.js and custom shaders, the
+      manmade sun in the piece interacts with the atmosphere and scatters light
+      across the crisp, digital horizon based on how you move the ball. SUN is
+      projected on a big screen, summoning both the spectacular feeling of the
+      sun whilst revelling in its own artificiality. Shifting across digital and
+      physical space, the addictive experience of playing somewhere in-between
+      the two triggers a split-second of awe when you realise what is in your
+      power.
+    image: ''
+    marginLeft: 0
+    marginTop: 3
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/294743163.hd.mp4?s=4c383006babd7960c861d4503c5eec2601e80d69&profile_id=175
+  - caption: fvev
+    image: /img/sun1.png
+    marginLeft: 10
+    marginTop: 80
+    ratio: ''
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 100
+credits:
+  - key: 'Role:'
+    value: 'Concept Development, Creative Direction, Development'
+  - key: 'With:'
+    value: Philip Schütte
 ---
 
