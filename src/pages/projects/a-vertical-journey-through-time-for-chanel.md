@@ -106,5 +106,21 @@ content:
       url: >-
         https://player.vimeo.com/external/221734975.hd.mp4?s=e3648ce5f661f3b6da62d0d2c17020846180b57f&profile_id=174
     width: 100
+credits:
+  - key: |-
+      For:
+      Role:
+      With:
+    value: >-
+      Chanel
+
+
+      Concept Development, Creative Direction, Design, Content Production,
+      Software Development, App Design and Development, Video Editing,
+      Animation, Sound Design, Set Design.
+
+
+      Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction,
+      Marius Denisse — 3D Animation
 ---
 
