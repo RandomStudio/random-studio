@@ -14,8 +14,8 @@ thumbnail:
   width: 35
 content:
   - image: /img/chanel2.jpg
-    marginLeft: 0
-    marginTop: 0
+    marginLeft: 5
+    marginTop: 1
     ratio: 0
     video:
       autoplay: false
