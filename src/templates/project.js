@@ -4,6 +4,7 @@ import Layout from "../components/Layout/layout"
 import ProjectDetail from "../components/projectDetail"
 import Navigation from "../components/Layout/navigation"
 import SEO from "../components/Layout/seo"
+import BackScrim from "../components/Project/BackScrim/backScrim"
 
 export const pageQuery = graphql`
   query ProjectById($id: String!) {
@@ -68,5 +69,6 @@ export default ({
     />
     <Navigation />
     <ProjectDetail {...project} />
+    <BackScrim />
   </Layout>
 )
