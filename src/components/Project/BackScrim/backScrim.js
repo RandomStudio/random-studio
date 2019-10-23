@@ -5,13 +5,11 @@ import { Link } from "gatsby"
 
 const BackScrim = () => {
   return (
-    <>
-      <div className={styles.backScrim}>
-        <Link className={styles.backButton} to="/#projects">
-          Back to projects
-        </Link>
-      </div>
-    </>
+    <div className={styles.backScrim}>
+      <Link className={styles.backButton} to="/#projects">
+        Back to projects
+      </Link>
+    </div>
   )
 }
 
