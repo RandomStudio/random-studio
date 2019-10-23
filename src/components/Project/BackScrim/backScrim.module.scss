@@ -20,12 +20,6 @@
   }
 }
 
-@media (min-width: 48rem) {
-  .backScrim {
-    height: 24rem;
-  }
-}
-
 @media (min-width: 36rem) {
   .backScrim {
     font-size: 1.2rem;
@@ -36,10 +30,14 @@
   }
 }
 
+@media (min-width: 48rem) {
+  .backScrim {
+    height: 24rem;
+  }
+}
+
 @media (min-width: 72rem) {
   .backScrim {
     font-size: 1.4rem;
-    .backButton {
-    }
   }
 }
