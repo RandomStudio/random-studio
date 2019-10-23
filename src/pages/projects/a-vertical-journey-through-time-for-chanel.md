@@ -9,7 +9,7 @@ intro: >-
 thumbnail:
   image: /img/chanel1.jpg
   marginLeft: 0
-  marginTop: -30
+  marginTop: -29
   ratio: 0
   width: 35
 content:
