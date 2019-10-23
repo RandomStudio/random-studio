@@ -54,7 +54,7 @@ const ProjectVideo = ({
               {isPlaying ? "Pause" : "Play"}
             </button>
             <button onClick={handleTapVolumeToggle}>
-              {isStartingMuted ? "Unmute" : "Mute"}
+              {isCurrentlyMuted ? "Unmute" : "Mute"}
             </button>
           </div>
         ) : (
