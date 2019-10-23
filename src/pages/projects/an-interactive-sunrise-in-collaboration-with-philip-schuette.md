@@ -107,7 +107,6 @@ content:
     image: /img/sun1.png
     marginLeft: 12
     marginTop: 40
-    ratio: ''
     video:
       autoplay: false
       hasControls: false
