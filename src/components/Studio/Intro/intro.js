@@ -14,7 +14,11 @@ const Intro = ({ data: { address, contact, intro }, location }) => (
       <header className={styles.introHeader}>
         <div className={styles.address}>
           <div>
-            <ReactMarkdown escapeHtml={false} source={address} />
+            <ReactMarkdown
+              escapeHtml={false}
+              source={address}
+              linkTarget="__blank"
+            />
           </div>
           <div>
             <ReactMarkdown escapeHtml={false} source={contact} />

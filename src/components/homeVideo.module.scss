@@ -38,7 +38,7 @@
 
 h1.logo {
   position: absolute;
-  left: 1.2rem;
+  left: 1.4rem;
   top: 40vh;
   font-size: 3.2rem;
   font-weight: normal;
@@ -48,7 +48,7 @@ h1.logo {
   color: white;
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 36rem) {
   .featured-author {
     text-align: right;
   }

@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 export default ({ address, contact }) => (
   <footer className={styles.footer}>
     <div>
-      <ReactMarkdown escapeHtml={false} source={address} />
+      <ReactMarkdown escapeHtml={false} source={address} linkTarget="__blank" />
     </div>
 
     <div>
