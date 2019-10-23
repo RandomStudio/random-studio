@@ -14,3 +14,9 @@
     padding: 2rem;
   }
 }
+
+@media (min-width: 72rem) {
+  .footer {
+    padding: 2.4rem;
+  }
+}

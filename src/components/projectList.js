@@ -35,10 +35,13 @@ export default ({ intro, middle, projects }) => (
                 }}
                 ratio={thumbnail.ratio}
               />
-            ) : thumbnail.image.childImageSharp ? (
-              <Img fluid={thumbnail.image.childImageSharp.fluid} />
             ) : (
-              <img alt="" src={thumbnail.image} />
+              !!thumbnail.image &&
+              (thumbnail.image.childImageSharp ? (
+                <Img fluid={thumbnail.image.childImageSharp.fluid} />
+              ) : (
+                <img alt="" src={thumbnail.image} />
+              ))
             )}
           </div>
           <p className={styles.title}>{title}</p>
