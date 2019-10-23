@@ -16,7 +16,7 @@ thumbnail:
   width: 45
 content:
   - marginLeft: 5
-    marginTop: -6
+    marginTop: 0
     ratio: 53.958
     video:
       autoplay: false
@@ -53,6 +53,7 @@ content:
       isMuted: true
       loops: true
   - image: /img/runner.jpg
+    caption: The lights pulse along with audio, launching into a faster loop as the runner breaks into a jog, surrounded by a myriad of reflected visions.
     marginLeft: 0
     marginTop: 0
     ratio: 0
@@ -92,7 +93,7 @@ content:
     width: 25
   - marginLeft: 36
     marginTop: -10
-    ratio: 0
+    ratio: 100
     video:
       autoplay: true
       hasControls: false

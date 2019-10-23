@@ -7,7 +7,9 @@ import ProjectVideo from "./projectVideo"
 const ProjectDetail = ({ title, intro, content, credits }) => {
   return (
     <div className={styles.project}>
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className={styles.title}>
+        <ReactMarkdown escapeHtml={false} source={title} />
+      </h1>
       <div className={styles.intro}>
         <ReactMarkdown escapeHtml={false} source={intro} />
       </div>
@@ -27,7 +29,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
           >
             {(video && video.url) || image ? (
               <>
-                {(video && video.url) ? (
+                {video && video.url ? (
                   <ProjectVideo video={video} ratio={ratio} />
                 ) : image.childImageSharp ? (
                   <Img fluid={image.childImageSharp.fluid} />

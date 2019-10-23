@@ -17,7 +17,7 @@ content:
   - caption: ''
     marginLeft: 0
     marginTop: 0
-    ratio: 0
+    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -32,7 +32,7 @@ content:
       physical, SUN uses technology to reflect on how it’s shaping the way we
       experience the world.
     marginLeft: 0
-    marginTop: 60
+    marginTop: 0
     ratio: 0
     video:
       autoplay: false
@@ -41,7 +41,7 @@ content:
       loops: true
   - marginLeft: 0
     marginTop: 0
-    ratio: 0
+    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -59,7 +59,7 @@ content:
       most basic and universal human experiences, and also the most widely
       photographed, placed in your hands in the shape of a giant bouncy ball.
     marginLeft: 0
-    marginTop: 35
+    marginTop: 0
     ratio: 0
     video:
       autoplay: false
@@ -95,19 +95,19 @@ content:
       loops: true
   - marginLeft: 35
     marginTop: 0
-    ratio: 0
+    ratio: 56.25
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/294743163.hd.mp4?s=4c383006babd7960c861d4503c5eec2601e80d69&profile_id=175
     width: 65
-  - caption: Rotterdam
+  - caption: Venice
     image: /img/sun1.png
     marginLeft: 12
-    marginTop: 40
+    marginTop: 5
     ratio: 0
     video:
       autoplay: false
