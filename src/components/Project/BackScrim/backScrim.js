@@ -12,7 +12,4 @@ const BackScrim = () => {
   )
 }
 
-BackScrim.propTypes = {}
-BackScrim.defaultProps = {}
-
 export default BackScrim
