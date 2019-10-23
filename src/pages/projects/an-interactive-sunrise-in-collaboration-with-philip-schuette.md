@@ -43,7 +43,7 @@ content:
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
