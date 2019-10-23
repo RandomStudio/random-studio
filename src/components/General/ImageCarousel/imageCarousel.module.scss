@@ -3,7 +3,6 @@
   & > div > div,
   img {
     margin-bottom: 0.8rem;
-    cursor: e-resize;
     object-fit: contain;
   }
 
@@ -11,12 +10,10 @@
   span {
     margin-left: 1.4rem;
   }
+}
 
-  p a {
-  }
-
-  span {
-  }
+.hasMultiple {
+  cursor: e-resize;
 }
 
 .image {
