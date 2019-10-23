@@ -9,6 +9,7 @@
     rgba(191, 191, 191, 1) 60%,
     rgba(191, 191, 191, 1) 100%
   );
+  pointer-events: none;
 
   .backButton {
     position: absolute;
@@ -17,7 +18,14 @@
     background: #fff;
     border-radius: 2rem;
     padding: 0.6rem 1.2rem;
+    pointer-events: all;
   }
+}
+
+.intersectionLine {
+  position: absolute;
+  height: 1px;
+  width: 100%;
 }
 
 @media (min-width: 36rem) {
