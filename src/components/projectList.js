@@ -44,7 +44,9 @@ export default ({ intro, middle, projects }) => (
               ))
             )}
           </div>
-          <p className={styles.title}>{title}</p>
+          <p className={styles.title}>
+            <ReactMarkdown escapeHtml={false} source={title} />
+          </p>
         </Link>
         {(index === 5 ||
           (projects.length < 5 && index === projects.length - 1)) && (
