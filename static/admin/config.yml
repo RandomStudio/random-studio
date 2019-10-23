@@ -52,7 +52,7 @@ collections:
         name: priority
         required: false
         valueType: float
-        widget: number
+        widget: nonEmptyStringableNumber
       - label: Thumbnail
         name: thumbnail
         widget: object
@@ -70,22 +70,22 @@ collections:
             required: false
             valueType: float
             default: 0.00
-            widget: number
+            widget: nonEmptyStringableNumber
           - label: Width
             name: width
             required: false
             valueType: float
-            widget: number
+            widget: nonEmptyStringableNumber
           - label: "Margin Top"
             name: marginTop
             default: 0
             valueType: float
-            widget: number
+            widget: nonEmptyStringableNumber
           - label: "Margin Left"
             name: marginLeft
             default: 0
             valueType: float
-            widget: number
+            widget: nonEmptyStringableNumber
       - label: Content
         name: content
         widget: list
@@ -132,22 +132,22 @@ collections:
             required: false
             valueType: float
             default: 0.00
-            widget: number
+            widget: nonEmptyStringableNumber
           - label: Width
             name: width
             required: false
             valueType: float
-            widget: number
+            widget: nonEmptyStringableNumber
           - label: "Margin Top"
             name: marginTop
             default: 0
             valueType: float
-            widget: number
+            widget: nonEmptyStringableNumber
           - label: "Margin Left"
             name: marginLeft
             default: 0
             valueType: float
-            widget: number
+            widget: nonEmptyStringableNumber
       - label: Credits
         name: credits
         widget: list
