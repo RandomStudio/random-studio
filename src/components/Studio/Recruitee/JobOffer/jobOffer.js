@@ -1,5 +1,6 @@
 import styles from "./jobOffer.module.scss"
 import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const JobOffer = ({
   closeOpenOffer,
@@ -17,13 +18,13 @@ const JobOffer = ({
 
         <div dangerouslySetInnerHTML={{ __html: description }}></div>
         <div dangerouslySetInnerHTML={{ __html: requirements }}></div>
-        <a
+        <OutboundLink
           target="blank"
           href={careers_apply_url}
           className={styles.applyButton}
         >
           Apply for this position
-        </a>
+        </OutboundLink>
       </div>
     </section>
   )
