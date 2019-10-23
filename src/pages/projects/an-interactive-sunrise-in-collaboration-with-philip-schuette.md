@@ -12,13 +12,14 @@ thumbnail:
   ratio: 0
   video: >-
     https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
+  width: 50
 content:
   - caption: ''
     marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
@@ -38,11 +39,12 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+  - caption: Rotterdam
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
@@ -96,17 +98,18 @@ content:
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/294743163.hd.mp4?s=4c383006babd7960c861d4503c5eec2601e80d69&profile_id=175
     width: 65
-  - caption: Rotterdam
+  - caption: Venice
     image: /img/sun1.png
     marginLeft: 12
     marginTop: 40
+    ratio: ''
     video:
       autoplay: false
       hasControls: false
