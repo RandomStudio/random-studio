@@ -36,7 +36,14 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
                 ) : (
                   <img alt="" src={image} />
                 )}
-                {caption && <div className={styles.caption}>{caption}</div>}
+                {caption && (
+                  <div
+                    className={styles.caption}
+                    style={{ marginLeft: !marginLeft && "1.4rem" }}
+                  >
+                    {caption}
+                  </div>
+                )}
               </>
             ) : (
               <div className={styles.text}>{caption}</div>
