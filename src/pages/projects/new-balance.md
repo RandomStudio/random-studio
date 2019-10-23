@@ -9,13 +9,11 @@ intro: >-
   To celebrate the launch of the New Balance 574S in Shanghai, we created an
   installation literally centred around the product: a pair of sneakers became
   interactive controllers for an immersive sound and light experience.
-priority: 0
+priority: 1
 thumbnail:
-  image: /img/thumbnail_NB.jpeg
+  image: /img/3bf3090bba8f923fe4de6a1bdf21e3b0.f9ff33c0d055c8df53faa54b4233688-hoepilar3-short-jpg.jpg
   marginLeft: 60
-  marginTop: 0
-  ratio: 0
-  video: ''
+  marginTop: -25
   width: 40
 content:
   - caption: ''

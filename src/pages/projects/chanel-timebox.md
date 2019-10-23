@@ -6,6 +6,7 @@ intro: >-
   and perfection. For the introduction of the Chanel Première Camélia Skeleton
   watch at the international watch show Baselworld 2017, we translated the
   qualities of the precious watch into a memorable, intimate voyage.
+priority: 6
 thumbnail:
   image: /img/chanel1.jpg
   marginLeft: 0

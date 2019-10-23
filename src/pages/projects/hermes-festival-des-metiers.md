@@ -7,6 +7,7 @@ intro: >-
   that offers visitors the chance to meet the craftsmen of the house. We created
   three interactive exhibits that reveal the manufacturing details that normally
   remain invisible to the naked eye.
+priority: 4
 thumbnail:
   image: /img/Hermes_thumbnail.jpg
   marginLeft: 5

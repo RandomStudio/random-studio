@@ -12,10 +12,11 @@ intro: >-
 
 
   [maps.fredperryxrafsimons.com](https://maps.fredperryxrafsimons.com/)
+priority: 3
 thumbnail:
   marginLeft: 42
   marginTop: -6
-  ratio: 0
+  ratio: 66.6666
   video: >-
     https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
   width: 50

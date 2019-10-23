@@ -48,8 +48,8 @@ export default ({ intro, middle, projects }) => (
             <ReactMarkdown escapeHtml={false} source={title} />
           </p>
         </Link>
-        {(index === 5 ||
-          (projects.length < 5 && index === projects.length - 1)) && (
+        {(index === 3 ||
+          (projects.length < 3 && index === projects.length - 1)) && (
           <div className={styles.intermittentStatement}>
             <ReactMarkdown escapeHtml={false} source={middle} />
           </div>

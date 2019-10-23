@@ -7,6 +7,7 @@ intro: >-
   boundaries of its ever-evolving language. For Spring-Summer 19 Couture,
   Galliano enlisted us as a digital partner to amplify the coverage of his
   extravagant runway show.
+priority: 5
 thumbnail:
   marginLeft: 50
   marginTop: -22

@@ -13,12 +13,13 @@ intro: >-
   
   
   The end result is a experimental digital experience that resonates the world of Raf Simons in a dynamic way.
-priority: 10
+priority: 8
 thumbnail:
-  image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
-  marginLeft: 20
-  marginTop: 1
-  width: 60
+  video: https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
+  marginLeft: 5
+  marginTop: -5
+  width: 58
+  ratio: 66.66
 content:
   - marginLeft: 5
     marginTop: 5
