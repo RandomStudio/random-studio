@@ -33,11 +33,11 @@ body {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 a:hover {
   opacity: 0.5;
-  text-decoration: none;
 }
 
 ::selection {
