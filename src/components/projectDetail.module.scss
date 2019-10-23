@@ -64,6 +64,9 @@
     }
   }
 }
+.text p + p {
+  margin-top: 1.375em;
+}
 
 @media (min-width: 36rem) {
   .title,
