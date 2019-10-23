@@ -7,18 +7,19 @@ intro: >-
   the rising and setting of the sun – into a playful sensory experience.
 priority: 0
 thumbnail:
-  marginLeft: 0
-  marginTop: 0
+  marginLeft: 50
+  marginTop: 10
   ratio: 0
   video: >-
     https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
+  width: 50
 content:
   - caption: ''
     marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
