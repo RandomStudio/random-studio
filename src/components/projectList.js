@@ -48,7 +48,7 @@ export default ({ intro, middle, projects }) => (
             className={styles.title}
             style={{ marginLeft: !thumbnail.marginLeft && "1.4rem" }}
           >
-            {title}
+            <ReactMarkdown escapeHtml={false} source={title} />
           </p>
         </Link>
         {(index === 5 ||
