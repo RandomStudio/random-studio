@@ -44,6 +44,8 @@
     text-align: left;
     cursor: pointer;
     outline: none;
+    position: relative;
+    z-index: 1;
   }
 }
 

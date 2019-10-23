@@ -28,10 +28,6 @@
   font-weight: normal;
   margin: 10vw 0;
   padding: 0 1.4rem;
-
-  p + p {
-    margin-top: 1.375em;
-  }
 }
 
 .title,
@@ -51,6 +47,12 @@
   font-size: 1rem;
   line-height: 1.375;
   padding: 1.4rem;
+}
+
+.intro, .text {
+  p + p {
+    margin-top: 1.375em;
+  }
 }
 
 .credits {

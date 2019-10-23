@@ -3,7 +3,7 @@ templateKey: project
 title: >-
   Digital partner 
   
-  
+
   for Raf Simons
 intro: >-
   Fashion designer Raf Simons constantly investigates the very perception of men and clothing. Each collection of his namesake label tells a story. Therefore, showing the context in which the clothing is conceived in an enticing way seemed essential to the new website. 
