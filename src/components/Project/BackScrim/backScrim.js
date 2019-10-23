@@ -1,6 +1,5 @@
 import styles from "./backScrim.module.scss"
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const BackScrim = () => {
