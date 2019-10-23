@@ -39,7 +39,8 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+  - caption: Rotterdam
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
@@ -104,7 +105,7 @@ content:
       url: >-
         https://player.vimeo.com/external/294743163.hd.mp4?s=4c383006babd7960c861d4503c5eec2601e80d69&profile_id=175
     width: 65
-  - caption: Rotterdam
+  - caption: Venice
     image: /img/sun1.png
     marginLeft: 12
     marginTop: 40
