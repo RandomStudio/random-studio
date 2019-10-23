@@ -92,6 +92,10 @@ const SEO = ({ title, description, image, pathName }) => {
         href="/favicons/apple-touch-icon.png"
       />
       <link
+        rel="apple-touch-icon-precomposed"
+        href="/favicons/apple-touch-icon.png"
+      ></link>
+      <link
         rel="icon"
         type="image/png"
         sizes="32x32"
