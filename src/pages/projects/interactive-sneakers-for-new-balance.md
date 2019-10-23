@@ -8,10 +8,11 @@ intro: >-
 priority: 0
 thumbnail:
   image: /img/thumbnail_NB.jpeg
-  marginLeft: 0
+  marginLeft: 60
   marginTop: 0
   ratio: 0
   video: ''
+  width: 40
 content:
   - caption: ''
     marginLeft: 10
