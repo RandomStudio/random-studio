@@ -8,6 +8,7 @@ const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef()
   const [isVisible, setIsVisible] = useState(false)
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const intersection = intersectionRef // For cleanup reference - according to eslint
     const handleScrimVisibility = event => {
@@ -36,6 +37,7 @@ const BackScrim = ({ returnUrl }) => {
       window.removeEventListener("wheel", handleScrimVisibility)
     }
   }, [])
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   return (
     <>

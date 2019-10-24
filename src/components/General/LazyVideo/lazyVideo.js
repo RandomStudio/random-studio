@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
-import PropTypes from "prop-types"
+import React, { useState, useEffect } from "react"
 
 const LazyVideo = React.forwardRef(
   ({ videoSrc, loops, isMuted, autoPlays }, ref) => {
@@ -7,6 +6,8 @@ const LazyVideo = React.forwardRef(
     const [intersected, setIntersected] = useState(false)
 
     useEffect(() => {
+      // Referrence for cleanup
+      const videoRef = ref
       setNoJS(false)
 
       const observer = new IntersectionObserver(
@@ -23,13 +24,13 @@ const LazyVideo = React.forwardRef(
         }
       )
 
-      observer.observe(ref.current)
+      observer.observe(videoRef.current)
 
       return () => {
-        observer.unobserve(ref.current)
+        observer.unobserve(videoRef.current)
         observer.disconnect()
       }
-    }, [noJS])
+    }, [noJS, ref])
 
     return (
       <video
