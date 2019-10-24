@@ -1,13 +1,14 @@
 import styles from "./imageCarousel.module.scss"
 import React, { useState } from "react"
 import ReactMarkdown from "react-markdown"
+import PropTypes from "prop-types"
 import Img from "gatsby-image/withIEPolyfill"
+import LazyImage from "../LazyImage/lazyImage"
 
-const ImageCarousel = ({ images, showIndicator, title }) => {
+const ImageCarousel = ({ images, showIndicator, title, isLazy }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleNextImage = () => {
-    console.log("?")
     setCurrentIndex((currentIndex + 1) % images.length)
   }
 
@@ -32,7 +33,9 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
             className={`${images.length > 1 && styles.hasMultiple}`}
             onClick={handleNextImage}
           >
-            {image.childImageSharp ? (
+            {isLazy ? (
+              <LazyImage image={image} objectFit="contain" />
+            ) : image.childImageSharp ? (
               <Img objectFit="contain" fluid={image.childImageSharp.fluid} />
             ) : (
               <img alt="" src={image} />
@@ -51,6 +54,14 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
       </div>
     </div>
   )
+}
+
+ImageCarousel.propTypes = {
+  isLazy: PropTypes.bool,
+}
+
+ImageCarousel.propTypes = {
+  isLazy: false,
 }
 
 export default ImageCarousel

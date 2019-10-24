@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./projectDetail.module.scss"
-import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 import ProjectVideo from "./projectVideo"
+import LazyImage from "./General/LazyImage/lazyImage"
 
 const ProjectDetail = ({ title, intro, content, credits }) => {
   return (
@@ -31,10 +31,8 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
               <>
                 {video && video.url ? (
                   <ProjectVideo video={video} ratio={ratio} />
-                ) : image.childImageSharp ? (
-                  <Img fluid={image.childImageSharp.fluid} />
                 ) : (
-                  <img alt="" src={image} />
+                  <LazyImage image={image} />
                 )}
                 {caption && (
                   <div

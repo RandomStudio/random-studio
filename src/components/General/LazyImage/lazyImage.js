@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react"
 import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
-const LazyImage = ({ image }) => {
+const LazyImage = ({ image, objectFit }) => {
   let imageRef = useRef()
   const [noJS, setNoJS] = useState(true)
   const [intersected, setIntersected] = useState(false)
@@ -44,11 +45,22 @@ const LazyImage = ({ image }) => {
     <Img
       style={{ minHeight: "1px", minWidth: "1px" }}
       ref={imageRef}
+      objectFit={objectFit}
       fluid={intersected ? image.childImageSharp.fluid : {}}
     />
   ) : (
     <img ref={imageRef} alt="" src={intersected ? image : ""} />
   )
+}
+
+LazyImage.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  objectFit: PropTypes.string,
+}
+
+LazyImage.defaultProps = {
+  // image:
+  objectFit: "cover",
 }
 
 export default LazyImage
