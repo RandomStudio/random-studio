@@ -8,6 +8,7 @@ const BackScrim = () => {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    const intersection = intersectionRef // For cleanup reference - according to eslint
     const handleScrimVisibility = event => {
       if (event.deltaY > 0 && !isVisible) {
         setIsVisible(true)
@@ -26,10 +27,10 @@ const BackScrim = () => {
     }
 
     const observer = new IntersectionObserver(intersectCb)
-    observer.observe(intersectionRef.current)
+    observer.observe(intersection.current)
 
     return () => {
-      observer.unobserve(intersectionRef.current)
+      observer.unobserve(intersection.current)
     }
   }, [])
 
