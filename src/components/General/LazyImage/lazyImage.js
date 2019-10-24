@@ -9,15 +9,18 @@ const LazyImage = ({ image }) => {
   useEffect(() => {
     setNoJS(false)
 
-    const observer = new IntersectionObserver(entries => {
-      // Can only be one image
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIntersected(true)
-          observer.disconnect()
-        }
-      })
-    })
+    const observer = new IntersectionObserver(
+      entries => {
+        // Can only be one image
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIntersected(true)
+            observer.disconnect()
+          }
+        })
+      },
+      { rootMargin: "5%" }
+    )
 
     if (
       imageRef.current &&

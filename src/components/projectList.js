@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from "./projectList.module.scss"
-import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 import ProjectVideo from "./projectVideo"
 import LazyImage from "./General/LazyImage/lazyImage"
