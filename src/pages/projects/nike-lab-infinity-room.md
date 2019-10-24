@@ -7,6 +7,7 @@ intro: >-
   For the launch of the LunarEpic Flyknit shoe in the London store, we conceived
   an immersive space that invited visitors to put the shoe to the test in an
   experiential set up.
+priority: 2
 thumbnail:
   marginLeft: 3
   marginTop: -5

@@ -7,7 +7,7 @@ intro: >-
   creatives to come together for a series of in-store events. We designed and
   created a Tech Pack ‘Atelier’ that made visible, and physical, the inner
   workings of the collection.
-priority: 1
+priority: 9
 thumbnail:
   image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.png
   marginLeft: 62

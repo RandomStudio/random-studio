@@ -46,7 +46,9 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
                 )}
               </>
             ) : (
-              <div className={styles.text}>{caption}</div>
+              <div className={styles.text}>
+                <ReactMarkdown source={caption} />
+              </div>
             )}
           </div>
         )

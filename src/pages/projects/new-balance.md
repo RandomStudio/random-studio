@@ -1,26 +1,28 @@
 ---
 templateKey: project
-title: Interactive sneakers for New Balance
+title: >-
+  Interactive sneakers 
+  
+  
+  for New Balance
 intro: >-
   To celebrate the launch of the New Balance 574S in Shanghai, we created an
   installation literally centred around the product: a pair of sneakers became
   interactive controllers for an immersive sound and light experience.
-priority: 0
+priority: 1
 thumbnail:
-  image: /img/thumbnail_NB.jpeg
+  image: /img/3bf3090bba8f923fe4de6a1bdf21e3b0.f9ff33c0d055c8df53faa54b4233688-hoepilar3-short-jpg.jpg
   marginLeft: 60
-  marginTop: 0
-  ratio: 0
-  video: ''
+  marginTop: -25
   width: 40
 content:
   - caption: ''
     marginLeft: 10
     marginTop: 0
-    ratio: 0
+    ratio: 56.25
     video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       isMuted: true
       loops: true
       url: >-
@@ -35,7 +37,7 @@ content:
       Inside, the new 574S range is the hero, displayed on a glowing plinth
       which is the only light source for the curved interior.
     marginLeft: 0
-    marginTop: 44
+    marginTop: 0
     ratio: 0
     video:
       autoplay: false
@@ -76,18 +78,18 @@ content:
       Lifting the shoes from the plinth triggers an immediate change in light
       and sound. Visitors are free to touch and explore the shoe, and in the
       process intuitively discover the interaction mechanism. 
-
-
-
-
+      
+      
+      
+      
       Wireless motion sensors hidden inside each shoe allow users to shift the
       brightness and hue of the lighting, while the ambient audio subtly changes
       in response. Shaking the shoes or spinning them rapidly unlocks different
       sound and lighting effects.
-
-
-
-
+      
+      
+      
+      
       Before hearing a word of product information or marketing-speak, the
       installation allows visitors to enjoy an experience of playfulness and
       wonder connected directly with the product in their hands.
@@ -101,10 +103,10 @@ content:
       loops: true
   - marginLeft: 15
     marginTop: 0
-    ratio: 0
+    ratio: 56.25
     video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       isMuted: true
       loops: true
       url: >-
@@ -114,7 +116,7 @@ content:
       The lack of visible cables helps the technology disappear, and the curved
       walls render the boundaries of the space invisible, too.
     marginLeft: 0
-    marginTop: 35
+    marginTop: 0
     ratio: 0
     video:
       autoplay: false

@@ -49,6 +49,12 @@
   padding: 1.4rem;
 }
 
+.intro, .text {
+  p + p {
+    margin-top: 1.375em;
+  }
+}
+
 .credits {
   margin-bottom: 5%;
   padding: 8rem 1.4rem 0;

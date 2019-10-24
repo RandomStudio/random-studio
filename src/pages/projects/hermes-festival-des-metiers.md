@@ -7,6 +7,7 @@ intro: >-
   that offers visitors the chance to meet the craftsmen of the house. We created
   three interactive exhibits that reveal the manufacturing details that normally
   remain invisible to the naked eye.
+priority: 4
 thumbnail:
   image: /img/Hermes_thumbnail.jpg
   marginLeft: 5
@@ -14,13 +15,12 @@ thumbnail:
   ratio: 0
   width: 65
 content:
-  - caption: ''
-    marginLeft: 5
+  - marginLeft: 5
     marginTop: 0
-    ratio: 0
+    ratio: 56.25
     video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       isMuted: true
       loops: true
       url: >-
@@ -41,7 +41,7 @@ content:
       design, we opted for digital moments with artistic, fanciful and didactic
       qualities.
     marginLeft: 0
-    marginTop: 70
+    marginTop: 0
     video:
       autoplay: false
       hasControls: false
@@ -67,10 +67,10 @@ content:
       themselves.
     marginLeft: 52
     marginTop: -17
-    ratio: 0
+    ratio: 56.25
     video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       isMuted: true
       loops: true
       url: >-
@@ -78,7 +78,7 @@ content:
     width: 37
   - image: /img/hermes_shot_02.jpg
     marginLeft: 20
-    marginTop: 30
+    marginTop: 10
     ratio: 0
     video:
       autoplay: false
@@ -92,10 +92,10 @@ content:
       itself.
     marginLeft: 55
     marginTop: 12
-    ratio: 0
+    ratio: 56.25
     video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       isMuted: true
       loops: true
       url: >-
@@ -106,7 +106,7 @@ content:
       the material through the eyes of the craftsman.
     image: /img/hermes_shot_03.jpg
     marginLeft: 0
-    marginTop: 6
+    marginTop: -12
     ratio: 0
     video:
       autoplay: false
