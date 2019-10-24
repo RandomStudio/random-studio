@@ -42,7 +42,7 @@ collections:
         default: project
       - label: Title
         name: title
-        widget: string
+        widget: text
       - label: Intro
         name: intro
         buttons:
