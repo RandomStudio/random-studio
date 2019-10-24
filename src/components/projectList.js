@@ -4,6 +4,7 @@ import styles from "./projectList.module.scss"
 import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 import ProjectVideo from "./projectVideo"
+import LazyImage from "./General/LazyImage/lazyImage"
 
 export default ({ intro, middle, projects }) => (
   <div id="projects" className={styles.projects}>
@@ -36,12 +37,7 @@ export default ({ intro, middle, projects }) => (
                 ratio={thumbnail.ratio}
               />
             ) : (
-              !!thumbnail.image &&
-              (thumbnail.image.childImageSharp ? (
-                <Img fluid={thumbnail.image.childImageSharp.fluid} />
-              ) : (
-                <img alt="" src={thumbnail.image} />
-              ))
+              !!thumbnail.image && <LazyImage image={thumbnail.image} />
             )}
           </div>
 
