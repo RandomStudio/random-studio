@@ -41,7 +41,11 @@ const LazyImage = ({ image }) => {
   if (noJS) return <img ref={imageRef} alt="" src={image} />
 
   return image.childImageSharp ? (
-    <Img ref={imageRef} fluid={image.childImageSharp.fluid} />
+    <Img
+      style={{ minHeight: "1px", minWidth: "1px" }}
+      ref={imageRef}
+      fluid={intersected ? image.childImageSharp.fluid : {}}
+    />
   ) : (
     <img ref={imageRef} alt="" src={intersected ? image : ""} />
   )
