@@ -34,6 +34,10 @@ const BackScrim = () => {
     }
   }, [])
 
+  const exitProject = () => {
+    window.history.back()
+  }
+
   return (
     <>
       <AnimatePresence>
@@ -44,9 +48,9 @@ const BackScrim = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <Link className={styles.backButton} to="/#projects">
+            <button onClick={exitProject} className={styles.backButton}>
               Back to projects
-            </Link>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
