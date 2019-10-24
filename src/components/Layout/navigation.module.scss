@@ -25,6 +25,10 @@
   .nav {
     font-size: 1.4rem;
     padding: 2rem;
+
+    a + a {
+      margin-left: 2.4rem;
+    }
   }
 }
 
@@ -32,5 +36,9 @@
   .nav {
     font-size: 1.7rem;
     padding: 2.4rem;
+
+    a + a {
+      margin-left: 3.2rem;
+    }
   }
 }
