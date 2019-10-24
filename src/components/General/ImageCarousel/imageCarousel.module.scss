@@ -23,6 +23,10 @@
   &.imageVisible {
     animation: showSlide 1.2s;
   }
+
+  a {
+    text-decoration: underline;
+  }
 }
 
 @media (min-width: 36rem) {

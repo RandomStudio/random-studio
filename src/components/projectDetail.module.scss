@@ -49,9 +49,16 @@
   padding: 1.4rem;
 }
 
-.intro, .text {
+.intro,
+.text {
   p + p {
     margin-top: 1.375em;
+  }
+}
+
+.text {
+  a {
+    text-decoration: underline;
   }
 }
 
