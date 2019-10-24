@@ -23,16 +23,7 @@ const LazyImage = ({ image, objectFit }) => {
       { rootMargin: "5%" }
     )
 
-    if (
-      imageRef.current &&
-      imageRef.current.imageRef &&
-      imageRef.current.imageRef.current
-    ) {
-      // Reference of a ref in a component
-      observer.observe(imageRef.current.imageRef.current)
-    } else {
-      observer.observe(imageRef.current)
-    }
+    observer.observe(imageRef.current)
 
     return () => {
       observer.disconnect()
@@ -42,12 +33,13 @@ const LazyImage = ({ image, objectFit }) => {
   if (noJS) return <img ref={imageRef} alt="" src={image} />
 
   return image.childImageSharp ? (
-    <Img
-      style={{ minHeight: "1px", minWidth: "1px" }}
-      ref={imageRef}
-      objectFit={objectFit}
-      fluid={intersected ? image.childImageSharp.fluid : {}}
-    />
+    <div ref={imageRef}>
+      <Img
+        style={{ minHeight: "1px", minWidth: "1px" }}
+        objectFit={objectFit}
+        fluid={intersected ? image.childImageSharp.fluid : {}}
+      />
+    </div>
   ) : (
     <img ref={imageRef} alt="" src={intersected ? image : ""} />
   )

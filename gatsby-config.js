@@ -2,6 +2,12 @@ const gatsbyConfig = {
   plugins: [
     "gatsby-plugin-sass",
     {
+      resolve: `gatsby-plugin-polyfill-io`, //  ios12> & ie11
+      options: {
+        features: ["IntersectionObserver"],
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/img`,
