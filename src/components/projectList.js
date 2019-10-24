@@ -44,12 +44,13 @@ export default ({ intro, middle, projects }) => (
               ))
             )}
           </div>
-          <p
+
+          <div
             className={styles.title}
             style={{ marginLeft: !thumbnail.marginLeft && "1.4rem" }}
           >
             <ReactMarkdown escapeHtml={false} source={title} />
-          </p>
+          </div>
         </Link>
         {(index === 3 ||
           (projects.length < 3 && index === projects.length - 1)) && (
