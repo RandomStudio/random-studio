@@ -3,7 +3,6 @@ import React, { useState } from "react"
 import ReactMarkdown from "react-markdown"
 import PropTypes from "prop-types"
 import Img from "gatsby-image/withIEPolyfill"
-import LazyImage from "../LazyImage/lazyImage"
 
 const ImageCarousel = ({ images, showIndicator, title, isLazy }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -33,9 +32,7 @@ const ImageCarousel = ({ images, showIndicator, title, isLazy }) => {
             className={`${images.length > 1 && styles.hasMultiple}`}
             onClick={handleNextImage}
           >
-            {isLazy ? (
-              <LazyImage image={image} objectFit="contain" />
-            ) : image.childImageSharp ? (
+            {image.childImageSharp ? (
               <Img objectFit="contain" fluid={image.childImageSharp.fluid} />
             ) : (
               <img alt="" src={image} />
@@ -44,7 +41,7 @@ const ImageCarousel = ({ images, showIndicator, title, isLazy }) => {
           {caption && <ReactMarkdown escapeHtml={false} source={caption} />}
         </div>
       ))}
-      <div>
+      <div className={styles.indicatorWrapper}>
         {title && <p>{title}</p>}
         {showIndicator && images.length > 1 && (
           <span>
