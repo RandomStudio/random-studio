@@ -26,6 +26,7 @@ const LazyVideo = React.forwardRef(
       observer.observe(ref.current)
 
       return () => {
+        observer.unobserve(ref.current)
         observer.disconnect()
       }
     }, [noJS])

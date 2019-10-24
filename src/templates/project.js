@@ -57,18 +57,24 @@ export default ({
       frontmatter: project,
     },
   },
-}) => (
-  <Layout>
-    <SEO
-      pathName={slug}
-      title={project.title}
-      description={project.intro}
-      image={
-        project.thumbnail.image ? project.thumbnail.image.publicURL : undefined
-      }
-    />
-    <Navigation />
-    <ProjectDetail {...project} />
-    <BackScrim />
-  </Layout>
-)
+}) => {
+  const returnSlug = `#${slug}`
+
+  return (
+    <Layout>
+      <SEO
+        pathName={slug}
+        title={project.title}
+        description={project.intro}
+        image={
+          project.thumbnail.image
+            ? project.thumbnail.image.publicURL
+            : undefined
+        }
+      />
+      <Navigation />
+      <ProjectDetail {...project} />
+      <BackScrim returnUrl={returnSlug} />
+    </Layout>
+  )
+}

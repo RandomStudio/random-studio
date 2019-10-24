@@ -2,8 +2,9 @@ import styles from "./backScrim.module.scss"
 import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
+import PropTypes from "prop-types"
 
-const BackScrim = () => {
+const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef()
   const [isVisible, setIsVisible] = useState(false)
 
@@ -31,12 +32,10 @@ const BackScrim = () => {
 
     return () => {
       observer.unobserve(intersection.current)
+      observer.disconnect()
+      window.removeEventListener("wheel", handleScrimVisibility)
     }
   }, [])
-
-  const exitProject = () => {
-    window.history.back()
-  }
 
   return (
     <>
@@ -48,9 +47,9 @@ const BackScrim = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <button onClick={exitProject} className={styles.backButton}>
+            <Link to={returnUrl} className={styles.backButton}>
               Back to projects
-            </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
@@ -59,13 +58,17 @@ const BackScrim = () => {
       {/* If JS disabled - just show it */}
       <noscript>
         <div className={styles.backScrim}>
-          <Link className={styles.backButton} to="/#projects">
+          <Link to={returnUrl} className={styles.backButton}>
             Back to projects
           </Link>
         </div>
       </noscript>
     </>
   )
+}
+
+BackScrim.propTypes = {
+  returnUrl: PropTypes.string.isRequired,
 }
 
 export default BackScrim
