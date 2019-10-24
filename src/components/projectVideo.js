@@ -1,5 +1,6 @@
 import styles from "./projectVideo.module.scss"
 import React, { useRef, useState } from "react"
+import LazyVideo from "./General/LazyVideo/lazyVideo"
 
 const ProjectVideo = ({
   video: { autoplay, hasControls, isMuted: isStartingMuted, loops, url },
@@ -39,13 +40,12 @@ const ProjectVideo = ({
       onClick={handleTapPlayPause}
       style={{ paddingBottom: `${ratio}%` }}
     >
-      <video
+      <LazyVideo
         ref={videoRef}
-        src={url}
-        loop={loops}
-        muted={isCurrentlyMuted}
-        autoPlay={isPlaying}
-        playsInline
+        videoSrc={url}
+        loops={loops}
+        isMuted={isCurrentlyMuted}
+        autoplays={isPlaying}
       />
       {hasControls &&
         (hasPlayed ? (
