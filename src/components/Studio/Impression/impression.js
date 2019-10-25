@@ -7,7 +7,6 @@ const Impression = ({ data: { title, showIndicator, images } }) => {
     <div className={styles.impression}>
       <div className={styles.carouselWrapper}>
         <ImageCarousel
-          isLazy
           images={images}
           showIndicator={showIndicator}
           title={title}
