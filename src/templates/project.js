@@ -67,7 +67,7 @@ export default ({
   const thumbnailImage = project.thumbnail.image
   const SEOImage = thumbnailImage
     ? thumbnailImage.childImageSharp
-      ? thumbnailImage.childImageSharp.src
+      ? thumbnailImage.childImageSharp.fixed.src
       : thumbnailImage.publicURL
     : undefined
 
