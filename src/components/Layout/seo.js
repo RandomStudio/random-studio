@@ -44,9 +44,7 @@ const SEO = ({ title, description, image, pathName }) => {
   } = data
 
   const metaTitle = title ? `${defaultTitle} - ${title}` : defaultTitle
-  // const url = `${siteUrl}${pathName}`
   const url = `https://deploy-preview-25--random-studio.netlify.com${pathName}`
-  // const imageUrl = `${siteUrl}${image}?123`
   const imageUrl = `https://deploy-preview-25--random-studio.netlify.com${image}`
 
   return (
@@ -77,11 +75,11 @@ const SEO = ({ title, description, image, pathName }) => {
         // Explicit image sizing for twitter
         {
           property: "og:image:width",
-          content: 400,
+          content: 800,
         },
         {
           property: "og:image:height",
-          content: 400,
+          content: 800,
         },
         // Twitter
         { name: "twitter:title", content: `${metaTitle}` },
