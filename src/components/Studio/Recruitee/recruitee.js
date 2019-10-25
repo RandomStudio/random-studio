@@ -4,6 +4,10 @@ import JobOffer from "./JobOffer/jobOffer"
 import { navigate } from "gatsby"
 
 const Recruitee = ({ location }) => {
+  // If fetch is not supported, we will not show any job offers
+  // IE11 and lower
+  if (!window.fetch) return null
+
   const [recruiteeData, setRecruiteeData] = useState({})
   const [openOffer, setOpenOffer] = useState()
 
