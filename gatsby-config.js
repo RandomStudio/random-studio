@@ -1,6 +1,13 @@
+const postCssCustomProperties = require("postcss-custom-properties")
+
 const gatsbyConfig = {
   plugins: [
-    "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        postCssPlugins: [postCssCustomProperties()],
+      },
+    },
     {
       resolve: `gatsby-plugin-polyfill-io`, //  ios12> & ie11
       options: {
