@@ -4,10 +4,6 @@ import JobOffer from "./JobOffer/jobOffer"
 import { navigate } from "gatsby"
 
 const Recruitee = ({ location }) => {
-  // If fetch is not supported, we will not show any job offers
-  // IE11 and lower
-  if (!window.fetch) return null
-
   const [recruiteeData, setRecruiteeData] = useState({})
   const [openOffer, setOpenOffer] = useState()
 
@@ -37,6 +33,10 @@ const Recruitee = ({ location }) => {
     // Should only check it once on render, so disabled eslint for it
     // eslint-disable-next-line
   }, [])
+
+  // If fetch is not supported, we will not show any job offers
+  // IE11 and lower
+  if (!window.fetch) return null
 
   const handleOpenOffer = offer => {
     document.body.classList.add("prevent-scroll")
