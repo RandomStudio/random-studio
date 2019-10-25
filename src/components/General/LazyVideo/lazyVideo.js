@@ -39,10 +39,20 @@ const LazyVideo = React.forwardRef(
       }
     }, [noJS, ref, autoPlays])
 
-    return (
+    // Prevents autoplay conflicting
+    return noJS ? (
       <video
         ref={ref}
-        src={intersected || noJS ? videoSrc : ""}
+        src={videoSrc}
+        loop={loops}
+        muted={isMuted}
+        autoplay={autoPlays}
+        playsInline
+      />
+    ) : (
+      <video
+        ref={ref}
+        src={intersected ? videoSrc : ""}
         loop={loops}
         muted={isMuted}
         playsInline
