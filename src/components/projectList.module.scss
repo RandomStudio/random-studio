@@ -97,7 +97,7 @@
 @media (min-width: 72rem) {
   .statement,
   .intermittentStatement {
-    font-size: 2.6rem;
+    font-size: var(--font-large);
   }
 
   .title {

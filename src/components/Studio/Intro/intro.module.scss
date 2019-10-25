@@ -7,6 +7,7 @@
   padding-top: 40vh;
   padding-left: 1.4rem;
   letter-spacing: -0.01em;
+  // line-height: 1.1;
 }
 
 .intro {
@@ -30,6 +31,12 @@
   p {
     margin-bottom: 1.3em;
   }
+
+  // div:last-of-type {
+  //   p:last-of-type {
+  //     margin-bottom: 1em;
+  //   }
+  // }
 
   a {
     position: relative;
@@ -114,7 +121,7 @@
   }
 
   .introHeader {
-    font-size: 2.5rem;
+    font-size: var(--font-large);
   }
 
   .address {

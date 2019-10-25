@@ -42,7 +42,7 @@
 
 @media (min-width: 66rem) {
   .notFoundPage {
-    font-size: 2.4rem;
+    font-size: var(--font-large);
     padding-left: 3.2rem;
   }
 }
