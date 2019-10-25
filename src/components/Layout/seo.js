@@ -72,6 +72,15 @@ const SEO = ({ title, description, image, pathName }) => {
           property: "og:image",
           content: imageUrl,
         },
+        // Explicit image sizing for twitter
+        {
+          property: "og:image:width",
+          content: 400,
+        },
+        {
+          property: "og:image:height",
+          content: 400,
+        },
         // Twitter
         { name: "twitter:title", content: `${metaTitle}` },
         {
