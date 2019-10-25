@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react"
 
 const LazyVideo = React.forwardRef(
   ({ videoSrc, loops, isMuted, autoPlays }, ref) => {
-    console.log(autoPlays)
-
     const [noJS, setNoJS] = useState(true)
     const [intersected, setIntersected] = useState(false)
 
