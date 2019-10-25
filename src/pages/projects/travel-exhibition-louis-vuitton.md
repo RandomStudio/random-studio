@@ -128,13 +128,13 @@ content:
     marginTop: -30
     width: 36
 credits:
-  - key: For
+  - key: 'For:'
     value: Louis Vuitton
-  - key: Role
+  - key: 'Role:'
     value: >-
       Concept Development, Creative Direction, Design, Software Development,
       Installation
-  - key: With
+  - key: 'With:'
     value: Naivi — Unreal development
 ---
 

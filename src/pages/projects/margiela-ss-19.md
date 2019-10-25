@@ -103,9 +103,11 @@ content:
       loops: true
     width: 100
 credits:
-  - key: For
+  - key: 'For:'
     value: Maison Margiela
-  - key: Role
-    value: 'Creative Direction of Film Production, Editing, Asset production'
+  - key: 'Role:'
+    value: >-
+      Creative Direction of Film Production, Editing, Asset production,
+      Photography
 ---
 
