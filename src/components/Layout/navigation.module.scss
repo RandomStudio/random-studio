@@ -23,7 +23,7 @@
 
 @media (min-width: 36rem) {
   .nav {
-    font-size: 1.4rem;
+    font-size: var(--font-small);
     padding: 2rem;
 
     a + a {

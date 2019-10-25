@@ -32,7 +32,7 @@
 
 .title,
 .intro {
-  font-size: 1.4rem;
+  font-size: var(--font-small);
 }
 
 .title {
@@ -88,12 +88,12 @@
 
   .title,
   .intro {
-    font-size: 2rem;
+    font-size: var(--font-med);
   }
 
   .text,
   .credits {
-    font-size: 1.4rem;
+    font-size: var(--font-small);
   }
 
   .item {

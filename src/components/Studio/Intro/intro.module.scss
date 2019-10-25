@@ -7,7 +7,7 @@
   padding-top: 40vh;
   padding-left: 1.4rem;
   letter-spacing: -0.01em;
-  // line-height: 1.1;
+  line-height: 1.1;
 }
 
 .intro {
@@ -17,7 +17,7 @@
 
 .introHeader {
   margin-bottom: 6.4rem;
-  font-size: 1.5rem;
+  font-size: var(--font-small);
   font-weight: normal;
   letter-spacing: 0.01em;
 }
@@ -32,11 +32,11 @@
     margin-bottom: 1.3em;
   }
 
-  // div:last-of-type {
-  //   p:last-of-type {
-  //     margin-bottom: 1em;
-  //   }
-  // }
+  div:last-of-type {
+    p:last-of-type {
+      margin-bottom: 1em;
+    }
+  }
 
   a {
     position: relative;
@@ -72,13 +72,13 @@
   }
 
   .introHeader {
-    font-size: 2rem;
+    font-size: var(--font-med);
     margin-bottom: 9.6rem;
   }
 
   .address {
     float: left;
-    font-size: 1.4rem;
+    font-size: var(--font-small);
     margin: 0;
     margin-right: 2rem;
   }
@@ -100,8 +100,7 @@
   }
 
   .introHeader {
-    font-size: 2rem;
-    // font-size: 40px;
+    font-size: var(--font-med);
   }
 
   .address {

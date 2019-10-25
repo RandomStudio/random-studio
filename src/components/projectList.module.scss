@@ -5,7 +5,7 @@
 
 .statement,
 .intermittentStatement {
-  font-size: 1.5rem;
+  font-size: var(--font-small);
   line-height: 1.25;
   margin: 10vw auto 25vw;
   padding: 0 1.4rem;
@@ -70,7 +70,7 @@
 @media (min-width: 30rem) {
   .statement,
   .intermittentStatement {
-    font-size: 2rem;
+    font-size: var(--font-med);
     padding: 0 2rem;
   }
 
@@ -90,7 +90,7 @@
 
   .title {
     padding: 0.6rem 0;
-    font-size: 1.4rem;
+    font-size: var(--font-small);
   }
 }
 

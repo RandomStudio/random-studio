@@ -2,11 +2,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  // display: flex;
-  // align-items: center;
   height: 100%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: var(--font-small);
   background: #fff;
   padding-left: 1.4rem;
 
@@ -35,7 +33,7 @@
 
 @media (min-width: 36rem) {
   .notFoundPage {
-    font-size: 2rem;
+    font-size: var(--font-med);
     padding-left: 2rem;
   }
 }
