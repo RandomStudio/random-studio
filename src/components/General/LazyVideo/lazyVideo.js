@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 
 const LazyVideo = React.forwardRef(
   ({ videoSrc, loops, isMuted, autoPlays }, ref) => {
+    console.log(autoPlays)
+
     const [noJS, setNoJS] = useState(true)
     const [intersected, setIntersected] = useState(false)
 
@@ -10,11 +12,18 @@ const LazyVideo = React.forwardRef(
       const videoRef = ref
       setNoJS(false)
 
+      const handlePlayer = () => {
+        if (autoPlays) {
+          videoRef.current.play()
+        }
+      }
+
       const observer = new IntersectionObserver(
         entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               setIntersected(true)
+              handlePlayer()
               observer.disconnect()
             }
           })
@@ -38,7 +47,6 @@ const LazyVideo = React.forwardRef(
         src={intersected || noJS ? videoSrc : ""}
         loop={loops}
         muted={isMuted}
-        autoplay={autoPlays}
         playsInline
       />
     )
