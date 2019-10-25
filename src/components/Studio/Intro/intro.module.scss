@@ -30,6 +30,28 @@
   p {
     margin-bottom: 1.3em;
   }
+
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: #000;
+    }
+  }
+
+  // Remove underline of phonenumber
+  div:last-of-type {
+    a:first-of-type::after {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 36rem) {

@@ -1,0 +1,44 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 28rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.375;
+  padding: 1.4rem;
+
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      height: 0.05rem;
+      width: 100%;
+      background-color: #000;
+    }
+  }
+
+  // Remove underline of phonenumber
+  div:last-of-type {
+    a:first-of-type::after {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 36rem) {
+  .footer {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 72rem) {
+  .footer {
+    padding: 2.4rem;
+  }
+}
