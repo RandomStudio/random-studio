@@ -1,6 +1,7 @@
 import styles from "./recruitee.module.scss"
 import React, { useEffect, useState } from "react"
 import JobOffer from "./JobOffer/jobOffer"
+import { navigate } from "gatsby"
 
 const Recruitee = ({ location }) => {
   const [recruiteeData, setRecruiteeData] = useState({})
@@ -40,6 +41,8 @@ const Recruitee = ({ location }) => {
 
   const handleCloseOffer = () => {
     setOpenOffer(null)
+    // Replace as offer is programmatically opened
+    navigate("/studio", { replace: true })
     document.body.classList.remove("prevent-scroll")
   }
 
