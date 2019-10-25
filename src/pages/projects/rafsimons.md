@@ -1,25 +1,33 @@
 ---
 templateKey: project
-title: >-
+title: |-
   Digital partner 
-  
 
   for Raf Simons
 intro: >-
-  Fashion designer Raf Simons constantly investigates the very perception of men and clothing. Each collection of his namesake label tells a story. Therefore, showing the context in which the clothing is conceived in an enticing way seemed essential to the new website. 
-  
-  
-  Rafsimons.com invites the viewer to take a detailed look at the garments, and moreover narrates conceptual, emotional and psychological layers of information. Phrases, sound, video footage and other contextual stimuli that are appropriate for the most recent creative output of the designer persuade the viewer to see the collection with different eyes — maybe, his eyes. 
-  
-  
-  The end result is a experimental digital experience that resonates the world of Raf Simons in a dynamic way.
+  Fashion designer Raf Simons constantly investigates the very perception of men
+  and clothing. Each collection of his namesake label tells a story. Therefore,
+  showing the context in which the clothing is conceived in an enticing way
+  seemed essential to the new website. 
+
+
+  Rafsimons.com invites the viewer to take a detailed look at the garments, and
+  moreover narrates conceptual, emotional and psychological layers of
+  information. Phrases, sound, video footage and other contextual stimuli that
+  are appropriate for the most recent creative output of the designer persuade
+  the viewer to see the collection with different eyes — maybe, his eyes. 
+
+
+  The end result is a experimental digital experience that resonates the world
+  of Raf Simons in a dynamic way.
 priority: 8
 thumbnail:
-  video: https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
   marginLeft: 5
   marginTop: -5
-  width: 58
   ratio: 66.66
+  video: >-
+    https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
+  width: 58
 content:
   - marginLeft: 5
     marginTop: 5
@@ -99,13 +107,13 @@ content:
         https://player.vimeo.com/external/206554511.hd.mp4?s=1dd3981e1b8f025ddfbfe8124e708ffeac515a16&profile_id=119
     width: 90
 credits:
-  - key: For
+  - key: 'For:'
     value: Louis Vuitton
-  - key: Role
+  - key: 'Role:'
     value: >-
       Concept Development, Creative Direction, Design, Software Development,
       Installation
-  - key: With
+  - key: 'With:'
     value: Naivi — Unreal development
 ---
 
