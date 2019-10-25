@@ -21,8 +21,6 @@ const LazyVideo = React.forwardRef(
           entries => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
-                console.log("intersected")
-
                 setIntersected(true)
                 handlePlayer()
                 observer.disconnect()
