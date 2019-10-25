@@ -81,6 +81,10 @@
     font-size: var(--font-small);
     margin: 0;
     margin-right: 2rem;
+
+    a::after {
+      height: 2px;
+    }
   }
 }
 
@@ -125,6 +129,6 @@
 
   .address {
     margin-right: 2.4rem;
-    font-size: 1.6rem;
+    font-size: 1.74rem;
   }
 }
