@@ -16,10 +16,26 @@
     margin: 0 auto;
     padding-top: 50vh;
   }
+
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      height: 0.05em;
+      width: 100%;
+      background-color: #000;
+    }
+  }
 }
 
 @media (min-width: 36rem) {
   .notFoundPage {
+    font-size: 2rem;
     padding-left: 2rem;
   }
 }
