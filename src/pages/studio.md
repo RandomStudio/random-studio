@@ -6,16 +6,13 @@ intro: >-
   trigger curiosity and use technology to spark new, unexpected connections
   between people and the space around them.
 
-  <br>
-  <br>
+  <br> <br>
 
-  How can we make the digital a living, breathing part of our world? We think
-  and make as bodies.<br /> We explore how technology can be integrated into the
-  very foundations of a space; as part of our physical world, engaging us to
-  explore, play and wonder.
+  How can we make the digital a living, breathing part of our world? How can
+  technology be integrated into the very foundations of a space; as part of our
+  physical world, engaging us to explore, play and wonder?
 
-  <br>
-  <br>
+  <br> <br>
 
   We have a holistic, research-led approach that can be applied to products,
   experiences and platforms where spatial and digital design are integrated.
@@ -27,10 +24,12 @@ infoBlock:
               Vuitton](https://random.studio/projects/travel-exhibition-louis-vuitton)
             image: /img/connected-space-02-lv-2x.jpg
           - caption: >-
-              [In-store Installations for NikeLab](https://random.studio/projects/NikeLab-ACG)
+              [In-store Installations for
+              NikeLab](https://random.studio/projects/NikeLab-ACG)
             image: /img/connected-space-01-Nike-ACG@2x.jpg
           - caption: >-
-              [Exhibition for Hermès](https://random.studio/projects/hermes-festival-des-metiers)
+              [Exhibition for
+              Hermès](https://random.studio/projects/hermes-festival-des-metiers)
             image: /img/connected-space-03-Hermes@2x.jpg
         info: ''
         showIndicator: true
@@ -68,20 +67,18 @@ infoBlock:
           * Omnichannel services
         showIndicator: false
       - images:
-          - caption: >-
-              Shoppable wall for Tommy Hilfiger
+          - caption: Shoppable wall for Tommy Hilfiger
             image: /img/human-centered-products-02-gigi-shopwall-2x.jpg
-          - caption: >-
-              Digital showroom for PVH
+          - caption: Digital showroom for PVH
             image: /img/human-centered-products-02-Digital-Showroom@2x.jpg
         showIndicator: true
   - collection:
       - images:
           - caption: '[Website for Raf Simons](https://random.studio/projects/rafsimons)'
             image: /img/communication-design-01-raf-simons-2x.jpg
-          - caption: 'Communication strategy for Fred Perry'
+          - caption: Communication strategy for Fred Perry
             image: /img/communication-design-02-Raf-x-Fred-Perry@2x.jpg
-          - caption: 'Interactive documentary 51 Sprints'
+          - caption: Interactive documentary 51 Sprints
             image: /img/communication-design-03-51-Sprints@2x.jpg
         showIndicator: true
       - info: >-
@@ -113,3 +110,4 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 ---
+
