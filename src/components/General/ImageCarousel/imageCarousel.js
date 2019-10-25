@@ -1,7 +1,6 @@
 import styles from "./imageCarousel.module.scss"
 import React, { useState } from "react"
 import ReactMarkdown from "react-markdown"
-import PropTypes from "prop-types"
 import Img from "gatsby-image/withIEPolyfill"
 
 const ImageCarousel = ({ images, showIndicator, title }) => {
