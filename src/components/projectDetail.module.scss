@@ -68,11 +68,11 @@
   max-width: 60rem;
 
   ul {
-    padding-bottom: 1.6rem;
+    padding-bottom: 1.4rem;
     line-height: 1.375;
 
     li:first-of-type {
-      max-width: 6rem;
+      max-width: 7.2rem;
       padding-right: 2.4rem;
     }
   }
@@ -110,6 +110,7 @@
   .credits {
     ul {
       display: flex;
+      padding: 0;
       li {
         flex: 1;
       }
