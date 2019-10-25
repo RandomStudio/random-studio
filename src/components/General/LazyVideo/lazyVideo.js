@@ -20,6 +20,8 @@ const LazyVideo = React.forwardRef(
         entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
+              console.log("intersected")
+
               setIntersected(true)
               handlePlayer()
               observer.disconnect()
@@ -46,7 +48,7 @@ const LazyVideo = React.forwardRef(
         src={videoSrc}
         loop={loops}
         muted={isMuted}
-        autoplay={autoPlays}
+        autoPlay={autoPlays}
         playsInline
       />
     ) : (
