@@ -45,7 +45,7 @@ const SEO = ({ title, description, image, pathName }) => {
 
   const metaTitle = title ? `${defaultTitle} - ${title}` : defaultTitle
   const url = `${siteUrl}${pathName}`
-  const imageUrl = `${siteUrl}${image}`
+  const imageUrl = `${siteUrl}${image}?123`
 
   return (
     <Helmet
