@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown"
 import PropTypes from "prop-types"
 import Img from "gatsby-image/withIEPolyfill"
 
-const ImageCarousel = ({ images, showIndicator, title, isLazy }) => {
+const ImageCarousel = ({ images, showIndicator, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleNextImage = () => {
@@ -51,14 +51,6 @@ const ImageCarousel = ({ images, showIndicator, title, isLazy }) => {
       </div>
     </div>
   )
-}
-
-ImageCarousel.propTypes = {
-  isLazy: PropTypes.bool,
-}
-
-ImageCarousel.propTypes = {
-  isLazy: false,
 }
 
 export default ImageCarousel
