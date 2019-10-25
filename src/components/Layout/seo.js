@@ -44,8 +44,8 @@ const SEO = ({ title, description, image, pathName }) => {
   } = data
 
   const metaTitle = title ? `${defaultTitle} - ${title}` : defaultTitle
-  const url = `https://deploy-preview-25--random-studio.netlify.com${pathName}`
-  const imageUrl = `https://deploy-preview-25--random-studio.netlify.com${image}`
+  const url = `${siteUrl}${pathName}`
+  const imageUrl = `${siteUrl}${image}`
 
   return (
     <Helmet
