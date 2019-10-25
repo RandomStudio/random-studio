@@ -46,7 +46,7 @@ const LazyVideo = React.forwardRef(
     // Prevents autoplay conflicting
     return (
       <>
-        {noJS && (
+        {!noJS && (
           <video
             ref={ref}
             src={intersected ? videoSrc : ""}
