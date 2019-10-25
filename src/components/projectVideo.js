@@ -21,7 +21,10 @@ const ProjectVideo = ({
   }
 
   const handleTapPlayPause = e => {
-    setHasPlayed(true)
+    if (!hasPlayed) {
+      setHasPlayed(true)
+    }
+
     setIsPlaying(prevState => {
       if (isPlaying) {
         videoRef.current.pause()
@@ -45,7 +48,7 @@ const ProjectVideo = ({
         videoSrc={url}
         loops={loops}
         isMuted={isCurrentlyMuted}
-        autoplays={isPlaying}
+        autoPlays={isPlaying}
       />
       {hasControls &&
         (hasPlayed ? (
