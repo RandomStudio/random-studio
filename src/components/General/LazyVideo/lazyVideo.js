@@ -16,49 +16,59 @@ const LazyVideo = React.forwardRef(
         }
       }
 
-      const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              console.log("intersected")
+      if (videoRef.current) {
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                console.log("intersected")
 
-              setIntersected(true)
-              handlePlayer()
-              observer.disconnect()
-            }
-          })
-        },
-        {
-          rootMargin: "8%",
+                setIntersected(true)
+                handlePlayer()
+                observer.disconnect()
+              }
+            })
+          },
+          {
+            rootMargin: "8%",
+          }
+        )
+
+        observer.observe(videoRef.current)
+
+        return () => {
+          if (videoRef.current) {
+            observer.unobserve(videoRef.current)
+          }
+          observer.disconnect()
         }
-      )
-
-      observer.observe(videoRef.current)
-
-      return () => {
-        observer.unobserve(videoRef.current)
-        observer.disconnect()
       }
     }, [noJS, ref, autoPlays])
 
     // Prevents autoplay conflicting
-    return noJS ? (
-      <video
-        ref={ref}
-        src={videoSrc}
-        loop={loops}
-        muted={isMuted}
-        autoPlay={autoPlays}
-        playsInline
-      />
-    ) : (
-      <video
-        ref={ref}
-        src={intersected ? videoSrc : ""}
-        loop={loops}
-        muted={isMuted}
-        playsInline
-      />
+    return (
+      <>
+        {noJS && (
+          <video
+            ref={ref}
+            src={intersected ? videoSrc : ""}
+            loop={loops}
+            muted={isMuted}
+            playsInline
+          />
+        )}
+
+        <noscript>
+          <video
+            ref={ref}
+            src={videoSrc}
+            loop={loops}
+            muted={isMuted}
+            autoPlay={autoPlays}
+            playsInline
+          />
+        </noscript>
+      </>
     )
   }
 )
