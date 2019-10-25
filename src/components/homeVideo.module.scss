@@ -44,6 +44,7 @@ h1.logo {
   font-weight: normal;
   line-height: 1.1;
   margin: 0;
+  letter-spacing: -0.01em;
   mix-blend-mode: difference;
   color: white;
 }
@@ -54,13 +55,24 @@ h1.logo {
   }
 
   h1.logo {
-    left: calc(12vw + 1.2rem);
-    font-size: 5.4rem;
+    left: 4rem;
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 54rem) {
+  h1.logo {
+    right: 0;
+    left: 0;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding-left: 4rem;
   }
 }
 
 @media (min-width: 72rem) {
   h1.logo {
-    font-size: 5.4rem;
+    max-width: 72rem;
+    font-size: 5.6rem;
   }
 }
