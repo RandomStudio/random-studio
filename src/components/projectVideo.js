@@ -1,5 +1,6 @@
 import styles from "./projectVideo.module.scss"
 import React, { useRef, useState } from "react"
+import LazyVideo from "./General/LazyVideo/lazyVideo"
 
 const ProjectVideo = ({
   video: { autoplay, hasControls, isMuted: isStartingMuted, loops, url },
@@ -9,18 +10,21 @@ const ProjectVideo = ({
 
   const [hasPlayed, setHasPlayed] = useState(autoplay)
 
-  const [isCurrentlyMuted, setVideoIsCurrentlyMuted] = useState(
+  const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
     autoplay || isStartingMuted
   )
   const [isPlaying, setIsPlaying] = useState(autoplay)
 
   const handleTapVolumeToggle = e => {
-    setVideoIsCurrentlyMuted(prevState => !prevState)
+    setIsCurrentlyMuted(prevState => !prevState)
     e.stopPropagation()
   }
 
   const handleTapPlayPause = e => {
-    setHasPlayed(true)
+    if (!hasPlayed) {
+      setHasPlayed(true)
+    }
+
     setIsPlaying(prevState => {
       if (isPlaying) {
         videoRef.current.pause()
@@ -39,13 +43,12 @@ const ProjectVideo = ({
       onClick={handleTapPlayPause}
       style={{ paddingBottom: `${ratio}%` }}
     >
-      <video
+      <LazyVideo
         ref={videoRef}
-        src={url}
-        loop={loops}
-        muted={isCurrentlyMuted}
-        autoPlay={isPlaying}
-        playsInline
+        videoSrc={url}
+        loops={loops}
+        isMuted={isCurrentlyMuted}
+        autoPlays={isPlaying}
       />
       {hasControls &&
         (hasPlayed ? (

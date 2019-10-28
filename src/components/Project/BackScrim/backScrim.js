@@ -2,12 +2,15 @@ import styles from "./backScrim.module.scss"
 import React, { useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
+import PropTypes from "prop-types"
 
-const BackScrim = () => {
+const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef()
   const [isVisible, setIsVisible] = useState(false)
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
+    const intersection = intersectionRef // For cleanup reference - according to eslint
     const handleScrimVisibility = event => {
       if (event.deltaY > 0 && !isVisible) {
         setIsVisible(true)
@@ -26,12 +29,15 @@ const BackScrim = () => {
     }
 
     const observer = new IntersectionObserver(intersectCb)
-    observer.observe(intersectionRef.current)
+    observer.observe(intersection.current)
 
     return () => {
-      observer.unobserve(intersectionRef.current)
+      observer.unobserve(intersection.current)
+      observer.disconnect()
+      window.removeEventListener("wheel", handleScrimVisibility)
     }
   }, [])
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   return (
     <>
@@ -43,7 +49,7 @@ const BackScrim = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <Link className={styles.backButton} to="/#projects">
+            <Link to={returnUrl} className={styles.backButton}>
               Back to projects
             </Link>
           </motion.div>
@@ -54,13 +60,17 @@ const BackScrim = () => {
       {/* If JS disabled - just show it */}
       <noscript>
         <div className={styles.backScrim}>
-          <Link className={styles.backButton} to="/#projects">
+          <Link to={returnUrl} className={styles.backButton}>
             Back to projects
           </Link>
         </div>
       </noscript>
     </>
   )
+}
+
+BackScrim.propTypes = {
+  returnUrl: PropTypes.string.isRequired,
 }
 
 export default BackScrim

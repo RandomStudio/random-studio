@@ -16,6 +16,11 @@ export const pageQuery = graphql`
         thumbnail {
           image {
             publicURL
+            childImageSharp {
+              fixed(width: 800, height: 800) {
+                ...GatsbyImageSharpFixed
+              }
+            }
           }
         }
         title
@@ -57,18 +62,26 @@ export default ({
       frontmatter: project,
     },
   },
-}) => (
-  <Layout>
-    <SEO
-      pathName={slug}
-      title={project.title}
-      description={project.intro}
-      image={
-        project.thumbnail.image ? project.thumbnail.image.publicURL : undefined
-      }
-    />
-    <Navigation />
-    <ProjectDetail {...project} />
-    <BackScrim />
-  </Layout>
-)
+}) => {
+  const returnSlug = `#${slug}`
+  const thumbnailImage = project.thumbnail.image
+  const SEOImage = thumbnailImage
+    ? thumbnailImage.childImageSharp
+      ? thumbnailImage.childImageSharp.fixed.src
+      : thumbnailImage.publicURL
+    : undefined
+
+  return (
+    <Layout>
+      <SEO
+        pathName={slug}
+        title={project.title}
+        description={project.intro}
+        image={SEOImage}
+      />
+      <Navigation />
+      <ProjectDetail {...project} />
+      <BackScrim returnUrl={returnSlug} />
+    </Layout>
+  )
+}

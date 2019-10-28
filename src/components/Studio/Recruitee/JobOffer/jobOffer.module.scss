@@ -20,7 +20,7 @@
     position: relative;
     margin-bottom: 0.8rem;
     strong {
-      font-size: 1.5rem;
+      font-size: var(--font-small);
     }
   }
 
@@ -67,7 +67,7 @@
 
   .closeButton {
     width: 2.4rem;
-    font-size: 1.4rem;
+    font-size: var(--font-small);
     font-weight: 700;
     text-align: end;
     margin: 0;
@@ -89,7 +89,7 @@
     header {
       margin-bottom: 1.2rem;
       strong {
-        font-size: 2rem;
+        font-size: var(--font-med);
       }
     }
 
@@ -101,7 +101,7 @@
     }
 
     .closeButton {
-      font-size: 2rem;
+      font-size: var(--font-med);
     }
   }
 }

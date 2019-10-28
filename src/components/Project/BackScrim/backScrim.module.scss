@@ -19,6 +19,7 @@
     border-radius: 2rem;
     padding: 0.6rem 1.2rem;
     pointer-events: all;
+    text-decoration: none;
   }
 }
 
@@ -30,7 +31,6 @@
 
 @media (min-width: 36rem) {
   .backScrim {
-    font-size: 1.2rem;
     .backButton {
       bottom: 2rem;
       left: 2rem;
@@ -41,11 +41,5 @@
 @media (min-width: 48rem) {
   .backScrim {
     height: 24rem;
-  }
-}
-
-@media (min-width: 72rem) {
-  .backScrim {
-    font-size: 1.4rem;
   }
 }

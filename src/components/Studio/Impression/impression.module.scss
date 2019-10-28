@@ -20,7 +20,7 @@
     position: absolute;
     top: -0.8rem;
     bottom: 0;
-    font-size: 1.5rem;
+    font-size: var(--font-small);
     color: #fff;
     mix-blend-mode: difference;
   }
@@ -29,7 +29,7 @@
 @media (min-width: 36rem) {
   .carouselWrapper {
     & > div > div:last-of-type {
-      font-size: 2rem;
+      font-size: var(--font-med);
       top: 50%;
       bottom: initial;
       left: 0;

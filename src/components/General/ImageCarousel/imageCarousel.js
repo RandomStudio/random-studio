@@ -7,7 +7,6 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleNextImage = () => {
-    console.log("?")
     setCurrentIndex((currentIndex + 1) % images.length)
   }
 
@@ -41,7 +40,7 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
           {caption && <ReactMarkdown escapeHtml={false} source={caption} />}
         </div>
       ))}
-      <div>
+      <div className={styles.indicatorWrapper}>
         {title && <p>{title}</p>}
         {showIndicator && images.length > 1 && (
           <span>

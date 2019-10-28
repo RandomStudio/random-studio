@@ -72,6 +72,15 @@ const SEO = ({ title, description, image, pathName }) => {
           property: "og:image",
           content: imageUrl,
         },
+        // Explicit image sizing for twitter
+        {
+          property: "og:image:width",
+          content: 800,
+        },
+        {
+          property: "og:image:height",
+          content: 800,
+        },
         // Twitter
         { name: "twitter:title", content: `${metaTitle}` },
         {
@@ -91,6 +100,10 @@ const SEO = ({ title, description, image, pathName }) => {
         sizes="180x180"
         href="/favicons/apple-touch-icon.png"
       />
+      <link
+        rel="apple-touch-icon-precomposed"
+        href="/favicons/apple-touch-icon.png"
+      ></link>
       <link
         rel="icon"
         type="image/png"

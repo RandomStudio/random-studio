@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./footer.module.css"
+import styles from "./footer.module.scss"
 import ReactMarkdown from "react-markdown"
 
 export default ({ address, contact }) => (

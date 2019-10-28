@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./projectDetail.module.scss"
-import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 import ProjectVideo from "./projectVideo"
+import Img from "gatsby-image"
 
 const ProjectDetail = ({ title, intro, content, credits }) => {
   return (
@@ -36,7 +36,14 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
                 ) : (
                   <img alt="" src={image} />
                 )}
-                {caption && <div className={styles.caption}>{caption}</div>}
+                {caption && (
+                  <div
+                    className={styles.caption}
+                    style={{ marginLeft: !marginLeft && "1.4rem" }}
+                  >
+                    {caption}
+                  </div>
+                )}
               </>
             ) : (
               <div className={styles.text}>

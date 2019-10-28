@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from "./projectList.module.scss"
-import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown"
 import ProjectVideo from "./projectVideo"
+import Img from "gatsby-image"
 
 export default ({ intro, middle, projects }) => (
   <div id="projects" className={styles.projects}>
@@ -35,18 +35,19 @@ export default ({ intro, middle, projects }) => (
                 }}
                 ratio={thumbnail.ratio}
               />
+            ) : !!thumbnail.image && thumbnail.image.childImageSharp ? (
+              <Img fluid={thumbnail.image.childImageSharp.fluid} />
             ) : (
-              !!thumbnail.image &&
-              (thumbnail.image.childImageSharp ? (
-                <Img fluid={thumbnail.image.childImageSharp.fluid} />
-              ) : (
-                <img alt="" src={thumbnail.image} />
-              ))
+              <img alt="" src={thumbnail.image} />
             )}
           </div>
-          <p className={styles.title}>
+
+          <div
+            className={styles.title}
+            style={{ marginLeft: !thumbnail.marginLeft && "1.4rem" }}
+          >
             <ReactMarkdown escapeHtml={false} source={title} />
-          </p>
+          </div>
         </Link>
         {(index === 3 ||
           (projects.length < 3 && index === projects.length - 1)) && (
