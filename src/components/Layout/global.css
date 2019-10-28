@@ -15,7 +15,6 @@ body {
   position: relative;
   -webkit-tap-highlight-color: transparent;
   background-color: #000;
-  scroll-behavior: auto;
 }
 
 body {
