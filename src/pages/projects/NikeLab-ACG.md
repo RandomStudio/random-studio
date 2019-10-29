@@ -1,6 +1,6 @@
 ---
 templateKey: project
-title: |-
+title: >-
   Various in-store installations
 
   for NikeLab
