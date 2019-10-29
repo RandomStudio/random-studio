@@ -9,18 +9,18 @@ intro: >-
   experiential set up.
 priority: 2
 thumbnail:
-  image: /img/runner.jpg
+  image: ''
   marginLeft: 3
   marginTop: -5
   ratio: 56.25
-  video: ''
+  video: 'https://player.vimeo.com/video/210279283'
   width: 45
 content:
   - marginLeft: 5
     marginTop: 0
     ratio: 53.958
     video:
-      autoplay: false
+      autoplay: true
       hasControls: true
       isMuted: true
       loops: true
