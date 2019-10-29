@@ -13,7 +13,8 @@ thumbnail:
   marginLeft: 3
   marginTop: -5
   ratio: 56.25
-  video: 'https://player.vimeo.com/video/210279283'
+  video: >-
+    https://player.vimeo.com/external/210279283.hd.mp4?s=706d9c6149f5bd15d01856a15818b6e9a8702a80&profile_id=119
   width: 45
 content:
   - marginLeft: 5
