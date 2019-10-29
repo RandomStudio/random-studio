@@ -9,11 +9,11 @@ intro: >-
   experiential set up.
 priority: 2
 thumbnail:
+  image: /img/runner.jpg
   marginLeft: 3
   marginTop: -5
   ratio: 56.25
-  video: >-
-    https://player.vimeo.com/external/210279283.hd.mp4?s=706d9c6149f5bd15d01856a15818b6e9a8702a80&profile_id=119
+  video: ''
   width: 45
 content:
   - marginLeft: 5
@@ -53,8 +53,10 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - image: /img/runner.jpg
-    caption: The lights pulse along with audio, launching into a faster loop as the runner breaks into a jog, surrounded by a myriad of reflected visions.
+  - caption: >-
+      The lights pulse along with audio, launching into a faster loop as the
+      runner breaks into a jog, surrounded by a myriad of reflected visions.
+    image: /img/runner.jpg
     marginLeft: 0
     marginTop: 0
     ratio: 0
