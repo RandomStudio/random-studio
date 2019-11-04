@@ -76,5 +76,23 @@ content:
       isMuted: true
       loops: true
     width: 53
+  - caption: >-
+      The illusion reached its peak in the Grand Salon: the iconic view out onto
+      Place Vendôme was replaced by a simulation that allowed the room to travel
+      through time, slipping between warm sunsets, foggy mornings and glowing
+      afternoon skies. The sun traces through the sky, shadows dart across the
+      square and cars race backwards, as different Chanel muses invite visitors
+      into their favourite memories in short films screened on the walls. This
+      magical light dance reverberated through the different rooms of the store,
+      and also became the spearhead for two other J12 launch events that we
+      organised, in Beijing and Taiwan.
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
 ---
 
