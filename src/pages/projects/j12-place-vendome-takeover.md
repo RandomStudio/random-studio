@@ -65,6 +65,16 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/370904935.hd.mp4?s=fac34f063d29e7662baf300d5e97fadf9006ede5&profile_id=175
-    width: 39
+    width: 37
+  - image: /img/wec190502_chanel_j12_022_2.jpg
+    marginLeft: 47
+    marginTop: 16
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 53
 ---
 
