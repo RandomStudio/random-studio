@@ -141,7 +141,7 @@ content:
     width: 25
   - marginLeft: 65
     marginTop: 0
-    ratio: 0
+    ratio: 200
     video:
       autoplay: false
       hasControls: false
