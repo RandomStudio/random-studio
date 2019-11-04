@@ -150,5 +150,10 @@ content:
       url: >-
         https://player.vimeo.com/external/370845292.hd.mp4?s=7310ad125069983a5e49b79727e696186e77a41e&profile_id=174
     width: 25
+credits:
+  - key: 'For:'
+    value: Random Studio
+  - key: 'Role:'
+    value: 'Concept, Design, Development'
 ---
 
