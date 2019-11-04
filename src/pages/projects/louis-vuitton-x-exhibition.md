@@ -87,5 +87,35 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+  - image: /img/65453893_815006268886585_7648533371953348608_n.png
+    marginLeft: 20
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 10
+  - image: /img/65445113_893189817697135_6332105627778678784_n.png
+    marginLeft: 45
+    marginTop: -10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 10
+  - image: /img/65415586_385629605409287_4618380884599373824_n.png
+    marginLeft: 70
+    marginTop: -10
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 10
 ---
 
