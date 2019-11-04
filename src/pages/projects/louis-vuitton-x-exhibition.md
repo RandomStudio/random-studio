@@ -1,12 +1,13 @@
 ---
 templateKey: project
-title: 'Louis Vuitton X Exhibition '
+title: 'An immersive exhibition space for the Louis Vuitton X Exhibition '
 intro: >-
-  The Louis Vuitton X Exhibition celebrates 160 years of its pioneering history.
-  Tasked with bringing the brand’s heritage into the now, Random Studio designed
-  LED paneling into the walls and ceiling of the ‘Origins Room’: a space that
-  restages the fashion house’s beginnings through a collection of items from the
-  archive from early sketches to one-of-a-kind pieces.
+  The Louis Vuitton X Exhibition celebrates 160 years of creative exchanges and
+  artistic collaborations. Tasked with bringing the brand’s artistic heritage to
+  live, Random Studio designed LED paneling into the walls and ceiling of the
+  ‘Origins Room’: a space that restates the fashion house’s collaborative
+  beginnings through a collection of items from the archive from early sketches
+  to one-of-a-kind pieces.
 thumbnail:
   marginLeft: 0
   marginTop: 0
