@@ -128,5 +128,16 @@ content:
       url: >-
         https://player.vimeo.com/external/370845311.hd.mp4?s=351ae75654db4d1fe846e209e197e907ebe63726&profile_id=174
     width: 26
+  - marginLeft: 40
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/370845330.hd.mp4?s=00b6921a496740a65e32387f877b25f8851c0a41&profile_id=174
+    width: 25
 ---
 
