@@ -99,7 +99,7 @@ content:
       loops: true
     width: 8
   - image: /img/65445113_893189817697135_6332105627778678784_n.png
-    marginLeft: 46
+    marginLeft: 45
     marginTop: -8
     ratio: 0
     video:
@@ -109,7 +109,7 @@ content:
       loops: true
     width: 8
   - image: /img/65415586_385629605409287_4618380884599373824_n.png
-    marginLeft: 73
+    marginLeft: 72
     marginTop: -8
     ratio: 0
     video:
@@ -122,29 +122,29 @@ content:
     marginTop: 4
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/370845311.hd.mp4?s=351ae75654db4d1fe846e209e197e907ebe63726&profile_id=174
-    width: 26
-  - marginLeft: 38
+    width: 25
+  - marginLeft: 37
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/370845330.hd.mp4?s=00b6921a496740a65e32387f877b25f8851c0a41&profile_id=174
     width: 25
-  - marginLeft: 65
+  - marginLeft: 64
     marginTop: 0
     ratio: 200
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
