@@ -33,7 +33,7 @@ content:
       the unique pieces on display. The result was an elevated experience that
       evoked the sense of adventure and elegance at Louis Vuitton’s core.
     marginLeft: 0
-    marginTop: 70
+    marginTop: 65
     ratio: 0
     video:
       autoplay: false
@@ -81,7 +81,7 @@ content:
       into play the dialogue between heritage and innovation that has
       characterised Louis Vuitton’s journey for nearly two centuries.
     marginLeft: 0
-    marginTop: 80
+    marginTop: 76
     ratio: 0
     video:
       autoplay: false
