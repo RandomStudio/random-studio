@@ -18,7 +18,7 @@ content:
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
@@ -104,6 +104,27 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/370915183.hd.mp4?s=b2c5c9bf232eb3767727ff6bcc1e3f0c850eae23&profile_id=175
-    width: 63
+    width: 54
+  - image: /img/wec190502_chanel_j12_010_5.jpg
+    marginLeft: 64
+    marginTop: 25
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 36
+credits:
+  - key: 'For: '
+    value: Chanel
+  - key: 'Role: '
+    value: |
+      Scenography Design, Software development, Creative Direction, Installation
+  - key: 'With:'
+    value: 'K2, Lighting & Show Design Ltd'
+  - key: 'Team:'
+    value: |
+      Tiemen, Josh
 ---
 
