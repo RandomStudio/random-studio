@@ -94,5 +94,16 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+  - marginLeft: 3
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/370915183.hd.mp4?s=b2c5c9bf232eb3767727ff6bcc1e3f0c850eae23&profile_id=175
+    width: 63
 ---
 
