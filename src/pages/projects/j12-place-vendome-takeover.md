@@ -27,7 +27,7 @@ content:
     width: 80
   - image: /img/wec190502_chanel_j12_0150.jpg
     marginLeft: 0
-    marginTop: 70
+    marginTop: 66
     ratio: 0
     video:
       autoplay: false
@@ -37,7 +37,7 @@ content:
     width: 48
   - image: /img/wec190502_chanel_j12_001_2.jpg
     marginLeft: 57
-    marginTop: -15
+    marginTop: -19
     ratio: 0
     video:
       autoplay: false
@@ -56,7 +56,7 @@ content:
       loops: true
     width: 70
   - marginLeft: 2
-    marginTop: 7
+    marginTop: 9
     ratio: 0
     video:
       autoplay: true
@@ -68,7 +68,7 @@ content:
     width: 37
   - image: /img/wec190502_chanel_j12_022_2.jpg
     marginLeft: 47
-    marginTop: 16
+    marginTop: 18
     ratio: 0
     video:
       autoplay: false
