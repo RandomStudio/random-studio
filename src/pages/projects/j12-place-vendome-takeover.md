@@ -1,6 +1,6 @@
 ---
 templateKey: project
-title: J12 Place Vendome Takeover
+title: A store takeover at Place Vendôme for the launch of Chanel's J12 watch
 intro: >-
   For its biggest ever global watch launch, Chanel enlisted Random Studio to
   create the scenography for a temporary takeover of its flagship boutique on
