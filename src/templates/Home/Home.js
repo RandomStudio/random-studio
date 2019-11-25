@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout/layout"
-import Navigation from "../components/Layout/navigation"
+import Layout from "../../components/Layout/layout"
+import Navigation from "../components/Navigation/Navigation"
 import Footer from "../components/Layout/footer"
-import ProjectList from "../components/projectList"
-import HomeVideo from "../components/homeVideo"
-import SEO from "../components/Layout/seo"
+import ProjectList from "./ProjectList/ProjectList"
+import HomeVideo from "./HomeVideo/HomeVideo"
+import SEO from "../../components/SEO/SEO"
 
 export const query = graphql`
   {

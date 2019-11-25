@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styles from "./homeVideo.module.scss"
+import styles from "./HomeVideo.module.scss"
 
 export default ({ collaborationCredits, videoUrl }) => {
   const scrollToProjects = event => {

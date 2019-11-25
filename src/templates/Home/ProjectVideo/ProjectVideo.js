@@ -1,6 +1,6 @@
-import styles from "./projectVideo.module.scss"
+import styles from "./ProjectVideo.module.scss"
 import React, { useRef, useState } from "react"
-import LazyVideo from "./General/LazyVideo/lazyVideo"
+import LazyVideo from "../../../components/LazyVideo/lazyVideo"
 
 const ProjectVideo = ({
   video: { autoplay, hasControls, isMuted: isStartingMuted, loops, url },

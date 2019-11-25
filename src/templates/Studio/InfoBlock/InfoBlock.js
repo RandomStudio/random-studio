@@ -1,7 +1,7 @@
 import styles from "./infoBlock.module.scss"
 import React, { Fragment } from "react"
 import ReactMarkdown from "react-markdown"
-import ImageCarousel from "../../General/ImageCarousel/imageCarousel"
+import ImageCarousel from "../../General/ImageCarousel/ImageCarousel"
 
 const InfoBlock = ({ collection }) => {
   return (

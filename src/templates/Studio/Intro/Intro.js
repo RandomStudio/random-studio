@@ -1,7 +1,7 @@
 import styles from "./intro.module.scss"
 import React from "react"
 import ReactMarkdown from "react-markdown"
-import Recruitee from "../Recruitee/recruitee"
+import Recruitee from "../Recruitee/Recruitee"
 
 const Intro = ({ data: { address, contact, intro }, location }) => (
   <>

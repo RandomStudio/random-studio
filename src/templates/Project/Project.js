@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout/layout"
-import ProjectDetail from "../components/projectDetail"
+import Layout from "../../components/Layout/layout"
+import ProjectDetail from "../../components/projectDetail"
 import Navigation from "../components/Layout/navigation"
-import SEO from "../components/Layout/seo"
+import SEO from "../../components/Layout/seo"
 import BackScrim from "../components/Project/BackScrim/backScrim"
 
 export const pageQuery = graphql`

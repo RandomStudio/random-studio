@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import styles from "./projectList.module.scss"
+import styles from "./ProjectList.module.scss"
 import ReactMarkdown from "react-markdown"
-import ProjectVideo from "./projectVideo"
+import ProjectVideo from "../ProjectVideo/ProjectVideo"
 import Img from "gatsby-image"
 
 export default ({ intro, middle, projects }) => (

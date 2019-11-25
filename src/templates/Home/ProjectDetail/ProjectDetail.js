@@ -1,7 +1,7 @@
 import React from "react"
-import styles from "./projectDetail.module.scss"
+import styles from "./ProjectDetail.module.scss"
 import ReactMarkdown from "react-markdown"
-import ProjectVideo from "./projectVideo"
+import ProjectVideo from "../ProjectVideo/ProjectVideo"
 import Img from "gatsby-image"
 
 const ProjectDetail = ({ title, intro, content, credits }) => {

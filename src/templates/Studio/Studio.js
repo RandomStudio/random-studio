@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout/layout"
-import Navigation from "../components/Layout/navigation"
-import Footer from "../components/Layout/footer"
-import Intro from "../components/Studio/Intro/intro"
-import InfoBlock from "../components/Studio/InfoBlock/infoBlock"
-import Impression from "../components/Studio/Impression/impression"
-import SEO from "../components/Layout/seo"
+import Layout from "../../components/Layout/Layout"
+import Navigation from "../../components/Navigation/Navigation"
+import Footer from "../../components/Footer/Footer"
+import Intro from "../components/Studio/Intro/Intro"
+import InfoBlock from "../components/Studio/InfoBlock/InfoBlock"
+import Impression from "../components/Studio/Impression/Impression"
+import SEO from "../../components/SEO/SEO"
 
 export const query = graphql`
   {

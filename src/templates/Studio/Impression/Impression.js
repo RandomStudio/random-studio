@@ -1,6 +1,6 @@
 import styles from "./impression.module.scss"
 import React from "react"
-import ImageCarousel from "../../General/ImageCarousel/imageCarousel"
+import ImageCarousel from "../../General/ImageCarousel/ImageCarousel"
 
 const Impression = ({ data: { title, showIndicator, images } }) => {
   return (

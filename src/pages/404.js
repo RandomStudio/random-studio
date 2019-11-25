@@ -4,7 +4,7 @@ import Layout from "../components/Layout/layout"
 import Navigation from "../components/Layout/navigation"
 import { Link } from "gatsby"
 
-const NotFoundPAge = () => {
+const Error404 = () => {
   return (
     <Layout>
       <Navigation />
@@ -18,7 +18,4 @@ const NotFoundPAge = () => {
   )
 }
 
-NotFoundPAge.propTypes = {}
-NotFoundPAge.defaultProps = {}
-
-export default NotFoundPAge
+export default Error404
