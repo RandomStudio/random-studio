@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
-import styles from './backScrim.module.scss';
+import styles from './BackScrim.module.scss';
 
 const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef();

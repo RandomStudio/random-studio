@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styles from './ProjectVideo.module.scss';
-import LazyVideo from '../../../components/LazyVideo/lazyVideo';
+import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
 const ProjectVideo = ({
   video: {
