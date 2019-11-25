@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: An immersive in-store environment for NikeLab Milano
 intro: >-
   For NikeLab’s FA18 Tech Pack launch in Milan, we were asked to transform the

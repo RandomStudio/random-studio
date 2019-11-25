@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: Creative direction of film production for Maison Margiela
 intro: >-
   Headed up by John Galliano, Maison Margiela’s ‘Artisanal’ is a high concept

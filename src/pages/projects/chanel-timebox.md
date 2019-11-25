@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: A vertical journey through time for Chanel
 intro: >-
   French fashion house Chanel is known for a continuous strive for excellence

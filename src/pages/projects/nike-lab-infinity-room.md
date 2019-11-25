@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: An infinity room for NikeLab
 intro: >-
   NikeLab fuses physical retail, online commerce and digital engagement

@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: An exhibition for Hermès
 intro: >-
   At its core, the world of Hermès is a world of beautiful materials, mastered
@@ -30,7 +30,7 @@ content:
       Various work stations showed the diverse skills and phases that precede a
       precious accessory. Typical to the festival is its unpretentious
       character, or as the French say, “with its feet on the ground and its head
-      in the sky”. 
+      in the sky”.
 
 
 

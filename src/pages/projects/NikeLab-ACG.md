@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: >-
   Various in-store installations
 

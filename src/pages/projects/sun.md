@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: An interactive sunrise in collaboration with Philip Schuette
 intro: >-
   This interactive installation was made in collaboration with our Creative Lead
