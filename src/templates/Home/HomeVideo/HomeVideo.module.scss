@@ -26,9 +26,13 @@
   width: 100%;
   font-size: 1rem;
   line-height: 1;
-  color: white;
+  color: black;
   padding: 1rem 1.4rem;
-  mix-blend-mode: difference;
+
+  @supports (mix-blend-mode: difference) {
+    color: white;
+    mix-blend-mode: difference;
+  }
 }
 
 .logo {
