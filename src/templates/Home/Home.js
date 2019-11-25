@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../../components/Layout/Layout';
-import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 import ProjectList from './ProjectList/ProjectList';
 import HomeVideo from './HomeVideo/HomeVideo';
@@ -71,7 +70,6 @@ const Home = ({
   return (
     <Layout>
       <SEO pathName={fields.slug} />
-      <Navigation />
       <HomeVideo
         videoUrl={frontmatter.video}
         collaborationCredits={frontmatter.collaborationCredits}
