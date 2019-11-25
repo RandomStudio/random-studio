@@ -10,7 +10,7 @@ import SEO from '../../components/SEO/SEO';
 
 export const query = graphql`
   {
-    studioPage: markdownRemark(frontmatter: { templateKey: { eq: "studio" } }) {
+    studioPage: markdownRemark(frontmatter: { templateKey: { eq: "Studio" } }) {
       fields {
         slug
       }
@@ -47,7 +47,7 @@ export const query = graphql`
         }
       }
     }
-    indexPage: markdownRemark(frontmatter: { templateKey: { eq: "index" } }) {
+    indexPage: markdownRemark(frontmatter: { templateKey: { eq: "Home" } }) {
       frontmatter {
         address
         contact

@@ -12,7 +12,7 @@ export const pageQuery = graphql`
   {
     allMarkdownRemark(
       sort: { fields: frontmatter___priority, order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "project" } } }
+      filter: { frontmatter: { templateKey: { eq: "Project" } } }
     ) {
       edges {
         node {
@@ -39,7 +39,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(frontmatter: { templateKey: { eq: "index" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "Home" } }) {
       fields {
         slug
       }
