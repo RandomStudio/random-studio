@@ -1,6 +1,6 @@
-import './reset.css';
-import './vars.css';
-import './global.css';
+import '../../styles/reset.css';
+import '../../styles/vars.css';
+import '../../styles/global.css';
 import React from 'react';
 import styles from './Layout.module.scss';
 
