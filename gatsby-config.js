@@ -55,9 +55,6 @@ const gatsbyConfig = {
               // base for generating different widths of each image.
               maxWidth: 2048,
               quality: 90,
-              tracedSVG: {
-                color: '#eeeeee',
-              },
               withWebp: {
                 quality: 90,
               },
