@@ -11,12 +11,20 @@ CMS.registerPreviewTemplate('project', ProjectPreview);
 // sets the value to '' (empty string) when saved. This causes problems when parsing the resulting
 // markdown files. This code can be removed (and the admin/config.yml set to use the regular number
 // widget) when the problems are fixed in a next release of netlify-cms.
-const NonEmptyStringableNumberControl = props => (
-  <NumberControl
-    {...props}
-    onChange={value => props.onChange(value === '' ? null : value)}
-  />
-);
+
+// Netlify doesn't support functional components...
+// eslint-disable-next-line react/prefer-stateless-function
+class NonEmptyStringableNumberControl extends React.Component {
+  render() {
+    const { onChange } = this.props;
+    return (
+      <NumberControl
+        {...this.props}
+        onChange={value => onChange(value === '' ? null : value)}
+      />
+    );
+  }
+}
 
 NonEmptyStringableNumberControl.propTypes = {
   onChange: PropTypes.func.isRequired,
