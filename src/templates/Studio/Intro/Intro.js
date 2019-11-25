@@ -1,7 +1,7 @@
-import styles from "./intro.module.scss"
-import React from "react"
-import ReactMarkdown from "react-markdown"
-import Recruitee from "../Recruitee/Recruitee"
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import styles from './Intro.module.scss';
+import Recruitee from '../Recruitee/Recruitee';
 
 const Intro = ({ data: { address, contact, intro }, location }) => (
   <>
@@ -30,6 +30,6 @@ const Intro = ({ data: { address, contact, intro }, location }) => (
       <Recruitee location={location} />
     </div>
   </>
-)
+);
 
-export default Intro
+export default Intro;

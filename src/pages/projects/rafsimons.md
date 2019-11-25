@@ -1,21 +1,21 @@
 ---
-templateKey: project
+templateKey: Project
 title: |-
-  Digital partner 
+  Digital partner
 
   for Raf Simons
 intro: >-
   Fashion designer Raf Simons constantly investigates the very perception of men
   and clothing. Each collection of his namesake label tells a story. Therefore,
   showing the context in which the clothing is conceived in an enticing way
-  seemed essential to the new website. 
+  seemed essential to the new website.
 
 
   Rafsimons.com invites the viewer to take a detailed look at the garments, and
   moreover narrates conceptual, emotional and psychological layers of
   information. Phrases, sound, video footage and other contextual stimuli that
   are appropriate for the most recent creative output of the designer persuade
-  the viewer to see the collection with different eyes — maybe, his eyes. 
+  the viewer to see the collection with different eyes — maybe, his eyes.
 
 
   The end result is a experimental digital experience that resonates the world

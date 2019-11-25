@@ -1,21 +1,23 @@
-import styles from "./404.module.scss"
-import React from "react"
-import Layout from "../components/Layout/layout"
-import Navigation from "../components/Layout/navigation"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
+import styles from './404.module.scss';
+import Layout from '../components/Layout/Layout';
+import Navigation from '../components/Navigation/Navigation';
 
-const Error404 = () => {
-  return (
-    <Layout>
-      <Navigation />
-      <main className={styles.notFoundPage}>
-        <div>
-          Page not found <br />
-          View our <Link to="/#projects">projects</Link>
-        </div>
-      </main>
-    </Layout>
-  )
-}
+const Error404 = () => (
+  <Layout>
+    <Navigation />
+    <main className={styles.notFoundPage}>
+      <div>
+          Page not found
+        {' '}
+        <br />
+          View our
+        {' '}
+        <Link to="/#projects">projects</Link>
+      </div>
+    </main>
+  </Layout>
+);
 
-export default Error404
+export default Error404;

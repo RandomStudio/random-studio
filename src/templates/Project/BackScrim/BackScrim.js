@@ -1,42 +1,42 @@
-import styles from "./backScrim.module.scss"
-import React, { useEffect, useRef, useState } from "react"
-import { Link } from "gatsby"
-import { motion, AnimatePresence } from "framer-motion"
-import PropTypes from "prop-types"
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'gatsby';
+import { motion, AnimatePresence } from 'framer-motion';
+import PropTypes from 'prop-types';
+import styles from './backScrim.module.scss';
 
 const BackScrim = ({ returnUrl }) => {
-  const intersectionRef = useRef()
-  const [isVisible, setIsVisible] = useState(false)
+  const intersectionRef = useRef();
+  const [isVisible, setIsVisible] = useState(false);
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    const intersection = intersectionRef // For cleanup reference - according to eslint
+    const intersection = intersectionRef; // For cleanup reference - according to eslint
     const handleScrimVisibility = event => {
       if (event.deltaY > 0 && !isVisible) {
-        setIsVisible(true)
+        setIsVisible(true);
       }
-    }
+    };
 
     const intersectCb = entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          window.addEventListener("wheel", handleScrimVisibility)
+          window.addEventListener('wheel', handleScrimVisibility);
         } else {
-          window.removeEventListener("wheel", handleScrimVisibility)
-          setIsVisible(false)
+          window.removeEventListener('wheel', handleScrimVisibility);
+          setIsVisible(false);
         }
-      })
-    }
+      });
+    };
 
-    const observer = new IntersectionObserver(intersectCb)
-    observer.observe(intersection.current)
+    const observer = new IntersectionObserver(intersectCb);
+    observer.observe(intersection.current);
 
     return () => {
-      observer.unobserve(intersection.current)
-      observer.disconnect()
-      window.removeEventListener("wheel", handleScrimVisibility)
-    }
-  }, [])
+      observer.unobserve(intersection.current);
+      observer.disconnect();
+      window.removeEventListener('wheel', handleScrimVisibility);
+    };
+  }, []);
   /* eslint-enable react-hooks/exhaustive-deps */
 
   return (
@@ -66,11 +66,11 @@ const BackScrim = ({ returnUrl }) => {
         </div>
       </noscript>
     </>
-  )
-}
+  );
+};
 
 BackScrim.propTypes = {
   returnUrl: PropTypes.string.isRequired,
-}
+};
 
-export default BackScrim
+export default BackScrim;

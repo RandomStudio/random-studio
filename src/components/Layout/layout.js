@@ -1,10 +1,10 @@
-import "./reset.css"
-import "./vars.css"
-import "./global.css"
-import React from "react"
-import styles from "./layout.module.scss"
+import './reset.css';
+import './vars.css';
+import './global.css';
+import React from 'react';
+import styles from './Layout.module.scss';
 
-const backgroundTransitionColors = ["#0000FF", "#FFFF00", "#00FFFF", "#FF00FF"]
+const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
 export default ({ children }) => (
   <>
@@ -19,4 +19,4 @@ export default ({ children }) => (
       }}
     />
   </>
-)
+);

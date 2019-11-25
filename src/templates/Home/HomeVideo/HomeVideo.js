@@ -1,16 +1,16 @@
-import React from "react"
-import { Link } from "gatsby"
-import styles from "./HomeVideo.module.scss"
+import React from 'react';
+import { Link } from 'gatsby';
+import styles from './HomeVideo.module.scss';
 
 export default ({ collaborationCredits, videoUrl }) => {
   const scrollToProjects = event => {
-    const projectsBlock = document.getElementById("projects")
+    const projectsBlock = document.getElementById('projects');
     projectsBlock.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
-    event.preventDefault()
-  }
+      behavior: 'smooth',
+      block: 'start',
+    });
+    event.preventDefault();
+  };
 
   return (
     <div className={styles.video}>
@@ -43,5 +43,5 @@ export default ({ collaborationCredits, videoUrl }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};

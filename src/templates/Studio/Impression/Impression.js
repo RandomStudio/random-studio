@@ -1,19 +1,17 @@
-import styles from "./impression.module.scss"
-import React from "react"
-import ImageCarousel from "../../General/ImageCarousel/ImageCarousel"
+import React from 'react';
+import styles from './Impression.module.scss';
+import ImageCarousel from '../../../components/ImageCarousel/ImageCarousel';
 
-const Impression = ({ data: { title, showIndicator, images } }) => {
-  return (
-    <div className={styles.impression}>
-      <div className={styles.carouselWrapper}>
-        <ImageCarousel
-          images={images}
-          showIndicator={showIndicator}
-          title={title}
-        />
-      </div>
+const Impression = ({ data: { title, showIndicator, images } }) => (
+  <div className={styles.impression}>
+    <div className={styles.carouselWrapper}>
+      <ImageCarousel
+        images={images}
+        showIndicator={showIndicator}
+        title={title}
+      />
     </div>
-  )
-}
+  </div>
+);
 
-export default Impression
+export default Impression;

@@ -1,47 +1,49 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react';
 
 const LazyVideo = React.forwardRef(
-  ({ videoSrc, loops, isMuted, autoPlays }, ref) => {
-    const [noJS, setNoJS] = useState(true)
-    const [intersected, setIntersected] = useState(false)
+  ({
+    videoSrc, loops, isMuted, autoPlays,
+  }, ref) => {
+    const [noJS, setNoJS] = useState(true);
+    const [intersected, setIntersected] = useState(false);
 
     useEffect(() => {
       // Referrence for cleanup
-      const videoRef = ref
-      setNoJS(false)
+      const videoRef = ref;
+      setNoJS(false);
 
       const handlePlayer = () => {
         if (autoPlays) {
-          videoRef.current.play()
+          videoRef.current.play();
         }
-      }
+      };
 
       if (videoRef.current) {
         const observer = new IntersectionObserver(
           entries => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
-                setIntersected(true)
-                handlePlayer()
-                observer.disconnect()
+                setIntersected(true);
+                handlePlayer();
+                observer.disconnect();
               }
-            })
+            });
           },
           {
-            rootMargin: "8%",
-          }
-        )
+            rootMargin: '8%',
+          },
+        );
 
-        observer.observe(videoRef.current)
+        observer.observe(videoRef.current);
 
         return () => {
           if (videoRef.current) {
-            observer.unobserve(videoRef.current)
+            observer.unobserve(videoRef.current);
           }
-          observer.disconnect()
-        }
+          observer.disconnect();
+        };
       }
-    }, [noJS, ref, autoPlays])
+    }, [noJS, ref, autoPlays]);
 
     // Prevents autoplay conflicting
     return (
@@ -49,7 +51,7 @@ const LazyVideo = React.forwardRef(
         {!noJS && (
           <video
             ref={ref}
-            src={intersected ? videoSrc : ""}
+            src={intersected ? videoSrc : ''}
             loop={loops}
             muted={isMuted}
             playsInline
@@ -67,11 +69,11 @@ const LazyVideo = React.forwardRef(
           />
         </noscript>
       </>
-    )
-  }
-)
+    );
+  },
+);
 
-LazyVideo.propTypes = {}
-LazyVideo.defaultProps = {}
+LazyVideo.propTypes = {};
+LazyVideo.defaultProps = {};
 
-export default LazyVideo
+export default LazyVideo;

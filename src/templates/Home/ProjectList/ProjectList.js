@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
-import styles from "./ProjectList.module.scss"
-import ReactMarkdown from "react-markdown"
-import ProjectVideo from "../ProjectVideo/ProjectVideo"
-import Img from "gatsby-image"
+import React from 'react';
+import { Link } from 'gatsby';
+import ReactMarkdown from 'react-markdown';
+import Img from 'gatsby-image';
+import styles from './ProjectList.module.scss';
+import ProjectVideo from '../ProjectVideo/ProjectVideo';
 
 export default ({ intro, middle, projects }) => (
   <div id="projects" className={styles.projects}>
@@ -18,9 +18,9 @@ export default ({ intro, middle, projects }) => (
           id={slug}
           to={slug}
           style={{
-            "--marginTop": `${thumbnail.marginTop}%`,
-            "--marginLeft": `${thumbnail.marginLeft}%`,
-            "--width": `${thumbnail.width}%`,
+            '--marginTop': `${thumbnail.marginTop}%`,
+            '--marginLeft': `${thumbnail.marginLeft}%`,
+            '--width': `${thumbnail.width}%`,
           }}
         >
           <div className={styles.media}>
@@ -44,13 +44,13 @@ export default ({ intro, middle, projects }) => (
 
           <div
             className={styles.title}
-            style={{ marginLeft: !thumbnail.marginLeft && "1.4rem" }}
+            style={{ marginLeft: !thumbnail.marginLeft && '1.4rem' }}
           >
             <ReactMarkdown escapeHtml={false} source={title} />
           </div>
         </Link>
-        {(index === 3 ||
-          (projects.length < 3 && index === projects.length - 1)) && (
+        {(index === 3
+          || (projects.length < 3 && index === projects.length - 1)) && (
           <div className={styles.intermittentStatement}>
             <ReactMarkdown escapeHtml={false} source={middle} />
           </div>
@@ -58,4 +58,4 @@ export default ({ intro, middle, projects }) => (
       </React.Fragment>
     ))}
   </div>
-)
+);

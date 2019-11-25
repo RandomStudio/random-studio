@@ -1,9 +1,9 @@
 ---
-templateKey: project
+templateKey: Project
 title: >-
-  Interactive sneakers 
-  
-  
+  Interactive sneakers
+
+
   for New Balance
 intro: >-
   To celebrate the launch of the New Balance 574S in Shanghai, we created an
@@ -77,19 +77,19 @@ content:
   - caption: >-
       Lifting the shoes from the plinth triggers an immediate change in light
       and sound. Visitors are free to touch and explore the shoe, and in the
-      process intuitively discover the interaction mechanism. 
-      
-      
-      
-      
+      process intuitively discover the interaction mechanism.
+
+
+
+
       Wireless motion sensors hidden inside each shoe allow users to shift the
       brightness and hue of the lighting, while the ambient audio subtly changes
       in response. Shaking the shoes or spinning them rapidly unlocks different
       sound and lighting effects.
-      
-      
-      
-      
+
+
+
+
       Before hearing a word of product information or marketing-speak, the
       installation allows visitors to enjoy an experience of playfulness and
       wonder connected directly with the product in their hands.

@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../../components/Layout/layout"
-import ProjectDetail from "../../components/projectDetail"
-import Navigation from "../components/Layout/navigation"
-import SEO from "../../components/Layout/seo"
-import BackScrim from "../components/Project/BackScrim/backScrim"
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../../components/Layout/Layout';
+import ProjectDetail from '../../components/ProjectDetail/ProjectDetail';
+import Navigation from '../../components/Navigation/Navigation';
+import SEO from '../../components/SEO/SEO';
+import BackScrim from './BackScrim/BackScrim';
 
 export const pageQuery = graphql`
   query ProjectById($id: String!) {
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
 export default ({
   data: {
@@ -63,13 +63,13 @@ export default ({
     },
   },
 }) => {
-  const returnSlug = `#${slug}`
-  const thumbnailImage = project.thumbnail.image
+  const returnSlug = `#${slug}`;
+  const thumbnailImage = project.thumbnail.image;
   const SEOImage = thumbnailImage
     ? thumbnailImage.childImageSharp
       ? thumbnailImage.childImageSharp.fixed.src
       : thumbnailImage.publicURL
-    : undefined
+    : undefined;
 
   return (
     <Layout>
@@ -83,5 +83,5 @@ export default ({
       <ProjectDetail {...project} />
       <BackScrim returnUrl={returnSlug} />
     </Layout>
-  )
-}
+  );
+};

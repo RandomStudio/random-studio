@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../../components/Layout/Layout"
-import Navigation from "../../components/Navigation/Navigation"
-import Footer from "../../components/Footer/Footer"
-import Intro from "../components/Studio/Intro/Intro"
-import InfoBlock from "../components/Studio/InfoBlock/InfoBlock"
-import Impression from "../components/Studio/Impression/Impression"
-import SEO from "../../components/SEO/SEO"
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../../components/Layout/Layout';
+import Navigation from '../../components/Navigation/Navigation';
+import Footer from '../../components/Footer/Footer';
+import Intro from './Intro/Intro';
+import InfoBlock from './InfoBlock/InfoBlock';
+import Impression from './Impression/Impression';
+import SEO from '../../components/SEO/SEO';
 
 export const query = graphql`
   {
@@ -54,7 +54,7 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 export default ({ location, data: { indexPage, studioPage } }) => (
   <Layout>
@@ -70,4 +70,4 @@ export default ({ location, data: { indexPage, studioPage } }) => (
     <Impression data={studioPage.frontmatter.studioImpression} />
     <Footer {...indexPage.frontmatter} />
   </Layout>
-)
+);

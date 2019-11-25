@@ -1,6 +1,6 @@
-import React from "react"
-import styles from "./Footer.module.scss"
-import ReactMarkdown from "react-markdown"
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import styles from './Footer.module.scss';
 
 export default ({ address, contact }) => (
   <footer className={styles.footer}>
@@ -12,4 +12,4 @@ export default ({ address, contact }) => (
       <ReactMarkdown escapeHtml={false} source={contact} />
     </div>
   </footer>
-)
+);

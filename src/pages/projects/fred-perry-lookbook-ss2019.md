@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: Interactive editorial lookbook SS19 for Fred Perry
 intro: >-
   The Fred Perry x Raf Simons SS19 collaboration is presented within an
@@ -34,7 +34,7 @@ content:
     width: 70
   - caption: >-
       The experience is a tribute to the accidental/objective photo genre made
-      widely available through street view, which offers a scan of reality. 
+      widely available through street view, which offers a scan of reality.
 
 
       Users can take a stroll to encounter the casually worn garments, discover
@@ -47,7 +47,7 @@ content:
       autoplay: false
       hasControls: false
       isMuted: true
-      loops: true    
+      loops: true
   - marginLeft: 0
     marginTop: 0
     ratio: 56.25

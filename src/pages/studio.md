@@ -1,5 +1,5 @@
 ---
-templateKey: studio
+templateKey: Studio
 intro: >-
   Random is an independent experience design studio.<br /> We are strategists,
   designers and engineers from all over the world, collaborating with brands to

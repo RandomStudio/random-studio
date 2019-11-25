@@ -1,56 +1,55 @@
-import styles from "./recruitee.module.scss"
-import React, { useEffect, useState } from "react"
-import JobOffer from "./JobOffer/JobOffer"
-import { navigate } from "gatsby"
+import React, { useEffect, useState } from 'react';
+import { navigate } from 'gatsby';
+import styles from './Recruitee.module.scss';
+import JobOffer from './JobOffer/JobOffer';
 
 const Recruitee = ({ location }) => {
-  const [recruiteeData, setRecruiteeData] = useState({})
-  const [openOffer, setOpenOffer] = useState()
+  const [recruiteeData, setRecruiteeData] = useState({});
+  const [openOffer, setOpenOffer] = useState();
+
+  const handleOpenOffer = offer => {
+    document.body.classList.add('prevent-scroll');
+    setOpenOffer(offer);
+  };
 
   useEffect(() => {
     // If fetch is not supported, we will not show any job offers
     // IE11 and lower
     if (window.fetch) {
-      fetch("https://career.recruitee.com/api/c/23038/widget/?widget=true")
+      fetch('https://career.recruitee.com/api/c/23038/widget/?widget=true')
         .then(res => res.json())
         .then(json => {
-          setRecruiteeData(json)
+          setRecruiteeData(json);
 
           if (location.hash && (json.offers && json.offers.length)) {
-            const openOffer = json.offers.find(
-              offer =>
-                offer.id ===
-                parseInt(location.hash.substring(1, location.hash.length), 10)
-            )
+            const selectedOffer = json.offers.find(
+              offer => offer.id
+                === parseInt(location.hash.substring(1, location.hash.length), 10),
+            );
 
-            if (openOffer) {
-              handleOpenOffer(openOffer)
+            if (selectedOffer) {
+              handleOpenOffer(selectedOffer);
             }
           }
         })
         .catch(err => {
-          throw new Error(`Failed to fetch open job offers: ${err}`)
-        })
+          throw new Error(`Failed to fetch open job offers: ${err}`);
+        });
     }
 
     // react-hooks/exhaustive-deps about location.hash
     // Should only check it once on render, so disabled eslint for it
     // eslint-disable-next-line
-  }, [])
-
-  const handleOpenOffer = offer => {
-    document.body.classList.add("prevent-scroll")
-    setOpenOffer(offer)
-  }
+  }, []);
 
   const handleCloseOffer = () => {
-    setOpenOffer(null)
+    setOpenOffer(null);
     // Replace as offer is programmatically opened
-    navigate("/studio", { replace: true })
-    document.body.classList.remove("prevent-scroll")
-  }
+    navigate('/studio', { replace: true });
+    document.body.classList.remove('prevent-scroll');
+  };
 
-  if (!recruiteeData.offers || !recruiteeData.offers.length) return null
+  if (!recruiteeData.offers || !recruiteeData.offers.length) return null;
 
   return (
     <>
@@ -71,7 +70,7 @@ const Recruitee = ({ location }) => {
         <JobOffer closeOpenOffer={handleCloseOffer} offer={openOffer} />
       )}
     </>
-  )
-}
+  );
+};
 
-export default Recruitee
+export default Recruitee;

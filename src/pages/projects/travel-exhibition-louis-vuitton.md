@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
 intro: >-
   Louis Vuitton’s traveling exhibition “Volez, Voguez, Voyagez” (Fly, Sail,
