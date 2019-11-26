@@ -19,6 +19,7 @@ projects:
       Travel exhibition ‘Volez, Voguez, Voyagez’
       for Louis Vuitton
     image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
+    project: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
 address: >
   Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
