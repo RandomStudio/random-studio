@@ -146,5 +146,9 @@ credits:
     value: >-
       Concept Development, Creative Direction, Art Direction, 3D and
       Photography, Animation, Web Development, Retail Fixture Concept & Design
+opengraph:
+  og_description: Test description
+  og_image: /img/9ebaa1e79f39e9509588a6170a0ac25a-1-.sc03108-jpg.jpg
+  og_title: Test title
 ---
 
