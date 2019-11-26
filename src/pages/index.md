@@ -14,8 +14,14 @@ middle: >-
 
 
   [More about our studio](/studio)
+projects:
+  - caption: |-
+      Travel exhibition ‘Volez, Voguez, Voyagez’
+      for Louis Vuitton
+    image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
 address: >
   Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
 contact: '[+31 20 779 7735](tel://+31207797735)<br /> <mailto:hello@random.studio>'
 ---
+
