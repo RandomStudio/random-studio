@@ -160,6 +160,25 @@ collections:
           - label: Value
             name: value
             widget: text
+      - label: OpenGraph tags
+        name: opengraph
+        widget: object
+        fields:
+          - label: "Title"
+            name: ogTitle
+            required: false
+            valueType: string
+            widget: text
+          - label: "Description"
+            name: ogDescription
+            required: false
+            valueType: string
+            widget: text
+          - label: "Image"
+            name: ogImage
+            required: false
+            valueType: string
+            widget: image
   - name: pages
     label: Pages
     files:

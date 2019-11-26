@@ -19,7 +19,12 @@ const defaultMeta = [
 ];
 
 const SEO = ({
-  title, description, image, pathName,
+  title,
+  description,
+  image,
+  pathName,
+  socialDescription,
+  socialTitle,
 }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
@@ -45,54 +50,41 @@ const SEO = ({
     },
   } = data;
 
-  const metaTitle = title ? `${defaultTitle} - ${title}` : defaultTitle;
-  const url = `${siteUrl}${pathName}`;
-  const imageUrl = `${siteUrl}${image}`;
+  const formatTitle = string => `${defaultTitle} - ${string}`;
+
+  const pageTitle = title ? formatTitle(title) : defaultTitle;
+  const pageDescription = description || defaultDescription;
+  const pageUrl = `${siteUrl}${pathName}`;
+
+  const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
+  const ogDescription = socialDescription || pageDescription;
+  const ogImage = `${siteUrl}${image}`;
 
   return (
     <Helmet
       htmlAttributes={{ lang: 'en' }}
-      title={metaTitle}
+      title={pageTitle}
       meta={[
         ...defaultMeta,
-        {
-          name: 'description',
-          content: description || defaultDescription,
-        },
+        { name: 'description', content: pageDescription },
 
         // OG
-        { property: 'og:title', content: `${metaTitle}` },
+        { property: 'og:title', content: ogTitle },
         { property: 'og:site_name', content: 'Random Studio' },
-        {
-          property: 'og:description',
-          content: description || defaultDescription,
-        },
+        { property: 'og:description', content: ogDescription },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'en_US' },
-        { property: 'og:url', content: `${url}` },
-        {
-          property: 'og:image',
-          content: imageUrl,
-        },
+        { property: 'og:url', content: pageUrl },
+        { property: 'og:image', content: ogImage },
+
         // Explicit image sizing for twitter
-        {
-          property: 'og:image:width',
-          content: 800,
-        },
-        {
-          property: 'og:image:height',
-          content: 800,
-        },
+        { property: 'og:image:width', content: 800 },
+        { property: 'og:image:height', content: 800 },
+
         // Twitter
-        { name: 'twitter:title', content: `${metaTitle}` },
-        {
-          name: 'twitter:description',
-          content: description || defaultDescription,
-        },
-        {
-          name: 'twitter:image',
-          content: imageUrl,
-        },
+        { name: 'twitter:title', content: ogTitle },
+        { name: 'twitter:description', content: ogDescription },
+        { name: 'twitter:image', content: ogImage },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: twitterHandle },
       ]}
@@ -141,12 +133,16 @@ SEO.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   pathName: PropTypes.string.isRequired,
+  socialDescription: PropTypes.string,
+  socialTitle: PropTypes.string,
 };
 
 SEO.defaultProps = {
   title: '',
   description: '',
   image: '/og-image.jpg',
+  socialDescription: null,
+  socialTitle: null,
 };
 
 export default SEO;
