@@ -25,12 +25,14 @@ const BackScrim = ({ returnUrl }) => {
       setIsVisible(hasScrolledToBottom);
     };
 
-    if (supportsIntersectionObserver) {
-      window.addEventListener('scroll', onScroll);
-    } else {
-      const intersectCb = sentinel => setIsVisible(sentinel.isIntersecting);
-      observer = new IntersectionObserver(entries => intersectCb(entries[0]));
-      observer.observe(intersection);
+    if (window) {
+      if (supportsIntersectionObserver) {
+        window.addEventListener('scroll', onScroll);
+      } else {
+        const intersectCb = sentinel => setIsVisible(sentinel.isIntersecting);
+        observer = new IntersectionObserver(entries => intersectCb(entries[0]));
+        observer.observe(intersection);
+      }
     }
 
     return () => {
@@ -38,7 +40,10 @@ const BackScrim = ({ returnUrl }) => {
         observer.unobserve(intersection);
         observer.disconnect();
       }
-      window.removeEventListener('scroll', onScroll);
+
+      if (window) {
+        window.removeEventListener('scroll', onScroll);
+      }
     };
   }, []);
 
