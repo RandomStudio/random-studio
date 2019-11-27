@@ -3,13 +3,6 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import styles from './BackScrim.module.scss';
 
-const supportsIntersectionObserver = (('IntersectionObserver' in window)
-  || (
-    ('IntersectionObserverEntry' in window)
-    && ('isIntersecting' in window.IntersectionObserverEntry.prototype)
-  )
-);
-
 const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
@@ -17,6 +10,12 @@ const BackScrim = ({ returnUrl }) => {
   useEffect(() => {
     const intersection = intersectionRef.current;
     let observer = null;
+    const supportsIntersectionObserver = (('IntersectionObserver' in window)
+      || (
+        ('IntersectionObserverEntry' in window)
+        && ('isIntersecting' in window.IntersectionObserverEntry.prototype)
+      )
+    );
 
     const onScroll = () => {
       const hasScrolledToBottom = (
