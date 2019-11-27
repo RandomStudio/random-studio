@@ -3,8 +3,10 @@ import NumberControl from 'netlify-cms-widget-number/dist/esm/NumberControl';
 import NumberPreview from 'netlify-cms-widget-number/dist/esm/NumberPreview';
 import PropTypes from 'prop-types';
 import React from 'react';
+import HomePreview from './preview-templates/Page/HomePreview';
 import ProjectPreview from './preview-templates/ProjectPreview';
 
+CMS.registerPreviewTemplate('index', HomePreview);
 CMS.registerPreviewTemplate('project', ProjectPreview);
 
 // Override default number widget since it has a bug with non-required number fields where it

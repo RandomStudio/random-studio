@@ -193,6 +193,54 @@ collections:
           - label: Middle
             name: middle
             widget: markdown
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - label: Homepage Caption
+                name: caption
+                required: false
+                widget: text
+              - label: Thumbnail
+                name: thumbnail
+                widget: object
+                fields:
+                  - label: Image
+                    name: image
+                    required: false
+                    widget: image
+                  - label: "Video URL"
+                    name: video
+                    required: false
+                    widget: text
+                  - label: Ratio
+                    name: ratio
+                    required: false
+                    valueType: float
+                    default: 0.00
+                    widget: nonEmptyStringableNumber
+                  - label: Width
+                    name: width
+                    required: false
+                    valueType: float
+                    widget: nonEmptyStringableNumber
+                  - label: "Margin Top"
+                    name: marginTop
+                    default: 0
+                    valueType: float
+                    widget: nonEmptyStringableNumber
+                  - label: "Margin Left"
+                    name: marginLeft
+                    default: 0
+                    valueType: float
+                    widget: nonEmptyStringableNumber
+              - name: project
+                required: true
+                widget: relation
+                collection: 'project'
+                searchFields: ['title']
+                valueField: 'title'
+                displayFields: ['title']
           - label: Address
             name: address
             widget: markdown
