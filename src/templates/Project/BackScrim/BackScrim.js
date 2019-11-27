@@ -3,21 +3,42 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import styles from './BackScrim.module.scss';
 
+const supportsIntersectionObserver = (('IntersectionObserver' in window)
+  || (
+    ('IntersectionObserverEntry' in window)
+    && ('isIntersecting' in window.IntersectionObserverEntry.prototype)
+  )
+);
+
 const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const intersection = intersectionRef.current;
+    let observer = null;
 
-    const intersectCb = sentinel => setIsVisible(sentinel.isIntersecting);
+    const onScroll = (e) => {
+      const hasScrolledToBottom = (
+        (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight
+      );
+      setIsVisible(hasScrolledToBottom);
+    };
 
-    const observer = new IntersectionObserver(entries => intersectCb(entries[0]));
-    observer.observe(intersection);
+    if (supportsIntersectionObserver) {
+      window.addEventListener('scroll', onScroll);
+    } else {
+      const intersectCb = sentinel => setIsVisible(sentinel.isIntersecting);
+      observer = new IntersectionObserver(entries => intersectCb(entries[0]));
+      observer.observe(intersection);
+    }
 
     return () => {
-      observer.unobserve(intersection);
-      observer.disconnect();
+      if (observer) {
+        observer.unobserve(intersection);
+        observer.disconnect();
+      }
+      window.removeEventListener('scroll', onScroll);
     };
   }, [setIsVisible]);
 
