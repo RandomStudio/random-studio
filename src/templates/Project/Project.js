@@ -81,7 +81,7 @@ export default ({
       />
       <Navigation />
       <ProjectDetail {...project} />
-      {window && <BackScrim returnUrl={returnSlug} />}
+      {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
     </Layout>
   );
 };
