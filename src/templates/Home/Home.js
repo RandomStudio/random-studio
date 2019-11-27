@@ -21,20 +21,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            thumbnail {
-              ratio
-              marginLeft
-              marginTop
-              video
-              width
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 1920) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -52,6 +38,24 @@ export const pageQuery = graphql`
         }
         intro
         middle
+        projects {
+          caption
+          project
+          thumbnail {
+            ratio
+            marginLeft
+            marginTop
+            video
+            width
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
         video
       }
     }
@@ -60,37 +64,44 @@ export const pageQuery = graphql`
 
 const Home = ({
   data: {
-    allMarkdownRemark,
-    markdownRemark,
+    allMarkdownRemark: {
+      edges,
+    },
+    markdownRemark: {
+      fields,
+      frontmatter,
+    },
   },
-}) => {
-  const edges = allMarkdownRemark.edges || [];
-  const fields = markdownRemark ? markdownRemark.fields : {};
-  const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
-
-  return (
-    <Layout>
-      <SEO pathName={fields.slug} />
-      <Navigation />
-      <HomeVideo
-        videoUrl={frontmatter.video}
-        collaborationCredits={frontmatter.collaborationCredits}
-      />
-      <ProjectList
-        {...frontmatter}
-        projects={edges.map(
-          ({
-            node: {
-              fields: { slug },
-              frontmatter: { title, thumbnail },
-            },
-          }) => ({ slug, title, thumbnail }),
-        )}
-      />
-      <Footer {...frontmatter} />
-    </Layout>
-  );
-};
+}) => (
+  <Layout>
+    <SEO pathName={fields.slug} />
+    <Navigation />
+    <HomeVideo
+      videoUrl={frontmatter.video}
+      collaborationCredits={frontmatter.collaborationCredits}
+    />
+    <ProjectList
+      {...frontmatter}
+      projects={frontmatter.projects.map(
+        ({
+          caption,
+          project,
+          thumbnail,
+        }) => {
+          const relation = edges.find(e => (
+            e.node.frontmatter.title === frontmatter.projects[0].project
+          ));
+          return {
+            slug: relation ? relation.node.fields.slug : null,
+            title: caption || project,
+            thumbnail,
+          };
+        },
+      )}
+    />
+    <Footer {...frontmatter} />
+  </Layout>
+);
 
 Home.propTypes = {
   data: PropTypes.shape({

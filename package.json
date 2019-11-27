@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
-    "develop:expose": "gatsby clean && gatsby develop --https --host 0.0.0.0",
+    "develop:expose": "gatsby clean && NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --host 0.0.0.0 --https",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

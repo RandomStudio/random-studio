@@ -20,12 +20,12 @@ export default ({ entry }) => {
       />
       <ProjectList
         {...data}
-        projects={[].map(({
+        projects={projects.map(({
           caption,
           project,
           thumbnail,
         }) => ({
-          slug: 'none',
+          slug: null,
           title: caption || project,
           thumbnail,
         }))}
