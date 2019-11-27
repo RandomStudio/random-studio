@@ -40,7 +40,7 @@ const BackScrim = ({ returnUrl }) => {
       }
       window.removeEventListener('scroll', onScroll);
     };
-  }, [setIsVisible]);
+  }, []);
 
   const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible}`;
 
