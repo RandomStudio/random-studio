@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'gatsby';
-import { motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 import styles from './BackScrim.module.scss';
 
@@ -8,63 +7,30 @@ const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
-  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    const intersection = intersectionRef; // For cleanup reference - according to eslint
-    const handleScrimVisibility = event => {
-      if (event.deltaY > 0 && !isVisible) {
-        setIsVisible(true);
-      }
-    };
+    const intersection = intersectionRef.current;
 
-    const intersectCb = entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          window.addEventListener('wheel', handleScrimVisibility);
-        } else {
-          window.removeEventListener('wheel', handleScrimVisibility);
-          setIsVisible(false);
-        }
-      });
-    };
+    const intersectCb = sentinel => setIsVisible(sentinel.isIntersecting);
 
-    const observer = new IntersectionObserver(intersectCb);
-    observer.observe(intersection.current);
+    const observer = new IntersectionObserver(entries => intersectCb(entries[0]));
+    observer.observe(intersection);
 
     return () => {
-      observer.unobserve(intersection.current);
+      observer.unobserve(intersection);
       observer.disconnect();
-      window.removeEventListener('wheel', handleScrimVisibility);
     };
-  }, []);
-  /* eslint-enable react-hooks/exhaustive-deps */
+  }, [setIsVisible]);
+
+  const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible}`;
 
   return (
     <>
-      <AnimatePresence>
-        {isVisible && (
-          <motion.div
-            className={styles.backScrim}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <Link to={returnUrl} className={styles.backButton}>
-              Back to projects
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className={scrimClassNames}>
+        <Link to={returnUrl} className={styles.backButton}>
+          Back to projects
+        </Link>
+      </div>
       <div ref={intersectionRef} className={styles.intersectionLine} />
-
-      {/* If JS disabled - just show it */}
-      <noscript>
-        <div className={styles.backScrim}>
-          <Link to={returnUrl} className={styles.backButton}>
-            Back to projects
-          </Link>
-        </div>
-      </noscript>
     </>
   );
 };
