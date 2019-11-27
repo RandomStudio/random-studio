@@ -18,7 +18,7 @@ const BackScrim = ({ returnUrl }) => {
     const intersection = intersectionRef.current;
     let observer = null;
 
-    const onScroll = (e) => {
+    const onScroll = () => {
       const hasScrolledToBottom = (
         (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight
       );
