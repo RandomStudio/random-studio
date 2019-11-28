@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styles from './HomeVideo.module.scss';
 
-export default ({ collaborationCredits, videoUrl }) => {
+export default ({ collaborationCredits, layout, videoUrl }) => {
   const scrollToProjects = event => {
     const projectsBlock = document.getElementById('projects');
     projectsBlock.scrollIntoView({
@@ -12,10 +12,12 @@ export default ({ collaborationCredits, videoUrl }) => {
     event.preventDefault();
   };
 
+  const logoClass = `${styles.logo} ${layout === 'top' ? styles.isTop : styles.isCenter}`;
+
   return (
     <div className={styles.video}>
       <video src={videoUrl} muted loop autoPlay playsInline />
-      <h1 className={styles.logo}>
+      <h1 className={logoClass}>
         Random
         <br />
         Studio
@@ -29,7 +31,7 @@ export default ({ collaborationCredits, videoUrl }) => {
       </Link>
       {collaborationCredits && (
         <div className={styles.featuredAuthor}>
-          <span className={styles.logo}>Random Studio</span>
+          <span className={styles.creditsLogo}>Random Studio</span>
           <span> × </span>
           <span>
             <a
