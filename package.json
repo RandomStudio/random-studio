@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby clean && gatsby build",
-    "develop": "gatsby develop",
-    "develop:expose": "gatsby clean && gatsby develop --host 0.0.0.0",
+    "develop": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --host 0.0.0.0 --https",
+    "develop:expose": "gatsby clean && npm run develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
