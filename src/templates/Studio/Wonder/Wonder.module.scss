@@ -5,7 +5,7 @@
   height: 100vh;
   width: 100vw;
   z-index: 0;
-  pointer-events: none;
+  //pointer-events: none;
   opacity: 0;
   transition: opacity 4000ms ease-in;
 
@@ -15,7 +15,7 @@
 }
 
 .admin {
-  display: none;
+  //display: none;
   position: fixed;
   bottom: 0;
   right: 0;

@@ -16,66 +16,16 @@ import {
 import 'babylonjs-loaders';
 import styles from './Wonder.module.scss';
 
+// Scenes
+import Couch from './scenes/Couch';
+import Island from './scenes/Island';
 
 const Wonder = () => {
+  const mirrorRef = useRef();
   const canvasRef = useRef();
   const [canvasVisible, setCanvasVisible] = useState(false);
 
-  const cameraRotationVectors = [
-    {
-      frame: 0,
-      value: new Vector3(-1, 3, -5),
-    },
-    {
-      frame: 1000,
-      value: new Vector3(-3.5, 5, -5.5),
-    },
-    {
-      frame: 2000,
-      value: new Vector3(-1, 5, -6),
-    },
-  ];
-
-  const cameraTargetVectors = [
-    {
-      frame: 0,
-      value: new Vector3(-2, 2, 0),
-    },
-    {
-      frame: 1000,
-      value: new Vector3(-0.15, 2, 0),
-    },
-    {
-      frame: 2000,
-      value: new Vector3(-2, 2, 0),
-    },
-  ];
-
-  const modelVectors = [
-    {
-      frame: 0,
-      value: new Vector3(0, 0, 0),
-    },
-    {
-      frame: 3000,
-      value: new Vector3(0, -2, 0),
-    },
-  ];
-
-  const mirrors = [
-    {
-      width: 1.4,
-      height: 2.3,
-      position: new Vector3(-0.92, 1.58, 3.65),
-      rotation: new Vector3(0, -0.31, 0),
-    },
-    {
-      width: 0.45,
-      height: 2.3,
-      position: new Vector3(-1.654, 1.58, 3.65),
-      rotation: new Vector3(0, 89.23, 0),
-    },
-  ];
+  const [cameraRotationVectors, cameraTargetVectors, filename, modelVectors, mirrors] = [Island, Couch][Math.round(Math.random())];
 
   useEffect(() => {
     let engine;
@@ -114,7 +64,7 @@ const Wonder = () => {
 
     const addModel = async scene => {
       SceneLoader.ShowLoadingScreen = false;
-      await SceneLoader.AppendAsync('/models/', 'test-island.obj', scene);
+      await SceneLoader.AppendAsync('/models/', filename, scene);
       // Cleanup unneeded meshes
       return scene.meshes.find(mesh => mesh.id === 'Default');
     };
@@ -129,6 +79,7 @@ const Wonder = () => {
         mirror.position = mirrorState.position;
         mirror.rotation = mirrorState.rotation;
         mirror.computeWorldMatrix(true);
+        mirrorRef.current = mirror;
         const mirrorWorldMatrix = mirror.getWorldMatrix();
         const mirrorVertexData = mirror.getVerticesData('normal');
         let mirrorNormal = new Vector3(mirrorVertexData[0], mirrorVertexData[1], mirrorVertexData[2]);
@@ -155,11 +106,11 @@ const Wonder = () => {
 
     const setupCameraAnimation = (scene, camera) => {
       const targetAnim = new Animation('targetAnim', 'target', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
-      const rotAnim = new Animation('rotationAnim', 'rotation', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      const rotAnim = new Animation('rotationAnim', 'position', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
       targetAnim.setKeys(cameraTargetVectors);
       rotAnim.setKeys(cameraRotationVectors);
-      camera.animations.push(rotAnim);
       camera.animations.push(targetAnim);
+      camera.animations.push(rotAnim);
       scene.beginAnimation(camera, 0, 2000, true);
     };
 
