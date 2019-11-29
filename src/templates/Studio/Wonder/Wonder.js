@@ -1,5 +1,4 @@
-import './Wonder.scss';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {
   Animation,
   HemisphericLight,
@@ -15,15 +14,17 @@ import {
   Plane,
 } from 'babylonjs';
 import 'babylonjs-loaders';
+import styles from './Wonder.module.scss';
 
 
 const Wonder = () => {
   const canvasRef = useRef();
+  const [canvasVisible, setCanvasVisible] = useState(false);
 
   const cameraRotationVectors = [
     {
       frame: 0,
-      value: new Vector3(-1, 5, -5),
+      value: new Vector3(-1, 3, -5),
     },
     {
       frame: 1000,
@@ -50,6 +51,17 @@ const Wonder = () => {
     },
   ];
 
+  const modelVectors = [
+    {
+      frame: 0,
+      value: new Vector3(0, 0, 0),
+    },
+    {
+      frame: 3000,
+      value: new Vector3(0, -2, 0),
+    },
+  ];
+
   const mirrors = [
     {
       width: 1.4,
@@ -73,12 +85,13 @@ const Wonder = () => {
         preserveDrawingBuffer: true,
         stencil: true,
       });
-      engine.doNotHandleContextLost = true;
+      // engine.doNotHandleContextLost = true;
     };
 
     const createScene = () => {
       const scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
+      // scene.clearColor = new Color3(0.4, 0.972549, 0.972549);
       return scene;
     };
 
@@ -102,14 +115,17 @@ const Wonder = () => {
     const addModel = async scene => {
       SceneLoader.ShowLoadingScreen = false;
       await SceneLoader.AppendAsync('/models/', 'test-island.obj', scene);
+      // Cleanup unneeded meshes
+      return scene.meshes.find(mesh => mesh.id === 'Default');
     };
 
-    const addMirrors = scene => {
+    const addMirrors = (model, scene) => {
       mirrors.forEach(mirrorState => {
         const mirror = MeshBuilder.CreatePlane('glass', {
           width: mirrorState.width,
           height: mirrorState.height,
         }, scene);
+        mirror.parent = model;
         mirror.position = mirrorState.position;
         mirror.rotation = mirrorState.rotation;
         mirror.computeWorldMatrix(true);
@@ -123,7 +139,7 @@ const Wonder = () => {
         mirrorMaterial.diffuseColor = new Color3(0.1, 0.1, 0.1);
         mirrorMaterial.reflectionTexture = new MirrorTexture('mirror', 1024, scene, true);
         mirrorMaterial.reflectionTexture.mirrorPlane = reflector;
-        mirrorMaterial.reflectionTexture.renderList = [scene.meshes.find(mesh => mesh.id === 'Default')];
+        mirrorMaterial.reflectionTexture.renderList = [model];
         mirror.material = mirrorMaterial;
       });
     };
@@ -131,8 +147,8 @@ const Wonder = () => {
     const setupRenderLoop = scene => {
       engine.runRenderLoop(() => {
         // We don't use physics etc so can safely clear this
-        scene.clearCachedVertexData();
-        scene.cleanCachedTextureBuffer();
+        // scene.clearCachedVertexData();
+        // scene.cleanCachedTextureBuffer();
         scene.render();
       });
     };
@@ -147,17 +163,30 @@ const Wonder = () => {
       scene.beginAnimation(camera, 0, 2000, true);
     };
 
+    const setupModelAnimation = (scene, model) => {
+      const rotAnim = new Animation('rotationAnim', 'rotation', 15, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      rotAnim.setKeys(modelVectors);
+      model.animations.push(rotAnim);
+      scene.beginAnimation(model, 0, 3000, true);
+    };
+
     const onResize = () => engine.resize();
 
     const createGLScene = async () => {
       createEngine();
       const scene = createScene();
       const camera = addCamera(scene);
-      const light = addLighting(scene);
-      await addModel(scene);
-      addMirrors(scene);
-      setupRenderLoop(scene, camera);
-      setupCameraAnimation(scene, camera);
+      addLighting(scene);
+      scene.meshes = [await addModel(scene)];
+      const model = scene.meshes[0];
+      addMirrors(model, scene);
+
+      scene.executeWhenReady(() => {
+        setupRenderLoop(scene, camera);
+        setupCameraAnimation(scene, camera);
+        setupModelAnimation(scene, model);
+        setCanvasVisible(true);
+      });
 
       window.addEventListener('resize', onResize);
     };
@@ -172,7 +201,7 @@ const Wonder = () => {
     };
   }, [canvasRef]);
 
-  return <canvas ref={canvasRef} className="canvas" />;
+  return <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />;
 };
 
 export default Wonder;

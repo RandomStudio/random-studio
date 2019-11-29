@@ -6,6 +6,12 @@
   width: 100vw;
   z-index: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 4000ms ease-in;
+
+  &.is-visible {
+    opacity: 1;
+  }
 }
 
 .admin {
