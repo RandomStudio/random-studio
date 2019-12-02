@@ -10,10 +10,12 @@ intro: >-
   an interactive store fixture that provides a solution to the puzzle: the Tommy
   Hilfiger Kids Machine.
 thumbnail:
-  marginLeft: 0
+  image: /img/thumbnail_kidsmachine.png
+  marginLeft: 5
   marginTop: 0
   ratio: 0
   video: ''
+  width: 36
 content:
   - marginLeft: 5
     marginTop: 10
