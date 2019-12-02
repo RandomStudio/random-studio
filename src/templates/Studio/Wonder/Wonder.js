@@ -1,17 +1,20 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
   Animation,
+  DirectionalLight,
   HemisphericLight,
   StandardMaterial,
   MirrorTexture,
   Engine,
   MeshBuilder,
+  Mesh,
   Scene,
   Vector3,
   SceneLoader,
   Color3,
   ArcRotateCamera,
   Plane,
+  ShadowGenerator,
 } from 'babylonjs';
 import 'babylonjs-loaders';
 import styles from './Wonder.module.scss';
@@ -19,12 +22,13 @@ import styles from './Wonder.module.scss';
 // Scenes
 import Couch from './scenes/Couch';
 import Island from './scenes/Island';
+import Admin from './Admin/Admin';
 
 const Wonder = () => {
   const mirrorRef = useRef();
   const canvasRef = useRef();
   const [canvasVisible, setCanvasVisible] = useState(false);
-
+  const [manualValues, setManualValues] = useState([0, 0, 0, 0, 0, 0]);
   const [cameraRotationVectors, cameraTargetVectors, filename, modelVectors, mirrors] = [Island, Couch][Math.round(Math.random())];
 
   useEffect(() => {
@@ -55,11 +59,21 @@ const Wonder = () => {
     };
 
     const addLighting = scene => {
-      const light = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);
-      light.specular = new Color3(0, 0, 0);
-      light.specularPower = 0;
-      light.intensity = 2;
+      const light = new DirectionalLight("dir01", new Vector3(-1, -2, -1), scene);
+      light.position = new Vector3(20, 40, 20);
+      light.intensity = 0.5;
+      //const generalLight = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);
+      //generalLight.specular = new Color3(0, 0, 0);
+      //generalLight.specularPower = 0;
+      //generalLight.intensity = 0.5;
       return light;
+    };
+
+    const addShadows = (light, model) => {
+      const shadows = new ShadowGenerator(1024, light);
+      shadows.addShadowCaster(model);
+      shadows.useExponentialShadowMap = true;
+      model.receiveShadows = true;
     };
 
     const addModel = async scene => {
@@ -127,14 +141,19 @@ const Wonder = () => {
       createEngine();
       const scene = createScene();
       const camera = addCamera(scene);
-      addLighting(scene);
-      scene.meshes = [await addModel(scene)];
+      const light = addLighting(scene);
+      const lightSphere = Mesh.CreateSphere("sphere", 10, 2, scene);
+      lightSphere.position = light.position;
+      lightSphere.material = new StandardMaterial("light", scene);
+      lightSphere.material.emissiveColor = new Color3(1, 1, 0);
+      scene.meshes = [await addModel(scene), lightSphere];
       const model = scene.meshes[0];
       addMirrors(model, scene);
+      addShadows(light, model);
 
       scene.executeWhenReady(() => {
         setupRenderLoop(scene, camera);
-        setupCameraAnimation(scene, camera);
+        // setupCameraAnimation(scene, camera);
         setupModelAnimation(scene, model);
         setCanvasVisible(true);
       });
@@ -152,7 +171,12 @@ const Wonder = () => {
     };
   }, [canvasRef]);
 
-  return <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />;
+  return (
+    <>
+      <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
+      <Admin values={manualValues} setValues={setManualValues} />
+    </>
+  );
 };
 
 export default Wonder;
