@@ -12,6 +12,16 @@ export default ({ entry }) => {
     video,
   } = data;
 
+  const formattedProjects = (projects && projects.length > 0) ? projects.map(({
+    caption,
+    project,
+    thumbnail,
+  }) => ({
+    slug: null,
+    title: caption || project,
+    thumbnail,
+  })) : [];
+
   return (
     <Layout>
       <HomeVideo
@@ -20,15 +30,7 @@ export default ({ entry }) => {
       />
       <ProjectList
         {...data}
-        projects={projects.map(({
-          caption,
-          project,
-          thumbnail,
-        }) => ({
-          slug: null,
-          title: caption || project,
-          thumbnail,
-        }))}
+        projects={formattedProjects}
       />
     </Layout>
   );
