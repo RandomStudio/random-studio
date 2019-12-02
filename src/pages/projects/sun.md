@@ -8,7 +8,7 @@ intro: >-
 priority: 7
 thumbnail:
   marginLeft: 45
-  marginTop: 0
+  marginTop: -10
   ratio: 66.66666
   video: >-
     https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
