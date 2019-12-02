@@ -1,10 +1,12 @@
+
 .logo {
   position: relative;
   z-index: 1;
   font-family: "Larish Neue", serif;
   font-weight: normal;
   font-size: 3.2rem;
-  color: black;
+  color: white;
+  mix-blend-mode: difference;
   margin: 0;
   padding-top: 40vh;
   padding-left: 1.4rem;

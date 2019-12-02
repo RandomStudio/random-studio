@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import {
   Animation,
-  DirectionalLight,
+  SpotLight,
   HemisphericLight,
   StandardMaterial,
   MirrorTexture,
@@ -22,14 +22,12 @@ import styles from './Wonder.module.scss';
 // Scenes
 import Couch from './scenes/Couch';
 import Island from './scenes/Island';
-import Admin from './Admin/Admin';
 
 const Wonder = () => {
   const mirrorRef = useRef();
   const canvasRef = useRef();
   const [canvasVisible, setCanvasVisible] = useState(false);
-  const [manualValues, setManualValues] = useState([0, 0, 0, 0, 0, 0]);
-  const [cameraRotationVectors, cameraTargetVectors, filename, modelVectors, mirrors] = [Island, Couch][Math.round(Math.random())];
+  const [cameraRotationVectors, cameraTargetVectors, filename, lightDirectionVectors, lightPositionVectors, modelVectors, mirrors] = [Couch, Couch][Math.round(Math.random())];
 
   useEffect(() => {
     let engine;
@@ -45,6 +43,7 @@ const Wonder = () => {
     const createScene = () => {
       const scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
+      //scene.debugLayer.show();
       // scene.clearColor = new Color3(0.4, 0.972549, 0.972549);
       return scene;
     };
@@ -59,20 +58,26 @@ const Wonder = () => {
     };
 
     const addLighting = scene => {
-      const light = new DirectionalLight("dir01", new Vector3(-1, -2, -1), scene);
-      light.position = new Vector3(20, 40, 20);
-      light.intensity = 0.5;
-      //const generalLight = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);
-      //generalLight.specular = new Color3(0, 0, 0);
-      //generalLight.specularPower = 0;
-      //generalLight.intensity = 0.5;
+      const light = new SpotLight('Sun', new Vector3(0, 9, 14), new Vector3(0, -0.5, -0.8), 1, 32, scene);
+      light.intensity = 16;
+      light.diffuse = new Color3(0.94, 1, 0.69);
+      light.specular = new Color3(0.071, 0.078, 0.055);
+      light.shadowEnabled = true;
+      light.shadowMinZ = 6;
+      light.shadowMaxZ = 17;
+      const generalLight = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);
+      generalLight.specular = new Color3(0, 0, 0);
+      generalLight.specularPower = 0;
+      generalLight.intensity = 0.7;
       return light;
     };
 
     const addShadows = (light, model) => {
       const shadows = new ShadowGenerator(1024, light);
-      shadows.addShadowCaster(model);
       shadows.useExponentialShadowMap = true;
+      shadows.getShadowMap().renderList.push(model);
+      shadows.addShadowCaster(model);
+      shadows.useCloseExponentialShadowMap = true;
       model.receiveShadows = true;
     };
 
@@ -125,7 +130,7 @@ const Wonder = () => {
       rotAnim.setKeys(cameraRotationVectors);
       camera.animations.push(targetAnim);
       camera.animations.push(rotAnim);
-      scene.beginAnimation(camera, 0, 2000, true);
+      scene.beginAnimation(camera, 0, 3000, true);
     };
 
     const setupModelAnimation = (scene, model) => {
@@ -133,6 +138,16 @@ const Wonder = () => {
       rotAnim.setKeys(modelVectors);
       model.animations.push(rotAnim);
       scene.beginAnimation(model, 0, 3000, true);
+    };
+
+    const setupLightAnimation = (scene, light) => {
+      const dirAnim = new Animation('directionAnim', 'direction', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      const posAnim = new Animation('positionAnim', 'position', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      dirAnim.setKeys(lightDirectionVectors);
+      posAnim.setKeys(lightPositionVectors);
+      light.animations.push(posAnim);
+      light.animations.push(dirAnim);
+      scene.beginAnimation(light, 0, 3000, true);
     };
 
     const onResize = () => engine.resize();
@@ -153,8 +168,9 @@ const Wonder = () => {
 
       scene.executeWhenReady(() => {
         setupRenderLoop(scene, camera);
-        // setupCameraAnimation(scene, camera);
+        setupCameraAnimation(scene, camera);
         setupModelAnimation(scene, model);
+        setupLightAnimation(scene, light);
         setCanvasVisible(true);
       });
 
@@ -171,12 +187,7 @@ const Wonder = () => {
     };
   }, [canvasRef]);
 
-  return (
-    <>
-      <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
-      <Admin values={manualValues} setValues={setManualValues} />
-    </>
-  );
+  return <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />;
 };
 
 export default Wonder;
