@@ -196,9 +196,12 @@ collections:
           - label: Address
             name: address
             widget: markdown
-          - label: "Contact Info"
-            name: contact
-            widget: markdown
+          - label: "Phone Number"
+            name: phone
+            widget: text
+          - label: "Email Address"
+            name: email
+            widget: text
       - file: src/pages/studio.md
         label: "Studio Page"
         name: studio
