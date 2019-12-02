@@ -2,13 +2,15 @@
 templateKey: Project
 title: Interactive retail fixture for Tommy Hilfiger
 intro: >-
-  While Tommy Hilfiger’s Kids’ Collection is extensive, it is usually only
-  available in a handful of their larger stores. Without taking up limited floor
-  space or introducing new stock, how can you make people aware that the
-  collection even exists? Through play. We drew on our two areas of
-  specialisation – experiential installations and retail platforms – to create
-  an interactive store fixture that provides a solution to the puzzle: the Tommy
-  Hilfiger Kids Machine.
+  While the Tommy Hilfiger Kids’ Collection is extensive, it is usually only
+  available in a handful of their stores. Without taking up too much floor space
+  or introducing new stock, how could you make people aware that this collection
+  exists? Through play. 
+
+
+  We drew on our two areas of specialisation – experiential installations and
+  retail platforms – to create an interactive store fixture that provides a
+  solution to the puzzle: the Tommy Hilfiger Kids Machine.
 priority: 7.5
 thumbnail:
   image: /img/thumbnail_kidsmachine.png
@@ -30,10 +32,10 @@ content:
         https://player.vimeo.com/external/370848080.hd.mp4?s=029022badf948ec7d53dc83dd22cca19551a59c9&profile_id=175
     width: 90
   - caption: >-
-      Playfully shaped like a stack of boxes, the Kids Machine  is bright and
-      eye-catching with colourful tubes of moving lights protruding from its
-      sides. The central touchscreen is framed by dials, glowing buttons and a
-      giant slider and sound effects are emitted from a visible speaker grille.
+      Playfully shaped like a stack of boxes, the Kids Machine is colourful and
+      eye-catching with bright tubes of moving lights protruding from its sides.
+      The central touchscreen is framed by dials, glowing buttons and a giant
+      slider and sound effects are emitted from a visible speaker grille.
     marginLeft: 0
     marginTop: 72
     ratio: 0
