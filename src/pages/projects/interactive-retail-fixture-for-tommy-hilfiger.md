@@ -154,7 +154,7 @@ credits:
     value: Tommy Hilfiger
   - key: 'Role:'
     value: >-
-      Concept, Creative/Art Direction, Experience Design, Engineering, Fixture
+      Creative Direction, Art Direction, Experience Design, Engineering, Fixture
       Design
 ---
 
