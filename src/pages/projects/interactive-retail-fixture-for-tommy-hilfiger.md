@@ -9,10 +9,11 @@ intro: >-
   specialisation – experiential installations and retail platforms – to create
   an interactive store fixture that provides a solution to the puzzle: the Tommy
   Hilfiger Kids Machine.
+priority: 7.5
 thumbnail:
   image: /img/thumbnail_kidsmachine.png
   marginLeft: 5
-  marginTop: 0
+  marginTop: 10
   ratio: 0
   video: ''
   width: 36
