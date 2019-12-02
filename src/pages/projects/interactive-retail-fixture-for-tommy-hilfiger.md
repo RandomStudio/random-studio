@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: Interactive retail fixture for Tommy Hilfiger
 intro: >-
   While Tommy Hilfiger’s Kids’ Collection is extensive, it is usually only
