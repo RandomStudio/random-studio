@@ -38,7 +38,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^6.0.0-beta",
+    "react-helmet-async": "^1.0.4",
     "react-markdown": "^4.2.2"
   },
   "devDependencies": {
