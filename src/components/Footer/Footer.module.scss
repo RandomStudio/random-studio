@@ -7,28 +7,51 @@
   font-size: 1rem;
   line-height: 1.375;
   padding: 1.4rem;
+}
 
-  a {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 2px;
-      left: 0;
-      height: 0.05rem;
-      width: 100%;
-      background-color: #000;
-    }
+a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 0.05rem;
+    width: 100%;
+    background-color: #000;
   }
+}
 
-  // Remove underline of phonenumber
-  div:last-of-type {
-    a:first-of-type::after {
-      display: none;
-    }
-  }
+// Remove underline of phonenumber
+.phone::after {
+  display: none;
+}
+
+.email-desktop,
+.email-value {
+  display: none;
+}
+
+.notice {
+  font-size: var(--font-xs);
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 300ms ease-out 0ms, transform 1ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 301ms;
+  transform: translateX(-50%) translateY(4rem);
+  padding: 0 0.75rem;
+  border-radius: 1rem;
+}
+
+.notice-is-visible {
+  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 @media (min-width: 36rem) {
@@ -40,5 +63,11 @@
 @media (min-width: 72rem) {
   .footer {
     padding: 2.4rem;
+  }
+  .email-desktop {
+    display: block;
+  }
+  .email-mobile {
+    display: none;
   }
 }
