@@ -3,22 +3,18 @@ import { Vector3 } from 'babylonjs';
 const cameraRotationVectors = [
   {
     frame: 0,
-    value: new Vector3(-1, 5, -30),
-  },
-  {
-    frame: 3000,
-    value: new Vector3(19, 20, -20),
+    value: new Vector3(-1.75, 2, -4),
   },
 ];
 
 const cameraTargetVectors = [
   {
     frame: 0,
-    value: new Vector3(-2, 2, 0),
+    value: new Vector3(-1.5, 2, 2.4),
   },
 ];
 
-const filename = 'test-couch.obj';
+const filename = 'sofaisland.glb';
 
 const lightDirectionVectors = [
   {
@@ -63,9 +59,9 @@ const modelVectors = [
 
 const mirrors = [
   {
-    width: 14,
-    height: 14,
-    position: new Vector3(0.5, 7, 9.5),
+    width: 5,
+    height: 5,
+    position: new Vector3(0.45, 2.5, 7.975),
     rotation: new Vector3(0, 0, 0),
   },
 ];

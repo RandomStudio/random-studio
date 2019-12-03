@@ -43,7 +43,7 @@ const Wonder = () => {
     const createScene = () => {
       const scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
-      //scene.debugLayer.show();
+      scene.debugLayer.show();
       // scene.clearColor = new Color3(0.4, 0.972549, 0.972549);
       return scene;
     };
@@ -85,7 +85,10 @@ const Wonder = () => {
       SceneLoader.ShowLoadingScreen = false;
       await SceneLoader.AppendAsync('/models/', filename, scene);
       // Cleanup unneeded meshes
-      return scene.meshes.find(mesh => mesh.id === 'Default');
+      const world = scene.meshes.find(mesh => mesh.id === 'Default');
+      world.scaling.x = -1
+      scene.meshes = [world];
+      return world;
     };
 
     const addMirrors = (model, scene) => {
@@ -157,18 +160,13 @@ const Wonder = () => {
       const scene = createScene();
       const camera = addCamera(scene);
       const light = addLighting(scene);
-      const lightSphere = Mesh.CreateSphere("sphere", 10, 2, scene);
-      lightSphere.position = light.position;
-      lightSphere.material = new StandardMaterial("light", scene);
-      lightSphere.material.emissiveColor = new Color3(1, 1, 0);
-      scene.meshes = [await addModel(scene), lightSphere];
-      const model = scene.meshes[0];
+      const model = await addModel(scene);
       addMirrors(model, scene);
       addShadows(light, model);
 
       scene.executeWhenReady(() => {
         setupRenderLoop(scene, camera);
-        setupCameraAnimation(scene, camera);
+        //setupCameraAnimation(scene, camera);
         setupModelAnimation(scene, model);
         setupLightAnimation(scene, light);
         setCanvasVisible(true);
