@@ -19,5 +19,6 @@ address: >
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
 phone: +31 20 779 7735
 email: hello@random.studio
+contact: hello@random.studio
 ---
 
