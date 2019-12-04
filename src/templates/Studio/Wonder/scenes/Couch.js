@@ -3,14 +3,14 @@ import { Vector3 } from 'babylonjs';
 const cameraRotationVectors = [
   {
     frame: 0,
-    value: new Vector3(-1.75, 2, -4),
+    value: new Vector3(50, 30, -120),
   },
 ];
 
 const cameraTargetVectors = [
   {
     frame: 0,
-    value: new Vector3(-1.5, 2, 2.4),
+    value: new Vector3(-10, 0, 100),
   },
 ];
 
@@ -30,23 +30,23 @@ const lightDirectionVectors = [
 const lightPositionVectors = [
   {
     frame: 0,
-    value: new Vector3(-15, 0, 14),
+    value: new Vector3(-50, 0, 60),
   },
   {
     frame: 750,
-    value: new Vector3(-5, 8, 14),
+    value: new Vector3(-40, 8, 60),
   },
   {
     frame: 1500,
-    value: new Vector3(0, 10, 14),
+    value: new Vector3(0, 45, 60),
   },
   {
     frame: 2250,
-    value: new Vector3(5, 8, 14),
+    value: new Vector3(40, 8, 60),
   },
   {
     frame: 3000,
-    value: new Vector3(15, 0, 14),
+    value: new Vector3(50, 0, 60),
   },
 ];
 
@@ -59,9 +59,9 @@ const modelVectors = [
 
 const mirrors = [
   {
-    width: 5,
-    height: 5,
-    position: new Vector3(0.45, 2.5, 7.975),
+    width: 48,
+    height: 48,
+    position: new Vector3(3, 26, 43.2),
     rotation: new Vector3(0, 0, 0),
   },
 ];

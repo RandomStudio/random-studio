@@ -18,15 +18,7 @@ const cameraRotationVectors = [
 const cameraTargetVectors = [
   {
     frame: 0,
-    value: new Vector3(-2, 2, 0),
-  },
-  {
-    frame: 1000,
-    value: new Vector3(-0.15, 2, 0),
-  },
-  {
-    frame: 2000,
-    value: new Vector3(-2, 2, 0),
+    value: new Vector3(0, -5, 40),
   },
 ];
 
