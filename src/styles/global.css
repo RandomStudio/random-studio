@@ -60,3 +60,10 @@ button,
     font-size: 1.4rem;
   }
 }
+
+
+/* Babylon inspector should be on top of anything */
+#scene-explorer-host,
+#inspector-host {
+  z-index: 99999;
+}

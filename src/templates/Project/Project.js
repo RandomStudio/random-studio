@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout/Layout';
 import ProjectDetail from '../../components/ProjectDetail/ProjectDetail';
-import Navigation from '../../components/Navigation/Navigation';
 import SEO from '../../components/SEO/SEO';
 import BackScrim from './BackScrim/BackScrim';
 
@@ -79,7 +78,6 @@ export default ({
         description={project.intro}
         image={SEOImage}
       />
-      <Navigation />
       <ProjectDetail {...project} />
       {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
     </Layout>

@@ -1,3 +1,5 @@
+@import '../../../styles/mixins';
+
 .impression {
   height: 100vh;
   display: flex;
@@ -17,12 +19,11 @@
 
   // Target the indicator wrapper with title - Will alsways be last in markdown
   & > div > div:last-of-type {
+    @include blendedText;
     position: absolute;
     top: -0.8rem;
     bottom: 0;
     font-size: var(--font-small);
-    color: #fff;
-    mix-blend-mode: difference;
   }
 }
 

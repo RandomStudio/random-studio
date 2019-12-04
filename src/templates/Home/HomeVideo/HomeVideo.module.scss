@@ -1,3 +1,5 @@
+@import '../../../styles/mixins';
+
 .video {
   display: block;
   position: relative;
@@ -21,14 +23,13 @@
 }
 
 .featured-author {
+  @include blendedText;
   position: absolute;
   bottom: 0;
   width: 100%;
   font-size: 1rem;
   line-height: 1;
-  color: white;
   padding: 1rem 1.4rem;
-  mix-blend-mode: difference;
 }
 
 .logo {
@@ -37,6 +38,7 @@
 }
 
 h1.logo {
+  @include blendedText;
   position: absolute;
   left: 1.4rem;
   top: 40vh;
@@ -45,8 +47,6 @@ h1.logo {
   line-height: 1.1;
   margin: 0;
   letter-spacing: -0.01em;
-  mix-blend-mode: difference;
-  color: white;
 }
 
 @media (min-width: 36rem) {
