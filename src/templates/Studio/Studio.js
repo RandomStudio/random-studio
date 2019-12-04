@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout/Layout';
-import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 import Intro from './Intro/Intro';
 import InfoBlock from './InfoBlock/InfoBlock';
@@ -59,7 +58,6 @@ export const query = graphql`
 export default ({ location, data: { indexPage, studioPage } }) => (
   <Layout>
     <SEO title="Studio" pathName={studioPage.fields.slug} />
-    <Navigation />
     <Intro
       data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
       location={location}
