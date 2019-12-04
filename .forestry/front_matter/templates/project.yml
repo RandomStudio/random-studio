@@ -1,0 +1,109 @@
+---
+label: Project
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+  hidden: true
+  default: Project
+- type: text
+  name: title
+  label: Title
+- type: number
+  name: priority
+  label: Priority
+  description: Used to determine position of project
+- type: textarea
+  name: intro
+  label: Intro
+  description: Short introduction to the project
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+    required: true
+- type: field_group
+  name: thumbnail
+  label: Thumbnail
+  fields:
+  - type: file
+    name: image
+    label: Image
+  - type: number
+    name: marginLeft
+    label: Left margin
+  - type: number
+    name: marginTop
+    label: Top margin
+  - type: number
+    name: width
+    label: Width
+  - type: number
+    name: ratio
+    label: Aspect ratio
+- type: field_group_list
+  name: content
+  label: Content
+  fields:
+  - type: field_group
+    name: video
+    fields:
+    - name: url
+      type: text
+      config:
+        required: false
+      label: URL
+    - type: boolean
+      name: autoplay
+      label: Autoplay
+    - type: boolean
+      name: hasControls
+      label: Controls
+    - type: boolean
+      name: isMuted
+      label: Muted
+    - type: boolean
+      name: loops
+      label: Loop
+    label: Video
+    description: Link a video
+  - type: file
+    name: image
+    label: Image
+  - name: Description
+    type: text
+    config:
+      required: false
+    label: Description
+    description: Image or video description
+  - type: number
+    name: marginLeft
+    label: Left margin
+  - type: number
+    name: marginTop
+    label: Top margin
+  - type: number
+    name: width
+    label: Width
+  - type: number
+    name: ratio
+    label: Aspect ratio
+  config:
+    labelField: Description
+- type: field_group_list
+  name: credits
+  label: Credits
+  fields:
+  - type: text
+    name: key
+    label: Key
+    description: What kind of credit? ('With:', 'For:', 'Role:', etc.)
+  - type: text
+    name: value
+    label: Value
+    description: Who is being credited?
+  config:
+    labelField: value
+pages:
+- src/pages/projects/chanel-timebox.md

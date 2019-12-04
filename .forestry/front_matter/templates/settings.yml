@@ -1,0 +1,23 @@
+---
+label: Settings
+hide_body: true
+fields:
+- type: text
+  name: key
+  label: key
+  hidden: true
+  default: settings
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: description
+  label: description
+- type: text
+  name: twitterHandle
+  label: twitterHandle
+- type: text
+  name: siteUrl
+  label: siteUrl
+pages:
+- src/site/settings.md

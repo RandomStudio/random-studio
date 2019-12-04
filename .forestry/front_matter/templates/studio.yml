@@ -1,0 +1,64 @@
+---
+label: Studio
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+  default: Studio
+  hidden: true
+- type: textarea
+  name: intro
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Intro
+- type: field_group_list
+  name: infoBlock
+  label: Info block
+  fields:
+  - type: field_group_list
+    name: collection
+    label: Collection
+    fields:
+    - type: field_group_list
+      name: images
+      fields:
+      - type: file
+        name: image
+        label: Image
+      - type: text
+        name: caption
+        label: Caption
+      label: Images
+    - type: text
+      name: info
+      label: Info
+    - type: boolean
+      name: showIndicator
+      label: Indicator
+    config:
+      labelField: info
+- type: field_group
+  name: studioImpression
+  label: Studio impression
+  fields:
+  - type: text
+    name: title
+    label: Title
+  - type: field_group_list
+    name: images
+    label: Images
+    fields:
+    - type: file
+      name: image
+      label: Image
+    - type: text
+      name: caption
+      label: Caption
+  - type: boolean
+    name: showIndicator
+    label: Indicator
+pages:
+- src/pages/studio.md

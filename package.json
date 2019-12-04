@@ -8,6 +8,7 @@
     "build": "gatsby clean && gatsby build",
     "develop": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --host 0.0.0.0 --https",
     "develop:expose": "gatsby clean && npm run develop",
+    "forestry:preview": "gatsby develop -H 0.0.0.0 -p 8080",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

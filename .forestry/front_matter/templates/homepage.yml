@@ -1,0 +1,58 @@
+---
+label: Homepage
+hide_body: true
+fields:
+- type: text
+  name: templateKey
+  label: templateKey
+  hidden: true
+  default: Home
+- type: textarea
+  name: video
+  label: Video
+  description: Link to Vimeo, YouTube
+- type: field_group
+  name: collaborationCredits
+  label: Collaboration credits
+  fields:
+  - type: text
+    name: collaborator
+    label: Collaborator
+  - type: text
+    name: url
+    label: URL
+    description: Link to website of collaborator
+- name: intro
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Intro
+- type: textarea
+  name: middle
+  label: Middle
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: textarea
+  name: address
+  label: Address
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: text
+  name: phone
+  label: Phone
+- type: text
+  name: email
+  label: E-mail
+- type: text
+  name: contact
+  label: Contact
+pages:
+- src/pages/index.md
