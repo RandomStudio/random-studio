@@ -31,12 +31,14 @@ const Newsletter = () => {
         isSuccessful ? (
           <>
             <div className={styles.input}>Thank you!</div>
-            <div className={styles.submit}>T</div>
+            <div className={styles.submit}>
+              <img alt="success" className={styles.check} src="/img/icons/check.svg" />
+            </div>
           </>
         ) : (
           <>
             <input className={styles.input} onChange={handleInput} placeholder="enter your email address" value={email} type="text" />
-            <input className={styles.submit} type="submit" value=">" />
+            <input alt="submit" className={styles.submit} src="/img/icons/arrow.svg" type="image" />
             {error && <p className={styles.error}>Failed to submit. Please check email and try again.</p>}
           </>
         )
