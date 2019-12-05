@@ -1,5 +1,6 @@
 ---
 templateKey: Home
+layout: center
 video: >-
   https://player.vimeo.com/external/219822090.hd.mp4?s=9fcbf6bfec731604e4b4d29e278e676848c2ac20&profile_id=119
 collaborationCredits:
@@ -17,8 +18,6 @@ middle: >-
 address: >
   Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
-phone: +31 20 779 7735
-email: hello@random.studio
 contact: hello@random.studio
 ---
 
