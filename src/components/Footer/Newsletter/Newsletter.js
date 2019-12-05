@@ -7,8 +7,20 @@ const Newsletter = () => {
 
   const handleInput = e => setEmail(e.target.value);
 
-  const handleSubmit = () => {
-    console.log(email);
+  const handleSubmit = async () => {
+    const response = await fetch('https://api.mailchimp.com/3.0/lists/cf9e550f84/members/', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        authorization: authenticationString,
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+    return false;
   }
 
   return (
