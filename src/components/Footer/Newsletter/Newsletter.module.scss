@@ -13,7 +13,6 @@
     order: 2;
     margin-bottom: 0;
     margin-right: 4rem;
-    margin-right: 8rem;
   }
 
   @media (min-width: 72rem) {
@@ -40,4 +39,8 @@
   position: absolute;
   right: 0;
   bottom: 0.25rem;
+
+  @media (min-width: 54rem) {
+    bottom: 2.25rem;
+  }
 }

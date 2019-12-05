@@ -4,22 +4,22 @@ import styles from './Newsletter.module.scss';
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
-  const [isSuccessful, setIsSuccessful] = useState(true);
+  const [isSuccessful, setIsSuccessful] = useState(false);
 
   const handleInput = e => setEmail(e.target.value);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async event => {
+    event.preventDefault();
     try {
-      const response = await fetch('/functions/addToNewsletterList');
+      const response = await fetch(`/functions/addToNewsletterList?email=${email}`);
       console.log(response);
       setIsSuccessful(true);
     } catch(error) {
       console.log(error);
       setError(error);
     }
-    e.preventDefault();
     return false;
-  }
+  };
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
