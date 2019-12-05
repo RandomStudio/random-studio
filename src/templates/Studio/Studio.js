@@ -6,6 +6,7 @@ import Intro from './Intro/Intro';
 import InfoBlock from './InfoBlock/InfoBlock';
 import Impression from './Impression/Impression';
 import SEO from '../../components/SEO/SEO';
+import Wonder from './Wonder/Wonder';
 
 export const query = graphql`
   {
@@ -58,6 +59,7 @@ export const query = graphql`
 export default ({ location, data: { indexPage, studioPage } }) => (
   <Layout>
     <SEO title="Studio" pathName={studioPage.fields.slug} />
+    <Wonder />
     <Intro
       data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
       location={location}

@@ -20,47 +20,67 @@ import 'babylonjs-loaders';
 import styles from './Wonder.module.scss';
 
 // Scenes
-import Couch from '../Wonder/scenes/Couch';
-import Island from '../Wonder/scenes/Island';
-import Lighting from './Lighting/Lighting';
+import Couch from './scenes/Couch';
+import Island from './scenes/Island';
 
 const Wonder = () => {
   const mirrorRef = useRef();
   const canvasRef = useRef();
   const [canvasVisible, setCanvasVisible] = useState(false);
-  const {
-    camera: cameraVectors,
-    filename,
-    modelVectors,
-    mirrors,
-  } = [Couch, Couch][Math.round(Math.random())];
-  const [currentScene, setCurrentScene] = useState(null);
+  const [cameraRotationVectors, cameraTargetVectors, filename, lightDirectionVectors, lightPositionVectors, modelVectors, mirrors] = [Island, Island][Math.round(Math.random())];
 
   useEffect(() => {
     let engine;
-    let world;
 
     const createEngine = () => {
       engine = new Engine(canvasRef.current, true, {
         preserveDrawingBuffer: true,
         stencil: true,
       });
+      // engine.doNotHandleContextLost = true;
     };
 
     const createScene = () => {
       const scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
       scene.debugLayer.show();
+      // scene.clearColor = new Color3(0.4, 0.972549, 0.972549);
       return scene;
     };
 
     const addCamera = scene => {
-      const camera = new ArcRotateCamera('camera', 0, 0, 0, cameraVectors.target, scene, true);
-      camera.setPosition(cameraVectors.rotation);
-      camera.setTarget(cameraVectors.target);
+      const camera = new ArcRotateCamera('camera', 0, 0, 0, cameraTargetVectors[0].value, scene, true);
+      camera.setPosition(cameraRotationVectors[0].value);
+      camera.setTarget(cameraTargetVectors[0].value);
       camera.attachControl(canvasRef.current, true);
       camera.minZ = 0;
       return camera;
+    };
+
+    const addLighting = scene => {
+      const light = new SpotLight('Sun', lightPositionVectors[0].value, lightDirectionVectors[0].value, 1, 32, scene);
+      light.intensity = 16;
+      light.diffuse = new Color3(0.94, 1, 0.69);
+      light.specular = new Color3(0.071, 0.078, 0.055);
+      light.shadowEnabled = true;
+      light.shadowMinZ = 6;
+      light.shadowMaxZ = 17;
+      const generalLight = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);
+      generalLight.specular = new Color3(0, 0, 0);
+      generalLight.specularPower = 0;
+      generalLight.intensity = 0.7;
+      return light;
+    };
+
+    const addShadows = (light, scene) => {
+      const shadows = new ShadowGenerator(1024, light);
+      shadows.useExponentialShadowMap = true;
+      shadows.useCloseExponentialShadowMap = true;
+      scene.meshes.filter(mesh => mesh.id !== 'glass').forEach(model => {
+        shadows.getShadowMap().renderList.push(model);
+        shadows.addShadowCaster(model);
+        model.receiveShadows = true;
+      })
     };
 
     const addModel = async scene => {
@@ -68,7 +88,6 @@ const Wonder = () => {
       await SceneLoader.AppendAsync('/models/', filename, scene);
       // Cleanup unneeded meshes
       const world = scene.meshes.find(mesh => mesh.id === '__root__');
-      console.log(scene.meshes);
       scene.meshes.forEach(m => {
         m.scaling.z = 1;
       });
@@ -106,8 +125,21 @@ const Wonder = () => {
 
     const setupRenderLoop = scene => {
       engine.runRenderLoop(() => {
+        // We don't use physics etc so can safely clear this
+        // scene.clearCachedVertexData();
+        // scene.cleanCachedTextureBuffer();
         scene.render();
       });
+    };
+
+    const setupCameraAnimation = (scene, camera) => {
+      const targetAnim = new Animation('targetAnim', 'target', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      const rotAnim = new Animation('rotationAnim', 'position', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      targetAnim.setKeys(cameraTargetVectors);
+      rotAnim.setKeys(cameraRotationVectors);
+      camera.animations.push(targetAnim);
+      camera.animations.push(rotAnim);
+      scene.beginAnimation(camera, 0, 3000, true);
     };
 
     const setupModelAnimation = (scene, model) => {
@@ -117,35 +149,46 @@ const Wonder = () => {
       scene.beginAnimation(model, 0, 3000, true);
     };
 
+    const setupLightAnimation = (scene, light) => {
+      const dirAnim = new Animation('directionAnim', 'direction', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      const posAnim = new Animation('positionAnim', 'position', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      dirAnim.setKeys(lightDirectionVectors);
+      posAnim.setKeys(lightPositionVectors);
+      light.animations.push(posAnim);
+      light.animations.push(dirAnim);
+      scene.beginAnimation(light, 0, 3000, true);
+    };
+
     const onResize = () => engine.resize();
 
-    const onMouseMove = e => {
+    const onMouseMove = (e, model) => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       const widthPercentage = (e.pageX - (width / 2)) / width;
       const heightPercentage = (e.pageY - (height / 2)) / height;
-      world.rotation = new Vector3(heightPercentage * -0.1, widthPercentage * -0.4, 0);
-    };
+      model.rotation = new Vector3(heightPercentage * -0.1, widthPercentage * -0.4, 0);
+    }
 
     const createGLScene = async () => {
       createEngine();
       const scene = createScene();
       const camera = addCamera(scene);
-      world = await addModel(scene);
-      world.rotation = new Vector3(0, 0, 0);
-      addMirrors(world, scene);
+      const light = addLighting(scene);
+      const model = await addModel(scene);
+      model.rotation = new Vector3(0, 0, 0);
+      addMirrors(model, scene);
+      addShadows(light, scene);
 
       scene.executeWhenReady(() => {
         setupRenderLoop(scene, camera);
         //setupCameraAnimation(scene, camera);
         //setupModelAnimation(scene, model);
         //setupLightAnimation(scene, light);
-        setCurrentScene(scene);
         setCanvasVisible(true);
       });
 
       window.addEventListener('resize', onResize);
-      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mousemove', e => onMouseMove(e, model));
     };
 
     if (canvasRef.current) {
@@ -153,19 +196,12 @@ const Wonder = () => {
     }
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('resize', onResize);
       engine.dispose();
     };
   }, [canvasRef]);
 
-  return (
-    <>
-      <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
-      <Lighting layout={Couch.light} scene={currentScene} />
-      <Lighting layout={Couch.light} scene={currentScene} />
-    </>
-  );
+  return <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />;
 };
 
 export default Wonder;
