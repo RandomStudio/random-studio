@@ -40,14 +40,12 @@ const light = {
       value: new Vector3(50, 0, 60),
     },
   ],
-}
+};
 
-const modelVectors = [
-  {
-    frame: 0,
-    value: new Vector3(0, 0, 0),
-  },
-];
+const model = {
+  position: new Vector3(5, -8, 50),
+  rotation: new Vector3(0, 0, 0),
+};
 
 const mirrors = [
   {
@@ -62,6 +60,6 @@ export default {
   camera,
   filename,
   light,
-  modelVectors,
+  model,
   mirrors,
 };
