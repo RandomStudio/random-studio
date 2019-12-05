@@ -59,7 +59,6 @@ export const query = graphql`
 export default ({ location, data: { indexPage, studioPage } }) => (
   <Layout>
     <SEO title="Studio" pathName={studioPage.fields.slug} />
-    <Navigation />
     <Intro
       data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
       location={location}

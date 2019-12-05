@@ -4,7 +4,6 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 0;
   //pointer-events: none;
   opacity: 0;
   transition: opacity 4000ms ease-in;
@@ -12,13 +11,4 @@
   &.is-visible {
     opacity: 1;
   }
-}
-
-.admin {
-  //display: none;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background-color: white;
-  z-index: 99;
 }
