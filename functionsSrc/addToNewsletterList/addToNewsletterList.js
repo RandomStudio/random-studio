@@ -8,6 +8,11 @@ exports.handler = async function(event, context) {
   try {
     let authenticationString = btoa('randomstudiofakeuser:a190422ce7a17a3e098a155c2e966664-us4');
     authenticationString = `Basic ${authenticationString}`;
+    const body = JSON.stringify({
+      "email_address": email,
+      "status": "subscribed",
+    });
+    console.log(body);
     const response = await fetch('https://api.mailchimp.com/3.0/lists/cf9e550f84/members/', {
       method: 'POST',
       mode: 'no-cors',
@@ -16,12 +21,11 @@ exports.handler = async function(event, context) {
         'Content-Type': 'application/json',
         Authorization: authenticationString,
       },
-      body: JSON.stringify({
-        email,
-      }),
+      body,
     });
     console.log('Response is ok?')
     console.log(response.status)
+    console.log(response.statusText);
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
       return {
