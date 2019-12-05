@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
   const email = event.queryStringParameters.email;
+  console.log(`Received email ${email}`)
   try {
     let authenticationString = btoa('randomstudiofakeuser:a190422ce7a17a3e098a155c2e966664-us4');
     authenticationString = `Basic ${authenticationString}`;
@@ -19,6 +20,8 @@ exports.handler = async function(event, context) {
         email,
       }),
     });
+    console.log('Response is ok?')
+    console.log(response.status)
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
       return {
