@@ -17,7 +17,7 @@ export const pageQuery = graphql`
           image {
             publicURL
             childImageSharp {
-              fixed(width: 800, height: 800) {
+              fixed(width: 800, height: 800, quality: 90) {
                 ...GatsbyImageSharpFixed
               }
             }
@@ -29,7 +29,7 @@ export const pageQuery = graphql`
           caption
           image {
             childImageSharp {
-              fluid(maxWidth: 1920) {
+              fluid(maxWidth: 1920, quality: 99) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
