@@ -1,6 +1,10 @@
 /* eslint-disable */
 const fetch = require('node-fetch')
 exports.handler = async function(event, context) {
+  return {
+    event: JSON.stringify(event),
+    context: JSON.stringify(context)
+  }
   try {
     let authenticationString = btoa('randomstudiofakeuser:a190422ce7a17a3e098a155c2e966664-us4');
     authenticationString = `Basic ${authenticationString}`;
@@ -18,19 +22,24 @@ exports.handler = async function(event, context) {
     });
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
-      return { statusCode: response.status, body: response.statusText }
+      return {
+        statusCode: response.status,
+        message: response.statusText,
+      }
     }
     const data = await response.json()
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data.joke })
+      message: 'Success',
+      response: JSON.stringify(data),
     }
   } catch (err) {
     console.log(err) // output to netlify function log
     return {
       statusCode: 500,
-      body: JSON.stringify({ msg: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
+      message: 'Something went wrong',
+      error: err.message,
     }
   }
 }
