@@ -171,6 +171,13 @@ collections:
             name: templateKey
             widget: hidden
             default: index
+          - label: "Logo Position"
+            name: layout
+            widget: select
+            options:
+              - {label: center, value: center }
+              - {label: Top, value: top }
+            default: ["center"]
           - label: "Video URL"
             name: video
             required: true
