@@ -1,5 +1,7 @@
 /* eslint-disable */
-const fetch = require('node-fetch')
+const btoa = require('btoa');
+const fetch = require('node-fetch');
+
 exports.handler = async function(event, context) {
   const email = event.queryStringParameters.email;
   try {
@@ -11,7 +13,7 @@ exports.handler = async function(event, context) {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        authorization: authenticationString,
+        Authorization: authenticationString,
       },
       body: JSON.stringify({
         email,
