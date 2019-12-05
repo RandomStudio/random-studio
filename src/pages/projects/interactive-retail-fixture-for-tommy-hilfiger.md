@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: Interactive retail fixture for Tommy Hilfiger
+title: Interactive retail fixture <br> for Tommy Hilfiger
 intro: >-
   While the Tommy Hilfiger Kids’ Collection is extensive, it is usually only
   available in a handful of their stores. Without taking up too much floor space
@@ -158,3 +158,4 @@ credits:
       Creative Direction, Art Direction, Experience Design, Engineering, Fixture
       Design
 ---
+
