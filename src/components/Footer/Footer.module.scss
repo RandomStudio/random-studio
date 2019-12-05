@@ -7,20 +7,20 @@
   font-size: 1rem;
   line-height: 1.375;
   padding: 1.4rem;
-}
 
-a {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    height: 0.05rem;
-    width: 100%;
-    background-color: #000;
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      height: 0.05rem;
+      width: 100%;
+      background-color: #000;
+    }
   }
 }
 
