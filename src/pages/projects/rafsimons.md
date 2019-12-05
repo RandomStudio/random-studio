@@ -108,7 +108,7 @@ content:
     width: 90
 credits:
   - key: 'For:'
-    value: Louis Vuitton
+    value: Raf Simons
   - key: 'Role:'
     value: >-
       Concept Development, Creative Direction, Design, Software Development,
