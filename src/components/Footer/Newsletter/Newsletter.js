@@ -11,8 +11,11 @@ const Newsletter = () => {
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      const response = await fetch(`/functions/addToNewsletterList?email=${email}`);
-      console.log(response);
+      const response = await fetch(`https://5de901ef49bc28000963a1b2--random-studio.netlify.com/functions/addToNewsletterList?email=${email}`);
+      const text = await response.text();
+      const responsetwo = await fetch(`https://5de901ef49bc28000963a1b2--random-studio.netlify.com/functions/addToNewsletterList?email=${email}`);
+      const body = await responsetwo.json();
+      console.log(text, body)
       setIsSuccessful(true);
     } catch(error) {
       console.log(error);
