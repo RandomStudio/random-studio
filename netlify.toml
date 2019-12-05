@@ -2,6 +2,7 @@
 [build]
   command = "npm run build"
   functions = "functions"
+  functionsSource = "functionsSrc"
   publish = ""
 
 [[redirects]]

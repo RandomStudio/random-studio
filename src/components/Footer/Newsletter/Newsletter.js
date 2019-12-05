@@ -16,7 +16,7 @@ const Newsletter = () => {
       setIsSuccessful(true);
     } catch(error) {
       console.log(error);
-      setError(error);
+      setError(error.message);
     }
     return false;
   };
@@ -34,7 +34,7 @@ const Newsletter = () => {
           <>
             <input className={styles.input} onChange={handleInput} placeholder="enter your email address" value={email} type="text" />
             <input className={styles.submit} type="submit" value=">" />
-            {error && <p className={styles.error}>{error}</p>}
+            {error && <p className={styles.error}>Failed to submit. Please check email and try again.</p>}
           </>
         )
       }

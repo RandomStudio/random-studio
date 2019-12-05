@@ -33,14 +33,19 @@
   border-bottom: 1px solid black;
 }
 
+.error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.6rem;
+  margin-top: 0.25rem;
+}
+
 .submit {
   background-color: transparent;
   border: none;
   position: absolute;
   right: 0;
   bottom: 0.25rem;
-
-  @media (min-width: 54rem) {
-    bottom: 2.25rem;
-  }
 }

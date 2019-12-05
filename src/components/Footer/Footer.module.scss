@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   font-size: var(--font-xxs);
