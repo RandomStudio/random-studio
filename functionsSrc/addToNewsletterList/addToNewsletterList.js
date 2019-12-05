@@ -1,10 +1,7 @@
 /* eslint-disable */
 const fetch = require('node-fetch')
 exports.handler = async function(event, context) {
-  return {
-    event: JSON.stringify(event),
-    context: JSON.stringify(context)
-  }
+  const email = event.queryStringParameters.email;
   try {
     let authenticationString = btoa('randomstudiofakeuser:a190422ce7a17a3e098a155c2e966664-us4');
     authenticationString = `Basic ${authenticationString}`;
