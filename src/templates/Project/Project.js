@@ -79,7 +79,7 @@ export default ({
         image={SEOImage}
       />
       <ProjectDetail {...project} />
-      <BackScrim returnUrl={returnSlug} />
+      {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
     </Layout>
   );
 };
