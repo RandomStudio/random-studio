@@ -1,6 +1,9 @@
 ---
 templateKey: Project
-title: Interactive retail fixture <br> for Tommy Hilfiger
+title: |-
+  Interactive retail fixture
+
+  for Tommy Hilfiger
 intro: >-
   While the Tommy Hilfiger Kids’ Collection is extensive, it is usually only
   available in a handful of their stores. Without taking up too much floor space
@@ -25,9 +28,9 @@ content:
     marginTop: 10
     ratio: 0
     video:
-      autoplay: true
-      hasControls: false
-      isMuted: true
+      autoplay: false
+      hasControls: true
+      isMuted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/370848080.hd.mp4?s=029022badf948ec7d53dc83dd22cca19551a59c9&profile_id=175
