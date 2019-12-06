@@ -26,7 +26,7 @@ thumbnail:
 content:
   - marginLeft: 5
     marginTop: 10
-    ratio: 0
+    ratio: 56.2
     video:
       autoplay: false
       hasControls: true
@@ -41,7 +41,7 @@ content:
       The central touchscreen is framed by dials, glowing buttons and a giant
       slider and sound effects are emitted from a visible speaker grille.
     marginLeft: 0
-    marginTop: 72
+    marginTop: 0
     ratio: 0
     video:
       autoplay: false
