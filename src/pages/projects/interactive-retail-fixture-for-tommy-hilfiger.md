@@ -28,7 +28,7 @@ content:
     marginTop: 10
     ratio: 56.2
     video:
-      autoplay: false
+      autoplay: true
       hasControls: true
       isMuted: false
       loops: true
