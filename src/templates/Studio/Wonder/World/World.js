@@ -3,23 +3,37 @@ import { SceneLoader } from 'babylonjs';
 
 const World = ({ filename, layout, onImportWorld, scene }) => {
   useEffect(() => {
+    let importedModel;
     const importWorld = async () => {
       SceneLoader.ShowLoadingScreen = false;
-      await SceneLoader.AppendAsync('/models/', filename, scene);
-      let world = scene.meshes.find(mesh => mesh.id === '__root__');
-      world = {
-        ...world,
-        position: layout.position,
-        rotation: layout.rotation,
-        scaling: 1,
-      };
-      // for island: world.position = new Vector3(0, -20, 100);
+      importedModel = await SceneLoader.AppendAsync('/models/', filename, scene);
+      const root = scene.meshes.find(mesh => mesh.id === '__root__');
+      root.scaling.z = 1;
 
-      onImportWorld(world);
+      if (layout.identifier) {
+        const world = scene.meshes.find(mesh => mesh.id === layout.identifier);
+        world.position = layout.position;
+        world.rotation = layout.rotation;
+        world.scaling.z = 1;
+
+        scene.meshes = [world];
+        onImportWorld(world);
+      } else {
+        root.position = layout.position;
+        root.rotation = layout.rotation;
+        onImportWorld(root);
+      }
+
     };
 
     if (filename && scene) {
       importWorld();
+    }
+
+    return () => {
+      if (importedModel) {
+        importedModel.dispose();
+      }
     }
   }, [filename, scene]);
   return null;

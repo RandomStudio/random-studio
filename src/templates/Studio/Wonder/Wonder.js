@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { Engine, Scene, Color3 } from 'babylonjs';
 import 'babylonjs-loaders';
 import styles from './Wonder.module.scss';
@@ -11,12 +11,16 @@ import Camera from './Camera/Camera';
 import World from './World/World';
 import MouseAnimation from './MouseAnimation/MouseAnimation';
 import Mirrors from './Mirrors/Mirrors';
+import Shadows from './Shadows/Shadows';
+import Sun from './Sun/Sun';
 
 const Wonder = () => {
   const canvasRef = useRef();
   const [canvasVisible, setCanvasVisible] = useState(false);
   const [currentScene, setCurrentScene] = useState(null);
+  const [sun, setSun] = useState(null);
   const [world, setWorld] = useState(null);
+  const layout = useMemo(() => [Couch, Island][Math.round(Math.random())], []);
 
   useEffect(() => {
     let engine;
@@ -32,7 +36,7 @@ const Wonder = () => {
     const createScene = () => {
       scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
-      scene.debugLayer.show();
+      //scene.debugLayer.show();
       return scene;
     };
 
@@ -52,19 +56,27 @@ const Wonder = () => {
     }
 
     return () => {
+      setCurrentScene(null);
+      setCanvasVisible(false);
       window.removeEventListener('resize', engine.resize);
       engine.dispose();
     };
-  }, [canvasRef]);
+  }, [canvasRef, layout]);
 
   return (
     <>
       <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
-      <Camera canvasRef={canvasRef} layout={Couch.camera} scene={currentScene} />
-      <Lighting layout={Couch.light} scene={currentScene} />
-      <World filename={Couch.filename} layout={Couch.model} onImportWorld={setWorld} scene={currentScene} />
-      <MouseAnimation target={world} />
-      {Couch.mirrors && Couch.mirrors.length > 0 && <Mirrors layout={Couch.mirrors} scene={currentScene} world={world} />}
+      {currentScene && (
+        <>
+          <Camera canvasRef={canvasRef} layout={layout.camera} scene={currentScene} />
+          <Lighting layout={layout.light} scene={currentScene} />
+          <World filename={layout.filename} layout={layout.model} onImportWorld={setWorld} scene={currentScene} />
+          <Sun layout={layout.sun} onAddSun={setSun} scene={currentScene} world={world} />
+          <Shadows scene={currentScene} sun={sun} world={world} />
+          <MouseAnimation layout={layout.model} target={world} />
+          <Mirrors layout={layout.mirrors} scene={currentScene} world={world} />
+        </>
+      )}
     </>
   );
 };

@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 import { Vector3 } from 'babylonjs';
 
-const MouseAnimation = ({ target }) => {
+const MouseAnimation = ({ layout, target }) => {
   useEffect(() => {
     const onMouseMove = e => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-      const widthPercentage = (e.pageX - (width / 2)) / width;
-      const heightPercentage = (e.pageY - (height / 2)) / height;
-      target.rotation = new Vector3(heightPercentage * -0.1, widthPercentage * -0.4, 0);
-      console.log(target.rotation)
+      const widthPercentage = ((e.pageX - (width / 2)) / width) * 2;
+      const heightPercentage = ((e.pageY - (height / 2)) / height) * 2;
+      const depthPercentage = widthPercentage / heightPercentage;
+
+      const { rotation } = layout;
+      target.rotation = new Vector3(rotation.x + (heightPercentage * -0.1), rotation.y + (widthPercentage * -0.2), rotation.z)
     };
 
     if (target) {

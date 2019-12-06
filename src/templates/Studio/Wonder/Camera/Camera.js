@@ -5,7 +5,7 @@ const Camera = ({ canvasRef, layout, scene }) => {
   useEffect(() => {
     if (scene) {
       const camera = new ArcRotateCamera('camera', 0, 0, 0, layout.target, scene, true);
-      camera.setPosition(layout.rotation);
+      camera.setPosition(layout.position);
       camera.setTarget(layout.target);
       camera.attachControl(canvasRef.current, true);
       camera.minZ = 0;

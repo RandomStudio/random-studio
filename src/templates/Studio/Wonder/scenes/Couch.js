@@ -1,51 +1,11 @@
 import { Vector3 } from 'babylonjs';
 
 const camera = {
-  rotation: new Vector3(50, 30, -120),
+  position: new Vector3(50, 30, -120),
   target: new Vector3(-10, 0, 100),
 };
 
 const filename = 'sofaisland.glb';
-
-const light = {
-  direction: [
-    {
-      frame: 0,
-      value: new Vector3(1, -0.5, -0.8),
-    },
-    {
-      frame: 3000,
-      value: new Vector3(-1, -0.5, -0.8),
-    },
-  ],
-  position: [
-    {
-      frame: 0,
-      value: new Vector3(-50, 0, 60),
-    },
-    {
-      frame: 750,
-      value: new Vector3(-40, 8, 60),
-    },
-    {
-      frame: 1500,
-      value: new Vector3(0, 45, 60),
-    },
-    {
-      frame: 2250,
-      value: new Vector3(40, 8, 60),
-    },
-    {
-      frame: 3000,
-      value: new Vector3(50, 0, 60),
-    },
-  ],
-};
-
-const model = {
-  position: new Vector3(5, -8, 50),
-  rotation: new Vector3(0, 0, 0),
-};
 
 const mirrors = [
   {
@@ -56,10 +16,29 @@ const mirrors = [
   },
 ];
 
+const model = {
+  position: new Vector3(25, -8, 80),
+  rotation: new Vector3(0, 0, 0),
+};
+
+const sun = {
+  direction: {
+    left: new Vector3(1, -0.5, -0.8),
+    centre: new Vector3(0, -0.4, -0.848),
+    right: new Vector3(-1, -0.5, -0.8),
+  },
+  position: {
+    left: new Vector3(-50, 0, 120),
+    centre: new Vector3(30, 30, 150),
+    right: new Vector3(50, 0, 120),
+  },
+  shadows: [30, 150],
+};
+
 export default {
   camera,
   filename,
-  light,
-  model,
   mirrors,
+  model,
+  sun,
 };

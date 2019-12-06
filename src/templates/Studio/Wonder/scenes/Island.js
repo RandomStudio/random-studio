@@ -1,95 +1,86 @@
 import { Vector3 } from 'babylonjs';
 
-const cameraRotationVectors = [
-  {
-    frame: 0,
-    value: new Vector3(-1, 3, -5),
-  },
-  {
-    frame: 1000,
-    value: new Vector3(-3.5, 5, -5.5),
-  },
-  {
-    frame: 2000,
-    value: new Vector3(-1, 5, -6),
-  },
-];
-
-const cameraTargetVectors = [
-  {
-    frame: 0,
-    value: new Vector3(0, -5, 40),
-  },
-];
+const camera = {
+  position: new Vector3(-1, 3, -40),
+  target: new Vector3(0, 0, 0),
+};
 
 const filename = 'mirrorisland.glb';
 
-const lightDirectionVectors = [
-  {
-    frame: 0,
-    value: new Vector3(1, -0.5, -0.8),
-  },
-  {
-    frame: 3000,
-    value: new Vector3(-1, -0.5, -0.8),
-  },
-];
+const light = {
+  direction: [
+    {
+      frame: 0,
+      value: new Vector3(1, -0.5, -0.8),
+    },
+    {
+      frame: 3000,
+      value: new Vector3(-1, -0.5, -0.8),
+    },
+  ],
+  position: [
+    {
+      frame: 0,
+      value: new Vector3(-15, 0, 14),
+    },
+    {
+      frame: 750,
+      value: new Vector3(-5, 8, 14),
+    },
+    {
+      frame: 1500,
+      value: new Vector3(0, 10, 14),
+    },
+    {
+      frame: 2250,
+      value: new Vector3(5, 8, 14),
+    },
+    {
+      frame: 3000,
+      value: new Vector3(15, 0, 14),
+    },
+  ],
+};
 
-const lightPositionVectors = [
-  {
-    frame: 0,
-    value: new Vector3(-15, 0, 14),
+const sun = {
+  direction: {
+    left: new Vector3(1, -0.5, -0.8),
+    centre: new Vector3(0, -0.2, -0.95),
+    right: new Vector3(-1, -0.5, -0.8),
   },
-  {
-    frame: 750,
-    value: new Vector3(-5, 8, 14),
+  position: {
+    left: new Vector3(-50, 0, 120),
+    centre: new Vector3(6, 6, 30),
+    right: new Vector3(50, 0, 120),
   },
-  {
-    frame: 1500,
-    value: new Vector3(0, 10, 14),
-  },
-  {
-    frame: 2250,
-    value: new Vector3(5, 8, 14),
-  },
-  {
-    frame: 3000,
-    value: new Vector3(15, 0, 14),
-  },
-];
+  shadows: [25, 40],
+};
 
-const modelVectors = [
-  {
-    frame: 0,
-    value: new Vector3(0, 0, 0),
-  },
-  {
-    frame: 3000,
-    value: new Vector3(0, -2, 0),
-  },
-];
+const model = {
+  identifier: 'Default',
+  position: new Vector3(-5, -4, -10),
+  rotation: new Vector3(0, -3, 0),
+};
 
 const mirrors = [
   {
-    width: 1.4,
-    height: 2.3,
-    position: new Vector3(-0.92, 1.58, 3.65),
+    width: 4.2,
+    height: 6.45,
+    position: new Vector3(-3.53, 4.5, -6.25),
     rotation: new Vector3(0, -0.31, 0),
   },
   {
-    width: 0.45,
-    height: 2.3,
-    position: new Vector3(-1.654, 1.58, 3.65),
+    width: 1,
+    height: 6.45,
+    position: new Vector3(-5.7, 4.5, -6.5),
     rotation: new Vector3(0, 89.23, 0),
   },
 ];
 
-export default [
-  cameraRotationVectors,
-  cameraTargetVectors,
+export default {
+  camera,
   filename,
-  lightDirectionVectors,
-  lightPositionVectors,
-  modelVectors,
+  model,
+  sun,
   mirrors,
-];
+};
