@@ -26,7 +26,7 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
 
     };
 
-    if (filename && scene) {
+    if (filename && scene && !scene.isDisposed) {
       importWorld();
     }
 

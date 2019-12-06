@@ -20,7 +20,7 @@ const Wonder = () => {
   const [currentScene, setCurrentScene] = useState(null);
   const [sun, setSun] = useState(null);
   const [world, setWorld] = useState(null);
-  const layout = useMemo(() => [Couch, Island][Math.round(Math.random())], []);
+  const layout = useMemo(() => [Couch, Couch][Math.round(Math.random())], []);
 
   useEffect(() => {
     let engine;
@@ -36,7 +36,7 @@ const Wonder = () => {
     const createScene = () => {
       scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
-      //scene.debugLayer.show();
+      scene.debugLayer.show();
       return scene;
     };
 
@@ -66,7 +66,7 @@ const Wonder = () => {
   return (
     <>
       <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
-      {currentScene && (
+      {currentScene && !currentScene.isDisposed && (
         <>
           <Camera canvasRef={canvasRef} layout={layout.camera} scene={currentScene} />
           <Lighting layout={layout.light} scene={currentScene} />

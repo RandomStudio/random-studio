@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {
+  Animation,
   DirectionalLight,
   Color3,
   ShadowGenerator,
@@ -9,21 +10,49 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
   useEffect(() => {
     let light;
 
-    const setupLightAnimation = () => {
-      const dirAnim = new Animation('directionAnim', 'direction', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
-      const posAnim = new Animation('positionAnim', 'position', 60, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
-      dirAnim.setKeys(light.direction);
-      posAnim.setKeys(light.position);
-      light.animations.push(posAnim);
+    const getMinutesSinceMidnight = (timestamp = null) => {
+      const date = new Date(timestamp);
+      const utcDate = date.getTime() + (date.getTimezoneOffset() * 60000);
+      const amsterdamDate = new Date(utcDate + (3600000 * 1));
+      return amsterdamDate.getMinutes() + (amsterdamDate.getHours() * 60);
+    };
+
+    const animateToCurrentTimeOfDay = async () => {
+      let sunrise;
+      let sunset;
+      console.log(light);
+      try {
+        const response = await fetch('https://api.sunrise-sunset.org/json?lng=4.881437&lat=52.388408&formatted=0');
+        const data = await response.json();
+        sunrise = data.results.sunrise;
+        sunset = data.results.sunset;
+      } catch (error) {
+        console.log(error);
+        sunrise = '2019-12-06T07:00:00+00:00';
+        sunset = '2019-12-06T19:00:00+00:00';
+      }
+
+      sunrise = getMinutesSinceMidnight(sunrise);
+      sunset = getMinutesSinceMidnight(sunset);
+
+      const currentTime = getMinutesSinceMidnight();
+
+      const rawProgress = ((currentTime - sunrise) / (sunrise - sunset)) * 100;
+      const progress = Math.min(Math.max(rawProgress, 0), 100);
+      const dirAnim = new Animation('directionAnim', 'direction', 30, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      const colorAnim = new Animation('colorAnim', 'diffuse', 30, Animation.ANIMATIONTYPE_COLOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      dirAnim.setKeys(layout.direction);
+      colorAnim.setKeys(layout.color);
       light.animations.push(dirAnim);
-      scene.beginAnimation(light, 0, 3000, true);
+      light.animations.push(colorAnim);
+      scene.beginAnimation(light, 0, progress, false);
     };
 
     if (scene && world) {
-      light = new DirectionalLight('Sun', layout.direction.centre, scene);
-      light.position = layout.position.centre;
+      light = new DirectionalLight('Sun', layout.direction[0].value, scene);
+      light.position = layout.position;
       light.intensity = 3;
-      light.diffuse = new Color3(0.94, 1, 0.69);
+      light.diffuse = layout.color[0].value
       light.specular = new Color3(0.071, 0.078, 0.055);
       light.shadowEnabled = true;
       const [shadowMinZ, shadowMaxZ] = layout.shadows;
@@ -31,6 +60,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
       light.shadowMaxZ = shadowMaxZ;
 
       onAddSun(light);
+      animateToCurrentTimeOfDay();
     }
 
     return () => {

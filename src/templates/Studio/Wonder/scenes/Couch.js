@@ -1,4 +1,4 @@
-import { Vector3 } from 'babylonjs';
+import { Vector3, Color3 } from 'babylonjs';
 
 const camera = {
   position: new Vector3(50, 30, -120),
@@ -22,16 +22,43 @@ const model = {
 };
 
 const sun = {
-  direction: {
-    left: new Vector3(1, -0.5, -0.8),
-    centre: new Vector3(0, -0.4, -0.848),
-    right: new Vector3(-1, -0.5, -0.8),
-  },
-  position: {
-    left: new Vector3(-50, 0, 120),
-    centre: new Vector3(30, 30, 150),
-    right: new Vector3(50, 0, 120),
-  },
+  color: [
+    {
+      frame: 0,
+      value: new Color3.FromHexString('#FF82E9'),
+    },
+    {
+      frame: 20,
+      value: new Color3.FromHexString('#F2B49A'),
+    },
+    {
+      frame: 50,
+      value: new Color3.FromHexString('#FFEF76'),
+    },
+    {
+      frame: 90,
+      value: new Color3.FromHexString('#F99000'),
+    },
+    {
+      frame: 100,
+      value: new Color3.FromHexString('#6130BC'),
+    },
+  ],
+  direction: [
+    {
+      frame: 0,
+      value: new Vector3(1, -0.5, -0.8),
+    },
+    {
+      frame: 50,
+      value: new Vector3(0, -0.4, -0.848),
+    },
+    {
+      frame: 100,
+      value: new Vector3(-1, -0.5, -0.8),
+    },
+  ],
+  position: new Vector3(30, 30, 150),
   shadows: [30, 150],
 };
 
