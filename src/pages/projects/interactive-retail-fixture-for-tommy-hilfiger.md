@@ -28,9 +28,9 @@ content:
     marginTop: 10
     ratio: 0
     video:
-      autoplay: true
-      hasControls: false
-      isMuted: true
+      autoplay: false
+      hasControls: true
+      isMuted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/370848080.hd.mp4?s=029022badf948ec7d53dc83dd22cca19551a59c9&profile_id=175
