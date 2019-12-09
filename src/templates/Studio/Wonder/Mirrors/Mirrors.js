@@ -5,7 +5,6 @@ import {
   MirrorTexture,
   Plane,
   StandardMaterial,
-  Texture,
   Vector3,
 } from 'babylonjs';
 
@@ -22,23 +21,6 @@ const Mirrors = ({ layout, scene, world }) => {
         mirror.position = mirrorLayout.position;
         mirror.rotation = mirrorLayout.rotation;
 
-        if (mirrorLayout.window) {
-          const { window } = mirrorLayout;
-          const outside = MeshBuilder.CreatePlane('outside', {
-            width: window.width,
-            height: window.height,
-          }, scene);
-          outside.parent = world;
-          outside.position = window.position;
-          outside.rotation = window.rotation;
-          const image = new StandardMaterial('outside', scene);
-          image.diffuseTexture = new Texture(window.texture, scene);
-          outside.material = image;
-          outside.receiveShadows = false;
-          activeMirrorContent.push(outside);
-          activeMirrorContent.push(image);
-        }
-
         mirror.computeWorldMatrix(true);
 
         const mirrorWorldMatrix = mirror.getWorldMatrix();
@@ -49,6 +31,7 @@ const Mirrors = ({ layout, scene, world }) => {
         const reflector = new Plane.FromPositionAndNormal(mirror.position, mirrorNormal.scale(-1));
         const mirrorMaterial = new StandardMaterial('MirrorMat', scene);
         mirrorMaterial.diffuseColor = new Color3(0.1, 0.1, 0.1);
+
         mirrorMaterial.reflectionTexture = new MirrorTexture('mirror', 1024, scene, true);
         mirrorMaterial.reflectionTexture.mirrorPlane = reflector;
         const reflected = scene.meshes.filter(mesh => (

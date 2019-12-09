@@ -7,7 +7,7 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
     let importedModel;
     const importWorld = async () => {
       SceneLoader.ShowLoadingScreen = false;
-      importedModel = await SceneLoader.AppendAsync('/models/', filename, scene);
+      importedModel = await SceneLoader.AppendAsync(filename.path, filename.file, scene);
       const root = scene.meshes.find(mesh => mesh.id === '__root__');
       root.scaling.z = 1;
 
