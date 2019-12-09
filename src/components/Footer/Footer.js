@@ -5,6 +5,7 @@ import styles from './Footer.module.scss';
 export default ({ address, email, phone }) => {
   const [isNoticeVisible, setIsNoticeVisible] = useState(false);
   const emailRef = useRef();
+
   const handleClickEmail = e => {
     try {
       window.getSelection().selectAllChildren(emailRef.current);

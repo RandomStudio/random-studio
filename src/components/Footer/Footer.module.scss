@@ -10,7 +10,7 @@
 
   a {
     position: relative;
-    display: inline-block;
+    display: block;
     text-decoration: none;
     &::after {
       content: "";
@@ -31,7 +31,7 @@
 
 .email-desktop,
 .email-value {
-  display: none;
+  display: none !important;
 }
 
 .notice {
@@ -57,6 +57,10 @@
 @media (min-width: 36rem) {
   .footer {
     padding: 2rem;
+
+    a {
+      display: inline-block;
+    }
   }
 }
 
@@ -65,9 +69,9 @@
     padding: 2.4rem;
   }
   .email-desktop {
-    display: block;
+    display: block !important;
   }
   .email-mobile {
-    display: none;
+    display: none !important;
   }
 }
