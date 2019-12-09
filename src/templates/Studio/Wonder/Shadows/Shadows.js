@@ -1,11 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  SpotLight,
-  HemisphericLight,
-  Vector3,
-  Color3,
-  ShadowGenerator,
-} from 'babylonjs';
+import { ShadowGenerator } from 'babylonjs';
 
 const Shadows = ({ scene, sun, world }) => {
   useEffect(() => {

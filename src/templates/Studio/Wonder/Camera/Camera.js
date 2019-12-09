@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { ArcRotateCamera, PointerEventTypes } from 'babylonjs';
+import { ArcRotateCamera } from 'babylonjs';
 
 const Camera = ({ canvasRef, layout, scene }) => {
   useEffect(() => {
     let camera;
     const onClick = (e)=> {
-      camera.fov *= 0.8;
-    }
+      camera.fov *= 1.25;
+    };
 
     const onRelease = () => {
-      camera.fov *= 1.25;
-    }
+      camera.fov *= 0.8;
+    };
 
     if (scene) {
       camera = new ArcRotateCamera('camera', 0, 0, 0, layout.target, scene, true);

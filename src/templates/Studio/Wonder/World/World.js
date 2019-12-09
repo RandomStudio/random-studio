@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { SceneLoader } from 'babylonjs';
+import { GLTFFileLoader } from 'babylonjs-loaders';
 
 const World = ({ filename, layout, onImportWorld, scene }) => {
   useEffect(() => {

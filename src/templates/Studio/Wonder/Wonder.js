@@ -1,11 +1,10 @@
-import React, { useRef, useEffect, useState, useMemo } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Engine, Scene, Color3 } from 'babylonjs';
-import 'babylonjs-loaders';
 import styles from './Wonder.module.scss';
 
 // Scenes
-import Couch from '../Wonder/scenes/Couch';
-import Island from '../Wonder/scenes/Island';
+import Couch from './scenes/Couch';
+// import Island from '../Wonder/scenes/Island';
 import Lighting from './Lighting/Lighting';
 import Camera from './Camera/Camera';
 import World from './World/World';
@@ -20,7 +19,8 @@ const Wonder = () => {
   const [currentScene, setCurrentScene] = useState(null);
   const [sun, setSun] = useState(null);
   const [world, setWorld] = useState(null);
-  const layout = useMemo(() => [Couch, Couch][Math.round(Math.random())], []);
+  // const layout = useMemo(() => [Couch, Island][Math.round(Math.random())], []);
+  const layout = Couch;
 
   useEffect(() => {
     let engine;

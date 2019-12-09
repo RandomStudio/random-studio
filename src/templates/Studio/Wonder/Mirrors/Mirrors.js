@@ -1,5 +1,13 @@
 import React, { useEffect } from 'react';
-import { Vector3, Plane, StandardMaterial, MirrorTexture, Texture, MeshBuilder, Color3 } from 'babylonjs';
+import {
+  Color3,
+  MeshBuilder,
+  MirrorTexture,
+  Plane,
+  StandardMaterial,
+  Texture,
+  Vector3,
+} from 'babylonjs';
 
 const Mirrors = ({ layout, scene, world }) => {
   useEffect(() => {

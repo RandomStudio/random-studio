@@ -3,7 +3,6 @@ import {
   Animation,
   DirectionalLight,
   Color3,
-  ShadowGenerator,
 } from 'babylonjs';
 
 const Sun = ({ layout, onAddSun, scene, world }) => {

@@ -14,8 +14,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {
-    "babylonjs": "^4.0.3",
-    "babylonjs-loaders": "^4.0.3",
+    "babylonjs": "4.1.0-beta.6",
+    "babylonjs-loaders": "4.1.0-beta.6",
     "framer-motion": "^1.6.14",
     "gatsby": "^2.15.7",
     "gatsby-image": "^2.2.18",
