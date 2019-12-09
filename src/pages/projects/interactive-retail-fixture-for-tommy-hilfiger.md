@@ -1,6 +1,9 @@
 ---
 templateKey: Project
-title: Interactive retail fixture for Tommy Hilfiger
+title: |-
+  Interactive retail fixture
+
+  for Tommy Hilfiger
 intro: >-
   While the Tommy Hilfiger Kids’ Collection is extensive, it is usually only
   available in a handful of their stores. Without taking up too much floor space
@@ -16,17 +19,18 @@ thumbnail:
   image: /img/thumbnail_kidsmachine.png
   marginLeft: 5
   marginTop: 10
-  ratio: 0
-  video: ''
-  width: 36
+  ratio: 66.666666666
+  video: >-
+    https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
+  width: 45
 content:
   - marginLeft: 5
     marginTop: 10
-    ratio: 0
+    ratio: 56.2
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      hasControls: true
+      isMuted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/370848080.hd.mp4?s=029022badf948ec7d53dc83dd22cca19551a59c9&profile_id=175
@@ -37,7 +41,7 @@ content:
       The central touchscreen is framed by dials, glowing buttons and a giant
       slider and sound effects are emitted from a visible speaker grille.
     marginLeft: 0
-    marginTop: 72
+    marginTop: 0
     ratio: 0
     video:
       autoplay: false
