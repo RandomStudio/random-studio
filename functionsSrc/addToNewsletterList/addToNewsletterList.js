@@ -22,15 +22,17 @@ exports.handler = async function(event, context) {
     });
     console.log('Response is ok?')
     console.log(response.status)
-    console.log(response.statusText);
+
+    const data = await response.json();
+    console.log(data.detail);
+
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
       return {
         statusCode: response.status,
-        message: response.statusText,
+        message: data.detail,
       }
     }
-    const data = await response.json()
 
     return {
       statusCode: 200,
