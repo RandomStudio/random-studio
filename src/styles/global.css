@@ -10,7 +10,7 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   position: relative;
   -webkit-tap-highlight-color: transparent;
@@ -59,4 +59,11 @@ button,
   body {
     font-size: 1.4rem;
   }
+}
+
+
+/* Babylon inspector should be on top of anything */
+#scene-explorer-host,
+#inspector-host {
+  z-index: 99999;
 }

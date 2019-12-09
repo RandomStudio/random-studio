@@ -6,14 +6,16 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby clean && gatsby build",
-    "develop": "gatsby develop",
-    "develop:expose": "gatsby clean && NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --host 0.0.0.0 --https",
+    "develop": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --host 0.0.0.0 --https",
+    "develop:expose": "gatsby clean && npm run develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {
+    "babylonjs": "^4.0.3",
+    "babylonjs-loaders": "^4.0.3",
     "framer-motion": "^1.6.14",
     "gatsby": "^2.15.7",
     "gatsby-image": "^2.2.18",
@@ -36,7 +38,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^6.0.0-beta",
+    "react-helmet-async": "^1.0.4",
     "react-markdown": "^4.2.2"
   },
   "devDependencies": {

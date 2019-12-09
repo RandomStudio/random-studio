@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../../components/Layout/Layout';
-import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 import ProjectList from './ProjectList/ProjectList';
 import HomeVideo from './HomeVideo/HomeVideo';
@@ -37,6 +36,7 @@ export const pageQuery = graphql`
           url
         }
         intro
+        layout
         middle
         projects {
           caption
@@ -64,44 +64,37 @@ export const pageQuery = graphql`
 
 const Home = ({
   data: {
-    allMarkdownRemark: {
-      edges,
-    },
-    markdownRemark: {
-      fields,
-      frontmatter,
-    },
+    allMarkdownRemark,
+    markdownRemark,
   },
-}) => (
-  <Layout>
-    <SEO pathName={fields.slug} />
-    <Navigation />
-    <HomeVideo
-      videoUrl={frontmatter.video}
-      collaborationCredits={frontmatter.collaborationCredits}
-    />
-    <ProjectList
-      {...frontmatter}
-      projects={frontmatter.projects.map(
-        ({
-          caption,
-          project,
-          thumbnail,
-        }) => {
-          const relation = edges.find(e => (
-            e.node.frontmatter.title === frontmatter.projects[0].project
-          ));
-          return {
-            slug: relation ? relation.node.fields.slug : null,
-            title: caption || project,
-            thumbnail,
-          };
-        },
-      )}
-    />
-    <Footer {...frontmatter} />
-  </Layout>
-);
+}) => {
+  const edges = allMarkdownRemark.edges || [];
+  const fields = markdownRemark ? markdownRemark.fields : {};
+  const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
+
+  return (
+    <Layout>
+      <SEO pathName={fields.slug} />
+      <HomeVideo
+        collaborationCredits={frontmatter.collaborationCredits}
+        layout={frontmatter.layout}
+        videoUrl={frontmatter.video}
+      />
+      <ProjectList
+        {...frontmatter}
+        projects={edges.map(
+          ({
+            node: {
+              fields: { slug },
+              frontmatter: { title, thumbnail },
+            },
+          }) => ({ slug, title, thumbnail }),
+        )}
+      />
+      <Footer {...frontmatter} />
+    </Layout>
+  );
+};
 
 Home.propTypes = {
   data: PropTypes.shape({

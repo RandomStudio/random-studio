@@ -1,13 +1,14 @@
+@import '../../styles/mixins';
+
 .nav {
+  @include blendedText;
   display: flex;
   position: fixed;
   top: 0;
   padding: 1.4rem;
   width: 100%;
-  color: white;
   font-size: 1.2rem;
   line-height: 1;
-  mix-blend-mode: difference;
   z-index: 999;
   pointer-events: all;
 
