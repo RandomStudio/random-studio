@@ -50,6 +50,7 @@ export const pageQuery = graphql`
           url
         }
         intro
+        layout
         middle
         video
       }
@@ -71,8 +72,9 @@ const Home = ({
     <Layout>
       <SEO pathName={fields.slug} />
       <HomeVideo
-        videoUrl={frontmatter.video}
         collaborationCredits={frontmatter.collaborationCredits}
+        layout={frontmatter.layout}
+        videoUrl={frontmatter.video}
       />
       <ProjectList
         {...frontmatter}
