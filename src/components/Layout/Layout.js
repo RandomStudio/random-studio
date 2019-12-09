@@ -9,6 +9,7 @@ const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
 export default ({ children }) => (
   <>
+    <Navigation />
     <div className={styles.container}>{children}</div>
     <Navigation />
     <div

@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: [
     'react',
+    'react-hooks'
   ],
   rules: {
     "arrow-parens": [1, "as-needed"],
@@ -27,5 +28,7 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     // Temporarily disabling prop type rules, due to sheer volume that need fixing
     "react/prop-types": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
 };
