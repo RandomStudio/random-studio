@@ -1,17 +1,35 @@
 // Docs: https://www.gatsbyjs.org/docs/ssr-apis/
 
-const { Helmet } = require("react-helmet")
+const { HelmetProvider } = require('react-helmet-async');
+const React = require('react');
 
-exports.onRenderBody = (
-  { setHeadComponents, setHtmlAttributes, setBodyAttributes },
-  pluginOptions
-) => {
-  const helmet = Helmet.renderStatic()
-  setHtmlAttributes(helmet.htmlAttributes.toComponent())
-  setBodyAttributes(helmet.bodyAttributes.toComponent())
-  setHeadComponents([
-    helmet.title.toComponent(),
-    helmet.link.toComponent(),
-    helmet.meta.toComponent(),
-  ])
-}
+const helmetContextMap = new Map();
+
+exports.wrapRootElement = ({ element, pathname }) => {
+  const helmetContext = {};
+  helmetContextMap.set(pathname, helmetContext);
+
+  return (
+    <HelmetProvider context={helmetContext}>
+      {element}
+    </HelmetProvider>
+  );
+};
+
+exports.onRenderBody = ({
+  setHeadComponents,
+  setHtmlAttributes,
+  setBodyAttributes,
+  pathname,
+}) => {
+  const helmetContext = helmetContextMap.get(pathname);
+  if (helmetContext) {
+    setHtmlAttributes(helmetContext.helmet.htmlAttributes.toComponent());
+    setBodyAttributes(helmetContext.helmet.bodyAttributes.toComponent());
+    setHeadComponents([
+      helmetContext.helmet.title.toComponent(),
+      helmetContext.helmet.link.toComponent(),
+      helmetContext.helmet.meta.toComponent(),
+    ]);
+  }
+};

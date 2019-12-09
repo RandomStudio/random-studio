@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import getThumbnailSafely from '../../utils/getThumbnailSafely';
 import Layout from '../../components/Layout/Layout';
 import ProjectDetail from '../../components/ProjectDetail/ProjectDetail';
-import Navigation from '../../components/Navigation/Navigation';
 import SEO from '../../components/SEO/SEO';
 import BackScrim from './BackScrim/BackScrim';
 
@@ -18,7 +17,7 @@ export const pageQuery = graphql`
           image {
             publicURL
             childImageSharp {
-              fixed(width: 800, height: 800) {
+              fixed(width: 800, height: 800, quality: 90) {
                 ...GatsbyImageSharpFixed
               }
             }
@@ -30,7 +29,7 @@ export const pageQuery = graphql`
           caption
           image {
             childImageSharp {
-              fluid(maxWidth: 1920) {
+              fluid(maxWidth: 1920, quality: 99) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -106,9 +105,8 @@ export default ({
         socialDescription={socialDescription}
         socialTitle={socialTitle}
       />
-      <Navigation />
       <ProjectDetail {...project} />
-      <BackScrim returnUrl={returnSlug} />
+      {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
     </Layout>
   );
 };

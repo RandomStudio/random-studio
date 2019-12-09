@@ -10,17 +10,23 @@
     rgba(191, 191, 191, 1) 100%
   );
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
 
-  .backButton {
-    position: absolute;
-    bottom: 1.4rem;
-    left: 1.4rem;
-    background: #fff;
-    border-radius: 2rem;
-    padding: 0.6rem 1.2rem;
-    pointer-events: all;
-    text-decoration: none;
-  }
+.isVisible {
+  opacity: 1;
+}
+
+.backButton {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  background: #fff;
+  border-radius: 2rem;
+  padding: 0.6rem 1.2rem;
+  pointer-events: all;
+  text-decoration: none;
 }
 
 .intersectionLine {
@@ -30,11 +36,9 @@
 }
 
 @media (min-width: 36rem) {
-  .backScrim {
-    .backButton {
-      bottom: 2rem;
-      left: 2rem;
-    }
+  .backButton {
+    bottom: 2rem;
+    left: 2rem;
   }
 }
 
