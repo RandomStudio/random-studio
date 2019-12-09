@@ -12,12 +12,9 @@ const Newsletter = () => {
     event.preventDefault();
     try {
       const response = await fetch(`/functions/addToNewsletterList?email=${email}`);
-      const text = await response.text();
-      const responsetwo = await fetch(`/functions/addToNewsletterList?email=${email}`);
-      const body = await responsetwo.json();
-      console.log(text, body)
+      const body = await response.json();
       setIsSuccessful(true);
-    } catch(error) {
+    } catch (error) {
       console.log(error);
       setError(error.message);
     }

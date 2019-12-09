@@ -14,7 +14,6 @@
   "author": "Netlify",
   "license": "MIT",
   "dependencies": {
-    "btoa": "^1.2.1",
     "node-fetch": "^2.3.0"
   }
 }
