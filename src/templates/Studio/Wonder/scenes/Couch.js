@@ -36,7 +36,7 @@ const sun = {
       value: new Color3.FromHexString('#FF82E9'),
     },
     {
-      frame: 20,
+      frame: 17,
       value: new Color3.FromHexString('#F2B49A'),
     },
     {

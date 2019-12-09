@@ -37,7 +37,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
       const currentTime = getMinutesSinceMidnight();
 
       const rawProgress = ((currentTime - sunrise) / (sunrise - sunset)) * 100;
-      const progress = Math.min(Math.max(rawProgress, 0), 100);
+      const progress = Math.min(Math.max(Math.abs(rawProgress), 0), 100);
       const dirAnim = new Animation('directionAnim', 'direction', 30, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
       const colorAnim = new Animation('colorAnim', 'diffuse', 30, Animation.ANIMATIONTYPE_COLOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
       dirAnim.setKeys(layout.direction);
