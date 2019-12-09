@@ -10,6 +10,7 @@ const Newsletter = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
+    setError('');
     try {
       const response = await fetch(`/.netlify/functions/addToNewsletterList?email=${email}`);
       const body = await response.json();
