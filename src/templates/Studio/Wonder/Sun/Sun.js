@@ -9,6 +9,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
   useEffect(() => {
     let interval;
     let light;
+    let prevProgress = 0;
 
     const getMinutesSinceMidnight = (timestamp = Date.now()) => {
       const date = new Date(timestamp);
@@ -17,7 +18,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
       return amsterdamDate.getMinutes() + (amsterdamDate.getHours() * 60);
     };
 
-    const animateToCurrentTimeOfDay = async () => {
+    const getCurrentSunProperties = async () => {
       let sunrise;
       let sunset;
 
@@ -38,13 +39,19 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
 
       const rawProgress = ((currentTime - sunrise) / (sunrise - sunset)) * 100;
       const progress = Math.min(Math.max(Math.abs(rawProgress), 0), 100);
+      return progress;
+    }
+
+    const animateToCurrentTimeOfDay = async () => {
+      const progress = await getCurrentSunProperties();
       const dirAnim = new Animation('directionAnim', 'direction', 30, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
       const colorAnim = new Animation('colorAnim', 'diffuse', 30, Animation.ANIMATIONTYPE_COLOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
       dirAnim.setKeys(layout.direction);
       colorAnim.setKeys(layout.color);
       light.animations.push(dirAnim);
       light.animations.push(colorAnim);
-      scene.beginAnimation(light, 0, progress, false);
+      scene.beginAnimation(light, prevProgress, progress, false);
+      prevProgress = progress;
     };
 
     if (scene && world) {
