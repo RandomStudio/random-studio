@@ -11,9 +11,13 @@ const Newsletter = () => {
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      const response = await fetch(`/functions/addToNewsletterList?email=${email}`);
+      const response = await fetch(`/.netlify/functions/addToNewsletterList?email=${email}`);
       const body = await response.json();
-      setIsSuccessful(true);
+      if (body.status === 200) {
+        setIsSuccessful(true);
+      } else {
+        setError(body.message);
+      }
     } catch (error) {
       console.log(error);
       setError(error.message);
