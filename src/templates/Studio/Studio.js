@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout/Layout';
 import Footer from '../../components/Footer/Footer';
@@ -56,18 +56,22 @@ export const query = graphql`
   }
 `;
 
-export default ({ location, data: { indexPage, studioPage } }) => (
-  <Layout globalClass="studio">
-    <SEO title="Studio" pathName={studioPage.fields.slug} />
-    <Wonder />
-    <Intro
-      data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
-      location={location}
-    />
-    {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
-      <InfoBlock key={index} collection={collection} />
-    ))}
-    <Impression data={studioPage.frontmatter.studioImpression} />
-    <Footer {...indexPage.frontmatter} />
-  </Layout>
-);
+export default ({ location, data: { indexPage, studioPage } }) => {
+  const introRef = useRef();
+  return (
+    <Layout globalClass="studio">
+      <SEO title="Studio" pathName={studioPage.fields.slug} />
+      <Wonder introRef={introRef} />
+      <Intro
+        data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
+        location={location}
+        ref={introRef}
+      />
+      {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
+        <InfoBlock key={index} collection={collection} />
+      ))}
+      <Impression data={studioPage.frontmatter.studioImpression} />
+      <Footer {...indexPage.frontmatter} />
+    </Layout>
+  );
+};

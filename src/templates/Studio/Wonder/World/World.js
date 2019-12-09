@@ -5,26 +5,26 @@ import { GLTFFileLoader } from 'babylonjs-loaders';
 const World = ({ filename, layout, onImportWorld, scene }) => {
   useEffect(() => {
     let importedModel;
+    let model;
+
     const importWorld = async () => {
       SceneLoader.ShowLoadingScreen = false;
       importedModel = await SceneLoader.AppendAsync(filename.path, filename.file, scene);
-      const root = scene.meshes.find(mesh => mesh.id === '__root__');
-      root.scaling.z = 1;
+      model = scene.meshes.find(mesh => mesh.id === '__root__');
+      model.scaling.z = 1;
 
       if (layout.identifier) {
-        const world = scene.meshes.find(mesh => mesh.id === layout.identifier);
-        world.position = layout.position;
-        world.rotation = layout.rotation;
-        world.scaling.z = 1;
+        model = scene.meshes.find(mesh => mesh.id === layout.identifier);
+        model.position = layout.position;
+        model.rotation = layout.rotation;
+        model.scaling.z = 1;
 
-        scene.meshes = [world];
-        onImportWorld(world);
+        scene.meshes = [model];
       } else {
-        root.position = layout.position;
-        root.rotation = layout.rotation;
-        onImportWorld(root);
+        model.position = layout.position;
+        model.rotation = layout.rotation;
       }
-
+      onImportWorld(model);
     };
 
     if (filename && scene && !scene.isDisposed) {
@@ -34,9 +34,10 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
     return () => {
       if (importedModel) {
         importedModel.dispose();
+        onImportWorld(null);
       }
     }
-  }, [filename, scene]);
+  }, [filename, layout, onImportWorld, scene]);
   return null;
 };
 

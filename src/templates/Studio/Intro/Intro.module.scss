@@ -9,22 +9,18 @@
   font-size: 3.2rem;
   mix-blend-mode: difference;
   margin: 0;
-  padding: 40vh 0 15.4rem 1.4rem;
+  padding-top: 40vh;
+  padding-left: 1.4rem;
   letter-spacing: -0.01em;
   line-height: 1.1;
-
-  :global(.studio) & {
-    pointer-events: auto;
-  }
 }
 
 .intro {
   position: relative;
   z-index: 1;
-  margin: 0;
+  margin: 15.4rem 0 0;
   padding: 0 1.4rem;
 }
-
 .introHeader {
   margin-bottom: 6.4rem;
   font-size: var(--font-small);
@@ -79,7 +75,6 @@
 
   .intro {
     padding: 4rem;
-    margin: 15.4rem 0 0;
   }
 
   .introHeader {
@@ -124,10 +119,6 @@
 }
 
 @media (min-width: 72rem) {
-  :global(.studio) .logo {
-    pointer-events: none;
-  }
-
   .logo,
   .intro {
     max-width: 64rem;

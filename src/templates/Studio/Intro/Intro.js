@@ -3,14 +3,14 @@ import ReactMarkdown from 'react-markdown';
 import styles from './Intro.module.scss';
 import Recruitee from '../Recruitee/Recruitee';
 
-const Intro = ({ data: { address, contact, intro }, location }) => (
+const Intro = React.forwardRef(({ data: { address, contact, intro }, location }, ref) => (
   <>
     <h1 className={styles.logo}>
       Random
       <br />
       Studio
     </h1>
-    <div className={styles.intro}>
+    <div className={styles.intro} ref={ref}>
       <header className={styles.introHeader}>
         <div className={styles.address}>
           <div>
@@ -30,6 +30,6 @@ const Intro = ({ data: { address, contact, intro }, location }) => (
       <Recruitee location={location} />
     </div>
   </>
-);
+));
 
 export default Intro;

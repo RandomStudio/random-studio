@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
 import { ArcRotateCamera } from 'babylonjs';
 
-const Camera = ({ canvasRef, layout, scene }) => {
+const Camera = ({ canvasRef, layout, onCreateCamera, scene }) => {
   useEffect(() => {
     let camera;
     const canvas = canvasRef.current;
-
-    const onClick = () => {
-      camera.fov = (camera.fov === 0.8) ? 0.5 : 0.8;
-      return true;
-    };
 
     if (scene) {
       camera = new ArcRotateCamera('camera', 0, 0, 0, layout.target, scene, true);
@@ -18,14 +13,16 @@ const Camera = ({ canvasRef, layout, scene }) => {
       camera.attachControl(canvas, true);
       camera.inputs.clear();
       camera.minZ = 0;
-      camera.fov = 0.8;
-      canvas.addEventListener('pointerdown', onClick);
+      camera.fov = 1;
+      onCreateCamera(camera);
     }
 
     return () => {
-      canvas.removeEventListener('pointerdown', onClick);
+      camera.dispose();
+      onCreateCamera(null);
     };
-  }, [scene]);
+  }, [canvasRef, layout, scene]);
+
   return null;
 };
 

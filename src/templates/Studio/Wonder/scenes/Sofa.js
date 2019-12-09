@@ -1,7 +1,7 @@
 import { Vector3, Color3 } from 'babylonjs';
 
 const camera = {
-  position: new Vector3(50, 30, -120),
+  position: new Vector3(50, 30, 0),
   target: new Vector3(-10, 0, 100),
 };
 
