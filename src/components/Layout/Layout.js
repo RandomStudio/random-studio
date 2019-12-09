@@ -7,10 +7,10 @@ import Navigation from '../Navigation/Navigation';
 
 const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
-export default ({ children }) => (
+export default ({ children, globalClass }) => (
   <>
     <Navigation />
-    <div className={styles.container}>{children}</div>
+    <div className={`${styles.container} ${globalClass}`}>{children}</div>
     <div
       className={styles.backgroundTransition}
       style={{

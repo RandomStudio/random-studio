@@ -36,7 +36,7 @@ const Wonder = () => {
     const createScene = () => {
       scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
-      scene.debugLayer.show();
+      // scene.debugLayer.show();
       return scene;
     };
 

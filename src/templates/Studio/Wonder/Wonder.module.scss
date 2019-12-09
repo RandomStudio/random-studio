@@ -8,6 +8,7 @@
   //pointer-events: none;
   opacity: 0;
   transition: opacity 4000ms ease-in 500ms;
+  outline: none;
 
   &.is-visible {
     opacity: 1;

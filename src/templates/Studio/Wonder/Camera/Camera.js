@@ -4,29 +4,27 @@ import { ArcRotateCamera } from 'babylonjs';
 const Camera = ({ canvasRef, layout, scene }) => {
   useEffect(() => {
     let camera;
-    const onClick = (e)=> {
-      camera.fov *= 1.25;
-    };
+    const canvas = canvasRef.current;
 
-    const onRelease = () => {
-      camera.fov *= 0.8;
+    const onClick = () => {
+      camera.fov = (camera.fov === 0.8) ? 0.5 : 0.8;
+      return true;
     };
 
     if (scene) {
       camera = new ArcRotateCamera('camera', 0, 0, 0, layout.target, scene, true);
       camera.setPosition(layout.position);
       camera.setTarget(layout.target);
-      camera.attachControl(canvasRef.current, true);
+      camera.attachControl(canvas, true);
       camera.inputs.clear();
       camera.minZ = 0;
-      canvasRef.current.addEventListener('pointerup', onClick);
-      canvasRef.current.addEventListener('pointerdown', onRelease);
+      camera.fov = 0.8;
+      canvas.addEventListener('pointerdown', onClick);
     }
 
     return () => {
-      canvasRef.current.removeEventListener('pointerup', onClick);
-      canvasRef.current.removeEventListener('pointerdown', onRelease);
-    }
+      canvas.removeEventListener('pointerdown', onClick);
+    };
   }, [scene]);
   return null;
 };

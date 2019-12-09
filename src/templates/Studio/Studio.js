@@ -57,7 +57,7 @@ export const query = graphql`
 `;
 
 export default ({ location, data: { indexPage, studioPage } }) => (
-  <Layout>
+  <Layout globalClass="studio">
     <SEO title="Studio" pathName={studioPage.fields.slug} />
     <Wonder />
     <Intro

@@ -1,23 +1,27 @@
+@import '../../../styles/mixins';
 
 .logo {
+  @include blendedText;
   position: relative;
   z-index: 1;
   font-family: "Larish Neue", serif;
   font-weight: normal;
   font-size: 3.2rem;
-  color: white;
   mix-blend-mode: difference;
   margin: 0;
-  padding-top: 40vh;
-  padding-left: 1.4rem;
+  padding: 40vh 0 15.4rem 1.4rem;
   letter-spacing: -0.01em;
   line-height: 1.1;
+
+  :global(.studio) & {
+    pointer-events: auto;
+  }
 }
 
 .intro {
   position: relative;
   z-index: 1;
-  margin: 15.4rem 0 0;
+  margin: 0;
   padding: 0 1.4rem;
 }
 
@@ -75,6 +79,7 @@
 
   .intro {
     padding: 4rem;
+    margin: 15.4rem 0 0;
   }
 
   .introHeader {
@@ -95,6 +100,9 @@
 }
 
 @media (min-width: 54rem) {
+  :global(.studio) .intro {
+    pointer-events: none;
+  }
   .logo,
   .intro {
     max-width: 48rem;
