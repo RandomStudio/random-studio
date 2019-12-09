@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styles from './404.module.scss';
-import Layout from '../../components/Layout/Layout';
-import Navigation from '../../components/Navigation/Navigation';
+import Layout from '../components/Layout/Layout';
+import Navigation from '../components/Navigation/Navigation';
 
 const Error404 = () => (
   <Layout>
