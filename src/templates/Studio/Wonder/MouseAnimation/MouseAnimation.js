@@ -8,18 +8,19 @@ const MouseAnimation = ({ layout, target }) => {
       const height = window.innerHeight;
       const widthPercentage = ((e.pageX - (width / 2)) / width) * 2;
       const heightPercentage = ((e.pageY - (height / 2)) / height) * 2;
-      const depthPercentage = widthPercentage / heightPercentage;
 
       const { rotation } = layout;
       target.rotation = new Vector3(rotation.x + (heightPercentage * -0.1), rotation.y + (widthPercentage * -0.2), rotation.z)
     };
 
     if (target) {
-      window.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('drag', onMouseMove);
+      document.addEventListener('mousemove', onMouseMove);
     }
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('drag', onMouseMove);
+      document.removeEventListener('mousemove', onMouseMove);
     };
   }, [target]);
 

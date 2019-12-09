@@ -8,9 +8,10 @@ import {
 
 const Sun = ({ layout, onAddSun, scene, world }) => {
   useEffect(() => {
+    let interval;
     let light;
 
-    const getMinutesSinceMidnight = (timestamp = null) => {
+    const getMinutesSinceMidnight = (timestamp = Date.now()) => {
       const date = new Date(timestamp);
       const utcDate = date.getTime() + (date.getTimezoneOffset() * 60000);
       const amsterdamDate = new Date(utcDate + (3600000 * 1));
@@ -20,7 +21,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
     const animateToCurrentTimeOfDay = async () => {
       let sunrise;
       let sunset;
-      console.log(light);
+
       try {
         const response = await fetch('https://api.sunrise-sunset.org/json?lng=4.881437&lat=52.388408&formatted=0');
         const data = await response.json();
@@ -34,7 +35,6 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
 
       sunrise = getMinutesSinceMidnight(sunrise);
       sunset = getMinutesSinceMidnight(sunset);
-
       const currentTime = getMinutesSinceMidnight();
 
       const rawProgress = ((currentTime - sunrise) / (sunrise - sunset)) * 100;
@@ -52,7 +52,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
       light = new DirectionalLight('Sun', layout.direction[0].value, scene);
       light.position = layout.position;
       light.intensity = 3;
-      light.diffuse = layout.color[0].value
+      light.diffuse = layout.color[0].value;
       light.specular = new Color3(0.071, 0.078, 0.055);
       light.shadowEnabled = true;
       const [shadowMinZ, shadowMaxZ] = layout.shadows;
@@ -61,12 +61,14 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
 
       onAddSun(light);
       animateToCurrentTimeOfDay();
+      interval = window.setInterval(animateToCurrentTimeOfDay, 60000);
     }
 
     return () => {
       if (light) {
         light.dispose();
       }
+      window.clearInterval(interval);
     };
   }, [scene, world]);
 

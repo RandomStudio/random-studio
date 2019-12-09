@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Vector3, Plane, StandardMaterial, MirrorTexture, MeshBuilder, Color3 } from 'babylonjs';
+import { Vector3, Plane, StandardMaterial, MirrorTexture, Texture, MeshBuilder, Color3 } from 'babylonjs';
 
 const Mirrors = ({ layout, scene, world }) => {
   useEffect(() => {
-    const activeMirrors = [];
+    const activeMirrorContent = [];
     const addMirrors = () => {
       layout.forEach(mirrorLayout => {
         const mirror = MeshBuilder.CreatePlane('glass', {
@@ -13,6 +13,24 @@ const Mirrors = ({ layout, scene, world }) => {
         mirror.parent = world;
         mirror.position = mirrorLayout.position;
         mirror.rotation = mirrorLayout.rotation;
+
+        if (mirrorLayout.window) {
+          const { window } = mirrorLayout;
+          const outside = MeshBuilder.CreatePlane('outside', {
+            width: window.width,
+            height: window.height,
+          }, scene);
+          outside.parent = world;
+          outside.position = window.position;
+          outside.rotation = window.rotation;
+          const image = new StandardMaterial('outside', scene);
+          image.diffuseTexture = new Texture(window.texture, scene);
+          outside.material = image;
+          outside.receiveShadows = false;
+          activeMirrorContent.push(outside);
+          activeMirrorContent.push(image);
+        }
+
         mirror.computeWorldMatrix(true);
 
         const mirrorWorldMatrix = mirror.getWorldMatrix();
@@ -25,17 +43,22 @@ const Mirrors = ({ layout, scene, world }) => {
         mirrorMaterial.diffuseColor = new Color3(0.1, 0.1, 0.1);
         mirrorMaterial.reflectionTexture = new MirrorTexture('mirror', 1024, scene, true);
         mirrorMaterial.reflectionTexture.mirrorPlane = reflector;
-        mirrorMaterial.reflectionTexture.renderList = [world];
+        const reflected = scene.meshes.filter(mesh => (
+          mesh.id !== 'glass' && (!mirrorLayout.exclude || !mirrorLayout.exclude.includes(mesh.id))
+        ));
+        mirrorMaterial.reflectionTexture.renderList = reflected;
+
         mirror.material = mirrorMaterial;
-        activeMirrors.push(mirror);
+        activeMirrorContent.push(mirror);
+        activeMirrorContent.push(mirrorMaterial);
       });
     };
 
-    if (scene && world && layout.mirrors && layout.mirrors.length > 0) {
+    if (scene && world && layout && layout.length > 0) {
       addMirrors();
     }
 
-    return () => activeMirrors.forEach(mesh => mesh.dispose());
+    return () => activeMirrorContent.forEach(mesh => mesh.dispose());
   }, [layout, scene, world]);
   return null;
 };

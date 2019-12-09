@@ -11,8 +11,16 @@ const mirrors = [
   {
     width: 48,
     height: 48,
+    exclude: ['__root__'],
     position: new Vector3(3, 26, 43.2),
     rotation: new Vector3(0, 0, 0),
+    window: {
+      width: 144,
+      height: 144,
+      position: new Vector3(0, 25, -100),
+      rotation: new Vector3(0, 3, 0),
+      texture: '/models/CouchWindow.jpg',
+    },
   },
 ];
 
@@ -47,7 +55,7 @@ const sun = {
   direction: [
     {
       frame: 0,
-      value: new Vector3(1, -0.5, -0.8),
+      value: new Vector3(-1, -0.5, -0.8),
     },
     {
       frame: 50,
@@ -55,10 +63,10 @@ const sun = {
     },
     {
       frame: 100,
-      value: new Vector3(-1, -0.5, -0.8),
+      value: new Vector3(1, -0.5, -0.8),
     },
   ],
-  position: new Vector3(30, 30, 150),
+  position: new Vector3(30, 30, 200),
   shadows: [30, 150],
 };
 

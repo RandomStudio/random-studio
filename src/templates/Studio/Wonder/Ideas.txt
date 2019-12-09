@@ -1,0 +1,6 @@
+- Adjust z on mouse shift ---done
+- Click to randomise scene –––– no
+- Restore something to Island rear?
+- Shoot images for rear planes in mirrors
+- EDDIE ---- added
+- Explore animating skeletons directly in Babylon (for randomising characters + scnee)

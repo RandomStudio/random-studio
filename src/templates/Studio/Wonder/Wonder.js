@@ -65,7 +65,7 @@ const Wonder = () => {
 
   return (
     <>
-      <canvas ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
+      <canvas draggable="true" ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
       {currentScene && !currentScene.isDisposed && (
         <>
           <Camera canvasRef={canvasRef} layout={layout.camera} scene={currentScene} />
