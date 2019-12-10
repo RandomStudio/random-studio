@@ -11,6 +11,7 @@ export default ({ children }) => (
   <>
     <Navigation />
     <div className={styles.container}>{children}</div>
+    <Navigation />
     <div
       className={styles.backgroundTransition}
       style={{
