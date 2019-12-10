@@ -105,9 +105,9 @@ content:
   - caption: >-
       The key functionalities of the machine are simple and clear: you can
       browse the Kids Collection, purchase items and create a wishlist. Building
-      on our previous work on the Store of the Future platform, which powers
-      much of Tommy Hilfiger's in-store digital experience. The difference here
-      is in the presentation: carefully-prototyped hardware controls replace
+      on our previous work for the Store of the Future platform, which powers
+      much of Tommy Hilfiger’s in-store digital experience, the Kids Machine is
+      different in presentation: carefully-prototyped hardware controls replace
       almost all of the interface that is normally represented on-screen. By
       encouraging play, the experience of the Kids Machine evokes the brand
       values of the collection itself.
@@ -141,7 +141,7 @@ content:
     width: 44
   - caption: >-
       The result was a real success story that saw double the rates of
-      engagement and conversion compared to other touch screens in store. We saw
+      engagement and conversion compared to other touch screens in store. We see
       this as an exciting step forward in our long-term work on the Store of the
       Future that demonstrated the possibilities of merging retail platforms
       with interactive installations.
