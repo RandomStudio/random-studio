@@ -20,7 +20,7 @@ export default ({ address, email, phone }) => {
 
   return (
     <footer className={styles.footer}>
-      <div>
+      <div className={styles.address}>
         <ReactMarkdown escapeHtml={false} source={address} linkTarget="__blank" />
       </div>
 

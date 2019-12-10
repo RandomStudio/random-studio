@@ -24,6 +24,12 @@
   }
 }
 
+.address {
+  a {
+    display: inline-block;
+  }
+}
+
 // Remove underline of phonenumber
 .phone::after {
   display: none;
@@ -57,10 +63,6 @@
 @media (min-width: 36rem) {
   .footer {
     padding: 2rem;
-
-    a {
-      display: inline-block;
-    }
   }
 }
 
