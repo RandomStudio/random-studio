@@ -18,8 +18,7 @@ const Newsletter = () => {
         setIsSuccessful(true);
       } else {
         const body = await response.json();
-        console.log(response, body);
-        setError(body.detail);
+        setError(body.errorMessage);
       }
     } catch (error) {
       console.log(error);
