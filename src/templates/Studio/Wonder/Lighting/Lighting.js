@@ -7,18 +7,17 @@ import {
 
 const Lighting = ({ scene }) => {
   useEffect(() => {
-    let generalLight;
     if (scene) {
-      generalLight = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);
-      generalLight.specular = new Color3(0, 0, 0);
-      generalLight.specularPower = 0;
-      generalLight.intensity = 0.4;
+      return null;
     }
 
+    const generalLight = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);
+    generalLight.specular = new Color3(0, 0, 0);
+    generalLight.specularPower = 0;
+    generalLight.intensity = 0.4;
+
     return () => {
-      if (generalLight) {
-        generalLight.dispose();
-      }
+      generalLight.dispose();
     };
   }, [scene]);
 

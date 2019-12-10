@@ -7,7 +7,10 @@ import {
 
 const Sun = ({ layout, onAddSun, scene, world }) => {
   useEffect(() => {
-    let interval;
+    if (!scene || !world) {
+      return null;
+    }
+
     let light;
     let prevProgress = 0;
 
@@ -40,7 +43,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
       const rawProgress = ((currentTime - sunrise) / (sunrise - sunset)) * 100;
       const progress = Math.min(Math.max(Math.abs(rawProgress), 0), 100);
       return progress;
-    }
+    };
 
     const animateToCurrentTimeOfDay = async () => {
       const progress = await getCurrentSunProperties();
@@ -54,29 +57,25 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
       prevProgress = progress;
     };
 
-    if (scene && world) {
-      light = new DirectionalLight('Sun', layout.direction[0].value, scene);
-      light.position = layout.position;
-      light.intensity = 3;
-      light.diffuse = layout.color[0].value;
-      light.specular = new Color3(0.071, 0.078, 0.055);
-      light.shadowEnabled = true;
-      const [shadowMinZ, shadowMaxZ] = layout.shadows;
-      light.shadowMinZ = shadowMinZ;
-      light.shadowMaxZ = shadowMaxZ;
+    light = new DirectionalLight('Sun', layout.direction[0].value, scene);
+    light.position = layout.position;
+    light.intensity = 3;
+    light.diffuse = layout.color[0].value;
+    light.specular = new Color3(0.071, 0.078, 0.055);
+    light.shadowEnabled = true;
+    const [shadowMinZ, shadowMaxZ] = layout.shadows;
+    light.shadowMinZ = shadowMinZ;
+    light.shadowMaxZ = shadowMaxZ;
 
-      onAddSun(light);
-      animateToCurrentTimeOfDay();
-      interval = window.setInterval(animateToCurrentTimeOfDay, 60000);
-    }
+    onAddSun(light);
+    animateToCurrentTimeOfDay();
+    const interval = window.setInterval(animateToCurrentTimeOfDay, 60000);
 
     return () => {
-      if (light) {
-        light.dispose();
-      }
+      light.dispose();
       window.clearInterval(interval);
     };
-  }, [scene, world]);
+  }, [layout, onAddSun, scene, world]);
 
   return null;
 };

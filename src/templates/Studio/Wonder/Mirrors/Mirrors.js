@@ -10,6 +10,10 @@ import {
 
 const Mirrors = ({ layout, scene, world }) => {
   useEffect(() => {
+    if (!scene || !world || !layout || layout.length === 0) {
+      return null;
+    }
+
     const activeMirrorContent = [];
     const addMirrors = () => {
       layout.forEach(mirrorLayout => {
@@ -45,9 +49,7 @@ const Mirrors = ({ layout, scene, world }) => {
       });
     };
 
-    if (scene && world && layout && layout.length > 0) {
-      addMirrors();
-    }
+    addMirrors();
 
     return () => activeMirrorContent.forEach(mesh => mesh.dispose());
   }, [layout, scene, world]);
