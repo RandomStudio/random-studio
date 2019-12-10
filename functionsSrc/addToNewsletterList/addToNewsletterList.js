@@ -1,50 +1,57 @@
-/* eslint-disable */
-const fetch = require('node-fetch');
+const request = require('request');
 
-exports.handler = async function(event, context) {
-  const email = event.queryStringParameters.email;
-  try {
-    const authenticationString = 'Basic cmFuZG9tc3R1ZGlvOmExOTA0MjJjZTdhMTdhM2UwOThhMTU1YzJlOTY2NjY0LXVzNA==';
-    const body = JSON.stringify({
-      "email_address": email,
-      "status": "subscribed",
-    });
-    console.log(body);
-    const response = await fetch('https://us4.api.mailchimp.com/3.0/lists/cf9e550f84/members/', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: authenticationString,
-      },
-      body,
-    });
-    console.log('Response is ok?')
-    console.log(response.status)
+module.exports.handler = (event, context, callback) => {
+  const { email } = event.queryStringParameters;
+  let errorMessage = null;
 
-    const data = await response.json();
-    console.log(data.detail);
-
-    if (response.status == 200) {
-      return {
-        statusCode: 200,
-        message: 'Success',
-        response: JSON.stringify(data),
-      }
-    }
-
-    return {
-      statusCode: response.status,
-      message: data.detail,
-    }
-
-  } catch (err) {
-    console.log(err) // output to netlify function log
-    return {
-      statusCode: 500,
-      message: 'Something went wrong',
-      error: err.message,
-    }
+  if (!email) {
+    errorMessage = 'No EMAIL supplied';
+    console.log(errorMessage);
+    callback(errorMessage);
   }
-}
+
+  const data = {
+    email_address: email,
+    status: 'subscribed',
+    merge_fields: {},
+  };
+
+  const subscriber = JSON.stringify(data);
+  console.log('Sending data to mailchimp', subscriber);
+
+  request({
+    method: 'POST',
+    url: 'https://us4.api.mailchimp.com/3.0/lists/cf9e550f84/members',
+    body: subscriber,
+    headers: {
+      Authorization: 'Basic cmFuZG9tc3R1ZGlvOmExOTA0MjJjZTdhMTdhM2UwOThhMTU1YzJlOTY2NjY0LXVzNA==',
+      'Content-Type': 'application/json',
+    },
+  }, (error, response, body) => {
+    if (error) {
+      callback(error, null);
+    }
+    const bodyObj = JSON.parse(body);
+
+    console.log('Mailchimp body: ' + JSON.stringify(bodyObj));
+    console.log('Status Code: ' + response.statusCode);
+
+    if (response.statusCode < 300 || (bodyObj.status === 400 && bodyObj.title === 'Member Exists')) {
+      console.log('Added to list in Mailchimp subscriber list');
+      callback(null, {
+        statusCode: 201,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': 'true',
+        },
+        body: JSON.stringify({
+          status: 'saved email',
+        }),
+      });
+    } else {
+      console.log('Error from mailchimp', bodyObj.detail);
+      callback(bodyObj.detail, null);
+    }
+  });
+};
