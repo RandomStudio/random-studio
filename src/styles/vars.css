@@ -1,6 +1,10 @@
 :root {
+  --font-xxs: 1rem;
   --font-xs: 1.4rem;
   --font-small: 1.44rem;
   --font-med: 2rem;
   --font-large: 2.5rem;
+  --font-logo-small: 3.2rem;
+  --font-logo-medium: 5rem;
+  --font-logo-large: 5.6rem;
 }

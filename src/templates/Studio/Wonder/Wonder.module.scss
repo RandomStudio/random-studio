@@ -1,0 +1,14 @@
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  //pointer-events: none;
+  opacity: 0;
+  transition: opacity 4000ms ease-in;
+
+  &.is-visible {
+    opacity: 1;
+  }
+}

@@ -54,11 +54,12 @@ const Recruitee = ({ location }) => {
   return (
     <>
       <aside className={styles.recruitee}>
-        <p>Open Roles</p>
-        <ul>
+        <p className={styles.openRoles}>Open Roles</p>
+        <ul className={styles.list}>
           {recruiteeData.offers.map(offer => (
-            <li key={offer.id}>
-              <a href={`#${offer.id}`} onClick={() => handleOpenOffer(offer)}>
+            <li className={styles.item} key={offer.id}>
+              <p className={styles.department}>{offer.department}</p>
+              <a className={styles.role} href={`#${offer.id}`} onClick={() => handleOpenOffer(offer)}>
                 {offer.title}
               </a>
             </li>

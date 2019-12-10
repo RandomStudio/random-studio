@@ -147,8 +147,8 @@ credits:
       Concept Development, Creative Direction, Art Direction, 3D and
       Photography, Animation, Web Development, Retail Fixture Concept & Design
 opengraph:
-  og_description: Test description
-  og_image: /img/9ebaa1e79f39e9509588a6170a0ac25a-1-.sc03108-jpg.jpg
-  og_title: Test title
+  ogDescription: The experience invites you to step into multiple narratively connected three-dimensional photographs, that display the evening of a regular house party - familiar to all of us. The 80s Youth Archive photographs are centre stage of the Fred Perry x Raf Simons AW19 collection. \LThey are also the main source of reference for this season’s interactive lookbook which pays homage to the energy and feel of the era.
+  ogImage: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
+  ogTitle: Interactive lookbook for Fred Perry x Raf Simons
 ---
 

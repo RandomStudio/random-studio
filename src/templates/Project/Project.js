@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import getThumbnailSafely from '../../utils/getThumbnailSafely';
 import Layout from '../../components/Layout/Layout';
 import ProjectDetail from '../../components/ProjectDetail/ProjectDetail';
-import Navigation from '../../components/Navigation/Navigation';
 import SEO from '../../components/SEO/SEO';
 import BackScrim from './BackScrim/BackScrim';
 
@@ -17,7 +17,7 @@ export const pageQuery = graphql`
           image {
             publicURL
             childImageSharp {
-              fixed(width: 800, height: 800) {
+              fixed(width: 800, height: 800, quality: 90) {
                 ...GatsbyImageSharpFixed
               }
             }
@@ -29,7 +29,7 @@ export const pageQuery = graphql`
           caption
           image {
             childImageSharp {
-              fluid(maxWidth: 1920) {
+              fluid(maxWidth: 1920, quality: 99) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -50,6 +50,17 @@ export const pageQuery = graphql`
           key
           value
         }
+        opengraph {
+          ogDescription
+          ogImage {
+            childImageSharp {
+              fixed(width: 800, height: 800) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          ogTitle
+        }
       }
     }
   }
@@ -58,18 +69,31 @@ export const pageQuery = graphql`
 export default ({
   data: {
     markdownRemark: {
-      fields: { slug },
+      fields: {
+        slug,
+      },
       frontmatter: project,
     },
   },
 }) => {
+  const {
+    opengraph,
+    thumbnail,
+  } = project;
+
   const returnSlug = `#${slug}`;
-  const thumbnailImage = project.thumbnail.image;
-  const SEOImage = thumbnailImage
-    ? thumbnailImage.childImageSharp
-      ? thumbnailImage.childImageSharp.fixed.src
-      : thumbnailImage.publicURL
+
+  const socialTitle = (opengraph && opengraph.ogTitle)
+    ? opengraph.ogTitle
     : undefined;
+
+  const socialDescription = (opengraph && opengraph.ogDescription)
+    ? opengraph.ogDescription
+    : undefined;
+
+  const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null)
+    || getThumbnailSafely(thumbnail.image)
+    || undefined;
 
   return (
     <Layout>
@@ -78,10 +102,11 @@ export default ({
         title={project.title}
         description={project.intro}
         image={SEOImage}
+        socialDescription={socialDescription}
+        socialTitle={socialTitle}
       />
-      <Navigation />
       <ProjectDetail {...project} />
-      <BackScrim returnUrl={returnSlug} />
+      {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
     </Layout>
   );
 };
