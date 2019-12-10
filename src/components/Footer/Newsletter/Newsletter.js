@@ -3,7 +3,7 @@ import styles from './Newsletter.module.scss';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
   const [isSuccessful, setIsSuccessful] = useState(false);
 
   const handleInput = e => setEmail(e.target.value);
@@ -12,16 +12,18 @@ const Newsletter = () => {
     event.preventDefault();
     setError('');
     try {
-      const response = await fetch(`/.netlify/functions/addToNewsletterList?email=${email}`);
-      const body = await response.json();
-      if (body.status === 200) {
+      const response = await fetch(`https://deploy-preview-48--random-studio.netlify.com/.netlify/functions/addToNewsletterList?email=${email}`);
+
+      if (response.ok) {
         setIsSuccessful(true);
       } else {
-        setError(body.message);
+        const body = await response.json();
+        console.log(response, body);
+        setError(body.detail);
       }
     } catch (error) {
       console.log(error);
-      setError(error.message);
+      setError('Failed to submit. Please check email and try again.');
     }
     return false;
   };
@@ -41,7 +43,7 @@ const Newsletter = () => {
           <>
             <input className={styles.input} onChange={handleInput} placeholder="enter your email address" value={email} type="text" />
             <input alt="submit" className={styles.submit} src="/img/icons/arrow.svg" type="image" />
-            {error && <p className={styles.error}>Failed to submit. Please check email and try again.</p>}
+            {error !== '' && <p className={styles.error}>{error}</p>}
           </>
         )
       }
