@@ -14,7 +14,7 @@ body {
   width: 100%;
   position: relative;
   -webkit-tap-highlight-color: transparent;
-  background-color: #000;
+  background-color: transparent;
 }
 
 body {
