@@ -11,7 +11,7 @@ import {
 const Mirrors = ({ layout, scene, world }) => {
   useEffect(() => {
     if (!scene || !world || !layout || layout.length === 0) {
-      return null;
+      return undefined;
     }
 
     const activeMirrorContent = [];

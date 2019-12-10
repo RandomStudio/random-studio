@@ -8,7 +8,7 @@ import {
 const Sun = ({ layout, onAddSun, scene, world }) => {
   useEffect(() => {
     if (!scene || !world) {
-      return null;
+      return undefined;
     }
 
     let light;

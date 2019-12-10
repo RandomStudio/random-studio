@@ -7,8 +7,8 @@ import {
 
 const Lighting = ({ scene }) => {
   useEffect(() => {
-    if (scene) {
-      return null;
+    if (!scene) {
+      return undefined;
     }
 
     const generalLight = new HemisphericLight('hemi', new Vector3(0, 10, -5), scene);

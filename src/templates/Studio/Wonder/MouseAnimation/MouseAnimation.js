@@ -4,7 +4,7 @@ import { Vector3 } from 'babylonjs';
 const MouseAnimation = ({ layout, target }) => {
   useEffect(() => {
     if (!target) {
-      return null;
+      return undefined;
     }
 
     const { rotation } = layout;

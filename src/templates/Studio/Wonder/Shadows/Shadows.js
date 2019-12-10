@@ -4,7 +4,7 @@ import { ShadowGenerator } from 'babylonjs';
 const Shadows = ({ scene, sun, world }) => {
   useEffect(() => {
     if (!scene || !sun || !world) {
-      return () => null;
+      return undefined;
     }
 
     const shadows = new ShadowGenerator(1024, sun);

@@ -4,7 +4,7 @@ import { ArcRotateCamera } from 'babylonjs';
 const Camera = ({ canvasRef, layout, onCreateCamera, scene }) => {
   useEffect(() => {
     if (!scene) {
-      return null;
+      return undefined;
     }
     const canvas = canvasRef.current;
 
