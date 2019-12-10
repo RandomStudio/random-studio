@@ -24,14 +24,14 @@ const MouseAnimation = ({ layout, target }) => {
     }, 16);
 
     if (target) {
-      if (window.DeviceOrientationEvent) {
-        window.addEventListener('deviceorientation', handleDeviceRotation);
-      }
+      // if (window.DeviceOrientationEvent) {
+      //   window.addEventListener('deviceorientation', handleDeviceRotation);
+      // }
       document.addEventListener('mousemove', onMouseMove);
     }
 
     return () => {
-      window.removeEventListener('deviceorientation', handleDeviceRotation);
+      // window.removeEventListener('deviceorientation', handleDeviceRotation);
       document.removeEventListener('mousemove', onMouseMove);
     };
   }, [target]);
