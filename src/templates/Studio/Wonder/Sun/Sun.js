@@ -14,7 +14,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
     const getMinutesSinceMidnight = (timestamp = Date.now()) => {
       const date = new Date(timestamp);
       const utcDate = date.getTime() + (date.getTimezoneOffset() * 60000);
-      const amsterdamDate = new Date(utcDate + (3600000 * 1));
+      const amsterdamDate = new Date(utcDate + 3600000);
       return amsterdamDate.getMinutes() + (amsterdamDate.getHours() * 60);
     };
 

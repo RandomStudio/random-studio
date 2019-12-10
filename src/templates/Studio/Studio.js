@@ -59,7 +59,7 @@ export const query = graphql`
 export default ({ location, data: { indexPage, studioPage } }) => {
   const introRef = useRef();
   return (
-    <Layout globalClass="studio">
+    <Layout>
       <SEO title="Studio" pathName={studioPage.fields.slug} />
       <Wonder introRef={introRef} />
       <Intro

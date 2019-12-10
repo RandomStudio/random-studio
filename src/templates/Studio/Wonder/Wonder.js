@@ -48,7 +48,6 @@ const Wonder = ({ introRef }) => {
     let scene;
 
     const createEngine = () => {
-      // canvasRef.current.style.height = `${introRef.current.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop)}px`;
       engine = new Engine(canvasRef.current, true, {
         preserveDrawingBuffer: true,
         stencil: true,
