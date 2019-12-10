@@ -26,19 +26,19 @@ exports.handler = async function(event, context) {
     const data = await response.json();
     console.log(data.detail);
 
-    if (!response.ok) {
-      // NOT res.status >= 200 && res.status < 300
+    if (response.status == 200) {
       return {
-        statusCode: response.status,
-        message: data.detail,
+        statusCode: 200,
+        message: 'Success',
+        response: JSON.stringify(data),
       }
     }
 
     return {
-      statusCode: 200,
-      message: 'Success',
-      response: JSON.stringify(data),
+      statusCode: response.status,
+      message: data.detail,
     }
+
   } catch (err) {
     console.log(err) // output to netlify function log
     return {
