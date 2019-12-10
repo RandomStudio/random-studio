@@ -12,6 +12,13 @@ export default ({ address, email, phone }) => {
       document.execCommand('copy');
       setIsNoticeVisible(true);
       window.setTimeout(() => setIsNoticeVisible(false), 3000);
+
+      if (window.getSelection().empty) {
+        window.getSelection().empty();
+      } else if (window.getSelection().removeAllRanges) {
+        window.getSelection().removeAllRanges();
+      }
+
       e.preventDefault();
     } catch (error) {
       console.log('Failed to copy. Will open mailto link as normal. Error:', error);
