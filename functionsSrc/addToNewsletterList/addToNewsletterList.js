@@ -1,5 +1,7 @@
 const request = require('request');
 
+const mailChimpAPI = process.env.MAILCHIMP_API_KEY;
+
 module.exports.handler = (event, context, callback) => {
   const { email } = event.queryStringParameters;
   let errorMessage = null;
@@ -24,7 +26,7 @@ module.exports.handler = (event, context, callback) => {
     url: 'https://us4.api.mailchimp.com/3.0/lists/cf9e550f84/members',
     body: subscriber,
     headers: {
-      Authorization: 'Basic cmFuZG9tc3R1ZGlvOmExOTA0MjJjZTdhMTdhM2UwOThhMTU1YzJlOTY2NjY0LXVzNA==',
+      Authorization: `Basic ${mailChimpAPI}`,
       'Content-Type': 'application/json',
     },
   }, (error, response, body) => {
