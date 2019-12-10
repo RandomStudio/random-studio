@@ -12,7 +12,7 @@ const Newsletter = () => {
     event.preventDefault();
     setError('');
     try {
-      const response = await fetch(`https://deploy-preview-48--random-studio.netlify.com/.netlify/functions/addToNewsletterList?email=${email}`);
+      const response = await fetch(`/.netlify/functions/addToNewsletterList?email=${email}`);
 
       if (response.ok) {
         setIsSuccessful(true);
