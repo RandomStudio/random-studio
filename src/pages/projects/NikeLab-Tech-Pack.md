@@ -65,7 +65,6 @@ content:
   - marginLeft: 5
     marginTop: 0
     ratio: 56.25
-    width: 95
     video:
       autoplay: true
       hasControls: false
@@ -73,12 +72,14 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/293523956.hd.mp4?s=60079e02fd585595b28119ac617854f3af4a5ad6&profile_id=175
+    width: 95
   - caption: >-
-      On the first floor, a conveyor belt scanned items from the collection, triggering product content on the screens above. A series of screens on the other side streamed and analysed live footage from the floor below.
+      On the first floor, a conveyor belt scanned items from the collection,
+      triggering product content on the screens above. A series of screens on
+      the other side streamed and analysed live footage from the floor below.
     marginLeft: 0
     marginTop: -10
     ratio: 56.25
-    width: 40
     video:
       autoplay: true
       hasControls: false
@@ -86,9 +87,11 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/293521607.hd.mp4?s=75f4eb0c83c54d3769dadb33918260ec588ae9c7&profile_id=174
-  - image: /img/39150f647860ae4507bf8cd37ad0e0ce.ike-milaan-18-jpg.jpg
-    caption: A series of screens on the other side streamed and analysed live footage from the floor below.
-    width: 45
+    width: 40
+  - caption: >-
+      A series of screens on the other side streamed and analysed live footage
+      from the floor below.
+    image: /img/39150f647860ae4507bf8cd37ad0e0ce.ike-milaan-18-jpg.jpg
     marginLeft: 50
     marginTop: -10
     ratio: 0
@@ -97,9 +100,11 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - image: /img/46ed7dce04a766dda23738a9873fc8c8.ike-milaan-28-jpg.jpg
-    caption: A series of screens on the other side streamed and analysed live footage from the floor below.
-    width: 30
+    width: 45
+  - caption: >-
+      A series of screens on the other side streamed and analysed live footage
+      from the floor below.
+    image: /img/46ed7dce04a766dda23738a9873fc8c8.ike-milaan-28-jpg.jpg
     marginLeft: 10
     marginTop: -28
     ratio: 0
@@ -108,6 +113,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+    width: 30
   - caption: >-
       The vaults celebrated the creativity behind the Tech Pack: all three
       product collaborations – designed with a handful of Milan’s top
@@ -160,5 +166,9 @@ credits:
       Installation
   - key: 'With:'
     value: Fiction Factory
+opengraph:
+  ogDescription: test1
+  ogImage: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
+  ogTitle: test
 ---
 
