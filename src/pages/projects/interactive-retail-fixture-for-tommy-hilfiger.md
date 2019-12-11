@@ -18,7 +18,7 @@ priority: 7.5
 thumbnail:
   image: /img/thumbnail_kidsmachine.png
   marginLeft: 5
-  marginTop: 10
+  marginTop: 0
   ratio: 66.666666666
   video: >-
     https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174

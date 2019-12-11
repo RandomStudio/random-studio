@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
 intro: >-
   For its biggest ever global watch launch, Chanel enlisted us to create the
@@ -12,11 +12,12 @@ intro: >-
   the colour and light inside the building, our design aimed to hijack visitors’
   sense of time, giving them a surreal and sensory experience inspired and
   directed by a series of short campaign films.
+priority: 7.75
 thumbnail:
   image: /img/thumbnail_chanel-1-.png
-  marginLeft: 0
-  marginTop: 0
-  ratio: 1
+  width: 55
+  marginLeft: 35
+  marginTop: 15
 content:
   - marginLeft: 10
     marginTop: 0
@@ -139,8 +140,5 @@ credits:
       Scenography Design, Software development, Creative Direction, Installation
   - key: 'With:'
     value: 'K2, Lighting & Show Design Ltd'
-  - key: 'Team:'
-    value: |
-      Tiemen, Josh
 ---
 
