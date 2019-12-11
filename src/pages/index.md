@@ -61,6 +61,28 @@ projects:
       video: >-
         https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
       width: 58
+  - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
+    project: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
+    thumbnail:
+      image: /img/thumbnail_chanel-1-.png
+      width: 55
+      marginLeft: 35
+      marginTop: 15
+  - caption: |-
+      Interactive retail fixture
+
+      for Tommy Hilfiger
+    project: |-
+      Interactive retail fixture
+
+      for Tommy Hilfiger
+    thumbnail:
+      marginLeft: 5
+      marginTop: 0
+      ratio: 66.666666666
+      video: >-
+        https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
+      width: 45
   - caption: An interactive sunrise in collaboration with Philip Schuette
     project: 'An interactive sunrise in collaboration with Philip Schuette'
     thumbnail:
