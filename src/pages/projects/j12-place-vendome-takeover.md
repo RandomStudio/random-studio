@@ -13,6 +13,7 @@ intro: >-
   sense of time, giving them a surreal and sensory experience inspired and
   directed by a series of short campaign films.
 thumbnail:
+  image: /img/thumbnail_chanel-1-.png
   marginLeft: 0
   marginTop: 0
   ratio: 1
