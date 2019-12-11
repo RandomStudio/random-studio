@@ -49,7 +49,8 @@ export const query = graphql`
     indexPage: markdownRemark(frontmatter: { templateKey: { eq: "Home" } }) {
       frontmatter {
         address
-        contact
+        email
+        phone
       }
     }
   }

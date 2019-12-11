@@ -44,14 +44,15 @@ export const pageQuery = graphql`
       }
       frontmatter {
         address
-        contact
         collaborationCredits {
           collaborator
           url
         }
+        email
         intro
         layout
         middle
+        phone
         video
       }
     }
