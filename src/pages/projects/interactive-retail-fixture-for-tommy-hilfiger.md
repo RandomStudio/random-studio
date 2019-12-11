@@ -143,7 +143,7 @@ content:
       The result was a real success story that saw double the rates of
       engagement and conversion compared to other touch screens in store. We see
       this as an exciting step forward in our long-term work on the Store of the
-      Future that demonstrated the possibilities of merging retail platforms
+      Future that demonstrated the possibilities in merging retail platforms
       with interactive installations.
     marginLeft: 0
     marginTop: 0
