@@ -1,18 +1,21 @@
 ---
 templateKey: project
-title: A store takeover at Place Vendôme for the launch of Chanel's J12 watch
+title: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
 intro: >-
-  For its biggest ever global watch launch, Chanel enlisted Random Studio to
-  create the scenography for a temporary takeover of its flagship boutique on
-  Place Vendôme in Paris. The new J12 series revolves around encounters and
-  decisive moments, and needed a fittingly momentous occasion to celebrate its
-  launch. Through shaping the colour and light inside the building, our design
-  aimed to hijack visitors’ sense of time, giving them a surreal and sensory
-  experience inspired and directed by a series of short campaign films.
+  For its biggest ever global watch launch, Chanel enlisted us to create the
+  scenography for a temporary takeover of its flagship boutique on Place Vendôme
+  in Paris. 
+
+
+  The new J12 watch series revolves around encounters and decisive moments, and
+  needed a fittingly momentous occasion to celebrate its launch. Through shaping
+  the colour and light inside the building, our design aimed to hijack visitors’
+  sense of time, giving them a surreal and sensory experience inspired and
+  directed by a series of short campaign films.
 thumbnail:
   marginLeft: 0
   marginTop: 0
-  ratio: 0
+  ratio: 1
 content:
   - marginLeft: 10
     marginTop: 0
@@ -80,12 +83,12 @@ content:
       The illusion reached its peak in the Grand Salon: the iconic view out onto
       Place Vendôme was replaced by a simulation that allowed the room to travel
       through time, slipping between warm sunsets, foggy mornings and glowing
-      afternoon skies. The sun traces through the sky, shadows dart across the
-      square and cars race backwards, as different Chanel muses invite visitors
-      into their favourite memories in short films screened on the walls. This
-      magical light dance reverberated through the different rooms of the store,
-      and also became the spearhead for two other J12 launch events that we
-      organised, in Beijing and Taiwan.
+      afternoon skies. 
+
+
+      The sun traces through the sky, shadows dart across the square and cars
+      race backwards, as different Chanel muses invite visitors into their
+      favourite memories in short films screened on the walls.
     marginLeft: 0
     marginTop: 0
     ratio: 0
@@ -115,6 +118,18 @@ content:
       isMuted: true
       loops: true
     width: 36
+  - caption: >-
+      This magical light dance reverberated through the different rooms of the
+      store, and also became the spearhead for two other J12 launch events that
+      we organised, in Beijing and Taiwan.
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
 credits:
   - key: 'For: '
     value: Chanel
