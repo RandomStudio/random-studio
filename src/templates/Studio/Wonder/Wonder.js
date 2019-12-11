@@ -27,7 +27,7 @@ const Wonder = ({ introRef }) => {
   useEffect(() => {
     if (camera && currentScene && world) {
       // In the future remove this hard coded model name
-      const model = currentScene.meshes.find(mesh => mesh.id === 'node0_primitive2');
+      const model = currentScene.meshes.find(mesh => mesh.id === 'node0_primitive1');
       if (model) {
         const radius = model.getBoundingInfo().boundingSphere.radiusWorld;
         const aspectRatio = currentEngine.getAspectRatio(camera);

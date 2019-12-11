@@ -11,6 +11,7 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
       SceneLoader.ShowLoadingScreen = false;
       importedModel = await SceneLoader.AppendAsync(filename.path, filename.file, scene);
       model = scene.meshes.find(mesh => mesh.id === '__root__');
+      console.log(importedModel, model)
       model.scaling.z = 1;
 
       if (layout.identifier) {

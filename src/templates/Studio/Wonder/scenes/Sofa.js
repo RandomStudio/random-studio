@@ -7,7 +7,7 @@ const camera = {
 
 const filename = {
   path: '/models/sofa/Small/',
-  file: 'sittingisland-newtable.simplified.optimized.glb',
+  file: 'sittingisland-final.simplified.compressed.glb',
 };
 
 const mirrors = [
