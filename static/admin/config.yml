@@ -55,39 +55,6 @@ collections:
         required: false
         valueType: float
         widget: nonEmptyStringableNumber
-      - label: Thumbnail
-        name: thumbnail
-        widget: object
-        fields:
-          - label: Image
-            name: image
-            required: false
-            widget: image
-          - label: "Video URL"
-            name: video
-            required: false
-            widget: text
-          - label: Ratio
-            name: ratio
-            required: false
-            valueType: float
-            default: 0.00
-            widget: nonEmptyStringableNumber
-          - label: Width
-            name: width
-            required: false
-            valueType: float
-            widget: nonEmptyStringableNumber
-          - label: "Margin Top"
-            name: marginTop
-            default: 0
-            valueType: float
-            widget: nonEmptyStringableNumber
-          - label: "Margin Left"
-            name: marginLeft
-            default: 0
-            valueType: float
-            widget: nonEmptyStringableNumber
       - label: Content
         name: content
         widget: list
@@ -160,6 +127,25 @@ collections:
           - label: Value
             name: value
             widget: text
+      - label: OpenGraph tags
+        name: opengraph
+        widget: object
+        fields:
+          - label: "Title"
+            name: ogTitle
+            required: false
+            valueType: string
+            widget: text
+          - label: "Description"
+            name: ogDescription
+            required: false
+            valueType: string
+            widget: text
+          - label: "Image"
+            name: ogImage
+            required: false
+            valueType: string
+            widget: image
   - name: pages
     label: Pages
     files:
@@ -251,9 +237,12 @@ collections:
           - label: Address
             name: address
             widget: markdown
-          - label: "Contact Info"
-            name: contact
-            widget: markdown
+          - label: "Phone Number"
+            name: phone
+            widget: text
+          - label: "Email Address"
+            name: email
+            widget: text
       - file: src/pages/studio.md
         label: "Studio Page"
         name: studio

@@ -1,16 +1,26 @@
 .footer {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
-  box-sizing: border-box;
-  max-width: 28rem;
   width: 100%;
-  font-size: 1rem;
+  font-size: var(--font-xxs);
   line-height: 1.375;
   padding: 1.4rem;
+  max-width: 28rem;
+
+  @media (min-width: 36rem) {
+    padding: 2rem;
+    max-width: none;
+  }
+
+  @media (min-width: 72rem) {
+    padding: 2.4rem;
+  }
 
   a {
     position: relative;
-    display: inline-block;
+    display: block;
     text-decoration: none;
     &::after {
       content: "";
@@ -22,23 +32,64 @@
       background-color: #000;
     }
   }
+}
 
-  // Remove underline of phonenumber
+.studio {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  order: 2;
+  max-width: 28rem;
+
+  @media (min-width: 54rem) {
+    order: 1;
+  }
+
   div:last-of-type {
     a:first-of-type::after {
       display: none;
     }
   }
-}
-
-@media (min-width: 36rem) {
-  .footer {
-    padding: 2rem;
+  .email-desktop {
+    display: block !important;
+  }
+  .email-mobile {
+    display: none !important;
   }
 }
 
-@media (min-width: 72rem) {
-  .footer {
-    padding: 2.4rem;
+.address {
+  a {
+    display: inline-block;
   }
+}
+
+// Remove underline of phonenumber
+.phone::after {
+  display: none;
+}
+
+.email-desktop,
+.email-value {
+  display: none !important;
+}
+
+.notice {
+  font-size: var(--font-xs);
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 300ms ease-out 0ms, transform 1ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 301ms;
+  transform: translateX(-50%) translateY(4rem);
+  padding: 0 0.75rem;
+  border-radius: 1rem;
+}
+
+.notice-is-visible {
+  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }

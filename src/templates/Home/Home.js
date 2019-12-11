@@ -30,11 +30,11 @@ export const pageQuery = graphql`
       }
       frontmatter {
         address
-        contact
         collaborationCredits {
           collaborator
           url
         }
+        email
         intro
         layout
         middle
@@ -56,6 +56,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        phone
         video
       }
     }
@@ -82,14 +83,21 @@ const Home = ({
       />
       <ProjectList
         {...frontmatter}
-        projects={edges.map(
+        projects={(frontmatter.projects || []).map(
           ({
-            node: {
-              fields: { slug },
-              frontmatter: { title, thumbnail },
-            },
-          }) => ({ slug, title, thumbnail }),
-        )}
+            caption, project: projectTitle, thumbnail,
+          }) => {
+            const project = edges.find(({ node: { frontmatter: { title } } }) => title === projectTitle);
+            if (!project) {
+              return null;
+            }
+            return ({
+              slug: project.node.fields.slug,
+              title: caption || project.node.frontmatter.title,
+              thumbnail,
+            });
+          },
+        ).filter(project => project !== null)}
       />
       <Footer {...frontmatter} />
     </Layout>
