@@ -8,6 +8,7 @@ export default ({ entry }) => {
 
   const {
     collaborationCredits,
+    layout,
     projects,
     video,
   } = data;
@@ -25,6 +26,7 @@ export default ({ entry }) => {
   return (
     <Layout>
       <HomeVideo
+        layout={layout}
         videoUrl={video}
         collaborationCredits={collaborationCredits}
       />
