@@ -17,9 +17,7 @@ middle: >-
   [More about our studio](/studio)
 projects:
   - caption: |-
-      Travel exhibition ‘Volez, Voguez, Voyagez’
-
-      for Louis Vuitton
+      Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
     project: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
     thumbnail:
       image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
