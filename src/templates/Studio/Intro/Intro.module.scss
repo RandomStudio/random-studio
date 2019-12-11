@@ -1,10 +1,11 @@
+@import '../../../styles/mixins';
 
 .logo {
+  @include blendedText;
   position: relative;
   font-family: "Larish Neue", serif;
   font-weight: normal;
   font-size: 3.2rem;
-  color: white;
   mix-blend-mode: difference;
   margin: 0;
   padding-top: 40vh;
@@ -18,7 +19,6 @@
   margin: 15.4rem 0 0;
   padding: 0 1.4rem;
 }
-
 .introHeader {
   margin-bottom: 6.4rem;
   font-size: var(--font-small);
