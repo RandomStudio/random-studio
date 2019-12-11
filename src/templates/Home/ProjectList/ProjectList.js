@@ -10,18 +10,18 @@ export default ({ intro, middle, projects }) => (
     <div className={styles.statement}>
       <ReactMarkdown escapeHtml={false} source={intro} />
     </div>
-    {projects.map(({ thumbnail, title, slug }, index) => (
+    {projects.map(({ thumbnail, title, slug }, index) => thumbnail && (
       <React.Fragment key={index}>
         <Link
           className={styles.thumbnail}
           key={slug}
           id={slug}
-          to={slug}
           style={{
-            '--marginTop': `${thumbnail.marginTop}%`,
-            '--marginLeft': `${thumbnail.marginLeft}%`,
-            '--width': `${thumbnail.width}%`,
+            marginTop: `${thumbnail.marginTop}%`,
+            marginLeft: `${thumbnail.marginLeft}%`,
+            width: `${thumbnail.width}%`,
           }}
+          to={slug || '#'}
         >
           <div className={styles.media}>
             {thumbnail.video ? (

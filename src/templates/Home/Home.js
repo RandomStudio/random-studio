@@ -20,20 +20,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            thumbnail {
-              ratio
-              marginLeft
-              marginTop
-              video
-              width
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 1920) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -52,6 +38,24 @@ export const pageQuery = graphql`
         intro
         layout
         middle
+        projects {
+          caption
+          project
+          thumbnail {
+            ratio
+            marginLeft
+            marginTop
+            video
+            width
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
         phone
         video
       }
@@ -79,14 +83,21 @@ const Home = ({
       />
       <ProjectList
         {...frontmatter}
-        projects={edges.map(
+        projects={(frontmatter.projects || []).map(
           ({
-            node: {
-              fields: { slug },
-              frontmatter: { title, thumbnail },
-            },
-          }) => ({ slug, title, thumbnail }),
-        )}
+            caption, project: projectTitle, thumbnail,
+          }) => {
+            const project = edges.find(({ node: { frontmatter: { title } } }) => title === projectTitle);
+            if (!project) {
+              return null;
+            }
+            return ({
+              slug: project.node.fields.slug,
+              title: caption || project.node.frontmatter.title,
+              thumbnail,
+            });
+          },
+        ).filter(project => project !== null)}
       />
       <Footer {...frontmatter} />
     </Layout>
