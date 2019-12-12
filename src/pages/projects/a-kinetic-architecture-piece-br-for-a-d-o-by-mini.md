@@ -91,6 +91,8 @@ credits:
       Concept Design, Design Development, Creative Technology, Technical
       development
   - key: 'With:'
-    value: 'Matthijs Munnik, Vincent de Belleval, Showman Fabricators'
+    value: |-
+      Matthijs Munnik, Vincent de Belleval, Showman Fabricators
+      Daniel Seung Lee – Photography
 ---
 
