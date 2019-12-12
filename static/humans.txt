@@ -23,4 +23,4 @@ Instagram: @random_studio
 Mark Prendergast for the homepage video (https://www.instagram.com/prendswash/)
 
 /* BUILT WITH */
-Software: React, Gatsby, Netlify CMS
+Software: React, GatsbyJS, Babylon.js, Netlify CMS
