@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: Project
 title: A kinetic architecture piece <br> for A/D/O by MINI
 intro: >-
   In celebration of the US launch of MINI Electric, we were commissioned to
