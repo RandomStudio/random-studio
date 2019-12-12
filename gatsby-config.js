@@ -3,6 +3,9 @@ const postCssCustomProperties = require('postcss-custom-properties');
 const gatsbyConfig = {
   plugins: [
     {
+      resolve: 'gatsby-plugin-netlify-cache',
+    },
+    {
       resolve: 'gatsby-plugin-sass',
       options: {
         postCssPlugins: [postCssCustomProperties()],
