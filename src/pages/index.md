@@ -16,12 +16,22 @@ middle: >-
 
   [More about our studio](/studio)
 projects:
-  - caption: |-
-      Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
+  - caption: >-
+      A store takeover at Place Vendôme <br> for the launch of Chanel's new
+      watch
+    project: >-
+      A store takeover at Place Vendôme <br> for the launch of Chanel's new
+      watch
+    thumbnail:
+      image: /img/thumbnail_chanel-1-.png
+      marginLeft: 19
+      marginTop: 14
+      width: 60
+  - caption: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
     project: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
     thumbnail:
       image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
-      marginLeft: 20
+      marginLeft: 0
       marginTop: 1
       width: 60
   - caption: |-
@@ -34,40 +44,18 @@ projects:
       for Fred Perry x Raf Simons
     thumbnail:
       image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
-      marginLeft: 5
-      marginTop: 0
+      marginLeft: 55
+      marginTop: -9
       ratio: 0
-      width: 36
+      width: 45
   - caption: An immersive in-store environment for NikeLab Milano
-    project: 'An immersive in-store environment for NikeLab Milano'
+    project: An immersive in-store environment for NikeLab Milano
     thumbnail:
       image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.png
-      marginLeft: 62
+      marginLeft: 0
       marginTop: -30
       ratio: 0
-      width: 38
-  - caption: |-
-      Digital partner
-
-      for Raf Simons
-    project:  |-
-      Digital partner
-
-      for Raf Simons
-    thumbnail:
-      marginLeft: 5
-      marginTop: -5
-      ratio: 66.66
-      video: >-
-        https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
-      width: 58
-  - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
-    project: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
-    thumbnail:
-      image: /img/thumbnail_chanel-1-.png
-      width: 55
-      marginLeft: 35
-      marginTop: 15
+      width: 41
   - caption: |-
       Interactive retail fixture
 
@@ -77,31 +65,31 @@ projects:
 
       for Tommy Hilfiger
     thumbnail:
-      marginLeft: 5
-      marginTop: 0
+      marginLeft: 0
+      marginTop: 16
       ratio: 66.666666666
       video: >-
         https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
-      width: 45
+      width: 64
   - caption: An interactive sunrise in collaboration with Philip Schuette
-    project: 'An interactive sunrise in collaboration with Philip Schuette'
+    project: An interactive sunrise in collaboration with Philip Schuette
     thumbnail:
-      marginLeft: 45
+      marginLeft: 33
       marginTop: 10
       ratio: 66.66666
       video: >-
         https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
-      width: 52
+      width: 58
   - caption: A vertical journey through time for Chanel
-    project: 'A vertical journey through time <br> for Chanel'
+    project: A vertical journey through time <br> for Chanel
     thumbnail:
       image: /img/chanel1.jpg
       marginLeft: 0
-      marginTop: -29
+      marginTop: 0
       ratio: 0
-      width: 35
+      width: 40
   - caption: Creative direction of film production for Maison Margiela
-    project: 'Creative direction of film production for Maison Margiela'
+    project: Creative direction of film production for Maison Margiela
     thumbnail:
       marginLeft: 50
       marginTop: -22
@@ -109,8 +97,23 @@ projects:
       video: >-
         https://player.vimeo.com/external/325456009.hd.mp4?s=2d2d20db4d509264e3e8c1ed290c9576d15a2cc7&profile_id=174
       width: 38
+  - caption: |-
+      Digital partner
+
+      for Raf Simons
+    project: |-
+      Digital partner
+
+      for Raf Simons
+    thumbnail:
+      marginLeft: 0
+      marginTop: 10
+      ratio: 66.66
+      video: >-
+        https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
+      width: 64
   - caption: An exhibition for Hermès
-    project: 'An exhibition for Hermès'
+    project: An exhibition for Hermès
     thumbnail:
       image: /img/Hermes_thumbnail.jpg
       marginLeft: 5
@@ -118,7 +121,7 @@ projects:
       ratio: 0
       width: 65
   - caption: Interactive editorial lookbook SS19 for Fred Perry
-    project: 'Interactive editorial lookbook SS19 for Fred Perry'
+    project: Interactive editorial lookbook SS19 for Fred Perry
     thumbnail:
       marginLeft: 42
       marginTop: -6
@@ -127,7 +130,7 @@ projects:
         https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
       width: 50
   - caption: An infinity room for NikeLab
-    project: 'An infinity room for NikeLab'
+    project: An infinity room for NikeLab
     thumbnail:
       marginLeft: 3
       marginTop: -5
@@ -135,28 +138,25 @@ projects:
       video: >-
         https://player.vimeo.com/external/210279283.hd.mp4?s=706d9c6149f5bd15d01856a15818b6e9a8702a80&profile_id=119
       width: 45
-  - caption: >-
+  - caption: |-
       Interactive sneakers
-
 
       for New Balance
-    project: >-
+    project: |-
       Interactive sneakers
-
 
       for New Balance
     thumbnail:
-      image: /img/3bf3090bba8f923fe4de6a1bdf21e3b0.f9ff33c0d055c8df53faa54b4233688-hoepilar3-short-jpg.jpg
+      image: >-
+        /img/3bf3090bba8f923fe4de6a1bdf21e3b0.f9ff33c0d055c8df53faa54b4233688-hoepilar3-short-jpg.jpg
       marginLeft: 60
       marginTop: -25
       width: 40
-  - caption: >-
+  - caption: |-
       Various in-store installations
-
       for NikeLab
-    project:  >-
+    project: |-
       Various in-store installations
-
       for NikeLab
     thumbnail:
       image: /img/4622f88e3bcf3f7a116d65191d94cf0e.jpg
@@ -168,6 +168,5 @@ address: >
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
 phone: +31 20 779 7735
 email: hello@random.studio
-contact: hello@random.studio
 ---
 
