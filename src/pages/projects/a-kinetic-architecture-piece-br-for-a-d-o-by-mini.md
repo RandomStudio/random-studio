@@ -92,7 +92,7 @@ credits:
       development
   - key: 'With:'
     value: |-
-      Matthijs Munnik, Vincent de Belleval, Showman Fabricators
+      Matthijs Munnik, Vincent de Belleval, Showman Fabricators, 
       Daniel Seung Lee – Photography
 ---
 
