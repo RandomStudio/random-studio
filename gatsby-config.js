@@ -4,6 +4,11 @@ const gatsbyConfig = {
   plugins: [
     {
       resolve: 'gatsby-plugin-netlify-cache',
+      options: {
+        // Caching the public directory on long term can result in a huge directory
+        // size which can break your netlify build. Enable this with caution
+        cachePublic: true,
+      },
     },
     {
       resolve: 'gatsby-plugin-sass',
