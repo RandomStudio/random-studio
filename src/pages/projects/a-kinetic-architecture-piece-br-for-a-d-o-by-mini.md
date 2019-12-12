@@ -8,7 +8,7 @@ intro: >-
   Brooklyn.
 content:
   - image: /img/ADO_Perpetuum_9.jpg
-    marginLeft: -1
+    marginLeft: 5
     marginTop: 0
     ratio: 0
     video:
@@ -16,7 +16,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-    width: 100
+    width: 90
   - caption: >-
       The result – Perpetuum – is a kinetic experience that sets in motion the
       dreamy feeling of staring out of a window as the landscape zooms past you,
@@ -29,6 +29,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+    width: 100
   - image: /img/ADO_Perpetuum_24.jpg
     marginLeft: 0
     marginTop: -1
@@ -49,6 +50,16 @@ content:
       isMuted: true
       loops: true
     width: 42
+  - image: /img/ADO_Perpetuum_52.jpg
+    marginLeft: 6
+    marginTop: -19
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 45
   - image: /img/ADO_Perpetuum_55.jpg
     marginLeft: 1
     marginTop: 10
@@ -67,15 +78,16 @@ content:
       changes from moment to moment, enhanced by an ambient patchwork of urban
       sounds.
     marginLeft: 0
-    marginTop: 0
+    marginTop: -2
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 100
   - image: /img/ADO_Perpetuum_40.jpg
-    marginLeft: 0
+    marginLeft: 10
     marginTop: 0
     ratio: 0
     video:
@@ -83,6 +95,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+    width: 80
 credits:
   - key: 'For: '
     value: MINI Electric
