@@ -2,10 +2,10 @@
 templateKey: Project
 title: A kinetic architecture piece <br> for A/D/O by MINI
 intro: >-
-  In celebration of the US launch of MINI Electric, we were commissioned to
-  create an immersive installation that merged the vibrant energy of the iconic
-  car with the studio’s signature style at their A/D/O creative space in
-  Brooklyn.
+  In celebration of the 2020 launch of the new MINI Electric vehicle, we were
+  commissioned to create an immersive installation that reflects the kinetic
+  energy of the city and captures the experience of travel, imagining what new
+  forms of mobility can feel like.
 content:
   - image: /img/ADO_Perpetuum_9.jpg
     marginLeft: 5
@@ -18,9 +18,9 @@ content:
       loops: true
     width: 90
   - caption: >-
-      The result – Perpetuum – is a kinetic experience that sets in motion the
-      dreamy feeling of staring out of a window as the landscape zooms past you,
-      fuelled by the flux of our current environment.
+      The result – Perpetuum – is a kinetic landscape that evolves around you
+      and  sets in motion the dreamy feeling of staring out of a window as the
+      landscape zooms past you, fuelled by the flux of our current environment.
     marginLeft: 0
     marginTop: 0
     ratio: 0
@@ -74,9 +74,9 @@ content:
       The installation creates a meditative abstraction of a city in perpetual
       motion. Three rotating rings orbit around a central light sculpture,
       generating countless overlapping compositions, layering impression over
-      impression. Drifting through this ‘third’ space, the viewer’s experience
-      changes from moment to moment, enhanced by an ambient patchwork of urban
-      sounds.
+      impression.
+
+       Drifting through this ‘third’ space, the viewer’s experience changes from moment to moment, enhanced by an ambient patchwork of urban sounds.
     marginLeft: 0
     marginTop: -2
     ratio: 0
@@ -98,7 +98,7 @@ content:
     width: 80
 credits:
   - key: 'For: '
-    value: MINI Electric
+    value: 'A/D/O by MINI '
   - key: 'Role:'
     value: >-
       Concept Design, Design Development, Creative Technology, Technical
