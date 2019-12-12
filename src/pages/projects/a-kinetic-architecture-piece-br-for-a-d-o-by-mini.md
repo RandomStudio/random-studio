@@ -107,5 +107,8 @@ credits:
     value: |-
       Matthijs Munnik, Vincent de Belleval, Showman Fabricators, 
       Daniel Seung Lee – Photography
+opengraph:
+  ogImage: /img/ADO_Perpetuum_9.jpg
+  ogTitle: ''
 ---
 
