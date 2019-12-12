@@ -61,7 +61,7 @@ content:
       loops: true
     width: 45
   - image: /img/ADO_Perpetuum_55.jpg
-    marginLeft: 1
+    marginLeft: 0
     marginTop: 10
     ratio: 0
     video:
