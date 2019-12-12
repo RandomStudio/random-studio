@@ -41,7 +41,7 @@ collections:
       - label: "Template Key"
         name: templateKey
         widget: hidden
-        default: project
+        default: Project
       - label: Title
         name: title
         widget: text
