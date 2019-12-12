@@ -13,16 +13,6 @@ export const pageQuery = graphql`
         slug
       }
       frontmatter {
-        thumbnail {
-          image {
-            publicURL
-            childImageSharp {
-              fixed(width: 800, height: 800, quality: 90) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
         title
         intro
         content {
@@ -78,7 +68,6 @@ export default ({
 }) => {
   const {
     opengraph,
-    thumbnail,
   } = project;
 
   const returnSlug = `#${slug}`;
@@ -92,7 +81,6 @@ export default ({
     : undefined;
 
   const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null)
-    || getThumbnailSafely(thumbnail.image)
     || undefined;
 
   return (
