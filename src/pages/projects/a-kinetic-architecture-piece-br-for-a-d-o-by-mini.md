@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A kinetic architecture piece <br> for A/D/O by MINI
+title: A kinetic architecture piece <br> for A/D/O in Brooklyn
 intro: >-
   In celebration of the 2020 launch of the new MINI Electric vehicle, we were
   commissioned to create an immersive installation that reflects the kinetic
