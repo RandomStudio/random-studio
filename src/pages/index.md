@@ -28,8 +28,8 @@ projects:
       marginTop: 14
       width: 60
   - caption: |-
-      A kinetic architecture piece
-      for A/D/O in Brooklyn
+      A kinetic architecture piece <br>
+      for A/D/O by MINI
     project: A kinetic architecture piece <br> for A/D/O in Brooklyn
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
