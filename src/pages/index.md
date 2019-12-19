@@ -31,7 +31,7 @@ projects:
   - caption: |-
       A kinetic architecture piece <br>
       for A/D/O by MINI
-    project: A kinetic architecture piece <br> for A/D/O in Brooklyn
+    project: A kinetic architecture piece <br> for A/D/O by MINI
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
       marginLeft: 65
