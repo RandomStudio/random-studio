@@ -1,11 +1,12 @@
 ---
 templateKey: Home
 layout: center
-video: >-
-  https://player.vimeo.com/external/219822090.hd.mp4?s=9fcbf6bfec731604e4b4d29e278e676848c2ac20&profile_id=119
+video: >
+  https://player.vimeo.com/external/380435512.hd.mp4?s=42de8ed62d83917a95da30ff6724ba0352fd7798&profile_id=175
 collaborationCredits:
-  collaborator: Mark Prendergast
-  url: 'https://www.instagram.com/prendswash/'
+  collaborator: A/D/O by MINI
+  url: >-
+    https://random.studio/projects/a-kinetic-architecture-piece-br-for-a-d-o-by-mini/
 intro: >-
   How can we reimagine the digital as a living, breathing part of our physical
   world?
