@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A kinetic architecture piece <br> for A/D/O in Brooklyn
+title: A kinetic architecture piece <br> for A/D/O by MINI
 intro: >-
   In celebration of the 2020 launch of the new MINI Electric vehicle, we were
   commissioned to create an immersive installation that reflects the kinetic
@@ -109,6 +109,6 @@ credits:
       Daniel Seung Lee – Photography
 opengraph:
   ogImage: /img/ADO_Perpetuum_9.jpg
-  ogTitle: ''
+  ogTitle: "Perpetuum –\_A kinetic architecture piece for A/D/O by MINI"
 ---
 
