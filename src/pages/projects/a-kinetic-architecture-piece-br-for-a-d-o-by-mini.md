@@ -14,7 +14,7 @@ content:
     video:
       autoplay: true
       hasControls: false
-      isMuted: true
+      isMuted: false
       loops: true
       url: >-
         https://gcs-vimeo.akamaized.net/exp=1576763618~acl=%2A%2F1594044209.mp4%2A~hmac=421187eaf7af3d7961013d24a8c74a1d79bcbf0dbdab61a6f8dfc9cf9e70d5f0/vimeo-prod-skyfire-std-us/01/1087/15/380435512/1594044209.mp4
