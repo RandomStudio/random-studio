@@ -7,15 +7,17 @@ intro: >-
   energy of the city and captures the experience of travel, imagining what new
   forms of mobility can feel like.
 content:
-  - image: /img/ADO_Perpetuum_9.jpg
+  - image: ''
     marginLeft: 5
-    marginTop: 0
-    ratio: 0
+    marginTop: -1
+    ratio: 66.66
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
+      url: >-
+        https://gcs-vimeo.akamaized.net/exp=1576763618~acl=%2A%2F1594044209.mp4%2A~hmac=421187eaf7af3d7961013d24a8c74a1d79bcbf0dbdab61a6f8dfc9cf9e70d5f0/vimeo-prod-skyfire-std-us/01/1087/15/380435512/1594044209.mp4
     width: 90
   - caption: >-
       The result – Perpetuum – is a kinetic landscape that evolves around you
