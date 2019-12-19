@@ -9,7 +9,7 @@ intro: >-
 content:
   - image: ''
     marginLeft: 5
-    marginTop: -1
+    marginTop: 10
     ratio: 66.66
     video:
       autoplay: true
@@ -24,7 +24,7 @@ content:
       and  sets in motion the dreamy feeling of staring out of a window as the
       landscape zooms past you, fuelled by the flux of our current environment.
     marginLeft: 0
-    marginTop: 0
+    marginTop: -6
     ratio: 0
     video:
       autoplay: false
@@ -34,7 +34,7 @@ content:
     width: 100
   - image: /img/ADO_Perpetuum_24.jpg
     marginLeft: 0
-    marginTop: -1
+    marginTop: 10
     ratio: 0
     video:
       autoplay: false
@@ -44,7 +44,7 @@ content:
     width: 52
   - image: /img/ADO_Perpetuum_15.jpg
     marginLeft: 60
-    marginTop: -19
+    marginTop: -16
     ratio: 0
     video:
       autoplay: false
@@ -54,7 +54,7 @@ content:
     width: 42
   - image: /img/ADO_Perpetuum_52.jpg
     marginLeft: 6
-    marginTop: -19
+    marginTop: -14
     ratio: 0
     video:
       autoplay: false
@@ -64,7 +64,7 @@ content:
     width: 45
   - image: /img/ADO_Perpetuum_55.jpg
     marginLeft: 0
-    marginTop: 10
+    marginTop: 18
     ratio: 0
     video:
       autoplay: false
@@ -80,7 +80,7 @@ content:
 
        Drifting through this ‘third’ space, the viewer’s experience changes from moment to moment, enhanced by an ambient patchwork of urban sounds.
     marginLeft: 0
-    marginTop: -2
+    marginTop: 12
     ratio: 0
     video:
       autoplay: false
@@ -90,7 +90,7 @@ content:
     width: 100
   - image: /img/ADO_Perpetuum_40.jpg
     marginLeft: 10
-    marginTop: 0
+    marginTop: 12
     ratio: 0
     video:
       autoplay: false
