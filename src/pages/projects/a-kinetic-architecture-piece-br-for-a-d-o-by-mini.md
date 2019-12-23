@@ -3,9 +3,7 @@ templateKey: Project
 title: A kinetic architecture piece <br> for A/D/O by MINI
 intro: >-
   In celebration of the 2020 launch of the new MINI Electric vehicle, we were
-  commissioned to create an immersive installation that reflects the kinetic
-  energy of the city and captures the experience of travel, imagining what new
-  forms of mobility can feel like.
+  commissioned by A/D/O to create a work themed around the future of mobility.
 content:
   - image: ''
     marginLeft: 5
@@ -20,9 +18,10 @@ content:
         https://player.vimeo.com/external/380435512.hd.mp4?s=42de8ed62d83917a95da30ff6724ba0352fd7798&profile_id=175
     width: 90
   - caption: >-
-      The result – Perpetuum – is a kinetic landscape that evolves around you
-      and  sets in motion the dreamy feeling of staring out of a window as the
-      landscape zooms past you, fuelled by the flux of our current environment.
+      Inspired by the backdrop of our fast-paced environment, we focused on how
+      we experience travel, staring at passing landscapes and ever-changing
+      compositions. ‘Perpetuum’ was conceived as a kinetic, revolving landscape
+      that invites people to explore, pause and reflect.
     marginLeft: 0
     marginTop: -6
     ratio: 0
