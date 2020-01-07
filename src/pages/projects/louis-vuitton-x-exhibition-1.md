@@ -49,7 +49,7 @@ content:
     marginTop: -12
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
@@ -60,7 +60,7 @@ content:
     marginTop: 30
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
@@ -78,9 +78,30 @@ content:
     marginTop: 73
     ratio: 0
     video:
+      autoplay: true
+      hasControls: false
+      isMuted: true
+      loops: true
+  - image: /img/65453893_815006268886585_7648533371953348608_n.png
+    marginLeft: 20
+    marginTop: 0
+    ratio: 0
+    video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 8
+  - marginLeft: 11
+    marginTop: 4
+    ratio: 0
+    video:
+      autoplay: true
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/370845311.hd.mp4?s=351ae75654db4d1fe846e209e197e907ebe63726&profile_id=174
+    width: 25
 ---
 
