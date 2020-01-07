@@ -113,7 +113,7 @@ content:
       loops: true
     width: 8
   - marginLeft: 11
-    marginTop: 11
+    marginTop: 3
     ratio: 0
     video:
       autoplay: true
