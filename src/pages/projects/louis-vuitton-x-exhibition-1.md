@@ -31,7 +31,7 @@ content:
     marginTop: 59
     ratio: 0
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: true
       loops: true
@@ -45,5 +45,16 @@ content:
       isMuted: true
       loops: true
     width: 50
+  - marginLeft: 8
+    marginTop: -12
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/370845411.hd.mp4?s=97e48150dfaefef981dff937eaa2d200d565b9cf&profile_id=175
+    width: 24
 ---
 
