@@ -111,7 +111,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-    width: 7
+    width: 8
   - marginLeft: 12
     marginTop: 3
     ratio: 0
