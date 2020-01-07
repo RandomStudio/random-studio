@@ -92,8 +92,28 @@ content:
       isMuted: true
       loops: true
     width: 8
+  - image: /img/65445113_893189817697135_6332105627778678784_n.png
+    marginLeft: 46
+    marginTop: -8
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 8
+  - image: /img/65415586_385629605409287_4618380884599373824_n.png
+    marginLeft: 72
+    marginTop: -8
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 8
   - marginLeft: 11
-    marginTop: 4
+    marginTop: 11
     ratio: 0
     video:
       autoplay: true
