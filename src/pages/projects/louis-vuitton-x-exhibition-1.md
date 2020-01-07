@@ -20,5 +20,30 @@ content:
       url: >-
         https://player.vimeo.com/external/370845365.hd.mp4?s=461af50ce0ea8b60b77bc8bb90c45319f9a80e14&profile_id=175
     width: 80
+  - caption: >-
+      Inviting viewers into Louis Vuitton’s world, we brought the key themes
+      that encapsulate the brand’s heritage to life through motion and sound.
+      From the sea to the desert, right into space and beyond via floating
+      perfume bottles, these shifting landscapes formed an animated backdrop to
+      the unique pieces on display. The result was an elevated experience that
+      evoked the sense of adventure and elegance at Louis Vuitton’s core.
+    marginLeft: 0
+    marginTop: 59
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - image: /img/Render-Perfume.jpg
+    marginLeft: 40
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 50
 ---
 
