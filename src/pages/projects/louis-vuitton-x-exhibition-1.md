@@ -56,5 +56,31 @@ content:
       url: >-
         https://player.vimeo.com/external/370845411.hd.mp4?s=97e48150dfaefef981dff937eaa2d200d565b9cf&profile_id=175
     width: 24
+  - marginLeft: 40
+    marginTop: 30
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/370845220.hd.mp4?s=84fdb9655b42c067a54408c6aef2c17b032ecdf6&profile_id=175
+    width: 60
+  - caption: >-
+      As a tribute to the brand’s rich history of artistic collaborations and
+      creative exchange, we were also asked to create three Instagram Face
+      Filters. The filter was only accessible through a QR code within the
+      exhibition, adding a digital layer to the exhibition experience that put
+      into play the dialogue between heritage and innovation that has
+      characterised Louis Vuitton’s journey for nearly two centuries.
+    marginLeft: 0
+    marginTop: 73
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
 ---
 
