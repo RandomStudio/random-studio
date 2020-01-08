@@ -114,7 +114,7 @@ content:
     width: 8
   - marginLeft: 12
     marginTop: 3
-    ratio: 0
+    ratio: 150
     video:
       autoplay: true
       hasControls: false
@@ -124,8 +124,8 @@ content:
         https://player.vimeo.com/external/370845311.hd.mp4?s=351ae75654db4d1fe846e209e197e907ebe63726&profile_id=174
     width: 24
   - marginLeft: 38
-    marginTop: 0
-    ratio: 0
+    marginTop: -36
+    ratio: 150
     video:
       autoplay: true
       hasControls: false
@@ -135,8 +135,8 @@ content:
         https://player.vimeo.com/external/370845330.hd.mp4?s=00b6921a496740a65e32387f877b25f8851c0a41&profile_id=174
     width: 24
   - marginLeft: 64
-    marginTop: 0
-    ratio: 0
+    marginTop: -36
+    ratio: 150
     video:
       autoplay: true
       hasControls: false
