@@ -28,7 +28,7 @@ content:
       the unique pieces on display. The result was an elevated experience that
       evoked the sense of adventure and elegance at Louis Vuitton’s core.
     marginLeft: 0
-    marginTop: 59
+    marginTop: 63
     ratio: 0
     video:
       autoplay: true
@@ -37,7 +37,7 @@ content:
       loops: true
   - image: /img/Render-Perfume.jpg
     marginLeft: 40
-    marginTop: 0
+    marginTop: 10
     ratio: 0
     video:
       autoplay: false
@@ -84,7 +84,7 @@ content:
       loops: true
   - image: /img/65453893_815006268886585_7648533371953348608_n.png
     marginLeft: 20
-    marginTop: 0
+    marginTop: 9
     ratio: 0
     video:
       autoplay: false
@@ -145,5 +145,8 @@ content:
       url: >-
         https://player.vimeo.com/external/370845292.hd.mp4?s=7310ad125069983a5e49b79727e696186e77a41e&profile_id=174
     width: 24
+credits:
+  - key: 'Role:'
+    value: 'Concept, Design, Development'
 ---
 
