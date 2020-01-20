@@ -2,12 +2,12 @@
 templateKey: Project
 title: 'Louis Vuitton X Exhibition '
 intro: >-
-  The Louis Vuitton X Exhibition celebrates 160 years of its pioneering creative
+  Louis Vuitton X celebrates 160 years of the brands pioneering creative
   exchanges and artistic collaborations. Tasked with bringing the brand’s
-  heritage into the now, Random Studio designed LED paneling into the walls and
-  ceiling of the ‘Origins Room’: a space that restages the fashion house’s early
-  artistic collaborations through a collection of items from the archive from
-  early sketches to one-of-a-kind pieces.
+  heritage into the now, we designed LED paneling into the walls and ceiling of
+  the ‘Origins Room’. A space that re-stages the fashion house’s early artistic
+  collaborations through a collection of items from the archive. From early
+  sketches to one-of-a-kind pieces.
 content:
   - marginLeft: 10
     marginTop: 0
@@ -69,11 +69,11 @@ content:
     width: 60
   - caption: >-
       As a tribute to the brand’s rich history of artistic collaborations and
-      creative exchange, we were also asked to create three Instagram Face
-      Filters. The filter was only accessible through a QR code within the
-      exhibition, adding a digital layer to the exhibition experience that put
-      into play the dialogue between heritage and innovation that has
-      characterised Louis Vuitton’s journey for nearly two centuries.
+      creative exchange, we were also asked to create three Instagram Filters.
+      The filters were only accessible through a QR code within the exhibition,
+      adding a digital layer to the exhibition experience that put into play the
+      dialogue between heritage and innovation that has characterised Louis
+      Vuitton’s journey for nearly two centuries.
     marginLeft: 0
     marginTop: 73
     ratio: 0
@@ -146,7 +146,9 @@ content:
         https://player.vimeo.com/external/370845292.hd.mp4?s=7310ad125069983a5e49b79727e696186e77a41e&profile_id=174
     width: 24
 credits:
+  - key: 'For:'
+    value: Louis Vuitton
   - key: 'Role:'
-    value: 'Concept, Design, Development'
+    value: 'Concept Development, Creative Direction, Design, Software Development'
 ---
 
