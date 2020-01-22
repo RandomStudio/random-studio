@@ -43,7 +43,7 @@ projects:
     thumbnail:
       image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
       marginLeft: 0
-      marginTop: -1
+      marginTop: -35
       width: 50
   - caption: |-
       Interactive retail fixture
