@@ -62,7 +62,7 @@ export default ({ location, data: { indexPage, studioPage } }) => {
   return (
     <Layout>
       <SEO title="Studio" pathName={studioPage.fields.slug} />
-      <Wonder introRef={introRef} />
+      <Wonder />
       <Intro
         data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
         location={location}

@@ -1,17 +1,25 @@
 import React, { useEffect } from 'react';
 import { SceneLoader } from 'babylonjs';
-import { GLTFFileLoader } from 'babylonjs-loaders';
+import 'babylonjs-loaders';
 
 const World = ({ filename, layout, onImportWorld, scene }) => {
   useEffect(() => {
+    console.log('scene:', scene);
     let importedModel;
     let model;
 
     const importWorld = async () => {
       SceneLoader.ShowLoadingScreen = false;
-      importedModel = await SceneLoader.AppendAsync(filename.path, filename.file, scene);
+
+      importedModel = await SceneLoader.AppendAsync(
+        filename.path,
+        filename.file,
+        scene
+
+        // 'gltf'
+      );
+
       model = scene.meshes.find(mesh => mesh.id === '__root__');
-      console.log(importedModel, model)
       model.scaling.z = 1;
 
       if (layout.identifier) {
@@ -33,11 +41,13 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
     }
 
     return () => {
+      console.log('model', model);
+      console.log('importedModel:', importedModel);
       if (importedModel) {
         importedModel.dispose();
         onImportWorld(null);
       }
-    }
+    };
   }, [filename, layout, onImportWorld, scene]);
   return null;
 };
