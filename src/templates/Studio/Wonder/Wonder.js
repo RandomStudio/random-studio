@@ -1,20 +1,19 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Engine, Scene, Color3, CubeTexture } from 'babylonjs';
+import { Engine, Scene, Color3 } from 'babylonjs';
 import styles from './Wonder.module.scss';
 
 // Scenes
 import Sculpture from './scenes/Sculpture';
-import Sofa from './scenes/Sofa';
-// import Island from '../Wonder/scenes/Island';
 import Lighting from './Lighting/Lighting';
 import Camera from './Camera/Camera';
 import World from './World/World';
 import MouseAnimation from './MouseAnimation/MouseAnimation';
-import Mirrors from './Mirrors/Mirrors';
-import Shadows from './Shadows/Shadows';
-import Sun from './Sun/Sun';
+// import Sofa from './scenes/Sofa';
+// import Mirrors from './Mirrors/Mirrors';
+// import Shadows from './Shadows/Shadows';
+// import Sun from './Sun/Sun';
 
-const Wonder = ({ introRef }) => {
+const Wonder = () => {
   const canvasRef = useRef();
   const [canvasVisible, setCanvasVisible] = useState(false);
   const [currentEngine, setCurrentEngine] = useState(null);
@@ -29,19 +28,17 @@ const Wonder = ({ introRef }) => {
 
   useEffect(() => {
     if (camera && currentScene && world) {
-      // In the future remove this hard coded model name
-      const model = currentScene.meshes.find(
-        mesh => mesh.id === 'node0_primitive1'
-      );
-      // if (model) {
-      // const radius = model.getBoundingInfo().boundingSphere.radiusWorld;
-      // const aspectRatio = currentEngine.getAspectRatio(camera);
-      // const halfMinFov =
-      //   aspectRatio < 1
-      //     ? Math.atan(aspectRatio * Math.tan(camera.fov / 2))
-      //     : camera.fov / 2;
-      // const viewRadius = Math.abs(radius / Math.sin(halfMinFov));
-      // camera.radius = viewRadius;
+      // code for resizing the model according to screensize (looks better without resizing)
+      // currentScene.getEngine().onResizeObservable.add(() => {
+      //   if (
+      //     currentScene.getEngine().getRenderHeight() >
+      //     currentScene.getEngine().getRenderWidth()
+      //   ) {
+      //     camera.fovMode = Camera.FOVMODE_HORIZONTAL_FIXED;
+      //   } else {
+      //     camera.fovMode = Camera.FOVMODE_VERTICAL_FIXED;
+      //   }
+      // });
       setCanvasVisible(true);
       // }
     }
@@ -50,10 +47,7 @@ const Wonder = ({ introRef }) => {
       setCanvasVisible(false);
     };
   }, [camera, currentEngine, currentScene, world]);
-  const handleResize = () => {
-    console.log('ran resize');
-    currentEngine.resize;
-  };
+
   useEffect(() => {
     let engine;
     let scene;
@@ -63,27 +57,20 @@ const Wonder = ({ introRef }) => {
         preserveDrawingBuffer: true,
         stencil: true,
       });
-      // console.log('engine:', engine.getRenderingCanvasClientRect);
       setCurrentEngine(engine);
     };
     const createScene = () => {
       scene = new Scene(engine);
-      const hdrTexture = new CubeTexture.CreateFromPrefilteredData(
-        'hdr/environment.dds',
-        scene
-      );
-      hdrTexture.gammaSpace = false;
-      scene.environmentTexture = hdrTexture;
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
-
+      // Code Used for showing a babylon GUI for easier tweaking
       // scene.debugLayer.show();
     };
 
     const onResize = () => {
       canvasRef.current.width = getWidth();
-      console.log('called');
       engine.resize();
     };
+
     if (canvasRef.current) {
       createEngine();
       createScene();
@@ -97,7 +84,7 @@ const Wonder = ({ introRef }) => {
 
     return () => {
       setCurrentScene(null);
-      window.removeEventListener('resize', engine.resize);
+      window.removeEventListener('resize', onResize);
       engine.dispose();
     };
   }, [canvasRef, layout]);
@@ -109,7 +96,6 @@ const Wonder = ({ introRef }) => {
       });
     }
   }, [camera, currentEngine, currentScene]);
-
   return (
     <>
       <canvas
@@ -125,13 +111,14 @@ const Wonder = ({ introRef }) => {
             onCreateCamera={setCamera}
             scene={currentScene}
           />
-          <Lighting scene={currentScene} />
+          <Lighting hdr={layout.hdr} scene={currentScene} />
           <World
             filename={layout.filename}
             layout={layout.model}
             onImportWorld={setWorld}
             scene={currentScene}
           />
+          <MouseAnimation layout={layout.model} target={world} />
           {/* <Sun
             layout={layout.sun}
             onAddSun={setSun}
@@ -139,7 +126,6 @@ const Wonder = ({ introRef }) => {
             world={world}
           /> */}
           {/* <Shadows scene={currentScene} sun={sun} world={world} /> */}
-          <MouseAnimation layout={layout.model} target={world} />
           {/* <Mirrors layout={layout.mirrors} scene={currentScene} world={world} /> */}
         </>
       )}
