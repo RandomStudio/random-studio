@@ -6,16 +6,16 @@ const camera = {
 };
 
 const filename = {
-  path: '/models/sculpture/',
-  file: 'sculpture01.gltf',
+  path: '/models/sculpture/sculptureCompressed/',
+  file: 'sculptureCompressed.gltf',
 };
 
 const hdr = {
-  url: '/models/sculpture/environment.dds',
+  url: 'models/sculpture/hdr/environment.dds',
 };
 
 const model = {
-  position: new Vector3(0, 0, 80),
+  position: new Vector3(10, -7, 100),
   rotation: new Vector3(0, 0, 0),
 };
 
