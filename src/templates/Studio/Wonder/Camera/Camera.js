@@ -15,7 +15,7 @@ const Camera = ({ canvasRef, layout, onCreateCamera, scene }) => {
       0,
       layout.target,
       scene,
-      true
+      true,
     );
     camera.setPosition(layout.position);
     camera.setTarget(layout.target);
