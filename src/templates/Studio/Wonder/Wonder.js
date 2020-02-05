@@ -22,8 +22,6 @@ const Wonder = () => {
   // const layout = useMemo(() => [Sofa, Island][Math.round(Math.random())], []);
   const layout = Sculpture;
 
-  const getWidth = () => document.body.clientWidth;
-
   useEffect(() => {
     if (camera && currentScene && world) {
       setCanvasVisible(true);
@@ -54,7 +52,6 @@ const Wonder = () => {
     };
 
     const onResize = () => {
-      canvasRef.current.width = getWidth();
       engine.resize();
     };
 
