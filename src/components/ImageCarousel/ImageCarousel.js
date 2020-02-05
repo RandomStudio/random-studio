@@ -32,7 +32,7 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
             onClick={handleNextImage}
           >
             {image.childImageSharp ? (
-              <Img objectFit="contain" fluid={image.childImageSharp.fluid} />
+              <Img objectFit="contain" loading="eager" fluid={image.childImageSharp.fluid} />
             ) : (
               <img alt="" src={image} />
             )}
