@@ -27,7 +27,7 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
       // makes belt lighter
       material.emissiveColor = new Color3(1, 1, 1);
 
-      const texture = new Texture('models/sculpture/checkers_big.png');
+      const texture = new Texture('/models/sculpture/checkers_big.png');
       material.diffuseTexture = texture;
       belt.material = material;
       // moves the texture, creates illusion of belt moving
