@@ -19,7 +19,6 @@ const Wonder = () => {
   const [camera, setCamera] = useState(null);
   const [sun, setSun] = useState(null);
   const [world, setWorld] = useState(null);
-  // const layout = useMemo(() => [Sofa, Island][Math.round(Math.random())], []);
   const layout = Sculpture;
 
   useEffect(() => {
