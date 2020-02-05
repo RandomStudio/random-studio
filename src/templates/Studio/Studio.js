@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout/Layout';
 import Footer from '../../components/Footer/Footer';
@@ -57,8 +57,8 @@ export const query = graphql`
   }
 `;
 
+// eslint-disable-next-line react/display-name
 export default ({ location, data: { indexPage, studioPage } }) => {
-  const introRef = useRef();
   return (
     <Layout>
       <SEO title="Studio" pathName={studioPage.fields.slug} />
@@ -66,7 +66,6 @@ export default ({ location, data: { indexPage, studioPage } }) => {
       <Intro
         data={{ ...indexPage.frontmatter, ...studioPage.frontmatter }}
         location={location}
-        ref={introRef}
       />
       {studioPage.frontmatter.infoBlock.map(({ collection }, index) => (
         <InfoBlock key={index} collection={collection} />
