@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
@@ -20,9 +21,19 @@ const ProjectVideo = ({
   const handleTapVolumeToggle = e => {
     setIsCurrentlyMuted(prevState => !prevState);
     e.stopPropagation();
+    trackCustomEvent({
+      category: isCurrentlyMuted ? 'Unmute Button' : 'Mute Button',
+      action: isCurrentlyMuted ? 'Unmute' : 'Mute',
+      label: 'Video Player Interactions'
+    })
   };
 
   const handleTapPlayPause = e => {
+    trackCustomEvent({
+      category: isPlaying ? 'Pause Button' : 'Play Button',
+      action: isPlaying ? 'Pause' : 'Play',
+      label: 'Video Player Interactions',
+    });
     if (!hasPlayed) {
       setHasPlayed(true);
     }
