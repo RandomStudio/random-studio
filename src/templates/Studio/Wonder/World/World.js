@@ -20,7 +20,10 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
       model = scene.meshes.find(mesh => mesh.id === '__root__');
 
       const material = new StandardMaterial('CustomSTANDARTMaterial', scene);
-      belt.material = material;
+      if (belt) {
+        belt.material = material;
+      }
+
       // makes belt lighter
       material.emissiveColor = new Color3(1, 1, 1);
 
