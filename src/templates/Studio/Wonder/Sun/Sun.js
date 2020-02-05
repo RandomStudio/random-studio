@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Animation, DirectionalLight, Color3 } from 'babylonjs';
 
 const Sun = ({ layout, onAddSun, scene, world }) => {
@@ -69,7 +69,7 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
 
     light = new DirectionalLight('Sun', layout.direction[0].value, scene);
     light.position = layout.position;
-    light.intensity = 3;
+    light.intensity = 31;
     light.diffuse = layout.color[0].value;
     light.specular = new Color3(0.071, 0.078, 0.055);
     light.shadowEnabled = true;
