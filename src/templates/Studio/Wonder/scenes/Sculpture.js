@@ -7,15 +7,10 @@ const camera = {
 
 const filename = {
   path: '/models/sculpture/sculptureV2/',
-  // file: 'sculptureCompressed.gltf',
-  // file: 'sculpture01_optimized2.glb',
-  // file: 'compressed.gltf',
-  // file: 'sculptureLatest.glb',
   file: 'compressedRock6x.glb',
 };
 
 const hdr = {
-  // url: 'models/sculpture/hdr/environment.dds',
   url: 'models/sculpture/hdr/studio.env',
 };
 
