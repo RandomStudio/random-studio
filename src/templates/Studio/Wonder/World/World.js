@@ -15,7 +15,7 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
         filename.file,
         scene,
       );
-      const belt = await scene.meshes[7];
+      const belt = await scene.meshes[1];
 
       model = scene.meshes.find(mesh => mesh.id === '__root__');
 
@@ -29,7 +29,7 @@ const World = ({ filename, layout, onImportWorld, scene }) => {
       belt.material = material;
       // moves the texture, creates illusion of belt moving
       scene.registerBeforeRender(() => {
-        texture.uOffset += 1 / 60;
+        texture.uOffset -= 1 / 60;
       });
 
       if (layout.identifier) {

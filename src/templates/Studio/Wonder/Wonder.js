@@ -8,10 +8,8 @@ import Lighting from './Lighting/Lighting';
 import Camera from './Camera/Camera';
 import World from './World/World';
 import MouseAnimation from './MouseAnimation/MouseAnimation';
-// import Sofa from './scenes/Sofa';
-// import Mirrors from './Mirrors/Mirrors';
-// import Shadows from './Shadows/Shadows';
-// import Sun from './Sun/Sun';
+import Shadows from './Shadows/Shadows';
+import Sun from './Sun/Sun';
 
 const Wonder = () => {
   const canvasRef = useRef();
@@ -28,19 +26,7 @@ const Wonder = () => {
 
   useEffect(() => {
     if (camera && currentScene && world) {
-      // code for resizing the model according to screensize (looks better without resizing)
-      // currentScene.getEngine().onResizeObservable.add(() => {
-      //   if (
-      //     currentScene.getEngine().getRenderHeight() >
-      //     currentScene.getEngine().getRenderWidth()
-      //   ) {
-      //     camera.fovMode = Camera.FOVMODE_HORIZONTAL_FIXED;
-      //   } else {
-      //     camera.fovMode = Camera.FOVMODE_VERTICAL_FIXED;
-      //   }
-      // });
       setCanvasVisible(true);
-      // }
     }
 
     return () => {
@@ -56,6 +42,7 @@ const Wonder = () => {
       engine = new Engine(canvasRef.current, true, {
         preserveDrawingBuffer: true,
         stencil: true,
+        adaptToDeviceRatio: true,
       });
       setCurrentEngine(engine);
     };
@@ -119,13 +106,13 @@ const Wonder = () => {
             scene={currentScene}
           />
           <MouseAnimation layout={layout.model} target={world} />
-          {/* <Sun
+          <Sun
             layout={layout.sun}
             onAddSun={setSun}
             scene={currentScene}
             world={world}
-          /> */}
-          {/* <Shadows scene={currentScene} sun={sun} world={world} /> */}
+          />
+          <Shadows scene={currentScene} sun={sun} world={world} />
           {/* <Mirrors layout={layout.mirrors} scene={currentScene} world={world} /> */}
         </>
       )}

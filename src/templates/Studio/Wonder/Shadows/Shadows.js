@@ -9,13 +9,14 @@ const Shadows = ({ scene, sun, world }) => {
 
     const shadows = new ShadowGenerator(1024, sun);
     shadows.useCloseExponentialShadowMap = true;
-    scene.meshes
-      .filter(mesh => !['glass', 'outside'].includes(mesh.id))
-      .forEach(model => {
-        shadows.getShadowMap().renderList.push(model);
-        shadows.addShadowCaster(model);
-        model.receiveShadows = true;
-      });
+    scene.meshes.forEach(model => {
+      shadows.getShadowMap().renderList.push(model);
+      shadows.addShadowCaster(model);
+      model.receiveShadows = true;
+      shadows.useContactHardeningShadow = true;
+      shadows.contactHardeningLightSizeUVRatio = 0.05;
+      shadows.setDarkness(0.5);
+    });
 
     return () => {
       shadows.dispose();
