@@ -110,7 +110,6 @@ const Wonder = () => {
             world={world}
           />
           <Shadows scene={currentScene} sun={sun} world={world} />
-          {/* <Mirrors layout={layout.mirrors} scene={currentScene} world={world} /> */}
         </>
       )}
     </>
