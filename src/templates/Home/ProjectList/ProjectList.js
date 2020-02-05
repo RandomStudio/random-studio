@@ -36,7 +36,7 @@ export default ({ intro, middle, projects }) => (
                 ratio={thumbnail.ratio}
               />
             ) : !!thumbnail.image && thumbnail.image.childImageSharp ? (
-              <Img loading="eager" fluid={thumbnail.image.childImageSharp.fluid} />
+              <Img loading="auto" fluid={thumbnail.image.childImageSharp.fluid} />
             ) : (
               <img alt="" src={thumbnail.image} />
             )}
