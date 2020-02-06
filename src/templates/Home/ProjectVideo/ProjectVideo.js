@@ -4,16 +4,14 @@ import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
 const trackPausePlay = isPlaying => {
-  console.log('in the play tracker', trackCustomEvent);
-    trackCustomEvent({
-      category: isPlaying ? 'Pause Button' : 'Play Button',
-      action: isPlaying ? 'Pause' : 'Play',
-      label: 'Video Player Interactions',
-    });
+  trackCustomEvent({
+    category: isPlaying ? 'Pause Button' : 'Play Button',
+    action: isPlaying ? 'Pause' : 'Play',
+    label: 'Video Player Interactions',
+  });
 };
 
 const trackIsCurrentlyMuted = isCurrentlyMuted => {
-  console.log('in the mute tracker')
   trackCustomEvent({
     category: isCurrentlyMuted ? 'Unmute Button' : 'Mute Button',
     action: isCurrentlyMuted ? 'Unmute' : 'Mute',
@@ -56,8 +54,8 @@ const ProjectVideo = ({
 
       return !prevState;
     });
-    trackPausePlay(isPlaying);
     e.stopPropagation();
+    trackPausePlay(isPlaying);
   };
 
   return (
@@ -76,10 +74,10 @@ const ProjectVideo = ({
       {hasControls
         && (hasPlayed ? (
           <div className={styles.videoControls}>
-            <button onClick={handleTapPlayPause}>
+            <button type='button' onClick={handleTapPlayPause}>
               {isPlaying ? 'Pause' : 'Play'}
             </button>
-            <button onClick={handleTapVolumeToggle}>
+            <button type='button' onClick={handleTapVolumeToggle}>
               {isCurrentlyMuted ? 'Unmute' : 'Mute'}
             </button>
           </div>
