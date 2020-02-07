@@ -10,6 +10,7 @@ import World from './World/World';
 import MouseAnimation from './MouseAnimation/MouseAnimation';
 import Shadows from './Shadows/Shadows';
 import Sun from './Sun/Sun';
+import checkAndroid from '../../../utils/checkAndroid';
 
 const Wonder = () => {
   const canvasRef = useRef();
@@ -108,7 +109,9 @@ const Wonder = () => {
             scene={currentScene}
             world={world}
           />
-          <Shadows scene={currentScene} sun={sun} world={world} />
+          {!checkAndroid() && (
+            <Shadows scene={currentScene} sun={sun} world={world} />
+          )}
         </>
       )}
     </>

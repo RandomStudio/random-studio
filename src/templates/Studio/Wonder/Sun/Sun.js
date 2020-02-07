@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Animation, DirectionalLight, Color3 } from 'babylonjs';
+import checkAndroid from '../../../../utils/checkAndroid';
 
 const Sun = ({ layout, onAddSun, scene, world }) => {
   useEffect(() => {
@@ -76,8 +77,9 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
     const [shadowMinZ, shadowMaxZ] = layout.shadows;
     light.shadowMinZ = shadowMinZ;
     light.shadowMaxZ = shadowMaxZ;
-
-    onAddSun(light);
+    {
+      !checkAndroid() && onAddSun(light);
+    }
     animateToCurrentTimeOfDay();
     const interval = window.setInterval(animateToCurrentTimeOfDay, 60000);
 
