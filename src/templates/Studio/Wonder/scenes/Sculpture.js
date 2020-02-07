@@ -7,7 +7,9 @@ const camera = {
 
 const filename = {
   path: '/models/sculpture/sculptureV2/',
-  file: 'compressedRock6x.glb',
+  file: 'movingRock.glb',
+  path2: '/models/sculpture/backup/',
+  file2: 'movingRockBackup.gltf',
 };
 
 const hdr = {
