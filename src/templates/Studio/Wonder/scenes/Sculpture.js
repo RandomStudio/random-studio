@@ -13,7 +13,7 @@ const filename = {
 };
 
 const hdr = {
-  url: 'models/sculpture/hdr/studio.env',
+  url: '/models/sculpture/hdr/studio.env',
 };
 
 const model = {
