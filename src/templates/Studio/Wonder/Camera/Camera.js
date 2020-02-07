@@ -8,7 +8,15 @@ const Camera = ({ canvasRef, layout, onCreateCamera, scene }) => {
     }
     const canvas = canvasRef.current;
 
-    const camera = new ArcRotateCamera('camera', 0, 0, 0, layout.target, scene, true);
+    const camera = new ArcRotateCamera(
+      'camera',
+      0,
+      0,
+      0,
+      layout.target,
+      scene,
+      true,
+    );
     camera.setPosition(layout.position);
     camera.setTarget(layout.target);
     camera.attachControl(canvas, true);

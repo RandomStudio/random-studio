@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react';
-import {
-  Animation,
-  DirectionalLight,
-  Color3,
-} from 'babylonjs';
+import { useEffect } from 'react';
+import { Animation, DirectionalLight, Color3 } from 'babylonjs';
+import checkAndroid from '../../../../utils/checkAndroid';
 
 const Sun = ({ layout, onAddSun, scene, world }) => {
   useEffect(() => {
@@ -16,9 +13,9 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
 
     const getMinutesSinceMidnight = (timestamp = Date.now()) => {
       const date = new Date(timestamp);
-      const utcDate = date.getTime() + (date.getTimezoneOffset() * 60000);
+      const utcDate = date.getTime() + date.getTimezoneOffset() * 60000;
       const amsterdamDate = new Date(utcDate + 3600000);
-      return amsterdamDate.getMinutes() + (amsterdamDate.getHours() * 60);
+      return amsterdamDate.getMinutes() + amsterdamDate.getHours() * 60;
     };
 
     const getCurrentSunProperties = async () => {
@@ -26,7 +23,9 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
       let sunset;
 
       try {
-        const response = await fetch('https://api.sunrise-sunset.org/json?lng=4.881437&lat=52.388408&formatted=0');
+        const response = await fetch(
+          'https://api.sunrise-sunset.org/json?lng=4.881437&lat=52.388408&formatted=0',
+        );
         const data = await response.json();
         sunrise = data.results.sunrise;
         sunset = data.results.sunset;
@@ -47,8 +46,20 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
 
     const animateToCurrentTimeOfDay = async () => {
       const progress = await getCurrentSunProperties();
-      const dirAnim = new Animation('directionAnim', 'direction', 30, Animation.ANIMATIONTYPE_VECTOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
-      const colorAnim = new Animation('colorAnim', 'diffuse', 30, Animation.ANIMATIONTYPE_COLOR3, Animation.ANIMATIONLOOPMODE_CYCLE);
+      const dirAnim = new Animation(
+        'directionAnim',
+        'direction',
+        30,
+        Animation.ANIMATIONTYPE_VECTOR3,
+        Animation.ANIMATIONLOOPMODE_CYCLE,
+      );
+      const colorAnim = new Animation(
+        'colorAnim',
+        'diffuse',
+        30,
+        Animation.ANIMATIONTYPE_COLOR3,
+        Animation.ANIMATIONLOOPMODE_CYCLE,
+      );
       dirAnim.setKeys(layout.direction);
       colorAnim.setKeys(layout.color);
       light.animations.push(dirAnim);
@@ -59,15 +70,16 @@ const Sun = ({ layout, onAddSun, scene, world }) => {
 
     light = new DirectionalLight('Sun', layout.direction[0].value, scene);
     light.position = layout.position;
-    light.intensity = 3;
+    light.intensity = 31;
     light.diffuse = layout.color[0].value;
     light.specular = new Color3(0.071, 0.078, 0.055);
     light.shadowEnabled = true;
     const [shadowMinZ, shadowMaxZ] = layout.shadows;
     light.shadowMinZ = shadowMinZ;
     light.shadowMaxZ = shadowMaxZ;
-
-    onAddSun(light);
+    {
+      !checkAndroid() && onAddSun(light);
+    }
     animateToCurrentTimeOfDay();
     const interval = window.setInterval(animateToCurrentTimeOfDay, 60000);
 
