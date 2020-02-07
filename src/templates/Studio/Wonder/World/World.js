@@ -1,20 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { SceneLoader, StandardMaterial, Texture, Color3 } from 'babylonjs';
 import 'babylonjs-loaders';
+import checkVersion from '../../../../utils/checkIosVersion';
 
 const World = ({ filename, layout, onImportWorld, scene }) => {
   useEffect(() => {
     let importedModel;
     let model;
-
     const importWorld = async () => {
       SceneLoader.ShowLoadingScreen = false;
-
-      importedModel = await SceneLoader.AppendAsync(
-        filename.path,
-        filename.file,
-        scene,
-      );
+      // Draco compression not supported by  <=IOS 11
+      if (checkVersion() <= 11 && checkVersion() !== 0) {
+        // NON DRACO
+        importedModel = await SceneLoader.AppendAsync(
+          filename.path2,
+          filename.file2,
+          scene,
+        );
+      } else {
+        importedModel = await SceneLoader.AppendAsync(
+          filename.path,
+          filename.file,
+          scene,
+        );
+      }
       const belt = await scene.meshes[1];
 
       model = scene.meshes.find(mesh => mesh.id === '__root__');
