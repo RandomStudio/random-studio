@@ -3,14 +3,14 @@ templateKey: Project
 title: |
   A playful interactive search engine for Cinekid  Festival
 intro: >-
-  In another collaboration with artist Philip Schuette, BODY invites you to get
-  physical and use your body as a search term for images. Strike a pose and
-  watch it reflected back through images, excavated from the bottomless global
-  bin of the internet.
+  In another collaboration with artist Philip Schuette, this installation
+  invites you to get physical and use your body as a search term for images.
+  Strike a pose and watch it reflected back through images, excavated from the
+  bottomless global bin of the internet.
 priority: 0
 content:
   - marginLeft: 10
-    marginTop: 13
+    marginTop: 10
     video:
       autoplay: true
       hasControls: false
