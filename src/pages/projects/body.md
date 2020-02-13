@@ -4,7 +4,9 @@ title: |
   BODY 
 intro: >-
   A new collaboration between Random Studio and artist Philip Schuette, BODY
-  invites you to get physical and use your body as a search term for images.
+  invites you to get physical and use your body as a search term for images. 
+
+
   Strike a pose and watch it reflected back through images, excavated from the
   bottomless global bin of the internet. Each time you move, your digital series
   of associations moves with you, cycling through thousands of different online
@@ -31,7 +33,7 @@ content:
       the physical and the digital: a dialogue of mutual exploration and
       curiosity.
     marginLeft: 0
-    marginTop: 0
+    marginTop: 67
     ratio: 0
     video:
       autoplay: false
@@ -39,7 +41,7 @@ content:
       isMuted: true
       loops: true
   - image: /img/cinekid12.jpg
-    marginLeft: 10
+    marginLeft: 0
     marginTop: 4
     video:
       autoplay: false
@@ -48,18 +50,18 @@ content:
       loops: false
     width: 50
   - image: /img/cinekid10.jpg
-    marginLeft: 10
-    marginTop: 0
+    marginLeft: 58
+    marginTop: -24
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
-    width: 40
+    width: 30
   - image: /img/cinekid4.jpg
-    marginLeft: 11
-    marginTop: 0
+    marginLeft: 6
+    marginTop: -13
     ratio: 0
     video:
       autoplay: false
@@ -102,8 +104,8 @@ content:
         https://player.vimeo.com/external/391188886.sd.mp4?s=168c6080cf66d3d7713f0755196c45c367ebe90e&profile_id=164
     width: 100
   - image: /img/cinekid11.jpg
-    marginLeft: 40
-    marginTop: 0
+    marginLeft: 52
+    marginTop: 79
     ratio: 0
     video:
       autoplay: false
@@ -112,15 +114,15 @@ content:
       loops: true
     width: 40
   - image: /img/cinekid3.jpg
-    marginLeft: 20
-    marginTop: 0
+    marginLeft: 14
+    marginTop: 23
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
-    width: 40
+    width: 41
 credits:
   - key: 'For:'
     value: Cinekid
