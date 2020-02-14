@@ -85,8 +85,8 @@ content:
     marginTop: 0
     ratio: 0
     video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       isMuted: true
       loops: true
       url: >-
