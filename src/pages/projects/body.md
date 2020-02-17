@@ -9,41 +9,43 @@ intro: >-
   bottomless global bin of the internet.
 priority: 0
 content:
-  - marginLeft: 10
-    marginTop: 10
+  - marginLeft: 0
+    marginTop: 0
+    ratio: 0
     video:
       autoplay: true
       hasControls: false
       isMuted: true
       loops: true
       url: >-
-        https://player.vimeo.com/external/391187386.sd.mp4?s=d8f3ceade8690ea994de9694d4301e0f1c6affeb&profile_id=164
-    width: 80
+        https://player.vimeo.com/external/314018273.hd.mp4?s=7aa13dd86f5cd714dd1527d479381739663e8d33&profile_id=174
   - caption: >-
       Each time you move, your digital series of associations moves with you,
       cycling through thousands of different online images: holiday snaps,
       artwork, animals, sculptures, selfies – and whatever other surprises among
       the digital debris may surface.
     marginLeft: 0
-    marginTop: 67
+    marginTop: 75
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
-  - image: /img/cinekid12.jpg
+  - image: ''
     marginLeft: 0
     marginTop: 4
     video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       isMuted: false
-      loops: false
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/391187386.sd.mp4?s=d8f3ceade8690ea994de9694d4301e0f1c6affeb&profile_id=164
     width: 50
   - image: /img/cinekid10.jpg
     marginLeft: 58
-    marginTop: -24
+    marginTop: 25
     ratio: 0
     video:
       autoplay: false
@@ -53,7 +55,7 @@ content:
     width: 30
   - image: /img/cinekid4.jpg
     marginLeft: 10
-    marginTop: -13
+    marginTop: -21
     ratio: 0
     video:
       autoplay: false
@@ -81,7 +83,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+  - marginLeft: 25
     marginTop: 0
     ratio: 0
     video:
@@ -91,10 +93,10 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/391188886.sd.mp4?s=168c6080cf66d3d7713f0755196c45c367ebe90e&profile_id=164
-    width: 100
+    width: 50
   - image: /img/cinekid11.jpg
-    marginLeft: 55
-    marginTop: 77
+    marginLeft: 50
+    marginTop: 45
     ratio: 0
     video:
       autoplay: false
