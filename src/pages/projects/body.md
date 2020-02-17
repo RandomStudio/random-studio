@@ -26,7 +26,7 @@ content:
       artwork, animals, sculptures, selfies – and whatever other surprises among
       the digital debris may surface.
     marginLeft: 0
-    marginTop: 75
+    marginTop: 55
     ratio: 0
     video:
       autoplay: false
