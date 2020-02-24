@@ -1,7 +1,7 @@
 ---
 templateKey: Project
 title: |
-  A playful interactive search engine for Cinekid  Festival
+  A playful interactive search engine for Cinekid Festival
 intro: >-
   In another collaboration with artist Philip Schuette, this installation
   invites you to get physical and use your body as a search term for images.
