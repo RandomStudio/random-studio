@@ -9,7 +9,7 @@ intro: >-
   bottomless global bin of the internet.
 priority: 0
 content:
-  - marginLeft: 20
+  - marginLeft: 9
     marginTop: 0
     ratio: 0
     video:
@@ -19,14 +19,14 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/314018273.hd.mp4?s=7aa13dd86f5cd714dd1527d479381739663e8d33&profile_id=174
-    width: 60
+    width: 80
   - caption: >-
       Each time you move, your digital series of associations moves with you,
       cycling through thousands of different online images: holiday snaps,
       artwork, animals, sculptures, selfies – and whatever other surprises among
       the digital debris may surface.
     marginLeft: 0
-    marginTop: 55
+    marginTop: 60
     ratio: 0
     video:
       autoplay: false
