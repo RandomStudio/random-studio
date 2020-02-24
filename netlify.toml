@@ -10,3 +10,9 @@
   to = "/.netlify/functions/addToNewsletterList"
   status = 200
   query = {email = ":email"} # apply this rule for /?path=example
+
+[[redirects]]
+  from = "/nicetomeetyou"
+  to = "/"
+  status = 200
+
