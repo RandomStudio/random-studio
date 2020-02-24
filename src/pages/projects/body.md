@@ -1,20 +1,13 @@
 ---
 templateKey: Project
 title: |
-  A playful interactive search engine for Cinekid Festival
+  A playful interactive search engine for Cinekid Festival CACHE BUST
 intro: >-
   In another collaboration with artist Philip Schuette, this installation
   invites you to get physical and use your body as a search term for images.
   Strike a pose and watch it reflected back through images, excavated from the
   bottomless global bin of the internet.
 priority: 0
-thumbnail:
-  marginLeft: 42
-  marginTop: -6
-  ratio: 66.6666
-  video: >-
-    https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
-  width: 50
 content:
   - marginLeft: 9
     marginTop: 0
