@@ -131,9 +131,9 @@ content:
       loops: true
 credits:
   - key: 'For:'
-    value: Cinekid
+    value: Cinekid Festival
   - key: 'Role:'
-    value: 'Techinical Direction, Development, Design '
+    value: 'Technical Direction, Development, Art Direction'
   - key: 'With:'
     value: Philip Schuette
 opengraph:
