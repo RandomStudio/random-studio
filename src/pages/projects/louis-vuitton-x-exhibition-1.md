@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: 'Louis Vuitton X Exhibition '
+title: 'An exhibition titled Louis Vuitton X '
 intro: >-
   Louis Vuitton X celebrates 160 years of the brands pioneering creative
   exchanges and artistic collaborations. Tasked with bringing the brand’s
@@ -150,5 +150,11 @@ credits:
     value: Louis Vuitton
   - key: 'Role:'
     value: 'Concept Development, Creative Direction, Design, Software Development'
+opengraph:
+  ogDescription: >-
+    Tasked with bringing the brand’s heritage into the now, we designed LED
+    paneling into the walls and ceiling of the ‘Origins Room’.
+  ogImage: /img/65445113_893189817697135_6332105627778678784_n.png
+  ogTitle: "Louis Vuitton X –\_ Exhibition Space and Filters"
 ---
 
