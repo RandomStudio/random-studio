@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: 'An exhibition titled Louis Vuitton X '
+title: An exhibition space for Louis Vuitton X
 intro: >-
   Louis Vuitton X celebrates 160 years of the brands pioneering creative
   exchanges and artistic collaborations. Tasked with bringing the brand’s
