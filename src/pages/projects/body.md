@@ -88,7 +88,7 @@ content:
     ratio: 0
     video:
       autoplay: true
-      hasControls: true
+      hasControls: false
       isMuted: true
       loops: true
       url: >-
