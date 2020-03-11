@@ -8,7 +8,8 @@ intro: >-
   itself to create a bold stage for Bottega’s collection.
 priority: -4
 content:
-  - marginLeft: 0
+  - image: /img/200304_BottegaVeneta_Saks__067 Copy.jpg
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
@@ -16,7 +17,8 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+  - image: /img/200304_BottegaVeneta_Saks__062_2.jpg
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
@@ -24,7 +26,8 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+  - image: /img/200304_BottegaVeneta_Saks__072 Copy.jpg
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
@@ -51,7 +54,8 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
+  - image: /img/200304_BottegaVeneta_Saks__018.jpg
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
@@ -59,15 +63,8 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
-    marginTop: 0
-    ratio: 0
-    video:
-      autoplay: false
-      hasControls: false
-      isMuted: true
-      loops: true
-  - marginLeft: 0
+  - image: /img/200304_BottegaVeneta_Saks__020.jpg
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
@@ -83,6 +80,33 @@ content:
       takeover as a non-linear journey of discovery. The space is almost as it
       once was, but a second glance reveals a series of glitches that have
       mutated parts of the ten-floor building.
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - image: /img/200304_BottegaVeneta_Saks__047.jpg
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - image: /img/200304_BottegaVeneta_Saks__043.jpg
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+  - image: /img/200304_BottegaVeneta_Saks__040.jpg
     marginLeft: 0
     marginTop: 0
     ratio: 0
