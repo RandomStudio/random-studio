@@ -74,19 +74,27 @@ projects:
       marginTop: 15
       ratio: 0
       width: 40
+  - caption: Bottega Veneta Takeover at Saks Fifth Avenue
+    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
+    thumbnail:
+      image: /img/200304_bottegaveneta_saks__084.jpg
+      marginLeft: 60
+      marginTop: 0
+      ratio: 0
+      width: 40
   - caption: An immersive in-store environment for NikeLab Milano
     project: An immersive in-store environment for NikeLab Milano
     thumbnail:
       image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.png
       marginLeft: 0
-      marginTop: 0
+      marginTop: -27
       ratio: 0
-      width: 30
+      width: 35
   - caption: An interactive sunrise in collaboration with Philip Schuette
     project: An interactive sunrise in collaboration with Philip Schuette
     thumbnail:
       marginLeft: 50
-      marginTop: -40
+      marginTop: -28
       ratio: 66.66666
       video: >-
         https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
