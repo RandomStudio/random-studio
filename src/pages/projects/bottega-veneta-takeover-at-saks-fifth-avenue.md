@@ -130,7 +130,7 @@ credits:
     value: >-
       Concept, Creative Direction, Art Direction, Installation Overview,
       Production Management
-  - key: 'With '
+  - key: 'With:'
     value: Bonsoir Paris
 opengraph:
   ogDescription: >-
