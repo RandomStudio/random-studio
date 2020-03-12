@@ -94,7 +94,7 @@ content:
       isMuted: true
       loops: true
   - image: /img/200304_BottegaVeneta_Saks__047.jpg
-    marginLeft: 10
+    marginLeft: 13
     marginTop: 10
     ratio: 0
     video:
@@ -102,9 +102,9 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-    width: 80
+    width: 75
   - image: /img/200304_BottegaVeneta_Saks__043.jpg
-    marginLeft: 62
+    marginLeft: 63
     marginTop: 8
     ratio: 0
     video:
@@ -112,7 +112,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-    width: 32
+    width: 29
   - image: /img/200304_BottegaVeneta_Saks__040.jpg
     marginLeft: 0
     marginTop: -17
