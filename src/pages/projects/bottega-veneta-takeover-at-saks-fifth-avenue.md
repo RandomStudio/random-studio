@@ -9,7 +9,7 @@ intro: >-
 priority: -4
 content:
   - image: /img/200304_BottegaVeneta_Saks__067 Copy.jpg
-    marginLeft: 0
+    marginLeft: 10
     marginTop: 0
     ratio: 0
     video:
@@ -17,24 +17,27 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+    width: 80
   - image: /img/200304_BottegaVeneta_Saks__062_2.jpg
     marginLeft: 0
-    marginTop: 0
+    marginTop: 10
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 45
   - image: /img/200304_BottegaVeneta_Saks__072 Copy.jpg
-    marginLeft: 0
-    marginTop: 0
+    marginLeft: 53
+    marginTop: -59
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 40
   - caption: >-
 
 
@@ -47,7 +50,7 @@ content:
       realities distorted – Saks Fifth Avenue and Bottega Veneta meet and merge
       to create hybrid, gravity-defying spatial designs.
     marginLeft: 0
-    marginTop: 0
+    marginTop: 45
     ratio: 0
     video:
       autoplay: false
@@ -56,22 +59,24 @@ content:
       loops: true
   - image: /img/200304_BottegaVeneta_Saks__018.jpg
     marginLeft: 0
-    marginTop: 0
+    marginTop: 12
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 54
   - image: /img/200304_BottegaVeneta_Saks__020.jpg
-    marginLeft: 0
-    marginTop: 0
+    marginLeft: 60
+    marginTop: -15
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 35
   - caption: >-
 
 
@@ -81,7 +86,7 @@ content:
       once was, but a second glance reveals a series of glitches that have
       mutated parts of the ten-floor building.
     marginLeft: 0
-    marginTop: 0
+    marginTop: 11
     ratio: 0
     video:
       autoplay: false
@@ -89,32 +94,35 @@ content:
       isMuted: true
       loops: true
   - image: /img/200304_BottegaVeneta_Saks__047.jpg
-    marginLeft: 0
-    marginTop: 0
+    marginLeft: 10
+    marginTop: 10
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 80
   - image: /img/200304_BottegaVeneta_Saks__043.jpg
-    marginLeft: 0
-    marginTop: 0
+    marginLeft: 62
+    marginTop: 8
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 32
   - image: /img/200304_BottegaVeneta_Saks__040.jpg
     marginLeft: 0
-    marginTop: 0
+    marginTop: -17
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 50
 credits:
   - key: 'For:'
     value: Bottega Veneta
