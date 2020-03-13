@@ -20,7 +20,7 @@ content:
       isMuted: true
       loops: true
     width: 80
-  - image: /img/200304_BottegaVeneta_Saks__062_2.jpg
+  - image: /img/200304_bottegaveneta_saks__062_2.jpg
     marginLeft: 0
     marginTop: 10
     ratio: 0
