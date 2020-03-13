@@ -149,7 +149,7 @@ opengraph:
     To celebrate its SS20 collection, Bottega Veneta commissioned us to take
     over the windows of New York’s Saks Fifth Avenue and create 5 pop-up areas
     indoors.
-  ogImage: /img/200304_BottegaVeneta_Saks__062_2.jpg
+  ogImage: /img/200304_BottegaVeneta_Saks__084.jpg
   ogTitle: Bottega Veneta Takeover at Saks Fifth Avenue
 ---
 
