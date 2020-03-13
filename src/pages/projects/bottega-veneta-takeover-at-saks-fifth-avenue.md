@@ -10,7 +10,7 @@ intro: >-
   collection.
 priority: -4
 content:
-  - image: /img/200304_BottegaVeneta_Saks__067 Copy.jpg
+  - image: /img/200304_bottegaveneta_saks__067.jpg
     marginLeft: 10
     marginTop: 0
     ratio: 0
