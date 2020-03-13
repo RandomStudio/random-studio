@@ -4,9 +4,10 @@ title: 'Bottega Veneta Takeover at Saks Fifth Avenue '
 intro: >-
   To celebrate its SS20 collection, Bottega Veneta commissioned us to take over
   the windows of New York’s Saks Fifth Avenue and create 5 pop-up areas indoors.
-  We partnered with Bonsoir Paris to concept and design, and together we took
-  the takeover task literally. Through subtle interventions in the architecture
-  of Saks itself, we created a bold stage for Bottega’s collection.
+  We partnered with spatial designers Bonsoir Paris to concept and design.
+  Together, we took the takeover task literally; through subtle interventions
+  into the architecture of Saks itself, we created a bold stage for Bottega’s
+  collection.
 priority: -4
 content:
   - image: /img/200304_BottegaVeneta_Saks__067 Copy.jpg
@@ -39,6 +40,16 @@ content:
       isMuted: true
       loops: true
     width: 40
+  - image: /img/Center 6.jpg
+    marginLeft: 15
+    marginTop: 44
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 70
   - caption: >-
 
 
@@ -51,7 +62,7 @@ content:
       realities distorted – Saks Fifth Avenue and Bottega Veneta meet and merge
       to create hybrid, gravity-defying spatial designs.
     marginLeft: 0
-    marginTop: 45
+    marginTop: 10
     ratio: 0
     video:
       autoplay: false
