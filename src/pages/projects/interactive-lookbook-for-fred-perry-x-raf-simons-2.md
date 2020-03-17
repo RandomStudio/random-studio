@@ -147,12 +147,12 @@ content:
   - image: /img/9.jpg
     marginLeft: 0
     marginTop: 20
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 115
 credits:
   - key: 'For:'
     value: |
