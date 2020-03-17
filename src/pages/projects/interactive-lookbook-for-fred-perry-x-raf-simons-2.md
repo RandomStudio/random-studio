@@ -6,7 +6,7 @@ intro: "For our third collaboration with Fred Perry x \LRaf Simons, we continued
 content:
   - marginLeft: 0
     marginTop: 0
-    ratio: 52.8
+    ratio: 52.7
     video:
       autoplay: true
       hasControls: true
@@ -23,7 +23,7 @@ content:
       deconstructing and re-recording, the immersive environment plays on
       photography’s ability to direct and frame our attention.
     marginLeft: 0
-    marginTop: 15
+    marginTop: 12
     ratio: 0
     video:
       autoplay: false
@@ -31,24 +31,24 @@ content:
       isMuted: true
       loops: true
   - image: /img/1.jpg
-    marginLeft: 14
-    marginTop: 0
-    video:
-      autoplay: false
-      hasControls: false
-      isMuted: true
-      loops: true
-    width: 35
-  - image: /img/2.jpg
-    marginLeft: 62
-    marginTop: -24
-    ratio: 0
+    marginLeft: 16
+    marginTop: 14
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
     width: 34
+  - image: /img/2.jpg
+    marginLeft: 63
+    marginTop: -15
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 35
   - image: /img/3.jpg
     marginLeft: 0
     marginTop: -6
@@ -59,8 +59,8 @@ content:
       isMuted: true
       loops: true
     width: 55
-  - marginLeft: 20
-    marginTop: 15
+  - marginLeft: 15
+    marginTop: 18
     ratio: 52.7
     video:
       autoplay: true
@@ -69,7 +69,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/398005018.hd.mp4?s=18417787d590d6a66bc58fc04b7517c419152192&profile_id=174
-    width: 62
+    width: 70
   - caption: >-
       Everything is seamlessly connected in this universe, from throwbacks to
       the previous collection to the journey between editorial and e-commerce.
@@ -77,7 +77,7 @@ content:
       navigating away to a separate, homogenous page: each piece is shot on the
       model in front of the space they are standing in.
     marginLeft: 0
-    marginTop: 0
+    marginTop: 15
     ratio: 0
     video:
       autoplay: false
@@ -85,8 +85,8 @@ content:
       isMuted: true
       loops: true
   - image: /img/4.jpg
-    marginLeft: 0
-    marginTop: 16
+    marginLeft: 8.75
+    marginTop: 18
     ratio: 0
     video:
       autoplay: false
@@ -96,17 +96,17 @@ content:
     width: 57
   - image: /img/6.jpg
     marginLeft: 0
-    marginTop: 16
+    marginTop: 15
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
-    width: 39
+    width: 38
   - image: /img/5.jpg
-    marginLeft: 51
-    marginTop: -48
+    marginLeft: 50
+    marginTop: -47.5
     ratio: 0
     video:
       autoplay: false
