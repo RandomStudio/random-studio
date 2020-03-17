@@ -104,5 +104,34 @@ content:
       isMuted: true
       loops: true
     width: 39
+  - image: /img/5.jpg
+    marginLeft: 51
+    marginTop: -48
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 40
+  - image: /img/7.png
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 70
+  - image: /img/8.png
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
 ---
 
