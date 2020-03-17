@@ -51,6 +51,32 @@ content:
     width: 34
   - image: /img/3.jpg
     marginLeft: 0
+    marginTop: -6
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 55
+  - marginLeft: 20
+    marginTop: 15
+    ratio: 52.7
+    video:
+      autoplay: true
+      hasControls: true
+      isMuted: false
+      loops: true
+      url: >-
+        https://player.vimeo.com/external/398005018.hd.mp4?s=18417787d590d6a66bc58fc04b7517c419152192&profile_id=174
+    width: 62
+  - caption: >-
+      Everything is seamlessly connected in this universe, from throwbacks to
+      the previous collection to the journey between editorial and e-commerce.
+      Viewers can browse and explore the collection in-situ rather than
+      navigating away to a separate, homogenous page: each piece is shot on the
+      model in front of the space they are standing in.
+    marginLeft: 0
     marginTop: 0
     ratio: 0
     video:
@@ -58,21 +84,25 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
-    marginTop: 0
+  - image: /img/4.jpg
+    marginLeft: 0
+    marginTop: 16
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
-  - marginLeft: 0
-    marginTop: 0
+    width: 57
+  - image: /img/6.jpg
+    marginLeft: 0
+    marginTop: 16
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 39
 ---
 
