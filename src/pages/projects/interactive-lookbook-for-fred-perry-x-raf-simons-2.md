@@ -1,7 +1,7 @@
 ---
 templateKey: Project
 title: |
-  Interactive Lookbook for Fred Perry x Raf Simons 
+  Interactive Lookbook for Fred Perry x Raf Simons 2020
 intro: "For our third collaboration with Fred Perry x \LRaf Simons, we continued to explore further possibilities of the 360 world, this time revolving around their SS20 collection. \n\nThe house party we made for the AW19 shoot isn’t over yet: this meta-experience invites you backstage into a sweeping warehouse space filled with the same models and photographers at work on set."
 content:
   - marginLeft: 0
@@ -124,14 +124,43 @@ content:
       isMuted: true
       loops: true
     width: 70
-  - image: /img/8.png
-    marginLeft: 0
-    marginTop: 0
+  - image: /img/7.png
+    marginLeft: 15
+    marginTop: 35
     ratio: 0
     video:
       autoplay: false
       hasControls: false
       isMuted: true
       loops: true
+    width: 70
+  - image: /img/8.png
+    marginLeft: 15
+    marginTop: 5
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 70
+  - image: /img/9.jpg
+    marginLeft: 0
+    marginTop: 20
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+credits:
+  - key: 'For:'
+    value: |
+      Fred Perry
+  - key: 'Role:'
+    value: |-
+      Concept Development, Creative Direction, 
+      Art Direction, Photography, Animation, 
+      Web Development, Casting, Styling
 ---
 
