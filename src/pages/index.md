@@ -40,7 +40,7 @@ projects:
       marginLeft: 0
       marginTop: -2
       ratio: 0
-      width: 38
+      width: 35
   - caption: |-
       Kinetic architecture <br>
       for A/D/O by MINI
