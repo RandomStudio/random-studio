@@ -1,8 +1,17 @@
 ---
 templateKey: Project
-title: |
-  Interactive Lookbook for Fred Perry x Raf Simons 2020
-intro: "For our third collaboration with Fred Perry x \LRaf Simons, we continued to explore further possibilities of the 360 world, this time revolving around their SS20 collection. \n\nThe house party we made for the AW19 shoot isn’t over yet: this meta-experience invites you backstage into a sweeping warehouse space filled with the same models and photographers at work on set."
+title: |+
+  A Lookbook of Many Gazes for Fred Perry x Raf Simons
+
+intro: >-
+  What would it be like to trade perspectives with someone? To look at the world
+  through their eyes? And how can you unlock a story by piecing together
+  multiple perspectives? 
+
+
+  This was on our mind for our third collaboration with Fred Perry x Raf Simons.
+  For this new lookbook, the SS20 collection is seen through the eyes of many.
+  With no single perspective, the story unfolds from gaze-to-gaze.
 content:
   - marginLeft: 0
     marginTop: 0
@@ -15,13 +24,14 @@ content:
       url: >-
         https://player.vimeo.com/external/398004212.hd.mp4?s=00b78ca74a165fcbb04ed4c46cd70749b90c3538&profile_id=174
   - caption: >-
-      Here, instead of moving through time and space, you can jump from gaze to
-      gaze, travelling through the space to piece together fragments of the
-      story via a multiplicity of perspectives. Inspired by Gavin Watson’s
-      iconic imagery, which remains at the heart of the collection – this time
-      in colour – each viewpoint offers a fresh take on the scene. Staging,
-      deconstructing and re-recording, the immersive environment plays on
-      photography’s ability to direct and frame our attention.
+      Continuing our exploration of 360 storytelling, the lookbook follows on
+      from our previous collaborations. Last season's house party is still in
+      full swing, but we've shifted backstage to join the models and
+      photographers at work on set. Here, instead of moving through time and
+      space in a linear way, everything is compressed into a single moment. Time
+      and space collapse into one giant scene, with multiple stories unfolding
+      within it. Viewers can travel through the space through different
+      individuals, becoming part of the scene.
     marginLeft: 0
     marginTop: 12
     ratio: 0
@@ -71,11 +81,11 @@ content:
         https://player.vimeo.com/external/398005018.hd.mp4?s=18417787d590d6a66bc58fc04b7517c419152192&profile_id=174
     width: 70
   - caption: >-
-      Everything is seamlessly connected in this universe, from throwbacks to
-      the previous collection to the journey between editorial and e-commerce.
-      Viewers can browse and explore the collection in-situ rather than
-      navigating away to a separate, homogenous page: each piece is shot on the
-      model in front of the space they are standing in.
+      Inspired by the feeling of Gavin Watson’s iconic imagery, which remains at
+      the heart of the collection – this time in colour – each viewpoint offers
+      a fresh take on the scene. Staging, deconstructing and re-recording, the
+      immersive environment plays on photography’s ability to direct and frame
+      our attention.
     marginLeft: 0
     marginTop: 15
     ratio: 0
@@ -134,9 +144,23 @@ content:
       isMuted: true
       loops: true
     width: 70
+  - caption: >-
+      Everything is seamlessly connected in this universe, from throwbacks to
+      the previous collection to the journey between editorial and e-commerce.
+      Viewers can browse and explore the collection in-situ rather than
+      navigating away to a separate, homogenous page: each piece is shot on the
+      model in front of the space they are standing in.
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
   - image: /img/9.jpg
     marginLeft: 0
-    marginTop: 20
+    marginTop: 9
     video:
       autoplay: false
       hasControls: false
