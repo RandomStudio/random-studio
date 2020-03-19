@@ -38,9 +38,9 @@ projects:
     thumbnail:
       image: /img/jihye-1-.jpg
       marginLeft: 0
-      marginTop: 35
+      marginTop: -2
       ratio: 0
-      width: 30
+      width: 38
   - caption: |-
       Kinetic architecture <br>
       for A/D/O by MINI
@@ -48,7 +48,7 @@ projects:
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
       marginLeft: 65
-      marginTop: -5
+      marginTop: -30
       ratio: 0
       width: 35
   - caption: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
@@ -56,7 +56,7 @@ projects:
     thumbnail:
       image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
       marginLeft: 0
-      marginTop: -35
+      marginTop: -30
       width: 50
   - caption: |-
       Interactive retail fixture
@@ -67,8 +67,8 @@ projects:
 
       for Tommy Hilfiger
     thumbnail:
-      marginLeft: 50
-      marginTop: 20
+      marginLeft: 25
+      marginTop: 16
       ratio: 66.666666666
       video: >-
         https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
@@ -83,8 +83,8 @@ projects:
       for Fred Perry x Raf Simons
     thumbnail:
       image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
-      marginLeft: 30
-      marginTop: 15
+      marginLeft: 0
+      marginTop: 0
       ratio: 0
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
@@ -92,7 +92,7 @@ projects:
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60
-      marginTop: 0
+      marginTop: -14
       ratio: 0
       width: 40
   - caption: An immersive in-store environment for NikeLab Milano
