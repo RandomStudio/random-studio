@@ -29,6 +29,19 @@ projects:
       marginTop: 14
       width: 60
   - caption: |-
+      A Lookbook of Many Gazes 
+
+      for Fred Perry x Raf Simons
+    project: |+
+      A Lookbook of Many Gazes for Fred Perry x Raf Simons
+
+    thumbnail:
+      image: /img/jihye-1-.jpg
+      marginLeft: 0
+      marginTop: 35
+      ratio: 0
+      width: 30
+  - caption: |-
       Kinetic architecture <br>
       for A/D/O by MINI
     project: Kinetic architecture <br> for A/D/O by MINI
@@ -55,7 +68,7 @@ projects:
       for Tommy Hilfiger
     thumbnail:
       marginLeft: 50
-      marginTop: -5
+      marginTop: 20
       ratio: 66.666666666
       video: >-
         https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
