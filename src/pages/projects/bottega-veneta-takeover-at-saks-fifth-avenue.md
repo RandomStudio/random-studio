@@ -69,6 +69,26 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+  - image: /img/1stF_Pillar_2.jpg
+    marginLeft: 15
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 30
+  - image: /img/1stF_Pillar_1.jpg
+    marginLeft: 55
+    marginTop: -40
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
+    width: 30
   - image: /img/200304_BottegaVeneta_Saks__018.jpg
     marginLeft: 0
     marginTop: 12
