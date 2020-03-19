@@ -40,7 +40,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - image: /img/1.jpg
+  - image: /img/1.1.jpg
     marginLeft: 16
     marginTop: 14
     video:
