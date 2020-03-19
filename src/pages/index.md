@@ -37,7 +37,7 @@ projects:
 
     thumbnail:
       image: /img/jihye-1-.jpg
-      marginLeft: 0
+      marginLeft: 8
       marginTop: -2
       ratio: 0
       width: 35
