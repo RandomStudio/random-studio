@@ -2,11 +2,11 @@
 templateKey: Home
 layout: center
 video: >
-  https://player.vimeo.com/external/380435512.hd.mp4?s=42de8ed62d83917a95da30ff6724ba0352fd7798&profile_id=175
+  https://player.vimeo.com/external/399133083.hd.mp4?s=305952e78ff0b3d8ae3a462426e5c9687a1f7efc&profile_id=174
 collaborationCredits:
-  collaborator: A/D/O by MINI
+  collaborator: Fred Perry x Raf Simons
   url: >-
-    https://random.studio/projects/a-kinetic-architecture-piece-br-for-a-d-o-by-mini/
+    https://random.studio/projects/projects/interactive-lookbook-for-fred-perry-x-raf-simons-2
 intro: >-
   How can we reimagine the digital as a living, breathing part of our physical
   world?
