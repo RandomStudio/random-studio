@@ -1,0 +1,31 @@
+.wrapper {
+  background-image: linear-gradient(180deg, #000000 0%, #000000 95.36%, rgba(0, 0, 0, 0) 100%);
+  margin-bottom: 12rem;
+  padding-bottom: 8rem;
+}
+
+.listItem {
+  display: flex;
+  color: #fff;
+  font-size: var(--font-large);
+  margin-bottom: 10rem;
+
+  & > div {
+    position: relative;
+    flex: 1;
+    height: 60rem;
+  }
+
+  p {
+    padding: 65% 15%;
+  }
+
+  &.reversed {
+    flex-direction: row-reverse;
+  }
+}
+
+
+@media (min-width: 36rem) {}
+@media (min-width: 54rem) {}
+@media (min-width: 72rem) {}
