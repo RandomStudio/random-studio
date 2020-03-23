@@ -310,3 +310,47 @@ collections:
                     media_library:
                       config:
                         multiple: true
+      - file: src/pages/studio-new.md
+        label: "Studio temp page"
+        name: studio2
+        fields:
+          - label: "Template key"
+            name: templateKey
+            widget: hidden
+            default: studio2
+          - label: Highlights
+            name: highlight
+            widget: list
+            fields:
+              - label: Copy
+                name: copy
+                widget: text
+              - label: Image
+                name: image
+                widget: image
+              # - label: Image Position
+              #   name: position
+              #   options: ['left', 'right', 'center', 'top', 'bottom']
+          - label: Services
+            name: services
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: List of Services
+                name: list
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: text
+                  - label: Copy
+                    name: copy
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
+          - label: Our message
+            name: message
+            widget: text

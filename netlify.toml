@@ -16,3 +16,7 @@
   to = "/"
   status = 200
 
+[[redirects]]
+	from = "/studio-new"
+	to = "/studio"
+	status = 200
