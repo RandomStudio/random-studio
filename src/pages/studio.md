@@ -12,9 +12,6 @@ intro: >-
   <br> <br> We have a holistic, research-led approach that can be applied to
   products, experiences and platforms where spatial and digital design are
   integrated.
-
-
-  \-
 infoBlock:
   - collection:
       - images:
@@ -109,3 +106,4 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 ---
+
