@@ -28,7 +28,7 @@ exports.createPages = async ({ actions, graphql }) => {
         frontmatter: { templateKey },
       },
     }) => {
-      if (templateKey && templateKey !== 'Project') {
+      if (templateKey) {
         actions.createPage({
           path: slug,
           component: require.resolve(
