@@ -1,6 +1,3 @@
-.wrapper {
-}
-
 .header {
   font-size: var(--font-med);
   font-weight: normal;
@@ -26,27 +23,41 @@
 
 .serviceBlock {
   display: flex;
-  flex-direction: column;
   flex-direction: column-reverse;
   margin-bottom: 6rem;
 
   & > div {
     position: relative;
-    flex: 1;
   }
-
-  // h3 {
-  //   font-size: var(--font-med);
-  //   text-transform: uppercase;
-  // }
-
-  // p {
-  //   font-size: calc(var(--font-med) - 3px);
-  // }
 }
 
 @media (min-width: 42rem) {
+  .wrapper {
+    display: flex;
+    flex-flow: wrap;
+    width: 70%;
+    margin-left: auto;
+  }
+
+  .serviceBlock {
+    flex-direction: column;
+    width: 50%;
+    padding-right: 2rem;
+  }
+
+  .copyWrapper {
+    padding: 0;
+  }
 }
 
 @media (min-width: 68rem) {
+  .header {
+    font-size: var(--font-large);
+  }
+
+  .copyWrapper {
+    h3 {
+      font-size: var(--font-large);
+    }
+  }
 }

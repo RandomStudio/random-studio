@@ -5,19 +5,20 @@ import FluidImage from '../../../components/FluidImage/FluidImage';
 
 const ServiceList = ({ headerTitle, services }) => {
   return (
-    <section className={styles.wrapper}>
+    <>
       {headerTitle && <h2 className={styles.header}>{headerTitle}</h2>}
-
-      {services.map(({ title, copy, image }) => (
-        <div key={image.id} className={styles.serviceBlock}>
-          <div className={styles.copyWrapper}>
-            <h3>{title}</h3>
-            <p>{copy}</p>
+      <section className={styles.wrapper}>
+        {services.map(({ title, copy, image }) => (
+          <div key={image.id} className={styles.serviceBlock}>
+            <div className={styles.copyWrapper}>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </div>
+            <FluidImage image={image} />
           </div>
-          <FluidImage image={image} />
-        </div>
-      ))}
-    </section>
+        ))}
+      </section>
+    </>
   );
 };
 

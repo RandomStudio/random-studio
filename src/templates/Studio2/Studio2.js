@@ -72,7 +72,7 @@ const Studio2 = ({
         services={frontmatter.services.list}
         headerTitle={frontmatter.services.title}
       />
-      <Recruitee location={location} />
+      {/* <Recruitee location={location} /> */}
       <Footer {...indexPage.frontmatter} />
     </Layout>
   );
