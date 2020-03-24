@@ -6,6 +6,7 @@ import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import Message from './Message/Message';
+import Recruitee from '../Studio/Recruitee/Recruitee';
 
 export const query = graphql`
   query StudioPage($templateKey: String!) {
@@ -59,6 +60,7 @@ const Studio2 = ({
     studioPage: { fields, frontmatter },
     indexPage,
   },
+  location,
 }) => {
   return (
     <Layout>
@@ -70,7 +72,7 @@ const Studio2 = ({
         services={frontmatter.services.list}
         headerTitle={frontmatter.services.title}
       />
-
+      <Recruitee location={location} />
       <Footer {...indexPage.frontmatter} />
     </Layout>
   );
