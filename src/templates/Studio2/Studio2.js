@@ -4,6 +4,7 @@ import Layout from '../../components/Layout/Layout';
 import Highlight from './Highlight/Highlight';
 import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
+import Footer from '../../components/Footer/Footer';
 import Message from './Message/Message';
 
 export const query = graphql`
@@ -42,12 +43,21 @@ export const query = graphql`
         }
       }
     }
+
+    indexPage: markdownRemark(frontmatter: { templateKey: { eq: "Home" } }) {
+      frontmatter {
+        address
+        email
+        phone
+      }
+    }
   }
 `;
 
 const Studio2 = ({
   data: {
     studioPage: { fields, frontmatter },
+    indexPage,
   },
 }) => {
   return (
@@ -60,6 +70,8 @@ const Studio2 = ({
         services={frontmatter.services.list}
         headerTitle={frontmatter.services.title}
       />
+
+      <Footer {...indexPage.frontmatter} />
     </Layout>
   );
 };

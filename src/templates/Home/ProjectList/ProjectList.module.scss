@@ -67,6 +67,15 @@
   }
 }
 
+// Force overwrite the inline programmeticly set styles for small screens/mobile
+@media (max-width: 30rem) {
+  .thumbnail {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
 @media (min-width: 30rem) {
   .statement,
   .intermittentStatement {

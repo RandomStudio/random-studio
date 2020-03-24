@@ -1,3 +1,13 @@
 .wrapper {
-  font-size: var(--font-large);
+  font-size: var(--font-med);
+  margin-bottom: 3rem;;
+  padding: 2rem 1.4rem 0;
 }
+
+@media (min-width: 42rem) {
+  .wrapper {
+    font-size: var(--font-large);
+  }
+}
+
+@media (min-width: 68rem) {}

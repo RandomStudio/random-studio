@@ -19,7 +19,7 @@
   flex-direction: column-reverse;
   margin-bottom: 6rem;
   color: #fff;
-  font-size: var(--font-small);
+  font-size: var(--font-med);
 
   & > div {
     position: relative;
@@ -27,24 +27,19 @@
   }
 
   p {
-    width: 28rem;
+    max-width: 28rem;
     padding: 2rem 1.4rem 0;
   }
 }
 
 @media (min-width: 42rem) {
-  .wrapper {
-    margin-bottom: 12rem;
-    padding-bottom: 8rem;
-  }
-
   .listItem {
     flex-direction: row;
+    // Font size might change
     font-size: var(--font-med);
-    margin-bottom: 10rem;
 
     & > div {
-      height: 60rem;
+      height: 100vh;
     }
 
     p {
@@ -55,24 +50,30 @@
 
     &.reversed {
       flex-direction: row-reverse;
+
+      p {
+        max-width: 24rem;
+      }
     }
   }
 }
 
 @media (min-width: 68rem) {
-  .wrapper {
-  }
   .listItem {
     font-size: var(--font-large);
 
     p {
-      margin: 0 2rem 0 auto;
-      // margin-left: auto;
-      // margin: 0 2rem auto 2rem;
-      // padding: 65% 15%;
+      margin: 40% 2rem 0 auto;
+    }
+
+    &.reversed {
+      p {
+        margin: 40% auto 0 2rem;
+        max-width: 28rem;
+      }
     }
   }
 }
 
-@media (min-width: 72rem) {
-}
+// @media (min-width: 72rem) {
+// }
