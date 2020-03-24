@@ -5,57 +5,65 @@ import Img from 'gatsby-image';
 import styles from './ProjectList.module.scss';
 import ProjectVideo from '../ProjectVideo/ProjectVideo';
 
-export default ({ intro, middle, projects }) => (
+const ProjectList = ({ intro, middle, projects }) => (
   <div id="projects" className={styles.projects}>
     <div className={styles.statement}>
       <ReactMarkdown escapeHtml={false} source={intro} />
     </div>
-    {projects.map(({ thumbnail, title, slug }, index) => thumbnail && (
-      <React.Fragment key={index}>
-        <Link
-          className={styles.thumbnail}
-          key={slug}
-          id={slug}
-          style={{
-            marginTop: `${thumbnail.marginTop}%`,
-            marginLeft: `${thumbnail.marginLeft}%`,
-            width: `${thumbnail.width}%`,
-          }}
-          to={slug || '#'}
-        >
-          <div className={styles.media}>
-            {thumbnail.video ? (
-              <ProjectVideo
-                video={{
-                  autoplay: true,
-                  isMuted: true,
-                  hasControls: false,
-                  loops: true,
-                  url: thumbnail.video,
-                }}
-                ratio={thumbnail.ratio}
-              />
-            ) : !!thumbnail.image && thumbnail.image.childImageSharp ? (
-              <Img loading="auto" fluid={thumbnail.image.childImageSharp.fluid} />
-            ) : (
-              <img alt="" src={thumbnail.image} />
-            )}
-          </div>
+    {projects.map(
+      ({ thumbnail, title, slug }, index) =>
+        thumbnail && (
+          <React.Fragment key={index}>
+            <Link
+              className={styles.thumbnail}
+              key={slug}
+              id={slug}
+              style={{
+                marginTop: `${thumbnail.marginTop}%`,
+                marginLeft: `${thumbnail.marginLeft}%`,
+                width: `${thumbnail.width}%`,
+              }}
+              to={slug || '#'}
+            >
+              <div className={styles.media}>
+                {thumbnail.video ? (
+                  <ProjectVideo
+                    video={{
+                      autoplay: true,
+                      isMuted: true,
+                      hasControls: false,
+                      loops: true,
+                      url: thumbnail.video,
+                    }}
+                    ratio={thumbnail.ratio}
+                  />
+                ) : !!thumbnail.image && thumbnail.image.childImageSharp ? (
+                  <Img
+                    loading="auto"
+                    fluid={thumbnail.image.childImageSharp.fluid}
+                  />
+                ) : (
+                  <img alt="" src={thumbnail.image} />
+                )}
+              </div>
 
-          <div
-            className={styles.title}
-            style={{ marginLeft: !thumbnail.marginLeft && '1.4rem' }}
-          >
-            <ReactMarkdown escapeHtml={false} source={title} />
-          </div>
-        </Link>
-        {(index === 3
-          || (projects.length < 3 && index === projects.length - 1)) && (
-          <div className={styles.intermittentStatement}>
-            <ReactMarkdown escapeHtml={false} source={middle} />
-          </div>
-        )}
-      </React.Fragment>
-    ))}
+              <div
+                className={styles.title}
+                style={{ marginLeft: !thumbnail.marginLeft && '1.4rem' }}
+              >
+                <ReactMarkdown escapeHtml={false} source={title} />
+              </div>
+            </Link>
+            {(index === 3 ||
+              (projects.length < 3 && index === projects.length - 1)) && (
+              <div className={styles.intermittentStatement}>
+                <ReactMarkdown escapeHtml={false} source={middle} />
+              </div>
+            )}
+          </React.Fragment>
+        ),
+    )}
   </div>
 );
+
+export default ProjectList;
