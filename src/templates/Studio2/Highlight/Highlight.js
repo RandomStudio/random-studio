@@ -9,9 +9,9 @@ const Highlight = ({ highlights }) => {
       {highlights.map(({ copy, image }, index) => (
         <div
           key={image.id}
-          className={`${styles.listItem} ${index % 2 ? '' : styles.reversed}`}
+          className={`${styles.listItem} ${index % 2 ? styles.reversed : ''}`}
         >
-          <div>
+          <div className={styles.copyWrapper}>
             <p>{copy}</p>
           </div>
           <FluidImage image={image} />
