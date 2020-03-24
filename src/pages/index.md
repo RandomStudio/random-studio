@@ -2,7 +2,7 @@
 templateKey: Home
 layout: center
 video: >-
-  https://player.vimeo.com/external/400189647.hd.mp4?s=a8de9f72f0baceca567a308c2a19c392bccbcfe9&profile_id=174
+  https://player.vimeo.com/external/400189647.hd.mp4?s=a8de9f72f0baceca567a308c2a19c392bccbcfe9&profile_id=175
 collaborationCredits:
   collaborator: Fred Perry x Raf Simons
   url: >-
