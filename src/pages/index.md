@@ -6,7 +6,7 @@ video: >-
 collaborationCredits:
   collaborator: Fred Perry x Raf Simons
   url: >-
-    https://random.studio/projects/projects/interactive-lookbook-for-fred-perry-x-raf-simons-2/
+    https://random.studio/projects/interactive-lookbook-for-fred-perry-x-raf-simons-2/
 intro: >-
   How can we reimagine the digital as a living, breathing part of our physical
   world?
