@@ -14,9 +14,7 @@ intro: >-
   With no single perspective, the story unfolds from gaze-to-gaze.
 
 
-
-
-  [fredperry.com/rafsimons-20](fredperry.com/rafsimons-20)
+  [fredperry.com/rafsimons-20](https://www.fredperry.com/rafsimons-20)
 content:
   - marginLeft: 0
     marginTop: 0
