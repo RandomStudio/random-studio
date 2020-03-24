@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image/withIEPolyfill';
 import styles from './Highlight.module.scss';
+import FluidImage from '../../../components/FluidImage/FluidImage';
 
 const Highlight = ({ highlights }) => {
   return (
@@ -14,17 +14,7 @@ const Highlight = ({ highlights }) => {
           <div>
             <p>{copy}</p>
           </div>
-          {image.childImageSharp ? (
-            <Img
-              objectFit="cover"
-              loading="auto"
-              fluid={image.childImageSharp.fluid}
-            />
-          ) : (
-            <div>
-              <img alt="" src={image} />
-            </div>
-          )}
+          <FluidImage image={image} />
         </div>
       ))}
     </section>

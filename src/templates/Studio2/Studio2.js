@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout/Layout';
 import Highlight from './Highlight/Highlight';
-import Service from './Service/Service';
+import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
+import Message from './Message/Message';
 
 export const query = graphql`
   query StudioPage($templateKey: String!) {
@@ -14,12 +15,27 @@ export const query = graphql`
         slug
       }
       frontmatter {
+        message
         highlights: highlight {
           copy
           image {
             childImageSharp {
               fluid(maxWidth: 1280, quality: 70) {
                 ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        services {
+          title
+          list {
+            title
+            copy
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1280, quality: 70) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
               }
             }
           }
@@ -38,7 +54,12 @@ const Studio2 = ({
     <Layout>
       <SEO title="Studio" pathName={fields.slug} />
       <Highlight highlights={frontmatter.highlights} />
-      <Service />
+      <Message message={frontmatter.message} />
+
+      <ServiceList
+        services={frontmatter.services.list}
+        headerTitle={frontmatter.services.title}
+      />
     </Layout>
   );
 };
