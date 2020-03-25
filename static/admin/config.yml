@@ -116,6 +116,22 @@ collections:
             default: 0
             valueType: float
             widget: nonEmptyStringableNumber
+      - label: "Linked Article"
+        name: article
+        widget: object
+        fields:
+          - label: "Show Article"
+            name: isVisible
+            widget: boolean
+            default: true
+          - label: quote
+            name: quote
+            required: false
+            widget: text
+          - label: "Article URL"
+            name: articleUrl
+            required: false
+            widget: string
       - label: Credits
         name: credits
         widget: list
