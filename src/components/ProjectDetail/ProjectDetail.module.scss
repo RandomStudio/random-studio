@@ -63,9 +63,8 @@
 }
 
 .credits {
-  margin-bottom: 5%;
-  padding: 8rem 0 0;
-  max-width: 48rem;
+  margin: 10vw 0 5%;
+  padding: 8rem 1.4rem 0;
 
   ul {
     padding-bottom: 1.4rem;
@@ -112,9 +111,13 @@
   }
 
   .credits {
+    width: var(--width);
+    margin: 8vw 0;
+    padding: 8rem 4rem 0;
+
     ul {
       display: flex;
-      padding: 0 4rem;
+      // padding: 0 4rem;
       li {
         flex: 1;
       }
@@ -154,6 +157,7 @@
   }
 
   .credits {
+    max-width: 48rem;
     margin: 0 auto 8%;
   }
 }
