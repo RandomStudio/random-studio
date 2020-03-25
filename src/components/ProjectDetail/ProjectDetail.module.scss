@@ -64,8 +64,8 @@
 
 .credits {
   margin-bottom: 5%;
-  padding: 8rem 1.4rem 0;
-  max-width: 60rem;
+  padding: 8rem 0 0;
+  max-width: 48rem;
 
   ul {
     padding-bottom: 1.4rem;
@@ -79,6 +79,10 @@
 }
 
 @media (min-width: 36rem) {
+  .project {
+    padding-top: 8rem;
+  }
+
   .title,
   .intro,
   .text {
@@ -119,6 +123,10 @@
 }
 
 @media (min-width: 54rem) {
+  .project {
+    padding-top: 12rem;
+  }
+
   .title,
   .intro,
   .text {
@@ -146,17 +154,15 @@
   }
 
   .credits {
-    padding-right: 4.8rem;
-    padding-left: 4.8rem;
-    margin: 0 auto;
-    margin-bottom: 8%;
+    margin: 0 auto 8%;
   }
 }
 
 @media (min-width: 72rem) {
   .title,
   .intro,
-  .text {
+  .text,
+  .credits {
     max-width: 64rem;
   }
 
