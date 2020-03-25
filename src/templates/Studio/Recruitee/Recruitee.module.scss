@@ -27,7 +27,7 @@
 }
 
 .open-roles {
-  color: #ff0000;
+  color: var(--red);
   margin-bottom: 2rem;
 
   @media (min-width: 36rem) {
