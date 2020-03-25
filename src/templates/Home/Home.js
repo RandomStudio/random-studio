@@ -20,6 +20,11 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            article {
+              articleUrl
+              isVisible
+              quote
+            }
           }
         }
       }
@@ -63,12 +68,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const Home = ({
-  data: {
-    allMarkdownRemark,
-    markdownRemark,
-  },
-}) => {
+const Home = ({ data: { allMarkdownRemark, markdownRemark } }) => {
   const edges = allMarkdownRemark.edges || [];
   const fields = markdownRemark ? markdownRemark.fields : {};
   const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
@@ -83,21 +83,26 @@ const Home = ({
       />
       <ProjectList
         {...frontmatter}
-        projects={(frontmatter.projects || []).map(
-          ({
-            caption, project: projectTitle, thumbnail,
-          }) => {
-            const project = edges.find(({ node: { frontmatter: { title } } }) => title === projectTitle);
+        projects={(frontmatter.projects || [])
+          .map(({ caption, project: projectTitle, thumbnail }) => {
+            const project = edges.find(
+              ({
+                node: {
+                  frontmatter: { title },
+                },
+              }) => title === projectTitle,
+            );
             if (!project) {
               return null;
             }
-            return ({
+            return {
               slug: project.node.fields.slug,
               title: caption || project.node.frontmatter.title,
               thumbnail,
-            });
-          },
-        ).filter(project => project !== null)}
+              article: project.node.frontmatter.article,
+            };
+          })
+          .filter(project => project !== null)}
       />
       <Footer {...frontmatter} />
     </Layout>
