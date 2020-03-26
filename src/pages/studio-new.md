@@ -26,7 +26,7 @@ services:
       title: Connected Space
   title: Services & Expertise
 message: 'We are artists, designers and engineers who follow a research-led approach.'
-skillset:
+skillsets:
   - Strategy
   - Concept
   - Art Direction
@@ -34,4 +34,3 @@ skillset:
   - UX Design
   - Engineering
 ---
-

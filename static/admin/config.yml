@@ -328,9 +328,6 @@ collections:
               - label: Image
                 name: image
                 widget: image
-              # - label: Image Position
-              #   name: position
-              #   options: ['left', 'right', 'center', 'top', 'bottom']
           - label: Services
             name: services
             widget: object
@@ -338,7 +335,7 @@ collections:
               - label: Title
                 name: title
                 widget: text
-              - label: List of Services
+              - label: "List of Services"
                 name: list
                 widget: list
                 fields:
@@ -351,6 +348,13 @@ collections:
                   - label: Image
                     name: image
                     widget: image
-          - label: Our message
+          - label: "Our message"
             name: message
             widget: text
+          - label: "Our Skillset"
+            name: skillsets
+            widget: list
+            field:
+              label: Skill
+              name: skill
+              widget: string
