@@ -20,6 +20,7 @@ export const query = graphql`
       }
       frontmatter {
         message
+        skillsets
         highlights: highlight {
           copy
           image {
@@ -75,7 +76,7 @@ const Studio2 = ({
         headerTitle={frontmatter.services.title}
       />
 
-      <SkillList />
+      <SkillList skillsets={frontmatter.skillsets} />
       <Conversation email={indexPage.frontmatter.email} />
 
       {/* <Recruitee location={location} /> */}

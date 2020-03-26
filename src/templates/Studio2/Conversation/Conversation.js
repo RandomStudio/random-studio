@@ -6,12 +6,13 @@ const Converstation = ({ email }) => {
   return (
     <div className={styles.wrapper}>
       <p>Start a converstation</p>
-      <a href={`mailto:${email}`}>{email}</a>
+      <a href={`mailto:${email}`}>Contact Us</a>
     </div>
   );
 };
 
-Converstation.propTypes = {};
-Converstation.defaultProps = {};
+Converstation.propTypes = {
+  email: PropTypes.string.isRequired,
+};
 
 export default Converstation;
