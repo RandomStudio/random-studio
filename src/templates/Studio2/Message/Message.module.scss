@@ -6,8 +6,17 @@
 
 @media (min-width: 42rem) {
   .wrapper {
-    font-size: var(--font-large);
+    max-width: 580px;
+    margin-left: 120px;
+    margin-bottom: 48px;
   }
 }
 
-@media (min-width: 68rem) {}
+@media (min-width: 68rem) {
+  .wrapper {
+    max-width: 760px;
+    font-size: 42px;
+    margin-left: 220px;
+    margin-bottom: 48px;
+  }
+}

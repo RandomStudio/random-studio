@@ -1,63 +1,114 @@
 .header {
-  font-size: var(--font-med);
+  font-size: 42px;
   font-weight: normal;
-  margin-bottom: 3rem;
-  padding: 2rem 1.4rem 0;
+  margin-bottom: 48px;
+  padding: 32px 24px 0;
 }
 
 .copyWrapper {
-  margin-bottom: 1.2rem;
-  margin-bottom: 2rem;
-  padding: 2rem 1.4rem 0;
+  max-width: 400px;
+  margin-bottom: 32px;
+  padding: 32px 1.4rem 0;
 
   h3 {
-    font-size: var(--font-med);
+    font-size: 32px;
     font-weight: normal;
-    margin-bottom: .6rem;
+    margin-bottom: 10px;
   }
 
   p {
-    font-size: var(--font-small);
+    font-size: 20px;
   }
 }
 
 .serviceBlock {
   display: flex;
   flex-direction: column-reverse;
-  margin-bottom: 6rem;
-
-  & > div {
-    position: relative;
-  }
+  width: 100%;
+  margin-bottom: 96px;
 }
 
+.imageWrapper {}
+
 @media (min-width: 42rem) {
+  .header {
+    margin-left: 220px;
+    margin-bottom: 160px;
+  }
+
   .wrapper {
     display: flex;
     flex-flow: wrap;
-    width: 70%;
-    margin-left: auto;
-  }
 
-  .serviceBlock {
-    flex-direction: column;
-    width: 50%;
-    padding-right: 2rem;
-  }
+    .serviceBlock {
+      flex-direction: row;
+      margin: 0;
 
-  .copyWrapper {
-    padding: 0;
-  }
-}
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
+        align-items: center;
 
-@media (min-width: 68rem) {
-  .header {
-    font-size: var(--font-large);
-  }
+        .copyWrapper,
+        .imageWrapper {
+          width: 50%;
+        }
+      }
 
-  .copyWrapper {
-    h3 {
-      font-size: var(--font-large);
+      &:nth-of-type(1) {
+        flex-direction: row-reverse;
+
+        .copyWrapper {
+          margin-right: auto;
+          padding-left: 120px;
+        }
+
+        .imageWrapper {
+          width: 40%;
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin: 0 120px 250px;
+
+        .copyWrapper {
+          margin: 0 120px 0 auto;
+        }
+
+        .imageWrapper {
+          width: 38%;
+        }
+      }
+
+      &:nth-of-type(3) {
+        flex-direction: column-reverse;
+        width: 33%;
+
+        .copyWrapper {
+          margin-top: 56px;
+        }
+
+        .imageWrapper {
+          width: 100%;
+        }
+      }
+    }
+
+    .copyWrapper {
+      padding: 0;
     }
   }
 }
+
+// @media (min-width: 68rem) {
+//   .header {
+//     font-size: var(--font-large);
+//   }
+
+//   .copyWrapper {
+//     h3 {
+//       font-size: var(--font-large);
+//     }
+//   }
+// }
+
+//  3/7

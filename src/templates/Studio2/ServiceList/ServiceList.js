@@ -14,7 +14,7 @@ const ServiceList = ({ headerTitle, services }) => {
               <h3>{title}</h3>
               <p>{copy}</p>
             </div>
-            <FluidImage image={image} />
+            <FluidImage className={styles.imageWrapper} image={image} />
           </div>
         ))}
       </section>
