@@ -1,0 +1,23 @@
+.wrapper {
+  font-size: var(--px-font-large);
+  padding-left: 120px;
+
+  h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+}
+
+.listWrapper {
+  line-height: 52px;
+}
+
+
+@media (min-width: 42rem) {
+  .wrapper {
+    display: inline-block;
+    width: 50%;
+  }
+}

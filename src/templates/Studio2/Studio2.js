@@ -7,6 +7,8 @@ import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import Message from './Message/Message';
 import Recruitee from '../Studio/Recruitee/Recruitee';
+import SkillList from './SkillList/SkillList';
+import Conversation from './Conversation/Conversation';
 
 export const query = graphql`
   query StudioPage($templateKey: String!) {
@@ -72,6 +74,10 @@ const Studio2 = ({
         services={frontmatter.services.list}
         headerTitle={frontmatter.services.title}
       />
+
+      <SkillList />
+      <Conversation email={indexPage.frontmatter.email} />
+
       {/* <Recruitee location={location} /> */}
       <Footer {...indexPage.frontmatter} />
     </Layout>

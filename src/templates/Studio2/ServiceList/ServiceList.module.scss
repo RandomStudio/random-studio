@@ -1,3 +1,7 @@
+.wrapper {
+  margin-bottom: 280px;
+}
+
 .header {
   font-size: var(--px-font-large);
   font-weight: normal;
@@ -82,6 +86,7 @@
       &:nth-of-type(3) {
         flex-direction: column-reverse;
         width: 33%;
+        margin: auto;
 
         .copyWrapper {
           margin-top: 56px;

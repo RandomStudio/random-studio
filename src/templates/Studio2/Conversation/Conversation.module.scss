@@ -1,0 +1,8 @@
+.wrapper {}
+
+@media (min-width: 42rem) {
+  .wrapper {
+    display: inline-block;
+    width: 50%;
+  }
+}
