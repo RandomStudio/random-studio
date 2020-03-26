@@ -6,5 +6,11 @@
   --font-large: 2.5rem;
   --font-logo-small: 3.2rem;
   --font-logo-medium: 5rem;
-  --font-logo-large: 5.6rem;
+	--font-logo-large: 5.6rem;
+
+
+	/* To replace the rems above later on */
+	--px-font-small: 20px;
+	--px-font-med: 32px;
+	--px-font-large: 42px;
 }
