@@ -6,15 +6,12 @@ import FluidImage from '../../../components/FluidImage/FluidImage';
 const Highlight = ({ highlights }) => {
   return (
     <section className={styles.wrapper}>
-      {highlights.map(({ copy, image }, index) => (
-        <div
-          key={image.id}
-          className={`${styles.listItem} ${index % 2 ? styles.reversed : ''}`}
-        >
+      {highlights.map(({ copy, image }) => (
+        <div key={image.id} className={styles.listItem}>
           <div className={styles.copyWrapper}>
             <p>{copy}</p>
           </div>
-          <FluidImage image={image} />
+          <FluidImage className={styles.imageWrapper} image={image} />
         </div>
       ))}
     </section>
