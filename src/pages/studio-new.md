@@ -1,31 +1,34 @@
 ---
 templateKey: Studio2
 highlight:
-  - copy: >-
-      We create brand & service experiences that trigger a sense of wonder, in a
-      space where the digital meets the physical space.
-    image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
-  - copy: "These spaces are dynamic, interactive, \Land offer a dialogue with their visitors."
-    image: /img/200304_BottegaVeneta_Saks__047.jpg
+  - copy: |-
+      Random Studio
+
+      We create brand and service experiences that trigger a sense of wonder.
+    image: /img/wec190502_chanel_j12_022_2.jpg
+  - copy: 'Our work comes to life in the space where the digital meets the physical. '
+    image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
 services:
   list:
-    - copy: >-
-        Product Strategy, User Research, Design, Technology, Analytics &
-        Optimization:
-      image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
-      title: Connected Space
-    - copy: >-
-        Product Strategy, User Research, Design, Technology, Analytics &
-        Optimization:
-      image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
-      title: Connected Space
-    - copy: >-
-        Product Strategy, User Research, Design, Technology, Analytics &
-        Optimization:
-      image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
-      title: Connected Space
-  title: Services & Expertise
-message: 'We are artists, designers and engineers who follow a research-led approach.'
+    - copy: |
+        Interactive brand and service experiences,
+        including strategy, spatial design and engineering.
+      image: /img/connected-space-02-lv-2x.jpg
+      title: |-
+        Experience Design For
+        Retail and Exhibitions
+    - copy: |-
+        Strategy and continuous development
+        for services, tools and spatial infrastructure.
+      image: /img/human-centered-products-02-Digital-Showroom@2x.jpg
+      title: Product Development
+    - copy: |-
+        R&D Partnerships including bespoke trend reports,
+        future concepts and prototypes.
+      image: /img/wec190502_chanel_j12_010_5.jpg
+      title: Design Research
+  title: 'Our Areas of Expertise:'
+message: Our work comes to life in the space where the digital meets the physical.
 skillsets:
   - Strategy
   - Concept
@@ -34,3 +37,4 @@ skillsets:
   - UX Design
   - Engineering
 ---
+
