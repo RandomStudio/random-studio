@@ -358,3 +358,26 @@ collections:
               label: Skill
               name: skill
               widget: string
+          - label: "Studio impression"
+            name: studioImpression
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                default: "Studio Impressions"
+                widget: text
+              - label: "Show carousel indicator"
+                name: showIndicator
+                widget: boolean
+                required: false
+                default: false
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - label: Image
+                    name: image
+                    widget: image
+                    media_library:
+                      config:
+                        multiple: true

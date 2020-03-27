@@ -36,5 +36,15 @@ skillsets:
   - Spatial Design
   - UX Design
   - Engineering
+studioImpression:
+  images:
+    - image: /img/studio_01.jpg
+    - image: /img/studio_02.jpg
+    - image: /img/studio_03.jpg
+    - image: /img/studio_04.jpg
+    - image: /img/studio_05.jpg
+    - image: /img/studio_06.jpg
+    - image: /img/studio_07.jpg
+  showIndicator: true
+  title: Studio Impressions
 ---
-
