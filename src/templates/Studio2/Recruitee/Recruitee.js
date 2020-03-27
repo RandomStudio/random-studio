@@ -55,11 +55,10 @@ const Recruitee = ({ location }) => {
   return (
     <>
       <aside className={styles.recruitee}>
-        <p className={styles.openRoles}>Open Roles</p>
+        <p className={styles.openRoles}>Open Positions</p>
         <ul className={styles.list}>
           {recruiteeData.offers.map(offer => (
             <li className={styles.item} key={offer.id}>
-              <p className={styles.department}>{offer.department}</p>
               <a
                 className={styles.role}
                 href={`#${offer.id}`}

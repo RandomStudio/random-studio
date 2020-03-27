@@ -18,7 +18,7 @@ const FluidImage = ({ image, objectFit, loading, className }) =>
 
 FluidImage.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-  objectFit: PropTypes.string,
+  objectFit: PropTypes.oneOf(['contain', 'cover']),
   loading: PropTypes.string,
   className: PropTypes.string,
 };

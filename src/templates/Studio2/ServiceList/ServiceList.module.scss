@@ -1,7 +1,3 @@
-.wrapper {
-  margin-bottom: 280px;
-}
-
 .header {
   font-size: var(--px-font-large);
   font-weight: normal;
@@ -31,8 +27,6 @@
   width: 100%;
   margin-bottom: 96px;
 }
-
-.imageWrapper {}
 
 @media (min-width: 42rem) {
   .header {

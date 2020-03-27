@@ -1,6 +1,6 @@
 .wrapper {
+  flex: 1;
   font-size: var(--px-font-large);
-  padding-left: 120px;
 
   h3 {
     font-size: 24px;
@@ -14,10 +14,12 @@
   line-height: 52px;
 }
 
-
-@media (min-width: 42rem) {
+@media (min-width: 48rem) {
   .wrapper {
-    display: inline-block;
-    width: 50%;
+    margin: 0;
+
+    h3, .listWrapper {
+      padding-left: 120px;
+    }
   }
 }

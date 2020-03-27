@@ -1,17 +1,34 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styles from './Studio2.module.scss';
 import Layout from '../../components/Layout/Layout';
 import Highlight from './Highlight/Highlight';
 import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import Message from './Message/Message';
-import Recruitee from '../Studio/Recruitee/Recruitee';
+import Recruitee from './Recruitee/Recruitee';
 import SkillList from './SkillList/SkillList';
 import Conversation from './Conversation/Conversation';
+import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 
 export const query = graphql`
   query StudioPage($templateKey: String!) {
+    studioOld: markdownRemark(frontmatter: { templateKey: { eq: "Studio" } }) {
+      frontmatter {
+        studioImpression {
+          images {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1280, quality: 70) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     studioPage: markdownRemark(
       frontmatter: { templateKey: { eq: $templateKey } }
     ) {
@@ -60,6 +77,9 @@ export const query = graphql`
 
 const Studio2 = ({
   data: {
+    studioOld: {
+      frontmatter: { studioImpression },
+    },
     studioPage: { fields, frontmatter },
     indexPage,
   },
@@ -76,10 +96,18 @@ const Studio2 = ({
         headerTitle={frontmatter.services.title}
       />
 
-      <SkillList skillsets={frontmatter.skillsets} />
-      <Conversation email={indexPage.frontmatter.email} />
+      <div className={styles.wrapper}>
+        <SkillList skillsets={frontmatter.skillsets} />
+        <Conversation email={indexPage.frontmatter.email} />
+      </div>
 
-      {/* <Recruitee location={location} /> */}
+      <div className={styles.wrapper} style={{ minHeight: 800 }}>
+        <Recruitee location={location} />
+        <div style={{ flex: 1 }}>
+          <ImageCarousel images={studioImpression.images} />
+        </div>
+      </div>
+
       <Footer {...indexPage.frontmatter} />
     </Layout>
   );

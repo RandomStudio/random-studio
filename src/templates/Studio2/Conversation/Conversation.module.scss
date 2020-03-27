@@ -1,11 +1,12 @@
-.wrapper {}
+.wrapper {
+  flex: 1;
+  align-self: flex-end;
+  margin-top: auto;
+}
 
-@media (min-width: 42rem) {
+@media (min-width: 48rem) {
   .wrapper {
-    display: inline-block;
     font-size: var(--px-font-large);
-    width: 50%;
     line-height: 52px;
-    margin-bottom: 252px;
   }
 }

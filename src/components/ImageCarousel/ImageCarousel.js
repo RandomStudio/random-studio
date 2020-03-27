@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import Img from 'gatsby-image/withIEPolyfill';
+import PropTypes from 'prop-types';
 import styles from './ImageCarousel.module.scss';
+import FluidImage from '../FluidImage/FluidImage';
 
-const ImageCarousel = ({ images, showIndicator, title }) => {
+const ImageCarousel = ({ images, showIndicator, title, objectFit }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNextImage = () => {
@@ -31,11 +32,7 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
             className={`${images.length > 1 && styles.hasMultiple}`}
             onClick={handleNextImage}
           >
-            {image.childImageSharp ? (
-              <Img objectFit="contain" loading="auto" fluid={image.childImageSharp.fluid} />
-            ) : (
-              <img alt="" src={image} />
-            )}
+            <FluidImage image={image} objectFit={objectFit} loading="auto" />
           </div>
           {caption && <ReactMarkdown escapeHtml={false} source={caption} />}
         </div>
@@ -43,13 +40,24 @@ const ImageCarousel = ({ images, showIndicator, title }) => {
       <div className={styles.indicatorWrapper}>
         {title && <p>{title}</p>}
         {showIndicator && images.length > 1 && (
-          <span>
-            {`${currentIndex + 1} of ${images.length}`}
-          </span>
+          <span>{`${currentIndex + 1} of ${images.length}`}</span>
         )}
       </div>
     </div>
   );
+};
+
+ImageCarousel.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  objectFit: PropTypes.oneOf(['contain', 'cover']),
+  showIndicator: PropTypes.bool,
+  title: PropTypes.string,
+};
+
+ImageCarousel.defaultProps = {
+  objectFit: 'cover',
+  showIndicator: false,
+  title: '',
 };
 
 export default ImageCarousel;

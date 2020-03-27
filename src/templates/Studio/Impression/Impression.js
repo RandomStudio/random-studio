@@ -9,6 +9,7 @@ const Impression = ({ data: { title, showIndicator, images } }) => (
         images={images}
         showIndicator={showIndicator}
         title={title}
+        objectFit="contain"
       />
     </div>
   </div>

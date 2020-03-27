@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  margin: 360px 0 280px;
+  flex-direction: column;
+
+  @media(min-width: 48rem) {
+    flex-direction: row;
+  }
+}
