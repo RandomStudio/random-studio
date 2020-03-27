@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { graphql } from 'gatsby';
 import styles from './Studio2.module.scss';
 import Layout from '../../components/Layout/Layout';
@@ -21,6 +21,7 @@ export const query = graphql`
         slug
       }
       frontmatter {
+        title
         message
         skillsets
         highlights: highlight {
@@ -80,33 +81,67 @@ const Studio2 = ({
   },
   location,
 }) => {
+  const highlightRef = useRef();
+  const [themeClass, setThemeClass] = useState();
+
+  useEffect(() => {
+    console.log(highlightRef);
+
+    if (window.IntersectionObserver) {
+      setThemeClass(styles.darkTheme);
+
+      const options = {
+        rootMargin: '0px',
+      };
+
+      const cb = entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setThemeClass(styles.darkTheme);
+          } else {
+            setThemeClass();
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(cb, options);
+      observer.observe(highlightRef.current);
+    }
+  }, []);
+
   return (
     <Layout>
-      <SEO title="Studio" pathName={fields.slug} />
-      <Highlight highlights={frontmatter.highlights} />
-      <Message message={frontmatter.message} />
-
-      <ServiceList
-        services={frontmatter.services.list}
-        headerTitle={frontmatter.services.title}
-      />
-
-      <div className={styles.skillContactBlock}>
-        <SkillList skillsets={frontmatter.skillsets} />
-        <Conversation email={indexPage.frontmatter.email} />
-      </div>
-
-      <div className={styles.jobsImpressionBlock}>
-        <Recruitee location={location} />
-        <ImageCarousel
-          className={styles.carouselWrapper}
-          images={frontmatter.studioImpression.images}
-          showIndicator={frontmatter.studioImpression.showIndicator}
-          title={frontmatter.studioImpression.title}
+      <div className={`${styles.wrapper} ${themeClass}`}>
+        <SEO title="Studio" pathName={fields.slug} />
+        <Highlight
+          title={frontmatter.title}
+          highlights={frontmatter.highlights}
+          ref={highlightRef}
         />
-      </div>
+        <Message message={frontmatter.message} />
 
-      <Footer {...indexPage.frontmatter} />
+        <ServiceList
+          services={frontmatter.services.list}
+          headerTitle={frontmatter.services.title}
+        />
+
+        <div className={styles.skillContactBlock}>
+          <SkillList skillsets={frontmatter.skillsets} />
+          <Conversation email={indexPage.frontmatter.email} />
+        </div>
+
+        <div className={styles.jobsImpressionBlock}>
+          <Recruitee location={location} />
+          <ImageCarousel
+            className={styles.carouselWrapper}
+            images={frontmatter.studioImpression.images}
+            showIndicator={frontmatter.studioImpression.showIndicator}
+            title={frontmatter.studioImpression.title}
+          />
+        </div>
+
+        <Footer {...indexPage.frontmatter} />
+      </div>
     </Layout>
   );
 };

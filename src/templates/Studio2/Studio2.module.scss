@@ -23,3 +23,13 @@
     height: 1060px;
   }
 }
+
+.wrapper {
+  transition: background .35s ease-in-out,color .35s ease-in-out;
+  will-change: background,color;
+}
+
+.dark-theme {
+  background: #000;
+  color: #fff;
+}
