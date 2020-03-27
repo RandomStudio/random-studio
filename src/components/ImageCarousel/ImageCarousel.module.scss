@@ -1,14 +1,16 @@
 .carousel {
+  position: relative;
   // The gatsby generated image wrapper & img fallback
   & > div > div,
   img {
-    margin-bottom: 0.8rem;
+    // margin-bottom: 0.8rem;
     object-fit: contain;
   }
 
   p,
   span {
-    margin-left: 1.4rem;
+    // margin-left: 1.4rem;
+    font-size: var(--px-font-xxs);
   }
 }
 
@@ -30,6 +32,13 @@
 }
 
 .indicatorWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 10px -10px;
+  line-height: .9;
+  transform: rotate3d(0, 0, 1, -90deg);
+  transform-origin: bottom left;
   pointer-events: none;
 }
 
@@ -37,7 +46,7 @@
   .carousel {
     p,
     span {
-      margin-left: 2rem;
+      // margin-left: 2rem;
     }
   }
 }

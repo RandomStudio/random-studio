@@ -10,6 +10,7 @@
 
 
 	/* To replace the rems above later on */
+	--px-font-xxs: 16px;
 	--px-font-small: 20px;
 	--px-font-med: 32px;
 	--px-font-large: 42px;

@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import styles from './ImageCarousel.module.scss';
 import FluidImage from '../FluidImage/FluidImage';
 
-const ImageCarousel = ({ images, showIndicator, title, objectFit }) => {
+const ImageCarousel = ({
+  images,
+  showIndicator,
+  title,
+  objectFit,
+  className,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNextImage = () => {
@@ -14,7 +20,7 @@ const ImageCarousel = ({ images, showIndicator, title, objectFit }) => {
   if (!images) return null;
 
   return (
-    <div className={styles.carousel}>
+    <div className={`${styles.carousel} ${className}`}>
       {images.map(({ image, caption }, index) => (
         <div
           className={`
@@ -48,6 +54,7 @@ const ImageCarousel = ({ images, showIndicator, title, objectFit }) => {
 };
 
 ImageCarousel.propTypes = {
+  className: PropTypes.string,
   images: PropTypes.arrayOf(PropTypes.object).isRequired,
   objectFit: PropTypes.oneOf(['contain', 'cover']),
   showIndicator: PropTypes.bool,
@@ -55,6 +62,7 @@ ImageCarousel.propTypes = {
 };
 
 ImageCarousel.defaultProps = {
+  className: '',
   objectFit: 'cover',
   showIndicator: false,
   title: '',

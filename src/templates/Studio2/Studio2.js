@@ -14,21 +14,6 @@ import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 
 export const query = graphql`
   query StudioPage($templateKey: String!) {
-    studioOld: markdownRemark(frontmatter: { templateKey: { eq: "Studio" } }) {
-      frontmatter {
-        studioImpression {
-          images {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1280, quality: 70) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     studioPage: markdownRemark(
       frontmatter: { templateKey: { eq: $templateKey } }
     ) {
@@ -62,6 +47,19 @@ export const query = graphql`
             }
           }
         }
+        studioImpression {
+          title
+          showIndicator
+          images {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1280, quality: 70) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        }
       }
     }
 
@@ -77,9 +75,6 @@ export const query = graphql`
 
 const Studio2 = ({
   data: {
-    studioOld: {
-      frontmatter: { studioImpression },
-    },
     studioPage: { fields, frontmatter },
     indexPage,
   },
@@ -96,16 +91,19 @@ const Studio2 = ({
         headerTitle={frontmatter.services.title}
       />
 
-      <div className={styles.wrapper}>
+      <div className={styles.skillContactBlock}>
         <SkillList skillsets={frontmatter.skillsets} />
         <Conversation email={indexPage.frontmatter.email} />
       </div>
 
-      <div className={styles.wrapper} style={{ minHeight: 800 }}>
+      <div className={styles.jobsImpressionBlock}>
         <Recruitee location={location} />
-        <div style={{ flex: 1 }}>
-          <ImageCarousel images={studioImpression.images} />
-        </div>
+        <ImageCarousel
+          className={styles.carouselWrapper}
+          images={frontmatter.studioImpression.images}
+          showIndicator={frontmatter.studioImpression.showIndicator}
+          title={frontmatter.studioImpression.title}
+        />
       </div>
 
       <Footer {...indexPage.frontmatter} />

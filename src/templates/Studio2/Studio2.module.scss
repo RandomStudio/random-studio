@@ -1,9 +1,25 @@
-.wrapper {
+.skillContactBlock,
+.jobsImpressionBlock {
   display: flex;
   margin: 360px 0 280px;
   flex-direction: column;
 
-  @media(min-width: 48rem) {
+  @media (min-width: 48rem) {
     flex-direction: row;
+  }
+}
+
+.jobsImpressionBlock {
+  margin-bottom: 0;
+}
+
+.carouselWrapper {
+  flex: 1;
+  max-width: 700px;
+  margin-left: auto;
+
+  // Package specific class
+  [class=' gatsby-image-wrapper'] {
+    height: 1000px;
   }
 }
