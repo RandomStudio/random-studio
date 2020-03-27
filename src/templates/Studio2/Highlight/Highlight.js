@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import styles from './Highlight.module.scss';
 import FluidImage from '../../../components/FluidImage/FluidImage';
 
@@ -9,7 +10,7 @@ const Highlight = ({ highlights }) => {
       {highlights.map(({ copy, image }) => (
         <div key={image.id} className={styles.listItem}>
           <div className={styles.copyWrapper}>
-            <p>{copy}</p>
+            <ReactMarkdown escapeHtml={false} source={copy} />
           </div>
           <FluidImage className={styles.imageWrapper} image={image} />
         </div>

@@ -1,5 +1,5 @@
 .wrapper {
-  font-size: var(--font-med);
+  font-size: var(--px-font-med);
   margin-bottom: 3rem;;
   padding: 2rem 1.4rem 0;
 }
@@ -9,13 +9,14 @@
     max-width: 580px;
     margin-left: 120px;
     margin-bottom: 48px;
+
   }
 }
 
 @media (min-width: 68rem) {
   .wrapper {
-    max-width: 760px;
-    font-size: 42px;
+    max-width: 780px;
+    font-size: var(--px-font-large);
     margin-left: 220px;
     margin-bottom: 48px;
   }
