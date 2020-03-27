@@ -4,12 +4,13 @@ import ReactMarkdown from 'react-markdown';
 import styles from './Highlight.module.scss';
 import FluidImage from '../../../components/FluidImage/FluidImage';
 
-const Highlight = ({ highlights }) => {
+const Highlight = ({ title, highlights }, ref) => {
   return (
-    <section className={styles.wrapper}>
-      {highlights.map(({ copy, image }) => (
+    <section ref={ref} className={styles.wrapper}>
+      {highlights.map(({ copy, image }, index) => (
         <div key={image.id} className={styles.listItem}>
           <div className={styles.copyWrapper}>
+            {index === 0 && <p>{title}</p>}
             <ReactMarkdown escapeHtml={false} source={copy} />
           </div>
           <FluidImage className={styles.imageWrapper} image={image} />
@@ -28,4 +29,4 @@ Highlight.propTypes = {
   ).isRequired,
 };
 
-export default Highlight;
+export default React.forwardRef(Highlight);

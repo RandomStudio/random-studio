@@ -318,13 +318,17 @@ collections:
             name: templateKey
             widget: hidden
             default: studio2
+          - label: Title
+            name: title
+            widget: string
+            default: "Random Studio"
           - label: Highlights
             name: highlight
             widget: list
             fields:
               - label: Copy
                 name: copy
-                widget: text
+                widget: markdown
               - label: Image
                 name: image
                 widget: image
