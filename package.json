@@ -16,7 +16,8 @@
   "dependencies": {
     "babylonjs": "4.1.0",
     "babylonjs-loaders": "4.1.0",
-    "gatsby": "^2.20.4",
+    "framer-motion": "^2.0.0-beta.33",
+    "gatsby": "^2.20.9",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-google-analytics": "^2.2.1",
     "gatsby-plugin-netlify": "^2.2.1",

@@ -118,7 +118,9 @@ const Studio2 = ({
           highlights={frontmatter.highlights}
           ref={highlightRef}
         />
-        <Message message={frontmatter.message} />
+
+        {/* tb removed */}
+        {/* <Message message={frontmatter.message} /> */}
 
         <ServiceList
           services={frontmatter.services.list}

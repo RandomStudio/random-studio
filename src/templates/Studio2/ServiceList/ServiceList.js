@@ -9,7 +9,7 @@ const ServiceList = ({ headerTitle, services }) => {
       {headerTitle && <h2 className={styles.header}>{headerTitle}</h2>}
       <section className={styles.wrapper}>
         {services.map(({ title, copy, image }) => (
-          <div key={image.id} className={styles.serviceBlock}>
+          <div key={`${title}-${image.id}`} className={styles.serviceBlock}>
             <div className={styles.copyWrapper}>
               <h3>{title}</h3>
               <p>{copy}</p>

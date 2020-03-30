@@ -1,4 +1,8 @@
+@import '../../../styles/mixins';
+
 .wrapper {
+  @include blendedText;
+  position: relative;
   background: #000;
   color: #fff;
   margin-bottom: 108px;
@@ -8,24 +12,55 @@
   }
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: .45);
+
+  z-index: 9;
+  // pointer-events: none;
+  // opacity: 0;
+}
+
+.headerTitle,
+.listItem {
+  font-size: var(--px-font-xmed);
+  font-weight: normal;
+  // margin: 0 20px;
+
+  @media (min-width: 48rem) {
+    font-size: var(--px-font-med);
+  }
+}
+
 .listItem {
   display: flex;
+  position: relative;
   flex-direction: column-reverse;
   margin-bottom: 96px;
-  font-size: var(--px-font-med);
 
-  & > div {
-    position: relative;
-    flex: 1;
-  }
+  height: 100vh;
+
+  //  .imageWrapper {
+  //     position: absolute !important;
+  //     top: 0;
+  //     //  height:
+  //     width: 100%;
+  //  }
 
   @media (min-width: 48rem) {
     .listItem {
       flex-direction: row;
-      font-size: var(--px-font-med);
 
       &:nth-of-type(2) {
         flex-direction: row-reverse;
+      }
+
+      & > div {
+        position: relative;
+        flex: 1;
       }
     }
   }
@@ -42,6 +77,9 @@
 }
 
 .copyWrapper {
+  margin: 0 20px;
+  z-index: 10;
+
   @media (min-width: 48rem) {
     margin: 520px 0 0 120px;
 
@@ -56,8 +94,24 @@
   }
 }
 
-@media (min-width: 48rem) {
-  .imageWrapper {
+.imageWrapper {
+  position: absolute !important;
+  height: 100vh;
+  width: 100%;
+
+  // Setting the z-indexes for currently max 2 hihglight items
+  @for $i from 1 through 2 {
+    &:nth-of-type(#{$i}) {
+      z-index: $i;
+    }
+  }
+
+
+  @media (min-width: 48rem) {
     height: 1000px;
   }
+}
+
+.fluidImage {
+  height: 100%;
 }
