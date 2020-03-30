@@ -1,15 +1,14 @@
 .recruitee {
-  font-size: var(--font-small);
+  // font-size: var(--font-small);
   height: min-content;
-  align-self: flex-end;
-  margin-bottom: 300px;
+  margin-left: 20px;
+  margin: 120px 20px 200px;
 
-  @media (min-width: 36rem) {
-    font-size: var(--px-font-large);
-  }
 
   @media (min-width: 48rem) {
+    align-self: flex-end;
     width: 50%;
+    margin-bottom: 300px;
     padding: 0 120px 0 120px;
   }
 }
@@ -18,20 +17,20 @@
     margin: 0;
     padding: 0.8rem 0 0.6rem;
     list-style: none;
+
+    font-size: var(--px-font-xmed);
 }
 
 .title {
-  font-size: 24px;
+  font-size: var(--px-font-xxs);
   margin-bottom: 22px;
   text-transform: uppercase;
 
-  @media (min-width: 36rem) {
-    margin-bottom: 24px;
-  }
-
-  @media (min-width: 50rem) {
+  @media (min-width: 48rem) {
     flex: 1;
     max-width: 45%;
+    font-size: 24px;
+    margin-bottom: 24px;
   }
 }
 
