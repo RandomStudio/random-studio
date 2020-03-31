@@ -27,7 +27,7 @@ services:
       title: Design Research
   title: 'Our Areas of Expertise:'
 message: Our work comes to life in the space where the digital meets the physical.
-skillsets:
+skillset:
   - Strategy
   - Concept
   - Art Direction
@@ -46,4 +46,3 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 ---
-

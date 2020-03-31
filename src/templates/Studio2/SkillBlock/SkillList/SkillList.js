@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SkillList.module.scss';
 
-const SkillList = ({ skillsets }) => {
+const SkillList = ({ skillset }) => {
   return (
     <div className={styles.wrapper}>
       <h3>Our capabilities</h3>
       <ul className={styles.listWrapper}>
-        {skillsets.map(skillset => (
-          <li key={skillset}>{skillset}</li>
+        {skillset.map((skill) => (
+          <li key={skill}>{skill}</li>
         ))}
       </ul>
     </div>
@@ -16,7 +16,7 @@ const SkillList = ({ skillsets }) => {
 };
 
 SkillList.propTypes = {
-  skillsets: PropTypes.arrayOf(PropTypes.string).isRequired,
+  skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default SkillList;

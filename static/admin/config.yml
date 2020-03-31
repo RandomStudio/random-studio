@@ -356,7 +356,7 @@ collections:
             name: message
             widget: text
           - label: "Our Skillset"
-            name: skillsets
+            name: skillset
             widget: list
             field:
               label: Skill

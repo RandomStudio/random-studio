@@ -10,10 +10,16 @@
   }
 
   @media (min-width: 48rem) {
+    h3 {
+      font-size: var(--px-font-xs);
+    }
+  }
+
+  @media (min-width: 60rem) {
     margin: 0;
 
     h3 {
-      font-size: 24px;
+      font-size: var(--px-font-small);
     }
 
     h3, .listWrapper  {
@@ -26,6 +32,10 @@
   font-size: var(--px-font-xmed);
 
   @media (min-width: 48rem) {
+    font-size: var(--px-font-med);
+  }
+
+  @media (min-width: 60rem) {
     font-size: var(--px-font-large);
     line-height: 52px;
   }

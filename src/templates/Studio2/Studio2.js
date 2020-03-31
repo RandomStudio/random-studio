@@ -2,15 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { graphql } from 'gatsby';
 import styles from './Studio2.module.scss';
 import Layout from '../../components/Layout/Layout';
-import Highlight from './Highlight/Highlight';
+import HighlightBlock from './HighlightBlock/HighlightBlock';
 import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import Message from './Message/Message';
 import Recruitee from './Recruitee/Recruitee';
-import SkillList from './SkillList/SkillList';
-import Conversation from './Conversation/Conversation';
+
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
+import useWindowSize from '../../utils/hooks/useWindowSize';
+import SkillBlock from './SkillBlock/SkillBlock';
 
 export const query = graphql`
   query StudioPage($templateKey: String!) {
@@ -23,7 +24,7 @@ export const query = graphql`
       frontmatter {
         title
         message
-        skillsets
+        skillset
         highlights: highlight {
           copy
           image {
@@ -84,6 +85,8 @@ const Studio2 = ({
   const highlightRef = useRef();
   const [themeClass, setThemeClass] = useState();
 
+  const { width } = useWindowSize();
+
   useEffect(() => {
     console.log(highlightRef);
 
@@ -111,9 +114,9 @@ const Studio2 = ({
 
   return (
     <Layout>
-      <div className={`${styles.wrapper} ${themeClass}`}>
+      <div className={`${styles.wrapper} ${width > 600 ? themeClass : ''}`}>
         <SEO title="Studio" pathName={fields.slug} />
-        <Highlight
+        <HighlightBlock
           title={frontmatter.title}
           highlights={frontmatter.highlights}
           ref={highlightRef}
@@ -127,10 +130,10 @@ const Studio2 = ({
           headerTitle={frontmatter.services.title}
         />
 
-        <div className={styles.skillContactBlock}>
-          <SkillList skillsets={frontmatter.skillsets} />
-          <Conversation email={indexPage.frontmatter.email} />
-        </div>
+        <SkillBlock
+          skillset={frontmatter.skillset}
+          email={indexPage.frontmatter.email}
+        />
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee location={location} />

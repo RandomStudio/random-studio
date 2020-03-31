@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  margin: 148px 0 280px;
+  flex-direction: column;
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    margin: 200px 0 280px;
+  }
+}
+
+.conversationWrapper {
+  flex: 1;
+  font-size: var(--px-font-xmed);
+  margin: 120px 0 0 20px;
+
+  @media (min-width: 48rem) {
+      font-size: var(--px-font-med);
+      align-self: flex-end;
+      margin-top: auto;
+  }
+
+  @media (min-width: 60rem) {
+      font-size: var(--px-font-large);
+      line-height: 52px;
+  }
+}

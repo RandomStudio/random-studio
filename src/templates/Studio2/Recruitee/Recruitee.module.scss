@@ -1,13 +1,11 @@
 .recruitee {
-  // font-size: var(--font-small);
   height: min-content;
-  margin-left: 20px;
   margin: 120px 20px 200px;
 
-
-  @media (min-width: 48rem) {
+  @media (min-width: 60rem) {
     align-self: flex-end;
     width: 50%;
+    margin-left: 0;
     margin-bottom: 300px;
     padding: 0 120px 0 120px;
   }
@@ -17,8 +15,15 @@
     margin: 0;
     padding: 0.8rem 0 0.6rem;
     list-style: none;
-
     font-size: var(--px-font-xmed);
+
+    @media (min-width: 48rem) {
+      font-size: var(--px-font-med);
+    }
+
+    @media (min-width: 60rem) {
+      font-size: var(--px-font-large);
+    }
 }
 
 .title {
@@ -28,9 +33,12 @@
 
   @media (min-width: 48rem) {
     flex: 1;
-    max-width: 45%;
-    font-size: 24px;
+    font-size: var(--px-font-xs);
     margin-bottom: 24px;
+  }
+
+  @media (min-width: 60rem) {
+    font-size: var(--px-font-small);
   }
 }
 

@@ -1,34 +1,15 @@
-@import '../../../styles/mixins';
-
-.wrapper {
-  @include blendedText;
-  position: relative;
-  background: #000;
-  color: #fff;
-  margin-bottom: 108px;
-
-  @media (min-width: 48rem) {
-    margin-bottom: 144px;
-  }
-}
-
 .overlay {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba($color: #000000, $alpha: .45);
-
-  z-index: 9;
-  // pointer-events: none;
-  // opacity: 0;
+  background: rgba($color: #000000, $alpha: 0.5);
 }
 
 .headerTitle,
 .listItem {
   font-size: var(--px-font-xmed);
   font-weight: normal;
-  // margin: 0 20px;
 
   @media (min-width: 48rem) {
     font-size: var(--px-font-med);
@@ -37,18 +18,11 @@
 
 .listItem {
   display: flex;
+  flex-direction: column;
   position: relative;
-  flex-direction: column-reverse;
+  height: 100vh;
   margin-bottom: 96px;
 
-  height: 100vh;
-
-  //  .imageWrapper {
-  //     position: absolute !important;
-  //     top: 0;
-  //     //  height:
-  //     width: 100%;
-  //  }
 
   @media (min-width: 48rem) {
     .listItem {
@@ -80,12 +54,19 @@
   margin: 0 20px;
   z-index: 10;
 
+  .headerTitle {
+    margin-bottom: 40px;
+  }
+
+  p {
+    max-width: 520px;
+  }
+
   @media (min-width: 48rem) {
     margin: 520px 0 0 120px;
 
     p {
       width: 100%;
-      max-width: 520px;
 
       &:first-of-type {
         margin-bottom: 40px;
@@ -95,17 +76,24 @@
 }
 
 .imageWrapper {
-  position: absolute !important;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0;
   height: 100vh;
-  width: 100%;
 
-  // Setting the z-indexes for currently max 2 hihglight items
-  @for $i from 1 through 2 {
-    &:nth-of-type(#{$i}) {
-      z-index: $i;
-    }
+  div {
+    height: 100vh;
   }
 
+  .headerTitle {
+    position: relative;
+    bottom: 120px;
+    left: 20px;
+
+    img {
+      margin-top: 20px;
+    }
+  }
 
   @media (min-width: 48rem) {
     height: 1000px;
