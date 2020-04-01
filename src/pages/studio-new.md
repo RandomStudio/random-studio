@@ -35,7 +35,7 @@ skillset:
   - Engineering
 studioImpression:
   images:
-    - image: /img/studio_01.jpg
+    - image: /img/studio1.jpg
     - image: /img/studio_02.jpg
     - image: /img/studio_03.jpg
     - image: /img/studio_04.jpg
