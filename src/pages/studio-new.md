@@ -18,12 +18,12 @@ services:
     - copy: |-
         Strategy and continuous development
         for services, tools and spatial infrastructure.
-      image: /img/human-centered-products-02-Digital-Showroom@2x.jpg
+      image: /img/studio_expertise2.png
       title: Product Development
     - copy: |-
         R&D Partnerships including bespoke trend reports,
         future concepts and prototypes.
-      image: /img/wec190502_chanel_j12_010_5.jpg
+      image: /img/studio_expertise3.png
       title: Design Research
   title: 'Our Areas of Expertise:'
 skillset:
@@ -36,12 +36,12 @@ skillset:
 studioImpression:
   images:
     - image: /img/studio1.jpg
-    - image: /img/studio_02.jpg
-    - image: /img/studio_03.jpg
-    - image: /img/studio_04.jpg
-    - image: /img/studio_05.jpg
-    - image: /img/studio_06.jpg
-    - image: /img/studio_07.jpg
+    - image: /img/studio2.jpg
+    - image: /img/studio3.jpg
+    - image: /img/studio4.jpg
+    - image: /img/studio5.jpg
+    - image: /img/studio6.jpg
+    - image: /img/studio7.jpg
   showIndicator: true
   title: Studio Impressions
 ---
