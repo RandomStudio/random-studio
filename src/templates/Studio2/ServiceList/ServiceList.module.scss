@@ -65,7 +65,7 @@
 
   &:nth-of-type(1),
   &:nth-of-type(2) {
-    width: 80%;
+    width: 100%;
   }
 
   &:nth-of-type(2),
@@ -111,6 +111,7 @@
 
     &:nth-of-type(2) {
       margin: 0 120px 250px auto;
+      padding-left: 20px;
 
       .copyWrapper {
         margin: 0 120px 0 auto;

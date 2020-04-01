@@ -18,7 +18,7 @@ const Block = ({ image, index, copy, title }) => {
   // );
 
   // TODO: Find a way to prevent calculations on breakpoint
-  const overlayOpacity = useTransform(scrollY, [0, 150], [0, 1]);
+  const overlayOpacity = useTransform(scrollY, [0, 100], [0, 1]);
   const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
 
   return (

@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
 
   div {
     height: 100%;
@@ -30,9 +30,8 @@
 
   @media (min-width: 60rem) {
     position: relative;
-
-    width: 45%;
-    max-width: 700px;
+    height: 1280px;
+    width: 49%;
 
     &:nth-of-type(1) {
       order: 2;
@@ -51,7 +50,7 @@
 
 .imageWrapper {
   // Overwrite framer-motion transform on breakpoint
-  @media (min-width: 48rem) {
+  @media (min-width: 60rem) {
     transform: scale(1) !important;
   }
 }
@@ -131,6 +130,12 @@
 
   p {
     max-width: 520px;
+  }
+
+  @media (max-width: 48rem) {
+    .headerTitle {
+      display: none;
+    }
   }
 
   @media (min-width: 48rem) {

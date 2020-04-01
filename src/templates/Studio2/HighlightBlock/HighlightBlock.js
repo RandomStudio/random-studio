@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Highlight.module.scss';
+import styles from './HighlightBlock.module.scss';
 import Block from './Block/Block';
 
 const HighlightBlock = ({ title, highlights }, ref) => {
