@@ -17,26 +17,32 @@ const Block = ({ image, index, copy, title }) => {
   //   [1, 0.8, 0.8, 0.2],
   // );
 
-  const overlayOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  // TODO: Find a way to prevent calculations on breakpoint
+  const overlayOpacity = useTransform(scrollY, [0, 150], [0, 1]);
+  const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
 
   return (
     <>
-      <motion.div className={styles.imageWrapper}>
-        <motion.div style={{ scale }}>
+      <motion.div className={styles.imageBlock}>
+        <motion.div className={styles.imageWrapper} style={{ scale }}>
           <FluidImage className={styles.fluidImage} image={image} />
           <motion.div
             className={styles.overlay}
             style={{ opacity: overlayOpacity }}
           />
         </motion.div>
+
         {index === 0 && (
-          <h1 className={styles.headerTitle}>
+          <motion.h1
+            className={styles.headerTitle}
+            style={{ opacity: titleOpacity }}
+          >
             {title}
             <img
               src="/img/icons/arrow-white.svg"
               alt="Arrow pointing down. Indicating more content further down."
             />
-          </h1>
+          </motion.h1>
         )}
       </motion.div>
 
@@ -50,7 +56,12 @@ const Block = ({ image, index, copy, title }) => {
   );
 };
 
-Block.propTypes = {};
+Block.propTypes = {
+  image: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  copy: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 Block.defaultProps = {};
 
 export default Block;

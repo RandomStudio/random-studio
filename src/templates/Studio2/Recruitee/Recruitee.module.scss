@@ -2,11 +2,14 @@
   height: min-content;
   margin: 120px 20px 200px;
 
-  @media (min-width: 60rem) {
+  @media (min-width: 48rem) {
     align-self: flex-end;
     width: 50%;
-    margin-left: 0;
-    margin-bottom: 300px;
+    margin: 120px 20px 300px 0;
+    padding: 0 0 0 120px;
+  }
+
+  @media (min-width: 60rem) {
     padding: 0 120px 0 120px;
   }
 }

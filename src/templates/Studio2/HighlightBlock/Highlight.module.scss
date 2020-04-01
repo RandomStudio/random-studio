@@ -7,4 +7,9 @@
   @media (min-width: 48rem) {
     margin-bottom: 144px;
   }
+
+  @media (min-width: 60rem) {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }

@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SkillBlock.module.scss';
-
 import SkillList from './SkillList/SkillList';
-import Conversation from './Conversation/Conversation';
 
 const SkillBlock = ({ skillset, email }) => {
   return (
     <div className={styles.wrapper}>
       <SkillList skillset={skillset} />
-      <Conversation email={email} />
 
       <div className={styles.conversationWrapper}>
         <p>Start a converstation</p>
@@ -19,7 +16,9 @@ const SkillBlock = ({ skillset, email }) => {
   );
 };
 
-SkillBlock.propTypes = {};
-SkillBlock.defaultProps = {};
+SkillBlock.propTypes = {
+  skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
+  email: PropTypes.string.isRequired,
+};
 
 export default SkillBlock;
