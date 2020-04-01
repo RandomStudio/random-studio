@@ -26,7 +26,6 @@ services:
       image: /img/wec190502_chanel_j12_010_5.jpg
       title: Design Research
   title: 'Our Areas of Expertise:'
-message: Our work comes to life in the space where the digital meets the physical.
 skillset:
   - Strategy
   - Concept

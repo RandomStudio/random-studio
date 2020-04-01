@@ -6,12 +6,11 @@ import HighlightBlock from './HighlightBlock/HighlightBlock';
 import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
-import Message from './Message/Message';
 import Recruitee from './Recruitee/Recruitee';
-
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
-import useWindowSize from '../../utils/hooks/useWindowSize';
 import SkillBlock from './SkillBlock/SkillBlock';
+
+import useWindowSize from '../../utils/hooks/useWindowSize';
 
 export const query = graphql`
   query StudioPage($templateKey: String!) {
@@ -23,7 +22,6 @@ export const query = graphql`
       }
       frontmatter {
         title
-        message
         skillset
         highlights: highlight {
           copy
@@ -75,6 +73,8 @@ export const query = graphql`
   }
 `;
 
+const mediumBreakpoint = 768;
+
 const Studio2 = ({
   data: {
     studioPage: { fields, frontmatter },
@@ -88,8 +88,6 @@ const Studio2 = ({
   const { width } = useWindowSize();
 
   useEffect(() => {
-    console.log(highlightRef);
-
     if (window.IntersectionObserver) {
       setThemeClass(styles.darkTheme);
 
@@ -97,12 +95,12 @@ const Studio2 = ({
         rootMargin: '0px',
       };
 
-      const cb = entries => {
-        entries.forEach(entry => {
+      const cb = (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setThemeClass(styles.darkTheme);
           } else {
-            setThemeClass();
+            setThemeClass('');
           }
         });
       };
@@ -114,16 +112,17 @@ const Studio2 = ({
 
   return (
     <Layout>
-      <div className={`${styles.wrapper} ${width > 600 ? themeClass : ''}`}>
+      <div
+        className={`${styles.wrapper} ${
+          width > mediumBreakpoint ? themeClass : ''
+        }`}
+      >
         <SEO title="Studio" pathName={fields.slug} />
         <HighlightBlock
           title={frontmatter.title}
           highlights={frontmatter.highlights}
           ref={highlightRef}
         />
-
-        {/* tb removed */}
-        {/* <Message message={frontmatter.message} /> */}
 
         <ServiceList
           services={frontmatter.services.list}
