@@ -9,6 +9,19 @@ import SEO from '../../components/SEO/SEO';
 
 export const pageQuery = graphql`
   {
+    allArticles: allMarkdownRemark(
+      filter: { frontmatter: { key: { eq: "article" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            articleUrl
+            title
+            quote
+          }
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: frontmatter___priority, order: DESC }
       filter: { frontmatter: { templateKey: { eq: "Project" } } }
@@ -20,11 +33,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            article {
-              articleUrl
-              isVisible
-              quote
-            }
           }
         }
       }
@@ -44,6 +52,7 @@ export const pageQuery = graphql`
         layout
         middle
         projects {
+          article
           caption
           project
           thumbnail {
@@ -68,10 +77,11 @@ export const pageQuery = graphql`
   }
 `;
 
-const Home = ({ data: { allMarkdownRemark, markdownRemark } }) => {
+const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
   const edges = allMarkdownRemark.edges || [];
   const fields = markdownRemark ? markdownRemark.fields : {};
   const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
+  const articles = allArticles ? allArticles.edges : [];
 
   return (
     <Layout>
@@ -84,7 +94,7 @@ const Home = ({ data: { allMarkdownRemark, markdownRemark } }) => {
       <ProjectList
         {...frontmatter}
         projects={(frontmatter.projects || [])
-          .map(({ caption, project: projectTitle, thumbnail }) => {
+          .map(({ caption, project: projectTitle, thumbnail, article }) => {
             const project = edges.find(
               ({
                 node: {
@@ -92,14 +102,27 @@ const Home = ({ data: { allMarkdownRemark, markdownRemark } }) => {
                 },
               }) => title === projectTitle,
             );
+
+            if (article) {
+              const singleArticle =
+                articles.length &&
+                articles.find(
+                  item => article === item.node.frontmatter.title,
+                );
+
+              return {
+                article: singleArticle && singleArticle.node.frontmatter,
+              };
+            }
+
             if (!project) {
               return null;
             }
+
             return {
               slug: project.node.fields.slug,
               title: caption || project.node.frontmatter.title,
               thumbnail,
-              article: project.node.frontmatter.article,
             };
           })
           .filter(project => project !== null)}

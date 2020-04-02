@@ -1,5 +1,5 @@
 ---
-Key: article
+key: article
 title: '“Body”: using your self as a search tool'
 quote: >-
   A work reflecting the kinetic energy of the city and capturing the experience

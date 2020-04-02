@@ -129,13 +129,6 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-article:
-  articleUrl: >-
-    https://medium.com/random-studio/body-using-your-self-as-a-search-tool-a5d8480988b9
-  isVisible: false
-  quote: >-
-    A work reflecting the kinetic energy of the city and capturing the
-    experience of travel, imagining what new forms of mobility can feel like.
 credits:
   - key: 'For:'
     value: Cinekid Festival
@@ -150,4 +143,3 @@ opengraph:
   ogImage: /img/cinekid12.jpg
   ogTitle: BODY with Philip Schuette
 ---
-

@@ -22,17 +22,17 @@ const ProjectList = ({ intro, middle, projects }) => (
               index={index}
               projects={projects}
             />
-            {article && article.isVisible && (
-              <ResearchBlock
-                quote={article.quote}
-                articleUrl={article.articleUrl}
-              />
-            )}
-            {(index === 3 ||
-              (projects.length < 3 && index === projects.length - 1)) && (
-              <IntermittentStatement middle={middle} />
-            )}
           </>
+        )}
+        {article && (
+          <ResearchBlock
+            quote={article.quote}
+            articleUrl={article.articleUrl}
+          />
+        )}
+        {(index === 3 ||
+          (projects.length < 3 && index === projects.length - 1)) && (
+          <IntermittentStatement middle={middle} />
         )}
       </React.Fragment>
     ))}

@@ -1,43 +1,44 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: medium-link-and-fixes
+  # branch: master
 media_folder: static/img
 public_folder: /img
 collections:
   - name: siteInformation
-    label: "Site Information"
+    label: 'Site Information'
     files:
       - file: src/site/settings.md
-        label: "Site settings"
+        label: 'Site settings'
         name: siteSettings
         fields:
           - label: Key
             name: key
             widget: hidden
             default: settings
-          - label: "Site title"
+          - label: 'Site title'
             name: title
             widget: string
-            default: "Random Studio"
-          - label: "Description"
+            default: 'Random Studio'
+          - label: 'Description'
             name: description
             widget: text
-          - label: "Twitter handle"
+          - label: 'Twitter handle'
             name: twitterHandle
             widget: string
-            default: "@random.studio"
-          - label: "Site URL (base url)"
+            default: '@random.studio'
+          - label: 'Site URL (base url)'
             name: siteUrl
             widget: string
-            default: "https://random.studio"
+            default: 'https://random.studio'
   - name: project
     label: Project
     folder: src/pages/projects
     create: true
     identifier_field: title
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - label: "Template Key"
+      - label: 'Template Key'
         name: templateKey
         widget: hidden
         default: Project
@@ -49,11 +50,11 @@ collections:
         buttons:
           - link
         widget: markdown
-      - label: "Priority on homepage"
+      - label: 'Priority on homepage'
         name: priority
         required: false
         valueType: float
-        widget: nonEmptyStringableNumber
+        widget: number
       - label: Content
         name: content
         widget: list
@@ -67,21 +68,21 @@ collections:
             required: false
             widget: object
             fields:
-              - label: "Video URL"
+              - label: 'Video URL'
                 name: url
                 required: false
                 widget: text
-              - label: "Will autoplay"
+              - label: 'Will autoplay'
                 name: autoplay
                 required: false
                 default: false
                 widget: boolean
-              - label: "Show controls"
+              - label: 'Show controls'
                 name: hasControls
                 required: false
                 default: false
                 widget: boolean
-              - label: "Loop video"
+              - label: 'Loop video'
                 name: loops
                 required: false
                 default: true
@@ -100,38 +101,22 @@ collections:
             required: false
             valueType: float
             default: 0.00
-            widget: nonEmptyStringableNumber
+            widget: number
           - label: Width
             name: width
             required: false
             valueType: float
-            widget: nonEmptyStringableNumber
-          - label: "Margin Top"
+            widget: number
+          - label: 'Margin Top'
             name: marginTop
             default: 0
             valueType: float
-            widget: nonEmptyStringableNumber
-          - label: "Margin Left"
+            widget: number
+          - label: 'Margin Left'
             name: marginLeft
             default: 0
             valueType: float
-            widget: nonEmptyStringableNumber
-      - label: "Linked Article"
-        name: article
-        widget: object
-        fields:
-          - label: "Show Article"
-            name: isVisible
-            widget: boolean
-            default: true
-          - label: quote
-            name: quote
-            required: false
-            widget: text
-          - label: "Article URL"
-            name: articleUrl
-            required: false
-            widget: string
+            widget: number
       - label: Credits
         name: credits
         widget: list
@@ -146,40 +131,59 @@ collections:
         name: opengraph
         widget: object
         fields:
-          - label: "Title"
+          - label: 'Title'
             name: ogTitle
             required: false
             valueType: string
             widget: text
-          - label: "Description"
+          - label: 'Description'
             name: ogDescription
             required: false
             valueType: string
             widget: text
-          - label: "Image"
+          - label: 'Image'
             name: ogImage
             required: false
             valueType: string
             widget: image
+  - name: article
+    label: Articles
+    folder: src/site/articles
+    create: true
+    identifier_field: title
+    fields:
+      - label: Key
+        name: key
+        widget: hidden
+        default: article
+      - label: 'Article Title'
+        name: title
+      - label: quote
+        name: quote
+        widget: text
+      - label: 'Article URL'
+        name: articleUrl
+        required: false
+        widget: string
   - name: pages
     label: Pages
     files:
       - file: src/pages/index.md
-        label: "Home Page"
+        label: 'Home Page'
         name: index
         fields:
-          - label: "Template Key"
+          - label: 'Template Key'
             name: templateKey
             widget: hidden
             default: index
-          - label: "Logo Position"
+          - label: 'Logo Position'
             name: layout
             widget: select
             options:
-              - {label: center, value: center }
-              - {label: Top, value: top }
-            default: ["center"]
-          - label: "Video URL"
+              - { label: center, value: center }
+              - { label: Top, value: top }
+            default: ['center']
+          - label: 'Video URL'
             name: video
             required: true
             widget: text
@@ -191,7 +195,7 @@ collections:
               - label: Collaborator
                 name: collaborator
                 widget: text
-              - label: "Referral URL"
+              - label: 'Referral URL'
                 name: url
                 required: false
                 widget: text
@@ -217,7 +221,7 @@ collections:
                     name: image
                     required: false
                     widget: image
-                  - label: "Video URL"
+                  - label: 'Video URL'
                     name: video
                     required: false
                     widget: text
@@ -226,50 +230,57 @@ collections:
                     required: false
                     valueType: float
                     default: 0.00
-                    widget: nonEmptyStringableNumber
+                    widget: number
                   - label: Width
                     name: width
                     required: false
                     valueType: float
-                    widget: nonEmptyStringableNumber
-                  - label: "Margin Top"
+                    widget: number
+                  - label: 'Margin Top'
                     name: marginTop
                     default: 0
                     valueType: float
-                    widget: nonEmptyStringableNumber
-                  - label: "Margin Left"
+                    widget: number
+                  - label: 'Margin Left'
                     name: marginLeft
                     default: 0
                     valueType: float
-                    widget: nonEmptyStringableNumber
+                    widget: number
               - name: project
-                required: true
                 widget: relation
+                required: false
                 collection: 'project'
                 searchFields: ['title']
                 valueField: 'title'
                 displayFields: ['title']
+              - label: 'Linked Article'
+                name: article
+                required: false
+                widget: relation
+                collection: article
+                searchFields: [title]
+                valueField: title
           - label: Address
             name: address
             widget: markdown
-          - label: "Phone Number"
+          - label: 'Phone Number'
             name: phone
             widget: text
-          - label: "Email Address"
+          - label: 'Email Address'
             name: email
             widget: text
       - file: src/pages/studio.md
-        label: "Studio Page"
+        label: 'Studio Page'
         name: studio
         fields:
-          - label: "Template Key"
+          - label: 'Template Key'
             name: templateKey
             widget: hidden
             default: studio
           - label: Intro
             name: intro
             widget: markdown
-          - label: "Info block"
+          - label: 'Info block'
             name: infoBlock
             widget: list
             fields:
@@ -294,7 +305,7 @@ collections:
                         name: caption
                         widget: markdown
                         required: false
-                  - label: "Show carousel indicator"
+                  - label: 'Show carousel indicator'
                     name: showIndicator
                     widget: boolean
                     required: false
@@ -303,15 +314,15 @@ collections:
                     name: info
                     required: false
                     widget: markdown
-          - label: "Studio impression"
+          - label: 'Studio impression'
             name: studioImpression
             widget: object
             fields:
               - label: Title
                 name: title
-                default: "Studio Impressions"
+                default: 'Studio Impressions'
                 widget: text
-              - label: "Show carousel indicator"
+              - label: 'Show carousel indicator'
                 name: showIndicator
                 widget: boolean
                 required: false
