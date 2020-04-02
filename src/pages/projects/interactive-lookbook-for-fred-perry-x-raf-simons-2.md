@@ -179,5 +179,12 @@ credits:
       Concept Development, Creative Direction, 
       Art Direction, Photography, Animation, 
       Web Development, Casting, Styling
+opengraph:
+  ogDescription: >-
+    For this new interactive lookbook, the SS20 collection is seen through the
+    eyes of many. With no single perspective, the story unfolds from
+    gaze-to-gaze.
+  ogImage: /img/1.jpg
+  ogTitle: A Lookbook of Many Gazes for Fred Perry x Raf Simons
 ---
 
