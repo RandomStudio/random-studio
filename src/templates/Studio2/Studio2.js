@@ -73,7 +73,8 @@ export const query = graphql`
   }
 `;
 
-const mediumBreakpoint = 768;
+// const mediumBreakpoint = 768;
+const mediumBreakpoint = 960;
 
 const Studio2 = ({
   data: {
@@ -95,8 +96,8 @@ const Studio2 = ({
         rootMargin: '-120px 0px 0px 0px',
       };
 
-      const cb = entries => {
-        entries.forEach(entry => {
+      const cb = (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setThemeClass(styles.darkTheme);
           } else {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
@@ -8,9 +8,30 @@ import FluidImage from '../../../../components/FluidImage/FluidImage';
 import styles from './Block.module.scss';
 
 const Block = ({ image, index, copy, title }) => {
+  const imageRef = useRef();
+
+  const [start, setStart] = useState();
+  const [end, setEnd] = useState();
+
+  useEffect(() => {
+    if (imageRef && imageRef.current) {
+      const imageBox = imageRef.current.getBoundingClientRect();
+      console.log(imageBox);
+
+      // setTop(index === 0 ? imageBox.bottom : imageBox.y);
+      setStart(imageBox.top);
+      setEnd(imageBox.bottom);
+    }
+  }, []);
+
   const { scrollYProgress, scrollY } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
-  // const scale = useTransform(scrollYProgress, [0, 0], [1, 0.8]);
+  // const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
+  const scale = useTransform(
+    scrollY,
+    [start, end, end, end + 1000],
+    [1, 0.8, 0.8, 0.3],
+  );
+  // const scale = useTransform(scrollY, [start, end], [1, 0.8]);
   // const scale = useTransform(
   //   scrollYProgress,
   //   [0 + index * 0.2, 0.1 + index * 0.2, 0.4, 0.5],
@@ -18,13 +39,20 @@ const Block = ({ image, index, copy, title }) => {
   // );
 
   // TODO: Find a way to prevent calculations on breakpoint
-  const overlayOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  // const overlayOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  const overlayOpacity = useTransform(scrollY, [start, start + 120], [0, 1]);
   const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
+
+  // Calculate differently based on the index
 
   return (
     <>
       <motion.div className={styles.imageBlock}>
-        <motion.div className={styles.imageWrapper} style={{ scale }}>
+        <motion.div
+          ref={imageRef}
+          className={styles.imageWrapper}
+          style={{ scale }}
+        >
           <FluidImage className={styles.fluidImage} image={image} />
           <motion.div
             className={styles.overlay}
@@ -46,7 +74,10 @@ const Block = ({ image, index, copy, title }) => {
         )}
       </motion.div>
 
-      <div key={image.id} className={styles.listItem}>
+      <div
+        key={image.id}
+        className={`${styles.listItem} ${styles.parallaxFront}`}
+      >
         <div className={styles.copyWrapper}>
           {index === 0 && <h1 className={styles.headerTitle}>{title}</h1>}
           <ReactMarkdown escapeHtml={false} source={copy} />
