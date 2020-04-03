@@ -22,7 +22,7 @@ export const query = graphql`
       frontmatter {
         title
         skillset
-        introBlocks: intro {
+        introBlocks: introBlock {
           copy
           image {
             childImageSharp {
