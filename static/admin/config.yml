@@ -332,6 +332,15 @@ collections:
               - label: Image
                 name: image
                 widget: image
+              - label: Video
+                name: video
+                widget: file
+                hint: 'Adding a video will replace the image'
+                required: false
+                allow_multiple: false
+                media_library:
+                  config:
+                    multiple: false
           - label: Services
             name: services
             widget: object
@@ -352,9 +361,6 @@ collections:
                   - label: Image
                     name: image
                     widget: image
-          - label: "Our message"
-            name: message
-            widget: text
           - label: "Our Skillset"
             name: skillset
             widget: list

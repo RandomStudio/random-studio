@@ -23,15 +23,13 @@
   flex: 1;
   max-width: 88%;
   margin-left: 6%;
-  max-height: 100vh;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 60rem) {
     max-width: 50%;
     margin-left: auto;
 
     // Package specific class
     [class=' gatsby-image-wrapper'] {
-      max-height: 100vh;
       height: 1060px;
     }
   }

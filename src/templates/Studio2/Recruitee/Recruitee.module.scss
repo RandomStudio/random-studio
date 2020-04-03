@@ -5,11 +5,12 @@
   @media (min-width: 48rem) {
     align-self: flex-end;
     width: 50%;
-    margin: 120px 20px 300px 0;
-    padding: 0 0 0 120px;
+    margin: 0 20px 0px 0;
+    padding: 0 0 120px 120px;
   }
 
   @media (min-width: 60rem) {
+    margin: 120px 20px 300px 0;
     padding: 0 120px 0 120px;
   }
 }

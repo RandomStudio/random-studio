@@ -7,7 +7,7 @@ import FluidImage from '../../../../components/FluidImage/FluidImage';
 
 import styles from './Block.module.scss';
 
-const Block = ({ image, index, copy, title }) => {
+const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
 
   const [start, setStart] = useState();
@@ -16,7 +16,6 @@ const Block = ({ image, index, copy, title }) => {
   useEffect(() => {
     if (imageRef && imageRef.current) {
       const imageBox = imageRef.current.getBoundingClientRect();
-      console.log(imageBox);
 
       // setTop(index === 0 ? imageBox.bottom : imageBox.y);
       setStart(imageBox.top);
@@ -50,10 +49,16 @@ const Block = ({ image, index, copy, title }) => {
       <motion.div className={styles.imageBlock}>
         <motion.div
           ref={imageRef}
-          className={styles.imageWrapper}
+          className={styles.mediaWrapper}
           style={{ scale }}
         >
-          <FluidImage className={styles.fluidImage} image={image} />
+          {video ? (
+            <video className={styles.fluidVideo} autoPlay muted loop>
+              <source src={video} type="video/mp4" />
+            </video>
+          ) : (
+            <FluidImage className={styles.fluidImage} image={image} />
+          )}
           <motion.div
             className={styles.overlay}
             style={{ opacity: overlayOpacity }}
