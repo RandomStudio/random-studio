@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { graphql } from 'gatsby';
 import styles from './Studio2.module.scss';
 import Layout from '../../components/Layout/Layout';
-import HighlightBlock from './HighlightBlock/HighlightBlock';
+import IntroBlock from './IntroBlock/IntroBlock';
 import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
@@ -22,7 +22,7 @@ export const query = graphql`
       frontmatter {
         title
         skillset
-        highlights: highlight {
+        introBlocks: intro {
           copy
           image {
             childImageSharp {
@@ -84,7 +84,7 @@ const Studio2 = ({
   },
   location,
 }) => {
-  const highlightRef = useRef();
+  const introRef = useRef();
   const [themeClass, setThemeClass] = useState();
   const { width } = useWindowSize();
 
@@ -107,7 +107,7 @@ const Studio2 = ({
       };
 
       const observer = new IntersectionObserver(cb, options);
-      observer.observe(highlightRef.current);
+      observer.observe(introRef.current);
     }
   }, []);
 
@@ -120,10 +120,10 @@ const Studio2 = ({
         }`}
       >
         <SEO title="Studio" pathName={fields.slug} />
-        <HighlightBlock
+        <IntroBlock
           title={frontmatter.title}
-          highlights={frontmatter.highlights}
-          ref={highlightRef}
+          intros={frontmatter.introBlocks}
+          ref={introRef}
         />
 
         <ServiceList

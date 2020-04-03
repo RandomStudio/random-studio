@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './HighlightBlock.module.scss';
+import styles from './IntroBlock.module.scss';
 import Block from './Block/Block';
 
-const HighlightBlock = ({ title, highlights }, ref) => {
+const IntroBlock = ({ title, intros }, ref) => {
   return (
     <section ref={ref} className={styles.wrapper}>
-      {highlights.map(({ copy, image, video }, index) => (
+      {intros.map(({ copy, image, video }, index) => (
         <Block
           key={image.id}
           image={image}
@@ -20,8 +20,8 @@ const HighlightBlock = ({ title, highlights }, ref) => {
   );
 };
 
-HighlightBlock.propTypes = {
-  highlights: PropTypes.arrayOf(
+IntroBlock.propTypes = {
+  intros: PropTypes.arrayOf(
     PropTypes.shape({
       copy: PropTypes.string.isRequired,
       image: PropTypes.object.isRequired,
@@ -30,4 +30,4 @@ HighlightBlock.propTypes = {
   ).isRequired,
 };
 
-export default React.forwardRef(HighlightBlock);
+export default React.forwardRef(IntroBlock);
