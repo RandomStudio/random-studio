@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
-  branch: master
+  # branch: master
+  branch: studio-page-update
 media_folder: static/img
 public_folder: /img
 collections:
@@ -243,81 +244,13 @@ collections:
             name: email
             widget: text
       - file: src/pages/studio.md
-        label: "Studio Page"
-        name: studio
-        fields:
-          - label: "Template Key"
-            name: templateKey
-            widget: hidden
-            default: studio
-          - label: Intro
-            name: intro
-            widget: markdown
-          - label: "Info block"
-            name: infoBlock
-            widget: list
-            fields:
-              - label: Collection
-                name: collection
-                required: false
-                widget: list
-                fields:
-                  - label: Images
-                    name: images
-                    required: false
-                    widget: list
-                    fields:
-                      - label: Image
-                        name: image
-                        required: false
-                        widget: image
-                        media_library:
-                          config:
-                            multiple: true
-                      - label: Caption
-                        name: caption
-                        widget: markdown
-                        required: false
-                  - label: "Show carousel indicator"
-                    name: showIndicator
-                    widget: boolean
-                    required: false
-                    default: false
-                  - label: Info
-                    name: info
-                    required: false
-                    widget: markdown
-          - label: "Studio impression"
-            name: studioImpression
-            widget: object
-            fields:
-              - label: Title
-                name: title
-                default: "Studio Impressions"
-                widget: text
-              - label: "Show carousel indicator"
-                name: showIndicator
-                widget: boolean
-                required: false
-                default: false
-              - label: Images
-                name: images
-                widget: list
-                fields:
-                  - label: Image
-                    name: image
-                    widget: image
-                    media_library:
-                      config:
-                        multiple: true
-      - file: src/pages/studio-new.md
         label: "Studio temp page"
-        name: studio2
+        name: studio
         fields:
           - label: "Template key"
             name: templateKey
             widget: hidden
-            default: studio2
+            default: studio
           - label: Title
             name: title
             widget: string
