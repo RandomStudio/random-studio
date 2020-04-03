@@ -1,7 +1,7 @@
 ---
 templateKey: Studio2
 title: Random Studio
-highlight:
+intro:
   - copy: We create brand and service experiences that trigger a sense of wonder.
     image: /img/wec190502_chanel_j12_022_2.jpg
     video: /img/boat.mp4

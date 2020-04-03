@@ -322,8 +322,8 @@ collections:
             name: title
             widget: string
             default: "Random Studio"
-          - label: Highlights
-            name: highlight
+          - label: Intro
+            name: intro
             widget: list
             fields:
               - label: Copy
