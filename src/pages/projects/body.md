@@ -32,8 +32,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - image: ''
-    marginLeft: 0
+  - marginLeft: 0
     marginTop: 4
     video:
       autoplay: true
@@ -150,4 +149,3 @@ opengraph:
   ogImage: /img/cinekid12.jpg
   ogTitle: BODY with Philip Schuette
 ---
-
