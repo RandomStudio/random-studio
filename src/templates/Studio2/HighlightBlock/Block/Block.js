@@ -9,51 +9,49 @@ import styles from './Block.module.scss';
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
-
-  const [start, setStart] = useState();
-  const [end, setEnd] = useState();
+  const [blockStart, setBlockStart] = useState();
+  const [blockEnd, setBlockEnd] = useState();
 
   useEffect(() => {
     if (imageRef && imageRef.current) {
       const imageBox = imageRef.current.getBoundingClientRect();
 
-      // setTop(index === 0 ? imageBox.bottom : imageBox.y);
-      setStart(imageBox.top);
-      setEnd(imageBox.bottom);
+      setBlockStart(imageBox.top);
+      setBlockEnd(imageBox.bottom);
     }
   }, []);
 
-  const { scrollYProgress, scrollY } = useViewportScroll();
-  // const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
+  const { scrollY } = useViewportScroll();
   const scale = useTransform(
     scrollY,
-    [start, end, end, end + 1000],
-    [1, 0.8, 0.8, 0.3],
+    [blockStart, blockEnd, blockEnd + 1000],
+    [1, 0.8, 0.3],
   );
-  // const scale = useTransform(scrollY, [start, end], [1, 0.8]);
-  // const scale = useTransform(
-  //   scrollYProgress,
-  //   [0 + index * 0.2, 0.1 + index * 0.2, 0.4, 0.5],
-  //   [1, 0.8, 0.8, 0.2],
-  // );
 
-  // TODO: Find a way to prevent calculations on breakpoint
-  // const overlayOpacity = useTransform(scrollY, [0, 100], [0, 1]);
-  const overlayOpacity = useTransform(scrollY, [start, start + 120], [0, 1]);
+  // TODO: Find a way to prevent calculations on desktop breakpoint
+  const overlayOpacity = useTransform(
+    scrollY,
+    [blockStart, blockStart + 120],
+    [0, 1],
+  );
   const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
-
-  // Calculate differently based on the index
 
   return (
     <>
-      <motion.div className={styles.imageBlock}>
+      <div className={styles.imageBlock}>
         <motion.div
           ref={imageRef}
           className={styles.mediaWrapper}
           style={{ scale }}
         >
           {video ? (
-            <video className={styles.fluidVideo} autoPlay muted loop>
+            <video
+              className={styles.fluidVideo}
+              autoPlay
+              muted
+              loop
+              playsinline
+            >
               <source src={video} type="video/mp4" />
             </video>
           ) : (
@@ -77,7 +75,7 @@ const Block = ({ image, index, copy, title, video }) => {
             />
           </motion.h1>
         )}
-      </motion.div>
+      </div>
 
       <div
         key={image.id}

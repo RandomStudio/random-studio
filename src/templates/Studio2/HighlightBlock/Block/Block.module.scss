@@ -39,7 +39,6 @@
 
     &:nth-of-type(3) {
       order: 3;
-      transform-origin: 0 0;
     }
 
     .headerTitle {
@@ -180,14 +179,10 @@
 }
 
 .parallaxFront {
-  @media (max-width: 60rem) {
-    // Scale = (perspective - zTransalation) / perspective | Perspective is set iin HighlightBlock.module.scss
-    // Translate Y is eyeballed to correctly align
-    transform: translate3d(0, 80%, 6px) scale(0.25);
-    transform-origin: top left;
-
-    &:nth-of-type(4) {
-      transform: translate3d(0, -85%, 6px) scale(0.25);
-    }
+  @media (min-width: 60rem) {
+    transform-style: preserve-3d;
+    transform-origin: 0 0;
+    // Scale = (perspective - zTranslation) / perspective | Perspective is set iin Studio.module.scss
+    transform: translateX(1%) translateZ(-.1px) scale(1.1);
   }
 }

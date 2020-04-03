@@ -1,8 +1,7 @@
 .wrapper {
   position: relative;
   margin-bottom: 108px;
-  perspective: 8px;
-  perspective-origin: 0%;
+  transform-style: preserve-3d;
 
   @media (max-width: 60rem) {
     background: #000;

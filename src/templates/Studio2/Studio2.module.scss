@@ -37,7 +37,16 @@
 
 .wrapper {
   transition: background .35s ease-in-out,color .35s ease-in-out;
-  will-change: background,color;
+  will-change: background, color;
+
+  @media (min-width: 60rem) {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    perspective: 1px;
+    perspective-origin: 0 0;
+  }
 }
 
 .dark-theme {

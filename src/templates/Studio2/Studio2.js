@@ -9,7 +9,6 @@ import Footer from '../../components/Footer/Footer';
 import Recruitee from './Recruitee/Recruitee';
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 import SkillBlock from './SkillBlock/SkillBlock';
-
 import useWindowSize from '../../utils/hooks/useWindowSize';
 
 export const query = graphql`
@@ -76,8 +75,7 @@ export const query = graphql`
   }
 `;
 
-// const mediumBreakpoint = 768;
-const mediumBreakpoint = 960;
+const mediumBreakpoint = 960; // BP of 60rem
 
 const Studio2 = ({
   data: {
@@ -88,7 +86,6 @@ const Studio2 = ({
 }) => {
   const highlightRef = useRef();
   const [themeClass, setThemeClass] = useState();
-
   const { width } = useWindowSize();
 
   useEffect(() => {
@@ -99,8 +96,8 @@ const Studio2 = ({
         rootMargin: '-120px 0px 0px 0px',
       };
 
-      const cb = (entries) => {
-        entries.forEach((entry) => {
+      const cb = entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setThemeClass(styles.darkTheme);
           } else {
@@ -117,6 +114,7 @@ const Studio2 = ({
   return (
     <Layout>
       <div
+        tabIndex="-1" // Makes it scrollable with keyboard
         className={`${styles.wrapper} ${
           width > mediumBreakpoint ? themeClass : ''
         }`}
