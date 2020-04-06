@@ -32,8 +32,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - image: ''
-    marginLeft: 0
+  - marginLeft: 0
     marginTop: 4
     video:
       autoplay: true
