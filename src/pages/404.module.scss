@@ -6,11 +6,11 @@
   width: 100%;
   font-size: var(--font-small);
   background: #fff;
-  padding-left: 1.4rem;
+  padding-left: 22.4px;
 
   div {
     width: 100%;
-    max-width: 42rem;
+    max-width: 672px;
     margin: 0 auto;
     padding-top: 50vh;
   }
@@ -20,7 +20,7 @@
     display: inline-block;
     text-decoration: none;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 1px;
       left: 0;
@@ -31,16 +31,16 @@
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .notFoundPage {
     font-size: var(--font-med);
-    padding-left: 2rem;
+    padding-left: 32px;
   }
 }
 
-@media (min-width: 66rem) {
+@media (min-width: 1056px) {
   .notFoundPage {
     font-size: var(--font-large);
-    padding-left: 3.2rem;
+    padding-left: 51.2px;
   }
 }

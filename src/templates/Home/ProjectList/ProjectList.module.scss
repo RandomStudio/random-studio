@@ -8,7 +8,7 @@
   font-size: var(--font-small);
   line-height: 1.25;
   margin: 10vw auto 25vw;
-  padding: 0 1.4rem;
+  padding: 0 22.4px;
 }
 
 .statement {
@@ -18,7 +18,7 @@
 .intermittentStatement {
   max-width: 21em;
   p {
-    margin-bottom: 1.6rem;
+    margin-bottom: 25.6px;
   }
 
   a {
@@ -26,7 +26,7 @@
     display: inline-block;
     text-decoration: none;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -40,7 +40,7 @@
 .title {
   max-width: 17em;
   line-height: 1.375;
-  padding: 1rem 1.4rem 0;
+  padding: 16px 22.4px 0;
 }
 
 .thumbnail {
@@ -66,11 +66,11 @@
   }
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 480px) {
   .statement,
   .intermittentStatement {
     font-size: var(--font-med);
-    padding: 0 2rem;
+    padding: 0 32px;
   }
 
   .statement {
@@ -82,18 +82,18 @@
   }
 
   .title {
-    padding: 0.6rem 0;
+    padding: 9.6px 0;
     font-size: var(--font-small);
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .statement,
   .intermittentStatement {
     font-size: var(--font-large);
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 25.6px;
   }
 }

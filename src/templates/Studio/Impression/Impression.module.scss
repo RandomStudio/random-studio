@@ -13,7 +13,7 @@
   width: 100%;
 
   // Package specific class
-  [class=" gatsby-image-wrapper"] {
+  [class=' gatsby-image-wrapper'] {
     height: 70vh;
   }
 
@@ -21,13 +21,13 @@
   & > div > div:last-of-type {
     @include blendedText;
     position: absolute;
-    top: -0.8rem;
+    top: -12.8px;
     bottom: 0;
     font-size: var(--font-small);
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .carouselWrapper {
     & > div > div:last-of-type {
       font-size: var(--font-med);
@@ -35,24 +35,24 @@
       bottom: initial;
       left: 0;
       right: 0;
-      max-width: 44rem;
+      max-width: 704px;
       width: 100%;
       margin: auto;
       transform: translateY(-50%);
 
       p,
       span {
-        margin-left: 2rem;
+        margin-left: 32px;
       }
     }
   }
 }
 
-@media (min-width: 82rem) {
+@media (min-width: 1312px) {
   .carouselWrapper {
     & > div > div:last-of-type {
-      max-width: 58rem;
-      padding: 1.4rem;
+      max-width: 928px;
+      padding: 22.4px;
 
       p,
       span {

@@ -1,40 +1,40 @@
 .recruitee {
-  margin: 0 -1.4rem 6rem;
-  padding: 0 1.6rem;
+  margin: 0 -22.4px 96px;
+  padding: 0 25.6px;
   font-size: var(--font-small);
 
-  @media (min-width: 36rem) {
+  @media (min-width: 576px) {
     font-size: var(--font-med);
-    margin-bottom: 8rem;
+    margin-bottom: 128px;
   }
 
-  @media (min-width: 50rem) {
+  @media (min-width: 800px) {
   }
 }
 
 .list {
-    margin: 0;
-    padding: 0.8rem 0 0.6rem;
-    list-style: none;
+  margin: 0;
+  padding: 12.8px 0 9.6px;
+  list-style: none;
 }
 
 .item {
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 
-  @media (min-width: 36rem) {
-    margin-bottom: 3rem;
+  @media (min-width: 576px) {
+    margin-bottom: 48px;
   }
 }
 
 .open-roles {
   color: #ff0000;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 
-  @media (min-width: 36rem) {
-    margin-bottom: 3rem;
+  @media (min-width: 576px) {
+    margin-bottom: 48px;
   }
 
-  @media (min-width: 50rem) {
+  @media (min-width: 800px) {
     flex: 1;
     max-width: 45%;
   }
@@ -42,10 +42,10 @@
 
 .department {
   font-size: var(--font-xs);
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   text-transform: uppercase;
 
-  @media (min-width: 36rem) {
+  @media (min-width: 576px) {
     font-size: var(--font-small);
   }
 }
@@ -53,8 +53,7 @@
 .role {
   transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background: linear-gradient(transparent, transparent),
-    linear-gradient(transparent, transparent),
-    linear-gradient(black, black);
+    linear-gradient(transparent, transparent), linear-gradient(black, black);
   background-size: 0.05em 1px, 0.05em 1px, 1px 0.07em;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0 87%, 100% 87%, 0 100%;

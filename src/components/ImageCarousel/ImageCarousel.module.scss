@@ -2,13 +2,13 @@
   // The gatsby generated image wrapper & img fallback
   & > div > div,
   img {
-    margin-bottom: 0.8rem;
+    margin-bottom: 12.8px;
     object-fit: contain;
   }
 
   p,
   span {
-    margin-left: 1.4rem;
+    margin-left: 22.4px;
   }
 }
 
@@ -33,11 +33,11 @@
   pointer-events: none;
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .carousel {
     p,
     span {
-      margin-left: 2rem;
+      margin-left: 32px;
     }
   }
 }

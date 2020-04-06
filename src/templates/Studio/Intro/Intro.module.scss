@@ -5,31 +5,31 @@
   position: relative;
   font-family: 'Larish Neue', serif;
   font-weight: normal;
-  font-size: 3.2rem;
+  font-size: 51.2px;
   mix-blend-mode: difference;
   margin: 0;
   padding-top: 40vh;
-  padding-left: 1.4rem;
+  padding-left: 22.4px;
   letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
 .intro {
   position: relative;
-  margin: 15.4rem 0 0;
-  padding: 0 1.4rem;
+  margin: 246.4px 0 0;
+  padding: 0 22.4px;
 }
 .introHeader {
-  margin-bottom: 6.4rem;
+  margin-bottom: 102.4px;
   font-size: var(--font-small);
   font-weight: normal;
   letter-spacing: 0.01em;
 }
 
 .address {
-  font-size: 1rem;
-  margin-bottom: 3.2rem;
-  padding-top: 0.3rem;
+  font-size: 16px;
+  margin-bottom: 51.2px;
+  padding-top: 4.8px;
   letter-spacing: 0.02em;
 
   p {
@@ -65,26 +65,26 @@
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .logo {
-    padding-left: 4rem;
-    font-size: 5rem;
+    padding-left: 64px;
+    font-size: 80px;
   }
 
   .intro {
-    padding: 4rem;
+    padding: 64px;
   }
 
   .introHeader {
     font-size: var(--font-med);
-    margin-bottom: 9.6rem;
+    margin-bottom: 153.6px;
   }
 
   .address {
     float: left;
     font-size: var(--font-small);
     margin: 0;
-    margin-right: 2rem;
+    margin-right: 32px;
 
     a::after {
       height: 2px;
@@ -92,10 +92,10 @@
   }
 }
 
-@media (min-width: 54rem) {
+@media (min-width: 864px) {
   .logo,
   .intro {
-    max-width: 48rem;
+    max-width: 768px;
     margin: 0 auto;
   }
 
@@ -112,19 +112,19 @@
   }
 
   .address {
-    padding-top: 0.5rem;
+    padding-top: 8px;
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .logo,
   .intro {
-    max-width: 64rem;
+    max-width: 1024px;
   }
 
   .logo {
-    max-width: 72rem;
-    font-size: 5.6rem;
+    max-width: 1152px;
+    font-size: 89.6px;
   }
 
   .introHeader {
@@ -132,7 +132,7 @@
   }
 
   .address {
-    margin-right: 2.4rem;
-    font-size: 1.74rem;
+    margin-right: 38.4px;
+    font-size: 27.84px;
   }
 }
