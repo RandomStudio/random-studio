@@ -50,7 +50,7 @@ const Block = ({ image, index, copy, title, video }) => {
               autoPlay
               muted
               loop
-              playsinline
+              playsInline
             >
               <source src={video} type="video/mp4" />
             </video>
