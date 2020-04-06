@@ -189,7 +189,6 @@ projects:
       marginTop: 0
       marginLeft: 0
       width: 0
-    article: '“Body”: using your self as a search tool'
   - caption: |-
       Various in-store installations
       for NikeLab

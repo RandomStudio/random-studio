@@ -51,8 +51,11 @@ export const pageQuery = graphql`
         intro
         layout
         middle
-        projects {
+        articles {
           article
+          position
+        }
+        projects {
           caption
           project
           thumbnail {
@@ -81,7 +84,17 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
   const edges = allMarkdownRemark.edges || [];
   const fields = markdownRemark ? markdownRemark.fields : {};
   const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
-  const articles = allArticles ? allArticles.edges : [];
+
+  const articles = (frontmatter.articles || []).map(relation => {
+    const article = (allArticles.edges || []).find(
+      item => item.node.frontmatter.title === relation.article,
+    );
+
+    return {
+      ...article.node.frontmatter,
+      position: relation.position,
+    };
+  });
 
   return (
     <Layout>
@@ -93,8 +106,9 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
       />
       <ProjectList
         {...frontmatter}
+        articles={articles}
         projects={(frontmatter.projects || [])
-          .map(({ caption, project: projectTitle, thumbnail, article }) => {
+          .map(({ caption, project: projectTitle, thumbnail }) => {
             const project = edges.find(
               ({
                 node: {
@@ -102,18 +116,6 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
                 },
               }) => title === projectTitle,
             );
-
-            if (article) {
-              const singleArticle =
-                articles.length &&
-                articles.find(
-                  item => article === item.node.frontmatter.title,
-                );
-
-              return {
-                article: singleArticle && singleArticle.node.frontmatter,
-              };
-            }
 
             if (!project) {
               return null;
