@@ -1,6 +1,7 @@
 import CMS from 'netlify-cms-app';
 import NumberControl from 'netlify-cms-widget-number/dist/esm/NumberControl';
 import NumberPreview from 'netlify-cms-widget-number/dist/esm/NumberPreview';
+import video from 'netlify-cms-editor-component-video';
 import PropTypes from 'prop-types';
 import React from 'react';
 import HomePreview from './preview-templates/Page/HomePreview';
@@ -37,3 +38,5 @@ CMS.registerWidget(
   NonEmptyStringableNumberControl,
   NumberPreview,
 );
+
+CMS.registerEditorComponent(video);
