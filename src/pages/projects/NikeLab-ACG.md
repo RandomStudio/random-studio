@@ -113,7 +113,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/213649062.hd.mp4?s=140f4865386d492a2fab57cdf81ebb7594dc975e&profile_id=119
-      isAlwaysMuted: true
+      isAlwaysMuted: false
     width: 25
   - caption: >-
       Essential to the project was the idea of confrontation and evoking a sense
