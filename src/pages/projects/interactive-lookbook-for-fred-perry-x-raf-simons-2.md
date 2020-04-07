@@ -26,7 +26,6 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/398004212.hd.mp4?s=00b78ca74a165fcbb04ed4c46cd70749b90c3538&profile_id=174
-      isAlwaysMuted: true
   - caption: >-
       Continuing our exploration of 360 storytelling, the lookbook follows on
       from our previous collaborations. Last season's house party is still in
