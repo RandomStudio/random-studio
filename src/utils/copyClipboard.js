@@ -1,16 +1,25 @@
+// Added minor additions
+// Source: https://techoverflow.net/2018/03/30/copying-strings-to-the-clipboard-using-pure-javascript/
 /* eslint-disable import/prefer-default-export */
-export const copyEmail = (event, target, callback) => {
+export function copyStringToClipboard(event, string, callback) {
   try {
-    window.getSelection().selectAllChildren(target);
+    // Create new element
+    const tempElement = document.createElement('textarea');
+    // Set value (string to be copied)
+    tempElement.value = string;
+    // Set non-editable to avoid focus and move outside of view
+    tempElement.setAttribute('readonly', '');
+    tempElement.style = { position: 'absolute', left: '-9999px' };
+    document.body.appendChild(tempElement);
+    // Select text inside element
+    tempElement.select();
+    // Copy text to clipboard
     document.execCommand('copy');
+    // Remove temporary element
+    document.body.removeChild(tempElement);
+
     callback(true);
     window.setTimeout(() => callback(false), 3000);
-
-    if (window.getSelection().empty) {
-      window.getSelection().empty();
-    } else if (window.getSelection().removeAllRanges) {
-      window.getSelection().removeAllRanges();
-    }
 
     event.preventDefault();
   } catch (error) {
@@ -19,4 +28,4 @@ export const copyEmail = (event, target, callback) => {
       error,
     );
   }
-};
+}

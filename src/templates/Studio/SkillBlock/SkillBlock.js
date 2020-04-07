@@ -2,14 +2,14 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SkillBlock.module.scss';
 import SkillList from './SkillList/SkillList';
-import { copyEmail } from '../../../utils/copyClipboard';
+import { copyStringToClipboard } from '../../../utils/copyClipboard';
 
 const SkillBlock = ({ skillset, email }) => {
   const [isNoticeVisible, setIsNoticeVisible] = useState(false);
   const emailRef = useRef();
 
   const handleClickEmail = event =>
-    copyEmail(event, emailRef.current, setIsNoticeVisible);
+    copyStringToClipboard(event, email, setIsNoticeVisible);
 
   return (
     <div className={styles.wrapper}>

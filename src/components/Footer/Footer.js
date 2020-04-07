@@ -2,14 +2,14 @@ import React, { useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import Newsletter from './Newsletter/Newsletter';
 import styles from './Footer.module.scss';
-import { copyEmail } from '../../utils/copyClipboard';
+import { copyStringToClipboard } from '../../utils/copyClipboard';
 
 const Footer = ({ address, email, phone }) => {
   const [isNoticeVisible, setIsNoticeVisible] = useState(false);
   const emailRef = useRef();
 
   const handleClickEmail = event =>
-    copyEmail(event, emailRef.current, setIsNoticeVisible);
+    copyStringToClipboard(event, email, setIsNoticeVisible);
 
   return (
     <footer className={styles.footer}>
