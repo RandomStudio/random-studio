@@ -1,10 +1,16 @@
 import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
 const ProjectVideo = ({
   video: {
-    autoplay, hasControls, isMuted: isStartingMuted, loops, url,
+    autoplay,
+    hasControls,
+    isMuted: isStartingMuted,
+    loops,
+    url,
+    isAlwaysMuted,
   },
   ratio,
 }) => {
@@ -49,24 +55,43 @@ const ProjectVideo = ({
         ref={videoRef}
         videoSrc={url}
         loops={loops}
-        isMuted={isCurrentlyMuted}
+        isMuted={isAlwaysMuted || isCurrentlyMuted}
         autoPlays={isPlaying}
       />
-      {hasControls
-        && (hasPlayed ? (
+      {hasControls &&
+        (hasPlayed ? (
           <div className={styles.videoControls}>
-            <button onClick={handleTapPlayPause}>
+            <button type="button" onClick={handleTapPlayPause}>
               {isPlaying ? 'Pause' : 'Play'}
             </button>
-            <button onClick={handleTapVolumeToggle}>
-              {isCurrentlyMuted ? 'Unmute' : 'Mute'}
-            </button>
+            {!isAlwaysMuted && (
+              <button type="button" onClick={handleTapVolumeToggle}>
+                {isCurrentlyMuted ? 'Unmute' : 'Mute'}
+              </button>
+            )}
           </div>
         ) : (
           <div className={styles.beforeFirstPlay}>Play video</div>
         ))}
     </div>
   );
+};
+
+ProjectVideo.propTypes = {
+  autoplay: PropTypes.bool,
+  hasControls: PropTypes.bool,
+  isAlwaysMuted: PropTypes.bool,
+  isMuted: PropTypes.bool,
+  loops: PropTypes.bool,
+  url: PropTypes.string.isRequired,
+};
+
+ProjectVideo.defaultProps = {
+  autoplay: true,
+  hasControls: true,
+  isAlwaysMuted: false,
+  isMuted: true,
+  loops: true,
 };
 
 export default ProjectVideo;
