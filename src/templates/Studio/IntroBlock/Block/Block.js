@@ -44,7 +44,7 @@ const Block = ({ image, index, copy, title, video }) => {
           className={styles.mediaWrapper}
           style={{ scale }}
         >
-          {video ? (
+          {/* {video ? (
             <video
               className={styles.fluidVideo}
               autoPlay
@@ -56,7 +56,8 @@ const Block = ({ image, index, copy, title, video }) => {
             </video>
           ) : (
             <FluidImage className={styles.fluidImage} image={image} />
-          )}
+          )} */}
+          <FluidImage className={styles.fluidImage} image={image} />
           <motion.div
             className={styles.overlay}
             style={{ opacity: overlayOpacity }}

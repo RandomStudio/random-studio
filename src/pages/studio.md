@@ -37,13 +37,13 @@ skillset:
   - Engineering
 studioImpression:
   images:
-    - image: /img/studio1.jpg
-    - image: /img/studio2.jpg
-    - image: /img/studio3.jpg
-    - image: /img/studio4.jpg
-    - image: /img/studio5.jpg
-    - image: /img/studio6.jpg
-    - image: /img/studio7.jpg
+    - image: /img/studio_01.jpg
+    - image: /img/studio_02.jpg
+    - image: /img/studio_03.jpg
+    - image: /img/studio_04.jpg
+    - image: /img/studio_05.jpg
+    - image: /img/studio_06.jpg
+    - image: /img/studio_07.jpg
   showIndicator: true
   title: Studio Impressions
 ---
