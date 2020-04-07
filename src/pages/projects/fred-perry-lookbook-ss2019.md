@@ -31,7 +31,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/317991972.hd.mp4?s=9ed81e2894b01f7fc8b957a3582865d9e8b3c516&profile_id=175
-      isAlwaysMuted: true
+      isAlwaysMuted: false
     width: 70
   - caption: >-
       The experience is a tribute to the accidental/objective photo genre made
