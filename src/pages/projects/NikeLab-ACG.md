@@ -20,7 +20,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
-      isAlwaysMuted: true
+      isAlwaysMuted: false
     width: 100
   - caption: >-
       Conceived as a means of bringing about a relevant experience that connects
@@ -113,7 +113,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/213649062.hd.mp4?s=140f4865386d492a2fab57cdf81ebb7594dc975e&profile_id=119
-      isAlwaysMuted: false
+      isAlwaysMuted: true
     width: 25
   - caption: >-
       Essential to the project was the idea of confrontation and evoking a sense
