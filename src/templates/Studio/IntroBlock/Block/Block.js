@@ -24,8 +24,8 @@ const Block = ({ image, index, copy, title, video }) => {
   const { scrollY } = useViewportScroll();
   const scale = useTransform(
     scrollY,
-    [blockStart, blockEnd, blockEnd + 1000],
-    [1, 0.8, 0.3],
+    [blockStart, blockEnd, blockEnd + 300, blockEnd + 1000],
+    [1, 0.8, 0.8, 0.3],
   );
 
   // TODO: Find a way to prevent calculations on desktop breakpoint
