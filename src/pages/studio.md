@@ -3,10 +3,10 @@ templateKey: Studio
 title: Random Studio
 introBlock:
   - copy: We create brand and service experiences that trigger a sense of wonder.
-    image: /img/wec190502_chanel_j12_022_2.jpg
+    image: /img/studio-hero-1.jpg
     video: /img/boat.mp4
   - copy: 'Our work comes to life in the space where the digital meets the physical. '
-    image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
+    image: /img/studio-hero-2.jpg
     video: /img/digital.mp4
 services:
   list:
