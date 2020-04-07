@@ -20,7 +20,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
-      isAlwaysMuted: true
+      isAlwaysMuted: false
     width: 100
   - caption: >-
       Conceived as a means of bringing about a relevant experience that connects
