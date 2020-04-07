@@ -65,6 +65,7 @@ infoBlock:
       - images:
           - caption: Shoppable wall for Tommy Hilfiger
             image: /img/human-centered-products-02-gigi-shopwall-2x.jpg
+            video: /img/11106865_10203821090434708_1806257935_n.mp4
           - caption: Digital showroom for PVH
             image: /img/human-centered-products-02-Digital-Showroom@2x.jpg
         showIndicator: true
