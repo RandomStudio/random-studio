@@ -29,6 +29,15 @@
     }
 }
 
+.open-roles {
+  color: var(--red);
+  margin-bottom: 2rem;
+
+  @media (min-width: 36rem) {
+    margin-bottom: 3rem;
+  }
+}
+
 .title {
   font-size: var(--px-font-xxs);
   margin-bottom: 22px;

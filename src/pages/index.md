@@ -184,6 +184,11 @@ projects:
       video: >-
         https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
       width: 50
+  - thumbnail:
+      ratio: 0
+      marginTop: 0
+      marginLeft: 0
+      width: 0
   - caption: |-
       Various in-store installations
       for NikeLab
@@ -195,10 +200,12 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
-address: >
-  Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
+articles:
+  - article: '“Body”: using your self as a search tool'
+    position: 2
+address: >-
+  > Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
 phone: +31 20 779 7735
 email: hello@random.studio
 ---
-

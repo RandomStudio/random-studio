@@ -8,6 +8,8 @@
   --font-logo-medium: 5rem;
 	--font-logo-large: 5.6rem;
 
+	/* Colors */
+	--red: #ff0000;
 
 	/* To replace the rems above later on & better naming system */
 	--px-font-xxs: 16px;
