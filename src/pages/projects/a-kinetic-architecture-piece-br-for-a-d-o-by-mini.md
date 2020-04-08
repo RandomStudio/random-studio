@@ -5,8 +5,7 @@ intro: >-
   In celebration of the 2020 launch of the new MINI Electric vehicle, we were
   commissioned by A/D/O to create a work themed around the future of mobility.
 content:
-  - image: ''
-    marginLeft: 5
+  - marginLeft: 5
     marginTop: 10
     ratio: 66.66
     video:
@@ -112,4 +111,3 @@ opengraph:
   ogImage: /img/ADO_Perpetuum_9.jpg
   ogTitle: "Perpetuum –\_A kinetic architecture piece for A/D/O by MINI"
 ---
-

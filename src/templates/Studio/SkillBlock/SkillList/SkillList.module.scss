@@ -1,0 +1,44 @@
+.wrapper {
+  flex: 1;
+  margin-left: 20px;
+
+  h3 {
+    font-size: var(--px-font-xxs);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    font-weight: normal;
+  }
+
+  @media (min-width: 48rem) {
+    margin-left: 120px;
+
+    h3 {
+      font-size: var(--px-font-xs);
+    }
+  }
+
+  @media (min-width: 60rem) {
+    margin: 0;
+
+    h3 {
+      font-size: var(--px-font-small);
+    }
+
+    h3, .listWrapper  {
+      padding-left: 120px;
+    }
+  }
+}
+
+.listWrapper {
+  font-size: var(--px-font-xmed);
+
+  @media (min-width: 48rem) {
+    font-size: var(--px-font-med);
+  }
+
+  @media (min-width: 60rem) {
+    font-size: var(--px-font-large);
+    line-height: 52px;
+  }
+}

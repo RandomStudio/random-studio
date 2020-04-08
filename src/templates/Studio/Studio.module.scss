@@ -1,0 +1,68 @@
+
+.jobsImpressionBlock {
+  display: flex;
+  margin: 100px 0 280px;
+  flex-direction: column;
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    margin: 200px 0 280px;
+  }
+}
+
+.jobsImpressionBlock {
+  margin-bottom: 32px;
+  flex-direction: column-reverse;
+
+  @media (min-width: 48rem) {
+    flex-direction: row;
+  }
+}
+
+.carouselWrapper {
+  flex: 1;
+  max-width: 88%;
+  margin-left: 6%;
+
+  @media (min-width: 48rem) {
+    max-width: 50%;
+    margin-left: auto;
+
+    // Package specific class
+    [class=' gatsby-image-wrapper'] {
+      height: 760px;
+    }
+  }
+
+  @media (min-width: 60rem) {
+    // Package specific class
+    [class=' gatsby-image-wrapper'] {
+      height: 1060px;
+    }
+  }
+}
+
+.wrapper {
+  transition: background .35s ease-in-out,color .35s ease-in-out;
+  will-change: background, color;
+
+  @media (min-width: 60rem) {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    perspective: 1px;
+    perspective-origin: 0 0;
+
+    :global(.prevent-scroll) & {
+      overflow-y: hidden;
+      // See here why: https://css-tricks.com/things-watch-working-css-3d/
+      perspective: initial;
+    }
+  }
+}
+
+.dark-theme {
+  background: #000;
+  color: #fff;
+}
