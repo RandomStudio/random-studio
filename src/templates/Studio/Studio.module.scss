@@ -24,10 +24,17 @@
   max-width: 88%;
   margin-left: 6%;
 
-  @media (min-width: 60rem) {
+  @media (min-width: 48rem) {
     max-width: 50%;
     margin-left: auto;
 
+    // Package specific class
+    [class=' gatsby-image-wrapper'] {
+      height: 760px;
+    }
+  }
+
+  @media (min-width: 60rem) {
     // Package specific class
     [class=' gatsby-image-wrapper'] {
       height: 1060px;
