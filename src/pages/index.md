@@ -200,7 +200,9 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
-articles: []
+articles:
+  - article: '“Body”: using your self as a search tool'
+    position: 2
 address: >-
   > Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
