@@ -185,7 +185,7 @@
     // Scale = (perspective - zTranslation) / perspective | Perspective is set iin Studio.module.scss
     transform: translateX(1%) translateZ(-.1px) scale(1.1);
 
-    @supports (-webkit-touch-callout: none) {
+    @supports (-webkit-overflow-scrolling: none) {
       // CSS specific to iOS devices (ipads - landscape)
       // Simulator didn't trip up the CSS but my ipad 5 IOS 13 did - Trust the real device more
       transform: translateX(1%) translateZ(-.1px) scale(0.9);
