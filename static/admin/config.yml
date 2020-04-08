@@ -278,51 +278,64 @@ collections:
             name: email
             widget: text
       - file: src/pages/studio.md
-        label: 'Studio Page'
+        label: "Studio page"
         name: studio
         fields:
-          - label: 'Template Key'
+          - label: "Template key"
             name: templateKey
             widget: hidden
             default: studio
-          - label: Intro
-            name: intro
-            widget: markdown
-          - label: 'Info block'
-            name: infoBlock
+          - label: Title
+            name: title
+            widget: string
+            default: "Random Studio"
+          - label: 'Intro Block'
+            name: introBlock
             widget: list
             fields:
-              - label: Collection
-                name: collection
+              - label: Copy
+                name: copy
+                widget: markdown
+              - label: Image
+                name: image
+                widget: image
+              - label: Video
+                name: video
+                widget: file
+                hint: 'Adding a video will replace the image'
                 required: false
+                allow_multiple: false
+                media_library:
+                  config:
+                    multiple: false
+          - label: Services
+            name: services
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: "List of Services"
+                name: list
                 widget: list
                 fields:
-                  - label: Images
-                    name: images
-                    required: false
-                    widget: list
-                    fields:
-                      - label: Image
-                        name: image
-                        required: false
-                        widget: image
-                        media_library:
-                          config:
-                            multiple: true
-                      - label: Caption
-                        name: caption
-                        widget: markdown
-                        required: false
-                  - label: 'Show carousel indicator'
-                    name: showIndicator
-                    widget: boolean
-                    required: false
-                    default: false
-                  - label: Info
-                    name: info
-                    required: false
-                    widget: markdown
-          - label: 'Studio impression'
+                  - label: Title
+                    name: title
+                    widget: text
+                  - label: Copy
+                    name: copy
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
+          - label: "Our Skillset"
+            name: skillset
+            widget: list
+            field:
+              label: Skill
+              name: skill
+              widget: string
+          - label: "Studio impression"
             name: studioImpression
             widget: object
             fields:
