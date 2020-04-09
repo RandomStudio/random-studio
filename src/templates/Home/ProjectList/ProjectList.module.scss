@@ -3,20 +3,17 @@
   background: #f8f8f8;
 }
 
-.statement,
-.intermittentStatement {
+.statement {
   font-size: var(--font-small);
+  max-width: 17em;
   line-height: 1.25;
   margin: 10vw auto 25vw;
   padding: 0 1.4rem;
 }
 
-.statement {
-  max-width: 17em;
-}
-
 .intermittentStatement {
   max-width: 21em;
+
   p {
     margin-bottom: 1.6rem;
   }
@@ -26,13 +23,13 @@
     display: inline-block;
     text-decoration: none;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       height: 2px;
       width: 100%;
-      background-color: #000;
+      background-color: black;
     }
   }
 }
@@ -66,34 +63,25 @@
   }
 }
 
+// Force overwrite the inline programmeticly set styles for small screens/mobile
+@media (max-width: 30rem) {
+  .thumbnail {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
 @media (min-width: 30rem) {
-  .statement,
-  .intermittentStatement {
-    font-size: var(--font-med);
-    padding: 0 2rem;
-  }
-
   .statement {
+    font-size: var(--font-med);
     margin: 0 auto 15vw;
-  }
-
-  .intermittentStatement {
-    margin-bottom: 0;
-  }
-
-  .title {
-    padding: 0.6rem 0;
-    font-size: var(--font-small);
+    padding: 0 2rem;
   }
 }
 
 @media (min-width: 72rem) {
-  .statement,
-  .intermittentStatement {
+  .statement {
     font-size: var(--font-large);
-  }
-
-  .title {
-    font-size: 1.6rem;
   }
 }

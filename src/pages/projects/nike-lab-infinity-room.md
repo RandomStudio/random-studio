@@ -9,7 +9,6 @@ intro: >-
   experiential set up.
 priority: 2
 thumbnail:
-  image: ''
   marginLeft: 3
   marginTop: -5
   ratio: 56.25
@@ -117,4 +116,3 @@ credits:
   - key: 'With:'
     value: Ink Associates — Set Construction and Installation
 ---
-
