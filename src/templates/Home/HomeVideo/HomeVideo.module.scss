@@ -44,7 +44,7 @@
   width: 100%;
   font-size: 16px;
   line-height: 1;
-  padding: 16px 22.4px;
+  padding: 16px 22px;
 }
 
 .credits-logo,
@@ -56,7 +56,7 @@
 .logo {
   @include blendedText;
   position: absolute;
-  left: 22.4px;
+  left: 22px;
   font-size: var(--font-logo-small);
   font-weight: normal;
   line-height: 1.1;
@@ -99,7 +99,7 @@
 
     &.is-top {
       margin: 0;
-      padding-left: 38.4px;
+      padding-left: 38px;
     }
   }
 }

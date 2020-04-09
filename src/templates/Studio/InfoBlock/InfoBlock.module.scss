@@ -7,10 +7,10 @@
 .info {
   order: 2;
   margin-bottom: 20vh;
-  padding: 22.4px;
+  padding: 22px;
 
   p {
-    margin-bottom: 19.2px;
+    margin-bottom: 19px;
   }
 
   ul {
@@ -62,10 +62,10 @@
 
   .info {
     margin: 0;
-    padding: 76.8px 32px 115.2px;
+    padding: 77px 32px 115px;
 
     p {
-      margin-bottom: 28.8px;
+      margin-bottom: 29px;
     }
   }
 }
@@ -75,7 +75,7 @@
     flex-direction: row;
     margin: 0 auto;
     margin-bottom: 20vh;
-    font-size: 27.84px;
+    font-size: 28px;
     align-items: center;
 
     &:nth-of-type(1) {
@@ -115,6 +115,6 @@
 
   .info {
     order: 0;
-    padding: 0 51.2px;
+    padding: 0 51px;
   }
 }

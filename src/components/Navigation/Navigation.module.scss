@@ -5,9 +5,9 @@
   display: flex;
   position: fixed;
   top: 0;
-  padding: 22.4px;
+  padding: 22px;
   width: 100%;
-  font-size: 19.2px;
+  font-size: 19px;
   line-height: 1;
   mix-blend-mode: difference;
   pointer-events: all;
@@ -29,18 +29,18 @@
     padding: 32px;
 
     a + a {
-      margin-left: 38.4px;
+      margin-left: 38px;
     }
   }
 }
 
 @media (min-width: 1152px) {
   .nav {
-    font-size: 27.84px;
-    padding: 38.4px;
+    font-size: 28px;
+    padding: 38px;
 
     a + a {
-      margin-left: 51.2px;
+      margin-left: 51px;
     }
   }
 }

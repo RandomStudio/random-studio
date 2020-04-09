@@ -21,7 +21,7 @@
   & > div > div:last-of-type {
     @include blendedText;
     position: absolute;
-    top: -12.8px;
+    top: -13px;
     bottom: 0;
     font-size: var(--font-small);
   }
@@ -52,7 +52,7 @@
   .carouselWrapper {
     & > div > div:last-of-type {
       max-width: 928px;
-      padding: 22.4px;
+      padding: 22px;
 
       p,
       span {

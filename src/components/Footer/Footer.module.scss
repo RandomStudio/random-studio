@@ -6,7 +6,7 @@
   width: 100%;
   font-size: var(--font-xxs);
   line-height: 1.375;
-  padding: 22.4px;
+  padding: 22px;
   max-width: 448px;
 
   @media (min-width: 576px) {
@@ -15,7 +15,7 @@
   }
 
   @media (min-width: 1152px) {
-    padding: 38.4px;
+    padding: 38px;
   }
 
   a {
@@ -28,7 +28,7 @@
       position: absolute;
       bottom: 2px;
       left: 0;
-      height: 0.8px;
+      height: 1px;
       width: 100%;
       background-color: black;
     }
