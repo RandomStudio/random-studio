@@ -3,14 +3,6 @@
   background: #f8f8f8;
 }
 
-// .statement {
-//   font-size: var(--font-small);
-//   max-width: 17em;
-//   line-height: 1.25;
-//   margin: 10vw auto 25vw;
-//   padding: 0 1.4rem;
-// }
-
 .statement {
   max-width: 17em;
 }
@@ -68,7 +60,7 @@
 }
 
 // Force overwrite the inline programmeticly set styles for small screens/mobile
-@media (max-width: 30rem) {
+@media (max-width: 480px) {
   .thumbnail {
     margin-top: 0 !important;
     margin-left: 0 !important;
@@ -76,15 +68,15 @@
   }
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 480px) {
   .statement {
     font-size: var(--font-med);
     margin: 0 auto 15vw;
-    padding: 0 2rem;
+    padding: 0 32px;
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .statement {
     font-size: var(--font-large);
   }

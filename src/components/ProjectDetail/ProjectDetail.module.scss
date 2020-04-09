@@ -64,7 +64,7 @@
 
 .credits {
   margin: 10vw 0 5%;
-  padding: 8rem 1.4rem 0;
+  padding: 128px 22px 0;
 
   ul {
     padding-bottom: 22px;
@@ -77,9 +77,9 @@
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .project {
-    padding-top: 8rem;
+    padding-top: 128px;
   }
 
   .title,
@@ -113,7 +113,7 @@
   .credits {
     width: var(--width);
     margin: 8vw 0;
-    padding: 8rem 4rem 0;
+    padding: 128px 64px 0;
 
     ul {
       display: flex;
@@ -124,9 +124,9 @@
   }
 }
 
-@media (min-width: 54rem) {
+@media (min-width: 864px) {
   .project {
-    padding-top: 12rem;
+    padding-top: 192px;
   }
 
   .title,
@@ -156,7 +156,7 @@
   }
 
   .credits {
-    max-width: 48rem;
+    max-width: 768px;
     margin: 0 auto 8%;
   }
 }
@@ -166,7 +166,7 @@
   .intro,
   .text,
   .credits {
-    max-width: 64rem;
+    max-width: 1024px;
   }
 
   .title,
