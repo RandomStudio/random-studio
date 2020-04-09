@@ -16,3 +16,7 @@
   to = "/"
   status = 200
 
+[[redirects]]
+  from = "/projects"
+  to = "/#projects"
+  status = 200

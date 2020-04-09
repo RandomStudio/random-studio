@@ -1,14 +1,22 @@
 .carousel {
+  position: relative;
   // The gatsby generated image wrapper & img fallback
   & > div > div,
   img {
+<<<<<<< HEAD
     margin-bottom: 12.8px;
+=======
+>>>>>>> master
     object-fit: contain;
   }
 
   p,
   span {
+<<<<<<< HEAD
     margin-left: 22.4px;
+=======
+    font-size: var(--px-font-xxs);
+>>>>>>> master
   }
 }
 
@@ -30,14 +38,37 @@
 }
 
 .indicatorWrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+  transform: rotate3d(0, 0, 1, -90deg) translate3d(100%, 100%, 0);
+  margin: 0 -4px 0 0;
+  font-size: 13px;
+  line-height: 16px;
   pointer-events: none;
-}
 
-@media (min-width: 576px) {
-  .carousel {
-    p,
-    span {
-      margin-left: 32px;
+  p {
+    display: inline-block;
+    &::after {
+      content: ", \00a0";
+    }
+  }
+
+  @media (min-width: 48rem) {
+    right: initial;
+    left: 0;
+    transform-origin: bottom left;
+    transform: rotate3d(0, 0, 1, -90deg) translate3d(0, 0, 0);
+    margin: 0 0 10px -10px;
+    font-size: 16px;
+    line-height: 19px;
+
+    p {
+      display: block;
+      &::after {
+        display: none;
+      }
     }
   }
 }

@@ -1,52 +1,56 @@
 .recruitee {
-  margin: 0 -22.4px 96px;
-  padding: 0 25.6px;
-  font-size: var(--font-small);
+  height: min-content;
+  margin: 120px 20px 120px;
 
-  @media (min-width: 576px) {
-    font-size: var(--font-med);
-    margin-bottom: 128px;
+  @media (min-width: 48rem) {
+    align-self: flex-end;
+    width: 50%;
+    margin: 0 20px 0px 0;
+    padding: 0 0 120px 120px;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 60rem) {
+    margin: 120px 20px 300px 0;
+    padding: 0 120px 0 120px;
   }
 }
 
 .list {
   margin: 0;
-  padding: 12.8px 0 9.6px;
   list-style: none;
-}
+  font-size: var(--px-font-xmed);
 
-.item {
-  margin-bottom: 32px;
+  @media (min-width: 48rem) {
+    font-size: var(--px-font-med);
+  }
 
-  @media (min-width: 576px) {
-    margin-bottom: 48px;
+  @media (min-width: 60rem) {
+    font-size: var(--px-font-large);
   }
 }
 
 .open-roles {
-  color: #ff0000;
-  margin-bottom: 32px;
+  color: var(--red);
+  margin-bottom: 2rem;
 
   @media (min-width: 576px) {
     margin-bottom: 48px;
   }
-
-  @media (min-width: 800px) {
-    flex: 1;
-    max-width: 45%;
-  }
 }
 
-.department {
-  font-size: var(--font-xs);
-  margin-bottom: 8px;
+.title {
+  font-size: var(--px-font-xxs);
+  margin-bottom: 22px;
   text-transform: uppercase;
 
-  @media (min-width: 576px) {
-    font-size: var(--font-small);
+  @media (min-width: 48rem) {
+    flex: 1;
+    font-size: var(--px-font-xs);
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 60rem) {
+    font-size: var(--px-font-small);
   }
 }
 
@@ -54,10 +58,11 @@
   transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background: linear-gradient(transparent, transparent),
     linear-gradient(transparent, transparent), linear-gradient(black, black);
-  background-size: 0.05em 1px, 0.05em 1px, 1px 0.07em;
+  background-size: 0.05em 1px, 0.05em 1px, 1px 2px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0 87%, 100% 87%, 0 100%;
   text-decoration: none;
+  line-height: 52px;
 
   &:hover {
     opacity: 0.5;

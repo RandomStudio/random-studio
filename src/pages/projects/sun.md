@@ -84,7 +84,6 @@ content:
       physical space, the addictive experience of playing somewhere in-between
       the two triggers a split-second of awe when you realise what is in your
       power.
-    image: ''
     marginLeft: 0
     marginTop: 3
     ratio: 0
@@ -121,4 +120,3 @@ credits:
   - key: 'With:'
     value: Philip Schütte
 ---
-

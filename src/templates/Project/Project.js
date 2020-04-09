@@ -56,32 +56,26 @@ export const pageQuery = graphql`
   }
 `;
 
-export default ({
+const Project = ({
   data: {
     markdownRemark: {
-      fields: {
-        slug,
-      },
+      fields: { slug },
       frontmatter: project,
     },
   },
 }) => {
-  const {
-    opengraph,
-  } = project;
+  const { opengraph } = project;
 
   const returnSlug = `#${slug}`;
 
-  const socialTitle = (opengraph && opengraph.ogTitle)
-    ? opengraph.ogTitle
-    : undefined;
+  const socialTitle =
+    opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
 
-  const socialDescription = (opengraph && opengraph.ogDescription)
-    ? opengraph.ogDescription
-    : undefined;
+  const socialDescription =
+    opengraph && opengraph.ogDescription ? opengraph.ogDescription : undefined;
 
-  const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null)
-    || undefined;
+  const SEOImage =
+    (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
 
   return (
     <Layout>
@@ -98,3 +92,5 @@ export default ({
     </Layout>
   );
 };
+
+export default Project;

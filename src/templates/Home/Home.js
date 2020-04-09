@@ -9,6 +9,19 @@ import SEO from '../../components/SEO/SEO';
 
 export const pageQuery = graphql`
   {
+    allArticles: allMarkdownRemark(
+      filter: { frontmatter: { key: { eq: "article" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            articleUrl
+            title
+            quote
+          }
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: frontmatter___priority, order: DESC }
       filter: { frontmatter: { templateKey: { eq: "Project" } } }
@@ -38,6 +51,10 @@ export const pageQuery = graphql`
         intro
         layout
         middle
+        articles {
+          article
+          position
+        }
         projects {
           caption
           project
@@ -63,15 +80,21 @@ export const pageQuery = graphql`
   }
 `;
 
-const Home = ({
-  data: {
-    allMarkdownRemark,
-    markdownRemark,
-  },
-}) => {
+const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
   const edges = allMarkdownRemark.edges || [];
   const fields = markdownRemark ? markdownRemark.fields : {};
   const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
+
+  const articles = (frontmatter.articles || []).map(relation => {
+    const article = (allArticles.edges || []).find(
+      item => item.node.frontmatter.title === relation.article,
+    );
+
+    return {
+      ...article.node.frontmatter,
+      position: relation.position,
+    };
+  });
 
   return (
     <Layout>
@@ -83,21 +106,28 @@ const Home = ({
       />
       <ProjectList
         {...frontmatter}
-        projects={(frontmatter.projects || []).map(
-          ({
-            caption, project: projectTitle, thumbnail,
-          }) => {
-            const project = edges.find(({ node: { frontmatter: { title } } }) => title === projectTitle);
+        articles={articles}
+        projects={(frontmatter.projects || [])
+          .map(({ caption, project: projectTitle, thumbnail }) => {
+            const project = edges.find(
+              ({
+                node: {
+                  frontmatter: { title },
+                },
+              }) => title === projectTitle,
+            );
+
             if (!project) {
               return null;
             }
-            return ({
+
+            return {
               slug: project.node.fields.slug,
               title: caption || project.node.frontmatter.title,
               thumbnail,
-            });
-          },
-        ).filter(project => project !== null)}
+            };
+          })
+          .filter(project => project !== null)}
       />
       <Footer {...frontmatter} />
     </Layout>

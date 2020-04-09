@@ -1,0 +1,19 @@
+.wrapper {
+  position: relative;
+  margin-bottom: 108px;
+  transform-style: preserve-3d;
+
+  @media (max-width: 60rem) {
+    background: #000;
+    color: #fff;
+  }
+
+  @media (min-width: 48rem) {
+    margin-bottom: 144px;
+  }
+
+  @media (min-width: 60rem) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
