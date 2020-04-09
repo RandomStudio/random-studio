@@ -53,69 +53,193 @@ collections:
         name: priority
         required: false
         valueType: float
-        widget: nonEmptyStringableNumber
+        widget: string
       - label: Content
         name: content
         widget: list
-        fields:
-          - label: Image
-            name: image
-            required: false
-            widget: image
-          - label: Video
-            name: video
+        types:
+          - label: Images
+            name: images
             required: false
             widget: object
             fields:
-              - label: 'Video URL'
-                name: url
+              - label: Image
+                name: image
                 required: false
-                widget: text
-              - label: 'Will autoplay'
-                name: autoplay
+                widget: image
+              - label: Video
+                name: video
+                required: false
+                widget: object
+                fields:
+                  - label: 'Video URL'
+                    name: url
+                    required: false
+                    widget: text
+                  - label: 'Will autoplay'
+                    name: autoplay
+                    required: false
+                    default: false
+                    widget: boolean
+                  - label: 'Show controls'
+                    name: hasControls
+                    required: false
+                    default: false
+                    widget: boolean
+                  - label: 'Loop video'
+                    name: loops
+                    required: false
+                    default: true
+                    widget: boolean
+                  - label: Muted
+                    name: isMuted
+                    required: false
+                    default: true
+                    widget: boolean
+              - label: Caption
+                name: caption
+                required: false
+                widget: markdown
+              - label: Ratio
+                name: ratio
+                required: false
+                valueType: float
+                default: 0.00
+                widget: string
+              - label: Width
+                name: width
+                required: false
+                valueType: float
+                widget: string
+              - label: 'Margin Top'
+                name: marginTop
+                default: 0
+                valueType: float
+                widget: string
+              - label: 'Margin Left'
+                name: marginLeft
+                default: 0
+                valueType: float
+                widget: string
+          - label: Carousel
+            name: carousel
+            required: false
+            widget: object
+            fields:
+              - label: Media Content
+                name: mediaContent
+                required: false
+                widget: list
+                types:
+                  - label: Images
+                    name: images
+                    required: false
+                    widget: object
+                    fields:
+                      - label: Image
+                        name: image
+                        required: false
+                        widget: image
+                        media_library:
+                          config:
+                            multiple: true
+                      - label: Carousel Caption (Image)
+                        name: carouselCaptionImage
+                        widget: markdown
+                        required: false
+                  - label: Videos
+                    name: videos
+                    required: false
+                    widget: object
+                    fields:
+                      - label: 'Video URL'
+                        name: url
+                        required: false
+                        widget: text
+                      - label: Carousel Caption (Video)
+                        name: carouselCaptionVideo
+                        widget: markdown
+                        required: false
+                      - label: 'Will autoplay'
+                        name: autoplay
+                        required: false
+                        default: false
+                        widget: boolean
+                      - label: 'Show controls'
+                        name: hasControls
+                        required: false
+                        default: false
+                        widget: boolean
+                      - label: 'Loop video'
+                        name: loops
+                        required: false
+                        default: true
+                        widget: boolean
+                      - label: Muted
+                        name: isMuted
+                        required: false
+                        default: true
+                        widget: boolean
+              - label: 'Show carousel indicator'
+                name: showIndicator
+                widget: boolean
                 required: false
                 default: false
-                widget: boolean
-              - label: 'Show controls'
-                name: hasControls
+              - label: Caption
+                name: caption
                 required: false
-                default: false
-                widget: boolean
-              - label: 'Loop video'
-                name: loops
+                widget: markdown
+              - label: Ratio
+                name: ratio
                 required: false
-                default: true
-                widget: boolean
-              - label: Muted
-                name: isMuted
+                valueType: float
+                default: 0.00
+                widget: nonEmptyStringableNumber
+              - label: Width
+                name: width
                 required: false
-                default: true
-                widget: boolean
-          - label: Caption
-            name: caption
+                valueType: float
+                widget: nonEmptyStringableNumber
+              - label: 'Margin Top'
+                name: marginTop
+                default: 0
+                valueType: float
+                widget: nonEmptyStringableNumber
+              - label: 'Margin Left'
+                name: marginLeft
+                default: 0
+                valueType: float
+                widget: nonEmptyStringableNumber
+      - label: Credits
+        name: credits
+        widget: list
+        fields:
+          - label: Key
+            name: key
+            widget: text
+          - label: Value
+            name: value
+            widget: text
+      - label: OpenGraph tags
+        name: opengraph
+        widget: object
+        fields:
+          - label: 'Title'
+            name: ogTitle
             required: false
-            widget: markdown
-          - label: Ratio
-            name: ratio
+            valueType: string
+            widget: text
+          - label: 'Description'
+            name: ogDescription
             required: false
-            valueType: float
-            default: 0.00
-            widget: nonEmptyStringableNumber
-          - label: Width
-            name: width
+            valueType: string
+            widget: text
+          - label: 'Image'
+            name: ogImage
             required: false
-            valueType: float
-            widget: nonEmptyStringableNumber
-          - label: 'Margin Top'
-            name: marginTop
-            default: 0
-            valueType: float
-            widget: nonEmptyStringableNumber
-          - label: 'Margin Left'
-            name: marginLeft
-            default: 0
-            valueType: float
-            widget: nonEmptyStringableNumber
+            valueType: string
+            widget: image
+
       - label: Credits
         name: credits
         widget: list
@@ -229,22 +353,22 @@ collections:
                     required: false
                     valueType: float
                     default: 0.00
-                    widget: nonEmptyStringableNumber
+                    widget: string
                   - label: Width
                     name: width
                     required: false
                     valueType: float
-                    widget: nonEmptyStringableNumber
+                    widget: string
                   - label: 'Margin Top'
                     name: marginTop
                     default: 0
                     valueType: float
-                    widget: nonEmptyStringableNumber
+                    widget: string
                   - label: 'Margin Left'
                     name: marginLeft
                     default: 0
                     valueType: float
-                    widget: nonEmptyStringableNumber
+                    widget: string
               - name: project
                 widget: relation
                 required: false
@@ -266,7 +390,7 @@ collections:
               - label: 'Article Position'
                 name: position
                 required: true
-                widget: nonEmptyStringableNumber
+                widget: string
                 hint: 'Set the position of the article here. e.g. 5 will place the article below the 5th project. Will not show if the number is higher than the number of projects.'
           - label: Address
             name: address
