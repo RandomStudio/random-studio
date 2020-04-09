@@ -3,20 +3,12 @@
   // The gatsby generated image wrapper & img fallback
   & > div > div,
   img {
-<<<<<<< HEAD
-    margin-bottom: 12.8px;
-=======
->>>>>>> master
     object-fit: contain;
   }
 
   p,
   span {
-<<<<<<< HEAD
-    margin-left: 22.4px;
-=======
     font-size: var(--px-font-xxs);
->>>>>>> master
   }
 }
 
@@ -51,7 +43,7 @@
   p {
     display: inline-block;
     &::after {
-      content: ", \00a0";
+      content: ', \00a0';
     }
   }
 
