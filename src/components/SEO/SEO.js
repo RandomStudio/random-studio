@@ -140,7 +140,7 @@ SEO.propTypes = {
 SEO.defaultProps = {
   title: '',
   description: '',
-  image: '/og-image.png',
+  image: '/og-image.jpg',
   socialDescription: null,
   socialTitle: null,
 };
