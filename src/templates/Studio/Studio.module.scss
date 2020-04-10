@@ -24,6 +24,11 @@
   max-width: 88%;
   margin-left: 6%;
 
+  // Package specific class
+  [class=' gatsby-image-wrapper'] {
+    height: 560px;
+  }
+
   @media (min-width: 48rem) {
     max-width: 50%;
     margin-left: auto;
