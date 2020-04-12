@@ -1,6 +1,5 @@
 import CMS from 'netlify-cms-app';
 import NumberControl from 'netlify-cms-widget-number/dist/esm/NumberControl';
-import NumberPreview from 'netlify-cms-widget-number/dist/esm/NumberPreview';
 import PropTypes from 'prop-types';
 import React from 'react';
 import HomePreview from './preview-templates/Page/HomePreview';
@@ -35,5 +34,4 @@ NonEmptyStringableNumberControl.propTypes = {
 CMS.registerWidget(
   'nonEmptyStringableNumber',
   NonEmptyStringableNumberControl,
-  NumberPreview,
 );
