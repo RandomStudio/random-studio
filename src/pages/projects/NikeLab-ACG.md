@@ -9,17 +9,6 @@ intro: NikeLab is a retail destination that serves to spark consumer discovery
   and fog) that seized two of the brand’s stores around the globe.
 priority: 0
 content:
-  - marginLeft: 0
-    marginTop: 0
-    ratio: 56.25
-    video:
-      autoplay: true
-      hasControls: true
-      isMuted: true
-      loops: true
-      url: https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
-      isAlwaysMuted: false
-    width: 100
   - caption: Conceived as a means of bringing about a relevant experience that
       connects people with a product devised for use in extreme urban weather
       conditions, visitors to the NikeLabs 1948 store in London encountered an
@@ -31,6 +20,17 @@ content:
     marginTop: 10
     video:
       isMuted: false
+  - marginLeft: 0
+    marginTop: 0
+    ratio: 56.25
+    video:
+      autoplay: true
+      hasControls: true
+      isMuted: true
+      loops: true
+      url: https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
+      isAlwaysMuted: false
+    width: 100
   - image: /img/fa204fa0494f30282cd26501e0c92e34.jpg
     marginLeft: 30
     marginTop: 0
