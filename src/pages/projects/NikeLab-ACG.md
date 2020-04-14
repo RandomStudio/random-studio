@@ -125,13 +125,6 @@ carousel:
     - type: images
       image: /img/1.1.jpg
       carouselCaptionImage: Image 1 caption
-    - type: videos
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      url: https://player.vimeo.com/external/213647797.hd.mp4?s=ffdefed446dbeb98b6dbb99476938f725c236a85&profile_id=119
-      carouselCaptionVideo: video caption 2
     - type: images
       carouselCaptionImage: picture caption
       image: /img/2.jpg
