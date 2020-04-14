@@ -36,6 +36,11 @@ export const pageQuery = graphql`
           }
           width
         }
+        carousel {
+          mediaContent {
+            image
+          }
+        }
         credits {
           key
           value

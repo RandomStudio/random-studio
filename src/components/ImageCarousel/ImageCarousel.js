@@ -13,6 +13,8 @@ const ImageCarousel = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  console.log('images in carousel:', images);
+
   const handleNextImage = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
   };

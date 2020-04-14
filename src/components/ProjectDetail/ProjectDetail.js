@@ -3,11 +3,11 @@ import ReactMarkdown from 'react-markdown';
 import Img from 'gatsby-image';
 import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
+import ImageCarousel from '../ImageCarousel/ImageCarousel';
 
-const ProjectDetail = ({
-  title, intro, content, credits,
-}) => (
+const ProjectDetail = ({ title, intro, content, credits, carousel }) => (
   <div className={styles.project}>
+    {console.log('carousel:', carousel)}
     <h1 className={styles.title}>
       <ReactMarkdown escapeHtml={false} source={title} />
     </h1>
@@ -16,9 +16,7 @@ const ProjectDetail = ({
     </div>
     {(content || []).map(
       (
-        {
-          caption, image, marginLeft, marginTop, ratio, video, width,
-        },
+        { caption, image, marginLeft, marginTop, ratio, video, width },
         index,
       ) => (
         <div
@@ -40,12 +38,12 @@ const ProjectDetail = ({
                 <img alt="" src={image} />
               )}
               {caption && (
-              <div
-                className={styles.caption}
-                style={{ marginLeft: !marginLeft && '1.4rem' }}
-              >
-                {caption}
-              </div>
+                <div
+                  className={styles.caption}
+                  style={{ marginLeft: !marginLeft && '1.4rem' }}
+                >
+                  {caption}
+                </div>
               )}
             </>
           ) : (
@@ -56,6 +54,14 @@ const ProjectDetail = ({
         </div>
       ),
     )}
+    <div>
+      <ImageCarousel
+        className={styles.carouselWrapper}
+        images={carousel.mediaContent}
+        // showIndicator={frontmatter.studioImpression.showIndicator}
+        // title={frontmatter.studioImpression.title}
+      />
+    </div>
 
     <footer className={styles.credits}>
       {(credits || []).map(({ key, value }) => (
