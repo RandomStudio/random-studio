@@ -3,7 +3,7 @@
 import checkAndroid from './checkAndroid';
 import checkIOS from './checkIOS';
 
-const isMobile = Boolean(checkAndroid() || checkIOS());
+const isMobile = checkAndroid() || checkIOS();
 
 /* eslint-disable import/prefer-default-export */
 export function copyStringToClipboard(event, string, callback) {
