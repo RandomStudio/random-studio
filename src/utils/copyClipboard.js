@@ -1,7 +1,14 @@
 // Added minor additions
 // Source: https://techoverflow.net/2018/03/30/copying-strings-to-the-clipboard-using-pure-javascript/
+import checkAndroid from './checkAndroid';
+import checkIOS from './checkIOS';
+
+const isMobile = Boolean(checkAndroid() || checkIOS());
+
 /* eslint-disable import/prefer-default-export */
 export function copyStringToClipboard(event, string, callback) {
+  if (isMobile) return null;
+
   try {
     // Create new element
     const tempElement = document.createElement('textarea');
