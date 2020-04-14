@@ -1,4 +1,4 @@
-@mixin blendedText {
+@mixin blendedText($color: white, $mode: difference) {
   color: black;
 
   @supports (mix-blend-mode: difference) {
@@ -6,10 +6,10 @@
     mix-blend-mode: difference;
   }
 
-  // Bug in iPad Pros (only Pros, perhaps graphics chip related?) means mix-blend-mode is never reapplied after first paint.
+  // Bug in iPad Pros (only Pros 12.9", perhaps graphics chip related?) means mix-blend-mode is never reapplied after first paint.
   // This means blending is lost after orientation change.
-  @media only screen and (height: 1024px) and (width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) and (hover: none),
-  only screen and (width: 1024px) and (height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait) and (hover: none) {
-    color: black;
+  @media only screen and (min-width: 1023px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) and (hover: none), only screen and (min-width: 1365px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) and (hover: none) {
+    color: $color;
+    mix-blend-mode: $mode;
   }
 }
