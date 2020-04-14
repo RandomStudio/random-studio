@@ -125,9 +125,11 @@ carousel:
     - type: images
       image: /img/1.1.jpg
       carouselCaptionImage: Image 1 caption
+      caption: Image caption 1
     - type: images
       carouselCaptionImage: picture caption
       image: /img/2.jpg
+      caption: Image caption 2
   caption: Caption for carousel
   ratio: 0
   width: 0
