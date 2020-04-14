@@ -9,15 +9,6 @@ intro: NikeLab is a retail destination that serves to spark consumer discovery
   and fog) that seized two of the brand’s stores around the globe.
 priority: 0
 content:
-  - caption: Conceived as a means of bringing about a relevant experience that
-      connects people with a product devised for use in extreme urban weather
-      conditions, visitors to the NikeLabs 1948 store in London encountered an
-      actual in-store tornado. A system of fans created the vortex effect
-      required and allowed the steam to be contained in wall of wind. Customers
-      were able touch, play and break the tornados wind barrier, adding to the
-      tangibility of the installation.
-    marginLeft: 0
-    marginTop: 10
   - marginLeft: 0
     marginTop: 0
     ratio: 56.25
@@ -29,6 +20,17 @@ content:
       url: https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
       isAlwaysMuted: false
     width: 100
+  - caption: Conceived as a means of bringing about a relevant experience that
+      connects people with a product devised for use in extreme urban weather
+      conditions, visitors to the NikeLabs 1948 store in London encountered an
+      actual in-store tornado. A system of fans created the vortex effect
+      required and allowed the steam to be contained in wall of wind. Customers
+      were able touch, play and break the tornados wind barrier, adding to the
+      tangibility of the installation.
+    marginLeft: 0
+    marginTop: 10
+    video:
+      isMuted: false
   - image: /img/fa204fa0494f30282cd26501e0c92e34.jpg
     marginLeft: 30
     marginTop: 0
@@ -116,6 +118,9 @@ content:
       complex, it takes too long for people to master.”"
     marginLeft: 0
     marginTop: 0
+carousel:
+  marginTop: 0
+  marginLeft: 0
 credits:
   - key: "For:"
     value: NikeLab Global
