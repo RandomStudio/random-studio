@@ -8,7 +8,10 @@
 
   // Bug in iPad Pros (only Pros 12.9", perhaps graphics chip related?) means mix-blend-mode is never reapplied after first paint.
   // This means blending is lost after orientation change.
-  @media only screen and (min-width: 1023px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) and (hover: none), only screen and (min-width: 1365px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) and (hover: none) {
+  // Currently, we will remove the blendmode on landscape(orienation change.
+  // Resulting in atleast one orientation working correctly. This is accomplished with he optional parameters
+  // This works because each time the orientation changes a forceful assignement will be done. Thus, the blend-mode will be re-assigned resulting a correct behaviour, albet for jsut one orientation (landscape).
+  @media only screen and (min-width: 1365px) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) and (hover: none) {
     color: $color;
     mix-blend-mode: $mode;
   }
