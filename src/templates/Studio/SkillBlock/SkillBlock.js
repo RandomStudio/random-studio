@@ -1,15 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SkillBlock.module.scss';
 import SkillList from './SkillList/SkillList';
 import { copyStringToClipboard } from '../../../utils/copyClipboard';
 
-const SkillBlock = ({ skillset, email }) => {
-  const [isNoticeVisible, setIsNoticeVisible] = useState(false);
+const SkillBlock = ({ skillset, email, setCopyToastVisible }) => {
   const emailRef = useRef();
 
   const handleClickEmail = event =>
-    copyStringToClipboard(event, email, setIsNoticeVisible);
+    copyStringToClipboard(event, email, setCopyToastVisible);
 
   return (
     <div className={styles.wrapper}>
@@ -21,13 +20,6 @@ const SkillBlock = ({ skillset, email }) => {
           Contact Us
         </a>
       </div>
-
-      <div
-        className={`${styles.notice} ${isNoticeVisible &&
-          styles.noticeIsVisible}`}
-      >
-        Copied to clipboard
-      </div>
     </div>
   );
 };
@@ -35,6 +27,7 @@ const SkillBlock = ({ skillset, email }) => {
 SkillBlock.propTypes = {
   skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
   email: PropTypes.string.isRequired,
+  setCopyToastVisible: PropTypes.func.isRequired,
 };
 
 export default SkillBlock;

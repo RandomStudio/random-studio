@@ -10,6 +10,7 @@ import Recruitee from './Recruitee/Recruitee';
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 import SkillBlock from './SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
+import Toast from '../../components/Toast/Toast';
 
 export const query = graphql`
   query Studio($templateKey: String!) {
@@ -86,6 +87,7 @@ const Studio = ({
 }) => {
   const introRef = useRef();
   const [themeClass, setThemeClass] = useState();
+  const [isCopyToastVisible, setCopyToastVisible] = useState(false);
   const { width } = useWindowSize();
 
   useEffect(() => {
@@ -134,6 +136,7 @@ const Studio = ({
         <SkillBlock
           skillset={frontmatter.skillset}
           email={indexPage.frontmatter.email}
+          setCopyToastVisible={setCopyToastVisible}
         />
 
         <div className={styles.jobsImpressionBlock}>
@@ -146,8 +149,9 @@ const Studio = ({
           />
         </div>
 
-        <Footer {...indexPage.frontmatter} />
+        <Footer {...indexPage.frontmatter} setCopyToastVisible={setCopyToastVisible} />
       </div>
+      <Toast isVisible={isCopyToastVisible} copy="Copied to clipboard" />
     </Layout>
   );
 };
