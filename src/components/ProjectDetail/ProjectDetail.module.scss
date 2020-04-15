@@ -135,18 +135,20 @@
   .intro,
   .text {
     max-width: 48rem;
-    margin: 0 auto;
   }
 
   .title,
   .intro {
     font-size: var(--font-med);
-    margin: 1em auto;
   }
 
   .text,
   .credits {
     font-size: 1.74rem;
+  }
+
+  .title {
+    margin: 2em auto;
   }
 
   .intro {
