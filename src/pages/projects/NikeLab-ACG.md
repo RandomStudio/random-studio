@@ -125,6 +125,12 @@ media:
         caption: caption 2
       - image: /img/1.jpg
         caption: caption 1
+    showIndicator: false
+    caption: Caption for the carousel
+    ratio: 2
+    width: 50
+    marginTop: 25
+    marginLeft: 10
 credits:
   - key: "For:"
     value: NikeLab Global
