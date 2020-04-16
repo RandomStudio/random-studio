@@ -131,6 +131,18 @@ media:
     width: 50
     marginTop: 25
     marginLeft: 10
+  - type: carousel
+    showIndicator: true
+    ratio: 10
+    marginTop: 10
+    marginLeft: 10
+    images:
+      - image: /img/3.jpg
+        caption: fred pe
+      - image: /img/7.png
+        caption: fred pie
+    caption: another carousel stuff
+    width: 5
 credits:
   - key: "For:"
     value: NikeLab Global
