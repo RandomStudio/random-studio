@@ -100,6 +100,10 @@ relatedProjects:
     - title: "'Défile'"
       subtitle: Collection Spring-Summer 2020
       image: /img/1stF_Pillar_2.jpg
+      project: |-
+        Various in-store installations
+        for NikeLab
+  blockTitle: "Other work:"
 credits:
   - key: "For:"
     value: Maison Margiela
