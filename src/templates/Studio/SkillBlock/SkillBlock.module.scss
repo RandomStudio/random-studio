@@ -3,7 +3,7 @@
   margin: 120px 0 120px;
   flex-direction: column;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     flex-direction: row;
     margin: 200px 0 280px;
   }
@@ -17,8 +17,7 @@
   a {
     transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     background: linear-gradient(transparent, transparent),
-      linear-gradient(transparent, transparent),
-      linear-gradient(black, black);
+      linear-gradient(transparent, transparent), linear-gradient(black, black);
     background-size: 0.05em 1px, 0.05em 1px, 1px 2px;
     background-repeat: no-repeat, no-repeat, repeat-x;
     background-position: 0 87%, 100% 87%, 0 100%;
@@ -31,14 +30,14 @@
     }
   }
 
-  @media (min-width: 48rem) {
-      font-size: var(--px-font-med);
-      align-self: flex-end;
-      margin-top: auto;
+  @media (min-width: 768px) {
+    font-size: var(--px-font-med);
+    align-self: flex-end;
+    margin-top: auto;
   }
 
-  @media (min-width: 60rem) {
-      font-size: var(--px-font-large);
-      line-height: 52px;
+  @media (min-width: 960px) {
+    font-size: var(--px-font-large);
+    line-height: 52px;
   }
 }

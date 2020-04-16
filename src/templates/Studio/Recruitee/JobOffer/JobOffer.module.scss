@@ -47,7 +47,7 @@
 
     li {
       &::before {
-        content: "-";
+        content: '-';
         position: absolute;
         letter-spacing: 0.02em;
         margin-left: -12px;
@@ -85,7 +85,7 @@
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .jobOffer {
     header {
       margin-bottom: 20px;
