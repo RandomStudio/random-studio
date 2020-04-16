@@ -13,6 +13,10 @@ const Recruitee = ({ location }) => {
   };
 
   useEffect(() => {
+    if (!location.hash && openOffer) {
+      handleCloseOffer();
+    }
+
     // If fetch is not supported, we will not show any job offers
     // IE11 and lower
     if (
