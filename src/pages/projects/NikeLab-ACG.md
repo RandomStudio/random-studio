@@ -1,4 +1,20 @@
 ---
+carousel:
+  marginTop: 2
+  marginLeft: 1
+  mediaContent:
+    - type: images
+      image: /img/1.1.jpg
+      carouselCaptionImage: Image 1 caption
+      caption: Image caption 1
+    - type: images
+      carouselCaptionImage: picture caption
+      image: /img/2.jpg
+      caption: Image caption 2
+  caption: Caption for carousel
+  ratio: 0
+  width: 0
+  showIndicator: true
 templateKey: Project
 title: |-
   Various in-store installations
@@ -118,22 +134,13 @@ content:
       complex, it takes too long for people to master.”"
     marginLeft: 0
     marginTop: 0
-carousel:
-  marginTop: 2
-  marginLeft: 1
-  mediaContent:
-    - type: images
-      image: /img/1.1.jpg
-      carouselCaptionImage: Image 1 caption
-      caption: Image caption 1
-    - type: images
-      carouselCaptionImage: picture caption
-      image: /img/2.jpg
-      caption: Image caption 2
-  caption: Caption for carousel
-  ratio: 0
-  width: 0
-  showIndicator: true
+carousels:
+  - type: images
+    image: /img/1.1.jpg
+    caption: item 1
+  - type: images
+    image: /img/2.jpg
+    caption: item 2
 credits:
   - key: "For:"
     value: NikeLab Global
