@@ -1,0 +1,138 @@
+@import '../../../styles/mixins';
+
+.logo {
+  @include blendedText;
+  position: relative;
+  font-family: 'Larish Neue', serif;
+  font-weight: normal;
+  font-size: 51px;
+  mix-blend-mode: difference;
+  margin: 0;
+  padding-top: 40vh;
+  padding-left: 22px;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.intro {
+  position: relative;
+  margin: 246px 0 0;
+  padding: 0 22px;
+}
+.introHeader {
+  margin-bottom: 102px;
+  font-size: var(--font-small);
+  font-weight: normal;
+  letter-spacing: 0.01em;
+}
+
+.address {
+  font-size: 16px;
+  margin-bottom: 51px;
+  padding-top: 5px;
+  letter-spacing: 0.02em;
+
+  p {
+    margin-bottom: 1.3em;
+  }
+
+  div:last-of-type {
+    p:last-of-type {
+      margin-bottom: 1em;
+    }
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: #000;
+    }
+  }
+
+  // Remove underline of phonenumber
+  div:last-of-type {
+    a:first-of-type::after {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .logo {
+    padding-left: 64px;
+    font-size: 80px;
+  }
+
+  .intro {
+    padding: 64px;
+  }
+
+  .introHeader {
+    font-size: var(--font-med);
+    margin-bottom: 154px;
+  }
+
+  .address {
+    float: left;
+    font-size: var(--font-small);
+    margin: 0;
+    margin-right: 32px;
+
+    a::after {
+      height: 2px;
+    }
+  }
+}
+
+@media (min-width: 864px) {
+  .logo,
+  .intro {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    padding-top: 40vh;
+  }
+
+  .intro {
+    margin-top: 7.2vw;
+  }
+
+  .introHeader {
+    font-size: var(--font-med);
+  }
+
+  .address {
+    padding-top: 8px;
+  }
+}
+
+@media (min-width: 1152px) {
+  .logo,
+  .intro {
+    max-width: 1024px;
+  }
+
+  .logo {
+    max-width: 1152px;
+    font-size: 90px;
+  }
+
+  .introHeader {
+    font-size: var(--font-large);
+  }
+
+  .address {
+    margin-right: 38px;
+    font-size: 28px;
+  }
+}

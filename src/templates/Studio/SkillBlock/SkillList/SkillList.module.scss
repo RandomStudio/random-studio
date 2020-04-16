@@ -9,7 +9,7 @@
     font-weight: normal;
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     margin-left: 120px;
 
     h3 {
@@ -17,14 +17,15 @@
     }
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     margin: 0;
 
     h3 {
       font-size: var(--px-font-small);
     }
 
-    h3, .listWrapper  {
+    h3,
+    .listWrapper {
       padding-left: 120px;
     }
   }
@@ -33,11 +34,11 @@
 .listWrapper {
   font-size: var(--px-font-xmed);
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     font-size: var(--px-font-med);
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     font-size: var(--px-font-large);
     line-height: 52px;
   }

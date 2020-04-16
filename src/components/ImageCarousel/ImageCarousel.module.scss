@@ -43,11 +43,11 @@
   p {
     display: inline-block;
     &::after {
-      content: ", \00a0";
+      content: ', \00a0';
     }
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     right: initial;
     left: 0;
     transform-origin: bottom left;

@@ -8,8 +8,7 @@ const Footer = ({ address, email, phone }) => {
   const [isNoticeVisible, setIsNoticeVisible] = useState(false);
   const emailRef = useRef();
 
-  const handleClickEmail = event =>
-    copyStringToClipboard(event, email, setIsNoticeVisible);
+  const handleClickEmail = event => copyStringToClipboard(event, email, setIsNoticeVisible);
 
   return (
     <footer className={styles.footer}>
