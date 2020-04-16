@@ -75,8 +75,7 @@ content:
     marginLeft: 5
     marginTop: -10
     width: 44
-  - caption:
-      For NikeLab 21M store in New York we placed suspended sheets of “smart
+  - caption: For NikeLab 21M store in New York we placed suspended sheets of “smart
       fog” amongst the apparel that reacted to approaching guests, changing from
       transparent to foggy. Motion sensors were used to trigger an eerie
       techno-fog effect as well as the interruption of an electrical charge
@@ -109,31 +108,34 @@ content:
       url: https://player.vimeo.com/external/213649062.hd.mp4?s=140f4865386d492a2fab57cdf81ebb7594dc975e&profile_id=119
       isAlwaysMuted: true
     width: 25
-  - caption:
-      'Essential to the project was the idea of confrontation and evoking a
+  - caption: "Essential to the project was the idea of confrontation and evoking a
       sense of wonder by inviting the visitor to interact with the respective
       weather condition specific to each installation. How often is one
       confronted with extreme weather conditions inside a store? Daan Lucas,
       managing director at Random: “We played with the notion of connecting to
       people in a surprising, relevant and emotional way. Another important
       element is time: It needs to ‘happen’. If you make an experience too
-      complex, it takes too long for people to master.”'
+      complex, it takes too long for people to master.”"
     marginLeft: 0
     marginTop: 0
+media:
+  - type: carousel
+    images:
+      - image: /img/2.jpg
+        caption: caption 2
+      - image: /img/1.jpg
+        caption: caption 1
 credits:
-  - key: 'For:'
+  - key: "For:"
     value: NikeLab Global
-  - key: 'Role:'
-    value:
-      Concept Development, Creative Direction, Interaction Design, Production,
+  - key: "Role:"
+    value: Concept Development, Creative Direction, Interaction Design, Production,
       Hardware Architecture, Software Development
-  - key: 'With:'
-    value:
-      Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948
+  - key: "With:"
+    value: Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948
       London)
 opengraph:
-  ogDescription:
-    For the launch of the 2017 ACG (All Conditions Gear) collection,
+  ogDescription: For the launch of the 2017 ACG (All Conditions Gear) collection,
     we created various stylised weather conditions (wind, rain and fog) that
     seized two of the brand’s stores around the globe.
   ogImage: /img/4622f88e3bcf3f7a116d65191d94cf0e.jpg
