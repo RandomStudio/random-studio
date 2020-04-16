@@ -1,14 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SkillBlock.module.scss';
 import SkillList from './SkillList/SkillList';
 import { copyStringToClipboard } from '../../../utils/copyClipboard';
+import { AppContext } from '../../../utils/context/AppContext';
 
-const SkillBlock = ({ skillset, email, setCopyToastVisible }) => {
+const SkillBlock = ({ skillset, email }) => {
   const emailRef = useRef();
+  const { setIsToastVisible } = useContext(AppContext);
 
   const handleClickEmail = event =>
-    copyStringToClipboard(event, email, setCopyToastVisible);
+    copyStringToClipboard(event, email, setIsToastVisible);
 
   return (
     <div className={styles.wrapper}>
@@ -27,7 +29,6 @@ const SkillBlock = ({ skillset, email, setCopyToastVisible }) => {
 SkillBlock.propTypes = {
   skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
   email: PropTypes.string.isRequired,
-  setCopyToastVisible: PropTypes.func.isRequired,
 };
 
 export default SkillBlock;

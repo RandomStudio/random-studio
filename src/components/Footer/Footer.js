@@ -1,15 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Newsletter from './Newsletter/Newsletter';
 import styles from './Footer.module.scss';
 import { copyStringToClipboard } from '../../utils/copyClipboard';
+import { AppContext } from '../../utils/context/AppContext';
 
-const Footer = ({ address, email, phone, setCopyToastVisible }) => {
+const Footer = ({ address, email, phone }) => {
   const emailRef = useRef();
+  const { setIsToastVisible } = useContext(AppContext);
 
-  const handleClickEmail = event =>
-    copyStringToClipboard(event, email, setCopyToastVisible);
+  const handleClickEmail = (event) =>
+    copyStringToClipboard(event, email, setIsToastVisible);
 
   return (
     <footer className={styles.footer}>
@@ -48,7 +50,6 @@ Footer.propTypes = {
   address: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-  setCopyToastVisible: PropTypes.func.isRequired,
 }
 
 export default Footer;
