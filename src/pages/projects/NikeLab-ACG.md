@@ -119,46 +119,36 @@ content:
     marginLeft: 0
     marginTop: 0
 media:
-  - type: carousel
-    carouselImages:
-      - image: /img/2.jpg
-        caption: caption 2
-      - image: /img/1.jpg
-        caption: caption 1
-    showIndicator: false
-    caption: Caption for the carousel
-    ratio: 2
-    width: 50
-    marginTop: 25
-    marginLeft: 10
-  - width: 5
-    caption: another carousel stuff
-    marginTop: 10
+  - showIndicator: true
     ratio: 10
-    showIndicator: true
-    marginLeft: 10
-    images:
-      - image: /img/1.jpg
-        caption: door
-      - image: /img/5.jpg
-        caption: kitchen
-    videos:
-      - autoplay: true
+    marginTop: 10
+    marginLeft: 0
+    carousel:
+      - type: images
+        image: /img/1.jpg
+        caption: new image in carouse
+      - type: videos
+        autoplay: true
         loops: true
         isMuted: true
         url: https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
-        caption: video caption
-      - autoplay: true
+        caption: video in new carousel
+    width: 50
+  - showIndicator: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    carousel:
+      - type: images
+        image: /img/3.jpg
+        caption: carousel 2
+      - type: videos
+        autoplay: true
         loops: true
         isMuted: true
-        url: https://player.vimeo.com/external/213647797.hd.mp4?s=ffdefed446dbeb98b6dbb99476938f725c236a85&profile_id=119
-        caption: another video
-    carouselImages:
-      - image: /img/3.jpg
-        caption: fred pe
-      - image: /img/7.png
-        caption: fred pie
-    type: carousel
+        url: https://player.vimeo.com/external/213647084.hd.mp4?s=0dac195a0cb8cccd43117dd36bc6a16095d91be5&profile_id=119
+        caption: video 2 carousel 2
+    width: 30
 credits:
   - key: "For:"
     value: NikeLab Global
