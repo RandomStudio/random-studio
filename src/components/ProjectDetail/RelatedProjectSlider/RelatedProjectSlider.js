@@ -13,37 +13,17 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
 
       <div className={styles.worksWrapper}>
         {projects.map(({ image, title, subtitle, slug }) => (
-          <>
-            <Link className={styles.card} to={slug}>
-              <FluidImage
-                objectFit="cover"
-                image={image}
-                className={styles.imageWrapper}
-              />
-              {title && <p>{title}</p>}
-              {subtitle && <p>{subtitle}</p>}
-            </Link>
-            <Link className={styles.card} to={slug}>
-              <FluidImage
-                objectFit="cover"
-                image={image}
-                className={styles.imageWrapper}
-              />
-              {title && <p>{title}</p>}
-              {subtitle && <p>{subtitle}</p>}
-            </Link>
-            <Link className={styles.card} to={slug}>
-              <FluidImage
-                objectFit="cover"
-                image={image}
-                className={styles.imageWrapper}
-              />
-              {title && <p>{title}</p>}
-              {subtitle && <p>{subtitle}</p>}
-            </Link>
-            <span className={styles.cardSpacer}></span>
-          </>
+          <Link className={styles.card} to={slug}>
+            <FluidImage
+              objectFit="cover"
+              image={image}
+              className={styles.imageWrapper}
+            />
+            {title && <p>{title}</p>}
+            {subtitle && <p>{subtitle}</p>}
+          </Link>
         ))}
+        <span className={styles.cardSpacer}></span>
       </div>
     </section>
   );

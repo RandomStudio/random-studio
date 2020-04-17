@@ -168,6 +168,10 @@
   .credits {
     max-width: 768px;
     margin: 0 auto 8%;
+
+    &.creditsAdjustedSpacing {
+      margin-top: 120px;
+    }
   }
 }
 
