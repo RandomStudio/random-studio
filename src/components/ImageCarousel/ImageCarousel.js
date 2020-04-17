@@ -31,7 +31,11 @@ const ImageCarousel = ({
         ${styles.image}
         ${index === currentIndex && styles.imageVisible}
         `}
-          // key={image.childImageSharp.fluid.src}
+          key={
+            image && image.childImageSharp
+              ? image.childImageSharp.fluid.src
+              : index
+          }
           style={
             index === currentIndex
               ? { display: 'block', opacity: 1 }
