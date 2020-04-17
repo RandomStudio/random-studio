@@ -95,7 +95,7 @@ content:
       loops: true
     width: 100
 relatedProjects:
-  title: "Other work:"
+  blockTitle: "Other work:"
   projects:
     - title: "'Défile'"
       subtitle: Collection Spring-Summer 2020
@@ -103,7 +103,6 @@ relatedProjects:
       project: |-
         Various in-store installations
         for NikeLab
-  blockTitle: "Other work:"
 credits:
   - key: "For:"
     value: Maison Margiela

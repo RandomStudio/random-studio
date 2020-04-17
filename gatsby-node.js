@@ -59,7 +59,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
-  // Allow articles to be empty fro GraphQL MD
+  // Allow articles to be empty from\ GraphQL MD
   const typeDefsArticles = `
     type Article {
       article: String
@@ -70,6 +70,22 @@ exports.createSchemaCustomization = ({ actions }) => {
       articles: [Article]
     }
   `
+  const typeDefsRelatedProject = `
+    type RelatedProject {
+      title: String
+      subtitle: String
+      project: String!
+    }
 
-  createTypes(typeDefsArticles)
+    type RelatedProjectBlock {
+      blockTitle: String
+      projects: [RelatedProject]
+    }
+
+    type MarkdownRemarkFrontmatter implements Node {
+      relatedProjects: RelatedProjectBlock
+    }
+  `
+
+  createTypes(`${typeDefsArticles} ${typeDefsRelatedProject}`);
 }

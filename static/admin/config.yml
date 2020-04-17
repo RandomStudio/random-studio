@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: feature/grouped-projects
 media_folder: static/img
 public_folder: /img
 collections:
@@ -116,6 +116,42 @@ collections:
             default: 0
             valueType: float
             widget: nonEmptyStringableNumber
+      - label: Related Projects
+        name: relatedProjects
+        widget: object
+        required: false
+        fields:
+          - label: Block Title
+            name: blockTitle
+            widget: string
+            required: false
+          - label: Projects
+            name: projects
+            widget: list
+            required: false
+            fields:
+              - label: Title
+                name: title
+                widget: string
+                required: false
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Image
+                name: image
+                widget: image
+                required: true
+              - label: Project
+                name: project
+                hint: 'This is the url assignment for the related project'
+                widget: relation
+                required: true
+                collection: 'project'
+                searchFields: ['title']
+                # valueField: '{{slug}}' Currently not supproted
+                valueField: 'title'
+                displayFields: ['title']
       - label: Credits
         name: credits
         widget: list
