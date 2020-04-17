@@ -76,6 +76,11 @@
       padding-right: 38px;
     }
   }
+
+  &.creditsAdjustedSpacing {
+    margin-top: 100px;
+    padding-top: 0;
+  }
 }
 
 @media (min-width: 576px) {

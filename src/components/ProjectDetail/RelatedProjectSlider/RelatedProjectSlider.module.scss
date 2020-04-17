@@ -1,0 +1,53 @@
+.wrapper {
+  margin-top: 72px;
+
+  h4 {
+    font-size: var(--font-small);
+    font-weight: normal;
+    margin-bottom: 28px;
+    padding-left: 20px;
+  }
+}
+
+.worksWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+  padding-left: 20px;
+  scroll-padding-left: 20px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.card {
+  text-decoration: none;
+  scroll-snap-align: start;
+
+  p {
+    font-size: var(--font-xss);
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  &:nth-of-type(1n + 2) {
+    margin-left: 12px;
+  }
+}
+
+.cardSpacer {
+  padding-right: calc(100% - 268px);
+}
+
+.imageWrapper {
+  width: 268px;
+  height: 336px;
+
+  & + p {
+    margin-top: 20px;
+  }
+}
