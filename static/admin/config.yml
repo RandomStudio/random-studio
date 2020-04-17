@@ -119,15 +119,14 @@ collections:
       - label: Media
         name: media
         widget: list
-        types:
+        fields:
           - label: Carousel
             name: carousel
-            widget: object
-            fields:
-              - label: Images
-                name: images
-                required: false
-                widget: list
+            widget: list
+            types:
+              - label: Image
+                name: image
+                widget: object
                 fields:
                   - label: Image
                     name: image
@@ -137,10 +136,10 @@ collections:
                     name: caption
                     widget: markdown
                     required: false
-              - label: Videos
-                name: videos
+              - label: Video
+                name: video
                 required: false
-                widget: list
+                widget: object
                 fields:
                   - label: 'Video URL'
                     name: url
@@ -165,32 +164,32 @@ collections:
                     required: false
                     default: true
                     widget: hidden
-              - label: 'Show carousel indicator'
-                name: showIndicator
-                widget: boolean
-                required: false
-                default: false
-              - label: Ratio
-                name: ratio
-                required: false
-                valueType: float
-                default: 0.00
-                widget: nonEmptyStringableNumber
-              - label: Width
-                name: width
-                required: false
-                valueType: float
-                widget: nonEmptyStringableNumber
-              - label: 'Margin Top'
-                name: marginTop
-                default: 0
-                valueType: float
-                widget: nonEmptyStringableNumber
-              - label: 'Margin Left'
-                name: marginLeft
-                default: 0
-                valueType: float
-                widget: nonEmptyStringableNumber
+          - label: 'Show carousel indicator'
+            name: showIndicator
+            widget: boolean
+            required: false
+            default: false
+          - label: Ratio
+            name: ratio
+            required: false
+            valueType: float
+            default: 0.00
+            widget: nonEmptyStringableNumber
+          - label: Width
+            name: width
+            required: false
+            valueType: float
+            widget: nonEmptyStringableNumber
+          - label: 'Margin Top'
+            name: marginTop
+            default: 0
+            valueType: float
+            widget: nonEmptyStringableNumber
+          - label: 'Margin Left'
+            name: marginLeft
+            default: 0
+            valueType: float
+            widget: nonEmptyStringableNumber
       - label: Credits
         name: credits
         widget: list

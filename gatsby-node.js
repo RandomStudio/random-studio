@@ -60,15 +60,18 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   // Allow articles to be empty fro GraphQL MD
   const typeDefs = `
-
-    type CarouselImages {
+    type CarouselVideo{
+      url: String
+      caption: String
+    }
+    type CarouselImage {
       image: File
       caption: String
     }
 
     type Media{
-      type: String
-      images: [CarouselImages]
+      images: [CarouselImage]
+      videos: [CarouselVideo]
     }
 
     type Article {

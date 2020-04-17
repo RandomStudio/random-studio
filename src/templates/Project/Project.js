@@ -8,7 +8,8 @@ import BackScrim from './BackScrim/BackScrim';
 
 export const pageQuery = graphql`
   fragment Carousel on Media {
-    carouselImages {
+    carousel {
+      url
       caption
       image {
         childImageSharp {
@@ -22,7 +23,6 @@ export const pageQuery = graphql`
     marginTop
     showIndicator
     ratio
-    type
     width
   }
 

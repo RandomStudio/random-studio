@@ -54,31 +54,31 @@ const ProjectDetail = ({ title, intro, content, credits, media }) => (
       ),
     )}
     <div>
-      {media.map(
-        (
-          { marginTop, marginLeft, width, carouselImages, showIndicator },
-          index,
-        ) => {
-          return (
-            <div
-              className={styles.carousel}
-              key={index}
-              style={{
-                '--carouselMarginTop': `${marginTop}%`,
-                '--carouselMarginLeft': `${marginLeft}%`,
-                '--carouselWidth': `${width}%`,
-              }}
-            >
-              <ImageCarousel
-                className={styles.carouselWrapper}
-                images={carouselImages}
-                showIndicator={showIndicator}
-                // title={frontmatter.studioImpression.title}
-              />
-            </div>
-          );
-        },
-      )}
+      {media &&
+        media.map(
+          (
+            { marginTop, marginLeft, width, showIndicator, carousel },
+            index,
+          ) => {
+            return (
+              <div
+                className={styles.carousel}
+                key={index}
+                style={{
+                  '--carouselMarginTop': `${marginTop}%`,
+                  '--carouselMarginLeft': `${marginLeft}%`,
+                  '--carouselWidth': `${width}%`,
+                }}
+              >
+                <ImageCarousel
+                  className={styles.carouselWrapper}
+                  showIndicator={showIndicator}
+                  carousel={carousel}
+                />
+              </div>
+            );
+          },
+        )}
     </div>
 
     <footer className={styles.credits}>
