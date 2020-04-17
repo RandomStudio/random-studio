@@ -1,9 +1,9 @@
 .backScrim {
   position: absolute;
   bottom: 0;
-  height: 15.2rem;
+  height: 243px;
   width: 100%;
-  font-size: 1rem;
+  font-size: 16px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 300ms ease-out;
@@ -15,11 +15,11 @@
 
 .backButton {
   position: absolute;
-  bottom: 1.4rem;
-  left: 1.4rem;
+  bottom: 22px;
+  left: 22px;
   background: #fff;
-  border-radius: 2rem;
-  padding: 0.6rem 1.2rem;
+  border-radius: 32px;
+  padding: 10px 19px;
   pointer-events: all;
   text-decoration: none;
 }
@@ -30,15 +30,15 @@
   width: 100%;
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .backButton {
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 32px;
+    left: 32px;
   }
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
   .backScrim {
-    height: 24rem;
+    height: 384px;
   }
 }
