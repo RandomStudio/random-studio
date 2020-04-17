@@ -1,11 +1,31 @@
 .wrapper {
+  --spacing-left: 20px;
   margin-top: 72px;
 
   h4 {
     font-size: var(--font-small);
     font-weight: normal;
     margin-bottom: 28px;
-    padding-left: 20px;
+    padding-left: var(--spacing-left);
+  }
+
+  @media (min-width: 576px) {
+    --spacing-left: 64px;
+  }
+
+  @media (min-width: 864px) {
+    --spacing-left: 0;
+    max-width: 640px;
+    margin: 72px auto 0;
+    overflow-x: visible;
+
+    h4 {
+      font-size: var(--font-med);
+    }
+  }
+
+  @media (min-width: 1152px) {
+    max-width: 896px;
   }
 }
 
@@ -13,8 +33,9 @@
   display: flex;
   flex-flow: row nowrap;
   overflow-x: scroll;
-  padding-left: 20px;
-  scroll-padding-left: 20px;
+  width: 100vw;
+  padding-left: var(--spacing-left);
+  scroll-padding-left: var(--spacing-left);
   scroll-snap-type: x mandatory;
   scrollbar-width: none; // Firefox
 
@@ -29,13 +50,23 @@
   scroll-snap-align: start;
 
   p {
-    font-size: var(--font-xss);
+    font-size: var(--font-xxs);
     font-weight: normal;
     text-decoration: none;
   }
 
   &:nth-of-type(1n + 2) {
     margin-left: 12px;
+  }
+
+  @media (min-width: 864px) {
+    p {
+      font-size: var(--font-small);
+    }
+
+    &:nth-of-type(1n + 2) {
+      margin-left: 24px;
+    }
   }
 }
 
@@ -49,5 +80,15 @@
 
   & + p {
     margin-top: 20px;
+  }
+
+  @media (min-width: 864px) {
+    width: 322px;
+    height: 404px;
+  }
+
+  @media (min-width: 1152px) {
+    width: 408px;
+    height: 512px;
   }
 }
