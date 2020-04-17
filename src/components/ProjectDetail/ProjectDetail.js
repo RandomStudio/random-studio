@@ -5,9 +5,8 @@ import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
 
-const ProjectDetail = ({ title, intro, content, credits, carousel }) => (
+const ProjectDetail = ({ title, intro, content, credits, media }) => (
   <div className={styles.project}>
-    {console.log('carousel:', carousel)}
     <h1 className={styles.title}>
       <ReactMarkdown escapeHtml={false} source={title} />
     </h1>
@@ -55,12 +54,31 @@ const ProjectDetail = ({ title, intro, content, credits, carousel }) => (
       ),
     )}
     <div>
-      <ImageCarousel
-        className={styles.carouselWrapper}
-        images={carousel.mediaContent}
-        // showIndicator={frontmatter.studioImpression.showIndicator}
-        // title={frontmatter.studioImpression.title}
-      />
+      {media.map(
+        (
+          { marginTop, marginLeft, width, carouselImages, showIndicator },
+          index,
+        ) => {
+          return (
+            <div
+              className={styles.carousel}
+              key={index}
+              style={{
+                '--carouselMarginTop': `${marginTop}%`,
+                '--carouselMarginLeft': `${marginLeft}%`,
+                '--carouselWidth': `${width}%`,
+              }}
+            >
+              <ImageCarousel
+                className={styles.carouselWrapper}
+                images={carouselImages}
+                showIndicator={showIndicator}
+                // title={frontmatter.studioImpression.title}
+              />
+            </div>
+          );
+        },
+      )}
     </div>
 
     <footer className={styles.credits}>

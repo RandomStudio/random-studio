@@ -58,9 +58,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
-
   // Allow articles to be empty fro GraphQL MD
-  const typeDefsArticles = `
+  const typeDefs = `
+
+    type CarouselImages {
+      image: File
+      caption: String
+    }
+
+    type Media{
+      type: String
+      images: [CarouselImages]
+    }
+
     type Article {
       article: String
       position: Int
@@ -68,8 +78,9 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type MarkdownRemarkFrontmatter implements Node {
       articles: [Article]
+      media: [Media]
     }
-  `
+  `;
 
-  createTypes(typeDefsArticles)
-}
+  createTypes(typeDefs);
+};

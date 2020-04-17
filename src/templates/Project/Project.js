@@ -7,6 +7,25 @@ import SEO from '../../components/SEO/SEO';
 import BackScrim from './BackScrim/BackScrim';
 
 export const pageQuery = graphql`
+  fragment Carousel on Media {
+    carouselImages {
+      caption
+      image {
+        childImageSharp {
+          fluid(maxHeight: 700, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+    marginLeft
+    marginTop
+    showIndicator
+    ratio
+    type
+    width
+  }
+
   query ProjectById($id: String!) {
     markdownRemark(id: { eq: $id }) {
       fields {
@@ -15,6 +34,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         intro
+        media {
+          ...Carousel
+        }
         content {
           caption
           image {
@@ -35,11 +57,6 @@ export const pageQuery = graphql`
             loops
           }
           width
-        }
-        carousel {
-          mediaContent {
-            image
-          }
         }
         credits {
           key

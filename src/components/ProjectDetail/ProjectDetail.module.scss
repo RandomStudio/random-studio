@@ -130,6 +130,13 @@
     width: var(--width);
   }
 
+  .carousel {
+    margin-top: var(--carouselMarginTop);
+    margin-bottom: 0;
+    margin-left: var(--carouselMarginLeft);
+    width: var(--carouselWidth);
+  }
+
   .caption {
     max-width: 23rem;
     padding: 0.4rem 0 0;
