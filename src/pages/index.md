@@ -1,12 +1,12 @@
 ---
 templateKey: Home
 layout: center
-video: >
-  https://player.vimeo.com/external/380435512.hd.mp4?s=42de8ed62d83917a95da30ff6724ba0352fd7798&profile_id=175
+video: >-
+  https://player.vimeo.com/external/400189647.hd.mp4?s=a8de9f72f0baceca567a308c2a19c392bccbcfe9&profile_id=175
 collaborationCredits:
-  collaborator: A/D/O by MINI
+  collaborator: Fred Perry x Raf Simons
   url: >-
-    https://random.studio/projects/a-kinetic-architecture-piece-br-for-a-d-o-by-mini/
+    https://random.studio/projects/interactive-lookbook-for-fred-perry-x-raf-simons-2/
 intro: >-
   How can we reimagine the digital as a living, breathing part of our physical
   world?
@@ -29,13 +29,26 @@ projects:
       marginTop: 14
       width: 60
   - caption: |-
+      A Lookbook of Many Gazes 
+
+      for Fred Perry x Raf Simons
+    project: |+
+      A Lookbook of Many Gazes for Fred Perry x Raf Simons
+
+    thumbnail:
+      image: /img/jihye-1-.jpg
+      marginLeft: 8
+      marginTop: -2
+      ratio: 0
+      width: 35
+  - caption: |-
       Kinetic architecture <br>
       for A/D/O by MINI
     project: Kinetic architecture <br> for A/D/O by MINI
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
       marginLeft: 65
-      marginTop: -5
+      marginTop: -30
       ratio: 0
       width: 35
   - caption: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
@@ -43,7 +56,7 @@ projects:
     thumbnail:
       image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
       marginLeft: 0
-      marginTop: -35
+      marginTop: -30
       width: 50
   - caption: |-
       Interactive retail fixture
@@ -54,8 +67,8 @@ projects:
 
       for Tommy Hilfiger
     thumbnail:
-      marginLeft: 50
-      marginTop: -5
+      marginLeft: 25
+      marginTop: 16
       ratio: 66.666666666
       video: >-
         https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
@@ -70,8 +83,16 @@ projects:
       for Fred Perry x Raf Simons
     thumbnail:
       image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
-      marginLeft: 30
-      marginTop: 15
+      marginLeft: 0
+      marginTop: 0
+      ratio: 0
+      width: 40
+  - caption: Bottega Veneta Takeover at Saks Fifth Avenue
+    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
+    thumbnail:
+      image: /img/200304_bottegaveneta_saks__084.jpg
+      marginLeft: 60
+      marginTop: -14
       ratio: 0
       width: 40
   - caption: An immersive in-store environment for NikeLab Milano
@@ -79,14 +100,14 @@ projects:
     thumbnail:
       image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.png
       marginLeft: 0
-      marginTop: 0
+      marginTop: -27
       ratio: 0
-      width: 30
+      width: 35
   - caption: An interactive sunrise in collaboration with Philip Schuette
     project: An interactive sunrise in collaboration with Philip Schuette
     thumbnail:
       marginLeft: 50
-      marginTop: -40
+      marginTop: -28
       ratio: 66.66666
       video: >-
         https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
@@ -163,6 +184,11 @@ projects:
       video: >-
         https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
       width: 50
+  - thumbnail:
+      ratio: 0
+      marginTop: 0
+      marginLeft: 0
+      width: 0
   - caption: |-
       Various in-store installations
       for NikeLab
@@ -174,10 +200,9 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
-address: >
-  Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
+address: >-
+  > Westzaanstraat 10<br /> 1013 NG Amsterdam<br /> The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)
 phone: +31 20 779 7735
 email: hello@random.studio
 ---
-

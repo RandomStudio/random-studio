@@ -1,0 +1,54 @@
+.title {
+  max-width: 17em;
+  line-height: 1.375;
+  padding: 16px 22px 0;
+}
+
+.thumbnail {
+  display: block;
+  margin-bottom: 15vw;
+  text-decoration: none;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  background: #eee;
+
+  & video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Force overwrite the inline programmeticly set styles for small screens/mobile
+@media (max-width: 480px) {
+  .thumbnail {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .title {
+    margin-left: 0 !important;
+  }
+}
+
+@media (min-width: 480px) {
+  .title {
+    padding: 10px 0;
+    font-size: var(--font-small);
+  }
+}
+
+@media (min-width: 1152px) {
+  .title {
+    font-size: 26px;
+  }
+}

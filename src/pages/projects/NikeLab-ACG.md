@@ -1,8 +1,7 @@
 ---
 templateKey: Project
-title: >-
+title: |-
   Various in-store installations
-
   for NikeLab
 intro: >-
   NikeLab is a retail destination that serves to spark consumer discovery in new
@@ -10,11 +9,6 @@ intro: >-
   collection, we created various stylised weather conditions (wind, rain and
   fog) that seized two of the brand’s stores around the globe.
 priority: 0
-thumbnail:
-  image: /img/4622f88e3bcf3f7a116d65191d94cf0e.jpg
-  marginLeft: 20
-  marginTop: 0
-  width: 60
 content:
   - marginLeft: 0
     marginTop: 0
@@ -26,6 +20,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
+      isAlwaysMuted: false
     width: 100
   - caption: >-
       Conceived as a means of bringing about a relevant experience that connects
@@ -118,6 +113,7 @@ content:
       loops: true
       url: >-
         https://player.vimeo.com/external/213649062.hd.mp4?s=140f4865386d492a2fab57cdf81ebb7594dc975e&profile_id=119
+      isAlwaysMuted: true
     width: 25
   - caption: >-
       Essential to the project was the idea of confrontation and evoking a sense
@@ -141,5 +137,11 @@ credits:
     value: >-
       Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948
       London)
+opengraph:
+  ogDescription: >-
+    For the launch of the 2017 ACG (All Conditions Gear) collection, we created
+    various stylised weather conditions (wind, rain and fog) that seized two of
+    the brand’s stores around the globe.
+  ogImage: /img/4622f88e3bcf3f7a116d65191d94cf0e.jpg
+  ogTitle: Various in-store installations for NikeLab
 ---
-

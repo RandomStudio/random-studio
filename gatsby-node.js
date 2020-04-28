@@ -1,8 +1,8 @@
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const { createFilePath } = require('gatsby-source-filesystem');
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
-exports.createPages = async ({ actions, graphql }) => Promise.all(
-  (await graphql(`
+exports.createPages = async ({ actions, graphql }) => {
+  const { data } = await graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -18,7 +18,9 @@ exports.createPages = async ({ actions, graphql }) => Promise.all(
         }
       }
     }
-  `)).data.allMarkdownRemark.edges.map(
+  `);
+
+  data.allMarkdownRemark.edges.forEach(
     ({
       node: {
         id,
@@ -29,18 +31,18 @@ exports.createPages = async ({ actions, graphql }) => Promise.all(
       if (templateKey) {
         actions.createPage({
           path: slug,
-          component: require.resolve(`./src/templates/${templateKey}/${templateKey}.js`),
-          context: { id },
+          component: require.resolve(
+            `./src/templates/${templateKey}/${templateKey}.js`,
+          ),
+          context: { id, templateKey },
         });
       }
-
-      return templateKey;
     },
-  ),
-);
+  );
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  fmImagesToRelative(node) // convert image paths for gatsby images
+  fmImagesToRelative(node); // convert image paths for gatsby images
 
   if (node.internal.type === 'MarkdownRemark') {
     actions.createNodeField({
@@ -53,3 +55,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  // Allow articles to be empty fro GraphQL MD
+  const typeDefsArticles = `
+    type Article {
+      article: String
+      position: Int
+    }
+
+    type MarkdownRemarkFrontmatter implements Node {
+      articles: [Article]
+    }
+  `
+
+  createTypes(typeDefsArticles)
+}
