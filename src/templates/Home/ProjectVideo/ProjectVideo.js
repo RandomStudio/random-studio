@@ -43,7 +43,6 @@ const ProjectVideo = ({
     if (!hasPlayed) {
       setHasPlayed(true);
     }
-    e.preventDefault();
 
     setIsPlaying(prevState => {
       if (isPlaying) {
