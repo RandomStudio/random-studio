@@ -8,6 +8,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:prettier/recommended',
     'prettier/react',
+    'prettier',
+
   ],
 
   globals: {
@@ -21,9 +23,10 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks'.'prettier'],
   rules: {
     'arrow-parens': [1, 'as-needed'],
+    "prettier/prettier": ["error"],
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react/jsx-filename-extension': 0,
