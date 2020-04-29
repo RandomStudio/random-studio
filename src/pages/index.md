@@ -18,6 +18,15 @@ middle: >-
   [More about our studio](/studio)
 projects:
   - caption: >-
+      A playful interactive search engine for Cinekid Festival
+    project: >-
+      A playful interactive search engine for Cinekid Festival
+    thumbnail:
+      image: /img/cinekid12.jpg
+      marginLeft: 0
+      marginTop: 14
+      width: 40
+  - caption: >-
       A store takeover at Place Vendôme <br> for the launch of Chanel's new
       watch
     project: >-
@@ -25,9 +34,9 @@ projects:
       watch
     thumbnail:
       image: /img/thumbnail_chanel-1-.png
-      marginLeft: 19
-      marginTop: 14
-      width: 60
+      marginLeft: 50
+      marginTop: -14
+      width: 50
   - caption: |-
       A Lookbook of Many Gazes 
 
@@ -38,7 +47,7 @@ projects:
     thumbnail:
       image: /img/jihye-1-.jpg
       marginLeft: 8
-      marginTop: -2
+      marginTop: -6
       ratio: 0
       width: 35
   - caption: |-
@@ -55,8 +64,8 @@ projects:
     project: 'Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton'
     thumbnail:
       image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
-      marginLeft: 0
-      marginTop: -30
+      marginLeft: 25
+      marginTop: 0
       width: 50
   - caption: |-
       Interactive retail fixture
@@ -67,12 +76,12 @@ projects:
 
       for Tommy Hilfiger
     thumbnail:
-      marginLeft: 25
-      marginTop: 16
+      marginLeft: 60
+      marginTop: 0
       ratio: 66.666666666
       video: >-
         https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
-      width: 50
+      width: 40
   - caption: |-
       Interactive lookbook
 
@@ -84,7 +93,7 @@ projects:
     thumbnail:
       image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
       marginLeft: 0
-      marginTop: 0
+      marginTop: -28
       ratio: 0
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
