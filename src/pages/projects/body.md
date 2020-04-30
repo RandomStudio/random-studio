@@ -128,6 +128,16 @@ content:
       hasControls: false
       isMuted: true
       loops: true
+  - caption: >-
+      Read more about how this project was conceived technically in [this article](https://medium.com/random-studio/body-using-your-self-as-a-search-tool-a5d8480988b9) on [Medium](https://medium.com/random-studio).
+    marginLeft: 0
+    marginTop: 0
+    ratio: 0
+    video:
+      autoplay: false
+      hasControls: false
+      isMuted: true
+      loops: true
 credits:
   - key: 'For:'
     value: Cinekid Festival
