@@ -3,9 +3,7 @@ import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
 const ProjectVideo = ({
-  video: {
-    autoplay, hasControls, isMuted: isStartingMuted, loops, url,
-  },
+  video: { autoplay, hasControls, isMuted: isStartingMuted, loops, url },
   ratio,
 }) => {
   const videoRef = useRef(null);
@@ -17,17 +15,17 @@ const ProjectVideo = ({
   );
   const [isPlaying, setIsPlaying] = useState(autoplay);
 
-  const handleTapVolumeToggle = e => {
-    setIsCurrentlyMuted(prevState => !prevState);
+  const handleTapVolumeToggle = (e) => {
+    setIsCurrentlyMuted((prevState) => !prevState);
     e.stopPropagation();
   };
 
-  const handleTapPlayPause = e => {
+  const handleTapPlayPause = (e) => {
     if (!hasPlayed) {
       setHasPlayed(true);
     }
 
-    setIsPlaying(prevState => {
+    setIsPlaying((prevState) => {
       if (isPlaying) {
         videoRef.current.pause();
       } else {
@@ -52,8 +50,8 @@ const ProjectVideo = ({
         isMuted={isCurrentlyMuted}
         autoPlays={isPlaying}
       />
-      {hasControls
-        && (hasPlayed ? (
+      {hasControls &&
+        (hasPlayed ? (
           <div className={styles.videoControls}>
             <button onClick={handleTapPlayPause}>
               {isPlaying ? 'Pause' : 'Play'}
