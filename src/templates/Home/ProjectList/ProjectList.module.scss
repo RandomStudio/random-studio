@@ -3,22 +3,19 @@
   background: #f8f8f8;
 }
 
-.statement,
-.intermittentStatement {
+.statement {
   font-size: var(--font-small);
+  max-width: 17em;
   line-height: 1.25;
   margin: 10vw auto 25vw;
   padding: 0 1.4rem;
 }
 
-.statement {
-  max-width: 17em;
-}
-
 .intermittentStatement {
   max-width: 21em;
+
   p {
-    margin-bottom: 1.6rem;
+    margin-bottom: 26px;
   }
 
   a {
@@ -26,13 +23,13 @@
     display: inline-block;
     text-decoration: none;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       height: 2px;
       width: 100%;
-      background-color: #000;
+      background-color: black;
     }
   }
 }
@@ -40,7 +37,7 @@
 .title {
   max-width: 17em;
   line-height: 1.375;
-  padding: 1rem 1.4rem 0;
+  padding: 16px 22px 0;
 }
 
 .thumbnail {
@@ -66,34 +63,33 @@
   }
 }
 
-@media (min-width: 30rem) {
-  .statement,
-  .intermittentStatement {
-    font-size: var(--font-med);
-    padding: 0 2rem;
+// Force overwrite the inline programmeticly set styles for small screens/mobile
+@media (max-width: 480px) {
+  .projects {
+    padding: 0 0 15vw;
+  }
+
+  .thumbnail {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 
   .statement {
-    margin: 0 auto 15vw;
-  }
-
-  .intermittentStatement {
-    margin-bottom: 0;
-  }
-
-  .title {
-    padding: 0.6rem 0;
-    font-size: var(--font-small);
+    margin: 100px auto 100px;
   }
 }
 
-@media (min-width: 72rem) {
-  .statement,
-  .intermittentStatement {
-    font-size: var(--font-large);
+@media (min-width: 480px) {
+  .statement {
+    font-size: var(--font-med);
+    margin: 0 auto 15vw;
+    padding: 0 32px;
   }
+}
 
-  .title {
-    font-size: 1.6rem;
+@media (min-width: 1152px) {
+  .statement {
+    font-size: var(--font-large);
   }
 }

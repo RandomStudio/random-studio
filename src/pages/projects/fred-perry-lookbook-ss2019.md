@@ -94,7 +94,6 @@ content:
       in the shop. Location URLs of found garments, sound snippets or visual
       frames can be shared on social media. The entire campaign can also be
       viewed as a series of semi-accidental screenshots.
-    image: ''
     marginLeft: 0
     marginTop: 0
     ratio: 0

@@ -13,9 +13,16 @@ const Recruitee = ({ location }) => {
   };
 
   useEffect(() => {
+    if (!location.hash && openOffer) {
+      handleCloseOffer();
+    }
+
     // If fetch is not supported, we will not show any job offers
     // IE11 and lower
-    if (window.fetch) {
+    if (
+      window.fetch &&
+      (!recruiteeData.offers || !recruiteeData.offers.length)
+    ) {
       fetch('https://career.recruitee.com/api/c/23038/widget/?widget=true')
         .then(res => res.json())
         .then(json => {
@@ -23,8 +30,9 @@ const Recruitee = ({ location }) => {
 
           if (location.hash && (json.offers && json.offers.length)) {
             const selectedOffer = json.offers.find(
-              offer => offer.id
-                === parseInt(location.hash.substring(1, location.hash.length), 10),
+              offer =>
+                offer.id ===
+                parseInt(location.hash.substring(1, location.hash.length), 10),
             );
 
             if (selectedOffer) {
@@ -36,11 +44,7 @@ const Recruitee = ({ location }) => {
           throw new Error(`Failed to fetch open job offers: ${err}`);
         });
     }
-
-    // react-hooks/exhaustive-deps about location.hash
-    // Should only check it once on render, so disabled eslint for it
-    // eslint-disable-next-line
-  }, []);
+  }, [location.hash, recruiteeData.length, recruiteeData.offers]);
 
   const handleCloseOffer = () => {
     setOpenOffer(null);
@@ -54,12 +58,15 @@ const Recruitee = ({ location }) => {
   return (
     <>
       <aside className={styles.recruitee}>
-        <p className={styles.openRoles}>Open Roles</p>
+        <p className={styles.title}>Open Positions</p>
         <ul className={styles.list}>
           {recruiteeData.offers.map(offer => (
             <li className={styles.item} key={offer.id}>
-              <p className={styles.department}>{offer.department}</p>
-              <a className={styles.role} href={`#${offer.id}`} onClick={() => handleOpenOffer(offer)}>
+              <a
+                className={styles.role}
+                href={`#${offer.id}`}
+                onClick={() => handleOpenOffer(offer)}
+              >
                 {offer.title}
               </a>
             </li>
