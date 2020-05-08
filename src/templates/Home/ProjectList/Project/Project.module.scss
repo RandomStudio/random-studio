@@ -1,8 +1,7 @@
-
 .title {
   max-width: 17em;
   line-height: 1.375;
-  padding: 1rem 1.4rem 0;
+  padding: 16px 22px 0;
 }
 
 .thumbnail {
@@ -29,7 +28,7 @@
 }
 
 // Force overwrite the inline programmeticly set styles for small screens/mobile
-@media (max-width: 30rem) {
+@media (max-width: 480px) {
   .thumbnail {
     margin-top: 0 !important;
     margin-left: 0 !important;
@@ -41,15 +40,15 @@
   }
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 480px) {
   .title {
-    padding: 0.6rem 0;
+    padding: 10px 0;
     font-size: var(--font-small);
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .title {
-    font-size: 1.6rem;
+    font-size: 26px;
   }
 }

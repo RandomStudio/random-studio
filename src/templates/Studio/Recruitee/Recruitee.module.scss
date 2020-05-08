@@ -2,39 +2,39 @@
   height: min-content;
   margin: 120px 20px 120px;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     align-self: flex-end;
     width: 50%;
     margin: 0 20px 0px 0;
     padding: 0 0 120px 120px;
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     margin: 120px 20px 300px 0;
     padding: 0 120px 0 120px;
   }
 }
 
 .list {
-    margin: 0;
-    list-style: none;
-    font-size: var(--px-font-xmed);
+  margin: 0;
+  list-style: none;
+  font-size: var(--px-font-xmed);
 
-    @media (min-width: 48rem) {
-      font-size: var(--px-font-med);
-    }
+  @media (min-width: 768px) {
+    font-size: var(--px-font-med);
+  }
 
-    @media (min-width: 60rem) {
-      font-size: var(--px-font-large);
-    }
+  @media (min-width: 960px) {
+    font-size: var(--px-font-large);
+  }
 }
 
 .open-roles {
   color: var(--red);
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 
-  @media (min-width: 36rem) {
-    margin-bottom: 3rem;
+  @media (min-width: 576px) {
+    margin-bottom: 48px;
   }
 }
 
@@ -43,13 +43,13 @@
   margin-bottom: 22px;
   text-transform: uppercase;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     flex: 1;
     font-size: var(--px-font-xs);
     margin-bottom: 24px;
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     font-size: var(--px-font-small);
   }
 }
@@ -57,8 +57,7 @@
 .role {
   transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background: linear-gradient(transparent, transparent),
-    linear-gradient(transparent, transparent),
-    linear-gradient(black, black);
+    linear-gradient(transparent, transparent), linear-gradient(black, black);
   background-size: 0.05em 1px, 0.05em 1px, 1px 2px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0 87%, 100% 87%, 0 100%;

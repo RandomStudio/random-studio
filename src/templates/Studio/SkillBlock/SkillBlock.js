@@ -16,7 +16,7 @@ const SkillBlock = ({ skillset, email }) => {
       <SkillList skillset={skillset} />
 
       <div className={styles.conversationWrapper}>
-        <p>Start a converstation</p>
+        <p>Start a conversation</p>
         <a href={`mailto:${email}`} onClick={handleClickEmail} ref={emailRef}>
           Contact Us
         </a>

@@ -1,10 +1,9 @@
-
 .jobsImpressionBlock {
   display: flex;
   margin: 100px 0 280px;
   flex-direction: column;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     flex-direction: row;
     margin: 200px 0 280px;
   }
@@ -14,7 +13,7 @@
   margin-bottom: 32px;
   flex-direction: column-reverse;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 }
@@ -29,7 +28,7 @@
     height: 560px;
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     max-width: 50%;
     margin-left: auto;
 
@@ -39,7 +38,7 @@
     }
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     // Package specific class
     [class=' gatsby-image-wrapper'] {
       height: 1060px;
@@ -48,10 +47,10 @@
 }
 
 .wrapper {
-  transition: background .35s ease-in-out,color .35s ease-in-out;
+  transition: background 0.35s ease-in-out, color 0.35s ease-in-out;
   will-change: background, color;
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
