@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks'.'prettier'],
+  plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
     'arrow-parens': [1, 'as-needed'],
     "prettier/prettier": ["error"],
