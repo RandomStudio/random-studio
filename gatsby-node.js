@@ -69,7 +69,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MarkdownRemarkFrontmatter implements Node {
       articles: [Article]
     }
-  `
+  `;
 
-  createTypes(typeDefsArticles)
-}
+  createTypes(typeDefsArticles);
+};

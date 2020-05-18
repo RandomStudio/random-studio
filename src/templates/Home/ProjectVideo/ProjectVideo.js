@@ -4,7 +4,7 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
-const trackPausePlay = isPlaying => {
+const trackPausePlay = (isPlaying) => {
   trackCustomEvent({
     category: isPlaying ? 'Pause Button' : 'Play Button',
     action: isPlaying ? 'Pause' : 'Play',
@@ -12,7 +12,7 @@ const trackPausePlay = isPlaying => {
   });
 };
 
-const trackIsCurrentlyMuted = isCurrentlyMuted => {
+const trackIsCurrentlyMuted = (isCurrentlyMuted) => {
   trackCustomEvent({
     category: isCurrentlyMuted ? 'Unmute Button' : 'Mute Button',
     action: isCurrentlyMuted ? 'Unmute' : 'Mute',
@@ -39,18 +39,18 @@ const ProjectVideo = ({
   );
   const [isPlaying, setIsPlaying] = useState(autoplay);
 
-  const handleTapVolumeToggle = e => {
-    setIsCurrentlyMuted(prevState => !prevState);
+  const handleTapVolumeToggle = (e) => {
+    setIsCurrentlyMuted((prevState) => !prevState);
     e.stopPropagation();
-    trackIsCurrentlyMuted(isCurrentlyMuted)
+    trackIsCurrentlyMuted(isCurrentlyMuted);
   };
 
-  const handleTapPlayPause = e => {
+  const handleTapPlayPause = (e) => {
     if (!hasPlayed) {
       setHasPlayed(true);
     }
 
-    setIsPlaying(prevState => {
+    setIsPlaying((prevState) => {
       if (isPlaying) {
         videoRef.current.pause();
       } else {

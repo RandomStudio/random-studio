@@ -50,6 +50,6 @@ Footer.propTypes = {
   address: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-}
+};
 
 export default Footer;

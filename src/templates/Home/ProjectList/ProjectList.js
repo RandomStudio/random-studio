@@ -11,7 +11,9 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
       <ReactMarkdown escapeHtml={false} source={intro} />
     </div>
     {projects.map(({ thumbnail, title, slug }, index) => {
-      const article = (articles || []).find(({ position }) => position === index + 1);
+      const article = (articles || []).find(
+        ({ position }) => position === index + 1,
+      );
 
       return (
         <React.Fragment key={slug}>

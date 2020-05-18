@@ -1,4 +1,4 @@
-const getThumbnailSafely = thumbnail => {
+const getThumbnailSafely = (thumbnail) => {
   if (!thumbnail) {
     return null;
   }
@@ -8,6 +8,6 @@ const getThumbnailSafely = thumbnail => {
   }
 
   return thumbnail.childImageSharp.fixed.src;
-}
+};
 
 export default getThumbnailSafely;

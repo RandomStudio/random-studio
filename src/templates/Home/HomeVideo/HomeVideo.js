@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styles from './HomeVideo.module.scss';
 
 export default ({ collaborationCredits, layout, videoUrl }) => {
-  const scrollToProjects = event => {
+  const scrollToProjects = (event) => {
     const projectsBlock = document.getElementById('projects');
     projectsBlock.scrollIntoView({
       behavior: 'smooth',
@@ -12,7 +12,9 @@ export default ({ collaborationCredits, layout, videoUrl }) => {
     event.preventDefault();
   };
 
-  const logoClass = `${styles.logo} ${layout === 'top' ? styles.isTop : styles.isCenter}`;
+  const logoClass = `${styles.logo} ${
+    layout === 'top' ? styles.isTop : styles.isCenter
+  }`;
 
   return (
     <div className={styles.video}>

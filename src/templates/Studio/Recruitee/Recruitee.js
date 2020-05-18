@@ -7,7 +7,7 @@ const Recruitee = ({ location }) => {
   const [recruiteeData, setRecruiteeData] = useState({});
   const [openOffer, setOpenOffer] = useState();
 
-  const handleOpenOffer = offer => {
+  const handleOpenOffer = (offer) => {
     document.body.classList.add('prevent-scroll');
     setOpenOffer(offer);
   };
@@ -24,13 +24,13 @@ const Recruitee = ({ location }) => {
       (!recruiteeData.offers || !recruiteeData.offers.length)
     ) {
       fetch('https://career.recruitee.com/api/c/23038/widget/?widget=true')
-        .then(res => res.json())
-        .then(json => {
+        .then((res) => res.json())
+        .then((json) => {
           setRecruiteeData(json);
 
-          if (location.hash && (json.offers && json.offers.length)) {
+          if (location.hash && json.offers && json.offers.length) {
             const selectedOffer = json.offers.find(
-              offer =>
+              (offer) =>
                 offer.id ===
                 parseInt(location.hash.substring(1, location.hash.length), 10),
             );
@@ -40,7 +40,7 @@ const Recruitee = ({ location }) => {
             }
           }
         })
-        .catch(err => {
+        .catch((err) => {
           throw new Error(`Failed to fetch open job offers: ${err}`);
         });
     }
@@ -60,7 +60,7 @@ const Recruitee = ({ location }) => {
       <aside className={styles.recruitee}>
         <p className={styles.title}>Open Positions</p>
         <ul className={styles.list}>
-          {recruiteeData.offers.map(offer => (
+          {recruiteeData.offers.map((offer) => (
             <li className={styles.item} key={offer.id}>
               <a
                 className={styles.role}

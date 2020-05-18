@@ -172,4 +172,3 @@ opengraph:
   ogImage: /img/200304_bottegaveneta_saks__084-copy.jpg
   ogTitle: Bottega Veneta Takeover at Saks Fifth Avenue
 ---
-

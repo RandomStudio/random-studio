@@ -50,7 +50,7 @@ const SEO = ({
     },
   } = data;
 
-  const formatTitle = string => `${defaultTitle} - ${string}`;
+  const formatTitle = (string) => `${defaultTitle} - ${string}`;
 
   const pageTitle = title ? formatTitle(title) : defaultTitle;
   const pageDescription = description || defaultDescription;

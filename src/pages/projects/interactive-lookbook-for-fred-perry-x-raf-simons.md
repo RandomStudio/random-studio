@@ -151,4 +151,3 @@ opengraph:
   ogImage: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
   ogTitle: Interactive lookbook for Fred Perry x Raf Simons
 ---
-

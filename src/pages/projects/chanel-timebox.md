@@ -119,4 +119,3 @@ opengraph:
     A vertical journey through time
     for Chanel
 ---
-

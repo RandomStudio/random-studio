@@ -8,6 +8,7 @@ export const useToastVisibility = () => {
   });
 
   return {
-    isToastVisible, setIsToastVisible
-  }
-}
+    isToastVisible,
+    setIsToastVisible,
+  };
+};

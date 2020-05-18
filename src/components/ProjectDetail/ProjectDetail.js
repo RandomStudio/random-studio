@@ -4,9 +4,7 @@ import Img from 'gatsby-image';
 import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
 
-const ProjectDetail = ({
-  title, intro, content, credits,
-}) => (
+const ProjectDetail = ({ title, intro, content, credits }) => (
   <div className={styles.project}>
     <h1 className={styles.title}>
       <ReactMarkdown escapeHtml={false} source={title} />
@@ -16,9 +14,7 @@ const ProjectDetail = ({
     </div>
     {(content || []).map(
       (
-        {
-          caption, image, marginLeft, marginTop, ratio, video, width,
-        },
+        { caption, image, marginLeft, marginTop, ratio, video, width },
         index,
       ) => (
         <div
@@ -40,12 +36,12 @@ const ProjectDetail = ({
                 <img alt="" src={image} />
               )}
               {caption && (
-              <div
-                className={styles.caption}
-                style={{ marginLeft: !marginLeft && '1.4rem' }}
-              >
-                {caption}
-              </div>
+                <div
+                  className={styles.caption}
+                  style={{ marginLeft: !marginLeft && '1.4rem' }}
+                >
+                  {caption}
+                </div>
               )}
             </>
           ) : (

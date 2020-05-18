@@ -10,25 +10,22 @@ const BackScrim = ({ returnUrl }) => {
   useEffect(() => {
     const intersection = intersectionRef.current;
     let observer = null;
-    const supportsIntersectionObserver = (('IntersectionObserver' in window)
-      || (
-        ('IntersectionObserverEntry' in window)
-        && ('isIntersecting' in window.IntersectionObserverEntry.prototype)
-      )
-    );
+    const supportsIntersectionObserver =
+      'IntersectionObserver' in window ||
+      ('IntersectionObserverEntry' in window &&
+        'isIntersecting' in window.IntersectionObserverEntry.prototype);
 
     const onScroll = () => {
-      const hasScrolledToBottom = (
-        (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight
-      );
+      const hasScrolledToBottom =
+        window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
       setIsVisible(hasScrolledToBottom);
     };
 
     if (supportsIntersectionObserver) {
       window.addEventListener('scroll', onScroll);
     } else {
-      const intersectCb = sentinel => setIsVisible(sentinel.isIntersecting);
-      observer = new IntersectionObserver(entries => intersectCb(entries[0]));
+      const intersectCb = (sentinel) => setIsVisible(sentinel.isIntersecting);
+      observer = new IntersectionObserver((entries) => intersectCb(entries[0]));
       observer.observe(intersection);
     }
 
@@ -42,7 +39,9 @@ const BackScrim = ({ returnUrl }) => {
     };
   }, []);
 
-  const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible}`;
+  const scrimClassNames = `${styles.backScrim} ${
+    isVisible && styles.isVisible
+  }`;
 
   return (
     <>

@@ -8,12 +8,8 @@ const Error404 = () => (
   <Layout>
     <main className={styles.notFoundPage}>
       <div>
-          Page not found
-        {' '}
-        <br />
-          View our
-        {' '}
-        <Link to="/#projects">projects</Link>
+        Page not found <br />
+        View our <Link to="/#projects">projects</Link>
       </div>
     </main>
   </Layout>

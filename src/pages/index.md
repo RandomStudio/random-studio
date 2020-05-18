@@ -87,7 +87,7 @@ projects:
       ratio: 0
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
-    project: "Bottega Veneta Takeover at Saks Fifth Avenue "
+    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60
@@ -193,8 +193,8 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
-address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
-  [Directions](https://goo.gl/maps/7rGuGBBfhms)"
+address: '> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
+  [Directions](https://goo.gl/maps/7rGuGBBfhms)'
 phone: +31 20 779 7735
 email: hello@random.studio
 ---

@@ -168,4 +168,3 @@ opengraph:
   ogImage: /img/67626df4e2cce1b37e48ebf46165b19e.ike-milaan-36.jpg
   ogTitle: An immersive in-store environment for NikeLab Milano
 ---
-
