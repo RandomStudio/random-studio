@@ -1,15 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useContext } from 'react';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Newsletter from './Newsletter/Newsletter';
 import styles from './Footer.module.scss';
 import { copyStringToClipboard } from '../../utils/copyClipboard';
+import { AppContext } from '../../utils/context/AppContext';
 
 const Footer = ({ address, email, phone }) => {
-  const [isNoticeVisible, setIsNoticeVisible] = useState(false);
   const emailRef = useRef();
+  const { setIsToastVisible } = useContext(AppContext);
 
-  const handleClickEmail = event =>
-    copyStringToClipboard(event, email, setIsNoticeVisible);
+  const handleClickEmail = (event) =>
+    copyStringToClipboard(event, email, setIsToastVisible);
 
   return (
     <footer className={styles.footer}>
@@ -40,14 +42,14 @@ const Footer = ({ address, email, phone }) => {
         </div>
       </div>
       <Newsletter />
-      <div
-        className={`${styles.notice} ${isNoticeVisible &&
-          styles.noticeIsVisible}`}
-      >
-        Copied to clipboard
-      </div>
     </footer>
   );
 };
+
+Footer.propTypes = {
+  address: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+}
 
 export default Footer;

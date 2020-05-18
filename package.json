@@ -36,7 +36,6 @@
     "gatsby": "^2.20.9",
     "lodash": "^4.17.15",
     "netlify-cms-app": "^2.12.3",
-    "netlify-cms-widget-number": "^2.3.5",
     "node-sass": "^4.13.1",
     "postcss-custom-properties": "^9.1.1",
     "prop-types": "^15.7.2",
