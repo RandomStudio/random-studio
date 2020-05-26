@@ -1,0 +1,63 @@
+@import '../../../styles/mixins';
+
+.impression {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+
+  // Package specific class
+  [class=' gatsby-image-wrapper'] {
+    height: 70vh;
+  }
+
+  // Target the indicator wrapper with title - Will alsways be last in markdown
+  & > div > div:last-of-type {
+    @include blendedText;
+    position: absolute;
+    top: -13px;
+    bottom: 0;
+    font-size: var(--font-small);
+  }
+}
+
+@media (min-width: 576px) {
+  .carouselWrapper {
+    & > div > div:last-of-type {
+      font-size: var(--font-med);
+      top: 50%;
+      bottom: initial;
+      left: 0;
+      right: 0;
+      max-width: 704px;
+      width: 100%;
+      margin: auto;
+      transform: translateY(-50%);
+
+      p,
+      span {
+        margin-left: 32px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1312px) {
+  .carouselWrapper {
+    & > div > div:last-of-type {
+      max-width: 928px;
+      padding: 22px;
+
+      p,
+      span {
+        margin: 0;
+      }
+    }
+  }
+}

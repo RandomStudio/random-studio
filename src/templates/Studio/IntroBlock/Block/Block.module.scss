@@ -20,7 +20,7 @@
     }
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     height: 1000px;
 
     .headerTitle {
@@ -28,7 +28,7 @@
     }
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     position: relative;
     height: 1280px;
     width: 49%;
@@ -52,7 +52,7 @@
   max-height: 120vh;
 
   // Overwrite framer-motion transform on breakpoint
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     transform: scale(1) !important;
   }
 }
@@ -74,7 +74,7 @@
   height: 100%;
   background: rgba(#000000, 0.4);
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     display: none;
   }
 }
@@ -84,11 +84,11 @@
   font-size: var(--px-font-xmed);
   font-weight: normal;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     font-size: var(--px-font-med);
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     font-size: var(--px-font-large);
   }
 }
@@ -100,7 +100,7 @@
   height: 100vh;
   margin-bottom: 96px;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     flex-direction: row;
 
     & > div {
@@ -109,7 +109,7 @@
     }
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     display: inline-block;
     flex: 1;
     width: 50%;
@@ -140,13 +140,13 @@
     max-width: 520px;
   }
 
-  @media (max-width: 60rem) {
+  @media (max-width: 960px) {
     .headerTitle {
       display: none;
     }
   }
 
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     margin-left: 120px;
 
     p {
@@ -157,7 +157,7 @@
       }
     }
   }
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     margin-top: 440px;
 
     &:nth-of-type(1) {
@@ -165,7 +165,7 @@
     }
   }
 
-  @media (min-width: 68rem) {
+  @media (min-width: 1088px) {
     margin-top: 640px;
 
     &:nth-of-type(1) {
@@ -174,21 +174,21 @@
     }
   }
 
-  @media (min-width: 90rem) {
+  @media (min-width: 1440px) {
   } // Wide screen 1440+
 }
 
 .parallaxFront {
-  @media (min-width: 60rem) {
+  @media (min-width: 960px) {
     transform-style: preserve-3d;
     transform-origin: 0 0;
     // Scale = (perspective - zTranslation) / perspective | Perspective is set iin Studio.module.scss
-    transform: translateX(1%) translateZ(-.1px) scale(1.1);
+    transform: translateX(1%) translateZ(-0.1px) scale(1.1);
 
     @supports (-webkit-overflow-scrolling: none) {
       // CSS specific to iOS devices (ipads - landscape)
       // Simulator didn't trip up the CSS but my ipad 5 IOS 13 did - Trust the real device more
-      transform: translateX(1%) translateZ(-.1px) scale(0.9);
+      transform: translateX(1%) translateZ(-0.1px) scale(0.9);
     }
   }
 }

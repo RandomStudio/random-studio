@@ -6,7 +6,6 @@ import Navigation from '../components/Navigation/Navigation';
 
 const Error404 = () => (
   <Layout>
-    <Navigation />
     <main className={styles.notFoundPage}>
       <div>
           Page not found
