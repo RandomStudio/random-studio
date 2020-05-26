@@ -53,7 +53,7 @@ collections:
         name: priority
         required: false
         valueType: float
-        widget: string
+        widget: nonEmptyStringableNumber
       - label: Content
         name: content
         widget: list
@@ -106,22 +106,22 @@ collections:
             required: false
             valueType: float
             default: 0.00
-            widget: string
+            widget: nonEmptyStringableNumber
           - label: Width
             name: width
             required: false
             valueType: float
-            widget: string
+            widget: nonEmptyStringableNumber
           - label: 'Margin Top'
             name: marginTop
             default: 0
             valueType: float
-            widget: string
+            widget: nonEmptyStringableNumber
           - label: 'Margin Left'
             name: marginLeft
             default: 0
             valueType: float
-            widget: string
+            widget: nonEmptyStringableNumber
       - label: Media
         name: media
         widget: list
@@ -339,22 +339,22 @@ collections:
                     required: false
                     valueType: float
                     default: 0.00
-                    widget: string
+                    widget: nonEmptyStringableNumber
                   - label: Width
                     name: width
                     required: false
                     valueType: float
-                    widget: string
+                    widget: nonEmptyStringableNumber
                   - label: 'Margin Top'
                     name: marginTop
                     default: 0
                     valueType: float
-                    widget: string
+                    widget: nonEmptyStringableNumber
                   - label: 'Margin Left'
                     name: marginLeft
                     default: 0
                     valueType: float
-                    widget: string
+                    widget: nonEmptyStringableNumber
               - name: project
                 widget: relation
                 required: false
@@ -376,7 +376,7 @@ collections:
               - label: 'Article Position'
                 name: position
                 required: true
-                widget: string
+                widget: nonEmptyStringableNumber
                 hint: 'Set the position of the article here. e.g. 5 will place the article below the 5th project. Will not show if the number is higher than the number of projects.'
           - label: Address
             name: address
