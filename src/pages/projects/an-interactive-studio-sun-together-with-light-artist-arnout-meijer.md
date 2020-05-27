@@ -3,9 +3,11 @@ templateKey: Project
 title: Interactive Studio Lights together with Arnout Meijer
 intro: Located in a courtyard within a housing block, our studio doesn’t get
   much direct sunlight in winter. Using this problem as a tool in our research
-  into interactive space, we started to think about how we could connect our
-  physical space to the outdoors in order to bring our workspace back to life
-  during these winter months.
+  into [interactive
+  space](https://medium.com/random-studio/interactive-space-a-new-focus-cc0cbef22655),
+  we started to think about how we could connect our physical space to the
+  outdoors in order to bring our workspace back to life during these winter
+  months.
 content:
   - video:
       autoplay: false
@@ -14,15 +16,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/417218625.hd.mp4?s=5c5170af31e4fa52a06c0273e409d89fa20f6abd&profile_id=175
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
     ratio: 0
     marginTop: 0
     marginLeft: 0
