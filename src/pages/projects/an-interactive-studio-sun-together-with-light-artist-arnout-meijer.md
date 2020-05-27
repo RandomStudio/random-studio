@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: An Interactive Studio Sun together with light-artist Arnout Meijer
+title: Interactive Studio Lights together with Arnout Meijer
 intro: Located in a courtyard within a housing block, our studio doesn’t get
   much direct sunlight in winter. Using this problem as a tool in our research
   into interactive space, we started to think about how we could connect our
@@ -115,13 +115,14 @@ content:
        A programmable space like this creates a dialogue with the people that occupy it. Rather than isolating us from the physical world, it infuses real spaces with tech to make us aware of our surroundings.
 credits:
   - key: "For:"
-    value: Random Studio
-  - key: "With "
+    value: "Random Studio "
+  - key: "With:"
     value: |-
-      Arnout Meijer
-      Schrikdraad Ontwerp
+      Arnout Meijer – Light Design 
+      Schrikdraad Elektronisch Ontwerp –  Electronics Design 
   - key: "Roles: "
-    value: Creative Direction, Design, Development
+    value: Creative Direction, Art Direction, Experience Design, Creative
+      Technology, Software Development
 opengraph:
   ogTitle: ""
   ogDescription: ""
