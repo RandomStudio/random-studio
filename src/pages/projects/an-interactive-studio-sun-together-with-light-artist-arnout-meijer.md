@@ -1,13 +1,11 @@
 ---
 templateKey: Project
-title: Interactive Studio Lights together with Arnout Meijer
-intro: Located in a courtyard within a housing block, our studio doesn’t get
-  much direct sunlight in winter. Using this problem as a tool in our research
-  into [interactive
-  space](https://medium.com/random-studio/interactive-space-a-new-focus-cc0cbef22655),
-  we started to think about how we could connect our physical space to the
-  outdoors in order to bring our workspace back to life during these winter
-  months.
+title: An Interactive Studio Sun together with light-artist Arnout Meijer
+intro: Like many studios, we’re based in the city. Located in a courtyard within
+  a housing block, our space doesn’t get much direct sunlight in winter. Using
+  this problem as a tool in our research into interactive space, we started to
+  think about how we could connect our physical space to the outdoors in order
+  to bring our workspace back to life during these winter months.
 content:
   - video:
       autoplay: false
@@ -44,6 +42,7 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/random_licht_stills_5 (1).jpg
+    width: 55
   - video:
       autoplay: false
       hasControls: false
@@ -51,9 +50,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -10
+    marginLeft: 65
     image: /img/random_licht_stills_3 (1).jpg
+    width: 35
   - video:
       autoplay: false
       hasControls: false
@@ -72,6 +72,45 @@ content:
       and change as the light outside shifts, revitalising the space with the
       energy of the sun."
   - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/425502591.hd.mp4?s=6c6e727bf7181b38ec939c741720e0ca192c16ff&profile_id=175
+    ratio: 60
+    marginTop: 0
+    marginLeft: 15
+    width: 70
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: This is just the beginning of how our studio can come to life. The
+      dynamic system we created allows us to control each LED light pixel
+      individually, and the next step is to add 4D sound to our space. Our
+      studio is becoming the playground we use to think about how technology can
+      build a bridge between humans and nature, with the aim of creating
+      interactive spaces that feel alive and behave in their own way. A
+      programmable space like this creates a dialogue with the people that
+      occupy it. Rather than isolating us from the physical world, it infuses
+      real spaces with tech to make us aware of our surroundings.
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/425504084.hd.mp4?s=c4dc51127e603b16c248435e49bac68e778bcff0&profile_id=175
+    ratio: 70
+    marginTop: 0
+    marginLeft: 0
+  - video:
       autoplay: false
       hasControls: false
       loops: true
@@ -81,6 +120,7 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/random_licht_stills_4 (1).jpg
+    width: 60
   - video:
       autoplay: false
       hasControls: false
@@ -88,24 +128,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -11
+    marginLeft: 63
     image: /img/random_licht_stills_2 (1).jpg
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    caption: >-
-      
-
-      This is just the beginning of how our studio can come to life. The dynamic system we created allows us to control each LED light pixel individually, and the next step is to add 4D sound to our space. Our studio is becoming the playground we use to think about how technology can build a bridge between humans and nature, with the aim of creating interactive spaces that feel alive and behave in their own way.
-
-       A programmable space like this creates a dialogue with the people that occupy it. Rather than isolating us from the physical world, it infuses real spaces with tech to make us aware of our surroundings.
+    width: 37
 credits:
   - key: "For:"
     value: "Random Studio "
