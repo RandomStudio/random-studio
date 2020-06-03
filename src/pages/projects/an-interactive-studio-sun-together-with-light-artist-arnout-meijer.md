@@ -55,6 +55,17 @@ content:
     image: /img/random_licht_stills_3 (1).jpg
     width: 35
   - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/425502591.hd.mp4?s=6c6e727bf7181b38ec939c741720e0ca192c16ff&profile_id=175
+    ratio: 60
+    marginTop: 10
+    marginLeft: 15
+    width: 70
+  - video:
       autoplay: false
       hasControls: false
       loops: true
@@ -77,11 +88,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/425502591.hd.mp4?s=6c6e727bf7181b38ec939c741720e0ca192c16ff&profile_id=175
-    ratio: 60
+      url: https://player.vimeo.com/external/425504084.hd.mp4?s=c4dc51127e603b16c248435e49bac68e778bcff0&profile_id=175
+    ratio: 55
     marginTop: 0
-    marginLeft: 15
-    width: 70
+    marginLeft: 0
   - video:
       autoplay: false
       hasControls: false
@@ -100,16 +110,6 @@ content:
       programmable space like this creates a dialogue with the people that
       occupy it. Rather than isolating us from the physical world, it infuses
       real spaces with tech to make us aware of our surroundings.
-  - video:
-      autoplay: true
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-      url: https://player.vimeo.com/external/425504084.hd.mp4?s=c4dc51127e603b16c248435e49bac68e778bcff0&profile_id=175
-    ratio: 70
-    marginTop: 0
-    marginLeft: 0
   - video:
       autoplay: false
       hasControls: false
