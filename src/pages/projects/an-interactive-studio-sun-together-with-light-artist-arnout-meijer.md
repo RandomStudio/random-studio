@@ -41,7 +41,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    image: /img/random_licht_stills_5 (1).jpg
+    image: /img/new-random_licht_stills_5.jpg
     width: 55
   - video:
       autoplay: false
@@ -52,7 +52,7 @@ content:
     ratio: 0
     marginTop: -10
     marginLeft: 65
-    image: /img/random_licht_stills_3 (1).jpg
+    image: /img/new-random_licht_stills_3.jpg
     width: 35
   - video:
       autoplay: true
