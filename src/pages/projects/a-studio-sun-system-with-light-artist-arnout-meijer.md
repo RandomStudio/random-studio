@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: An Interactive Studio Sun together with light-artist Arnout Meijer
+title: A Studio Sun System with light-artist Arnout Meijer
 intro: Like many studios, we’re based in the city. Located in a courtyard within
   a housing block, our space doesn’t get much direct sunlight in winter. Using
   this problem as a tool in our research into interactive space, we started to
