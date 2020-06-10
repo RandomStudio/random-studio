@@ -138,6 +138,7 @@ credits:
   - key: "With:"
     value: |-
       Arnout Meijer – Light Design 
+      
       Schrikdraad Elektronisch Ontwerp –  Electronics Design 
   - key: "Roles: "
     value: Creative Direction, Art Direction, Experience Design, Creative
