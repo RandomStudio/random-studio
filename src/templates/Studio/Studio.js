@@ -96,8 +96,8 @@ const Studio = ({
         rootMargin: '-120px 0px 0px 0px',
       };
 
-      const cb = (entries) => {
-        entries.forEach((entry) => {
+      const cb = entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setThemeClass(styles.darkTheme);
           } else {

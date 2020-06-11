@@ -7,7 +7,9 @@ import FluidImage from '../../../../components/FluidImage/FluidImage';
 
 import styles from './Block.module.scss';
 
-const Block = ({ image, index, copy, title, video }) => {
+const Block = ({
+  image, index, copy, title, video,
+}) => {
   const imageRef = useRef();
   const [blockStart, setBlockStart] = useState();
   const [blockEnd, setBlockEnd] = useState();

@@ -19,6 +19,7 @@ exports.onRenderBody = ({
   pathname,
 }) => {
   const helmetContext = helmetContextMap.get(pathname);
+
   if (helmetContext) {
     setHtmlAttributes(helmetContext.helmet.htmlAttributes.toComponent());
     setBodyAttributes(helmetContext.helmet.bodyAttributes.toComponent());

@@ -5,7 +5,9 @@ import Project from './Project/Project';
 import ResearchBlock from './IntermittentBlock/ResearchBlock';
 import IntermittentStatement from './IntermittentBlock/IntermittentStatement';
 
-const ProjectList = ({ intro, middle, projects, articles }) => (
+const ProjectList = ({
+  intro, middle, projects, articles,
+}) => (
   <div id="projects" className={styles.projects}>
     <div className={styles.statement}>
       <ReactMarkdown escapeHtml={false} source={intro} />
@@ -33,8 +35,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
               articleUrl={article.articleUrl}
             />
           )}
-          {(index === 3 ||
-            (projects.length < 3 && index === projects.length - 1)) && (
+          {(index === 3 || (projects.length < 3 && index === projects.length - 1)) && (
             <IntermittentStatement middle={middle} />
           )}
         </React.Fragment>

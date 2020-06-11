@@ -4,7 +4,9 @@ import styles from './JobOffer.module.scss';
 
 const JobOffer = ({
   closeOpenOffer,
-  offer: { title, description, requirements, careers_apply_url },
+  offer: {
+    title, description, requirements, careers_apply_url,
+  },
 }) => (
   <section className={styles.jobOffer}>
     <div>
@@ -22,7 +24,7 @@ const JobOffer = ({
         href={careers_apply_url}
         className={styles.applyButton}
       >
-        Apply for this position
+        {'Apply for this position'}
       </OutboundLink>
     </div>
   </section>

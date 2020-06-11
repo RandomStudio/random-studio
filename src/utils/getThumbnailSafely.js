@@ -1,4 +1,4 @@
-const getThumbnailSafely = (thumbnail) => {
+const getThumbnailSafely = thumbnail => {
   if (!thumbnail) {
     return null;
   }

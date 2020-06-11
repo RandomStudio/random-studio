@@ -4,7 +4,7 @@ import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
-const trackPausePlay = (isPlaying) => {
+const trackPausePlay = isPlaying => {
   trackCustomEvent({
     category: isPlaying ? 'Pause Button' : 'Play Button',
     action: isPlaying ? 'Pause' : 'Play',
@@ -12,13 +12,14 @@ const trackPausePlay = (isPlaying) => {
   });
 };
 
-const trackIsCurrentlyMuted = (isCurrentlyMuted) => {
+const trackIsCurrentlyMuted = isCurrentlyMuted => {
   trackCustomEvent({
     category: isCurrentlyMuted ? 'Unmute Button' : 'Mute Button',
     action: isCurrentlyMuted ? 'Unmute' : 'Mute',
     label: 'Video Player Interactions',
   });
 };
+
 const ProjectVideo = ({
   video: {
     autoplay,
@@ -39,18 +40,18 @@ const ProjectVideo = ({
   );
   const [isPlaying, setIsPlaying] = useState(autoplay);
 
-  const handleTapVolumeToggle = (e) => {
-    setIsCurrentlyMuted((prevState) => !prevState);
+  const handleTapVolumeToggle = e => {
+    setIsCurrentlyMuted(prevState => !prevState);
     e.stopPropagation();
     trackIsCurrentlyMuted(isCurrentlyMuted);
   };
 
-  const handleTapPlayPause = (e) => {
+  const handleTapPlayPause = e => {
     if (!hasPlayed) {
       setHasPlayed(true);
     }
 
-    setIsPlaying((prevState) => {
+    setIsPlaying(prevState => {
       if (isPlaying) {
         videoRef.current.pause();
       } else {
@@ -76,8 +77,8 @@ const ProjectVideo = ({
         isMuted={isAlwaysMuted || isCurrentlyMuted}
         autoPlays={isPlaying}
       />
-      {hasControls &&
-        (hasPlayed ? (
+      {hasControls
+        && (hasPlayed ? (
           <div className={styles.videoControls}>
             <button type="button" onClick={handleTapPlayPause}>
               {isPlaying ? 'Pause' : 'Play'}
@@ -89,7 +90,7 @@ const ProjectVideo = ({
             )}
           </div>
         ) : (
-          <div className={styles.beforeFirstPlay}>Play video</div>
+          <div className={styles.beforeFirstPlay}>{'Play video'}</div>
         ))}
     </div>
   );

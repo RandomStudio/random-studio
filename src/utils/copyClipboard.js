@@ -30,9 +30,11 @@ export function copyStringToClipboard(event, string, callback) {
 
     event.preventDefault();
   } catch (error) {
-    console.log(
+    console.error(
       'Failed to copy. Will open mailto link as normal. Error:',
       error,
     );
   }
+
+  return null;
 }

@@ -6,11 +6,12 @@ const Newsletter = () => {
   const [error, setError] = useState('');
   const [isSuccessful, setIsSuccessful] = useState(false);
 
-  const handleInput = (e) => setEmail(e.target.value);
+  const handleInput = e => setEmail(e.target.value);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
     setError('');
+
     try {
       const response = await fetch(
         `/.netlify/functions/addToNewsletterList?email=${email}`,
@@ -22,19 +23,20 @@ const Newsletter = () => {
         const body = await response.json();
         setError(body.errorMessage);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (errorMsg) {
+      console.error(errorMsg);
       setError('Failed to submit. Please check email and try again.');
     }
+
     return false;
   };
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
-      <p className={styles.title}>Newsletter</p>
+      <p className={styles.title}>{'Newsletter'}</p>
       {isSuccessful ? (
         <>
-          <div className={styles.input}>Thank you!</div>
+          <div className={styles.input}>{'Thank you!'}</div>
           <div className={styles.submit}>
             <img
               alt="success"

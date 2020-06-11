@@ -37,7 +37,7 @@ class NonEmptyStringableNumberControl extends React.Component {
         step={step}
         min={min}
         max={max}
-        onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
+        onChange={e => onChange(parseFloat(e.target.value) || 0)}
       />
     );
   }
