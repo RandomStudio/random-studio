@@ -73,9 +73,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 7
+    marginLeft: 5
     image: /img/space10-–-everyday-experiments-–-point-_-speak-–-web-–-image-by-random-studio-–-01.jpg
-    width: 40
+    width: 38
   - video:
       autoplay: true
       hasControls: false
@@ -161,4 +161,15 @@ content:
     marginLeft: 50
     image: /img/space10-–-everyday-experiments-–-room-shuffle-–-web-–-video-by-random-studio-–-01.jpg
     width: 50
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/428465018.hd.mp4?s=81ed2302b383ded4f62d15369480907f59ee77cb&profile_id=175
+    ratio: 500
+    marginTop: -8
+    marginLeft: 10
+    width: 30
 ---
