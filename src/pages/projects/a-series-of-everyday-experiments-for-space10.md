@@ -16,9 +16,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 15
+    marginLeft: 10
     image: /img/rectangle-1.png
-    width: 70
+    width: 80
   - video:
       autoplay: false
       hasControls: false
@@ -48,8 +48,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 15
     image: /img/rectangle-2.png
+    width: 70
   - video:
       autoplay: false
       hasControls: false
@@ -68,9 +69,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
+    marginTop: -29
     marginLeft: 0
     image: /img/rectangle-3.png
+    width: 50
   - video:
       autoplay: false
       hasControls: false
@@ -78,9 +80,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 11
+    marginLeft: 46
     image: /img/rectangle-4.png
+    width: 47
   - video:
       autoplay: false
       hasControls: false
@@ -88,9 +91,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
+    marginTop: 9
     marginLeft: 0
     image: /img/rectangle-5.png
+    width: 60
   - video:
       autoplay: false
       hasControls: false
