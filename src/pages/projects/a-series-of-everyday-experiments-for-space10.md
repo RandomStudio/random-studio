@@ -16,6 +16,17 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
+    marginLeft: 15
+    image: /img/rectangle-1.png
+    width: 70
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
     marginLeft: 0
     caption: >-
       Hidden Characters
@@ -37,9 +48,8 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 15
-    image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.jpg
-    width: 70
+    marginLeft: 0
+    image: /img/rectangle-2.png
   - video:
       autoplay: false
       hasControls: false
@@ -51,6 +61,36 @@ content:
     marginLeft: 68
     image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-15.jpg
     width: 25
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/rectangle-3.png
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/rectangle-4.png
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/rectangle-5.png
   - video:
       autoplay: false
       hasControls: false
@@ -205,4 +245,13 @@ content:
     marginTop: 0
     marginLeft: 7
     width: 45
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
 ---
