@@ -37,8 +37,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 15
     image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.jpg
+    width: 70
   - video:
       autoplay: false
       hasControls: false
@@ -46,9 +47,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 9
+    marginLeft: 68
     image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-15.jpg
+    width: 25
   - video:
       autoplay: false
       hasControls: false
@@ -78,8 +80,42 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 7
     image: /img/space10-–-everyday-experiments-–-point-_-speak-–-web-–-image-by-random-studio-–-01.jpg
+    width: 40
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/428445528.hd.mp4?s=05849918e5a39b91bbd715bb8c9ee933c1d69720&profile_id=175
+    ratio: 60
+    marginTop: -10
+    marginLeft: 51
+    width: 49
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/428445507.hd.mp4?s=4f6a5521976f678887f1f1abe74cb606f66655d2&profile_id=175
+    ratio: 60
+    marginTop: 8
+    marginLeft: 9
+    width: 40
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/428445480.hd.mp4?s=6f0a06135c714dda8b17f91adad092690b6c9c48&profile_id=175
+    ratio: 60
+    marginTop: -24
+    marginLeft: 51
+    width: 40
   - video:
       autoplay: false
       hasControls: false
@@ -104,6 +140,7 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 50
     image: /img/space10-–-everyday-experiments-–-room-shuffle-–-web-–-video-by-random-studio-–-01.jpg
+    width: 50
 ---
