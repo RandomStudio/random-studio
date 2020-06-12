@@ -64,14 +64,7 @@ content:
       Point & Repair
 
 
-
-
       How can we dialogue with objects in our home? Can smart homes talk back? Point & Repair explores new interfaces that encourage a more natural way of interacting with the objects in your home. Transforming the current smart home setup, where we are responsible for controlling objects, Point & Repair creates a two-way relationship in which the home plays a more vocal role.
-
-
-
-
-      Combining voice and visual interface, the experience allows objects to ask questions, make suggestions and learn more about the user. Through an evolving exchange, you can get to know objects like your furniture better and figure out what upkeep they need and when, for a more conscious way of living.
   - video:
       autoplay: false
       hasControls: false
@@ -116,6 +109,31 @@ content:
     marginTop: -24
     marginLeft: 51
     width: 40
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: Combining voice and visual interface, the experience allows objects to
+      ask questions, make suggestions and learn more about the user. Through an
+      evolving exchange, you can get to know objects like your furniture better
+      and figure out what upkeep they need and when, for a more conscious way of
+      living.
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/428445440.hd.mp4?s=1f3fb04c7371d141b02e889f9d154002a7272242&profile_id=175
+    ratio: 60
+    marginTop: 0
+    marginLeft: 15
+    width: 70
   - video:
       autoplay: false
       hasControls: false
