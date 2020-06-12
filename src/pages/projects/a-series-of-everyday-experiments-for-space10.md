@@ -245,17 +245,19 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/428466414.hd.mp4?s=ed627f5ada7b1633dd95a3da10db38029ba51dd1&profile_id=175
-    ratio: 50
+    ratio: 90
     marginTop: 0
     marginLeft: 7
     width: 45
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
+credits:
+  - key: "For:"
+    value: |
+      SPACE10
+  - key: "Role:"
+    value: |
+      Creative Direction, Art Direction, UX Design
+  - key: "With: "
+    value: Anton Hjertstedt, 3D Artist
+opengraph:
+  ogTitle: ""
 ---
