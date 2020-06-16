@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A series of Digital Experiments for SPACE10
+title: A series of digital experiments for SPACE10
 intro: >-
   Initiated by IKEA and its research and design lab SPACE10, Everyday
   Experiments is a series of digital experiments that explores new ways of
@@ -266,10 +266,11 @@ credits:
     value: |
       SPACE10
   - key: "Role:"
-    value: |
-      Creative Direction, Art Direction, UX Design
+    value: >
+      Creative Direction, Art Direction, UX Design, Prototyping, Software
+      Development
   - key: "With: "
-    value: Anton Hjertstedt, 3D Artist
+    value: Anton Hjertstedt – 3D Artist
 opengraph:
   ogTitle: A series of Digital Experiments for SPACE10
   ogDescription: How can we make our homes more alive? How can we dialogue with
