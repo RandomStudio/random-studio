@@ -1,12 +1,13 @@
 ---
 templateKey: Project
-title: A series of Everyday Experiments for SPACE10
-intro: How can we make our homes more alive? Can we transform our everyday space
-  into a place of new encounters and connections? In what ways can we pay more
-  attention to the things that surround us? We joined research and design lab
-  SPACE10 as a creative partner to work on a series of digital experiments that
-  explore new ways of interacting with the spaces we live in. Researching and
-  prototyping 3 different ways of enhancing the home space in an innovative way
+title: A series of Digital Experiments for SPACE10
+intro: How will tomorrow's technologies redefine our spaces?Initiated by IKEA
+  and its research and design lab SPACE10, Everyday Experiments is a series of
+  digital experiments that explores new ways of interacting with the spaces we
+  live in. Along with some of the world’s most forward-thinking design and
+  technology studios, we were commissioned to reimagine the space we call home.
+  We researched and prototyped three different applications that transform the
+  home into a dynamic and innovative space of new encounters.
 content:
   - video:
       autoplay: false
