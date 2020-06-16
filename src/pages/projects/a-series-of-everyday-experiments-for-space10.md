@@ -1,13 +1,16 @@
 ---
 templateKey: Project
 title: A series of Digital Experiments for SPACE10
-intro: How will tomorrow's technologies redefine our spaces?Initiated by IKEA
-  and its research and design lab SPACE10, Everyday Experiments is a series of
-  digital experiments that explores new ways of interacting with the spaces we
-  live in. Along with some of the world’s most forward-thinking design and
-  technology studios, we were commissioned to reimagine the space we call home.
-  We researched and prototyped three different applications that transform the
-  home into a dynamic and innovative space of new encounters.
+intro: >-
+  Initiated by IKEA and its research and design lab SPACE10, Everyday
+  Experiments is a series of digital experiments that explores new ways of
+  interacting with the spaces we live in.
+
+
+  Along with some of the world’s most forward-thinking design and technology studios, we were commissioned to reimagine the space we call home. We researched and prototyped three different applications that transform the home into a dynamic and innovative space of new encounters.
+
+
+  <https://www.everydayexperiments.com/>
 content:
   - video:
       autoplay: false
