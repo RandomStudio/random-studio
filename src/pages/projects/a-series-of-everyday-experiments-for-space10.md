@@ -49,7 +49,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 15
-    image: /img/rectangle-2.png
+    image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.png
     width: 70
   - video:
       autoplay: false
@@ -63,37 +63,40 @@ content:
     image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-15.jpg
     width: 25
   - video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
+      url: https://player.vimeo.com/external/429576470.hd.mp4?s=844e78452e5c232aab8cb5d1d2d11b6894fc2538&profile_id=175
+    ratio: 50
     marginTop: -29
     marginLeft: 0
-    image: /img/rectangle-3.png
+    image: ""
     width: 50
   - video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
+      url: https://player.vimeo.com/external/429577312.hd.mp4?s=4358d188301f0a1e46db2276e55cae9769639088&profile_id=175
+    ratio: 60
     marginTop: 11
     marginLeft: 46
-    image: /img/rectangle-4.png
+    image: ""
     width: 47
   - video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
+      url: https://player.vimeo.com/external/429576856.hd.mp4?s=cbb708b57f20c865bbffc141408145529350d35f&profile_id=175
+    ratio: 60
     marginTop: 9
     marginLeft: 0
-    image: /img/rectangle-5.png
+    image: ""
     width: 60
   - video:
       autoplay: false
