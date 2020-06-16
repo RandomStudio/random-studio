@@ -261,15 +261,6 @@ content:
     marginTop: -7
     marginLeft: 4
     width: 45
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
 credits:
   - key: "For:"
     value: |
