@@ -274,9 +274,8 @@ credits:
     value: Anton Hjertstedt – 3D Artist
 opengraph:
   ogTitle: A series of Digital Experiments for SPACE10
-  ogDescription: How can we make our homes more alive? How can we dialogue with
-    our objects? What would your room look like if it had a refresh? We’ve
-    dreamt up a few digital experiments with SPACE10 to rethink our relationship
-    with the place we call home, and how digital technology can merge with the
-    physical to improve our well being.
+  ogDescription: We’ve dreamt up a few digital experiments with SPACE10 to rethink
+    our relationship with the place we call home, and how digital technology can
+    merge with the physical to improve our well being.
+  ogImage: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.png
 ---
