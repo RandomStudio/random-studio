@@ -1,10 +1,10 @@
 ---
 templateKey: Home
-layout: center
-video: https://player.vimeo.com/external/400189647.hd.mp4?s=a8de9f72f0baceca567a308c2a19c392bccbcfe9&profile_id=175
+layout: top
+video: https://player.vimeo.com/external/429576856.hd.mp4?s=cbb708b57f20c865bbffc141408145529350d35f&profile_id=175
 collaborationCredits:
-  collaborator: Fred Perry x Raf Simons
-  url: https://random.studio/projects/interactive-lookbook-for-fred-perry-x-raf-simons-2/
+  collaborator: SPACE10
+  url: https://random.studio/projects/a-series-of-everyday-experiments-for-space10
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
