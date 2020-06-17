@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A series of Digital Experiments for SPACE10
+title: A series of digital experiments for SPACE10
 intro: >-
   Initiated by IKEA and its research and design lab SPACE10, Everyday
   Experiments is a series of digital experiments that explores new ways of
@@ -13,15 +13,16 @@ intro: >-
   <https://www.everydayexperiments.com/>
 content:
   - video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
+      url: https://player.vimeo.com/external/429912616.sd.mp4?s=610368b98afd0e29ddfef3c279d0e5e532978036&profile_id=165
+    ratio: 55
     marginTop: 0
     marginLeft: 10
-    image: /img/rectangle-1.png
+    image: ""
     width: 80
   - video:
       autoplay: false
