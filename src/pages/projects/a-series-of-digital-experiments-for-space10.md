@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A series of digital experiments for SPACE10
+title: A series of Digital Experiments for SPACE10
 intro: >-
   Initiated by IKEA and its research and design lab SPACE10, Everyday
   Experiments is a series of digital experiments that explores new ways of
