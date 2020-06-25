@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/429576856.hd.mp4?s=cbb708b57f20c865bbffc141408145529350d35f&profile_id=175
+video: https://player.vimeo.com/external/432525200.hd.mp4?s=8dca6c7ae3c9432179df5e3ce45661709b470d80&profile_id=175
 collaborationCredits:
-  collaborator: SPACE10
-  url: https://random.studio/projects/a-series-of-everyday-experiments-for-space10
+  collaborator: WWWSHOWWW
+  url: www.showww.be
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
