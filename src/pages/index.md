@@ -4,7 +4,7 @@ layout: top
 video: https://player.vimeo.com/external/432525200.hd.mp4?s=8dca6c7ae3c9432179df5e3ce45661709b470d80&profile_id=175
 collaborationCredits:
   collaborator: WWWSHOWWW
-  url: www.showww.be
+  url: https://www.showww.be/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
