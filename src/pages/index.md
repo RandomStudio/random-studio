@@ -1,7 +1,7 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/432525200.hd.mp4?s=8dca6c7ae3c9432179df5e3ce45661709b470d80&profile_id=175
+video: https://player.vimeo.com/external/433934834.hd.mp4?s=962d3a25911d3cf38051c869efe584b76f4a48f3&profile_id=175
 collaborationCredits:
   collaborator: WWWSHOWWW
   url: https://www.showww.be/
