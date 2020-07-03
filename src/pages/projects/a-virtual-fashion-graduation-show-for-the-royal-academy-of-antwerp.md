@@ -165,4 +165,48 @@ content:
       changing to represent the collection on show. Challenging the perception
       of a model, the student’s work shimmies its way down the runway, in a
       total new way of documentation.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/screenshot-2020-07-03-at-12.01.50.png
+    width: 39
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/screenshot-2020-07-03-at-11.58.05.png
+    width: 40
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/screenshot-2020-07-03-at-12.04.22.png
+    width: 40
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/435093737.hd.mp4?s=452655353c59abcb523ca1ae53f71f2a46393983&profile_id=169
+    ratio: 100
+    marginTop: 0
+    marginLeft: 10
+    width: 80
 ---
