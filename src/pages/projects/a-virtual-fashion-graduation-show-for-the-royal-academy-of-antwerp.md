@@ -73,4 +73,49 @@ content:
       creations of all 140 Bachelor students across three year levels and 9
       Masters’ students in an event that unfolds live over a number of hours,
       and can then be rewatched on a timeline afterwards.
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/435086471.hd.mp4?s=0d4092840ef71fc00de026f72214e6773e8aaf13&profile_id=175
+    ratio: 100
+    marginTop: 0
+    marginLeft: 49
+    width: 40
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/435086013.hd.mp4?s=25b626643fdd88ede376f668625869a9726ffd69&profile_id=175
+    ratio: 100
+    marginTop: 0
+    marginLeft: 9
+    width: 30
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/435085566.hd.mp4?s=e1929f921cc32cdab71d54509f10eaf13f4df5a8&profile_id=175
+    ratio: 100
+    marginTop: 0
+    marginLeft: 55
+    width: 30
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 17
+    marginLeft: 0
+    caption: We supported the 9 master’s students in the creation of their
+      personalised environments, giving them control over their introduction to
+      the fashion industry, showcasing how unique each designer’s work is.
 ---
