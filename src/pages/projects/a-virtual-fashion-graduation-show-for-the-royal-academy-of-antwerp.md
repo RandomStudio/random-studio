@@ -151,4 +151,18 @@ content:
     marginLeft: 0
     image: /img/08.gif
     width: 30
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: The choreographies of the real-life fashion take on a new shape on the
+      platform. Here the virtual runway is located in a geometric space, ever
+      changing to represent the collection on show. Challenging the perception
+      of a model, the student’s work shimmies its way down the runway, in a
+      total new way of documentation.
 ---
