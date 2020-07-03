@@ -118,4 +118,37 @@ content:
     caption: We supported the 9 master’s students in the creation of their
       personalised environments, giving them control over their introduction to
       the fashion industry, showcasing how unique each designer’s work is.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/02.gif
+    width: 30
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/03.gif
+    width: 31
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/08.gif
+    width: 30
 ---
