@@ -78,7 +78,7 @@ content:
     marginLeft: 0
     caption: Through the traditional eyes of classic fashion show cameras, the
       visitor is invited to view and experience a innovative digital
-      event.[WWW.SHOWWW](http://www.showww) takes place in an online structure
+      event.[WWW.SHOWWW](http://www.showww)takes place in an online structure
       that references our shared understanding of space, but is enhanced using
       digital tools. The platform independently showcases the elaborate
       creations of all 140 Bachelor students across three year levels and 9
@@ -210,6 +210,17 @@ content:
     image: /img/ads_sc_3.jpg
     width: 46
   - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 11
+    marginLeft: 0
+    caption: Challenging the perception of a model, the student’s work shimmies its
+      way down the runway, in a total new way of documentation.
+  - video:
       autoplay: true
       hasControls: false
       loops: true
@@ -223,4 +234,10 @@ content:
 credits:
   - key: "For:"
     value: Antwerp Fashion Department, Royal Academy of Antwerp
+opengraph:
+  ogDescription: "How can you translate the energy and experience of the fashion
+    show to the digital? We reimagined the choreographies of the catwalk for the
+    screen, building an image environment and live event for the AFD Graduation
+    Show 2020. "
+  ogTitle: A virtual fashion graduation show for the Royal Academy of Antwerp
 ---
