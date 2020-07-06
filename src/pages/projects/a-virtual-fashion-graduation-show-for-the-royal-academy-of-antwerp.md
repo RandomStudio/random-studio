@@ -139,7 +139,7 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/02.gif
-    width: 39
+    width: 38
   - video:
       autoplay: false
       hasControls: false
@@ -150,7 +150,7 @@ content:
     marginTop: -10
     marginLeft: 59
     image: /img/03.gif
-    width: 36
+    width: 34
   - video:
       autoplay: false
       hasControls: false
