@@ -52,10 +52,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435062801.hd.mp4?s=e0a03851d9f80149f4eeb358ec6dd1d19f91cd72&profile_id=175
-    ratio: 100
-    marginTop: 10
-    marginLeft: 35
-    width: 40
+    ratio: 105
+    marginTop: 2
+    marginLeft: 12
+    width: 37
   - video:
       autoplay: false
       hasControls: false
@@ -82,8 +82,8 @@ content:
       url: https://player.vimeo.com/external/435086471.hd.mp4?s=0d4092840ef71fc00de026f72214e6773e8aaf13&profile_id=175
     ratio: 100
     marginTop: 0
-    marginLeft: 49
-    width: 40
+    marginLeft: 51
+    width: 36
   - video:
       autoplay: true
       hasControls: false
@@ -92,9 +92,9 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435086013.hd.mp4?s=25b626643fdd88ede376f668625869a9726ffd69&profile_id=175
     ratio: 100
-    marginTop: 0
-    marginLeft: 9
-    width: 30
+    marginTop: 3
+    marginLeft: 7
+    width: 32
   - video:
       autoplay: true
       hasControls: false
@@ -104,8 +104,8 @@ content:
       url: https://player.vimeo.com/external/435085566.hd.mp4?s=e1929f921cc32cdab71d54509f10eaf13f4df5a8&profile_id=175
     ratio: 100
     marginTop: 0
-    marginLeft: 55
-    width: 30
+    marginLeft: 57
+    width: 34
   - video:
       autoplay: false
       hasControls: false
@@ -128,7 +128,7 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/02.gif
-    width: 30
+    width: 45
   - video:
       autoplay: false
       hasControls: false
@@ -136,10 +136,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -10
+    marginLeft: 59
     image: /img/03.gif
-    width: 31
+    width: 41
   - video:
       autoplay: false
       hasControls: false
@@ -147,10 +147,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 6
+    marginLeft: 8
     image: /img/08.gif
-    width: 30
+    width: 40
   - video:
       autoplay: false
       hasControls: false
@@ -193,11 +193,11 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
+    ratio: 100
     marginTop: 0
     marginLeft: 0
     image: /img/screenshot-2020-07-03-at-12.04.22.png
-    width: 40
+    width: 0
   - video:
       autoplay: true
       hasControls: false
