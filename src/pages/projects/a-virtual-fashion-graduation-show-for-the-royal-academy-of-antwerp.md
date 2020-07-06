@@ -174,7 +174,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    image: /img/screenshot-2020-07-03-at-12.01.50.png
+    image: /img/ads_sc_1.jpg
     width: 39
   - video:
       autoplay: false
@@ -185,7 +185,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    image: /img/screenshot-2020-07-03-at-11.58.05.png
+    image: /img/ads_sc_2.jpg
     width: 40
   - video:
       autoplay: false
@@ -193,11 +193,11 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 100
+    ratio: 0
     marginTop: 0
     marginLeft: 0
-    image: /img/screenshot-2020-07-03-at-12.04.22.png
-    width: 0
+    image: /img/ads_sc_3.jpg
+    width: 40
   - video:
       autoplay: true
       hasControls: false
