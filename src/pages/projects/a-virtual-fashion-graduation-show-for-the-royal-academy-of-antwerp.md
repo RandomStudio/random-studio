@@ -14,6 +14,17 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
+      url: https://player.vimeo.com/external/435652852.hd.mp4?s=d10035c317549307cef8a736f73780e5874d11ee&profile_id=175
+    ratio: 59
+    marginTop: 0
+    marginLeft: 10
+    width: 80
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
       url: ""
     ratio: 0
     marginTop: 0
@@ -52,7 +63,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435062801.hd.mp4?s=e0a03851d9f80149f4eeb358ec6dd1d19f91cd72&profile_id=175
-    ratio: 105
+    ratio: 104
     marginTop: 2
     marginLeft: 12
     width: 37
@@ -205,8 +216,11 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435093737.hd.mp4?s=452655353c59abcb523ca1ae53f71f2a46393983&profile_id=169
-    ratio: 100
+    ratio: 58
     marginTop: 0
     marginLeft: 10
     width: 80
+credits:
+  - key: "For:"
+    value: Antwerp Fashion Department, Royal Academy of Antwerp
 ---
