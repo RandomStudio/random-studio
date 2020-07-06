@@ -44,7 +44,7 @@ content:
     ratio: 100
     marginTop: 1
     marginLeft: 0
-    width: 40
+    width: 36
   - video:
       autoplay: true
       hasControls: false
@@ -53,9 +53,9 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435063792.hd.mp4?s=bd83969c3814ba167f96c529f90f4371e5cd6d39&profile_id=175
     ratio: 100
-    marginTop: -15
+    marginTop: -16
     marginLeft: 60
-    width: 40
+    width: 34
   - video:
       autoplay: true
       hasControls: false
@@ -66,7 +66,7 @@ content:
     ratio: 105
     marginTop: 2
     marginLeft: 12
-    width: 37
+    width: 33
   - video:
       autoplay: false
       hasControls: false
@@ -93,8 +93,8 @@ content:
       url: https://player.vimeo.com/external/435086471.hd.mp4?s=0d4092840ef71fc00de026f72214e6773e8aaf13&profile_id=175
     ratio: 100
     marginTop: 10
-    marginLeft: 51
-    width: 36
+    marginLeft: 54
+    width: 30
   - video:
       autoplay: true
       hasControls: false
@@ -105,7 +105,7 @@ content:
     ratio: 100
     marginTop: 3
     marginLeft: 7
-    width: 32
+    width: 29
   - video:
       autoplay: true
       hasControls: false
@@ -114,9 +114,9 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435085566.hd.mp4?s=e1929f921cc32cdab71d54509f10eaf13f4df5a8&profile_id=175
     ratio: 100
-    marginTop: 0
+    marginTop: -2
     marginLeft: 57
-    width: 34
+    width: 30
   - video:
       autoplay: false
       hasControls: false
@@ -139,7 +139,7 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/02.gif
-    width: 45
+    width: 39
   - video:
       autoplay: false
       hasControls: false
@@ -150,7 +150,7 @@ content:
     marginTop: -10
     marginLeft: 59
     image: /img/03.gif
-    width: 41
+    width: 36
   - video:
       autoplay: false
       hasControls: false
@@ -161,7 +161,7 @@ content:
     marginTop: 6
     marginLeft: 8
     image: /img/08.gif
-    width: 40
+    width: 36
   - video:
       autoplay: false
       hasControls: false
