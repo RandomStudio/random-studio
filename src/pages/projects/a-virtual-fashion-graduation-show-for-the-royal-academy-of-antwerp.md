@@ -194,7 +194,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 9
+    marginTop: 11
     marginLeft: 0
     image: /img/ads_sc_2.jpg
     width: 45
@@ -205,7 +205,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: -2
+    marginTop: -4
     marginLeft: 54
     image: /img/ads_sc_3.jpg
     width: 46
