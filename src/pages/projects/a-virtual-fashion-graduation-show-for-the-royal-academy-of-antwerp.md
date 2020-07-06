@@ -248,4 +248,5 @@ opengraph:
     screen, building an image environment and live event for the AFD Graduation
     Show 2020. "
   ogTitle: A virtual fashion graduation show for the Royal Academy of Antwerp
+  ogImage: /img/screenshot-2020-07-06-at-14.09.59.png
 ---
