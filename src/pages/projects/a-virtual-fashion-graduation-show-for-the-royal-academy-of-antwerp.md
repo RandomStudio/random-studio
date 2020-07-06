@@ -63,7 +63,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435062801.hd.mp4?s=e0a03851d9f80149f4eeb358ec6dd1d19f91cd72&profile_id=175
-    ratio: 104
+    ratio: 105
     marginTop: 2
     marginLeft: 12
     width: 37
@@ -92,7 +92,7 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435086471.hd.mp4?s=0d4092840ef71fc00de026f72214e6773e8aaf13&profile_id=175
     ratio: 100
-    marginTop: 0
+    marginTop: 10
     marginLeft: 51
     width: 36
   - video:
