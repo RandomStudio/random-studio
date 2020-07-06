@@ -238,6 +238,10 @@ content:
 credits:
   - key: "For:"
     value: Antwerp Fashion Department, Royal Academy of Antwerp
+  - key: "Role:"
+    value: >
+      Creative Direction, Art Direction, 3D Stylist, Virtual Set Design,
+      Software Development, Interface Design
 opengraph:
   ogDescription: "How can you translate the energy and experience of the fashion
     show to the digital? We reimagined the choreographies of the catwalk for the
