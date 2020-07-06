@@ -77,9 +77,9 @@ content:
     marginTop: 0
     marginLeft: 0
     caption: Through the traditional eyes of classic fashion show cameras, the
-      visitor is invited to view and experience a innovative digital
-      event.[WWW.SHOWWW](http://www.showww)takes place in an online structure
-      that references our shared understanding of space, but is enhanced using
+      visitor is invited to view and experience a innovative digital event.
+      [WWW.SHOWWW](http://www.showww) takes place in an online structure that
+      references our shared understanding of space, but is enhanced using
       digital tools. The platform independently showcases the elaborate
       creations of all 140 Bachelor students across three year levels and 9
       Masters’ students in an event that unfolds live over a number of hours,
