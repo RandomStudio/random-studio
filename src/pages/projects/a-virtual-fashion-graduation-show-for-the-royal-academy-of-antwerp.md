@@ -184,9 +184,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 34
     image: /img/ads_sc_1.jpg
-    width: 39
+    width: 53
   - video:
       autoplay: false
       hasControls: false
@@ -194,10 +194,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
+    marginTop: 9
     marginLeft: 0
     image: /img/ads_sc_2.jpg
-    width: 40
+    width: 45
   - video:
       autoplay: false
       hasControls: false
@@ -205,10 +205,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -2
+    marginLeft: 54
     image: /img/ads_sc_3.jpg
-    width: 40
+    width: 46
   - video:
       autoplay: true
       hasControls: false
@@ -217,7 +217,7 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435093737.hd.mp4?s=452655353c59abcb523ca1ae53f71f2a46393983&profile_id=169
     ratio: 58
-    marginTop: 0
+    marginTop: 10
     marginLeft: 10
     width: 80
 credits:
