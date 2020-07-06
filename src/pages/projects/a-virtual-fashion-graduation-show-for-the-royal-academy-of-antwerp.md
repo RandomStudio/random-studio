@@ -138,7 +138,7 @@ content:
       url: https://player.vimeo.com/external/435711437.hd.mp4?s=5425ac1abc6dc48fbe8623ffba6db810846fb030&profile_id=175
     ratio: 100
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 4
     image: ""
     width: 38
     caption: ""
@@ -151,7 +151,7 @@ content:
       url: https://player.vimeo.com/external/435711772.hd.mp4?s=467b7e08096787a969a4f6b0c87db0805b39bf18&profile_id=175
     ratio: 100
     marginTop: -10
-    marginLeft: 59
+    marginLeft: 60
     image: ""
     width: 34
   - video:
@@ -162,8 +162,8 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435711991.hd.mp4?s=281b97c0386ca4087c95977df6d7f80b0f3c04bb&profile_id=174
     ratio: 100
-    marginTop: 6
-    marginLeft: 8
+    marginTop: -12
+    marginLeft: 13
     image: ""
     width: 36
   - video:
