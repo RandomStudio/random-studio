@@ -222,7 +222,7 @@ content:
     marginLeft: 0
     image: /img/ads_sc_2.jpg
     width: 45
-    caption: Masters –
+    caption: Masters – Julia Ballardt
   - video:
       autoplay: false
       hasControls: false
@@ -234,7 +234,7 @@ content:
     marginLeft: 54
     image: /img/ads_sc_3.jpg
     width: 46
-    caption: Masters –
+    caption: Masters – Marie Martens
   - video:
       autoplay: true
       hasControls: false
