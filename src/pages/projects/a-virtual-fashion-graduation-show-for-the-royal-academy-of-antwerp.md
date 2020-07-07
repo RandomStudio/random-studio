@@ -1,12 +1,13 @@
 ---
 templateKey: Project
 title: A virtual fashion graduation show for the Royal Academy of Antwerp
-intro: Known for their impressive graduation shows, the Fashion Department of
-  the Royal Academy of Fine Arts Antwerp commissioned us to think about how to
-  translate this year’s event into the digital. How to bring the energy and
-  experience of the physical runway to the screen? What kind of platform
-  accommodates the diverse – and potentially last minute – range of works
-  created by their large group of students?
+intro: >-
+  
+
+  The Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?  
+
+
+  How to bring the energy and experience of the physical runway to the screen? We used the opportunity to think forward to the possibilities of future fashion shows.
 content:
   - video:
       autoplay: true
@@ -29,11 +30,10 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: We used the opportunity to think forward to the possibilities of future
-      fashion shows. In our vision, physicality remains at the heart of this
-      digital architecture. We deconstructed/abstracted the mechanisms and
-      internal logic of the traditional fashion show, re-imagining how they
-      could play out in virtual space in front of a global audience.
+    caption: " In our vision, physicality remains at the heart of this digital
+      architecture. We deconstructed/abstracted the mechanisms and internal
+      logic of the traditional fashion show, re-imagining how they could play
+      out in virtual space in front of a global audience."
   - video:
       autoplay: true
       hasControls: false
@@ -45,6 +45,7 @@ content:
     marginTop: 1
     marginLeft: 0
     width: 36
+    caption: Third year bachelor – Ezio Costa
   - video:
       autoplay: true
       hasControls: false
@@ -56,6 +57,7 @@ content:
     marginTop: -16
     marginLeft: 60
     width: 34
+    caption: Third year bachelor – Huize You
   - video:
       autoplay: true
       hasControls: false
@@ -67,6 +69,7 @@ content:
     marginTop: 2
     marginLeft: 12
     width: 33
+    caption: Third year bachelor – Johanna von Moerl
   - video:
       autoplay: false
       hasControls: false
@@ -76,14 +79,15 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: Through the traditional eyes of classic fashion show cameras, the
-      visitor is invited to view and experience a innovative digital event.
-      [WWW.SHOWWW](http://www.showww) takes place in an online structure that
+    caption: >-
+      Through the traditional eyes of classic fashion show cameras, the visitor
+      is invited to view and experience an innovative digital event.
+      [WWW.SHOWWW.be](www.showww.be) takes place in an online structure that
       references our shared understanding of space, but is enhanced using
-      digital tools. The platform independently showcases the elaborate
-      creations of all 140 Bachelor students across three year levels and 9
-      Masters’ students in an event that unfolds live over a number of hours,
-      and can then be rewatched on a timeline afterwards.
+      digital tools.
+
+
+      The platform independently showcases the elaborate creations of all 140 Bachelor students across three year levels and 9 Masters’ students in an event that unfolds live over a number of hours, and can then be rewatched on a timeline afterwards.
   - video:
       autoplay: true
       hasControls: false
@@ -95,6 +99,7 @@ content:
     marginTop: 10
     marginLeft: 54
     width: 30
+    caption: Second Year Bachelor – Amar Amgalanbaatar
   - video:
       autoplay: true
       hasControls: false
@@ -106,6 +111,7 @@ content:
     marginTop: 3
     marginLeft: 7
     width: 29
+    caption: Second Year Bachelor – Ching-lin Chen
   - video:
       autoplay: true
       hasControls: false
@@ -117,6 +123,7 @@ content:
     marginTop: -2
     marginLeft: 57
     width: 30
+    caption: Second Year Bachelor – Gabriel Watt
   - video:
       autoplay: false
       hasControls: false
@@ -126,9 +133,9 @@ content:
     ratio: 0
     marginTop: 17
     marginLeft: 0
-    caption: We supported the 9 master’s students in the creation of their
-      personalised environments, giving them control over their introduction to
-      the fashion industry, showcasing how unique each designer’s work is.
+    caption: The choreographies of the real-life fashion take on a new shape on the
+      platform. Here the virtual runway is located in a geometric space, ever
+      changing to represent the collection on show.
   - video:
       autoplay: true
       hasControls: false
@@ -141,7 +148,7 @@ content:
     marginLeft: 4
     image: ""
     width: 38
-    caption: ""
+    caption: First Year Bachelor – Jin Young Kwon
   - video:
       autoplay: true
       hasControls: false
@@ -154,6 +161,7 @@ content:
     marginLeft: 60
     image: ""
     width: 34
+    caption: First Year Bachelor – Alba Niessen
   - video:
       autoplay: true
       hasControls: false
@@ -166,6 +174,7 @@ content:
     marginLeft: 13
     image: ""
     width: 36
+    caption: First Year Bachelor – Jiayue She
   - video:
       autoplay: false
       hasControls: false
@@ -175,11 +184,8 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: The choreographies of the real-life fashion take on a new shape on the
-      platform. Here the virtual runway is located in a geometric space, ever
-      changing to represent the collection on show. Challenging the perception
-      of a model, the student’s work shimmies its way down the runway, in a
-      total new way of documentation.
+    caption: Challenging the perception of a model, the student’s work shimmies its
+      way down the runway, in a total new way of documentation.
   - video:
       autoplay: false
       hasControls: false
@@ -191,6 +197,20 @@ content:
     marginLeft: 34
     image: /img/ads_sc_1.jpg
     width: 53
+    caption: Third Year Bachelor - Exercise World Costume
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: Additionally we supported the 9 master’s student by providing them with
+      a digital set-up that allowed them to create their own personalised
+      environments, setting the stage for their introduction to the fashion
+      industry.
   - video:
       autoplay: false
       hasControls: false
@@ -202,6 +222,7 @@ content:
     marginLeft: 0
     image: /img/ads_sc_2.jpg
     width: 45
+    caption: Masters –
   - video:
       autoplay: false
       hasControls: false
@@ -213,17 +234,7 @@ content:
     marginLeft: 54
     image: /img/ads_sc_3.jpg
     width: 46
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 11
-    marginLeft: 0
-    caption: Challenging the perception of a model, the student’s work shimmies its
-      way down the runway, in a total new way of documentation.
+    caption: Masters –
   - video:
       autoplay: true
       hasControls: false
@@ -235,6 +246,7 @@ content:
     marginTop: 10
     marginLeft: 10
     width: 80
+    caption: Masters – Florentina Leitner
 credits:
   - key: "For:"
     value: Antwerp Fashion Department, Royal Academy of Antwerp
