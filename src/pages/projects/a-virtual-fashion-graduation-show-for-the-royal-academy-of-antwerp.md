@@ -133,9 +133,8 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: The choreographies of the real-life fashion take on a new shape on the
-      platform. Here the virtual runway is located in a geometric space, ever
-      changing to represent the collection on show.
+    caption: Challenging the perception of a model, the student’s work shimmies its
+      way down the runway, in a total new way of documentation.
   - video:
       autoplay: true
       hasControls: false
@@ -184,8 +183,9 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: Challenging the perception of a model, the student’s work shimmies its
-      way down the runway, in a total new way of documentation.
+    caption: The choreographies of the real-life fashion take on a new shape on the
+      platform. Here the virtual runway is located in a geometric space, ever
+      changing to represent the collection on show.
   - video:
       autoplay: false
       hasControls: false
@@ -207,7 +207,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: Additionally we supported the 9 master students by providing them with
+    caption: We additionally supported the 9 master students by providing them with
       a digital spatial canvas that allowed them to create their personalised
       environment, setting their own stage for their introduction to the fashion
       industry.
