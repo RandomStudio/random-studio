@@ -123,7 +123,7 @@ content:
     marginTop: -9
     marginLeft: 60
     width: 30
-    caption: Second year bachelor – Gabriel WattSecond
+    caption: Second year bachelor – Gabriel Watt
   - video:
       autoplay: false
       hasControls: false
