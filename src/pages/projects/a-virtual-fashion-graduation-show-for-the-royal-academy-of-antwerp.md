@@ -11,9 +11,9 @@ intro: >-
 content:
   - video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       loops: true
-      isMuted: true
+      isMuted: false
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435652852.hd.mp4?s=d10035c317549307cef8a736f73780e5874d11ee&profile_id=175
     ratio: 59
