@@ -99,7 +99,7 @@ content:
     marginTop: 0
     marginLeft: 52
     width: 29
-    caption: Second Year Bachelor – Amar Amgalanbaatar
+    caption: Second year bachelor – Amar Amgalanbaatar
   - video:
       autoplay: true
       hasControls: false
@@ -111,7 +111,7 @@ content:
     marginTop: -13
     marginLeft: 8
     width: 29
-    caption: Second Year Bachelor – Ching-lin Chen
+    caption: Second year bachelor – Ching-lin Chen
   - video:
       autoplay: true
       hasControls: false
@@ -123,7 +123,7 @@ content:
     marginTop: -9
     marginLeft: 60
     width: 30
-    caption: Second Year Bachelor – Gabriel WattSecond
+    caption: Second year bachelor – Gabriel WattSecond
   - video:
       autoplay: false
       hasControls: false
@@ -148,7 +148,7 @@ content:
     marginLeft: 4
     image: ""
     width: 37
-    caption: First Year Bachelor – Jin Young Kwon
+    caption: First year bachelor – Jin Young Kwon
   - video:
       autoplay: true
       hasControls: false
@@ -161,7 +161,7 @@ content:
     marginLeft: 60
     image: ""
     width: 34
-    caption: First Year Bachelor – Alba Niessen
+    caption: First year bachelor – Alba Niessen
   - video:
       autoplay: true
       hasControls: false
@@ -174,7 +174,7 @@ content:
     marginLeft: 10
     image: ""
     width: 36
-    caption: First Year Bachelor – Jiayue She
+    caption: First year bachelor – Jiayue She
   - video:
       autoplay: false
       hasControls: false
