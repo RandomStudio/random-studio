@@ -16,18 +16,25 @@ middle: >-
 projects:
   - thumbnail:
       ratio: 56
-      marginTop: -3
-      marginLeft: 48
+      marginTop: 0
+      marginLeft: 5
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 48
     caption: A series of digital experiments for SPACE10
     project: A series of digital experiments for SPACE10
+  - thumbnail:
+      ratio: 83
+      marginTop: -14
+      marginLeft: 61
+      video: https://player.vimeo.com/external/435711991.hd.mp4?s=281b97c0386ca4087c95977df6d7f80b0f3c04bb&profile_id=175
+      width: 39
+    project: A virtual fashion graduation show for the Royal Academy of Antwerp
   - caption: A playful interactive search engine for Cinekid Festival
     project: A playful interactive search engine for Cinekid Festival
     thumbnail:
       image: /img/cinekid12.jpg
       marginLeft: 0
-      marginTop: -12
+      marginTop: -16
       width: 40
   - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
@@ -46,7 +53,7 @@ projects:
     thumbnail:
       image: /img/jihye-1-.jpg
       marginLeft: 8
-      marginTop: -6
+      marginTop: 17
       ratio: 0
       width: 35
   - caption: |-
@@ -56,7 +63,7 @@ projects:
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
       marginLeft: 65
-      marginTop: 0
+      marginTop: -30
       ratio: 0
       width: 35
   - caption: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
