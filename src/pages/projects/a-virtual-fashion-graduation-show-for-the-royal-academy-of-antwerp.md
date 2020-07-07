@@ -207,10 +207,10 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: We additionally supported the 9 master students by providing them with
-      a digital spatial canvas that allowed them to create their personalised
-      environment, setting their own stage for their introduction to the fashion
-      industry.
+    caption: We additionally supported the master students by providing them with a
+      digital spatial canvas that allowed each of them to create their
+      personalised environment, setting their own stage for their introduction
+      to the fashion industry.
   - video:
       autoplay: false
       hasControls: false
