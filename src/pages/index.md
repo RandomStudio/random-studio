@@ -1,6 +1,6 @@
 ---
 templateKey: Home
-layout: top
+layout: center
 video: https://player.vimeo.com/external/434023384.hd.mp4?s=c5792bb1a5a2c44527520c01eb4badcd4a7be036&profile_id=175
 collaborationCredits:
   collaborator: WWWSHOWWW
