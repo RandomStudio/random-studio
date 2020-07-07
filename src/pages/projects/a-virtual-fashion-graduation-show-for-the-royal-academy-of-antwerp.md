@@ -16,7 +16,7 @@ content:
       isMuted: false
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435652852.hd.mp4?s=d10035c317549307cef8a736f73780e5874d11ee&profile_id=175
-    ratio: 56
+    ratio: 59
     marginTop: 0
     marginLeft: 10
     width: 80
@@ -31,9 +31,9 @@ content:
     marginTop: 0
     marginLeft: 0
     caption: " In our vision, physicality remains at the heart of this digital
-      architecture. We deconstructed/abstracted the mechanisms and internal
-      logic of the traditional fashion show, re-imagining how they could play
-      out in virtual space in front of a global audience."
+      architecture. We deconstructed the mechanisms and internal logic of the
+      traditional fashion show, re-imagining how they could play out in virtual
+      space in front of a global audience."
   - video:
       autoplay: true
       hasControls: false
