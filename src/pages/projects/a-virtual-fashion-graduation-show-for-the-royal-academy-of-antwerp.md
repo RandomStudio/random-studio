@@ -134,7 +134,8 @@ content:
     marginTop: 0
     marginLeft: 0
     caption: Challenging the perception of a model, the student’s work shimmies its
-      way down the runway, in a total new way of documentation.
+      way down the runway, in a novel way of showcasing fashion graduation
+      content.
   - video:
       autoplay: true
       hasControls: false
