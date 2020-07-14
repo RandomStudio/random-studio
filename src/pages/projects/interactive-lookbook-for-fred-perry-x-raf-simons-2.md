@@ -187,4 +187,3 @@ opengraph:
   ogImage: /img/1.jpg
   ogTitle: A Lookbook of Many Gazes for Fred Perry x Raf Simons
 ---
-

@@ -43,11 +43,12 @@ export const pageQuery = graphql`
           marginLeft
           ratio
           video {
-            url
             autoplay
-            isMuted
             hasControls
+            isAlwaysMuted
+            isMuted
             loops
+            url
           }
           width
         }

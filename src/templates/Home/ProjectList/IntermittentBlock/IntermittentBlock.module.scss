@@ -46,6 +46,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .wrapper {
+    margin: 140px auto 140px;
+  }
+}
+
 @media (min-width: 480px) {
   .wrapper {
     font-size: var(--font-med);

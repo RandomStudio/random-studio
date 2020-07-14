@@ -65,10 +65,18 @@
 
 // Force overwrite the inline programmeticly set styles for small screens/mobile
 @media (max-width: 480px) {
+  .projects {
+    padding: 0 0 15vw;
+  }
+
   .thumbnail {
     margin-top: 0 !important;
     margin-left: 0 !important;
     width: 100% !important;
+  }
+
+  .statement {
+    margin: 100px auto 100px;
   }
 }
 
