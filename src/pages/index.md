@@ -208,7 +208,9 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
-articles: []
+articles:
+  - article: "“Body”: using your self as a search tool"
+    position: 3
 address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)"
 phone: +31 20 779 7735
