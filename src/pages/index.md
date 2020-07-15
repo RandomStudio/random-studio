@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: center
-video: https://player.vimeo.com/external/400189647.hd.mp4?s=a8de9f72f0baceca567a308c2a19c392bccbcfe9&profile_id=175
+video: https://player.vimeo.com/external/434023384.hd.mp4?s=c5792bb1a5a2c44527520c01eb4badcd4a7be036&profile_id=175
 collaborationCredits:
-  collaborator: Fred Perry x Raf Simons
-  url: https://random.studio/projects/interactive-lookbook-for-fred-perry-x-raf-simons-2/
+  collaborator: WWWSHOWWW
+  url: https://www.showww.be/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
@@ -14,12 +14,27 @@ middle: >-
 
   [More about our studio](/studio)
 projects:
+  - thumbnail:
+      ratio: 56
+      marginTop: 0
+      marginLeft: 5
+      video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
+      width: 48
+    caption: A series of digital experiments for SPACE10
+    project: A series of digital experiments for SPACE10
+  - thumbnail:
+      ratio: 83
+      marginTop: -14
+      marginLeft: 61
+      video: https://player.vimeo.com/external/435711991.hd.mp4?s=281b97c0386ca4087c95977df6d7f80b0f3c04bb&profile_id=175
+      width: 39
+    project: A virtual fashion graduation show for the Royal Academy of Antwerp
   - caption: A playful interactive search engine for Cinekid Festival
     project: A playful interactive search engine for Cinekid Festival
     thumbnail:
       image: /img/cinekid12.jpg
       marginLeft: 0
-      marginTop: 14
+      marginTop: -16
       width: 40
   - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
@@ -38,7 +53,7 @@ projects:
     thumbnail:
       image: /img/jihye-1-.jpg
       marginLeft: 8
-      marginTop: -6
+      marginTop: 17
       ratio: 0
       width: 35
   - caption: |-
@@ -193,7 +208,9 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
-articles: []
+articles:
+  - article: How can screens be more tactile?
+    position: 2
 address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)"
 phone: +31 20 779 7735
