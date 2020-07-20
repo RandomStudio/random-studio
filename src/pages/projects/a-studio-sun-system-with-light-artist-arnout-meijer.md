@@ -144,7 +144,7 @@ credits:
     value: Creative Direction, Art Direction, Experience Design, Creative
       Technology, Software Development
 opengraph:
-  ogTitle: An Interactive Studio Sun together with light-artist Arnout Meijer
+  ogTitle: A studio sun system with light-artist Arnout Meijer
   ogDescription: "Can you bring the outside in? During the winter months, we miss
     out on a lot of natural light in our studio. So we got to work to bring some
     sunshine back in. Our ambient light system mimics the changing light of the
