@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A Studio Sun System with light-artist Arnout Meijer
+title: A studio sun system with light-artist Arnout Meijer
 intro: Like many studios, we’re based in the city. Located in a courtyard within
   a housing block, our space doesn’t get much direct sunlight in winter. Using
   this problem as a tool in our research into interactive space, we started to
@@ -138,7 +138,7 @@ credits:
   - key: "With:"
     value: |-
       Arnout Meijer – Light Design 
-      
+
       Schrikdraad Elektronisch Ontwerp –  Electronics Design 
   - key: "Roles: "
     value: Creative Direction, Art Direction, Experience Design, Creative
