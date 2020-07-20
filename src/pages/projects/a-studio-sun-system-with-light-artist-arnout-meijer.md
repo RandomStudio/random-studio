@@ -26,12 +26,11 @@ content:
     ratio: 0
     marginTop: 70
     marginLeft: 0
-    caption: Does office light need to be static in order to work? How can we work
-      with light as a material? Can we use technology to craft something
-      organic? How can a space connect with its surroundings? With these
-      questions in mind, we set out to build a lighting system that emulates the
-      movement of the sun and the ever-evolving states of natural light that we
-      were missing out on.
+    caption: How can a space connect with its surroundings? Can we use technology to
+      craft something organic? How can we work with light as a material? With
+      these questions in mind, we set out to build a lighting system that
+      emulates the movement of the sun and the ever-evolving states of natural
+      light that we were missing out on.
   - video:
       autoplay: false
       hasControls: false
@@ -145,9 +144,8 @@ credits:
       Technology, Software Development
 opengraph:
   ogTitle: A studio sun system with light-artist Arnout Meijer
-  ogDescription: "Can you bring the outside in? During the winter months, we miss
-    out on a lot of natural light in our studio. So we got to work to bring some
-    sunshine back in. Our ambient light system mimics the changing light of the
-    day, like a sun moving over our workspace. A playground for our research
-    into interactive space, our Amsterdam studio is slowly coming to life. "
+  ogDescription: Collaborating with light artist Arnout Meijer the ambient system
+    we created mimics the behaviour of the sun travelling overhead in our
+    studio.
+  ogImage: /img/random_licht_stills_4 (1).jpg
 ---
