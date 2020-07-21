@@ -55,7 +55,7 @@ content:
     width: 35
   - video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
@@ -83,7 +83,7 @@ content:
       energy of the sun."
   - video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
