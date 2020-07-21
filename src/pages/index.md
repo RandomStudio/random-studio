@@ -17,7 +17,7 @@ projects:
   - thumbnail:
       ratio: 56
       marginTop: 0
-      marginLeft: 47
+      marginLeft: 48
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 48
     caption: A series of digital experiments for SPACE10
@@ -39,10 +39,10 @@ projects:
       width: 40
   - thumbnail:
       ratio: 0
-      marginTop: 0
+      marginTop: -9
       marginLeft: 0
       image: /img/new-random_licht_stills_5.jpg
-      width: 46
+      width: 44
     project: A studio sun system with light-artist Arnout Meijer
     caption: A studio sun system with light-artist Arnout Meijer
   - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
