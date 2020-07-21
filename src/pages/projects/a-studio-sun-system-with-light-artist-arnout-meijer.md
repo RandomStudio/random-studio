@@ -87,7 +87,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/425865560.hd.mp4?s=ba4d44b68c608be8794c52d9eaaa1e275de5761a&profile_id=174
+      url: https://player.vimeo.com/external/440254376.hd.mp4?s=081e98c46c8716bf1ffe723b25202518f7e4ffcd&profile_id=175
     ratio: 55
     marginTop: 0
     marginLeft: 0
