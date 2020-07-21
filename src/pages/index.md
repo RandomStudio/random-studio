@@ -17,25 +17,34 @@ projects:
   - thumbnail:
       ratio: 56
       marginTop: 0
-      marginLeft: 5
+      marginLeft: 47
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 48
     caption: A series of digital experiments for SPACE10
     project: A series of digital experiments for SPACE10
   - thumbnail:
       ratio: 83
-      marginTop: -14
-      marginLeft: 61
+      marginTop: -8
+      marginLeft: 0
       video: https://player.vimeo.com/external/435711991.hd.mp4?s=281b97c0386ca4087c95977df6d7f80b0f3c04bb&profile_id=175
       width: 39
     project: A virtual fashion graduation show for the Royal Academy of Antwerp
+    caption: A virtual fashion graduation show for the Royal Academy of Antwerp
   - caption: A playful interactive search engine for Cinekid Festival
     project: A playful interactive search engine for Cinekid Festival
     thumbnail:
       image: /img/cinekid12.jpg
-      marginLeft: 0
+      marginLeft: 60
       marginTop: -16
       width: 40
+  - thumbnail:
+      ratio: 0
+      marginTop: 0
+      marginLeft: 0
+      image: /img/new-random_licht_stills_5.jpg
+      width: 50
+    project: A studio sun system with light-artist Arnout Meijer
+    caption: A studio sun system with light-artist Arnout Meijer
   - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
     thumbnail:
