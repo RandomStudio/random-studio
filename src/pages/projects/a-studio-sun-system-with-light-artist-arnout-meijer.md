@@ -59,7 +59,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/425865613.sd.mp4?s=da6c53111458eed3b3a49404e91d5566e7541f24&profile_id=165
+      url: https://player.vimeo.com/external/440247305.hd.mp4?s=2b8ab9994bb5c943f41f345a270595f9f5f9d064&profile_id=175
     ratio: 60
     marginTop: 10
     marginLeft: 15
