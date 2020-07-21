@@ -42,7 +42,7 @@ projects:
       marginTop: 0
       marginLeft: 0
       image: /img/new-random_licht_stills_5.jpg
-      width: 50
+      width: 46
     project: A studio sun system with light-artist Arnout Meijer
     caption: A studio sun system with light-artist Arnout Meijer
   - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
