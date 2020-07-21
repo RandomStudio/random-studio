@@ -8,8 +8,8 @@ intro: Like many studios, we’re based in the city. Located in a courtyard with
   to bring our workspace back to life during these winter months.
 content:
   - video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
