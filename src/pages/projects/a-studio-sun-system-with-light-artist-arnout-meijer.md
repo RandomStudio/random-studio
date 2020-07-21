@@ -138,7 +138,7 @@ credits:
     value: |-
       Arnout Meijer – Light Design 
 
-      Schrikdraad Elektronisch Ontwerp –  Electronics Design 
+       RWA Electronics –  Electronics Design 
   - key: "Roles: "
     value: Creative Direction, Art Direction, Experience Design, Creative
       Technology, Software Development
