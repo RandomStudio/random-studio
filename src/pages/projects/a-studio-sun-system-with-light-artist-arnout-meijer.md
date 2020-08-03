@@ -100,15 +100,16 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: This is just the beginning of how our studio can come to life. The
-      dynamic system we created allows us to control each LED light pixel
-      individually, and the next step is to add 4D sound to our space. Our
-      studio is becoming the playground we use to think about how technology can
-      build a bridge between humans and nature, with the aim of creating
-      interactive spaces that feel alive and behave in their own way. A
-      programmable space like this creates a dialogue with the people that
-      occupy it. Rather than isolating us from the physical world, it infuses
-      real spaces with tech to make us aware of our surroundings.
+    caption: >-
+      This is just the beginning of how our studio can come to life. The dynamic
+      system we created allows us to control each LED light pixel individually,
+      and the next step is to add sound to our space. Our studio is becoming the
+      playground we use to think about how technology can build a bridge between
+      humans and nature, with the aim of creating interactive spaces that feel
+      alive and behave in their own way. 
+
+
+      A programmable space like this creates a dialogue with the people that occupy it. Rather than isolating us from the physical world, it infuses real spaces with tech to make us aware of our surroundings.
   - video:
       autoplay: false
       hasControls: false
