@@ -33,4 +33,13 @@ content:
       change the journey of the on-screen athletes, challenging them to excel
       and activate three different ‘innovations’. There’s no beginning and no
       end: all you need to do is step in front of the screen and explore."
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
 ---
