@@ -61,7 +61,9 @@ const ProjectDetail = ({
       {(credits || []).map(({ key, value }) => (
         <ul key={`${key}-${value}`} className="">
           <li>{key}</li>
-          <li>{value}</li>
+          <li>
+            <ReactMarkdown source={value} />
+          </li>
         </ul>
       ))}
     </footer>
