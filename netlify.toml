@@ -3,7 +3,10 @@
   command = "npm run build"
   functions = "functions"
   functionsSource = "functionsSrc"
-  publish = ""
+  publish = "public"
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
 
 [[redirects]]
   from = "/functions/addToNewsletterList"
