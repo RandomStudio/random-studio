@@ -120,4 +120,6 @@ credits:
     value: Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
       Design, Prototyping, Software Development, Installation Engineering,
       Research
+opengraph:
+  ogTitle: Nike Kids Pod
 ---
