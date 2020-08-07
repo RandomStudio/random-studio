@@ -55,4 +55,40 @@ content:
     marginLeft: 40
     image: /img/RND04908.jpg
     width: 60
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: Inspired by the spontaneity and energy of parkour, the possibilities of
+      the Kid’s Pod are limitless. With no instructions or interface, the
+      hexagonal structure creates a 360° play area that invites kids to discover
+      the game intuitively, and even team up for a multiplayer mode. The more
+      you play, the more you learn.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/RND05020.jpg
+    width: 50
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: -12
+    marginLeft: 66
+    image: /img/RND04762.ARW.jpg
+    width: 34
 ---
