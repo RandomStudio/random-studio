@@ -91,4 +91,33 @@ content:
     marginLeft: 66
     image: /img/RND04762.ARW.jpg
     width: 34
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: -15
+    marginLeft: 15
+    image: /img/RND05036.jpg
+    width: 41
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 17
+    marginLeft: 26
+    image: /img/RND04938.ARW.jpg
+    width: 46
+credits:
+  - key: "For:"
+    value: Nike
+  - key: "Role:"
+    value: Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
+      Design, Prototyping, Software Development, Installation Engineering,
+      Research
 ---
