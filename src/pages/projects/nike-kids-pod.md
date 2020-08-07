@@ -41,5 +41,18 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 9
+    image: /img/RND04373.jpg
+    width: 37
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 8
+    marginLeft: 40
+    image: /img/RND04908.jpg
+    width: 60
 ---
