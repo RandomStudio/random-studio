@@ -1,10 +1,10 @@
 ---
 templateKey: Project
-title: Nike Kids Pod
+title: Your body as a controller in Nike's House of Innovation Paris
 intro: Nike opened the doors of its third House of Innovation, in Paris, July
   2020. A store unlike any other, it exists to celebrate and challenge the
   future of sport. We created a long term immersive installation for the launch
-  of its European flagship store.
+  of this European flagship store.
 priority: 1
 content:
   - video:
