@@ -121,5 +121,10 @@ credits:
       Design, Prototyping, Software Development, Installation Engineering,
       Research
 opengraph:
-  ogTitle: Nike Kids Pod
+  ogTitle: Your body as a controller in Nike's House of Innovation Paris
+  ogImage: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
+  ogDescription: Nike opened the doors of its third House of Innovation, in Paris,
+    July 2020. A store unlike any other, it exists to celebrate and challenge
+    the future of sport. We created a long term immersive installation for the
+    launch of this European flagship store.
 ---
