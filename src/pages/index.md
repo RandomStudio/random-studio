@@ -15,6 +15,13 @@ middle: >-
   [More about our studio](/studio)
 projects:
   - thumbnail:
+      ratio: 0
+      marginTop: 0
+      marginLeft: 20
+      image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
+      width: 60
+    caption: Your body as a controller in Nike's House of Innovation Paris
+  - thumbnail:
       ratio: 56
       marginTop: 0
       marginLeft: 47
