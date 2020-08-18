@@ -21,6 +21,7 @@ projects:
       image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
       width: 60
     caption: Your body as a controller in Nike's House of Innovation Paris
+    project: Your body as a controller in Nike's House of Innovation Paris
   - thumbnail:
       ratio: 56
       marginTop: 0
