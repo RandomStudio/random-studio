@@ -2,6 +2,8 @@ const postCssCustomProperties = require('postcss-custom-properties');
 
 const gatsbyConfig = {
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-netlify-cache',
       options: {
@@ -43,8 +45,6 @@ const gatsbyConfig = {
         name: 'site',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
