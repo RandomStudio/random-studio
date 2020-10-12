@@ -43,7 +43,7 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467280089.sd.mp4?s=5e8f5d121d8dbf610ccb676186040cd2fc1d3cf7&profile_id=165
     ratio: 100
-    marginTop: 0
+    marginTop: -32
     marginLeft: 68
     width: 32
 ---
