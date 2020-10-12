@@ -13,4 +13,37 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/467279976.sd.mp4?s=d1c9760a1a6d2f965feca97fe8ce17a2dc161114&profile_id=165
+    ratio: 100
+    marginTop: 68
+    marginLeft: 0
+    width: 32
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/467280061.sd.mp4?s=a82ba57df77ef93207a2226dbc434de955a53685&profile_id=165
+    ratio: 100
+    marginTop: -32
+    marginLeft: 34
+    width: 32
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/467280089.sd.mp4?s=5e8f5d121d8dbf610ccb676186040cd2fc1d3cf7&profile_id=165
+    ratio: 100
+    marginTop: 0
+    marginLeft: 68
+    width: 32
 ---
