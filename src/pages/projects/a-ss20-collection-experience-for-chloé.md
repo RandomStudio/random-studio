@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A SS20 Collection Experience for Chloé
+title: A SS21 Collection Experience for Chloé
 intro: copy
 content:
   - video:
