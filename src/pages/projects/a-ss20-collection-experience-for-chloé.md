@@ -1,7 +1,13 @@
 ---
 templateKey: Project
-title: A SS21 Collection Experience for Chloé
-intro: copy
+title: A Live Spectacle for Chloé's SS21 Collection
+intro: >-
+  
+
+  For their SS21 collection, we worked with Natacha Ramsay-Levi from Chloé to imagine and create a live spectacle spilling through the streets of Paris, its grand finale unfolding against the backdrop of the Palais de Tokyo.
+
+
+  An ambitious collision between going to the movies, the theatre and a fashion show, we conceptualised, choreographed and executed the multilayered event from start to finish; from trailers and teasers to the live event, to livestream, to its digital afterlife.
 content:
   - video:
       autoplay: true
@@ -22,7 +28,13 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: lorem ipsum
+    caption: >-
+      
+
+      Centering around the themes of sisterhood and togetherness that underpin the collection, the spectacle captures snippets from the lives of 37 contemporary Chloé women as they cruise their city’s streets to reach the show; a colourful tapestry of criss-crossing micro-narratives. Resisting the constraints of the catwalk, the presentation played out in the wild, using the city as a set for a play in two acts. 
+
+
+      Guests could experience the same event from near and far: a small audience seated at the Palais de Tokyo, their backs facing the Seine, and another much larger digital audience scattered across the world, facing their screens, both watching the spectacle play out in real-time.
   - video:
       autoplay: true
       hasControls: false
@@ -66,7 +78,11 @@ content:
     ratio: 0
     marginTop: 32
     marginLeft: 0
-    caption: lorem ipsum
+    caption: On location, three zoom camera towers were erected, each capturing the
+      actors/models from a distance and streaming it live to three grand
+      portrait LED walls bordering the square. Guests watched a triptych
+      capturing the models drifting through the streets to a polyphonic
+      soundscape that builds with every new character.
   - video:
       autoplay: false
       hasControls: false
@@ -87,7 +103,11 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: lorem ipsum
+    caption: The cameras traced small moments of beauty in the journeys of the
+      individual models until they finally came together to form a tableaux
+      vivant at the Palais de Tokyo. Like actors stepping out of the screen and
+      into real life, the models then walked the catwalk one after the other,
+      the cameras capturing the detail of each garment.
   - video:
       autoplay: false
       hasControls: false
