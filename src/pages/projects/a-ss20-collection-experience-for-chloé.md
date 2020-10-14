@@ -228,6 +228,10 @@ credits:
   - key: "For: "
     value: Chloé
 opengraph:
-  ogTitle: ""
-  ogDescription: ""
+  ogTitle: A Live Spectacle for Chloé's SS21 Collection
+  ogDescription: For their SS21 collection, we worked with Natacha Ramsay-Levi
+    from Chloé to imagine and create a live spectacle spilling through the
+    streets of Paris, its grand finale unfolding against the backdrop of the
+    Palais de Tokyo.
+  ogImage: /img/look_37.4.jpg
 ---
