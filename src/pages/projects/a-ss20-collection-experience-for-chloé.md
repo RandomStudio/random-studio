@@ -87,57 +87,57 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 32
+    marginTop: 0
+    marginLeft: 0
+    image: /img/look_32.5.jpg
+    width: 42
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: -2
+    marginLeft: 54
+    image: /img/look_22_23_24.5.jpg
+    width: 46
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: -4
+    marginLeft: 2
+    image: /img/look_19.1.jpg
+    width: 42
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 8
+    marginLeft: 46
+    image: /img/look_13.3.jpg
+    width: 48
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
     marginLeft: 0
     caption: On location, three zoom camera towers were erected, each capturing the
       actors/models from a distance and streaming it live to three grand
       portrait LED walls bordering the square. Guests watched a triptych
       capturing the models drifting through the streets to a polyphonic
       soundscape that builds with every new character.
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    image: /img/look_32.5.jpg
-    width: 30
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    image: /img/look_22_23_24.5.jpg
-    width: 30
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    image: /img/look_19.1.jpg
-    width: 31
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    image: /img/look_13.3.jpg
-    width: 31
   - video:
       autoplay: false
       hasControls: false
