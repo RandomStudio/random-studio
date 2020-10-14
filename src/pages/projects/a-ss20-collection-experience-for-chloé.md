@@ -220,10 +220,11 @@ content:
     marginLeft: 68
     width: 32
 credits:
-  - value: Concept, Choreography, Art Direction
+  - value: >
+      Random Studio in collaboration with Poiuytre: Creative Concept,
+      Choreography, Set Design, Art Direction, Videography, Creative Production
+      Management, Videography
     key: "Role:"
-  - value: Poiuytre – Creative Concept and Production
-    key: "With:"
   - key: "For: "
     value: Chloé
 opengraph:
