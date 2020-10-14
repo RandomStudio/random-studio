@@ -109,7 +109,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: -4
+    marginTop: -5
     marginLeft: 2
     image: /img/look_19.1.jpg
     width: 42
@@ -120,8 +120,8 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 8
-    marginLeft: 46
+    marginTop: 7
+    marginLeft: 49
     image: /img/look_13.3.jpg
     width: 48
   - video:
