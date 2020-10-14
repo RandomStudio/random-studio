@@ -222,10 +222,10 @@ content:
 credits:
   - value: Concept, Choreography, Art Direction
     key: "Role:"
-  - value: Poiuytre – Concept and Execution
+  - value: Poiuytre – Creative Concept and Production
     key: "With:"
   - key: "For: "
-    value: Chloe
+    value: Chloé
 opengraph:
   ogTitle: ""
   ogDescription: ""
