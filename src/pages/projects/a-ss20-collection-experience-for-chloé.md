@@ -215,8 +215,18 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467280089.sd.mp4?s=5e8f5d121d8dbf610ccb676186040cd2fc1d3cf7&profile_id=165
-    ratio: 71
+    ratio: 120
     marginTop: -20
     marginLeft: 68
     width: 32
+credits:
+  - value: Concept, Choreography, Art Direction
+    key: "Role:"
+  - value: Poiuytre – Concept and Execution
+    key: "With:"
+  - key: "For: "
+    value: Chloe
+opengraph:
+  ogTitle: ""
+  ogDescription: ""
 ---
