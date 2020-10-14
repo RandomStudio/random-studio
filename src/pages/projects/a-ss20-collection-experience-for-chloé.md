@@ -139,6 +139,39 @@ content:
       capturing the models drifting through the streets to a polyphonic
       soundscape that builds with every new character.
   - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/467765638.hd.mp4?s=7a8e9bd544ab38fde8c1ceae3cb94359b0d33a62&profile_id=175
+    ratio: 100
+    marginTop: 0
+    marginLeft: 0
+    width: 32
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/467765889.hd.mp4?s=9f95266a30f9b60bcdb61845a47ec394415c070d&profile_id=175
+    ratio: 100
+    marginTop: -32
+    marginLeft: 34
+    width: 32
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/467766121.hd.mp4?s=0d0ffd36469e7c50ccf1b6fff0bb56721050097d&profile_id=175
+    ratio: 120
+    marginTop: -32
+    marginLeft: 68
+    width: 32
+  - video:
       autoplay: false
       hasControls: false
       loops: true
@@ -159,7 +192,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467279976.sd.mp4?s=d1c9760a1a6d2f965feca97fe8ce17a2dc161114&profile_id=165
-    ratio: 0
+    ratio: 50
     marginTop: 0
     marginLeft: 0
     width: 32
@@ -172,7 +205,7 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467280061.sd.mp4?s=a82ba57df77ef93207a2226dbc434de955a53685&profile_id=165
     ratio: 62
-    marginTop: 0
+    marginTop: -16
     marginLeft: 34
     width: 32
   - video:
@@ -182,7 +215,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467280089.sd.mp4?s=5e8f5d121d8dbf610ccb676186040cd2fc1d3cf7&profile_id=165
-    ratio: 50
+    ratio: 71
     marginTop: -20
     marginLeft: 68
     width: 32
