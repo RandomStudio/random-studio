@@ -28,13 +28,130 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: >-
-      
-
-      Centering around the themes of sisterhood and togetherness that underpin the collection, the spectacle captures snippets from the lives of 37 contemporary Chloé women as they cruise their city’s streets to reach the show; a colourful tapestry of criss-crossing micro-narratives. Resisting the constraints of the catwalk, the presentation played out in the wild, using the city as a set for a play in two acts. 
-
-
-      Guests could experience the same event from near and far: a small audience seated at the Palais de Tokyo, their backs facing the Seine, and another much larger digital audience scattered across the world, facing their screens, both watching the spectacle play out in real-time.
+    caption: Centering around the themes of sisterhood and togetherness that
+      underpin the collection, the spectacle captures snippets from the lives of
+      37 contemporary Chloé women as they cruise their city’s streets to reach
+      the show; a colourful tapestry of criss-crossing micro-narratives.
+      Resisting the constraints of the catwalk, the presentation played out in
+      the wild, using the city as a set for a play in two acts.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 3
+    image: /img/screenshot-selection-cam-2.00_00_56_04.still006.jpg
+    width: 94
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 3
+    marginLeft: 3
+    image: /img/screenshot-selection-cam-1.00_09_35_10.still138.jpg
+    width: 94
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 3
+    marginLeft: 3
+    image: /img/screenshot-selection-cam-4.00_00_13_21.still007.jpg
+    width: 94
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: "Guests could experience the same event from near and far: a small
+      audience seated at the Palais de Tokyo, their backs facing the Seine, and
+      another much larger digital audience scattered across the world, facing
+      their screens, both watching the spectacle play out in real-time."
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 32
+    marginLeft: 0
+    caption: On location, three zoom camera towers were erected, each capturing the
+      actors/models from a distance and streaming it live to three grand
+      portrait LED walls bordering the square. Guests watched a triptych
+      capturing the models drifting through the streets to a polyphonic
+      soundscape that builds with every new character.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/look_32.5.jpg
+    width: 30
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/look_22_23_24.5.jpg
+    width: 30
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/look_19.1.jpg
+    width: 31
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/look_13.3.jpg
+    width: 31
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: The cameras traced small moments of beauty in the journeys of the
+      individual models until they finally came together to form a tableaux
+      vivant at the Palais de Tokyo. Like actors stepping out of the screen and
+      into real life, the models then walked the catwalk one after the other,
+      the cameras capturing the detail of each garment.
   - video:
       autoplay: true
       hasControls: false
@@ -69,75 +186,4 @@ content:
     marginTop: -20
     marginLeft: 68
     width: 32
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 32
-    marginLeft: 0
-    caption: On location, three zoom camera towers were erected, each capturing the
-      actors/models from a distance and streaming it live to three grand
-      portrait LED walls bordering the square. Guests watched a triptych
-      capturing the models drifting through the streets to a polyphonic
-      soundscape that builds with every new character.
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 3
-    image: /img/screenshot-selection-cam-2.00_00_56_04.still006.jpg
-    width: 94
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    caption: The cameras traced small moments of beauty in the journeys of the
-      individual models until they finally came together to form a tableaux
-      vivant at the Palais de Tokyo. Like actors stepping out of the screen and
-      into real life, the models then walked the catwalk one after the other,
-      the cameras capturing the detail of each garment.
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 3
-    image: /img/screenshot-selection-cam-1.00_09_35_10.still138.jpg
-    width: 94
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    caption: lorem ipsum
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 3
-    image: /img/screenshot-selection-cam-4.00_00_13_21.still007.jpg
-    width: 94
 ---
