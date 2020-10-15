@@ -221,9 +221,9 @@ content:
     width: 32
 credits:
   - value: >
-      Random Studio in collaboration with Poiuytre: Creative Concept,
-      Choreography, Set Design, Art Direction, Videography, Creative Production
-      Management, Videography
+      In collaboration with creative unit Poiuytre we realised the Creative
+      Concept, Choreography, Set Design, Art Direction, Videography, Creative
+      Production Management, Videography, Live Video Direction
     key: "Role:"
   - key: "For: "
     value: Chloé
