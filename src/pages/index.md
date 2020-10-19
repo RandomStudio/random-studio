@@ -34,7 +34,7 @@ projects:
     project: A Live Spectacle for Chloé's SS21 Collection
   - thumbnail:
       ratio: 56
-      marginTop: -14
+      marginTop: -11
       marginLeft: 47
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 49
