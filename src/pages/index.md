@@ -23,6 +23,16 @@ projects:
     caption: Your body as a controller in Nike's House of Innovation Paris
     project: Your body as a controller in Nike's House of Innovation Paris
   - thumbnail:
+      ratio: 0
+      marginTop: 0
+      marginLeft: 0
+      width: 50
+      image: /img/look_37.4.jpg
+    caption: |-
+      A Live Spectacle for
+      Chloé's SS21 Collection
+    project: A Live Spectacle for Chloé's SS21 Collection
+  - thumbnail:
       ratio: 56
       marginTop: 0
       marginLeft: 47
@@ -209,11 +219,6 @@ projects:
       ratio: 66.6666
       video: https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
       width: 50
-  - thumbnail:
-      ratio: 0
-      marginTop: 0
-      marginLeft: 0
-      width: 0
   - caption: |-
       Various in-store installations
       for NikeLab
