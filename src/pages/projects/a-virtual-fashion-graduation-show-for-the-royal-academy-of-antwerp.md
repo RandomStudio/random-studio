@@ -146,7 +146,6 @@ content:
     ratio: 83
     marginTop: 1
     marginLeft: 4
-    image: ""
     width: 37
     caption: First year bachelor – Jin Young Kwon
   - video:
@@ -159,7 +158,6 @@ content:
     ratio: 83
     marginTop: -6
     marginLeft: 60
-    image: ""
     width: 34
     caption: First year bachelor – Alba Niessen
   - video:
@@ -172,7 +170,6 @@ content:
     ratio: 83
     marginTop: -4
     marginLeft: 10
-    image: ""
     width: 36
     caption: First year bachelor – Jiayue She
   - video:

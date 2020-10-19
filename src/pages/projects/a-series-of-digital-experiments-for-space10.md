@@ -22,7 +22,6 @@ content:
     ratio: 55
     marginTop: 0
     marginLeft: 10
-    image: ""
     width: 80
   - video:
       autoplay: false
@@ -48,7 +47,6 @@ content:
     ratio: 50
     marginTop: 0
     marginLeft: 10
-    image: ""
     width: 45
   - video:
       autoplay: false
@@ -71,7 +69,6 @@ content:
     ratio: 60
     marginTop: -6
     marginLeft: 0
-    image: ""
     width: 55
   - video:
       autoplay: true
@@ -83,7 +80,6 @@ content:
     ratio: 60
     marginTop: 7
     marginLeft: 45
-    image: ""
     width: 51
   - video:
       autoplay: false
