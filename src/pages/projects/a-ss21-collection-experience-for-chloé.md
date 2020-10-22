@@ -221,7 +221,7 @@ content:
     width: 32
 credits:
   - value: >
-      In collaboration with creative unit Poiuytre we realised the Creative
+      In collaboration with creative unit POIUYTRE we realised the Creative
       Concept, Choreography, Set Design, Art Direction, Videography, Creative
       Production Management, Videography, Live Video Direction
     key: "Role:"
