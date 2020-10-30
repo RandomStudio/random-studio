@@ -1,10 +1,10 @@
 ---
 templateKey: Home
-layout: center
-video: https://player.vimeo.com/external/434023384.hd.mp4?s=c5792bb1a5a2c44527520c01eb4badcd4a7be036&profile_id=175
+layout: top
+video: https://player.vimeo.com/external/464600042.hd.mp4?s=cbcc8003cf744bacbe72c14f3d94dfb0c33e9685&profile_id=175
 collaborationCredits:
-  collaborator: WWWSHOWWW
-  url: https://www.showww.be/
+  collaborator: Chloé
+  url: https://random.studio/projects/a-ss21-collection-experience-for-chlo%C3%A9/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
