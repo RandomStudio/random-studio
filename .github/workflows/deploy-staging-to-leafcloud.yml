@@ -51,5 +51,5 @@ jobs:
           ARGS: "-e -c -r --delete"
           DEPLOY_KEY: ${{ env.SSH_KEY }}
           USERNAME: ${{ env.SSH_USERNAME }}
-          FOLDER: "./${{ env.BUILD_DIR }}/"
+          FOLDER: "${{ env.BUILD_DIR }}/"
           SERVER_DESTINATION: '/var/www/staging.random.studio/${{ env.TARGET_DIR }}/'
