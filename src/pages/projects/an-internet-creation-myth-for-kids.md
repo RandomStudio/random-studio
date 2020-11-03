@@ -92,8 +92,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 49
     image: /img/geoffrey_lillemon_parallel_archaeologies_internet_egg_and_cylinder.gif
+    width: 50
   - video:
       autoplay: false
       hasControls: false
@@ -101,9 +102,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -6
+    marginLeft: 6
     image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
+    width: 34
   - video:
       autoplay: false
       hasControls: false
@@ -111,9 +113,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -4
+    marginLeft: 55
     image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01547.png
+    width: 35
   - video:
       autoplay: false
       hasControls: false
@@ -137,8 +140,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 6
     image: /img/geoffrey_lillemon_parallel_archaeologies_ancient_avatar_04.gif
+    width: 40
   - video:
       autoplay: false
       hasControls: false
@@ -146,9 +150,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -13
+    marginLeft: 55
     image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
+    width: 40
   - video:
       autoplay: false
       hasControls: false
