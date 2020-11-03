@@ -70,4 +70,63 @@ content:
     marginLeft: 11
     image: /img/geoffrey_lillemon_parallel_archaeologies_centaur_and_mermaid.gif
     width: 40
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: It all started when The Gods assembled a select group of ancient
+      avatars to decide upon the shape of a new, fantasy universe. But, once
+      they got to work, they quickly realized that they couldn't agree! The
+      mermaid wanted it square, the centaur wanted it cylindrical, and the
+      reptilian wanted it mobius...
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/geoffrey_lillemon_parallel_archaeologies_internet_egg_and_cylinder.gif
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01547.png
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: >-
+      Frustrated by their inability to decide they all fell into a deep
+      slumber...
+
+
+      While they slept, a clowder of hacker cats descended upon them to steal their avatar code and send it to an AI engine, essentially spoiling their plans.
 ---
