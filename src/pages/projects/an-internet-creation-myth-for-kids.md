@@ -14,6 +14,16 @@ intro: >-
   Experience is here: http://parallelarchaeologies.geoffreylillemon.com/
 content:
   - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/474983745.hd.mp4?s=a402d59aec7d280571da04e8849f3eaa049ccf4e&profile_id=174
+    ratio: 54
+    marginTop: 0
+    marginLeft: 0
+  - video:
       autoplay: false
       hasControls: false
       loops: true
@@ -27,4 +37,34 @@ content:
       streaming distortions of alternate internets and code cracked dimensions
       as we fall into a cosmic spiraling binary bliss, that is, until the
       robotic hacker cats messed it all up.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/geoffrey_lillemon_parallel_archaeologies_interface.gif
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/parallel_archaeologies_geoffrey_lillemon_well_portrait.png
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/geoffrey_lillemon_parallel_archaeologies_centaur_and_mermaid.gif
 ---
