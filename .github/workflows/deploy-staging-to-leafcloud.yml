@@ -44,7 +44,7 @@ jobs:
           key: ${{ env.SSH_KEY }}
           port: 22
           script: mkdir -p /var/www/staging.random.studio/${{ env.TARGET_DIR }}
-      - name: Deploy preview
+      - name: Deploy to server
         if: github.ref == 'refs/heads/staging'
         uses: AEnterprise/rsync-deploy@1.0.1
         env:
@@ -53,3 +53,5 @@ jobs:
           USERNAME: ${{ env.SSH_USERNAME }}
           FOLDER: "${{ env.BUILD_DIR }}/"
           SERVER_DESTINATION: '/var/www/staging.random.studio/${{ env.TARGET_DIR }}/'
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
