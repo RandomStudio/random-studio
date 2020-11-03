@@ -151,7 +151,7 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: -13
-    marginLeft: 55
+    marginLeft: 54
     image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
     width: 40
   - video:
@@ -182,8 +182,9 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 6
     image: /img/geoffrey_lillemon_parallel_archaeologies_loadinga.gif
+    width: 40
   - video:
       autoplay: false
       hasControls: false
@@ -191,9 +192,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -24
+    marginLeft: 54
     image: /img/geoffrey_lillemon_parallel_archaeologies_code_06.gif
+    width: 40
   - video:
       autoplay: false
       hasControls: false
@@ -201,9 +203,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 8
+    marginLeft: 18
     image: /img/geoffrey_lillemon_parallel_archaeologies_endless.gif
+    width: 60
   - video:
       autoplay: false
       hasControls: false
