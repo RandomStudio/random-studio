@@ -129,4 +129,44 @@ content:
 
 
       While they slept, a clowder of hacker cats descended upon them to steal their avatar code and send it to an AI engine, essentially spoiling their plans.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/geoffrey_lillemon_parallel_archaeologies_ancient_avatar_04.gif
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: >-
+      When the ancients awoke they found themselves trapped inside of an
+      artificial intelligence software in which their identities were consumed
+      by data libraries. Stuck with only fragments of their eyes freaking out,
+      the internet collapsed, sending the universe into an endless binary
+      blackhole.
+
+
+
+
+      That is, until it restarts…
 ---
