@@ -204,4 +204,19 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/geoffrey_lillemon_parallel_archaeologies_endless.gif
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: This creation myth is tied to a visual language that makes its audience
+      feel like they are constantly falling down a hole. We elaborated on that
+      with the physical version of this project that is shaped like a well,
+      with  arcade-style buttons on the side to use to switch to alternative
+      parallel realities where the worlds become devoured by artificial
+      intelligence becoming more incomprehensible and fascinating.
 ---
