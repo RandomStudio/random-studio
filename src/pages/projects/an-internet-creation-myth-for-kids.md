@@ -229,7 +229,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 15
+    marginTop: 10
     marginLeft: 56
     image: /img/parallel_archaeologies_geoffrey_lillemon_well.png
     width: 35
