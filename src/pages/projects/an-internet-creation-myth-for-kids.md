@@ -184,18 +184,18 @@ content:
     marginTop: 0
     marginLeft: 6
     image: /img/geoffrey_lillemon_parallel_archaeologies_loadinga.gif
-    width: 40
+    width: 39
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
-    marginTop: -24
+    ratio: 50
+    marginTop: -23
     marginLeft: 54
     image: /img/geoffrey_lillemon_parallel_archaeologies_code_06.gif
-    width: 40
+    width: 39
   - video:
       autoplay: false
       hasControls: false
