@@ -47,6 +47,7 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/geoffrey_lillemon_parallel_archaeologies_interface.gif
+    width: 50
   - video:
       autoplay: false
       hasControls: false
@@ -54,9 +55,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -10
+    marginLeft: 61
     image: /img/parallel_archaeologies_geoffrey_lillemon_well_portrait.png
+    width: 30
   - video:
       autoplay: false
       hasControls: false
@@ -65,6 +67,7 @@ content:
       isAlwaysMuted: false
     ratio: 0
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 11
     image: /img/geoffrey_lillemon_parallel_archaeologies_centaur_and_mermaid.gif
+    width: 40
 ---
