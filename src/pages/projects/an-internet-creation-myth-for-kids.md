@@ -229,10 +229,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 15
+    marginLeft: 56
     image: /img/parallel_archaeologies_geoffrey_lillemon_well.png
-    width: 40
+    width: 35
   - video:
       autoplay: false
       hasControls: false
@@ -240,7 +240,8 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -9
+    marginLeft: 5
     image: /img/geoffrey_lillemon_parallel_archaeologies_cinekid.gif
+    width: 42
 ---
