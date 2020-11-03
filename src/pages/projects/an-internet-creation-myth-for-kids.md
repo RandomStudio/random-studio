@@ -222,4 +222,25 @@ content:
       with  arcade-style buttons on the side to use to switch to alternative
       parallel realities where the worlds become devoured by artificial
       intelligence becoming more incomprehensible and fascinating.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/parallel_archaeologies_geoffrey_lillemon_well.png
+    width: 40
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/geoffrey_lillemon_parallel_archaeologies_cinekid.gif
 ---
