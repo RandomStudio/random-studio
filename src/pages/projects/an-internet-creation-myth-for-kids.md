@@ -22,4 +22,9 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
+    caption: Parallel Archaeologies is an ancient portal that has opened up at the
+      bottom of a well, like a blackhole it sucks our attention inwards
+      streaming distortions of alternate internets and code cracked dimensions
+      as we fall into a cosmic spiraling binary bliss, that is, until the
+      robotic hacker cats messed it all up.
 ---
