@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
@@ -6,12 +6,6 @@ import FluidImage from '../FluidImage/FluidImage';
 
 const Carousel = ({ carousel, showIndicator, title, objectFit, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [carouselHeight, setCarouselHeight] = useState(0);
-
-  const carouselElementsRef = useRef(
-    [...Array(carousel.length)].map(() => React.createRef()),
-  );
-
   const videoRef = useRef();
 
   const handleNext = () => {
@@ -21,16 +15,6 @@ const Carousel = ({ carousel, showIndicator, title, objectFit, className }) => {
 
     setCurrentIndex((currentIndex + 1) % carousel.length);
   };
-
-  useEffect(() => {
-    const {
-      height,
-    } = carouselElementsRef.current[0].current.getBoundingClientRect();
-
-    console.log(height);
-
-    setCarouselHeight(height);
-  }, []);
 
   if (!carousel) return null;
 
@@ -48,20 +32,11 @@ const Carousel = ({ carousel, showIndicator, title, objectFit, className }) => {
             className={`${carousel.length > 1 && styles.hasMultiple}`}
             onClick={handleNext}
           >
-            <div
-              ref={carouselElementsRef.current[index]}
-              // style={{ height: `${carouselHeight}px` }}
-            >
-              {url ? (
-                <video src={url} muted loop autoPlay playsInline />
-              ) : (
-                <FluidImage
-                  image={image}
-                  objectFit={objectFit}
-                  loading="auto"
-                />
-              )}
-            </div>
+            {url ? (
+              <video src={url} muted loop autoPlay playsInline />
+            ) : (
+              <FluidImage image={image} objectFit={objectFit} loading="auto" />
+            )}
             {caption && <ReactMarkdown escapeHtml={false} source={caption} />}
           </div>
         </div>
