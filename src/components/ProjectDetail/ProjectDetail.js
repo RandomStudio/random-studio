@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import Img from 'gatsby-image';
 import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
-import ImageCarousel from '../ImageCarousel/ImageCarousel';
+import Carousel from '../Carousel/Carousel';
 
 const ProjectDetail = ({ title, intro, content, credits, media }) => (
   <div className={styles.project}>
@@ -70,7 +70,7 @@ const ProjectDetail = ({ title, intro, content, credits, media }) => (
                   '--carouselWidth': `${width}%`,
                 }}
               >
-                <ImageCarousel
+                <Carousel
                   className={styles.carouselWrapper}
                   showIndicator={showIndicator}
                   carousel={carousel}
