@@ -22,7 +22,6 @@ content:
     ratio: 55
     marginTop: 0
     marginLeft: 10
-    image: ""
     width: 80
   - video:
       autoplay: false
@@ -48,7 +47,6 @@ content:
     ratio: 50
     marginTop: 0
     marginLeft: 10
-    image: ""
     width: 45
   - video:
       autoplay: false
@@ -71,7 +69,6 @@ content:
     ratio: 60
     marginTop: -6
     marginLeft: 0
-    image: ""
     width: 55
   - video:
       autoplay: true
@@ -83,7 +80,6 @@ content:
     ratio: 60
     marginTop: 7
     marginLeft: 45
-    image: ""
     width: 51
   - video:
       autoplay: false
@@ -94,7 +90,7 @@ content:
     ratio: 0
     marginTop: 10
     marginLeft: 15
-    image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.png
+    image: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.jpg
     width: 70
   - video:
       autoplay: false
@@ -277,5 +273,5 @@ opengraph:
   ogDescription: We’ve dreamt up a few digital experiments with SPACE10 to rethink
     our relationship with the place we call home, and how digital technology can
     merge with the physical to improve our well being.
-  ogImage: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.png
+  ogImage: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A Studio Sun System with light-artist Arnout Meijer
+title: A studio sun system with light-artist Arnout Meijer
 intro: Like many studios, we’re based in the city. Located in a courtyard within
   a housing block, our space doesn’t get much direct sunlight in winter. Using
   this problem as a tool in our research into interactive space, we started to
@@ -8,8 +8,8 @@ intro: Like many studios, we’re based in the city. Located in a courtyard with
   to bring our workspace back to life during these winter months.
 content:
   - video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
@@ -26,12 +26,11 @@ content:
     ratio: 0
     marginTop: 70
     marginLeft: 0
-    caption: Does office light need to be static in order to work? How can we work
-      with light as a material? Can we use technology to craft something
-      organic? How can a space connect with its surroundings? With these
-      questions in mind, we set out to build a lighting system that emulates the
-      movement of the sun and the ever-evolving states of natural light that we
-      were missing out on.
+    caption: How can a space connect with its surroundings? Can we use technology to
+      craft something organic? How can we work with light as a material? With
+      these questions in mind, we set out to build a lighting system that
+      emulates the movement of the sun and the ever-evolving states of natural
+      light that we were missing out on.
   - video:
       autoplay: false
       hasControls: false
@@ -56,11 +55,11 @@ content:
     width: 35
   - video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/425865613.sd.mp4?s=da6c53111458eed3b3a49404e91d5566e7541f24&profile_id=165
+      url: https://player.vimeo.com/external/440247305.hd.mp4?s=2b8ab9994bb5c943f41f345a270595f9f5f9d064&profile_id=175
     ratio: 60
     marginTop: 10
     marginLeft: 15
@@ -84,11 +83,11 @@ content:
       energy of the sun."
   - video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/425865560.hd.mp4?s=ba4d44b68c608be8794c52d9eaaa1e275de5761a&profile_id=174
+      url: https://player.vimeo.com/external/440254376.hd.mp4?s=081e98c46c8716bf1ffe723b25202518f7e4ffcd&profile_id=175
     ratio: 55
     marginTop: 0
     marginLeft: 0
@@ -101,15 +100,16 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: This is just the beginning of how our studio can come to life. The
-      dynamic system we created allows us to control each LED light pixel
-      individually, and the next step is to add 4D sound to our space. Our
-      studio is becoming the playground we use to think about how technology can
-      build a bridge between humans and nature, with the aim of creating
-      interactive spaces that feel alive and behave in their own way. A
-      programmable space like this creates a dialogue with the people that
-      occupy it. Rather than isolating us from the physical world, it infuses
-      real spaces with tech to make us aware of our surroundings.
+    caption: >-
+      This is just the beginning of how our studio can come to life. The dynamic
+      system we created allows us to control each LED light pixel individually,
+      and the next step is to add sound to our space. Our studio is becoming the
+      playground we use to think about how technology can build a bridge between
+      humans and nature, with the aim of creating interactive spaces that feel
+      alive and behave in their own way. 
+
+
+      A programmable space like this creates a dialogue with the people that occupy it. Rather than isolating us from the physical world, it infuses real spaces with tech to make us aware of our surroundings.
   - video:
       autoplay: false
       hasControls: false
@@ -138,16 +138,15 @@ credits:
   - key: "With:"
     value: |-
       Arnout Meijer – Light Design 
-      
-      Schrikdraad Elektronisch Ontwerp –  Electronics Design 
+
+       RWA Electronics –  Electronics Design 
   - key: "Roles: "
     value: Creative Direction, Art Direction, Experience Design, Creative
       Technology, Software Development
 opengraph:
-  ogTitle: An Interactive Studio Sun together with light-artist Arnout Meijer
-  ogDescription: "Can you bring the outside in? During the winter months, we miss
-    out on a lot of natural light in our studio. So we got to work to bring some
-    sunshine back in. Our ambient light system mimics the changing light of the
-    day, like a sun moving over our workspace. A playground for our research
-    into interactive space, our Amsterdam studio is slowly coming to life. "
+  ogTitle: A studio sun system with light-artist Arnout Meijer
+  ogDescription: Collaborating with light artist Arnout Meijer the ambient system
+    we created mimics the behaviour of the sun travelling overhead in our
+    studio.
+  ogImage: /img/random_licht_stills_4 (1).jpg
 ---
