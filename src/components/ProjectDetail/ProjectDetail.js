@@ -4,9 +4,7 @@ import Img from 'gatsby-image';
 import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
 
-const ProjectDetail = ({
-  title, intro, content, credits,
-}) => (
+const ProjectDetail = ({ title, intro, content, credits }) => (
   <div className={styles.project}>
     <h1 className={styles.title}>
       <ReactMarkdown escapeHtml={false} source={title} />
@@ -15,12 +13,7 @@ const ProjectDetail = ({
       <ReactMarkdown escapeHtml={false} source={intro} />
     </div>
     {(content || []).map(
-      (
-        {
-          caption, image, marginLeft, marginTop, ratio, video, width,
-        },
-        index,
-      ) => (
+      ({ caption, image, marginLeft, marginTop, video, width }, index) => (
         <div
           key={index}
           className={styles.item}
@@ -32,20 +25,21 @@ const ProjectDetail = ({
         >
           {(video && video.url) || image ? (
             <>
+              {/* eslint-disable-next-line no-nested-ternary */}
               {video && video.url ? (
-                <ProjectVideo video={video} ratio={ratio} />
+                <ProjectVideo video={video} />
               ) : image.childImageSharp ? (
                 <Img fluid={image.childImageSharp.fluid} />
               ) : (
                 <img alt="" src={image} />
               )}
               {caption && (
-              <div
-                className={styles.caption}
-                style={{ marginLeft: !marginLeft && '1.4rem' }}
-              >
-                {caption}
-              </div>
+                <div
+                  className={styles.caption}
+                  style={{ marginLeft: !marginLeft && '1.4rem' }}
+                >
+                  {caption}
+                </div>
               )}
             </>
           ) : (

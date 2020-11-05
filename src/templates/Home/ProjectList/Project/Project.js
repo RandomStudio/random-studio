@@ -20,6 +20,7 @@ const Project = ({ thumbnail, title, slug }) => (
       to={slug || '#'}
     >
       <div className={styles.media}>
+        {/* eslint-disable-next-line no-nested-ternary */}
         {thumbnail.video ? (
           <ProjectVideo
             video={{
@@ -29,7 +30,6 @@ const Project = ({ thumbnail, title, slug }) => (
               loops: true,
               url: thumbnail.video,
             }}
-            ratio={thumbnail.ratio}
           />
         ) : !!thumbnail.image && thumbnail.image.childImageSharp ? (
           <Img loading="auto" fluid={thumbnail.image.childImageSharp.fluid} />
