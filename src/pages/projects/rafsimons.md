@@ -24,14 +24,12 @@ priority: 8
 thumbnail:
   marginLeft: 5
   marginTop: -5
-  ratio: 66.66
   video: >-
     https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
   width: 58
 content:
   - marginLeft: 5
     marginTop: 5
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -42,7 +40,6 @@ content:
     width: 90
   - marginLeft: 5
     marginTop: 5
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -53,7 +50,6 @@ content:
     width: 90
   - marginLeft: 5
     marginTop: 5
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -64,7 +60,6 @@ content:
     width: 90
   - marginLeft: 5
     marginTop: 5
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -75,7 +70,6 @@ content:
     width: 90
   - marginLeft: 5
     marginTop: 5
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -86,7 +80,6 @@ content:
     width: 90
   - marginLeft: 5
     marginTop: 5
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -97,7 +90,6 @@ content:
     width: 90
   - marginLeft: 5
     marginTop: 5
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true

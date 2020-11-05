@@ -11,14 +11,12 @@ priority: 5
 thumbnail:
   marginLeft: 50
   marginTop: -22
-  ratio: 121.9444
   video: >-
     https://player.vimeo.com/external/325456009.hd.mp4?s=2d2d20db4d509264e3e8c1ed290c9576d15a2cc7&profile_id=174
   width: 38
 content:
   - marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -37,7 +35,6 @@ content:
       borders of fake and real.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -45,7 +42,6 @@ content:
       loops: true
   - marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -62,7 +58,6 @@ content:
       backstage and empty-set photography.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -70,7 +65,6 @@ content:
       loops: true
   - marginLeft: 10
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -86,7 +80,6 @@ content:
       the poodle – who became the show’s protagonist.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -95,7 +88,6 @@ content:
   - image: /img/93329ef8a50c1ae92159783fd2275f58-1-.m-dogs-jpg.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false

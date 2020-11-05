@@ -12,7 +12,6 @@ priority: 0
 content:
   - marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -38,7 +37,6 @@ content:
     width: 63
   - marginLeft: 0
     marginTop: 10
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -62,7 +60,6 @@ content:
     marginTop: 0
   - marginLeft: 10
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -90,7 +87,6 @@ content:
     marginTop: 0
   - marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -105,7 +101,6 @@ content:
     width: 35
   - marginLeft: 20
     marginTop: -35
-    ratio: 177.778
     video:
       autoplay: true
       hasControls: true

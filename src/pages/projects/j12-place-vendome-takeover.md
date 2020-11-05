@@ -4,7 +4,7 @@ title: A store takeover at Place Vendôme <br> for the launch of Chanel's new wa
 intro: >-
   For its biggest ever global watch launch, Chanel enlisted us to create the
   scenography for a temporary takeover of its flagship boutique on Place Vendôme
-  in Paris. 
+  in Paris.
 
 
   The new J12 watch series revolves around encounters and decisive moments, and
@@ -21,7 +21,6 @@ thumbnail:
 content:
   - marginLeft: 10
     marginTop: 0
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -33,7 +32,6 @@ content:
   - image: /img/wec190502_chanel_j12_0150.jpg
     marginLeft: 0
     marginTop: 66
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -43,7 +41,6 @@ content:
   - image: /img/wec190502_chanel_j12_001_2.jpg
     marginLeft: 57
     marginTop: -19
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -53,7 +50,6 @@ content:
   - image: /img/wec190502_chanel_j12_063.jpg
     marginLeft: 15
     marginTop: 9
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -62,7 +58,6 @@ content:
     width: 70
   - marginLeft: 2
     marginTop: 9
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -74,7 +69,6 @@ content:
   - image: /img/wec190502_chanel_j12_022_2.jpg
     marginLeft: 47
     marginTop: 18
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -85,7 +79,7 @@ content:
       The illusion reached its peak in the Grand Salon: the iconic view out onto
       Place Vendôme was replaced by a simulation that allowed the room to travel
       through time, slipping between warm sunsets, foggy mornings and glowing
-      afternoon skies. 
+      afternoon skies.
 
 
       The sun traces through the sky, shadows dart across the square and cars
@@ -93,7 +87,6 @@ content:
       favourite memories in short films screened on the walls.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -101,7 +94,6 @@ content:
       loops: true
   - marginLeft: 3
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -113,7 +105,6 @@ content:
   - image: /img/wec190502_chanel_j12_010_5.jpg
     marginLeft: 64
     marginTop: 25
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -126,7 +117,6 @@ content:
       we organised, in Beijing and Taiwan.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false

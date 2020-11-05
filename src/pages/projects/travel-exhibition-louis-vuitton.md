@@ -11,7 +11,6 @@ priority: 11
 content:
   - marginLeft: 15
     marginTop: -1
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -49,7 +48,6 @@ content:
     marginTop: 0
   - marginLeft: 15
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -83,7 +81,6 @@ content:
       /img/4a4efa9d7ab8fd2119b33f2b1ff43bbe.andomstudio-louisvuitton-vvv-seoul-03-jpg.jpg
     marginLeft: 50
     marginTop: -20
-    ratio: 0
     width: 40
   - caption: >-
       For the New York edition of the exhibition, our space was a long corridor
@@ -100,7 +97,6 @@ content:
     width: 70
   - marginLeft: 18
     marginTop: 10
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true

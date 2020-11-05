@@ -16,14 +16,12 @@ priority: 3
 thumbnail:
   marginLeft: 42
   marginTop: -6
-  ratio: 66.6666
   video: >-
     https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
   width: 50
 content:
   - marginLeft: 15
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: false
       hasControls: false
@@ -42,7 +40,6 @@ content:
       nonchalance.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -50,7 +47,6 @@ content:
       loops: true
   - marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: false
       hasControls: false
@@ -62,7 +58,6 @@ content:
   - image: /img/fred-perry-digital-maps-1.jpeg
     marginLeft: 65
     marginTop: -12
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -72,7 +67,6 @@ content:
   - image: /img/digitalmaps.jpeg
     marginLeft: 20
     marginTop: -20
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -82,7 +76,6 @@ content:
   - image: /img/digitalmaps3.jpeg
     marginLeft: 0
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -96,7 +89,6 @@ content:
       viewed as a series of semi-accidental screenshots.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -104,7 +96,6 @@ content:
       loops: true
   - marginLeft: 45
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -116,7 +107,6 @@ content:
   - image: /img/digitalmaps4.jpeg
     marginLeft: 0
     marginTop: -15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -126,7 +116,6 @@ content:
   - image: /img/digitalmaps5.jpeg
     marginLeft: 40
     marginTop: -15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -136,7 +125,6 @@ content:
   - image: /img/digitalmaps6.jpeg
     marginLeft: 0
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false

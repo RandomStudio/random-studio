@@ -11,7 +11,6 @@ intro: >-
 content:
   - marginLeft: 10
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -29,7 +28,6 @@ content:
       evoked the sense of adventure and elegance at Louis Vuitton’s core.
     marginLeft: 0
     marginTop: 63
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -38,7 +36,6 @@ content:
   - image: /img/Render-Perfume.jpg
     marginLeft: 40
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -47,7 +44,6 @@ content:
     width: 50
   - marginLeft: 8
     marginTop: -12
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -58,7 +54,6 @@ content:
     width: 24
   - marginLeft: 40
     marginTop: 30
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -76,7 +71,6 @@ content:
       Vuitton’s journey for nearly two centuries.
     marginLeft: 0
     marginTop: 73
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -85,7 +79,6 @@ content:
   - image: /img/65453893_815006268886585_7648533371953348608_n.png
     marginLeft: 20
     marginTop: 9
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -95,7 +88,6 @@ content:
   - image: /img/65445113_893189817697135_6332105627778678784_n.png
     marginLeft: 46
     marginTop: -8
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -105,7 +97,6 @@ content:
   - image: /img/65415586_385629605409287_4618380884599373824_n.png
     marginLeft: 72
     marginTop: -8
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -114,7 +105,6 @@ content:
     width: 8
   - marginLeft: 12
     marginTop: 3
-    ratio: 150
     video:
       autoplay: true
       hasControls: false
@@ -125,7 +115,6 @@ content:
     width: 24
   - marginLeft: 38
     marginTop: -36
-    ratio: 150
     video:
       autoplay: true
       hasControls: false
@@ -136,7 +125,6 @@ content:
     width: 24
   - marginLeft: 64
     marginTop: -36
-    ratio: 150
     video:
       autoplay: true
       hasControls: false

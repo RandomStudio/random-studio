@@ -101,12 +101,6 @@ collections:
             name: caption
             required: false
             widget: markdown
-          - label: Ratio
-            name: ratio
-            required: false
-            valueType: float
-            default: 0.00
-            widget: nonEmptyStringableNumber
           - label: Width
             name: width
             required: false
@@ -230,12 +224,6 @@ collections:
                     name: video
                     required: false
                     widget: text
-                  - label: Ratio
-                    name: ratio
-                    required: false
-                    valueType: float
-                    default: 0.00
-                    widget: nonEmptyStringableNumber
                   - label: Width
                     name: width
                     required: false
