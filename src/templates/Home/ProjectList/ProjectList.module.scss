@@ -1,6 +1,6 @@
 .projects {
   padding: 15vw 0;
-  background: #f8f8f8;
+  background: var(--white);
 }
 
 .statement {
@@ -54,7 +54,7 @@
 .media {
   position: relative;
   width: 100%;
-  background: #eee;
+  background: var(--off-white);
 
   & video {
     position: absolute;

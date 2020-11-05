@@ -18,7 +18,7 @@
 .media {
   position: relative;
   width: 100%;
-  background: #eee;
+  background: var(--off-white);
 
   & video {
     position: absolute;
