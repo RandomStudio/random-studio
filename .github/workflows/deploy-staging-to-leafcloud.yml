@@ -45,7 +45,7 @@ jobs:
           port: 22
           script: mkdir -p /var/www/staging.random.studio/${{ env.TARGET_DIR }}
       - name: Deploy to server
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/staging'
         uses: AEnterprise/rsync-deploy@1.0.1
         env:
           ARGS: "-e -c -r --delete"
