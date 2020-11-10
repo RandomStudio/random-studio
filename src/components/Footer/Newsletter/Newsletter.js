@@ -22,8 +22,8 @@ const Newsletter = () => {
         const body = await response.json();
         setError(body.errorMessage);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (responseError) {
+      console.log(responseError);
       setError('Failed to submit. Please check email and try again.');
     }
     return false;
