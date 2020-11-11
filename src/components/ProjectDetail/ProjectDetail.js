@@ -17,7 +17,7 @@ const ProjectDetail = ({
     {(content || []).map(
       (
         {
-          caption, image, marginLeft, marginTop, ratio, video, width,
+          caption, image, alt, marginLeft, marginTop, ratio, video, width,
         },
         index,
       ) => (
@@ -35,7 +35,7 @@ const ProjectDetail = ({
               {video && video.url ? (
                 <ProjectVideo video={video} ratio={ratio} />
               ) : image.childImageSharp ? (
-                <Img fluid={image.childImageSharp.fluid} />
+                <Img fluid={image.childImageSharp.fluid} alt={alt} />
               ) : (
                 <img alt="" src={image} />
               )}

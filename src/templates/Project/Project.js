@@ -24,6 +24,7 @@ export const pageQuery = graphql`
               }
             }
           }
+          alt
           marginTop
           marginLeft
           ratio

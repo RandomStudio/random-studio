@@ -65,9 +65,14 @@ collections:
             name: image
             required: false
             widget: image
+          - label: Alt tag image
+            name: alt
+            required: false
+            widget: string
           - label: Video
             name: video
             required: false
+            collapsed: true
             widget: object
             fields:
               - label: 'Video URL'
