@@ -127,6 +127,14 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
+    carousel:
+      - type: image
+        image: /img/1.jpg
+        caption: Image 1
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/213649062.hd.mp4?s=140f4865386d492a2fab57cdf81ebb7594dc975e&profile_id=119
+        caption: Video 1
 media:
   - showIndicator: true
     ratio: 10
