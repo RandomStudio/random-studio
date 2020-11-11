@@ -118,6 +118,19 @@ content:
       complex, it takes too long for people to master.”"
     marginLeft: 0
     marginTop: 0
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    carousel:
+      - type: image
+        image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
+        caption: Test
 media:
   - showIndicator: true
     ratio: 10
