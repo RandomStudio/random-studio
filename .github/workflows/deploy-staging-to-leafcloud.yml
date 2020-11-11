@@ -1,0 +1,55 @@
+name: Deploy Staging to LeafCloud
+on:
+  push:
+    branches:
+      - staging
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    env:
+      BUILD_DIR: 'public'
+      SERVER_IP: ssh.staging.random.studio
+      SERVER_PORT: 22
+      SSH_USERNAME: staging-bot
+      SSH_KEY: ${{ secrets.SSH_KEY }}
+      TARGET_DIR: ${{ github.event.repository.name }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v1
+        id: gatsby-cache-folder
+        with:
+          path: .cache
+          key: ${{ runner.os }}-cache-gatsby
+          restore-keys: |
+            ${{ runner.os }}-cache-gatsby
+      - name: Gatsby Public Folder
+        uses: actions/cache@v1
+        id: gatsby-public-folder
+        with:
+          path: public/
+          key: ${{ runner.os }}-public-gatsby
+          restore-keys: |
+            ${{ runner.os }}-public-gatsby
+      - name: Build
+        run: npm run build
+      - name: Create folders
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SERVER_IP }}
+          username: ${{ env.SSH_USERNAME }}
+          key: ${{ env.SSH_KEY }}
+          port: 22
+          script: mkdir -p /var/www/staging.random.studio/${{ env.TARGET_DIR }}
+      - name: Deploy to server
+        if: github.ref == 'refs/heads/staging'
+        uses: AEnterprise/rsync-deploy@1.0.1
+        env:
+          ARGS: "-e -c -r --delete"
+          DEPLOY_KEY: ${{ env.SSH_KEY }}
+          USERNAME: ${{ env.SSH_USERNAME }}
+          FOLDER: "${{ env.BUILD_DIR }}/"
+          SERVER_DESTINATION: '/var/www/staging.random.studio/${{ env.TARGET_DIR }}/'
