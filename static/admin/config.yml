@@ -33,6 +33,7 @@ collections:
             name: siteUrl
             widget: string
             default: 'https://random.studio'
+
   - name: project
     label: Project
     folder: src/pages/projects
@@ -100,35 +101,6 @@ collections:
                 widget: boolean
                 default: false
                 hint: "Check this if the video has no audio for example."
-          - label: Caption
-            name: caption
-            required: false
-            widget: markdown
-          - label: Ratio
-            name: ratio
-            required: false
-            valueType: float
-            default: 0.00
-            widget: nonEmptyStringableNumber
-          - label: Width
-            name: width
-            required: false
-            valueType: float
-            widget: nonEmptyStringableNumber
-          - label: 'Margin Top'
-            name: marginTop
-            default: 0
-            valueType: float
-            widget: nonEmptyStringableNumber
-          - label: 'Margin Left'
-            name: marginLeft
-            default: 0
-            valueType: float
-            widget: nonEmptyStringableNumber
-      - label: Media
-        name: media
-        widget: list
-        fields:
           - label: Carousel
             name: carousel
             widget: list
@@ -158,26 +130,15 @@ collections:
                     name: caption
                     widget: markdown
                     required: false
-                  - label: 'Will autoplay'
-                    name: autoplay
-                    required: false
-                    default: true
-                    widget: hidden
-                  - label: 'Loop video'
-                    name: loops
-                    required: false
-                    default: true
-                    widget: hidden
                   - label: Muted
                     name: isMuted
                     required: false
                     default: true
                     widget: hidden
-          - label: 'Show carousel indicator'
-            name: showIndicator
-            widget: boolean
+          - label: Caption
+            name: caption
             required: false
-            default: false
+            widget: markdown
           - label: Ratio
             name: ratio
             required: false
@@ -199,6 +160,35 @@ collections:
             default: 0
             valueType: float
             widget: nonEmptyStringableNumber
+      - label: Credits
+        name: credits
+        widget: list
+        fields:
+          - label: Key
+            name: key
+            widget: text
+          - label: Value
+            name: value
+            widget: text
+      - label: OpenGraph tags
+        name: opengraph
+        widget: object
+        fields:
+          - label: 'Title'
+            name: ogTitle
+            required: false
+            valueType: string
+            widget: text
+          - label: 'Description'
+            name: ogDescription
+            required: false
+            valueType: string
+            widget: text
+          - label: 'Image'
+            name: ogImage
+            required: false
+            valueType: string
+            widget: image
       - label: Credits
         name: credits
         widget: list
@@ -229,35 +219,6 @@ collections:
             valueType: string
             widget: image
 
-      - label: Credits
-        name: credits
-        widget: list
-        fields:
-          - label: Key
-            name: key
-            widget: text
-          - label: Value
-            name: value
-            widget: text
-      - label: OpenGraph tags
-        name: opengraph
-        widget: object
-        fields:
-          - label: 'Title'
-            name: ogTitle
-            required: false
-            valueType: string
-            widget: text
-          - label: 'Description'
-            name: ogDescription
-            required: false
-            valueType: string
-            widget: text
-          - label: 'Image'
-            name: ogImage
-            required: false
-            valueType: string
-            widget: image
   - name: article
     label: Articles
     folder: src/site/articles
@@ -277,6 +238,7 @@ collections:
         name: articleUrl
         required: false
         widget: string
+
   - name: pages
     label: Pages
     files:
@@ -456,11 +418,6 @@ collections:
                 name: title
                 default: 'Studio Impressions'
                 widget: text
-              - label: 'Show carousel indicator'
-                name: showIndicator
-                widget: boolean
-                required: false
-                default: false
               - label: Images
                 name: images
                 widget: list

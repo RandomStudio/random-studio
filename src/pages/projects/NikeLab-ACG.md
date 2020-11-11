@@ -127,13 +127,6 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    carousel:
-      - type: video
-        autoplay: true
-        loops: true
-        isMuted: true
-        url: https://player.vimeo.com/external/213648564.hd.mp4?s=2c0b0355f24c52a34d377f46342e1d6b5abf6514&profile_id=119
-        caption: Test 3
 media:
   - showIndicator: true
     ratio: 10

@@ -7,25 +7,6 @@ import SEO from '../../components/SEO/SEO';
 import BackScrim from './BackScrim/BackScrim';
 
 export const pageQuery = graphql`
-  fragment Carousel on Media {
-    carousel {
-      url
-      caption
-      image {
-        childImageSharp {
-          fluid(maxHeight: 700, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-    marginLeft
-    marginTop
-    showIndicator
-    ratio
-    width
-  }
-
   query ProjectById($id: String!) {
     markdownRemark(id: { eq: $id }) {
       fields {
@@ -34,9 +15,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         intro
-        media {
-          ...Carousel
-        }
         content {
           caption
           image {
@@ -56,6 +34,20 @@ export const pageQuery = graphql`
             isMuted
             loops
             url
+          }
+          carousel {
+            video {
+              url
+              caption
+            }
+            caption
+            image {
+              childImageSharp {
+                fluid(maxHeight: 700, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           width
         }
@@ -99,6 +91,8 @@ const Project = ({
 
   const SEOImage =
     (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
+
+  console.log(project);
 
   return (
     <Layout>

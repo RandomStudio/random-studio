@@ -5,7 +5,20 @@ import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
 import Carousel from '../Carousel/Carousel';
 
-const ProjectDetail = ({ title, intro, content, credits, media }) => (
+const Caption = ({ marginLeft, caption }) => {
+  if (!caption) return null;
+
+  return (
+    <div
+      className={styles.caption}
+      style={{ marginLeft: !marginLeft && '1.4rem' }}
+    >
+      {caption}
+    </div>
+  );
+};
+
+const ProjectDetail = ({ title, intro, content, credits }) => (
   <div className={styles.project}>
     <h1 className={styles.title}>
       <ReactMarkdown escapeHtml={false} source={title} />
@@ -15,71 +28,76 @@ const ProjectDetail = ({ title, intro, content, credits, media }) => (
     </div>
     {(content || []).map(
       (
-        { caption, image, marginLeft, marginTop, ratio, video, width },
+        {
+          caption,
+          image,
+          marginLeft,
+          marginTop,
+          ratio,
+          video,
+          width,
+          carousel,
+        },
         index,
-      ) => (
-        <div
-          key={index}
-          className={styles.item}
-          style={{
-            '--marginTop': `${marginTop}%`,
-            '--marginLeft': `${marginLeft}%`,
-            '--width': `${width}%`,
-          }}
-        >
-          {(video && video.url) || image ? (
-            <>
-              {video && video.url ? (
-                <ProjectVideo video={video} ratio={ratio} />
-              ) : image.childImageSharp ? (
-                <Img fluid={image.childImageSharp.fluid} />
-              ) : (
-                <img alt="" src={image} />
-              )}
-              {caption && (
-                <div
-                  className={styles.caption}
-                  style={{ marginLeft: !marginLeft && '1.4rem' }}
-                >
-                  {caption}
-                </div>
-              )}
-            </>
-          ) : (
-            <div className={styles.text}>
-              <ReactMarkdown source={caption} />
-            </div>
-          )}
-        </div>
-      ),
-    )}
-    <div>
-      {media &&
-        media.map(
-          (
-            { marginTop, marginLeft, width, showIndicator, carousel },
-            index,
-          ) => {
-            return (
-              <div
-                className={styles.carousel}
-                key={index}
-                style={{
-                  '--carouselMarginTop': `${marginTop}%`,
-                  '--carouselMarginLeft': `${marginLeft}%`,
-                  '--carouselWidth': `${width}%`,
-                }}
-              >
+      ) => {
+        const contentType = () => {
+          switch (true) {
+            case Boolean(video && video.url):
+              return (
+                <>
+                  <ProjectVideo video={video} ratio={ratio} />
+                  <Caption marginLeft={marginLeft} caption={caption} />
+                </>
+              );
+
+            case Boolean(image && image.childImageSharp):
+              return (
+                <>
+                  <Img fluid={image.childImageSharp.fluid} />
+                  <Caption marginLeft={marginLeft} caption={caption} />
+                </>
+              );
+
+            case Boolean(image):
+              return (
+                <>
+                  <img alt="" src={image} />
+                  <Caption marginLeft={marginLeft} caption={caption} />
+                </>
+              );
+
+            case Boolean(carousel):
+              return (
                 <Carousel
                   className={styles.carouselWrapper}
-                  showIndicator={showIndicator}
                   carousel={carousel}
                 />
-              </div>
-            );
-          },
-        )}
-    </div>
+              );
+
+            default:
+              return (
+                <div className={styles.text}>
+                  <ReactMarkdown source={caption} />
+                </div>
+              );
+          }
+        };
+
+        return (
+          <div
+            key={index}
+            className={styles.item}
+            style={{
+              '--marginTop': `${marginTop}%`,
+              '--marginLeft': `${marginLeft}%`,
+              '--width': `${width}%`,
+            }}
+          >
+            {contentType()}
+          </div>
+        );
+      },
+    )}
 
     <footer className={styles.credits}>
       {(credits || []).map(({ key, value }) => (

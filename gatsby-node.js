@@ -65,8 +65,26 @@ exports.createSchemaCustomization = ({ actions }) => {
       position: Int
     }
 
+    type Video {
+      url: String
+      caption: String
+    }
+
+    type CarouselElement {
+      image: File @fileByRelativePath
+      video: Video
+      caption: String
+    }
+
+    type Content {
+      image: File @fileByRelativePath
+      video: Video
+      carousel: [CarouselElement]
+    }
+
     type MarkdownRemarkFrontmatter implements Node {
       articles: [Article]
+      content: [Content]
     }
   `;
 

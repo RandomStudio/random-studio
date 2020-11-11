@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
 import FluidImage from '../FluidImage/FluidImage';
 
-const Carousel = ({ carousel, showIndicator, title, objectFit, className }) => {
+const Carousel = ({ carousel, title, objectFit, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -20,7 +20,7 @@ const Carousel = ({ carousel, showIndicator, title, objectFit, className }) => {
 
   return (
     <div className={`${styles.carousel} ${className}`}>
-      {carousel.map(({ url, image, caption }, index) => (
+      {carousel.map(({ video, image, caption }, index) => (
         <div
           className={`
             ${styles.image}
@@ -32,8 +32,8 @@ const Carousel = ({ carousel, showIndicator, title, objectFit, className }) => {
             className={`${carousel.length > 1 && styles.hasMultiple}`}
             onClick={handleNext}
           >
-            {url ? (
-              <video src={url} muted loop autoPlay playsInline />
+            {video.url ? (
+              <video src={video.url} muted loop autoPlay playsInline />
             ) : (
               <FluidImage image={image} objectFit={objectFit} loading="auto" />
             )}
@@ -43,7 +43,7 @@ const Carousel = ({ carousel, showIndicator, title, objectFit, className }) => {
       ))}
       <div className={styles.indicatorWrapper}>
         {title && <p>{title}</p>}
-        {showIndicator && carousel.length > 1 && (
+        {carousel.length > 1 && (
           <span>{`${currentIndex + 1} of ${carousel.length}`}</span>
         )}
       </div>
@@ -55,14 +55,12 @@ Carousel.propTypes = {
   className: PropTypes.string,
   carousel: PropTypes.arrayOf(PropTypes.object).isRequired,
   objectFit: PropTypes.oneOf(['contain', 'cover']),
-  showIndicator: PropTypes.bool,
   title: PropTypes.string,
 };
 
 Carousel.defaultProps = {
   className: '',
   objectFit: 'cover',
-  showIndicator: false,
   title: '',
 };
 
