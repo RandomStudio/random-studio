@@ -36,10 +36,7 @@ export const pageQuery = graphql`
             url
           }
           carousel {
-            video {
-              url
-              caption
-            }
+            url
             caption
             image {
               childImageSharp {

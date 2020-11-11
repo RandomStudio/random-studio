@@ -20,7 +20,7 @@ const Carousel = ({ carousel, title, objectFit, className }) => {
 
   return (
     <div className={`${styles.carousel} ${className}`}>
-      {carousel.map(({ video, image, caption }, index) => (
+      {carousel.map(({ url, image, caption }, index) => (
         <div
           className={`
             ${styles.image}
@@ -32,8 +32,8 @@ const Carousel = ({ carousel, title, objectFit, className }) => {
             className={`${carousel.length > 1 && styles.hasMultiple}`}
             onClick={handleNext}
           >
-            {video.url ? (
-              <video src={video.url} muted loop autoPlay playsInline />
+            {url ? (
+              <video src={url} muted loop autoPlay playsInline />
             ) : (
               <FluidImage image={image} objectFit={objectFit} loading="auto" />
             )}

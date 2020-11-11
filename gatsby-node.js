@@ -65,20 +65,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       position: Int
     }
 
-    type Video {
-      url: String
-      caption: String
-    }
-
     type CarouselElement {
       image: File @fileByRelativePath
-      video: Video
+      url: String
       caption: String
     }
 
     type Content {
       image: File @fileByRelativePath
-      video: Video
       carousel: [CarouselElement]
     }
 
