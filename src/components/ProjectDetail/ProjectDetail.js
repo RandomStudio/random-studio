@@ -10,6 +10,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
   const contentType = ({
     caption,
     image,
+    alt,
     marginLeft,
     marginTop,
     video,
@@ -28,7 +29,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
       case Boolean(image && image.childImageSharp):
         return (
           <>
-            <Img fluid={image.childImageSharp.fluid} />
+            <Img alt={alt} fluid={image.childImageSharp.fluid} />
             <Caption marginLeft={marginLeft} caption={caption} />
           </>
         );
@@ -71,6 +72,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
         {
           caption,
           image,
+          alt,
           marginLeft,
           marginTop,
           video,
@@ -91,6 +93,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
             {contentType({
               caption,
               image,
+              alt,
               marginLeft,
               marginTop,
               video,
