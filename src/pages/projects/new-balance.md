@@ -126,4 +126,3 @@ credits:
   - key: 'With:'
     value: 'Fiction Factory — Prototype Construction, InventDesign — LED partner'
 ---
-

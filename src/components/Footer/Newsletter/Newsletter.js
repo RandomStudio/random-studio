@@ -11,6 +11,7 @@ const Newsletter = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError('');
+
     try {
       const response = await fetch(
         `https://random-studio.netlify.app/.netlify/functions/addToNewsletterList?email=${email}`,
@@ -26,15 +27,16 @@ const Newsletter = () => {
       console.log(responseError);
       setError('Failed to submit. Please check email and try again.');
     }
+
     return false;
   };
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
-      <p className={styles.title}>Newsletter</p>
+      <p className={styles.title}>{'Newsletter'}</p>
       {isSuccessful ? (
         <>
-          <div className={styles.input}>Thank you!</div>
+          <div className={styles.input}>{'Thank you!'}</div>
           <div className={styles.submit}>
             <img
               alt="success"

@@ -19,6 +19,7 @@ const trackIsCurrentlyMuted = (isCurrentlyMuted) => {
     label: 'Video Player Interactions',
   });
 };
+
 const ProjectVideo = ({
   video: {
     autoplay,
@@ -71,8 +72,8 @@ const ProjectVideo = ({
         isMuted={isAlwaysMuted || isCurrentlyMuted}
         autoPlays={isPlaying}
       />
-      {hasControls &&
-        (hasPlayed ? (
+      {hasControls
+        && (hasPlayed ? (
           <div className={styles.videoControls}>
             <button type="button" onClick={handleTapPlayPause}>
               {isPlaying ? 'Pause' : 'Play'}
@@ -84,7 +85,7 @@ const ProjectVideo = ({
             )}
           </div>
         ) : (
-          <div className={styles.beforeFirstPlay}>Play video</div>
+          <div className={styles.beforeFirstPlay}>{'Play video'}</div>
         ))}
     </div>
   );

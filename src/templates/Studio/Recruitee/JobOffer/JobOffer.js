@@ -13,7 +13,7 @@ const JobOffer = ({
       <header>
         <strong>{title}</strong>
         <button className={styles.closeButton} onClick={closeOpenOffer}>
-            &times;
+          &times;
         </button>
       </header>
 
@@ -24,7 +24,7 @@ const JobOffer = ({
         href={careers_apply_url}
         className={styles.applyButton}
       >
-          Apply for this position
+        {'Apply for this position'}
       </OutboundLink>
     </div>
   </section>

@@ -145,4 +145,3 @@ opengraph:
   ogImage: /img/65445113_893189817697135_6332105627778678784_n.png
   ogTitle: "Louis Vuitton X –\_ Exhibition Space and Filters"
 ---
-

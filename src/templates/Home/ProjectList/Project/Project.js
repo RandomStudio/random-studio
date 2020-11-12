@@ -56,4 +56,5 @@ Project.propTypes = {
   title: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
 };
+
 export default Project;

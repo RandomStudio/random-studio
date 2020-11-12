@@ -10,17 +10,13 @@ const BackScrim = ({ returnUrl }) => {
   useEffect(() => {
     const intersection = intersectionRef.current;
     let observer = null;
-    const supportsIntersectionObserver = (('IntersectionObserver' in window)
-      || (
-        ('IntersectionObserverEntry' in window)
-        && ('isIntersecting' in window.IntersectionObserverEntry.prototype)
-      )
-    );
+    const supportsIntersectionObserver = 'IntersectionObserver' in window
+      || ('IntersectionObserverEntry' in window
+        && 'isIntersecting' in window.IntersectionObserverEntry.prototype);
 
     const onScroll = () => {
-      const hasScrolledToBottom = (
-        (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight
-      );
+      const hasScrolledToBottom = window.innerHeight
+        + window.pageYOffset >= document.body.offsetHeight;
       setIsVisible(hasScrolledToBottom);
     };
 
@@ -42,13 +38,15 @@ const BackScrim = ({ returnUrl }) => {
     };
   }, []);
 
-  const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible}`;
+  const scrimClassNames = `${styles.backScrim} ${
+    isVisible && styles.isVisible
+  }`;
 
   return (
     <>
       <div className={scrimClassNames}>
         <Link to={returnUrl} className={styles.backButton}>
-          Back to projects
+          {'Back to projects'}
         </Link>
       </div>
       <div ref={intersectionRef} className={styles.intersectionLine} />

@@ -131,4 +131,3 @@ credits:
       Robert Hoffman — Product Design, Artis Engineering — Fabrication and
       Engineering
 ---
-

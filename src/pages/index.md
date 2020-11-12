@@ -120,7 +120,7 @@ projects:
       marginTop: -28
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
-    project: "Bottega Veneta Takeover at Saks Fifth Avenue "
+    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60

@@ -10,8 +10,7 @@ const Footer = ({ address, email, phone }) => {
   const emailRef = useRef();
   const { setIsToastVisible } = useContext(AppContext);
 
-  const handleClickEmail = (event) =>
-    copyStringToClipboard(event, email, setIsToastVisible);
+  const handleClickEmail = event => copyStringToClipboard(event, email, setIsToastVisible);
 
   return (
     <footer className={styles.footer}>
@@ -50,6 +49,6 @@ Footer.propTypes = {
   address: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-}
+};
 
 export default Footer;
