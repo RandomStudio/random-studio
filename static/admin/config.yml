@@ -189,35 +189,6 @@ collections:
             required: false
             valueType: string
             widget: image
-      - label: Credits
-        name: credits
-        widget: list
-        fields:
-          - label: Key
-            name: key
-            widget: text
-          - label: Value
-            name: value
-            widget: text
-      - label: OpenGraph tags
-        name: opengraph
-        widget: object
-        fields:
-          - label: 'Title'
-            name: ogTitle
-            required: false
-            valueType: string
-            widget: text
-          - label: 'Description'
-            name: ogDescription
-            required: false
-            valueType: string
-            widget: text
-          - label: 'Image'
-            name: ogImage
-            required: false
-            valueType: string
-            widget: image
 
   - name: article
     label: Articles
