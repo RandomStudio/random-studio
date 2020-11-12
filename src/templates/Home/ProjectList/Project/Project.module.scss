@@ -2,6 +2,10 @@
   max-width: 17em;
   line-height: 1.375;
   padding: 16px 22px 0;
+
+  & span {
+    display: inline-block;
+  }
 }
 
 .thumbnail {

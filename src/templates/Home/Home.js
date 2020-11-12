@@ -58,6 +58,7 @@ export const pageQuery = graphql`
         projects {
           caption
           project
+          titleWidth
           thumbnail {
             ratio
             marginLeft
@@ -96,6 +97,8 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
     };
   });
 
+  console.log(frontmatter);
+
   return (
     <Layout>
       <SEO pathName={fields.slug} />
@@ -108,7 +111,7 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
         {...frontmatter}
         articles={articles}
         projects={(frontmatter.projects || [])
-          .map(({ caption, project: projectTitle, thumbnail }) => {
+          .map(({ caption, project: projectTitle, thumbnail, titleWidth }) => {
             const project = edges.find(
               ({
                 node: {
@@ -124,6 +127,7 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
             return {
               slug: project.node.fields.slug,
               title: caption || project.node.frontmatter.title,
+              titleWidth,
               thumbnail,
             };
           })

@@ -10,7 +10,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
     <div className={styles.statement}>
       <ReactMarkdown escapeHtml={false} source={intro} />
     </div>
-    {projects.map(({ thumbnail, title, slug }, index) => {
+    {projects.map(({ thumbnail, title, titleWidth, slug }, index) => {
       const article = (articles || []).find(({ position }) => position === index + 1);
 
       return (
@@ -20,6 +20,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
               middle={middle}
               thumbnail={thumbnail}
               title={title}
+              titleWidth={titleWidth}
               slug={slug}
               index={index}
               projects={projects}

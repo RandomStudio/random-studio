@@ -1,11 +1,10 @@
 ---
 templateKey: Project
-title: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
-titleWidth: 55
+title: A store takeover at Place Vendôme <span>for the launch of Chanel's new watch</span>
 intro: >-
   For its biggest ever global watch launch, Chanel enlisted us to create the
   scenography for a temporary takeover of its flagship boutique on Place Vendôme
-  in Paris. 
+  in Paris.
 
 
   The new J12 watch series revolves around encounters and decisive moments, and needed a fittingly momentous occasion to celebrate its launch. Through shaping the colour and light inside the building, our design aimed to hijack visitors’ sense of time, giving them a surreal and sensory experience inspired and directed by a series of short campaign films.
@@ -80,7 +79,7 @@ content:
       The illusion reached its peak in the Grand Salon: the iconic view out onto
       Place Vendôme was replaced by a simulation that allowed the room to travel
       through time, slipping between warm sunsets, foggy mornings and glowing
-      afternoon skies. 
+      afternoon skies.
 
 
       The sun traces through the sky, shadows dart across the square and cars race backwards, as different Chanel muses invite visitors into their favourite memories in short films screened on the walls.
