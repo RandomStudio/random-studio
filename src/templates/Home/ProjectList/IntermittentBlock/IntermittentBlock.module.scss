@@ -9,7 +9,7 @@
     font-size: var(--font-small);
     font-weight: lighter;
     text-transform: uppercase;
-    color: #a7423f;
+    color: var(--red);
   }
 
   a {
@@ -24,7 +24,7 @@
       left: 0;
       height: 2px;
       width: 100%;
-      background-color: #000;
+      background-color: var(--black);
     }
   }
 }
