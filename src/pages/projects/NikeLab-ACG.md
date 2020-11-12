@@ -113,54 +113,6 @@ content:
       complex, it takes too long for people to master.”"
     marginLeft: 0
     marginTop: 0
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    carousel:
-      - type: image
-        image: /img/1.jpg
-        caption: Image 1
-      - type: video
-        isMuted: true
-        url: https://player.vimeo.com/external/213649062.hd.mp4?s=140f4865386d492a2fab57cdf81ebb7594dc975e&profile_id=119
-        caption: Video 1
-media:
-  - showIndicator: true
-    ratio: 10
-    marginTop: 10
-    marginLeft: 0
-    carousel:
-      - type: images
-        image: /img/1.jpg
-        caption: new image in carouse
-      - type: videos
-        autoplay: true
-        loops: true
-        isMuted: true
-        url: https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
-        caption: video in new carousel
-    width: 50
-  - showIndicator: false
-    ratio: 0
-    marginTop: 0
-    marginLeft: 0
-    carousel:
-      - type: images
-        image: /img/3.jpg
-        caption: carousel 2
-      - type: videos
-        autoplay: true
-        loops: true
-        isMuted: true
-        url: https://player.vimeo.com/external/213647084.hd.mp4?s=0dac195a0cb8cccd43117dd36bc6a16095d91be5&profile_id=119
-        caption: video 2 carousel 2
-    width: 30
 credits:
   - key: "For:"
     value: NikeLab Global
