@@ -20,7 +20,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/474983745.hd.mp4?s=a402d59aec7d280571da04e8849f3eaa049ccf4e&profile_id=174
-    ratio: 54
     marginTop: 0
     marginLeft: 0
   - video:
@@ -29,7 +28,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: Parallel Archaeologies is an ancient portal that has opened up at the
@@ -43,7 +41,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     image: /img/geoffrey_lillemon_parallel_archaeologies_interface.gif
@@ -54,7 +51,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -10
     marginLeft: 61
     image: /img/parallel_archaeologies_geoffrey_lillemon_well_portrait.png
@@ -65,7 +61,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 11
     image: /img/geoffrey_lillemon_parallel_archaeologies_centaur_and_mermaid.gif
@@ -76,7 +71,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: It all started when The Gods assembled a select group of ancient
@@ -90,7 +84,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 49
     image: /img/geoffrey_lillemon_parallel_archaeologies_internet_egg_and_cylinder.gif
@@ -101,7 +94,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -6
     marginLeft: 6
     image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
@@ -112,7 +104,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -4
     marginLeft: 55
     image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01547.png
@@ -123,7 +114,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: >-
@@ -138,7 +128,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 6
     image: /img/geoffrey_lillemon_parallel_archaeologies_ancient_avatar_04.gif
@@ -149,7 +138,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -13
     marginLeft: 54
     image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
@@ -160,7 +148,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: >-
@@ -180,7 +167,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 6
     image: /img/geoffrey_lillemon_parallel_archaeologies_loadinga.gif
@@ -191,7 +177,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 50
     marginTop: -23
     marginLeft: 54
     image: /img/geoffrey_lillemon_parallel_archaeologies_code_06.gif
@@ -202,7 +187,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 8
     marginLeft: 18
     image: /img/geoffrey_lillemon_parallel_archaeologies_endless.gif
@@ -213,7 +197,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: This creation myth is tied to a visual language that makes its audience
@@ -228,7 +211,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 10
     marginLeft: 56
     image: /img/parallel_archaeologies_geoffrey_lillemon_well.png
@@ -239,7 +221,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -9
     marginLeft: 5
     image: /img/geoffrey_lillemon_parallel_archaeologies_cinekid.gif

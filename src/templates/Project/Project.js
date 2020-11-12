@@ -26,7 +26,6 @@ export const pageQuery = graphql`
           }
           marginTop
           marginLeft
-          ratio
           video {
             autoplay
             hasControls

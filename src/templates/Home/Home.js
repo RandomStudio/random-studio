@@ -59,7 +59,6 @@ export const pageQuery = graphql`
           caption
           project
           thumbnail {
-            ratio
             marginLeft
             marginTop
             video
@@ -85,9 +84,9 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
   const fields = markdownRemark ? markdownRemark.fields : {};
   const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
 
-  const articles = (frontmatter.articles || []).map(relation => {
+  const articles = (frontmatter.articles || []).map((relation) => {
     const article = (allArticles.edges || []).find(
-      item => item.node.frontmatter.title === relation.article,
+      (item) => item.node.frontmatter.title === relation.article,
     );
 
     return {
@@ -129,7 +128,7 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
               thumbnail,
             };
           })
-          .filter(project => project !== null)}
+          .filter((project) => project !== null)}
       />
       <Footer {...frontmatter} />
     </Layout>

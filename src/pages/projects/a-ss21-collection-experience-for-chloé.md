@@ -2,7 +2,7 @@
 templateKey: Project
 title: A Live Spectacle for Chloé's SS21 Collection
 intro: >-
-  
+
 
   For their SS21 collection, we worked with Natacha Ramsay-Levi from Chloé to imagine and create a live spectacle spilling through the streets of Paris, its grand finale unfolding against the backdrop of the Palais de Tokyo.
 
@@ -16,7 +16,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/464600042.hd.mp4?s=cbcc8003cf744bacbe72c14f3d94dfb0c33e9685&profile_id=175
-    ratio: 60
     marginTop: 0
     marginLeft: 0
   - video:
@@ -25,7 +24,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: Centering around the themes of sisterhood and togetherness that
@@ -40,7 +38,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 3
     image: /img/screenshot-selection-cam-2.00_00_56_04.still006.jpg
@@ -51,7 +48,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 3
     marginLeft: 3
     image: /img/screenshot-selection-cam-1.00_09_35_10.still138.jpg
@@ -62,7 +58,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 3
     marginLeft: 3
     image: /img/screenshot-selection-cam-4.00_00_13_21.still007.jpg
@@ -73,7 +68,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: "Guests could experience the same event from near and far: a small
@@ -86,7 +80,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     image: /img/look_32.5.jpg
@@ -97,7 +90,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -2
     marginLeft: 54
     image: /img/look_22_23_24.5.jpg
@@ -108,7 +100,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -5
     marginLeft: 2
     image: /img/look_19.1.jpg
@@ -119,7 +110,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 7
     marginLeft: 49
     image: /img/look_13.3.jpg
@@ -130,7 +120,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: On location, three zoom camera towers were erected, each capturing the
@@ -145,7 +134,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467765638.hd.mp4?s=7a8e9bd544ab38fde8c1ceae3cb94359b0d33a62&profile_id=175
-    ratio: 100
     marginTop: 0
     marginLeft: 0
     width: 32
@@ -156,7 +144,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467765889.hd.mp4?s=9f95266a30f9b60bcdb61845a47ec394415c070d&profile_id=175
-    ratio: 100
     marginTop: -32
     marginLeft: 34
     width: 32
@@ -167,7 +154,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467766121.hd.mp4?s=0d0ffd36469e7c50ccf1b6fff0bb56721050097d&profile_id=175
-    ratio: 120
     marginTop: -32
     marginLeft: 68
     width: 32
@@ -177,7 +163,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: The cameras traced small moments of beauty in the journeys of the
@@ -192,7 +177,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467279976.sd.mp4?s=d1c9760a1a6d2f965feca97fe8ce17a2dc161114&profile_id=165
-    ratio: 50
     marginTop: 0
     marginLeft: 0
     width: 32
@@ -204,7 +188,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467280061.sd.mp4?s=a82ba57df77ef93207a2226dbc434de955a53685&profile_id=165
-    ratio: 62
     marginTop: -16
     marginLeft: 34
     width: 32
@@ -215,7 +198,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/467280089.sd.mp4?s=5e8f5d121d8dbf610ccb676186040cd2fc1d3cf7&profile_id=165
-    ratio: 120
     marginTop: -20
     marginLeft: 68
     width: 32

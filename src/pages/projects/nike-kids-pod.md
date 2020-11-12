@@ -13,7 +13,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
@@ -25,7 +24,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: "The Kid’s Pod is a game station with a difference: you are the
@@ -39,7 +37,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 9
     image: /img/RND04373.jpg
@@ -50,7 +47,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 8
     marginLeft: 40
     image: /img/RND04908.jpg
@@ -61,7 +57,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: Inspired by the spontaneity and energy of parkour, the possibilities of
@@ -75,7 +70,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     image: /img/RND05020.jpg
@@ -86,7 +80,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -12
     marginLeft: 66
     image: /img/RND04762.ARW.jpg
@@ -97,7 +90,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -15
     marginLeft: 15
     image: /img/RND05036.jpg
@@ -108,7 +100,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 17
     marginLeft: 26
     image: /img/RND04938.ARW.jpg

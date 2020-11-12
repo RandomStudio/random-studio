@@ -6,7 +6,7 @@ title: |+
 intro: >-
   What would it be like to trade perspectives with someone? To look at the world
   through their eyes? And how can you unlock a story by piecing together
-  multiple perspectives? 
+  multiple perspectives?
 
 
   This was on our mind for our third collaboration with Fred Perry x Raf Simons.
@@ -18,7 +18,6 @@ intro: >-
 content:
   - marginLeft: 0
     marginTop: 0
-    ratio: 52.7
     video:
       autoplay: true
       hasControls: true
@@ -37,7 +36,6 @@ content:
       individuals, becoming part of the scene.
     marginLeft: 0
     marginTop: 12
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -55,7 +53,6 @@ content:
   - image: /img/2.jpg
     marginLeft: 63
     marginTop: -15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -65,7 +62,6 @@ content:
   - image: /img/3.jpg
     marginLeft: 0
     marginTop: -6
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -74,7 +70,6 @@ content:
     width: 55
   - marginLeft: 15
     marginTop: 18
-    ratio: 52.7
     video:
       autoplay: true
       hasControls: true
@@ -91,7 +86,6 @@ content:
       our attention.
     marginLeft: 0
     marginTop: 15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -100,7 +94,6 @@ content:
   - image: /img/4.jpg
     marginLeft: 8.75
     marginTop: 18
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -110,7 +103,6 @@ content:
   - image: /img/6.jpg
     marginLeft: 0
     marginTop: 15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -120,7 +112,6 @@ content:
   - image: /img/5.jpg
     marginLeft: 50
     marginTop: -47.5
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -130,7 +121,6 @@ content:
   - image: /img/7.png
     marginLeft: 15
     marginTop: 35
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -140,7 +130,6 @@ content:
   - image: /img/8.png
     marginLeft: 15
     marginTop: 5
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -155,7 +144,6 @@ content:
       model in front of the space they are standing in.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -176,8 +164,8 @@ credits:
       Fred Perry
   - key: 'Role:'
     value: |-
-      Concept Development, Creative Direction, 
-      Art Direction, Photography, Animation, 
+      Concept Development, Creative Direction,
+      Art Direction, Photography, Animation,
       Web Development, Casting, Styling
 opengraph:
   ogDescription: >-

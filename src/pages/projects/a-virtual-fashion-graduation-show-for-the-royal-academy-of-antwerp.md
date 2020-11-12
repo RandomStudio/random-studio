@@ -2,9 +2,9 @@
 templateKey: Project
 title: A virtual fashion graduation show for the Royal Academy of Antwerp
 intro: >-
-  
 
-  The Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?  
+
+  The Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?
 
 
   How to bring the energy and experience of the physical runway to the screen? We used the opportunity to think forward to the possibilities of future fashion shows.
@@ -16,7 +16,6 @@ content:
       isMuted: false
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435652852.hd.mp4?s=d10035c317549307cef8a736f73780e5874d11ee&profile_id=175
-    ratio: 56.25
     marginTop: 0
     marginLeft: 10
     width: 80
@@ -27,7 +26,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: ""
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: " In our vision, physicality remains at the heart of this digital
@@ -41,7 +39,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435064815.hd.mp4?s=84db06d8d715f208d73000cf0495013cdd6c531e&profile_id=175
-    ratio: 100
     marginTop: 1
     marginLeft: 0
     width: 35
@@ -53,7 +50,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435063792.hd.mp4?s=bd83969c3814ba167f96c529f90f4371e5cd6d39&profile_id=175
-    ratio: 100
     marginTop: -16
     marginLeft: 58
     width: 32
@@ -65,7 +61,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435062801.hd.mp4?s=e0a03851d9f80149f4eeb358ec6dd1d19f91cd72&profile_id=175
-    ratio: 100
     marginTop: 1
     marginLeft: 10
     width: 34
@@ -76,7 +71,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 100
     marginTop: 10
     marginLeft: 0
     caption: >-
@@ -95,7 +89,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435086471.hd.mp4?s=0d4092840ef71fc00de026f72214e6773e8aaf13&profile_id=175
-    ratio: 125
     marginTop: 0
     marginLeft: 52
     width: 29
@@ -107,7 +100,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435086013.hd.mp4?s=25b626643fdd88ede376f668625869a9726ffd69&profile_id=175
-    ratio: 125
     marginTop: -13
     marginLeft: 8
     width: 29
@@ -119,7 +111,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435085566.hd.mp4?s=e1929f921cc32cdab71d54509f10eaf13f4df5a8&profile_id=175
-    ratio: 125
     marginTop: -9
     marginLeft: 60
     width: 30
@@ -130,7 +121,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: Challenging the perception of a model, the student’s work shimmies its
@@ -143,7 +133,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435711437.hd.mp4?s=5425ac1abc6dc48fbe8623ffba6db810846fb030&profile_id=175
-    ratio: 83
     marginTop: 1
     marginLeft: 4
     width: 37
@@ -155,7 +144,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435711772.hd.mp4?s=467b7e08096787a969a4f6b0c87db0805b39bf18&profile_id=175
-    ratio: 83
     marginTop: -6
     marginLeft: 60
     width: 34
@@ -167,7 +155,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435711991.hd.mp4?s=281b97c0386ca4087c95977df6d7f80b0f3c04bb&profile_id=174
-    ratio: 83
     marginTop: -4
     marginLeft: 10
     width: 36
@@ -178,7 +165,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: The choreographies of the real-life fashion take on a new shape on the
@@ -190,7 +176,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 20
     image: /img/ads_sc_1.jpg
@@ -202,7 +187,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: We additionally supported the master students by providing them with a
@@ -215,7 +199,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 11
     marginLeft: 0
     image: /img/ads_sc_2.jpg
@@ -227,7 +210,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -4
     marginLeft: 54
     image: /img/ads_sc_3.jpg
@@ -240,7 +222,6 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/435093737.hd.mp4?s=452655353c59abcb523ca1ae53f71f2a46393983&profile_id=169
-    ratio: 56
     marginTop: 10
     marginLeft: 10
     width: 80

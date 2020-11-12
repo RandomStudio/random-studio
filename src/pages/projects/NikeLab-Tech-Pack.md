@@ -11,7 +11,6 @@ priority: 9
 content:
   - marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: false
       hasControls: true
@@ -27,7 +26,6 @@ content:
       store and the people in it.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -39,7 +37,6 @@ content:
     image: /img/adf0ae082ed5045aa38b9d943f324f8a.ike-milaan-01.jpg
     marginLeft: 5
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -49,7 +46,6 @@ content:
   - image: /img/67626df4e2cce1b37e48ebf46165b19e.ike-milaan-36.jpg
     marginLeft: 65
     marginTop: -30
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -58,7 +54,6 @@ content:
     width: 30
   - marginLeft: 5
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -73,7 +68,6 @@ content:
       the other side streamed and analysed live footage from the floor below.
     marginLeft: 0
     marginTop: -10
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -88,7 +82,6 @@ content:
     image: /img/39150f647860ae4507bf8cd37ad0e0ce.ike-milaan-18-jpg.jpg
     marginLeft: 50
     marginTop: -10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -101,7 +94,6 @@ content:
     image: /img/46ed7dce04a766dda23738a9873fc8c8.ike-milaan-28-jpg.jpg
     marginLeft: 10
     marginTop: -28
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -115,7 +107,6 @@ content:
       the workshop, a space where customisation events could be held.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -124,7 +115,6 @@ content:
   - image: /img/a47b8da915c5bb367243d4d399c8ab1e.ike-milaan-30.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -134,7 +124,6 @@ content:
   - image: /img/89af27d8031439f32ae732750e897e75.ike-milaan-19.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -144,7 +133,6 @@ content:
   - image: /img/fcaca4d9c0c5053e311fd2fbeca63006.ike-milaan-23.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false

@@ -12,7 +12,6 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
     image,
     marginLeft,
     marginTop,
-    ratio,
     video,
     width,
     carousel,
@@ -21,7 +20,7 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
       case Boolean(video && video.url):
         return (
           <>
-            <ProjectVideo video={video} ratio={ratio} />
+            <ProjectVideo video={video} />
             <Caption marginLeft={marginLeft} caption={caption} />
           </>
         );
@@ -74,7 +73,6 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
           image,
           marginLeft,
           marginTop,
-          ratio,
           video,
           width,
           carousel,
@@ -95,7 +93,6 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
               image,
               marginLeft,
               marginTop,
-              ratio,
               video,
               width,
               carousel,

@@ -13,7 +13,6 @@ content:
   - image: /img/200304_bottegaveneta_saks__067.jpg
     marginLeft: 10
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -23,7 +22,6 @@ content:
   - image: /img/200304_bottegaveneta_saks__062_2.jpg
     marginLeft: 0
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -33,7 +31,6 @@ content:
   - image: /img/200304_BottegaVeneta_Saks__072 Copy.jpg
     marginLeft: 53
     marginTop: -59
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -43,7 +40,6 @@ content:
   - image: /img/Center 6.jpg
     marginLeft: 15
     marginTop: 44
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -63,7 +59,6 @@ content:
       to create hybrid, gravity-defying spatial designs.
     marginLeft: 0
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -72,7 +67,6 @@ content:
   - image: /img/1stF_Pillar_2.jpg
     marginLeft: 15
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -82,7 +76,6 @@ content:
   - image: /img/1stF_Pillar_1.jpg
     marginLeft: 55
     marginTop: -40
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -92,7 +85,6 @@ content:
   - image: /img/200304_BottegaVeneta_Saks__018.jpg
     marginLeft: 0
     marginTop: 12
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -102,7 +94,6 @@ content:
   - image: /img/200304_BottegaVeneta_Saks__020.jpg
     marginLeft: 60
     marginTop: -15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -119,7 +110,6 @@ content:
       mutated parts of the ten-floor building.
     marginLeft: 0
     marginTop: 11
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -128,7 +118,6 @@ content:
   - image: /img/200304_BottegaVeneta_Saks__047.jpg
     marginLeft: 13
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -138,7 +127,6 @@ content:
   - image: /img/200304_BottegaVeneta_Saks__043.jpg
     marginLeft: 63
     marginTop: 8
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -148,7 +136,6 @@ content:
   - image: /img/200304_BottegaVeneta_Saks__040.jpg
     marginLeft: 0
     marginTop: -17
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
