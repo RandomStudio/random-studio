@@ -85,7 +85,7 @@ const Studio = ({
   location,
 }) => {
   const introRef = useRef();
-  const [themeClass, setThemeClass] = useState();
+  const [themeClass, setThemeClass] = useState(styles.darkTheme);
   const { width } = useWindowSize();
 
   useEffect(() => {
