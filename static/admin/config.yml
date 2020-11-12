@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   identity_url: "https://random.studio/netlify-identity"
   gateway_url: "https://random.studio/netlify-git"
-  branch: chanel-homepage-title-linebreak
+  branch: batch-branch-#1
   base_url: https://random.studio
 media_folder: static/img
 public_folder: /img
@@ -33,6 +33,7 @@ collections:
             name: siteUrl
             widget: string
             default: 'https://random.studio'
+
   - name: project
     label: Project
     folder: src/pages/projects
@@ -100,6 +101,40 @@ collections:
                 widget: boolean
                 default: false
                 hint: "Check this if the video has no audio for example."
+          - label: Carousel
+            name: carousel
+            widget: list
+            types:
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Image
+                    name: image
+                    required: false
+                    widget: image
+                  - label: Image Caption
+                    name: caption
+                    widget: markdown
+                    required: false
+              - label: Video
+                name: video
+                required: false
+                widget: object
+                fields:
+                  - label: 'Video URL'
+                    name: url
+                    required: false
+                    widget: text
+                  - label: Video Caption
+                    name: caption
+                    widget: markdown
+                    required: false
+                  - label: Muted
+                    name: isMuted
+                    required: false
+                    default: true
+                    widget: hidden
           - label: Caption
             name: caption
             required: false
@@ -154,6 +189,7 @@ collections:
             required: false
             valueType: string
             widget: image
+
   - name: article
     label: Articles
     folder: src/site/articles
@@ -173,6 +209,7 @@ collections:
         name: articleUrl
         required: false
         widget: string
+
   - name: pages
     label: Pages
     files:
@@ -287,17 +324,17 @@ collections:
             name: email
             widget: text
       - file: src/pages/studio.md
-        label: "Studio page"
+        label: 'Studio page'
         name: studio
         fields:
-          - label: "Template key"
+          - label: 'Template key'
             name: templateKey
             widget: hidden
             default: studio
           - label: Title
             name: title
             widget: string
-            default: "Random Studio"
+            default: 'Random Studio'
           - label: 'Intro Block'
             name: introBlock
             widget: list
@@ -324,7 +361,7 @@ collections:
               - label: Title
                 name: title
                 widget: text
-              - label: "List of Services"
+              - label: 'List of Services'
                 name: list
                 widget: list
                 fields:
@@ -337,14 +374,14 @@ collections:
                   - label: Image
                     name: image
                     widget: image
-          - label: "Our Skillset"
+          - label: 'Our Skillset'
             name: skillset
             widget: list
             field:
               label: Skill
               name: skill
               widget: string
-          - label: "Studio impression"
+          - label: 'Studio impression'
             name: studioImpression
             widget: object
             fields:
@@ -352,11 +389,6 @@ collections:
                 name: title
                 default: 'Studio Impressions'
                 widget: text
-              - label: 'Show carousel indicator'
-                name: showIndicator
-                widget: boolean
-                required: false
-                default: false
               - label: Images
                 name: images
                 widget: list

@@ -17,11 +17,21 @@
 }
 
 .image {
-  height: 100%;
   width: 100%;
+  opacity: 0;
+
+  &:not(:first-of-type) {
+    position: absolute;
+    bottom: 0;
+  }
+
+  & video {
+    width: 100%;
+  }
 
   &.imageVisible {
-    animation: showSlide 1.2s;
+    transition: opacity 1.2s;
+    opacity: 1;
   }
 
   a {
@@ -62,16 +72,5 @@
         display: none;
       }
     }
-  }
-}
-
-@keyframes showSlide {
-  from {
-    display: block;
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }

@@ -35,6 +35,17 @@ export const pageQuery = graphql`
             loops
             url
           }
+          carousel {
+            url
+            caption
+            image {
+              childImageSharp {
+                fluid(maxHeight: 700, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
           width
         }
         credits {
@@ -77,6 +88,8 @@ const Project = ({
 
   const SEOImage =
     (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
+
+  console.log(project);
 
   return (
     <Layout>
