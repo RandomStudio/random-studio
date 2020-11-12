@@ -63,8 +63,8 @@ projects:
       width: 43
     project: A studio sun system with light-artist Arnout Meijer
     caption: A studio sun system with light-artist Arnout Meijer
-  - caption: A store takeover at Place Vendôme <span>for the launch of Chanel's new watch</span>
-    project: A store takeover at Place Vendôme <span>for the launch of Chanel's new watch</span>
+  - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+    project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     thumbnail:
       image: /img/thumbnail_chanel-1-.png
       marginLeft: 50
