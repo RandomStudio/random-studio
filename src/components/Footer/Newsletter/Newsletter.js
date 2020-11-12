@@ -6,9 +6,9 @@ const Newsletter = () => {
   const [error, setError] = useState('');
   const [isSuccessful, setIsSuccessful] = useState(false);
 
-  const handleInput = (e) => setEmail(e.target.value);
+  const handleInput = e => setEmail(e.target.value);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
     setError('');
 

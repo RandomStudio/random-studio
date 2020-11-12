@@ -24,7 +24,7 @@ const ProjectList = ({
               middle={middle}
               thumbnail={thumbnail}
               title={title}
-              titleWidth={titleWidth}
+              titleWidth
               slug={slug}
               index={index}
               projects={projects}

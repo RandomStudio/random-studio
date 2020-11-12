@@ -88,8 +88,6 @@ const Project = ({
 
   const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
 
-  console.log(project);
-
   return (
     <Layout>
       <SEO

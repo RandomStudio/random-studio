@@ -6,15 +6,15 @@ import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
 import Carousel from '../Carousel/Carousel';
 import Caption from './Caption/Caption';
 
-const ProjectDetail = ({ title, intro, content, credits }) => {
+const ProjectDetail = ({
+  title, intro, content, credits,
+}) => {
   const contentType = ({
     caption,
     image,
     alt,
     marginLeft,
-    marginTop,
     video,
-    width,
     carousel,
   }) => {
     switch (true) {
@@ -60,27 +60,27 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
   };
 
   return (
-  <div className={styles.project}>
-    <h1 className={styles.title}>
-      <ReactMarkdown escapeHtml={false} source={title} />
-    </h1>
-    <div className={styles.intro}>
-      <ReactMarkdown escapeHtml={false} source={intro} />
-    </div>
-    {(content || []).map(
-      (
-        {
-          caption,
-          image,
-          alt,
-          marginLeft,
-          marginTop,
-          video,
-          width,
-          carousel,
-        },
-        index,
-      ) => (
+    <div className={styles.project}>
+      <h1 className={styles.title}>
+        <ReactMarkdown escapeHtml={false} source={title} />
+      </h1>
+      <div className={styles.intro}>
+        <ReactMarkdown escapeHtml={false} source={intro} />
+      </div>
+      {(content || []).map(
+        (
+          {
+            caption,
+            image,
+            alt,
+            marginLeft,
+            marginTop,
+            video,
+            width,
+            carousel,
+          },
+          index,
+        ) => (
           <div
             key={index}
             className={styles.item}
@@ -95,27 +95,25 @@ const ProjectDetail = ({ title, intro, content, credits }) => {
               image,
               alt,
               marginLeft,
-              marginTop,
               video,
-              width,
               carousel,
             })}
           </div>
-        )
-    )}
+        ),
+      )}
 
-    <footer className={styles.credits}>
-      {(credits || []).map(({ key, value }) => (
-        <ul key={`${key}-${value}`} className="">
-          <li>{key}</li>
-          <li>
-            <ReactMarkdown source={value} />
-          </li>
-        </ul>
-      ))}
-    </footer>
-  </div>
-)
+      <footer className={styles.credits}>
+        {(credits || []).map(({ key, value }) => (
+          <ul key={`${key}-${value}`} className="">
+            <li>{key}</li>
+            <li>
+              <ReactMarkdown source={value} />
+            </li>
+          </ul>
+        ))}
+      </footer>
+    </div>
+  );
 };
 
 export default ProjectDetail;

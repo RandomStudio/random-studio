@@ -42,7 +42,7 @@ const Project = ({ thumbnail, title, slug }) => (
       <div
         className={styles.title}
         style={{
-          marginLeft: !thumbnail.marginLeft && '1.4rem'
+          marginLeft: !thumbnail.marginLeft && '1.4rem',
         }}
       >
         <ReactMarkdown escapeHtml={false} source={title} />

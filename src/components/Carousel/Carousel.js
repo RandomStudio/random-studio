@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
 import FluidImage from '../FluidImage/FluidImage';
 
-const Carousel = ({ carousel, title, objectFit, className }) => {
+const Carousel = ({
+  carousel, title, objectFit, className,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
