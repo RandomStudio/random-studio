@@ -58,7 +58,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
-  // Allow articles to be empty fro GraphQL MD
+
   const typeDefs = `
     type Article {
       article: String
