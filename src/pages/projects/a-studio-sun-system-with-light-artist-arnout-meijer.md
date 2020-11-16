@@ -22,7 +22,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 70
+    marginTop: 0
     marginLeft: 0
     caption: How can a space connect with its surroundings? Can we use technology to
       craft something organic? How can we work with light as a material? With

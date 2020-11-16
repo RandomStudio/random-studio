@@ -21,7 +21,7 @@ content:
       compositions. ‘Perpetuum’ was conceived as a kinetic, revolving landscape
       that invites people to explore, pause and reflect.
     marginLeft: 0
-    marginTop: -6
+    marginTop: 0
     video:
       autoplay: false
       hasControls: false

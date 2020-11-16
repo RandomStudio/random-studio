@@ -24,7 +24,7 @@ content:
       artwork, animals, sculptures, selfies – and whatever other surprises among
       the digital debris may surface.
     marginLeft: 0
-    marginTop: 60
+    marginTop: 0
     video:
       autoplay: false
       hasControls: false
@@ -42,7 +42,7 @@ content:
     width: 50
   - image: /img/cinekid10.jpg
     marginLeft: 58
-    marginTop: 25
+    marginTop: -10
     video:
       autoplay: false
       hasControls: false
@@ -89,7 +89,7 @@ content:
     width: 45
   - image: /img/cinekid3.jpg
     marginLeft: 0
-    marginTop: 27
+    marginTop: -8
     video:
       autoplay: false
       hasControls: false
