@@ -37,7 +37,9 @@ const Carousel = ({
             {url ? (
               <video src={url} muted loop autoPlay playsInline />
             ) : (
-              <FluidImage image={image} objectFit={objectFit} loading="auto" />
+              image && (
+                <FluidImage image={image} objectFit={objectFit} loading="auto" />
+              )
             )}
             {caption && <ReactMarkdown escapeHtml={false} source={caption} />}
           </div>
