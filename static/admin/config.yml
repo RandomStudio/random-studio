@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   identity_url: "https://random.studio/netlify-identity"
   gateway_url: "https://random.studio/netlify-git"
-  branch: master
+  branch: batch-branch-1
   base_url: https://random.studio
 media_folder: static/img
 public_folder: /img
