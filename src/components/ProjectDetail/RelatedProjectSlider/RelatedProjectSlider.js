@@ -12,13 +12,17 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
       {blockTitle && <h4>{blockTitle}</h4>}
 
       <div className={styles.worksWrapper}>
-        {projects.map(({ image, title, subtitle, slug }) => (
+        {projects.map(({
+          image, title, subtitle, slug,
+        }) => (
           <Link key={title} className={styles.card} to={slug}>
-            <FluidImage
-              objectFit="cover"
-              image={image}
-              className={styles.imageWrapper}
-            />
+            {image && (
+              <FluidImage
+                objectFit="cover"
+                image={image}
+                className={styles.imageWrapper}
+              />
+            )}
             {title && <p>{title}</p>}
             {subtitle && <p>{subtitle}</p>}
           </Link>
