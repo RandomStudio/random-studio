@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image/withIEPolyfill';
 import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
 import Carousel from '../Carousel/Carousel';
