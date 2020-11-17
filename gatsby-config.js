@@ -81,7 +81,7 @@ const gatsbyConfig = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         identityWidgetInitConfig: {
-          APIUrl: 'https://random.studio/netlify-identity',
+          APIUrl: 'https://random.studio/.netlify/identity',
         },
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
