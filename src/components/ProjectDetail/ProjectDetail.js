@@ -1,14 +1,37 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
 import Carousel from '../Carousel/Carousel';
 import Caption from './Caption/Caption';
+import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 
 const ProjectDetail = ({
-  title, intro, content, credits,
+  title,
+  intro,
+  content,
+  credits,
+  relatedProjects,
+  allProjects,
 }) => {
+  const relatedWork = relatedProjects
+    && (relatedProjects.projects || []).map(relatedProject => {
+      const foundProject = allProjects.length
+        && allProjects.find(
+          ({
+            node: {
+              frontmatter: { title },
+            },
+          }) => relatedProject.project === title,
+        );
+
+      return {
+        ...relatedProject,
+        slug: foundProject ? foundProject.node.fields.slug : null,
+      };
+    });
+
   const contentType = ({
     caption,
     image,
@@ -102,6 +125,11 @@ const ProjectDetail = ({
         ),
       )}
 
+      <RelatedProjectSlider
+        blockTitle={relatedProjects && relatedProjects.blockTitle}
+        projects={relatedWork}
+      />
+
       <footer className={styles.credits}>
         {(credits || []).map(({ key, value }) => (
           <ul key={`${key}-${value}`} className="">
@@ -114,6 +142,23 @@ const ProjectDetail = ({
       </footer>
     </div>
   );
+};
+
+ProjectDetail.propTypes = {
+  title: PropTypes.string.isRequired,
+  intro: PropTypes.string.isRequired,
+  content: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  credits: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  relatedProjects: PropTypes.shape({
+    blockTitle: PropTypes.string,
+    projects: PropTypes.arrayOf(PropTypes.object),
+  }),
+  allProjects: PropTypes.arrayOf(PropTypes.object),
+};
+
+ProjectDetail.defaultProps = {
+  allProjects: [],
+  relatedProjects: null,
 };
 
 export default ProjectDetail;

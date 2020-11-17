@@ -8,6 +8,21 @@ import BackScrim from './BackScrim/BackScrim';
 
 export const pageQuery = graphql`
   query ProjectById($id: String!) {
+    allProjects: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Project" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+
     markdownRemark(id: { eq: $id }) {
       fields {
         slug
@@ -48,6 +63,21 @@ export const pageQuery = graphql`
           }
           width
         }
+        relatedProjects {
+          blockTitle
+          projects {
+            title
+            subtitle
+            image {
+              childImageSharp {
+                fluid(maxWidth: 3840, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            project
+          }
+        }
         credits {
           key
           value
@@ -68,14 +98,17 @@ export const pageQuery = graphql`
   }
 `;
 
-const Project = ({
-  data: {
-    markdownRemark: {
-      fields: { slug },
-      frontmatter: project,
+const Project = (props) => {
+  const {
+    data: {
+      allProjects: { edges: allProjects },
+      markdownRemark: {
+        fields: { slug },
+        frontmatter: project,
+      },
     },
-  },
-}) => {
+  } = props;
+
   const { opengraph } = project;
 
   const returnSlug = `#${slug}`;
@@ -98,7 +131,7 @@ const Project = ({
         socialDescription={socialDescription}
         socialTitle={socialTitle}
       />
-      <ProjectDetail {...project} />
+      <ProjectDetail {...project} allProjects={allProjects} />
       {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
     </Layout>
   );

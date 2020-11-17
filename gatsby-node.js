@@ -82,5 +82,22 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `;
 
-  createTypes(typeDefs);
+  const typeDefsRelatedProject = `
+    type RelatedProject {
+      title: String
+      subtitle: String
+      project: String!
+    }
+
+    type RelatedProjectBlock {
+      blockTitle: String
+      projects: [RelatedProject]
+    }
+
+    type MarkdownRemarkFrontmatter implements Node {
+      relatedProjects: RelatedProjectBlock
+    }
+  `;
+
+  createTypes(`${typeDefs} ${typeDefsRelatedProject}`);
 };
