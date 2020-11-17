@@ -1,7 +1,5 @@
 backend:
   name: git-gateway
-  identity_url: "https://random.studio/netlify-identity"
-  gateway_url: "https://random.studio/netlify-git"
   branch: master
   base_url: https://random.studio
 media_folder: static/img
@@ -18,7 +16,7 @@ collections:
             name: key
             widget: hidden
             default: settings
-          - label: 'Site title'
+          - label: 'Site title§'
             name: title
             widget: string
             default: 'Random Studio'
