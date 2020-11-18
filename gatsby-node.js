@@ -59,17 +59,45 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
-  // Allow articles to be empty fro GraphQL MD
-  const typeDefsArticles = `
+  const typeDefs = `
     type Article {
       article: String
       position: Int
     }
 
+    type CarouselElement {
+      image: File @fileByRelativePath
+      url: String
+      caption: String
+    }
+
+    type Content {
+      image: File @fileByRelativePath
+      carousel: [CarouselElement]
+    }
+
     type MarkdownRemarkFrontmatter implements Node {
       articles: [Article]
+      content: [Content]
     }
-  `
+  `;
 
-  createTypes(typeDefsArticles)
-}
+  const typeDefsRelatedProject = `
+    type RelatedProject {
+      title: String
+      subtitle: String
+      project: String!
+    }
+
+    type RelatedProjectBlock {
+      blockTitle: String
+      projects: [RelatedProject]
+    }
+
+    type MarkdownRemarkFrontmatter implements Node {
+      relatedProjects: RelatedProjectBlock
+    }
+  `;
+
+  createTypes(`${typeDefs} ${typeDefsRelatedProject}`);
+};

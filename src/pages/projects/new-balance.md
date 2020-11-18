@@ -19,7 +19,6 @@ content:
   - caption: ''
     marginLeft: 10
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -38,7 +37,6 @@ content:
       which is the only light source for the curved interior.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -47,7 +45,6 @@ content:
   - image: /img/shot_01_nb.jpeg
     marginLeft: 0
     marginTop: 2
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -57,7 +54,6 @@ content:
   - image: /img/shot_02_NB.jpeg
     marginLeft: 55
     marginTop: -20
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -67,7 +63,6 @@ content:
   - image: /img/shot_03_NB.jpeg
     marginLeft: 6
     marginTop: -11
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -95,7 +90,6 @@ content:
       wonder connected directly with the product in their hands.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -103,7 +97,6 @@ content:
       loops: true
   - marginLeft: 15
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -117,7 +110,6 @@ content:
       walls render the boundaries of the space invisible, too.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -134,4 +126,3 @@ credits:
   - key: 'With:'
     value: 'Fiction Factory — Prototype Construction, InventDesign — LED partner'
 ---
-

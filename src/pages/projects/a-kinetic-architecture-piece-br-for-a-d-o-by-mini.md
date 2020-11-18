@@ -7,7 +7,6 @@ intro: >-
 content:
   - marginLeft: 5
     marginTop: 10
-    ratio: 66.66
     video:
       autoplay: true
       hasControls: false
@@ -22,8 +21,7 @@ content:
       compositions. ‘Perpetuum’ was conceived as a kinetic, revolving landscape
       that invites people to explore, pause and reflect.
     marginLeft: 0
-    marginTop: -6
-    ratio: 0
+    marginTop: 0
     video:
       autoplay: false
       hasControls: false
@@ -33,7 +31,6 @@ content:
   - image: /img/ADO_Perpetuum_24.jpg
     marginLeft: 0
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -43,7 +40,6 @@ content:
   - image: /img/ADO_Perpetuum_15.jpg
     marginLeft: 60
     marginTop: -16
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -53,7 +49,6 @@ content:
   - image: /img/ADO_Perpetuum_52.jpg
     marginLeft: 6
     marginTop: -14
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -63,7 +58,6 @@ content:
   - image: /img/ADO_Perpetuum_55.jpg
     marginLeft: 0
     marginTop: 18
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -79,7 +73,6 @@ content:
        Drifting through this ‘third’ space, the viewer’s experience changes from moment to moment, enhanced by an ambient patchwork of urban sounds.
     marginLeft: 0
     marginTop: 12
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -89,7 +82,6 @@ content:
   - image: /img/ADO_Perpetuum_40.jpg
     marginLeft: 10
     marginTop: 12
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -105,7 +97,7 @@ credits:
       development
   - key: 'With:'
     value: |-
-      Matthijs Munnik, Vincent de Belleval, Showman Fabricators, 
+      Matthijs Munnik, Vincent de Belleval, Showman Fabricators,
       Daniel Seung Lee – Photography
 opengraph:
   ogImage: /img/ADO_Perpetuum_9.jpg

@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
 import styles from './Project.module.scss';
 import ProjectVideo from '../../ProjectVideo/ProjectVideo';
+import useWindowSize from '../../../../utils/hooks/useWindowSize';
 
 const Project = ({ thumbnail, title, slug }) => (
   <React.Fragment key={slug}>
@@ -20,6 +21,7 @@ const Project = ({ thumbnail, title, slug }) => (
       to={slug || '#'}
     >
       <div className={styles.media}>
+        {/* eslint-disable-next-line no-nested-ternary */}
         {thumbnail.video ? (
           <ProjectVideo
             video={{
@@ -29,7 +31,6 @@ const Project = ({ thumbnail, title, slug }) => (
               loops: true,
               url: thumbnail.video,
             }}
-            ratio={thumbnail.ratio}
           />
         ) : !!thumbnail.image && thumbnail.image.childImageSharp ? (
           <Img loading="auto" fluid={thumbnail.image.childImageSharp.fluid} />
@@ -40,7 +41,9 @@ const Project = ({ thumbnail, title, slug }) => (
 
       <div
         className={styles.title}
-        style={{ marginLeft: !thumbnail.marginLeft && '1.4rem' }}
+        style={{
+          marginLeft: !thumbnail.marginLeft && '1.4rem',
+        }}
       >
         <ReactMarkdown escapeHtml={false} source={title} />
       </div>
@@ -53,4 +56,5 @@ Project.propTypes = {
   title: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
 };
+
 export default Project;

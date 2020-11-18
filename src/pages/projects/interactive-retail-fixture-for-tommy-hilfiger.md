@@ -8,7 +8,7 @@ intro: >-
   While the Tommy Hilfiger Kids’ Collection is extensive, it is usually only
   available in a handful of their stores. Without taking up too much floor space
   or introducing new stock, how could you make people aware that this collection
-  exists? Through play. 
+  exists? Through play.
 
 
   We drew on our two areas of specialisation – experiential installations and
@@ -19,14 +19,12 @@ thumbnail:
   image: /img/thumbnail_kidsmachine.png
   marginLeft: 5
   marginTop: 0
-  ratio: 66.666666666
   video: >-
     https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
   width: 45
 content:
   - marginLeft: 5
     marginTop: 10
-    ratio: 56.2
     video:
       autoplay: true
       hasControls: true
@@ -42,7 +40,6 @@ content:
       slider and sound effects are emitted from a visible speaker grille.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -51,7 +48,6 @@ content:
   - image: /img/TommyKidsMachine-13.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -66,7 +62,6 @@ content:
       feedback on-screen, accompanied by lively light animations and sounds.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -75,7 +70,6 @@ content:
   - image: /img/TommyKidsMachine-08.jpg
     marginLeft: 50
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -85,7 +79,6 @@ content:
   - image: /img/TommyKidsMachine-05.jpg
     marginLeft: 0
     marginTop: -21
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -95,7 +88,6 @@ content:
   - image: /img/TommyKidsMachine-09.jpg
     marginLeft: 65
     marginTop: -9
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -113,7 +105,6 @@ content:
       values of the collection itself.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -122,7 +113,6 @@ content:
   - image: /img/TommyKidsMachine-12.jpg
     marginLeft: 10
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -132,7 +122,6 @@ content:
   - image: /img/TommyKidsMachine-11.jpg
     marginLeft: 50
     marginTop: -18
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -147,7 +136,6 @@ content:
       with interactive installations.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -161,4 +149,3 @@ credits:
       Creative Direction, Art Direction, Experience Design, Engineering, Fixture
       Design
 ---
-

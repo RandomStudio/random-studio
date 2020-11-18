@@ -10,12 +10,10 @@ thumbnail:
   image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
   marginLeft: 5
   marginTop: 0
-  ratio: 0
   width: 36
 content:
   - marginLeft: 15
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -34,7 +32,6 @@ content:
       Simons collaboration.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -43,7 +40,6 @@ content:
   - image: /img/eb12bfba419e63ba1d43cb67c42d6353.jpg
     marginLeft: 10
     marginTop: 1
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -52,7 +48,6 @@ content:
     width: 35
   - marginLeft: 54
     marginTop: -15
-    ratio: 100
     video:
       autoplay: true
       hasControls: false
@@ -62,7 +57,6 @@ content:
         https://player.vimeo.com/external/353981290.hd.mp4?s=925cef8f8bc61799e5a613282950f911f247ceb5&profile_id=175
   - marginLeft: 15
     marginTop: 10
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -78,7 +72,6 @@ content:
       collection is hanging.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -88,7 +81,6 @@ content:
     image: /img/9794e60b7b6160b3cdf6ec727781aafc.jpg
     marginLeft: 7
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -102,7 +94,6 @@ content:
     image: /img/6ee80f5bb3e1fe6aac71fb234e60a10a.jpg
     marginLeft: 63
     marginTop: -15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -112,7 +103,6 @@ content:
   - image: /img/c16cad212e2faeddcb486ad3dcc0d7e2.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -122,7 +112,6 @@ content:
   - image: /img/89cc32f552f626abf45611d9ee92f562.jpg
     marginLeft: 55
     marginTop: -10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -132,7 +121,6 @@ content:
   - image: /img/category_page_banner_-_desktop.jpg
     marginLeft: 0
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -151,4 +139,3 @@ opengraph:
   ogImage: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
   ogTitle: Interactive lookbook for Fred Perry x Raf Simons
 ---
-

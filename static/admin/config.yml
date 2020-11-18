@@ -31,6 +31,7 @@ collections:
             name: siteUrl
             widget: string
             default: 'https://random.studio'
+
   - name: project
     label: Project
     folder: src/pages/projects
@@ -63,9 +64,14 @@ collections:
             name: image
             required: false
             widget: image
+          - label: Alt tag image
+            name: alt
+            required: false
+            widget: string
           - label: Video
             name: video
             required: false
+            collapsed: true
             widget: object
             fields:
               - label: 'Video URL'
@@ -98,16 +104,44 @@ collections:
                 widget: boolean
                 default: false
                 hint: "Check this if the video has no audio for example."
+          - label: Carousel
+            name: carousel
+            widget: list
+            types:
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Image
+                    name: image
+                    required: false
+                    widget: image
+                  - label: Image Caption
+                    name: caption
+                    widget: markdown
+                    required: false
+              - label: Video
+                name: video
+                required: false
+                widget: object
+                fields:
+                  - label: 'Video URL'
+                    name: url
+                    required: false
+                    widget: text
+                  - label: Video Caption
+                    name: caption
+                    widget: markdown
+                    required: false
+                  - label: Muted
+                    name: isMuted
+                    required: false
+                    default: true
+                    widget: hidden
           - label: Caption
             name: caption
             required: false
             widget: markdown
-          - label: Ratio
-            name: ratio
-            required: false
-            valueType: float
-            default: 0.00
-            widget: nonEmptyStringableNumber
           - label: Width
             name: width
             required: false
@@ -123,6 +157,42 @@ collections:
             default: 0
             valueType: float
             widget: nonEmptyStringableNumber
+      - label: Related Projects
+        name: relatedProjects
+        widget: object
+        required: false
+        fields:
+          - label: Block Title
+            name: blockTitle
+            widget: string
+            required: false
+          - label: Projects
+            name: projects
+            widget: list
+            required: false
+            fields:
+              - label: Title
+                name: title
+                widget: string
+                required: false
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Image
+                name: image
+                widget: image
+                required: true
+              - label: Project
+                name: project
+                hint: 'This is the url assignment for the related project'
+                widget: relation
+                required: true
+                collection: 'project'
+                searchFields: ['title']
+                # valueField: '{{slug}}' Currently not supproted
+                valueField: 'title'
+                displayFields: ['title']
       - label: Credits
         name: credits
         widget: list
@@ -152,6 +222,7 @@ collections:
             required: false
             valueType: string
             widget: image
+
   - name: article
     label: Articles
     folder: src/site/articles
@@ -171,6 +242,7 @@ collections:
         name: articleUrl
         required: false
         widget: string
+
   - name: pages
     label: Pages
     files:
@@ -231,12 +303,6 @@ collections:
                     name: video
                     required: false
                     widget: text
-                  - label: Ratio
-                    name: ratio
-                    required: false
-                    valueType: float
-                    default: 0.00
-                    widget: nonEmptyStringableNumber
                   - label: Width
                     name: width
                     required: false
@@ -285,17 +351,17 @@ collections:
             name: email
             widget: text
       - file: src/pages/studio.md
-        label: "Studio page"
+        label: 'Studio page'
         name: studio
         fields:
-          - label: "Template key"
+          - label: 'Template key'
             name: templateKey
             widget: hidden
             default: studio
           - label: Title
             name: title
             widget: string
-            default: "Random Studio"
+            default: 'Random Studio'
           - label: 'Intro Block'
             name: introBlock
             widget: list
@@ -322,7 +388,7 @@ collections:
               - label: Title
                 name: title
                 widget: text
-              - label: "List of Services"
+              - label: 'List of Services'
                 name: list
                 widget: list
                 fields:
@@ -335,14 +401,14 @@ collections:
                   - label: Image
                     name: image
                     widget: image
-          - label: "Our Skillset"
+          - label: 'Our Skillset'
             name: skillset
             widget: list
             field:
               label: Skill
               name: skill
               widget: string
-          - label: "Studio impression"
+          - label: 'Studio impression'
             name: studioImpression
             widget: object
             fields:
@@ -350,11 +416,6 @@ collections:
                 name: title
                 default: 'Studio Impressions'
                 widget: text
-              - label: 'Show carousel indicator'
-                name: showIndicator
-                widget: boolean
-                required: false
-                default: false
               - label: Images
                 name: images
                 widget: list

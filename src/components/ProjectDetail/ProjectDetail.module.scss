@@ -2,8 +2,9 @@
   width: 100%;
   font-weight: 100;
   line-height: 1.3;
-  background: #d7d7d4;
+  background: var(--off-white);
   padding: 80px 0;
+  overflow-x: hidden;
 }
 
 .item {
@@ -13,7 +14,6 @@
 
   video {
     display: block;
-    position: absolute;
     width: 100%;
   }
 
@@ -44,12 +44,6 @@
   margin-top: 1.2931578947em;
 }
 
-.caption {
-  font-size: 16px;
-  line-height: 1.3;
-  padding: 22px;
-}
-
 .intro,
 .text {
   p + p {
@@ -74,6 +68,34 @@
     li:first-of-type {
       max-width: 115px;
       padding-right: 38px;
+    }
+  }
+
+  &.creditsAdjustedSpacing {
+    margin-top: 100px;
+    padding-top: 0;
+  }
+}
+
+.carouselWrapper {
+  flex: 1;
+  max-width: 88%;
+  margin-left: 6%;
+
+  @media (min-width: 48rem) {
+    max-width: 50%;
+    margin-left: auto;
+
+    // Package specific class
+    [class=' gatsby-image-wrapper'] {
+      height: 760px;
+    }
+  }
+
+  @media (min-width: 60rem) {
+    // Package specific class
+    [class=' gatsby-image-wrapper'] {
+      height: 1060px;
     }
   }
 }
@@ -105,6 +127,13 @@
     margin-bottom: 0;
     margin-left: var(--marginLeft);
     width: var(--width);
+  }
+
+  .carousel {
+    margin-top: var(--carouselMarginTop);
+    margin-bottom: 0;
+    margin-left: var(--carouselMarginLeft);
+    width: var(--carouselWidth);
   }
 
   .caption {
@@ -162,6 +191,10 @@
   .credits {
     max-width: 768px;
     margin: 0 auto 8%;
+
+    &.creditsAdjustedSpacing {
+      margin-top: 120px;
+    }
   }
 }
 

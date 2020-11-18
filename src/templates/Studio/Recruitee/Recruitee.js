@@ -20,19 +20,18 @@ const Recruitee = ({ location }) => {
     // If fetch is not supported, we will not show any job offers
     // IE11 and lower
     if (
-      window.fetch &&
-      (!recruiteeData.offers || !recruiteeData.offers.length)
+      window.fetch
+      && (!recruiteeData.offers || !recruiteeData.offers.length)
     ) {
       fetch('https://career.recruitee.com/api/c/23038/widget/?widget=true')
         .then(res => res.json())
         .then(json => {
           setRecruiteeData(json);
 
-          if (location.hash && (json.offers && json.offers.length)) {
+          if (location.hash && json.offers && json.offers.length) {
             const selectedOffer = json.offers.find(
-              offer =>
-                offer.id ===
-                parseInt(location.hash.substring(1, location.hash.length), 10),
+              offer => offer.id
+                === parseInt(location.hash.substring(1, location.hash.length), 10),
             );
 
             if (selectedOffer) {
@@ -58,7 +57,7 @@ const Recruitee = ({ location }) => {
   return (
     <>
       <aside className={styles.recruitee}>
-        <p className={styles.title}>Open Positions</p>
+        <p className={styles.title}>{'Open Positions'}</p>
         <ul className={styles.list}>
           {recruiteeData.offers.map(offer => (
             <li className={styles.item} key={offer.id}>

@@ -14,23 +14,24 @@ const Layout = ({ children }) => {
   const toastVisiblity = useToastVisibility();
 
   return (
-  <AppProvider value={toastVisiblity}>
-    <>
-      <Navigation />
-      <div className={styles.container}>{children}</div>
-      <Navigation />
-      <div
-        className={styles.backgroundTransition}
-        style={{
-          backgroundColor:
-            backgroundTransitionColors[
-              Math.floor(Math.random() * backgroundTransitionColors.length)
-            ],
-        }}
-      />
-      <Toast copy="Copied to clipboard" />
-    </>
-  </AppProvider>
-)};
+    <AppProvider value={toastVisiblity}>
+      <>
+        <Navigation />
+        <div className={styles.container}>{children}</div>
+        <Navigation />
+        <div
+          className={styles.backgroundTransition}
+          style={{
+            backgroundColor:
+              backgroundTransitionColors[
+                Math.floor(Math.random() * backgroundTransitionColors.length)
+              ],
+          }}
+        />
+        <Toast copy="Copied to clipboard" />
+      </>
+    </AppProvider>
+  );
+};
 
 export default Layout;

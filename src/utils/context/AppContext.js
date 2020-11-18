@@ -2,11 +2,13 @@ import React from 'react';
 
 const appDefaultState = {
   isToastVisible: false,
-  setIsToastVisible: () => {}
-}
+  setIsToastVisible: () => {},
+};
 
 const AppContext = React.createContext(appDefaultState);
 const AppProvider = AppContext.Provider;
 const AppConsumer = AppContext.Consumer;
 
-export { appDefaultState, AppContext, AppConsumer, AppProvider };
+export {
+  appDefaultState, AppContext, AppConsumer, AppProvider,
+};

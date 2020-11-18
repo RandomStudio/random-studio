@@ -13,10 +13,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
+    alt: Nike kids pod immersive installation at House of Innovation in Paris
     width: 101
     caption: Photo By Nike
   - video:
@@ -25,7 +25,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: "The Kid’s Pod is a game station with a difference: you are the
@@ -39,10 +38,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 9
     image: /img/RND04373.jpg
+    alt: Nike kids pod move to play
     width: 37
   - video:
       autoplay: false
@@ -50,10 +49,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 8
     marginLeft: 40
     image: /img/RND04908.jpg
+    alt: Nike kids pod body as a controller
     width: 60
   - video:
       autoplay: false
@@ -61,7 +60,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: Inspired by the spontaneity and energy of parkour, the possibilities of
@@ -75,10 +73,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 0
     marginLeft: 0
     image: /img/RND05020.jpg
+    alt: Nike kids pod kinect realtime sensors
     width: 50
   - video:
       autoplay: false
@@ -86,10 +84,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -12
     marginLeft: 66
     image: /img/RND04762.ARW.jpg
+    alt: Nike kids pod interactive installation
     width: 34
   - video:
       autoplay: false
@@ -97,10 +95,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: -15
     marginLeft: 15
     image: /img/RND05036.jpg
+    alt: Nike kids pod digital phisical interactive installation
     width: 41
   - video:
       autoplay: false
@@ -108,10 +106,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    ratio: 0
     marginTop: 17
     marginLeft: 26
     image: /img/RND04938.ARW.jpg
+    alt: Nike kids pod experimential marketing
     width: 46
 credits:
   - key: "For:"

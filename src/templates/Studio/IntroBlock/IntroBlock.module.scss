@@ -4,8 +4,8 @@
   transform-style: preserve-3d;
 
   @media (max-width: 960px) {
-    background: #000;
-    color: #fff;
+    background: var(--black);
+    color: var(--white);
   }
 
   @media (min-width: 768px) {

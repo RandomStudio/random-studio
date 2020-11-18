@@ -7,7 +7,7 @@ import ServiceList from './ServiceList/ServiceList';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import Recruitee from './Recruitee/Recruitee';
-import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
+import Carousel from '../../components/Carousel/Carousel';
 import SkillBlock from './SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
 
@@ -85,7 +85,7 @@ const Studio = ({
   location,
 }) => {
   const introRef = useRef();
-  const [themeClass, setThemeClass] = useState();
+  const [themeClass, setThemeClass] = useState(styles.darkTheme);
   const { width } = useWindowSize();
 
   useEffect(() => {
@@ -138,9 +138,9 @@ const Studio = ({
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee location={location} />
-          <ImageCarousel
+          <Carousel
             className={styles.carouselWrapper}
-            images={frontmatter.studioImpression.images}
+            carousel={frontmatter.studioImpression.images}
             showIndicator={frontmatter.studioImpression.showIndicator}
             title={frontmatter.studioImpression.title}
           />

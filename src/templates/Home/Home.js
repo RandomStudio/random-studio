@@ -59,7 +59,6 @@ export const pageQuery = graphql`
           caption
           project
           thumbnail {
-            ratio
             marginLeft
             marginTop
             video

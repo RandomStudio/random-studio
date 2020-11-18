@@ -8,6 +8,13 @@
   src: url('/fonts/LarishNeueSemibold-Regular.woff2') format('woff2');
 }
 
+:root {
+  --black: #000000;
+  --white: #f8f8f8;
+  --off-white: #eee;
+  --red: #a7423f;
+}
+
 html,
 body {
   min-height: 100%;

@@ -9,11 +9,7 @@ exports.wrapRootElement = ({ element, pathname }) => {
   const helmetContext = {};
   helmetContextMap.set(pathname, helmetContext);
 
-  return (
-    <HelmetProvider context={helmetContext}>
-      {element}
-    </HelmetProvider>
-  );
+  return <HelmetProvider context={helmetContext}>{element}</HelmetProvider>;
 };
 
 exports.onRenderBody = ({
@@ -23,6 +19,7 @@ exports.onRenderBody = ({
   pathname,
 }) => {
   const helmetContext = helmetContextMap.get(pathname);
+
   if (helmetContext) {
     setHtmlAttributes(helmetContext.helmet.htmlAttributes.toComponent());
     setBodyAttributes(helmetContext.helmet.bodyAttributes.toComponent());

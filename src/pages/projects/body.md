@@ -10,7 +10,6 @@ priority: 0
 content:
   - marginLeft: 9
     marginTop: 0
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -25,8 +24,7 @@ content:
       artwork, animals, sculptures, selfies – and whatever other surprises among
       the digital debris may surface.
     marginLeft: 0
-    marginTop: 60
-    ratio: 0
+    marginTop: 0
     video:
       autoplay: false
       hasControls: false
@@ -44,8 +42,7 @@ content:
     width: 50
   - image: /img/cinekid10.jpg
     marginLeft: 58
-    marginTop: 25
-    ratio: 0
+    marginTop: -10
     video:
       autoplay: false
       hasControls: false
@@ -55,7 +52,6 @@ content:
   - image: /img/cinekid4.jpg
     marginLeft: 10
     marginTop: -21
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -76,7 +72,6 @@ content:
       exploration and curiosity.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -84,7 +79,6 @@ content:
       loops: true
   - marginLeft: 45
     marginTop: 0
-    ratio: 0
     video:
       autoplay: true
       hasControls: false
@@ -95,8 +89,7 @@ content:
     width: 45
   - image: /img/cinekid3.jpg
     marginLeft: 0
-    marginTop: 27
-    ratio: 0
+    marginTop: -8
     video:
       autoplay: false
       hasControls: false
@@ -106,7 +99,6 @@ content:
   - image: /img/cinekid11.jpg
     marginLeft: 53
     marginTop: -15
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -122,7 +114,6 @@ content:
       in-browser with high performance web technologies.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -132,7 +123,6 @@ content:
       Read more about how this project was conceived technically in [this article](https://medium.com/random-studio/body-using-your-self-as-a-search-tool-a5d8480988b9) on [Medium](https://medium.com/random-studio).
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false

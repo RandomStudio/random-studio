@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 import PropTypes from 'prop-types';
 import styles from './BackScrim.module.scss';
 
@@ -7,20 +7,18 @@ const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
+  const returnUrlWithPrefix = withPrefix(`/${returnUrl}`);
+
   useEffect(() => {
     const intersection = intersectionRef.current;
     let observer = null;
-    const supportsIntersectionObserver = (('IntersectionObserver' in window)
-      || (
-        ('IntersectionObserverEntry' in window)
-        && ('isIntersecting' in window.IntersectionObserverEntry.prototype)
-      )
-    );
+    const supportsIntersectionObserver = 'IntersectionObserver' in window
+      || ('IntersectionObserverEntry' in window
+        && 'isIntersecting' in window.IntersectionObserverEntry.prototype);
 
     const onScroll = () => {
-      const hasScrolledToBottom = (
-        (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight
-      );
+      const hasScrolledToBottom = window.innerHeight
+        + window.pageYOffset >= document.body.offsetHeight;
       setIsVisible(hasScrolledToBottom);
     };
 
@@ -42,13 +40,15 @@ const BackScrim = ({ returnUrl }) => {
     };
   }, []);
 
-  const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible}`;
+  const scrimClassNames = `${styles.backScrim} ${
+    isVisible && styles.isVisible
+  }`;
 
   return (
     <>
       <div className={scrimClassNames}>
-        <Link to={returnUrl} className={styles.backButton}>
-          Back to projects
+        <Link to={returnUrlWithPrefix} className={styles.backButton}>
+          {'Back to projects'}
         </Link>
       </div>
       <div ref={intersectionRef} className={styles.intersectionLine} />

@@ -9,17 +9,16 @@ const SkillBlock = ({ skillset, email }) => {
   const emailRef = useRef();
   const { setIsToastVisible } = useContext(AppContext);
 
-  const handleClickEmail = event =>
-    copyStringToClipboard(event, email, setIsToastVisible);
+  const handleClickEmail = event => copyStringToClipboard(event, email, setIsToastVisible);
 
   return (
     <div className={styles.wrapper}>
       <SkillList skillset={skillset} />
 
       <div className={styles.conversationWrapper}>
-        <p>Start a conversation</p>
+        <p>{'Start a conversation'}</p>
         <a href={`mailto:${email}`} onClick={handleClickEmail} ref={emailRef}>
-          Contact Us
+          {'Contact Us'}
         </a>
       </div>
     </div>

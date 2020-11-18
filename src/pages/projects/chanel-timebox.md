@@ -11,7 +11,6 @@ content:
   - image: /img/chanel2.jpg
     marginLeft: 5
     marginTop: 1
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -26,7 +25,6 @@ content:
       providing for an individual experience.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -34,7 +32,6 @@ content:
       loops: true
   - marginLeft: 6
     marginTop: 0
-    ratio: 56
     video:
       autoplay: true
       hasControls: false
@@ -50,7 +47,6 @@ content:
     image: /img/chanel3.jpg
     marginLeft: 56
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -60,7 +56,6 @@ content:
   - image: /img/chanel4.jpg
     marginLeft: 8
     marginTop: -40
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -70,7 +65,6 @@ content:
   - image: /img/chanel5.jpg
     marginLeft: 25
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -84,7 +78,6 @@ content:
       was offered to each participant afterwards.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -92,7 +85,6 @@ content:
       loops: true
   - marginLeft: 0
     marginTop: 0
-    ratio: 29
     video:
       autoplay: true
       hasControls: false
@@ -119,4 +111,3 @@ opengraph:
     A vertical journey through time
     for Chanel
 ---
-

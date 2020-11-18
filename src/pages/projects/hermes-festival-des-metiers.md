@@ -12,12 +12,10 @@ thumbnail:
   image: /img/Hermes_thumbnail.jpg
   marginLeft: 5
   marginTop: 0
-  ratio: 0
   width: 65
 content:
   - marginLeft: 5
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -54,7 +52,6 @@ content:
     image: /img/hermes_shot_01.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -67,7 +64,6 @@ content:
       themselves.
     marginLeft: 52
     marginTop: -17
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -79,7 +75,6 @@ content:
   - image: /img/hermes_shot_02.jpg
     marginLeft: 20
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -92,7 +87,6 @@ content:
       itself.
     marginLeft: 55
     marginTop: 12
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -107,7 +101,6 @@ content:
     image: /img/hermes_shot_03.jpg
     marginLeft: 0
     marginTop: -12
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -120,7 +113,6 @@ content:
     image: /img/hermes_shot_04.jpg
     marginLeft: 49
     marginTop: -21
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -139,4 +131,3 @@ credits:
       Robert Hoffman — Product Design, Artis Engineering — Fabrication and
       Engineering
 ---
-
