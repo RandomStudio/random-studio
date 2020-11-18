@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 import PropTypes from 'prop-types';
 import styles from './BackScrim.module.scss';
 
 const BackScrim = ({ returnUrl }) => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
+
+  const returnUrlWithPrefix = withPrefix(`/${returnUrl}`);
 
   useEffect(() => {
     const intersection = intersectionRef.current;
@@ -45,7 +47,7 @@ const BackScrim = ({ returnUrl }) => {
   return (
     <>
       <div className={scrimClassNames}>
-        <Link to={returnUrl} className={styles.backButton}>
+        <Link to={returnUrlWithPrefix} className={styles.backButton}>
           {'Back to projects'}
         </Link>
       </div>
