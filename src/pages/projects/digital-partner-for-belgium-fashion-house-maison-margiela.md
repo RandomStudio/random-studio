@@ -71,9 +71,10 @@ content:
 relatedProjects:
   blockTitle: Other Work
   projects:
-    - project: |-
-        Various in-store installations
-        for NikeLab
+    - project: Digital Partner for Belgium fashion house Maison Margiela
       title: Artisanal SS20
-      image: /img/maisonmargiela_81393000_138260937648601_1845573813926662268_n.jpg
+      image: /img/maisonmargiela_81808808_204434447280190_7719988786441022934_n.jpg
+    - title: Défilé SS20
+      image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela
 ---
