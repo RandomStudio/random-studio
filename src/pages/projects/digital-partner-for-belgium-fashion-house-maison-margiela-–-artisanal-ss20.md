@@ -14,8 +14,8 @@ intro: >-
   Rather than ‘documenting’ an end-product, we have become part of the making-process itself. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.
 content:
   - video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
@@ -30,10 +30,13 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: Inspired by the ‘Bourgeois gesture’ and its place in the
-      cyber-industrial revolution of today, this collection saw Galliano trace
-      and reuse fragments of the past, upcycling classic shapes from the turn of
-      the century – and rebelling against them.
+    caption: >-
+      Artisanal SS20
+
+
+
+
+      Inspired by the ‘Bourgeois gesture’ and its place in the cyber-industrial revolution of today, this collection saw Galliano trace and reuse fragments of the past, upcycling classic shapes from the turn of the century – and rebelling against them.
   - video:
       autoplay: false
       hasControls: false
@@ -75,4 +78,85 @@ content:
         image: /img/maisonmargiela_83280386_2773500896090848_14565102521119019_n.jpg
     caption: Key Looks Photography
     width: 100
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: -30
+    marginLeft: 24
+    carousel:
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408401488.sd.mp4?s=5e397a193033e62208906d1cfd28006f0c78a794&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408401537.sd.mp4?s=2bf70a982de8303bf6aa14bd6876ef473ebd0be4&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408401574.sd.mp4?s=e06a4919f7e4a090709d833742f18e2ab9f1c67c&profile_id=165
+    caption: Teasers
+    width: 76
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: ""
+    marginTop: 7
+    marginLeft: -27
+    carousel:
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408416584.sd.mp4?s=ecdbffcd1f5160aa6f6cc77403de34efbe7f6890&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408417274.sd.mp4?s=df549173ccf68c88ab54c61c527c2c8d56070697&profile_id=165
+    width: 75
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    caption: Across the show teaser, podcast teaser and runway video we created, our
+      visual response was to hone in on the idea of ‘Gesture’ and fine details
+      of the garments, as well as amplifying the seduction, suspense and vibrant
+      colours of the collection. We also photographed the Maison Margiela x
+      Reebok collaboration and key looks for the show.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 50
+    image: /img/image0.jpeg
+    width: 41
+    caption: Vogue article
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: -16
+    marginLeft: -31
+    carousel:
+      - type: video
+        isMuted: true
+        url: >
+          https://player.vimeo.com/external/408445244.sd.mp4?s=0712aee1373ddc9c185c1a357f3ac646385a30d8&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408445990.sd.mp4?s=8cd275d0b920706b2d72e04a7254c9626b152196&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408446582.sd.mp4?s=6cae77a4f7d5558e740a1ea0696fe76c26a503f3&profile_id=165
+    width: 73
 ---
