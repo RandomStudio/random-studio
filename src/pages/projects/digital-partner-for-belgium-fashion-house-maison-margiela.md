@@ -77,4 +77,13 @@ relatedProjects:
     - title: Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
       project: Digital Partner for Belgium fashion house Maison Margiela
+credits:
+  - key: "For: "
+    value: "Maison Margiela "
+  - key: "Role:"
+    value: Creative Direction, Production Oversight, Post Production, Main Show
+      Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
+      Launch Photography.
+  - key: "With: "
+    value: "Lonneke van der Palen – Photography "
 ---
