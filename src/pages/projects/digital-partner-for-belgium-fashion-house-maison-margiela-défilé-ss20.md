@@ -135,4 +135,5 @@ content:
     marginLeft: 4
     image: /img/RANDOMSTUDIO_MARGIELA_BAG_01%25202.jpg
     width: 40
+    caption: "*"
 ---
