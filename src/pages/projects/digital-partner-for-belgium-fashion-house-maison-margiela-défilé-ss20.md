@@ -125,4 +125,14 @@ content:
       firmly back in the present, we also introduced photography of the show
       from an audience perspective as well photographing the new genderless
       ‘Snatched’ bag.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 10
+    marginLeft: 4
+    image: /img/RANDOMSTUDIO_MARGIELA_BAG_01%25202.jpg
+    width: 40
 ---
