@@ -107,9 +107,10 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/408419765.sd.mp4?s=afc38ef6b2e132aa016c3cfe63cd5a621429caa3&profile_id=165
     marginTop: 7
-    marginLeft: 12
-    width: 38
+    marginLeft: 9
+    width: 42
     caption: Podcast
+    carousel: []
   - video:
       autoplay: false
       hasControls: false
