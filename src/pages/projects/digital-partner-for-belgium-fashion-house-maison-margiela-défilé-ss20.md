@@ -110,4 +110,18 @@ content:
     marginLeft: 11
     width: 38
     caption: Podcast
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    caption: We foregrounded this idea of ‘Remembrance’ in the assets we created,
+      referencing the feeling of hope Galliano found in the heroes of WW2 in the
+      podcast teaser, show teaser and runway video. Grounding the collection
+      firmly back in the present, we also introduced photography of the show
+      from an audience perspective as well photographing the new genderless
+      ‘Snatched’ bag.
 ---
