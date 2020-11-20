@@ -106,7 +106,7 @@ content:
       isAlwaysMuted: false
       url: ""
     marginTop: 7
-    marginLeft: -27
+    marginLeft: -25
     carousel:
       - type: video
         isMuted: true
