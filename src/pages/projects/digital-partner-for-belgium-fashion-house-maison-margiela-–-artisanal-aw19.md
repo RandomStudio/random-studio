@@ -50,4 +50,14 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408406146.sd.mp4?s=fecd8eb09359e38c175d98ae366f0cde41772ba0&profile_id=165
+  - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/408420712.sd.mp4?s=cc26647d778743ca076f5d5048c1ea306a105a36&profile_id=165
+    marginTop: 7
+    marginLeft: 9
+    width: 42
 ---
