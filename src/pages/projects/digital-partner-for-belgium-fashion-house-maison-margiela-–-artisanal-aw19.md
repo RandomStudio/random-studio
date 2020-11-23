@@ -133,7 +133,7 @@ content:
       isAlwaysMuted: false
       url: ""
     marginTop: -10
-    marginLeft: -36
+    marginLeft: -39
     carousel:
       - type: video
         isMuted: true
