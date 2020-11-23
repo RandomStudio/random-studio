@@ -84,7 +84,7 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/408398073.sd.mp4?s=f0f2115818eebc22082f21194199061063ad4519&profile_id=165
     marginTop: 0
-    marginLeft: 54
+    marginLeft: 60
     width: 28
   - video:
       autoplay: true
@@ -93,7 +93,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: ""
-    marginTop: 0
+    marginTop: -10
     marginLeft: -31
     width: 79
     carousel:
@@ -164,4 +164,16 @@ content:
         isMuted: true
         url: https://vimeo.com/408771899/323303f841
     width: 70
+credits:
+  - key: |
+      For:
+    value: Maison Margiela
+  - key: |
+      Role:
+    value: Creative Direction, Production Oversight, Post Production, Main Show
+      Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
+      Launch Photography
+  - key: |
+      With:
+    value: Lonneke van der Palen – Photography
 ---
