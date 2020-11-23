@@ -42,7 +42,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 24
     carousel:
       - type: video
         isMuted: true
@@ -50,6 +50,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408406146.sd.mp4?s=fecd8eb09359e38c175d98ae366f0cde41772ba0&profile_id=165
+    width: 76
   - video:
       autoplay: true
       hasControls: true
