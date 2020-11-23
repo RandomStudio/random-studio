@@ -112,8 +112,8 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -15
-    marginLeft: 29
+    marginTop: 0
+    marginLeft: 30
     carousel:
       - type: video
         isMuted: true
@@ -132,8 +132,8 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: ""
-    marginTop: 5
-    marginLeft: -20
+    marginTop: -10
+    marginLeft: -36
     carousel:
       - type: video
         isMuted: true
@@ -144,5 +144,5 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408771589.sd.mp4?s=4427a18cb20231fa67d030743b99d22da0718a23&profile_id=165
-    width: 68
+    width: 77
 ---
