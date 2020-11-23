@@ -132,8 +132,45 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 10
-    marginLeft: 4
-    image: /img/RANDOMSTUDIO_MARGIELA_BAG_01%25202.jpg
+    marginLeft: 25
+    image: /img/randomstudio_margiela_bag_01-25202.jpg
     width: 40
-    caption: "*"
+    caption: "* not displayed"
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: -31
+    carousel:
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408765690.sd.mp4?s=aeee02d5b37e6d136a401aca524e76aaf4781228&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408765835.sd.mp4?s=49ddf8413ce40d27848f874a3b075fe01e716deb&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408765984.sd.mp4?s=511eb088ecffcbdb0611a7d54227b384718c5fd5&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408766173.sd.mp4?s=c942b959f103ce8c86ad5f0dbffe7e99fa034ef4&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408766427.sd.mp4?s=5b987225435693a3064e05a98315e034145a7706&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408766713.sd.mp4?s=350987a15332701ea3da4f4fe22c20b550382b7a&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408766841.sd.mp4?s=994b13e3c114a50420c1f989ddeff80918f6cf10&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408767010.sd.mp4?s=d73a5b72911e258aec65541425d0202b4c565d52&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408767135.sd.mp4?s=ee2238d2835ab676b1aac1cf720ff3a264781c74&profile_id=165
+    width: 73
 ---
