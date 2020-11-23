@@ -47,4 +47,14 @@ content:
     marginTop: 0
     marginLeft: 50
     width: 40
+  - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/408423019.sd.mp4?s=8ed7d4acb861571218d2bfcd01a27f2af277b222&profile_id=165
+    marginTop: 7
+    marginLeft: 10
+    width: 40
 ---
