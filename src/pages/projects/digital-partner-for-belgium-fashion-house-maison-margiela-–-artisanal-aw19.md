@@ -94,8 +94,8 @@ content:
       isAlwaysMuted: false
       url: ""
     marginTop: 0
-    marginLeft: -26
-    width: 71
+    marginLeft: -31
+    width: 79
     carousel:
       - type: video
         isMuted: true
