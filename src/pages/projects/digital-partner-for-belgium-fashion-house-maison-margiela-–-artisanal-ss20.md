@@ -135,7 +135,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 50
+    marginLeft: 59
     image: /img/image0.jpeg
     width: 41
     caption: Vogue article
@@ -158,7 +158,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408446582.sd.mp4?s=6cae77a4f7d5558e740a1ea0696fe76c26a503f3&profile_id=165
-    width: 73
+    width: 79
 credits:
   - key: "For:"
     value: Maison Margiela
