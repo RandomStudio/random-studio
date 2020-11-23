@@ -145,7 +145,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -16
+    marginTop: 0
     marginLeft: -31
     carousel:
       - type: video
