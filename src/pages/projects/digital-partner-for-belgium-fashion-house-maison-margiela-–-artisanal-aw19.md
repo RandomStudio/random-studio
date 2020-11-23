@@ -61,4 +61,19 @@ content:
     marginTop: 7
     marginLeft: 9
     width: 42
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    caption: Playing on the idea of the ‘Trompe-l'oeil’, the assets we created – a
+      show teaser, a runway video, a podcast teaser and a series of Instagram
+      vignettes – ribbed off the layers of visual information present in the
+      show, blurring the line between the clothes, the projections and the space
+      itself. Working closely with Katerina, we were also responsible for
+      translating her ideas into the show scenography, in which projections of
+      the human form filled the walls.
 ---
