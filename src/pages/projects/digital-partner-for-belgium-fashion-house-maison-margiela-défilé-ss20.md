@@ -132,9 +132,9 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 60
+    marginLeft: 59
     image: /img/randomstudio_margiela_bag_01-25202.jpg
-    width: 40
+    width: 41
     caption: <https://www.vogue.com/article/maison-margiela-john-galliano-snatched-bag-spring-2020>
   - video:
       autoplay: false
