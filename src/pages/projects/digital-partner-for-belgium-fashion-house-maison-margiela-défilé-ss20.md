@@ -196,4 +196,18 @@ content:
     alt: ""
     caption: "3"
     width: 68
+relatedProjects:
+  blockTitle: Other Project
+credits:
+  - value: "Maison Margiela "
+    key: "For: "
+  - key: "Role:"
+    value: Creative Direction, Production Oversight, Post Production, Main Show
+      Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
+      Launch Photography
+  - key: "With: "
+    value: "Lonneke van der Palen – Photography  "
+opengraph:
+  ogTitle: ""
+  ogDescription: ""
 ---
