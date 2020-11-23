@@ -131,11 +131,11 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 10
-    marginLeft: 25
+    marginTop: 0
+    marginLeft: 60
     image: /img/randomstudio_margiela_bag_01-25202.jpg
     width: 40
-    caption: "* not displayed"
+    caption: <https://www.vogue.com/article/maison-margiela-john-galliano-snatched-bag-spring-2020>
   - video:
       autoplay: false
       hasControls: false
@@ -154,6 +154,16 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408765984.sd.mp4?s=511eb088ecffcbdb0611a7d54227b384718c5fd5&profile_id=165
+    width: 79
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    carousel:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408766173.sd.mp4?s=c942b959f103ce8c86ad5f0dbffe7e99fa034ef4&profile_id=165
@@ -163,6 +173,16 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408766713.sd.mp4?s=350987a15332701ea3da4f4fe22c20b550382b7a&profile_id=165
+    caption: "2"
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    carousel:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408766841.sd.mp4?s=994b13e3c114a50420c1f989ddeff80918f6cf10&profile_id=165
@@ -172,5 +192,6 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408767135.sd.mp4?s=ee2238d2835ab676b1aac1cf720ff3a264781c74&profile_id=165
-    width: 73
+    alt: ""
+    caption: "3"
 ---
