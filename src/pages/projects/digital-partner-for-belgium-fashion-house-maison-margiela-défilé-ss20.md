@@ -161,8 +161,8 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -15
+    marginLeft: 29
     carousel:
       - type: video
         isMuted: true
@@ -174,14 +174,15 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408766713.sd.mp4?s=350987a15332701ea3da4f4fe22c20b550382b7a&profile_id=165
     caption: "2"
+    width: 70
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 5
+    marginLeft: -20
     carousel:
       - type: video
         isMuted: true
@@ -194,4 +195,5 @@ content:
         url: https://player.vimeo.com/external/408767135.sd.mp4?s=ee2238d2835ab676b1aac1cf720ff3a264781c74&profile_id=165
     alt: ""
     caption: "3"
+    width: 68
 ---
