@@ -125,4 +125,24 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408771385.sd.mp4?s=fa4a21069b9f2e9afe76347ca7193b424ed12bd0&profile_id=165
     width: 70
+  - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: ""
+    marginTop: 5
+    marginLeft: -20
+    carousel:
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408771454.sd.mp4?s=f161c7bc345d5f43d346ab956644044327aa9b36&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408771504.sd.mp4?s=711b3bfbd6b218cb8623107b34dcdfd6ce611739&profile_id=165
+      - type: video
+        isMuted: true
+        url: https://player.vimeo.com/external/408771589.sd.mp4?s=4427a18cb20231fa67d030743b99d22da0718a23&profile_id=165
+    width: 68
 ---
