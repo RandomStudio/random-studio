@@ -76,4 +76,14 @@ content:
       itself. Working closely with Katerina, we were also responsible for
       translating her ideas into the show scenography, in which projections of
       the human form filled the walls.
+  - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/408398073.sd.mp4?s=f0f2115818eebc22082f21194199061063ad4519&profile_id=165
+    marginTop: 0
+    marginLeft: 54
+    width: 28
 ---
