@@ -5,7 +5,8 @@ introBlock:
   - copy: We create brand and service experiences that trigger a sense of wonder.
     image: /img/studio-hero-01.jpg
     video: /img/boat.mp4
-  - copy: 'Our work comes to life in the space where the digital meets the physical. '
+  - copy: "Our work comes to life in the space where the digital meets the physical.
+      "
     image: /img/studio-hero-02.jpg
     video: /img/digital.mp4
 services:
@@ -27,7 +28,7 @@ services:
         future concepts and prototypes.
       image: /img/studio_expertise3.jpg
       title: Design Research
-  title: 'Our Areas of Expertise:'
+  title: "Our Areas of Expertise:"
 skillset:
   - Strategy
   - Concept
@@ -46,4 +47,8 @@ studioImpression:
     - image: /img/studio_07.jpg
   showIndicator: true
   title: Studio Impressions
+jobOpenings:
+  - url: https://randomstudio.bamboohr.com/jobs/view.php?id=1
+    title: Job title here
+    description: Job description here
 ---
