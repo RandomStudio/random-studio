@@ -90,6 +90,10 @@ relatedProjects:
       project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
         AW19
       image: /img/1.1.jpg
+    - title: Artisanal SS19
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        SS19
+      image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
 credits:
   - key: |
       For:
