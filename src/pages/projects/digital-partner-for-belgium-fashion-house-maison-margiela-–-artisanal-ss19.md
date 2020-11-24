@@ -37,4 +37,18 @@ content:
 
 
       This season was part of Galliano’s research into a ‘New Glamour’, with the latest instalment revolving around the cyclical nature of decadence. A riot of bright colours and jittering computer-generated imagery, the collection bubbles with the excess and artifice of the digital world and its flood of overlapping information.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 20
+    carousel:
+      - type: image
+        image: /img/maisonmargiela_49482196_849077468757920_1233326381946556516_n.jpg
+      - type: image
+        image: /img/maisonmargiela_50327453_1249339615205599_5660914223144192525_n.jpg
+    width: 70
 ---
