@@ -48,6 +48,22 @@ content:
     marginLeft: 50
     width: 40
   - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    caption: We explored the spirit of this contemporary Swan Lake through a variety
+      of different formats, from a show teaser and a runway video to a podcast
+      teaser. Peeking into Galliano’s vivid imagination and well of inspiration,
+      it was hailed as the first of its kind in the fashion industry – a bold
+      new form that pulled the curtain back on the process of creation. Cut
+      together with images from the show, the teaser recounted this abstracted
+      version of Swan Lake through his cast of models, narrated by Galliano
+      himself.
+  - video:
       autoplay: true
       hasControls: true
       loops: true
@@ -57,4 +73,16 @@ content:
     marginTop: 7
     marginLeft: 10
     width: 40
+credits:
+  - key: |
+      For:
+    value: Maison Margiela
+  - key: |
+      Role:
+    value: Creative Direction, Production Oversight, Post Production, Main Show
+      Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
+      Launch Photography
+  - key: |
+      With:
+    value: Lonneke van der Palen – Photography
 ---
