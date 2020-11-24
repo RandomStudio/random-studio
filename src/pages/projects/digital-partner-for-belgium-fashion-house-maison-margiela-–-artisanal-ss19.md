@@ -44,13 +44,13 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 20
+    marginLeft: 24
     carousel:
       - type: image
         image: /img/maisonmargiela_49482196_849077468757920_1233326381946556516_n.jpg
       - type: image
         image: /img/maisonmargiela_50327453_1249339615205599_5660914223144192525_n.jpg
-    width: 70
+    width: 76
   - video:
       autoplay: true
       hasControls: true
