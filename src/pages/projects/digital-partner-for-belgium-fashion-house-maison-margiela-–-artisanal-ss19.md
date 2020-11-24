@@ -51,4 +51,14 @@ content:
       - type: image
         image: /img/maisonmargiela_50327453_1249339615205599_5660914223144192525_n.jpg
     width: 70
+  - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+      url: https://player.vimeo.com/external/408424464.sd.mp4?s=e21da5bbc0d1f7b94e6d2a78a11dd73401824cc8&profile_id=165
+    marginTop: 7
+    marginLeft: 9
+    width: 42
 ---
