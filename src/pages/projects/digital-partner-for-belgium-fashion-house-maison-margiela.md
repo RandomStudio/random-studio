@@ -51,12 +51,13 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408400349.sd.mp4?s=dfe4fdec6491f6e166ddd1ea7ab0de4b9c7de5bc&profile_id=165
-        caption: Teaser 1
+        caption: ""
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408400397.sd.mp4?s=5de32129668f701c31a4076d4cfed459f2c58998&profile_id=165
-        caption: Teaser 2
+        caption: ""
     width: 75
+    caption: Teaser
   - video:
       autoplay: false
       hasControls: false
