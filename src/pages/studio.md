@@ -48,7 +48,7 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 jobOpenings:
-  - url: https://randomstudio.bamboohr.com/jobs/view.php?id=1
-    title: Job title here
-    description: Job description here
+  - jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=1
+    jobTitle: Job title here
+    jobDescription: Job description here
 ---
