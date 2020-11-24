@@ -92,7 +92,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408402300.sd.mp4?s=35b8a828f487dbdd1e70fa0c1883b2b05becfc75&profile_id=165
-        caption: Teasers
+        caption: ""
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408402405.sd.mp4?s=4f5fad054021774b79a363f141daaf769d2771be&profile_id=165
