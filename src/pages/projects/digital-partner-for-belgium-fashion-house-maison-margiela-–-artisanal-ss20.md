@@ -159,6 +159,27 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408446582.sd.mp4?s=6cae77a4f7d5558e740a1ea0696fe76c26a503f3&profile_id=165
     width: 79
+relatedProjects:
+  blockTitle: "Other work:"
+  projects:
+    - title: Défilé AW20
+      project: Digital Partner for Belgium fashion house Maison Margiela
+      image: /img/1.1.jpg
+    - title: Défilé SS20
+      image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela – Défilé SS20
+    - title: Artisanal AW19
+      image: /img/1.1.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        AW19
+    - title: Défilé AW19
+      project: "Digital Partner for Belgium fashion house Maison Margiela - Défilé
+        AW19 "
+      image: /img/1.1.jpg
+    - title: Artisanal SS19
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        SS19
+      image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
 credits:
   - key: "For:"
     value: Maison Margiela
