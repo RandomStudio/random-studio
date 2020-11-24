@@ -91,4 +91,20 @@ content:
       - type: image
         image: /img/maisonmargiela_51525984_367386054091437_6932946184675018036_n.jpg
     width: 80
+credits:
+  - key: |+
+      For:
+
+    value: Maison Margiela
+  - key: |
+      
+      Role:
+    value: >
+      Creative Direction, Production Oversight, Post Production, Main Show Video
+      Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch
+      Photography
+  - key: |
+      
+      With:
+    value: Lonneke van der Palen – Photography
 ---
