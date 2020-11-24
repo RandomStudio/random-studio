@@ -62,6 +62,12 @@ export const query = graphql`
             }
           }
         }
+        jobOpenings {
+          jobURL
+          jobTitle
+          jobDescription
+          jobIsVisible
+        }
       }
     }
 
@@ -82,7 +88,6 @@ const Studio = ({
     studioPage: { fields, frontmatter },
     indexPage,
   },
-  location,
 }) => {
   const introRef = useRef();
   const [themeClass, setThemeClass] = useState(styles.darkTheme);
@@ -137,7 +142,7 @@ const Studio = ({
         />
 
         <div className={styles.jobsImpressionBlock}>
-          <Recruitee location={location} />
+          <Recruitee jobOpenings={frontmatter.jobOpenings} />
           <Carousel
             className={styles.carouselWrapper}
             carousel={frontmatter.studioImpression.images}
