@@ -107,11 +107,11 @@ relatedProjects:
     - title: Artisanal AW19
       project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
         AW19
-      image: /img/1.1.jpg
+      image: /img/Artisanal_AW19.png
     - title: Défilé AW19
       project: "Digital Partner for Belgium fashion house Maison Margiela - Défilé
         AW19 "
-      image: /img/1.1.jpg
+      image: /img/Defile_AW19.png
 credits:
   - key: |+
       For:
