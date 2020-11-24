@@ -135,9 +135,9 @@ content:
     marginLeft: 59
     image: /img/randomstudio_margiela_bag_01-25202.jpg
     width: 41
-    caption: <a
-      href=“https://www.vogue.com/article/maison-margiela-john-galliano-snatched-bag-spring-2020”
-      target=“_blank”>Vogue article</a>
+    caption: "[Vogue
+      article](https://www.vogue.com/article/maison-margiela-john-galliano-snat\
+      ched-bag-spring-2020)"
   - video:
       autoplay: false
       hasControls: false
