@@ -73,6 +73,16 @@ content:
     marginTop: 7
     marginLeft: 10
     width: 40
+relatedProjects:
+  blockTitle: "Other work:"
+  projects:
+    - title: Défilé AW20
+      project: Digital Partner for Belgium fashion house Maison Margiela
+      image: /img/1.1.jpg
+    - title: Artisanal SS20
+      image: /img/maisonmargiela_81808808_204434447280190_7719988786441022934_n.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        SS20
 credits:
   - key: |
       For:
