@@ -61,4 +61,34 @@ content:
     marginTop: 7
     marginLeft: 9
     width: 42
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    caption: Our documentation of the show played on the borders of fake and real.
+      The show itself was a spectacle-like affair so we captured it from every
+      angle and perspective, creating a stream of different images and content
+      including the main runway video, live-editing for Instagram Live, a
+      pre-show teaser, a podcast teaser, a series of backstage videos and
+      backstage and empty-set photography. The main video played on the
+      reflected images of the mirrored runway, shot with rotating cameras to
+      blur the lines between reality and its image.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 9
+    carousel:
+      - type: image
+        image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+      - type: image
+        image: /img/maisonmargiela_51525984_367386054091437_6932946184675018036_n.jpg
+    width: 80
 ---
