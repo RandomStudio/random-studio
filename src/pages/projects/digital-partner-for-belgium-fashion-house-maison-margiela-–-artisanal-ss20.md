@@ -194,4 +194,5 @@ credits:
 opengraph:
   ogTitle: ""
   ogDescription: ""
+  ogImage: /img/maisonmargiela_81393000_138260937648601_1845573813926662268_n.jpg
 ---
