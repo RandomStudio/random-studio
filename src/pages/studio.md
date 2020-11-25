@@ -51,5 +51,5 @@ jobOpenings:
   - jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=1
     jobTitle: Job title here
     jobDescription: Job description here
-    jobIsVisible: true
+    jobIsVisible: false
 ---
