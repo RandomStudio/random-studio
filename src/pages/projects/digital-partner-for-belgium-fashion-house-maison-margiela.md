@@ -100,4 +100,6 @@ credits:
       Launch Photography.
   - key: "With: "
     value: "Lonneke van der Palen – Photography "
+opengraph:
+  ogImage: /img/Defile_AW20_2.jpg
 ---
