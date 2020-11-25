@@ -138,7 +138,9 @@ content:
     marginLeft: 59
     image: /img/image0.jpeg
     width: 41
-    caption: Vogue article
+    caption: "[Vogue
+      article](https://www.vogue.com/article/maison-margiela-reebok-collaborati\
+      on-sneaker)"
   - video:
       autoplay: false
       hasControls: false
