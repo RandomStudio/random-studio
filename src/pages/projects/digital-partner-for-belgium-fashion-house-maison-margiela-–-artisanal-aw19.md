@@ -197,4 +197,6 @@ credits:
   - key: |
       With:
     value: Lonneke van der Palen – Photography
+opengraph:
+  ogImage: /img/Artisanal_AW19.png
 ---
