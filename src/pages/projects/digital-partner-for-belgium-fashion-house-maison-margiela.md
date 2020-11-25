@@ -51,12 +51,13 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408400349.sd.mp4?s=dfe4fdec6491f6e166ddd1ea7ab0de4b9c7de5bc&profile_id=165
-        caption: Teaser 1
+        caption: ""
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408400397.sd.mp4?s=5de32129668f701c31a4076d4cfed459f2c58998&profile_id=165
-        caption: Teaser 2
+        caption: ""
     width: 75
+    caption: Teaser
   - video:
       autoplay: false
       hasControls: false
@@ -77,6 +78,18 @@ relatedProjects:
     - title: Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
       project: Digital Partner for Belgium fashion house Maison Margiela
+    - title: Artisanal AW19
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        AW19
+      image: /img/Artisanal_AW19.png
+    - title: Défilé AW19
+      project: "Digital Partner for Belgium fashion house Maison Margiela - Défilé
+        AW19 "
+      image: /img/Defile_AW19.png
+    - title: Artisanal SS19
+      image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        SS19
 credits:
   - key: "For: "
     value: "Maison Margiela "

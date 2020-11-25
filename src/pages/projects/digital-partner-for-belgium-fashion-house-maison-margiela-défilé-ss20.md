@@ -92,7 +92,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408402300.sd.mp4?s=35b8a828f487dbdd1e70fa0c1883b2b05becfc75&profile_id=165
-        caption: Teasers
+        caption: ""
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408402405.sd.mp4?s=4f5fad054021774b79a363f141daaf769d2771be&profile_id=165
@@ -135,7 +135,9 @@ content:
     marginLeft: 59
     image: /img/randomstudio_margiela_bag_01-25202.jpg
     width: 41
-    caption: <https://www.vogue.com/article/maison-margiela-john-galliano-snatched-bag-spring-2020>
+    caption: "[Vogue
+      article](https://www.vogue.com/article/maison-margiela-john-galliano-snat\
+      ched-bag-spring-2020)"
   - video:
       autoplay: false
       hasControls: false
@@ -198,6 +200,26 @@ content:
     width: 68
 relatedProjects:
   blockTitle: Other Project
+  projects:
+    - title: Défilé AW20
+      image: /img/Defile_AW20_2.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela
+    - title: Artisanal SS20
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        SS20
+      image: /img/maisonmargiela_81808808_204434447280190_7719988786441022934_n.jpg
+    - title: Artisanal AW19
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        AW19
+      image: /img/Artisanal_AW19.png
+    - title: Défilé AW19
+      image: /img/Defile_AW19.png
+      project: "Digital Partner for Belgium fashion house Maison Margiela - Défilé
+        AW19 "
+    - title: Artisanal SS19
+      image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
+        SS19
 credits:
   - value: "Maison Margiela "
     key: "For: "

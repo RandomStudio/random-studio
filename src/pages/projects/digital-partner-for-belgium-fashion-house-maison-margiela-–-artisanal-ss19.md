@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: "Digital Partner for Belgium fashion house Maison Margiela - Défilé AW19 "
+title: Digital Partner for Belgium fashion house Maison Margiela – Artisanal SS19
 intro: >-
   Since Spring-Summer 19, we have been collaborating with Maison Margiela as a
   digital partner for six of their collections. Guided by John Galliano’s
@@ -21,7 +21,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/408304485.hd.mp4?s=4a7fb45f78af347c8af475f8a923ed046ae29afc&profile_id=175
+      url: https://player.vimeo.com/external/408355369.hd.mp4?s=7b97222b1b36edde5967c3b804b9f98b95e216ec&profile_id=175
     marginTop: 0
     marginLeft: 0
   - video:
@@ -33,20 +33,34 @@ content:
     marginTop: 0
     marginLeft: 0
     caption: >-
-      Défilé AW19 
+      Artisanal SS19
 
 
-      The idea of digital decadence explored in the recent Artisanal show was filtered down for this ready-to-wear collection, with garments stripped back down into a more purified and minimal form. Inspired by retelling the classic story of Swan Lake to the dramatic overtones of Tchaikovsky’s music, Galliano’s research swings this time towards the idea of ‘Transformation’.
+      This season was part of Galliano’s research into a ‘New Glamour’, with the latest instalment revolving around the cyclical nature of decadence. A riot of bright colours and jittering computer-generated imagery, the collection bubbles with the excess and artifice of the digital world and its flood of overlapping information.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 24
+    carousel:
+      - type: image
+        image: /img/maisonmargiela_49482196_849077468757920_1233326381946556516_n.jpg
+      - type: image
+        image: /img/maisonmargiela_50327453_1249339615205599_5660914223144192525_n.jpg
+    width: 76
   - video:
       autoplay: true
       hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/408412623.sd.mp4?s=766dc988d85c31e0480a2704227c80e325a2027d&profile_id=165
-    marginTop: 0
-    marginLeft: 50
-    width: 40
+      url: https://player.vimeo.com/external/408424464.sd.mp4?s=e21da5bbc0d1f7b94e6d2a78a11dd73401824cc8&profile_id=165
+    marginTop: 7
+    marginLeft: 9
+    width: 42
   - video:
       autoplay: false
       hasControls: false
@@ -55,24 +69,28 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: We explored the spirit of this contemporary Swan Lake through a variety
-      of different formats, from a show teaser and a runway video to a podcast
-      teaser. Peeking into Galliano’s vivid imagination and well of inspiration,
-      it was hailed as the first of its kind in the fashion industry – a bold
-      new form that pulled the curtain back on the process of creation. Cut
-      together with images from the show, the teaser recounted this abstracted
-      version of Swan Lake through his cast of models, narrated by Galliano
-      himself.
+    caption: Our documentation of the show played on the borders of fake and real.
+      The show itself was a spectacle-like affair so we captured it from every
+      angle and perspective, creating a stream of different images and content
+      including the main runway video, live-editing for Instagram Live, a
+      pre-show teaser, a podcast teaser, a series of backstage videos and
+      backstage and empty-set photography. The main video played on the
+      reflected images of the mirrored runway, shot with rotating cameras to
+      blur the lines between reality and its image.
   - video:
-      autoplay: true
-      hasControls: true
+      autoplay: false
+      hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/408423019.sd.mp4?s=8ed7d4acb861571218d2bfcd01a27f2af277b222&profile_id=165
-    marginTop: 7
-    marginLeft: 10
-    width: 40
+    marginTop: 0
+    marginLeft: 9
+    carousel:
+      - type: image
+        image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+      - type: image
+        image: /img/maisonmargiela_51525984_367386054091437_6932946184675018036_n.jpg
+    width: 80
 relatedProjects:
   blockTitle: "Other work:"
   projects:
@@ -84,26 +102,30 @@ relatedProjects:
       project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
         SS20
     - title: Défilé SS20
-      project: Digital Partner for Belgium fashion house Maison Margiela – Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
+      project: Digital Partner for Belgium fashion house Maison Margiela – Défilé SS20
     - title: Artisanal AW19
       project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
         AW19
       image: /img/Artisanal_AW19.png
-    - title: Artisanal SS19
-      project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
-        SS19
-      image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+    - title: Défilé AW19
+      project: "Digital Partner for Belgium fashion house Maison Margiela - Défilé
+        AW19 "
+      image: /img/Defile_AW19.png
 credits:
-  - key: |
+  - key: |+
       For:
+
     value: Maison Margiela
   - key: |
+      
       Role:
-    value: Creative Direction, Production Oversight, Post Production, Main Show
-      Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
-      Launch Photography
+    value: >
+      Creative Direction, Production Oversight, Post Production, Main Show Video
+      Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch
+      Photography
   - key: |
+      
       With:
     value: Lonneke van der Palen – Photography
 ---
