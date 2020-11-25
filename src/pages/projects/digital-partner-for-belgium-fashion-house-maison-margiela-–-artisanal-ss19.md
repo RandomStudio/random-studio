@@ -128,4 +128,6 @@ credits:
       
       With:
     value: Lonneke van der Palen – Photography
+opengraph:
+  ogImage: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
 ---
