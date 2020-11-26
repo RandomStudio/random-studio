@@ -22,6 +22,7 @@ content:
       url: https://player.vimeo.com/external/408320004.hd.mp4?s=0ba652ea48a83974a5172a6914f31099b23d2cf6&profile_id=175
     marginTop: 0
     marginLeft: 0
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -35,6 +36,7 @@ content:
 
 
       The ready-to-wear collection looked back in order to look forward, layering the past into the present. In response to our contemporary state of political turmoil, Galliano searched for hope, drawing inspiration from the icons of WW2 and the idea of uniforms.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -100,6 +102,7 @@ content:
         caption: Teasers
     caption: Teasers
     width: 76
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -112,6 +115,7 @@ content:
     width: 42
     caption: Podcast
     carousel: []
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -126,6 +130,7 @@ content:
       firmly back in the present, we also introduced photography of the show
       from an audience perspective as well photographing the new genderless
       ‘Snatched’ bag.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -139,6 +144,7 @@ content:
     caption: "[Vogue
       article](https://www.vogue.com/article/maison-margiela-john-galliano-snat\
       ched-bag-spring-2020)"
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -158,6 +164,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408765984.sd.mp4?s=511eb088ecffcbdb0611a7d54227b384718c5fd5&profile_id=165
     width: 79
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -176,8 +183,9 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408766713.sd.mp4?s=350987a15332701ea3da4f4fe22c20b550382b7a&profile_id=165
-    caption: "2"
+    caption: ""
     width: 70
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -197,8 +205,9 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408767135.sd.mp4?s=ee2238d2835ab676b1aac1cf720ff3a264781c74&profile_id=165
     alt: ""
-    caption: "3"
+    caption: ""
     width: 68
+    zIndex: 1
 relatedProjects:
   blockTitle: Other Project
   projects:
