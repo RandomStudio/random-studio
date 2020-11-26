@@ -80,7 +80,7 @@ content:
         image: /img/maisonmargiela_83280386_2773500896090848_14565102521119019_n.jpg
     caption: Key Looks Photography
     width: 100
-    zIndex: 0
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -101,7 +101,7 @@ content:
         url: https://player.vimeo.com/external/408401574.sd.mp4?s=e06a4919f7e4a090709d833742f18e2ab9f1c67c&profile_id=165
     caption: Teasers
     width: 76
-    zIndex: 1
+    zIndex: 0
   - video:
       autoplay: false
       hasControls: false
@@ -120,6 +120,7 @@ content:
         url: https://player.vimeo.com/external/408417274.sd.mp4?s=df549173ccf68c88ab54c61c527c2c8d56070697&profile_id=165
     width: 75
     zIndex: 1
+    caption: Podcasts
   - video:
       autoplay: false
       hasControls: false
@@ -169,6 +170,7 @@ content:
         url: https://player.vimeo.com/external/408446582.sd.mp4?s=6cae77a4f7d5558e740a1ea0696fe76c26a503f3&profile_id=165
     width: 79
     zIndex: 1
+    caption: Vignettes
 relatedProjects:
   blockTitle: "Other work:"
   projects:
