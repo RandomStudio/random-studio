@@ -165,6 +165,7 @@ content:
         url: https://player.vimeo.com/external/408765984.sd.mp4?s=511eb088ecffcbdb0611a7d54227b384718c5fd5&profile_id=165
     width: 79
     zIndex: 1
+    caption: Vignettes
   - video:
       autoplay: false
       hasControls: false
@@ -183,7 +184,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408766713.sd.mp4?s=350987a15332701ea3da4f4fe22c20b550382b7a&profile_id=165
-    caption: ""
+    caption: Vignettes
     width: 70
     zIndex: 1
   - video:
@@ -205,7 +206,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408767135.sd.mp4?s=ee2238d2835ab676b1aac1cf720ff3a264781c74&profile_id=165
     alt: ""
-    caption: ""
+    caption: Vignettes
     width: 68
     zIndex: 1
 relatedProjects:
