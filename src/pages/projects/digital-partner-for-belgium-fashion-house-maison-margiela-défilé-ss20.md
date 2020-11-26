@@ -43,6 +43,7 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: -50
+    zIndex: 1
     carousel:
       - type: image
         image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg

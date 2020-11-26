@@ -157,6 +157,11 @@ collections:
             default: 0
             valueType: float
             widget: nonEmptyStringableNumber
+          - label: 'z-index'
+            name: zIndex
+            default: 0
+            valueType: number
+            widget: nonEmptyStringableNumber
       - label: Related Projects
         name: relatedProjects
         widget: object

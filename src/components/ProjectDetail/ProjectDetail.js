@@ -103,6 +103,7 @@ const ProjectDetail = ({
             video,
             width,
             carousel,
+            zIndex,
           },
           index,
         ) => (

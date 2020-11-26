@@ -42,6 +42,7 @@ export const pageQuery = graphql`
           alt
           marginTop
           marginLeft
+          zIndex
           video {
             autoplay
             hasControls
@@ -98,7 +99,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const Project = (props) => {
+const Project = props => {
   const {
     data: {
       allProjects: { edges: allProjects },
@@ -120,6 +121,8 @@ const Project = (props) => {
     : undefined;
 
   const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
+
+  console.log(project);
 
   return (
     <Layout>
