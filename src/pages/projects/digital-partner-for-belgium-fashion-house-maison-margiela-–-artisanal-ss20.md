@@ -22,6 +22,7 @@ content:
       url: https://player.vimeo.com/external/407992711.hd.mp4?s=2dfd56cc8749a4e12099c6ca3c3fe9bfb4d8c2b1&profile_id=175
     marginTop: 0
     marginLeft: 0
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -37,6 +38,7 @@ content:
 
 
       Inspired by the ‘Bourgeois gesture’ and its place in the cyber-industrial revolution of today, this collection saw Galliano trace and reuse fragments of the past, upcycling classic shapes from the turn of the century – and rebelling against them.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -78,6 +80,7 @@ content:
         image: /img/maisonmargiela_83280386_2773500896090848_14565102521119019_n.jpg
     caption: Key Looks Photography
     width: 100
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -98,6 +101,7 @@ content:
         url: https://player.vimeo.com/external/408401574.sd.mp4?s=e06a4919f7e4a090709d833742f18e2ab9f1c67c&profile_id=165
     caption: Teasers
     width: 76
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -115,6 +119,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408417274.sd.mp4?s=df549173ccf68c88ab54c61c527c2c8d56070697&profile_id=165
     width: 75
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -128,6 +133,7 @@ content:
       of the garments, as well as amplifying the seduction, suspense and vibrant
       colours of the collection. We also photographed the Maison Margiela x
       Reebok collaboration and key looks for the show.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -141,6 +147,7 @@ content:
     caption: "[Vogue
       article](https://www.vogue.com/article/maison-margiela-reebok-collaborati\
       on-sneaker)"
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -161,6 +168,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408446582.sd.mp4?s=6cae77a4f7d5558e740a1ea0696fe76c26a503f3&profile_id=165
     width: 79
+    zIndex: 1
 relatedProjects:
   blockTitle: "Other work:"
   projects:
