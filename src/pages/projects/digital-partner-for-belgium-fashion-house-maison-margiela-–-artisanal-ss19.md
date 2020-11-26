@@ -24,6 +24,8 @@ content:
       url: https://player.vimeo.com/external/408355369.hd.mp4?s=7b97222b1b36edde5967c3b804b9f98b95e216ec&profile_id=175
     marginTop: 0
     marginLeft: 0
+    caption: ""
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -37,6 +39,7 @@ content:
 
 
       This season was part of Galliano’s research into a ‘New Glamour’, with the latest instalment revolving around the cyclical nature of decadence. A riot of bright colours and jittering computer-generated imagery, the collection bubbles with the excess and artifice of the digital world and its flood of overlapping information.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -51,6 +54,7 @@ content:
       - type: image
         image: /img/maisonmargiela_50327453_1249339615205599_5660914223144192525_n.jpg
     width: 76
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -61,6 +65,8 @@ content:
     marginTop: 7
     marginLeft: 9
     width: 42
+    caption: Podcast
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -77,6 +83,7 @@ content:
       backstage and empty-set photography. The main video played on the
       reflected images of the mirrored runway, shot with rotating cameras to
       blur the lines between reality and its image.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -91,6 +98,8 @@ content:
       - type: image
         image: /img/maisonmargiela_51525984_367386054091437_6932946184675018036_n.jpg
     width: 80
+    caption: Vignettes
+    zIndex: 1
 relatedProjects:
   blockTitle: "Other work:"
   projects:
