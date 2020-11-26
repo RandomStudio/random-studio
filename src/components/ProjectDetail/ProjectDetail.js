@@ -71,6 +71,7 @@ const ProjectDetail = ({
           <Carousel
             className={styles.carouselWrapper}
             carousel={carousel}
+            caption={caption}
           />
         );
 
@@ -109,6 +110,7 @@ const ProjectDetail = ({
             key={index}
             className={styles.item}
             style={{
+              zIndex: zIndex || '0',
               '--marginTop': `${marginTop}%`,
               '--marginLeft': `${marginLeft}%`,
               '--width': `${width}%`,

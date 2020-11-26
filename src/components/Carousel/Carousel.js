@@ -3,9 +3,10 @@ import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
 import FluidImage from '../FluidImage/FluidImage';
+import Caption from '../ProjectDetail/Caption/Caption';
 
 const Carousel = ({
-  carousel, title, objectFit, className,
+  carousel, caption, title, objectFit, className,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
@@ -22,35 +23,31 @@ const Carousel = ({
 
   return (
     <div className={`${styles.carousel} ${className}`}>
-      {carousel.map(({ url, image, caption }, index) => (
-        <div
-          className={`
+      <div className={styles.carouselInner}>
+        {carousel.map(({ url, image }, index) => (
+          <div
+            className={`
             ${styles.image}
             ${index === currentIndex && styles.imageVisible}
           `}
-          key={index}
-        >
-          <div
-            className={`${carousel.length > 1 && styles.hasMultiple}`}
-            onClick={handleNext}
+            key={index}
           >
-            {url ? (
-              <video src={url} muted loop autoPlay playsInline />
-            ) : (
-              image && (
+            <div
+              className={`${carousel.length > 1 && styles.hasMultiple}`}
+              onClick={handleNext}
+            >
+              {url ? (
+                <video src={url} muted loop autoPlay playsInline />
+              ) : (
+                image && (
                 <FluidImage image={image} objectFit={objectFit} loading="auto" />
-              )
-            )}
-            {caption && <ReactMarkdown escapeHtml={false} source={caption} />}
+                )
+              )}
+            </div>
           </div>
-        </div>
-      ))}
-      <div className={styles.indicatorWrapper}>
-        {title && <p>{title}</p>}
-        {carousel.length > 1 && (
-          <span>{`${currentIndex + 1} of ${carousel.length}`}</span>
-        )}
+        ))}
       </div>
+      <Caption caption={caption} carouselIndicator={`${currentIndex + 1} of ${carousel.length}`} />
     </div>
   );
 };

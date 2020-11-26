@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import styles from './Caption.module.scss';
 
-const Caption = ({ marginLeft, caption }) => {
-  if (!caption) return null;
+const Caption = ({ marginLeft, caption, carouselIndicator }) => {
+  if (!caption && !carouselIndicator) return null;
 
   return (
     <div
@@ -12,6 +12,7 @@ const Caption = ({ marginLeft, caption }) => {
       style={{ marginLeft: !marginLeft && '1.4rem' }}
     >
       <ReactMarkdown escapeHtml={false} source={caption} />
+      <ReactMarkdown escapeHtml={false} source={carouselIndicator} />
     </div>
   );
 };
