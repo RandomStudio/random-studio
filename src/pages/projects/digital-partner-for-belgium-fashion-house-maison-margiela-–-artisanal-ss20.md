@@ -22,7 +22,7 @@ content:
       url: https://player.vimeo.com/external/407992711.hd.mp4?s=2dfd56cc8749a4e12099c6ca3c3fe9bfb4d8c2b1&profile_id=175
     marginTop: 0
     marginLeft: 0
-    zIndex: 1
+    zIndex: 0
   - video:
       autoplay: false
       hasControls: false
@@ -38,7 +38,7 @@ content:
 
 
       Inspired by the ‘Bourgeois gesture’ and its place in the cyber-industrial revolution of today, this collection saw Galliano trace and reuse fragments of the past, upcycling classic shapes from the turn of the century – and rebelling against them.
-    zIndex: 0
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -80,7 +80,7 @@ content:
         image: /img/maisonmargiela_83280386_2773500896090848_14565102521119019_n.jpg
     caption: Key Looks Photography
     width: 100
-    zIndex: 1
+    zIndex: 0
   - video:
       autoplay: false
       hasControls: false
