@@ -22,6 +22,7 @@ content:
       url: https://player.vimeo.com/external/408015045.hd.mp4?s=286f1f34f2c39e9dcf925468cefce05b36f38a0b&profile_id=175
     marginTop: 0
     marginLeft: 0
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -35,6 +36,7 @@ content:
 
 
       The final stage of this cycle of decadence, this collection presents a breakdown of social structure and a carte-blanche for the future. Feeding this sense of decay into the garments themselves, the show featured projections of the nudes and fleshy close-ups of artist Katerina Jebb, harking back to a desire for authenticity and human instinct.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -51,6 +53,8 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408406146.sd.mp4?s=fecd8eb09359e38c175d98ae366f0cde41772ba0&profile_id=165
     width: 76
+    caption: Teasers
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -61,6 +65,8 @@ content:
     marginTop: 7
     marginLeft: 9
     width: 42
+    caption: Podcast
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -76,6 +82,7 @@ content:
       itself. Working closely with Katerina, we were also responsible for
       translating her ideas into the show scenography, in which projections of
       the human form filled the walls.
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -86,6 +93,7 @@ content:
     marginTop: 0
     marginLeft: 60
     width: 28
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -106,6 +114,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408771118.sd.mp4?s=b2813a69725fcf4ff287446ffa198abc1b7f4706&profile_id=165
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -125,6 +134,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408771385.sd.mp4?s=fa4a21069b9f2e9afe76347ca7193b424ed12bd0&profile_id=165
     width: 70
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -145,6 +155,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408771589.sd.mp4?s=4427a18cb20231fa67d030743b99d22da0718a23&profile_id=165
     width: 77
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -164,6 +175,7 @@ content:
         isMuted: true
         url: https://vimeo.com/408771899/323303f841
     width: 70
+    zIndex: 1
 relatedProjects:
   blockTitle: "Other work:"
   projects:
