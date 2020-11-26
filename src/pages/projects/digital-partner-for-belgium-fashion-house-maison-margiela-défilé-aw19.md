@@ -24,6 +24,7 @@ content:
       url: https://player.vimeo.com/external/408304485.hd.mp4?s=4a7fb45f78af347c8af475f8a923ed046ae29afc&profile_id=175
     marginTop: 0
     marginLeft: 0
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -37,6 +38,7 @@ content:
 
 
       The idea of digital decadence explored in the recent Artisanal show was filtered down for this ready-to-wear collection, with garments stripped back down into a more purified and minimal form. Inspired by retelling the classic story of Swan Lake to the dramatic overtones of Tchaikovsky’s music, Galliano’s research swings this time towards the idea of ‘Transformation’.
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -47,6 +49,8 @@ content:
     marginTop: 0
     marginLeft: 50
     width: 40
+    caption: Teaser
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -63,6 +67,7 @@ content:
       together with images from the show, the teaser recounted this abstracted
       version of Swan Lake through his cast of models, narrated by Galliano
       himself.
+    zIndex: 1
   - video:
       autoplay: true
       hasControls: true
@@ -73,6 +78,8 @@ content:
     marginTop: 7
     marginLeft: 10
     width: 40
+    caption: Podcast
+    zIndex: 1
 relatedProjects:
   blockTitle: "Other work:"
   projects:
