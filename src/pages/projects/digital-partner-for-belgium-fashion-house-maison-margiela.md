@@ -25,6 +25,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -39,6 +40,7 @@ content:
 
 
       Continuing on the theme of remixing the house’s heritage, Galliano’s concept of ‘Recicla’ – resurrecting and deconstructing shapes from the past – was at the core of this collection. Driven by a new obsession with uniforms, the garments played on the idea of ‘work-in-progress’ as a new approach for the house’s future.
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -57,7 +59,8 @@ content:
         url: https://player.vimeo.com/external/408400397.sd.mp4?s=5de32129668f701c31a4076d4cfed459f2c58998&profile_id=165
         caption: ""
     width: 75
-    caption: Teaser
+    caption: Teasers
+    zIndex: 1
   - video:
       autoplay: false
       hasControls: false
@@ -69,6 +72,7 @@ content:
     caption: Galliano’s obsession was something we wanted to amplify in the assets
       we created, highlighting small details such as the vegetables decorating
       some of the outfits and the unique cuts of each altered uniform.
+    zIndex: 1
 relatedProjects:
   blockTitle: Other Work
   projects:
