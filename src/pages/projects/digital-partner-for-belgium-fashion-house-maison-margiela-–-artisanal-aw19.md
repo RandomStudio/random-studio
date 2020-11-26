@@ -115,6 +115,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408771118.sd.mp4?s=b2813a69725fcf4ff287446ffa198abc1b7f4706&profile_id=165
     zIndex: 1
+    caption: Vignettes
   - video:
       autoplay: false
       hasControls: false
@@ -135,6 +136,7 @@ content:
         url: https://player.vimeo.com/external/408771385.sd.mp4?s=fa4a21069b9f2e9afe76347ca7193b424ed12bd0&profile_id=165
     width: 70
     zIndex: 1
+    caption: Vignettes
   - video:
       autoplay: true
       hasControls: true
@@ -156,6 +158,7 @@ content:
         url: https://player.vimeo.com/external/408771589.sd.mp4?s=4427a18cb20231fa67d030743b99d22da0718a23&profile_id=165
     width: 77
     zIndex: 1
+    caption: Vignettes
   - video:
       autoplay: false
       hasControls: false
@@ -176,6 +179,7 @@ content:
         url: https://vimeo.com/408771899/323303f841
     width: 70
     zIndex: 1
+    caption: Vignettes
 relatedProjects:
   blockTitle: "Other work:"
   projects:
