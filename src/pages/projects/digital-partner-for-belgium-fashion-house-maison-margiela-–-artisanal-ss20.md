@@ -38,7 +38,7 @@ content:
 
 
       Inspired by the ‘Bourgeois gesture’ and its place in the cyber-industrial revolution of today, this collection saw Galliano trace and reuse fragments of the past, upcycling classic shapes from the turn of the century – and rebelling against them.
-    zIndex: 1
+    zIndex: 0
   - video:
       autoplay: false
       hasControls: false
