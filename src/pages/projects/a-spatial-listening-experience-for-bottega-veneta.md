@@ -1,0 +1,77 @@
+---
+templateKey: Project
+title: |
+  A Spatial Listening Experience for Bottega Veneta 
+intro: To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul,
+  we were enlisted to design a pop-up experience and store scenography. Drawing
+  inspiration from its location next to the iconic Hyundai Card Music
+  Library, we created a spatial listening experience based on the ‘Acousmonium’
+  sonic installations as pioneered by Francois Bayle in the 1970s.
+content:
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: video edit
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: Housed in a reflective inflatable structure in front of the building,
+      the experience blended acoustic properties with architecture and
+      aesthetics, nestling 24 speakers of various sizes into its voluminous
+      walls to produce a three-dimensional sonic landscape, determined by the
+      speakers’ varying frequency response. Upon entering, visitors encountered
+      an atmospheric, evolving soundscape that they can explore with their
+      bodies, by moving or staying still. Layers of sound overlap to conjure up
+      different dreamscapes – the gentle seascape of Ischia, the tranquility of
+      a morning hike through the hills of Jeju Island, the bustle of New York’s
+      streets – woven together with musical elements created by Seungmin Cha.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: -60
+    zIndex: 0
+    carousel:
+      - type: image
+        image: /img/BV_1.jpg
+      - type: image
+        image: /img/BV2.jpg
+    width: 120
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 6
+    marginLeft: 50
+    zIndex: 0
+    image: /img/BV6.jpg
+    width: 50
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 10
+    marginLeft: 8
+    zIndex: 0
+    image: /img/BV5.jpg
+    width: 55
+---
