@@ -74,4 +74,30 @@ content:
     zIndex: 0
     image: /img/BV5.jpg
     width: 55
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: The aesthetics of the installation were mirrored inside the Vinyl &
+      Plastic pop-up store next door, where we designed the product displays out
+      of reflective materials and inflated structures. The two locations allowed
+      for a focused experience design; one dedicated to an immersive brand
+      experience and the other a powerful product display, with both sharing art
+      direction and concept.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    carousel:
+      - type: image
 ---
