@@ -31,12 +31,7 @@ content:
       the experience blended acoustic properties with architecture and
       aesthetics, nestling 24 speakers of various sizes into its voluminous
       walls to produce a three-dimensional sonic landscape, determined by the
-      speakers’ varying frequency response. Upon entering, visitors encountered
-      an atmospheric, evolving soundscape that they can explore with their
-      bodies, by moving or staying still. Layers of sound overlap to conjure up
-      different dreamscapes – the gentle seascape of Ischia, the tranquility of
-      a morning hike through the hills of Jeju Island, the bustle of New York’s
-      streets – woven together with musical elements created by Seungmin Cha.
+      speakers’ varying frequency response.
   - video:
       autoplay: false
       hasControls: false
@@ -83,12 +78,18 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: The aesthetics of the installation were mirrored inside the Vinyl &
+    caption: >-
+      The aesthetics of the installation were mirrored inside the Vinyl &
       Plastic pop-up store next door, where we designed the product displays out
       of reflective materials and inflated structures. The two locations allowed
       for a focused experience design; one dedicated to an immersive brand
       experience and the other a powerful product display, with both sharing art
       direction and concept.
+
+
+
+
+      Upon entering, visitors encountered an atmospheric, evolving soundscape that they can explore with their bodies, by moving or staying still. Layers of sound overlap to conjure up different dreamscapes – the gentle seascape of Ischia, the tranquility of a morning hike through the hills of Jeju Island, the bustle of New York’s streets – woven together with musical elements created by Seungmin Cha.
   - video:
       autoplay: false
       hasControls: false
@@ -154,9 +155,17 @@ content:
     width: 72
 credits:
   - key: "For:"
-    value: ...
+    value: Bottega Veneta
   - key: "Role:"
-    value: ...
+    value: Concept Design, Design Development, Creative Technology, Technical
+      development
+  - key: "With:"
+    value: |-
+      Ben Kreukniet – Sound design & arrangement 
+
+      Wárms Korea – Physical production
+
+      Seungmin Cha – Field recordings and daegeum flute performance
 opengraph:
   ogDescription: "A shiny take on the Acousmoniums of the 1970s as pioneered by
     Francois Bayle, we made an inflatable sonic installation to mark the launch
