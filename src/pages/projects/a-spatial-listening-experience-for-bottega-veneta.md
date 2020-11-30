@@ -111,10 +111,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 7
-    marginLeft: 61
+    marginLeft: 60
     zIndex: 0
     image: /img/RND05189 copy.jpg
-    width: 31
+    width: 33
   - video:
       autoplay: false
       hasControls: false
