@@ -152,4 +152,17 @@ content:
     zIndex: 0
     image: /img/RND05199 copy.jpg
     width: 72
+credits:
+  - key: "For:"
+    value: ...
+  - key: "Role:"
+    value: ...
+opengraph:
+  ogDescription: "A shiny take on the Acousmoniums of the 1970s as pioneered by
+    Francois Bayle, we made an inflatable sonic installation to mark the launch
+    of Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul. Reflecting
+    on the location of the Hyundai Card Music Library, the structure offered
+    visitors a dreamy spatial listening experience that transformed with every
+    step. Read more on our website. "
+  ogImage: /img/BV_1.jpg
 ---
