@@ -96,8 +96,38 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 0
+    marginLeft: -41
     zIndex: 0
     carousel:
       - type: image
+        image: /img/RND05171 copy.jpg
+      - type: image
+        image: /img/RND05178.jpg
+    width: 120
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 7
+    marginLeft: 61
+    zIndex: 0
+    image: /img/RND05189 copy.jpg
+    width: 31
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: -22
+    marginLeft: -32
+    zIndex: 0
+    carousel:
+      - type: image
+        image: /img/RND05191 copy.jpg
+      - type: image
+        image: /img/RND05203 copy.jpg
+    width: 79
 ---
