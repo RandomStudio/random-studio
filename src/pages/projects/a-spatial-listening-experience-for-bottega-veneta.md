@@ -12,12 +12,13 @@ content:
       autoplay: false
       hasControls: false
       loops: true
-      isMuted: true
+      isMuted: false
       isAlwaysMuted: false
+      url: https://player.vimeo.com/external/485603898.hd.mp4?s=413d2a6ab5dfc3d3686fc22460d020fd6de56a71&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: video edit
+    caption: ""
   - video:
       autoplay: false
       hasControls: false
