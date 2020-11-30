@@ -59,10 +59,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 6
-    marginLeft: 50
+    marginLeft: 52
     zIndex: 0
     image: /img/BV6.jpg
-    width: 50
+    width: 48
   - video:
       autoplay: false
       hasControls: false
@@ -130,4 +130,26 @@ content:
       - type: image
         image: /img/RND05203 copy.jpg
     width: 79
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: -4
+    marginLeft: 60
+    zIndex: 0
+    image: /img/RND05344.jpg
+    width: 40
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 10
+    marginLeft: 13
+    zIndex: 0
+    image: /img/RND05199 copy.jpg
+    width: 72
 ---
