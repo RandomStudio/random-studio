@@ -10,7 +10,7 @@ intro: To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul
 content:
   - video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       loops: true
       isMuted: false
       isAlwaysMuted: false
