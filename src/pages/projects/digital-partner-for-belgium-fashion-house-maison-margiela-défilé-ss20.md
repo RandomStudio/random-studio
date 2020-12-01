@@ -210,7 +210,7 @@ content:
     width: 68
     zIndex: 1
 relatedProjects:
-  blockTitle: Other Project
+  blockTitle: Other Projects
   projects:
     - title: Défilé AW20
       image: /img/Defile_AW20_2.jpg
