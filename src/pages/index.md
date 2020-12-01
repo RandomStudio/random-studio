@@ -16,22 +16,30 @@ middle: >-
 projects:
   - thumbnail:
       marginTop: 0
-      marginLeft: 20
-      image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
-      width: 60
-    caption: Your body as a controller in Nike's House of Innovation Paris
-    project: Your body as a controller in Nike's House of Innovation Paris
+      marginLeft: 23
+      image: /img/BV_1.jpg
+      width: 54
+    project: |
+      A Spatial Listening Experience for Bottega Veneta 
+    caption: A Spatial Listening Experience for Bottega Veneta
   - thumbnail:
       marginTop: 0
-      marginLeft: 0
-      width: 50
+      marginLeft: 55
+      width: 45
       image: /img/look_37.4.jpg
     caption: |-
       A Live Spectacle for
       Chloé's SS21 Collection
     project: A Live Spectacle for Chloé's SS21 Collection
   - thumbnail:
-      marginTop: -11
+      marginTop: -10
+      marginLeft: 8
+      image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
+      width: 52
+    caption: Your body as a controller in Nike's House of Innovation Paris
+    project: Your body as a controller in Nike's House of Innovation Paris
+  - thumbnail:
+      marginTop: 0
       marginLeft: 47
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 49
@@ -120,7 +128,7 @@ projects:
       marginTop: -28
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
-    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
+    project: "Bottega Veneta Takeover at Saks Fifth Avenue "
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60
