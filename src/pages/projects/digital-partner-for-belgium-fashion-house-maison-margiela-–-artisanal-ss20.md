@@ -175,7 +175,7 @@ relatedProjects:
   blockTitle: "Other work:"
   projects:
     - title: Défilé AW20
-      project: Digital Partner for Belgium fashion house Maison Margiela
+      project: Digital Partner for Belgium fashion house Maison Margiela – Défilé AW20
       image: /img/Defile_AW20_2.jpg
     - title: Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
@@ -185,7 +185,7 @@ relatedProjects:
       project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
         AW19
     - title: Défilé AW19
-      project: "Digital Partner for Belgium fashion house Maison Margiela - Défilé
+      project: "Digital Partner for Belgium fashion house Maison Margiela – Défilé
         AW19 "
       image: /img/Defile_AW19.png
     - title: Artisanal SS19
