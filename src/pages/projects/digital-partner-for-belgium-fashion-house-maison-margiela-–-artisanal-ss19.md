@@ -101,7 +101,7 @@ content:
     caption: Vignettes
     zIndex: 1
 relatedProjects:
-  blockTitle: "Other work:"
+  blockTitle: Other Projects
   projects:
     - title: Défilé AW20
       project: Digital Partner for Belgium fashion house Maison Margiela
