@@ -9,7 +9,7 @@ intro: To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul
   sonic installations as pioneered by Francois Bayle in the 1970s.
 content:
   - video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       loops: true
       isMuted: false
