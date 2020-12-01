@@ -30,7 +30,7 @@ projects:
     caption: |-
       A Live Spectacle for
       Chloé's SS21 Collection
-    project: A Live Spectacle for Chloé's SS21 Collection
+    project: A live spectacle for Chloé's SS21 Collection
   - thumbnail:
       marginTop: -10
       marginLeft: 8
