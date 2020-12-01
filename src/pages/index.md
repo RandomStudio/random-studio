@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/464600042.hd.mp4?s=cbcc8003cf744bacbe72c14f3d94dfb0c33e9685&profile_id=175
+video: https://player.vimeo.com/external/485890365.hd.mp4?s=70620eac5af8ea7d824b9d334df5706010f05514&profile_id=175
 collaborationCredits:
-  collaborator: Chloé
-  url: https://random.studio/projects/a-ss21-collection-experience-for-chlo%C3%A9/
+  collaborator: Bottege Veneta Korea
+  url: https://random.studio/projects/a-spatial-listening-experience-for-bottega-veneta/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
