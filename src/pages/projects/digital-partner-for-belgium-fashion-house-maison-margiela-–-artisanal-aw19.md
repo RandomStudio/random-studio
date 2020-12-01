@@ -181,7 +181,7 @@ content:
     zIndex: 1
     caption: Vignettes
 relatedProjects:
-  blockTitle: "Other work:"
+  blockTitle: Other Projects
   projects:
     - title: Défilé AW20
       image: /img/Defile_AW20_2.jpg
