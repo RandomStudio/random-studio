@@ -20,8 +20,8 @@ projects:
       image: /img/BV_1.jpg
       width: 54
     project: |
-      A Spatial Listening Experience for Bottega Veneta 
-    caption: A Spatial Listening Experience for Bottega Veneta
+      A spatial listening experience for Bottega Veneta 
+    caption: A spatial listening experience for Bottega Veneta
   - thumbnail:
       marginTop: 0
       marginLeft: 55
