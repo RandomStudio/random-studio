@@ -74,7 +74,7 @@ content:
       some of the outfits and the unique cuts of each altered uniform.
     zIndex: 1
 relatedProjects:
-  blockTitle: Other Work
+  blockTitle: Other Projects
   projects:
     - project: Digital Partner for Belgium fashion house Maison Margiela – Artisanal
         SS20
