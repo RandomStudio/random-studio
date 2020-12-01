@@ -59,10 +59,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 6
-    marginLeft: 52
+    marginLeft: 56
     zIndex: 0
     image: /img/BV6.jpg
-    width: 48
+    width: 44
   - video:
       autoplay: false
       hasControls: false
@@ -73,7 +73,7 @@ content:
     marginLeft: 8
     zIndex: 0
     image: /img/BV5.jpg
-    width: 55
+    width: 53
   - video:
       autoplay: false
       hasControls: false
