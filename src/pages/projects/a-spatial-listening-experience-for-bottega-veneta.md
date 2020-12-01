@@ -1,7 +1,7 @@
 ---
 templateKey: Project
 title: |
-  A Spatial Listening Experience for Bottega Veneta 
+  A spatial listening experience for Bottega Veneta 
 intro: To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul,
   we were enlisted to design a pop-up experience and store scenography. Drawing
   inspiration from its location next to the iconic Hyundai Card Music
