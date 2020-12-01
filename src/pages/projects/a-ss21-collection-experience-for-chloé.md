@@ -1,8 +1,8 @@
 ---
 templateKey: Project
-title: A Live Spectacle for Chloé's SS21 Collection
+title: A live spectacle for Chloé's SS21 Collection
 intro: >-
-
+  
 
   For their SS21 collection, we worked with Natacha Ramsay-Levi from Chloé to imagine and create a live spectacle spilling through the streets of Paris, its grand finale unfolding against the backdrop of the Palais de Tokyo.
 
