@@ -74,7 +74,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 17
+    marginTop: 15
     marginLeft: -57
     zIndex: 0
     carousel:
