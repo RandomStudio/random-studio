@@ -57,4 +57,15 @@ content:
     zIndex: 0
     image: /img/RND05377.jpg
     width: 48
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 11
+    marginLeft: 9
+    zIndex: 0
+    image: /img/RND05368.jpg
+    width: 53
 ---
