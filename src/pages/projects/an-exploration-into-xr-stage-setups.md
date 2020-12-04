@@ -68,4 +68,19 @@ content:
     zIndex: 0
     image: /img/RND05368.jpg
     width: 55
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 14
+    marginLeft: -57
+    zIndex: 0
+    carousel:
+      - type: image
+        image: /img/RND05398.jpg
+      - type: image
+        image: /img/RND05466.jpg
+    width: 149
 ---
