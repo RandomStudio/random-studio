@@ -74,7 +74,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 14
+    marginTop: 17
     marginLeft: -57
     zIndex: 0
     carousel:
@@ -83,4 +83,32 @@ content:
       - type: image
         image: /img/RND05466.jpg
     width: 149
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+      odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis
+      sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+      Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia
+      arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per
+      conubia nostra, per inceptos himenaeos.
+credits:
+  - key: "For:"
+    value: Random Studio
+  - key: "Role:"
+    value: |
+      Creative Concept,
+      User Experience/Customer Experience Design,
+      Experience Design,
+      Art Direction,
+      Spatial Design,
+      Prototyping,
+      Software Development,
+      Installation Engineering
 ---
