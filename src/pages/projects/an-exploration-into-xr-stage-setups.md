@@ -67,5 +67,5 @@ content:
     marginLeft: 9
     zIndex: 0
     image: /img/RND05368.jpg
-    width: 53
+    width: 55
 ---
