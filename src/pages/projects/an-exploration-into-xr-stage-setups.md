@@ -35,4 +35,26 @@ content:
       luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris
       ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in,
       nibh. Quisque volutpat condimentum velit.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    image: /img/RND05357.jpg
+    width: 60
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 12
+    marginLeft: 52
+    zIndex: 0
+    image: /img/RND05377.jpg
+    width: 48
 ---
