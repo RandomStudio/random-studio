@@ -111,4 +111,6 @@ credits:
       Prototyping,
       Software Development,
       Installation Engineering
+opengraph:
+  ogImage: /img/RND05466.jpg
 ---
