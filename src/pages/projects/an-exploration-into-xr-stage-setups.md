@@ -63,7 +63,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 11
+    marginTop: 12
     marginLeft: 9
     zIndex: 0
     image: /img/RND05368.jpg
