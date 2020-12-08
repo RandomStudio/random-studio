@@ -386,6 +386,7 @@ collections:
                 media_library:
                   config:
                     multiple: false
+
           - label: Services
             name: services
             widget: object
@@ -406,6 +407,7 @@ collections:
                   - label: Image
                     name: image
                     widget: image
+
           - label: 'Our Skillset'
             name: skillset
             widget: list
@@ -413,6 +415,7 @@ collections:
               label: Skill
               name: skill
               widget: string
+
           - label: 'Studio impression'
             name: studioImpression
             widget: object
@@ -431,3 +434,24 @@ collections:
                     media_library:
                       config:
                         multiple: true
+
+          - label: 'Job Openings'
+            name: jobOpenings
+            widget: list
+            fields:
+              - label: 'Job title'
+                name: jobTitle
+                widget: string
+                default: Job function title
+              - label: 'Job URL'
+                name: jobURL
+                widget: string
+                default: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>
+              - label: 'Job description'
+                name: jobDescription
+                widget: text
+                default: Job description
+              - label: 'Show this project live'
+                name: jobIsVisible
+                widget: boolean
+                default: false

@@ -49,6 +49,7 @@ studioImpression:
   title: Studio Impressions
 jobOpenings:
   - jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=1
-    jobTitle: Job function title 1234
-    jobDescription: Job description3 3raef
+    jobTitle: Job title here
+    jobDescription: Job description here
+    jobIsVisible: false
 ---
