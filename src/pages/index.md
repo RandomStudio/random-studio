@@ -24,7 +24,7 @@ projects:
     caption: A spatial listening experience for Bottega Veneta
   - thumbnail:
       marginTop: 0
-      marginLeft: 55
+      marginLeft: 0
       width: 45
       image: /img/look_37.4.jpg
     caption: |-
@@ -33,11 +33,19 @@ projects:
     project: A live spectacle for Chloé's SS21 Collection
   - thumbnail:
       marginTop: -10
-      marginLeft: 8
+      marginLeft: 50
       image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
-      width: 52
+      width: 50
     caption: Your body as a controller in Nike's House of Innovation Paris
     project: Your body as a controller in Nike's House of Innovation Paris
+  - thumbnail:
+      marginTop: 16
+      marginLeft: 18
+      image: ""
+      width: 48
+      video: https://player.vimeo.com/external/488969392.sd.mp4?s=d183dddfe72bb508e4b9a4ad7d7b14171ab60116&profile_id=164
+    caption: An internet creation myth for kids
+    project: An internet creation myth for kids
   - thumbnail:
       marginTop: 0
       marginLeft: 47
