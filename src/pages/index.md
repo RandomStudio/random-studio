@@ -155,13 +155,14 @@ projects:
       marginLeft: 0
       marginTop: 0
       width: 40
-  - caption: Creative direction of film production for Maison Margiela
-    project: Creative direction of film production for Maison Margiela
+  - caption: Digital Partner for Belgium Fashion House Maison Margiela
+    project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
     thumbnail:
       marginLeft: 60
       marginTop: -41
-      video: https://player.vimeo.com/external/325456009.hd.mp4?s=2d2d20db4d509264e3e8c1ed290c9576d15a2cc7&profile_id=174
+      video: ""
       width: 35
+      image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
   - caption: |-
       Digital partner
 
