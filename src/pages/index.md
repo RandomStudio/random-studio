@@ -40,9 +40,9 @@ projects:
     project: Your body as a controller in Nike's House of Innovation Paris
   - thumbnail:
       marginTop: 0
-      marginLeft: 20
+      marginLeft: 11
       video: ""
-      width: 45
+      width: 40
       image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
     project: An internet creation myth for kids
     caption: An internet creation myth for kids
