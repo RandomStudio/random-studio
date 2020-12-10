@@ -41,6 +41,13 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 20
+      video: https://player.vimeo.com/external/489416632.sd.mp4?s=b400e8d594ff444f854a7901bce652348ad858c1&profile_id=165
+      width: 45
+    project: An internet creation myth for kids
+    caption: An internet creation myth for kids
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 45
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 49
     caption: A series of digital experiments for SPACE10
