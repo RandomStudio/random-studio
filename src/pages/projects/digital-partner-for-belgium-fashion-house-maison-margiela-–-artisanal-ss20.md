@@ -202,7 +202,10 @@ credits:
   - key: "With:"
     value: Lonneke van der Palen – Photography
 opengraph:
-  ogTitle: ""
-  ogDescription: ""
+  ogTitle: Maison Margiela – Artisanal SS20
+  ogDescription: Across the show teaser, podcast teaser and runway video we
+    created, our visual response was to hone in on the idea of ‘Gesture’ and
+    fine details of the garments, as well as amplifying the seduction, suspense
+    and vibrant colours of the collection.
   ogImage: /img/maisonmargiela_81393000_138260937648601_1845573813926662268_n.jpg
 ---
