@@ -139,4 +139,11 @@ credits:
     value: Lonneke van der Palen – Photography
 opengraph:
   ogImage: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+  ogDescription: "Our documentation of the show played on the borders of fake and
+    real. The show itself was a spectacle-like affair so we captured it from
+    every angle and perspective, creating a stream of different images and
+    content including the main runway video, live-editing for Instagram Live, a
+    pre-show teaser, a podcast teaser, a series of backstage videos and
+    backstage and empty-set photography. "
+  ogTitle: Maison Margiela – Artisanal SS19
 ---
