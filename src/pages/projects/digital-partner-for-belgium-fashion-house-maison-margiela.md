@@ -106,4 +106,10 @@ credits:
     value: "Lonneke van der Palen – Photography "
 opengraph:
   ogImage: /img/Defile_AW20_2.jpg
+  ogTitle: " Maison Margiela – Défilé AW20"
+  ogDescription: Continuing on the theme of remixing the house’s heritage,
+    Galliano’s concept of ‘Recicla’ – resurrecting and deconstructing shapes
+    from the past – was at the core of this collection.  Driven by a new
+    obsession with uniforms, the garments played on the idea of
+    ‘work-in-progress’ as a new approach for the house’s future.
 ---
