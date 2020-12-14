@@ -215,4 +215,10 @@ credits:
     value: Lonneke van der Palen – Photography
 opengraph:
   ogImage: /img/Artisanal_AW19.png
+  ogTitle: Maison Margiela – Artisanal AW19
+  ogDescription: The final stage of this cycle of decadence, this collection
+    presents a breakdown of social structure and a carte-blanche for the future.
+    Feeding this sense of decay into the garments themselves, the show featured
+    projections of the nudes and fleshy close-ups of artist Katerina Jebb,
+    harking back to a desire for authenticity and human instinct.
 ---
