@@ -2,12 +2,11 @@
 templateKey: Project
 title: |
   An exploration into Xr stage setups
-intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-  odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem
-  at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec
-  tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget
-  nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-  inceptos himenaeos.
+intro: We’ve been thinking about the future of in-store experiences. What if you
+  could literally step into the world of a product? XR experiences propose a new
+  kind of immersive and adaptable brand encounter. Transforming any space into a
+  pop-up dynamic visual landscape, customers are invited to step into the
+  creative vision of a collection.
 content:
   - video:
       autoplay: true
@@ -28,13 +27,12 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
-      Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at
-      dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel
-      nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis,
-      luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris
-      ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in,
-      nibh. Quisque volutpat condimentum velit.
+    caption: Each experience is unique. As you pick up a garment or product, the
+      surrounding environment transforms using head and camera tracking to
+      respond in real-time to your presence. Exploring the space with your body,
+      you can experience the product from different perspectives, immersed in
+      the atmosphere created by LED and stage lighting. Leave with a takeaway to
+      remember your experience and share it online.
   - video:
       autoplay: false
       hasControls: false
@@ -74,30 +72,31 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 19
-    marginLeft: -57
+    marginTop: 10
+    marginLeft: 0
     zIndex: 0
-    carousel:
-      - type: image
-        image: /img/RND05398.jpg
-      - type: image
-        image: /img/RND05466.jpg
-    width: 149
+    caption: From in-store installations to product launches, from photobooths to
+      Instagram filters, XR Stages are flexible to suit different shapes, scales
+      and seasons and host a range of different content. Customers can enter
+      into campaign imagery or a product story, or give products a ‘test-drive
+      in real-life contextual scenarios. Offering a range of unique, sensorial
+      product experiences, XR Stages bridge the digital and physical to create a
+      memorable customer journey.
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 13
+    marginLeft: -58
     zIndex: 0
-    caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-      odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis
-      sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-      Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia
-      arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per
-      conubia nostra, per inceptos himenaeos.
+    carousel:
+      - type: image
+        image: /img/RND05398.jpg
+      - type: image
+        image: /img/RND05466.jpg
+    width: 144
 credits:
   - key: "For:"
     value: Random Studio
