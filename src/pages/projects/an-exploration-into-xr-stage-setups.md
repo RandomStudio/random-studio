@@ -72,7 +72,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 10
+    marginTop: 0
     marginLeft: 0
     zIndex: 0
     caption: From in-store installations to product launches, from photobooths to
@@ -88,7 +88,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 13
+    marginTop: 0
     marginLeft: -58
     zIndex: 0
     carousel:
