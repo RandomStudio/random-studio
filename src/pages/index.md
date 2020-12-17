@@ -3,7 +3,7 @@ templateKey: Home
 layout: top
 video: https://player.vimeo.com/external/485890365.hd.mp4?s=70620eac5af8ea7d824b9d334df5706010f05514&profile_id=175
 collaborationCredits:
-  collaborator: Bottege Veneta Korea
+  collaborator: Bottega Veneta Korea
   url: https://random.studio/projects/a-spatial-listening-experience-for-bottega-veneta/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
