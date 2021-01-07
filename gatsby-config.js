@@ -90,10 +90,8 @@ const gatsbyConfig = {
   ],
 };
 
-// CONTEXT is a netlify env
 if (
-  process.env.CONTEXT === 'production' ||
-  process.env.CONTEXT === 'deploy-preview'
+  process.env.NODE_ENV === 'production'
 ) {
   const gaConfig = {
     resolve: 'gatsby-plugin-google-analytics',
