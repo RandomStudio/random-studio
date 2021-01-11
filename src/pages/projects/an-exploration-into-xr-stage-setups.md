@@ -1,12 +1,12 @@
 ---
 templateKey: Project
 title: |
-  An exploration into Xr stage setups
+  An exploration into mixed reality setups
 intro: We’ve been thinking about the future of in-store experiences. What if you
-  could literally step into the world of a product? XR experiences propose a new
-  kind of immersive and adaptable brand encounter. Transforming any space into a
-  pop-up dynamic visual landscape, customers are invited to step into the
-  creative vision of a collection.
+  could literally step into the world of a product? Mixed reality (XR)
+  experiences propose a new kind of immersive and adaptable brand encounter.
+  Transforming any space into a pop-up dynamic visual landscape, customers are
+  invited to step into the creative vision of a collection.
 content:
   - video:
       autoplay: true
