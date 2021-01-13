@@ -1,0 +1,100 @@
+.container {
+	width: 100%;
+	z-index: 10;
+}
+
+.scrubberContainer {
+	position: relative;
+	height: 100%;
+	font-family: var(--mono-font);
+	font-size: 12px;
+
+	& > span {
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		background-color: var(--white);
+		color: var(--white);
+		
+		&:nth-of-type(1) {
+			width: 1px;
+			height: 4px;
+			left: 0;
+			
+			&::after {
+				content: "AMS";
+				position: absolute;
+				top: -1.6em;
+				left: 0;
+				user-select: none;
+			}
+		}
+
+		&:nth-of-type(2) {
+			height: 1px;
+			width: 100%;
+			bottom: 0;
+		}
+
+		&:nth-of-type(3) {
+			width: 1px;
+			height: 4px;
+			right: 0;
+
+			&::after {
+				content: "PAR";
+				position: absolute;
+				top: -1.6em;
+				right: 0;
+				user-select: none;
+			}
+		}
+	}
+}
+
+.scrubber {
+	position: relative;
+	width: calc(100% - 80px);
+	left: 40px;
+	cursor: pointer;
+}
+
+.thumbnail {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	touch-action: none; // Prevent glitching on touch devices - react use gesture
+	user-select: none;
+	cursor: grab;
+
+	width: 60px;
+	height: 40px; // double of the scrubber height
+	background-color: var(--white);
+	
+	p  {
+		user-select: none;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.liveContinueButton {
+	position: absolute;
+	top: 0;
+	padding: 4px 0;
+	border: none;
+	transform: translate3d(0, -100%, 0);
+	text-align: center;
+	width: 100%;
+	background: darkslategray;
+	color: var(--white);
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}

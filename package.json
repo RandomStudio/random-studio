@@ -16,6 +16,14 @@
     "lint": "eslint './src/**/*.js'"
   },
   "dependencies": {
+    "@anselan/maprange": "^0.6.1",
+    "@babylonjs/core": "^4.2.0",
+    "@babylonjs/loaders": "^4.2.0",
+    "babylonjs-hook": "0.0.9",
+    "react-lazy-images": "^1.1.0",
+    "react-spring": "^9.0.0-rc.3",
+    "react-use-gesture": "^9.0.0-beta.11",
+    "stats.js": "^0.17.0",
     "babylonjs": "4.1.0",
     "babylonjs-loaders": "4.1.0",
     "framer-motion": "^2.0.0-beta.33",

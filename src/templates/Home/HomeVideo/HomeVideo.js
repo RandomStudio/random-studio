@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styles from './HomeVideo.module.scss';
+import TakeOverHeader from '../../../random-paris/components/TakeOverHeader/TakeOverHeader';
 
 const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
   const scrollToProjects = event => {
@@ -12,13 +13,15 @@ const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
     event.preventDefault();
   };
 
-  const logoClass = `${styles.logo} ${
-    layout === 'top' ? styles.isTop : styles.isCenter
-  }`;
+  const logoClass = `${styles.logo} ${layout === 'top' ? styles.isTop : styles.isCenter
+    }`;
 
   return (
     <div className={styles.video}>
-      <video src={videoUrl} muted loop autoPlay playsInline />
+
+      <TakeOverHeader />
+
+      {/* <video src={videoUrl} muted loop autoPlay playsInline /> */}
       <h1 className={logoClass}>
         {'Random'}
         <br />
