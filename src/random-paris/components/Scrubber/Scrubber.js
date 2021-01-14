@@ -1,3 +1,4 @@
+import styles from './Scrubber.module.scss';
 
 import React, { useEffect, useMemo, useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
@@ -5,7 +6,6 @@ import classnames from 'classnames';
 import { remap } from '@anselan/maprange';
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
-import styles from './Scrubber.module.scss';
 
 import { WIDTH_CORRECTION } from '../../utils/CONSTANTS';
 import gpsData from '../../utils/gpsWithData.json';
@@ -43,7 +43,6 @@ const Scrubber = (
 		}
 
 		window.addEventListener('resize', getSize);
-
 		return () => window.removeEventListener('resize', getSize);
 	}, []); // Empty array ensures that effect is only run on mount and unmount
 
@@ -69,9 +68,7 @@ const Scrubber = (
 	const [{ x }, set] = useSpring(() => ({ x: 0 }));
 	const [{ xLive }, setLive] = useSpring(() => ({ xLive: 0 }));
 
-	const frameStepPerPixel = useMemo(() => dimensions.width / totalFrames, [dimensions, totalFrames]);
-
-	const getClientSideX = inputX => {
+	const getClientSideX = (inputX) => {
 		if (typeof window === 'undefined') return 0;
 
 		// Calculated by
@@ -83,13 +80,21 @@ const Scrubber = (
 		return mappedX;
 	};
 
-	const handleUpdateFrameByClick = inputX => {
+	const getTargetFrame = (inputX) => {
+		if (typeof window === 'undefined') return 0;
+
+		const targetFrame = Math.floor(remap(inputX, [70, window.innerWidth - 70], [0, totalFrames], true));
+
+		return targetFrame;
+	};
+
+	const handleUpdateFrameByClick = (inputX) => {
 		const targetX = getClientSideX(inputX);
 
 		if (isLive) {
 			updateLiveFrames(targetX);
 		} else {
-			const targetFrame = Math.floor(remap(inputX, [70, window.innerWidth - 70], [0, totalFrames], true));
+			const targetFrame = getTargetFrame(inputX);
 
 			set({ x: targetX });
 			updateFrames(targetFrame);
@@ -106,7 +111,7 @@ const Scrubber = (
 			}
 
 			const targetX = getClientSideX(ogX);
-			const targetFrame = Math.floor(remap(ogX, [70, window.innerWidth - 70], [0, totalFrames], true));
+			const targetFrame = getTargetFrame(ogX);
 
 			if (isLive) {
 				updateLiveFrames(targetX);
@@ -152,13 +157,13 @@ const Scrubber = (
 		<section className={contrainerClasses}>
 			<div
 				className={styles.scrubberContainer}
-				onPointerDown={e => {
+				onPointerDown={(e) => {
 					handleUpdateFrameByClick(e.clientX);
 				}}
 			>
-				<span />
-				<span />
-				<span />
+				<span></span>
+				<span></span>
+				<span></span>
 
 				<div ref={scrubberRef} className={styles.scrubber}>
 					{isLive && (
@@ -169,7 +174,7 @@ const Scrubber = (
 								x: xLive,
 							}}
 						>
-							<p>{"LIVE"}</p>
+							<p>LIVE</p>
 						</animated.div>
 					)}
 

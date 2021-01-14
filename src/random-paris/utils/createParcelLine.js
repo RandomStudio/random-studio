@@ -1,4 +1,4 @@
-import { Color3, Curve3, Path3D, Vector3 } from '@babylonjs/core/Maths/math';
+import { Color3, Color4, Curve3, Path3D, Vector3 } from '@babylonjs/core/Maths/math';
 import { Animation, AnimationGroup, Mesh } from '@babylonjs/core';
 import '@babylonjs/loaders/glTF';
 import { remap } from '@anselan/maprange';
@@ -30,8 +30,12 @@ const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
 	const catmullRom = Curve3.CreateCatmullRomSpline(trackerLine, 60);
 
 	const catmullRomSpline = Mesh.CreateLines('catmullRom', catmullRom.getPoints(), scene);
+
 	// catmullRomSpline.color = new Color3(1, 0.611, 0.254); // Dutch Orange - 225 156 65
 	catmullRomSpline.color = new Color3(0.976, 0.572, 0.27); // Royal Orange - 249 146 69
+	catmullRomSpline.enableEdgesRendering();
+	catmullRomSpline.edgesWidth = 0.5;
+	catmullRomSpline.edgesColor = new Color4(0.976, 0.572, 0.27, 1);
 	catmullRomSpline.renderingGroupId = 2;
 
 	// Create Path3D from array of points

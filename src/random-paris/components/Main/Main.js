@@ -98,19 +98,14 @@ const Main = ({ isLive, totalDuration }) => {
 			const animGroup = sceneRef.current.getAnimation();
 
 			if (animGroup) {
-				console.log(animGroup);
-
-				// animGroup.play();
-				// animGroup.goToFrame(1);
-				// animGroup.pause();
 				setSceneAnimationGroup(animGroup);
 
 				setTotalFrames(animGroup._to);
 
 				console.log(`
-							DURATION in Minutes - ${gpsData.length}
-							TOTAL FRAMES - ${animGroup._to}
-						`);
+					DURATION in Minutes - ${gpsData.length}
+					TOTAL FRAMES - ${animGroup._to}
+				`);
 
 				// clearInterval(onReadyInterval);
 			}

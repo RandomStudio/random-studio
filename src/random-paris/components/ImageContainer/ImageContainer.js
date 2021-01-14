@@ -1,10 +1,12 @@
-import React, { useRef, useState, useMemo, forwardRef, useImperativeHandle } from 'react';
+import React, {
+	useRef, useState, useMemo, forwardRef, useImperativeHandle,
+} from 'react';
 import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
+import { LazyImageFull, ImageState } from 'react-lazy-images';
 import gpsData from '../../utils/gpsWithData.json';
 // import gpsData from '../../utils/gpsWithDataSmall.json';
 
-import { LazyImageFull, ImageState } from 'react-lazy-images';
 import styles from './ImageContainer.module.scss';
 import useTimeout from '../../hooks/useTimeout';
 
@@ -70,7 +72,7 @@ const ImageContainer = ({ currentCoordIndex }, ref) => {
 						placeholderSrc={`https://random-paris.s3.eu-central-1.amazonaws.com/images-thumbnails/${imgSrc}`}
 					>
 						{({ imageProps, imageState, ref }) => (
-							<animated.div ref={ref} style={{ opacity: opacity }}>
+							<animated.div ref={ref} style={{ opacity }}>
 								<animated.img
 									src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
 									alt=""
@@ -80,7 +82,7 @@ const ImageContainer = ({ currentCoordIndex }, ref) => {
 									src={imageProps.placeholderSrc}
 									style={{
 										...overlayStyles,
-										opacity: imageState === ImageState.LoadSuccess ? 0 : 1
+										opacity: imageState === ImageState.LoadSuccess ? 0 : 1,
 									}}
 								/>
 							</animated.div>

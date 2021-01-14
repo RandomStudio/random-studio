@@ -52,25 +52,25 @@ const onSceneReady = async scene => {
 
 	// loadAllTiles();
 
-	const isDrag = false;
+	let isDrag = false;
 
-	// canvas.addEventListener(
-	// 	'pointerup',
-	// 	() => {
-	// 		isDrag = false;
-	// 		console.log('up');
-	// 	},
-	// 	false,
-	// );
+	canvas.addEventListener(
+		'pointerup',
+		() => {
+			isDrag = false;
+			console.log('up');
+		},
+		false,
+	);
 
-	// canvas.addEventListener(
-	// 	'pointerdown',
-	// 	() => {
-	// 		isDrag = true;
-	// 		console.log('up');
-	// 	},
-	// 	false,
-	// );
+	canvas.addEventListener(
+		'pointerdown',
+		() => {
+			isDrag = true;
+			console.log('up');
+		},
+		false,
+	);
 
 	// runs every frame
 	scene.registerBeforeRender(() => {

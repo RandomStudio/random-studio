@@ -74,15 +74,15 @@ const addImageOnPoint = (scene, point, imageURL, size, flip = false) => {
 	projectImage.crossOrigin = 'anonymous';
 	projectImage.src = imageURL;
 
-	asyncAddImage(imageURL, textureContext, texture);
-	// projectImage.onload = () => {
-	// 	const aspectRatio = projectImage.width / projectImage.height;
-	// 	const sidesMargin = IMAGE_CANVAS - IMAGE_CANVAS * aspectRatio;
+	// asyncAddImage(imageURL, textureContext, texture);
+	projectImage.onload = () => {
+		const aspectRatio = projectImage.width / projectImage.height;
+		const sidesMargin = IMAGE_CANVAS - IMAGE_CANVAS * aspectRatio;
 
-	// 	textureContext.drawImage(projectImage, sidesMargin / 2, 0, IMAGE_CANVAS - sidesMargin, IMAGE_CANVAS);
+		textureContext.drawImage(projectImage, sidesMargin / 2, 0, IMAGE_CANVAS - sidesMargin, IMAGE_CANVAS);
 
-	// 	texture.update();
-	// };
+		texture.update();
+	};
 
 	return imagePlane;
 };
