@@ -8,6 +8,8 @@
 	height: 100%;
 	font-family: var(--mono-font);
 	font-size: 12px;
+	cursor: pointer;
+
 
 	& > span {
 		display: inline-block;
@@ -55,46 +57,62 @@
 .scrubber {
 	position: relative;
 	width: calc(100% - 80px);
-	left: 40px;
-	cursor: pointer;
+	left: 28px;
 }
 
-.thumbnail {
-	position: relative;
+.thumbnail, .thumbnailInteractive {
+	position: absolute;
+	top: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	touch-action: none; // Prevent glitching on touch devices - react use gesture
 	user-select: none;
-	cursor: grab;
 
-	width: 60px;
-	height: 40px; // double of the scrubber height
+	width: 20px;
+	height: 20px; // double of the scrubber height
+
 	background-color: var(--white);
+	color: var(--white);
+	border: 1px solid var(--white);
 	
 	p  {
+		position: absolute;
 		user-select: none;
 		text-align: center;
 		text-transform: uppercase;
+		width: max-content;
+		bottom: -120%;
+		left: 50%;
+		transform: translate3d(-50%, 0 , 0);
 	}
 }
 
-.liveContinueButton {
-	position: absolute;
-	top: 0;
-	padding: 4px 0;
-	border: none;
-	transform: translate3d(0, -100%, 0);
-	text-align: center;
-	width: 100%;
-	background: darkslategray;
-	color: var(--white);
+.thumbnail {
+	// pointer-events: none;
+	
+}
 
-	&:focus {
-		outline: none;
+.thumbnailInteractive {
+	cursor: grab;
+	
+	// Do not target (most) touch devices like this
+	@media(pointer: fine)  {
+		&::before {
+			content: "<<< >>>";
+			width: max-content;
+			height: 100%;
+			position: absolute;
+			// background: red;
+			transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+			z-index: inherit;
+			opacity: 0;
+		}
+		
+		&:hover::before {
+			transform: translateY(-100%);
+			opacity: 1;
+		}
 	}
 
-	&:hover {
-		cursor: pointer;
-	}
 }

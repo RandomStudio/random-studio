@@ -1,4 +1,3 @@
-import styles from './Scene.module.scss';
 
 import React, { forwardRef, useImperativeHandle } from 'react';
 import { HemisphericLight } from '@babylonjs/core/Lights/hemisphericLight';
@@ -6,6 +5,7 @@ import { FreeCamera } from '@babylonjs/core/Cameras/freeCamera';
 import { Vector3 } from '@babylonjs/core/Maths/math';
 import { MeshBuilder } from '@babylonjs/core/Meshes/meshBuilder';
 import BabylonScene from 'babylonjs-hook';
+import styles from './Scene.module.scss';
 import '@babylonjs/loaders/glTF';
 
 import progressiveTileLoader, { loadAllTiles } from '../../utils/progressiveTileLoader';
@@ -14,7 +14,7 @@ import createParcelLine from '../../utils/createParcelLine';
 let camera;
 let parcelAnimGroup;
 
-const onSceneReady = async (scene) => {
+const onSceneReady = async scene => {
 	// This creates and positions a free camera (non-mesh)
 	camera = new FreeCamera('camera1', new Vector3(0, 0, 0), scene);
 
@@ -22,18 +22,20 @@ const onSceneReady = async (scene) => {
 	camera.minZ = 0.001;
 	// SceneLoader.ShowLoadingScreen = false;
 
-	// const canvas = scene.getEngine().getRenderingCanvas();
+	const canvas = scene.getEngine().getRenderingCanvas();
 
-	// // This attaches the camera to the canvas
-	// camera.attachControl(canvas, true);
+	// This attaches the camera to the canvas
+	camera.attachControl(canvas, true);
 
-	// // // WASD keys
+	// // WASD keys
 	// camera.keysUp.push(87);
 	// camera.keysDown.push(83);
-	// camera.keysLeft.push(65);
-	// camera.keysRight.push(68);
-	// camera.keysDownward.push(81); // Q
-	// camera.keysUpward.push(69); // E
+	camera.keysDown.push(69); // Q
+	camera.keysUp.push(81); // E
+	camera.keysLeft.push(65);
+	camera.keysRight.push(68);
+	camera.keysDownward.push(83); // S
+	camera.keysUpward.push(87); // W
 
 	const light = new HemisphericLight('light', new Vector3(0, 1, 0), scene);
 	light.intensity = 0.7;
@@ -44,10 +46,39 @@ const onSceneReady = async (scene) => {
 	const animParcel = createParcelLine(scene, camera, followObject, 1);
 	parcelAnimGroup = animParcel;
 
+	animParcel.play();
+	animParcel.goToFrame(1);
+	animParcel.pause();
+
 	// loadAllTiles();
+
+	const isDrag = false;
+
+	// canvas.addEventListener(
+	// 	'pointerup',
+	// 	() => {
+	// 		isDrag = false;
+	// 		console.log('up');
+	// 	},
+	// 	false,
+	// );
+
+	// canvas.addEventListener(
+	// 	'pointerdown',
+	// 	() => {
+	// 		isDrag = true;
+	// 		console.log('up');
+	// 	},
+	// 	false,
+	// );
 
 	// runs every frame
 	scene.registerBeforeRender(() => {
+		if (!isDrag) {
+			// console.log(g);
+			// camera.setTarget(followObject.position);
+		}
+
 		progressiveTileLoader(scene, camera);
 	});
 };

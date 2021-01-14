@@ -19,11 +19,7 @@ const TakeOverHeader = () => {
 	const isBeforeLive = timeAfterStart < 0;
 	const isDuringLive = timeAfterStart >= 0 && timeAfterStart < totalDuration * 1000;
 
-	return (
-		// <main>
-		<Main isLive={isDuringLive} totalDuration={totalDuration} />
-		// </main>
-	);
+	return <Main isLive={isDuringLive} totalDuration={totalDuration} />;
 };
 
 TakeOverHeader.propTypes = {};

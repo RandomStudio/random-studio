@@ -5,8 +5,14 @@ import PropTypes from 'prop-types';
 import { remap } from '@anselan/maprange';
 
 import Scrubber from '../Scrubber/Scrubber';
+
+import Loadable from '@loadable/component';
 import Scene from '../Scene/Scene';
-import ImageContainer from '../ImageContainer/ImageContainer';
+// import ImageContainer from '../ImageContainer/ImageContainer';
+
+const ImageContainer = Loadable(() => import('../ImageContainer/ImageContainer'));
+// const Scene = Loadable(() => import('../Scene/Scene'));
+
 import GridBlocks from './GridBlocks';
 
 import useRunEveryFrame from '../../hooks/useRunEveryFrame';
@@ -85,34 +91,44 @@ const Main = ({ isLive, totalDuration }) => {
 	// Initialize the animation group with positions
 	// And duration
 	useEffect(() => {
+		// Scene.load().then(() => {
+		// 	console.log('Component is loaded!', sceneRef.current)
 		if (sceneRef.current) {
+			// const onReadyInterval = setInterval(() => {
 			const animGroup = sceneRef.current.getAnimation();
 
-			animGroup.play();
-			animGroup.goToFrame(1);
-			animGroup.pause();
-			setSceneAnimationGroup(animGroup);
+			if (animGroup) {
+				console.log(animGroup);
 
-			setTotalFrames(animGroup._to);
+				// animGroup.play();
+				// animGroup.goToFrame(1);
+				// animGroup.pause();
+				setSceneAnimationGroup(animGroup);
 
-			console.log(`
-				DURATION in Minutes - ${gpsData.length}
-				TOTAL FRAMES - ${animGroup._to}
-			`);
+				setTotalFrames(animGroup._to);
+
+				console.log(`
+							DURATION in Minutes - ${gpsData.length}
+							TOTAL FRAMES - ${animGroup._to}
+						`);
+
+				// clearInterval(onReadyInterval);
+			}
+
+			// }, 300);
+
+
+
+
+			// const animGroup = sceneRef.current.getAnimation();
+
 		}
+		// })
 	}, []);
 
 	useEffect(() => {
 		setIsPlaying(isLive);
 	}, [isLive]);
-
-	const togglePlay = useCallback(() => {
-		if (!isPlaying) {
-			setIsPlaying(true);
-		} else {
-			setIsPlaying(false);
-		}
-	}, [isPlaying]);
 
 	const scrubUpdateFrames = (frame) => {
 		sceneAnimationGroup.goToFrame(frame);
@@ -124,14 +140,14 @@ const Main = ({ isLive, totalDuration }) => {
 		updateCoord();
 	};
 
-	const scrubUpdateLiveFrames = (ox) => {
+	const scrubUpdateLiveFrames = (xTarget) => {
 		// If isLive allow only dragging to the past
 		// Handle drag execution here instead of in Scrubber (access to time here)
 		const progressLive = timeProgress.current / totalDuration;
 		// const newX = totalWidth * progress;
 		const xLimit = scrubberRef.current.scrubberWidth * progressLive;
 
-		const xTarget = (ox / scrubberRef.current.scrubberWidth) * scrubberRef.current.scrubberWidth;
+		// const xTarget = (inputX / scrubberRef.current.scrubberWidth) * scrubberRef.current.scrubberWidth;
 
 		const newX = clamp(xTarget, 0, xLimit);
 
@@ -164,8 +180,11 @@ const Main = ({ isLive, totalDuration }) => {
 		const isSecondPart = limitedProgress >= ONE_THIRD && limitedProgress <= TWO_THIRD;
 		const isThirdPart = limitedProgress >= TWO_THIRD && limitedProgress <= 1;
 
-		// Whole if else to prevent a more seamless image transfer
+		// Huge if else to prevent a more seamless image transfer
 		// Flashing due to image switching
+		// Check due to component splitting
+		if (!imageContainerRef.current) return;
+
 		imageContainerRef.current.setOpacitySprings((index) => {
 			if (shouldFlip) {
 				if (isFirstPart) {
@@ -219,7 +238,7 @@ const Main = ({ isLive, totalDuration }) => {
 	}, [currentCoordIndex, totalFrames]);
 
 	const activeCoord = useMemo(() => {
-		return gpsData[currentCoordIndex];
+		return gpsData[currentCoordIndex] || {};
 	}, [currentCoordIndex]);
 
 	return (
@@ -228,7 +247,7 @@ const Main = ({ isLive, totalDuration }) => {
 				style={{
 					'--window-height': height,
 					'--window-width': width,
-					backgroundColor: activeCoord.mixedColor,
+					backgroundColor: activeCoord?.mixedColor,
 				}}
 				className={styles.container}
 			>
@@ -243,6 +262,9 @@ const Main = ({ isLive, totalDuration }) => {
 						<div className={styles.crossHairContainer}>
 							<span></span>
 							<span></span>
+							<span className={styles.crossHairSwatch}
+								style={{ backgroundColor: activeCoord?.mixedColor || '#fff' }}
+							></span>
 						</div>
 
 						<div className={styles.coordinates}>
@@ -265,7 +287,7 @@ const Main = ({ isLive, totalDuration }) => {
 						isPlaying={isPlaying}
 						setIsPlaying={setIsPlaying}
 						isLive={isLive}
-					// currentColor={activeCoord?.mixedColor}
+						currentColor={activeCoord?.mixedColor}
 					/>
 				)}
 

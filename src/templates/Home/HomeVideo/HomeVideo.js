@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Link } from 'gatsby';
+import Loadable from '@loadable/component';
 import styles from './HomeVideo.module.scss';
 import TakeOverHeader from '../../../random-paris/components/TakeOverHeader/TakeOverHeader';
+
+// const TakeOverHeader = Loadable(() => import(/* webpackPrefetch: true */ '../../../random-paris/components/TakeOverHeader/TakeOverHeader'), {
+// });
+// TakeOverHeader.preload()
+
+// const TakeOverHeader = React.lazy(() => import('../../../random-paris/components/TakeOverHeader/TakeOverHeader'));
+
+// import Loadable from 'react-loadable';
+
+// const TakeOverHeader = Loadable({
+//   loader: () => import('../../../random-paris/components/TakeOverHeader/TakeOverHeader'),
+//   loading() {
+//     return <div>Loading... (rendered from the server)</div>;
+//   },
+// });
 
 const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
   const scrollToProjects = event => {
@@ -22,19 +38,20 @@ const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
       <TakeOverHeader />
 
       {/* <video src={videoUrl} muted loop autoPlay playsInline /> */}
-      <h1 className={logoClass}>
+      {/* <h1 className={logoClass}>
         {'Random'}
         <br />
         {'Studio'}
-      </h1>
-      <Link
+      </h1> */}
+      {/* <Link
         to="/#projects"
         className={styles.videoOverlay}
         onClick={scrollToProjects}
       >
         {'Projects'}
-      </Link>
-      {collaborationCredits && (
+      </Link> */}
+
+      {/* {collaborationCredits && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>
           <span>{' × '}</span>
@@ -48,7 +65,7 @@ const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
             </a>
           </span>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

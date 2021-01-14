@@ -19,12 +19,9 @@
     "@anselan/maprange": "^0.6.1",
     "@babylonjs/core": "^4.2.0",
     "@babylonjs/loaders": "^4.2.0",
-    "babylonjs-hook": "0.0.9",
-    "react-lazy-images": "^1.1.0",
-    "react-spring": "^9.0.0-rc.3",
-    "react-use-gesture": "^9.0.0-beta.11",
-    "stats.js": "^0.17.0",
+    "@loadable/component": "^5.14.1",
     "babylonjs": "4.1.0",
+    "babylonjs-hook": "0.0.9",
     "babylonjs-loaders": "4.1.0",
     "framer-motion": "^2.0.0-beta.33",
     "gatsby": "^2.25.4",
@@ -52,7 +49,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.4",
-    "react-markdown": "^4.3.1"
+    "react-lazy-images": "^1.1.0",
+    "react-loadable": "^5.5.0",
+    "react-markdown": "^4.3.1",
+    "react-spring": "^9.0.0-rc.3",
+    "react-use-gesture": "^9.0.0-beta.11",
+    "stats.js": "^0.17.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

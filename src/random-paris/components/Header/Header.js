@@ -13,7 +13,7 @@ const Header = () => {
 			</h1>
 			<p>
 				Our Random family is growing internationally:
-				<br /> Design studio Bonsoir Paris becomes Random Paris.
+				<br /> Design studio Bonsoir Paris becomes Random Paris
 			</p>
 		</header>
 	);

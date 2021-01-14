@@ -131,6 +131,7 @@
 .crossHairContainer {
 	span {
 		position: absolute;
+		z-index: 10;
 		left: 50%;
 		top: 50%;
 		transform: translate3d(-50%, -50%, 0);
@@ -142,16 +143,22 @@
 		width: 1px;
 	}
 	
-	span:last-of-type {
+	span:nth-of-type(2) {
 		width: 20%;
 		height: 1px;
+	}
+
+	.crossHairSwatch {
+		width: 20px;
+		height: 20px;
+		border: 1px solid #fff;
 	}
 }
 
 .coordinates {
 	position: absolute;
-	top: 51%;
-	left: 51%;
+	top: 53%;
+	left: 53%;
 	color: var(--white);
 	user-select: none;
 
@@ -188,7 +195,7 @@
 .scrubber {
 	position: absolute;
 	bottom: 3rem;
-	height: 20px;
+	height: 10px;
 	padding: 0 22px;
 
 

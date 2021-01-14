@@ -20,8 +20,8 @@ const mapImages = (ctx => {
 			x: Number(imageURL.match(new RegExp('_x' + '(.*)' + '_y'))[1]),
 			y: Number(imageURL.match(new RegExp('_y' + '(.*)' + '.jpg'))[1]),
 		}));
-	// })(require.context('../../public/map-tiles', true, /.*/));
-})(require.context('./map-tiles', true, /.*/));
+})(require.context('../../../public/map-tiles', true, /.*/));
+// })(require.context('./map-tiles', true, /.*/));
 
 const asyncAddImage = (src, textureContext, texture) => new Promise((resolve, reject) => {
 	const projectImage = new Image();
@@ -70,10 +70,19 @@ const addImageOnPoint = (scene, point, imageURL, size, flip = false) => {
 	imagePlane.material.disableLighting = true;
 	// imagePlane.material.backFaceCulling = false;
 
-	// const projectImage = new Image();
-	// projectImage.crossOrigin = 'anonymous';
-	// projectImage.src = imageURL;
+	const projectImage = new Image();
+	projectImage.crossOrigin = 'anonymous';
+	projectImage.src = imageURL;
+
 	asyncAddImage(imageURL, textureContext, texture);
+	// projectImage.onload = () => {
+	// 	const aspectRatio = projectImage.width / projectImage.height;
+	// 	const sidesMargin = IMAGE_CANVAS - IMAGE_CANVAS * aspectRatio;
+
+	// 	textureContext.drawImage(projectImage, sidesMargin / 2, 0, IMAGE_CANVAS - sidesMargin, IMAGE_CANVAS);
+
+	// 	texture.update();
+	// };
 
 	return imagePlane;
 };
@@ -108,7 +117,7 @@ const progressiveTileLoader = (scene, camera) => {
 				return;
 			}
 
-			const position = new Vector3(toAddXY[0] + 0.5, toAddXY[1] + 0.7, 0);
+			const position = new Vector3(toAddXY[0] + 0.5, toAddXY[1] + 0.68, 0);
 			addImageOnPoint(scene, position, `${URL_PREFIX}/${image.url}`, 1);
 		});
 	}

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, forwardRef, useImperativeHandle } from 'react';
+import React, { useRef, useState, useMemo, forwardRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
 import gpsData from '../../utils/gpsWithData.json';
@@ -6,6 +6,7 @@ import gpsData from '../../utils/gpsWithData.json';
 
 import { LazyImageFull, ImageState } from 'react-lazy-images';
 import styles from './ImageContainer.module.scss';
+import useTimeout from '../../hooks/useTimeout';
 
 const overlayStyles = {
 	position: 'absolute',
@@ -16,6 +17,9 @@ const overlayStyles = {
 
 const ImageContainer = ({ currentCoordIndex }, ref) => {
 	const activeIndexRef = useRef(0);
+
+	const [shouldRender, setShouldRender] = useState(false);
+	useTimeout(() => setShouldRender(true), 500);
 
 	const currentImages = useMemo(() => {
 		const shouldFlip = currentCoordIndex % 2 === 1;
@@ -48,6 +52,8 @@ const ImageContainer = ({ currentCoordIndex }, ref) => {
 		[setImageSprings],
 	);
 
+	if (!shouldRender) return null;
+
 	return (
 		<section className={styles.container}>
 			{imageSprings.map(({ opacity }, index) => {
@@ -56,7 +62,8 @@ const ImageContainer = ({ currentCoordIndex }, ref) => {
 				return (
 					<LazyImageFull
 						key={imgSrc}
-						debounceDurationMs={0}
+						// debounceDurationMs={0}
+						debounceDurationMs={150}
 						// src={`/images/${imgSrc}`}
 						// placeholderSrc={`/images-thumbnails/${imgSrc}`}
 						src={`https://random-paris.s3.eu-central-1.amazonaws.com/images/${imgSrc}`}
