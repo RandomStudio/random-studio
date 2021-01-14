@@ -8,10 +8,8 @@ import Scrubber from '../Scrubber/Scrubber';
 
 import Loadable from '@loadable/component';
 import Scene from '../Scene/Scene';
-// import ImageContainer from '../ImageContainer/ImageContainer';
 
 const ImageContainer = Loadable(() => import('../ImageContainer/ImageContainer'));
-// const Scene = Loadable(() => import('../Scene/Scene'));
 
 import GridBlocks from './GridBlocks';
 
@@ -30,9 +28,15 @@ const Main = ({ isLive, totalDuration }) => {
 	const sceneRef = useRef();
 	const scrubberRef = useRef();
 	const imageContainerRef = useRef();
-
 	const currentFrameRef = useRef(0);
 	const timeProgress = useRef(0);
+
+	// For during live only
+	const progressiveTrackerLine = useRef();
+	const progressiveTrackerLineToShow = useRef();
+	const progressiveTrackerLineMesh = useRef();
+	const updateProgressiveTrackerLineMesh = useRef();
+
 
 	const { height, width } = useWindowSize();
 
@@ -80,7 +84,57 @@ const Main = ({ isLive, totalDuration }) => {
 
 			const newX = scrubberRef.current.scrubberWidth * progress;
 
-			scrubberRef.current.setDrag({ x: newX });
+			scrubberRef.current.setThumb({ x: newX });
+
+			if (isLive) {
+				// 28 is the left offset the scrubber has
+				scrubberRef.current.setLiveThumb({ xLive: newX, scaleLive: progress - 28 / scrubberRef.current.scrubberWidth });
+
+
+				// console.log(progressiveTrackerLine, currentFrame, progressiveTrackerLineToShow.current.length * 60);
+
+				// if (currentFrame > progressiveTrackerLineToShow.current.length * 60) {
+				// progressiveTrackerLineToShow.current = progressiveTrackerLine.current.slice(0, Math.floor(currentFrame / 60))
+				// // console.log();
+
+				// const updatedLine = updateProgressiveTrackerLineMesh.current(progressiveTrackerLineMesh.current, progressiveTrackerLineToShow.current);
+
+				// progressiveTrackerLineMesh.current = updatedLine;
+
+
+
+				// const t = Math.floor(11112000 / 60)
+				// const t = Math.floor(currentFrame / 60)
+				// progressiveTrackerLineToShow.current = progressiveTrackerLine.current.slice(0, t);
+
+				// console.log(currentFrame);
+
+				// for (let index = t; index < progressiveTrackerLineToShow.current.length; index++) {
+				// 	const element = progressiveTrackerLineToShow.current[index];
+
+				// 	progressiveTrackerLineToShow.current[element]
+				// }
+
+
+
+				// const updatedLine = updateProgressiveTrackerLineMesh.current(progressiveTrackerLineMesh.current, progressiveTrackerLineToShow.current)
+
+				// progressiveTrackerLineMesh.current = updatedLine;
+
+
+				// console.log(progressiveTrackerLine, currentFrame, progressiveTrackerLineToShow.current.length * 60, updatedLine);
+
+				// }
+
+				// console.log(updatedLine);
+
+
+				// progressiveTrackerLine.current
+
+				// if (progressiveTrackerLineMesh.length < currentFrame)
+
+
+			}
 
 			updateCoord();
 
@@ -91,10 +145,7 @@ const Main = ({ isLive, totalDuration }) => {
 	// Initialize the animation group with positions
 	// And duration
 	useEffect(() => {
-		// Scene.load().then(() => {
-		// 	console.log('Component is loaded!', sceneRef.current)
 		if (sceneRef.current) {
-			// const onReadyInterval = setInterval(() => {
 			const animGroup = sceneRef.current.getAnimation();
 
 			if (animGroup) {
@@ -106,22 +157,63 @@ const Main = ({ isLive, totalDuration }) => {
 					DURATION in Minutes - ${gpsData.length}
 					TOTAL FRAMES - ${animGroup._to}
 				`);
-
-				// clearInterval(onReadyInterval);
 			}
-
-			// }, 300);
-
-
-
-
-			// const animGroup = sceneRef.current.getAnimation();
-
 		}
-		// })
 	}, []);
 
 	useEffect(() => {
+		if (!progressiveTrackerLine.current && sceneRef.current) {
+			// Initialize and create procedurally update tracker line during live
+			// progressiveTrackerLine.current = sceneRef.current.getTrackerLinePoints();
+
+			// // progressiveTrackerLineToShow.current = progressiveTrackerLine.current.slice(0, 300); // 5 points
+			// progressiveTrackerLineToShow.current = progressiveTrackerLine.current; // 5 points
+			// // this - 1 * 60 is total frames
+
+			// console.log('hopefully');
+
+			// // Create initial frame line/point
+			// progressiveTrackerLineMesh.current = sceneRef.current.getParcelTrackerLineMesh()(progressiveTrackerLineToShow.current);
+
+			// console.log('created already 300', progressiveTrackerLineMesh.current, progressiveTrackerLineToShow.current);
+
+
+			// // sceneRef.current.getHandleUpdateParcelTrackerLineMesh
+
+			// // Save line isntance updating method
+			// updateProgressiveTrackerLineMesh.current = sceneRef.current.getHandleUpdateParcelTrackerLineMesh();
+
+
+			// const t = Math.floor(10621855 / 60)
+
+			// console.log(progressiveTrackerLineToShow.current.length);
+			// progressiveTrackerLineToShow.current = progressiveTrackerLine.current.slice(0, t);
+
+			// console.log(progressiveTrackerLineToShow.current.length);
+
+
+			// for (let index = t; index < progressiveTrackerLine.current.length - 1; index++) {
+			// 	const element = progressiveTrackerLine.current[t];
+
+			// 	progressiveTrackerLineToShow.current[index] = element
+			// }
+
+			// console.log(progressiveTrackerLineToShow.current);
+
+
+			// const updated = updateProgressiveTrackerLineMesh.current(progressiveTrackerLineMesh.current, progressiveTrackerLineToShow.current)
+
+
+
+
+
+
+			// console.log(progressiveTrackerLine.current, progressiveTrackerLineMesh.current);
+
+
+			// progressiveTrackerLineMesh.current = const catmullRomSpline = Mesh.CreateLines('catmullRom', catmullRom.getPoints(), scene, true);
+		}
+
 		setIsPlaying(isLive);
 	}, [isLive]);
 
@@ -142,11 +234,9 @@ const Main = ({ isLive, totalDuration }) => {
 		// const newX = totalWidth * progress;
 		const xLimit = scrubberRef.current.scrubberWidth * progressLive;
 
-		// const xTarget = (inputX / scrubberRef.current.scrubberWidth) * scrubberRef.current.scrubberWidth;
-
 		const newX = clamp(xTarget, 0, xLimit);
 
-		scrubberRef.current.setDrag({ x: newX });
+		scrubberRef.current.setThumb({ x: newX });
 
 		//
 		const frameTarget = (newX / scrubberRef.current.scrubberWidth) * totalFrames;
@@ -229,6 +319,8 @@ const Main = ({ isLive, totalDuration }) => {
 		// Update if changes and has not reached the end
 		if (currentCoordIndex !== currentCoordIndexJump && currentFrameRef.current !== totalFrames) {
 			setCurrentCoordIndex(currentCoordIndexJump);
+
+			// if ()
 		}
 	}, [currentCoordIndex, totalFrames]);
 

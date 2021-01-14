@@ -30,7 +30,14 @@ const Scrubber = (
 	const isPlayingRef = useRef(isPlaying);
 	const scrubberRef = useRef();
 
+	// The BG color saved when paused on drag
+	const liveBackgroundColor = useRef();
+
 	const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+	const [isLiveDragging, setIsLiveDragging] = useState(false);
+
+	const [{ x }, set] = useSpring(() => ({ x: 0 }));
+	const [{ xLive, scaleLive }, setLive] = useSpring(() => ({ xLive: 0, scaleLive: 0 }));
 
 	useEffect(() => {
 		function getSize() {
@@ -53,8 +60,6 @@ const Scrubber = (
 				width: scrubberRef.current.offsetWidth,
 				height: scrubberRef.current.offsetHeight,
 			});
-
-			console.log('width', scrubberRef.current.offsetWidth);
 		}
 	}, []);
 
@@ -62,11 +67,8 @@ const Scrubber = (
 	useEffect(() => {
 		const newX = (currentFrame / totalFrames) * dimensions.width;
 
-		set({ x: newX, immediate: true });
+		set({ x: newX });
 	}, [dimensions, set, totalFrames, currentFrame]);
-
-	const [{ x }, set] = useSpring(() => ({ x: 0 }));
-	const [{ xLive }, setLive] = useSpring(() => ({ xLive: 0 }));
 
 	const getClientSideX = (inputX) => {
 		if (typeof window === 'undefined') return 0;
@@ -114,12 +116,17 @@ const Scrubber = (
 			const targetFrame = getTargetFrame(ogX);
 
 			if (isLive) {
+				if (first) {
+					setIsLiveDragging(true);
+					liveBackgroundColor.current = currentColor;
+				}
+
 				updateLiveFrames(targetX);
+
+				if (last) {
+					setIsLiveDragging(false);
+				}
 			} else {
-				// const newX = (ox / dimensions.width) * dimensions.width;
-
-				// const xTarget = (inputX / scrubberRef.current.scrubberWidth) * scrubberRef.current.scrubberWidth;
-
 				set({ x: targetX });
 
 				updateFrames(targetFrame);
@@ -142,8 +149,8 @@ const Scrubber = (
 	useImperativeHandle(
 		ref,
 		() => ({
-			setDrag: set,
-			setLiveDrag: setLive,
+			setThumb: set,
+			setLiveThumb: setLive,
 			scrubberWidth: dimensions.width,
 		}),
 		[set, dimensions, setLive],
@@ -153,10 +160,24 @@ const Scrubber = (
 		[customClass]: customClass,
 	});
 
+	const scrubberContainerClasses = classnames(styles.scrubberContainer, {
+		[styles.isLive]: isLive,
+	});
+
+	const interactiveThumbnailClasses = classnames(styles.thumbnail, styles.thumbnailInteractive, {
+		[styles.isLive]: isLive,
+		[styles.isDragging]: isLiveDragging,
+	});
+
+	const liveThumbnailClasses = classnames(styles.thumbnail, styles.thumbnailLive, {
+		[styles.isDragging]: isLiveDragging,
+	});
+
 	return (
 		<section className={contrainerClasses}>
-			<div
-				className={styles.scrubberContainer}
+			<animated.div
+				className={scrubberContainerClasses}
+				style={{ '--scrubberLineScale': scaleLive }}
 				onPointerDown={(e) => {
 					handleUpdateFrameByClick(e.clientX);
 				}}
@@ -168,9 +189,9 @@ const Scrubber = (
 				<div ref={scrubberRef} className={styles.scrubber}>
 					{isLive && (
 						<animated.div
-							className={styles.thumbnail}
+							className={liveThumbnailClasses}
 							style={{
-								backgroundColor: currentColor || '#fff',
+								backgroundColor: isLiveDragging ? liveBackgroundColor.current : currentColor,
 								x: xLive,
 							}}
 						>
@@ -180,7 +201,7 @@ const Scrubber = (
 
 					<animated.div
 						{...bind()}
-						className={styles.thumbnailInteractive}
+						className={interactiveThumbnailClasses}
 						style={{
 							backgroundColor: currentColor || '#fff',
 							x,
@@ -189,7 +210,7 @@ const Scrubber = (
 						<p>{`${gpsData[currentCoordIndex].timestamp.date} ${gpsData[currentCoordIndex].timestamp.time}`}</p>
 					</animated.div>
 				</div>
-			</div>
+			</animated.div>
 		</section>
 	);
 };

@@ -4,11 +4,38 @@
 }
 
 .scrubberContainer {
+	// For during live only
+	--scrubberLineScale: 0;
+
 	position: relative;
 	height: 100%;
 	font-family: var(--mono-font);
 	font-size: 12px;
 	cursor: pointer;
+
+	&.isLive {
+		& > span:nth-of-type(2) {
+			background-color: transparent;
+
+			&::before,
+			&::after {
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 1px;
+				background-color: white;
+			}
+
+			&::before {
+				opacity: .4;
+			}
+			
+			&::after {
+				transform: scale3d(var(--scrubberLineScale), 1, 1);
+				transform-origin: left;
+			}
+		}
+	}
 
 
 	& > span {
@@ -60,7 +87,7 @@
 	left: 28px;
 }
 
-.thumbnail, .thumbnailInteractive {
+.thumbnail {
 	position: absolute;
 	top: 0;
 	display: flex;
@@ -88,17 +115,33 @@
 	}
 }
 
-.thumbnail {
+.thumbnailLive {
 	// touch-action: none; // Prevent glitching on touch devices - react use gesture
 	touch-action: pan-y; // Prevent glitching on touch devices - react use gesture
+	&.isDragging {
+		opacity: .7;
+	}
 
-	// pointer-events: none;
+	@media(pointer: fine)  {
+		&:hover + .thumbnailInteractive::before {
+			transform: translateY(-100%);
+			opacity: 1;
+		}
+	}
 }
 
 .thumbnailInteractive {
 	cursor: grab;
-	z-index: 11;
 	
+	&.isLive {
+		transition: opacity 300ms ease-in-out;
+		opacity: 0;
+
+		&.isDragging {
+			opacity: 1;
+		}
+	}
+
 	// Do not target (most) touch devices like this
 	@media(pointer: fine)  {
 		&::before {
@@ -106,9 +149,7 @@
 			width: max-content;
 			height: 100%;
 			position: absolute;
-			// background: red;
 			transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
-			// z-index: inherit;
 			opacity: 0;
 		}
 		
@@ -117,5 +158,4 @@
 			opacity: 1;
 		}
 	}
-
 }

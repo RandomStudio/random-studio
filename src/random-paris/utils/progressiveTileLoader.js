@@ -2,7 +2,7 @@ import { MeshBuilder } from '@babylonjs/core/Meshes/meshBuilder';
 import { Vector3 } from '@babylonjs/core/Maths/math';
 import { DynamicTexture, StandardMaterial } from '@babylonjs/core';
 
-const IMAGE_CANVAS = 500;
+const IMAGE_CANVAS = 512;
 // const URL_PREFIX = 'map-tiles';
 const URL_PREFIX = 'https://random-paris.s3.eu-central-1.amazonaws.com/map-tiles';
 
