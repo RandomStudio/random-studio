@@ -1,6 +1,4 @@
-import {
-	Color3, Color4, Curve3, Path3D, Vector3
-} from '@babylonjs/core/Maths/math';
+import { Color3, Color4, Curve3, Path3D, Vector3 } from '@babylonjs/core/Maths/math';
 import { Animation, AnimationGroup, Mesh } from '@babylonjs/core';
 import '@babylonjs/loaders/glTF';
 import { remap } from '@anselan/maprange';
@@ -34,28 +32,28 @@ const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
 
 	const catmullRomSpline = Mesh.CreateLines('catmullRom', splinePoints, scene);
 
-	catmullRomSpline.renderingGroupId = 2;
+	// catmullRomSpline.color = new Color3(1, 0.611, 0.254); // Dutch Orange - 225 156 65
+	// catmullRomSpline.color = new Color3(0.976, 0.572, 0.27); // Royal Orange - 249 146 69
+	catmullRomSpline.color = new Color3(1, 0, 0); // Royal Orange - 249 146 69
 	catmullRomSpline.enableEdgesRendering();
 	catmullRomSpline.edgesWidth = 0.5;
-	// catmullRomSpline.color = new Color3(1, 0.611, 0.254); // Dutch Orange - 225 156 65
-	catmullRomSpline.color = new Color3(0.976, 0.572, 0.27); // Royal Orange - 249 146 69
-	catmullRomSpline.edgesColor = new Color4(0.976, 0.572, 0.27, 1);
-	// catmullRomSpline.color = new Color3(1, 0, 0);
-	// catmullRomSpline.edgesColor = new Color4(1, 0, 0, 1);
+	// catmullRomSpline.edgesColor = new Color4(0.976, 0.572, 0.27, 1);
+	catmullRomSpline.edgesColor = new Color4(1, 0, 0, 1);
+	catmullRomSpline.renderingGroupId = 2;
 
 	// Create Path3D from array of points
-	const path3d = new Path3D(catmullRom.getPoints());
-	const curve = path3d.getCurve(); // create the curve
-	const tangents = path3d.getTangents(); // array of tangents to the curve
-	const normals = path3d.getNormals(); // array of normals to the curve
-	const binormals = path3d.getBinormals(); // array of binormals to curve
+	let path3d = new Path3D(catmullRom.getPoints());
+	let curve = path3d.getCurve(); // create the curve
+	let tangents = path3d.getTangents(); //array of tangents to the curve
+	let normals = path3d.getNormals(); //array of normals to the curve
+	let binormals = path3d.getBinormals(); //array of binormals to curve
 
-	// Create and draw a plane in xy plane to trace the curve at (0, 0, 0)
-	const norm = new Vector3(0, 0, 1); // normal to plane
-	const pos_of_norm = new Vector3(0, 0, 0); // position of normal (for display)
+	//Create and draw a plane in xy plane to trace the curve at (0, 0, 0)
+	let norm = new Vector3(0, 0, 1); // normal to plane
+	let pos_of_norm = new Vector3(0, 0, 0); // position of normal (for display)
 
 	// Draw the normal line in yellow
-	const normLine = Mesh.CreateLines('normLine', [pos_of_norm, pos_of_norm.add(norm).scale(0.1)], scene);
+	let normLine = Mesh.CreateLines('normLine', [pos_of_norm, pos_of_norm.add(norm).scale(0.1)], scene);
 	normLine.color = Color3.Yellow();
 	// //Set box as parent of normal line so they move and turn as one
 	normLine.parent = followMesh;
@@ -63,8 +61,8 @@ const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
 
 	//
 	const animPosCam = new Animation('animPosCam', 'position', FRAME_RATE_EXTRA, Animation.ANIMATIONTYPE_VECTOR3);
-	const animPos = new Animation('animPos', 'position', FRAME_RATE_EXTRA, Animation.ANIMATIONTYPE_VECTOR3);
-	const animRot = new Animation('animRot', 'rotation', FRAME_RATE_EXTRA, Animation.ANIMATIONTYPE_VECTOR3);
+	let animPos = new Animation('animPos', 'position', FRAME_RATE_EXTRA, Animation.ANIMATIONTYPE_VECTOR3);
+	let animRot = new Animation('animRot', 'rotation', FRAME_RATE_EXTRA, Animation.ANIMATIONTYPE_VECTOR3);
 
 	const keysPositionCamera = [];
 	const keysPosition = [];
@@ -94,7 +92,7 @@ const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
 	animRot.setKeys(keysRotation);
 
 	// Create the animation group
-	const animationGroup = new AnimationGroup('Group');
+	let animationGroup = new AnimationGroup('Group');
 	animationGroup.addTargetedAnimation(animPosCam, camera);
 	animationGroup.addTargetedAnimation(animPos, followMesh);
 	animationGroup.addTargetedAnimation(animRot, followMesh);
@@ -116,7 +114,7 @@ const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
 
 			return updatedLine;
 		},
-		createLiveTrackerLine: startPoints => {
+		createLiveTrackerLine: (startPoints) => {
 			const liveTrackerLine = Mesh.CreateLines('liveTrackerLine', startPoints, scene, true);
 
 			// liveTrackerLine.color = new Color3(1, 0.611, 0.254); // Dutch Orange - 225 156 65

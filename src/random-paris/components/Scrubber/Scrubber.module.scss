@@ -102,7 +102,7 @@
 	color: var(--white);
 	border: 1px solid var(--white);
 	
-	p  {
+	p:last-of-type {
 		position: absolute;
 		user-select: none;
 		touch-action: none;
@@ -123,8 +123,8 @@
 	}
 
 	@media(pointer: fine)  {
-		&:hover + .thumbnailInteractive::before {
-			transform: translateY(-100%);
+		&:hover + .thumbnailInteractive p:first-of-type {
+			transform: translateY(-120%);
 			opacity: 1;
 		}
 	}
@@ -132,30 +132,43 @@
 
 .thumbnailInteractive {
 	cursor: grab;
-	
-	&.isLive {
-		transition: opacity 300ms ease-in-out;
-		opacity: 0;
 
-		&.isDragging {
+	p {
+		transition: opacity 150ms ease-in-out;
+	}
+	
+	&.isLive  {
+		p {
+			opacity: 0;
+		}
+
+		&.isDragging p {
 			opacity: 1;
 		}
 	}
 
 	// Do not target (most) touch devices like this
 	@media(pointer: fine)  {
-		&::before {
-			content: "<<< >>>";
+		p:first-of-type {
+			position: absolute;
 			width: max-content;
 			height: 100%;
-			position: absolute;
-			transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
 			opacity: 0;
+			left: 50%;
+			transform: translate3d(-50%, -120%, 0);
 		}
+
+		// &::before {
+		// 	content: "<<< >>>";
+		// }
 		
-		&:hover::before {
-			transform: translateY(-100%);
+		&:hover p {
+			// transform: translateY(-100%);
 			opacity: 1;
+
+			&:first-of-type {
+				// transform: translate3d(-50%, -120%, 0);
+			}
 		}
 	}
 }

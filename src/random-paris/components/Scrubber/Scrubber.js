@@ -207,6 +207,7 @@ const Scrubber = (
 							x,
 						}}
 					>
+						<p>{`<<< >>>`}</p>
 						<p>{`${gpsData[currentCoordIndex].timestamp.date} ${gpsData[currentCoordIndex].timestamp.time}`}</p>
 					</animated.div>
 				</div>
