@@ -15,9 +15,10 @@ let camera;
 let parcelAnimGroup;
 let parcelTrackerLine;
 let createParcelTrackerLineMesh;
-let updateParcelTrackerLineMesh;
 
-const onSceneReady = async (scene) => {
+let camTargetProgress = 0;
+
+const onSceneReady = async (scene, isLive) => {
 	scene.autoClear = false;
 
 	// This creates and positions a free camera (non-mesh)
@@ -31,16 +32,7 @@ const onSceneReady = async (scene) => {
 
 	// This attaches the camera to the canvas
 	camera.attachControl(canvas, true);
-
-	// // WASD keys
-	// camera.keysUp.push(87);
-	// camera.keysDown.push(83);
-	camera.keysDown.push(69); // Q
-	camera.keysUp.push(81); // E
-	camera.keysLeft.push(65);
-	camera.keysRight.push(68);
-	camera.keysDownward.push(83); // S
-	camera.keysUpward.push(87); // W
+	camera.inputs.attached.keyboard.detachControl();
 
 	const light = new HemisphericLight('light', new Vector3(0, 1, 0), scene);
 	light.intensity = 0.7;
@@ -48,17 +40,17 @@ const onSceneReady = async (scene) => {
 	// The focus/follow for the camera
 	const followObject = MeshBuilder.CreateBox('box', { size: 0.05 }, scene);
 
-	const { animationGroup: animParcel, trackerLine, createLiveTrackerLine, updateLiveTrackerLine } = createParcelLine(
+	const { animationGroup: animParcel, trackerLine, createLiveTrackerLine } = createParcelLine(
 		scene,
 		camera,
 		followObject,
 		1,
+		isLive,
 	);
 
 	parcelAnimGroup = animParcel;
 	parcelTrackerLine = trackerLine;
 	createParcelTrackerLineMesh = createLiveTrackerLine;
-	updateParcelTrackerLineMesh = updateLiveTrackerLine;
 
 	// Initialize animation
 	animParcel.play();
@@ -73,7 +65,7 @@ const onSceneReady = async (scene) => {
 		'pointerup',
 		() => {
 			isDrag = false;
-			console.log('up');
+			camTargetProgress = 0;
 		},
 		false,
 	);
@@ -82,23 +74,27 @@ const onSceneReady = async (scene) => {
 		'pointerdown',
 		() => {
 			isDrag = true;
-			console.log('up');
+			camTargetProgress = 0;
 		},
 		false,
 	);
 
 	// runs every frame
 	scene.registerBeforeRender(() => {
-		if (!isDrag) {
-			// console.log(g);
-			// camera.setTarget(followObject.position);
-		}
-
 		progressiveTileLoader(scene, camera);
+
+		if (!isDrag) {
+			if (camTargetProgress >= 1) return;
+
+			const newTarget = Vector3.Lerp(camera.target, followObject.position, camTargetProgress);
+			camTargetProgress += 0.01;
+
+			camera.setTarget(newTarget);
+		}
 	});
 };
 
-const Scene = (props, ref) => {
+const Scene = ({ isLive }, ref) => {
 	useImperativeHandle(
 		ref,
 		() => ({
@@ -111,14 +107,13 @@ const Scene = (props, ref) => {
 			getParcelTrackerLineMesh() {
 				return createParcelTrackerLineMesh;
 			},
-			getHandleUpdateParcelTrackerLineMesh() {
-				return updateParcelTrackerLineMesh;
-			},
 		}),
 		[],
 	);
 
-	return <BabylonScene antialias onSceneReady={onSceneReady} className={styles.renderCanvas} />;
+	return (
+		<BabylonScene antialias onSceneReady={(scene) => onSceneReady(scene, isLive)} className={styles.renderCanvas} />
+	);
 };
 
 export default forwardRef(Scene);

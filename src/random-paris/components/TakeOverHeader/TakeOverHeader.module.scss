@@ -1,0 +1,30 @@
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, .5);
+
+	// TODO: Check to not be above navigation
+	z-index: 99;
+	pointer-events: none;
+	
+	transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition-delay: 2s;
+
+
+
+	img {
+		display: block;
+		width: 40%;
+		max-width: 240px;
+		height: auto;
+	}
+
+	&.hasLoaded {
+		opacity: 0;
+	}
+}

@@ -1,16 +1,13 @@
 import styles from './Scrubber.module.scss';
 
-import React, { useEffect, useMemo, useRef, useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { remap } from '@anselan/maprange';
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 
-import { WIDTH_CORRECTION } from '../../utils/CONSTANTS';
 import gpsData from '../../utils/gpsWithData.json';
-
-const HALF_WIDTH_CORRECTION = WIDTH_CORRECTION / 2;
 
 const Scrubber = (
 	{
@@ -186,6 +183,13 @@ const Scrubber = (
 				<span></span>
 				<span></span>
 
+				{isLive && (
+					<>
+						<span></span>
+						<span></span>
+					</>
+				)}
+
 				<div ref={scrubberRef} className={styles.scrubber}>
 					{isLive && (
 						<animated.div
@@ -207,7 +211,7 @@ const Scrubber = (
 							x,
 						}}
 					>
-						<p>{`<<< >>>`}</p>
+						<span>{`<<< >>>`}</span>
 						<p>{`${gpsData[currentCoordIndex].timestamp.date} ${gpsData[currentCoordIndex].timestamp.time}`}</p>
 					</animated.div>
 				</div>

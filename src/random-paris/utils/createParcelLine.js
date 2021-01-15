@@ -17,7 +17,7 @@ const yRangeWorld = [48.2317, 52.7028];
 const FRAME_RATE = 60;
 const FRAME_RATE_EXTRA = 60;
 
-const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
+const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1, isLive) => {
 	const trackerLine = gpsData.map(
 		({ lat, lng }) => new Vector3(remap(lng, xRangeWorld, xRangeTarget), remap(lat, yRangeWorld, yRangeTarget), 0),
 	);
@@ -33,12 +33,17 @@ const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
 	const catmullRomSpline = Mesh.CreateLines('catmullRom', splinePoints, scene);
 
 	// catmullRomSpline.color = new Color3(1, 0.611, 0.254); // Dutch Orange - 225 156 65
-	// catmullRomSpline.color = new Color3(0.976, 0.572, 0.27); // Royal Orange - 249 146 69
-	catmullRomSpline.color = new Color3(1, 0, 0); // Royal Orange - 249 146 69
-	catmullRomSpline.enableEdgesRendering();
-	catmullRomSpline.edgesWidth = 0.5;
-	// catmullRomSpline.edgesColor = new Color4(0.976, 0.572, 0.27, 1);
-	catmullRomSpline.edgesColor = new Color4(1, 0, 0, 1);
+	catmullRomSpline.color = new Color3(0.976, 0.572, 0.27); // Royal Orange - 249 146 69
+	// catmullRomSpline.color = new Color3(1, 0, 0);
+
+	if (!isLive) {
+		catmullRomSpline.enableEdgesRendering();
+		catmullRomSpline.edgesWidth = 0.75;
+		catmullRomSpline.edgesColor = new Color4(0.976, 0.572, 0.27, 1);
+	} else {
+		catmullRomSpline.isVisible = false;
+	}
+
 	catmullRomSpline.renderingGroupId = 2;
 
 	// Create Path3D from array of points
@@ -97,33 +102,29 @@ const createParcelLine = (scene, camera, followMesh, zoomLevel = 0.1) => {
 	animationGroup.addTargetedAnimation(animPos, followMesh);
 	animationGroup.addTargetedAnimation(animRot, followMesh);
 
-	// animationGroup.play(false);
-	// animationGroup.goToFrame(framenum); // To sync
-	console.log(`
-		Ready animation group \n
-		Total Frames: ${animationGroup._to}
-		Coords Length/Minutes: ${gpsData.length} 
-	`);
+	// console.log(`
+	// 	Ready animation group \n
+	// 	Total Frames: ${animationGroup._to}
+	// 	Coords Length : ${gpsData.length}
+	// `);
 
 	return {
 		animationGroup,
 		trackerLine: splinePoints,
-		updateLiveTrackerLine: (line, points) => {
-			// const updatedLine = Mesh.CreateLines('liveTrackerLine', points, scene, true, line);
-			const updatedLine = Mesh.CreateLines(null, points, null, true, line);
-
-			return updatedLine;
-		},
 		createLiveTrackerLine: (startPoints) => {
 			const liveTrackerLine = Mesh.CreateLines('liveTrackerLine', startPoints, scene, true);
 
-			// liveTrackerLine.color = new Color3(1, 0.611, 0.254); // Dutch Orange - 225 156 65
-			// liveTrackerLine.color = new Color3(0.976, 0.572, 0.27); // Royal Orange - 249 146 69
-			liveTrackerLine.color = new Color3(0, 0, 1); // Royal Orange - 249 146 69
+			liveTrackerLine.alpha = 0;
+
+			// As there is no width for createLines - this is the closest we can come
+			// Using Tube Mesh did not work well - thus using this method
+			// Requires to enable disable first to pass properties to the edge
 			liveTrackerLine.enableEdgesRendering();
-			liveTrackerLine.edgesWidth = 0.5;
-			// liveTrackerLine.edgesColor = new Color4(0.976, 0.572, 0.27, 1);
-			liveTrackerLine.edgesColor = new Color4(0, 0, 1, 1);
+
+			liveTrackerLine.edgesWidth = 0.75;
+			liveTrackerLine.edgesColor = new Color4(0.976, 0.572, 0.27, 1); // Royal Orange - 249 146 69
+			liveTrackerLine.disableEdgesRendering();
+
 			liveTrackerLine.renderingGroupId = 3;
 
 			return liveTrackerLine;

@@ -1,7 +1,9 @@
 @import '../../styles/mixins';
 
 .nav {
-  @include blendedText(black, normal);
+  // @include blendedText(black, normal);
+  color: var(--white);
+  
   display: flex;
   position: fixed;
   top: 0;

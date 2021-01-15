@@ -23,25 +23,6 @@ const mapImages = (ctx => {
 })(require.context('../../../public/map-tiles', true, /.*/));
 // })(require.context('./map-tiles', true, /.*/));
 
-const asyncAddImage = (src, textureContext, texture) => new Promise((resolve, reject) => {
-	const projectImage = new Image();
-	projectImage.crossOrigin = 'anonymous';
-	projectImage.src = src;
-
-	projectImage.onerror = reject;
-
-	projectImage.onload = () => {
-		const aspectRatio = projectImage.width / projectImage.height;
-		const sidesMargin = IMAGE_CANVAS - IMAGE_CANVAS * aspectRatio;
-
-		textureContext.drawImage(projectImage, sidesMargin / 2, 0, IMAGE_CANVAS - sidesMargin, IMAGE_CANVAS);
-
-		texture.update();
-
-		resolve(true);
-	};
-});
-
 // Add images on grid
 const addImageOnPoint = (scene, point, imageURL, size, flip = false) => {
 	const imagePlane = MeshBuilder.CreatePlane(
@@ -68,7 +49,6 @@ const addImageOnPoint = (scene, point, imageURL, size, flip = false) => {
 	imagePlane.material.opacityTexture = texture;
 	imagePlane.material.emissiveTexture = texture;
 	imagePlane.material.disableLighting = true;
-	// imagePlane.material.backFaceCulling = false;
 
 	const projectImage = new Image();
 	projectImage.crossOrigin = 'anonymous';

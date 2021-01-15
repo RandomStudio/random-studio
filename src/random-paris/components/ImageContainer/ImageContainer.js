@@ -2,7 +2,6 @@ import React, { useRef, useState, useMemo, forwardRef, useImperativeHandle } fro
 import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
 import gpsData from '../../utils/gpsWithData.json';
-// import gpsData from '../../utils/gpsWithDataSmall.json';
 
 import { LazyImageFull, ImageState } from 'react-lazy-images';
 import styles from './ImageContainer.module.scss';
@@ -15,13 +14,15 @@ const overlayStyles = {
 	clipPath: 'inset(0)',
 };
 
-const ImageContainer = ({ currentCoordIndex }, ref) => {
+const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 	const activeIndexRef = useRef(0);
 
 	const [shouldRender, setShouldRender] = useState(false);
 	useTimeout(() => setShouldRender(true), 500);
 
 	const currentImages = useMemo(() => {
+		if (!isPlaying) return [gpsData[currentCoordIndex].images[0]];
+
 		const shouldFlip = currentCoordIndex % 2 === 1;
 
 		if (currentCoordIndex >= gpsData.length - 1) {
@@ -33,7 +34,7 @@ const ImageContainer = ({ currentCoordIndex }, ref) => {
 		}
 
 		return [...gpsData[currentCoordIndex].images, ...gpsData[currentCoordIndex + 1].images];
-	}, [currentCoordIndex]);
+	}, [currentCoordIndex, isPlaying]);
 
 	const [imageSprings, setImageSprings] = useSprings(
 		currentImages.length,
@@ -70,7 +71,7 @@ const ImageContainer = ({ currentCoordIndex }, ref) => {
 						placeholderSrc={`https://random-paris.s3.eu-central-1.amazonaws.com/images-thumbnails/${imgSrc}`}
 					>
 						{({ imageProps, imageState, ref }) => (
-							<animated.div ref={ref} style={{ opacity: opacity }}>
+							<animated.div ref={ref} style={{ opacity: !isPlaying ? 1 : opacity }}>
 								<animated.img
 									src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
 									alt=""

@@ -149,9 +149,16 @@
 	}
 
 	.crossHairSwatch {
-		width: 20px;
-		height: 20px;
+		width: 15px;
+		height: 15px;
 		border: 1px solid #fff;
+	}
+	
+	@media screen and (min-width: 580px) {
+		.crossHairSwatch {
+			width: 20px;
+			height: 20px;
+		}
 	}
 }
 
