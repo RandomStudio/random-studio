@@ -50,21 +50,21 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 10
-    marginLeft: 45
+    marginLeft: 42
     zIndex: 0
     image: /img/COS_042.jpg
-    width: 55
+    width: 58
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 10
+    marginTop: 12
     marginLeft: 9
     zIndex: 0
     image: /img/COS_030.jpg
-    width: 47
+    width: 48
   - video:
       autoplay: false
       hasControls: false
@@ -81,40 +81,40 @@ content:
       lifespan and can live in any shape, space, or scale to suit an endless
       stream of product displays."
   - video:
-      autoplay: true
-      hasControls: true
-      loops: true
-      isMuted: true
-      isAlwaysMuted: true
-      url: https://player.vimeo.com/external/502612562.hd.mp4?s=90c5064293cd94b236a60d70d10abece4564b3cb&profile_id=174
-    marginTop: 0
-    marginLeft: 10
-    zIndex: 0
-    width: 80
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 11
-    marginLeft: 0
-    zIndex: 0
-    image: /img/COS_306.jpg
-    width: 35
-  - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
     marginTop: 10
-    marginLeft: -39
+    marginLeft: -34
     zIndex: 0
     carousel:
       - type: image
         image: /img/COS_260.jpg
       - type: image
         image: /img/COS_261.jpg
-    width: 129
+    width: 126
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 6
+    marginLeft: 0
+    zIndex: 0
+    image: /img/COS_306.jpg
+    width: 35
+  - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: true
+      url: https://player.vimeo.com/external/502612562.hd.mp4?s=90c5064293cd94b236a60d70d10abece4564b3cb&profile_id=174
+    marginTop: 11
+    marginLeft: 12
+    zIndex: 0
+    width: 76
 ---
