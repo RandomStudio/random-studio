@@ -61,10 +61,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 12
-    marginLeft: 9
+    marginLeft: 14
     zIndex: 0
     image: /img/COS_030.jpg
-    width: 48
+    width: 47
   - video:
       autoplay: false
       hasControls: false
@@ -87,25 +87,25 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 10
-    marginLeft: -3
+    marginLeft: -5
     zIndex: 0
     carousel:
       - type: image
         image: /img/COS_260.jpg
       - type: image
         image: /img/COS_261.jpg
-    width: 100
+    width: 105
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -10
-    marginLeft: 0
+    marginTop: -8
+    marginLeft: 6
     zIndex: 0
     image: /img/COS_306.jpg
-    width: 35
+    width: 31
   - video:
       autoplay: true
       hasControls: true
@@ -114,9 +114,9 @@ content:
       isAlwaysMuted: true
       url: https://player.vimeo.com/external/502612562.hd.mp4?s=90c5064293cd94b236a60d70d10abece4564b3cb&profile_id=174
     marginTop: 11
-    marginLeft: 12
+    marginLeft: 14
     zIndex: 0
-    width: 76
+    width: 73
 credits:
   - key: "With:"
     value: Bonsoir Paris
