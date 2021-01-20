@@ -65,4 +65,56 @@ content:
     zIndex: 0
     image: /img/COS_030.jpg
     width: 47
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: "The resulting centrepiece brings to life COS’ core design ethos,
+      turning a complex composition into something that appears simple and
+      minimal: an elegant frame for a selection of garments from the SS13
+      collection. Like a timeless white shirt, the modular display has no
+      lifespan and can live in any shape, space, or scale to suit an endless
+      stream of product displays."
+  - video:
+      autoplay: true
+      hasControls: true
+      loops: true
+      isMuted: true
+      isAlwaysMuted: true
+      url: https://player.vimeo.com/external/502612562.hd.mp4?s=90c5064293cd94b236a60d70d10abece4564b3cb&profile_id=174
+    marginTop: 0
+    marginLeft: 10
+    zIndex: 0
+    width: 80
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 11
+    marginLeft: 0
+    zIndex: 0
+    image: /img/COS_306.jpg
+    width: 35
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 10
+    marginLeft: -39
+    zIndex: 0
+    carousel:
+      - type: image
+        image: /img/COS_260.jpg
+      - type: image
+        image: /img/COS_261.jpg
+    width: 129
 ---
