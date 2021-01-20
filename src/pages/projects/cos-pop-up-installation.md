@@ -39,10 +39,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 6
+    marginLeft: 7
     zIndex: 0
     image: /img/COS_040.jpg
-    width: 50
+    width: 48
   - video:
       autoplay: false
       hasControls: false
