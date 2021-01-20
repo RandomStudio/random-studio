@@ -91,7 +91,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 10
+    marginLeft: 7
     zIndex: 0
     image: /img/054_Nike_JFS-SU15_LDN-1948_portfolio22.jpg
     width: 32
