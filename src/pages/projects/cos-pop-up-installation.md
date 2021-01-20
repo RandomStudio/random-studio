@@ -87,7 +87,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 10
-    marginLeft: -12
+    marginLeft: -3
     zIndex: 0
     carousel:
       - type: image
@@ -101,7 +101,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 6
+    marginTop: -10
     marginLeft: 0
     zIndex: 0
     image: /img/COS_306.jpg
