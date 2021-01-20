@@ -87,14 +87,14 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 10
-    marginLeft: -34
+    marginLeft: -12
     zIndex: 0
     carousel:
       - type: image
         image: /img/COS_260.jpg
       - type: image
         image: /img/COS_261.jpg
-    width: 126
+    width: 100
   - video:
       autoplay: false
       hasControls: false
