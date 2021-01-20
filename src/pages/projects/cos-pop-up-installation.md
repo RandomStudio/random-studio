@@ -117,4 +117,12 @@ content:
     marginLeft: 12
     zIndex: 0
     width: 76
+opengraph:
+  ogDescription: "Transforming COS’ signature minimalist ethos into a spatial
+    experience, we created a pop-up installation to house their SS13 collection
+    during Salone del Mobile in Milan. Based on the structural codes of an atom,
+    the centrepiece itself is timeless and can be reconfigured into an infinite
+    number of new forms. "
+  ogTitle: COS Pop-Up Installation
+  ogImage: /img/COS_040.jpg
 ---
