@@ -39,10 +39,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 7
+    marginLeft: 5
     zIndex: 0
     image: /img/COS_040.jpg
-    width: 48
+    width: 44
   - video:
       autoplay: false
       hasControls: false
@@ -53,7 +53,7 @@ content:
     marginLeft: 42
     zIndex: 0
     image: /img/COS_042.jpg
-    width: 58
+    width: 53
   - video:
       autoplay: false
       hasControls: false
