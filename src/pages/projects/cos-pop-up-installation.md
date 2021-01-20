@@ -117,6 +117,9 @@ content:
     marginLeft: 12
     zIndex: 0
     width: 76
+credits:
+  - key: "With:"
+    value: Bonsoir Paris
 opengraph:
   ogDescription: "Transforming COS’ signature minimalist ethos into a spatial
     experience, we created a pop-up installation to house their SS13 collection
