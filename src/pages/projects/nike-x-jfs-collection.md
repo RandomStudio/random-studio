@@ -106,4 +106,11 @@ content:
     zIndex: 0
     image: /img/054_Nike_JFS-SU15_LDN-1948_portfolio1.jpg
     width: 59
+opengraph:
+  ogTitle: Nike x JFS Collection
+  ogDescription: "Revolving around the theme of modularity, the Nike x JFS
+    collection captured the body in motion. We created campaign photography, an
+    event and a blueprint for all in-store installations that played with
+    sequence, function and change. "
+  ogImage: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
 ---
