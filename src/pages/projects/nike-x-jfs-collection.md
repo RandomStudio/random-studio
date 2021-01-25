@@ -106,6 +106,15 @@ content:
     zIndex: 0
     image: /img/054_Nike_JFS-SU15_LDN-1948_portfolio1.jpg
     width: 59
+credits:
+  - key: "For:"
+    value: Nike
+  - key: "Role:"
+    value: >-
+      
+      Concept Design, Art Direction, Spatial Design, Interior Design, Fixture Design, Technical Development
+  - key: "With: "
+    value: Bonsoir Paris
 opengraph:
   ogTitle: Nike x JFS Collection
   ogDescription: "Revolving around the theme of modularity, the Nike x JFS
