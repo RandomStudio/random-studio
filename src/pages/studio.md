@@ -48,8 +48,12 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 jobOpenings:
-  - jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=1
-    jobTitle: Job title here
-    jobDescription: Job description here
-    jobIsVisible: false
+  - jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=3
+    jobTitle: Senior UI Designer
+    jobDescription: At Random Studio, we create brand and service experiences that
+      trigger a sense of wonder. Our work comes to life in the space where the
+      digital meets the physical. As a studio, we value new ideas, new insight,
+      new ways of seeing the world — and we're currently looking for a Senior UI
+      designer who can bring that to the table.
+    jobIsVisible: true
 ---
