@@ -20,6 +20,7 @@ content:
       url: https://player.vimeo.com/external/474983745.hd.mp4?s=a402d59aec7d280571da04e8849f3eaa049ccf4e&profile_id=174
     marginTop: 0
     marginLeft: 0
+    ratio: 56
   - video:
       autoplay: false
       hasControls: false
@@ -27,6 +28,19 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
+    marginLeft: 0
+    caption: A fantasy universe populated by ancient avatars and hacker cats,
+      Parallel Archeologies reimagines the Internet as a blackhole that sucks
+      our attention inwards, streaming distortions of alternate Internets and
+      code-cracked dimensions to stitch together a cosmic fairy tale for the
+      digital age.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 15
     marginLeft: 0
     image: /img/geoffrey_lillemon_parallel_archaeologies_interface.gif
     width: 50
@@ -50,19 +64,6 @@ content:
     marginLeft: 11
     image: /img/geoffrey_lillemon_parallel_archaeologies_centaur_and_mermaid.gif
     width: 40
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
-    caption: A fantasy universe populated by ancient avatars and hacker cats,
-      Parallel Archeologies reimagines the Internet as a blackhole that sucks
-      our attention inwards, streaming distortions of alternate Internets and
-      code-cracked dimensions to stitch together a cosmic fairy tale for the
-      digital age.
   - video:
       autoplay: false
       hasControls: false
@@ -128,36 +129,6 @@ content:
     marginLeft: 54
     image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
     width: 40
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 6
-    image: /img/geoffrey_lillemon_parallel_archaeologies_loadinga.gif
-    width: 39
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: -23
-    marginLeft: 54
-    image: /img/geoffrey_lillemon_parallel_archaeologies_code_06.gif
-    width: 39
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 8
-    marginLeft: 18
-    image: /img/geoffrey_lillemon_parallel_archaeologies_endless.gif
-    width: 60
   - video:
       autoplay: false
       hasControls: false
