@@ -118,8 +118,12 @@ content:
     zIndex: 0
     width: 73
 credits:
+  - key: "For:"
+    value: COS
   - key: "With:"
     value: Bonsoir Paris
+  - key: "Role:"
+    value: Concept Design, Art Direction, Technical development
 opengraph:
   ogDescription: "Transforming COS’ signature minimalist ethos into a spatial
     experience, we created a pop-up installation to house their SS13 collection
