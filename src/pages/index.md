@@ -47,6 +47,14 @@ projects:
     project: An internet creation myth for kids
     caption: An internet creation myth for kids
   - thumbnail:
+      ratio: 0
+      marginTop: 0
+      marginLeft: 0
+      image: /img/COS_093.jpg
+      width: 50
+    project: |
+      COS Pop-Up Installation
+  - thumbnail:
       marginTop: -12
       marginLeft: 45
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
