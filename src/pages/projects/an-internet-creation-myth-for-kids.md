@@ -50,7 +50,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -10
+    marginTop: -6
     marginLeft: 61
     image: /img/parallel_archaeologies_geoffrey_lillemon_well_portrait.png
     width: 30
@@ -60,8 +60,8 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 11
+    marginTop: -5
+    marginLeft: 3
     image: /img/geoffrey_lillemon_parallel_archaeologies_centaur_and_mermaid.gif
     width: 40
   - video:
@@ -71,9 +71,9 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 6
-    marginLeft: 49
+    marginLeft: 51
     image: /img/geoffrey_lillemon_parallel_archaeologies_internet_egg_and_cylinder.gif
-    width: 50
+    width: 48
     caption: ""
   - video:
       autoplay: false
