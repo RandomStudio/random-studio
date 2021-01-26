@@ -239,6 +239,11 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 0
+      image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
+    caption: "Nike x JFS Collection "
 articles:
   - article: How can screens be more tactile?
     position: 2
