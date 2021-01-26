@@ -48,15 +48,17 @@ projects:
     caption: An internet creation myth for kids
   - thumbnail:
       ratio: 0
-      marginTop: 0
+      marginTop: -7
       marginLeft: 0
       image: /img/COS_093.jpg
       width: 50
     project: |
       COS Pop-Up Installation
+    caption: |
+      COS Pop-Up Installation
   - thumbnail:
-      marginTop: -12
-      marginLeft: 45
+      marginTop: -2
+      marginLeft: 51
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 49
     caption: A series of digital experiments for SPACE10
@@ -237,6 +239,11 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 0
+      image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
+    caption: "Nike x JFS Collection "
 articles:
   - article: How can screens be more tactile?
     position: 2
