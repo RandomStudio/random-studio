@@ -40,7 +40,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 15
+    marginTop: 9
     marginLeft: 0
     image: /img/geoffrey_lillemon_parallel_archaeologies_interface.gif
     width: 50
