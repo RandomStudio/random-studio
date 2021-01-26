@@ -105,9 +105,9 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 5
+    marginLeft: 6
     image: /img/geoffrey_lillemon_parallel_archaeologies_ancient_avatar_04.gif
-    width: 36
+    width: 37
     caption: ""
   - video:
       autoplay: false
@@ -116,9 +116,9 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: -10
-    marginLeft: 51
+    marginLeft: 52
     image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
-    width: 43
+    width: 41
   - video:
       autoplay: false
       hasControls: false
