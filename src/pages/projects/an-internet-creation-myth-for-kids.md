@@ -70,7 +70,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
+    marginTop: 6
     marginLeft: 49
     image: /img/geoffrey_lillemon_parallel_archaeologies_internet_egg_and_cylinder.gif
     width: 50
@@ -91,16 +91,6 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -4
-    marginLeft: 55
-    image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01547.png
-    width: 35
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
     caption: Delving into the bottomless well of Internet aesthetics, visitors have
@@ -115,7 +105,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 6
+    marginLeft: 5
     image: /img/geoffrey_lillemon_parallel_archaeologies_ancient_avatar_04.gif
     width: 40
     caption: ""
@@ -126,17 +116,17 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: -13
-    marginLeft: 54
+    marginLeft: 55
     image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
-    width: 40
+    width: 41
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 10
-    marginLeft: 56
+    marginTop: 3
+    marginLeft: 7
     image: /img/parallel_archaeologies_geoffrey_lillemon_well.png
     width: 35
   - video:
@@ -145,8 +135,8 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -9
-    marginLeft: 5
+    marginTop: -6
+    marginLeft: 49
     image: /img/geoffrey_lillemon_parallel_archaeologies_cinekid.gif
-    width: 42
+    width: 43
 ---
