@@ -25,9 +25,9 @@ jobs:
         id: gatsby-cache-folder
         with:
           path: .cache
-          key: ${{ runner.os }}-cache-gatsby-260121
+          key: ${{ runner.os }}-cache-gatsby-260121-2
           restore-keys: |
-            ${{ runner.os }}-cache-gatsby-260121
+            ${{ runner.os }}-cache-gatsby-260121-2
       - name: Gatsby Public Folder
         uses: actions/cache@v1
         id: gatsby-public-folder
