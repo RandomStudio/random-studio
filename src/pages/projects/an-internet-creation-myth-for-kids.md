@@ -60,8 +60,8 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -5
-    marginLeft: 3
+    marginTop: -9
+    marginLeft: 4
     image: /img/geoffrey_lillemon_parallel_archaeologies_centaur_and_mermaid.gif
     width: 40
   - video:
@@ -84,7 +84,7 @@ content:
     marginTop: -6
     marginLeft: 6
     image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
-    width: 34
+    width: 35
   - video:
       autoplay: false
       hasControls: false
@@ -107,7 +107,7 @@ content:
     marginTop: 0
     marginLeft: 5
     image: /img/geoffrey_lillemon_parallel_archaeologies_ancient_avatar_04.gif
-    width: 40
+    width: 36
     caption: ""
   - video:
       autoplay: false
@@ -115,28 +115,28 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -13
-    marginLeft: 55
+    marginTop: -10
+    marginLeft: 51
     image: /img/geoffrey_lillemon_parallel_archaeologies_meowmeow_03.gif
-    width: 41
+    width: 43
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 3
+    marginTop: -1
     marginLeft: 7
     image: /img/parallel_archaeologies_geoffrey_lillemon_well.png
-    width: 35
+    width: 32
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -6
-    marginLeft: 49
+    marginTop: -3
+    marginLeft: 44
     image: /img/geoffrey_lillemon_parallel_archaeologies_cinekid.gif
     width: 43
 ---
