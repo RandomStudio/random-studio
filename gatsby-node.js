@@ -1,4 +1,19 @@
+
 const { createFilePath } = require('gatsby-source-filesystem');
+
+// Allows react spring to work (after build)
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /react-spring/,
+          sideEffects: true,
+        },
+      ],
+    },
+  });
+};
 
 exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`

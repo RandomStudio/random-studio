@@ -1,0 +1,64 @@
+.header {
+	position: absolute;
+	display: flex;
+    justify-content: space-between;
+	flex-direction: column;
+	top: 104px;
+    right: 0;
+    padding: 0 22px;
+	width: 100%;
+
+	user-select: none;
+	pointer-events: none;
+	
+	color: var(--white);
+	z-index: 10;
+	
+	h1 {
+		position: relative;
+		font-family: 'Larish Neue';
+		font-size: 51px;
+		font-weight: 400;
+		line-height: 1.1;
+		letter-spacing: -.01em;
+		margin: 0;
+	}
+	
+	p {
+		font-size: 19px;
+		text-align: initial;
+		width: 70%;
+	}
+	
+	@media screen and (min-width: 580px) {
+		flex-direction: row;
+		padding: 0 32px;
+
+		h1 {
+			// left: 32px;
+			width: 30%;
+			align-self: initial;
+		}
+		
+		p {
+			font-size: 23px;
+			text-align: right;
+			width: 65%;
+		}
+	}
+	
+	// @media screen and (min-width: 864px) {
+	// 	h1 {
+	// 		left: 0;
+	// 	}
+	// }
+
+	@media screen and (min-width: 1150px) {
+		padding: 0 38px;
+
+		p {
+			font-size: 28px;
+			width: 55%;
+		}
+	}
+}

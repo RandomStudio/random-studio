@@ -1,0 +1,107 @@
+[
+	{
+		"lat": "52.383",
+		"lon": "4.696",
+		"colorHex": "#9c9b2f",
+		"color": [
+			156,
+			155,
+			47
+		],
+		"Occured_At": "December 17, 2020 at 09:47PM",
+		"time": 1608238046000,
+		"images": [
+			"random_studio/Random_OG.81.png",
+			"random_paris/Random.81.png",
+			"bonsoir_paris/Bonsoir_OG.81.png"
+		],
+		"mixedColor": "rgb(149,147,68)",
+		"imageInfo": {
+			"colorHex": "#928f4d"
+		}
+	},
+	{
+		"lat": "52.382",
+		"lon": "4.696",
+		"colorHex": "#fdc27a",
+		"color": [
+			253,
+			194,
+			122
+		],
+		"Occured_At": "December 17, 2020 at 10:10PM",
+		"time": 1608239426000,
+		"images": [
+			"random_studio/Random_OG.46.png",
+			"random_paris/Random.46.png",
+			"bonsoir_paris/Bonsoir_OG.46.png"
+		],
+		"mixedColor": "rgb(252,196,131)",
+		"imageInfo": {
+			"colorHex": "#fbc587"
+		}
+	},
+	{
+		"lat": "52.383",
+		"lon": "4.696",
+		"colorHex": "#9c9b2f",
+		"color": [
+			156,
+			155,
+			47
+		],
+		"Occured_At": "December 17, 2020 at 10:19PM",
+		"time": 1608239966000,
+		"images": [
+			"random_studio/Random_OG.49.png",
+			"random_paris/Random.49.png",
+			"bonsoir_paris/Bonsoir_OG.49.png"
+		],
+		"mixedColor": "rgb(179,127,51)",
+		"imageInfo": {
+			"colorHex": "#bd7334"
+		}
+	},
+	{
+		"lat": "52.383",
+		"lon": "4.697",
+		"colorHex": "#9d9b2f",
+		"color": [
+			157,
+			155,
+			47
+		],
+		"Occured_At": "December 17, 2020 at 11:12PM",
+		"time": 1608243146000,
+		"images": [
+			"random_studio/Random_OG.52.png",
+			"random_paris/Random.52.png",
+			"bonsoir_paris/Bonsoir_OG.52.png"
+		],
+		"mixedColor": "rgb(154,123,65)",
+		"imageInfo": {
+			"colorHex": "#996d49"
+		}
+	},
+	{
+		"lat": "52.383",
+		"lon": "4.696",
+		"colorHex": "#9c9b2f",
+		"color": [
+			156,
+			155,
+			47
+		],
+		"Occured_At": "December 17, 2020 at 11:13PM",
+		"time": 1608243206000,
+		"images": [
+			"random_studio/Random_OG.51.png",
+			"random_paris/Random.51.png",
+			"bonsoir_paris/Bonsoir_OG.51.png"
+		],
+		"mixedColor": "rgb(157,119,67)",
+		"imageInfo": {
+			"colorHex": "#9e684b"
+		}
+	}
+]

@@ -1,0 +1,219 @@
+.container {
+	width: 100%;
+	z-index: 10;
+}
+
+.scrubberContainer {
+	// For during live only
+	--scrubberLineScale: 0;
+
+	position: relative;
+	height: 100%;
+	font-family: var(--mono-font);
+	font-size: 12px;
+	cursor: pointer;
+
+	&.isLive {
+		& > span {
+			&:nth-of-type(2) {
+				background-color: transparent;
+				width: calc(100% - 80px);
+				left: 28px;
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background-color: white;
+				}
+
+				&::before {
+					opacity: .4;
+				}
+				
+				&::after {
+					transform: scale3d(var(--scrubberLineScale), 1, 1);
+					transform-origin: left;
+				}
+			}
+
+			&:nth-of-type(3)::before {
+				opacity: .4;
+			}
+			
+			// Didn't have time anymore for a better solution
+			// Quick fill in sides which would be out fo sync with during live scaling of progress
+			&:nth-of-type(4) {
+				left: 0;
+				width: 28px;
+				height: 1px;
+			}
+			
+			&:nth-of-type(5) {
+				right: 0;
+				width: 52px;
+				height: 1px;
+				opacity: 0.4;
+			}
+		}
+	}
+
+
+	& > span {
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		background-color: var(--white);
+		color: var(--white);
+
+		&::before {
+			content: "";
+			position: absolute;
+			background-color: var(--white);
+		}
+		
+		&:nth-of-type(1) {
+			width: 1px;
+			height: 4px;
+			left: 0;
+
+			&::before {
+				width:  100%;
+				height: 100%;
+			}
+			
+			&::after {
+				content: "AMS";
+				position: absolute;
+				top: -1.6em;
+				left: 0;
+				user-select: none;
+			}
+		}
+
+		&:nth-of-type(2) {
+			height: 1px;
+			width: 100%;
+			bottom: 0;
+		}
+
+		&:nth-of-type(3) {
+			width: 1px;
+			height: 4px;
+			right: 0;
+			background-color: transparent;
+
+			&::before {
+				width: 100%;
+				height: 100%;
+			}
+
+			&::after {
+				content: "PAR";
+				position: absolute;
+				top: -1.6em;
+				right: 0;
+				user-select: none;
+			}
+		}
+	}
+}
+
+.scrubber {
+	position: relative;
+	width: calc(100% - 80px);
+	left: 28px;
+}
+
+.thumbnail {
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	user-select: none;
+
+	width: 20px;
+	height: 20px; // double of the scrubber height
+
+	background-color: var(--white);
+	color: var(--white);
+	border: 1px solid var(--white);
+	
+	p:last-of-type {
+		position: absolute;
+		user-select: none;
+		touch-action: none;
+		text-align: center;
+		text-transform: uppercase;
+		width: max-content;
+		bottom: -120%;
+		left: 50%;
+		transform: translate3d(-50%, 0 , 0);
+	}
+}
+
+.thumbnailLive {
+	// touch-action: none; // Prevent glitching on touch devices - react use gesture
+	touch-action: pan-y; // Prevent glitching on touch devices - react use gesture
+
+	p {
+		transition: opacity 150ms ease-in-out;
+		opacity: 1;
+	}
+	
+	&.isDragging {
+		opacity: .7;
+
+		p { 
+			opacity: 0;
+		}
+	}
+
+	@media(pointer: fine)  {
+		&:hover + .thumbnailInteractive span {
+			transform: translateY(-120%);
+			opacity: 1;
+		}
+	}
+}
+
+.thumbnailInteractive {
+	cursor: grab;
+
+	span {
+		opacity: 0;
+	}
+
+	p, span {
+		transition: opacity 150ms ease-in-out;
+	}
+	
+	&.isLive  {
+		p {
+			opacity: 0;
+		}
+
+		&.isDragging p {
+			opacity: 1;
+		}
+	}
+
+	// Do not target (most) touch devices like this
+	@media(pointer: fine)  {
+		span {
+			position: absolute;
+			width: max-content;
+			height: 100%;
+			opacity: 0;
+			left: 50%;
+			transform: translate3d(-50%, -120%, 0);
+		}
+
+		&:hover span {
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+
+	div, img {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.placeholder {
+	filter: blur(2px);
+}
