@@ -38,10 +38,10 @@
 .studio {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   order: 2;
-  max-width: 448px;
-  padding-bottom: calc(2 * 1.375em);
-  min-width: 400px;
+  max-width: 600px;
+  width: 100%;
 
   @media (min-width: 864px) {
     order: 1;
@@ -53,7 +53,7 @@
     }
   }
   .email-desktop {
-    display: block !important;
+    display: inline-block !important;
   }
   .email-mobile {
     display: none !important;
@@ -66,6 +66,9 @@
 
 .address {
   display: block;
+  min-width: 300px;
+  padding-top: 1.375em;
+  padding-bottom: 1.375em;
   a {
     display: inline-block;
   }

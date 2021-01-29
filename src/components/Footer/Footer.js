@@ -26,6 +26,7 @@ const Footer = ({ address, email, phone }) => {
           <a className={styles.phone} href={`tel:${phone.replace(' ', '-')}`}>
             {phone}
           </a>
+          <br />
           <a
             className={styles.emailDesktop}
             href={`mailto:${email}`}
@@ -38,8 +39,6 @@ const Footer = ({ address, email, phone }) => {
             {email}
           </a>
         </div>
-        </div>
-      <div className={styles.studio}>
         <div className={`${styles.address} ${styles.column}`}>
           <span className={styles.name}>Random Paris</span>
           <div
@@ -54,6 +53,7 @@ const Footer = ({ address, email, phone }) => {
           <a className={styles.phone} href={`tel:+33-(0)-1-40-36-41-44`}>
             {"+33 (0) 1 40 36 41 44"}
           </a>
+          <br />
           <a
             className={styles.emailDesktop}
             href={`mailto:morgan.maccari@random.studio`}
