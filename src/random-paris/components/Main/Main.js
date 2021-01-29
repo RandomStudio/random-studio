@@ -286,7 +286,7 @@ const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 					</div>
 				</section>
 
-				{sceneAnimationGroup && (
+				{!isBeforeLive && sceneAnimationGroup && (
 					<Scrubber
 						ref={scrubberRef}
 						thumbnail={gpsData[currentCoordIndex].images[1]}
