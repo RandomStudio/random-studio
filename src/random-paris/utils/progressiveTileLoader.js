@@ -20,8 +20,8 @@ const mapImages = ((ctx) => {
 			x: Number(imageURL.match(new RegExp('_x' + '(.*)' + '_y'))[1]),
 			y: Number(imageURL.match(new RegExp('_y' + '(.*)' + '.jpg'))[1]),
 		}));
-})(require.context('../../public/map-tiles', true, /.*/));
-// })(require.context('./map-tiles', true, /.*/));
+//})(require.context('../../public/map-tiles', true, /.*/));
+})(require.context('../map-tiles', true, /.*/));
 
 // Add images on grid
 const addImageOnPoint = (scene, point, imageURL, size, flip = false) => {
