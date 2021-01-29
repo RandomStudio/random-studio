@@ -38,9 +38,10 @@
 .studio {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   order: 2;
   max-width: 448px;
+  padding-bottom: calc(2 * 1.375em);
+  min-width: 400px;
 
   @media (min-width: 864px) {
     order: 1;
@@ -59,9 +60,22 @@
   }
 }
 
+.name {
+  opacity: 0.5;
+}
+
 .address {
+  display: block;
   a {
     display: inline-block;
+  }
+}
+
+.location {
+  margin-bottom: 1.375em;
+
+  a {
+    text-decoration: underline;
   }
 }
 
