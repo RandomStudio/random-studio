@@ -5,9 +5,9 @@ import { remap } from '@anselan/maprange';
 
 import gpsData from './gpsWithData.json';
 
-const xRangeTarget = [0, 16];
+const xRangeTarget = [0, 8];
 const xRangeWorld = [1.66654, 7.29154];
-const yRangeTarget = [0, 20];
+const yRangeTarget = [0, 10];
 const yRangeWorld = [48.2317, 52.7028];
 
 // Extra is for debugging - higher number speeds things up

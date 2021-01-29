@@ -2,9 +2,9 @@ import { MeshBuilder } from '@babylonjs/core/Meshes/meshBuilder';
 import { Vector3 } from '@babylonjs/core/Maths/math';
 import { DynamicTexture, StandardMaterial } from '@babylonjs/core';
 
-const IMAGE_CANVAS = 512;
+const IMAGE_CANVAS = 1024;
 //const URL_PREFIX = 'map-tiles';
-const URL_PREFIX = 'https://random-paris.s3.eu-central-1.amazonaws.com/map-tiles';
+const URL_PREFIX = 'https://random-paris.s3.eu-central-1.amazonaws.com/map-tiles-1k';
 
 // tiles which have been added
 const addedMapParts = [];
@@ -20,8 +20,7 @@ const mapImages = ((ctx) => {
 			x: Number(imageURL.match(new RegExp('_x' + '(.*)' + '_y'))[1]),
 			y: Number(imageURL.match(new RegExp('_y' + '(.*)' + '.jpg'))[1]),
 		}));
-//})(require.context('../../public/map-tiles', true, /.*/));
-})(require.context('../map-tiles', true, /.*/));
+})(require.context('../map-tiles-1k', true, /.*/));
 
 // Add images on grid
 const addImageOnPoint = (scene, point, imageURL, size, flip = false) => {
