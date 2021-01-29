@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = () => {
+const Header = ({ isBeforeLive }) => {
 	return (
 		<header className={styles.header}>
 			<h1>
@@ -11,10 +11,12 @@ const Header = () => {
 				<br />
 				Studio
 			</h1>
-			<p>
-				Our Random family is growing internationally:
-				<br /> Design studio Bonsoir Paris becomes Random Paris
-			</p>
+			{!isBeforeLive && (
+				<p>
+					Our Random family is growing internationally!
+					<br /> Design studio Bonsoir Paris becomes Random Paris
+				</p>
+			)}
 		</header>
 	);
 };

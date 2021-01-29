@@ -23,7 +23,7 @@ import stats from '../../utils/addStats';
 import gpsData from '../../utils/gpsWithData.json';
 
 // Special takeover header
-const Main = ({ isLive, totalDuration, isPastLive, handleSetSceneHasMounted }) => {
+const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 	const sceneRef = useRef();
 	const scrubberRef = useRef();
 	const imageContainerRef = useRef();
@@ -128,9 +128,6 @@ const Main = ({ isLive, totalDuration, isPastLive, handleSetSceneHasMounted }) =
 		}
 
 		setIsPlaying(isLive || isPastLive);
-
-		// For the loader
-		// handleSetSceneHasMounted(true);
 	}, [isLive, isPastLive]);
 
 	const scrubUpdateFrames = (frame) => {
@@ -310,7 +307,7 @@ const Main = ({ isLive, totalDuration, isPastLive, handleSetSceneHasMounted }) =
 					<GridBlocks />
 				</section>
 
-				<Header />
+				<Header isBeforeLive={isBeforeLive} />
 			</main>
 		</>
 	);

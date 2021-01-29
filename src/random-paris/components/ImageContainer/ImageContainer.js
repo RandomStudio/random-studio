@@ -1,11 +1,14 @@
+import styles from './ImageContainer.module.scss';
 import React, { useRef, useState, useMemo, forwardRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
 import gpsData from '../../utils/gpsWithData.json';
+// import gpsData from '../../utils/gpsWithDataSmall.json';
 
 import { LazyImageFull, ImageState } from 'react-lazy-images';
-import styles from './ImageContainer.module.scss';
 import useTimeout from '../../hooks/useTimeout';
+
+
 
 const overlayStyles = {
 	position: 'absolute',
@@ -38,7 +41,7 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 
 	const [imageSprings, setImageSprings] = useSprings(
 		currentImages.length,
-		index => ({ opacity: index === 0 && currentCoordIndex === 0 ? 1 : 0 }),
+		(index) => ({ opacity: index === 0 && currentCoordIndex === 0 ? 1 : 0 }),
 		[currentImages],
 	);
 
@@ -46,7 +49,7 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 		ref,
 		() => ({
 			setOpacitySprings: setImageSprings,
-			setActiveIndexRef: newIndex => {
+			setActiveIndexRef: (newIndex) => {
 				activeIndexRef.current = newIndex;
 			},
 		}),
@@ -65,27 +68,30 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 						key={imgSrc}
 						// debounceDurationMs={0}
 						debounceDurationMs={150}
-						// src={`/images/${imgSrc}`}
-						// placeholderSrc={`/images-thumbnails/${imgSrc}`}
+						//src={`/images/${imgSrc}`}
+						//placeholderSrc={`/images-thumbnails/${imgSrc}`}
 						src={`https://random-paris.s3.eu-central-1.amazonaws.com/images/${imgSrc}`}
 						placeholderSrc={`https://random-paris.s3.eu-central-1.amazonaws.com/images-thumbnails/${imgSrc}`}
 					>
-						{({ imageProps, imageState, ref }) => (
-							<animated.div ref={ref} style={{ opacity: !isPlaying ? 1 : opacity }}>
-								<animated.img
-									src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
-									alt=""
-								/>
-								<img
-									alt=""
-									src={imageProps.placeholderSrc}
-									style={{
-										...overlayStyles,
-										opacity: imageState === ImageState.LoadSuccess ? 0 : 1
-									}}
-								/>
-							</animated.div>
-						)}
+						{({ imageProps, imageState, ref }) => {
+							return (
+								<animated.div ref={ref} style={{ opacity: !isPlaying ? 1 : opacity }}>
+									<animated.img
+										src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
+										alt=""
+									/>
+									<img
+										alt=""
+										src={imageProps.placeholderSrc}
+										style={{
+											...overlayStyles,
+											opacity: imageState === ImageState.LoadSuccess ? 0 : 1
+										}}
+										className={styles.placeholder}
+									/>
+								</animated.div>
+							)
+						}}
 					</LazyImageFull>
 				);
 			})}

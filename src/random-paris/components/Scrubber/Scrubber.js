@@ -1,3 +1,4 @@
+import styles from './Scrubber.module.scss';
 
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
@@ -5,7 +6,6 @@ import classnames from 'classnames';
 import { remap } from '@anselan/maprange';
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
-import styles from './Scrubber.module.scss';
 
 import gpsData from '../../utils/gpsWithData.json';
 
@@ -47,7 +47,6 @@ const Scrubber = (
 		}
 
 		window.addEventListener('resize', getSize);
-
 		return () => window.removeEventListener('resize', getSize);
 	}, []); // Empty array ensures that effect is only run on mount and unmount
 
@@ -68,7 +67,7 @@ const Scrubber = (
 		set({ x: newX });
 	}, [dimensions, set, totalFrames, currentFrame]);
 
-	const getClientSideX = inputX => {
+	const getClientSideX = (inputX) => {
 		if (typeof window === 'undefined') return 0;
 
 		// Calculated by
@@ -80,7 +79,7 @@ const Scrubber = (
 		return mappedX;
 	};
 
-	const getTargetFrame = inputX => {
+	const getTargetFrame = (inputX) => {
 		if (typeof window === 'undefined') return 0;
 
 		const targetFrame = Math.floor(remap(inputX, [70, window.innerWidth - 70], [0, totalFrames], true));
@@ -88,7 +87,7 @@ const Scrubber = (
 		return targetFrame;
 	};
 
-	const handleUpdateFrameByClick = inputX => {
+	const handleUpdateFrameByClick = (inputX) => {
 		const targetX = getClientSideX(inputX);
 
 		if (isLive) {
@@ -176,22 +175,22 @@ const Scrubber = (
 			<animated.div
 				className={scrubberContainerClasses}
 				style={{ '--scrubberLineScale': scaleLive }}
-				onPointerDown={e => {
+				onPointerDown={(e) => {
 					setIsPlaying(false);
 					handleUpdateFrameByClick(e.clientX);
 				}}
-				onPointerUp={e => {
+				onPointerUp={(e) => {
 					setIsPlaying(true);
 				}}
 			>
-				<span />
-				<span />
-				<span />
+				<span></span>
+				<span></span>
+				<span></span>
 
 				{isLive && (
 					<>
-						<span />
-						<span />
+						<span></span>
+						<span></span>
 					</>
 				)}
 
@@ -204,7 +203,7 @@ const Scrubber = (
 								x: xLive,
 							}}
 						>
-							<p>{"LIVE"}</p>
+							<p>LIVE</p>
 						</animated.div>
 					)}
 
@@ -216,7 +215,7 @@ const Scrubber = (
 							x,
 						}}
 					>
-						<span>{'<<< >>>'}</span>
+						<span>{`<<< >>>`}</span>
 						<p>{`${gpsData[currentCoordIndex].timestamp.date} ${gpsData[currentCoordIndex].timestamp.time}`}</p>
 					</animated.div>
 				</div>

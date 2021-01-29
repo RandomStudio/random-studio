@@ -3,24 +3,24 @@ import { Vector3 } from '@babylonjs/core/Maths/math';
 import { DynamicTexture, StandardMaterial } from '@babylonjs/core';
 
 const IMAGE_CANVAS = 512;
-// const URL_PREFIX = 'map-tiles';
+//const URL_PREFIX = 'map-tiles';
 const URL_PREFIX = 'https://random-paris.s3.eu-central-1.amazonaws.com/map-tiles';
 
 // tiles which have been added
 const addedMapParts = [];
 
 // Load in images -> Object
-const mapImages = (ctx => {
+const mapImages = ((ctx) => {
 	const keys = ctx.keys();
 
 	return keys
-		.map(key => key.replace('./', ''))
-		.map(imageURL => ({
+		.map((key) => key.replace('./', ''))
+		.map((imageURL) => ({
 			url: imageURL,
 			x: Number(imageURL.match(new RegExp('_x' + '(.*)' + '_y'))[1]),
 			y: Number(imageURL.match(new RegExp('_y' + '(.*)' + '.jpg'))[1]),
 		}));
-})(require.context('../../../public/map-tiles', true, /.*/));
+})(require.context('../../public/map-tiles', true, /.*/));
 // })(require.context('./map-tiles', true, /.*/));
 
 // Add images on grid
@@ -54,7 +54,6 @@ const addImageOnPoint = (scene, point, imageURL, size, flip = false) => {
 	projectImage.crossOrigin = 'anonymous';
 	projectImage.src = imageURL;
 
-	// asyncAddImage(imageURL, textureContext, texture);
 	projectImage.onload = () => {
 		const aspectRatio = projectImage.width / projectImage.height;
 		const sidesMargin = IMAGE_CANVAS - IMAGE_CANVAS * aspectRatio;
@@ -85,13 +84,13 @@ const progressiveTileLoader = (scene, camera) => {
 	];
 
 	const toLoadImages = shouldLoadXY.filter(
-		toAddXY => !addedMapParts.find(addedXY => addedXY[0] === toAddXY[0] && addedXY[1] === toAddXY[1]),
+		(toAddXY) => !addedMapParts.find((addedXY) => addedXY[0] === toAddXY[0] && addedXY[1] === toAddXY[1]),
 	);
 
 	if (toLoadImages.length > 0) {
-		toLoadImages.forEach(toAddXY => {
+		toLoadImages.forEach((toAddXY) => {
 			addedMapParts.push(toAddXY);
-			const image = mapImages.find(image => image.x === toAddXY[0] && image.y === toAddXY[1]);
+			const image = mapImages.find((image) => image.x === toAddXY[0] && image.y === toAddXY[1]);
 
 			if (!image) {
 				return;
@@ -103,7 +102,7 @@ const progressiveTileLoader = (scene, camera) => {
 	}
 };
 
-export const loadAllTiles = scene => {
+export const loadAllTiles = (scene) => {
 	mapImages.forEach(({ x, y, url }) => {
 		const position = new Vector3(x, y, 0);
 		addImageOnPoint(scene, position, `${URL_PREFIX}/${url}`, 1);
