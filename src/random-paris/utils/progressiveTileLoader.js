@@ -4,7 +4,7 @@ import { DynamicTexture, StandardMaterial } from '@babylonjs/core';
 
 const IMAGE_CANVAS = 1024;
 //const URL_PREFIX = 'map-tiles';
-const URL_PREFIX = 'https://random-paris.s3.eu-central-1.amazonaws.com/map-tiles-1k';
+const URL_PREFIX = 'https://d319unozazpg6l.cloudfront.net/map-tiles-1k';
 
 // tiles which have been added
 const addedMapParts = [];
