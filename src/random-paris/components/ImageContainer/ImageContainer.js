@@ -83,19 +83,19 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 						{({ imageProps, imageState, ref }) => {
 							return (
 								<animated.div ref={ref} style={{ opacity: !isPlaying ? 1 : opacity }}>
+									<img
+										alt=""
+										src={imageProps.placeholderSrc}
+										className={styles.placeholder}
+									/>
 									<animated.img
 										src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
 										srcSet={imageProps.srcSet}
 										alt=""
-									/>
-									<img
-										alt=""
-										src={imageProps.placeholderSrc}
 										style={{
 											...overlayStyles,
-											opacity: imageState === ImageState.LoadSuccess ? 0 : 1
+											opacity: imageState === ImageState.LoadSuccess ? 1 : 0
 										}}
-										className={styles.placeholder}
 									/>
 								</animated.div>
 							)
