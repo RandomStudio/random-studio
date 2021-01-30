@@ -74,6 +74,7 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 						sizes="(max-width: 1280px) 50vw,
 									 (max-width: 2160px) 40vw,
 									 25vw"
+						src={`https://d319unozazpg6l.cloudfront.net/images/${imgSrc}`}
 						srcSet={`
 							https://d319unozazpg6l.cloudfront.net/images/${imgSrc}_small.${extension} 512w,
 							https://d319unozazpg6l.cloudfront.net/images/${imgSrc} 1080w
@@ -84,6 +85,7 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 								<animated.div ref={ref} style={{ opacity: !isPlaying ? 1 : opacity }}>
 									<animated.img
 										src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
+										srcSet={imageProps.srcSet}
 										alt=""
 									/>
 									<img
