@@ -62,7 +62,7 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 		<section className={styles.container}>
 			{imageSprings.map(({ opacity }, index) => {
 				const imgSrc = currentImages[index];
-
+        const extension = imgSrc.split('.').pop();
 				return (
 					<LazyImageFull
 						key={imgSrc}
