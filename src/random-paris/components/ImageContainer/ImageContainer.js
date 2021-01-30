@@ -70,8 +70,14 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 						debounceDurationMs={150}
 						//src={`/images/${imgSrc}`}
 						//placeholderSrc={`/images-thumbnails/${imgSrc}`}
-						src={`https://random-paris.s3.eu-central-1.amazonaws.com/images/${imgSrc}`}
 						placeholderSrc={`https://random-paris.s3.eu-central-1.amazonaws.com/images-thumbnails/${imgSrc}`}
+						sizes="(max-width: 1280px) 50vw,
+									 (max-width: 2160px) 40vw,
+									 25vw"
+						srcSet={`
+							https://random-paris.s3.eu-central-1.amazonaws.com/images/${imgSrc}_small.${extension} 512w,
+							https://random-paris.s3.eu-central-1.amazonaws.com/images/${imgSrc} 1080w
+						`}
 					>
 						{({ imageProps, imageState, ref }) => {
 							return (
