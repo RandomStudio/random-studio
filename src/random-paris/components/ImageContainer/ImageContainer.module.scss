@@ -10,3 +10,11 @@
 		object-fit: cover;
 	}
 }
+
+.full {
+	opacity: 0;
+	transition: opacity 600ms ease-in;
+	&.isLoaded {
+		opacity: 1;
+	}
+}

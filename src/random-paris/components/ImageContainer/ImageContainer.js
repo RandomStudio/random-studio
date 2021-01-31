@@ -1,5 +1,5 @@
 import styles from './ImageContainer.module.scss';
-import React, { useRef, useState, useMemo, forwardRef, useImperativeHandle } from 'react';
+import React, { useEffect, useRef, useState, useMemo, forwardRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import { useSprings, animated } from 'react-spring';
 import gpsData from '../../utils/gpsWithData.json';
@@ -7,8 +7,6 @@ import gpsData from '../../utils/gpsWithData.json';
 
 import { LazyImageFull, ImageState } from 'react-lazy-images';
 import useTimeout from '../../hooks/useTimeout';
-
-
 
 const overlayStyles = {
 	position: 'absolute',
@@ -19,9 +17,6 @@ const overlayStyles = {
 
 const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 	const activeIndexRef = useRef(0);
-
-	const [shouldRender, setShouldRender] = useState(false);
-	useTimeout(() => setShouldRender(true), 500);
 
 	const currentImages = useMemo(() => {
 		if (!isPlaying) return [gpsData[currentCoordIndex].images[0]];
@@ -56,54 +51,78 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 		[setImageSprings],
 	);
 
-	if (!shouldRender) return null;
+	const [shouldRender, setShouldRender] = useState(false);
+	useEffect(() => {
+		window.setTimeout(() => setShouldRender(true), 500);
+		return () => {
+			setShouldRender(false);
+		}
+	}, [currentImages]);
+
+	const [imagesWithState, setImagesWithState] = useState([]);
+	useEffect(() => {
+		const images = imageSprings.map((_, index) => {
+			const imgSrc = currentImages[index];
+			const extension = imgSrc.split('.').pop();
+			return {
+				isLoaded: false,
+				src: `https://d319unozazpg6l.cloudfront.net/images/${imgSrc}`,
+				srcSet: `https://d319unozazpg6l.cloudfront.net/images/${imgSrc}_small.${extension} 512w, https://d319unozazpg6l.cloudfront.net/images/${imgSrc} 1080w`,
+				placeholder: `https://d319unozazpg6l.cloudfront.net/images-thumbnails/${imgSrc}`,
+			};
+		});
+		setImagesWithState(images);
+
+		if (!shouldRender) {
+			return;
+		}
+
+		Promise.all(images.map(async (details, index) => {
+			const {src, srcSet } = details;
+			const image = new Image();
+			image.src = src;
+			image.srcset = srcSet;
+			image.decoding = 'async';
+			await image.decode();
+			return {
+				...details,
+				isLoaded: true,
+			}
+		})).then(loadedImages => {
+			setImagesWithState(loadedImages);
+		});
+
+		return () => {
+			setImagesWithState([]);
+		}
+	}, [currentImages, shouldRender]);
 
 	return (
 		<section className={styles.container}>
 			{imageSprings.map(({ opacity }, index) => {
-				const imgSrc = currentImages[index];
-        const extension = imgSrc.split('.').pop();
+				if (!imagesWithState[index]) {
+					return null;
+				}
+				const {placeholder, src, srcSet, isLoaded } = imagesWithState[index];
+
 				return (
-					<LazyImageFull
-						key={imgSrc}
-						// debounceDurationMs={0}
-            debounceDurationMs={150}
-						//src={`/images/${imgSrc}`}
-						//placeholderSrc={`/images-thumbnails/${imgSrc}`}
-						placeholderSrc={`https://d319unozazpg6l.cloudfront.net/images-thumbnails/${imgSrc}`}
-						sizes="(max-width: 1280px) 50vw,
-									 (max-width: 2160px) 40vw,
-									 25vw"
-						src={`https://d319unozazpg6l.cloudfront.net/images/${imgSrc}`}
-						srcSet={`
-							https://d319unozazpg6l.cloudfront.net/images/${imgSrc}_small.${extension} 512w,
-							https://d319unozazpg6l.cloudfront.net/images/${imgSrc} 1080w
-						`}
-					>
-						{({ imageProps, imageState, ref }) => {
-							return (
-								<animated.div ref={ref} style={{ opacity: !isPlaying ? 1 : opacity }}>
-									<img
-										alt=""
-										src={imageProps.placeholderSrc}
-										className={styles.placeholder}
-										style={{
-											...overlayStyles,
-											opacity: imageState === ImageState.LoadSuccess ? 0 : 1
-										}}
-									/>
-									<animated.img
-										src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
-										srcSet={imageProps.srcSet}
-										alt=""
-										style={{
-											opacity: imageState === ImageState.LoadSuccess ? 1 : 0
-										}}
-									/>
-								</animated.div>
-							)
-						}}
-					</LazyImageFull>
+					<div style={{ opacity: !isPlaying ? 1 : opacity }}>
+						<img
+							alt=""
+							src={placeholder}
+							className={styles.placeholder}
+							style={{
+								...overlayStyles,
+							}}
+						/>
+						<img
+							className={`${styles.full} ${isLoaded ? styles.isLoaded : ''}`}
+							sizes="(max-width: 1280px) 50vw, (max-width: 2160px) 40vw, 25vw"
+							src={isLoaded ? src : placeholder}
+							srcSet={isLoaded ? srcSet : ''}
+							alt=""
+						/>
+					</div>
 				);
 			})}
 		</section>
