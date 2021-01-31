@@ -67,7 +67,8 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 					<LazyImageFull
 						key={imgSrc}
 						// debounceDurationMs={0}
-						debounceDurationMs={150}
+            debounceDurationMs={150}
+            loadEagerly
 						//src={`/images/${imgSrc}`}
 						//placeholderSrc={`/images-thumbnails/${imgSrc}`}
 						placeholderSrc={`https://d319unozazpg6l.cloudfront.net/images-thumbnails/${imgSrc}`}
