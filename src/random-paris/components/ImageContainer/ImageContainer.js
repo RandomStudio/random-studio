@@ -12,7 +12,7 @@ import useTimeout from '../../hooks/useTimeout';
 
 const overlayStyles = {
 	position: 'absolute',
-	filter: 'blur(1px)',
+	filter: 'blur(2px)',
 	transition: 'opacity ease-in 300ms',
 	clipPath: 'inset(0)',
 };
@@ -68,7 +68,6 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 						key={imgSrc}
 						// debounceDurationMs={0}
             debounceDurationMs={150}
-            loadEagerly
 						//src={`/images/${imgSrc}`}
 						//placeholderSrc={`/images-thumbnails/${imgSrc}`}
 						placeholderSrc={`https://d319unozazpg6l.cloudfront.net/images-thumbnails/${imgSrc}`}
@@ -88,13 +87,16 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 										alt=""
 										src={imageProps.placeholderSrc}
 										className={styles.placeholder}
+										style={{
+											...overlayStyles,
+											opacity: imageState === ImageState.LoadSuccess ? 0 : 1
+										}}
 									/>
 									<animated.img
 										src={imageState === ImageState.LoadSuccess ? imageProps.src : imageProps.placeholderSrc}
 										srcSet={imageProps.srcSet}
 										alt=""
 										style={{
-											...overlayStyles,
 											opacity: imageState === ImageState.LoadSuccess ? 1 : 0
 										}}
 									/>
