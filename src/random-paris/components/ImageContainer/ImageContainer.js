@@ -106,7 +106,7 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 				const {placeholder, src, srcSet, isLoaded } = imagesWithState[index];
 
 				return (
-					<div style={{ opacity: !isPlaying ? 1 : opacity }}>
+					<animated.div style={{ opacity: !isPlaying ? 1 : opacity }}>
 						<img
 							alt=""
 							src={placeholder}
@@ -122,7 +122,7 @@ const ImageContainer = ({ currentCoordIndex, isPlaying }, ref) => {
 							srcSet={isLoaded ? srcSet : ''}
 							alt=""
 						/>
-					</div>
+					</animated.div>
 				);
 			})}
 		</section>
