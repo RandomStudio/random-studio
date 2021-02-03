@@ -1,241 +1,246 @@
-import styles from './Scrubber.module.scss';
 
-import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
+import React, {
+  useEffect, useRef, useState, forwardRef, useImperativeHandle,
+} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { remap } from '@anselan/maprange';
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
+import styles from './Scrubber.module.scss';
 
 import gpsData from '../../utils/gpsWithData.json';
 
 const Scrubber = (
-	{
-		customClass,
-		currentFrame,
-		updateFrames,
-		totalFrames,
-		isPlaying,
-		setIsPlaying,
-		isLive,
-		currentCoordIndex,
-		updateLiveFrames,
-		currentColor,
-	},
-	ref,
+  {
+    customClass,
+    currentFrame,
+    updateFrames,
+    totalFrames,
+    isPlaying,
+    setIsPlaying,
+    isLive,
+    currentCoordIndex,
+    updateLiveFrames,
+    currentColor,
+  },
+  ref,
 ) => {
-	const isPlayingRef = useRef(isPlaying);
-	const scrubberRef = useRef();
+  const isPlayingRef = useRef(isPlaying);
+  const scrubberRef = useRef();
 
-	// The BG color saved when paused on drag
-	const liveBackgroundColor = useRef();
+  // The BG color saved when paused on drag
+  const liveBackgroundColor = useRef();
 
-	const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-	const [isLiveDragging, setIsLiveDragging] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [isLiveDragging, setIsLiveDragging] = useState(false);
 
-	const [{ x }, set] = useSpring(() => ({ x: 0 }));
-	const [{ xLive, scaleLive }, setLive] = useSpring(() => ({ xLive: 0, scaleLive: 0 }));
+  const [{ x }, set] = useSpring(() => ({ x: 0 }));
+  const [{ xLive, scaleLive }, setLive] = useSpring(() => ({ xLive: 0, scaleLive: 0 }));
 
-	useEffect(() => {
-		function getSize() {
-			if (scrubberRef.current) {
-				setDimensions({
-					width: scrubberRef.current.offsetWidth,
-					height: scrubberRef.current.offsetHeight,
-				});
-			}
-		}
+  useEffect(() => {
+    function getSize() {
+      if (scrubberRef.current) {
+        setDimensions({
+          width: scrubberRef.current.offsetWidth,
+          height: scrubberRef.current.offsetHeight,
+        });
+      }
+    }
 
-		window.addEventListener('resize', getSize);
-		return () => window.removeEventListener('resize', getSize);
-	}, []); // Empty array ensures that effect is only run on mount and unmount
+    window.addEventListener('resize', getSize);
 
-	useEffect(() => {
-		if (scrubberRef.current) {
-			setDimensions({
-				// To fit withing boundaries
-				width: scrubberRef.current.offsetWidth,
-				height: scrubberRef.current.offsetHeight,
-			});
-		}
-	}, []);
+    return () => window.removeEventListener('resize', getSize);
+  }, []); // Empty array ensures that effect is only run on mount and unmount
 
-	// On resize update the scrubber loc
-	useEffect(() => {
-		const newX = (currentFrame / totalFrames) * dimensions.width;
+  useEffect(() => {
+    if (scrubberRef.current) {
+      setDimensions({
+        // To fit withing boundaries
+        width: scrubberRef.current.offsetWidth,
+        height: scrubberRef.current.offsetHeight,
+      });
+    }
+  }, []);
 
-		set({ x: newX });
-	}, [dimensions, set, totalFrames, currentFrame]);
+  // On resize update the scrubber loc
+  useEffect(() => {
+    const newX = (currentFrame / totalFrames) * dimensions.width;
 
-	const getClientSideX = (inputX) => {
-		if (typeof window === 'undefined') return 0;
+    set({ x: newX });
+  }, [dimensions, set, totalFrames, currentFrame]);
 
-		// Calculated by
-		// padding of container(scrubber) - 32
-		// left offset of scrubber box (initial) - 28
-		// width of scrubber- 20
-		const mappedX = remap(inputX, [70, window.innerWidth - 70], [0, dimensions.width], true);
+  const getClientSideX = inputX => {
+    if (typeof window === 'undefined') return 0;
 
-		return mappedX;
-	};
+    // Calculated by
+    // padding of container(scrubber) - 32
+    // left offset of scrubber box (initial) - 28
+    // width of scrubber- 20
+    const mappedX = remap(inputX, [70, window.innerWidth - 70], [0, dimensions.width], true);
 
-	const getTargetFrame = (inputX) => {
-		if (typeof window === 'undefined') return 0;
+    return mappedX;
+  };
 
-		const targetFrame = Math.floor(remap(inputX, [70, window.innerWidth - 70], [0, totalFrames], true));
+  const getTargetFrame = inputX => {
+    if (typeof window === 'undefined') return 0;
 
-		return targetFrame;
-	};
+    const targetFrame = Math.floor(remap(inputX, [70, window.innerWidth - 70], [0, totalFrames], true));
 
-	const handleUpdateFrameByClick = (inputX) => {
-		const targetX = getClientSideX(inputX);
+    return targetFrame;
+  };
 
-		if (isLive) {
-			updateLiveFrames(targetX);
-		} else {
-			const targetFrame = getTargetFrame(inputX);
+  const handleUpdateFrameByClick = inputX => {
+    const targetX = getClientSideX(inputX);
 
-			set({ x: targetX });
-			updateFrames(targetFrame);
-		}
-	};
+    if (isLive) {
+      updateLiveFrames(targetX);
+    } else {
+      const targetFrame = getTargetFrame(inputX);
 
-	const bind = useDrag(
-		({ first, last, xy: [ogX] }) => {
-			if (typeof window === 'undefined') return;
+      set({ x: targetX });
+      updateFrames(targetFrame);
+    }
+  };
 
-			if (first) {
-				isPlayingRef.current = isPlaying;
-				setIsPlaying(false);
-			}
+  const handleUpdateFrameByClickUp = e => {
+    if (currentFrame !== totalFrames) {
+      setIsPlaying(true);
+    }
+  };
 
-			const targetX = getClientSideX(ogX);
-			const targetFrame = getTargetFrame(ogX);
+  const bind = useDrag(
+    ({ first, last, xy: [ogX] }) => {
+      if (typeof window === 'undefined') return;
 
-			if (isLive) {
-				if (first) {
-					setIsLiveDragging(true);
-					liveBackgroundColor.current = currentColor;
-				}
+      const targetX = getClientSideX(ogX);
+      const targetFrame = getTargetFrame(ogX);
 
-				updateLiveFrames(targetX);
+      if (isLive) {
+        if (first) {
+          setIsLiveDragging(true);
+          liveBackgroundColor.current = currentColor;
+        }
 
-				if (last) {
-					setIsLiveDragging(false);
-				}
-			} else {
-				set({ x: targetX });
+        updateLiveFrames(targetX);
 
-				updateFrames(targetFrame);
-			}
+        if (last) {
+          setIsLiveDragging(false);
+        }
+      } else {
+        set({ x: targetX });
 
-			// Resume playing if started scrub while playing
-			if (last && isPlayingRef.current) {
-				setIsPlaying(true);
-			}
-		},
-		{
-			bounds: {
-				left: 0,
-				right: dimensions.width,
-			},
-			axis: 'x',
-		},
-	);
+        updateFrames(targetFrame);
+      }
 
-	useImperativeHandle(
-		ref,
-		() => ({
-			setThumb: set,
-			setLiveThumb: setLive,
-			scrubberWidth: dimensions.width,
-		}),
-		[set, dimensions, setLive],
-	);
+      // Resume playing if started scrub while playing
+      if (last && isPlayingRef.current) {
+        if (totalFrames !== targetFrame) {
+          setIsPlaying(true);
+        }
+      }
+    },
+    {
+      bounds: {
+        left: 0,
+        right: dimensions.width,
+      },
+      axis: 'x',
+    },
+  );
 
-	const contrainerClasses = classnames(styles.container, {
-		[customClass]: customClass,
-	});
+  useImperativeHandle(
+    ref,
+    () => ({
+      setThumb: set,
+      setLiveThumb: setLive,
+      scrubberWidth: dimensions.width,
+    }),
+    [set, dimensions, setLive],
+  );
 
-	const scrubberContainerClasses = classnames(styles.scrubberContainer, {
-		[styles.isLive]: isLive,
-	});
+  const contrainerClasses = classnames(styles.container, {
+    [customClass]: customClass,
+  });
 
-	const interactiveThumbnailClasses = classnames(styles.thumbnail, styles.thumbnailInteractive, {
-		[styles.isLive]: isLive,
-		[styles.isDragging]: isLiveDragging,
-	});
+  const scrubberContainerClasses = classnames(styles.scrubberContainer, {
+    [styles.isLive]: isLive,
+  });
 
-	const liveThumbnailClasses = classnames(styles.thumbnail, styles.thumbnailLive, {
-		[styles.isDragging]: isLiveDragging,
-	});
+  const interactiveThumbnailClasses = classnames(styles.thumbnail, styles.thumbnailInteractive, {
+    [styles.isLive]: isLive,
+    [styles.isDragging]: isLiveDragging,
+  });
 
-	return (
-		<section className={contrainerClasses}>
-			<animated.div
-				className={scrubberContainerClasses}
-				style={{ '--scrubberLineScale': scaleLive }}
-				onPointerDown={(e) => {
-					setIsPlaying(false);
-					handleUpdateFrameByClick(e.clientX);
-				}}
-				onPointerUp={(e) => {
-					setIsPlaying(true);
-				}}
-			>
-				<span></span>
-				<span></span>
-				<span></span>
+  const liveThumbnailClasses = classnames(styles.thumbnail, styles.thumbnailLive, {
+    [styles.isDragging]: isLiveDragging,
+  });
 
-				{isLive && (
-					<>
-						<span></span>
-						<span></span>
-					</>
-				)}
+  return (
+    <section className={contrainerClasses}>
+      <animated.div
+        className={scrubberContainerClasses}
+        style={{ '--scrubberLineScale': scaleLive }}
+        onPointerDown={e => {
+          isPlayingRef.current = isPlaying;
+				  setIsPlaying(false);
+				  handleUpdateFrameByClick(e.clientX);
+        }}
+        onPointerUp={handleUpdateFrameByClickUp}
+      >
+        <span />
+        <span />
+        <span />
 
-				<div ref={scrubberRef} className={styles.scrubber}>
-					{isLive && (
-						<animated.div
-							className={liveThumbnailClasses}
-							style={{
-								backgroundColor: isLiveDragging ? liveBackgroundColor.current : currentColor,
-								x: xLive,
-							}}
-						>
-							<p>LIVE</p>
-						</animated.div>
-					)}
+        {isLive && (
+        <>
+          <span />
+          <span />
+        </>
+        )}
 
-					<animated.div
-						{...bind()}
-						className={interactiveThumbnailClasses}
-						style={{
-							backgroundColor: currentColor || '#fff',
-							x,
-						}}
-					>
-						<span>{`<<< >>>`}</span>
-						<p>{`${gpsData[currentCoordIndex].timestamp.date} ${gpsData[currentCoordIndex].timestamp.time}`}</p>
-					</animated.div>
-				</div>
-			</animated.div>
-		</section>
-	);
+        <div ref={scrubberRef} className={styles.scrubber}>
+          {isLive && (
+          <animated.div
+            className={liveThumbnailClasses}
+            style={{
+							  backgroundColor: isLiveDragging ? liveBackgroundColor.current : currentColor,
+							  x: xLive,
+            }}
+          >
+            <p>{'LIVE'}</p>
+          </animated.div>
+          )}
+
+          <animated.div
+            {...bind()}
+            className={interactiveThumbnailClasses}
+            style={{
+						  backgroundColor: currentColor || '#fff',
+						  x,
+            }}
+          >
+            <span>{'<<< >>>'}</span>
+            <p>{`${gpsData[currentCoordIndex].timestamp.date} ${gpsData[currentCoordIndex].timestamp.time}`}</p>
+          </animated.div>
+        </div>
+      </animated.div>
+    </section>
+  );
 };
 
 Scrubber.propTypes = {
-	customClass: PropTypes.string,
-	thumbnail: PropTypes.string.isRequired,
-	updateFrames: PropTypes.func.isRequired,
-	totalFrames: PropTypes.number.isRequired,
-	isPlaying: PropTypes.bool.isRequired,
-	setIsPlaying: PropTypes.func.isRequired,
-	currentFrame: PropTypes.number.isRequired,
+  customClass: PropTypes.string,
+  thumbnail: PropTypes.string.isRequired,
+  updateFrames: PropTypes.func.isRequired,
+  totalFrames: PropTypes.number.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
+  setIsPlaying: PropTypes.func.isRequired,
+  currentFrame: PropTypes.number.isRequired,
 };
 
 Scrubber.defaultProps = {
-	customClass: '',
+  customClass: '',
 };
 
 export default forwardRef(Scrubber);
