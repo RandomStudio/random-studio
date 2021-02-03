@@ -138,6 +138,10 @@ const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 		timeProgress.current = (currentFrameRef.current / totalFrames) * totalDuration;
 
 		updateCoord();
+
+		if (frame === totalFrames) {
+			setCurrentCoordIndex(gpsData.length - 1);
+		}
 	};
 
 	const scrubUpdateLiveFrames = (xTarget) => {
