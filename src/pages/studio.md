@@ -58,6 +58,21 @@ jobOpenings:
       so that our new studio can maintain its balance between being a clear &
       organized place whilst retaining its human and wonderful qualities.
     jobIsVisible: true
+  - jobTitle: Senior Creative
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=6&source=aWQ9Nw%3D%3D
+    jobDescription: >
+      At Random Studio, we create brand and service experiences that trigger a
+      sense of wonder. Our work comes to life in the space where the digital
+      meets the physical. As a team of artists, creative technologists and
+      strategists, we value new ideas, new insights, new ways of seeing the
+      world. We are currently looking for a Senior Creative with a strong vision
+      for what we define as ‘interactive spaces’.
+
+
+
+
+      Our studio is high freedom and low control, so we value those with an experimental and independent spirit. We are looking for someone who feels comfortable working in a dynamic and ever-changing environment. In this role, you will lead cross-disciplinary teams and get energized from collaborating with artists, creative technologists and talented developers open to exploring new territories.
+    jobIsVisible: true
 projects:
   - thumbnail:
       marginTop: 0
