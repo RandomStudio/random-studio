@@ -20,7 +20,15 @@ const TakeOverHeader = () => {
   const isDuringLive = timeAfterStart >= 0 && timeAfterStart < totalDuration * 1000;
   const isPastLive = timeAfterStart > totalDuration * 1000;
 
-  return <Main isBeforeLive={isBeforeLive} isLive={isDuringLive} isPastLive={isPastLive} totalDuration={totalDuration} />;
+  return (
+    <Main
+      isBeforeLive={isBeforeLive}
+      isLive={isDuringLive}
+      isPastLive={isPastLive}
+      totalDuration={totalDuration}
+      startAtRandomFrame={isPastLive}
+    />
+  );
 };
 
 TakeOverHeader.propTypes = {};
