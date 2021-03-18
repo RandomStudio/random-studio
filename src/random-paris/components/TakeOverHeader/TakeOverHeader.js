@@ -9,8 +9,8 @@ import gpsData from '../../utils/gpsWithData.json';
 const TakeOverHeader = () => {
   const timeAfterStart = useTimeFromStart();
 
-  // Total duration in seconds of the whole journey
-  const totalDuration = useMemo(() => gpsData.length * 60, []);
+  // Total duration in seconds of the whole journey - 60 being natural
+  const totalDuration = useMemo(() => gpsData.length * 10, []);
 
   if (timeAfterStart === null) {
     return null;
