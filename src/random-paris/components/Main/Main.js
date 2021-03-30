@@ -23,7 +23,7 @@ import stats from '../../utils/addStats';
 import gpsData from '../../utils/gpsWithData.json';
 
 // Special takeover header
-const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
+const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive, startAtRandomFrame }) => {
 	const sceneRef = useRef();
 	const scrubberRef = useRef();
 	const imageContainerRef = useRef();
@@ -44,7 +44,7 @@ const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 
 	const [currentCoordIndex, setCurrentCoordIndex] = useState(0);
 
-	const [isPlaying, setIsPlaying] = useState(isLive || isPastLive);
+	const [isPlaying, setIsPlaying] = useState();
 
 	// Make it time reliant instead of fps
 	const runClock = useMemo(() => {
@@ -71,7 +71,7 @@ const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 	// On play run loop
 	useRunEveryFrame(() => {
 		if (sceneAnimationGroup && isPlaying && currentFrameRef.current < totalFrames && scrubberRef.current) {
-			stats.begin();
+			// stats.begin();
 
 			const progress = clamp(timeProgress.current / totalDuration, 0, 1);
 
@@ -100,7 +100,7 @@ const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 
 			updateCoord();
 
-			stats.end();
+			// stats.end();
 		}
 	});
 
@@ -127,8 +127,19 @@ const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 			progressiveTrackerLineMesh.current = sceneRef.current.getParcelTrackerLineMesh()(progressiveTrackerLine.current);
 		}
 
-		setIsPlaying(isLive || isPastLive);
-	}, [isLive, isPastLive]);
+
+		if (totalFrames) {
+			const shouldPlay = isLive || isPastLive;
+			
+			if (shouldPlay && startAtRandomFrame) {
+				const randomFrame = remap(Math.random(), [0, 1], [totalFrames * 0.2, totalFrames * 0.8], true, true);
+				
+				scrubUpdateFrames(randomFrame);
+			}
+
+			setIsPlaying(shouldPlay);
+		}
+	}, [isLive, isPastLive, totalFrames, startAtRandomFrame]);
 
 	const scrubUpdateFrames = (frame) => {
 		sceneAnimationGroup.goToFrame(frame);
@@ -155,7 +166,6 @@ const Main = ({ isBeforeLive, isLive, totalDuration, isPastLive }) => {
 
 		scrubberRef.current.setThumb({ x: newX });
 
-		//
 		const frameTarget = (newX / scrubberRef.current.scrubberWidth) * totalFrames;
 
 		sceneAnimationGroup.goToFrame(frameTarget);
