@@ -8,8 +8,8 @@ intro: Nike opened the doors of its third House of Innovation, in Paris, July
 priority: 1
 content:
   - video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
@@ -19,7 +19,7 @@ content:
     image: ""
     alt: Nike kids pod immersive installation at House of Innovation in Paris
     width: 101
-    caption: Photo By Nike
+    caption: ""
   - video:
       autoplay: false
       hasControls: false
