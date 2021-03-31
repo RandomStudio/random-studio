@@ -47,7 +47,11 @@ studioImpression:
     - image: /img/studio_07.jpg
   showIndicator: true
   title: Studio Impressions
-jobOpenings: []
+jobOpenings:
+  - jobTitle: Job function title
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>
+    jobDescription: Job description
+    jobIsVisible: false
 projects:
   - thumbnail:
       marginTop: 0
