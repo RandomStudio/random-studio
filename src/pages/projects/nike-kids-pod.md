@@ -13,9 +13,10 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
+      url: https://player.vimeo.com/external/485605110.hd.mp4?s=6a45ff575297c3c262533396ba6f100daa4bfb4f&profile_id=175
     marginTop: 0
     marginLeft: 0
-    image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
+    image: ""
     alt: Nike kids pod immersive installation at House of Innovation in Paris
     width: 101
     caption: Photo By Nike
