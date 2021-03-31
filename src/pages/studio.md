@@ -47,17 +47,7 @@ studioImpression:
     - image: /img/studio_07.jpg
   showIndicator: true
   title: Studio Impressions
-jobOpenings:
-  - jobTitle: Office Manager
-    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=4&source=aWQ9Nw%3D%3D
-    jobDescription: We are looking to hire an office manager to take care of our
-      multi-functional creative studio space in Amsterdam. You will be
-      responsible for everything from welcoming our guests to handling a large
-      part of the administrative tasks of the studio. Whilst there are some
-      clear expectations, the role is broad and is open to being shaped by you;
-      so that our new studio can maintain its balance between being a clear &
-      organized place whilst retaining its human and wonderful qualities.
-    jobIsVisible: true
+jobOpenings: []
 projects:
   - thumbnail:
       marginTop: 0
