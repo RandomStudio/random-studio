@@ -12,8 +12,7 @@ const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
     event.preventDefault();
   };
 
-  const logoClass = `${styles.logo} ${layout === 'top' ? styles.isTop : styles.isCenter
-    }`;
+  const logoClass = `${styles.logo} ${layout === 'top' ? styles.isTop : styles.isCenter}`;
 
   return (
     <div className={styles.video}>
