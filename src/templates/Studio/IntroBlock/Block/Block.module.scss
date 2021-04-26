@@ -191,4 +191,8 @@
       transform: translateX(1%) translateZ(-0.1px) scale(0.9);
     }
   }
+
+  @media (min-width: 2600px) {
+    transform: none;
+  }
 }
