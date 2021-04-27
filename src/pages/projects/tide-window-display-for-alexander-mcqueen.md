@@ -10,7 +10,7 @@ intro: We worked with Alexander McQueen to design a display for their flagship
 content:
   - video:
       autoplay: true
-      hasControls: true
+      hasControls: false
       loops: true
       isMuted: false
       isAlwaysMuted: false
