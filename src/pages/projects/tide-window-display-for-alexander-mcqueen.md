@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: "Tide Window Display for Alexander McQueen "
+title: Tide, a kinetic window display for Alexander McQueen
 intro: We worked with Alexander McQueen to design a display for their flagship
   store in London to showcase the new Curve bag. Drawing inspiration from the
   SS21 campaign film directed by Jonathan Glazer – a dystopian short unfolding
@@ -10,7 +10,7 @@ intro: We worked with Alexander McQueen to design a display for their flagship
 content:
   - video:
       autoplay: true
-      hasControls: false
+      hasControls: true
       loops: true
       isMuted: false
       isAlwaysMuted: false
