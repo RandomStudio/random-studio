@@ -95,7 +95,7 @@ credits:
     value: Alexander McQueen
   - key: "Role:"
     value: |
-      Creative concept, Art direction and Experience design 
+      Creative Concept, Art Direction and Experience Design 
   - key: "With:"
     value: Souvenir
 opengraph:
