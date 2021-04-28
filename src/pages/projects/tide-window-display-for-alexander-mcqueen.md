@@ -42,7 +42,6 @@ content:
     marginTop: 0
     marginLeft: 0
     image: /img/0.40.png
-    width: 50
   - video:
       autoplay: false
       hasControls: false
@@ -50,10 +49,9 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: -5
-    marginLeft: 55
+    marginTop: 0
+    marginLeft: 0
     image: /img/screenshot-2021-04-26-at-12.59.13.png
-    width: 40
   - video:
       autoplay: false
       hasControls: false
@@ -75,10 +73,9 @@ content:
       isMuted: true
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/542060484.hd.mp4?s=14cd3e54e848eb72f432d4df3c56e41830c22f45&profile_id=174&download=1
-    ratio: 1
+    ratio: 0
     marginTop: 0
-    marginLeft: 5
-    width: 35
+    marginLeft: 0
   - video:
       autoplay: false
       hasControls: false
@@ -86,10 +83,9 @@ content:
       isMuted: true
       isAlwaysMuted: false
     ratio: 0
-    marginTop: -8
-    marginLeft: 45
+    marginTop: 0
+    marginLeft: 0
     image: /img/screenshot-2021-04-26-at-12.59.26.png
-    width: 50
 credits:
   - key: "For:"
     value: Alexander McQueen
@@ -106,5 +102,5 @@ opengraph:
     unfolding on the banks of the capital’s iconic River Thames – we created a
     display that mirrors the movement of the tide to bring the peace and
     tranquility of the natural world into the heart of the city.
-  ogImage: /img/0.38.png
+  ogImage: /img/screenshot-2021-04-26-at-12.59.13.png
 ---
