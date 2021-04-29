@@ -17,13 +17,6 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 23
-      image: /img/screenshot-2021-04-26-at-12.59.13.png
-      width: 54
-    project: Tide, a kinetic window display for Alexander McQueen
-    caption: A kinetic window display for Alexander McQueen
-  - thumbnail:
-      marginTop: 0
-      marginLeft: 46
       image: /img/BV_1.jpg
       width: 54
     project: |
@@ -31,6 +24,13 @@ projects:
     caption: A spatial listening experience for Bottega Veneta
   - thumbnail:
       marginTop: 0
+      marginLeft: 50
+      image: /img/screenshot-2021-04-26-at-12.59.13.png
+      width: 45
+    project: Tide, a kinetic window display for Alexander McQueen
+    caption: A kinetic window display for Alexander McQueen
+  - thumbnail:
+      marginTop: -26
       marginLeft: 0
       width: 45
       image: /img/look_37.4.jpg
@@ -253,8 +253,6 @@ projects:
       width: 40
     caption: "Nike x JFS Collection "
 articles:
-  - article: How can screens be more tactile?
-    position: 3
 address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)"
 phone: +31 20 779 7735
