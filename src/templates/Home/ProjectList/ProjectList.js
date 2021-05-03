@@ -36,7 +36,7 @@ const ProjectList = ({
               articleUrl={article.articleUrl}
             />
           )}
-          {(index === 3 || (projects.length < 3 && index === projects.length - 1)) && (
+          {(index === 4 || (projects.length < 4 && index === projects.length - 1)) && (
             <IntermittentStatement middle={middle} />
           )}
         </React.Fragment>

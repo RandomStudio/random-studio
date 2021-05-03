@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/485890365.hd.mp4?s=70620eac5af8ea7d824b9d334df5706010f05514&profile_id=175
+video: https://player.vimeo.com/external/542050918.hd.mp4?s=80e9dcf043bbb21ce05317813d8a34ced395789d&profile_id=175
 collaborationCredits:
-  collaborator: Bottega Veneta Korea
-  url: https://random.studio/projects/a-spatial-listening-experience-for-bottega-veneta/
+  collaborator: Alexander McQueen
+  url: https://random.studio/projects/tide-window-display-for-alexander-mcqueen/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
@@ -21,9 +21,16 @@ projects:
       width: 54
     project: |
       A spatial listening experience for Bottega Veneta 
-    caption: A spatial listening experience for Bottega Veneta
+    caption: A spatial listening experience for Bottega Veneta
   - thumbnail:
       marginTop: 0
+      marginLeft: 50
+      image: /img/screenshot-2021-04-26-at-12.59.13.png
+      width: 45
+    project: Tide, a kinetic window display for Alexander McQueen
+    caption: A kinetic window display for Alexander McQueen
+  - thumbnail:
+      marginTop: -26
       marginLeft: 0
       width: 45
       image: /img/look_37.4.jpg
@@ -246,8 +253,6 @@ projects:
       width: 40
     caption: "Nike x JFS Collection "
 articles:
-  - article: How can screens be more tactile?
-    position: 2
 address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)"
 phone: +31 20 779 7735

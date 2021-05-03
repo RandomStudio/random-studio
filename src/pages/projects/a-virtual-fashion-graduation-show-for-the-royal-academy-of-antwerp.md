@@ -2,7 +2,7 @@
 templateKey: Project
 title: A virtual fashion graduation show for the Royal Academy of Antwerp
 intro: >-
-
+  
 
   The Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?
 
@@ -226,6 +226,18 @@ content:
     marginLeft: 10
     width: 80
     caption: Masters – Florentina Leitner
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: Read more about how this project was conceived technically in [this
+      article](https://medium.com/random-studio/alone-with-others-shared-online-experiences-decentralised-d3fdca35df3b)
+      on [Medium](https://medium.com/random-studio).
 credits:
   - key: "For:"
     value: Antwerp Fashion Department, Royal Academy of Antwerp
