@@ -42,6 +42,11 @@
 
 .intro {
   margin-top: 1.2931578947em;
+
+  a {
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.05em;
+  }
 }
 
 .intro,
@@ -83,7 +88,7 @@
   margin-left: 6%;
 
   @media (min-width: 48rem) {
-    max-width: 50%;
+    max-width: none;
     margin-left: auto;
   }
 }

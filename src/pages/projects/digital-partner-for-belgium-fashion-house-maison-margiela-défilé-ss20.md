@@ -44,7 +44,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -50
+    marginLeft: 0
     zIndex: 1
     carousel:
       - type: image
@@ -79,7 +79,7 @@ content:
       - type: image
         image: /img/maisonmargiela_92263511_235453927655787_4016396683566657174_n.jpg
     caption: Key Looks Photography
-    width: 100
+    width: 50
   - video:
       autoplay: false
       hasControls: false
@@ -87,7 +87,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: -30
-    marginLeft: 24
+    marginLeft: 62
     carousel:
       - type: video
         isMuted: true
@@ -101,7 +101,7 @@ content:
         url: https://player.vimeo.com/external/408402405.sd.mp4?s=4f5fad054021774b79a363f141daaf769d2771be&profile_id=165
         caption: Teasers
     caption: Teasers
-    width: 76
+    width: 38
     zIndex: 1
   - video:
       autoplay: true
@@ -111,8 +111,8 @@ content:
       isAlwaysMuted: false
       url: https://player.vimeo.com/external/408419765.sd.mp4?s=afc38ef6b2e132aa016c3cfe63cd5a621429caa3&profile_id=165
     marginTop: 7
-    marginLeft: 9
-    width: 42
+    marginLeft: 30
+    width: 21
     caption: Podcast
     carousel: []
     zIndex: 1
@@ -152,7 +152,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -31
+    marginLeft: 9
     carousel:
       - type: video
         isMuted: true
@@ -163,7 +163,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408765984.sd.mp4?s=511eb088ecffcbdb0611a7d54227b384718c5fd5&profile_id=165
-    width: 79
+    width: 40
     zIndex: 1
     caption: Vignettes
   - video:
@@ -173,7 +173,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: -15
-    marginLeft: 29
+    marginLeft: 6
     carousel:
       - type: video
         isMuted: true
@@ -185,7 +185,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408766713.sd.mp4?s=350987a15332701ea3da4f4fe22c20b550382b7a&profile_id=165
     caption: Vignettes
-    width: 70
+    width: 35
     zIndex: 1
   - video:
       autoplay: false
@@ -194,7 +194,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 5
-    marginLeft: -20
+    marginLeft: 14
     carousel:
       - type: video
         isMuted: true
@@ -207,7 +207,7 @@ content:
         url: https://player.vimeo.com/external/408767135.sd.mp4?s=ee2238d2835ab676b1aac1cf720ff3a264781c74&profile_id=165
     alt: ""
     caption: Vignettes
-    width: 68
+    width: 34
     zIndex: 1
 relatedProjects:
   blockTitle: Other Projects

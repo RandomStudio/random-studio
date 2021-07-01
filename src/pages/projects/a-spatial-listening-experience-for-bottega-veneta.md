@@ -44,14 +44,14 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -60
+    marginLeft: 0
     zIndex: 0
     carousel:
       - type: image
         image: /img/BV_1.jpg
       - type: image
         image: /img/BV2.jpg
-    width: 120
+    width: 60
   - video:
       autoplay: false
       hasControls: false
@@ -96,14 +96,14 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -41
+    marginLeft: 19
     zIndex: 0
     carousel:
       - type: image
         image: /img/RND05171 copy.jpg
       - type: image
         image: /img/RND05178.jpg
-    width: 120
+    width: 60
   - video:
       autoplay: false
       hasControls: false
@@ -122,14 +122,14 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: -22
-    marginLeft: -32
+    marginLeft: 8
     zIndex: 0
     carousel:
       - type: image
         image: /img/RND05191 copy.jpg
       - type: image
         image: /img/RND05203 copy.jpg
-    width: 79
+    width: 40
   - video:
       autoplay: false
       hasControls: false

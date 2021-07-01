@@ -6,7 +6,7 @@ intro: >-
   physical environment for a store takeover at the House of Innovation in Paris.
   The brand’s longterm journey towards zero carbon and waste is a constellation
   of different stories and ideas that has so far mostly lived online as a
-  Circular Design Guide. 
+  [Circular Design Guide](https://www.nikecirculardesign.com/). 
 
 
   We were excited to tackle the challenge of transforming the website into a dynamic physical space, full of tangible, moving parts; one that both brings customers into the brand’s sustainability story, but also informs, educates and inspires them to become part of the journey by getting involved in caring for their own products.
@@ -50,7 +50,7 @@ content:
     marginLeft: 0
     zIndex: 0
     image: /img/HOI PAR002_SU21_MTZ_02.jpg
-    width: 55
+    width: 50
   - video:
       autoplay: false
       hasControls: false
@@ -58,7 +58,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: -8
-    marginLeft: 30
+    marginLeft: 57
     zIndex: 0
     carousel:
       - type: image
@@ -67,7 +67,7 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_06.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_36.jpg
-    width: 70
+    width: 43
   - video:
       autoplay: false
       hasControls: false
@@ -95,10 +95,10 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 10
+    marginLeft: 15
     zIndex: 0
     image: /img/HOI PAR002_SU21_MTZ_08.jpg
-    width: 80
+    width: 70
   - video:
       autoplay: false
       hasControls: false
@@ -106,7 +106,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 9
-    marginLeft: -40
+    marginLeft: 9
     zIndex: 0
     carousel:
       - type: image
@@ -123,15 +123,15 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_18.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_19.jpg
-    width: 80
+    width: 34
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -73.5
-    marginLeft: 18
+    marginTop: -55.5
+    marginLeft: 57
     zIndex: 0
     carousel:
       - type: image
@@ -140,7 +140,7 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_45.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_49.jpg
-    width: 80
+    width: 43
   - video:
       autoplay: false
       hasControls: false
@@ -148,7 +148,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 6
-    marginLeft: 20
+    marginLeft: 57
     zIndex: 0
     carousel:
       - type: image
@@ -161,7 +161,7 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_47.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_46.jpg
-    width: 80
+    width: 28
   - video:
       autoplay: false
       hasControls: false
@@ -190,16 +190,18 @@ content:
     marginLeft: 0
     zIndex: 0
     image: /img/HOI PAR002_SU21_MTZ_31.jpg
+    width: 55
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -19
+    marginLeft: 64
     zIndex: 0
     image: /img/HOI PAR002_SU21_MTZ_43.jpg
+    width: 28
 credits:
   - key: For
     value: Nike

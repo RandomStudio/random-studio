@@ -44,7 +44,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 24
+    marginLeft: 62
     carousel:
       - type: video
         isMuted: true
@@ -52,7 +52,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408406146.sd.mp4?s=fecd8eb09359e38c175d98ae366f0cde41772ba0&profile_id=165
-    width: 76
+    width: 38
     caption: Teasers
     zIndex: 1
   - video:
@@ -102,8 +102,8 @@ content:
       isAlwaysMuted: false
       url: ""
     marginTop: -10
-    marginLeft: -31
-    width: 79
+    marginLeft: 10
+    width: 40
     carousel:
       - type: video
         isMuted: true
@@ -123,7 +123,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 30
+    marginLeft: 65
     carousel:
       - type: video
         isMuted: true
@@ -134,7 +134,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408771385.sd.mp4?s=fa4a21069b9f2e9afe76347ca7193b424ed12bd0&profile_id=165
-    width: 70
+    width: 35
     zIndex: 1
     caption: Vignettes
   - video:
@@ -145,7 +145,7 @@ content:
       isAlwaysMuted: false
       url: ""
     marginTop: -10
-    marginLeft: -39
+    marginLeft: 0
     carousel:
       - type: video
         isMuted: true
@@ -156,7 +156,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408771589.sd.mp4?s=4427a18cb20231fa67d030743b99d22da0718a23&profile_id=165
-    width: 77
+    width: 39
     zIndex: 1
     caption: Vignettes
   - video:
@@ -166,7 +166,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 18
+    marginLeft: 53
     carousel:
       - type: video
         isMuted: true
@@ -177,7 +177,7 @@ content:
       - type: video
         isMuted: true
         url: https://vimeo.com/408771899/323303f841
-    width: 70
+    width: 35
     zIndex: 1
     caption: Vignettes
 relatedProjects:

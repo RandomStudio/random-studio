@@ -40,14 +40,14 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -17
+    marginLeft: 38
     zIndex: 0
     carousel:
       - type: image
         image: /img/054_Nike_JFS-NYC-WPR-Event_portfolio5.jpg
       - type: image
         image: /img/054_Nike_JFS-NYC-WPR-Event_portfolio11.jpg
-    width: 110
+    width: 55
   - video:
       autoplay: false
       hasControls: false

@@ -89,14 +89,14 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -58
+    marginLeft: 14
     zIndex: 0
     carousel:
       - type: image
         image: /img/RND05398.jpg
       - type: image
         image: /img/RND05466.jpg
-    width: 144
+    width: 72
 credits:
   - key: "For:"
     value: Random Studio

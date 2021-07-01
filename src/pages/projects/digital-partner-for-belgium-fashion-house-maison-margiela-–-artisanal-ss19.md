@@ -47,13 +47,13 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 24
+    marginLeft: 59
     carousel:
       - type: image
         image: /img/maisonmargiela_49482196_849077468757920_1233326381946556516_n.jpg
       - type: image
         image: /img/maisonmargiela_50327453_1249339615205599_5660914223144192525_n.jpg
-    width: 76
+    width: 35
     zIndex: 1
   - video:
       autoplay: true
@@ -91,13 +91,13 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 9
+    marginLeft: 49
     carousel:
       - type: image
         image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
       - type: image
         image: /img/maisonmargiela_51525984_367386054091437_6932946184675018036_n.jpg
-    width: 80
+    width: 40
     caption: Vignettes
     zIndex: 1
 relatedProjects:

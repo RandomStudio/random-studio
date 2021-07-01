@@ -46,7 +46,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -50
+    marginLeft: 0
     carousel:
       - type: image
         image: /img/maisonmargiela_81393000_138260937648601_1845573813926662268_n.jpg
@@ -79,7 +79,7 @@ content:
       - type: image
         image: /img/maisonmargiela_83280386_2773500896090848_14565102521119019_n.jpg
     caption: Key Looks Photography
-    width: 100
+    width: 50
     zIndex: 1
   - video:
       autoplay: false
@@ -88,7 +88,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: -30
-    marginLeft: 24
+    marginLeft: 62
     carousel:
       - type: video
         isMuted: true
@@ -100,7 +100,7 @@ content:
         isMuted: true
         url: https://player.vimeo.com/external/408401574.sd.mp4?s=e06a4919f7e4a090709d833742f18e2ab9f1c67c&profile_id=165
     caption: Teasers
-    width: 76
+    width: 38
     zIndex: 0
   - video:
       autoplay: false
@@ -110,7 +110,7 @@ content:
       isAlwaysMuted: false
       url: ""
     marginTop: 7
-    marginLeft: -25
+    marginLeft: 13
     carousel:
       - type: video
         isMuted: true
@@ -118,7 +118,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408417274.sd.mp4?s=df549173ccf68c88ab54c61c527c2c8d56070697&profile_id=165
-    width: 75
+    width: 38
     zIndex: 1
     caption: Podcasts
   - video:
@@ -156,7 +156,7 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: -31
+    marginLeft: 7
     carousel:
       - type: video
         isMuted: true
@@ -168,7 +168,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408446582.sd.mp4?s=6cae77a4f7d5558e740a1ea0696fe76c26a503f3&profile_id=165
-    width: 79
+    width: 38
     zIndex: 1
     caption: Vignettes
 relatedProjects:
