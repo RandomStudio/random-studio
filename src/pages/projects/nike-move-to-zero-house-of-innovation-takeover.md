@@ -203,7 +203,7 @@ content:
     image: /img/HOI PAR002_SU21_MTZ_43.jpg
     width: 28
 credits:
-  - key: For:
+  - key: "For:"
     value: Nike
   - key: "Role:"
     value: Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
