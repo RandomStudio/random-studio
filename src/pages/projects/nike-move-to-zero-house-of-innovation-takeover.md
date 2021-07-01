@@ -12,7 +12,7 @@ intro: >-
   We were excited to tackle the challenge of transforming the website into a dynamic physical space, full of tangible, moving parts; one that both brings customers into the brand’s sustainability story, but also informs, educates and inspires them to become part of the journey by getting involved in caring for their own products.
 content:
   - video:
-      autoplay: false
+      autoplay: true
       hasControls: false
       loops: true
       isMuted: true
