@@ -17,7 +17,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/video/565538673
+      url: https://player.vimeo.com/external/565538673.hd.mp4?s=40130cc9de82dd4aeef93737e9656d87e18309f5&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -50,14 +50,15 @@ content:
     marginLeft: 0
     zIndex: 0
     image: /img/HOI PAR002_SU21_MTZ_02.jpg
+    width: 55
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -8
+    marginLeft: 30
     zIndex: 0
     carousel:
       - type: image
@@ -66,6 +67,7 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_06.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_36.jpg
+    width: 70
   - video:
       autoplay: false
       hasControls: false
@@ -93,17 +95,18 @@ content:
       isMuted: true
       isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 0
+    marginLeft: 10
     zIndex: 0
     image: /img/HOI PAR002_SU21_MTZ_08.jpg
+    width: 80
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 9
+    marginLeft: -40
     zIndex: 0
     carousel:
       - type: image
@@ -120,14 +123,15 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_18.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_19.jpg
+    width: 80
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: -73.5
+    marginLeft: 18
     zIndex: 0
     carousel:
       - type: image
@@ -136,14 +140,15 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_45.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_49.jpg
+    width: 80
   - video:
       autoplay: false
       hasControls: false
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
+    marginTop: 6
+    marginLeft: 20
     zIndex: 0
     carousel:
       - type: image
@@ -156,6 +161,7 @@ content:
         image: /img/HOI PAR002_SU21_MTZ_47.jpg
       - type: image
         image: /img/HOI PAR002_SU21_MTZ_46.jpg
+    width: 80
   - video:
       autoplay: false
       hasControls: false
