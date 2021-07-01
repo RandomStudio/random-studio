@@ -17,7 +17,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://vimeo.com/565538673/f1ad67d52d
+      url: https://player.vimeo.com/video/565538673
     marginTop: 0
     marginLeft: 0
     zIndex: 0
