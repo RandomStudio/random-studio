@@ -204,11 +204,16 @@ content:
     width: 28
 credits:
   - key: "For:"
-    value: Nike
+    value: Nike France
   - key: "Role:"
-    value: Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
-      Design, Prototyping, Software Development, Installation Engineering,
-      Research
+    value: Creative Concept, Experience Design, Art Direction, Spatial Design, Design Development, Prototyping, Software Development, Creative Technology, Installation Engineering
+  - key: "With:"
+    value: |-
+      Satis&Fy
+
+      Jean-Baptiste Fastrez – Space Design
+
+      Thomas Hervé – Graphic Design
 opengraph:
   ogTitle: Nike Move to Zero House of Innovation Takeover
   ogDescription: >
