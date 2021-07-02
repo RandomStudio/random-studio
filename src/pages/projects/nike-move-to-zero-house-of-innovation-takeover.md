@@ -209,11 +209,7 @@ credits:
     value: Creative Concept, Experience Design, Art Direction, Spatial Design, Design Development, Prototyping, Software Development, Creative Technology, Installation Engineering
   - key: "With:"
     value: |-
-      Satis&Fy
-
-      Jean-Baptiste Fastrez – Space Design
-
-      Thomas Hervé – Graphic Design
+      [Satis&Fy](https://satis-fy.com/), [Jean-Baptiste Fastrez](http://www.jeanbaptistefastrez.com/), [Thomas Hervé](https://www.hervethomas.com/)
   - key: "Photos:"
     value: |-
       [Benoit Florençon](https://www.benoitflorencon.com/)
