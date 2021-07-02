@@ -214,6 +214,12 @@ credits:
       Jean-Baptiste Fastrez – Space Design
 
       Thomas Hervé – Graphic Design
+  - key: "Photos:"
+    value: |-
+      [Benoit Florençon](https://www.benoitflorencon.com/)
+  - key: "Video:"
+    value: |-
+      [Dixhuit](https://dix-huit.com/)
 opengraph:
   ogTitle: Nike Move to Zero House of Innovation Takeover
   ogDescription: >
