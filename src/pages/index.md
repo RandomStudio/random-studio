@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/542050918.hd.mp4?s=80e9dcf043bbb21ce05317813d8a34ced395789d&profile_id=175
+video: https://player.vimeo.com/external/565538673.hd.mp4?s=40130cc9de82dd4aeef93737e9656d87e18309f5&profile_id=175
 collaborationCredits:
-  collaborator: Alexander McQueen
-  url: https://random.studio/projects/tide-window-display-for-alexander-mcqueen/
+  collaborator: Nike
+  url: https://random.studio/projects/nike-move-to-zero-house-of-innovation-takeover/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
@@ -16,23 +16,54 @@ middle: >-
 projects:
   - thumbnail:
       marginTop: 0
+      marginLeft: 53
+      image: /img/HOI PAR002_SU21_MTZ_08.jpg
+      width: 47
+    project: Nike Move to Zero House of Innovation Takeover
+    caption: Nike Move to Zero House of Innovation Takeover
+  - thumbnail:
+      marginTop: -32
+      marginLeft: 4
+      image: /img/screenshot-2021-04-26-at-12.59.13.png
+      width: 42
+    project: Tide, a kinetic window display for Alexander McQueen
+    caption: A kinetic window display for Alexander McQueen
+  - thumbnail:
+      marginTop: -2
       marginLeft: 23
       image: /img/BV_1.jpg
       width: 54
     project: |
       A spatial listening experience for Bottega Veneta 
     caption: A spatial listening experience for Bottega Veneta
-  - thumbnail:
-      marginTop: 0
-      marginLeft: 50
-      image: /img/screenshot-2021-04-26-at-12.59.13.png
-      width: 45
-    project: Tide, a kinetic window display for Alexander McQueen
-    caption: A kinetic window display for Alexander McQueen
-  - thumbnail:
-      marginTop: -26
+  - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+    project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+    thumbnail:
+      image: /img/thumbnail_chanel-1-.png
       marginLeft: 0
-      width: 45
+      marginTop: 0
+      width: 46
+  - thumbnail:
+      marginTop: -32
+      marginLeft: 53
+      image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
+      width: 47
+    caption: Your body as a controller in Nike's House of Innovation Paris
+    project: Your body as a controller in Nike's House of Innovation Paris
+  - thumbnail:
+      ratio: 0
+      marginTop: -10
+      marginLeft: 0
+      image: /img/COS_093.jpg
+      width: 46
+    project: |
+      COS Pop-Up Installation
+    caption: |
+      A Pop-Up Installation for COS
+  - thumbnail:
+      marginTop: -23
+      marginLeft: 53
+      width: 47
       image: /img/look_37.4.jpg
     caption: |-
       A Live Spectacle for
@@ -40,41 +71,24 @@ projects:
     project: A live spectacle for Chloé's SS21 Collection
   - thumbnail:
       marginTop: -10
-      marginLeft: 50
-      image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
-      width: 50
-    caption: Your body as a controller in Nike's House of Innovation Paris
-    project: Your body as a controller in Nike's House of Innovation Paris
-  - thumbnail:
-      marginTop: 0
-      marginLeft: 11
+      marginLeft: 6
       video: ""
       width: 40
       image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
     project: An internet creation myth for kids
     caption: An internet creation myth for kids
   - thumbnail:
-      ratio: 0
-      marginTop: -7
-      marginLeft: 0
-      image: /img/COS_093.jpg
-      width: 50
-    project: |
-      COS Pop-Up Installation
-    caption: |
-      COS Pop-Up Installation
-  - thumbnail:
-      marginTop: -2
-      marginLeft: 51
+      marginTop: -5
+      marginLeft: 53
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
-      width: 49
+      width: 47
     caption: A series of digital experiments for SPACE10
     project: A series of digital experiments for SPACE10
   - thumbnail:
-      marginTop: -8
+      marginTop: -35
       marginLeft: 0
       video: https://player.vimeo.com/external/435711991.hd.mp4?s=281b97c0386ca4087c95977df6d7f80b0f3c04bb&profile_id=175
-      width: 39
+      width: 37
     project: A virtual fashion graduation show for the Royal Academy of Antwerp
     caption: A virtual fashion graduation show for the Royal Academy of Antwerp
   - caption: A playful interactive search engine for Cinekid Festival
@@ -85,19 +99,12 @@ projects:
       marginTop: -16
       width: 40
   - thumbnail:
-      marginTop: -9
+      marginTop: -22
       marginLeft: 0
       image: /img/new-random_licht_stills_5.jpg
-      width: 43
+      width: 46
     project: A studio sun system with light-artist Arnout Meijer
     caption: A studio sun system with light-artist Arnout Meijer
-  - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
-    project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
-    thumbnail:
-      image: /img/thumbnail_chanel-1-.png
-      marginLeft: 50
-      marginTop: -14
-      width: 50
   - caption: |-
       A Lookbook of Many Gazes
 
@@ -107,9 +114,9 @@ projects:
 
     thumbnail:
       image: /img/jihye-1-.jpg
-      marginLeft: 8
+      marginLeft: 10
       marginTop: 17
-      width: 35
+      width: 36
   - caption: |-
       Kinetic architecture <br>
       for A/D/O by MINI
