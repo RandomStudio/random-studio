@@ -47,29 +47,9 @@
   padding: 16px 22px;
 }
 
-.credits-logo,
-.logo {
+.credits-logo {
   font-family: 'Larish Neue', serif;
   letter-spacing: -0.01em;
-}
-
-.logo {
-  @include blendedText;
-  position: absolute;
-  left: 22px;
-  font-size: var(--font-logo-small);
-  font-weight: normal;
-  line-height: 1.1;
-  margin: 0;
-  letter-spacing: -0.01em;
-
-  &.is-center {
-    top: 40vh;
-  }
-
-  &.is-top {
-    top: 78px;
-  }
 }
 
 @media (min-width: 576px) {

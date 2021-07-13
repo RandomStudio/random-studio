@@ -4,6 +4,7 @@ import styles from './Studio.module.scss';
 import Layout from '../../components/Layout/Layout';
 import IntroBlock from './IntroBlock/IntroBlock';
 import ServiceList from './ServiceList/ServiceList';
+import Logo from '../../components/Logo/Logo';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import Recruitee from './Recruitee/Recruitee';
@@ -101,8 +102,8 @@ const Studio = ({
         rootMargin: '-120px 0px 0px 0px',
       };
 
-      const cb = entries => {
-        entries.forEach(entry => {
+      const cb = (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setThemeClass(styles.darkTheme);
           } else {
@@ -125,6 +126,7 @@ const Studio = ({
         }`}
       >
         <SEO title="Studio" pathName={fields.slug} />
+        <Logo />
         <IntroBlock
           title={frontmatter.title}
           intros={frontmatter.introBlocks}
