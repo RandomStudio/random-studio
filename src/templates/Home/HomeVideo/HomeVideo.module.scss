@@ -68,7 +68,7 @@
   }
 
   &.is-top {
-    top: 104px;
+    top: 78px;
   }
 }
 
@@ -82,6 +82,10 @@
 
     &.is-center {
       font-size: var(--font-logo-medium);
+    }
+
+    &.is-top {
+      top: 45px;
     }
   }
 }
