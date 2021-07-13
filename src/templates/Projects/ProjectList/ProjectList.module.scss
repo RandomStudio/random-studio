@@ -1,3 +1,19 @@
+.filters {
+  display: flex;
+  width: 100%;
+  padding-top: 200px;
+}
+
+.filter {
+  display: block;
+  cursor: pointer;
+  border: 1px solid black;
+
+  &.active {
+    background: red;
+  }
+}
+
 .projects {
   padding: 15vw 0;
   background: var(--white);

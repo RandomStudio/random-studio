@@ -126,7 +126,6 @@ const Projects = ({
     <Layout>
       <SEO pathName={fields.slug} />
       <Logo />
-      <ProjectFilters projects={projects} />
       <ProjectList {...frontmatter} articles={articles} projects={projects} />
       <Footer {...frontmatter} />
     </Layout>
