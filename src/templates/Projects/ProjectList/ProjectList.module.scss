@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-left: 150px;
+  padding-right: 150px;
   padding-top: 315px;
   user-select: none;
 }
@@ -9,11 +11,19 @@
 .filter {
   display: block;
   cursor: pointer;
-  border: 1px solid black;
+  padding: 20px;
 
-  &.active {
-    background: red;
+  &:not(.activeTag) {
+    color: #d0d0d0;
   }
+
+  &:not(.activeFilter) {
+    color: black;
+  }
+}
+
+.filterCount {
+  color: #d0d0d0;
 }
 
 .projects {

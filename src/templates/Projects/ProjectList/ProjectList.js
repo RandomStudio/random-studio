@@ -13,20 +13,19 @@ const ProjectList = ({ middle, projects }) => {
 
   const [activeTag, setActiveTag] = useState(null);
 
-  console.log(filterCount);
-
   return (
     <>
       <div className={styles.filters}>
         {filterList.map((filter) => (
           <div
             className={`${styles.filter} ${
-              filter === activeTag && styles.active
-            }`}
+              activeTag !== null ? styles.activeFilter : ''
+            } ${filter === activeTag ? styles.activeTag : ''}`}
             onClick={() => setActiveTag(filter === activeTag ? null : filter)}
             key={filter}
           >
-            {filter} {filterCount[filter]}
+            {filter}{' '}
+            <span className={styles.filterCount}> {filterCount[filter]}</span>
           </div>
         ))}
       </div>
