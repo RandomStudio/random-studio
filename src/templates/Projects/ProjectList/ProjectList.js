@@ -8,8 +8,9 @@ const ProjectList = ({ middle, projects }) => {
     .map(({ tags }) => tags)
     .filter(Boolean)
     .flat();
-  const filters = [...new Set([...projectFilters])];
+  const filterList = [...new Set([...projectFilters])];
   const filterCount = countBy(projectFilters);
+
   const [activeTag, setActiveTag] = useState(null);
 
   console.log(filterCount);
@@ -17,7 +18,7 @@ const ProjectList = ({ middle, projects }) => {
   return (
     <>
       <div className={styles.filters}>
-        {filters.map((filter) => (
+        {filterList.map((filter) => (
           <div
             className={`${styles.filter} ${
               filter === activeTag && styles.active
