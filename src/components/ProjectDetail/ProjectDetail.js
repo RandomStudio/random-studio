@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image/withIEPolyfill';
 import styles from './ProjectDetail.module.scss';
-import ProjectVideo from '../../templates/Home/ProjectVideo/ProjectVideo';
+import ProjectVideo from '../../templates/Projects/ProjectVideo/ProjectVideo';
 import Carousel from '../Carousel/Carousel';
 import Caption from './Caption/Caption';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
