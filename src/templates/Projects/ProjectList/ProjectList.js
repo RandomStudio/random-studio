@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
+import { countBy } from 'lodash';
 import styles from './ProjectList.module.scss';
 import Project from './Project/Project';
 
-const FILTERS = [
-  'Spatial Experience',
-  'Interactive Installation',
-  'Exhibition Design',
-  'Interior Design',
-  'Window Installation',
-  'Research & Development',
-  'Digital Partnership',
-];
-
 const ProjectList = ({ middle, projects }) => {
+  const projectFilters = projects
+    .map(({ tags }) => tags)
+    .filter(Boolean)
+    .flat();
+  const filters = [...new Set([...projectFilters])];
+  const filterCount = countBy(projectFilters);
   const [activeTag, setActiveTag] = useState(null);
+
+  console.log(filterCount);
 
   return (
     <>
       <div className={styles.filters}>
-        {FILTERS.map((filter) => (
+        {filters.map((filter) => (
           <div
             className={`${styles.filter} ${
               filter === activeTag && styles.active
@@ -26,7 +25,7 @@ const ProjectList = ({ middle, projects }) => {
             onClick={() => setActiveTag(filter === activeTag ? null : filter)}
             key={filter}
           >
-            {filter}
+            {filter} {filterCount[filter]}
           </div>
         ))}
       </div>
@@ -37,7 +36,7 @@ const ProjectList = ({ middle, projects }) => {
             <React.Fragment key={slug}>
               {thumbnail && (
                 <Project
-                  isHidden={activeTag !== null && !tags.includes(activeTag)}
+                  isHidden={activeTag !== null && !tags?.includes(activeTag)}
                   middle={middle}
                   thumbnail={thumbnail}
                   title={title}

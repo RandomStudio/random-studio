@@ -8,7 +8,7 @@ projects:
       width: 47
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation Takeover
-    tags: ['Spatial Experience']
+    tags: ['Spatial Experience', 'Interactive Installation']
   - thumbnail:
       marginTop: -32
       marginLeft: 4
@@ -16,6 +16,7 @@ projects:
       width: 42
     project: Tide, a kinetic window display for Alexander McQueen
     caption: A kinetic window display for Alexander McQueen
+    tags: ['Interactive Installation']
   - thumbnail:
       marginTop: -2
       marginLeft: 23

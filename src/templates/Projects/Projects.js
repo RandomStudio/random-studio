@@ -117,7 +117,7 @@ const Projects = ({
         slug: project.node.fields.slug,
         title: caption || project.node.frontmatter.title,
         thumbnail,
-        tags: tags || [],
+        tags,
       };
     })
     .filter((project) => project !== null);
