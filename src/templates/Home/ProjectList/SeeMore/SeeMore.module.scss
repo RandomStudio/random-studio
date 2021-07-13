@@ -1,0 +1,25 @@
+.wrapper {
+  font-size: var(--font-small);
+  max-width: 21em;
+  line-height: 1.25;
+  margin: 10vw auto 10vw;
+  padding: 0 22px;
+  display: flex;
+  justify-content: center;
+
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: var(--black);
+    }
+  }
+}

@@ -12,7 +12,7 @@ const Error404 = () => (
         <br />
         {'View our'}
         {' '}
-        <Link to="/#projects">{'projects'}</Link>
+        <Link to="/projects">{'projects'}</Link>
       </div>
     </main>
   </Layout>
