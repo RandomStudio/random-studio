@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  padding-top: 200px;
+}
+
+.filter {
+  display: block;
+  cursor: pointer;
+  border: 1px solid black;
+
+  &.active {
+    background: red;
+  }
+}
