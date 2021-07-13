@@ -2,10 +2,9 @@
 
 .nav {
   @include blendedText(black, normal);
-
-  display: flex;
   position: fixed;
   top: 0;
+  text-align: right;
   padding: 22px;
   width: 100%;
   font-size: 19px;
@@ -25,7 +24,6 @@
 
 @media (min-width: 576px) {
   .nav {
-    justify-content: flex-end;
     font-size: var(--font-small);
     padding: 32px 45px 32px 45px;
 
