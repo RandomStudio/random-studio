@@ -8,12 +8,6 @@ const Navigation = () => (
       <Link to="/projects">{'Projects'}</Link>
       <Link to="/studio">{'Studio'}</Link>
     </nav>
-
-    <h1 className={`${styles.logo}`}>
-      {'Random'}
-      <br />
-      {'Studio'}
-    </h1>
   </>
 );
 

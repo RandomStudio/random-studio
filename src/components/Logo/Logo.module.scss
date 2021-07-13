@@ -5,10 +5,24 @@
   @include blendedText;
   position: absolute;
   left: 22px;
-  top: 40px;
   font-size: var(--font-logo-small);
   font-weight: normal;
   line-height: 1.1;
   margin: 0;
   letter-spacing: -0.01em;
+  pointer-events: all;
+  z-index: 1;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  &.is-center {
+    top: 40vh;
+  }
+
+  &.is-top {
+    top: 40px;
+  }
 }

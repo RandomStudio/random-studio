@@ -23,7 +23,7 @@
 }
 
 .logo {
-  @include blendedText;
+  @include blendedText(black, normal);
   font-family: 'Larish Neue', serif;
   position: absolute;
   left: 22px;
@@ -33,6 +33,11 @@
   line-height: 1.1;
   margin: 0;
   letter-spacing: -0.01em;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
 }
 
 @media (min-width: 576px) {

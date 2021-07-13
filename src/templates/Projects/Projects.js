@@ -5,9 +5,23 @@ import Layout from '../../components/Layout/Layout';
 import Footer from '../../components/Footer/Footer';
 import ProjectList from './ProjectList/ProjectList';
 import SEO from '../../components/SEO/SEO';
+import Logo from '../../components/Logo/Logo';
 
 export const pageQuery = graphql`
   {
+    allArticles: allMarkdownRemark(
+      filter: { frontmatter: { key: { eq: "article" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            articleUrl
+            title
+            quote
+          }
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: frontmatter___priority, order: DESC }
       filter: { frontmatter: { templateKey: { eq: "Project" } } }
@@ -84,8 +98,10 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
   return (
     <Layout>
       <SEO pathName={fields.slug} />
+      <Logo />
       <ProjectList
         {...frontmatter}
+        articles={articles}
         projects={(frontmatter.projects || [])
           .map(({ caption, project: projectTitle, thumbnail }) => {
             const project = edges.find(
