@@ -6,6 +6,8 @@ import ResearchBlock from './IntermittentBlock/ResearchBlock';
 import IntermittentStatement from './IntermittentBlock/IntermittentStatement';
 import SeeMore from './SeeMore/SeeMore';
 
+const PROJECT_LIMIT = 6;
+
 const ProjectList = ({ intro, middle, projects, articles }) => (
   <div className={styles.projects}>
     <div className={styles.statement}>
@@ -20,7 +22,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
         <React.Fragment key={slug}>
           {thumbnail && (
             <Project
-              isHidden={index >= 6}
+              isHidden={index >= PROJECT_LIMIT}
               middle={middle}
               thumbnail={thumbnail}
               title={title}

@@ -9,7 +9,7 @@ const ProjectList = ({ middle, projects }) => (
         <React.Fragment key={slug}>
           {thumbnail && (
             <Project
-              isHidden={index >= 6}
+              isHidden={false}
               middle={middle}
               thumbnail={thumbnail}
               title={title}
