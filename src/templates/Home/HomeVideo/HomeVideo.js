@@ -1,9 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import Logo from '../../../components/Logo/Logo';
 import styles from './HomeVideo.module.scss';
 
-const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
+const HomeVideo = ({ collaborationCredits, videoUrl }) => {
   const scrollToProjects = (event) => {
     const projectsBlock = document.getElementById('projects');
     projectsBlock.scrollIntoView({
@@ -16,7 +15,6 @@ const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
   return (
     <div className={styles.video}>
       <video src={videoUrl} muted loop autoPlay playsInline />
-      <Logo layout={layout} />
       <Link
         to="/#projects"
         className={styles.videoOverlay}
