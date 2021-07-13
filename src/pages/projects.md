@@ -8,6 +8,7 @@ projects:
       width: 47
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation Takeover
+    tags: ['Spatial Experience']
   - thumbnail:
       marginTop: -32
       marginLeft: 4

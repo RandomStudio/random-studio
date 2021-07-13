@@ -1,4 +1,3 @@
-
 const { createFilePath } = require('gatsby-source-filesystem');
 
 // Allows react spring to work (after build)

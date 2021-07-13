@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import ProjectList from './ProjectList/ProjectList';
 import SEO from '../../components/SEO/SEO';
 import Logo from '../../components/Logo/Logo';
+import ProjectFilters from './ProjectFilters/ProjectFilters';
 
 export const pageQuery = graphql`
   {
@@ -37,7 +38,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(frontmatter: { templateKey: { eq: "Home" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "Projects" } }) {
       fields {
         slug
       }
@@ -58,6 +59,7 @@ export const pageQuery = graphql`
         projects {
           caption
           project
+          tags
           thumbnail {
             marginLeft
             marginTop
@@ -79,7 +81,9 @@ export const pageQuery = graphql`
   }
 `;
 
-const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
+const Projects = ({
+  data: { allArticles, allMarkdownRemark, markdownRemark },
+}) => {
   const edges = allMarkdownRemark.edges || [];
   const fields = markdownRemark ? markdownRemark.fields : {};
   const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
@@ -95,41 +99,41 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
     };
   });
 
+  const projects = (frontmatter.projects || [])
+    .map(({ caption, project: projectTitle, thumbnail, tags }) => {
+      const project = edges.find(
+        ({
+          node: {
+            frontmatter: { title },
+          },
+        }) => title === projectTitle,
+      );
+
+      if (!project) {
+        return null;
+      }
+
+      return {
+        slug: project.node.fields.slug,
+        title: caption || project.node.frontmatter.title,
+        thumbnail,
+        tags: tags || [],
+      };
+    })
+    .filter((project) => project !== null);
+
   return (
     <Layout>
       <SEO pathName={fields.slug} />
       <Logo />
-      <ProjectList
-        {...frontmatter}
-        articles={articles}
-        projects={(frontmatter.projects || [])
-          .map(({ caption, project: projectTitle, thumbnail }) => {
-            const project = edges.find(
-              ({
-                node: {
-                  frontmatter: { title },
-                },
-              }) => title === projectTitle,
-            );
-
-            if (!project) {
-              return null;
-            }
-
-            return {
-              slug: project.node.fields.slug,
-              title: caption || project.node.frontmatter.title,
-              thumbnail,
-            };
-          })
-          .filter((project) => project !== null)}
-      />
+      <ProjectFilters projects={projects} />
+      <ProjectList {...frontmatter} articles={articles} projects={projects} />
       <Footer {...frontmatter} />
     </Layout>
   );
 };
 
-Home.propTypes = {
+Projects.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -141,4 +145,4 @@ Home.propTypes = {
   }).isRequired,
 };
 
-export default Home;
+export default Projects;

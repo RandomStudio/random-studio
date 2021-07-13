@@ -99,7 +99,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const Project = props => {
+const Project = (props) => {
   const {
     data: {
       allProjects: { edges: allProjects },
@@ -114,13 +114,14 @@ const Project = props => {
 
   const returnSlug = `#${slug}`;
 
-  const socialTitle = opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
+  const socialTitle =
+    opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
 
-  const socialDescription = opengraph && opengraph.ogDescription
-    ? opengraph.ogDescription
-    : undefined;
+  const socialDescription =
+    opengraph && opengraph.ogDescription ? opengraph.ogDescription : undefined;
 
-  const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
+  const SEOImage =
+    (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
 
   console.log(project);
 

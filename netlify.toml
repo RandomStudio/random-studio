@@ -25,11 +25,6 @@
   status = 200
 
 [[redirects]]
-  from = "/projects"
-  to = "/#projects"
-  status = 200
-
-[[redirects]]
   from = "/chloe"
   to = "/projects/a-ss21-collection-experience-for-chlo%C3%A9/"
   status = 200

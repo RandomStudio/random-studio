@@ -58,6 +58,7 @@ export const pageQuery = graphql`
         projects {
           caption
           project
+          tags
           thumbnail {
             marginLeft
             marginTop
@@ -84,16 +85,27 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
   const fields = markdownRemark ? markdownRemark.fields : {};
   const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
 
-  const articles = (frontmatter.articles || []).map(relation => {
-    const article = (allArticles.edges || []).find(
-      item => item.node.frontmatter.title === relation.article,
-    );
+  const projects = (frontmatter.projects || [])
+    .map(({ caption, project: projectTitle, thumbnail }) => {
+      const project = edges.find(
+        ({
+          node: {
+            frontmatter: { title },
+          },
+        }) => title === projectTitle,
+      );
 
-    return {
-      ...article.node.frontmatter,
-      position: relation.position,
-    };
-  });
+      if (!project) {
+        return null;
+      }
+
+      return {
+        slug: project.node.fields.slug,
+        title: caption || project.node.frontmatter.title,
+        thumbnail,
+      };
+    })
+    .filter((project) => project !== null);
 
   return (
     <Layout>
@@ -103,31 +115,7 @@ const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
         layout={frontmatter.layout}
         videoUrl={frontmatter.video}
       />
-      <ProjectList
-        {...frontmatter}
-        articles={articles}
-        projects={(frontmatter.projects || [])
-          .map(({ caption, project: projectTitle, thumbnail }) => {
-            const project = edges.find(
-              ({
-                node: {
-                  frontmatter: { title },
-                },
-              }) => title === projectTitle,
-            );
-
-            if (!project) {
-              return null;
-            }
-
-            return {
-              slug: project.node.fields.slug,
-              title: caption || project.node.frontmatter.title,
-              thumbnail,
-            };
-          })
-          .filter(project => project !== null)}
-      />
+      <ProjectList {...frontmatter} projects={projects} />
       <Footer {...frontmatter} />
     </Layout>
   );
