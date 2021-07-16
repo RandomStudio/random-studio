@@ -58,7 +58,6 @@ export const pageQuery = graphql`
         projects {
           caption
           project
-          tags
           thumbnail {
             marginLeft
             marginTop

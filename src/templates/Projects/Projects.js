@@ -6,7 +6,6 @@ import Footer from '../../components/Footer/Footer';
 import ProjectList from './ProjectList/ProjectList';
 import SEO from '../../components/SEO/SEO';
 import Logo from '../../components/Logo/Logo';
-import ProjectFilters from './ProjectFilters/ProjectFilters';
 
 export const pageQuery = graphql`
   {

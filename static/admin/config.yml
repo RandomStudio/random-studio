@@ -208,21 +208,6 @@ collections:
           - label: Value
             name: value
             widget: text
-      - label: Tags
-        name: tags
-        widget: 'select'
-        multiple: true
-        required: false
-        options:
-          [
-            'Spatial Experience',
-            'Interactive Installation',
-            'Exhibition Design',
-            'Interior Design',
-            'Window Installation',
-            'Research & Development',
-            'Digital Partnership',
-          ]
       - label: OpenGraph tags
         name: opengraph
         widget: object
@@ -370,6 +355,14 @@ collections:
           - label: 'Email Address'
             name: email
             widget: text
+      - file: src/pages/projects.md
+        label: 'Projects Page'
+        name: projects
+        fields:
+          - label: 'Template Key'
+            name: templateKey
+            widget: hidden
+            default: projects
       - file: src/pages/studio.md
         label: 'Studio page'
         name: studio
