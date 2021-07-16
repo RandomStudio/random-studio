@@ -8,7 +8,7 @@ projects:
       width: 47
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation Takeover
-    tags: ['Spatial Experience', 'Interactive Installation']
+    tags: ['Exhibition & Event Design']
   - thumbnail:
       marginTop: -32
       marginLeft: 4
@@ -16,7 +16,7 @@ projects:
       width: 42
     project: Tide, a kinetic window display for Alexander McQueen
     caption: A kinetic window display for Alexander McQueen
-    tags: ['Interactive Installation']
+    tags: ['Spatial Experience']
   - thumbnail:
       marginTop: -2
       marginLeft: 23
@@ -25,6 +25,7 @@ projects:
     project: |
       A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
+    tags: ['Spatial Experience', 'Exhibition & Event Design']
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     thumbnail:
@@ -32,6 +33,7 @@ projects:
       marginLeft: 0
       marginTop: 0
       width: 46
+    tags: ['Spatial Experience', 'Exhibition & Event Design']
   - thumbnail:
       marginTop: -32
       marginLeft: 53
@@ -39,6 +41,7 @@ projects:
       width: 47
     caption: Your body as a controller in Nike's House of Innovation Paris
     project: Your body as a controller in Nike's House of Innovation Paris
+    tags: ['Interactive Installation']
   - thumbnail:
       ratio: 0
       marginTop: -10
@@ -49,6 +52,7 @@ projects:
       COS Pop-Up Installation
     caption: |
       A Pop-Up Installation for COS
+    tags: ['Spatial Design', 'Exhibition & Event Design']
   - thumbnail:
       marginTop: -23
       marginLeft: 53
@@ -58,6 +62,7 @@ projects:
       A Live Spectacle for
       Chloé's SS21 Collection
     project: A live spectacle for Chloé's SS21 Collection
+    tags: ['Digital Partnership']
   - thumbnail:
       marginTop: -10
       marginLeft: 6
@@ -66,6 +71,7 @@ projects:
       image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
     project: An internet creation myth for kids
     caption: An internet creation myth for kids
+    tags: ['Interactive Installation']
   - thumbnail:
       marginTop: -5
       marginLeft: 53
@@ -73,6 +79,7 @@ projects:
       width: 47
     caption: A series of digital experiments for SPACE10
     project: A series of digital experiments for SPACE10
+    tags: ['Research & Design']
   - thumbnail:
       marginTop: -35
       marginLeft: 0
@@ -80,6 +87,7 @@ projects:
       width: 37
     project: A virtual fashion graduation show for the Royal Academy of Antwerp
     caption: A virtual fashion graduation show for the Royal Academy of Antwerp
+    tags: ['Digital Partnership']
   - caption: A playful interactive search engine for Cinekid Festival
     project: A playful interactive search engine for Cinekid Festival
     thumbnail:
@@ -87,6 +95,7 @@ projects:
       marginLeft: 60
       marginTop: -16
       width: 40
+    tags: ['Interactive Installation']
   - thumbnail:
       marginTop: -22
       marginLeft: 0
@@ -94,6 +103,7 @@ projects:
       width: 46
     project: A studio sun system with light-artist Arnout Meijer
     caption: A studio sun system with light-artist Arnout Meijer
+    tags: ['Research & Design']
   - caption: |-
       A Lookbook of Many Gazes
 
@@ -106,6 +116,7 @@ projects:
       marginLeft: 10
       marginTop: 17
       width: 36
+    tags: ['Digital Partnership']
   - caption: |-
       Kinetic architecture <br>
       for A/D/O by MINI
@@ -115,6 +126,7 @@ projects:
       marginLeft: 65
       marginTop: -30
       width: 35
+    tags: ['Spatial Experience']
   - caption: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
     project: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
     thumbnail:
@@ -122,6 +134,7 @@ projects:
       marginLeft: 25
       marginTop: 0
       width: 50
+    tags: ['Interactive Installation', 'Exhibition & Event Design']
   - caption: |-
       Interactive retail fixture
 
@@ -135,6 +148,7 @@ projects:
       marginTop: 0
       video: https://player.vimeo.com/external/377579443.hd.mp4?s=dfdbadbed0005b184ac59bdf19f8926eec6624ec&profile_id=174
       width: 40
+    tags: ['Interactive Installation', 'Exhibition & Event Design']
   - caption: |-
       Interactive lookbook
 
@@ -148,6 +162,7 @@ projects:
       marginLeft: 0
       marginTop: -28
       width: 40
+    tags: ['Digital Partnership']
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
     project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
     thumbnail:
@@ -155,6 +170,7 @@ projects:
       marginLeft: 60
       marginTop: -14
       width: 40
+    tags: ['Spatial Design']
   - caption: An immersive in-store environment for NikeLab Milano
     project: An immersive in-store environment for NikeLab Milano
     thumbnail:
@@ -169,6 +185,7 @@ projects:
       marginTop: -28
       video: https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
       width: 49
+    tags: ['Research & Design']
   - caption: A vertical journey through time for Chanel
     project: A vertical journey through time <br> for Chanel
     thumbnail:
@@ -176,6 +193,7 @@ projects:
       marginLeft: 0
       marginTop: 0
       width: 40
+    tags: ['Spatial Experience', 'Interactive Installation']
   - caption: Digital Partner for Belgium Fashion House Maison Margiela
     project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
     thumbnail:
@@ -184,6 +202,7 @@ projects:
       video: ''
       width: 35
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+    tags: ['Digital Partnership']
   - caption: |-
       Digital partner
 
@@ -197,6 +216,7 @@ projects:
       marginTop: 10
       video: https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
       width: 60
+    tags: ['Digital Partnership']
   - caption: An exhibition for Hermès
     project: An exhibition for Hermès
     thumbnail:
@@ -204,6 +224,7 @@ projects:
       marginLeft: 20
       marginTop: -5
       width: 60
+    tags: ['Interactive Installation', 'Exhibition & Event Design']
   - caption: |-
       Interactive sneakers
 
@@ -217,6 +238,7 @@ projects:
       marginLeft: 0
       marginTop: 0
       width: 40
+    tags: ['Spatial Experience', 'Interactive Installation']
   - caption: An infinity room for NikeLab
     project: An infinity room for NikeLab
     thumbnail:
@@ -224,6 +246,7 @@ projects:
       marginTop: -30
       video: https://player.vimeo.com/external/210279283.hd.mp4?s=706d9c6149f5bd15d01856a15818b6e9a8702a80&profile_id=119
       width: 50
+    tags: ['Spatial Experience', 'Interactive Installation']
   - caption: Interactive editorial lookbook SS19 for Fred Perry
     project: Interactive editorial lookbook SS19 for Fred Perry
     thumbnail:
@@ -231,6 +254,7 @@ projects:
       marginTop: 0
       video: https://player.vimeo.com/external/345418873.sd.mp4?s=27185d3d16e6a61c82a5b37fbb275a85e87de4ab&profile_id=165
       width: 50
+    tags: ['Digital Partnership']
   - caption: |-
       Various in-store installations
       for NikeLab
@@ -242,12 +266,14 @@ projects:
       marginLeft: 20
       marginTop: 0
       width: 60
+    tags: ['Spatial Experience', 'Interactive Installation']
   - thumbnail:
       marginTop: 0
       marginLeft: 0
       image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
       width: 40
     caption: 'Nike x JFS Collection '
+    tags: ['Spatial Experience']
 articles:
 address: '> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)'
