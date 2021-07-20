@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { countBy } from 'lodash';
 import styles from './ProjectList.module.scss';
 import Project from './Project/Project';
+import Filters from '../Filters/Filters';
 
 const ProjectList = ({ middle, projects }) => {
   const projectFilters = projects
@@ -15,20 +16,12 @@ const ProjectList = ({ middle, projects }) => {
 
   return (
     <>
-      <div className={styles.filters}>
-        {filterList.map((filter) => (
-          <div
-            className={`${styles.filter} ${
-              activeTag !== null ? styles.activeFilter : ''
-            } ${filter === activeTag ? styles.activeTag : ''}`}
-            onClick={() => setActiveTag(filter === activeTag ? null : filter)}
-            key={filter}
-          >
-            {filter}{' '}
-            <span className={styles.filterCount}> {filterCount[filter]}</span>
-          </div>
-        ))}
-      </div>
+      <Filters
+        filterList={filterList}
+        filterCount={filterCount}
+        activeTag={activeTag}
+        setActiveTag={setActiveTag}
+      />
 
       <div className={styles.projects}>
         {projects.map(({ thumbnail, title, slug, tags }, index) => {

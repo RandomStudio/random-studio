@@ -1,0 +1,76 @@
+.filters {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 315px;
+    user-select: none;
+  }
+}
+
+.filterEntry {
+  display: block;
+  cursor: pointer;
+  padding: 20px;
+
+  &:not(.activeTag) {
+    color: #d0d0d0;
+  }
+
+  &:not(.activeFilter) {
+    color: black;
+  }
+}
+
+.filterCount {
+  color: #d0d0d0;
+}
+
+.accordion {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 315px;
+  }
+}
+
+.accordionEntry {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+
+  &:not(.activeTag) {
+    color: #d0d0d0;
+  }
+
+  &:not(.activeFilter) {
+    color: black;
+  }
+}
+
+.accordionLabel {
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
+
+.accordionIcon {
+  display: inline;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.icon {
+  display: inline;
+  position: absolute;
+  top: 20px;
+}

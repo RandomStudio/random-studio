@@ -1,13 +1,10 @@
 import React, { useState, useRef } from 'react';
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
 import FluidImage from '../FluidImage/FluidImage';
 import Caption from '../ProjectDetail/Caption/Caption';
 
-const Carousel = ({
-  carousel, caption, title, objectFit, className,
-}) => {
+const Carousel = ({ carousel, caption, objectFit, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -40,14 +37,21 @@ const Carousel = ({
                 <video src={url} muted loop autoPlay playsInline />
               ) : (
                 image && (
-                <FluidImage image={image} objectFit={objectFit} loading="auto" />
+                  <FluidImage
+                    image={image}
+                    objectFit={objectFit}
+                    loading="auto"
+                  />
                 )
               )}
             </div>
           </div>
         ))}
       </div>
-      <Caption caption={caption} carouselIndicator={`${currentIndex + 1} of ${carousel.length}`} />
+      <Caption
+        caption={caption}
+        carouselIndicator={`${currentIndex + 1} of ${carousel.length}`}
+      />
     </div>
   );
 };
