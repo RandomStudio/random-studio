@@ -1,4 +1,5 @@
 .filters {
+  padding-top: 230px;
   display: none;
 
   @media (min-width: 768px) {
@@ -32,13 +33,17 @@
 }
 
 .accordion {
+  padding-top: 315px;
+  padding-bottom: 50px;
   display: none;
 
   @media (max-width: 768px) {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
-    padding-top: 315px;
+    padding-top: 230px;
   }
 }
 
@@ -72,5 +77,9 @@
 .icon {
   display: inline;
   position: absolute;
-  top: 20px;
+  top: 16px;
+
+  @media (min-width: 450px) {
+    top: 20px;
+  }
 }
