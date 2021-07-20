@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Filters.module.scss';
 
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
@@ -22,12 +22,12 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
       </div>
 
       <div className={styles.accordion}>
-        <div className={styles.accordionLabel}>
+        <div
+          className={styles.accordionLabel}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {activeTag !== null ? activeTag : 'All Projects'}
-          <div
-            className={`${styles.accordionIcon}`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <div className={`${styles.accordionIcon}`}>
             <img
               alt={isOpen ? 'open' : 'close'}
               className={styles.icon}
@@ -41,9 +41,7 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
           filterList.map((filter) => (
             <span
               value={filter}
-              className={`${styles.accordionEntry} ${
-                activeTag !== null ? styles.activeFilter : ''
-              } ${filter === activeTag ? styles.activeTag : ''}`}
+              className={`${styles.accordionEntry}`}
               onClick={() => {
                 setActiveTag(filter === activeTag ? null : filter);
                 setIsOpen(false);

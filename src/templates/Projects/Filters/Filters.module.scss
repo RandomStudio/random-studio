@@ -52,26 +52,18 @@
   text-align: center;
   cursor: pointer;
   padding: 10px;
-
-  &:not(.activeTag) {
-    color: #d0d0d0;
-  }
-
-  &:not(.activeFilter) {
-    color: black;
-  }
 }
 
 .accordionLabel {
   text-align: center;
   position: relative;
   padding: 10px;
+  cursor: pointer;
 }
 
 .accordionIcon {
   display: inline;
   margin-left: 20px;
-  cursor: pointer;
 }
 
 .icon {
