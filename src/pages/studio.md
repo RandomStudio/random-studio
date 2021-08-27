@@ -58,6 +58,11 @@ jobOpenings:
     jobDescription: |-
       At Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a team of designers, creative technologists and strategists, we value new ideas, new insights, new ways of seeing the world. We are currently looking for a Medior Producer / Project Manager to work on an innovative retail platform for a large fashion retailer.<br /><br />Producers at Random Studio manage projects from end-to-end. They work with clients to understand a challenge, and in close collaboration with cross-functional teams, develop and deliver solutions that all parties are proud of. They know every detail of any given project and serve as the client contact and Random Studio project lead.
     jobIsVisible: true
+  - jobTitle: Mid-Level Digital Designer
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=9
+    jobDescription: |-
+      If you are passionate about exploring future technologies and how they will impact the way we interact with digital platforms, and looking for a chance to innovate the retail experience for a global fashion brand alongside other short-term projects for a wide range of clients, this is an opportunity for you.<br /><br />Our studio is high freedom and low control, so we value those with an experimental and independent spirit. We are looking for someone who feels comfortable working in a dynamic and ever-changing environment. In this role, you will work with cross-disciplinary teams and get energised collaborating with creative technologists and developers open to exploring creative solutions.
+    jobIsVisible: true
   - jobTitle: Job function title
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>
     jobDescription: Job description
