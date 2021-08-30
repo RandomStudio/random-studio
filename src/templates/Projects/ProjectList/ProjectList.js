@@ -9,7 +9,16 @@ const ProjectList = ({ middle, projects }) => {
     .map(({ tags }) => tags)
     .filter(Boolean)
     .flat();
-  const filterList = [...new Set([...projectFilters])];
+  // Was previously constructed dynamically but because the filterList has to be ordered in a certain way we have to hardcode it
+  // const filterList = [...new Set([...projectFilters])];
+  const filterList = [
+    'Spatial Experience',
+    'Spatial Design',
+    'Interactive Installation',
+    'Exhibition & Event Design',
+    'Research & Design',
+    'Digital Partnership',
+  ];
   const filterCount = countBy(projectFilters);
 
   const [activeTag, setActiveTag] = useState(null);
