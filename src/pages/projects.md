@@ -160,7 +160,7 @@ projects:
     thumbnail:
       image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
       marginLeft: 0
-      marginTop: -28
+      marginTop: 0
       width: 40
     tags: ['Digital Partnership']
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue

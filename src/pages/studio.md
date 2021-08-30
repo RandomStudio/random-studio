@@ -5,8 +5,9 @@ introBlock:
   - copy: We create brand and service experiences that trigger a sense of wonder.
     image: /img/studio-hero-01.jpg
     video: /img/boat.mp4
-  - copy: "Our work comes to life in the space where the digital meets the physical.
-      "
+  - copy:
+      'Our work comes to life in the space where the digital meets the physical.
+      '
     image: /img/studio-hero-02.jpg
     video: /img/digital.mp4
 services:
@@ -28,7 +29,7 @@ services:
         future concepts and prototypes.
       image: /img/studio_expertise3.jpg
       title: Design Research
-  title: "Our Areas of Expertise:"
+  title: 'Our Areas of Expertise:'
 skillset:
   - Strategy
   - Concept
@@ -59,7 +60,7 @@ projects:
       image: /img/BV_1.jpg
       width: 54
     project: |
-      A spatial listening experience for Bottega Veneta 
+      A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
   - thumbnail:
       marginTop: 0
@@ -80,7 +81,7 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 11
-      video: ""
+      video: ''
       width: 40
       image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
     project: An internet creation myth for kids
@@ -185,7 +186,7 @@ projects:
       marginTop: -28
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
-    project: "Bottega Veneta Takeover at Saks Fifth Avenue "
+    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60
@@ -217,7 +218,7 @@ projects:
     thumbnail:
       marginLeft: 60
       marginTop: -41
-      video: ""
+      video: ''
       width: 35
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
   - caption: |-
@@ -283,5 +284,5 @@ projects:
       marginLeft: 0
       image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
       width: 40
-    caption: "Nike x JFS Collection "
+    caption: 'Nike x JFS Collection '
 ---
