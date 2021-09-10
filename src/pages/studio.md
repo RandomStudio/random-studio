@@ -51,17 +51,23 @@ jobOpenings:
   - jobTitle: Experience Strategist
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=8&source=aWQ9Nw%3D%3D
     jobDescription: |-
-      Random is an experience design studio based in Amsterdam and Paris. We explore how technology can be integrated into the foundations of a space; as part of our physical world, engaging us to explore, play and wonder.<br /><br />We are looking for an experience strategist who can lead the proposal process and concept development phase for innovation programs and long-term projects.
+      Random is an experience design studio based in Amsterdam and Paris. We explore how technology can be integrated into the foundations of a space; as part of our physical world, engaging us to explore, play and wonder.
+      
+      We are looking for an experience strategist who can lead the proposal process and concept development phase for innovation programs and long-term projects.
     jobIsVisible: true
   - jobTitle: Medior Project Manager (Platform/Services)
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=7&source=aWQ9Nw%3D%3D
     jobDescription: |-
-      At Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a team of designers, creative technologists and strategists, we value new ideas, new insights, new ways of seeing the world. We are currently looking for a Medior Producer / Project Manager to work on an innovative retail platform for a large fashion retailer.<br /><br />Producers at Random Studio manage projects from end-to-end. They work with clients to understand a challenge, and in close collaboration with cross-functional teams, develop and deliver solutions that all parties are proud of. They know every detail of any given project and serve as the client contact and Random Studio project lead.
+      At Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a team of designers, creative technologists and strategists, we value new ideas, new insights, new ways of seeing the world. We are currently looking for a Medior Producer / Project Manager to work on an innovative retail platform for a large fashion retailer.
+      
+      Producers at Random Studio manage projects from end-to-end. They work with clients to understand a challenge, and in close collaboration with cross-functional teams, develop and deliver solutions that all parties are proud of. They know every detail of any given project and serve as the client contact and Random Studio project lead.
     jobIsVisible: true
   - jobTitle: Mid-Level Digital Designer
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=9&source=aWQ9Nw%3D%3D
     jobDescription: |-
-      If you are passionate about exploring future technologies and how they will impact the way we interact with digital platforms, and looking for a chance to innovate the retail experience for a global fashion brand alongside other short-term projects for a wide range of clients, this is an opportunity for you.<br /><br />Our studio is high freedom and low control, so we value those with an experimental and independent spirit. We are looking for someone who feels comfortable working in a dynamic and ever-changing environment. In this role, you will work with cross-disciplinary teams and get energised collaborating with creative technologists and developers open to exploring creative solutions.
+      If you are passionate about exploring future technologies and how they will impact the way we interact with digital platforms, and looking for a chance to innovate the retail experience for a global fashion brand alongside other short-term projects for a wide range of clients, this is an opportunity for you.
+      
+      Our studio is high freedom and low control, so we value those with an experimental and independent spirit. We are looking for someone who feels comfortable working in a dynamic and ever-changing environment. In this role, you will work with cross-disciplinary teams and get energised collaborating with creative technologists and developers open to exploring creative solutions.
     jobIsVisible: true
   - jobTitle: Senior Experience Designer
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=10&source=aWQ9Nw%3D%3D
