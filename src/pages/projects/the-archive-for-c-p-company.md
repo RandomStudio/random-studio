@@ -36,4 +36,35 @@ content:
       objects, sketches and editorials into a behind-the-scenes experience of
       the lab. Visitors can journey through the archive as Osti himself might
       use it.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: Each artefact is of equal importance, grouped together on the landing
+      page yet navigable using a filter-system. Clicking on an object leads you
+      on a deep-dive into its life-story, from pre-production research to how
+      it’s worn on the streets today.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
 ---
