@@ -18,7 +18,22 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
+      url: https://player.vimeo.com/external/605729793.hd.mp4?s=83c98e14248a3f869da7c35c7b9a587049a7f4b5&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 0
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: The online archive we designed pays homage to Osti’s trailblazing
+      process-based vision, bringing together five-decade’s worth of garments,
+      objects, sketches and editorials into a behind-the-scenes experience of
+      the lab. Visitors can journey through the archive as Osti himself might
+      use it.
 ---
