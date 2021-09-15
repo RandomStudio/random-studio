@@ -67,4 +67,49 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
+    image: /img/cp-1.jpg
+    width: 100
+    caption: ""
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: Informed by C.P.’s material processes, the website transitions
+      reference the tactility of each artefact, inviting visitors to feel the
+      garments as well as read about them. A tool that collects, highlights and
+      contextualises the research behind the brand’s innovation, the archive is
+      a living entity; one that can be added to in years to come.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    image: /img/cp-2.jpg
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 0
+    zIndex: 0
+    caption: For the physical rendition of the archive, premiering at Pitti Uomo, we
+      created an installation where visitors can ‘scroll’ through the online
+      archive. Upon entering the pavilion, visitors encounter a single archive
+      rack framing a flag fashioned out of 50 patches of dyed fabric; a symbolic
+      object to celebrate C.P. Company’s Cinquenta. This rack is used as a
+      control to navigate through the digital archive so the public can immerse
+      themselves in C.P. Company’s story through audio and images. A hybrid of
+      physical and digital space, the exhibition offers visitors an embodied
+      experience of the often-hidden brand archive.
 ---
