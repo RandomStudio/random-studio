@@ -13,8 +13,8 @@ intro: >-
   [archive.cpcompany.com](archive.cpcompany.com)
 content:
   - video:
-      autoplay: false
-      hasControls: false
+      autoplay: true
+      hasControls: true
       loops: true
       isMuted: true
       isAlwaysMuted: false
