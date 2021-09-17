@@ -145,4 +145,18 @@ content:
     zIndex: 0
     image: /img/cp-5.jpg
     width: 50
+credits:
+  - key: "For:"
+    value: C.P. Company
+  - key: "With:"
+    value: H-Farm, Sander de Vogel, The Collective Studio
+  - key: "Video:"
+    value:  Feline Hjermind
+  - key: "Sound:"
+    value: Juho Nurmela (video), Aimée Portioli (installation)
+  - key: "Photos:"
+    value: Luca Capuano
+  - key: "Role:"
+    value: Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
+      Design, Prototyping, Software Development, Installation Engineering
 ---
