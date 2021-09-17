@@ -112,4 +112,37 @@ content:
       themselves in C.P. Company’s story through audio and images. A hybrid of
       physical and digital space, the exhibition offers visitors an embodied
       experience of the often-hidden brand archive.
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 0
+    marginLeft: 14
+    zIndex: 0
+    image: /img/cp-3.jpg
+    width: 72
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: 15
+    marginLeft: 0
+    zIndex: 0
+    image: /img/cp-4.jpg
+    width: 50
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    marginTop: -33.4
+    marginLeft: 50
+    zIndex: 0
+    image: /img/cp-5.jpg
+    width: 50
 ---
