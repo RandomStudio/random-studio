@@ -140,7 +140,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    marginTop: -33.4
+    marginTop: -33.3
     marginLeft: 50
     zIndex: 0
     image: /img/cp-5.jpg
