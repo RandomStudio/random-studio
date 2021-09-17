@@ -10,7 +10,7 @@ intro: >-
   hybrid urban sportswear.
 
 
-  [archive.cpcompany.com](archive.cpcompany.com)
+  [archive.cpcompany.com](https://archive.cpcompany.com/)
 content:
   - video:
       autoplay: true
