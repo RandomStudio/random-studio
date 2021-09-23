@@ -76,7 +76,7 @@ content:
     caption: >-
       Through the traditional eyes of classic fashion show cameras, the visitor
       is invited to view and experience an innovative digital event.
-      [WWW.SHOWWW.be](https://www.showww.be) takes place in an online structure
+      [WWW.SHOWWW.be](https://2020.showww.be) takes place in an online structure
       that references our shared understanding of space, but is enhanced using
       digital tools.
 
