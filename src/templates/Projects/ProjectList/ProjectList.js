@@ -13,11 +13,11 @@ const ProjectList = ({ middle, projects }) => {
   // const filterList = [...new Set([...projectFilters])];
   const filterList = [
     'Spatial Experience',
-    'Spatial Design',
     'Interactive Installation',
+    'Spatial Design',
     'Exhibition & Event Design',
-    'Research & Design',
     'Digital Partnership',
+    'Research & Design',
   ];
   const filterCount = countBy(projectFilters);
 
