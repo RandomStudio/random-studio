@@ -14,6 +14,8 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
+  - caption: >-
+    The retrospective’s location in Darwen paid homage to the C.P. Company’s special relationship with the British working class youth in the north of England who have contributed to its legacy. For 10 days, the car park transformed into a behind-the-scenes look at the brand’s vision. Visitors could explore 65 different garments housed in archive racks, each presented with a scannable Garment Card that allowed them to continue their journey online into the digital archive and its wider ecosystem of related content.
   - video:
       autoplay: false
       hasControls: false
@@ -23,122 +25,12 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: The online archive we designed pays homage to Osti’s trailblazing
-      process-based vision, bringing together five-decade’s worth of garments,
-      objects, sketches and editorials into a behind-the-scenes experience of
-      the lab. Visitors can journey through the archive as Osti himself might
-      use it.
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
-    zIndex: 0
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
-    zIndex: 0
-    caption:
-      Each artefact is of equal importance, grouped together on the landing
-      page yet navigable using a filter-system. Clicking on an object leads you
-      on a deep-dive into its life-story, from pre-production research to how
-      it’s worn on the streets today.
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
-    zIndex: 0
-    image: /img/cp-1.jpg
-    width: 100
-    caption: ''
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
-    zIndex: 0
-    caption: Informed by C.P.’s material processes, the website transitions
-      reference the tactility of each artefact, inviting visitors to feel the
-      garments as well as read about them. A tool that collects, highlights and
-      contextualises the research behind the brand’s innovation, the archive is
-      a living entity; one that can be added to in years to come.
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
-    zIndex: 0
-    image: /img/cp-2.jpg
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 0
-    zIndex: 0
-    caption:
-      For the physical rendition of the archive, premiering at Pitti Uomo, we
-      created an installation where visitors can ‘scroll’ through the online
-      archive. Upon entering the pavilion, visitors encounter a single archive
-      rack framing a flag fashioned out of 50 patches of dyed fabric; a symbolic
-      object to celebrate C.P. Company’s Cinquenta. This rack is used as a
-      control to navigate through the digital archive so the public can immerse
-      themselves in C.P. Company’s story through audio and images. A hybrid of
-      physical and digital space, the exhibition offers visitors an embodied
-      experience of the often-hidden brand archive.
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 0
-    marginLeft: 14
-    zIndex: 0
-    image: /img/cp-3.jpg
-    width: 72
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: 15
-    marginLeft: 0
-    zIndex: 0
-    image: /img/cp-4.jpg
-    width: 50
-  - video:
-      autoplay: false
-      hasControls: false
-      loops: true
-      isMuted: true
-      isAlwaysMuted: false
-    marginTop: -33.3
-    marginLeft: 50
-    zIndex: 0
-    image: /img/cp-5.jpg
-    width: 50
+    carousel:
+      - type: image
+        image: /img/RND05171 copy.jpg
+      - type: image
+        image: /img/RND05178.jpg
+    width: 60
 credits:
   - key: 'For:'
     value: C.P. Company
