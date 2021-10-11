@@ -178,7 +178,7 @@ projects:
       marginLeft: 0
       marginTop: 0
       width: 40
-  - caption: Digital Partner for Belgium Fashion House Maison Margiela
+  - caption: Digital Partner for French Fashion House Maison Margiela
     project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
     thumbnail:
       marginLeft: 60
