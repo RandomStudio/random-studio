@@ -1,16 +1,8 @@
 ---
 templateKey: Project
-title: The Archive for C.P. Company
+title: An Archival Experience celebrating C.P. Company’s 50th Anniversary
 intro: >-
-  We are proud to join C.P. Company’s 50th anniversary ‘Cinquenta’ celebrations
-  and help them bring their extensive archive to life – in both a digital and
-  physical form. Spearheaded by designer Massimo Otti, the legendary brand
-  pioneered Italian sportswear in their experimental garment laboratory,
-  blending the functionality of military wear with textile innovation to create
-  hybrid urban sportswear.
-
-
-  [archive.cpcompany.com](https://archive.cpcompany.com/)
+  We were proud to join C.P. Company’s 50th anniversary Cinquanta celebrations to help them bring their rich archive to life – in both a physical and digital form. Working with five-decade’s worth of their hybrid urban sportswear, objects, sketches and editorials, we created an interactive spatial archive in a repurposed car park in Darwen, UK, as part of the 2021 British Textile Biennale, as well as a dynamic online archive. A hybrid of physical and digital space, the exhibition offers visitors an embodied experience of the often-hidden brand archive.
 content:
   - video:
       autoplay: true
@@ -18,7 +10,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/605729793.hd.mp4?s=83c98e14248a3f869da7c35c7b9a587049a7f4b5&profile_id=175
+      url: https://player.vimeo.com/external/628953500.hd.mp4?s=1bfe435a8e9b72f21238f8da6f1e0de4b05d5093&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -54,7 +46,8 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: Each artefact is of equal importance, grouped together on the landing
+    caption:
+      Each artefact is of equal importance, grouped together on the landing
       page yet navigable using a filter-system. Clicking on an object leads you
       on a deep-dive into its life-story, from pre-production research to how
       it’s worn on the streets today.
@@ -69,7 +62,7 @@ content:
     zIndex: 0
     image: /img/cp-1.jpg
     width: 100
-    caption: ""
+    caption: ''
   - video:
       autoplay: false
       hasControls: false
@@ -103,7 +96,8 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: For the physical rendition of the archive, premiering at Pitti Uomo, we
+    caption:
+      For the physical rendition of the archive, premiering at Pitti Uomo, we
       created an installation where visitors can ‘scroll’ through the online
       archive. Upon entering the pavilion, visitors encounter a single archive
       rack framing a flag fashioned out of 50 patches of dyed fabric; a symbolic
@@ -146,17 +140,18 @@ content:
     image: /img/cp-5.jpg
     width: 50
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: C.P. Company
-  - key: "With:"
+  - key: 'With:'
     value: H-Farm, Sander de Vogel, The Collective Studio
-  - key: "Video:"
-    value:  Feline Hjermind
-  - key: "Sound:"
+  - key: 'Video:'
+    value: Feline Hjermind
+  - key: 'Sound:'
     value: Juho Nurmela (video), Aimée Portioli (installation)
-  - key: "Photos:"
+  - key: 'Photos:'
     value: Luca Capuano
-  - key: "Role:"
-    value: Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
+  - key: 'Role:'
+    value:
+      Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
       Design, Prototyping, Software Development, Installation Engineering
 ---
