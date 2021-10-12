@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/565538673.hd.mp4?s=40130cc9de82dd4aeef93737e9656d87e18309f5&profile_id=175
+video: https://player.vimeo.com/external/628953500.hd.mp4?s=1bfe435a8e9b72f21238f8da6f1e0de4b05d5093&profile_id=175
 collaborationCredits:
-  collaborator: Nike
-  url: https://random.studio/projects/nike-move-to-zero-house-of-innovation-takeover/
+  collaborator: C.P. Company
+  url: https://random.studio/projects/an-archival-experience-celebrating-c-p-companys-50th-anniversary/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
