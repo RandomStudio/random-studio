@@ -173,4 +173,9 @@ credits:
     value:
       Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
       Design, Prototyping, Software Development, Installation Engineering, Research
+  - key: 'With:'
+    value: |-
+      H-Farm – Web Development
+
+      Sparklestreet studio – Exhibition Build
 ---
