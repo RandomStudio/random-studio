@@ -101,21 +101,21 @@ content:
     isMuted: true
     isAlwaysMuted: false
     marginTop: 0
-    marginLeft: 50
+    marginLeft: 55
     zIndex: 0
     image: /img/photo09.jpg
-    width: 50
+    width: 45
   - video:
     autoplay: false
     hasControls: false
     loops: true
     isMuted: true
     isAlwaysMuted: false
-    marginTop: 8
-    marginLeft: 8
+    marginTop: 10
+    marginLeft: 5
     zIndex: 0
     image: /img/photo10.jpg
-    width: 36
+    width: 45
   - caption: Due to its modular design, the exhibition format is reusable, premiering at Pitti Uomo in June 2021 as a smaller installation, with plans to travel to more locations in the future.
   - video:
     autoplay: false
@@ -134,7 +134,7 @@ content:
     loops: true
     isMuted: true
     isAlwaysMuted: false
-    marginTop: 8
+    marginTop: -10
     marginLeft: 60
     zIndex: 0
     image: /img/162A1383.jpg
