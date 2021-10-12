@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+title: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
 intro: >-
   We were proud to join C.P. Company’s 50th anniversary Cinquanta celebrations to help them bring their rich archive to life – in both a physical and digital form. Working with five-decade’s worth of their hybrid urban sportswear, objects, sketches and editorials, we created an interactive spatial archive in a repurposed car park in Darwen, UK, as part of the 2021 British Textile Biennale, as well as a dynamic online archive. A hybrid of physical and digital space, the exhibition offers visitors an embodied experience of the often-hidden brand archive.
 content:
@@ -16,7 +16,7 @@ content:
     image: /img/top-grid@2x.png
     width: 100
   - caption: |-
-      ‘Cinquanta’ Archive Exhibition
+      <div class="content-section-title">‘Cinquanta’ Archive Exhibition</div>
 
       The retrospective’s location in Darwen paid homage to the C.P. Company’s special relationship with the British working class youth in the north of England who have contributed to its legacy. For 10 days, the car park transformed into a behind-the-scenes look at the brand’s vision. Visitors could explore 65 different garments housed in archive racks, each presented with a scannable Garment Card that allowed them to continue their journey online into the digital archive and its wider ecosystem of related content.
   - video:
@@ -111,12 +111,13 @@ content:
     loops: true
     isMuted: true
     isAlwaysMuted: false
-    marginTop: 10
+    marginTop: -5
     marginLeft: 5
     zIndex: 0
     image: /img/photo10.jpg
     width: 45
-  - caption: Due to its modular design, the exhibition format is reusable, premiering at Pitti Uomo in June 2021 as a smaller installation, with plans to travel to more locations in the future.
+  - caption: |-
+      <div class="content-section-padding">Due to its modular design, the exhibition format is reusable, premiering at Pitti Uomo in June 2021 as a smaller installation, with plans to travel to more locations in the future.</div>
   - video:
     autoplay: false
     hasControls: false
@@ -140,7 +141,7 @@ content:
     image: /img/162A1383.jpg
     width: 36
   - caption: |-
-      Digital Archive
+      <div class="content-section-title">Digital Archive</div>
 
       The digital archive we created is a living entity; one that can be added to in years to come and accessed by anyone in the world. Preserving the brand’s process-based vision, visitors can journey through the archive as founder Massimo Osti himself might have used it. Each artefact is of equal importance, grouped together on the landing page yet navigable using a filter-system. Clicking on an object leads you on a deep-dive into its life-story, from pre-production research to how it’s worn on the streets today. Informed by the brand’s material processes, the website transitions reference the tactility of each artefact, inviting visitors to feel the garments as well as read about them.
   - video:
@@ -149,7 +150,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/628953500.hd.mp4?s=1bfe435a8e9b72f21238f8da6f1e0de4b05d5093&profile_id=175
+      url: https://player.vimeo.com/external/628953663.hd.mp4?s=efc25ebab8afd54f9a79860992a855d400a0aae2&profile_id=175
     marginTop: 0
     marginLeft: 5
     zIndex: 0
