@@ -16,7 +16,7 @@ content:
     image: /img/top-grid@2x.png
     width: 100
   - caption: |-
-      ‘Cinquanta’ Archive Exhibition
+      <div class="content-section-title">‘Cinquanta’ Archive Exhibition</div>
 
       The retrospective’s location in Darwen paid homage to the C.P. Company’s special relationship with the British working class youth in the north of England who have contributed to its legacy. For 10 days, the car park transformed into a behind-the-scenes look at the brand’s vision. Visitors could explore 65 different garments housed in archive racks, each presented with a scannable Garment Card that allowed them to continue their journey online into the digital archive and its wider ecosystem of related content.
   - video:
@@ -140,7 +140,7 @@ content:
     image: /img/162A1383.jpg
     width: 36
   - caption: |-
-      Digital Archive
+      <div class="content-section-title">Digital Archive</div>
 
       The digital archive we created is a living entity; one that can be added to in years to come and accessed by anyone in the world. Preserving the brand’s process-based vision, visitors can journey through the archive as founder Massimo Osti himself might have used it. Each artefact is of equal importance, grouped together on the landing page yet navigable using a filter-system. Clicking on an object leads you on a deep-dive into its life-story, from pre-production research to how it’s worn on the streets today. Informed by the brand’s material processes, the website transitions reference the tactility of each artefact, inviting visitors to feel the garments as well as read about them.
   - video:
