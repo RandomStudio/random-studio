@@ -116,7 +116,8 @@ content:
     zIndex: 0
     image: /img/photo10.jpg
     width: 45
-  - caption: Due to its modular design, the exhibition format is reusable, premiering at Pitti Uomo in June 2021 as a smaller installation, with plans to travel to more locations in the future.
+  - caption: |-
+      <div class="content-section-padding">Due to its modular design, the exhibition format is reusable, premiering at Pitti Uomo in June 2021 as a smaller installation, with plans to travel to more locations in the future.</div>
   - video:
     autoplay: false
     hasControls: false

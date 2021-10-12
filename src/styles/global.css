@@ -82,9 +82,20 @@ button,
   margin-bottom: 1em;
 }
 
+/* Used to add extra padding around a project caption text block */
+.content-section-padding {
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
 @media (min-width: 576px) {
   .content-section-title {
     font-size: var(--font-med);
+  }
+
+  .content-section-padding {
+    margin-top: 20%;
+    margin-bottom: 20%;
   }
 }
 
@@ -92,5 +103,10 @@ button,
   .content-section-title {
     max-width: 1024px;
     font-size: var(--font-large);
+  }
+
+  .content-section-padding {
+    margin-top: 25%;
+    margin-bottom: 25%;
   }
 }
