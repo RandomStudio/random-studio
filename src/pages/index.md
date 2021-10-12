@@ -16,6 +16,13 @@ middle: >-
 projects:
   - thumbnail:
       marginTop: 0
+      marginLeft: 23
+      image: /img/cp-thumb.jpg
+      width: 54
+    project: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+    caption: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+  - thumbnail:
+      marginTop: 0
       marginLeft: 53
       image: /img/HOI PAR002_SU21_MTZ_08.jpg
       width: 47
@@ -34,7 +41,7 @@ projects:
       image: /img/BV_1.jpg
       width: 54
     project: |
-      A spatial listening experience for Bottega Veneta 
+      A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
@@ -63,7 +70,7 @@ projects:
   - thumbnail:
       marginTop: -15
       marginLeft: 6
-      video: ""
+      video: ''
       width: 40
       image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
     project: An internet creation myth for kids
@@ -151,7 +158,7 @@ projects:
       marginTop: -28
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
-    project: "Bottega Veneta Takeover at Saks Fifth Avenue "
+    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60
@@ -183,7 +190,7 @@ projects:
     thumbnail:
       marginLeft: 60
       marginTop: -41
-      video: ""
+      video: ''
       width: 35
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
   - caption: |-
@@ -249,10 +256,10 @@ projects:
       marginLeft: 0
       image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
       width: 40
-    caption: "Nike x JFS Collection "
+    caption: 'Nike x JFS Collection '
 articles: null
-address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
-  [Directions](https://goo.gl/maps/7rGuGBBfhms)"
+address: '> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
+  [Directions](https://goo.gl/maps/7rGuGBBfhms)'
 phone: +31 20 779 7735
 email: hello@random.studio
 ---
