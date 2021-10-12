@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+title: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
 intro: >-
   We were proud to join C.P. Company’s 50th anniversary Cinquanta celebrations to help them bring their rich archive to life – in both a physical and digital form. Working with five-decade’s worth of their hybrid urban sportswear, objects, sketches and editorials, we created an interactive spatial archive in a repurposed car park in Darwen, UK, as part of the 2021 British Textile Biennale, as well as a dynamic online archive. A hybrid of physical and digital space, the exhibition offers visitors an embodied experience of the often-hidden brand archive.
 content:
@@ -111,7 +111,7 @@ content:
     loops: true
     isMuted: true
     isAlwaysMuted: false
-    marginTop: 10
+    marginTop: -5
     marginLeft: 5
     zIndex: 0
     image: /img/photo10.jpg
@@ -149,7 +149,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: https://player.vimeo.com/external/628953500.hd.mp4?s=1bfe435a8e9b72f21238f8da6f1e0de4b05d5093&profile_id=175
+      url: https://player.vimeo.com/external/628953663.hd.mp4?s=efc25ebab8afd54f9a79860992a855d400a0aae2&profile_id=175
     marginTop: 0
     marginLeft: 5
     zIndex: 0
