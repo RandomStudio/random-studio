@@ -178,4 +178,7 @@ credits:
       H-Farm – Web Development
 
       Sparklestreet studio – Exhibition Build
+opengraph:
+  ogImage: /img/cp-thumb.jpg
+  ogTitle: 'An Archival Experience celebrating C.P. Company’s 50th Anniversary'
 ---
