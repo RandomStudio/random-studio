@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal SS19
+title: Digital Partner for French Fashion House Maison Margiela – Artisanal SS19
 intro: >-
   Since Spring-Summer 19, we have been collaborating with Maison Margiela as a
   digital partner for six of their collections. Guided by John Galliano’s

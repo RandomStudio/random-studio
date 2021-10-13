@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/565538673.hd.mp4?s=40130cc9de82dd4aeef93737e9656d87e18309f5&profile_id=175
+video: https://player.vimeo.com/external/628953500.hd.mp4?s=1bfe435a8e9b72f21238f8da6f1e0de4b05d5093&profile_id=175
 collaborationCredits:
-  collaborator: Nike
-  url: https://random.studio/projects/nike-move-to-zero-house-of-innovation-takeover/
+  collaborator: C.P. Company
+  url: https://random.studio/projects/an-archival-experience-celebrating-c-p-companys-50th-anniversary/
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
@@ -14,6 +14,13 @@ middle: >-
 
   [More about our studio](/studio)
 projects:
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 23
+      image: /img/cp-thumb.jpg
+      width: 54
+    project: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
+    caption: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
   - thumbnail:
       marginTop: 0
       marginLeft: 53
@@ -61,16 +68,7 @@ projects:
     caption: |
       A Pop-Up Installation for COS
   - thumbnail:
-      marginTop: -23
-      marginLeft: 53
-      width: 47
-      image: /img/look_37.4.jpg
-    caption: |-
-      A Live Spectacle for
-      Chloé's SS21 Collection
-    project: A live spectacle for Chloé's SS21 Collection
-  - thumbnail:
-      marginTop: -10
+      marginTop: -15
       marginLeft: 6
       video: ''
       width: 40
@@ -187,7 +185,7 @@ projects:
       marginLeft: 0
       marginTop: 0
       width: 40
-  - caption: Digital Partner for Belgium Fashion House Maison Margiela
+  - caption: Digital Partner for French Fashion House Maison Margiela
     project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
     thumbnail:
       marginLeft: 60
@@ -259,7 +257,7 @@ projects:
       image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
       width: 40
     caption: 'Nike x JFS Collection '
-articles:
+articles: null
 address: '> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
   [Directions](https://goo.gl/maps/7rGuGBBfhms)'
 phone: +31 20 779 7735

@@ -16,10 +16,12 @@ const ProjectDetail = ({
   relatedProjects,
   allProjects,
 }) => {
-  const relatedWork = relatedProjects
-    && (relatedProjects.projects || []).map(relatedProject => {
-      const foundProject = allProjects.length
-        && allProjects.find(
+  const relatedWork =
+    relatedProjects &&
+    (relatedProjects.projects || []).map((relatedProject) => {
+      const foundProject =
+        allProjects.length &&
+        allProjects.find(
           ({
             node: {
               frontmatter: { title },
@@ -78,7 +80,7 @@ const ProjectDetail = ({
       default:
         return (
           <div className={styles.text}>
-            <ReactMarkdown source={caption} />
+            <ReactMarkdown escapeHtml={false} source={caption} />
           </div>
         );
     }

@@ -20,39 +20,16 @@
     display: flex;
     position: relative;
     margin-bottom: 12px;
+    max-width: 700px;
+    margin: auto;
     strong {
       font-size: var(--font-small);
     }
   }
 
-  // Fields from Recruitee API
   & > div {
     max-width: 700px;
     margin: auto;
-
-    p {
-      margin-bottom: 10px;
-    }
-
-    em {
-      font-style: normal;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      margin-left: 16px;
-      padding: 0;
-    }
-
-    li {
-      &::before {
-        content: '-';
-        position: absolute;
-        letter-spacing: 0.02em;
-        margin-left: -12px;
-      }
-    }
   }
 
   button {
@@ -85,19 +62,45 @@
   }
 }
 
+.description {
+  white-space: pre-wrap;
+
+  p {
+    margin-bottom: 0.5em;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  h3 {
+    margin: 1em 0 0.5em;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 0 1em 16px;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+    &::before {
+      content: '-';
+      position: absolute;
+      letter-spacing: 0.02em;
+      margin-left: -12px;
+    }
+  }
+
+}
+
 @media (min-width: 576px) {
   .jobOffer {
     header {
       margin-bottom: 20px;
       strong {
         font-size: var(--font-med);
-      }
-    }
-
-    // Fields from Recruitee API
-    & > div {
-      p {
-        margin-bottom: 12px;
       }
     }
 

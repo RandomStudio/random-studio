@@ -2,7 +2,7 @@
 templateKey: Project
 title: A virtual fashion graduation show for the Royal Academy of Antwerp
 intro: >-
-  
+
 
   The Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?
 
@@ -25,13 +25,13 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: ""
+      url: ''
     marginTop: 0
     marginLeft: 0
-    caption: " In our vision, physicality remains at the heart of this digital
+    caption: ' In our vision, physicality remains at the heart of this digital
       architecture. We deconstructed the mechanisms and internal logic of the
       traditional fashion show, re-imagining how they could play out in virtual
-      space in front of a global audience."
+      space in front of a global audience.'
   - video:
       autoplay: true
       hasControls: false
@@ -76,7 +76,7 @@ content:
     caption: >-
       Through the traditional eyes of classic fashion show cameras, the visitor
       is invited to view and experience an innovative digital event.
-      [WWW.SHOWWW.be](https://www.showww.be) takes place in an online structure
+      [2020.SHOWWW.be](https://2020.showww.be) takes place in an online structure
       that references our shared understanding of space, but is enhanced using
       digital tools.
 
@@ -123,7 +123,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: Challenging the perception of a model, the student’s work shimmies its
+    caption:
+      Challenging the perception of a model, the student’s work shimmies its
       way down the runway, in a novel way of showcasing fashion graduation
       content.
   - video:
@@ -167,7 +168,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: The choreographies of the real-life fashion take on a new shape on the
+    caption:
+      The choreographies of the real-life fashion take on a new shape on the
       platform. Here the virtual runway is located in a geometric space, ever
       changing to represent the collection on show.
   - video:
@@ -189,7 +191,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: We additionally supported the master students by providing them with a
+    caption:
+      We additionally supported the master students by providing them with a
       digital spatial canvas that allowed each of them to create their
       personalised environment, setting their own stage for their introduction
       to the fashion industry.
@@ -239,17 +242,17 @@ content:
       article](https://medium.com/random-studio/alone-with-others-shared-online-experiences-decentralised-d3fdca35df3b)
       on [Medium](https://medium.com/random-studio).
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Antwerp Fashion Department, Royal Academy of Antwerp
-  - key: "Role:"
+  - key: 'Role:'
     value: >
       Creative Direction, Art Direction, 3D Stylist, Virtual Set Design,
       Software Development, Interface Design
 opengraph:
-  ogDescription: "How can you translate the energy and experience of the fashion
+  ogDescription: 'How can you translate the energy and experience of the fashion
     show to the digital? We reimagined the choreographies of the catwalk for the
     screen, building an image environment and live event for the AFD Graduation
-    Show 2020. "
+    Show 2020. '
   ogTitle: A virtual fashion graduation show for the Royal Academy of Antwerp
   ogImage: /img/screenshot-2020-07-06-at-14.09.59.png
 ---
