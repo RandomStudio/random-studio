@@ -19,8 +19,8 @@ projects:
       marginLeft: 23
       image: /img/cp-thumb.jpg
       width: 54
-    project: An Archival Experience celebrating C.P. Company’s 50th Anniversary
-    caption: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+    project: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
+    caption: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
   - thumbnail:
       marginTop: 0
       marginLeft: 53
