@@ -73,3 +73,40 @@ button,
 #inspector-host {
   z-index: 99999;
 }
+
+/* Used to add a title inside of a project caption text block */
+.content-section-title {
+  line-height: 1.3;
+  font-weight: normal;
+  font-size: var(--font-small);
+  margin-bottom: 1em;
+}
+
+/* Used to add extra padding around a project caption text block */
+.content-section-padding {
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
+@media (min-width: 576px) {
+  .content-section-title {
+    font-size: var(--font-med);
+  }
+
+  .content-section-padding {
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+}
+
+@media (min-width: 1152px) {
+  .content-section-title {
+    max-width: 1024px;
+    font-size: var(--font-large);
+  }
+
+  .content-section-padding {
+    margin-top: 25%;
+    margin-bottom: 25%;
+  }
+}
