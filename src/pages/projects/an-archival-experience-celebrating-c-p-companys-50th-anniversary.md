@@ -179,6 +179,6 @@ credits:
 
       Sparklestreet studio – Exhibition Build
 opengraph:
-  ogImage: /img/cp-thumb.jpg
+  ogImage: /img/cp-og.jpg
   ogTitle: 'An Archival Experience celebrating C.P. Company’s 50th Anniversary'
 ---
