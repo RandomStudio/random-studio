@@ -23,44 +23,53 @@ projects:
     caption: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
   - thumbnail:
       marginTop: 0
-      marginLeft: 53
-      image: /img/HOI PAR002_SU21_MTZ_08.jpg
-      width: 47
-    project: Nike Move to Zero House of Innovation Takeover
-    caption: Nike Move to Zero House of Innovation Takeover
-  - thumbnail:
-      marginTop: -32
       marginLeft: 4
+      image: /img/BV_1.jpg
+      width: 46
+    project: |
+      A spatial listening experience for Bottega Veneta 
+    caption: A spatial listening experience for Bottega Veneta
+  - thumbnail:
+      marginTop: -15
+      marginLeft: 58
       image: /img/screenshot-2021-04-26-at-12.59.13.png
       width: 42
     project: Tide, a kinetic window display for Alexander McQueen
     caption: A kinetic window display for Alexander McQueen
   - thumbnail:
-      marginTop: -2
-      marginLeft: 23
-      image: /img/BV_1.jpg
-      width: 54
-    project: |
-      A spatial listening experience for Bottega Veneta
-    caption: A spatial listening experience for Bottega Veneta
+      marginTop: -10
+      marginLeft: 0
+      image: /img/HOI PAR002_SU21_MTZ_08.jpg
+      width: 46
+    project: Nike Move to Zero House of Innovation Takeover
+    caption: Nike Move to Zero House of Innovation Takeover
+  - caption: |-
+      Kinetic architecture <br>
+      for A/D/O by MINI
+    project: Kinetic architecture <br> for A/D/O by MINI
+    thumbnail:
+      image: /img/ADO_Perpetuum_15.jpg
+      marginLeft: 65
+      marginTop: -15
+      width: 35
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     thumbnail:
       image: /img/thumbnail_chanel-1-.png
-      marginLeft: 0
+      marginLeft: 26
       marginTop: 0
       width: 46
   - thumbnail:
-      marginTop: -32
-      marginLeft: 53
+      marginTop: 0
+      marginLeft: 0
       image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
       width: 47
     caption: Your body as a controller in Nike's House of Innovation Paris
     project: Your body as a controller in Nike's House of Innovation Paris
   - thumbnail:
       ratio: 0
-      marginTop: -10
-      marginLeft: 0
+      marginTop: -15
+      marginLeft: 54
       image: /img/COS_093.jpg
       width: 46
     project: |
@@ -115,15 +124,6 @@ projects:
       marginLeft: 10
       marginTop: 17
       width: 36
-  - caption: |-
-      Kinetic architecture <br>
-      for A/D/O by MINI
-    project: Kinetic architecture <br> for A/D/O by MINI
-    thumbnail:
-      image: /img/ADO_Perpetuum_15.jpg
-      marginLeft: 65
-      marginTop: -30
-      width: 35
   - caption: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
     project: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
     thumbnail:
