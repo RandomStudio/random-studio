@@ -80,6 +80,10 @@ const gatsbyConfig = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
+        // !! LOCAL MODE !!
+        // identityWidgetInitConfig: {
+        //   APIUrl: 'https://localhost:8000/.netlify/identity',
+        // },
         identityWidgetInitConfig: {
           APIUrl: 'https://random.studio/.netlify/identity',
         },
@@ -90,9 +94,7 @@ const gatsbyConfig = {
   ],
 };
 
-if (
-  process.env.NODE_ENV === 'production'
-) {
+if (process.env.NODE_ENV === 'production') {
   const gaConfig = {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
