@@ -4,7 +4,7 @@ layout: top
 video: https://player.vimeo.com/external/628953500.hd.mp4?s=1bfe435a8e9b72f21238f8da6f1e0de4b05d5093&profile_id=175
 collaborationCredits:
   collaborator: C.P. Company
-  url: https://random.studio/projects/an-archival-experience-celebrating-c-p-companys-50th-anniversary/
+  url: https://random.studio/projects/an-archival-experience-celebrating-c-p-companys-50th-anniversary
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
@@ -23,44 +23,53 @@ projects:
     caption: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
   - thumbnail:
       marginTop: 0
-      marginLeft: 53
-      image: /img/HOI PAR002_SU21_MTZ_08.jpg
-      width: 47
-    project: Nike Move to Zero House of Innovation Takeover
-    caption: Nike Move to Zero House of Innovation Takeover
-  - thumbnail:
-      marginTop: -32
       marginLeft: 4
+      image: /img/BV_1.jpg
+      width: 46
+    project: |
+      A spatial listening experience for Bottega Veneta 
+    caption: A spatial listening experience for Bottega Veneta
+  - thumbnail:
+      marginTop: -15
+      marginLeft: 58
       image: /img/screenshot-2021-04-26-at-12.59.13.png
       width: 42
     project: Tide, a kinetic window display for Alexander McQueen
     caption: A kinetic window display for Alexander McQueen
   - thumbnail:
-      marginTop: -2
-      marginLeft: 23
-      image: /img/BV_1.jpg
-      width: 54
-    project: |
-      A spatial listening experience for Bottega Veneta
-    caption: A spatial listening experience for Bottega Veneta
+      marginTop: -10
+      marginLeft: 0
+      image: /img/HOI PAR002_SU21_MTZ_08.jpg
+      width: 46
+    project: Nike Move to Zero House of Innovation Takeover
+    caption: Nike Move to Zero House of Innovation Takeover
+  - caption: |-
+      Kinetic architecture <br>
+      for A/D/O by MINI
+    project: Kinetic architecture <br> for A/D/O by MINI
+    thumbnail:
+      image: /img/ADO_Perpetuum_15.jpg
+      marginLeft: 65
+      marginTop: -15
+      width: 35
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     thumbnail:
       image: /img/thumbnail_chanel-1-.png
-      marginLeft: 0
+      marginLeft: 26
       marginTop: 0
       width: 46
   - thumbnail:
-      marginTop: -32
-      marginLeft: 53
+      marginTop: 0
+      marginLeft: 0
       image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
       width: 47
     caption: Your body as a controller in Nike's House of Innovation Paris
     project: Your body as a controller in Nike's House of Innovation Paris
   - thumbnail:
       ratio: 0
-      marginTop: -10
-      marginLeft: 0
+      marginTop: -15
+      marginLeft: 54
       image: /img/COS_093.jpg
       width: 46
     project: |
@@ -70,7 +79,7 @@ projects:
   - thumbnail:
       marginTop: -15
       marginLeft: 6
-      video: ''
+      video: ""
       width: 40
       image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
     project: An internet creation myth for kids
@@ -115,15 +124,6 @@ projects:
       marginLeft: 10
       marginTop: 17
       width: 36
-  - caption: |-
-      Kinetic architecture <br>
-      for A/D/O by MINI
-    project: Kinetic architecture <br> for A/D/O by MINI
-    thumbnail:
-      image: /img/ADO_Perpetuum_15.jpg
-      marginLeft: 65
-      marginTop: -30
-      width: 35
   - caption: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
     project: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
     thumbnail:
@@ -158,7 +158,7 @@ projects:
       marginTop: -28
       width: 40
   - caption: Bottega Veneta Takeover at Saks Fifth Avenue
-    project: 'Bottega Veneta Takeover at Saks Fifth Avenue '
+    project: "Bottega Veneta Takeover at Saks Fifth Avenue "
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60
@@ -190,7 +190,7 @@ projects:
     thumbnail:
       marginLeft: 60
       marginTop: -41
-      video: ''
+      video: ""
       width: 35
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
   - caption: |-
@@ -256,10 +256,10 @@ projects:
       marginLeft: 0
       image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
       width: 40
-    caption: 'Nike x JFS Collection '
+    caption: "Nike x JFS Collection "
 articles: null
-address: '> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
-  [Directions](https://goo.gl/maps/7rGuGBBfhms)'
+address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
+  [Directions](https://goo.gl/maps/7rGuGBBfhms)"
 phone: +31 20 779 7735
 email: hello@random.studio
 ---
