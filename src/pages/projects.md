@@ -22,8 +22,7 @@ projects:
       marginLeft: 23
       image: /img/BV_1.jpg
       width: 54
-    project: |
-      A spatial listening experience for Bottega Veneta
+    project: A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
     tags: ['Spatial Experience', 'Exhibition & Event Design']
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch

@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import styles from './ProjectList.module.scss';
 import Project from '../../Projects/ProjectList/Project/Project';
 import ResearchBlock from './IntermittentBlock/ResearchBlock';
-import IntermittentStatement from './IntermittentBlock/IntermittentStatement';
 import SeeMore from './SeeMore/SeeMore';
 
 const PROJECT_LIMIT = 6;
@@ -37,10 +36,6 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
               quote={article.quote}
               articleUrl={article.articleUrl}
             />
-          )}
-          {(index === 4 ||
-            (projects.length < 4 && index === projects.length - 1)) && (
-            <IntermittentStatement middle={middle} />
           )}
           {index === projects.length - 1 && <SeeMore />}
         </React.Fragment>

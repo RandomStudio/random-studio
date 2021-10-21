@@ -1,7 +1,6 @@
 ---
 templateKey: Project
-title: |
-  A spatial listening experience for Bottega Veneta 
+title: A spatial listening experience for Bottega Veneta
 intro: To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul,
   we were enlisted to design a pop-up experience and store scenography. Drawing
   inspiration from its location next to the iconic Hyundai Card Music
@@ -18,7 +17,7 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: ""
+    caption: ''
   - video:
       autoplay: false
       hasControls: false
@@ -153,12 +152,12 @@ content:
     image: /img/RND05199 copy.jpg
     width: 72
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Bottega Veneta
-  - key: "Role:"
+  - key: 'Role:'
     value: Concept Design, Design Development, Creative Technology, Technical
       development
-  - key: "With:"
+  - key: 'With:'
     value: |-
       Ben Kreukniet – Sound design & arrangement 
 
@@ -166,11 +165,11 @@ credits:
 
       Seungmin Cha – Field recordings and daegeum flute performance
 opengraph:
-  ogDescription: "A shiny take on the Acousmoniums of the 1970s as pioneered by
+  ogDescription: 'A shiny take on the Acousmoniums of the 1970s as pioneered by
     Francois Bayle, we made an inflatable sonic installation to mark the launch
     of Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul. Reflecting
     on the location of the Hyundai Card Music Library, the structure offered
     visitors a dreamy spatial listening experience that transformed with every
-    step. Read more on our website. "
+    step. Read more on our website. '
   ogImage: /img/BV_1.jpg
 ---
