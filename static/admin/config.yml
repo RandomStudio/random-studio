@@ -1,10 +1,7 @@
 backend:
   name: git-gateway
-  # !! COMMENT IF LOCAL !!
   branch: master
   base_url: https://random.studio
-# !! UNCOMMENT IF LOCAL !!
-# local_backend: true
 media_folder: static/img
 public_folder: /img
 collections:
