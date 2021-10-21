@@ -83,11 +83,44 @@
 }
 
 // Remove underline of phonenumber
-.phone::after {
+.phone::after,
+.social::after {
   display: none;
 }
 
 .email-desktop,
 .email-value {
   display: none !important;
+}
+
+.column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  order: 1;
+  margin-bottom: 32px;
+
+  @media (min-width: 864px) {
+    width: auto;
+    max-width: none;
+    order: 2;
+    margin-bottom: 0;
+  }
+}
+
+.socials {
+  display: block;
+  margin-top: 10px;
+
+  @media (min-width: 864px) {
+    margin-top: 40px;
+  }
+
+  .social {
+    margin: 10px 0px;
+    margin-right: 25px;
+    display: inline-block;
+  }
 }

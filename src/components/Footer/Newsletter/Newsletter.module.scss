@@ -1,37 +1,19 @@
-.wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 448px;
-  order: 1;
-  margin-bottom: 32px;
-
-  @media (min-width: 864px) {
-    width: auto;
-    max-width: none;
-    order: 2;
-    margin-bottom: 0;
-    margin-right: 64px;
-  }
-
-  @media (min-width: 1152px) {
-    margin-right: 192px;
-  }
-}
-
 .title {
   margin-bottom: 8px;
 }
 
 .input {
-  min-width: 224px;
+  min-width: 100%;
   background-color: transparent;
   border: none;
   padding: 0 0 3px;
   outline: none;
   border-bottom: 1px solid black;
   border-radius: 0;
+
+  @media (min-width: 864px) {
+    min-width: 300px;
+  }
 }
 
 .error {
@@ -47,8 +29,8 @@
   background-color: transparent;
   border: none;
   position: absolute;
+  top: 32px;
   right: 0;
-  bottom: 8px;
 }
 
 .check {
