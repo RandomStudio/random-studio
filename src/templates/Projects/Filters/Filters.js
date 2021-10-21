@@ -5,7 +5,11 @@ import styles from './Filters.module.scss';
 import { PROJECT_FILTER_LIST } from '../ProjectList/ProjectList';
 
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
-  const searchParameters = new URLSearchParams(window.location.search);
+  const searchParameters =
+    // Disable for server side rendering
+    typeof window === 'undefined'
+      ? new URLSearchParams('')
+      : new URLSearchParams(window.location.search);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -15,7 +19,7 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
 
     if (
       searchParameterEntries &&
-      PROJECT_FILTER_LIST.includes(searchParameterEntries.filter)
+      PROJECT_FILTER_LIST.includes(searchParameterEntries?.filter)
     ) {
       setActiveTag(searchParameterEntries.filter);
     }
@@ -23,6 +27,11 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
   }, []);
 
   useEffect(() => {
+    // Disable for server side rendering
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     if (activeTag === null) {
       window.history.replaceState({}, '', `${window.location.pathname}`);
     } else {
