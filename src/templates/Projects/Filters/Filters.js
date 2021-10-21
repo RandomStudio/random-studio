@@ -7,7 +7,20 @@ import { PROJECT_FILTER_LIST } from '../ProjectList/ProjectList';
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
   const searchParameters = new URLSearchParams(window.location.search);
   const [isOpen, setIsOpen] = useState(false);
-  const [searchFilter, setSearchFilter] = useState([]);
+
+  useEffect(() => {
+    const searchParameterEntries = Object.fromEntries(
+      searchParameters.entries(),
+    );
+
+    if (
+      searchParameterEntries &&
+      PROJECT_FILTER_LIST.includes(searchParameterEntries.filter)
+    ) {
+      setActiveTag(searchParameterEntries.filter);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (activeTag === null) {
@@ -27,21 +40,6 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
   const handleSelectFilter = (filter) => {
     setActiveTag(filter === activeTag ? null : filter);
   };
-
-  useEffect(() => {
-    const searchParameterEntries = Object.fromEntries(
-      searchParameters.entries(),
-    );
-
-    if (
-      searchParameterEntries &&
-      PROJECT_FILTER_LIST.includes(searchParameterEntries.filter)
-    ) {
-      setSearchFilter(searchParameterEntries.filter);
-      setActiveTag(searchParameterEntries.filter);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>
