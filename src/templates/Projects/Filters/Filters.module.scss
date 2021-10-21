@@ -19,6 +19,11 @@
   cursor: pointer;
   padding: 20px;
 
+  &:hover {
+    opacity: 0.75;
+    transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+  }
+
   &:not(.activeTag) {
     color: #d0d0d0;
   }
