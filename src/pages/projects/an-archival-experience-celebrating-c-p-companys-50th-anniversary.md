@@ -95,22 +95,22 @@ content:
     width: 35
   - caption: At the epicentre of the exhibition, a series of 4 mobile interactive racks invited visitors to physically explore different chapters of the brand’s story, ‘scrolling’ through an atmospheric sequence of graphics, sketches, patterns and tactile transitions. Acting as an index to the rest of the exhibition, visitors could navigate through C.P. Company’s timeline, set in motion by the mobile archive racks. Encompassing the brand’s latest chapter – a collaboration with adidas Spezial designed by Darwen local Gary Aspden – the space also hosts a photo booth where visitors can have their portraits taken by photographer Neil Bedford, feeding back into the future of the archive.
   - video:
-    autoplay: false
-    hasControls: false
-    loops: true
-    isMuted: true
-    isAlwaysMuted: false
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
     marginTop: 0
     marginLeft: 55
     zIndex: 0
     image: /img/photo09.jpg
     width: 45
   - video:
-    autoplay: false
-    hasControls: false
-    loops: true
-    isMuted: true
-    isAlwaysMuted: false
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
     marginTop: -5
     marginLeft: 5
     zIndex: 0
@@ -119,22 +119,22 @@ content:
   - caption: |-
       <div class="content-section-padding">Due to its modular design, the exhibition format is reusable, premiering at Pitti Uomo in June 2021 as a smaller installation, with plans to travel to more locations in the future.</div>
   - video:
-    autoplay: false
-    hasControls: false
-    loops: true
-    isMuted: true
-    isAlwaysMuted: false
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
     image: /img/162A1217 copy.jpg
     width: 50
   - video:
-    autoplay: false
-    hasControls: false
-    loops: true
-    isMuted: true
-    isAlwaysMuted: false
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
     marginTop: -10
     marginLeft: 60
     zIndex: 0
@@ -178,4 +178,7 @@ credits:
       H-Farm – Web Development
 
       Sparklestreet studio – Exhibition Build
+opengraph:
+  ogImage: /img/cp-og.jpg
+  ogTitle: 'An Archival Experience celebrating C.P. Company’s 50th Anniversary'
 ---

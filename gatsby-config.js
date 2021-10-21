@@ -90,9 +90,7 @@ const gatsbyConfig = {
   ],
 };
 
-if (
-  process.env.NODE_ENV === 'production'
-) {
+if (process.env.NODE_ENV === 'production') {
   const gaConfig = {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
