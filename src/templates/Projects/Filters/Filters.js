@@ -1,8 +1,47 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React, { useEffect, useState } from 'react';
 import styles from './Filters.module.scss';
+import { PROJECT_FILTER_LIST } from '../ProjectList/ProjectList';
 
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
+  const searchParameters = new URLSearchParams(window.location.search);
   const [isOpen, setIsOpen] = useState(false);
+  const [searchFilter, setSearchFilter] = useState([]);
+
+  useEffect(() => {
+    if (activeTag === null) {
+      window.history.replaceState({}, '', `${window.location.pathname}`);
+    } else {
+      searchParameters.set('filter', activeTag);
+
+      window.history.replaceState(
+        {},
+        '',
+        `${window.location.pathname}?${searchParameters}`,
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTag]);
+
+  const handleSelectFilter = (filter) => {
+    setActiveTag(filter === activeTag ? null : filter);
+  };
+
+  useEffect(() => {
+    const searchParameterEntries = Object.fromEntries(
+      searchParameters.entries(),
+    );
+
+    if (
+      searchParameterEntries &&
+      PROJECT_FILTER_LIST.includes(searchParameterEntries.filter)
+    ) {
+      setSearchFilter(searchParameterEntries.filter);
+      setActiveTag(searchParameterEntries.filter);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -12,7 +51,9 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
             className={`${styles.filterEntry} ${
               activeTag !== null ? styles.activeFilter : ''
             } ${filter === activeTag ? styles.activeTag : ''}`}
-            onClick={() => setActiveTag(filter === activeTag ? null : filter)}
+            onClick={() => {
+              handleSelectFilter(filter);
+            }}
             key={filter}
           >
             {filter}{' '}
@@ -43,7 +84,7 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
               value={filter}
               className={`${styles.accordionEntry}`}
               onClick={() => {
-                setActiveTag(filter === activeTag ? null : filter);
+                handleSelectFilter(filter);
                 setIsOpen(false);
               }}
               key={filter}

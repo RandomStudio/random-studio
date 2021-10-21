@@ -4,6 +4,15 @@ import styles from './ProjectList.module.scss';
 import Project from './Project/Project';
 import Filters from '../Filters/Filters';
 
+export const PROJECT_FILTER_LIST = [
+  'Spatial Experience',
+  'Interactive Installation',
+  'Spatial Design',
+  'Exhibition & Event Design',
+  'Digital Partnership',
+  'Research & Design',
+];
+
 const ProjectList = ({ middle, projects }) => {
   const projectFilters = projects
     .map(({ tags }) => tags)
@@ -11,14 +20,7 @@ const ProjectList = ({ middle, projects }) => {
     .flat();
   // Was previously constructed dynamically but because the filterList has to be ordered in a certain way we have to hardcode it
   // const filterList = [...new Set([...projectFilters])];
-  const filterList = [
-    'Spatial Experience',
-    'Interactive Installation',
-    'Spatial Design',
-    'Exhibition & Event Design',
-    'Digital Partnership',
-    'Research & Design',
-  ];
+
   const filterCount = countBy(projectFilters);
 
   const [activeTag, setActiveTag] = useState(null);
@@ -26,7 +28,7 @@ const ProjectList = ({ middle, projects }) => {
   return (
     <>
       <Filters
-        filterList={filterList}
+        filterList={PROJECT_FILTER_LIST}
         filterCount={filterCount}
         activeTag={activeTag}
         setActiveTag={setActiveTag}
