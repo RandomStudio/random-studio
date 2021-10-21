@@ -29,14 +29,14 @@ projects:
     project: A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
   - thumbnail:
-      marginTop: -15
+      marginTop: -10
       marginLeft: 58
       image: /img/screenshot-2021-04-26-at-12.59.13.png
       width: 42
     project: Tide, a kinetic window display for Alexander McQueen
     caption: A kinetic window display for Alexander McQueen
   - thumbnail:
-      marginTop: -10
+      marginTop: -5
       marginLeft: 0
       image: /img/HOI PAR002_SU21_MTZ_08.jpg
       width: 46
@@ -48,8 +48,8 @@ projects:
     project: Kinetic architecture <br> for A/D/O by MINI
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
-      marginLeft: 65
-      marginTop: -15
+      marginLeft: 61
+      marginTop: -5
       width: 35
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
