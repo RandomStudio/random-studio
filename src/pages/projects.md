@@ -220,7 +220,7 @@ projects:
     thumbnail:
       image: /img/Hermes_thumbnail.jpg
       marginLeft: 20
-      marginTop: -5
+      marginTop: 0
       width: 60
     tags: ['Interactive Installation', 'Exhibition & Event Design']
   - caption: |-
