@@ -24,7 +24,7 @@ const Newsletter = () => {
         setError(body.errorMessage);
       }
     } catch (responseError) {
-      console.warn(responseError);
+      console.error(responseError);
       setError('Failed to submit. Please check email and try again.');
     }
 
