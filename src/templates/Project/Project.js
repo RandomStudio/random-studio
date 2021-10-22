@@ -112,8 +112,6 @@ const Project = (props) => {
 
   const { opengraph } = project;
 
-  const returnSlug = `#${slug}`;
-
   const socialTitle =
     opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
 
@@ -122,8 +120,6 @@ const Project = (props) => {
 
   const SEOImage =
     (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
-
-  console.log(project);
 
   return (
     <Layout>
@@ -136,7 +132,7 @@ const Project = (props) => {
         socialTitle={socialTitle}
       />
       <ProjectDetail {...project} allProjects={allProjects} />
-      {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
+      {typeof window !== 'undefined' && <BackScrim returnUrl="projects" />}
     </Layout>
   );
 };
