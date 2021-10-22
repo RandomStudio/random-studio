@@ -33,16 +33,17 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
     }
 
     if (activeTag === null) {
-      window.history.replaceState({}, '', `${window.location.pathname}`);
-    } else {
-      searchParameters.set('filter', activeTag);
-
-      window.history.replaceState(
-        {},
-        '',
-        `${window.location.pathname}?${searchParameters}`,
-      );
+      window.history.replaceState(null, '', window.location.pathname);
+      return;
     }
+
+    searchParameters.set('filter', activeTag);
+    window.history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}?${searchParameters}`,
+    );
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTag]);
 
