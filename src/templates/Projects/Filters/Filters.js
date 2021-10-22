@@ -4,12 +4,12 @@ import React, { useEffect, useState } from 'react';
 import styles from './Filters.module.scss';
 import { PROJECT_FILTER_LIST } from '../ProjectList/ProjectList';
 
+const searchParameters = new URLSearchParams(
+  typeof window !== 'undefined' ? window.location.search : '',
+);
+
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
-  const searchParameters =
-    // Disable for server side rendering
-    typeof window === 'undefined'
-      ? new URLSearchParams('')
-      : new URLSearchParams(window.location.search);
+  // Disable for server side rendering
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
