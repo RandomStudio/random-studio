@@ -4,17 +4,15 @@ import React, { useEffect, useState } from 'react';
 import styles from './Filters.module.scss';
 import { PROJECT_FILTER_LIST } from '../ProjectList/ProjectList';
 
-const searchParameters = new URLSearchParams(
-  typeof window !== 'undefined' ? window.location.search : '',
-);
-
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
   // Disable for server side rendering
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const searchParameterEntries = Object.fromEntries(
-      searchParameters.entries(),
+      new URLSearchParams(
+        typeof window !== 'undefined' ? window.location.search : '',
+      ).entries(),
     );
 
     if (
@@ -23,7 +21,6 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
     ) {
       setActiveTag(searchParameterEntries.filter);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -37,14 +34,15 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
       return;
     }
 
+    const searchParameters = new URLSearchParams(
+      typeof window !== 'undefined' ? window.location.search : '',
+    );
     searchParameters.set('filter', activeTag);
     window.history.replaceState(
       null,
       '',
       `${window.location.pathname}?${searchParameters}`,
     );
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTag]);
 
   const handleSelectFilter = (filter) => {
