@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: "Digital Partner for French Fashion House Maison Margiela – Défilé AW19 "
+title: 'Digital Partner for French Fashion House Maison Margiela – Défilé AW19 '
 intro: >-
   Since SS19, we have been collaborating with Maison Margiela as a digital
   partner for six of their collections. Guided by John Galliano’s radical
@@ -54,7 +54,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: We explored the spirit of this contemporary Swan Lake through a variety
+    caption:
+      We explored the spirit of this contemporary Swan Lake through a variety
       of different formats, from a show teaser and a runway video to a podcast
       teaser. Peeking into Galliano’s vivid imagination and well of inspiration,
       it was hailed as the first of its kind in the fashion industry – a bold
@@ -79,21 +80,24 @@ relatedProjects:
   blockTitle: Other Projects
   projects:
     - title: Défilé AW20
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé AW20
       image: /img/Defile_AW20_2.jpg
     - title: Artisanal SS20
       image: /img/maisonmargiela_81808808_204434447280190_7719988786441022934_n.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS20
     - title: Défilé SS20
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé SS20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
     - title: Artisanal AW19
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         AW19
       image: /img/Artisanal_AW19.png
     - title: Artisanal SS19
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS19
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
 credits:

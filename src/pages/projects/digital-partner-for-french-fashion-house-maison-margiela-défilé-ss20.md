@@ -60,7 +60,8 @@ content:
       - type: image
         image: /img/maisonmargiela_90474346_890145831426414_6498633189150380167_n.jpg
       - type: image
-        image: /img/maisonmargiela_90855243_1235793599957650_1674157971718148350_n
+        image:
+          /img/maisonmargiela_90855243_1235793599957650_1674157971718148350_n
           (1).jpg
       - type: image
         image: /img/maisonmargiela_91048393_254866045555927_6862242121016386468_n.jpg
@@ -95,7 +96,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408402300.sd.mp4?s=35b8a828f487dbdd1e70fa0c1883b2b05becfc75&profile_id=165
-        caption: ""
+        caption: ''
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408402405.sd.mp4?s=4f5fad054021774b79a363f141daaf769d2771be&profile_id=165
@@ -124,7 +125,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: We foregrounded this idea of ‘Remembrance’ in the assets we created,
+    caption:
+      We foregrounded this idea of ‘Remembrance’ in the assets we created,
       referencing the feeling of hope Galliano found in the heroes of WW2 in the
       podcast teaser, show teaser and runway video. Grounding the collection
       firmly back in the present, we also introduced photography of the show
@@ -205,7 +207,7 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408767135.sd.mp4?s=ee2238d2835ab676b1aac1cf720ff3a264781c74&profile_id=165
-    alt: ""
+    alt: ''
     caption: Vignettes
     width: 34
     zIndex: 1
@@ -214,34 +216,38 @@ relatedProjects:
   projects:
     - title: Défilé AW20
       image: /img/Defile_AW20_2.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé AW20
     - title: Artisanal SS20
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS20
       image: /img/maisonmargiela_81808808_204434447280190_7719988786441022934_n.jpg
     - title: Artisanal AW19
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         AW19
       image: /img/Artisanal_AW19.png
     - title: Défilé AW19
       image: /img/Defile_AW19.png
-      project: "Digital Partner for Belgium Fashion House Maison Margiela – Défilé
-        AW19 "
+      project:
+        'Digital Partner for French Fashion House Maison Margiela – Défilé
+        AW19 '
     - title: Artisanal SS19
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS19
 credits:
-  - value: "Maison Margiela "
-    key: "For: "
-  - key: "Role:"
+  - value: 'Maison Margiela '
+    key: 'For: '
+  - key: 'Role:'
     value: Creative Direction, Production Oversight, Post Production, Main Show
       Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
       Launch Photography
-  - key: "With: "
-    value: "Lonneke van der Palen – Photography  "
+  - key: 'With: '
+    value: 'Lonneke van der Palen – Photography  '
 opengraph:
-  ogTitle: ""
-  ogDescription: ""
+  ogTitle: ''
+  ogDescription: ''
   ogImage: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
 ---

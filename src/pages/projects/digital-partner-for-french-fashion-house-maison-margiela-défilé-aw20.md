@@ -53,11 +53,11 @@ content:
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408400349.sd.mp4?s=dfe4fdec6491f6e166ddd1ea7ab0de4b9c7de5bc&profile_id=165
-        caption: ""
+        caption: ''
       - type: video
         isMuted: true
         url: https://player.vimeo.com/external/408400397.sd.mp4?s=5de32129668f701c31a4076d4cfed459f2c58998&profile_id=165
-        caption: ""
+        caption: ''
     width: 38
     caption: Teasers
     zIndex: 1
@@ -69,44 +69,49 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: Galliano’s obsession was something we wanted to amplify in the assets
+    caption:
+      Galliano’s obsession was something we wanted to amplify in the assets
       we created, highlighting small details such as the vegetables decorating
       some of the outfits and the unique cuts of each altered uniform.
     zIndex: 1
 relatedProjects:
   blockTitle: Other Projects
   projects:
-    - project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+    - project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS20
       title: Artisanal SS20
       image: /img/maisonmargiela_81808808_204434447280190_7719988786441022934_n.jpg
     - title: Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé SS20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé SS20
     - title: Artisanal AW19
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         AW19
       image: /img/Artisanal_AW19.png
     - title: Défilé AW19
-      project: "Digital Partner for Belgium Fashion House Maison Margiela – Défilé
-        AW19 "
+      project:
+        'Digital Partner for French Fashion House Maison Margiela – Défilé
+        AW19 '
       image: /img/Defile_AW19.png
     - title: Artisanal SS19
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS19
 credits:
-  - key: "For: "
-    value: "Maison Margiela "
-  - key: "Role:"
+  - key: 'For: '
+    value: 'Maison Margiela '
+  - key: 'Role:'
     value: Creative Direction, Production Oversight, Post Production, Main Show
       Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
       Launch Photography.
-  - key: "With: "
-    value: "Lonneke van der Palen – Photography "
+  - key: 'With: '
+    value: 'Lonneke van der Palen – Photography '
 opengraph:
   ogImage: /img/Defile_AW20_2.jpg
-  ogTitle: " Maison Margiela – Défilé AW20"
+  ogTitle: ' Maison Margiela – Défilé AW20'
   ogDescription: Continuing on the theme of remixing the house’s heritage,
     Galliano’s concept of ‘Recicla’ – resurrecting and deconstructing shapes
     from the past – was at the core of this collection.  Driven by a new

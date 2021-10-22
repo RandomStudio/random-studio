@@ -24,7 +24,7 @@ content:
       url: https://player.vimeo.com/external/408355369.hd.mp4?s=7b97222b1b36edde5967c3b804b9f98b95e216ec&profile_id=175
     marginTop: 0
     marginLeft: 0
-    caption: ""
+    caption: ''
     zIndex: 1
   - video:
       autoplay: false
@@ -75,7 +75,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: Our documentation of the show played on the borders of fake and real.
+    caption:
+      Our documentation of the show played on the borders of fake and real.
       The show itself was a spectacle-like affair so we captured it from every
       angle and perspective, creating a stream of different images and content
       including the main runway video, live-editing for Instagram Live, a
@@ -104,22 +105,25 @@ relatedProjects:
   blockTitle: Other Projects
   projects:
     - title: Défilé AW20
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé AW20
       image: /img/Defile_AW20_2.jpg
     - title: Artisanal SS20
       image: /img/maisonmargiela_81808808_204434447280190_7719988786441022934_n.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS20
     - title: Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé SS20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé SS20
     - title: Artisanal AW19
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         AW19
       image: /img/Artisanal_AW19.png
     - title: Défilé AW19
-      project: "Digital Partner for Belgium Fashion House Maison Margiela – Défilé
-        AW19 "
+      project:
+        'Digital Partner for French Fashion House Maison Margiela – Défilé
+        AW19 '
       image: /img/Defile_AW19.png
 credits:
   - key: |+
@@ -127,23 +131,24 @@ credits:
 
     value: Maison Margiela
   - key: |
-      
+
       Role:
     value: >
       Creative Direction, Production Oversight, Post Production, Main Show Video
       Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch
       Photography
   - key: |
-      
+
       With:
     value: Lonneke van der Palen – Photography
 opengraph:
   ogImage: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
-  ogDescription: "Our documentation of the show played on the borders of fake and
+  ogDescription:
+    'Our documentation of the show played on the borders of fake and
     real. The show itself was a spectacle-like affair so we captured it from
     every angle and perspective, creating a stream of different images and
     content including the main runway video, live-editing for Instagram Live, a
     pre-show teaser, a podcast teaser, a series of backstage videos and
-    backstage and empty-set photography. "
+    backstage and empty-set photography. '
   ogTitle: Maison Margiela – Artisanal SS19
 ---

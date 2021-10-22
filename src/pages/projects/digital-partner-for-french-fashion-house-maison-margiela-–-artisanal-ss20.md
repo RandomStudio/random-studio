@@ -108,7 +108,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-      url: ""
+      url: ''
     marginTop: 7
     marginLeft: 13
     carousel:
@@ -129,7 +129,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: Across the show teaser, podcast teaser and runway video we created, our
+    caption:
+      Across the show teaser, podcast teaser and runway video we created, our
       visual response was to hone in on the idea of ‘Gesture’ and fine details
       of the garments, as well as amplifying the seduction, suspense and vibrant
       colours of the collection. We also photographed the Maison Margiela x
@@ -175,31 +176,34 @@ relatedProjects:
   blockTitle: Other Projects
   projects:
     - title: Défilé AW20
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé AW20
       image: /img/Defile_AW20_2.jpg
     - title: Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé SS20
+      project: Digital Partner for French Fashion House Maison Margiela – Défilé SS20
     - title: Artisanal AW19
       image: /img/Artisanal_AW19.png
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         AW19
     - title: Défilé AW19
-      project: "Digital Partner for Belgium Fashion House Maison Margiela – Défilé
-        AW19 "
+      project:
+        'Digital Partner for French Fashion House Maison Margiela – Défilé
+        AW19 '
       image: /img/Defile_AW19.png
     - title: Artisanal SS19
-      project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
+      project:
+        Digital Partner for French Fashion House Maison Margiela – Artisanal
         SS19
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Maison Margiela
   - value: Creative Direction, Production Oversight, Post Production, Main Show
       Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product
       Launch Photography.
-    key: "Role:"
-  - key: "With:"
+    key: 'Role:'
+  - key: 'With:'
     value: Lonneke van der Palen – Photography
 opengraph:
   ogTitle: Maison Margiela – Artisanal SS20

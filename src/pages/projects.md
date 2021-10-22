@@ -13,15 +13,15 @@ projects:
       marginTop: 0
       marginLeft: 0
       image: /img/BV_1.jpg
-      width: 50
+      width: 46
     project: A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
     tags: ['Spatial Experience', 'Exhibition & Event Design']
   - thumbnail:
       marginTop: 0
-      marginLeft: 53
+      marginLeft: 54
       image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
-      width: 47
+      width: 46
     caption: Your body as a controller in Nike's House of Innovation Paris
     project: Your body as a controller in Nike's House of Innovation Paris
     tags: ['Interactive Installation']
@@ -51,7 +51,7 @@ projects:
     tags: ['Spatial Experience']
   - thumbnail:
       ratio: 0
-      marginTop: -23
+      marginTop: 0
       marginLeft: 0
       image: /img/COS_093.jpg
       width: 46
@@ -61,7 +61,7 @@ projects:
       A Pop-Up Installation for COS
     tags: ['Spatial Design', 'Exhibition & Event Design']
   - thumbnail:
-      marginTop: -23
+      marginTop: 0
       marginLeft: 53
       width: 47
       image: /img/look_37.4.jpg
@@ -71,7 +71,7 @@ projects:
     project: A live spectacle for Chloé's SS21 Collection
     tags: ['Digital Partnership']
   - thumbnail:
-      marginTop: -10
+      marginTop: 0
       marginLeft: 6
       video: ''
       width: 40
@@ -80,7 +80,7 @@ projects:
     caption: An internet creation myth for kids
     tags: ['Interactive Installation']
   - thumbnail:
-      marginTop: -5
+      marginTop: 0
       marginLeft: 53
       video: https://player.vimeo.com/external/429970176.hd.mp4?s=81a2fba7165ae9e4c135b055b6295fb233dfe4ba&profile_id=175
       width: 47
@@ -88,7 +88,7 @@ projects:
     project: A series of digital experiments for SPACE10
     tags: ['Research & Design']
   - thumbnail:
-      marginTop: -35
+      marginTop: 0
       marginLeft: 0
       video: https://player.vimeo.com/external/435711991.hd.mp4?s=281b97c0386ca4087c95977df6d7f80b0f3c04bb&profile_id=175
       width: 37
@@ -100,7 +100,7 @@ projects:
     thumbnail:
       image: /img/cinekid12.jpg
       marginLeft: 60
-      marginTop: -16
+      marginTop: 0
       width: 40
     tags: ['Interactive Installation']
   - caption: |-
@@ -113,7 +113,7 @@ projects:
     thumbnail:
       image: /img/jihye-1-.jpg
       marginLeft: 10
-      marginTop: 17
+      marginTop: 0
       width: 36
     tags: ['Digital Partnership']
   - caption: |-
@@ -123,7 +123,7 @@ projects:
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
       marginLeft: 65
-      marginTop: -30
+      marginTop: 0
       width: 35
     tags: ['Spatial Experience']
   - caption: Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton
@@ -167,7 +167,7 @@ projects:
     thumbnail:
       image: /img/200304_bottegaveneta_saks__084.jpg
       marginLeft: 60
-      marginTop: -14
+      marginTop: 0
       width: 40
     tags: ['Spatial Design']
   - caption: An immersive in-store environment for NikeLab Milano
@@ -175,13 +175,13 @@ projects:
     thumbnail:
       image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.png
       marginLeft: 0
-      marginTop: -27
+      marginTop: 0
       width: 35
   - caption: An interactive sunrise in collaboration with Philip Schuette
     project: An interactive sunrise in collaboration with Philip Schuette
     thumbnail:
       marginLeft: 50
-      marginTop: -28
+      marginTop: 0
       video: https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
       width: 49
     tags: ['Research & Design']
@@ -193,14 +193,13 @@ projects:
       marginTop: 0
       width: 40
     tags: ['Spatial Experience', 'Interactive Installation']
-  - caption: Digital Partner for Belgium Fashion House Maison Margiela
-    project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé AW20
+  - caption: Digital Partner for French Fashion House Maison Margiela
+    project: Digital Partner for French Fashion House Maison Margiela – Défilé AW20
     thumbnail:
       marginLeft: 60
-      marginTop: -41
-      video: ''
-      width: 35
+      marginTop: 0
       image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+      width: 35
     tags: ['Digital Partnership']
   - caption: |-
       Digital partner
@@ -212,7 +211,7 @@ projects:
       for Raf Simons
     thumbnail:
       marginLeft: 0
-      marginTop: 10
+      marginTop: 0
       video: https://player.vimeo.com/external/345423611.sd.mp4?s=f08c9728c31f514ead3a1acbcf2810cb5bd8defb&profile_id=165
       width: 60
     tags: ['Digital Partnership']
@@ -242,7 +241,7 @@ projects:
     project: An infinity room for NikeLab
     thumbnail:
       marginLeft: 50
-      marginTop: -30
+      marginTop: 0
       video: https://player.vimeo.com/external/210279283.hd.mp4?s=706d9c6149f5bd15d01856a15818b6e9a8702a80&profile_id=119
       width: 50
     tags: ['Spatial Experience', 'Interactive Installation']

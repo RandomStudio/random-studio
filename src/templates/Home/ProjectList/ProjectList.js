@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import styles from './ProjectList.module.scss';
 import Project from '../../Projects/ProjectList/Project/Project';
 import ResearchBlock from './IntermittentBlock/ResearchBlock';
-import SeeMore from './SeeMore/SeeMore';
 
 const PROJECT_LIMIT = 6;
 
