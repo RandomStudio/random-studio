@@ -2,48 +2,56 @@
 templateKey: Projects
 projects:
   - thumbnail:
-      marginTop: 0
-      marginLeft: 53
       image: /img/HOI PAR002_SU21_MTZ_08.jpg
-      width: 47
+      marginLeft: 25
+      marginTop: 0
+      width: 50
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation Takeover
     tags: ['Exhibition & Event Design']
   - thumbnail:
-      marginTop: -32
-      marginLeft: 4
-      image: /img/screenshot-2021-04-26-at-12.59.13.png
-      width: 42
-    project: Tide, a kinetic window display for Alexander McQueen
-    caption: A kinetic window display for Alexander McQueen
-    tags: ['Spatial Experience']
-  - thumbnail:
-      marginTop: -2
-      marginLeft: 23
+      marginTop: 0
+      marginLeft: 0
       image: /img/BV_1.jpg
-      width: 54
+      width: 50
     project: A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
     tags: ['Spatial Experience', 'Exhibition & Event Design']
-  - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
-    project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
-    thumbnail:
-      image: /img/thumbnail_chanel-1-.png
-      marginLeft: 0
-      marginTop: 0
-      width: 46
-    tags: ['Spatial Experience', 'Exhibition & Event Design']
   - thumbnail:
-      marginTop: -32
+      marginTop: 0
       marginLeft: 53
       image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
       width: 47
     caption: Your body as a controller in Nike's House of Innovation Paris
     project: Your body as a controller in Nike's House of Innovation Paris
     tags: ['Interactive Installation']
+  - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+    project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+    thumbnail:
+      image: /img/thumbnail_chanel-1-.png
+      marginLeft: 25
+      marginTop: 0
+      width: 50
+    tags: ['Spatial Experience', 'Exhibition & Event Design']
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 0
+      image: /img/new-random_licht_stills_5.jpg
+      width: 42
+    project: A studio sun system with light-artist Arnout Meijer
+    caption: A studio sun system with light-artist Arnout Meijer
+    tags: ['Research & Design']
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 58
+      image: /img/screenshot-2021-04-26-at-12.59.13.png
+      width: 42
+    project: Tide, a kinetic window display for Alexander McQueen
+    caption: A kinetic window display for Alexander McQueen
+    tags: ['Spatial Experience']
   - thumbnail:
       ratio: 0
-      marginTop: -10
+      marginTop: -23
       marginLeft: 0
       image: /img/COS_093.jpg
       width: 46
@@ -95,14 +103,6 @@ projects:
       marginTop: -16
       width: 40
     tags: ['Interactive Installation']
-  - thumbnail:
-      marginTop: -22
-      marginLeft: 0
-      image: /img/new-random_licht_stills_5.jpg
-      width: 46
-    project: A studio sun system with light-artist Arnout Meijer
-    caption: A studio sun system with light-artist Arnout Meijer
-    tags: ['Research & Design']
   - caption: |-
       A Lookbook of Many Gazes
 
