@@ -27,7 +27,7 @@ services:
     - copy: |-
         R&D Partnerships including bespoke trend reports,
         future concepts and prototypes.
-      image: /img/studio_expertise3.jpg
+      image: /img/design-research.png
       title: Design Research
   title: 'Our Areas of Expertise:'
 skillset:
