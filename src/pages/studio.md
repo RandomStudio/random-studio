@@ -17,7 +17,7 @@ services:
         including strategy, spatial design and engineering.
       image: /img/connected-space-02-lv-2x.jpg
       title: |-
-        Experience Design For
+        Experience Design for
         Retail and Exhibitions
     - copy: |-
         Strategy and continuous development

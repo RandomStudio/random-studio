@@ -6,6 +6,7 @@
 }
 
 .header {
+  text-align: center;
   font-size: var(--px-font-med);
   font-weight: normal;
   margin-bottom: 80px;
@@ -13,12 +14,11 @@
 
   @media (min-width: 768px) {
     padding: 0;
-    margin: 0 0 160px 120px;
+    margin-bottom: 160px;
   }
 
   @media (min-width: 960px) {
     font-size: var(--font-large);
-    margin-left: 220px;
   }
 }
 
