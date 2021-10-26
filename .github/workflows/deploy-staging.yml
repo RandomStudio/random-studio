@@ -15,22 +15,22 @@ jobs:
           node-version: '15'
       - name: Install dependencies
         run: npm install
-      - name: Gatsby Cache Folder
-        uses: actions/cache@v1
-        id: gatsby-cache-folder
-        with:
-          path: .cache
-          key: ${{ runner.os }}-cache-gatsby
-          restore-keys: |
-            ${{ runner.os }}-cache-gatsby
-      - name: Gatsby Public Folder
-        uses: actions/cache@v1
-        id: gatsby-public-folder
-        with:
-          path: public/
-          key: ${{ runner.os }}-public-gatsby
-          restore-keys: |
-            ${{ runner.os }}-public-gatsby
+      # - name: Gatsby Cache Folder
+      #   uses: actions/cache@v1
+      #   id: gatsby-cache-folder
+      #   with:
+      #     path: .cache
+      #     key: ${{ runner.os }}-cache-gatsby
+      #     restore-keys: |
+      #       ${{ runner.os }}-cache-gatsby
+      # - name: Gatsby Public Folder
+      #   uses: actions/cache@v1
+      #   id: gatsby-public-folder
+      #   with:
+      #     path: public/
+      #     key: ${{ runner.os }}-public-gatsby
+      #     restore-keys: |
+      #       ${{ runner.os }}-public-gatsby
       - name: 'build'
         run: |
           npm run build
