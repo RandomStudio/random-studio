@@ -4,7 +4,7 @@
   font-family: 'Larish Neue', serif;
   @include blendedText;
   position: absolute;
-  left: 22px;
+  left: 38px;
   font-size: var(--font-logo-small);
   font-weight: normal;
   line-height: 1.1;
@@ -23,6 +23,6 @@
   }
 
   &.is-top {
-    top: 30px;
+    top: 38px;
   }
 }
