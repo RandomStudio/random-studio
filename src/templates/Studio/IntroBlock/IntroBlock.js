@@ -11,7 +11,6 @@ const IntroBlock = ({ title, intros }, ref) => (
         image={image}
         index={index}
         copy={copy}
-        title={title}
         video={video && video.publicURL}
       />
     ))}
