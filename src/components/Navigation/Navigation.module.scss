@@ -2,9 +2,9 @@
 
 .nav {
   @include blendedText(black, normal);
+  display: flex;
   position: fixed;
   top: 0;
-  text-align: right;
   padding: 22px;
   width: 100%;
   font-size: 19px;
@@ -19,6 +19,11 @@
     & + a {
       margin-left: 32px;
     }
+  }
+
+  @media (min-width: 1152px) {
+    display: block;
+    text-align: right;
   }
 }
 
