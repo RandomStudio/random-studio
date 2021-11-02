@@ -17,8 +17,17 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 23
-      image: /img/cp-thumb.jpg
+      image: /img/RND_DP_Berlin-1.jpg
       width: 54
+    caption: |-
+      A Glitch Palace 
+      for the Dom Pérignon x Lady Gaga Collaboration
+    project: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 50
+      image: /img/cp-thumb.jpg
+      width: 46
     project: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
     caption: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
   - thumbnail:
@@ -59,8 +68,8 @@ projects:
       marginTop: 0
       width: 46
 articles: null
-address: '> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
-  [Directions](https://goo.gl/maps/7rGuGBBfhms)'
+address: "> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
+  [Directions](https://goo.gl/maps/7rGuGBBfhms)"
 phone: +31 20 779 7735
 email: hello@random.studio
 ---
