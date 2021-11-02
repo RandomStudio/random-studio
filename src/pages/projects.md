@@ -2,10 +2,18 @@
 templateKey: Projects
 projects:
   - thumbnail:
-      image: /img/HOI PAR002_SU21_MTZ_08.jpg
-      marginLeft: 25
       marginTop: 0
-      width: 50
+      marginLeft: 23
+      image: /img/RND_DP_Berlin-1.jpg
+      width: 54
+    project: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
+    caption: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
+    tags: ['Spatial Experience', 'Interactive Space']
+  - thumbnail:
+      image: /img/HOI PAR002_SU21_MTZ_08.jpg
+      marginLeft: 50
+      marginTop: 0
+      width: 46
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation Takeover
     tags: ['Exhibition & Event Design']
