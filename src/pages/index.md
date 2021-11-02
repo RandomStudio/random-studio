@@ -21,7 +21,7 @@ projects:
       width: 54
     caption: |-
       A Glitch Palace 
-      for the Dom Pérignon x Lady Gaga Collaboration
+      for the Dom Pérignon x Lady Gaga collaboration
     project: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
   - thumbnail:
       marginTop: 0
@@ -29,7 +29,7 @@ projects:
       image: /img/cp-thumb.jpg
       width: 46
     project: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
-    caption: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
+    caption: An archival experience celebrating <br>C.P. Company’s anniversary
   - thumbnail:
       marginTop: 0
       marginLeft: 4
@@ -50,7 +50,7 @@ projects:
       image: /img/HOI PAR002_SU21_MTZ_08.jpg
       width: 46
     project: Nike Move to Zero House of Innovation Takeover
-    caption: Nike Move to Zero House of Innovation Takeover
+    caption: Nike Move to Zero House of Innovation takeover
   - caption: |-
       Kinetic architecture <br>
       for A/D/O by MINI
