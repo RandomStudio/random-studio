@@ -87,9 +87,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       carousel: [CarouselElement]
     }
 
+    type Thumbnail {
+      image: File @fileByRelativePath
+    }
+
+    type Project {
+      thumbnail: Thumbnail
+    }
+
     type MarkdownRemarkFrontmatter implements Node {
       articles: [Article]
       content: [Content]
+      projects: [Project]
     }
   `;
 
