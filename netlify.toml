@@ -28,3 +28,9 @@
   from = "/chloe"
   to = "/projects/a-ss21-collection-experience-for-chlo%C3%A9/"
   status = 200
+
+[[redirects]]
+  from = "/newsletter"
+  to = "http://eepurl.com/gebngv"
+  status = 200
+  force = true
