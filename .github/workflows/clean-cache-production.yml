@@ -1,8 +1,5 @@
 name: Clean cache Production
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 jobs:
   clean:
