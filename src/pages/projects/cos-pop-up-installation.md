@@ -1,7 +1,7 @@
 ---
 templateKey: Project
 title: |
-  COS Pop-Up Installation
+  A Pop-Up Installation for COS at Salone del Mobile
 intro: COS commissioned us to create a pop-up concept store during Salone del
   Mobile in Milan. Located in the Lambrate district, our installation
   transformed the brand’s signature minimalism into a spatial experience.
