@@ -90,6 +90,59 @@ content:
     marginLeft: 45
     image: /img/screenshot-2021-04-26-at-12.59.26.png
     width: 50
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: Next up on the world tour is Shanghai, where we created a new environment for the Curve bag in the form of a pop-up store at the IAPM Atrium. This time it was a microscopic view of nature that informed our design of the space, set in motion by several life-size kaleidoscopic screens activated by the presence of each visitor. 
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    image: /img/AMQ_image.jpg
+    width: 50
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: -25
+    marginLeft: 64
+    image: /img/AMQ_image3.jpg
+    width: 28
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: -5
+    marginLeft: 15
+    image: /img/AMQ_image2.jpg
+    width: 35
+  - video:
+      autoplay: false
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: false
+    ratio: 0
+    marginTop: 0
+    marginLeft: 0
+    caption: Visitors enter a symmetrical space, reflecting the architecture of a kaleidoscope. Drawing on a recurrent motif across Alexander McQueens history – the butterfly – each of the five screens positioned through the space hosts an ever-evolving sequence of abstract natural patterns, taking their colour palette from the bag’s design. Inspired by the metamorphosis of a butterfly, the visuals shift and transform, delving further into the patterns the longer a visitor is present. Once they leave, the kaleidoscope slowly reverses to its original state, ready to restart its hypnotic life cycle the next time someone steps in front of the screen. Visitors are also invited to enter the kaleidoscope on their own screens via a Face Filter, taking a memory of the pop-up home with them or experiencing it from afar.
 credits:
   - key: "For:"
     value: Alexander McQueen
