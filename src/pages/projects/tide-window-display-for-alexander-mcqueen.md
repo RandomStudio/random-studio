@@ -142,7 +142,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: Visitors enter a symmetrical space, reflecting the architecture of a kaleidoscope. Drawing on a recurrent motif across Alexander McQueens history – the butterfly – each of the five screens positioned through the space hosts an ever-evolving sequence of abstract natural patterns, taking their colour palette from the bag’s design. Inspired by the metamorphosis of a butterfly, the visuals shift and transform, delving further into the patterns the longer a visitor is present. Once they leave, the kaleidoscope slowly reverses to its original state, ready to restart its hypnotic life cycle the next time someone steps in front of the screen. Visitors are also invited to enter the kaleidoscope on their own screens via a Face Filter, taking a memory of the pop-up home with them or experiencing it from afar.
+    caption: Visitors enter a symmetrical space, reflecting the architecture of a kaleidoscope. Drawing on a recurrent motif across Alexander McQueen's history – the butterfly – each of the five screens positioned throughout the space hosts an ever-evolving sequence of abstract natural patterns, taking their colour palette from the bag’s design. Inspired by the metamorphosis of a butterfly, the visuals shift and transform, delving further into the patterns the longer a visitor is present. Once they leave, the kaleidoscope slowly reverses to its original state, ready to restart its hypnotic life cycle the next time someone steps in front of the screen. Visitors are also invited to enter the kaleidoscope on their own screens via a face filter, taking a memory of the pop-up home with them or experiencing it from afar.
 credits:
   - key: "For:"
     value: Alexander McQueen
