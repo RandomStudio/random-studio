@@ -157,6 +157,50 @@ content:
     marginTop: 0
     marginLeft: 0
     caption: Visitors enter a symmetrical space, reflecting the architecture of a kaleidoscope. Drawing on a recurrent motif across Alexander McQueen's history – the butterfly – each of the five screens positioned throughout the space hosts an ever-evolving sequence of abstract natural patterns, taking their colour palette from the bag’s design. Inspired by the metamorphosis of a butterfly, the visuals shift and transform, delving further into the patterns the longer a visitor is present. Once they leave, the kaleidoscope slowly reverses to its original state, ready to restart its hypnotic life cycle the next time someone steps in front of the screen. Visitors are also invited to enter the kaleidoscope on their own screens via a face filter, taking a memory of the pop-up home with them or experiencing it from afar.
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: true
+      url: https://player.vimeo.com/external/644756017.hd.mp4?s=af78beaae83b61610fb3d82ac84f5c11256c8869&profile_id=174&download=1
+    ratio: 1
+    marginTop: 0
+    marginLeft: 13
+    width: 17
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: true
+      url: https://player.vimeo.com/external/644757269.hd.mp4?s=63e0dfe168359dbb532536e5c83330e53bb2b258&profile_id=174&download=1
+    ratio: 1
+    marginTop: -30.3
+    marginLeft: 31
+    width: 17
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: true
+      url: https://player.vimeo.com/external/644756945.hd.mp4?s=21a8a86ddcb16d0435edc555e31734d57bfbfced&profile_id=174&download=1
+    ratio: 1
+    marginTop: -30.3
+    marginLeft: 49
+    width: 17
+  - video:
+      autoplay: true
+      hasControls: false
+      loops: true
+      isMuted: true
+      isAlwaysMuted: true
+      url: https://player.vimeo.com/external/644756353.hd.mp4?s=5eb78b0564e5b10bf237748703baf214e0b69a76&profile_id=174&download=1
+    ratio: 1
+    marginTop: -30.3
+    marginLeft: 67
+    width: 17
 credits:
   - key: "For:"
     value: Alexander McQueen
