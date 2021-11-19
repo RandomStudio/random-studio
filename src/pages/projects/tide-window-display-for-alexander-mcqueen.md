@@ -109,7 +109,15 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    image: /img/AMQ_image.jpg
+    carousel:
+      - type: image
+        image: /img/AMQ_image1a.jpg
+      - type: image
+        image: /img/AMQ_image1b.jpg
+      - type: image
+        image: /img/AMQ_image1c.jpg
+      - type: image
+        image: /img/AMQ_image1d.jpg
     width: 50
   - video:
       autoplay: false
@@ -120,7 +128,7 @@ content:
     ratio: 0
     marginTop: -25
     marginLeft: 64
-    image: /img/AMQ_image3.jpg
+    image: /img/AMQ_image2.jpg
     width: 28
   - video:
       autoplay: false
@@ -131,8 +139,14 @@ content:
     ratio: 0
     marginTop: -5
     marginLeft: 15
-    image: /img/AMQ_image2.jpg
     width: 35
+    carousel:
+      - type: image
+        image: /img/AMQ_image3a.jpg
+      - type: image
+        image: /img/AMQ_image3b.jpg
+      - type: image
+        image: /img/AMQ_image3c.jpg
   - video:
       autoplay: false
       hasControls: false
