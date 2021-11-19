@@ -165,7 +165,7 @@ content:
       isAlwaysMuted: true
       url: https://player.vimeo.com/external/644756017.hd.mp4?s=af78beaae83b61610fb3d82ac84f5c11256c8869&profile_id=174&download=1
     ratio: 1
-    marginTop: 0
+    marginTop: 10
     marginLeft: 13
     width: 17
   - video:
