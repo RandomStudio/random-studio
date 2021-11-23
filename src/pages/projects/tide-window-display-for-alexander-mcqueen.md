@@ -163,7 +163,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: true
-      url: https://player.vimeo.com/external/644756017.hd.mp4?s=af78beaae83b61610fb3d82ac84f5c11256c8869&profile_id=174&download=1
+      url: https://player.vimeo.com/external/644756017.sd.mp4?s=99695fb4b8b523014206786e08266d745776c98b&profile_id=165
     ratio: 1
     marginTop: 10
     marginLeft: 13
@@ -174,7 +174,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: true
-      url: https://player.vimeo.com/external/644757269.hd.mp4?s=63e0dfe168359dbb532536e5c83330e53bb2b258&profile_id=174&download=1
+      url: https://player.vimeo.com/external/644757269.sd.mp4?s=a5c07aa19a599b3f7f5a6d350063bebd8f02c7fc&profile_id=165
     ratio: 1
     marginTop: -30.3
     marginLeft: 31
@@ -185,7 +185,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: true
-      url: https://player.vimeo.com/external/644756945.hd.mp4?s=21a8a86ddcb16d0435edc555e31734d57bfbfced&profile_id=174&download=1
+      url: https://player.vimeo.com/external/644756945.sd.mp4?s=76dcfd8f1f7a1c784169cb025a6714c8990dd307&profile_id=165
     ratio: 1
     marginTop: -30.3
     marginLeft: 49
@@ -196,7 +196,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: true
-      url: https://player.vimeo.com/external/644756353.hd.mp4?s=5eb78b0564e5b10bf237748703baf214e0b69a76&profile_id=174&download=1
+      url: https://player.vimeo.com/external/644756353.sd.mp4?s=7ff1b14b94a7ed11062669510608ed885908f2b7&profile_id=165
     ratio: 1
     marginTop: -30.3
     marginLeft: 67
