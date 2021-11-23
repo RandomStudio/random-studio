@@ -42,6 +42,7 @@ const ProjectDetail = ({
     marginLeft,
     video,
     carousel,
+    width,
   }) => {
     switch (true) {
       case Boolean(video && video.url):
@@ -55,7 +56,14 @@ const ProjectDetail = ({
       case Boolean(image && image.childImageSharp):
         return (
           <>
-            <Img alt={alt} fluid={image.childImageSharp.fluid} />
+            <Img
+              alt={alt}
+              fluid={{
+                ...image.childImageSharp.fluid,
+                sizes: `(max-width: 576px) 100vw, ${width}vw`,
+              }}
+              width={width}
+            />
             <Caption marginLeft={marginLeft} caption={caption} />
           </>
         );
@@ -126,6 +134,7 @@ const ProjectDetail = ({
               marginLeft,
               video,
               carousel,
+              width,
             })}
           </div>
         ),
