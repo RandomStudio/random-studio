@@ -105,7 +105,7 @@ const Projects = ({
           node: {
             frontmatter: { title },
           },
-        }) => title.toLowerCase() === projectTitle.toLowerCase()
+        }) => title.toLowerCase() === projectTitle.toLowerCase(),
       );
       if (!project) {
         return null;
