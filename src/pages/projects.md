@@ -167,7 +167,7 @@ projects:
       image: /img/COS_093.jpg
       width: 46
     project: |
-      COS Pop-Up Installation
+      A Pop-Up Installation for COS at Salone del Mobile
     caption: |
       A Pop-Up Installation for COS
     tags: ['Spaces', 'Digital']

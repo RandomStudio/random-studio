@@ -80,6 +80,8 @@ export const pageQuery = graphql`
   }
 `;
 
+const slugify = string => string.toLowerCase().replaceAll('\n', '')
+
 const Projects = ({
   data: { allArticles, allMarkdownRemark, markdownRemark },
 }) => {
@@ -105,9 +107,8 @@ const Projects = ({
           node: {
             frontmatter: { title },
           },
-        }) => title === projectTitle,
+        }) => slugify(title) === slugify(projectTitle)
       );
-
       if (!project) {
         return null;
       }
@@ -121,7 +122,7 @@ const Projects = ({
     })
     .filter((project) => project !== null);
 
-  return (
+    return (
     <Layout>
       <SEO pathName={fields.slug} />
       <Logo />
