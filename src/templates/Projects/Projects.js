@@ -80,7 +80,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const slugify = string => string.toLowerCase().replaceAll('\n', '')
+const slugify = string => string.toLowerCase();
 
 const Projects = ({
   data: { allArticles, allMarkdownRemark, markdownRemark },
