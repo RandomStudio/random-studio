@@ -6,8 +6,8 @@ projects:
       marginLeft: 23
       image: /img/top-grid@2x.png
       width: 54
-    project: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
-    caption: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+    project: An archival experience celebrating C.P. Company’s 50th anniversary
+    caption: An archival experience celebrating C.P. Company’s 50th anniversary
     tags: ['Spaces', 'Installations', 'Exhibitions', 'Digital']
   - thumbnail:
       marginTop: 0
