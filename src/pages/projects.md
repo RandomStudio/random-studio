@@ -281,8 +281,7 @@ projects:
     caption: 'Nike x JFS Collection '
     tags: ['Spatial Experience']
 articles:
-address: '> Westzaanstraat 10<br /> 1013 NG Amsterdam<br />The Netherlands<br />
-  [Directions](https://goo.gl/maps/7rGuGBBfhms)'
+address: '> Gillis van Ledenberchstraat 112<br />1052 VK Amsterdam<br />The Netherlands<br />[Directions](https://goo.gl/maps/2sJnCcLummnmvrVb9)'
 phone: +31 20 779 7735
 email: hello@random.studio
 ---
