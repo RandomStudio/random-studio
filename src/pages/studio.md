@@ -67,19 +67,6 @@ jobOpenings:
       solutions. You will hunt for bugs and work within the team to guard the
       stability and quality of the work we deliver on one of our key accounts.
     jobIsVisible: true
-  - jobTitle: Medior Project Manager (Platform/Services)
-    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=7&source=aWQ9Nw%3D%3D
-    jobDescription: >-
-      At Random Studio, we create brand and service experiences that trigger a
-      sense of wonder. Our work comes to life in the space where the digital
-      meets the physical. As a team of designers, creative technologists and
-      strategists, we value new ideas, new insights, new ways of seeing the
-      world. We are currently looking for a Medior Producer / Project Manager to
-      work on an innovative retail platform for a large fashion retailer.
-
-
-      Producers at Random Studio manage projects from end-to-end. They work with clients to understand a challenge, and in close collaboration with cross-functional teams, develop and deliver solutions that all parties are proud of. They know every detail of any given project and serve as the client contact and Random Studio project lead.
-    jobIsVisible: true
   - jobTitle: Senior Experience Designer
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=10&source=aWQ9Nw%3D%3D
     jobDescription: >-
