@@ -5,12 +5,11 @@ import Project from './Project/Project';
 import Filters from '../Filters/Filters';
 
 export const PROJECT_FILTER_LIST = [
-  'Spatial Experience',
-  'Interactive Installation',
-  'Spatial Design',
-  'Exhibition & Event Design',
-  'Digital Partnership',
-  'Research & Design',
+  'Spaces',
+  'Installations',
+  'Exhibitions',
+  'Research',
+  'Digital',
 ];
 
 const ProjectList = ({ middle, projects }) => {
