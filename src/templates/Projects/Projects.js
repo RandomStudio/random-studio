@@ -80,8 +80,6 @@ export const pageQuery = graphql`
   }
 `;
 
-const slugify = string => string.toLowerCase();
-
 const Projects = ({
   data: { allArticles, allMarkdownRemark, markdownRemark },
 }) => {
@@ -107,7 +105,7 @@ const Projects = ({
           node: {
             frontmatter: { title },
           },
-        }) => slugify(title) === slugify(projectTitle)
+        }) => title.toLowerCase() === projectTitle.toLowerCase()
       );
       if (!project) {
         return null;
