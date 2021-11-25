@@ -4,7 +4,7 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 23
-      image: /img/top-grid@2x.png
+      image: /img/carousel1_1.jpg
       width: 54
     project: An archival experience celebrating C.P. Company’s 50th anniversary
     caption: An archival experience celebrating C.P. Company’s 50th anniversary

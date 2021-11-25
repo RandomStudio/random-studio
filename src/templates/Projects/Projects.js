@@ -120,7 +120,7 @@ const Projects = ({
     })
     .filter((project) => project !== null);
 
-    return (
+  return (
     <Layout>
       <SEO pathName={fields.slug} />
       <Logo />
