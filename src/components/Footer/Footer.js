@@ -88,7 +88,7 @@ const Footer = ({ address, email, phone }) => {
           </a>
           <a
             className={styles.social}
-            href="https://linkedin.com/random-studio/"
+            href="https://www.linkedin.com/company/random-studio/"
             target="_blank"
             rel="noopener noreferrer"
           >
