@@ -21,14 +21,6 @@ jobs:
           node-version: '12'
       - name: Install dependencies
         run: npm install
-      - name: Gatsby Cache Folder
-        uses: actions/cache@v1
-        id: gatsby-cache-folder
-        with:
-          path: .cache
-          key: ${{ runner.os }}-cache-gatsby-251121
-          restore-keys: |
-            ${{ runner.os }}-cache-gatsby-251121
       - name: Gatsby Public Folder
         uses: actions/cache@v1
         id: gatsby-public-folder
