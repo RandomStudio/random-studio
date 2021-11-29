@@ -16,7 +16,7 @@ projects:
       width: 54
     project: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
     caption: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
-    tags: ['Spaces', 'Installations', 'Digital']
+    tags: ['Spaces']
   - thumbnail:
       marginTop: 0
       marginLeft: 0
