@@ -55,7 +55,7 @@ content:
     marginTop: -10
     marginLeft: 50
     zIndex: 0
-    image: /img/RND_DP_Berlin-1.jpg
+    image: /img/RND_DP_Berlin-100.jpg
     width: 50
   - video:
       autoplay: true
