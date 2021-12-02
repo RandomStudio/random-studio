@@ -1,94 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { graphql } from 'gatsby';
 import styles from './Studio.module.scss';
 import Layout from '../../components/Layout/Layout';
-import IntroBlock from './IntroBlock/IntroBlock';
-import ServiceList from './ServiceList/ServiceList';
+import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
+import ServiceList from '../../components/Studio/ServiceList/ServiceList';
 import Logo from '../../components/Logo/Logo';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
-import Recruitee from './Recruitee/Recruitee';
+import Recruitee from '../../components/Studio/Recruitee/Recruitee';
 import Carousel from '../../components/Carousel/Carousel';
-import SkillBlock from './SkillBlock/SkillBlock';
+import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
-
-export const query = graphql`
-  query Studio($templateKey: String!) {
-    studioPage: markdownRemark(
-      frontmatter: { templateKey: { eq: $templateKey } }
-    ) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        skillset
-        introBlocks: introBlock {
-          copy
-          image {
-            childImageSharp {
-              fluid(maxWidth: 3840, quality: 90) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-          video {
-            publicURL
-          }
-        }
-        services {
-          title
-          list {
-            title
-            copy
-            image {
-              childImageSharp {
-                fluid(maxWidth: 3840, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-        studioImpression {
-          title
-          showIndicator
-          images {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 3840, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-        jobOpenings {
-          jobURL
-          jobTitle
-          jobDescription
-          jobIsVisible
-        }
-      }
-    }
-
-    indexPage: markdownRemark(frontmatter: { templateKey: { eq: "Home" } }) {
-      frontmatter {
-        address
-        email
-        phone
-      }
-    }
-  }
-`;
 
 const mediumBreakpoint = 960; // BP of 60rem
 
 const Studio = ({
-  data: {
-    studioPage: { fields, frontmatter },
-    indexPage,
-  },
+  address,
+  phone,
+  slug,
+  title,
+  introBlock,
+  services,
+  skillset,
+  email,
+  jobOpenings,
+  studioImpression
 }) => {
   const introRef = useRef();
   const [themeClass, setThemeClass] = useState(styles.darkTheme);
@@ -125,38 +60,52 @@ const Studio = ({
           width > mediumBreakpoint ? themeClass : ''
         }`}
       >
-        <SEO title="Studio" pathName={fields.slug} />
+        <SEO title="Studio" pathName={slug} />
         <Logo />
         <IntroBlock
-          title={frontmatter.title}
-          intros={frontmatter.introBlocks}
+          title={title}
+          intros={introBlock}
           ref={introRef}
         />
 
         <ServiceList
-          services={frontmatter.services.list}
-          headerTitle={frontmatter.services.title}
+          services={services.list}
+          headerTitle={services.title}
         />
 
         <SkillBlock
-          skillset={frontmatter.skillset}
-          email={indexPage.frontmatter.email}
+          skillset={skillset}
+          email={email}
         />
 
         <div className={styles.jobsImpressionBlock}>
-          <Recruitee jobOpenings={frontmatter.jobOpenings} />
+          <Recruitee jobOpenings={jobOpenings} />
           <Carousel
             className={styles.carouselWrapper}
-            carousel={frontmatter.studioImpression.images}
-            showIndicator={frontmatter.studioImpression.showIndicator}
-            title={frontmatter.studioImpression.title}
+            carousel={studioImpression.images}
+            showIndicator={studioImpression.showIndicator}
+            title={studioImpression.title}
           />
         </div>
 
-        <Footer {...indexPage.frontmatter} />
+        <Footer address={address} email={email} phone={phone} />
       </div>
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  const { getContentFromFile } = require('../../utils/blog');
+
+  const index = getContentFromFile('index');
+  const studio = getContentFromFile('studio');
+  console.log(studio)
+  return {
+    props: {
+      ...index,
+      ...studio,
+    }
+  };
+}
 
 export default Studio;

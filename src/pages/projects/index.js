@@ -1,119 +1,28 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../../components/Layout/Layout';
 import Footer from '../../components/Footer/Footer';
-import ProjectList from '../../components/Project/ProjectList/ProjectList';
+import ProjectList from '../../components/Projects/ProjectList/ProjectList';
 import SEO from '../../components/SEO/SEO';
 import Logo from '../../components/Logo/Logo';
 
-export const pageQuery = graphql`
-  {
-    allArticles: allMarkdownRemark(
-      filter: { frontmatter: { key: { eq: "article" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            articleUrl
-            title
-            quote
-          }
-        }
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: frontmatter___priority, order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "Project" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-    markdownRemark(frontmatter: { templateKey: { eq: "Projects" } }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        address
-        collaborationCredits {
-          collaborator
-          url
-        }
-        email
-        intro
-        layout
-        middle
-        articles {
-          article
-          position
-        }
-        projects {
-          caption
-          project
-          tags
-          thumbnail {
-            marginLeft
-            marginTop
-            video
-            width
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1280, quality: 80) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-        phone
-        video
-      }
-    }
-  }
-`;
-
 const Projects = ({
-  data: { allArticles, allMarkdownRemark, markdownRemark },
+  address,
+  allProjects,
+  email,
+  phone,
+  projects,
+  slug,
 }) => {
-  const edges = allMarkdownRemark.edges || [];
-  const fields = markdownRemark ? markdownRemark.fields : {};
-  const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
-
-  const articles = (frontmatter.articles || []).map((relation) => {
-    const article = (allArticles.edges || []).find(
-      (item) => item.node.frontmatter.title === relation.article,
-    );
-
-    return {
-      ...article.node.frontmatter,
-      position: relation.position,
-    };
-  });
-
-  const projects = (frontmatter.projects || [])
-    .map(({ caption, project: projectTitle, thumbnail, tags }) => {
-      const project = edges.find(
-        ({
-          node: {
-            frontmatter: { title },
-          },
-        }) => title.toLowerCase() === projectTitle.toLowerCase(),
-      );
+  const projectDetails = projects.map(({ caption, project: projectTitle, thumbnail, tags }) => {
+      const project = allProjects.find(({ title }) => title.toLowerCase() === projectTitle.toLowerCase());
       if (!project) {
         return null;
       }
 
       return {
-        slug: project.node.fields.slug,
-        title: caption || project.node.frontmatter.title,
+        slug: project.slug,
+        title: caption || project.title,
         thumbnail,
         tags,
       };
@@ -122,13 +31,27 @@ const Projects = ({
 
   return (
     <Layout>
-      <SEO pathName={fields.slug} />
+      <SEO pathName={slug} />
       <Logo />
-      <ProjectList {...frontmatter} articles={articles} projects={projects} />
-      <Footer {...frontmatter} />
+      <ProjectList projects={projectDetails} />
+      <Footer address={address} email={email} phone={phone} />
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  const { getAllProjects, getContentFromFile } = require('../../utils/blog');
+
+  const data = getContentFromFile('projects');
+  const allProjects = getAllProjects();
+
+  return {
+    props: {
+      allProjects,
+      ...data,
+    }
+  };
+}
 
 Projects.propTypes = {
   data: PropTypes.shape({

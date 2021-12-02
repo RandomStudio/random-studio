@@ -38,7 +38,7 @@
     opacity: 1;
   }
 
-  a {
+  :global(a) {
     text-decoration: underline;
   }
 }

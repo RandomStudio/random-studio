@@ -43,7 +43,7 @@
 .intro {
   margin-top: 1.2931578947em;
 
-  a {
+  :global(a) {
     text-decoration-thickness: 0.05em;
     text-underline-offset: 0.05em;
   }
@@ -57,7 +57,7 @@
 }
 
 .text {
-  a {
+  :global(a) {
     text-decoration: underline;
   }
 }

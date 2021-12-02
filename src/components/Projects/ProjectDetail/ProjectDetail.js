@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image/withIEPolyfill';
+import Img from 'next/image';
 import styles from './ProjectDetail.module.scss';
-import ProjectVideo from '../../pages/projects/ProjectVideo/ProjectVideo';
-import Carousel from '../Carousel/Carousel';
+import ProjectVideo from '../ProjectVideo/ProjectVideo';
+import Carousel from '../../Carousel/Carousel';
 import Caption from './Caption/Caption';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 

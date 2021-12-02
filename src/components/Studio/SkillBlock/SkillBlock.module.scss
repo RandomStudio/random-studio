@@ -14,7 +14,7 @@
   font-size: var(--px-font-xmed);
   margin: 120px 0 0 20px;
 
-  a {
+  :global(a) {
     transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     background: linear-gradient(transparent, transparent),
       linear-gradient(transparent, transparent), linear-gradient(black, black);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import styles from './404.module.scss';
 import Layout from '../components/Layout/Layout';
 
@@ -12,7 +12,10 @@ const Error404 = () => (
         <br />
         {'View our'}
         {' '}
-        <Link to="/projects">{'projects'}</Link>
+        <Link href="/projects"><a>
+          {'projects'}
+        </a>
+        </Link>
       </div>
     </main>
   </Layout>

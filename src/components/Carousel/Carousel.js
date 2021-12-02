@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
+import Caption from '../Projects/ProjectDetail/Caption/Caption';
 import FluidImage from '../FluidImage/FluidImage';
-import Caption from '../ProjectDetail/Caption/Caption';
 
 const Carousel = ({ carousel, caption, objectFit, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -60,13 +60,11 @@ Carousel.propTypes = {
   className: PropTypes.string,
   carousel: PropTypes.arrayOf(PropTypes.object).isRequired,
   objectFit: PropTypes.oneOf(['contain', 'cover']),
-  title: PropTypes.string,
 };
 
 Carousel.defaultProps = {
   className: '',
   objectFit: 'cover',
-  title: '',
 };
 
 export default Carousel;

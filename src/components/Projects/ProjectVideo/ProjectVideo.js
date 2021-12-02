@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+//import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../../components/LazyVideo/LazyVideo';
 
+const trackCustomEvent = input => console.log(input)
 const trackPausePlay = isPlaying => {
   trackCustomEvent({
     category: isPlaying ? 'Pause Button' : 'Play Button',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { navigate } from 'gatsby';
+import { navigate } from 'next/link';
 import styles from './Recruitee.module.scss';
 import JobOffer from './JobOffer/JobOffer';
 

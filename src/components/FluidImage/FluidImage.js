@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image/withIEPolyfill';
+import Img from 'next/image';
 
 const FluidImage = ({
   image, objectFit, loading, className,

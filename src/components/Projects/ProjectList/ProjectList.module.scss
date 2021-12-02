@@ -18,7 +18,7 @@
     margin-bottom: 26px;
   }
 
-  a {
+  :global(a) {
     position: relative;
     display: inline-block;
     text-decoration: none;

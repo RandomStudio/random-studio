@@ -1,7 +1,8 @@
 import React from 'react';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import styles from './JobOffer.module.scss';
 import ReactMarkdown from 'react-markdown';
+import styles from './JobOffer.module.scss';
+
+//Todo: restore analytics
 
 const JobOffer = ({
   closeOpenOffer,
@@ -19,13 +20,13 @@ const JobOffer = ({
       </header>
 
       <ReactMarkdown className={styles.description} escapeHtml={false} source={jobDescription} />
-      <OutboundLink
+      <a
         target="blank"
         href={jobURL}
         className={styles.applyButton}
       >
         {'Apply for this position'}
-      </OutboundLink>
+      </a>
     </div>
   </section>
 );

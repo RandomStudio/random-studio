@@ -1,117 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import getThumbnailSafely from '../../../utils/getThumbnailSafely';
 import Layout from '../../../components/Layout/Layout';
-import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
+import ProjectDetail from '../../../components/Projects/ProjectDetail/ProjectDetail';
 import SEO from '../../../components/SEO/SEO';
-import BackScrim from '../../../components/Project/BackScrim/BackScrim';
+import BackScrim from '../../../components/Projects/BackScrim/BackScrim';
 
-export const pageQuery = graphql`
-  query ProjectById($id: String!) {
-    allProjects: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "Project" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-
-    markdownRemark(id: { eq: $id }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        intro
-        content {
-          caption
-          image {
-            childImageSharp {
-              fluid(maxWidth: 3840, quality: 90) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-          alt
-          marginTop
-          marginLeft
-          zIndex
-          video {
-            autoplay
-            hasControls
-            isAlwaysMuted
-            isMuted
-            loops
-            url
-          }
-          carousel {
-            url
-            caption
-            image {
-              childImageSharp {
-                fluid(maxHeight: 700, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-          width
-        }
-        relatedProjects {
-          blockTitle
-          projects {
-            title
-            subtitle
-            image {
-              childImageSharp {
-                fluid(maxWidth: 3840, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-            project
-          }
-        }
-        credits {
-          key
-          value
-        }
-        opengraph {
-          ogDescription
-          ogImage {
-            childImageSharp {
-              fixed(width: 800, height: 800) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-          ogTitle
-        }
-      }
-    }
-  }
-`;
-
-const Project = (props) => {
-  const {
-    data: {
-      allProjects: { edges: allProjects },
-      markdownRemark: {
-        fields: { slug },
-        frontmatter: project,
-      },
-    },
-  } = props;
-
-  const { opengraph } = project;
-
+const Project = ({ allProjects, intro, opengraph, content, credits, relatedProjects, slug, title }) => {
   const socialTitle =
     opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
 
@@ -125,16 +19,53 @@ const Project = (props) => {
     <Layout>
       <SEO
         pathName={slug}
-        title={project.title}
-        description={project.intro}
+        title={title}
+        description={intro}
         image={SEOImage}
         socialDescription={socialDescription}
         socialTitle={socialTitle}
       />
-      <ProjectDetail {...project} allProjects={allProjects} />
+      <ProjectDetail
+        allProjects={allProjects}
+        content={content}
+        title={title}
+        intro={intro}
+        credits={credits}
+        relatedProjects={relatedProjects}
+      />
       {typeof window !== 'undefined' && <BackScrim returnUrl="projects" />}
     </Layout>
   );
 };
+
+export async function getStaticProps({ params }) {
+  const { getAllProjects, getContentFromFile } = require('../../../utils/blog');
+
+  const data = getContentFromFile(`projects/${params.slug}`);
+  const allProjects = getAllProjects();
+
+  return {
+    props: {
+      allProjects,
+      ...data,
+    }
+  };
+}
+
+export async function getStaticPaths() {
+  const { getAllProjects } = require('../../../utils/blog');
+  const projects = getAllProjects();
+
+  return {
+    paths: projects.map(project => {
+      return {
+        params: {
+          slug: project.slug.replace('projects/', ''),
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
 
 export default Project;

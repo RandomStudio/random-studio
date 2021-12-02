@@ -9,7 +9,7 @@
     padding-top: 50vh;
   }
 
-  a {
+  :global(a) {
     position: relative;
     display: inline-block;
     text-decoration: none;

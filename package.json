@@ -13,11 +13,13 @@
   },
   "dependencies": {
     "@loadable/component": "^5.14.1",
+    "date-fns": "^2.27.0",
     "framer-motion": "^2.0.0-beta.33",
+    "gray-matter": "^4.0.3",
     "lodash": "^4.17.15",
+    "markdown-json": "^1.6.0",
     "netlify-cms-app": "^2.12.3",
     "next": "^12.0.4",
-    "node-sass": "^4.13.1",
     "postcss-custom-properties": "^9.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -26,7 +28,10 @@
     "react-loadable": "^5.5.0",
     "react-markdown": "^4.3.1",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "remark-parse": "^10.0.1",
+    "sass": "1.44.0",
+    "unified": "^10.1.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

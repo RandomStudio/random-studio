@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
-import FluidImage from '../../FluidImage/FluidImage';
+import FluidImage from '../../../FluidImage/FluidImage';
 
 const RelatedProjectSlider = ({ blockTitle, projects }) => {
   if (!projects || projects.length <= 0) return null;
@@ -15,7 +15,8 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
         {projects.map(({
           image, title, subtitle, slug,
         }) => (
-          <Link key={title} className={styles.card} to={slug}>
+          <Link key={title} href={slug}>
+            <a className={styles.card}>
             {image && (
               <FluidImage
                 objectFit="cover"
@@ -25,6 +26,7 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
             )}
             {title && <p>{title}</p>}
             {subtitle && <p>{subtitle}</p>}
+              </a>
           </Link>
         ))}
         <span className={styles.cardSpacer} />

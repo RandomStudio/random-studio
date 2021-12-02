@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'next/link';
+import Link from 'next/link';
 import styles from './Logo.module.scss';
 
 const Logo = ({ layout }) => {
@@ -9,10 +9,12 @@ const Logo = ({ layout }) => {
 
   return (
     <h1 className={logoClass}>
-      <Link to="/">
-        {'Random'}
-        <br />
-        {'Studio'}
+      <Link href="/">
+        <a>
+          {'Random'}
+          <br />
+          {'Studio'}
+        </a>
       </Link>
     </h1>
   );

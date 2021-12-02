@@ -18,7 +18,7 @@
     padding: 38px;
   }
 
-  a {
+  :global(a) {
     position: relative;
     display: block;
     text-decoration: none;
@@ -69,7 +69,8 @@
   min-width: 300px;
   padding-top: 1.375em;
   padding-bottom: 1.375em;
-  a {
+
+  :global(a) {
     display: inline-block;
   }
 }
@@ -77,7 +78,7 @@
 .location {
   margin-bottom: 1.375em;
 
-  a {
+  :global(a) {
     text-decoration: underline;
   }
 }

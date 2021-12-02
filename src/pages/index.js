@@ -1,135 +1,53 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Layout from '../components/Layout/Layout';
 import Footer from '../components/Footer/Footer';
-import ProjectList from './Home/ProjectList/ProjectList';
-import HomeVideo from './Home/HomeVideo/HomeVideo';
+import HomeVideo from '../components/Home/HomeVideo/HomeVideo';
+import Layout from '../components/Layout/Layout';
+import ProjectList from '../components/Home/ProjectList/ProjectList';
 import SEO from '../components/SEO/SEO';
 
-export const pageQuery = graphql`
-  {
-    allArticles: allMarkdownRemark(
-      filter: { frontmatter: { key: { eq: "article" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            articleUrl
-            title
-            quote
-          }
-        }
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: frontmatter___priority, order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "Project" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-    markdownRemark(frontmatter: { templateKey: { eq: "Home" } }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        address
-        collaborationCredits {
-          collaborator
-          url
-        }
-        email
-        intro
-        layout
-        middle
-        articles {
-          article
-          position
-        }
-        projects {
-          caption
-          project
-          thumbnail {
-            marginLeft
-            marginTop
-            video
-            width
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1280, quality: 80) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-        phone
-        video
-      }
-    }
-  }
-`;
-
-const Home = ({ data: { allArticles, allMarkdownRemark, markdownRemark } }) => {
-  const edges = allMarkdownRemark.edges || [];
-  const fields = markdownRemark ? markdownRemark.fields : {};
-  const frontmatter = markdownRemark ? markdownRemark.frontmatter : {};
-
-  const projects = (frontmatter.projects || [])
+const Home = ({ address, allProjects, collaborationCredits, email, layout, phone, projects, slug, video }) => {
+  const projectsAdjusted = projects
     .map(({ caption, project: projectTitle, thumbnail }) => {
-      const project = edges.find(
-        ({
-          node: {
-            frontmatter: { title },
-          },
-        }) => title === projectTitle,
-      );
+      const project = allProjects.find(({ title }) => title === projectTitle);
 
       if (!project) {
         return null;
       }
 
       return {
-        slug: project.node.fields.slug,
-        title: caption || project.node.frontmatter.title,
+        slug: project.slug,
+        title: caption || project.title,
         thumbnail,
       };
     })
-    .filter((project) => project !== null);
+    .filter(project => project !== null);
 
   return (
     <Layout>
-      <SEO pathName={fields.slug} />
+      <SEO pathName={slug} />
       <HomeVideo
-        collaborationCredits={frontmatter.collaborationCredits}
-        layout={frontmatter.layout}
-        videoUrl={frontmatter.video}
+        collaborationCredits={collaborationCredits}
+        layout={layout}
+        videoUrl={video}
       />
-      <ProjectList {...frontmatter} projects={projects} />
-      <Footer {...frontmatter} />
+      <ProjectList projects={projectsAdjusted} />
+      <Footer address={address} email={email} phone={phone} />
     </Layout>
   );
 };
 
-Home.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-    markdownRemark: PropTypes.shape({
-      fields: PropTypes.shape,
-      frontmatter: PropTypes.shape,
-    }),
-  }).isRequired,
-};
+export async function getStaticProps() {
+  const { getAllProjects, getContentFromFile } = require('../utils/blog');
+
+  const data = getContentFromFile('projects');
+  const allProjects = getAllProjects();
+
+  return {
+    props: {
+      allProjects,
+      ...data,
+    }
+  };
+}
 
 export default Home;

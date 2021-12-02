@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { countBy } from 'lodash';
 import styles from './ProjectList.module.scss';
 import Project from './Project/Project';
-import Filters from '../Filters/Filters';
+import Filters from '../../Filters/Filters';
 
 export const PROJECT_FILTER_LIST = [
   'Spaces',
@@ -13,6 +13,7 @@ export const PROJECT_FILTER_LIST = [
 ];
 
 const ProjectList = ({ middle, projects }) => {
+  console.log(projects)
   const projectFilters = projects
     .map(({ tags }) => tags)
     .filter(Boolean)

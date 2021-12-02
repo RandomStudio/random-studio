@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useState } from 'react';
 import styles from './Filters.module.scss';
-import { PROJECT_FILTER_LIST } from '../Project/ProjectList/ProjectList';
+import { PROJECT_FILTER_LIST } from '../Projects/ProjectList/ProjectList';
 
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
   // Disable for server side rendering

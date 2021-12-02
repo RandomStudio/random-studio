@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 
 const defaultMeta = [
   {
@@ -24,31 +23,12 @@ const SEO = ({
   image,
   pathName,
   socialDescription,
-  socialTitle,
+  socialTitle
 }) => {
-  const data = useStaticQuery(graphql`
-    query HeaderQuery {
-      markdownRemark(frontmatter: { key: { eq: "settings" } }) {
-        frontmatter {
-          title
-          description
-          twitterHandle
-          siteUrl
-        }
-      }
-    }
-  `);
-
-  const {
-    markdownRemark: {
-      frontmatter: {
-        title: defaultTitle,
-        description: defaultDescription,
-        twitterHandle,
-        siteUrl,
-      },
-    },
-  } = data;
+  const defaultTitle = "Random Studio";
+  const defaultDescription = "Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.";
+  const twitterHandle = '@random.studio';
+  const siteUrl = 'https://random.studio';
 
   const formatTitle = string => `${defaultTitle} - ${string}`;
 
