@@ -22,16 +22,12 @@ const ProjectDetail = ({
       const foundProject =
         allProjects.length &&
         allProjects.find(
-          ({
-            node: {
-              frontmatter: { title },
-            },
-          }) => relatedProject.project === title,
+          (project) => relatedProject.project === project.title,
         );
 
       return {
         ...relatedProject,
-        slug: foundProject ? foundProject.node.fields.slug : null,
+        slug: foundProject ? foundProject.slug : null,
       };
     });
 

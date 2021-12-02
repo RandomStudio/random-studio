@@ -53,16 +53,4 @@ export async function getStaticProps() {
   };
 }
 
-Projects.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-    markdownRemark: PropTypes.shape({
-      fields: PropTypes.shape,
-      frontmatter: PropTypes.shape,
-    }),
-  }).isRequired,
-};
-
 export default Projects;
