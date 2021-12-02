@@ -30,7 +30,7 @@ jobs:
           npm run build
       - name: 'publish'
         run: |
-          npx -p "@getmeli/cli" meli upload ./public \
+          npx -p "@getmeli/cli" meli upload ./.next \
             --url "https://staging.random.studio" \
             --site "$MELI_SITE" \
             --token "$MELI_TOKEN" \
