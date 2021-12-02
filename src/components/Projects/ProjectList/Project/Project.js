@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
-import Img from 'next/image';
 import styles from './Project.module.scss';
 import ProjectVideo from '../../ProjectVideo/ProjectVideo';
 
@@ -32,8 +31,6 @@ const Project = ({ thumbnail, title, slug, isHidden }) => (
                   url: thumbnail.video,
                 }}
               />
-            ) : !!thumbnail.image && thumbnail.image.childImageSharp ? (
-              <Img loading="auto" fluid={thumbnail.image.childImageSharp.fluid} />
             ) : (
               <img alt="" src={thumbnail.image} />
             )}

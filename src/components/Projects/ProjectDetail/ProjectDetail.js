@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
-import Img from 'next/image';
 import styles from './ProjectDetail.module.scss';
 import ProjectVideo from '../ProjectVideo/ProjectVideo';
 import Carousel from '../../Carousel/Carousel';
@@ -52,7 +51,7 @@ const ProjectDetail = ({
       case Boolean(image && image.childImageSharp):
         return (
           <>
-            <Img
+            <img
               alt={alt}
               fluid={{
                 ...image.childImageSharp.fluid,
