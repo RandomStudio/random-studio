@@ -13,6 +13,10 @@ export function getContentFromFile(path) {
 
   return {
     ...data,
+    content: data.content.map(c => ({
+      ...c,
+      ...(c.image ? { image: process.env.NEXT_PUBLIC_CDN_URL + c.image } : {}),
+    })),
     slug: realSlug,
   };
 }

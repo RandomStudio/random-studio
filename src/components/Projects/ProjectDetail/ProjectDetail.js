@@ -41,7 +41,7 @@ const ProjectDetail = ({
       case Boolean(video && video.url):
         return (
           <>
-            <ProjectVideo video={`${process.env.NEXT_PUBLIC_CDN_URL}${video}`} />
+            <ProjectVideo video={video} />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
@@ -64,7 +64,7 @@ const ProjectDetail = ({
       case Boolean(image):
         return (
           <>
-            <img alt="" src={`${process.env.NEXT_PUBLIC_CDN_URL}${image}`} />
+            <img alt="" src={image} />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
@@ -148,7 +148,7 @@ const ProjectDetail = ({
           </ul>
         ))}
       </footer>
-    </div>
+    </div >
   );
 };
 
