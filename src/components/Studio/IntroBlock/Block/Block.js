@@ -74,7 +74,7 @@ const Block = ({ image, index, copy, title, video }) => {
             {title}
             <img
               alt="Arrow pointing down. Indicating more content further down."
-              src="/img/icons/arrow-white.svg"
+              src="/icons/arrow-white.svg"
             />
           </motion.h1>
         )}

@@ -4,4 +4,4 @@ if (!process.env.GITHUB_ACTIONS) {
   return;
 }
 const fs = require('fs');
-fs.rmdirSync('./public', { recursive: true });
+fs.rmdirSync('./public/img', { recursive: true });
