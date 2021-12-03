@@ -13,7 +13,6 @@ export const PROJECT_FILTER_LIST = [
 ];
 
 const ProjectList = ({ middle, projects }) => {
-  console.log(projects)
   const projectFilters = projects
     .map(({ tags }) => tags)
     .filter(Boolean)

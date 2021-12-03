@@ -5,28 +5,28 @@ import styles from './RelatedProjectSlider.module.scss';
 import FluidImage from '../../../FluidImage/FluidImage';
 
 const RelatedProjectSlider = ({ blockTitle, projects }) => {
-  if (!projects || projects.length <= 0) return null;
+  if (!projects || projects.length <= 0) {
+    return null;
+  }
 
   return (
     <section className={styles.wrapper}>
       {blockTitle && <h4>{blockTitle}</h4>}
 
       <div className={styles.worksWrapper}>
-        {projects.map(({
-          image, title, subtitle, slug,
-        }) => (
-          <Link key={title} href={slug}>
+        {projects.map(({ image, title, subtitle, slug }) => (
+          <Link href={slug} key={title}>
             <a className={styles.card}>
-            {image && (
-              <FluidImage
-                objectFit="cover"
-                image={image}
-                className={styles.imageWrapper}
-              />
-            )}
-            {title && <p>{title}</p>}
-            {subtitle && <p>{subtitle}</p>}
-              </a>
+              {image && (
+                <FluidImage
+                  className={styles.imageWrapper}
+                  image={image}
+                  objectFit="cover"
+                />
+              )}
+              {title && <p>{title}</p>}
+              {subtitle && <p>{subtitle}</p>}
+            </a>
           </Link>
         ))}
         <span className={styles.cardSpacer} />

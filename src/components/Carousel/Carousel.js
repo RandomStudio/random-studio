@@ -16,7 +16,9 @@ const Carousel = ({ carousel, caption, objectFit, className }) => {
     setCurrentIndex((currentIndex + 1) % carousel.length);
   };
 
-  if (!carousel) return null;
+  if (!carousel) {
+    return null;
+  }
 
   return (
     <div className={`${styles.carousel} ${className}`}>
@@ -34,13 +36,13 @@ const Carousel = ({ carousel, caption, objectFit, className }) => {
               onClick={handleNext}
             >
               {url ? (
-                <video src={url} muted loop autoPlay playsInline />
+                <video autoPlay loop muted playsInline src={url} />
               ) : (
                 image && (
                   <FluidImage
                     image={image}
-                    objectFit={objectFit}
                     loading="auto"
+                    objectFit={objectFit}
                   />
                 )
               )}

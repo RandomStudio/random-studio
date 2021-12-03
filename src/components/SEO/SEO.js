@@ -23,10 +23,13 @@ const SEO = ({
   image,
   pathName,
   socialDescription,
-  socialTitle
+  socialTitle,
 }) => {
-  const defaultTitle = "Random Studio";
-  const defaultDescription = "Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.";
+  const defaultTitle = 'Random Studio';
+
+  const defaultDescription =
+    'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.';
+
   const twitterHandle = '@random.studio';
   const siteUrl = 'https://random.studio';
 
@@ -43,7 +46,6 @@ const SEO = ({
   return (
     <Helmet
       htmlAttributes={{ lang: 'en' }}
-      title={pageTitle}
       meta={[
         ...defaultMeta,
         { name: 'description', content: pageDescription },
@@ -68,42 +70,40 @@ const SEO = ({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: twitterHandle },
       ]}
+      title={pageTitle}
     >
       <link
+        href="/favicons/apple-touch-icon.png"
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/favicons/apple-touch-icon.png"
       />
+      <link href="/favicons/apple-touch-icon.png" />
       <link
-        rel="apple-touch-icon-precomposed"
-        href="/favicons/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
         href="/favicons/favicon-32x32.png"
+        rel="icon"
+        sizes="32x32"
+        type="image/png"
       />
       <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
         href="/favicons/favicon-16x16.png"
-      />
-      <link
         rel="icon"
+        sizes="16x16"
         type="image/png"
-        sizes="192x192"
-        href="/favicons/android-chrome-192x192.png"
       />
-      <link rel="manifest" href="/favicons/site.webmanifest" />
       <link
-        rel="mask-icon"
-        href="/favicons/safari-pinned-tab.svg"
-        color="#0000ff"
+        href="/favicons/android-chrome-192x192.png"
+        rel="icon"
+        sizes="192x192"
+        type="image/png"
       />
-      <link rel="manifest" href="/favicons/manifest.json" />
-      <link rel="shortcut icon" href="/favicons/favicon.ico" />
+      <link href="/favicons/site.webmanifest" rel="manifest" />
+      <link
+        color="#0000ff"
+        href="/favicons/safari-pinned-tab.svg"
+        rel="mask-icon"
+      />
+      <link href="/favicons/manifest.json" rel="manifest" />
+      <link href="/favicons/favicon.ico" rel="icon" />
     </Helmet>
   );
 };

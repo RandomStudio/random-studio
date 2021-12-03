@@ -7,14 +7,10 @@ const Error404 = () => (
   <Layout>
     <main className={styles.notFoundPage}>
       <div>
-        {'Page not found'}
-        {' '}
-        <br />
-        {'View our'}
-        {' '}
-        <Link href="/projects"><a>
-          {'projects'}
-        </a>
+        {'Page not found'} <br />
+        {'View our'}{' '}
+        <Link href="/projects">
+          <a>{'projects'}</a>
         </Link>
       </div>
     </main>

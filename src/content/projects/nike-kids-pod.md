@@ -16,10 +16,10 @@ content:
       url: https://player.vimeo.com/external/485605110.hd.mp4?s=6a45ff575297c3c262533396ba6f100daa4bfb4f&profile_id=175
     marginTop: 0
     marginLeft: 0
-    image: ""
+    image: ''
     alt: Nike kids pod immersive installation at House of Innovation in Paris
     width: 101
-    caption: ""
+    caption: ''
   - video:
       autoplay: false
       hasControls: false
@@ -28,11 +28,11 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: "The Kid’s Pod is a game station with a difference: you are the
+    caption: 'The Kid’s Pod is a game station with a difference: you are the
       controller and there are no rules. The movements of your body shape and
       change the journey of the on-screen athletes, challenging them to excel
       and activate three different ‘innovations’. There’s no beginning and no
-      end: all you need to do is step in front of the screen and explore."
+      end: all you need to do is step in front of the screen and explore.'
   - video:
       autoplay: false
       hasControls: false
@@ -63,7 +63,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: Inspired by the spontaneity and energy of parkour, the possibilities of
+    caption:
+      Inspired by the spontaneity and energy of parkour, the possibilities of
       the Kid’s Pod are limitless. With no instructions or interface, the
       hexagonal structure creates a 360° play area that invites kids to discover
       the game intuitively, and even team up for a multiplayer mode. The more
@@ -113,16 +114,18 @@ content:
     alt: Nike kids pod experimential marketing
     width: 46
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Nike
-  - key: "Role:"
-    value: Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
+  - key: 'Role:'
+    value:
+      Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
       Design, Prototyping, Software Development, Installation Engineering,
       Research
 opengraph:
   ogTitle: Your body as a controller in Nike's House of Innovation Paris
   ogImage: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
-  ogDescription: Nike opened the doors of its third House of Innovation, in Paris,
+  ogDescription:
+    Nike opened the doors of its third House of Innovation, in Paris,
     July 2020. A store unlike any other, it exists to celebrate and challenge
     the future of sport. We created a long term immersive installation for the
     launch of this European flagship store.

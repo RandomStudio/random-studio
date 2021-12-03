@@ -7,7 +7,9 @@ const isMobile = checkAndroid() || checkIOS();
 
 /* eslint-disable import/prefer-default-export */
 export function copyStringToClipboard(event, string, callback) {
-  if (isMobile) return null;
+  if (isMobile) {
+    return null;
+  }
 
   try {
     // Create new element
@@ -16,7 +18,9 @@ export function copyStringToClipboard(event, string, callback) {
     tempElement.value = string;
     // Set non-editable to avoid focus and move outside of view
     tempElement.setAttribute('readonly', '');
+
     tempElement.style = { position: 'absolute', left: '-9999px' };
+
     document.body.appendChild(tempElement);
     // Select text inside element
     tempElement.select();

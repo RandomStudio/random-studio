@@ -45,15 +45,17 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
     );
   }, [activeTag]);
 
-  const handleSelectFilter = (filter) => {
+  const handleSelectFilter = filter => {
     setActiveTag(filter === activeTag ? null : filter);
   };
 
-  const filtersWithEntries = filterList.filter(filter => (filterCount?.[filter] ?? 0) > 0);
+  const filtersWithEntries = filterList.filter(
+    filter => (filterCount?.[filter] ?? 0) > 0,
+  );
   return (
     <>
       <div className={styles.filters}>
-        {filtersWithEntries.map((filter) => (
+        {filtersWithEntries.map(filter => (
           <div
             className={`${styles.filterEntry} ${
               activeTag !== null ? styles.activeFilter : ''
@@ -86,7 +88,7 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
           </div>
         </div>
         {isOpen &&
-          filtersWithEntries.map((filter) => (
+          filtersWithEntries.map(filter => (
             <span
               value={filter}
               className={`${styles.accordionEntry}`}

@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import FluidImage from '../../../../components/FluidImage/FluidImage';
+import FluidImage from '../../../FluidImage/FluidImage';
 
 import styles from './Block.module.scss';
 
-const Block = ({
-  image, index, copy, title, video,
-}) => {
+const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
   const [blockStart, setBlockStart] = useState();
   const [blockEnd, setBlockEnd] = useState();
@@ -24,6 +22,7 @@ const Block = ({
   }, []);
 
   const { scrollY } = useViewportScroll();
+
   const scale = useTransform(
     scrollY,
     [blockStart, blockEnd, blockEnd + 300, blockEnd + 1000],
@@ -36,14 +35,15 @@ const Block = ({
     [blockStart, blockStart + 120],
     [0, 1],
   );
+
   const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
 
   return (
     <>
       <div className={styles.imageBlock}>
         <motion.div
-          ref={imageRef}
           className={styles.mediaWrapper}
+          ref={imageRef}
           style={{ scale }}
         >
           {/* {video ? (
@@ -73,16 +73,16 @@ const Block = ({
           >
             {title}
             <img
-              src="/img/icons/arrow-white.svg"
               alt="Arrow pointing down. Indicating more content further down."
+              src="/img/icons/arrow-white.svg"
             />
           </motion.h1>
         )}
       </div>
 
       <div
-        key={image.id}
         className={`${styles.listItem} ${styles.parallaxFront}`}
+        key={image.id}
       >
         <div className={styles.copyWrapper}>
           {index === 0 && <h1 className={styles.headerTitle}>{title}</h1>}
@@ -99,6 +99,7 @@ Block.propTypes = {
   copy: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
+
 Block.defaultProps = {};
 
 export default Block;

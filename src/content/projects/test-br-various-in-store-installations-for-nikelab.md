@@ -114,4 +114,3 @@ opengraph:
   ogImage: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
   ogTitle: Various in-store installations for NikeLab
 ---
-

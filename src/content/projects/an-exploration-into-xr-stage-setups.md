@@ -75,7 +75,8 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: From in-store installations to product launches, from photobooths to
+    caption:
+      From in-store installations to product launches, from photobooths to
       Instagram filters, XR Stages are flexible to suit different shapes, scales
       and seasons and host a range of different content. Customers can enter
       into campaign imagery or a product story, or give products a ‘test-drive
@@ -98,9 +99,9 @@ content:
         image: /img/RND05466.jpg
     width: 72
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Random Studio
-  - key: "Role:"
+  - key: 'Role:'
     value: |
       Creative Concept,
       User Experience/Customer Experience Design,

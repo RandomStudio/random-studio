@@ -23,7 +23,7 @@ const Studio = ({
   skillset,
   email,
   jobOpenings,
-  studioImpression
+  studioImpression,
 }) => {
   const introRef = useRef();
   const [themeClass, setThemeClass] = useState(styles.darkTheme);
@@ -37,8 +37,8 @@ const Studio = ({
         rootMargin: '-120px 0px 0px 0px',
       };
 
-      const cb = (entries) => {
-        entries.forEach((entry) => {
+      const cb = entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setThemeClass(styles.darkTheme);
           } else {
@@ -55,34 +55,24 @@ const Studio = ({
   return (
     <Layout>
       <div
-        tabIndex="-1" // Makes it scrollable with keyboard
         className={`${styles.wrapper} ${
           width > mediumBreakpoint ? themeClass : ''
-        }`}
+        }`} // Makes it scrollable with keyboard
+        tabIndex="-1"
       >
-        <SEO title="Studio" pathName={slug} />
+        <SEO pathName={slug} title="Studio" />
         <Logo />
-        <IntroBlock
-          title={title}
-          intros={introBlock}
-          ref={introRef}
-        />
+        <IntroBlock intros={introBlock} ref={introRef} title={title} />
 
-        <ServiceList
-          services={services.list}
-          headerTitle={services.title}
-        />
+        <ServiceList headerTitle={services.title} services={services.list} />
 
-        <SkillBlock
-          skillset={skillset}
-          email={email}
-        />
+        <SkillBlock email={email} skillset={skillset} />
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee jobOpenings={jobOpenings} />
           <Carousel
-            className={styles.carouselWrapper}
             carousel={studioImpression.images}
+            className={styles.carouselWrapper}
             showIndicator={studioImpression.showIndicator}
             title={studioImpression.title}
           />
@@ -99,12 +89,13 @@ export async function getStaticProps() {
 
   const index = getContentFromFile('index');
   const studio = getContentFromFile('studio');
-  console.log(studio)
+  console.log(studio);
+
   return {
     props: {
       ...index,
       ...studio,
-    }
+    },
   };
 }
 

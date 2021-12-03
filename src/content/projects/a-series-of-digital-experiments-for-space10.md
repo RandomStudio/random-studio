@@ -146,7 +146,8 @@ content:
       isAlwaysMuted: false
     marginTop: 10
     marginLeft: 0
-    caption: Designing each object as it would be in built in physical space, you
+    caption:
+      Designing each object as it would be in built in physical space, you
       can learn about their individual components, looking from different
       perspectives to get to know it better. Point & Repair creates a two-way
       relationship combining voice and visual interface to give the home a more
@@ -238,18 +239,19 @@ content:
     marginLeft: 4
     width: 45
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: |
       SPACE10
-  - key: "Role:"
+  - key: 'Role:'
     value: >
       Creative Direction, Art Direction, UX Design, Prototyping, Software
       Development
-  - key: "With: "
+  - key: 'With: '
     value: Anton Hjertstedt – 3D Artist
 opengraph:
   ogTitle: A series of Digital Experiments for SPACE10
-  ogDescription: We’ve dreamt up a few digital experiments with SPACE10 to rethink
+  ogDescription:
+    We’ve dreamt up a few digital experiments with SPACE10 to rethink
     our relationship with the place we call home, and how digital technology can
     merge with the physical to improve our well being.
   ogImage: /img/space10-–-everyday-experiments-–-enchanted-home-–-web-–-photo-by-random-studio-–-01.jpg

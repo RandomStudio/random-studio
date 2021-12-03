@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-//import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+// import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import styles from './ProjectVideo.module.scss';
-import LazyVideo from '../../../components/LazyVideo/LazyVideo';
+import LazyVideo from '../../LazyVideo/LazyVideo';
 
-const trackCustomEvent = input => console.log(input)
+const trackCustomEvent = input => console.log(input);
+
 const trackPausePlay = isPlaying => {
   trackCustomEvent({
-    category: isPlaying ? 'Pause Button' : 'Play Button',
     action: isPlaying ? 'Pause' : 'Play',
+    category: isPlaying ? 'Pause Button' : 'Play Button',
     label: 'Video Player Interactions',
   });
 };
@@ -38,6 +39,7 @@ const ProjectVideo = ({
   const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
     autoplay || isStartingMuted,
   );
+
   const [isPlaying, setIsPlaying] = useState(autoplay);
 
   const handleTapVolumeToggle = e => {
@@ -60,6 +62,7 @@ const ProjectVideo = ({
 
       return !prevState;
     });
+
     e.stopPropagation();
     trackPausePlay(isPlaying);
   };
@@ -67,20 +70,20 @@ const ProjectVideo = ({
   return (
     <div className={styles.videoWrapper} onClick={handleTapPlayPause}>
       <LazyVideo
+        autoPlays={isPlaying}
+        isMuted={isAlwaysMuted || isCurrentlyMuted}
+        loops={loops}
         ref={videoRef}
         videoSrc={url}
-        loops={loops}
-        isMuted={isAlwaysMuted || isCurrentlyMuted}
-        autoPlays={isPlaying}
       />
-      {hasControls
-        && (hasPlayed ? (
+      {hasControls &&
+        (hasPlayed ? (
           <div className={styles.videoControls}>
-            <button type="button" onClick={handleTapPlayPause}>
+            <button onClick={handleTapPlayPause} type="button">
               {isPlaying ? 'Pause' : 'Play'}
             </button>
             {!isAlwaysMuted && (
-              <button type="button" onClick={handleTapVolumeToggle}>
+              <button onClick={handleTapVolumeToggle} type="button">
                 {isCurrentlyMuted ? 'Unmute' : 'Mute'}
               </button>
             )}

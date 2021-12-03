@@ -23,7 +23,8 @@ content:
       loops: true
       url: https://player.vimeo.com/external/323718464.hd.mp4?s=bd90a5b3f772786683c7c27efd785fc178cdeb6c&profile_id=175
     width: 100
-  - caption: This season was part of Galliano’s research into a ‘New Glamour’, with
+  - caption:
+      This season was part of Galliano’s research into a ‘New Glamour’, with
       the latest instalment revolving around the cyclical nature of decadence. A
       riot of bright colours and jittering computer-generated imagery, the
       collection bubbles with the excess and artifice of the digital world and
@@ -67,7 +68,8 @@ content:
       loops: true
       url: https://player.vimeo.com/external/323733416.hd.mp4?s=0fa31cd68099a054665f50639759620a24a12af8&profile_id=175
     width: 80
-  - caption: The main video played on the reflected images of the mirrored runway,
+  - caption:
+      The main video played on the reflected images of the mirrored runway,
       shot with rotating cameras to blur the lines between reality and its
       image. For a finishing touch, we brought to life the key motif of the
       collection – the poodle – who became the show’s protagonist.
@@ -88,7 +90,7 @@ content:
       loops: true
     width: 100
 relatedProjects:
-  blockTitle: "Other work:"
+  blockTitle: 'Other work:'
   projects:
     - title: "'Défile'"
       subtitle: Collection Spring-Summer 2020
@@ -97,9 +99,9 @@ relatedProjects:
         Various in-store installations
         for NikeLab
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Maison Margiela
-  - key: "Role:"
+  - key: 'Role:'
     value: Creative Direction of Film Production, Editing, Asset production,
       Photography
 ---

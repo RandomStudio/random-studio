@@ -15,8 +15,8 @@ const ResearchBlock = ({ quote, articleUrl }) => (
 );
 
 ResearchBlock.propTypes = {
-  quote: PropTypes.string.isRequired,
   articleUrl: PropTypes.string,
+  quote: PropTypes.string.isRequired,
 };
 
 ResearchBlock.defaultProps = {

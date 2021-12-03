@@ -1,5 +1,5 @@
+import matter from 'gray-matter';
 
-import matter from 'gray-matter'
 const fs = require('fs');
 const { join } = require('path');
 
@@ -9,19 +9,20 @@ export function getContentFromFile(path) {
   const realSlug = path.replace(/\.md$/, '');
   const fullPath = join(contentDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const data = matter(fileContents).data;
+  const { data } = matter(fileContents);
 
   return {
     ...data,
-    slug: realSlug
+    slug: realSlug,
   };
 }
 
 export function getAllProjects() {
   const fullPath = join(contentDirectory, 'projects');
   const slugs = fs.readdirSync(fullPath, 'utf-8');
-  const posts = slugs.map((slug) => {
-    const data = getContentFromFile(join('projects', slug))
+
+  const posts = slugs.map(slug => {
+    const data = getContentFromFile(join('projects', slug));
 
     return data;
   });

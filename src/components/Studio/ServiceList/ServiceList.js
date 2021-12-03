@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ServiceList.module.scss';
-import FluidImage from '../../../components/FluidImage/FluidImage';
+import FluidImage from '../../FluidImage/FluidImage';
 
 const ServiceList = ({ headerTitle, services }) => (
   <>
     {headerTitle && <h2 className={styles.header}>{headerTitle}</h2>}
     <section className={styles.wrapper}>
       {services.map(({ title, copy, image }) => (
-        <div key={`${title}-${image.id}`} className={styles.serviceBlock}>
+        <div className={styles.serviceBlock} key={`${title}-${image.id}`}>
           <div className={styles.copyWrapper}>
             <h3>{title}</h3>
             <p>{copy}</p>

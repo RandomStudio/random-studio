@@ -1,21 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Layout from '../../components/Layout/Layout';
 import Footer from '../../components/Footer/Footer';
 import ProjectList from '../../components/Projects/ProjectList/ProjectList';
 import SEO from '../../components/SEO/SEO';
 import Logo from '../../components/Logo/Logo';
 
-const Projects = ({
-  address,
-  allProjects,
-  email,
-  phone,
-  projects,
-  slug,
-}) => {
-  const projectDetails = projects.map(({ caption, project: projectTitle, thumbnail, tags }) => {
-      const project = allProjects.find(({ title }) => title.toLowerCase() === projectTitle.toLowerCase());
+const Projects = ({ address, allProjects, email, phone, projects, slug }) => {
+  const projectDetails = projects
+    .map(({ caption, project: projectTitle, thumbnail, tags }) => {
+      const project = allProjects.find(
+        ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
+      );
+
       if (!project) {
         return null;
       }
@@ -27,7 +23,7 @@ const Projects = ({
         tags,
       };
     })
-    .filter((project) => project !== null);
+    .filter(project => project !== null);
 
   return (
     <Layout>
@@ -49,7 +45,7 @@ export async function getStaticProps() {
     props: {
       allProjects,
       ...data,
-    }
+    },
   };
 }
 

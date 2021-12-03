@@ -63,7 +63,8 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: Implanting a moment of calm into the midst of a busy shopping street,
+    caption:
+      Implanting a moment of calm into the midst of a busy shopping street,
       the window’s gentle tempo invites passersby to slow down, reconnect to the
       pace of a river-side stroll and lose themselves in a few minutes of
       contemplation. Starting in London, the display will travel on a world tour
@@ -99,7 +100,7 @@ content:
     ratio: 0
     marginTop: 0
     marginLeft: 0
-    caption: Next up on the world tour is Shanghai, where we created a new environment for the Curve bag in the form of a pop-up store at the IAPM Atrium. This time it was a microscopic view of nature that informed our design of the space, set in motion by several life-size kaleidoscopic screens activated by the presence of each visitor. 
+    caption: Next up on the world tour is Shanghai, where we created a new environment for the Curve bag in the form of a pop-up store at the IAPM Atrium. This time it was a microscopic view of nature that informed our design of the space, set in motion by several life-size kaleidoscopic screens activated by the presence of each visitor.
   - video:
       autoplay: false
       hasControls: false
@@ -202,12 +203,12 @@ content:
     marginLeft: 67
     width: 17
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Alexander McQueen
-  - key: "Role:"
+  - key: 'Role:'
     value: |
-      Creative Concept, Art Direction and Experience Design 
-  - key: "With:"
+      Creative Concept, Art Direction and Experience Design
+  - key: 'With:'
     value: Souvenir
 opengraph:
   ogTitle: Tide Window Display for Alexander McQueen

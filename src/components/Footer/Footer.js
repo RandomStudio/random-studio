@@ -10,7 +10,7 @@ const Footer = ({ address, email, phone }) => {
   const emailRef = useRef();
   const { setIsToastVisible } = useContext(AppContext);
 
-  const handleClickEmail = (event) =>
+  const handleClickEmail = event =>
     copyStringToClipboard(event, email, setIsToastVisible);
 
   return (
@@ -21,8 +21,8 @@ const Footer = ({ address, email, phone }) => {
           <ReactMarkdown
             className={styles.location}
             escapeHtml={false}
-            source={address}
             linkTarget="__blank"
+            source={address}
           />
           <a className={styles.phone} href={`tel:${phone.replace(' ', '-')}`}>
             {phone}
@@ -49,18 +49,22 @@ const Footer = ({ address, email, phone }) => {
             <br />
             France
             <br />
-            <a href="https://goo.gl/maps/8JhU7KsTLAaZZtGA9" target="_blank">
+            <a
+              href="https://goo.gl/maps/8JhU7KsTLAaZZtGA9"
+              rel="noreferrer"
+              target="_blank"
+            >
               Directions
             </a>
           </div>
 
-          <a className={styles.phone} href={`tel:+33-(0)-1-40-36-41-44`}>
+          <a className={styles.phone} href="tel:+33-(0)-1-40-36-41-44">
             {'+33 (0) 1 40 36 41 44'}
           </a>
           <br />
           <a
             className={styles.emailDesktop}
-            href={`mailto:morgan.maccari@random.studio`}
+            href="mailto:morgan.maccari@random.studio"
             onClick={handleClickEmail}
             ref={emailRef}
           >
@@ -68,7 +72,7 @@ const Footer = ({ address, email, phone }) => {
           </a>
           <a
             className={styles.emailMobile}
-            href={`mailto:morgan.maccari@random.studio`}
+            href="mailto:morgan.maccari@random.studio"
           >
             {'morgan.maccari@random.studio'}
           </a>
@@ -81,24 +85,24 @@ const Footer = ({ address, email, phone }) => {
           <a
             className={styles.social}
             href="https://instagram.com/random_studio/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Instagram
           </a>
           <a
             className={styles.social}
             href="https://www.linkedin.com/company/random-studio/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             LinkedIn
           </a>
           <a
             className={styles.social}
             href="https://medium.com/random-studio/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Medium
           </a>

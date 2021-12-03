@@ -1,11 +1,11 @@
 import React from 'react';
-import Logo from '../../../components/Logo/Logo';
+import Logo from '../../Logo/Logo';
 import styles from './HomeVideo.module.scss';
 
 const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
   return (
     <div className={styles.video}>
-      <video src={videoUrl} muted loop autoPlay playsInline />
+      <video autoPlay loop muted playsInline src={videoUrl} />
       <Logo layout={layout} />
 
       {collaborationCredits && (
@@ -14,9 +14,9 @@ const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
           <span>{' × '}</span>
           <span>
             <a
-              target="_blank"
-              rel="noopener noreferrer"
               href={collaborationCredits.url}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               {collaborationCredits.collaborator}
             </a>

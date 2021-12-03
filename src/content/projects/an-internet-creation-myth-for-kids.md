@@ -74,7 +74,7 @@ content:
     marginLeft: 51
     image: /img/geoffrey_lillemon_parallel_archaeologies_internet_egg_and_cylinder.gif
     width: 48
-    caption: ""
+    caption: ''
   - video:
       autoplay: false
       hasControls: false
@@ -93,7 +93,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: Delving into the bottomless well of Internet aesthetics, visitors have
+    caption:
+      Delving into the bottomless well of Internet aesthetics, visitors have
       the dizzying feeling of falling into an endless blackhole. For the
       physical version, the experience literally plays out in a well, with
       arcade-style buttons on the side to switch to alternative parallel
@@ -108,7 +109,7 @@ content:
     marginLeft: 6
     image: /img/geoffrey_lillemon_parallel_archaeologies_ancient_avatar_04.gif
     width: 37
-    caption: ""
+    caption: ''
   - video:
       autoplay: false
       hasControls: false

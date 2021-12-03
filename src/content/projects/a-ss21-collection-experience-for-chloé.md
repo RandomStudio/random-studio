@@ -2,7 +2,7 @@
 templateKey: Project
 title: A live spectacle for Chloé's SS21 Collection
 intro: >-
-  
+
 
   For their SS21 collection, we worked with Natacha Ramsay-Levi from Chloé to imagine and create a live spectacle spilling through the streets of Paris, its grand finale unfolding against the backdrop of the Palais de Tokyo.
 
@@ -70,10 +70,10 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: "Guests could experience the same event from near and far: a small
+    caption: 'Guests could experience the same event from near and far: a small
       audience seated at the Palais de Tokyo, their backs facing the Seine, and
       another much larger digital audience scattered across the world, facing
-      their screens, both watching the spectacle play out in real-time."
+      their screens, both watching the spectacle play out in real-time.'
   - video:
       autoplay: false
       hasControls: false
@@ -122,7 +122,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: On location, three zoom camera towers were erected, each capturing the
+    caption:
+      On location, three zoom camera towers were erected, each capturing the
       actors/models from a distance and streaming it live to three grand
       portrait LED walls bordering the square. Guests watched a triptych
       capturing the models drifting through the streets to a polyphonic
@@ -180,7 +181,7 @@ content:
     marginTop: 0
     marginLeft: 0
     width: 32
-    caption: ""
+    caption: ''
   - video:
       autoplay: true
       hasControls: false
@@ -206,8 +207,8 @@ credits:
       In collaboration with creative unit POIUYTRE we realised the Creative
       Concept, Choreography, Set Design, Art Direction, Videography, Creative
       Production Management, Videography, Live Video Direction
-    key: "Role:"
-  - key: "For: "
+    key: 'Role:'
+  - key: 'For: '
     value: Chloé
 opengraph:
   ogTitle: A Live Spectacle for Chloé's SS21 Collection

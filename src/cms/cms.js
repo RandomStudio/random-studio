@@ -28,16 +28,16 @@ class NonEmptyStringableNumberControl extends React.Component {
 
     return (
       <input
-        type="number"
-        id={forID}
         className={classNameWrapper}
-        onFocus={setActiveStyle}
-        onBlur={setInactiveStyle}
-        value={value || 0}
-        step={step}
-        min={min}
+        id={forID}
         max={max}
+        min={min}
+        onBlur={setInactiveStyle}
         onChange={e => onChange(parseFloat(e.target.value) || 0)}
+        onFocus={setActiveStyle}
+        step={step}
+        type="number"
+        value={value || 0}
       />
     );
   }

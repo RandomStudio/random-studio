@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FluidImage = ({
-  image, objectFit, loading, className,
-}) => (
+const FluidImage = ({ image, objectFit, loading, className }) => (
   <div className={className}>
     <img alt="" src={image?.childImageSharp?.fluid ?? image} />
   </div>

@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import PropTypes from 'prop-types';
-import styles from './ProjectDetail.module.scss';
-import ProjectVideo from '../ProjectVideo/ProjectVideo';
-import Carousel from '../../Carousel/Carousel';
 import Caption from './Caption/Caption';
+import Carousel from '../../Carousel/Carousel';
+import ProjectVideo from '../ProjectVideo/ProjectVideo';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
+import styles from './ProjectDetail.module.scss';
 
 const ProjectDetail = ({
   title,
@@ -17,12 +17,10 @@ const ProjectDetail = ({
 }) => {
   const relatedWork =
     relatedProjects &&
-    (relatedProjects.projects || []).map((relatedProject) => {
+    (relatedProjects.projects || []).map(relatedProject => {
       const foundProject =
         allProjects.length &&
-        allProjects.find(
-          (project) => relatedProject.project === project.title,
-        );
+        allProjects.find(project => relatedProject.project === project.title);
 
       return {
         ...relatedProject,
@@ -44,7 +42,7 @@ const ProjectDetail = ({
         return (
           <>
             <ProjectVideo video={video} />
-            <Caption marginLeft={marginLeft} caption={caption} />
+            <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
 
@@ -59,7 +57,7 @@ const ProjectDetail = ({
               }}
               width={width}
             />
-            <Caption marginLeft={marginLeft} caption={caption} />
+            <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
 
@@ -67,16 +65,16 @@ const ProjectDetail = ({
         return (
           <>
             <img alt="" src={image} />
-            <Caption marginLeft={marginLeft} caption={caption} />
+            <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
 
       case Boolean(carousel):
         return (
           <Carousel
-            className={styles.carouselWrapper}
-            carousel={carousel}
             caption={caption}
+            carousel={carousel}
+            className={styles.carouselWrapper}
           />
         );
 
@@ -113,8 +111,8 @@ const ProjectDetail = ({
           index,
         ) => (
           <div
-            key={index}
             className={styles.item}
+            key={index}
             style={{
               zIndex: zIndex || '0',
               '--marginTop': `${marginTop}%`,
@@ -142,7 +140,7 @@ const ProjectDetail = ({
 
       <footer className={styles.credits}>
         {(credits || []).map(({ key, value }) => (
-          <ul key={`${key}-${value}`} className="">
+          <ul className="" key={`${key}-${value}`}>
             <li>{key}</li>
             <li>
               <ReactMarkdown source={value} />

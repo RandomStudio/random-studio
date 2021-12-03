@@ -20,20 +20,20 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
         <React.Fragment key={slug}>
           {thumbnail && (
             <Project
+              index={index}
               isHidden={index >= PROJECT_LIMIT}
               middle={middle}
+              projects={projects}
+              slug={slug}
               thumbnail={thumbnail}
               title={title}
               titleWidth
-              slug={slug}
-              index={index}
-              projects={projects}
             />
           )}
           {article && (
             <ResearchBlock
-              quote={article.quote}
               articleUrl={article.articleUrl}
+              quote={article.quote}
             />
           )}
           {index === projects.length - 1 && (

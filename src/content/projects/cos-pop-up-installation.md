@@ -74,12 +74,12 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: "The resulting centrepiece brings to life COS’ core design ethos,
+    caption: 'The resulting centrepiece brings to life COS’ core design ethos,
       turning a complex composition into something that appears simple and
       minimal: an elegant frame for a selection of garments from the SS13
       collection. Like a timeless white shirt, the modular display has no
       lifespan and can live in any shape, space, or scale to suit an endless
-      stream of product displays."
+      stream of product displays.'
   - video:
       autoplay: false
       hasControls: false
@@ -118,18 +118,18 @@ content:
     zIndex: 0
     width: 73
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: COS
-  - key: "With:"
+  - key: 'With:'
     value: Bonsoir Paris
-  - key: "Role:"
+  - key: 'Role:'
     value: Concept Design, Art Direction, Technical development
 opengraph:
-  ogDescription: "Transforming COS’ signature minimalist ethos into a spatial
+  ogDescription: 'Transforming COS’ signature minimalist ethos into a spatial
     experience, we created a pop-up installation to house their SS13 collection
     during Salone del Mobile in Milan. Based on the structural codes of an atom,
     the centrepiece itself is timeless and can be reconfigured into an infinite
-    number of new forms. "
+    number of new forms. '
   ogTitle: COS Pop-Up Installation
   ogImage: /img/COS_040.jpg
 ---

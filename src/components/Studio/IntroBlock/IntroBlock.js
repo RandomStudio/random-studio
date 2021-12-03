@@ -4,13 +4,13 @@ import styles from './IntroBlock.module.scss';
 import Block from './Block/Block';
 
 const IntroBlock = ({ title, intros }, ref) => (
-  <section ref={ref} className={styles.wrapper}>
+  <section className={styles.wrapper} ref={ref}>
     {intros.map(({ copy, image, video }, index) => (
       <Block
-        key={image.id}
+        copy={copy}
         image={image}
         index={index}
-        copy={copy}
+        key={image.id}
         video={video && video.publicURL}
       />
     ))}

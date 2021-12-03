@@ -5,7 +5,17 @@ import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/Home/ProjectList/ProjectList';
 import SEO from '../components/SEO/SEO';
 
-const Home = ({ address, allProjects, collaborationCredits, email, layout, phone, projects, slug, video }) => {
+const Home = ({
+  address,
+  allProjects,
+  collaborationCredits,
+  email,
+  layout,
+  phone,
+  projects,
+  slug,
+  video,
+}) => {
   const projectsAdjusted = projects
     .map(({ caption, project: projectTitle, thumbnail }) => {
       const project = allProjects.find(({ title }) => title === projectTitle);
@@ -15,12 +25,14 @@ const Home = ({ address, allProjects, collaborationCredits, email, layout, phone
       }
 
       return {
+        priority: project.priority,
         slug: project.slug,
-        title: caption || project.title,
         thumbnail,
+        title: caption || project.title,
       };
     })
-    .filter(project => project !== null);
+    .filter(project => project !== null)
+    .sort(({ priority: a }, { priority: b }) => b - a);
 
   return (
     <Layout>
@@ -39,14 +51,14 @@ const Home = ({ address, allProjects, collaborationCredits, email, layout, phone
 export async function getStaticProps() {
   const { getAllProjects, getContentFromFile } = require('../utils/blog');
 
-  const data = getContentFromFile('projects');
+  const data = getContentFromFile('index');
   const allProjects = getAllProjects();
 
   return {
     props: {
       allProjects,
       ...data,
-    }
+    },
   };
 }
 

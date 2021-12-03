@@ -17,7 +17,7 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 23
-      image: ""
+      image: ''
       width: 54
       video: https://player.vimeo.com/external/639898328.hd.mp4?s=8ed04ae1552ce15c4de6f09b14949d02655f034b&profile_id=175
     caption: |-

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { navigate } from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './Recruitee.module.scss';
 import JobOffer from './JobOffer/JobOffer';
 
 const Recruitee = ({ jobOpenings }) => {
+  const router = useRouter();
   const [openOpening, setOpenOpening] = useState();
 
   const handleOpenOpening = offer => {
@@ -14,13 +15,14 @@ const Recruitee = ({ jobOpenings }) => {
   const handleCloseOpening = () => {
     setOpenOpening(null);
     // Replace as offer is programmatically opened
-    navigate('/studio', { replace: true });
+    router.replace('/studio');
     document.body.classList.remove('prevent-scroll');
   };
 
-  if (!jobOpenings
-    || !jobOpenings.length
-    || !jobOpenings.some(opening => opening.jobIsVisible)
+  if (
+    !jobOpenings ||
+    !jobOpenings.length ||
+    !jobOpenings.some(opening => opening.jobIsVisible)
   ) {
     return null;
   }
@@ -30,19 +32,20 @@ const Recruitee = ({ jobOpenings }) => {
       <aside className={styles.recruitee}>
         <p className={styles.title}>{'Open Positions'}</p>
         <ul className={styles.list}>
-          {jobOpenings.map(opening => (
-            opening.jobIsVisible && (
-              <li className={styles.item} key={opening.jobURL}>
-                <a
-                  className={styles.role}
-                  href={`#${opening.jobURL}`}
-                  onClick={() => handleOpenOpening(opening)}
-                >
-                  {opening.jobTitle}
-                </a>
-              </li>
-            )
-          ))}
+          {jobOpenings.map(
+            opening =>
+              opening.jobIsVisible && (
+                <li className={styles.item} key={opening.jobURL}>
+                  <a
+                    className={styles.role}
+                    href={`#${opening.jobURL}`}
+                    onClick={() => handleOpenOpening(opening)}
+                  >
+                    {opening.jobTitle}
+                  </a>
+                </li>
+              ),
+          )}
         </ul>
       </aside>
 

@@ -18,18 +18,18 @@
     text-decoration: none;
   }
 
-  &.is-center {
+  &.isCenter {
     top: 40vh;
   }
 
-  &.is-top {
+  &.isTop {
     top: 65px;
   }
 
   @media (min-width: 576px) {
     left: 45px;
 
-    &.is-top {
+    &.isTop {
       top: 78px;
     }
   }
@@ -37,7 +37,7 @@
   @media (min-width: 1152px) {
     left: 40px;
 
-    &.is-top {
+    &.isTop {
       top: 40px;
     }
   }

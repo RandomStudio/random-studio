@@ -9,7 +9,8 @@ const SkillBlock = ({ skillset, email }) => {
   const emailRef = useRef();
   const { setIsToastVisible } = useContext(AppContext);
 
-  const handleClickEmail = event => copyStringToClipboard(event, email, setIsToastVisible);
+  const handleClickEmail = event =>
+    copyStringToClipboard(event, email, setIsToastVisible);
 
   return (
     <div className={styles.wrapper}>

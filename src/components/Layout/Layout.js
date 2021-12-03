@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
           style={{
             backgroundColor:
               backgroundTransitionColors[
-              Math.floor(Math.random() * backgroundTransitionColors.length)
+                Math.floor(Math.random() * backgroundTransitionColors.length)
               ],
           }}
         />

@@ -4,7 +4,9 @@ import ReactMarkdown from 'react-markdown';
 import styles from './Caption.module.scss';
 
 const Caption = ({ marginLeft, caption, carouselIndicator }) => {
-  if (!caption && !carouselIndicator) return null;
+  if (!caption && !carouselIndicator) {
+    return null;
+  }
 
   return (
     <div
@@ -18,7 +20,7 @@ const Caption = ({ marginLeft, caption, carouselIndicator }) => {
 };
 
 Caption.propTypes = {
-  marginLeft: PropTypes.string,
+  marginLeft: PropTypes.number,
   caption: PropTypes.string,
 };
 

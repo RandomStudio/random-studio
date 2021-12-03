@@ -102,7 +102,8 @@ content:
       isMuted: true
       loops: true
     width: 36
-  - caption: This magical light dance reverberated through the different rooms of
+  - caption:
+      This magical light dance reverberated through the different rooms of
       the store, and also became the spearhead for two other J12 launch events
       that we organised, in Beijing and Taiwan.
     marginLeft: 0
@@ -113,11 +114,11 @@ content:
       isMuted: true
       loops: true
 credits:
-  - key: "For: "
+  - key: 'For: '
     value: Chanel
-  - key: "Role: "
+  - key: 'Role: '
     value: |
       Scenography Design, Software development, Creative Direction, Installation
-  - key: "With:"
+  - key: 'With:'
     value: K2, Lighting & Show Design Ltd
 ---

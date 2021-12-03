@@ -30,7 +30,8 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: Filling the ground floor of Nike’s House of Innovation on the Champs
+    caption:
+      Filling the ground floor of Nike’s House of Innovation on the Champs
       Elysee, the space proposes a holistic, circular journey that makes visible
       the many layers of production, from material choices right through to the
       refurbishment of products, through concrete examples. Starting from the
@@ -171,7 +172,8 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: In the Trash Hacker’s Gallery, pedestals and mannequin podiums in the
+    caption:
+      In the Trash Hacker’s Gallery, pedestals and mannequin podiums in the
       middle of the space provide a platform for ‘hacked’ creations made by
       local talents and curated by the House of Innovation. After learning about
       the brand’s sustainable efforts and best practices, visitors can visit the
@@ -203,20 +205,20 @@ content:
     image: /img/HOI PAR002_SU21_MTZ_43.jpg
     width: 28
 credits:
-  - key: "For:"
+  - key: 'For:'
     value: Nike France
-  - key: "Role:"
+  - key: 'Role:'
     value: Creative Concept, Experience Design, Art Direction, Spatial Design,
       Design Development, Prototyping, Software Development, Creative
       Technology, Installation Engineering
-  - key: "With:"
-    value: "[Satis&Fy](https://satis-fy.com/), [Jean-Baptiste
+  - key: 'With:'
+    value: '[Satis&Fy](https://satis-fy.com/), [Jean-Baptiste
       Fastrez](http://www.jeanbaptistefastrez.com/), [Thomas
-      Hervé](https://www.hervethomas.com/)"
-  - key: "Photos:"
-    value: "[Benoit Florençon](https://www.benoitflorencon.com/)"
-  - key: "Video:"
-    value: "[Dixhuit](https://dix-huit.com/)"
+      Hervé](https://www.hervethomas.com/)'
+  - key: 'Photos:'
+    value: '[Benoit Florençon](https://www.benoitflorencon.com/)'
+  - key: 'Video:'
+    value: '[Dixhuit](https://dix-huit.com/)'
 opengraph:
   ogTitle: Nike Move to Zero House of Innovation Takeover
   ogDescription: >

@@ -8,25 +8,23 @@ import ProjectVideo from '../../ProjectVideo/ProjectVideo';
 const Project = ({ thumbnail, title, slug, isHidden }) => (
   <React.Fragment key={slug}>
     {isHidden ? null : (
-      <Link
-      key={slug}
-      id={slug}
-      href={slug || '#'}
-      >
-        <a className={styles.thumbnail}
+      <Link href={slug || '#'} id={slug} key={slug}>
+        <a
+          className={styles.thumbnail}
           style={{
-          marginTop: `${thumbnail.marginTop}%`,
-          marginLeft: `${thumbnail.marginLeft}%`,
-          width: `${thumbnail.width}%`,
-        }}>
+            marginLeft: `${thumbnail.marginLeft}%`,
+            marginTop: `${thumbnail.marginTop}%`,
+            width: `${thumbnail.width}%`,
+          }}
+        >
           <div className={styles.media}>
             {/* eslint-disable-next-line no-nested-ternary */}
             {thumbnail.video ? (
               <ProjectVideo
                 video={{
                   autoplay: true,
-                  isMuted: true,
                   hasControls: false,
+                  isMuted: true,
                   loops: true,
                   url: thumbnail.video,
                 }}

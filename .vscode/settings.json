@@ -1,5 +1,9 @@
 {
   "editor.tabSize": 2,
   "editor.insertSpaces": false,
-  "eslint.alwaysShowStatus": true
+  "editor.detectIndentation": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
 }

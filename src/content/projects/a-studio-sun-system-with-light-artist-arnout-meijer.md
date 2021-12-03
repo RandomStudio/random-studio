@@ -24,7 +24,8 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: How can a space connect with its surroundings? Can we use technology to
+    caption:
+      How can a space connect with its surroundings? Can we use technology to
       craft something organic? How can we work with light as a material? With
       these questions in mind, we set out to build a lighting system that
       emulates the movement of the sun and the ever-evolving states of natural
@@ -67,14 +68,15 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 0
-    caption: "Collaborating with light artist Arnout Meijer, the ambient system we
+    caption:
+      'Collaborating with light artist Arnout Meijer, the ambient system we
       created mimics the behaviour of the sun travelling overhead in our studio.
       Light, of course, is anything but static: we observed its movement,
       intensity and colour temperature to mirror the changes that occur outside
       and subtly interact with the natural light of the studio. Each day in our
       workspace will be dynamic, interspersed with little moments of difference
       and change as the light outside shifts, revitalising the space with the
-      energy of the sun."
+      energy of the sun.'
   - video:
       autoplay: true
       hasControls: true
@@ -123,19 +125,20 @@ content:
     image: /img/random_licht_stills_2 (1).jpg
     width: 37
 credits:
-  - key: "For:"
-    value: "Random Studio "
-  - key: "With:"
+  - key: 'For:'
+    value: 'Random Studio '
+  - key: 'With:'
     value: |-
       Arnout Meijer – Light Design
 
        RWA Electronics –  Electronics Design
-  - key: "Roles: "
+  - key: 'Roles: '
     value: Creative Direction, Art Direction, Experience Design, Creative
       Technology, Software Development
 opengraph:
   ogTitle: A studio sun system with light-artist Arnout Meijer
-  ogDescription: Collaborating with light artist Arnout Meijer the ambient system
+  ogDescription:
+    Collaborating with light artist Arnout Meijer the ambient system
     we created mimics the behaviour of the sun travelling overhead in our
     studio.
   ogImage: /img/random_licht_stills_4 (1).jpg

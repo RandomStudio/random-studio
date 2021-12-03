@@ -5,7 +5,16 @@ import ProjectDetail from '../../../components/Projects/ProjectDetail/ProjectDet
 import SEO from '../../../components/SEO/SEO';
 import BackScrim from '../../../components/Projects/BackScrim/BackScrim';
 
-const Project = ({ allProjects, intro, opengraph, content, credits, relatedProjects, slug, title }) => {
+const Project = ({
+  allProjects,
+  intro,
+  opengraph,
+  content,
+  credits,
+  relatedProjects,
+  slug,
+  title,
+}) => {
   const socialTitle =
     opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
 
@@ -18,20 +27,20 @@ const Project = ({ allProjects, intro, opengraph, content, credits, relatedProje
   return (
     <Layout>
       <SEO
-        pathName={slug}
-        title={title}
         description={intro}
         image={SEOImage}
+        pathName={slug}
         socialDescription={socialDescription}
         socialTitle={socialTitle}
+        title={title}
       />
       <ProjectDetail
         allProjects={allProjects}
         content={content}
-        title={title}
-        intro={intro}
         credits={credits}
+        intro={intro}
         relatedProjects={relatedProjects}
+        title={title}
       />
       {typeof window !== 'undefined' && <BackScrim returnUrl="projects" />}
     </Layout>
@@ -48,7 +57,7 @@ export async function getStaticProps({ params }) {
     props: {
       allProjects,
       ...data,
-    }
+    },
   };
 }
 
@@ -57,14 +66,12 @@ export async function getStaticPaths() {
   const projects = getAllProjects();
 
   return {
-    paths: projects.map(project => {
-      return {
-        params: {
-          slug: project.slug.replace('projects/', ''),
-        },
-      };
-    }),
     fallback: false,
+    paths: projects.map(project => ({
+      params: {
+        slug: project.slug.replace('projects/', ''),
+      },
+    })),
   };
 }
 
