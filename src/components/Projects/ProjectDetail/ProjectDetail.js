@@ -41,7 +41,7 @@ const ProjectDetail = ({
       case Boolean(video && video.url):
         return (
           <>
-            <ProjectVideo video={video} />
+            <ProjectVideo video={`${process.env.CDN_URL}${video}`} />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
@@ -64,7 +64,7 @@ const ProjectDetail = ({
       case Boolean(image):
         return (
           <>
-            <img alt="" src={image} />
+            <img alt="" src={`${process.env.CDN_URL}${image}`} />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
