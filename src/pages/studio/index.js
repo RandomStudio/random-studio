@@ -88,7 +88,6 @@ export async function getStaticProps() {
 
   const index = getContentFromFile('index');
   const studio = getContentFromFile('studio');
-  console.log(studio);
 
   return {
     props: {

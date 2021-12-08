@@ -10,7 +10,8 @@
     "build": "next build && next export",
     "start": "next start",
     "format": "eslint \"scripts/**/*.{js,jsx,json,md}\" --fix --cache --cache-location ~/.eslintcache/eslintcache",
-    "lint": "eslint -v && eslint \"scripts/**/*.{js,jsx,json,md}\" --cache --cache-location ~/.eslintcache/eslintcache"
+    "lint": "eslint -v && eslint \"scripts/**/*.{js,jsx,json,md}\" --cache --cache-location ~/.eslintcache/eslintcache",
+    "uploadImage": "node uploadImage.js"
   },
   "dependencies": {
     "@loadable/component": "5.15.0",

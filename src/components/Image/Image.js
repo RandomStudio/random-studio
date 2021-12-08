@@ -13,11 +13,7 @@ const srcToId = src => {
 
 const cloudflareLoader = ({ src, width }) => {
   if (process.env.NODE_ENV !== 'production') {
-    return src;
-  }
-
-  if (typeof window === 'undefined') {
-    return src;
+    return `${src}?wouldBeWidth=${width}`;
   }
 
   return `${process.env.NEXT_PUBLIC_CDN_URL}/${srcToId(src)}/${width}`;
@@ -36,7 +32,6 @@ const Image = ({
     <NextImage
       alt={alt}
       className={styles.image}
-      height="100%"
       layout="fill"
       loader={cloudflareLoader}
       objectFit={objectFit}
@@ -44,7 +39,6 @@ const Image = ({
       quality={quality}
       sizes={sizes}
       src={src}
-      width="100%"
     />
   </div>
 );

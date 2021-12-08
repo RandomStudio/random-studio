@@ -1,4 +1,4 @@
-name: Deploy NextJS Staging to Meli
+name: Synchronise Images to Cloudflare
 on:
   push:
     branches:
@@ -9,7 +9,16 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '16'
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --ignore-scripts
       - name: Checkout into images
         uses: actions/checkout@v2
         with:
@@ -20,5 +29,8 @@ jobs:
         uses: tj-actions/changed-files@v11.9
         with:
           path: public/img
-      - name: Upload images
-        run: node uploadImages.js --files ${{ steps.changed-files.outputs.added_files }};
+      - name: Upload Images
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
+            npm run uploadImage -- --file $file
+          done
