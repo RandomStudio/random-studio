@@ -14,11 +14,6 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
-      - name: Checkout into images
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          path: public/img
       - name: Run changed-files with defaults on the img folder
         id: changed-files
         uses: tj-actions/changed-files@v11.9
