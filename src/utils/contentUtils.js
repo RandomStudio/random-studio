@@ -9,14 +9,11 @@ export function getContentFromFile(path) {
   const realSlug = path.replace(/\.md$/, '');
   const fullPath = join(contentDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
+
   const { data } = matter(fileContents);
 
   return {
     ...data,
-    content: data.content.map(c => ({
-      ...c,
-      ...(c.image ? { image: process.env.NEXT_PUBLIC_CDN_URL + c.image } : {}),
-    })),
     slug: realSlug,
   };
 }

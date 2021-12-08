@@ -6,6 +6,7 @@ import Carousel from '../../Carousel/Carousel';
 import ProjectVideo from '../ProjectVideo/ProjectVideo';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
+import Image from '../../Image/Image';
 
 const ProjectDetail = ({
   title,
@@ -46,25 +47,14 @@ const ProjectDetail = ({
           </>
         );
 
-      case Boolean(image && image.childImageSharp):
-        return (
-          <>
-            <img
-              alt={alt}
-              fluid={{
-                ...image.childImageSharp.fluid,
-                sizes: `(max-width: 576px) 100vw, ${width}vw`,
-              }}
-              width={width}
-            />
-            <Caption caption={caption} marginLeft={marginLeft} />
-          </>
-        );
-
       case Boolean(image):
         return (
           <>
-            <img alt="" src={image} />
+            <Image
+              alt={alt}
+              sizes={`(max-width: 576px) 100vw, ${width}vw`}
+              src={image}
+            />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
@@ -75,6 +65,7 @@ const ProjectDetail = ({
             caption={caption}
             carousel={carousel}
             className={styles.carouselWrapper}
+            width={width}
           />
         );
 
@@ -148,7 +139,7 @@ const ProjectDetail = ({
           </ul>
         ))}
       </footer>
-    </div >
+    </div>
   );
 };
 

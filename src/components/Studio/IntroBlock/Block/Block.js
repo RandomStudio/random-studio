@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import FluidImage from '../../../FluidImage/FluidImage';
+import Image from '../../../Image/Image';
 
 import styles from './Block.module.scss';
 
@@ -46,20 +46,7 @@ const Block = ({ image, index, copy, title, video }) => {
           ref={imageRef}
           style={{ scale }}
         >
-          {/* {video ? (
-            <video
-              className={styles.fluidVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src={video} type="video/mp4" />
-            </video>
-          ) : (
-            <FluidImage className={styles.fluidImage} image={image} />
-          )} */}
-          <FluidImage className={styles.fluidImage} image={image} />
+          <Image sizes="(max-width: 960px) 100vw, 50vw" src={image} />
           <motion.div
             className={styles.overlay}
             style={{ opacity: overlayOpacity }}

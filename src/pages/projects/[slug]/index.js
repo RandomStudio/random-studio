@@ -48,7 +48,7 @@ const Project = ({
 };
 
 export async function getStaticProps({ params }) {
-  const { getAllProjects, getContentFromFile } = require('../../../utils/blog');
+  const { getAllProjects, getContentFromFile } = require('../../../utils/contentUtils');
 
   const data = getContentFromFile(`projects/${params.slug}`);
   const allProjects = getAllProjects();
@@ -62,7 +62,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const { getAllProjects } = require('../../../utils/blog');
+  const { getAllProjects } = require('../../../utils/contentUtils');
   const projects = getAllProjects();
 
   return {

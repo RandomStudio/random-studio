@@ -35,21 +35,22 @@ const ProjectList = ({ middle, projects }) => {
 
       <div className={styles.projects}>
         {projects.map(({ thumbnail, title, slug, tags }, index) => {
+          const isHidden = activeTag !== null && !tags?.includes(activeTag);
+
+          if (!thumbnail || isHidden) {
+            return null;
+          }
+
           return (
-            <React.Fragment key={slug}>
-              {thumbnail && (
-                <Project
-                  isHidden={activeTag !== null && !tags?.includes(activeTag)}
-                  middle={middle}
-                  thumbnail={thumbnail}
-                  title={title}
-                  titleWidth
-                  slug={slug}
-                  index={index}
-                  projects={projects}
-                />
-              )}
-            </React.Fragment>
+            <Project
+              middle={middle}
+              thumbnail={thumbnail}
+              title={title}
+              titleWidth
+              slug={slug}
+              index={index}
+              projects={projects}
+            />
           );
         })}
       </div>

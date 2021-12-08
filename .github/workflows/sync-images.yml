@@ -20,8 +20,5 @@ jobs:
         uses: tj-actions/changed-files@v11.9
         with:
           path: public/img
-      - name: List all added files in img
-        run: |
-          for file in ${{ steps.changed-files.outputs.added_files }}; do
-            echo "$file was added"
-          done
+      - name: Upload images
+        run: node uploadImages.js --files ${{ steps.changed-files.outputs.added_files }};

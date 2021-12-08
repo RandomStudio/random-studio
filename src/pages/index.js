@@ -49,7 +49,7 @@ const Home = ({
 };
 
 export async function getStaticProps() {
-  const { getAllProjects, getContentFromFile } = require('../utils/blog');
+  const { getAllProjects, getContentFromFile } = require('../utils/contentUtils');
 
   const data = getContentFromFile('index');
   const allProjects = getAllProjects();

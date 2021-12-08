@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
-import FluidImage from '../../../FluidImage/FluidImage';
+import Image from '../../../Image/Image';
 
 const RelatedProjectSlider = ({ blockTitle, projects }) => {
   if (!projects || projects.length <= 0) {
@@ -18,10 +18,11 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
           <Link href={slug} key={title}>
             <a className={styles.card}>
               {image && (
-                <FluidImage
+                <Image
                   className={styles.imageWrapper}
-                  image={image}
                   objectFit="cover"
+                  sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
+                  src={image}
                 />
               )}
               {title && <p>{title}</p>}

@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
 import Caption from '../Projects/ProjectDetail/Caption/Caption';
-import FluidImage from '../FluidImage/FluidImage';
+import Image from '../Image/Image';
 
-const Carousel = ({ carousel, caption, objectFit, className }) => {
+const Carousel = ({ carousel, caption, objectFit, className, width }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -29,7 +29,7 @@ const Carousel = ({ carousel, caption, objectFit, className }) => {
             ${styles.image}
             ${index === currentIndex && styles.imageVisible}
           `}
-            key={index}
+            key={url}
           >
             <div
               className={`${carousel.length > 1 && styles.hasMultiple}`}
@@ -39,10 +39,11 @@ const Carousel = ({ carousel, caption, objectFit, className }) => {
                 <video autoPlay loop muted playsInline src={url} />
               ) : (
                 image && (
-                  <FluidImage
-                    image={image}
+                  <Image
                     loading="auto"
                     objectFit={objectFit}
+                    sizes={`(max-width: 576px) 100vw, ${width}vw`}
+                    src={image}
                   />
                 )
               )}
@@ -59,8 +60,8 @@ const Carousel = ({ carousel, caption, objectFit, className }) => {
 };
 
 Carousel.propTypes = {
-  className: PropTypes.string,
   carousel: PropTypes.arrayOf(PropTypes.object).isRequired,
+  className: PropTypes.string,
   objectFit: PropTypes.oneOf(['contain', 'cover']),
 };
 

@@ -55,9 +55,8 @@ const Studio = ({
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${
-          width > mediumBreakpoint ? themeClass : ''
-        }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
+          }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
         <SEO pathName={slug} title="Studio" />
@@ -85,7 +84,7 @@ const Studio = ({
 };
 
 export async function getStaticProps() {
-  const { getContentFromFile } = require('../../utils/blog');
+  const { getContentFromFile } = require('../../utils/contentUtils');
 
   const index = getContentFromFile('index');
   const studio = getContentFromFile('studio');

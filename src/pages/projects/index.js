@@ -36,7 +36,7 @@ const Projects = ({ address, allProjects, email, phone, projects, slug }) => {
 };
 
 export async function getStaticProps() {
-  const { getAllProjects, getContentFromFile } = require('../../utils/blog');
+  const { getAllProjects, getContentFromFile } = require('../../utils/contentUtils');
 
   const data = getContentFromFile('projects');
   const allProjects = getAllProjects();
