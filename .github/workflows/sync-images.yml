@@ -10,7 +10,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - uses: actions/checkout@v2
+      - name: Checkout into images
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
