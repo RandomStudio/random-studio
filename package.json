@@ -36,8 +36,8 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.27.1",
     "eslint-plugin-react-hooks": "4.3.0",
-    "mime-types": "^2.1.34",
-    "node-libcurl": "^2.3.3",
+    "mime-types": "2.1.34",
+    "node-libcurl": "2.3.3",
     "postcss": "8.4.4",
     "prettier": "2.5.0",
     "sass": "1.44.0"
