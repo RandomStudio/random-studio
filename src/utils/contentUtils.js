@@ -51,6 +51,13 @@ export const imageStringToObject = src => {
     return null;
   }
 
+  if (
+    !src.includes('jpg') &&
+    !src.includes('jpeg') &&
+    !src.includes('png')
+  ) {
+    return src;
+  }
   return {
     full: src,
     thumb: getPlaceholderDataUrl(src),
