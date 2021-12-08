@@ -40,9 +40,25 @@ const ProjectDetail = ({
   }) => {
     switch (true) {
       case Boolean(video && video.url):
+        const {
+          autoplay,
+          hasControls,
+          loops,
+          isMuted,
+          isAlwaysMuted,
+          url
+        } = video;
+
         return (
           <>
-            <ProjectVideo video={video} />
+            <ProjectVideo
+              autoplay={autoplay}
+              hasControls={hasControls}
+              loops={loops}
+              isMuted={isMuted}
+              isAlwaysMuted={isAlwaysMuted}
+              url={url}
+            />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
@@ -51,7 +67,7 @@ const ProjectDetail = ({
         return (
           <>
             <Image
-              alt={alt}
+              alt={alt ?? caption ?? title}
               sizes={`(max-width: 576px) 100vw, ${width}vw`}
               src={image}
             />

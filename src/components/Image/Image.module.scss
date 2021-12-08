@@ -1,10 +1,24 @@
 .wrapper {
-  span {
-    position: relative !important;
-  }
+  position: relative;
 }
 .image {
-  position: relative !important;
   width: initial !important;
   height: initial !important;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+
+  .isLoaded & {
+    opacity: 1;
+  }
+}
+
+.placeholder {
+  position: relative;
+  width: 100%;
+  opacity: 1;
+
+  .isLoaded & {
+    opacity: 0;
+    transition: opacity 300ms ease-out 200ms;
+  }
 }

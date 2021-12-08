@@ -23,14 +23,12 @@ const trackIsCurrentlyMuted = isCurrentlyMuted => {
 };
 
 const ProjectVideo = ({
-  video: {
-    autoplay,
-    hasControls,
-    isMuted: isStartingMuted,
-    loops,
-    url,
-    isAlwaysMuted,
-  },
+  autoplay,
+  hasControls,
+  isMuted: isStartingMuted,
+  loops,
+  url,
+  isAlwaysMuted,
 }) => {
   const videoRef = useRef(null);
 

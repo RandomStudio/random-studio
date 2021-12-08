@@ -29,7 +29,7 @@ const Carousel = ({ carousel, caption, objectFit, className, width }) => {
             ${styles.image}
             ${index === currentIndex && styles.imageVisible}
           `}
-            key={url}
+            key={image ?? url}
           >
             <div
               className={`${carousel.length > 1 && styles.hasMultiple}`}
@@ -40,6 +40,7 @@ const Carousel = ({ carousel, caption, objectFit, className, width }) => {
               ) : (
                 image && (
                   <Image
+                    alt={`${caption} – slide ${index + 1}`}
                     loading="auto"
                     objectFit={objectFit}
                     sizes={`(max-width: 576px) 100vw, ${width}vw`}

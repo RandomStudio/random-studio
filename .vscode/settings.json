@@ -5,5 +5,8 @@
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  }
 }

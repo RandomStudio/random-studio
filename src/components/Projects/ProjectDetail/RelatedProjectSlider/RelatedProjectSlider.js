@@ -19,6 +19,7 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
             <a className={styles.card}>
               {image && (
                 <Image
+                  alt={title}
                   className={styles.imageWrapper}
                   objectFit="cover"
                   sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"

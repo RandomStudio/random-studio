@@ -37,7 +37,7 @@ const Block = ({ image, index, copy, title, video }) => {
   );
 
   const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
-  console.log(image)
+
   return (
     <>
       <div className={styles.imageBlock}>
@@ -46,7 +46,11 @@ const Block = ({ image, index, copy, title, video }) => {
           ref={imageRef}
           style={{ scale }}
         >
-          <Image sizes="(max-width: 960px) 100vw, 50vw" src={image} />
+          <Image
+            alt={title}
+            sizes="(max-width: 960px) 100vw, 50vw"
+            src={image}
+          />
           <motion.div
             className={styles.overlay}
             style={{ opacity: overlayOpacity }}

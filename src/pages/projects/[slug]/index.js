@@ -47,11 +47,10 @@ const Project = ({
   );
 };
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   const {
     getAllProjects,
     getContentFromFile,
-    addPlaceholdersToProjectBlock,
   } = require('../../../utils/contentUtils');
 
   const data = getContentFromFile(`projects/${params.slug}`);
@@ -61,7 +60,6 @@ export async function getStaticProps({ params }) {
     props: {
       allProjects,
       ...data,
-      content: data.content.map(block => addPlaceholdersToProjectBlock(block)),
     },
   };
 }

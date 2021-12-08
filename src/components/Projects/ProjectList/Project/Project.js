@@ -17,16 +17,13 @@ const Project = ({ thumbnail, title, slug }) => (
       }}
     >
       <div className={styles.media}>
-        {/* eslint-disable-next-line no-nested-ternary */}
         {thumbnail.video ? (
           <ProjectVideo
-            video={{
-              autoplay: true,
-              hasControls: false,
-              isMuted: true,
-              loops: true,
-              url: thumbnail.video,
-            }}
+            autoplay
+            hasControls={false}
+            isMuted
+            loops
+            url={thumbnail.video}
           />
         ) : (
           <Image

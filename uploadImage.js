@@ -2,7 +2,6 @@ const { Curl } = require('node-libcurl');
 const fs = require('fs');
 const mime = require('mime-types');
 const path = require('path');
-const sharp = require('sharp');
 
 const filePath = process.argv[3];
 const filename = path.basename(filePath);
@@ -10,34 +9,15 @@ const filename = path.basename(filePath);
 const curl = new Curl();
 const close = curl.close.bind(curl);
 
-const onSuccess = (code, response) => {
-  if (code === 200) {
-    const {
-      result: { id },
-    } = JSON.parse(response);
+let savedImageIds;
 
-    let savedImageIds;
+try {
+  savedImageIds = JSON.parse(fs.readFileSync('./cloudflareImageIds.json'));
+} catch (error) {
+  console.error(error);
 
-    try {
-      savedImageIds = JSON.parse(fs.readFileSync('./cloudflareImageIds.json'));
-    } catch (error) {
-      console.error(error);
-
-      return;
-    }
-
-    savedImageIds[filename] = id;
-
-    fs.writeFileSync(
-      './cloudflareImageIds.json',
-      JSON.stringify(savedImageIds),
-    );
-
-    console.log('Saved', filePath);
-  }
-
-  close();
-};
+  return;
+}
 
 const upload = () =>
   new Promise((resolve, reject) => {
@@ -60,8 +40,18 @@ const upload = () =>
       },
     ]);
 
-    curl.on('end', () => {
-      onSuccess();
+    curl.on('end', (code, response) => {
+      if (code === 200) {
+        const {
+          result: { id },
+        } = JSON.parse(response);
+
+        savedImageIds[filename] = {
+          full: id,
+        };
+      }
+
+      close();
       resolve();
     });
 
@@ -75,22 +65,39 @@ const upload = () =>
     curl.perform();
   });
 
-const blur = () =>
-  new Promise(resolve => {
-    if (
-      !filePath.includes('jpg') &&
-      !filePath.includes('jpeg') &&
-      !filePath.includes('png')
-    ) {
-      resolve();
 
-      return;
-    }
+const createPlaceholder = async () => {
+  const { encode } = require('blurhash');
+  const sharp = require("sharp");
 
-    sharp(filePath)
-      .resize({ width: 10 })
-      .toFile(`./public/placeholders/${filename}`)
-      .then(() => resolve());
-  });
+  const buffer = await sharp(filePath)
+    .raw()
+    .ensureAlpha()
+    .resize(10, 10, { fit: "inside" })
+    .toFormat(sharp.format.jpeg)
+    .toBuffer();
 
-Promise.all([upload(), blur()]);
+  savedImageIds[filename].thumb = buffer.toString('base64')
+}
+
+const save = () => {
+  fs.writeFileSync(
+    './cloudflareImageIds.json',
+    JSON.stringify(savedImageIds),
+  );
+
+  console.log('Saved', filePath);
+}
+
+const processImage = async () => {
+  //await upload();
+  try {
+    await createPlaceholder();
+  } catch (error) {
+    console.error(error)
+    console.log('Caught and will continue without placeholder.')
+  }
+  save();
+}
+
+processImage()

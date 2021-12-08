@@ -39,7 +39,6 @@ export async function getStaticProps() {
   const {
     getAllProjects,
     getContentFromFile,
-    imageStringToObject,
   } = require('../../utils/contentUtils');
 
   const data = getContentFromFile('projects');
@@ -49,13 +48,6 @@ export async function getStaticProps() {
     props: {
       allProjects,
       ...data,
-      projects: data.projects.map(project => ({
-        ...project,
-        thumbnail: {
-          ...project.thumbnail,
-          ...imageStringToObject(project.thumbnail.image),
-        },
-      })),
     },
   };
 }
