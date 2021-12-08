@@ -22,7 +22,7 @@ jobs:
         uses: tj-actions/changed-files@v11.9
         with:
           files: |
-            .(png|jpeg|jpg)$
+            ^public/img/.+\.(png|jpeg|jpg|gif)
       - name: Upload Images
         run: |
           for file in ${{ steps.changed-files.outputs.all_modified_files }}; do

@@ -37,7 +37,7 @@ const Block = ({ image, index, copy, title, video }) => {
   );
 
   const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
-
+  console.log(image)
   return (
     <>
       <div className={styles.imageBlock}>

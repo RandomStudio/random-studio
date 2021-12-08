@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import NextImage from 'next/image';
 import PropTypes from 'prop-types';
 import cloudflareImageIds from '../../../cloudflareImageIds.json';
@@ -31,14 +31,16 @@ const Image = ({
   <div className={`${styles.wrapper} ${className}`}>
     <NextImage
       alt={alt}
+      blurDataURL={src.thumb}
       className={styles.image}
       layout="fill"
       loader={cloudflareLoader}
       objectFit={objectFit}
+      placeholder={src.thumb ? 'blur' : 'empty'}
       priority={priority}
       quality={quality}
       sizes={sizes}
-      src={src}
+      src={src?.full ?? src}
     />
   </div>
 );
@@ -50,7 +52,7 @@ Image.propTypes = {
   priority: PropTypes.bool,
   quality: PropTypes.number,
   sizes: PropTypes.string.isRequired,
-  src: PropTypes.string.isRequired,
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ full: PropTypes.string, thumb: PropTypes.string })]).isRequired,
 };
 
 Image.defaultProps = {

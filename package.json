@@ -40,7 +40,8 @@
     "node-libcurl": "2.3.3",
     "postcss": "8.4.4",
     "prettier": "2.5.0",
-    "sass": "1.44.0"
+    "sass": "1.44.0",
+    "sharp": "^0.29.3"
   },
   "engines": {
     "node": "16.13.1"

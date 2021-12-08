@@ -2,8 +2,10 @@ const { Curl } = require('node-libcurl');
 const fs = require('fs');
 const mime = require('mime-types');
 const path = require('path');
+const sharp = require('sharp');
 
 const filePath = process.argv[3];
+const filename = path.basename(filePath);
 
 const curl = new Curl();
 const close = curl.close.bind(curl);
@@ -24,7 +26,6 @@ const onSuccess = (code, response) => {
       return;
     }
 
-    const filename = path.basename(filePath);
     savedImageIds[filename] = id;
 
     fs.writeFileSync(
@@ -38,35 +39,58 @@ const onSuccess = (code, response) => {
   close();
 };
 
-const doCurl = () => {
-  console.log('Starting for', filePath);
+const upload = () =>
+  new Promise((resolve, reject) => {
+    console.log('Starting for', filePath);
 
-  curl.setOpt(
-    Curl.option.URL,
-    'https://api.cloudflare.com/client/v4/accounts/f1e9e2ac863d9018abac35af3b649b56/images/v1',
-  );
+    curl.setOpt(
+      Curl.option.URL,
+      'https://api.cloudflare.com/client/v4/accounts/f1e9e2ac863d9018abac35af3b649b56/images/v1',
+    );
 
-  curl.setOpt(Curl.option.HTTPHEADER, [
-    'Authorization: Bearer YwCiyIeddoLNbfe5l0sCHvkXPbEuZ7-yLw6MD5uo',
-  ]);
+    curl.setOpt(Curl.option.HTTPHEADER, [
+      'Authorization: Bearer YwCiyIeddoLNbfe5l0sCHvkXPbEuZ7-yLw6MD5uo',
+    ]);
 
-  curl.setOpt(Curl.option.HTTPPOST, [
-    {
-      file: filePath,
-      name: 'file',
-      type: mime.contentType(filePath),
-    },
-  ]);
+    curl.setOpt(Curl.option.HTTPPOST, [
+      {
+        file: filePath,
+        name: 'file',
+        type: mime.contentType(filePath),
+      },
+    ]);
 
-  curl.on('end', onSuccess);
+    curl.on('end', () => {
+      onSuccess();
+      resolve();
+    });
 
-  curl.on('error', error => {
-    console.log(error);
+    curl.on('error', error => {
+      console.log(error);
 
-    close();
+      close();
+      reject();
+    });
+
+    curl.perform();
   });
 
-  curl.perform();
-};
+const blur = () =>
+  new Promise(resolve => {
+    if (
+      !filePath.includes('jpg') &&
+      !filePath.includes('jpeg') &&
+      !filePath.includes('png')
+    ) {
+      resolve();
 
-doCurl();
+      return;
+    }
+
+    sharp(filePath)
+      .resize({ width: 10 })
+      .toFile(`./public/placeholders/${filename}`)
+      .then(() => resolve());
+  });
+
+Promise.all([upload(), blur()]);

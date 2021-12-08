@@ -33,7 +33,7 @@ const Home = ({
     })
     .filter(project => project !== null)
     .sort(({ priority: a }, { priority: b }) => b - a);
-
+  console.log(projectsAdjusted);
   return (
     <Layout>
       <SEO pathName={slug} />
@@ -49,7 +49,11 @@ const Home = ({
 };
 
 export async function getStaticProps() {
-  const { getAllProjects, getContentFromFile } = require('../utils/contentUtils');
+  const {
+    getAllProjects,
+    getContentFromFile,
+    addPlaceholdersToProjectBlock,
+  } = require('../utils/contentUtils');
 
   const data = getContentFromFile('index');
   const allProjects = getAllProjects();
@@ -58,6 +62,9 @@ export async function getStaticProps() {
     props: {
       allProjects,
       ...data,
+      projects: data.projects.map(project =>
+        addPlaceholdersToProjectBlock(project),
+      ),
     },
   };
 }

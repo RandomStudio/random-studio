@@ -84,15 +84,38 @@ const Studio = ({
 };
 
 export async function getStaticProps() {
-  const { getContentFromFile } = require('../../utils/contentUtils');
+  const {
+    getContentFromFile,
+    imageStringToObject,
+  } = require('../../utils/contentUtils');
 
   const index = getContentFromFile('index');
   const studio = getContentFromFile('studio');
+
+  const { introBlock, services, studioImpression } = studio;
 
   return {
     props: {
       ...index,
       ...studio,
+      introBlock: introBlock.map(block => ({
+        ...block,
+        image: imageStringToObject(block.image),
+      })),
+      services: {
+        ...services,
+        list: services.list.map(item => ({
+          ...item,
+          image: imageStringToObject(item.image),
+        })),
+      },
+      studioImpression: {
+        ...studioImpression,
+        images: studioImpression.images.map(img => ({
+          ...img,
+          image: imageStringToObject(img.image),
+        })),
+      },
     },
   };
 }

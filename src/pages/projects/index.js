@@ -18,9 +18,9 @@ const Projects = ({ address, allProjects, email, phone, projects, slug }) => {
 
       return {
         slug: project.slug,
-        title: caption || project.title,
-        thumbnail,
         tags,
+        thumbnail,
+        title: caption || project.title,
       };
     })
     .filter(project => project !== null);
@@ -36,7 +36,11 @@ const Projects = ({ address, allProjects, email, phone, projects, slug }) => {
 };
 
 export async function getStaticProps() {
-  const { getAllProjects, getContentFromFile } = require('../../utils/contentUtils');
+  const {
+    getAllProjects,
+    getContentFromFile,
+    imageStringToObject,
+  } = require('../../utils/contentUtils');
 
   const data = getContentFromFile('projects');
   const allProjects = getAllProjects();
@@ -45,6 +49,13 @@ export async function getStaticProps() {
     props: {
       allProjects,
       ...data,
+      projects: data.projects.map(project => ({
+        ...project,
+        thumbnail: {
+          ...project.thumbnail,
+          ...imageStringToObject(project.thumbnail.image),
+        },
+      })),
     },
   };
 }
