@@ -5,6 +5,7 @@ on:
       - "next.js"
 env:
   MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
+  NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
 jobs:
   build:
     runs-on: ubuntu-latest
