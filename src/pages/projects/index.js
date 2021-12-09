@@ -5,31 +5,12 @@ import ProjectList from '../../components/Projects/ProjectList/ProjectList';
 import SEO from '../../components/SEO/SEO';
 import Logo from '../../components/Logo/Logo';
 
-const Projects = ({ address, allProjects, email, phone, projects, slug }) => {
-  const projectDetails = projects
-    .map(({ caption, project: projectTitle, thumbnail, tags }) => {
-      const project = allProjects.find(
-        ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
-      );
-
-      if (!project) {
-        return null;
-      }
-
-      return {
-        slug: project.slug,
-        tags,
-        thumbnail,
-        title: caption || project.title,
-      };
-    })
-    .filter(project => project !== null);
-
+const Projects = ({ address, email, phone, projects, slug }) => {
   return (
     <Layout>
       <SEO pathName={slug} />
       <Logo />
-      <ProjectList projects={projectDetails} />
+      <ProjectList projects={projects} />
       <Footer address={address} email={email} phone={phone} />
     </Layout>
   );
@@ -44,10 +25,28 @@ export async function getStaticProps() {
   const data = getContentFromFile('projects');
   const allProjects = getAllProjects();
 
+  const projectDetails = data.projects.map(({ caption, project: projectTitle, thumbnail, tags }) => {
+    const project = allProjects.find(
+      ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
+    );
+
+    if (!project) {
+      return null;
+    }
+
+    return {
+      slug: project.slug,
+      tags: tags ?? null,
+      thumbnail: thumbnail ?? null,
+      title: caption || project.title,
+    };
+  })
+    .filter(project => project !== null);
+
   return {
     props: {
-      allProjects,
       ...data,
+      projects: projectDetails,
     },
   };
 }

@@ -7,7 +7,6 @@ import SEO from '../components/SEO/SEO';
 
 const Home = ({
   address,
-  allProjects,
   collaborationCredits,
   email,
   layout,
@@ -15,38 +14,18 @@ const Home = ({
   projects,
   slug,
   video,
-}) => {
-  const projectsAdjusted = projects
-    .map(({ caption, project: projectTitle, thumbnail }) => {
-      const project = allProjects.find(({ title }) => title === projectTitle);
-
-      if (!project) {
-        return null;
-      }
-
-      return {
-        priority: project.priority,
-        slug: project.slug,
-        thumbnail,
-        title: caption || project.title,
-      };
-    })
-    .filter(project => project !== null)
-    .sort(({ priority: a }, { priority: b }) => b - a);
-
-  return (
-    <Layout>
-      <SEO pathName={slug} />
-      <HomeVideo
-        collaborationCredits={collaborationCredits}
-        layout={layout}
-        videoUrl={video}
-      />
-      <ProjectList projects={projectsAdjusted} />
-      <Footer address={address} email={email} phone={phone} />
-    </Layout>
-  );
-};
+}) => (
+  <Layout>
+    <SEO pathName={slug} />
+    <HomeVideo
+      collaborationCredits={collaborationCredits}
+      layout={layout}
+      videoUrl={video}
+    />
+    <ProjectList projects={projects} />
+    <Footer address={address} email={email} phone={phone} />
+  </Layout>
+);
 
 export const getStaticProps = async () => {
   const {
@@ -57,10 +36,28 @@ export const getStaticProps = async () => {
   const data = getContentFromFile('index');
   const allProjects = getAllProjects();
 
+  const projectDetails = data.projects
+    .map(({ caption, project: projectTitle, thumbnail }) => {
+      const project = allProjects.find(({ title }) => title === projectTitle);
+
+      if (!project) {
+        return null;
+      }
+
+      return {
+        priority: project.priority ?? null,
+        slug: project.slug,
+        thumbnail: thumbnail ?? null,
+        title: caption || project.title,
+      };
+    })
+    .filter(project => project !== null)
+    .sort(({ priority: a }, { priority: b }) => b - a);
+
   return {
     props: {
-      allProjects,
       ...data,
+      projects: projectDetails,
     },
   };
 };
