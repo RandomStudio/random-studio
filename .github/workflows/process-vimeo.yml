@@ -1,0 +1,24 @@
+name: Process Vimeo assets
+on:
+  push:
+    branches:
+      - "next.js"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Checkout into images
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+      - name: Upload Images
+        run: |
+          for file in src/content/**/*.md; do
+            npm run process:vimeo -- --file $file
+          done

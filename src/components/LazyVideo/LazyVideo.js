@@ -1,22 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import styles from './LazyVideo.module.scss';
+import vimeoLookup from '../../../infrastructure/vimeoLookup.json';
 
 const LazyVideo = React.forwardRef(
-  ({ videoSrc, loops, isMuted, autoPlays }, ref) => {
+  ({ alt, videoSrc, loops, isMuted, autoPlays }, videoRef) => {
     const [noJS, setNoJS] = useState(true);
     const [intersected, setIntersected] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    const id = useMemo(() => {
+      if (!videoSrc) {
+        return null;
+      }
+
+      const matches = videoSrc.match(
+        /https:\/\/player\.vimeo\.com\/external\/(.*)\./,
+      );
+
+      if (!matches[1]) {
+        return null;
+      }
+
+      return matches[1].split('.')[0];
+    }, [videoSrc]);
 
     useEffect(() => {
-      // Referrence for cleanup
-      const videoRef = ref;
+      // Reference for cleanup
+      const ref = videoRef.current;
       setNoJS(false);
 
       const handlePlayer = () => {
         if (autoPlays) {
-          videoRef.current.play();
+          ref.play();
         }
       };
 
-      if (videoRef.current) {
+      if (ref) {
         const observer = new IntersectionObserver(
           entries => {
             entries.forEach(entry => {
@@ -32,46 +51,56 @@ const LazyVideo = React.forwardRef(
           },
         );
 
-        observer.observe(videoRef.current);
+        observer.observe(ref);
 
         return () => {
-          if (videoRef.current) {
-            observer.unobserve(videoRef.current);
+          if (ref) {
+            observer.unobserve(ref);
           }
 
           observer.disconnect();
         };
       }
-    }, [noJS, ref, autoPlays]);
+    }, [noJS, videoRef, autoPlays]);
+
+    const videoElement = (
+      // eslint-disable-next-line jsx-a11y/media-has-caption
+      <video
+        loop={loops}
+        muted={isMuted}
+        onPlaying={() => setIsLoaded(true)}
+        playsInline
+        ref={videoRef}
+        src={intersected ? videoSrc : ''}
+      />
+    );
+
+    if (!vimeoLookup[id]) {
+      return videoElement;
+    }
+
+    const { height, thumb, width } = vimeoLookup[id];
 
     // Prevents autoplay conflicting
     return (
-      <>
-        {!noJS && (
-          <video
-            loop={loops}
-            muted={isMuted}
-            playsInline
-            ref={ref}
-            src={intersected ? videoSrc : ''}
-          />
-        )}
-
-        <noscript>
-          <video
-            autoPlay={autoPlays}
-            loop={loops}
-            muted={isMuted}
-            playsInline
-            ref={ref}
-            src={videoSrc}
-          />
-        </noscript>
-      </>
+      <div
+        className={`${styles.frame} ${isLoaded ? styles.isLoaded : ''}`}
+        style={{
+          aspectRatio: `${width} / ${height}`,
+        }}
+      >
+        <img
+          alt={alt}
+          className={styles.placeholder}
+          src={`data:image/jpeg;base64,${thumb}`}
+        />
+        {videoElement}
+      </div>
     );
   },
 );
 
+LazyVideo.displayName = 'LazyVideo';
 LazyVideo.propTypes = {};
 LazyVideo.defaultProps = {};
 

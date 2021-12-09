@@ -1,4 +1,4 @@
-name: Synchronise Images to Cloudflare
+name: Process image assets
 on:
   push:
     branches:
@@ -26,5 +26,5 @@ jobs:
       - name: Upload Images
         run: |
           for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
-            npm run uploadImage -- --file $file
+            npm run process:image -- --file $file
           done

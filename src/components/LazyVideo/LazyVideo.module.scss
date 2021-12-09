@@ -1,0 +1,23 @@
+.frame {
+  display: block;
+  position: relative;
+  contain: layout style paint;
+  overflow: hidden;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  opacity: 1;
+    transition: opacity 300ms ease-in;
+
+  .isLoaded & {
+    opacity: 0;
+  }
+}

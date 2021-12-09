@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import NextImage from 'next/image';
 import PropTypes from 'prop-types';
-import cloudflareImageIds from '../../../cloudflareImageIds.json';
+import imageLookup from '../../../infrastructure/imageLookup.json';
 import styles from './Image.module.scss';
 
 const srcToIds = src => {
   const normalizedSrc = src[0] === '/' ? src.slice(1) : src;
   const cleanSrc = normalizedSrc.replace('img/', '');
 
-  return cloudflareImageIds[cleanSrc] ?? {};
+  return imageLookup[cleanSrc] ?? {};
 };
 
 const cloudflareLoader = ({ src, width }) => {

@@ -1,18 +1,17 @@
-const { Curl } = require('node-libcurl');
-const fs = require('fs');
-const mime = require('mime-types');
-const path = require('path');
+import { basename } from 'path';
+import createPlaceholder from './createPlaceholder';
+import { Curl } from 'node-libcurl';
+import fs from 'fs';
+import mime from 'mime-types';
 
+const lookupFile = './infrastructure/imageLookup.json';
 const filePath = process.argv[3];
-const filename = path.basename(filePath);
-
-const curl = new Curl();
-const close = curl.close.bind(curl);
+const filename = basename(filePath);
 
 let savedImageIds;
 
 try {
-  savedImageIds = JSON.parse(fs.readFileSync('./cloudflareImageIds.json'));
+  savedImageIds = JSON.parse(fs.readFileSync(lookupFile));
 } catch (error) {
   console.error(error);
 
@@ -21,6 +20,9 @@ try {
 
 const upload = () =>
   new Promise((resolve, reject) => {
+    const curl = new Curl();
+    const close = curl.close.bind(curl);
+
     console.log('Starting for', filePath);
 
     curl.setOpt(
@@ -66,37 +68,23 @@ const upload = () =>
   });
 
 
-const createPlaceholder = async () => {
-  const sharp = require("sharp");
-
-  const buffer = await sharp(filePath)
-    .raw()
-    .ensureAlpha()
-    .resize(10, 10, { fit: "inside" })
-    .toFormat(sharp.format.jpeg)
-    .toBuffer();
-
-  savedImageIds[filename].thumb = buffer.toString('base64')
-}
-
-const save = () => {
-  fs.writeFileSync(
-    './cloudflareImageIds.json',
-    JSON.stringify(savedImageIds),
-  );
-
-  console.log('Saved', filePath);
-}
-
 const processImage = async () => {
-  //await upload();
+  await upload();
+
   try {
-    await createPlaceholder();
+    const placeholder = await createPlaceholder();
+    savedImageIds[filename].thumb = placeholder;
   } catch (error) {
     console.error(error)
     console.log('Caught and will continue without placeholder.')
   }
-  save();
+
+  fs.writeFileSync(
+    lookupFile,
+    JSON.stringify(savedImageIds),
+  );
+
+  console.log('Saved', filePath);
 }
 
 processImage()
