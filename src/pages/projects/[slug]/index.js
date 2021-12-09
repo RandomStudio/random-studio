@@ -42,7 +42,7 @@ const Project = ({
         relatedProjects={relatedProjects}
         title={title}
       />
-      {typeof window !== 'undefined' && <BackScrim returnUrl="projects" />}
+      {typeof window !== 'undefined' && <BackScrim />}
     </Layout>
   );
 };

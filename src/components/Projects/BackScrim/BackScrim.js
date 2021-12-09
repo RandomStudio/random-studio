@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import styles from './BackScrim.module.scss';
 
-const BackScrim = ({ returnUrl }) => {
+const BackScrim = () => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -41,24 +40,19 @@ const BackScrim = ({ returnUrl }) => {
     };
   }, []);
 
-  const scrimClassNames = `${styles.backScrim} ${
-    isVisible && styles.isVisible
-  }`;
+  const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible
+    }`;
 
   return (
     <>
       <div className={scrimClassNames}>
-        <Link href={returnUrl}>
+        <Link href="/projects">
           <a className={styles.backButton}>{'Back to projects'}</a>
         </Link>
       </div>
       <div className={styles.intersectionLine} ref={intersectionRef} />
     </>
   );
-};
-
-BackScrim.propTypes = {
-  returnUrl: PropTypes.string.isRequired,
 };
 
 export default BackScrim;
