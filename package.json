@@ -14,8 +14,6 @@
     "uploadImage": "node uploadImage.js"
   },
   "dependencies": {
-    "@loadable/component": "5.15.0",
-    "canvas": "^2.8.0",
     "framer-motion": "5.3.3",
     "gray-matter": "^4.0.3",
     "lodash": "4.17.21",
@@ -25,13 +23,9 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-helmet-async": "1.2.1",
-    "react-loadable": "^5.5.0",
-    "react-markdown": "4.3.1",
-    "sharp": "^0.29.3",
-    "use-next-blurhash": "^1.0.2"
+    "react-markdown": "4.3.1"
   },
   "devDependencies": {
-    "blurhash": "^1.1.4",
     "eslint": "8.3.0",
     "eslint-config-airbnb": "19.0.2",
     "eslint-config-prettier": "^8.3.0",
@@ -44,7 +38,8 @@
     "node-libcurl": "2.3.3",
     "postcss": "8.4.4",
     "prettier": "2.5.0",
-    "sass": "1.44.0"
+    "sass": "1.44.0",
+    "sharp": "^0.29.3"
   },
   "engines": {
     "node": "16.13.1"

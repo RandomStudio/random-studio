@@ -3,7 +3,6 @@ import NextImage from 'next/image';
 import PropTypes from 'prop-types';
 import cloudflareImageIds from '../../../cloudflareImageIds.json';
 import styles from './Image.module.scss';
-import useNextBlurhash from "use-next-blurhash";
 
 const srcToIds = src => {
   const normalizedSrc = src[0] === '/' ? src.slice(1) : src;

@@ -67,7 +67,6 @@ const upload = () =>
 
 
 const createPlaceholder = async () => {
-  const { encode } = require('blurhash');
   const sharp = require("sharp");
 
   const buffer = await sharp(filePath)
