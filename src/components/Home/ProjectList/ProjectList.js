@@ -18,7 +18,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
       );
 
       return (
-        <>
+        <React.Fragment key={slug}>
           {thumbnail && index < PROJECT_LIMIT && (
             <Project
               index={index}
@@ -41,7 +41,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
               <Link href="/projects"><a>{'See all projects'}</a></Link>
             </div>
           )}
-        </>
+        </React.Fragment>
       );
     })}
   </div>
