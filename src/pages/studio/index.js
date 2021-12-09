@@ -26,30 +26,32 @@ const Studio = ({
   studioImpression,
 }) => {
   const introRef = useRef();
-  const [themeClass, setThemeClass] = useState(styles.darkTheme);
+  const [themeClass, setThemeClass] = useState('');
   const { width } = useWindowSize();
 
   useEffect(() => {
-    if (window.IntersectionObserver) {
-      setThemeClass(styles.darkTheme);
-
-      const options = {
-        rootMargin: '-120px 0px 0px 0px',
-      };
-
-      const cb = entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setThemeClass(styles.darkTheme);
-          } else {
-            setThemeClass('');
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(cb, options);
-      observer.observe(introRef.current);
+    if (!window.IntersectionObserver) {
+      return;
     }
+
+    setThemeClass(styles.darkTheme);
+
+    const options = {
+      rootMargin: '-120px 0px 0px 0px',
+    };
+
+    const cb = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setThemeClass(styles.darkTheme);
+        } else {
+          setThemeClass('');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(cb, options);
+    observer.observe(introRef.current);
   }, []);
 
   return (
@@ -84,9 +86,7 @@ const Studio = ({
 };
 
 export const getStaticProps = async () => {
-  const {
-    getContentFromFile,
-  } = require('../../utils/contentUtils');
+  const { getContentFromFile } = require('../../utils/contentUtils');
 
   const index = getContentFromFile('index');
   const studio = getContentFromFile('studio');
@@ -97,6 +97,6 @@ export const getStaticProps = async () => {
       ...studio,
     },
   };
-}
+};
 
 export default Studio;

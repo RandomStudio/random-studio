@@ -4,12 +4,12 @@ title: Random Studio
 introBlock:
   - copy: We create brand and service experiences that trigger a sense of wonder.
     image: /img/studio-hero-01.jpg
-    video: /img/boat.mp4
+    video: https://player.vimeo.com/external/654875216.hd.mp4?s=32c3ab6143557993e96fe0baabfa5b403a8437b1&profile_id=175
   - copy:
       'Our work comes to life in the space where the digital meets the physical.
       '
     image: /img/studio-hero-02.jpg
-    video: /img/digital.mp4
+    video: https://player.vimeo.com/external/654875101.hd.mp4?s=f3666e8b0b2c9ac99c4020a61d75cd4947faeee5&profile_id=175
 services:
   list:
     - copy: |

@@ -1,9 +1,11 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import styles from './LazyVideo.module.scss';
 import vimeoLookup from '../../../infrastructure/vimeoLookup.json';
 
 const LazyVideo = React.forwardRef(
-  ({ alt, videoSrc, loops, isMuted, autoPlays }, videoRef) => {
+  ({ alt, videoSrc, loops, isMuted, autoPlays }, parentRef) => {
+    const localRef = useRef();
+    const videoRef = parentRef ?? localRef;
     const [noJS, setNoJS] = useState(true);
     const [intersected, setIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -17,7 +19,7 @@ const LazyVideo = React.forwardRef(
         /https:\/\/player\.vimeo\.com\/external\/(.*)\./,
       );
 
-      if (!matches[1]) {
+      if (!matches) {
         return null;
       }
 
@@ -101,7 +103,5 @@ const LazyVideo = React.forwardRef(
 );
 
 LazyVideo.displayName = 'LazyVideo';
-LazyVideo.propTypes = {};
-LazyVideo.defaultProps = {};
 
 export default LazyVideo;

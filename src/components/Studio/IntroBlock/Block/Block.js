@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import Image from '../../../Image/Image';
-
+import LazyVideo from '../../../LazyVideo/LazyVideo';
 import styles from './Block.module.scss';
+
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
@@ -46,11 +46,15 @@ const Block = ({ image, index, copy, title, video }) => {
           ref={imageRef}
           style={{ scale }}
         >
-          <Image
-            alt={title}
-            sizes="(max-width: 960px) 100vw, 50vw"
-            src={image}
-          />
+          {video ? (
+            <LazyVideo alt={title} autoPlays isMuted loops videoSrc={video} />
+          ) : (
+            <Image
+              alt={title}
+              sizes="(max-width: 960px) 100vw, 50vw"
+              src={image}
+            />
+          )}
           <motion.div
             className={styles.overlay}
             style={{ opacity: overlayOpacity }}

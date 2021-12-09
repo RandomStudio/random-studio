@@ -11,7 +11,8 @@ const IntroBlock = ({ title, intros }, ref) => (
         image={image}
         index={index}
         key={image.id}
-        video={video && video.publicURL}
+        title={title}
+        video={video}
       />
     ))}
   </section>
