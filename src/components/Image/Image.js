@@ -74,7 +74,7 @@ Image.propTypes = {
 
 Image.defaultProps = {
   className: '',
-  objectFit: 'contain',
+  objectFit: 'cover',
   priority: false,
   quality: 75,
 };

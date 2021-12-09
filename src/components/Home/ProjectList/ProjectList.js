@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import styles from './ProjectList.module.scss';
 import Project from '../../Projects/ProjectList/Project/Project';
@@ -37,7 +38,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
           )}
           {index === projects.length - 1 && (
             <div className={`${styles.seeMore}`}>
-              <a href="/projects">{'See all projects'}</a>
+              <Link href="/projects"><a>{'See all projects'}</a></Link>
             </div>
           )}
         </>

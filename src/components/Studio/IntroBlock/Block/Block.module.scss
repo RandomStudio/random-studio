@@ -179,7 +179,7 @@
     transform-style: preserve-3d;
     transform-origin: 0 0;
     // Scale = (perspective - zTranslation) / perspective | Perspective is set iin Studio.module.scss
-    transform: translateX(1%) translateZ(-0.1px) scale(1.1);
+    // transform: translateX(1%) translateZ(-0.1px) scale(1.1);
 
     @supports (-webkit-overflow-scrolling: none) {
       // CSS specific to iOS devices (ipads - landscape)
