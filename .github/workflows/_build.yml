@@ -41,6 +41,9 @@ jobs:
       - name: 'build'
         run: |
           npm run build
+        env:
+          NEXT_PUBLIC_CDN_URL: ${{ inputs.NEXT_PUBLIC_CDN_URL }}
+
       - name: 'publish'
         run: |
           npx -p "@getmeli/cli" meli upload ./out \
@@ -52,6 +55,5 @@ jobs:
           MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MELI_SITE: ${{ inputs.MELI_SITE }}
-          NEXT_PUBLIC_CDN_URL: ${{ inputs.NEXT_PUBLIC_CDN_URL }}
 
 
