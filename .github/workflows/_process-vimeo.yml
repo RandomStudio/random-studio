@@ -2,12 +2,23 @@ name: Process Vimeo assets
 on:
   workflow_call
 jobs:
-  prepare:
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_prepare.yml@next.js
   build:
     name: Process Vimeo links
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - uses: actions/checkout@v2
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --ignore-scripts
       - name: Upload Images
         run: |
           for file in src/content/**/*.md; do

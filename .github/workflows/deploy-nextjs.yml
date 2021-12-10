@@ -14,17 +14,3 @@ jobs:
   build:
     needs: [process-images, process-vimeo]
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@next.js
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'publish'
-        run: |
-          npx -p "@getmeli/cli" meli upload ./out \
-            --url "https://staging.random.studio" \
-            --site "$MELI_SITE" \
-            --token "$MELI_TOKEN" \
-            --release "$GITHUB_SHA"
-        env:
-          MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
