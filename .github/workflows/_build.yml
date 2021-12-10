@@ -1,6 +1,11 @@
 name: Build Application
 on:
-  workflow_call
+  workflow_call:
+    secrets:
+      MELI_SITE:
+        required: true
+      NEXT_PUBLIC_CDN_URL:
+        required: true
 jobs:
   build:
     name: Build application
