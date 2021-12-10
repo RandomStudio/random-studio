@@ -9,10 +9,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - name: Checkout into images
+      - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v2
