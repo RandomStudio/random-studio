@@ -1,6 +1,9 @@
 name: Deploy Application
 on:
-  workflow_call
+  workflow_call:
+    secrets:
+      MELI_SITE:
+        required: true
 jobs:
   deploy:
     name: Build application
