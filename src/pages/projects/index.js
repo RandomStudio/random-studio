@@ -25,22 +25,23 @@ export async function getStaticProps() {
   const data = getContentFromFile('projects');
   const allProjects = getAllProjects();
 
-  const projectDetails = data.projects.map(({ caption, project: projectTitle, thumbnail, tags }) => {
-    const project = allProjects.find(
-      ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
-    );
+  const projectDetails = data.projects
+    .map(({ caption, project: projectTitle, thumbnail, tags }) => {
+      const project = allProjects.find(
+        ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
+      );
 
-    if (!project) {
-      return null;
-    }
+      if (!project) {
+        return null;
+      }
 
-    return {
-      slug: '/' + project.slug,
-      tags: tags ?? null,
-      thumbnail: thumbnail ?? null,
-      title: caption || project.title,
-    };
-  })
+      return {
+        slug: `/${project.slug}`,
+        tags: tags ?? null,
+        thumbnail: thumbnail ?? null,
+        title: caption || project.title,
+      };
+    })
     .filter(project => project !== null);
 
   return {

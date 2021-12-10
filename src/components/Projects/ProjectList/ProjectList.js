@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import { countBy } from 'lodash';
 import styles from './ProjectList.module.scss';
-import Project from './Project/Project';
 import Filters from '../../Filters/Filters';
-
-export const PROJECT_FILTER_LIST = [
-  'Spaces',
-  'Installations',
-  'Exhibitions',
-  'Research',
-  'Digital',
-];
+import PROJECT_FILTERS from './PROJECT_FILTERS';
+import Project from './Project/Project';
 
 const ProjectList = ({ middle, projects }) => {
   const projectFilters = projects
@@ -27,9 +20,9 @@ const ProjectList = ({ middle, projects }) => {
   return (
     <>
       <Filters
-        filterList={PROJECT_FILTER_LIST}
-        filterCount={filterCount}
         activeTag={activeTag}
+        filterCount={filterCount}
+        filterList={PROJECT_FILTERS}
         setActiveTag={setActiveTag}
       />
 

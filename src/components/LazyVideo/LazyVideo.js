@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import styles from './LazyVideo.module.scss';
 import vimeoLookup from '../../../infrastructure/vimeoLookup.json';
-import { useIntersectionObserverRef } from 'rooks';
 
 const LazyVideo = React.forwardRef(
   ({ alt, className, videoSrc, loops, isMuted, autoPlays }, parentRef) => {
@@ -38,32 +37,34 @@ const LazyVideo = React.forwardRef(
         }
       };
 
-      if (ref) {
-        const observer = new IntersectionObserver(
-          entries => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                setIntersected(true);
-                handlePlayer();
-                observer.disconnect();
-              }
-            });
-          },
-          {
-            rootMargin: '8%',
-          },
-        );
-
-        observer.observe(ref);
-
-        return () => {
-          if (ref) {
-            observer.unobserve(ref);
-          }
-
-          observer.disconnect();
-        };
+      if (!ref) {
+        return undefined;
       }
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setIntersected(true);
+              handlePlayer();
+              observer.disconnect();
+            }
+          });
+        },
+        {
+          rootMargin: '8%',
+        },
+      );
+
+      observer.observe(ref);
+
+      return () => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+
+        observer.disconnect();
+      };
     }, [noJS, videoRef, autoPlays]);
 
     const videoElement = (
@@ -87,7 +88,8 @@ const LazyVideo = React.forwardRef(
     // Prevents autoplay conflicting
     return (
       <div
-        className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''}`}
+        className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
+          }`}
         style={{
           aspectRatio: `${width} / ${height}`,
         }}

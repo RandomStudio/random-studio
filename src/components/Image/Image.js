@@ -14,25 +14,30 @@ const getSrc = (src, width) => {
   if (process.env.NODE_ENV !== 'production') {
     return `${src}?wouldBeWidth=${width}`;
   }
+
   const { full } = srcToIds(src);
 
   return `${process.env.NEXT_PUBLIC_CDN_URL}/${full}/${width}`;
 };
 
 // Should match variant options on Cloudflare
-const CLOUDFLARE_VARIANTS = [320, 512, 640, 720, 864, 1024, 1280, 1440, 1920, 2048];
+const CLOUDFLARE_VARIANTS = [
+  320, 512, 640, 720, 864, 1024, 1280, 1440, 1920, 2048,
+];
 
-const CustomImage = ({
-  alt,
-  className,
-  sizes,
-  src,
-}) => {
+const CustomImage = ({ alt, className, sizes, src }) => {
   const imageRef = useRef();
   const { thumb } = srcToIds(src);
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const srcset = useMemo(() => CLOUDFLARE_VARIANTS.map(size => `${getSrc(src, size)} ${size}w`).join(', '), [src]);
+
+  const srcset = useMemo(
+    () =>
+      CLOUDFLARE_VARIANTS.map(size => `${getSrc(src, size)} ${size}w`).join(
+        ', ',
+      ),
+    [src],
+  );
 
   useEffect(() => {
     const ref = imageRef.current;
@@ -41,21 +46,22 @@ const CustomImage = ({
       const image = new Image();
       image.decoding = 'async';
       image.alt = alt;
-      image.className = styles.image
+      image.className = styles.image;
       image.sizes = sizes;
       image.srcset = srcset;
+
       try {
-        await image.decode()
-        setIsLoaded(true)
+        await image.decode();
+        setIsLoaded(true);
       } catch (error) {
-        console.error(error, src)
+        console.error(error, src);
       }
-    }
+    };
 
     const observer = new IntersectionObserver(
       entries => {
         if (entries[0].isIntersecting) {
-          loadImage()
+          loadImage();
           observer.disconnect();
         }
       },
@@ -70,18 +76,25 @@ const CustomImage = ({
       observer.unobserve(ref);
       observer.disconnect();
     };
-  }, []);
+  }, [alt, sizes, src, srcset]);
 
   return (
-    <div className={`${styles.wrapper} ${className} ${isLoaded ? styles.isLoaded : ''}`} ref={imageRef}>
-      <img src={`data:image/jpeg;base64,${thumb}`} className={styles.placeholder} />
+    <div
+      className={`${styles.wrapper} ${className} ${isLoaded ? styles.isLoaded : ''
+        }`}
+      ref={imageRef}
+    >
       <img
+        className={styles.placeholder}
+        src={`data:image/jpeg;base64,${thumb}`}
+      />
+      <img
+        alt={alt}
         className={styles.image}
         decoding="async"
-        alt={alt}
         sizes={sizes}
-        srcSet={isLoaded ? srcset : null}
         src={isLoaded ? src : null}
+        srcSet={isLoaded ? srcset : null}
       />
     </div>
   );
@@ -90,16 +103,18 @@ const CustomImage = ({
 CustomImage.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  priority: PropTypes.bool,
-  quality: PropTypes.number,
   sizes: PropTypes.string.isRequired,
-  src: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ full: PropTypes.string, thumb: PropTypes.string })]).isRequired,
+  src: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      full: PropTypes.string,
+      thumb: PropTypes.string
+    }),
+  ]).isRequired,
 };
 
 CustomImage.defaultProps = {
   className: '',
-  priority: false,
-  quality: 75,
 };
 
 export default CustomImage;
