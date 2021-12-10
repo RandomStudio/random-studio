@@ -1,6 +1,16 @@
 name: Build Application
 on:
-  workflow_call
+  workflow_call:
+    inputs:
+      MELI_SITE:
+        required: true
+        type: string
+      NEXT_PUBLIC_CDN_URL:
+        required: true
+        type: string
+    secrets:
+      MELI_TOKEN:
+        required: true
 jobs:
   build:
     name: Build application
@@ -41,7 +51,7 @@ jobs:
         env:
           MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
-          NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+          MELI_SITE: ${{ inputs.MELI_SITE }}
+          NEXT_PUBLIC_CDN_URL: ${{ inputs.NEXT_PUBLIC_CDN_URL }}
 
 
