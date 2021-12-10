@@ -19,16 +19,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - uses: actions/checkout@v2
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v2
+      - uses: actions/download-artifact@v2
         with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+          name: repo
       - name: Cache Next
         uses: actions/cache@v2
         with:

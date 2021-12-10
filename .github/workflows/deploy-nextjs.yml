@@ -4,6 +4,31 @@ on:
     branches:
       - "next.js"
 jobs:
+  checkout:
+    name: Checkout and cache
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Checkout into images
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - uses: actions/upload-artifact@v2
+        with:
+          retention-days: 1
+          name: repo
+          path: /
   process-images:
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@next.js
   process-vimeo:
