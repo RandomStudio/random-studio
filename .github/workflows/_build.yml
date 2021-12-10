@@ -2,22 +2,12 @@ name: Build Application
 on:
   workflow_call
 jobs:
+  prepare:
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_prepare.yml@next.js
   build:
+    name: Build application
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '16'
-      - uses: actions/checkout@v2
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v2
-        with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --ignore-scripts
       - name: Cache Next
         uses: actions/cache@v2
         with:

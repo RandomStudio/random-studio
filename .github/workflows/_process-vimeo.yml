@@ -2,7 +2,10 @@ name: Process Vimeo assets
 on:
   workflow_call
 jobs:
+  prepare:
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_prepare.yml@next.js
   build:
+    name: Process Vimeo links
     runs-on: ubuntu-latest
     steps:
       - name: Upload Images
