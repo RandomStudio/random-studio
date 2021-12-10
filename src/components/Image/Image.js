@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import NextImage from 'next/image';
 import PropTypes from 'prop-types';
 import imageLookup from '../../../infrastructure/imageLookup.json';
 import styles from './Image.module.scss';
