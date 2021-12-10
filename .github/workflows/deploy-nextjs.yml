@@ -8,12 +8,12 @@ env:
   NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
 jobs:
   process-images:
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@main
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@next.js
   process-vimeo:
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-vimeo.yml@main
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-vimeo.yml@next.js
   build:
     needs: [process-images, process-vimeo]
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@main
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@next.js
   deploy:
     needs: build
     runs-on: ubuntu-latest
