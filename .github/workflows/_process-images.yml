@@ -15,9 +15,19 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - uses: actions/download-artifact@v2
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          name: repo
+          fetch-depth: 0
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
       - name: Run changed-files with defaults on the img folder
         id: changed-files
         uses: tj-actions/changed-files@v11.9
