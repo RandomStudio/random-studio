@@ -1,7 +1,7 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/628953500.hd.mp4?s=1bfe435a8e9b72f21238f8da6f1e0de4b05d5093&profile_id=175
+video: https://player.vimeo.com/external/654862644.hd.mp4?s=72c963d566d60df6cf8ac1f0173d1b1d0f22cf10&profile_id=175
 collaborationCredits:
   collaborator: C.P. Company
   url: https://random.studio/projects/an-archival-experience-celebrating-c-p-companys-50th-anniversary

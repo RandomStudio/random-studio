@@ -1,8 +1,8 @@
-import { basename } from 'path';
-import createPlaceholder from './createPlaceholder';
-import { Curl } from 'node-libcurl';
-import fs from 'fs';
-import mime from 'mime-types';
+const { basename } = require('path');
+const createPlaceholder = require('./createPlaceholder');
+const { Curl } = require('node-libcurl');
+const fs = require('fs');
+const mime = require('mime-types');
 
 const lookupFile = './infrastructure/imageLookup.json';
 const filePath = process.argv[3];
@@ -43,11 +43,15 @@ const upload = () =>
     ]);
 
     curl.on('end', (code, response) => {
+      if (code === 413) {
+        console.error(response);
+        console.log('Currently need to recover manually.')
+      }
       if (code === 200) {
         const {
           result: { id },
         } = JSON.parse(response);
-
+        console.log(id)
         savedImageIds[filename] = {
           full: id,
         };
@@ -72,11 +76,12 @@ const processImage = async () => {
   await upload();
 
   try {
-    const placeholder = await createPlaceholder();
+    const placeholder = await createPlaceholder(filePath);
     savedImageIds[filename].thumb = placeholder;
   } catch (error) {
     console.error(error)
     console.log('Caught and will continue without placeholder.')
+    console.log(savedImageIds[filename])
   }
 
   fs.writeFileSync(

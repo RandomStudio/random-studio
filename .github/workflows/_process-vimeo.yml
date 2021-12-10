@@ -1,0 +1,31 @@
+name: Process Vimeo assets
+on:
+  workflow_call
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload Images
+        run: |
+          for file in src/content/**/*.md; do
+            npm run process:vimeo -- --file $file
+          done
+      - name: Commit files
+        id: commit
+        run: |
+          git config --local user.email "automated@random.studio"
+          git config --local user.name "Image Workflow"
+          git add --all
+          if [-z "$(git status --porcelain)"]; then
+            echo "::set-output name=push::false"
+          else
+            git commit -m "Update Image Lookup file" -a
+            echo "::set-output name=push::true"
+          fi
+        shell: bash
+      - name: Push changes
+        if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+

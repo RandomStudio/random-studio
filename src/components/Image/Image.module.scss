@@ -10,6 +10,7 @@
   transition: opacity 300ms ease-out;
 
   .isLoaded & {
+    background-color: #f8f8f8;
     opacity: 1;
   }
 }
@@ -17,10 +18,4 @@
 .placeholder {
   position: relative;
   width: 100%;
-  opacity: 1;
-
-  .isLoaded & {
-    opacity: 0;
-    transition: opacity 300ms ease-out 200ms;
-  }
 }

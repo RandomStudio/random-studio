@@ -7,36 +7,17 @@ env:
   MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
   NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
 jobs:
+  process-images:
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@main
+  process-vimeo:
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-vimeo.yml@main
   build:
+    needs: [process-images, process-vimeo]
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@main
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '16'
-      - uses: actions/checkout@v2
-
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v2
-        with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --ignore-scripts
-
-      - name: Cache Next
-        uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}/.next/cache # [I]
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
-      - name: 'build'
-        run: |
-          npm run build
       - name: 'publish'
         run: |
           npx -p "@getmeli/cli" meli upload ./out \

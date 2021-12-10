@@ -4,9 +4,9 @@ import styles from './ServiceList.module.scss';
 import Image from '../../Image/Image';
 
 const imageSizes = [
-  ['(max-width: 960px) 40vw, 80vw'],
-  ['(max-width: 960px) 38vw, 80vw'],
-  ['75vw'],
+  '(max-width: 960px) 40vw, 80vw',
+  '(max-width: 960px) 38vw, 80vw',
+  '75vw',
 ];
 
 const ServiceList = ({ headerTitle, services }) => (
