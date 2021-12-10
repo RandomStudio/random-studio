@@ -35,7 +35,7 @@ export async function getStaticProps() {
     }
 
     return {
-      slug: project.slug,
+      slug: '/' + project.slug,
       tags: tags ?? null,
       thumbnail: thumbnail ?? null,
       title: caption || project.title,

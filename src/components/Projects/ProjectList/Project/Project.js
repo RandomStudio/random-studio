@@ -7,7 +7,7 @@ import ProjectVideo from '../../ProjectVideo/ProjectVideo';
 import Image from '../../../Image/Image';
 
 const Project = ({ thumbnail, title, slug }) => (
-  <Link href={slug || '#'} id={slug}>
+  <Link href={slug} id={slug}>
     <a
       className={styles.thumbnail}
       style={{

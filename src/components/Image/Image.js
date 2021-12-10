@@ -44,8 +44,12 @@ const CustomImage = ({
       image.className = styles.image
       image.sizes = sizes;
       image.srcset = srcset;
-      await image.decode()
-      setIsLoaded(true)
+      try {
+        await image.decode()
+        setIsLoaded(true)
+      } catch (error) {
+        console.error(error, src)
+      }
     }
 
     const observer = new IntersectionObserver(
@@ -76,7 +80,7 @@ const CustomImage = ({
         decoding="async"
         alt={alt}
         sizes={sizes}
-        srcset={isLoaded ? srcset : null}
+        srcSet={isLoaded ? srcset : null}
         src={isLoaded ? src : null}
       />
     </div>

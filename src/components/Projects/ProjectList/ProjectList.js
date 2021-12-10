@@ -43,13 +43,14 @@ const ProjectList = ({ middle, projects }) => {
 
           return (
             <Project
+              index={index}
+              key={slug}
               middle={middle}
+              projects={projects}
+              slug={slug}
               thumbnail={thumbnail}
               title={title}
               titleWidth
-              slug={slug}
-              index={index}
-              projects={projects}
             />
           );
         })}
