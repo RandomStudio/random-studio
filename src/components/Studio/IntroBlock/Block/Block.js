@@ -47,7 +47,7 @@ const Block = ({ image, index, copy, title, video }) => {
           style={{ scale }}
         >
           {video ? (
-            <LazyVideo alt={title} autoPlays isMuted loops videoSrc={video} />
+            <LazyVideo alt={title} autoPlays className={styles.fluidVideo} isMuted loops videoSrc={video} />
           ) : (
             <Image
               alt={title}

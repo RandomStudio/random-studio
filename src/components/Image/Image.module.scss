@@ -10,7 +10,6 @@
   transition: opacity 300ms ease-out;
 
   .isLoaded & {
-    background-color: #f8f8f8;
     opacity: 1;
   }
 }
