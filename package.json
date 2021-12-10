@@ -45,7 +45,7 @@
     "sharp": "0.29.3"
   },
   "engines": {
-    "node": "16.13.1"
+    "node": "^16.13.0"
   },
   "repository": {
     "type": "git",
