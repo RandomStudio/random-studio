@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import styles from './LazyVideo.module.scss';
 import vimeoLookup from '../../../infrastructure/vimeoLookup.json';
+import { useIntersectionObserverRef } from 'rooks';
 
 const LazyVideo = React.forwardRef(
   ({ alt, className, videoSrc, loops, isMuted, autoPlays }, parentRef) => {

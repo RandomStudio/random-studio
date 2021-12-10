@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import NextImage from 'next/image';
 import PropTypes from 'prop-types';
 import imageLookup from '../../../infrastructure/imageLookup.json';
@@ -11,7 +11,7 @@ const srcToIds = src => {
   return imageLookup[cleanSrc] ?? {};
 };
 
-const cloudflareLoader = ({ src, width }) => {
+const getSrc = (src, width) => {
   if (process.env.NODE_ENV !== 'production') {
     return `${src}?wouldBeWidth=${width}`;
   }
@@ -20,62 +20,83 @@ const cloudflareLoader = ({ src, width }) => {
   return `${process.env.NEXT_PUBLIC_CDN_URL}/${full}/${width}`;
 };
 
-const Image = ({
+// Should match variant options on Cloudflare
+const CLOUDFLARE_VARIANTS = [320, 512, 640, 720, 864, 1024, 1280, 1440, 1920, 2048];
+
+const CustomImage = ({
   alt,
   className,
-  objectFit,
-  priority,
-  quality,
   sizes,
   src,
 }) => {
+  const imageRef = useRef();
   const { thumb } = srcToIds(src);
 
   const [isLoaded, setIsLoaded] = useState(false);
+  const srcset = useMemo(() => CLOUDFLARE_VARIANTS.map(size => `${getSrc(src, size)} ${size}w`).join(', '), [src]);
+
+  useEffect(() => {
+    const ref = imageRef.current;
+
+    const loadImage = async () => {
+      const image = new Image();
+      image.decoding = 'async';
+      image.alt = alt;
+      image.className = styles.image
+      image.sizes = sizes;
+      image.srcset = srcset;
+      await image.decode()
+      setIsLoaded(true)
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          loadImage()
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '200px',
+      },
+    );
+
+    observer.observe(ref);
+
+    return () => {
+      observer.unobserve(ref);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <div className={`${styles.wrapper} ${className} ${isLoaded ? styles.isLoaded : ''}`}>
+    <div className={`${styles.wrapper} ${className} ${isLoaded ? styles.isLoaded : ''}`} ref={imageRef}>
       <img src={`data:image/jpeg;base64,${thumb}`} className={styles.placeholder} />
-      <NextImage
-        alt={alt}
+      <img
         className={styles.image}
-        layout="fill"
-        loader={cloudflareLoader}
-        objectFit={objectFit}
-        priority={priority}
-        quality={quality}
+        decoding="async"
+        alt={alt}
         sizes={sizes}
-        placeholder="empty"
-        src={src}
-        onLoadingComplete={() => setIsLoaded(true)}
-        {
-        ...(thumb ?
-          {
-            //blurDataURL: `data:image/jpeg;base64,${thumb}`,
-            //placeholder: "blur",
-            //src: src
-          } : {})
-        }
+        srcset={isLoaded ? srcset : null}
+        src={isLoaded ? src : null}
       />
     </div>
   );
 };
 
-Image.propTypes = {
+CustomImage.propTypes = {
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  objectFit: PropTypes.oneOf(['contain', 'cover']),
   priority: PropTypes.bool,
   quality: PropTypes.number,
   sizes: PropTypes.string.isRequired,
   src: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ full: PropTypes.string, thumb: PropTypes.string })]).isRequired,
 };
 
-Image.defaultProps = {
+CustomImage.defaultProps = {
   className: '',
-  objectFit: 'cover',
   priority: false,
   quality: 75,
 };
 
-export default Image;
+export default CustomImage;

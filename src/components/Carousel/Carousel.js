@@ -4,7 +4,7 @@ import styles from './Carousel.module.scss';
 import Caption from '../Projects/ProjectDetail/Caption/Caption';
 import Image from '../Image/Image';
 
-const Carousel = ({ carousel, caption, objectFit, className, width }) => {
+const Carousel = ({ carousel, caption, className, width }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -42,7 +42,6 @@ const Carousel = ({ carousel, caption, objectFit, className, width }) => {
                   <Image
                     alt={`${caption} – slide ${index + 1}`}
                     loading="auto"
-                    objectFit={objectFit}
                     sizes={`(max-width: 576px) 100vw, ${width}vw`}
                     src={image}
                   />
@@ -63,12 +62,10 @@ const Carousel = ({ carousel, caption, objectFit, className, width }) => {
 Carousel.propTypes = {
   carousel: PropTypes.arrayOf(PropTypes.object).isRequired,
   className: PropTypes.string,
-  objectFit: PropTypes.oneOf(['contain', 'cover']),
 };
 
 Carousel.defaultProps = {
   className: '',
-  objectFit: 'cover',
 };
 
 export default Carousel;

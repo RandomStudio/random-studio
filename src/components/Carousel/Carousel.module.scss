@@ -1,10 +1,5 @@
 .carousel {
   position: relative;
-  // The gatsby generated image wrapper & img fallback
-  & > div > div,
-  img {
-    object-fit: contain;
-  }
 
   p,
   span {

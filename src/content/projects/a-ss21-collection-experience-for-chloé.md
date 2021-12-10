@@ -40,7 +40,7 @@ content:
       isAlwaysMuted: false
     marginTop: 0
     marginLeft: 3
-    image: /img/screenshot-selection-cam-2.00_00_56_04.still006.png
+    image: /img/screenshot-selection-cam-2.00_00_56_04.still006.jpg
     width: 94
   - video:
       autoplay: false
@@ -50,7 +50,7 @@ content:
       isAlwaysMuted: false
     marginTop: 3
     marginLeft: 3
-    image: /img/screenshot-selection-cam-1.00_09_35_10.still138.png
+    image: /img/screenshot-selection-cam-1.00_09_35_10.still138.jpg
     width: 94
   - video:
       autoplay: false
@@ -60,7 +60,7 @@ content:
       isAlwaysMuted: false
     marginTop: 3
     marginLeft: 3
-    image: /img/screenshot-selection-cam-4.00_00_13_21.still007.png
+    image: /img/screenshot-selection-cam-4.00_00_13_21.still007.jpg
     width: 94
   - video:
       autoplay: false
