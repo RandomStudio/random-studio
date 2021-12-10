@@ -1,0 +1,27 @@
+name: Deploy Application
+on:
+  workflow_call
+jobs:
+  deploy:
+    name: Build application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - uses: actions/checkout@v2
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: out
+      - name: 'publish'
+        run: |
+          npx -p "@getmeli/cli" meli upload ./out \
+            --url "https://staging.random.studio" \
+            --site "$MELI_SITE" \
+            --token "$MELI_TOKEN" \
+            --release "$GITHUB_SHA"
+        env:
+          MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

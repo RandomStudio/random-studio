@@ -36,14 +36,9 @@ jobs:
       - name: 'build'
         run: |
           npm run build
-      - name: 'publish'
-        run: |
-          npx -p "@getmeli/cli" meli upload ./out \
-            --url "https://staging.random.studio" \
-            --site "$MELI_SITE" \
-            --token "$MELI_TOKEN" \
-            --release "$GITHUB_SHA"
-        env:
-          MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Save build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: out
+          path: |
+            out
