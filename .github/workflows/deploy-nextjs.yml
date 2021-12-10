@@ -30,8 +30,10 @@ jobs:
           name: repo
           path: /
   process-images:
+    needs: checkout
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@next.js
   process-vimeo:
+    needs: checkout
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-vimeo.yml@next.js
   build:
     needs: [process-images, process-vimeo]
