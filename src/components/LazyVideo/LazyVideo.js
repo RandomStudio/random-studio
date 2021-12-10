@@ -3,7 +3,7 @@ import styles from './LazyVideo.module.scss';
 import vimeoLookup from '../../../infrastructure/vimeoLookup.json';
 
 const LazyVideo = React.forwardRef(
-  ({ alt, videoSrc, loops, isMuted, autoPlays }, parentRef) => {
+  ({ alt, className, videoSrc, loops, isMuted, autoPlays }, parentRef) => {
     const localRef = useRef();
     const videoRef = parentRef ?? localRef;
     const [noJS, setNoJS] = useState(true);
@@ -86,7 +86,7 @@ const LazyVideo = React.forwardRef(
     // Prevents autoplay conflicting
     return (
       <div
-        className={`${styles.frame} ${isLoaded ? styles.isLoaded : ''}`}
+        className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''}`}
         style={{
           aspectRatio: `${width} / ${height}`,
         }}
