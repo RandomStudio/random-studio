@@ -1,10 +1,16 @@
 name: Process image assets
 on:
-  workflow_call
+  workflow_call:
+    outputs:
+      pushed:
+        description: "Did workflow commit new files"
+        value: ${{ jobs.build.outputs.pushed }}
 jobs:
   process_images:
     name: Process image assets
     runs-on: ubuntu-latest
+    outputs:
+      pushed: ${{ steps.commit.outputs.push }}
     steps:
       - uses: actions/setup-node@v1
         with:

@@ -4,38 +4,24 @@ on:
     branches:
       - "next.js"
 jobs:
-  checkout:
-    name: Checkout and cache
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '16'
-      - name: Checkout into images
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v2
-        with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-      - uses: actions/upload-artifact@v2
-        with:
-          retention-days: 1
-          name: repo
-          path: ./
+  build:
+    name: Build and deploy immediately
+    needs: [process-images, process-vimeo]
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@next.js
+    with:
+      MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
+      NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+    secrets:
+      MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
   process-images:
-    needs: checkout
+    needs: build
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@next.js
   process-vimeo:
-    needs: checkout
+    needs: build
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-vimeo.yml@next.js
-  build:
+  rebuild-if-required:
+    name: Rebuild and deploy with new assets
+    if: ${{ needs.process-images.outputs.pushed || needs.process-vimeo.outputs.pushed }}
     needs: [process-images, process-vimeo]
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@next.js
     with:
