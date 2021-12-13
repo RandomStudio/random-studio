@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - back-to-gatsby
   workflow_dispatch:
 jobs:
   deploy:

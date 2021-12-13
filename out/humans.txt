@@ -1,0 +1,26 @@
+Site: https://random.studio/
+Get in touch: hello@random.studio
+Location: Amsterdam, Netherlands
+
+/* WORKED ON BY */
+Andrew Hill
+Ben Mingo
+Dominique Rokebrand
+Debbie Schonenberg
+Hugo Desjardins
+Ineke Tjalsma
+Jordi van der Oord
+Kevin Wang
+Larix Kortbeek
+Mark Hinch
+Richard Overboom
+
+/* SOCIAL */
+Twitter: @random_studio
+Instagram: @random_studio
+
+/* THANKS */
+Mark Prendergast for the homepage video (https://www.instagram.com/prendswash/)
+
+/* BUILT WITH */
+Software: React, GatsbyJS, Babylon.js, Netlify CMS
