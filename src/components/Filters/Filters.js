@@ -61,8 +61,9 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
       <div className={styles.filters}>
         {filtersWithEntries.map(filter => (
           <div
-            className={`${styles.filterEntry} ${activeTag !== null ? styles.activeFilter : ''
-              } ${filter === activeTag ? styles.activeTag : ''}`}
+            className={`${styles.filterEntry} ${
+              activeTag !== null ? styles.activeFilter : ''
+            } ${filter === activeTag ? styles.activeTag : ''}`}
             key={filter}
             onClick={() => {
               handleSelectFilter(filter);

@@ -12,8 +12,12 @@ const JobOffer = ({
     <div>
       <header>
         <strong>{jobTitle}</strong>
-        <button className={styles.closeButton} onClick={closeOpenOffer}>
-          &times;
+        <button
+          className={styles.closeButton}
+          onClick={closeOpenOffer}
+          type="button"
+        >
+          {'&times;'}
         </button>
       </header>
 

@@ -62,7 +62,7 @@ export const getStaticProps = async ({ params }) => {
       ...data,
     },
   };
-}
+};
 
 export async function getStaticPaths() {
   const { getAllProjects } = require('../../../utils/contentUtils');

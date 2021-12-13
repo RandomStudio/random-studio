@@ -2,7 +2,7 @@ import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SkillBlock.module.scss';
 import SkillList from './SkillList/SkillList';
-import { copyStringToClipboard } from '../../../utils/copyClipboard';
+import copyStringToClipboard from '../../../utils/copyClipboard';
 import { AppContext } from '../../../utils/context/AppContext';
 
 const SkillBlock = ({ skillset, email }) => {

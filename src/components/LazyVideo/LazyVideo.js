@@ -88,8 +88,9 @@ const LazyVideo = React.forwardRef(
     // Prevents autoplay conflicting
     return (
       <div
-        className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
-          }`}
+        className={`${styles.frame} ${className} ${
+          isLoaded ? styles.isLoaded : ''
+        }`}
         style={{
           aspectRatio: `${width} / ${height}`,
         }}

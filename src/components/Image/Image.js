@@ -80,8 +80,9 @@ const CustomImage = ({ alt, className, sizes, src }) => {
 
   return (
     <div
-      className={`${styles.wrapper} ${className} ${isLoaded ? styles.isLoaded : ''
-        }`}
+      className={`${styles.wrapper} ${className} ${
+        isLoaded ? styles.isLoaded : ''
+      }`}
       ref={imageRef}
     >
       <img
@@ -108,7 +109,7 @@ CustomImage.propTypes = {
     PropTypes.string,
     PropTypes.shape({
       full: PropTypes.string,
-      thumb: PropTypes.string
+      thumb: PropTypes.string,
     }),
   ]).isRequired,
 };

@@ -38,7 +38,9 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
           )}
           {index === projects.length - 1 && (
             <div className={`${styles.seeMore}`}>
-              <Link href="/projects"><a>{'See all projects'}</a></Link>
+              <Link href="/projects">
+                <a>{'See all projects'}</a>
+              </Link>
             </div>
           )}
         </React.Fragment>

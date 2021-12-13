@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import Newsletter from './Newsletter/Newsletter';
 import styles from './Footer.module.scss';
-import { copyStringToClipboard } from '../../utils/copyClipboard';
+import copyStringToClipboard from '../../utils/copyClipboard';
 import { AppContext } from '../../utils/context/AppContext';
 
 const Footer = ({ address, email, phone }) => {
@@ -17,7 +17,7 @@ const Footer = ({ address, email, phone }) => {
     <footer className={styles.footer}>
       <div className={styles.studio}>
         <div className={`${styles.address}`}>
-          <span className={styles.name}>Random Amsterdam</span>
+          <span className={styles.name}>{'Random Amsterdam'}</span>
           <ReactMarkdown
             className={styles.location}
             escapeHtml={false}
@@ -41,20 +41,20 @@ const Footer = ({ address, email, phone }) => {
           </a>
         </div>
         <div className={`${styles.address}`}>
-          <span className={styles.name}>Random Paris</span>
+          <span className={styles.name}>{'Random Paris'}</span>
           <div className={styles.location}>
-            174 Quai de Jemmapes
+            {'174 Quai de Jemmapes'}
             <br />
-            75010 Paris
+            {'75010 Paris'}
             <br />
-            France
+            {'France'}
             <br />
             <a
               href="https://goo.gl/maps/8JhU7KsTLAaZZtGA9"
               rel="noreferrer"
               target="_blank"
             >
-              Directions
+              {'Directions'}
             </a>
           </div>
 
@@ -88,7 +88,7 @@ const Footer = ({ address, email, phone }) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Instagram
+            {'Instagram'}
           </a>
           <a
             className={styles.social}
@@ -96,7 +96,7 @@ const Footer = ({ address, email, phone }) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            LinkedIn
+            {'LinkedIn'}
           </a>
           <a
             className={styles.social}
@@ -104,7 +104,7 @@ const Footer = ({ address, email, phone }) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Medium
+            {'Medium'}
           </a>
         </div>
       </div>
