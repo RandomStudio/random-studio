@@ -9,7 +9,7 @@ jobs:
     name: Build and deploy immediately
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@master
     with:
-      BUILD_DIR: 'public'
+      BUILD_DIR: 'out'
       SERVER_IP: '195.114.30.143'
       SSH_USERNAME: random-studio
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
@@ -25,7 +25,7 @@ jobs:
     needs: [build, process-images, process-vimeo]
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@master
     with:
-      BUILD_DIR: 'public'
+      BUILD_DIR: 'out'
       SERVER_IP: '195.114.30.143'
       SSH_USERNAME: random-studio
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
