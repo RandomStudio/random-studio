@@ -100,7 +100,7 @@ const ProjectDetail = ({
         }) => (
           <div
             className={styles.item}
-            key={`${image}_${alt}_${video?.url}_${carousel[0]?.url}_${carousel[0]?.image}`}
+            key={`${image}_${alt}_${video?.url}_${carousel?.[0]?.url}_${carousel?.[0]?.image}`}
             style={{
               zIndex: zIndex || '0',
               '--marginTop': `${marginTop}%`,
