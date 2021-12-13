@@ -65,10 +65,10 @@ jobs:
       - name: Deploy to server
         uses: AEnterprise/rsync-deploy@1.0.1
         env:
+          DEPLOY_KEY: ${{ secrets.SSH_KEY }}
           ARGS: "-e -c -r --delete"
-          DEPLOY_KEY: ${{ inputs.SSH_KEY }}
-          USERNAME: ${{ env.SSH_USERNAME }}
+          SERVER_PORT: ${{ inputs.SERVER_PORT }}
           FOLDER: "${{ inputs.BUILD_DIR }}/"
+          SERVER_IP: ${{ inputs.SERVER_IP }}
+          USERNAME: ${{ inputs.SSH_USERNAME }}
           SERVER_DESTINATION: '/var/www/random.studio/'
-
-
