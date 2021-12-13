@@ -5,45 +5,29 @@ on:
       - master
   workflow_dispatch:
 jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    env:
+  build:
+    name: Build and deploy immediately
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@next.js
+    with:
       BUILD_DIR: 'public'
       SERVER_IP: 195.114.30.143
-      SERVER_PORT: 22
       SSH_USERNAME: random-studio
+      NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+    secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12'
-      - name: Install dependencies
-        run: npm install
-      - name: Gatsby Public Folder
-        uses: actions/cache@v1
-        id: gatsby-public-folder
-        with:
-          path: public/
-          key: ${{ runner.os }}-public-gatsby
-          restore-keys: |
-            ${{ runner.os }}-public-gatsby
-      - name: Build
-        run: npm run build
-      - name: Create folders
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ env.SERVER_IP }}
-          username: ${{ env.SSH_USERNAME }}
-          key: ${{ env.SSH_KEY }}
-          port: 22
-          script: mkdir -p /var/www/random.studio
-      - name: Deploy to server
-        uses: AEnterprise/rsync-deploy@1.0.1
-        env:
-          ARGS: "-e -c -r --delete"
-          DEPLOY_KEY: ${{ env.SSH_KEY }}
-          USERNAME: ${{ env.SSH_USERNAME }}
-          FOLDER: "${{ env.BUILD_DIR }}/"
-          SERVER_DESTINATION: '/var/www/random.studio/'
+  process-images:
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@next.js
+  process-vimeo:
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-vimeo.yml@next.js
+  rebuild-if-required:
+    name: Rebuild and deploy with new assets
+    if: ${{ needs.process-images.outputs.pushed == 'true' || needs.process-vimeo.outputs.pushed == 'true' }}
+    needs: [build, process-images, process-vimeo]
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@next.js
+    with:
+      BUILD_DIR: 'public'
+      SERVER_IP: 195.114.30.143
+      SSH_USERNAME: random-studio
+      NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+    secrets:
+      SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}

@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Build and deploy immediately
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@next.js
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-meli.yml@next.js
     with:
       MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
@@ -20,7 +20,7 @@ jobs:
     name: Rebuild and deploy with new assets
     if: ${{ needs.process-images.outputs.pushed == 'true' || needs.process-vimeo.outputs.pushed == 'true' }}
     needs: [build, process-images, process-vimeo]
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build.yml@next.js
+    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-meli.yml@next.js
     with:
       MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
