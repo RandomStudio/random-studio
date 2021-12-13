@@ -57,18 +57,18 @@ jobs:
       - name: Create folders
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ env.SERVER_IP }}
-          username: ${{ env.SSH_USERNAME }}
-          key: ${{ env.SSH_KEY }}
+          host: ${{ inputs.SERVER_IP }}
+          username: ${{ inputs.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           script: mkdir -p /var/www/random.studio
       - name: Deploy to server
         uses: AEnterprise/rsync-deploy@1.0.1
         env:
           ARGS: "-e -c -r --delete"
-          DEPLOY_KEY: ${{ env.SSH_KEY }}
+          DEPLOY_KEY: ${{ inputs.SSH_KEY }}
           USERNAME: ${{ env.SSH_USERNAME }}
-          FOLDER: "${{ env.BUILD_DIR }}/"
+          FOLDER: "${{ inputs.BUILD_DIR }}/"
           SERVER_DESTINATION: '/var/www/random.studio/'
 
 
