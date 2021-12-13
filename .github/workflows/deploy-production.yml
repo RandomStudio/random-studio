@@ -10,7 +10,7 @@ jobs:
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@master
     with:
       BUILD_DIR: 'public'
-      SERVER_IP: 195.114.30.143
+      SERVER_IP: '195.114.30.143'
       SSH_USERNAME: random-studio
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
     secrets:
@@ -26,7 +26,7 @@ jobs:
     uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@master
     with:
       BUILD_DIR: 'public'
-      SERVER_IP: 195.114.30.143
+      SERVER_IP: '195.114.30.143'
       SSH_USERNAME: random-studio
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
     secrets:
