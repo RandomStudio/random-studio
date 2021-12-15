@@ -1,10 +1,11 @@
 import React from 'react';
+import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import styles from './HomeVideo.module.scss';
 
 const HomeVideo = ({ collaborationCredits, videoUrl }) => {
   return (
     <div className={styles.video}>
-      <video autoPlay loop muted playsInline src={videoUrl} />
+      <VideoWithControls autoPlay hasControls={false} isMuted loops url={videoUrl}  />
       {collaborationCredits && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>

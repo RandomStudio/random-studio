@@ -3,7 +3,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Caption from './Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
-import ProjectVideo from '../ProjectVideo/ProjectVideo';
+import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import Image from '../../Image/Image';
@@ -42,7 +42,7 @@ const ProjectDetail = ({
       case Boolean(video && video.url):
         return (
           <>
-            <ProjectVideo {...video} />
+            <VideoWithControls {...video} />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );

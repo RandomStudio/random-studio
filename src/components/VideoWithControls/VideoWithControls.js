@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 // import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
-import styles from './ProjectVideo.module.scss';
-import LazyVideo from '../../LazyVideo/LazyVideo';
+import styles from './VideoWithControls.module.scss';
+import LazyVideo from '../LazyVideo/LazyVideo';
 
 // eslint-disable-next-line no-console
 const trackCustomEvent = input => console.log(input);
@@ -23,8 +23,9 @@ const trackIsCurrentlyMuted = isCurrentlyMuted => {
   });
 };
 
-const ProjectVideo = ({
+const VideoWithControls = ({
   autoplay,
+  hasClickControls,
   hasControls,
   isMuted: isStartingMuted,
   loops,
@@ -48,6 +49,12 @@ const ProjectVideo = ({
   };
 
   const handleTapPlayPause = e => {
+    e.stopPropagation();
+
+    if (!hasClickControls) {
+      return;
+    }
+
     if (!hasPlayed) {
       setHasPlayed(true);
     }
@@ -62,7 +69,6 @@ const ProjectVideo = ({
       return !prevState;
     });
 
-    e.stopPropagation();
     trackPausePlay(isPlaying);
   };
 
@@ -94,7 +100,7 @@ const ProjectVideo = ({
   );
 };
 
-ProjectVideo.propTypes = {
+VideoWithControls.propTypes = {
   autoplay: PropTypes.bool,
   hasControls: PropTypes.bool,
   isAlwaysMuted: PropTypes.bool,
@@ -103,7 +109,7 @@ ProjectVideo.propTypes = {
   url: PropTypes.string.isRequired,
 };
 
-ProjectVideo.defaultProps = {
+VideoWithControls.defaultProps = {
   autoplay: true,
   hasControls: true,
   isAlwaysMuted: false,
@@ -111,4 +117,4 @@ ProjectVideo.defaultProps = {
   loops: true,
 };
 
-export default ProjectVideo;
+export default VideoWithControls;

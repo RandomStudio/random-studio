@@ -3,8 +3,8 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './Project.module.scss';
-import VideoWithControls from '../VideoWithControls/VideoWithControls';
-import Image from '../Image/Image';
+import VideoWithControls from '../../VideoWithControls/VideoWithControls';
+import Image from '../../Image/Image';
 
 const Project = ({ thumbnail, title, slug }) => (
   <Link href={slug} id={slug}>
