@@ -1,55 +1,26 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import PROJECT_FILTERS from '../Projects/ProjectList/PROJECT_FILTERS';
 import styles from './Filters.module.scss';
 
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
-  // Disable for server side rendering
+  const router = useRouter();
+
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const searchParameterEntries = Object.fromEntries(
-      new URLSearchParams(
-        typeof window !== 'undefined' ? window.location.search : '',
-      ).entries(),
-    );
+    const requestedFilter = router.query.filter;
 
-    if (
-      searchParameterEntries &&
-      PROJECT_FILTERS.includes(searchParameterEntries?.filter)
-    ) {
-      setActiveTag(searchParameterEntries.filter);
+    if (requestedFilter && PROJECT_FILTERS.includes(requestedFilter)) {
+      setActiveTag(requestedFilter);
     }
-  }, [setActiveTag]);
-
-  useEffect(() => {
-    // Disable for server side rendering
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    if (activeTag === null) {
-      window.history.replaceState(null, '', window.location.pathname);
-
-      return;
-    }
-
-    const searchParameters = new URLSearchParams(
-      typeof window !== 'undefined' ? window.location.search : '',
-    );
-
-    searchParameters.set('filter', activeTag);
-
-    window.history.replaceState(
-      null,
-      '',
-      `${window.location.pathname}?${searchParameters}`,
-    );
-  }, [activeTag]);
+  }, [router.query.filter, setActiveTag]);
 
   const handleSelectFilter = filter => {
-    setActiveTag(filter === activeTag ? null : filter);
+    const tag = filter === activeTag ? null : filter;
+    setActiveTag(tag);
+
+    router.replace(`/projects${tag ? `?filter=${tag}` : ''}`);
   };
 
   const filtersWithEntries = filterList.filter(
