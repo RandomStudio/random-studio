@@ -6,7 +6,7 @@ export const useToastVisibility = () => {
 
   const setIsToastVisible = useCallback(isVisible => {
     setIsVisible(isVisible);
-  });
+  }, []);
 
   return {
     isToastVisible,

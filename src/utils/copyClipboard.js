@@ -5,8 +5,7 @@ import checkIOS from './checkIOS';
 
 const isMobile = checkAndroid() || checkIOS();
 
-/* eslint-disable import/prefer-default-export */
-export function copyStringToClipboard(event, string, callback) {
+const copyStringToClipboard = (event, string, callback) => {
   if (isMobile) {
     return null;
   }
@@ -19,7 +18,10 @@ export function copyStringToClipboard(event, string, callback) {
     // Set non-editable to avoid focus and move outside of view
     tempElement.setAttribute('readonly', '');
 
-    tempElement.style = { position: 'absolute', left: '-9999px' };
+    tempElement.style = {
+      position: 'absolute',
+      left: '-9999px',
+    };
 
     document.body.appendChild(tempElement);
     // Select text inside element
@@ -41,4 +43,6 @@ export function copyStringToClipboard(event, string, callback) {
   }
 
   return null;
-}
+};
+
+export default copyStringToClipboard;

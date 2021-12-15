@@ -40,8 +40,9 @@ const BackScrim = () => {
     };
   }, []);
 
-  const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible
-    }`;
+  const scrimClassNames = `${styles.backScrim} ${
+    isVisible && styles.isVisible
+  }`;
 
   return (
     <>

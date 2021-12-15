@@ -1,0 +1,74 @@
+name: Build Application
+on:
+  workflow_call:
+    inputs:
+      BUILD_DIR:
+        default: 'public'
+        required: false
+        type: string
+      SERVER_IP:
+        required: true
+        type: string
+      SERVER_PORT:
+        default: 22
+        required: false
+        type: number
+      SSH_USERNAME:
+        required: true
+        type: string
+      NEXT_PUBLIC_CDN_URL:
+        required: true
+        type: string
+    secrets:
+      SSH_KEY:
+        required: true
+jobs:
+  build:
+    name: Build application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - uses: actions/checkout@v2
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Cache Next
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.next/cache # [I]
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
+      - name: 'build'
+        run: |
+          npm run build
+        env:
+          NEXT_PUBLIC_CDN_URL: ${{ inputs.NEXT_PUBLIC_CDN_URL }}
+      - name: Create folders
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ inputs.SERVER_IP }}
+          username: ${{ inputs.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: mkdir -p /var/www/random.studio
+      - name: Deploy to server
+        uses: AEnterprise/rsync-deploy@1.0.1
+        env:
+          DEPLOY_KEY: ${{ secrets.SSH_KEY }}
+          ARGS: "-e -c -r --delete"
+          SERVER_PORT: ${{ inputs.SERVER_PORT }}
+          FOLDER: "${{ inputs.BUILD_DIR }}/"
+          SERVER_IP: ${{ inputs.SERVER_IP }}
+          USERNAME: ${{ inputs.SSH_USERNAME }}
+          SERVER_DESTINATION: '/var/www/random.studio/'

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../../components/Layout/Layout';
-import HomeVideo from '../../../templates/Home/HomeVideo/HomeVideo';
-import ProjectList from '../../../templates/Home/ProjectList/ProjectList';
+import HomeVideo from '../../../components/Home/HomeVideo/HomeVideo';
+import ProjectList from '../../../components/Home/ProjectList/ProjectList';
 
 const HomePreview = ({ entry }) => {
   const { data } = entry.toJSON();

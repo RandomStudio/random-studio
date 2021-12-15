@@ -25,6 +25,9 @@ module.exports = {
     'brace-style': [2, '1tbs'],
     curly: [2, 'all'],
     'global-require': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/alt-text': 0,
     'jsx-a11y/anchor-is-valid': 0,
     'no-console': [2, { allow: ['warn', 'error'] }],
     'no-multiple-empty-lines': ['error', { max: 1 }],
@@ -76,7 +79,7 @@ module.exports = {
     radix: [2, 'as-needed'],
     'react-hooks/exhaustive-deps': 2,
     'react-hooks/rules-of-hooks': 2,
-    'react/forbid-dom-props': [1],
+    'react/forbid-prop-types': 0,
     'react/function-component-definition': [
       2,
       {
@@ -120,9 +123,10 @@ module.exports = {
     'react/jsx-uses-vars': 'error',
     'react/no-danger': 0,
     'react/prop-types': 0,
+    'react/require-default-props': 0,
     'react/sort-comp': 0,
     'react/sort-prop-types': [
-      2,
+      0,
       {
         callbacksLast: false,
         ignoreCase: false,
@@ -132,9 +136,8 @@ module.exports = {
     ],
     'react/state-in-constructor': 0,
     'react/static-property-placement': 0,
-    // Temporarily disabling prop type rules, due to sheer volume that need fixing
     'sort-keys': [
-      2,
+      0,
       'asc',
       {
         caseSensitive: true,

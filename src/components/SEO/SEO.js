@@ -4,17 +4,26 @@ import PropTypes from 'prop-types';
 
 const defaultMeta = [
   {
-    name: 'author',
     content: 'Random Studio',
+    name: 'author',
   },
   {
-    name: 'keywords',
     content:
       'Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio',
+    name: 'keywords',
   },
-  { name: 'msapplication-config', content: '/favicons/browserconfig.xml' },
-  { name: 'theme-color', content: '#ffffff' },
-  { name: 'msapplication-TileColor', content: '#ffffff' },
+  {
+    content: '/favicons/browserconfig.xml',
+    name: 'msapplication-config',
+  },
+  {
+    content: '#ffffff',
+    name: 'theme-color',
+  },
+  {
+    content: '#ffffff',
+    name: 'msapplication-TileColor',
+  },
 ];
 
 const SEO = ({
@@ -48,27 +57,72 @@ const SEO = ({
       htmlAttributes={{ lang: 'en' }}
       meta={[
         ...defaultMeta,
-        { name: 'description', content: pageDescription },
+        {
+          content: pageDescription,
+          name: 'description',
+        },
 
         // OG
-        { property: 'og:title', content: ogTitle },
-        { property: 'og:site_name', content: 'Random Studio' },
-        { property: 'og:description', content: ogDescription },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:locale', content: 'en_US' },
-        { property: 'og:url', content: pageUrl },
-        { property: 'og:image', content: ogImage },
+        {
+          content: ogTitle,
+          property: 'og:title',
+        },
+        {
+          content: 'Random Studio',
+          property: 'og:site_name',
+        },
+        {
+          content: ogDescription,
+          property: 'og:description',
+        },
+        {
+          content: 'website',
+          property: 'og:type',
+        },
+        {
+          content: 'en_US',
+          property: 'og:locale',
+        },
+        {
+          content: pageUrl,
+          property: 'og:url',
+        },
+        {
+          content: ogImage,
+          property: 'og:image',
+        },
 
         // Explicit image sizing for twitter
-        { property: 'og:image:width', content: 800 },
-        { property: 'og:image:height', content: 800 },
+        {
+          content: 800,
+          property: 'og:image:width',
+        },
+        {
+          content: 800,
+          property: 'og:image:height',
+        },
 
         // Twitter
-        { name: 'twitter:title', content: ogTitle },
-        { name: 'twitter:description', content: ogDescription },
-        { name: 'twitter:image', content: ogImage },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: twitterHandle },
+        {
+          content: ogTitle,
+          name: 'twitter:title',
+        },
+        {
+          content: ogDescription,
+          name: 'twitter:description',
+        },
+        {
+          content: ogImage,
+          name: 'twitter:image',
+        },
+        {
+          content: 'summary_large_image',
+          name: 'twitter:card',
+        },
+        {
+          content: twitterHandle,
+          name: 'twitter:site',
+        },
       ]}
       title={pageTitle}
     >
@@ -109,20 +163,20 @@ const SEO = ({
 };
 
 SEO.propTypes = {
-  title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
   pathName: PropTypes.string.isRequired,
   socialDescription: PropTypes.string,
   socialTitle: PropTypes.string,
+  title: PropTypes.string,
 };
 
 SEO.defaultProps = {
-  title: '',
   description: '',
   image: '/og-image.jpg',
   socialDescription: null,
   socialTitle: null,
+  title: '',
 };
 
 export default SEO;

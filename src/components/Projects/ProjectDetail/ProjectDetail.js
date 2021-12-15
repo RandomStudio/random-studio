@@ -40,25 +40,9 @@ const ProjectDetail = ({
   }) => {
     switch (true) {
       case Boolean(video && video.url):
-        const {
-          autoplay,
-          hasControls,
-          loops,
-          isMuted,
-          isAlwaysMuted,
-          url
-        } = video;
-
         return (
           <>
-            <ProjectVideo
-              autoplay={autoplay}
-              hasControls={hasControls}
-              loops={loops}
-              isMuted={isMuted}
-              isAlwaysMuted={isAlwaysMuted}
-              url={url}
-            />
+            <ProjectVideo {...video} />
             <Caption caption={caption} marginLeft={marginLeft} />
           </>
         );
@@ -103,23 +87,20 @@ const ProjectDetail = ({
         <ReactMarkdown escapeHtml={false} source={intro} />
       </div>
       {(content || []).map(
-        (
-          {
-            caption,
-            image,
-            alt,
-            marginLeft,
-            marginTop,
-            video,
-            width,
-            carousel,
-            zIndex,
-          },
-          index,
-        ) => (
+        ({
+          caption,
+          image,
+          alt,
+          marginLeft,
+          marginTop,
+          video,
+          width,
+          carousel,
+          zIndex,
+        }) => (
           <div
             className={styles.item}
-            key={index}
+            key={`${image}_${alt}_${video?.url}_${carousel?.[0]?.url}_${carousel?.[0]?.image}`}
             style={{
               '--marginLeft': `${marginLeft}%`,
               '--marginTop': `${marginTop}%`,

@@ -6,7 +6,6 @@ import Image from '../../../Image/Image';
 import LazyVideo from '../../../LazyVideo/LazyVideo';
 import styles from './Block.module.scss';
 
-
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
   const [blockStart, setBlockStart] = useState();
@@ -47,7 +46,14 @@ const Block = ({ image, index, copy, title, video }) => {
           style={{ scale }}
         >
           {video ? (
-            <LazyVideo alt={title} autoPlays className={styles.fluidVideo} isMuted loops videoSrc={video} />
+            <LazyVideo
+              alt={title}
+              autoPlays
+              className={styles.fluidVideo}
+              isMuted
+              loops
+              videoSrc={video}
+            />
           ) : (
             <Image
               alt={title}

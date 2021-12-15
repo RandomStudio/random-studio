@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './ProjectVideo.module.scss';
 import LazyVideo from '../../LazyVideo/LazyVideo';
 
+// eslint-disable-next-line no-console
 const trackCustomEvent = input => console.log(input);
 
 const trackPausePlay = isPlaying => {
