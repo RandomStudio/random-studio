@@ -69,7 +69,7 @@ const CustomImage = ({ alt, className, sizes, src }) => {
         }
       },
       {
-        rootMargin: '200px',
+        rootMargin: `${window.innerHeight}px`,
       },
     );
 

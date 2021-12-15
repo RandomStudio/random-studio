@@ -16,8 +16,9 @@ const JobOffer = ({
           className={styles.closeButton}
           onClick={closeOpenOffer}
           type="button"
+        // eslint-disable-next-line react/jsx-no-literals
         >
-          {'&times;'}
+          &times;
         </button>
       </header>
 
