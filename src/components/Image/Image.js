@@ -24,7 +24,7 @@ const getSrc = (src, width) => {
 
 // Should match variant options on Cloudflare
 const CLOUDFLARE_VARIANTS = [
-  320, 512, 640, 720, 864, 1024, 1280, 1440, 1920, 2048, 2560, 3840, 4096
+  320, 512, 640, 720, 864, 1024, 1280, 1440, 1920, 2048, 2560, 3840, 4096,
 ];
 
 const CustomImage = ({ alt, className, sizes, src }) => {

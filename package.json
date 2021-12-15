@@ -9,8 +9,7 @@
     "prebuild": "node prebuild.js",
     "build": "next build && next export",
     "start": "next start",
-    "format": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache",
-    "lint": "eslint -v && eslint \"src/**/*.{js,jsx,json}\" --cache --cache-location ~/.eslintcache/eslintcache",
+    "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache",
     "process:image": "node infrastructure/processImage.js",
     "process:vimeo": "node infrastructure/processVimeo.js"
   },
