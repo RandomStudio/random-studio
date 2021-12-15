@@ -14,7 +14,7 @@ export function getContentFromFile(path) {
 
   return {
     ...data,
-    slug: realSlug,
+    slug: (realSlug[0] === '/' ? realSlug : `/${realSlug}`),
   };
 }
 
@@ -24,7 +24,7 @@ export function getAllProjects() {
 
   const posts = slugs.map(slug => {
     const data = getContentFromFile(join('projects', slug));
-
+    console.log(data.slug)
     return data;
   });
 

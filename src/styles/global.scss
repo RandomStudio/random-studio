@@ -60,6 +60,24 @@ a:hover {
   pointer-events: none;
 }
 
+.screen-reader-only {
+  position: absolute;
+  left: -999px;
+  width:1px;
+  height: 1px;
+  top: auto;
+
+  &:focus {
+    color: black;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    position: static;
+    margin: auto;
+  }
+
+}
+
 button,
 [type='submit'] {
   cursor: pointer;

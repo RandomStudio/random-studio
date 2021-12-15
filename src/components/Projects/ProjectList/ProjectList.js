@@ -5,7 +5,7 @@ import Filters from '../../Filters/Filters';
 import PROJECT_FILTERS from './PROJECT_FILTERS';
 import Project from './Project/Project';
 
-const ProjectList = ({ middle, projects }) => {
+const ProjectList = ({ projects }) => {
   const projectFilters = projects
     .map(({ tags }) => tags)
     .filter(Boolean)
@@ -27,7 +27,7 @@ const ProjectList = ({ middle, projects }) => {
       />
 
       <div className={styles.projects}>
-        {projects.map(({ thumbnail, title, slug, tags }, index) => {
+        {projects.map(({ thumbnail, title, slug, tags }) => {
           const isHidden = activeTag !== null && !tags?.includes(activeTag);
 
           if (!thumbnail || isHidden) {
@@ -36,14 +36,10 @@ const ProjectList = ({ middle, projects }) => {
 
           return (
             <Project
-              index={index}
               key={slug}
-              middle={middle}
-              projects={projects}
               slug={slug}
               thumbnail={thumbnail}
               title={title}
-              titleWidth
             />
           );
         })}

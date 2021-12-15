@@ -2,12 +2,10 @@ import React from 'react';
 import Logo from '../../Logo/Logo';
 import styles from './HomeVideo.module.scss';
 
-const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
+const HomeVideo = ({ collaborationCredits, videoUrl }) => {
   return (
     <div className={styles.video}>
       <video autoPlay loop muted playsInline src={videoUrl} />
-      <Logo layout={layout} />
-
       {collaborationCredits && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>

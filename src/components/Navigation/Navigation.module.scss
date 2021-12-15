@@ -10,58 +10,35 @@
   font-size: 19px;
   line-height: 1;
   pointer-events: all;
+  z-index: 99;
 
-  :global(a) {
-    display: inline-block;
-    text-decoration: none;
-    letter-spacing: 0.32px;
-
-    & + :global(a) {
-      margin-left: 32px;
-    }
+  @media (min-width: 576px) {
+    font-size: var(--font-small);
+    padding: 32px 45px 32px 45px;
   }
 
   @media (min-width: 1152px) {
+    font-size: 28px;
+    padding: 40px;
     display: block;
     text-align: right;
   }
 }
 
-.logo {
-  @include blendedText(black, normal);
-  font-family: 'Larish Neue', serif;
-  position: absolute;
-  left: 22px;
-  top: 40px;
-  font-size: var(--font-logo-small);
-  font-weight: normal;
-  line-height: 1.1;
-  margin: 0;
-  letter-spacing: -0.01em;
 
-  :global(a) {
-    display: inline-block;
-    text-decoration: none;
-  }
-}
+.link {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0.32px;
 
-@media (min-width: 576px) {
-  .nav {
-    font-size: var(--font-small);
-    padding: 32px 45px 32px 45px;
+  & + .link {
+    margin-left: 32px;
 
-    a + :global(a) {
+    @media (min-width: 576px) {
       margin-left: 38px;
     }
-  }
-}
 
-@media (min-width: 1152px) {
-  .nav {
-    font-size: 28px;
-    padding: 40px;
-
-    a + :global(a) {
+    @media (min-width: 1152px) {
       margin-left: 51px;
     }
   }

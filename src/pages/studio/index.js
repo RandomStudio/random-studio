@@ -62,7 +62,6 @@ const Studio = ({
         tabIndex="-1"
       >
         <SEO pathName={slug} title="Studio" />
-        <Logo />
         <IntroBlock intros={introBlock} ref={introRef} title={title} />
 
         <ServiceList headerTitle={services.title} services={services.list} />

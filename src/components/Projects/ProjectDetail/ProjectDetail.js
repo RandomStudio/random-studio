@@ -121,10 +121,10 @@ const ProjectDetail = ({
             className={styles.item}
             key={index}
             style={{
-              zIndex: zIndex || '0',
-              '--marginTop': `${marginTop}%`,
               '--marginLeft': `${marginLeft}%`,
+              '--marginTop': `${marginTop}%`,
               '--width': `${width}%`,
+              zIndex: zIndex || '0',
             }}
           >
             {contentType({
@@ -145,16 +145,16 @@ const ProjectDetail = ({
         projects={relatedWork}
       />
 
-      <footer className={styles.credits}>
+      <ul aria-label="Project Details" className={styles.credits}>
         {(credits || []).map(({ key, value }) => (
-          <ul className="" key={`${key}-${value}`}>
-            <li>{key}</li>
-            <li>
+          <li key={`${key}-${value}`}>
+            <dt>{key}</dt>
+            <dd>
               <ReactMarkdown source={value} />
-            </li>
-          </ul>
+            </dd>
+          </li>
         ))}
-      </footer>
+      </ul>
     </div>
   );
 };

@@ -7,8 +7,8 @@ import ResearchBlock from './IntermittentBlock/ResearchBlock';
 
 const PROJECT_LIMIT = 6;
 
-const ProjectList = ({ intro, middle, projects, articles }) => (
-  <div className={styles.projects}>
+const ProjectList = ({ intro, projects, articles }) => (
+  <ul aria-label="Highlighted projects" className={styles.projects}>
     <div className={styles.statement}>
       <ReactMarkdown escapeHtml={false} source={intro} />
     </div>
@@ -20,15 +20,7 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
       return (
         <React.Fragment key={slug}>
           {thumbnail && index < PROJECT_LIMIT && (
-            <Project
-              index={index}
-              middle={middle}
-              projects={projects}
-              slug={slug}
-              thumbnail={thumbnail}
-              title={title}
-              titleWidth
-            />
+            <Project alt="" slug={slug} thumbnail={thumbnail} title={title} />
           )}
           {article && (
             <ResearchBlock
@@ -38,13 +30,15 @@ const ProjectList = ({ intro, middle, projects, articles }) => (
           )}
           {index === projects.length - 1 && (
             <div className={`${styles.seeMore}`}>
-              <Link href="/projects"><a>{'See all projects'}</a></Link>
+              <Link href="/projects">
+                <a>{'See all projects'}</a>
+              </Link>
             </div>
           )}
         </React.Fragment>
       );
     })}
-  </div>
+  </ul>
 );
 
 export default ProjectList;

@@ -3,13 +3,11 @@ import Layout from '../../components/Layout/Layout';
 import Footer from '../../components/Footer/Footer';
 import ProjectList from '../../components/Projects/ProjectList/ProjectList';
 import SEO from '../../components/SEO/SEO';
-import Logo from '../../components/Logo/Logo';
 
 const Projects = ({ address, email, phone, projects, slug }) => {
   return (
     <Layout>
       <SEO pathName={slug} />
-      <Logo />
       <ProjectList projects={projects} />
       <Footer address={address} email={email} phone={phone} />
     </Layout>

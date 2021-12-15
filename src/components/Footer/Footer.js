@@ -16,7 +16,7 @@ const Footer = ({ address, email, phone }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.studio}>
-        <div className={`${styles.address}`}>
+        <address aria-label="Amsterdam address" className={`${styles.address}`}>
           <span className={styles.name}>Random Amsterdam</span>
           <ReactMarkdown
             className={styles.location}
@@ -24,11 +24,12 @@ const Footer = ({ address, email, phone }) => {
             linkTarget="__blank"
             source={address}
           />
-          <a className={styles.phone} href={`tel:${phone.replace(' ', '-')}`}>
+          <a aria-label="Phone number" className={styles.phone} href={`tel:${phone.replaceAll(' ', '')}`}>
             {phone}
           </a>
           <br />
           <a
+            aria-label="Email address"
             className={styles.emailDesktop}
             href={`mailto:${email}`}
             onClick={handleClickEmail}
@@ -36,11 +37,11 @@ const Footer = ({ address, email, phone }) => {
           >
             {email}
           </a>
-          <a className={styles.emailMobile} href={`mailto:${email}`}>
+          <a aria-label="Email address" className={styles.emailMobile} href={`mailto:${email}`}>
             {email}
           </a>
-        </div>
-        <div className={`${styles.address}`}>
+        </address>
+        <address aria-label="Paris address" className={`${styles.address}`}>
           <span className={styles.name}>Random Paris</span>
           <div className={styles.location}>
             174 Quai de Jemmapes
@@ -58,11 +59,12 @@ const Footer = ({ address, email, phone }) => {
             </a>
           </div>
 
-          <a className={styles.phone} href="tel:+33-(0)-1-40-36-41-44">
+          <a aria-label="Phone number" className={styles.phone} href="tel:+33140364144" type="tel">
             {'+33 (0) 1 40 36 41 44'}
           </a>
           <br />
           <a
+            aria-label="Email address"
             className={styles.emailDesktop}
             href="mailto:morgan.maccari@random.studio"
             onClick={handleClickEmail}
@@ -71,17 +73,18 @@ const Footer = ({ address, email, phone }) => {
             {'morgan.maccari@random.studio'}
           </a>
           <a
+            aria-label="Email address"
             className={styles.emailMobile}
             href="mailto:morgan.maccari@random.studio"
           >
             {'morgan.maccari@random.studio'}
           </a>
-        </div>
+        </address>
       </div>
       <div className={styles.column}>
         <Newsletter />
 
-        <div className={styles.socials}>
+        <nav aria-label="Social media profiles" className={styles.socials}>
           <a
             className={styles.social}
             href="https://instagram.com/random_studio/"
@@ -106,9 +109,9 @@ const Footer = ({ address, email, phone }) => {
           >
             Medium
           </a>
-        </div>
+        </nav>
       </div>
-    </footer>
+    </footer >
   );
 };
 

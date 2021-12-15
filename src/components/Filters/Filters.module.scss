@@ -4,17 +4,21 @@
 
   @media (min-width: 768px) {
     display: flex;
+    width: 100%;
+    padding: 315px 150px 0;
+    user-select: none;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 315px;
-    user-select: none;
   }
 }
 
 .filterEntry {
+  --count: 0;
+  appearance: none;
+  border: none;
+  background: none;
   display: block;
   cursor: pointer;
   padding: 20px;
@@ -22,6 +26,15 @@
   &:hover {
     opacity: 0.75;
     transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+  }
+
+  &::after {
+    color: #d0d0d0;
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5em;
+    counter-reset: count var(--count);
+    content: counter(count);
   }
 
   &:not(.activeTag) {

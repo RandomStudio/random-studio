@@ -8,21 +8,25 @@ import { useToastVisibility } from '../../utils/hooks/useToastVisiblity';
 
 const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
-const Layout = ({ children }) => {
+const Layout = ({ children, layout }) => {
   const toastVisiblity = useToastVisibility();
 
   return (
     <HelmetProvider>
       <AppProvider value={toastVisiblity}>
-        <Navigation />
-        <div className={styles.container}>{children}</div>
-        <Navigation />
+        <a className="screen-reader-only" href="#main-content" id="skip-nav">
+          {'Skip Navigation'}
+        </a>
+        <Navigation layout={layout} />
+        <div className={styles.container} id="main-content">
+          {children}
+        </div>
         <div
           className={styles.backgroundTransition}
           style={{
             backgroundColor:
               backgroundTransitionColors[
-                Math.floor(Math.random() * backgroundTransitionColors.length)
+              Math.floor(Math.random() * backgroundTransitionColors.length)
               ],
           }}
         />

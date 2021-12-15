@@ -58,21 +58,29 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
 
   return (
     <>
-      <div className={styles.filters}>
+      <ul
+        aria-label="Category filters"
+        className={styles.filters}
+        role="navigation"
+      >
         {filtersWithEntries.map(filter => (
-          <div
+          <button
+            aria-pressed={filter === activeTag}
             className={`${styles.filterEntry} ${activeTag !== null ? styles.activeFilter : ''
               } ${filter === activeTag ? styles.activeTag : ''}`}
             key={filter}
             onClick={() => {
               handleSelectFilter(filter);
             }}
+            style={{
+              '--count': filterCount[filter],
+            }}
+            type="button"
           >
-            {filter}{' '}
-            <span className={styles.filterCount}> {filterCount[filter]}</span>
-          </div>
+            {filter}
+          </button>
         ))}
-      </div>
+      </ul>
 
       <div className={styles.accordion}>
         <div

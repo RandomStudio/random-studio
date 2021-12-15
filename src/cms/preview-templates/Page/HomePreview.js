@@ -11,10 +11,10 @@ const HomePreview = ({ entry }) => {
   const formattedProjects =
     projects && projects.length > 0
       ? projects.map(({ caption, project, thumbnail }) => ({
-          slug: null,
-          title: caption || project,
-          thumbnail,
-        }))
+        slug: null,
+        thumbnail,
+        title: caption || project,
+      }))
       : [];
 
   return (

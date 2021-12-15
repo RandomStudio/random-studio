@@ -1,5 +1,7 @@
 /* From: https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
 
+/* Adjusted for Random.studio – ul/ol with class selector would otherwise take priority over simple class selectors */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -8,8 +10,8 @@
 }
 
 /* Remove default padding */
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
 }
 
@@ -20,8 +22,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -40,8 +42,8 @@ body {
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -57,7 +59,7 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
+article>*+* {
   margin-top: 1em;
 }
 
@@ -65,6 +67,7 @@ article > * + * {
 input,
 button,
 textarea,
+address,
 select {
   font: inherit;
 }

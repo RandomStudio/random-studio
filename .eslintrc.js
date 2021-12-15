@@ -76,7 +76,7 @@ module.exports = {
     radix: [2, 'as-needed'],
     'react-hooks/exhaustive-deps': 2,
     'react-hooks/rules-of-hooks': 2,
-    'react/forbid-dom-props': [1, { forbid: ['onClick' /* , 'className' */] }],
+    'react/forbid-dom-props': [1],
     'react/function-component-definition': [
       2,
       {

@@ -15,13 +15,9 @@ const Home = ({
   slug,
   video,
 }) => (
-  <Layout>
+  <Layout layout={layout}>
     <SEO pathName={slug} />
-    <HomeVideo
-      collaborationCredits={collaborationCredits}
-      layout={layout}
-      videoUrl={video}
-    />
+    <HomeVideo collaborationCredits={collaborationCredits} videoUrl={video} />
     <ProjectList projects={projects} />
     <Footer address={address} email={email} phone={phone} />
   </Layout>

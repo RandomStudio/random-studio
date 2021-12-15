@@ -27,7 +27,7 @@ const Project = ({ thumbnail, title, slug }) => (
           />
         ) : (
           <Image
-            alt={title}
+            alt="" // Keeps the screen reader focused on project list
             sizes={`(max-width: 576px) 100vw, ${thumbnail.width}vw`}
             src={thumbnail.image}
           />
