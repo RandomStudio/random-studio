@@ -2,9 +2,9 @@ import React from 'react';
 import { uniqueId } from 'lodash';
 import getThumbnailSafely from '../../../utils/getThumbnailSafely';
 import Layout from '../../../components/Layout/Layout';
-import ProjectDetail from '../../../components/Projects/ProjectDetail/ProjectDetail';
+import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
 import SEO from '../../../components/SEO/SEO';
-import BackScrim from '../../../components/Projects/BackScrim/BackScrim';
+import BackScrim from '../../../components/Project/BackScrim/BackScrim';
 
 const Project = ({
   allProjects,

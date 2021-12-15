@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import PROJECT_FILTERS from '../Projects/ProjectList/PROJECT_FILTERS';
+import PROJECT_FILTERS from '../PROJECT_FILTERS';
 import styles from './Filters.module.scss';
 
 const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {

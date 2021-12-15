@@ -32,6 +32,7 @@ const CustomImage = ({ alt, className, sizes, src }) => {
   const { thumb } = srcToIds(src);
 
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isRendered, setIsRendered] = useState(false);
 
   const srcset = useMemo(
     () =>
@@ -82,7 +83,7 @@ const CustomImage = ({ alt, className, sizes, src }) => {
 
   return (
     <div
-      className={`${styles.wrapper} ${className} ${isLoaded ? styles.isLoaded : ''
+      className={`${styles.wrapper} ${className} ${isRendered ? styles.isRendered : ''
         }`}
       ref={imageRef}
     >
@@ -94,6 +95,7 @@ const CustomImage = ({ alt, className, sizes, src }) => {
         alt={alt}
         className={styles.image}
         decoding="async"
+        onLoad={() => setIsRendered(true)}
         sizes={sizes}
         src={isLoaded ? src : null}
         srcSet={isLoaded ? srcset : null}

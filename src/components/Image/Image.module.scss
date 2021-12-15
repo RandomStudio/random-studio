@@ -13,10 +13,10 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 300ms ease-out;
+  transition: opacity 300ms ease-out, background-color 300ms linear 600ms;
   background-color: transparent;
 
-  .isLoaded & {
+  .isRendered & {
     opacity: 1;
     background-color: var(--page-background-color);
   }

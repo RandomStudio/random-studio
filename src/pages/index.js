@@ -1,14 +1,15 @@
 import React from 'react';
 import Footer from '../components/Footer/Footer';
-import HomeVideo from '../components/Home/HomeVideo/HomeVideo';
+import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
-import ProjectList from '../components/Home/ProjectList/ProjectList';
+import ProjectList from '../components/ProjectList/ProjectList';
 import SEO from '../components/SEO/SEO';
 
 const Home = ({
   address,
   collaborationCredits,
   email,
+  intro,
   layout,
   phone,
   projects,
@@ -18,7 +19,7 @@ const Home = ({
   <Layout layout={layout}>
     <SEO pathName={slug} />
     <HomeVideo collaborationCredits={collaborationCredits} videoUrl={video} />
-    <ProjectList projects={projects} />
+    <ProjectList intro={intro} limit={5} projects={projects} />
     <Footer address={address} email={email} phone={phone} />
   </Layout>
 );
