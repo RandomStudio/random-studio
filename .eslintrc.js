@@ -7,6 +7,7 @@ module.exports = {
     'airbnb',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'plugin:@next/next/recommended',
   ],
   globals: {
     Atomics: 'readonly',
@@ -21,6 +22,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
+    '@next/next/no-img-element': 0,
     'arrow-parens': [1, 'as-needed'],
     'brace-style': [2, '1tbs'],
     curly: [2, 'all'],

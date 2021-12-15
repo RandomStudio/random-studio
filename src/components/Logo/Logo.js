@@ -3,8 +3,9 @@ import Link from 'next/link';
 import styles from './Logo.module.scss';
 
 const Logo = ({ layout }) => {
-  const logoClass = `${styles.logo} ${layout === 'center' ? styles.isCenter : styles.isTop
-    }`;
+  const logoClass = `${styles.logo} ${
+    layout === 'center' ? styles.isCenter : styles.isTop
+  }`;
 
   return (
     <h1 className={logoClass}>

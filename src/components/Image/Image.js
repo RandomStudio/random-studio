@@ -83,8 +83,9 @@ const CustomImage = ({ alt, className, sizes, src }) => {
 
   return (
     <div
-      className={`${styles.wrapper} ${className} ${isRendered ? styles.isRendered : ''
-        }`}
+      className={`${styles.wrapper} ${className} ${
+        isRendered ? styles.isRendered : ''
+      }`}
       ref={imageRef}
     >
       <img

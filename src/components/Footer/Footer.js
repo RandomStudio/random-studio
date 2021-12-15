@@ -24,7 +24,11 @@ const Footer = ({ address, email, phone }) => {
             linkTarget="__blank"
             source={address}
           />
-          <a aria-label="Phone number" className={styles.phone} href={`tel:${phone.replaceAll(' ', '')}`}>
+          <a
+            aria-label="Phone number"
+            className={styles.phone}
+            href={`tel:${phone.replaceAll(' ', '')}`}
+          >
             {phone}
           </a>
           <br />
@@ -37,10 +41,14 @@ const Footer = ({ address, email, phone }) => {
           >
             {email}
           </a>
-          <a aria-label="Email address" className={styles.emailMobile} href={`mailto:${email}`}>
+          <a
+            aria-label="Email address"
+            className={styles.emailMobile}
+            href={`mailto:${email}`}
+          >
             {email}
           </a>
-        </address >
+        </address>
         <address aria-label="Paris address" className={`${styles.address}`}>
           <span className={styles.name}>{'Random Paris'}</span>
           <div className={styles.location}>
@@ -59,7 +67,12 @@ const Footer = ({ address, email, phone }) => {
             </a>
           </div>
 
-          <a aria-label="Phone number" className={styles.phone} href="tel:+33140364144" type="tel">
+          <a
+            aria-label="Phone number"
+            className={styles.phone}
+            href="tel:+33140364144"
+            type="tel"
+          >
             {'+33 (0) 1 40 36 41 44'}
           </a>
           <br />
@@ -80,7 +93,7 @@ const Footer = ({ address, email, phone }) => {
             {'morgan.maccari@random.studio'}
           </a>
         </address>
-      </div >
+      </div>
       <div className={styles.column}>
         <Newsletter />
 
@@ -111,7 +124,7 @@ const Footer = ({ address, email, phone }) => {
           </a>
         </nav>
       </div>
-    </footer >
+    </footer>
   );
 };
 

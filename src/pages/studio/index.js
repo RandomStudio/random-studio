@@ -54,15 +54,16 @@ const Studio = ({
     observer.observe(introRef.current);
 
     return () => {
-      observer.disconnect()
-    }
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
-          }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${
+          width > mediumBreakpoint ? themeClass : ''
+        }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
         <SEO pathName={slug} title="Studio" />

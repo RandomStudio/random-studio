@@ -37,8 +37,9 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
         {filtersWithEntries.map(filter => (
           <button
             aria-pressed={filter === activeTag}
-            className={`${styles.filterEntry} ${activeTag !== null ? styles.activeFilter : ''
-              } ${filter === activeTag ? styles.activeTag : ''}`}
+            className={`${styles.filterEntry} ${
+              activeTag !== null ? styles.activeFilter : ''
+            } ${filter === activeTag ? styles.activeTag : ''}`}
             key={filter}
             onClick={() => {
               handleSelectFilter(filter);
