@@ -1,4 +1,5 @@
 import React from 'react';
+import { uniqueId } from 'lodash';
 import getThumbnailSafely from '../../../utils/getThumbnailSafely';
 import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/Projects/ProjectDetail/ProjectDetail';
@@ -42,7 +43,7 @@ const Project = ({
         relatedProjects={relatedProjects}
         title={title}
       />
-      {typeof window !== 'undefined' && <BackScrim />}
+      <BackScrim />
     </Layout>
   );
 };
@@ -60,6 +61,10 @@ export const getStaticProps = async ({ params }) => {
     props: {
       allProjects,
       ...data,
+      content: data.content.map(block => ({
+        ...block,
+        id: uniqueId(),
+      })),
     },
   };
 };
@@ -72,7 +77,7 @@ export async function getStaticPaths() {
     fallback: false,
     paths: projects.map(project => ({
       params: {
-        slug: project.slug.replace('projects/', ''),
+        slug: project.slug.replace('/projects/', ''),
       },
     })),
   };

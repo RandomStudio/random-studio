@@ -1,48 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import styles from './BackScrim.module.scss';
+import supportsIntersectionObserver from '../../../utils/supportsIntersectionObserver';
 
 const BackScrim = () => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const intersection = intersectionRef.current;
-    let observer = null;
-
-    const supportsIntersectionObserver =
-      'IntersectionObserver' in window ||
-      ('IntersectionObserverEntry' in window &&
-        'isIntersecting' in window.IntersectionObserverEntry.prototype);
-
-    const onScroll = () => {
-      const hasScrolledToBottom =
-        window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
-
-      setIsVisible(hasScrolledToBottom);
-    };
-
-    if (supportsIntersectionObserver) {
-      window.addEventListener('scroll', onScroll);
-    } else {
-      const intersectCb = sentinel => setIsVisible(sentinel.isIntersecting);
-      observer = new IntersectionObserver(entries => intersectCb(entries[0]));
-      observer.observe(intersection);
+    if (!supportsIntersectionObserver) {
+      return undefined;
     }
 
-    return () => {
-      if (observer) {
-        observer.unobserve(intersection);
-        observer.disconnect();
-      }
+    const observer = new IntersectionObserver(entries =>
+      setIsVisible(entries[0].isIntersecting),
+    );
 
-      window.removeEventListener('scroll', onScroll);
+    observer.observe(intersectionRef.current);
+
+    return () => {
+      observer.disconnect();
     };
   }, []);
 
-  const scrimClassNames = `${styles.backScrim} ${
-    isVisible && styles.isVisible
-  }`;
+  const scrimClassNames = `${styles.backScrim} ${isVisible && styles.isVisible
+    }`;
 
   return (
     <>

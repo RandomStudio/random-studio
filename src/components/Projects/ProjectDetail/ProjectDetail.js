@@ -91,6 +91,7 @@ const ProjectDetail = ({
           caption,
           image,
           alt,
+          id,
           marginLeft,
           marginTop,
           video,
@@ -100,7 +101,7 @@ const ProjectDetail = ({
         }) => (
           <div
             className={styles.item}
-            key={`${image}_${alt}_${video?.url}_${carousel?.[0]?.url}_${carousel?.[0]?.image}`}
+            key={id}
             style={{
               '--marginLeft': `${marginLeft}%`,
               '--marginTop': `${marginTop}%`,

@@ -3,13 +3,13 @@ import styles from './Studio.module.scss';
 import Layout from '../../components/Layout/Layout';
 import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
 import ServiceList from '../../components/Studio/ServiceList/ServiceList';
-import Logo from '../../components/Logo/Logo';
 import SEO from '../../components/SEO/SEO';
 import Footer from '../../components/Footer/Footer';
 import Recruitee from '../../components/Studio/Recruitee/Recruitee';
 import Carousel from '../../components/Carousel/Carousel';
 import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
+import supportsIntersectionObserver from '../../utils/supportsIntersectionObserver';
 
 const mediumBreakpoint = 960; // BP of 60rem
 
@@ -30,8 +30,8 @@ const Studio = ({
   const { width } = useWindowSize();
 
   useEffect(() => {
-    if (!window.IntersectionObserver) {
-      return;
+    if (!supportsIntersectionObserver) {
+      return undefined;
     }
 
     setThemeClass(styles.darkTheme);
@@ -52,14 +52,17 @@ const Studio = ({
 
     const observer = new IntersectionObserver(cb, options);
     observer.observe(introRef.current);
+
+    return () => {
+      observer.disconnect()
+    }
   }, []);
 
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${
-          width > mediumBreakpoint ? themeClass : ''
-        }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
+          }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
         <SEO pathName={slug} title="Studio" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { AppProvider } from '../../utils/context/AppContext';
 import styles from './Layout.module.scss';
@@ -10,6 +10,21 @@ const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
 const Layout = ({ children, layout }) => {
   const toastVisiblity = useToastVisibility();
+  const [randomStyle, setRandomStyle] = useState({});
+
+  useEffect(() => {
+    if (!process.browser) {
+      return;
+    }
+
+    const randomOffset = Math.floor(
+      Math.random() * backgroundTransitionColors.length,
+    );
+
+    setRandomStyle({
+      backgroundColor: backgroundTransitionColors[randomOffset],
+    });
+  }, []);
 
   return (
     <HelmetProvider>
@@ -21,15 +36,7 @@ const Layout = ({ children, layout }) => {
         <div className={styles.container} id="main-content">
           {children}
         </div>
-        <div
-          className={styles.backgroundTransition}
-          style={{
-            backgroundColor:
-              backgroundTransitionColors[
-              Math.floor(Math.random() * backgroundTransitionColors.length)
-              ],
-          }}
-        />
+        <div className={styles.backgroundTransition} style={randomStyle} />
         <Toast copy="Copied to clipboard" />
       </AppProvider>
     </HelmetProvider>

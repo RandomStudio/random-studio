@@ -12,7 +12,9 @@ const srcToIds = src => {
 
 const getSrc = (src, width) => {
   if (process.env.NODE_ENV !== 'production') {
-    return `${src}?wouldBeWidth=${width}`;
+    const safeSrc = src.replaceAll(' ', '%20');
+
+    return `${safeSrc}?wouldBeWidth=${width}`;
   }
 
   const { full } = srcToIds(src);
@@ -80,9 +82,8 @@ const CustomImage = ({ alt, className, sizes, src }) => {
 
   return (
     <div
-      className={`${styles.wrapper} ${className} ${
-        isLoaded ? styles.isLoaded : ''
-      }`}
+      className={`${styles.wrapper} ${className} ${isLoaded ? styles.isLoaded : ''
+        }`}
       ref={imageRef}
     >
       <img

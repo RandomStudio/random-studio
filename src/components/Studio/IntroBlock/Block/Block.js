@@ -8,8 +8,8 @@ import styles from './Block.module.scss';
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
-  const [blockStart, setBlockStart] = useState();
-  const [blockEnd, setBlockEnd] = useState();
+  const [blockStart, setBlockStart] = useState(0);
+  const [blockEnd, setBlockEnd] = useState(0);
 
   useEffect(() => {
     if (imageRef && imageRef.current) {
@@ -72,7 +72,6 @@ const Block = ({ image, index, copy, title, video }) => {
             className={styles.headerTitle}
             style={{ opacity: titleOpacity }}
           >
-            {title}
             <img
               alt="Arrow pointing down. Indicating more content further down."
               src="/icons/arrow-white.svg"
@@ -81,12 +80,8 @@ const Block = ({ image, index, copy, title, video }) => {
         )}
       </div>
 
-      <div
-        className={`${styles.listItem} ${styles.parallaxFront}`}
-        key={image.id}
-      >
+      <div className={`${styles.listItem} ${styles.parallaxFront}`}>
         <div className={styles.copyWrapper}>
-          {index === 0 && <h1 className={styles.headerTitle}>{title}</h1>}
           <ReactMarkdown escapeHtml={false} source={copy} />
         </div>
       </div>
@@ -95,10 +90,11 @@ const Block = ({ image, index, copy, title, video }) => {
 };
 
 Block.propTypes = {
-  image: PropTypes.object.isRequired,
+  image: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   copy: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  video: PropTypes.string,
 };
 
 Block.defaultProps = {};
