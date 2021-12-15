@@ -14,9 +14,11 @@
   object-fit: cover;
   opacity: 0;
   transition: opacity 300ms ease-out;
+  background-color: transparent;
 
   .isLoaded & {
     opacity: 1;
+    background-color: var(--page-background-color);
   }
 }
 

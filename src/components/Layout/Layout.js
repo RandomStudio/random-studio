@@ -22,7 +22,7 @@ const Layout = ({ children, layout }) => {
     );
 
     setRandomStyle({
-      backgroundColor: backgroundTransitionColors[randomOffset],
+      '--backgroundColor': backgroundTransitionColors[randomOffset],
     });
   }, []);
 

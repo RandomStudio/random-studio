@@ -1,6 +1,7 @@
 .container {
+  --page-background-color: var(--white);
   position: relative;
-  background: var(--white);
+  background: var(--page-background-color);
 }
 
 .backgroundTransition {

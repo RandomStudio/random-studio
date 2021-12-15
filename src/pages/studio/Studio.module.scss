@@ -64,6 +64,7 @@
 }
 
 .darkTheme {
-  background: var(--black);
+  --page-background-color: var(--black);
+  background: var(--page-background-color);
   color: var(--white);
 }
