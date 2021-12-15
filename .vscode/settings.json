@@ -6,6 +6,9 @@
   "eslint.format.enable": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "[css]": {
     "editor.defaultFormatter": "aeschli.vscode-css-formatter"
   }
