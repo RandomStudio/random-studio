@@ -42,7 +42,7 @@ jobs:
         run: npm ci
       - name: Install SWC compiler
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install next/swc-linux-x64-gnu
+        run: npm install @next/swc-linux-x64-gnu
       - name: Cache Next
         uses: actions/cache@v2
         with:
