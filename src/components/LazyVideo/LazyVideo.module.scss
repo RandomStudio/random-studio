@@ -17,10 +17,10 @@
 
   .jsVideo {
     display: none;
+  }
 
-    .hasJs & {
-      display: block;
-    }
+  &.hasJs .jsVideo {
+    display: block;
   }
 }
 
