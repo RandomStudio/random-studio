@@ -108,7 +108,6 @@ const CustomImage = ({ alt, className, sizes, src }) => {
       <noscript>
         <img
           alt={alt}
-          className={styles.image}
           decoding="async"
           sizes={sizes}
           src={src}
