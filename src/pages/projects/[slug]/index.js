@@ -1,5 +1,5 @@
 import React from 'react';
-import { uniqueId } from 'lodash';
+import { uniqueId } from 'lodash-es';
 import getThumbnailSafely from '../../../utils/getThumbnailSafely';
 import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';

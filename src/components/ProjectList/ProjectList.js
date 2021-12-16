@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { countBy } from 'lodash';
+import { countBy } from 'lodash-es';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './ProjectList.module.scss';
