@@ -15,6 +15,11 @@
   opacity: 0;
   transition: opacity 300ms ease-out, background-color 300ms linear 600ms;
   background-color: transparent;
+  display: none;
+
+  .hasJs & {
+    display: block;
+  }
 
   .isRendered & {
     opacity: 1;
@@ -25,4 +30,9 @@
 .placeholder {
   position: relative;
   width: 100%;
+  display: none;
+
+  .hasJs & {
+    display: block;
+  }
 }

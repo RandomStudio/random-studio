@@ -80,6 +80,7 @@ const VideoWithControls = ({
     >
       <LazyVideo
         autoPlays={isPlaying}
+        hasControls
         isMuted={isAlwaysMuted || isCurrentlyMuted}
         loops={loops}
         ref={videoRef}

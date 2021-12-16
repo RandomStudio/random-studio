@@ -3,10 +3,13 @@ import styles from './LazyVideo.module.scss';
 import vimeoLookup from '../../../infrastructure/vimeoLookup.json';
 
 const LazyVideo = React.forwardRef(
-  ({ alt, className, videoSrc, loops, isMuted, autoPlays }, parentRef) => {
+  (
+    { alt, className, hasControls, videoSrc, loops, isMuted, autoPlays },
+    parentRef,
+  ) => {
     const localRef = useRef();
     const videoRef = parentRef ?? localRef;
-    const [noJS, setNoJS] = useState(true);
+    const [hasJs, setHasJs] = useState(false);
     const [intersected, setIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -29,7 +32,7 @@ const LazyVideo = React.forwardRef(
     useEffect(() => {
       // Reference for cleanup
       const ref = videoRef.current;
-      setNoJS(false);
+      setHasJs(true);
 
       const handlePlayer = () => {
         if (autoPlays) {
@@ -65,19 +68,32 @@ const LazyVideo = React.forwardRef(
 
         observer.disconnect();
       };
-    }, [noJS, videoRef, autoPlays]);
+    }, [videoRef, autoPlays]);
 
+    /* eslint-disable jsx-a11y/media-has-caption */
     const videoElement = (
-      // eslint-disable-next-line jsx-a11y/media-has-caption
-      <video
-        loop={loops}
-        muted={isMuted}
-        onPlaying={() => setIsLoaded(true)}
-        playsInline
-        ref={videoRef}
-        src={intersected ? videoSrc : ''}
-      />
+      <>
+        <video
+          className={styles.jsVideo}
+          loop={loops}
+          muted={isMuted}
+          onPlaying={() => setIsLoaded(true)}
+          playsInline
+          ref={videoRef}
+          src={intersected ? videoSrc : ''}
+        />
+        <noscript>
+          <video
+            controls={hasControls}
+            loop={loops}
+            muted={isMuted}
+            playsInline
+            src={videoSrc}
+          />
+        </noscript>
+      </>
     );
+    /* eslint-enable jsx-a11y/media-has-caption */
 
     if (!vimeoLookup[id]) {
       return videoElement;
@@ -90,7 +106,8 @@ const LazyVideo = React.forwardRef(
       <div
         className={`${styles.frame} ${className} ${
           isLoaded ? styles.isLoaded : ''
-        }`}
+        }
+        ${hasJs ? styles.hasJs : ''}`}
         style={{
           aspectRatio: `${width} / ${height}`,
         }}

@@ -33,6 +33,7 @@ const CustomImage = ({ alt, className, sizes, src }) => {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isRendered, setIsRendered] = useState(false);
+  const [hasJs, setHasJs] = useState(false);
 
   const srcset = useMemo(
     () =>
@@ -43,6 +44,8 @@ const CustomImage = ({ alt, className, sizes, src }) => {
   );
 
   useEffect(() => {
+    setHasJs(true);
+
     const ref = imageRef.current;
 
     const loadImage = async () => {
@@ -85,7 +88,8 @@ const CustomImage = ({ alt, className, sizes, src }) => {
     <div
       className={`${styles.wrapper} ${className} ${
         isRendered ? styles.isRendered : ''
-      }`}
+      }
+      ${hasJs ? styles.hasJs : ''}`}
       ref={imageRef}
     >
       <img
@@ -101,6 +105,16 @@ const CustomImage = ({ alt, className, sizes, src }) => {
         src={isLoaded ? src : null}
         srcSet={isLoaded ? srcset : null}
       />
+      <noscript>
+        <img
+          alt={alt}
+          className={styles.image}
+          decoding="async"
+          sizes={sizes}
+          src={src}
+          srcSet={srcset}
+        />
+      </noscript>
     </div>
   );
 };
