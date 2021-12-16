@@ -5,7 +5,14 @@ import styles from './HomeVideo.module.scss';
 const HomeVideo = ({ collaborationCredits, videoUrl }) => {
   return (
     <div className={styles.video}>
-      <VideoWithControls autoPlay hasControls={false} isMuted loops url={videoUrl}  />
+      <VideoWithControls
+        autoPlay
+        className={styles.videoWrapper}
+        hasControls={false}
+        isMuted
+        loops
+        url={videoUrl}
+      />
       {collaborationCredits && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>

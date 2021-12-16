@@ -25,6 +25,7 @@ const trackIsCurrentlyMuted = isCurrentlyMuted => {
 
 const VideoWithControls = ({
   autoplay,
+  className,
   hasClickControls,
   hasControls,
   isMuted: isStartingMuted,
@@ -73,7 +74,10 @@ const VideoWithControls = ({
   };
 
   return (
-    <div className={styles.videoWrapper} onClick={handleTapPlayPause}>
+    <div
+      className={`${styles.videoWrapper} ${className}`}
+      onClick={handleTapPlayPause}
+    >
       <LazyVideo
         autoPlays={isPlaying}
         isMuted={isAlwaysMuted || isCurrentlyMuted}
