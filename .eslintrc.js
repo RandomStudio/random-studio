@@ -67,7 +67,7 @@ module.exports = {
       },
     ],
     'prettier/prettier': [
-      1,
+      2,
       {
         arrowParens: 'avoid',
         endOfLine: 'auto',
