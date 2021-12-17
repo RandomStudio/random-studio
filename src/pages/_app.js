@@ -2,7 +2,6 @@ import '../styles/global.scss';
 import React, { useEffect } from 'react';
 import { pageview, initialize, set } from 'react-ga';
 import { useRouter } from 'next/router';
-import Script from 'next/script';
 
 const App = ({ Component, pageProps }) => {
   const router = useRouter();

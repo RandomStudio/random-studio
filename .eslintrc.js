@@ -10,6 +10,8 @@ module.exports = {
     'plugin:@next/next/recommended',
   ],
   globals: {
+    CSSUnitValue: 'readonly',
+    ScrollTimeline: 'readonly',
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
