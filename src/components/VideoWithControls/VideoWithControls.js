@@ -1,14 +1,11 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-// import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { event } from 'react-ga';
 import styles from './VideoWithControls.module.scss';
 import LazyVideo from '../LazyVideo/LazyVideo';
 
-// eslint-disable-next-line no-console
-const trackCustomEvent = input => console.log(input);
-
 const trackPausePlay = isPlaying => {
-  trackCustomEvent({
+  event({
     action: isPlaying ? 'Pause' : 'Play',
     category: isPlaying ? 'Pause Button' : 'Play Button',
     label: 'Video Player Interactions',
@@ -16,7 +13,7 @@ const trackPausePlay = isPlaying => {
 };
 
 const trackIsCurrentlyMuted = isCurrentlyMuted => {
-  trackCustomEvent({
+  event({
     category: isCurrentlyMuted ? 'Unmute Button' : 'Mute Button',
     action: isCurrentlyMuted ? 'Unmute' : 'Mute',
     label: 'Video Player Interactions',

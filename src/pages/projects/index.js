@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from '../../components/Layout/Layout';
 import Footer from '../../components/Footer/Footer';
+import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
-import SEO from '../../components/SEO/SEO';
 
 const Projects = ({ address, email, phone, projects, slug }) => {
   return (
     <Layout>
-      <SEO pathName={slug} />
+      <Head pathName={slug} title="Projects" />
       <ProjectList hasFilters projects={projects} />
       <Footer address={address} email={email} phone={phone} />
     </Layout>

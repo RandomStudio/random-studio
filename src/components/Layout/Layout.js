@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import { AppProvider } from '../../utils/context/AppContext';
 import styles from './Layout.module.scss';
 import Navigation from '../Navigation/Navigation';
@@ -27,19 +26,17 @@ const Layout = ({ children, layout }) => {
   }, []);
 
   return (
-    <HelmetProvider>
-      <AppProvider value={toastVisiblity}>
-        <a className="screen-reader-only" href="#main-content" id="skip-nav">
-          {'Skip Navigation'}
-        </a>
-        <Navigation layout={layout} />
-        <div className={styles.container} id="main-content">
-          {children}
-        </div>
-        <div className={styles.backgroundTransition} style={randomStyle} />
-        <Toast copy="Copied to clipboard" />
-      </AppProvider>
-    </HelmetProvider>
+    <AppProvider value={toastVisiblity}>
+      <a className="screen-reader-only" href="#main-content" id="skip-nav">
+        {'Skip Navigation'}
+      </a>
+      <Navigation layout={layout} />
+      <div className={styles.container} id="main-content">
+        {children}
+      </div>
+      <div className={styles.backgroundTransition} style={randomStyle} />
+      <Toast copy="Copied to clipboard" />
+    </AppProvider>
   );
 };
 

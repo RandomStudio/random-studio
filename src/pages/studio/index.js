@@ -3,7 +3,7 @@ import styles from './Studio.module.scss';
 import Layout from '../../components/Layout/Layout';
 import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
 import ServiceList from '../../components/Studio/ServiceList/ServiceList';
-import SEO from '../../components/SEO/SEO';
+import Head from '../../components/Head/Head';
 import Footer from '../../components/Footer/Footer';
 import Recruitee from '../../components/Studio/Recruitee/Recruitee';
 import Carousel from '../../components/Carousel/Carousel';
@@ -66,7 +66,7 @@ const Studio = ({
         }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
-        <SEO pathName={slug} title="Studio" />
+        <Head pathName={slug} title="Studio" />
         <IntroBlock intros={introBlock} ref={introRef} title={title} />
 
         <ServiceList headerTitle={services.title} services={services.list} />

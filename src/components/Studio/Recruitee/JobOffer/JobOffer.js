@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { OutboundLink } from 'react-ga';
 import styles from './JobOffer.module.scss';
-
-// Todo: restore analytics
 
 const JobOffer = ({
   closeOpenOffer,
@@ -27,9 +26,14 @@ const JobOffer = ({
         escapeHtml={false}
         source={jobDescription}
       />
-      <a className={styles.applyButton} href={jobURL} target="blank">
+      <OutboundLink
+        className={styles.applyButton}
+        eventLabel={`Apply for ${jobTitle}`}
+        target="_blank"
+        to={jobURL}
+      >
         {'Apply for this position'}
-      </a>
+      </OutboundLink>
     </div>
   </section>
 );

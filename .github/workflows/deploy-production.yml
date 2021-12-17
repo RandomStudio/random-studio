@@ -13,6 +13,7 @@ jobs:
       SERVER_IP: '195.114.30.143'
       SSH_USERNAME: random-studio
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+      BUILD_MESSAGE: Production deploy started
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -30,6 +31,7 @@ jobs:
       SERVER_IP: '195.114.30.143'
       SSH_USERNAME: random-studio
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+      BUILD_MESSAGE: Redeploying with updated assets
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

@@ -1,9 +1,9 @@
 import React from 'react';
 import Footer from '../components/Footer/Footer';
+import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
-import SEO from '../components/SEO/SEO';
 
 const Home = ({
   address,
@@ -17,7 +17,7 @@ const Home = ({
   video,
 }) => (
   <Layout layout={layout}>
-    <SEO pathName={slug} />
+    <Head pathName={slug} />
     <HomeVideo collaborationCredits={collaborationCredits} videoUrl={video} />
     <ProjectList intro={intro} limit={5} projects={projects} />
     <Footer address={address} email={email} phone={phone} />

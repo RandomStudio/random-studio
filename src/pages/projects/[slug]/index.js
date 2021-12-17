@@ -1,8 +1,8 @@
 import React from 'react';
 import { uniqueId } from 'lodash-es';
+import Head from '../../../components/Head/Head';
 import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
-import SEO from '../../../components/SEO/SEO';
 import BackScrim from '../../../components/Project/BackScrim/BackScrim';
 
 const Project = ({
@@ -25,7 +25,7 @@ const Project = ({
 
   return (
     <Layout>
-      <SEO
+      <Head
         description={intro}
         image={SEOImage}
         pathName={slug}

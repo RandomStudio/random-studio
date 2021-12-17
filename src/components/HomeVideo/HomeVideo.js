@@ -16,7 +16,7 @@ const HomeVideo = ({ collaborationCredits, videoUrl }) => {
       {collaborationCredits && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>
-          <span>{' × '}</span>
+          <span aria-label="with">{' × '}</span>
           <span>
             <a
               href={collaborationCredits.url}
