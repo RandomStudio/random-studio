@@ -1,50 +1,84 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import Image from '../../../Image/Image';
 import LazyVideo from '../../../LazyVideo/LazyVideo';
 import styles from './Block.module.scss';
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
-  const [blockStart, setBlockStart] = useState(0);
-  const [blockEnd, setBlockEnd] = useState(0);
+  const overlayRef = useRef();
+  const titleRef = useRef();
 
   useEffect(() => {
-    if (imageRef && imageRef.current) {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const setupAnimations = async () => {
+      await import('./scroll-timeline-polyfill');
+
       const imageBox = imageRef.current.getBoundingClientRect();
 
-      setBlockStart(imageBox.top);
-      setBlockEnd(imageBox.bottom);
-    }
+      const blockStart = imageBox.top;
+      const blockEnd = imageBox.bottom;
+
+      imageRef.current.animate(
+        { transform: ['scale(1)', 'scale(0.8)', 'scale(0.8)', 'scale(0.3)'] },
+        {
+          duration: 10000, // Totally arbitrary!
+          fill: 'both',
+          timeline: new ScrollTimeline({
+            scrollOffsets: [
+              new CSSUnitValue(blockStart, 'px'),
+              new CSSUnitValue(blockEnd, 'px'),
+              new CSSUnitValue(blockEnd + 300, 'px'),
+              new CSSUnitValue(blockEnd + 1000, 'px'),
+            ],
+          }),
+        },
+      );
+
+      overlayRef.current.animate(
+        { opacity: [0, 1] },
+        {
+          duration: 10000, // Totally arbitrary!
+          fill: 'both',
+          timeline: new ScrollTimeline({
+            scrollOffsets: [
+              new CSSUnitValue(blockStart, 'px'),
+              new CSSUnitValue(blockStart + 120, 'px'),
+            ],
+          }),
+        },
+      );
+
+      if (!titleRef.current) {
+        return;
+      }
+
+      titleRef.current.animate(
+        { opacity: [1, 0] },
+        {
+          duration: 10000, // Totally arbitrary!
+          fill: 'both',
+          timeline: new ScrollTimeline({
+            scrollOffsets: [
+              new CSSUnitValue(0, 'px'),
+              new CSSUnitValue(80, 'px'),
+            ],
+          }),
+        },
+      );
+    };
+
+    setupAnimations();
   }, []);
-
-  const { scrollY } = useViewportScroll();
-
-  const scale = useTransform(
-    scrollY,
-    [blockStart, blockEnd, blockEnd + 300, blockEnd + 1000],
-    [1, 0.8, 0.8, 0.3],
-  );
-
-  // TODO: Find a way to prevent calculations on desktop breakpoint
-  const overlayOpacity = useTransform(
-    scrollY,
-    [blockStart, blockStart + 120],
-    [0, 1],
-  );
-
-  const titleOpacity = useTransform(scrollY, [0, 80], [1, 0]);
 
   return (
     <>
       <div className={styles.imageBlock}>
-        <motion.div
-          className={styles.mediaWrapper}
-          ref={imageRef}
-          style={{ scale }}
-        >
+        <div className={styles.mediaWrapper} ref={imageRef}>
           {video ? (
             <LazyVideo
               alt={title}
@@ -61,22 +95,16 @@ const Block = ({ image, index, copy, title, video }) => {
               src={image}
             />
           )}
-          <motion.div
-            className={styles.overlay}
-            style={{ opacity: overlayOpacity }}
-          />
-        </motion.div>
+          <div className={styles.overlay} ref={overlayRef} />
+        </div>
 
         {index === 0 && (
-          <motion.h1
-            className={styles.headerTitle}
-            style={{ opacity: titleOpacity }}
-          >
+          <h1 className={styles.headerTitle} ref={titleRef}>
             <img
               alt="Arrow pointing down. Indicating more content further down."
               src="/icons/arrow-white.svg"
             />
-          </motion.h1>
+          </h1>
         )}
       </div>
 
