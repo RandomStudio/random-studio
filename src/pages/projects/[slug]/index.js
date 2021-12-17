@@ -1,6 +1,5 @@
 import React from 'react';
 import { uniqueId } from 'lodash-es';
-import getThumbnailSafely from '../../../utils/getThumbnailSafely';
 import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
 import SEO from '../../../components/SEO/SEO';
@@ -22,8 +21,7 @@ const Project = ({
   const socialDescription =
     opengraph && opengraph.ogDescription ? opengraph.ogDescription : undefined;
 
-  const SEOImage =
-    (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
+  const SEOImage = (opengraph ? opengraph.ogImage : null) || undefined;
 
   return (
     <Layout>

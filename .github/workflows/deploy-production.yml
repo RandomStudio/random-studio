@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build and deploy immediately
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@master
+    uses: RandomStudio/random-studio/.github/workflows/_build-deploy-production.yml@master
     with:
       BUILD_DIR: 'out'
       SERVER_IP: '195.114.30.143'
@@ -16,14 +16,14 @@ jobs:
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
   process-images:
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-images.yml@master
+    uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@master
   process-vimeo:
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_process-vimeo.yml@master
+    uses: RandomStudio/random-studio/.github/workflows/_process-vimeo.yml@master
   rebuild-if-required:
     name: Rebuild and deploy with new assets
     if: ${{ needs.process-images.outputs.pushed == 'true' || needs.process-vimeo.outputs.pushed == 'true' }}
     needs: [build, process-images, process-vimeo]
-    uses: RandomStudio/random-studio-gatsby/.github/workflows/_build-deploy-production.yml@master
+    uses: RandomStudio/random-studio/.github/workflows/_build-deploy-production.yml@master
     with:
       BUILD_DIR: 'out'
       SERVER_IP: '195.114.30.143'
