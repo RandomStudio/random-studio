@@ -127,16 +127,16 @@ const ProjectDetail = ({
         projects={relatedWork}
       />
 
-      <ul aria-label="Project Details" className={styles.credits}>
+      <dl aria-label="Project Details" className={styles.credits}>
         {(credits || []).map(({ key, value }) => (
-          <li key={`${key}-${value}`}>
+          <React.Fragment key={`${key}-${value}`}>
             <dt>{key}</dt>
             <dd>
               <ReactMarkdown source={value} />
             </dd>
-          </li>
+          </React.Fragment>
         ))}
-      </ul>
+      </dl>
     </div>
   );
 };

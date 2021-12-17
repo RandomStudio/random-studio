@@ -67,15 +67,15 @@
   margin: 10vw 0 5%;
   padding: 128px 22px 0;
 
-  li {
+  dt, dd {
     padding-bottom: 22px;
     line-height: 1.3;
+  }
 
-    dt:first-of-type {
+    dt {
       max-width: 115px;
       padding-right: 38px;
     }
-  }
 
   &.creditsAdjustedSpacing {
     margin-top: 100px;
@@ -139,13 +139,8 @@
     width: var(--width);
     margin: 8vw 0;
     padding: 128px 64px 0;
-
-    li {
-      display: flex;
-      dt, dd {
-        flex: 1;
-      }
-    }
+    display: grid;
+    grid-template-columns: min-content 1fr;
   }
 }
 
