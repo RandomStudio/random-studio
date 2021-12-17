@@ -20,9 +20,25 @@ on:
         required: true
         type: string
     secrets:
+      SLACK_WEBHOOK:
+        required: true
       SSH_KEY:
         required: true
 jobs:
+  notify:
+    name: Send Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_USERNAME: Random.Studio Github
+        SLACK_COLOR: ${{ job.status }}
+        SLACK_MESSAGE: Production deploy started
+        SLACK_FOOTER: I hope you know what you were doing!!
+        MSG_MINIMAL: true
   build:
     name: Build application
     runs-on: ubuntu-latest
@@ -74,3 +90,33 @@ jobs:
           SERVER_IP: ${{ inputs.SERVER_IP }}
           USERNAME: ${{ inputs.SSH_USERNAME }}
           SERVER_DESTINATION: '/var/www/random.studio/'
+  failure-notify:
+    name: Send Slack Notification
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_USERNAME: Random.Studio Github
+        SLACK_COLOR: ${{ job.status }}
+        SLACK_MESSAGE: Deploy to production failed
+        SLACK_FOOTER: I hope you know what you were doing!!
+        MSG_MINIMAL: true
+  success-notify:
+    name: Send Slack Notification
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_USERNAME: Random.Studio Github
+        SLACK_COLOR: ${{ job.status }}
+        SLACK_MESSAGE: Deploy to production succeeded
+        SLACK_FOOTER: I hope you know what you were doing!!
+        MSG_MINIMAL: true

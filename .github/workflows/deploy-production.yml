@@ -15,6 +15,7 @@ jobs:
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
+      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
   process-images:
     uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@master
   process-vimeo:
@@ -31,3 +32,4 @@ jobs:
       NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
+      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
