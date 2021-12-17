@@ -8,27 +8,7 @@ import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import Image from '../../Image/Image';
 
-const ProjectDetail = ({
-  title,
-  intro,
-  content,
-  credits,
-  relatedProjects,
-  allProjects,
-}) => {
-  const relatedWork =
-    relatedProjects &&
-    (relatedProjects.projects || []).map(relatedProject => {
-      const foundProject =
-        allProjects.length &&
-        allProjects.find(project => relatedProject.project === project.title);
-
-      return {
-        ...relatedProject,
-        slug: foundProject ? foundProject.slug : null,
-      };
-    });
-
+const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
   const contentType = ({
     caption,
     image,
@@ -124,7 +104,7 @@ const ProjectDetail = ({
 
       <RelatedProjectSlider
         blockTitle={relatedProjects && relatedProjects.blockTitle}
-        projects={relatedWork}
+        projects={relatedProjects}
       />
 
       <dl aria-label="Project Details" className={styles.credits}>

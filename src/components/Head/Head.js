@@ -14,7 +14,11 @@ const Head = ({
 }) => {
   const siteUrl = 'https://random.studio';
 
-  const formatTitle = string => `${string} - ${defaultPageTitle}`;
+  const formatTitle = string =>
+    `${string
+      .replace('<br> ', '')
+      .replace('<br /> ', '')} - ${defaultPageTitle}`;
+
   const pageTitle = title ? formatTitle(title) : defaultPageTitle;
 
   const pageUrl = `${siteUrl}${pathName}`;

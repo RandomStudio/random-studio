@@ -1,4 +1,5 @@
 import matter from 'gray-matter';
+import imageLookup from '../../infrastructure/imageLookup.json';
 
 const fs = require('fs');
 const { join } = require('path');
@@ -8,7 +9,21 @@ const contentDirectory = join(process.cwd(), 'src', 'content');
 export function getContentFromFile(path) {
   const realSlug = path.replace(/\.md$/, '');
   const fullPath = join(contentDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  let fileContents = fs.readFileSync(fullPath, 'utf8');
+
+  if (process.env.NODE_ENV === 'production') {
+    const matches = fileContents.matchAll(/(\/img\/.*)/g);
+    const urls = [...matches].map(match => match[1]).flat();
+
+    urls.forEach(url => {
+      const filename = url.split('/')[2];
+
+      fileContents = fileContents.replace(
+        url,
+        JSON.stringify(imageLookup[filename]),
+      );
+    });
+  }
 
   const { data } = matter(fileContents);
 

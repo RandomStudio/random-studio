@@ -55,14 +55,29 @@ export const getStaticProps = async ({ params }) => {
   const data = getContentFromFile(`projects/${params.slug}`);
   const allProjects = getAllProjects();
 
+  const { relatedProjects } = data;
+
+  const relatedWork =
+    relatedProjects &&
+    (relatedProjects.projects || []).map(relatedProject => {
+      const foundProject =
+        allProjects.length &&
+        allProjects.find(project => relatedProject.project === project.title);
+
+      return {
+        ...relatedProject,
+        slug: foundProject ? foundProject.slug : null,
+      };
+    });
+
   return {
     props: {
-      allProjects,
       ...data,
       content: data.content.map(block => ({
         ...block,
         id: uniqueId(),
       })),
+      ...(relatedWork ? { relatedProjects: relatedWork } : {}),
     },
   };
 };

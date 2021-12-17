@@ -1,14 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import imageLookup from '../../../infrastructure/imageLookup.json';
 import styles from './Image.module.scss';
-
-const srcToIds = src => {
-  const normalizedSrc = src[0] === '/' ? src.slice(1) : src;
-  const cleanSrc = normalizedSrc.replace('img/', '');
-
-  return imageLookup[cleanSrc] ?? {};
-};
 
 const getSrc = (src, width) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -17,19 +9,18 @@ const getSrc = (src, width) => {
     return `${safeSrc}?wouldBeWidth=${width}`;
   }
 
-  const { full } = srcToIds(src);
+  const { full } = src;
 
   return `${process.env.NEXT_PUBLIC_CDN_URL}/${full}/${width}`;
 };
 
-// Should match variant options on Cloudflare
+// Should match variant options on Cloudflare1
 const CLOUDFLARE_VARIANTS = [
   320, 512, 640, 720, 864, 1024, 1280, 1440, 1920, 2048, 2560, 3840, 4096,
 ];
 
 const CustomImage = ({ alt, className, sizes, src }) => {
   const imageRef = useRef();
-  const { thumb } = srcToIds(src);
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isRendered, setIsRendered] = useState(false);
@@ -95,7 +86,7 @@ const CustomImage = ({ alt, className, sizes, src }) => {
       <img
         aria-hidden
         className={styles.placeholder}
-        src={`data:image/jpeg;base64,${thumb}`}
+        src={src.thumb ? `data:image/jpeg;base64,${src?.thumb}` : src}
       />
       <img
         alt={alt}

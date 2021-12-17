@@ -92,13 +92,15 @@ const Studio = ({
 export const getStaticProps = async () => {
   const { getContentFromFile } = require('../../utils/contentUtils');
 
-  const index = getContentFromFile('index');
+  const { address, email, phone } = getContentFromFile('index');
   const studio = getContentFromFile('studio');
 
   return {
     props: {
-      ...index,
       ...studio,
+      address,
+      email,
+      phone,
     },
   };
 };
