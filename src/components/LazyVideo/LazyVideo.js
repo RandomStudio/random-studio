@@ -114,6 +114,7 @@ const LazyVideo = React.forwardRef(
       >
         <img
           alt={alt}
+          aria-hidden
           className={styles.placeholder}
           src={`data:image/jpeg;base64,${thumb}`}
         />

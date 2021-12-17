@@ -93,6 +93,7 @@ const CustomImage = ({ alt, className, sizes, src }) => {
       ref={imageRef}
     >
       <img
+        aria-hidden
         className={styles.placeholder}
         src={`data:image/jpeg;base64,${thumb}`}
       />
