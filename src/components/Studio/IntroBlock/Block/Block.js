@@ -16,7 +16,9 @@ const Block = ({ image, index, copy, title, video }) => {
     }
 
     const setupAnimations = async () => {
-      await import('./scroll-timeline-polyfill');
+      if (typeof ScrollTimeline === 'undefined') {
+        await import('./scroll-timeline-polyfill');
+      }
 
       const imageBox = imageRef.current.getBoundingClientRect();
 
