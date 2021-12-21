@@ -19,7 +19,7 @@ const Home = ({
   <Layout layout={layout}>
     <Head pathName={slug} />
     <HomeVideo collaborationCredits={collaborationCredits} videoUrl={video} />
-    <ProjectList intro={intro} limit={5} projects={projects} />
+    <ProjectList intro={intro} limit={projects.length} projects={projects} />
     <Footer address={address} email={email} phone={phone} />
   </Layout>
 );
@@ -35,7 +35,9 @@ export const getStaticProps = async () => {
 
   const projectDetails = data.projects
     .map(({ caption, project: projectTitle, thumbnail }) => {
-      const project = allProjects.find(({ title }) => title === projectTitle);
+      const project = allProjects.find(
+        ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
+      );
 
       if (!project) {
         return null;
@@ -48,8 +50,7 @@ export const getStaticProps = async () => {
         title: caption || project.title,
       };
     })
-    .filter(project => project !== null)
-    .sort(({ priority: a }, { priority: b }) => b - a);
+    .filter(project => project !== null);
 
   return {
     props: {

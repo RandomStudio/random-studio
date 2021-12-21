@@ -16,9 +16,9 @@ middle: >-
 projects:
   - thumbnail:
       marginTop: 0
-      marginLeft: 23
+      marginLeft: 21
       image: ''
-      width: 54
+      width: 58
       video: https://player.vimeo.com/external/639898328.hd.mp4?s=8ed04ae1552ce15c4de6f09b14949d02655f034b&profile_id=175
     caption: |-
       A Glitch Palace 
@@ -26,16 +26,18 @@ projects:
     project: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
   - thumbnail:
       marginTop: 0
-      marginLeft: 50
+      marginLeft: 45
       image: /img/cp-thumb.jpg
-      width: 46
-    project: An Archival Experience celebrating <br>C.P. Company’s 50th Anniversary
-    caption: An archival experience celebrating <br>C.P. Company’s anniversary
+      width: 50
+    project: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+    caption: |-
+      An archival experience celebrating
+      C.P. Company’s anniversary
   - thumbnail:
       marginTop: 0
       marginLeft: 4
       image: /img/BV_1.jpg
-      width: 46
+      width: 50
     project: A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
   - thumbnail:
@@ -49,7 +51,7 @@ projects:
       marginTop: -5
       marginLeft: 0
       image: /img/HOI PAR002_SU21_MTZ_08.jpg
-      width: 46
+      width: 50
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation takeover
   - caption: |-
@@ -58,16 +60,16 @@ projects:
     project: Kinetic architecture <br> for A/D/O by MINI
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
-      marginLeft: 61
+      marginLeft: 58
       marginTop: -5
-      width: 35
+      width: 37
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     thumbnail:
       image: /img/thumbnail_chanel-1-.png
-      marginLeft: 26
+      marginLeft: 23
       marginTop: 0
-      width: 46
+      width: 52
 articles: null
 address: '> Gillis van Ledenberchstraat 112<br />1052 VK Amsterdam<br />The Netherlands<br />[Directions](https://goo.gl/maps/2sJnCcLummnmvrVb9)'
 phone: +31 20 779 7735
