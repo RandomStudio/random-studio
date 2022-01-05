@@ -13,13 +13,13 @@ thumbnail:
     https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
   width: 52
 content:
-  - caption: ''
+  - 
     marginLeft: 0
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/294600042.hd.mp4?s=a543bad2502bd8a292d5122a18714045b575f3eb&profile_id=175
@@ -33,15 +33,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 0
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/294742595.hd.mp4?s=c639be9f6d3b8c5215705054d25b1b77c76a48f2&profile_id=175
@@ -58,16 +58,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/ball.jpg
     marginLeft: 0
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - caption: >-
       Developed in WebGL using the 3D framework Three.js and custom shaders, the
@@ -82,15 +82,15 @@ content:
     marginTop: 3
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 35
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/294743163.hd.mp4?s=4c383006babd7960c861d4503c5eec2601e80d69&profile_id=175
@@ -101,8 +101,8 @@ content:
     marginTop: 5
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 41
 credits:

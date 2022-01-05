@@ -14,8 +14,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 80
   - image: /img/200304_bottegaveneta_saks__062_2.jpg
@@ -23,8 +23,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 45
   - image: /img/200304_BottegaVeneta_Saks__072 Copy.jpg
@@ -32,8 +32,8 @@ content:
     marginTop: -59
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 40
   - image: /img/Center 6.jpg
@@ -41,8 +41,8 @@ content:
     marginTop: 44
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 70
   - caption: >-
@@ -53,16 +53,16 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/1stF_Pillar_2.jpg
     marginLeft: 15
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - image: /img/1stF_Pillar_1.jpg
@@ -70,8 +70,8 @@ content:
     marginTop: -40
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - image: /img/200304_BottegaVeneta_Saks__018.jpg
@@ -79,8 +79,8 @@ content:
     marginTop: 12
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 54
   - image: /img/200304_BottegaVeneta_Saks__020.jpg
@@ -88,8 +88,8 @@ content:
     marginTop: -15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 35
   - caption: >-
@@ -100,16 +100,16 @@ content:
     marginTop: 11
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/200304_BottegaVeneta_Saks__047.jpg
     marginLeft: 13
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 75
   - image: /img/200304_BottegaVeneta_Saks__043.jpg
@@ -117,8 +117,8 @@ content:
     marginTop: 8
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 29
   - image: /img/200304_BottegaVeneta_Saks__040.jpg
@@ -126,8 +126,8 @@ content:
     marginTop: -17
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 50
 credits:
@@ -139,10 +139,10 @@ credits:
   - key: 'With:'
     value: Bonsoir Paris
 opengraph:
-  ogDescription:
+  description:
     To celebrate its SS20 collection, Bottega Veneta commissioned us
     to take over the windows of New York’s Saks Fifth Avenue and create 5 pop-up
     areas indoors.
-  ogImage: /img/200304_bottegaveneta_saks__084-copy.jpg
-  ogTitle: Bottega Veneta Takeover at Saks Fifth Avenue
+  image: /img/200304_bottegaveneta_saks__084-copy.jpg
+  title: Bottega Veneta Takeover at Saks Fifth Avenue
 ---

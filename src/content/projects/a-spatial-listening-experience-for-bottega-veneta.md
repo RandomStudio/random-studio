@@ -9,21 +9,21 @@ intro: To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: false
-      isAlwaysMuted: false
+      is_muted: false
+      is_always_muted: false
       url: https://player.vimeo.com/external/485603898.hd.mp4?s=413d2a6ab5dfc3d3686fc22460d020fd6de56a71&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    caption: ''
+    
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -38,10 +38,10 @@ content:
       Upon entering, visitors encountered an atmospheric, evolving soundscape that they can explore with their bodies, by moving or staying still. Layers of sound overlap to conjure up different dreamscapes – the gentle seascape of Ischia, the tranquility of a morning hike through the hills of Jeju Island, the bustle of New York’s streets – woven together with musical elements created by Seungmin Cha.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -53,10 +53,10 @@ content:
     width: 60
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 6
     marginLeft: 56
     zIndex: 0
@@ -64,10 +64,10 @@ content:
     width: 44
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 10
     marginLeft: 8
     zIndex: 0
@@ -75,10 +75,10 @@ content:
     width: 53
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -90,10 +90,10 @@ content:
       both sharing art direction and concept.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 19
     zIndex: 0
@@ -105,10 +105,10 @@ content:
     width: 60
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 7
     marginLeft: 60
     zIndex: 0
@@ -116,10 +116,10 @@ content:
     width: 33
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -22
     marginLeft: 8
     zIndex: 0
@@ -131,10 +131,10 @@ content:
     width: 40
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -4
     marginLeft: 60
     zIndex: 0
@@ -142,10 +142,10 @@ content:
     width: 40
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 10
     marginLeft: 13
     zIndex: 0
@@ -165,11 +165,11 @@ credits:
 
       Seungmin Cha – Field recordings and daegeum flute performance
 opengraph:
-  ogDescription: 'A shiny take on the Acousmoniums of the 1970s as pioneered by
+  description: 'A shiny take on the Acousmoniums of the 1970s as pioneered by
     Francois Bayle, we made an inflatable sonic installation to mark the launch
     of Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul. Reflecting
     on the location of the Hyundai Card Music Library, the structure offered
     visitors a dreamy spatial listening experience that transformed with every
     step. Read more on our website. '
-  ogImage: /img/BV_1.jpg
+  image: /img/BV_1.jpg
 ---

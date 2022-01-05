@@ -32,8 +32,8 @@ content:
     marginTop: 5
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/280930115.hd.mp4?s=dfaa4741bf7b417bb03db5f254f49b0de325fe9c&profile_id=175
@@ -42,8 +42,8 @@ content:
     marginTop: 5
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/229272163.hd.mp4?s=1e4792a9be3ce7410c3944dea3226b147422d0db&profile_id=174
@@ -52,8 +52,8 @@ content:
     marginTop: 5
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206454895.hd.mp4?s=2ff06eb37b72d9915d246c7c4bec3ee1d3a92662&profile_id=119
@@ -62,8 +62,8 @@ content:
     marginTop: 5
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206452606.hd.mp4?s=5d13b6ed04b48768d4f5ca820838261ba5d517e2&profile_id=119
@@ -72,8 +72,8 @@ content:
     marginTop: 5
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206450262.hd.mp4?s=ea3c5bcbc0b1d454e601dae0a8664ec2b46f4e45&profile_id=119
@@ -82,8 +82,8 @@ content:
     marginTop: 5
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206453646.hd.mp4?s=3ac300c6eaf965be548c76c1080026f58b0a2d3a&profile_id=119
@@ -92,8 +92,8 @@ content:
     marginTop: 5
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206554511.hd.mp4?s=1dd3981e1b8f025ddfbfe8124e708ffeac515a16&profile_id=119

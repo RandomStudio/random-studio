@@ -8,20 +8,20 @@ intro: COS commissioned us to create a pop-up concept store during Salone del
 content:
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
     image: /img/COS_093.jpg
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -34,10 +34,10 @@ content:
       straight lines were ruptured by soft rope, playing with form and function.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 5
     zIndex: 0
@@ -45,10 +45,10 @@ content:
     width: 44
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 10
     marginLeft: 42
     zIndex: 0
@@ -56,10 +56,10 @@ content:
     width: 53
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 12
     marginLeft: 14
     zIndex: 0
@@ -67,10 +67,10 @@ content:
     width: 47
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -82,10 +82,10 @@ content:
       stream of product displays.'
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 10
     marginLeft: 47
     zIndex: 0
@@ -97,10 +97,10 @@ content:
     width: 53
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -8
     marginLeft: 6
     zIndex: 0
@@ -108,10 +108,10 @@ content:
     width: 31
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/502612562.hd.mp4?s=90c5064293cd94b236a60d70d10abece4564b3cb&profile_id=174
     marginTop: 11
     marginLeft: 14
@@ -125,11 +125,11 @@ credits:
   - key: 'Role:'
     value: Concept Design, Art Direction, Technical development
 opengraph:
-  ogDescription: 'Transforming COS’ signature minimalist ethos into a spatial
+  description: 'Transforming COS’ signature minimalist ethos into a spatial
     experience, we created a pop-up installation to house their SS13 collection
     during Salone del Mobile in Milan. Based on the structural codes of an atom,
     the centrepiece itself is timeless and can be reconfigured into an infinite
     number of new forms. '
-  ogTitle: COS Pop-Up Installation
-  ogImage: /img/COS_040.jpg
+  title: COS Pop-Up Installation
+  image: /img/COS_040.jpg
 ---

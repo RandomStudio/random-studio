@@ -17,10 +17,10 @@ intro: >-
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/407971982.hd.mp4?s=c3c1e4d1c95ec22e70dfd4f2338715b59ffb8148&profile_id=175
     ratio: 0
     marginTop: 0
@@ -28,10 +28,10 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: 0
     marginLeft: 0
@@ -43,30 +43,30 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 11
     carousel:
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408400349.sd.mp4?s=dfe4fdec6491f6e166ddd1ea7ab0de4b9c7de5bc&profile_id=165
-        caption: ''
+        
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408400397.sd.mp4?s=5de32129668f701c31a4076d4cfed459f2c58998&profile_id=165
-        caption: ''
+        
     width: 38
     caption: Teasers
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption:
@@ -110,9 +110,9 @@ credits:
   - key: 'With: '
     value: 'Lonneke van der Palen – Photography '
 opengraph:
-  ogImage: /img/Defile_AW20_2.jpg
-  ogTitle: ' Maison Margiela – Défilé AW20'
-  ogDescription: Continuing on the theme of remixing the house’s heritage,
+  image: /img/Defile_AW20_2.jpg
+  title: ' Maison Margiela – Défilé AW20'
+  description: Continuing on the theme of remixing the house’s heritage,
     Galliano’s concept of ‘Recicla’ – resurrecting and deconstructing shapes
     from the past – was at the core of this collection.  Driven by a new
     obsession with uniforms, the garments played on the idea of

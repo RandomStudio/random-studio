@@ -12,20 +12,20 @@ intro: >-
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408304485.hd.mp4?s=4a7fb45f78af347c8af475f8a923ed046ae29afc&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption: >-
@@ -36,10 +36,10 @@ content:
     zIndex: 1
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408412623.sd.mp4?s=766dc988d85c31e0480a2704227c80e325a2027d&profile_id=165
     marginTop: 0
     marginLeft: 50
@@ -48,10 +48,10 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption:
@@ -66,10 +66,10 @@ content:
     zIndex: 1
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408423019.sd.mp4?s=8ed7d4acb861571218d2bfcd01a27f2af277b222&profile_id=165
     marginTop: 7
     marginLeft: 10
@@ -113,5 +113,5 @@ credits:
       With:
     value: Lonneke van der Palen – Photography
 opengraph:
-  ogImage: /img/Defile_AW19.png
+  image: /img/Defile_AW19.png
 ---

@@ -10,20 +10,20 @@ intro: We were commissioned to create a campaign around the Nike x JFS
 content:
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
     image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -36,10 +36,10 @@ content:
       colour, to discover the products and their many uses.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 38
     zIndex: 0
@@ -51,10 +51,10 @@ content:
     width: 55
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 8
     marginLeft: 0
     zIndex: 0
@@ -62,10 +62,10 @@ content:
     width: 48
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 61
     zIndex: 0
@@ -73,10 +73,10 @@ content:
     width: 33
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -88,10 +88,10 @@ content:
       colour palette.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 7
     zIndex: 0
@@ -99,10 +99,10 @@ content:
     width: 32
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 8
     marginLeft: 29
     zIndex: 0
@@ -118,10 +118,10 @@ credits:
   - key: 'With: '
     value: Bonsoir Paris
 opengraph:
-  ogTitle: Nike x JFS Collection
-  ogDescription: 'Revolving around the theme of modularity, the Nike x JFS
+  title: Nike x JFS Collection
+  description: 'Revolving around the theme of modularity, the Nike x JFS
     collection captured the body in motion. We created campaign photography, an
     event and a blueprint for all in-store installations that played with
     sequence, function and change. '
-  ogImage: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
+  image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
 ---

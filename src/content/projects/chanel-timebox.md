@@ -13,8 +13,8 @@ content:
     marginTop: 1
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 90
   - caption: >-
@@ -27,15 +27,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 6
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/213066493.hd.mp4?s=6dc1f03cb0c4baf32eb60bf3a851feb7cbc001d2&profile_id=119
@@ -49,8 +49,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 45
   - image: /img/chanel4.jpg
@@ -58,8 +58,8 @@ content:
     marginTop: -40
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 38
   - image: /img/chanel5.jpg
@@ -67,8 +67,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 50
   - caption: >-
@@ -80,15 +80,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 0
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/221734975.hd.mp4?s=e3648ce5f661f3b6da62d0d2c17020846180b57f&profile_id=174
@@ -106,8 +106,8 @@ credits:
       Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction,
       Marius Denisse — 3D Animation
 opengraph:
-  ogImage: /img/chanel5.jpg
-  ogTitle: |-
+  image: /img/chanel5.jpg
+  title: |-
     A vertical journey through time
     for Chanel
 ---

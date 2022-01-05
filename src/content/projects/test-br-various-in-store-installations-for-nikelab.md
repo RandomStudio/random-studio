@@ -23,8 +23,8 @@ content:
         marginTop: 0
         mediaContent:
           - autoplay: true
-            hasControls: true
-            isMuted: true
+            has_controls: true
+            is_muted: true
             loops: true
             type: videos
             url: >-
@@ -40,8 +40,8 @@ content:
             image: /img/fa204fa0494f30282cd26501e0c92e34.jpg
             type: images
           - autoplay: true
-            hasControls: true
-            isMuted: true
+            has_controls: true
+            is_muted: true
             loops: true
             type: videos
             url: >-
@@ -69,8 +69,8 @@ content:
         marginTop: 0
         mediaContent:
           - autoplay: true
-            hasControls: true
-            isMuted: true
+            has_controls: true
+            is_muted: true
             loops: true
             type: videos
             url: >-
@@ -85,8 +85,8 @@ content:
           - image: /img/ef38b96e96347aa4a3aa329cfe2078b4.jpg
             type: images
           - autoplay: true
-            hasControls: true
-            isMuted: true
+            has_controls: true
+            is_muted: true
             loops: true
             type: videos
             url: >-
@@ -107,10 +107,10 @@ credits:
       Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948
       London)
 opengraph:
-  ogDescription: >-
+  description: >-
     For the launch of the 2017 ACG (All Conditions Gear) collection, we created
     various stylised weather conditions (wind, rain and fog) that seized two of
     the brand’s stores around the globe.
-  ogImage: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
-  ogTitle: Various in-store installations for NikeLab
+  image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
+  title: Various in-store installations for NikeLab
 ---

@@ -9,10 +9,10 @@ intro: 'We were invited by Dom Pérignon to design and build the scenography  fo
 content:
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -20,10 +20,10 @@ content:
     width: 100
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -37,22 +37,22 @@ content:
       materials such as fabric and marble to create precious, hybrid objects.
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/639898372.hd.mp4?s=8292524161651534fa963e8e407e725a1b274531&profile_id=175
     marginTop: 0
     marginLeft: 4
     width: 42
     zIndex: 0
-    caption: ''
+    
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -10
     marginLeft: 50
     zIndex: 0
@@ -60,22 +60,22 @@ content:
     width: 50
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/639898329.hd.mp4?s=7a3ac229977c8ff4750645a675a06e43a65e6a04&profile_id=175
     marginTop: 8
     marginLeft: 17
     width: 66
     zIndex: 0
-    caption: ''
+    
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -89,22 +89,22 @@ content:
       artistic gesture in itself.
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/639898328.hd.mp4?s=8ed04ae1552ce15c4de6f09b14949d02655f034b&profile_id=175
     marginTop: 8
     marginLeft: 30
     width: 70
     zIndex: 0
-    caption: ''
+    
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 8
     marginLeft: 4
     zIndex: 0
@@ -118,10 +118,10 @@ content:
     width: 37
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -10
     marginLeft: 50
     zIndex: 0
@@ -129,10 +129,10 @@ content:
     width: 50
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 8
     marginLeft: 31
     zIndex: 0
@@ -148,11 +148,11 @@ credits:
   - key: 'With:'
     value: Fiction Factory – Physical Production
 opengraph:
-  ogDescription: How can you build a digital world in physical space? We were
+  description: How can you build a digital world in physical space? We were
     invited by Dom Pérignon to create the scenography for a series of pop-up
     spaces in London, Berlin, Madrid and Japan showcasing their collaboration
     with @ladygaga. Working closely with a digital sculptor, we created the
     Glitch Palace; a physical realm glitched and deformed by Lady Gaga’s
     whirlwind energy.
-  ogImage: /img/RND_DP_Berlin-2.jpg
+  image: /img/RND_DP_Berlin-2.jpg
 ---

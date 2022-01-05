@@ -14,12 +14,12 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/212768475.hd.mp4?s=db1df7d4a0a2de382171f68df4e222eded174bf4&profile_id=119
-      isAlwaysMuted: false
+      is_always_muted: false
     width: 100
   - caption: >-
       Conceived as a means of bringing about a relevant experience that connects
@@ -33,10 +33,10 @@ content:
     marginTop: 10
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     image: /img/fa204fa0494f30282cd26501e0c92e34.jpg
     marginLeft: 30
     marginTop: 0
@@ -45,18 +45,18 @@ content:
     marginTop: 10
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/213647797.hd.mp4?s=ffdefed446dbeb98b6dbb99476938f725c236a85&profile_id=119
     width: 56
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
     marginLeft: 60
     marginTop: -15
@@ -74,28 +74,28 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/213647084.hd.mp4?s=0dac195a0cb8cccd43117dd36bc6a16095d91be5&profile_id=119
     width: 60
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     image: /img/db21a8e5a25f26ec50d2d40558e4708f.jpg
     marginLeft: 60
     marginTop: 10
     width: 40
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     image: /img/b8d4598605993e7744b7e2ad68a58cdc.jpg
     marginLeft: 5
     marginTop: -10
@@ -113,18 +113,18 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/213648564.hd.mp4?s=2c0b0355f24c52a34d377f46342e1d6b5abf6514&profile_id=119
     width: 70
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     image: /img/ef38b96e96347aa4a3aa329cfe2078b4.jpg
     marginLeft: 50
     marginTop: 10
@@ -133,12 +133,12 @@ content:
     marginTop: -35
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/213649062.hd.mp4?s=140f4865386d492a2fab57cdf81ebb7594dc975e&profile_id=119
-      isAlwaysMuted: true
+      is_always_muted: true
     width: 25
   - caption: >-
       Essential to the project was the idea of confrontation and evoking a sense
@@ -163,10 +163,10 @@ credits:
       Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948
       London)
 opengraph:
-  ogDescription: >-
+  description: >-
     For the launch of the 2017 ACG (All Conditions Gear) collection, we created
     various stylised weather conditions (wind, rain and fog) that seized two of
     the brand’s stores around the globe.
-  ogImage: /img/4622f88e3bcf3f7a116d65191d94cf0e.jpg
-  ogTitle: Various in-store installations for NikeLab
+  image: /img/4622f88e3bcf3f7a116d65191d94cf0e.jpg
+  title: Various in-store installations for NikeLab
 ---

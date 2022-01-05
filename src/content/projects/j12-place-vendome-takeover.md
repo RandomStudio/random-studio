@@ -19,8 +19,8 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: https://player.vimeo.com/external/336056048.hd.mp4?s=fbe8e1b86618f5a3e2d93597cc7cebed76ba4350&profile_id=175
     width: 80
@@ -29,8 +29,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 48
   - image: /img/wec190502_chanel_j12_001_2.jpg
@@ -38,8 +38,8 @@ content:
     marginTop: -19
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 43
   - image: /img/wec190502_chanel_j12_063.jpg
@@ -47,16 +47,16 @@ content:
     marginTop: 9
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 70
   - marginLeft: 2
     marginTop: 9
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: https://player.vimeo.com/external/370904935.hd.mp4?s=fac34f063d29e7662baf300d5e97fadf9006ede5&profile_id=175
     width: 37
@@ -65,8 +65,8 @@ content:
     marginTop: -10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 53
   - caption: >-
@@ -81,15 +81,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 3
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: https://player.vimeo.com/external/370915183.hd.mp4?s=b2c5c9bf232eb3767727ff6bcc1e3f0c850eae23&profile_id=175
     width: 54
@@ -98,8 +98,8 @@ content:
     marginTop: -15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 36
   - caption:
@@ -110,8 +110,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
 credits:
   - key: 'For: '
