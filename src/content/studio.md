@@ -59,16 +59,6 @@ jobOpenings:
 
       We are looking for an experience strategist who can lead the proposal process and concept development phase for innovation programs and long-term projects.
     jobIsVisible: true
-  - jobTitle: Junior QA Tester
-    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=12&source=aWQ9Nw%3D%3D
-    jobDescription:
-      As a Junior QA Tester at Random Studio, you will be part of a
-      team of creatives and technologists that work together with the client to
-      develop a digital platform for in-store experiences. You will be involved
-      in scoping out the work to build new functionality and validate developed
-      solutions. You will hunt for bugs and work within the team to guard the
-      stability and quality of the work we deliver on one of our key accounts.
-    jobIsVisible: true
   - jobTitle: Senior Experience Designer
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=10&source=aWQ9Nw%3D%3D
     jobDescription: >-
@@ -132,6 +122,11 @@ jobOpenings:
       ### Random Studio Diversity & Inclusion Statement
 
       At Random Studio, we believe that an inclusive work environment and a diverse team are key to creating fresh and inspiring work. We’re looking for candidates who enrich our culture and challenge the status quo. We encourage everyone to bring their whole selves to work, and we strive to provide all candidates with an unbiased and accessible recruitment process. If you require assistance due to a disability when applying please let us know in your application so we can accommodate your needs.
+    jobIsVisible: true
+  - jobTitle: Senior Spatial Designer
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=14&source=aWQ9Nw%3D%3D
+    jobDescription:
+      We are looking for a Senior Spatial Designer who can lead projects from start to end.
     jobIsVisible: true
   - jobTitle: Senior UX Designer
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=11&source=aWQ9Nw%3D%3D
