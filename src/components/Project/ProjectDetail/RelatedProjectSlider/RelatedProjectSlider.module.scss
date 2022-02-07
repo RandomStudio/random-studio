@@ -1,6 +1,7 @@
 .wrapper {
   --spacing-left: 20px;
   margin-top: 72px;
+  
 
   h4 {
     font-size: var(--font-small);
@@ -44,9 +45,19 @@
   }
 }
 
+.worksWrapperSingleProject {
+  display: flex;
+  justify-content: center ;
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}
+
+
 .card {
   text-decoration: none;
-  scroll-snap-align: start;
+  
 
   p {
     font-size: var(--font-xxs);
@@ -69,8 +80,65 @@
   }
 }
 
+.cardSingleProject {
+  width: 679px;
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  text-decoration: none;
+  
+
+  p {
+    font-size: var(--font-xxs);
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  &:nth-of-type(1n + 2) {
+    margin-left: 12px;
+  }
+  
+  @media (min-width: 864px) {
+    width: 322px;
+    p {
+      font-size: var(--font-small);
+    }
+
+    &:nth-of-type(1n + 2) {
+      margin-left: 24px;
+    }
+  }
+  @media (min-width: 1152px) {
+    width: 679px;
+  }
+}
+
 .cardSpacer {
+  //padding-right: 200px;
   padding-right: calc(100% - 268px);
+}
+
+.cardSpacerSinglePorject {
+  padding-right: 0px;
+}
+.imageWrapperSingleProject {
+  width: 679px;
+  height: 452px;
+
+  & + p {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 864px) {
+    width: 322px;
+    height: 404px;
+  }
+
+  @media (min-width: 1152px) {
+    width: 679px;
+    height: 452px;
+  }
 }
 
 .imageWrapper {
