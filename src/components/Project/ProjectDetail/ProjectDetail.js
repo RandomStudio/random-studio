@@ -17,6 +17,7 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
     video,
     carousel,
     width,
+    isCentered,
   }) => {
     switch (true) {
       case Boolean(video && video.url):
@@ -51,7 +52,9 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
 
       default:
         return (
-          <div className={styles.text}>
+          <div
+            className={`${styles.text} ${isCentered ? styles.isCentered : ''}`}
+          >
             <ReactMarkdown escapeHtml={false} source={caption} />
           </div>
         );
@@ -78,6 +81,7 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
           width,
           carousel,
           zIndex,
+          isCentered,
         }) => (
           <div
             className={styles.item}
@@ -97,6 +101,7 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
               video,
               carousel,
               width,
+              isCentered,
             })}
           </div>
         ),
@@ -139,3 +144,4 @@ ProjectDetail.defaultProps = {
 };
 
 export default ProjectDetail;
+
