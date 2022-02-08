@@ -9,32 +9,21 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
     return null;
   }
 
-  const worksWrapper =
-    projects.length === 1
-      ? styles.worksWrapperSingleProject
-      : styles.worksWrapper;
-
-  const card = projects.length === 1 ? styles.cardSingleProject : styles.card;
-
-  const imageWrapper =
-    projects.length === 1
-      ? styles.imageWrapperSingleProject
-      : styles.imageWrapper;
-
-  const cardSpacer =
-    projects.length === 1 ? styles.cardSpacerSingleProject : styles.cardSpacer;
+  const wrapperClass = `${styles.wrapper} ${
+    projects.length === 1 ? styles.isSingle : ''
+  }`;
 
   return (
-    <section className={styles.wrapper}>
+    <section className={wrapperClass}>
       {blockTitle && <h4>{blockTitle}</h4>}
-      <div className={worksWrapper}>
+      <div className={styles.worksWrapper}>
         {projects.map(({ image, title, subtitle, slug }) => (
           <Link href={slug} key={title}>
-            <a className={card}>
+            <a className={styles.card}>
               {image && (
                 <Image
                   alt={title}
-                  className={imageWrapper}
+                  className={styles.imageWrapper}
                   sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
                   src={image}
                 />
@@ -44,7 +33,7 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
             </a>
           </Link>
         ))}
-        <span className={cardSpacer} />
+        <span className={styles.cardSpacer} />
       </div>
     </section>
   );
