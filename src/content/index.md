@@ -27,12 +27,12 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 45
-      image: /img/cp-thumb.jpg
       width: 50
-    project: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+      image: /img/randomstudio_cpcompany_DSC7655.jpg
     caption: |-
-      An archival experience celebrating
-      C.P. Company’s anniversary
+      An archival experience celebrating 
+      C.P. Company’s anniversary – Milan edition
+    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
   - thumbnail:
       marginTop: 0
       marginLeft: 4

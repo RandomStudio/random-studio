@@ -3,6 +3,14 @@ templateKey: Projects
 projects:
   - thumbnail:
       marginTop: 0
+      marginLeft: 21
+      width: 58
+      image: /img/randomstudio_cpcompany_DSC7655.jpg
+    caption: An archival experience celebrating C.P. Company’s anniversary – Milan edition
+    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
+    tags: ['Spaces','Exhibitions']
+  - thumbnail:
+      marginTop: 0
       marginLeft: 23
       image: /img/carousel1_1.jpg
       width: 54

@@ -4,15 +4,23 @@ import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
 import Image from '../../../Image/Image';
 
-const RelatedProjectSlider = ({ blockTitle, projects }) => {
+const RelatedProjectSlider = ({ relatedProjects }) => {
+  const { blockTitle, marginTop, projects } = relatedProjects;
+
   if (!projects || projects.length <= 0) {
     return null;
   }
 
-  return (
-    <section className={styles.wrapper}>
-      {blockTitle && <h4>{blockTitle}</h4>}
+  const wrapperClass = `${styles.wrapper} ${
+    projects.length === 1 ? styles.isSingle : ''
+  }`;
 
+  return (
+    <section
+      className={wrapperClass}
+      style={{ marginTop: `${marginTop}%` ?? 0 }}
+    >
+      {blockTitle && <h4>{blockTitle}</h4>}
       <div className={styles.worksWrapper}>
         {projects.map(({ image, title, subtitle, slug }) => (
           <Link href={slug} key={title}>
@@ -37,13 +45,15 @@ const RelatedProjectSlider = ({ blockTitle, projects }) => {
 };
 
 RelatedProjectSlider.propTypes = {
-  blockTitle: PropTypes.string,
-  projects: PropTypes.string,
+  relatedProjects: PropTypes.shape({
+    blockTitle: PropTypes.string,
+    marginTop: PropTypes.number,
+    projects: PropTypes.string,
+  }),
 };
 
 RelatedProjectSlider.defaultProps = {
-  blockTitle: '',
-  projects: [],
+  relatedProjects: {},
 };
 
 export default RelatedProjectSlider;

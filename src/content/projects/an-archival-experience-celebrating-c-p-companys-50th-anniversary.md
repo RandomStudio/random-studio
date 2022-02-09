@@ -166,6 +166,13 @@ content:
     zIndex: 0
     image: /img/bottom-grid@2x.png
     width: 100
+relatedProjects:
+  blockTitle: More on our celebration of CP Company’s  50th anniversary
+  marginTop: 10
+  projects:
+    - image: /img/randomstudio_cpcompany_DSC7655.jpg
+      title: An archival experience celebrating C.P. Company’s anniversary – Milan edition
+      project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
 credits:
   - key: 'For:'
     value: C.P. Company
