@@ -50,8 +50,10 @@ content:
       - type: image
         image: /img/RS_CPCOMPANY_027.jpg
     width: 65
+  - 
+    width: 100
     caption:
-       Working with five-decade’s worth of C.P. Company's hybrid urban sportswear, objects, sketches and editorials, visitors are invited to ‘scroll’ the brand’s rich history using interactive racks or explore a wider ecosystem of digital content through scannable Garment Cards. The result is an embodied experience of the often-hidden brand archive. 
+      Working with five-decade’s worth of C.P. Company's hybrid urban sportswear, objects, sketches and editorials, visitors are invited to ‘scroll’ the brand’s rich history using interactive racks or explore a wider ecosystem of digital content through scannable Garment Cards. The result is an embodied experience of the often-hidden brand archive. 
   - 
     marginTop: 10
     marginLeft: 51
@@ -86,11 +88,6 @@ credits:
       Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial
       Design, Prototyping, Software Development, Installation Engineering, Research
 opengraph:
-  ogDescription: How can you build a digital world in physical space? We were
-    invited by Dom Pérignon to create the scenography for a series of pop-up
-    spaces in London, Berlin, Madrid and Japan showcasing their collaboration
-    with @ladygaga. Working closely with a digital sculptor, we created the
-    Glitch Palace; a physical realm glitched and deformed by Lady Gaga’s
-    whirlwind energy.
-  ogImage: /img/RND_DP_Berlin-2.jpg
+  ogDescription: ''
+  ogImage: 
 ---
