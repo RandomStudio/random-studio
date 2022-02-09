@@ -122,6 +122,7 @@
 .imageWrapper {
   width: 268px;
   height: 336px;
+  overflow: hidden;
 
   & + p {
     margin-top: 20px;
