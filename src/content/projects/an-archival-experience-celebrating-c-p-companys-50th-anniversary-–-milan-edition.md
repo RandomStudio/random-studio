@@ -70,12 +70,9 @@ content:
     zIndex: 0
     image: /img/RS_CPCOMPANY_105.jpg
     width: 34
-  - marginTop: 35
-    isCentered: true
-    width: 100
-    caption: 'More on our celebration of CP Company’s  50th anniversary:'
 relatedProjects:
-  blockTitle: Other Projects
+  blockTitle: More on our celebration of CP Company’s  50th anniversary
+  marginTop: 30
   projects:
     - title: An archival experience celebrating C.P. Company’s 50th anniversary
       project: An archival experience celebrating C.P. Company’s 50th anniversary

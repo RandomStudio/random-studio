@@ -1,7 +1,6 @@
 .wrapper {
   --spacing-left: 20px;
   margin-top: 72px;
-  
 
   h4 {
     font-size: var(--font-small);
@@ -13,6 +12,11 @@
     }
   }
 
+  &.isSingle {
+    h4 {
+      text-align: center;
+    }
+  }
   @media (min-width: 576px) {
     --spacing-left: 64px;
   }
@@ -48,7 +52,7 @@
     display: flex;
     justify-content: center ;
     padding-left: 0%;
-    
+
 }
 }
 
@@ -63,7 +67,7 @@
     text-decoration: none;
     @media (min-width: 864px){
       font-size: var(--font-small);
-    } 
+    }
   }
 
   &:nth-of-type(1n + 2) {
@@ -85,7 +89,7 @@
     @media (min-width: 1152px) {
       width: 679px;
     }
-    
+
     p {
       font-size: var(--font-xxs);
       font-weight: normal;
@@ -135,16 +139,16 @@
   .isSingle &{
     width: 679px;
     height: 452px;
-  
+
     & + p {
       margin-top: 20px;
     }
-  
+
     @media (min-width: 864px) {
       width: 322px;
       height: 404px;
     }
-  
+
     @media (min-width: 1152px) {
       width: 679px;
       height: 452px;

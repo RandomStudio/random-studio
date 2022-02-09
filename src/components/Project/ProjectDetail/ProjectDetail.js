@@ -106,12 +106,9 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
           </div>
         ),
       )}
-
-      <RelatedProjectSlider
-        blockTitle={relatedProjects && relatedProjects.blockTitle}
-        projects={relatedProjects}
-      />
-
+      {relatedProjects && (
+        <RelatedProjectSlider relatedProjects={relatedProjects} />
+      )}
       <dl aria-label="Project Details" className={styles.credits}>
         {(credits || []).map(({ key, value }) => (
           <React.Fragment key={`${key}-${value}`}>
@@ -144,4 +141,3 @@ ProjectDetail.defaultProps = {
 };
 
 export default ProjectDetail;
-

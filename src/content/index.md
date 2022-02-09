@@ -17,15 +17,6 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 21
-      width: 58
-      image: /img/randomstudio_cpcompany_DSC7655.jpg
-    caption: |-
-      An archival experience celebrating 
-      C.P. Company’s anniversary – Milan edition
-    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
-  - thumbnail:
-      marginTop: 0
-      marginLeft: 21
       image: ''
       width: 58
       video: https://player.vimeo.com/external/639898328.hd.mp4?s=8ed04ae1552ce15c4de6f09b14949d02655f034b&profile_id=175
@@ -36,12 +27,12 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 45
-      image: /img/cp-thumb.jpg
       width: 50
-    project: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+      image: /img/randomstudio_cpcompany_DSC7655.jpg
     caption: |-
-      An archival experience celebrating
-      C.P. Company’s anniversary
+      An archival experience celebrating 
+      C.P. Company’s anniversary – Milan edition
+    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
   - thumbnail:
       marginTop: 0
       marginLeft: 4
