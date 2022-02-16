@@ -49,6 +49,15 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 jobOpenings:
+  - jobTitle: Operations Manager / Project Manager
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=15&source=aWQ9Nw%3D%3D
+    jobDescription:
+      We are looking for an Operations Manager who can lead our Paris operations.
+
+      Random is an independent experience design studio based in Paris and Amsterdam. Our work comes to life where the digital and the physical are fluid.
+
+      We use technology in a human, tangible way and invite people to connect to both each other and the space they are in.
+    jobIsVisible: true
   - jobTitle: Experience Strategist
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=8&source=aWQ9Nw%3D%3D
     jobDescription: >-
