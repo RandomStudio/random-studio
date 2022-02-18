@@ -18,7 +18,7 @@ projects:
         marginTop: 0
         marginLeft: 21
         width: 58
-        image: /img/01.jpg
+        image: /img/prada1.jpg
     caption: Exhibition design for Fondazione Prada’s ‘Role Play’ 
     project: Exhibition design for Fondazione Prada’s ‘Role Play’ 
   - thumbnail:
