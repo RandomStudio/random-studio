@@ -10,7 +10,7 @@ thumbnail:
 content:
   - marginLeft: 0
     marginTop: 0
-    image: /img/prada-1.jpg
+    image: /img/prada1.jpg
     width: 100
   - caption: >-
       Using minimal physical interventions, we transformed the space completely by submerging it in a sea of deep blue lighting. The rich tone of blue invites visitors on a disorienting, intense perceptual experience whilst also creating a homogeneous space that envelops the details of the building.
@@ -23,24 +23,24 @@ content:
       isMuted: true
       loops: true
     width: 29
-  - image: /img/prada-2.jpg
+  - image: /img/prada2.jpg
     marginLeft: 45
     marginTop: -21
     width: 55
   - caption: >-
       Highlighted by precise spotlights that neutralise the blue, the art work on view seems to float in space, popping out against the monochrome. The result is a paradoxical space that plays on the theme of identity: the blue space has a distinct character of its own whilst having zero influence on the art work, celebrating the unique identity of each piece. 
-  - image: /img/prada-3.jpg
+  - image: /img/prada3.jpg
     marginLeft: 3
     marginTop: 0
     width: 47
-  - image: /img/prada-4.jpg
+  - image: /img/prada4.jpg
     marginLeft: 57
     marginTop: -50
     width: 28
   - caption: >-
       “Role Play” will generate its own “alter-ego” at Prada Aoyama Tokyo in the form of another show including works by Juno Calypso, Beatrice Marchi, Haruka Sakaguchi and Griselda San Martin, Tomoko Sawada, and Bogosi Sekhukhuni. Prada will present this second exhibition in Tokyo from 11 March to 20 June 2022 with the support of Fondazione Prada.
     marginTop: 15
-  - image: /img/prada-5.jpg
+  - image: /img/prada5.jpg
     width: 100
 credits:
   - key: 'For:'
@@ -50,6 +50,6 @@ credits:
       Creative Concept, UX/CX Design, Experience Design, Art Direction , Spatial Design, Prototyping, Software Development, Installation Engineering, Research
 opengraph:
   ogDescription: For Fondazione Prada’s exhibition “Role Play”we designed a space in blue that erased the identity of the building, drawing the individuality of each piece into sharp focus.
-  ogImage: /img/prada-1.jpg
+  ogImage: /img/prada1.jpg
   ogTitle: Exhibition design for Fondazione Prada’s ‘Role Play’
 ---
