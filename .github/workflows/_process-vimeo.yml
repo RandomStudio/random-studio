@@ -42,7 +42,7 @@ jobs:
           if [ -z "$(git status --porcelain)" ]; then
             echo "::set-output name=push::false"
           else
-            git commit -m "Update Vimeo Lookup file" -a
+            git commit -m "Update Vimeo Lookup file – skip assets" -a
             echo "::set-output name=push::true"
           fi
         shell: bash
@@ -50,5 +50,5 @@ jobs:
         if: steps.commit.outputs.push == 'true'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.RS_BOT_TOKEN }}
           branch: ${{ github.ref }}
