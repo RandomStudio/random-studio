@@ -5,6 +5,9 @@ on:
       pushed:
         description: "Did workflow commit new files"
         value: ${{ jobs.build.outputs.pushed }}
+    secrets:
+      RS_BOT_TOKEN:
+        required: true
 jobs:
   process_images:
     name: Process image assets
