@@ -23,7 +23,7 @@ content:
       isMuted: true
       loops: true
     width: 29
-  - image: /img/rectangle 11.jpg
+  - image: /img/rectangle11.jpg
     marginLeft: 45
     marginTop: -21
     width: 55
@@ -33,7 +33,7 @@ content:
     marginLeft: 3
     marginTop: 0
     width: 47
-  - image: /img/_DSC5595-HDR 1.jpg
+  - image: /img/_DSC5595-HDR1.jpg
     marginLeft: 57
     marginTop: -50
     width: 28
