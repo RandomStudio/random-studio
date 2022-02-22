@@ -66,7 +66,7 @@ content:
     width: 100
 credits:
   - key: 'For:'
-    value: Prada Osservatorio
+    value: Fondazione Prada
   - key: 'Role:'
     value: >-
       Exhibition Design
