@@ -15,6 +15,22 @@ middle: >-
   [More about our studio](/studio)
 projects:
   - thumbnail:
+        marginTop: 0
+        marginLeft: 21
+        width: 58
+        image: /img/prada_first.jpg
+    caption: Exhibition design for Fondazione Prada’s ‘Role Play’ 
+    project: Exhibition design for Fondazione Prada’s ‘Role Play’ 
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 21
+      width: 58
+      image: /img/randomstudio_cpcompany_DSC7655.jpg
+    caption: |-
+      An archival experience celebrating 
+      C.P. Company’s anniversary – Milan edition
+    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
+  - thumbnail:
       marginTop: 0
       marginLeft: 21
       image: ''
@@ -27,12 +43,12 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 45
+      image: /img/cp-thumb.jpg
       width: 50
-      image: /img/randomstudio_cpcompany_DSC7655.jpg
+    project: An Archival Experience celebrating C.P. Company’s 50th Anniversary
     caption: |-
-      An archival experience celebrating 
-      C.P. Company’s anniversary – Milan edition
-    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
+      An archival experience celebrating
+      C.P. Company’s anniversary
   - thumbnail:
       marginTop: 0
       marginLeft: 4

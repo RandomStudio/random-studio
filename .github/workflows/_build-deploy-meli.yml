@@ -18,8 +18,10 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: "16"
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v2
@@ -38,13 +40,13 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
-      - name: 'build'
+      - name: "build"
         run: |
           npm run build
         env:
           NEXT_PUBLIC_CDN_URL: ${{ inputs.NEXT_PUBLIC_CDN_URL }}
 
-      - name: 'publish'
+      - name: "publish"
         run: |
           npx -p "@getmeli/cli" meli upload ./out \
             --url "https://staging.random.studio" \
@@ -55,5 +57,3 @@ jobs:
           MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MELI_SITE: ${{ inputs.MELI_SITE }}
-
-

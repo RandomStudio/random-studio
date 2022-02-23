@@ -5,6 +5,9 @@ on:
       pushed:
         description: "Did workflow commit new files"
         value: ${{ jobs.build.outputs.pushed }}
+    secrets:
+      RS_BOT_TOKEN:
+        required: true
 jobs:
   process_images:
     name: Process image assets
@@ -14,7 +17,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -48,7 +51,7 @@ jobs:
           if [ -z "$(git status --porcelain)" ]; then
             echo "::set-output name=push::false"
           else
-            git commit -m "Update Image Lookup file" -a
+            git commit -m "Update Image Lookup file – skip assets" -a
             echo "::set-output name=push::true"
           fi
         shell: bash
@@ -56,4 +59,5 @@ jobs:
         if: steps.commit.outputs.push == 'true'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.RS_BOT_TOKEN }}
+          branch: ${{ github.ref }}
