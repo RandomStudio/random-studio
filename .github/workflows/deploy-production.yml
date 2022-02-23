@@ -9,28 +9,32 @@ jobs:
     name: Build and deploy immediately
     uses: RandomStudio/random-studio/.github/workflows/_build-deploy-production.yml@master
     with:
-      BUILD_DIR: 'out'
-      SERVER_IP: '195.114.30.143'
+      BUILD_DIR: "out"
+      SERVER_IP: "195.114.30.143"
       SSH_USERNAME: random-studio
-      NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+      NEXT_PUBLIC_CDN_URL: "https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw"
       BUILD_MESSAGE: Production deploy started
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
   process-images:
     uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@master
+    secrets:
+      RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
   process-vimeo:
     uses: RandomStudio/random-studio/.github/workflows/_process-vimeo.yml@master
+    secrets:
+      RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
   rebuild-if-required:
     name: Rebuild and deploy with new assets
     if: ${{ needs.process-images.outputs.pushed == 'true' || needs.process-vimeo.outputs.pushed == 'true' }}
     needs: [build, process-images, process-vimeo]
     uses: RandomStudio/random-studio/.github/workflows/_build-deploy-production.yml@master
     with:
-      BUILD_DIR: 'out'
-      SERVER_IP: '195.114.30.143'
+      BUILD_DIR: "out"
+      SERVER_IP: "195.114.30.143"
       SSH_USERNAME: random-studio
-      NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+      NEXT_PUBLIC_CDN_URL: "https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw"
       BUILD_MESSAGE: Redeploying with updated assets
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
