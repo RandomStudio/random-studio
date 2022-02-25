@@ -50,7 +50,13 @@ jobs:
           fi
         shell: bash
       - name: Push changes
-        if: steps.commit.outputs.push == 'true'
+        if: ${{ steps.commit.outputs.push == 'true' && github.head_ref }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.RS_BOT_TOKEN }}
+          branch: ${{ github.head_ref }}
+      - name: Push changes
+        if: ${{ steps.commit.outputs.push == 'true' && !github.head_ref }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.RS_BOT_TOKEN }}

@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: "16"
       - uses: actions/checkout@v2
+        if: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: actions/checkout@v2
+        if: ${{ !github.head_ref }}
         with:
           ref: ${{ github.ref }}
       - name: Cache dependencies
