@@ -1,5 +1,7 @@
 name: Deploy NextJS Staging to Meli
 on:
+  pull_request:
+    types: [opened, reopened]
   push:
     branches:
       - "staging"
