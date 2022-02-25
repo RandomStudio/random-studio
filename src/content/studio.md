@@ -58,7 +58,7 @@ jobOpenings:
 
       We use technology in a human, tangible way and invite people to connect to both each other and the space they are in.
     jobIsVisible: true
-  - jobTitle: Experience Strategist
+  - jobTitle: Senior User Experience Strategist
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=8&source=aWQ9Nw%3D%3D
     jobDescription: >-
       Random is an experience design studio based in Amsterdam and Paris. We
@@ -66,7 +66,7 @@ jobOpenings:
       as part of our physical world, engaging us to explore, play and wonder.
 
 
-      We are looking for an experience strategist who can lead the proposal process and concept development phase for innovation programs and long-term projects.
+      We are looking for a a Senior User Experience Strategist who can lead the proposal process and concept development phase for innovation programs and long-term projects.
     jobIsVisible: true
   - jobTitle: Senior Experience Designer
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=10&source=aWQ9Nw%3D%3D
