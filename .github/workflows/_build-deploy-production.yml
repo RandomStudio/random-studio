@@ -3,7 +3,7 @@ on:
   workflow_call:
     inputs:
       BUILD_DIR:
-        default: 'public'
+        default: "public"
         required: false
         type: string
       SERVER_IP:
@@ -32,25 +32,27 @@ jobs:
     name: Send Slack Notification
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Slack Notification
-      uses: rtCamp/action-slack-notify@v2
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_USERNAME: Random.Studio Github
-        SLACK_ICON: https://avatars.githubusercontent.com/u/8861680?s=400&u=c7c52458389708902d47179e1f1a9419196b0420&v=4
-        SLACK_COLOR: '#000000'
-        SLACK_MESSAGE: ${{ inputs.BUILD_MESSAGE }}
-        SLACK_FOOTER: I hope you know what you are doing!!
-        MSG_MINIMAL: true
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Random.Studio Github
+          SLACK_ICON: https://avatars.githubusercontent.com/u/8861680?s=400&u=c7c52458389708902d47179e1f1a9419196b0420&v=4
+          SLACK_COLOR: "#000000"
+          SLACK_MESSAGE: ${{ inputs.BUILD_MESSAGE }}
+          SLACK_FOOTER: I hope you know what you are doing!!
+          MSG_MINIMAL: true
   build:
     name: Build application
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: "16"
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v2
@@ -71,7 +73,7 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
-      - name: 'build'
+      - name: "build"
         run: |
           npm run build
         env:
@@ -93,36 +95,36 @@ jobs:
           FOLDER: "${{ inputs.BUILD_DIR }}/"
           SERVER_IP: ${{ inputs.SERVER_IP }}
           USERNAME: ${{ inputs.SSH_USERNAME }}
-          SERVER_DESTINATION: '/var/www/random.studio/'
+          SERVER_DESTINATION: "/var/www/random.studio/"
   failure-notify:
     name: Notify of failure
     runs-on: ubuntu-latest
     if: failure()
     needs: [build]
     steps:
-    - uses: actions/checkout@v2
-    - name: Slack Notification
-      uses: rtCamp/action-slack-notify@v2
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_USERNAME: Random.Studio Github
-        SLACK_COLOR: ${{ job.status }}
-        SLACK_MESSAGE: Deploy to production failed
-        SLACK_FOOTER: I can't believe you've done this
-        MSG_MINIMAL: true
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Random.Studio Github
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: Deploy to production failed
+          SLACK_FOOTER: I can't believe you've done this
+          MSG_MINIMAL: true
   success-notify:
     name: Notify of success
     runs-on: ubuntu-latest
     if: success()
     needs: [build]
     steps:
-    - uses: actions/checkout@v2
-    - name: Slack Notification
-      uses: rtCamp/action-slack-notify@v2
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_USERNAME: Random.Studio Github
-        SLACK_COLOR: ${{ job.status }}
-        SLACK_MESSAGE: Deploy to production succeeded
-        SLACK_FOOTER: Quality
-        MSG_MINIMAL: true
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Random.Studio Github
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: Deploy to production succeeded
+          SLACK_FOOTER: Quality
+          MSG_MINIMAL: true
