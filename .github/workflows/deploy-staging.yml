@@ -6,6 +6,13 @@ on:
     branches:
       - "staging"
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show the Github context for the triggered event
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
   process-images:
     uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@staging
     secrets:
