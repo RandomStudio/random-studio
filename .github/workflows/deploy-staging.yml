@@ -1,23 +1,16 @@
 name: Deploy NextJS Staging to Meli
 on:
-  pull_request:
-    types: [opened, reopened, synchronize]
   push:
     branches:
       - "staging"
 jobs:
-  debug:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Show the Github context for the triggered event
-        run: echo "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
   process-images:
+    if: "!contains(github.event.head_commit.message, 'skip assets')"
     uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@staging
     secrets:
       RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
   process-vimeo:
+    if: "!contains(github.event.head_commit.message, 'skip assets')"
     uses: RandomStudio/random-studio/.github/workflows/_process-vimeo.yml@staging
     secrets:
       RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
