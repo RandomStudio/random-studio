@@ -90,7 +90,7 @@ const Head = ({
       <script
         data-domain="random.studio"
         defer
-        src="https://plausible.io/js/plausible.js"
+        src="https://plausible.io/js/plausible.outbound-links.js"
       />
     </NextHead>
   );
