@@ -60,10 +60,27 @@ content:
     marginTop: 15
     width: 71
   - caption: >-
-      ‘Role Play’ will generate its own “alter-ego” at Prada Aoyama Tokyo . This second exhibition will be on display from 11 March to 20 June 2022.
+      “Role Play” will generate its own “alter-ego” at Prada Aoyama Tokyo in the form of another show including works by Juno Calypso, Beatrice Marchi, Haruka Sakaguchi and Griselda San Martin, Tomoko Sawada, and Bogosi Sekhukhuni. Prada will present this second exhibition in Tokyo from 11 March to 20 June 2022 with the support of Fondazione Prada.
     marginTop: 5
-  - image: /img/prada-last.jpg
+  - image: /img/prada-5.jpg
+    width: 64
+  - carousel:
+    - type: image
+      image: /img/prada1-carrousel3.jpg
+    - type: image
+      image: /img/prada2-carrousel3.jpg
+    - type: image
+      image: /img/prada3-carrousel3.jpg
+    - type: image
+      image: /img/prada4-carrousel3.jpg
+    - type: image
+      image: /img/prada5-carrousel3.jpg
+    marginLeft: 39
+    marginTop: 10
+    width: 61
+  - image: /img/prada-bottom.jpg
     width: 100
+    marginTop: 10
 credits:
   - key: 'For:'
     value: Fondazione Prada

@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/654862644.hd.mp4?s=72c963d566d60df6cf8ac1f0173d1b1d0f22cf10&profile_id=175
+video: https://vod-progressive.akamaized.net/exp=1647093065~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2330%2F27%2F686654010%2F3168015691.mp4~hmac=7d34b2f4f0a0f649d6a837b59e13bad625454f7155454dc966f65abab173f5c7/vimeo-prod-skyfire-std-us/01/2330/27/686654010/3168015691.mp4 
 collaborationCredits:
-  collaborator: C.P. Company
-  url: https://random.studio/projects/an-archival-experience-celebrating-c-p-companys-50th-anniversary
+  collaborator: Fondazione Prada
+  url: https://random.studio/projects/exhibition-design-for-fondazione-pradas-role-play
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-

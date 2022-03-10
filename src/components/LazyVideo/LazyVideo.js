@@ -70,6 +70,8 @@ const LazyVideo = React.forwardRef(
       };
     }, [videoRef, autoPlays]);
 
+    const { height, thumb, width } = vimeoLookup?.[id] ?? {};
+
     /* eslint-disable jsx-a11y/media-has-caption */
     const videoElement = (
       <>
@@ -79,6 +81,7 @@ const LazyVideo = React.forwardRef(
           muted={isMuted}
           onPlaying={() => setIsLoaded(true)}
           playsInline
+          poster={thumb ? `data:image/jpeg;base64,${thumb}` : null}
           ref={videoRef}
           src={intersected ? videoSrc : ''}
         />
@@ -88,6 +91,7 @@ const LazyVideo = React.forwardRef(
             loop={loops}
             muted={isMuted}
             playsInline
+            poster={thumb ? `data:image/jpeg;base64,${thumb}` : null}
             src={videoSrc}
           />
         </noscript>
@@ -98,8 +102,6 @@ const LazyVideo = React.forwardRef(
     if (!vimeoLookup[id]) {
       return videoElement;
     }
-
-    const { height, thumb, width } = vimeoLookup[id];
 
     // Prevents autoplay conflicting
     return (
