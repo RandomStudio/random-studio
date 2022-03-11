@@ -49,6 +49,14 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 jobOpenings:
+
+  - jobTitle: Unreal Developer
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=17&source=aWQ9Nw%3D%3D
+    jobDescription: >-
+      We are looking for an Unreal Developer who will partner with our team to create digital twins of our physical spaces.
+
+      For this role you will utilize your experience building with Unreal to create Blueprint interactions and develop larger realtime experiences. You'll work alongside a team of Unreal artists and within a Realtime pipeline to build and package files correctly for various scenarios. 
+    jobIsVisible: true
   - jobTitle: Operations Manager / Project Manager
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=15&source=aWQ9Nw%3D%3D
     jobDescription:
