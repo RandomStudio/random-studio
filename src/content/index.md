@@ -1,7 +1,7 @@
 ---
 templateKey: Home
 layout: top
-video: https://vod-progressive.akamaized.net/exp=1647093065~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2330%2F27%2F686654010%2F3168015691.mp4~hmac=7d34b2f4f0a0f649d6a837b59e13bad625454f7155454dc966f65abab173f5c7/vimeo-prod-skyfire-std-us/01/2330/27/686654010/3168015691.mp4 
+video: https://player.vimeo.com/progressive_redirect/playback/686654010/rendition/1080p?loc=external&signature=04b53b08954ca16ca37686f1e61b5407c211f7eae9c7bb4dbefda26cbcc2f370 
 collaborationCredits:
   collaborator: Fondazione Prada
   url: https://random.studio/projects/exhibition-design-for-fondazione-pradas-role-play
