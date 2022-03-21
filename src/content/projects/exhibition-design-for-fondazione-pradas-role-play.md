@@ -8,10 +8,11 @@ thumbnail:
   marginTop: 0
   width: 36
 content:
-  - marginLeft: 0
-    marginTop: 0
-    image: /img/prada-first.jpg
-    width: 100
+  - video: 
+      url: https://player.vimeo.com/progressive_redirect/playback/686654010/rendition/1080p?loc=external&signature=04b53b08954ca16ca37686f1e61b5407c211f7eae9c7bb4dbefda26cbcc2f370 
+      marginLeft: 0
+      marginTop: 0
+      width: 100
   - caption: >-
       Using minimal physical interventions, we transformed the space completely by submerging it in a sea of deep blue lighting. The rich tone of blue invites visitors on a disorienting, intense perceptual experience whilst also creating a homogeneous space that envelops the details of the building.
   - image: /img/prada-4.jpg
