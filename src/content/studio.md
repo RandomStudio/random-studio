@@ -150,12 +150,6 @@ jobOpenings:
       Experience Designer to work primarily on one of our key accounts who can
       bring that to the table.
     jobIsVisible: true
-  - jobTitle: Graphic / Digital Design Intern
-    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=16&source=bamboohr
-    jobDescription:
-      At Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a studio, we value new ideas, new insight, new ways of seeing the world — and we're currently looking for a Graphic / Digital Design Intern to join us in our Amsterdam office.
-      This is a paid internship for a minimum of 4 months, preferably starting in April 2022.
-    jobIsVisible: true
   - jobTitle: Job function title
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>
     jobDescription: Job description
