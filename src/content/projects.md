@@ -32,7 +32,7 @@ projects:
       width: 50
     project: A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
-    tags: ['Spaces', 'Exhibitions', 'Digital']
+    tags: ['Spaces', 'Exhibitions']
   - thumbnail:
       marginTop: -10
       marginLeft: 58
