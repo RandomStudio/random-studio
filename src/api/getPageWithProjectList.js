@@ -1,12 +1,26 @@
 import matter from 'gray-matter';
+import { getAllProjects, getContentFromFile } from './localDataUtils';
 import getDataFromBackend from './getDataFromBackend';
 import { ALL_PROJECTS_QUERY, PAGE_QUERY } from './QUERIES';
 
 // TODO: Using slug avoids need to do all of this
 const getPageWithProjectList = async pagename => {
-  const { page: { text }, allProjects: { projects } } = await getDataFromBackend({
+  let response = await getDataFromBackend({
     query: [PAGE_QUERY(pagename), ALL_PROJECTS_QUERY],
   });
+
+  if (!response) {
+    response = {
+      page: {
+        text: getContentFromFile(pagename),
+      },
+      allProjects: {
+        projects: getAllProjects(),
+      }
+    }
+  }
+
+  const { page: { text }, allProjects: { projects } } = response;
 
   const { data } = matter(text);
 

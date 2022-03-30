@@ -12,6 +12,7 @@ import supportsIntersectionObserver from '../../utils/supportsIntersectionObserv
 import { PAGE_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import matter from 'gray-matter';
+import { getContentFromFile } from '../../api/localDataUtils';
 
 const mediumBreakpoint = 960; // BP of 60rem
 
@@ -86,9 +87,19 @@ const Studio = ({
 };
 
 export const getStaticProps = async () => {
-  const { page: { text } } = await getDataFromBackend({
+  let response = await getDataFromBackend({
     query: PAGE_QUERY('studio'),
   });
+
+  if (!response) {
+    response = {
+      page: {
+        text: getContentFromFile('studio'),
+      },
+    }
+  }
+
+  const { page: { text } } = response
 
   const { data } = matter(text);
 

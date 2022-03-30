@@ -8,7 +8,7 @@
     "dev": "next dev",
     "prebuild": "node prebuild.js",
     "build": "next build && next export",
-    "start": "next start",
+    "start": "next build && next start",
     "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache",
     "process:image": "node infrastructure/processImage.js",
     "process:vimeo": "node infrastructure/processVimeo.js"

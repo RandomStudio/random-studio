@@ -7,6 +7,7 @@ import BackScrim from '../../../components/Project/BackScrim/BackScrim';
 import getDataFromBackend from '../../../api/getDataFromBackend';
 import { PROJECTS_LIST_QUERY, PAGE_QUERY } from '../../../api/QUERIES';
 import matter from 'gray-matter';
+import { getAllProjects, getContentFromFile } from '../../../api/localDataUtils';
 
 const Project = ({
   allProjects,
@@ -50,9 +51,22 @@ const Project = ({
 };
 
 export const getStaticProps = async ({ params }) => {
-  const { page: { text }, projectsList: { projects } } = await getDataFromBackend({
+  let response = await getDataFromBackend({
     query: [PAGE_QUERY(`projects/${params.slug}`), PROJECTS_LIST_QUERY],
   });
+
+  if (!response) {
+    response = {
+      page: {
+        text: getContentFromFile(`projects/${params.slug}`),
+      },
+      projectsList: {
+        projects: getAllProjects(),
+      }
+    }
+  }
+
+  const { page: { text }, projectsList: { projects } } = response;
 
   const { data } = matter(text);
 
@@ -89,9 +103,19 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export async function getStaticPaths() {
-  const { projectsList: { projects } } = await getDataFromBackend({
+  let response = await getDataFromBackend({
     query: PROJECTS_LIST_QUERY,
   });
+
+  if (!response) {
+    response = {
+      projectsList: {
+        projects: getAllProjects(),
+      }
+    }
+  }
+
+  const { projectsList: { projects } } = response;
 
   return {
     fallback: false,

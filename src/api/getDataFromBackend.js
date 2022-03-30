@@ -1,6 +1,10 @@
 import { GraphQLClient } from 'graphql-request';
 
 const getDataFromBackend = async ({ query, variables }) => {
+  if (process.env.NODE_ENV === 'development') {
+    return null;
+  }
+
   const client = new GraphQLClient('https://api.github.com/graphql', {
     headers: {
       authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
