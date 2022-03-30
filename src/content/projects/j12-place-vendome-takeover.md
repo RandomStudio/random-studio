@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+title: A store takeover at Place Vendôme \nfor the launch of Chanel's new watch
 intro: >-
   For its biggest ever global watch launch, Chanel enlisted us to create the
   scenography for a temporary takeover of its flagship boutique on Place Vendôme

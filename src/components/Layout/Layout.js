@@ -4,6 +4,7 @@ import styles from './Layout.module.scss';
 import Navigation from '../Navigation/Navigation';
 import Toast from '../Toast/Toast';
 import { useToastVisibility } from '../../utils/hooks/useToastVisiblity';
+import Footer from '../Footer/Footer';
 
 const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
@@ -33,6 +34,7 @@ const Layout = ({ children, layout }) => {
       <Navigation layout={layout} />
       <div className={styles.container} id="main-content">
         {children}
+        <Footer />
       </div>
       <div className={styles.backgroundTransition} style={randomStyle} />
       <Toast copy="Copied to clipboard" />

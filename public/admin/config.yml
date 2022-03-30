@@ -1,45 +1,20 @@
 backend:
-  name: git-gateway
   branch: master
-  base_url: https://random.studio
-media_folder: static/img
+  name: github
+  repo: RandomStudio/random-studio
+  use_graphql: true
+publish_mode: editorial_workflow
+media_folder: public/img
 public_folder: /img
 collections:
-  - name: siteInformation
-    label: 'Site Information'
-    files:
-      - file: src/site/settings.md
-        label: 'Site settings'
-        name: siteSettings
-        fields:
-          - label: Key
-            name: key
-            widget: hidden
-            default: settings
-          - label: 'Site title'
-            name: title
-            widget: string
-            default: 'Random Studio'
-          - label: 'Description'
-            name: description
-            widget: text
-          - label: 'Twitter handle'
-            name: twitterHandle
-            widget: string
-            default: '@random.studio'
-          - label: 'Site URL (base url)'
-            name: siteUrl
-            widget: string
-            default: 'https://random.studio'
-
   - name: project
     label: Project
-    folder: src/pages/projects
+    folder: src/content/projects
     create: true
     identifier_field: title
-    slug: '{{slug}}'
+    slug: "{{slug}}"
     fields:
-      - label: 'Template Key'
+      - label: "Template Key"
         name: templateKey
         widget: hidden
         default: Project
@@ -51,10 +26,10 @@ collections:
         buttons:
           - link
         widget: markdown
-      - label: 'Priority on homepage'
+      - label: "Priority on homepage"
         name: priority
         required: false
-        valueType: float
+        value_type: float
         widget: nonEmptyStringableNumber
       - label: Content
         name: content
@@ -74,21 +49,21 @@ collections:
             collapsed: true
             widget: object
             fields:
-              - label: 'Video URL'
+              - label: "Video URL"
                 name: url
                 required: false
                 widget: text
-              - label: 'Will autoplay'
+              - label: "Will autoplay"
                 name: autoplay
                 required: false
                 default: false
                 widget: boolean
-              - label: 'Show controls'
+              - label: "Show controls"
                 name: hasControls
                 required: false
                 default: false
                 widget: boolean
-              - label: 'Loop video'
+              - label: "Loop video"
                 name: loops
                 required: false
                 default: true
@@ -98,12 +73,12 @@ collections:
                 required: false
                 default: true
                 widget: boolean
-              - label: 'Always Muted'
+              - label: "Always Muted"
                 name: isAlwaysMuted
                 required: false
                 widget: boolean
                 default: false
-                hint: 'Check this if the video has no audio for example.'
+                hint: "Check this if the video has no audio for example."
           - label: Carousel
             name: carousel
             widget: list
@@ -125,7 +100,7 @@ collections:
                 required: false
                 widget: object
                 fields:
-                  - label: 'Video URL'
+                  - label: "Video URL"
                     name: url
                     required: false
                     widget: text
@@ -145,22 +120,22 @@ collections:
           - label: Width
             name: width
             required: false
-            valueType: float
+            value_type: float
             widget: nonEmptyStringableNumber
-          - label: 'Margin Top'
+          - label: "Margin Top"
             name: marginTop
             default: 0
-            valueType: float
+            value_type: float
             widget: nonEmptyStringableNumber
-          - label: 'Margin Left'
+          - label: "Margin Left"
             name: marginLeft
             default: 0
-            valueType: float
+            value_type: float
             widget: nonEmptyStringableNumber
-          - label: 'z-index'
+          - label: "z-index"
             name: zIndex
             default: 0
-            valueType: number
+            value_type: number
             widget: nonEmptyStringableNumber
       - label: Related Projects
         name: relatedProjects
@@ -190,14 +165,14 @@ collections:
                 required: true
               - label: Project
                 name: project
-                hint: 'This is the url assignment for the related project'
+                hint: "This is the url assignment for the related project"
                 widget: relation
                 required: true
-                collection: 'project'
-                searchFields: ['title']
+                collection: "project"
+                search_fields: ["title"]
                 # valueField: '{{slug}}' Currently not supproted
-                valueField: 'title'
-                displayFields: ['title']
+                value_field: "title"
+                display_fields: ["title"]
       - label: Credits
         name: credits
         widget: list
@@ -212,61 +187,40 @@ collections:
         name: opengraph
         widget: object
         fields:
-          - label: 'Title'
+          - label: "Title"
             name: ogTitle
             required: false
-            valueType: string
+            value_type: string
             widget: text
-          - label: 'Description'
+          - label: "Description"
             name: ogDescription
             required: false
-            valueType: string
+            value_type: string
             widget: text
-          - label: 'Image'
+          - label: "Image"
             name: ogImage
             required: false
-            valueType: string
+            value_type: string
             widget: image
-
-  - name: article
-    label: Articles
-    folder: src/site/articles
-    create: true
-    identifier_field: title
-    fields:
-      - label: Key
-        name: key
-        widget: hidden
-        default: article
-      - label: 'Article Title'
-        name: title
-      - label: quote
-        name: quote
-        widget: text
-      - label: 'Article URL'
-        name: articleUrl
-        required: false
-        widget: string
-
   - name: pages
     label: Pages
     files:
-      - file: src/pages/index.md
-        label: 'Home Page'
+      - file: src/content/index.md
+        label: "Home Page"
         name: index
         fields:
-          - label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: index
-          - label: 'Logo Position'
+          - label: "Logo Position"
             name: layout
             widget: select
             options:
               - { label: center, value: center }
               - { label: Top, value: top }
-            default: ['center']
-          - label: 'Video URL'
+            default: ["center"]
+          - label: "Video URL"
             name: video
             required: true
             widget: text
@@ -278,7 +232,7 @@ collections:
               - label: Collaborator
                 name: collaborator
                 widget: text
-              - label: 'Referral URL'
+              - label: "Referral URL"
                 name: url
                 required: false
                 widget: text
@@ -304,78 +258,53 @@ collections:
                     name: image
                     required: false
                     widget: image
-                  - label: 'Video URL'
+                  - label: "Video URL"
                     name: video
                     required: false
                     widget: text
                   - label: Width
                     name: width
                     required: false
-                    valueType: float
+                    value_type: float
                     widget: nonEmptyStringableNumber
-                  - label: 'Margin Top'
+                  - label: "Margin Top"
                     name: marginTop
                     default: 0
-                    valueType: float
+                    value_type: float
                     widget: nonEmptyStringableNumber
-                  - label: 'Margin Left'
+                  - label: "Margin Left"
                     name: marginLeft
                     default: 0
-                    valueType: float
+                    value_type: float
                     widget: nonEmptyStringableNumber
               - name: project
                 widget: relation
                 required: false
-                collection: 'project'
-                searchFields: ['title']
-                valueField: 'title'
-                displayFields: ['title']
-          - label: Articles
-            name: articles
-            widget: list
-            fields:
-              - label: 'Linked Article'
-                name: article
-                required: false
-                widget: relation
-                collection: article
-                searchFields: [title]
-                valueField: title
-              - label: 'Article Position'
-                name: position
-                required: true
-                widget: nonEmptyStringableNumber
-                hint: 'Set the position of the article here. e.g. 5 will place the article below the 5th project. Will not show if the number is higher than the number of projects.'
-          - label: Address
-            name: address
-            widget: markdown
-          - label: 'Phone Number'
-            name: phone
-            widget: text
-          - label: 'Email Address'
-            name: email
-            widget: text
-      - file: src/pages/projects.md
-        label: 'Projects Page'
+                collection: "project"
+                search_fields: ["title"]
+                value_field: "title"
+                display_fields: ["title"]
+      - file: src/content/projects.md
+        label: "Projects Page"
         name: projects
         fields:
-          - label: 'Template Key'
+          - label: "Template Key"
             name: templateKey
             widget: hidden
             default: projects
-      - file: src/pages/studio.md
-        label: 'Studio page'
+      - file: src/content/studio.md
+        label: "Studio page"
         name: studio
         fields:
-          - label: 'Template key'
+          - label: "Template key"
             name: templateKey
             widget: hidden
             default: studio
           - label: Title
             name: title
             widget: string
-            default: 'Random Studio'
-          - label: 'Intro Block'
+            default: "Random Studio"
+          - label: "Intro Block"
             name: introBlock
             widget: list
             fields:
@@ -388,7 +317,7 @@ collections:
               - label: Video
                 name: video
                 widget: file
-                hint: 'Adding a video will replace the image'
+                hint: "Adding a video will replace the image"
                 required: false
                 allow_multiple: false
                 media_library:
@@ -402,7 +331,7 @@ collections:
               - label: Title
                 name: title
                 widget: text
-              - label: 'List of Services'
+              - label: "List of Services"
                 name: list
                 widget: list
                 fields:
@@ -416,7 +345,7 @@ collections:
                     name: image
                     widget: image
 
-          - label: 'Our Skillset'
+          - label: "Our Skillset"
             name: skillset
             widget: list
             field:
@@ -424,13 +353,13 @@ collections:
               name: skill
               widget: string
 
-          - label: 'Studio impression'
+          - label: "Studio impression"
             name: studioImpression
             widget: object
             fields:
               - label: Title
                 name: title
-                default: 'Studio Impressions'
+                default: "Studio Impressions"
                 widget: text
               - label: Images
                 name: images
@@ -443,23 +372,23 @@ collections:
                       config:
                         multiple: true
 
-          - label: 'Job Openings'
+          - label: "Job Openings"
             name: jobOpenings
             widget: list
             fields:
-              - label: 'Job title'
+              - label: "Job title"
                 name: jobTitle
                 widget: string
                 default: Job function title
-              - label: 'Job URL'
+              - label: "Job URL"
                 name: jobURL
                 widget: string
                 default: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>
-              - label: 'Job description'
+              - label: "Job description"
                 name: jobDescription
                 widget: text
                 default: Job description
-              - label: 'Show this project live'
+              - label: "Show this project live"
                 name: jobIsVisible
                 widget: boolean
                 default: false

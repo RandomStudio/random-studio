@@ -4,6 +4,9 @@ import Head from '../../../components/Head/Head';
 import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
 import BackScrim from '../../../components/Project/BackScrim/BackScrim';
+import getDataFromBackend from '../../../api/getDataFromBackend';
+import { PROJECTS_LIST_QUERY, PAGE_QUERY } from '../../../api/QUERIES';
+import matter from 'gray-matter';
 
 const Project = ({
   allProjects,
@@ -47,22 +50,22 @@ const Project = ({
 };
 
 export const getStaticProps = async ({ params }) => {
-  const {
-    getAllProjects,
-    getContentFromFile,
-  } = require('../../../utils/contentUtils');
+  const { page: { text }, projectsList: { projects } } = await getDataFromBackend({
+    query: [PAGE_QUERY(`projects/${params.slug}`), PROJECTS_LIST_QUERY],
+  });
 
-  const data = getContentFromFile(`projects/${params.slug}`);
-  const allProjects = getAllProjects();
+  const { data } = matter(text);
 
   const { relatedProjects } = data;
 
+  // TODO: This can be avoided by changing `project` property to be slug rather than title
+  // Matching non slug/ID is a bad move anyway
   const relatedWork =
     relatedProjects &&
     (relatedProjects.projects || []).map(relatedProject => {
       const foundProject =
-        allProjects.length &&
-        allProjects.find(project => relatedProject.project === project.title);
+        projects.length &&
+        projects.find(project => relatedProject.project === project.title);
 
       return {
         ...relatedProject,
@@ -77,20 +80,21 @@ export const getStaticProps = async ({ params }) => {
         ...block,
         id: uniqueId(),
       })),
-      ...(relatedWork ? { relatedProjects: relatedWork } : {}),
+      //...(relatedWork ? { relatedProjects: relatedWork } : {}),
     },
   };
 };
 
 export async function getStaticPaths() {
-  const { getAllProjects } = require('../../../utils/contentUtils');
-  const projects = getAllProjects();
+  const { projectsList: { projects } } = await getDataFromBackend({
+    query: PROJECTS_LIST_QUERY,
+  });
 
   return {
     fallback: false,
     paths: projects.map(project => ({
       params: {
-        slug: project.slug.replace('/projects/', ''),
+        slug: project.name.replace('.md', ''),
       },
     })),
   };

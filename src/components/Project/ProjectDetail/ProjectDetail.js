@@ -52,7 +52,7 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
       default:
         return (
           <div className={styles.text}>
-            <ReactMarkdown escapeHtml={false} source={caption} />
+            <ReactMarkdown>{caption}</ReactMarkdown>
           </div>
         );
     }
@@ -61,10 +61,10 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
   return (
     <div className={styles.project}>
       <h1 className={styles.title}>
-        <ReactMarkdown escapeHtml={false} source={title} />
+        <ReactMarkdown>{title}</ReactMarkdown>
       </h1>
       <div className={styles.intro}>
-        <ReactMarkdown escapeHtml={false} source={intro} />
+        <ReactMarkdown>{intro}</ReactMarkdown>
       </div>
       {(content || []).map(
         ({
@@ -112,7 +112,7 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
           <React.Fragment key={`${key}-${value}`}>
             <dt>{key}</dt>
             <dd>
-              <ReactMarkdown source={value} />
+              <ReactMarkdown>{value}</ReactMarkdown>
             </dd>
           </React.Fragment>
         ))}

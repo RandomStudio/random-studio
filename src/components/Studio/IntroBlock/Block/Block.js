@@ -112,7 +112,7 @@ const Block = ({ image, index, copy, title, video }) => {
 
       <div className={`${styles.listItem} ${styles.parallaxFront}`}>
         <div className={styles.copyWrapper}>
-          <ReactMarkdown escapeHtml={false} source={copy} />
+          <ReactMarkdown>{copy}</ReactMarkdown>
         </div>
       </div>
     </>

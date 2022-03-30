@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: Kinetic architecture <br> for A/D/O by MINI
+title: Kinetic architecture \n for A/D/O by MINI
 intro: >-
   In celebration of the 2020 launch of the new MINI Electric vehicle, we were
   commissioned by A/D/O to create a work themed around the future of mobility.

@@ -4,7 +4,6 @@ import Layout from '../../components/Layout/Layout';
 import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
 import ServiceList from '../../components/Studio/ServiceList/ServiceList';
 import Head from '../../components/Head/Head';
-import Footer from '../../components/Footer/Footer';
 import Recruitee from '../../components/Studio/Recruitee/Recruitee';
 import Carousel from '../../components/Carousel/Carousel';
 import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
@@ -14,14 +13,11 @@ import supportsIntersectionObserver from '../../utils/supportsIntersectionObserv
 const mediumBreakpoint = 960; // BP of 60rem
 
 const Studio = ({
-  address,
-  phone,
   slug,
   title,
   introBlock,
   services,
   skillset,
-  email,
   jobOpenings,
   studioImpression,
 }) => {
@@ -61,9 +57,8 @@ const Studio = ({
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${
-          width > mediumBreakpoint ? themeClass : ''
-        }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
+          }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
         <Head pathName={slug} title="Studio" />
@@ -71,7 +66,7 @@ const Studio = ({
 
         <ServiceList headerTitle={services.title} services={services.list} />
 
-        <SkillBlock email={email} skillset={skillset} />
+        <SkillBlock skillset={skillset} />
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee jobOpenings={jobOpenings} />
@@ -82,8 +77,6 @@ const Studio = ({
             title={studioImpression.title}
           />
         </div>
-
-        <Footer address={address} email={email} phone={phone} />
       </div>
     </Layout>
   );
@@ -92,16 +85,10 @@ const Studio = ({
 export const getStaticProps = async () => {
   const { getContentFromFile } = require('../../utils/contentUtils');
 
-  const { address, email, phone } = getContentFromFile('index');
   const studio = getContentFromFile('studio');
-
+  console.log(studio)
   return {
-    props: {
-      ...studio,
-      address,
-      email,
-      phone,
-    },
+    props: studio,
   };
 };
 

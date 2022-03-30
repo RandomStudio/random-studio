@@ -5,7 +5,8 @@ import styles from './RelatedProjectSlider.module.scss';
 import Image from '../../../Image/Image';
 
 const RelatedProjectSlider = ({ blockTitle, projects }) => {
-  if (!projects || projects.length <= 0) {
+  console.log(projects)
+  if (!projects || projects.length <= 0 || !projects[0]?.projects?.[0]?.slug) {
     return null;
   }
 

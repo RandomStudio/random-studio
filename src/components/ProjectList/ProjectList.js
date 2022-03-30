@@ -6,9 +6,8 @@ import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
 import PROJECT_FILTERS from './PROJECT_FILTERS';
 import Project from '../Project/Project';
-import ResearchBlock from './IntermittentBlock/ResearchBlock';
 
-const ProjectList = ({ articles, hasFilters, intro, limit, projects }) => {
+const ProjectList = ({ hasFilters, intro, limit, projects }) => {
   const projectFilters = projects
     .map(({ tags }) => tags)
     .filter(Boolean)
@@ -33,46 +32,32 @@ const ProjectList = ({ articles, hasFilters, intro, limit, projects }) => {
       <ul aria-label="Highlighted projects" className={styles.projects}>
         {intro && (
           <div className={styles.statement}>
-            <ReactMarkdown escapeHtml={false} source={intro} />
+            <ReactMarkdown>{intro}</ReactMarkdown>
           </div>
         )}
         {projects.map(({ thumbnail, title, slug, tags }, index) => {
-          const article = (articles || []).find(
-            ({ position }) => position === index + 1,
-          );
-
           const isHidden = activeTag !== null && !tags?.includes(activeTag);
 
-          if (index >= limit) {
+          if (index >= limit || !thumbnail || isHidden) {
             return null;
           }
 
           return (
-            <React.Fragment key={slug}>
-              {thumbnail && !isHidden && (
-                <Project
-                  key={slug}
-                  slug={slug}
-                  thumbnail={thumbnail}
-                  title={title}
-                />
-              )}
-              {article && (
-                <ResearchBlock
-                  articleUrl={article.articleUrl}
-                  quote={article.quote}
-                />
-              )}
-              {limit && index === projects.length - 1 && (
-                <div className={`${styles.seeMore}`}>
-                  <Link href="/projects">
-                    <a>{'See all projects'}</a>
-                  </Link>
-                </div>
-              )}
-            </React.Fragment>
+            <Project
+              key={slug}
+              slug={slug}
+              thumbnail={thumbnail}
+              title={title}
+            />
           );
         })}
+        {limit && (
+          <div className={styles.seeMore}>
+            <Link href="/projects">
+              <a>{'See all projects'}</a>
+            </Link>
+          </div>
+        )}
       </ul>
     </>
   );

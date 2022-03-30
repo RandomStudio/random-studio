@@ -13,8 +13,8 @@ const Caption = ({ marginLeft, caption, carouselIndicator }) => {
       className={styles.caption}
       style={{ marginLeft: !marginLeft && '1.4rem' }}
     >
-      <ReactMarkdown escapeHtml={false} source={caption} />
-      <ReactMarkdown escapeHtml={false} source={carouselIndicator} />
+      <ReactMarkdown>{caption}</ReactMarkdown>
+      <ReactMarkdown>{carouselIndicator}</ReactMarkdown>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import styles from './IntermittentBlock.module.scss';
 
 const IntermittentStatement = ({ middle }) => (
   <div className={`${styles.wrapper} ${styles.statementBlock}`}>
-    <ReactMarkdown escapeHtml={false} source={middle} />
+    <ReactMarkdown>{middle}</ReactMarkdown>
   </div>
 );
 

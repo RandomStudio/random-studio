@@ -40,7 +40,7 @@ const Project = ({ thumbnail, title, slug }) => (
           marginLeft: !thumbnail.marginLeft && '1.4rem',
         }}
       >
-        <ReactMarkdown escapeHtml={false} source={title} />
+        <ReactMarkdown>{title}</ReactMarkdown>
       </div>
     </a>
   </Link>

@@ -1,17 +1,13 @@
 import React from 'react';
-import Footer from '../components/Footer/Footer';
 import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
 
 const Home = ({
-  address,
   collaborationCredits,
-  email,
   intro,
   layout,
-  phone,
   projects,
   slug,
   video,
@@ -20,7 +16,6 @@ const Home = ({
     <Head pathName={slug} />
     <HomeVideo collaborationCredits={collaborationCredits} videoUrl={video} />
     <ProjectList intro={intro} limit={projects.length} projects={projects} />
-    <Footer address={address} email={email} phone={phone} />
   </Layout>
 );
 

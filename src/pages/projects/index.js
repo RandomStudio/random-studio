@@ -1,28 +1,33 @@
 import React from 'react';
 import Layout from '../../components/Layout/Layout';
-import Footer from '../../components/Footer/Footer';
 import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
+import getDataFromBackend from '../../api/getDataFromBackend';
+import { PAGE_QUERY, ALL_PROJECTS_QUERY } from '../../api/QUERIES';
+import matter from 'gray-matter';
 
-const Projects = ({ address, email, phone, projects, slug }) => {
+const Projects = ({ projects, slug }) => {
   return (
     <Layout>
       <Head pathName={slug} title="Projects" />
       <ProjectList hasFilters projects={projects} />
-      <Footer address={address} email={email} phone={phone} />
     </Layout>
   );
 };
 
 export async function getStaticProps() {
-  const {
-    getAllProjects,
-    getContentFromFile,
-  } = require('../../utils/contentUtils');
+  const { page: { text }, allProjects: { projects } } = await getDataFromBackend({
+    query: [PAGE_QUERY('projects'), ALL_PROJECTS_QUERY],
+  });
 
-  const data = getContentFromFile('projects');
-  const allProjects = getAllProjects();
+  const { data } = matter(text);
 
+  const allProjects = projects.map(({ name, content }) => ({
+    ...matter(content.text).data,
+    slug: name.replace('.md', '')
+  }));
+
+  // TODO: Using slug avoids need to reference all projects
   const projectDetails = data.projects
     .map(({ caption, project: projectTitle, thumbnail, tags }) => {
       const project = allProjects.find(
@@ -41,7 +46,7 @@ export async function getStaticProps() {
       };
     })
     .filter(project => project !== null);
-
+  console.log(projectDetails)
   return {
     props: {
       ...data,
