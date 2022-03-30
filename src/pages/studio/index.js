@@ -9,6 +9,9 @@ import Carousel from '../../components/Carousel/Carousel';
 import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
 import supportsIntersectionObserver from '../../utils/supportsIntersectionObserver';
+import { PAGE_QUERY } from '../../api/QUERIES';
+import getDataFromBackend from '../../api/getDataFromBackend';
+import matter from 'gray-matter';
 
 const mediumBreakpoint = 960; // BP of 60rem
 
@@ -83,12 +86,14 @@ const Studio = ({
 };
 
 export const getStaticProps = async () => {
-  const { getContentFromFile } = require('../../utils/contentUtils');
+  const { page: { text } } = await getDataFromBackend({
+    query: PAGE_QUERY('studio'),
+  });
 
-  const studio = getContentFromFile('studio');
-  console.log(studio)
+  const { data } = matter(text);
+
   return {
-    props: studio,
+    props: data,
   };
 };
 

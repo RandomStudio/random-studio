@@ -1,4 +1,5 @@
 import React from 'react';
+import getPageWithProjectList from '../api/getPageWithProjectList';
 import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
@@ -19,40 +20,10 @@ const Home = ({
   </Layout>
 );
 
-export const getStaticProps = async () => {
-  const {
-    getAllProjects,
-    getContentFromFile,
-  } = require('../utils/contentUtils');
+export async function getStaticProps() {
+  const props = await getPageWithProjectList('index');
 
-  const data = getContentFromFile('index');
-  const allProjects = getAllProjects();
-
-  const projectDetails = data.projects
-    .map(({ caption, project: projectTitle, thumbnail }) => {
-      const project = allProjects.find(
-        ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
-      );
-
-      if (!project) {
-        return null;
-      }
-
-      return {
-        priority: project.priority ?? null,
-        slug: project.slug,
-        thumbnail: thumbnail ?? null,
-        title: caption || project.title,
-      };
-    })
-    .filter(project => project !== null);
-
-  return {
-    props: {
-      ...data,
-      projects: projectDetails,
-    },
-  };
-};
+  return props;
+}
 
 export default Home;
