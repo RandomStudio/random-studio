@@ -49,7 +49,24 @@ studioImpression:
   showIndicator: true
   title: Studio Impressions
 jobOpenings:
-  - jobTitle: Experience Strategist
+
+  - jobTitle: Unreal Developer
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=17&source=aWQ9Nw%3D%3D
+    jobDescription: >-
+      We are looking for an Unreal Developer who will partner with our team to create digital twins of our physical spaces.
+
+      For this role you will utilize your experience building with Unreal to create Blueprint interactions and develop larger realtime experiences. You'll work alongside a team of Unreal artists and within a Realtime pipeline to build and package files correctly for various scenarios. 
+    jobIsVisible: true
+  - jobTitle: Operations Manager / Project Manager
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=15&source=aWQ9Nw%3D%3D
+    jobDescription:
+      We are looking for an Operations Manager who can lead our Paris operations.
+
+      Random is an independent experience design studio based in Paris and Amsterdam. Our work comes to life where the digital and the physical are fluid.
+
+      We use technology in a human, tangible way and invite people to connect to both each other and the space they are in.
+    jobIsVisible: true
+  - jobTitle: Senior User Experience Strategist
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=8&source=aWQ9Nw%3D%3D
     jobDescription: >-
       Random is an experience design studio based in Amsterdam and Paris. We
@@ -57,17 +74,7 @@ jobOpenings:
       as part of our physical world, engaging us to explore, play and wonder.
 
 
-      We are looking for an experience strategist who can lead the proposal process and concept development phase for innovation programs and long-term projects.
-    jobIsVisible: true
-  - jobTitle: Junior QA Tester
-    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=12&source=aWQ9Nw%3D%3D
-    jobDescription:
-      As a Junior QA Tester at Random Studio, you will be part of a
-      team of creatives and technologists that work together with the client to
-      develop a digital platform for in-store experiences. You will be involved
-      in scoping out the work to build new functionality and validate developed
-      solutions. You will hunt for bugs and work within the team to guard the
-      stability and quality of the work we deliver on one of our key accounts.
+      We are looking for a a Senior User Experience Strategist who can lead the proposal process and concept development phase for innovation programs and long-term projects.
     jobIsVisible: true
   - jobTitle: Senior Experience Designer
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=10&source=aWQ9Nw%3D%3D
@@ -142,6 +149,12 @@ jobOpenings:
       new ways of seeing the world — and we are currently searching for a User
       Experience Designer to work primarily on one of our key accounts who can
       bring that to the table.
+    jobIsVisible: true
+  - jobTitle: Graphic / Digital Design Intern
+    jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=16&source=bamboohr
+    jobDescription:
+      At Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a studio, we value new ideas, new insight, new ways of seeing the world — and we're currently looking for a Graphic / Digital Design Intern to join us in our Amsterdam office.
+      This is a paid internship for a minimum of 4 months, preferably starting in April 2022.
     jobIsVisible: true
   - jobTitle: Job function title
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>

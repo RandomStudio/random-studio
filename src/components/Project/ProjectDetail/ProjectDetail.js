@@ -17,6 +17,7 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
     video,
     carousel,
     width,
+    isCentered,
   }) => {
     switch (true) {
       case Boolean(video && video.url):
@@ -51,7 +52,9 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
 
       default:
         return (
-          <div className={styles.text}>
+          <div
+            className={`${styles.text} ${isCentered ? styles.isCentered : ''}`}
+          >
             <ReactMarkdown>{caption}</ReactMarkdown>
           </div>
         );
@@ -78,6 +81,7 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
           width,
           carousel,
           zIndex,
+          isCentered,
         }) => (
           <div
             className={styles.item}
@@ -97,16 +101,14 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
               video,
               carousel,
               width,
+              isCentered,
             })}
           </div>
         ),
       )}
-
-      <RelatedProjectSlider
-        blockTitle={relatedProjects && relatedProjects.blockTitle}
-        projects={relatedProjects}
-      />
-
+      {relatedProjects && (
+        <RelatedProjectSlider relatedProjects={relatedProjects} />
+      )}
       <dl aria-label="Project Details" className={styles.credits}>
         {(credits || []).map(({ key, value }) => (
           <React.Fragment key={`${key}-${value}`}>

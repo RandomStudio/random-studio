@@ -4,26 +4,22 @@ on:
     branches:
       - "staging"
 jobs:
+  process-images:
+    if: "!contains(github.event.head_commit.message, 'skip assets')"
+    uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@staging
+    secrets:
+      RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
+  process-vimeo:
+    if: "!contains(github.event.head_commit.message, 'skip assets')"
+    uses: RandomStudio/random-studio/.github/workflows/_process-vimeo.yml@staging
+    secrets:
+      RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
   build:
     name: Build and deploy immediately
+    needs: [process-images, process-vimeo]
     uses: RandomStudio/random-studio/.github/workflows/_build-deploy-meli.yml@staging
     with:
-      MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
-      NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
+      MELI_SITE: "82ece754-578d-42dd-965d-7761523f28ef"
+      NEXT_PUBLIC_CDN_URL: "https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw"
     secrets:
       MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
-  process-images:
-    uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@staging
-  process-vimeo:
-    uses: RandomStudio/random-studio/.github/workflows/_process-vimeo.yml@staging
-  rebuild-if-required:
-    name: Rebuild and deploy with new assets
-    if: ${{ needs.process-images.outputs.pushed == 'true' || needs.process-vimeo.outputs.pushed == 'true' }}
-    needs: [build, process-images, process-vimeo]
-    uses: RandomStudio/random-studio/.github/workflows/_build-deploy-meli.yml@staging
-    with:
-      MELI_SITE: '82ece754-578d-42dd-965d-7761523f28ef'
-      NEXT_PUBLIC_CDN_URL: 'https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw'
-    secrets:
-      MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
-

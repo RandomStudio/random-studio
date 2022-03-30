@@ -80,7 +80,10 @@ export const getStaticProps = async ({ params }) => {
         ...block,
         id: uniqueId(),
       })),
-      //...(relatedWork ? { relatedProjects: relatedWork } : {}),
+      //   relatedProjects: {
+      //     ...relatedProjects,
+      //     projects: relatedWork ?? [],
+      //   },
     },
   };
 };

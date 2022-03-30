@@ -3,31 +3,38 @@ templateKey: Projects
 projects:
   - thumbnail:
       marginTop: 0
-      marginLeft: 23
-      image: /img/carousel1_1.jpg
-      width: 54
-    project: An archival experience celebrating C.P. Company’s 50th anniversary
-    caption: An archival experience celebrating C.P. Company’s 50th anniversary
-    tags: ['Spaces', 'Installations', 'Exhibitions', 'Digital']
+      marginLeft: 4
+      width: 63
+      image: /img/prada-first.jpg
+    caption: Exhibition design for Fondazione Prada’s ‘Role Play’
+    project: Exhibition design for Fondazione Prada’s ‘Role Play’
+    tags: ['Spaces','Exhibitions']
   - thumbnail:
       marginTop: 0
-      marginLeft: 23
+      marginLeft: 21
       image: ''
-      width: 54
+      width: 58
       video: https://player.vimeo.com/external/639898328.hd.mp4?s=8ed04ae1552ce15c4de6f09b14949d02655f034b&profile_id=175
     project: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
     caption: A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration
-    tags: ['Spaces']
   - thumbnail:
       marginTop: 0
-      marginLeft: 0
+      marginLeft: 45
+      image: /img/randomstudio_cpcompany_DSC7655.jpg
+      width: 50
+    caption: An archival experience celebrating C.P. Company’s anniversary – Milan edition
+    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
+    tags: ['Spaces','Exhibitions']
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 4
       image: /img/BV_1.jpg
-      width: 46
+      width: 50
     project: A spatial listening experience for Bottega Veneta
     caption: A spatial listening experience for Bottega Veneta
-    tags: ['Spaces', 'Exhibitions', 'Digital']
+    tags: ['Spaces', 'Exhibitions']
   - thumbnail:
-      marginTop: 0
+      marginTop: -10
       marginLeft: 58
       image: /img/screenshot-2021-04-26-at-12.59.13.png
       width: 42
@@ -36,9 +43,9 @@ projects:
     tags: ['Installations']
   - thumbnail:
       image: /img/HOI PAR002_SU21_MTZ_08.jpg
-      marginLeft: 50
-      marginTop: 0
-      width: 46
+      marginLeft: 0
+      marginTop: -5
+      width: 50
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation Takeover
     tags: ['Spaces', 'Installations', 'Exhibitions', 'Digital']
@@ -48,9 +55,9 @@ projects:
     project: Kinetic architecture \n for A/D/O by MINI
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
-      marginLeft: 65
-      marginTop: 0
-      width: 35
+      marginLeft: 58
+      marginTop: -5
+      width: 37
     tags: ['Installations']
   - caption: A store takeover at Place Vendôme \nfor the launch of Chanel's new watch
     project: A store takeover at Place Vendôme \nfor the launch of Chanel's new watch
@@ -60,6 +67,14 @@ projects:
       marginTop: 0
       width: 50
     tags: ['Spaces', 'Digital']
+  - thumbnail:
+      marginTop: 0
+      marginLeft: 23
+      image: /img/carousel1_1.jpg
+      width: 54
+    project: An archival experience celebrating C.P. Company’s 50th anniversary
+    caption: An archival experience celebrating C.P. Company’s 50th anniversary
+    tags: ['Spaces', 'Installations', 'Exhibitions', 'Digital']
   - thumbnail:
       marginTop: 0
       marginLeft: 54

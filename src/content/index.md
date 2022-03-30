@@ -1,10 +1,10 @@
 ---
 templateKey: Home
 layout: top
-video: https://player.vimeo.com/external/654862644.hd.mp4?s=72c963d566d60df6cf8ac1f0173d1b1d0f22cf10&profile_id=175
+video: https://player.vimeo.com/progressive_redirect/playback/686654010/rendition/1080p?loc=external&signature=04b53b08954ca16ca37686f1e61b5407c211f7eae9c7bb4dbefda26cbcc2f370 
 collaborationCredits:
-  collaborator: C.P. Company
-  url: https://random.studio/projects/an-archival-experience-celebrating-c-p-companys-50th-anniversary
+  collaborator: Fondazione Prada
+  url: https://random.studio/projects/exhibition-design-for-fondazione-pradas-role-play
 intro: How can we reimagine the digital as a living, breathing part of our
   physical world?
 middle: >-
@@ -14,6 +14,13 @@ middle: >-
 
   [More about our studio](/studio)
 projects:
+  - thumbnail:
+        marginTop: 0
+        marginLeft: 4
+        width: 63
+        image: /img/prada-first.jpg
+    caption: Exhibition design for Fondazione Prada’s ‘Role Play’ 
+    project: Exhibition design for Fondazione Prada’s ‘Role Play’ 
   - thumbnail:
       marginTop: 0
       marginLeft: 21
@@ -27,12 +34,12 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 45
-      image: /img/cp-thumb.jpg
+      image: /img/randomstudio_cpcompany_DSC7655.jpg
       width: 50
-    project: An Archival Experience celebrating C.P. Company’s 50th Anniversary
+    project: An archival experience celebrating C.P. Company’s anniversary – Milan edition
     caption: |-
-      An archival experience celebrating
-      C.P. Company’s anniversary
+      An archival experience celebrating 
+      C.P. Company’s anniversary – Milan edition
   - thumbnail:
       marginTop: 0
       marginLeft: 4

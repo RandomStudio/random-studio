@@ -69,16 +69,14 @@ content:
     marginLeft: 40
     marginTop: 0
     width: 60
-  - image: >-
-      /img/2c308614002eeb4cd17e649586abd5e2.andomstudio-louisvuitton-vvv-seoul-02-jpg.jpg
+  - image: /img/2c308614002eeb4cd17e649586abd5e2.andomstudio-louisvuitton-vvv-seoul-02-jpg.jpg
     marginLeft: 0
     marginTop: -20
     width: 30
   - caption: >-
       The installation rewarded exploration, causing the plane to pull special
       maneuvers around the monuments when steered close enough.
-    image: >-
-      /img/4a4efa9d7ab8fd2119b33f2b1ff43bbe.andomstudio-louisvuitton-vvv-seoul-03-jpg.jpg
+    image: /img/4a4efa9d7ab8fd2119b33f2b1ff43bbe.andomstudio-louisvuitton-vvv-seoul-03-jpg.jpg
     marginLeft: 50
     marginTop: -20
     width: 40
@@ -90,8 +88,7 @@ content:
       immersive 6-speaker soundscape.
     marginLeft: 0
     marginTop: 0
-  - image: >-
-      /img/7d102ce5d3b8f3e90c72d9719086c4c7.andomstudio-louisvuitton-vvv-nyc-02-crop-jpg.jpg
+  - image: /img/7d102ce5d3b8f3e90c72d9719086c4c7.andomstudio-louisvuitton-vvv-nyc-02-crop-jpg.jpg
     marginLeft: 15
     marginTop: 0
     width: 70
@@ -105,16 +102,14 @@ content:
       url: >-
         https://player.vimeo.com/external/245185336.hd.mp4?s=174ef918bb1f27274628cf1f56e328a9acd69a69&profile_id=175
     width: 45
-  - image: >-
-      /img/52f854eca91995c272d693dcc5bb1682.andomstudio-louisvuitton-vvv-nyc-04-jpg.jpg
+  - image: /img/52f854eca91995c272d693dcc5bb1682.andomstudio-louisvuitton-vvv-nyc-04-jpg.jpg
     marginLeft: 55
     marginTop: 16
     width: 35
   - caption: >-
       The installation combined digital and physical elements, connected by the
       same design language.
-    image: >-
-      /img/9cdb5b913ea032ff4ca5b7a0a162099c.andomstudio-louisvuitton-vvv-nyc-03-jpg.jpg
+    image: /img/9cdb5b913ea032ff4ca5b7a0a162099c.andomstudio-louisvuitton-vvv-nyc-03-jpg.jpg
     marginLeft: 4
     marginTop: -30
     width: 36

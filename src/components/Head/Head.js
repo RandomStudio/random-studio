@@ -87,6 +87,11 @@ const Head = ({
       />
       <link href="/favicons/manifest.json" rel="manifest" />
       <link href="/favicons/favicon.ico" rel="icon" />
+      <script
+        data-domain="random.studio"
+        defer
+        src="https://plausible.io/js/plausible.outbound-links.js"
+      />
     </NextHead>
   );
 };
