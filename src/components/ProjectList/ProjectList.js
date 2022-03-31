@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { countBy } from 'lodash-es';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
-import PROJECT_FILTERS from './PROJECT_FILTERS';
+import LAYOUT from './LAYOUT';
 import Project from '../Project/Project';
 
 const ProjectList = ({ hasFilters, intro, limit, projects }) => {
@@ -19,13 +19,22 @@ const ProjectList = ({ hasFilters, intro, limit, projects }) => {
 
   const [activeTag, setActiveTag] = useState(null);
 
+  const visibleProjects = useMemo(
+    () =>
+      projects.filter(
+        ({ featuredImage, featuredVideo, tags }) =>
+          (!activeTag || tags?.includes(activeTag)) &&
+          (!!featuredVideo || !!featuredImage),
+      ),
+    [activeTag, projects],
+  );
+
   return (
     <>
       {hasFilters && (
         <Filters
           activeTag={activeTag}
           filterCount={filterCount}
-          filterList={PROJECT_FILTERS}
           setActiveTag={setActiveTag}
         />
       )}
@@ -35,22 +44,29 @@ const ProjectList = ({ hasFilters, intro, limit, projects }) => {
             <ReactMarkdown>{intro}</ReactMarkdown>
           </div>
         )}
-        {projects.map(({ thumbnail, title, slug, tags }, index) => {
-          const isHidden = activeTag !== null && !tags?.includes(activeTag);
+        {visibleProjects.map(
+          ({ featuredImage, featuredVideo, title, slug }, index) => {
+            if (index >= limit) {
+              return null;
+            }
 
-          if (index >= limit || !thumbnail || isHidden) {
-            return null;
-          }
+            const { left, top, width } = LAYOUT[index];
 
-          return (
-            <Project
-              key={slug}
-              slug={slug}
-              thumbnail={thumbnail}
-              title={title}
-            />
-          );
-        })}
+            return (
+              <Project
+                featuredImage={featuredImage}
+                featuredVideo={featuredVideo}
+                index={index}
+                left={left}
+                top={top}
+                width={width}
+                key={slug}
+                slug={slug}
+                title={title}
+              />
+            );
+          },
+        )}
         {limit && (
           <div className={styles.seeMore}>
             <Link href="/projects">

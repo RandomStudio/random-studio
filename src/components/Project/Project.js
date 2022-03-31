@@ -1,35 +1,35 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { Image } from 'react-datocms';
 import Link from 'next/link';
 import styles from './Project.module.scss';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
-import Image from '../Image/Image';
 
-const Project = ({ thumbnail, title, slug }) => (
-  <Link href={slug} id={slug}>
+const Project = ({ featuredImage, featuredVideo, left, title, top, slug, width }) => (
+  <Link href={`/projects/${slug}`} id={slug}>
     <a
       className={styles.thumbnail}
       style={{
-        marginLeft: `${thumbnail.marginLeft}%`,
-        marginTop: `${thumbnail.marginTop}%`,
-        width: `${thumbnail.width}%`,
+        marginLeft: `${left}%`,
+        marginTop: `${top}%`,
+        width: `${width}%`,
       }}
     >
       <div className={styles.media}>
-        {thumbnail.video ? (
+        {featuredVideo ? (
           <VideoWithControls
             autoplay
             hasControls={false}
             isMuted
             loops
-            url={thumbnail.video}
+            url={featuredVideo}
           />
         ) : (
           <Image
             alt="" // Keeps the screen reader focused on project list
-            sizes={`(max-width: 576px) 100vw, ${thumbnail.width}vw`}
-            src={thumbnail.image}
+            //sizes={`(max-width: 576px) 100vw, ${thumbnail.width}vw`}
+            data={featuredImage.imageData}
           />
         )}
       </div>
@@ -37,7 +37,7 @@ const Project = ({ thumbnail, title, slug }) => (
       <div
         className={styles.title}
         style={{
-          marginLeft: !thumbnail.marginLeft && '1.4rem',
+          // marginLeft: !thumbnail.marginLeft && '1.4rem',
         }}
       >
         <ReactMarkdown>{title}</ReactMarkdown>
@@ -49,7 +49,8 @@ const Project = ({ thumbnail, title, slug }) => (
 Project.propTypes = {
   slug: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  thumbnail: PropTypes.object.isRequired,
+  featuredImage: PropTypes.object,
+  featuredVideo: PropTypes.string,
   title: PropTypes.string.isRequired,
 };
 

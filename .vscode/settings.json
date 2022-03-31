@@ -11,5 +11,8 @@
   },
   "[css]": {
     "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
   }
 }

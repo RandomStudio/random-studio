@@ -2,21 +2,29 @@ import React from 'react';
 import Layout from '../../components/Layout/Layout';
 import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
-import getPageWithProjectList from '../../api/getPageWithProjectList';
+import { PROJECTS_LIST_QUERY } from '../../api/QUERIES';
+import getDataFromBackend from '../../api/getDataFromBackend';
 
-const Projects = ({ projects, slug }) => {
-  return (
-    <Layout>
-      <Head pathName={slug} title="Projects" />
-      <ProjectList hasFilters projects={projects} />
-    </Layout>
-  );
+const Projects = ({ projects }) => (
+  <Layout>
+    <Head pathName="/projects" title="Projects" />
+    <ProjectList hasFilters projects={projects} />
+  </Layout>
+);
+
+export const getStaticProps = async () => {
+  const { projects } = await getDataFromBackend({
+    query: PROJECTS_LIST_QUERY,
+  });
+
+  return {
+    props: {
+      projects: projects.map(project => ({
+        ...project,
+        tags: project.tags?.map(tag => tag.toLowerCase()) ?? [],
+      })),
+    },
+  };
 };
-
-export async function getStaticProps() {
-  const props = await getPageWithProjectList('projects');
-
-  return props;
-}
 
 export default Projects;

@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import PROJECT_FILTERS from '../PROJECT_FILTERS';
 import styles from './Filters.module.scss';
 
-const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
+const LOWERCASE_PROJECT_FILTESR = PROJECT_FILTERS.map(filter => filter.toLowerCase());
+
+const Filters = ({ filterCount, activeTag, setActiveTag }) => {
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +13,10 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
   useEffect(() => {
     const requestedFilter = router.query.filter;
 
-    if (requestedFilter && PROJECT_FILTERS.includes(requestedFilter)) {
+    if (
+      requestedFilter &&
+      LOWERCASE_PROJECT_FILTESR.includes(requestedFilter)
+    ) {
       setActiveTag(requestedFilter);
     }
   }, [router.query.filter, setActiveTag]);
@@ -23,7 +28,7 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
     router.replace(`/projects${tag ? `?filter=${tag}` : ''}`);
   };
 
-  const filtersWithEntries = filterList.filter(
+  const filtersWithEntries = LOWERCASE_PROJECT_FILTESR.filter(
     filter => (filterCount?.[filter] ?? 0) > 0,
   );
 
@@ -37,9 +42,8 @@ const Filters = ({ filterCount, filterList, activeTag, setActiveTag }) => {
         {filtersWithEntries.map(filter => (
           <button
             aria-pressed={filter === activeTag}
-            className={`${styles.filterEntry} ${
-              activeTag !== null ? styles.activeFilter : ''
-            } ${filter === activeTag ? styles.activeTag : ''}`}
+            className={`${styles.filterEntry} ${activeTag !== null ? styles.activeFilter : ''
+              } ${filter === activeTag ? styles.activeTag : ''}`}
             key={filter}
             onClick={() => {
               handleSelectFilter(filter);

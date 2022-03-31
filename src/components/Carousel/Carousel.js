@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Carousel.module.scss';
-import Caption from '../Project/ProjectDetail/Caption/Caption';
+import Caption from '../Caption/Caption';
 import Image from '../Image/Image';
 
 const Carousel = ({ carousel, caption, className, width }) => {

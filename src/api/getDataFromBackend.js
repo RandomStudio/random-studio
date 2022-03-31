@@ -1,29 +1,19 @@
 import { GraphQLClient } from 'graphql-request';
 
-const getDataFromBackend = async ({ query, variables }) => {
-  if (process.env.NODE_ENV === 'development') {
-    console.log('Loading from local file system')
-    return null;
-  }
-  console.log('Loading from Github')
-  const client = new GraphQLClient('https://api.github.com/graphql', {
+const getDataFromBackend = async ({ query, variables, preview }) => {
+  const endpoint = preview
+    ? `https://graphql.datocms.com/preview`
+    : `https://graphql.datocms.com/`;
+
+  const client = new GraphQLClient(endpoint, {
     headers: {
-      authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
+      authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
     },
   });
 
-  const {
-    repository,
-  } = await client.request(
-    `query {
-      repository(owner: "RandomStudio", name: "random-studio") {
-        ${typeof query === 'string' ? query : query.join('')}
-      }
-    }`,
-    variables,
-  );
+  const data = await client.request(query, variables);
 
-  return repository;
+  return data;
 };
 
 export default getDataFromBackend;
