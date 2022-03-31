@@ -19,10 +19,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      projects: projects.map(project => ({
-        ...project,
-        tags: project.tags?.map(tag => tag.toLowerCase()) ?? [],
-      })),
+      projects,
     },
   };
 };

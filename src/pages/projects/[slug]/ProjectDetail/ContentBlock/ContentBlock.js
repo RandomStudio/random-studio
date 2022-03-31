@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Image } from 'react-datocms';
-import Caption from '../../../Caption/Caption';
-import Carousel from '../../../Carousel/Carousel';
-import VideoWithControls from '../../../VideoWithControls/VideoWithControls';
+import Caption from '../../../../../components/Caption/Caption';
+import Carousel from '../../../../../components/Carousel/Carousel';
+import VideoWithControls from '../../../../../components/VideoWithControls/VideoWithControls';
 import styles from './ContentBlock.module.scss';
 
 const BLOCK_TYPES = {
@@ -21,13 +21,13 @@ const ContentBlock = ({
   loops,
   isMuted,
   isAlwaysMuted,
-  isCentered, //missing
+  isCentered, // missing
   hasControls,
   caption,
   autoplay,
-  carousel,
   id,
   image,
+  slides,
   marginLeft,
   marginTop,
   text,
@@ -55,25 +55,20 @@ const ContentBlock = ({
     {__typename === BLOCK_TYPES.VideoBlockRecord && (
       <>
         <VideoWithControls
+          autoplay={autoplay}
+          caption={caption}
+          hasControls={hasControls}
+          isAlwaysMuted={isAlwaysMuted}
+          isMuted={isMuted}
+          loops={loops}
           url={url}
           width={width}
-          loops={loops}
-          isMuted={isMuted}
-          isAlwaysMuted={isAlwaysMuted}
-          hasControls={hasControls}
-          caption={caption}
-          autoplay={autoplay}
         />
         <Caption caption={caption} marginLeft={marginLeft} />
       </>
     )}
     {__typename === BLOCK_TYPES.CarouselBlockRecord && (
-      <Carousel
-        caption={caption}
-        carousel={carousel}
-        className={styles.carouselWrapper}
-        width={width}
-      />
+      <Carousel className={styles.carouselWrapper} slides={slides} />
     )}
     {__typename === BLOCK_TYPES.TextBlockRecord && (
       <div className={`${styles.text} ${isCentered ? styles.isCentered : ''}`}>

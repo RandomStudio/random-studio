@@ -9,9 +9,9 @@ const imageSizes = [
   '75vw',
 ];
 
-const ServiceList = ({ headerTitle, services }) => (
+const ServiceList = ({ services }) => (
   <>
-    {headerTitle && <h2 className={styles.header}>{headerTitle}</h2>}
+    <h2 className={styles.header}>{'Our Areas of Expertise'}</h2>
     <section className={styles.wrapper}>
       {services.map(({ title, copy, image }, index) => (
         <div className={styles.serviceBlock} key={`${title}-${image.id}`}>

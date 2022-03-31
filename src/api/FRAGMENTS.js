@@ -1,5 +1,6 @@
 export const IMAGE_DATA_OBJECT_FRAGMENT = `
   fragment ImageDataObject on FileField {
+    id
     imageData: responsiveImage (
       imgixParams: { fit: crop, w: 3840, h: 2160, auto: format }
     ) {

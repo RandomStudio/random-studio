@@ -9,6 +9,7 @@ import Carousel from '../../components/Carousel/Carousel';
 import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
 import supportsIntersectionObserver from '../../utils/supportsIntersectionObserver';
+import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
 
 const mediumBreakpoint = 960; // BP of 60rem
@@ -16,7 +17,7 @@ const mediumBreakpoint = 960; // BP of 60rem
 const Studio = ({
   slug,
   title,
-  introBlock,
+  introBlocks,
   services,
   skillset,
   jobOpenings,
@@ -63,19 +64,19 @@ const Studio = ({
         tabIndex="-1"
       >
         <Head pathName={slug} title="Studio" />
-        <IntroBlock intros={introBlock} ref={introRef} title={title} />
+        <IntroBlock intros={introBlocks} ref={introRef} title={title} />
 
-        <ServiceList headerTitle={services.title} services={services.list} />
+        <ServiceList services={services} />
 
         <SkillBlock skillset={skillset} />
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee jobOpenings={jobOpenings} />
           <Carousel
-            carousel={studioImpression.images}
+            carousel={studioImpression}
             className={styles.carouselWrapper}
-            showIndicator={studioImpression.showIndicator}
-            title={studioImpression.title}
+            showIndicator
+            title="Studio Impressions"
           />
         </div>
       </div>
@@ -84,25 +85,12 @@ const Studio = ({
 };
 
 export const getStaticProps = async () => {
-  // let response = await getDataFromBackend({
-  //   query: PAGE_QUERY('studio'),
-  // });
-  //
-  // if (!response) {
-  //   response = {
-  //     page: {
-  //       text: getContentFromFile('studio'),
-  //     },
-  //   }
-  // }
-  //
-  // const { page: { text } } = response
-  //
-  // const { data } = matter(text);
-  //
-  const data = {}
+  const { page } = await getDataFromBackend({
+    query: STUDIO_PAGE_QUERY,
+  });
+
   return {
-    props: data,
+    props: page,
   };
 };
 

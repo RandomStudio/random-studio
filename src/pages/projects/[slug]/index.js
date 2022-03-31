@@ -5,7 +5,7 @@ import {
 } from '../../../api/QUERIES';
 import Head from '../../../components/Head/Head';
 import Layout from '../../../components/Layout/Layout';
-import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
+import ProjectDetail from './ProjectDetail/ProjectDetail';
 import BackScrim from '../../../components/Project/BackScrim/BackScrim';
 import getDataFromBackend from '../../../api/getDataFromBackend';
 

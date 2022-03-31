@@ -1,4 +1,4 @@
-import { THUMBNAIL_FRAGMENT } from './FRAGMENTS';
+import { IMAGE_DATA_OBJECT_FRAGMENT, THUMBNAIL_FRAGMENT } from './FRAGMENTS';
 
 export const INDEX_PAGE_QUERY = `
   ${THUMBNAIL_FRAGMENT}
@@ -91,8 +91,46 @@ export const SINGLE_PROJECT_QUERY = `
         }
         ... on CarouselBlockRecord {
           id
+          marginLeft
+          marginTop
+          width
+          slides {
+            id
+            video
+            image {
+              ...ImageDataObject
+            }
+          }
         }
       }
     }
   }
 `;
+
+export const STUDIO_PAGE_QUERY = `
+${IMAGE_DATA_OBJECT_FRAGMENT}
+
+{
+  page: studioPage {
+    id
+    skillset
+    title
+    introBlocks {
+      video
+      copy
+      image {
+        ...ImageDataObject
+      }
+    }
+    services {
+      title
+      copy
+      image {
+        ...ImageDataObject
+      }
+    }
+    studioImpression {
+      ...ImageDataObject
+    }
+  }
+}`;

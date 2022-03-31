@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
-import Image from '../../../Image/Image';
+import Image from '../../../../../components/Image/Image';
 
 const RelatedProjectSlider = ({ relatedProjects }) => {
   const { blockTitle, marginTop, projects } = relatedProjects;
