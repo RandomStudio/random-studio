@@ -5,7 +5,7 @@ import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
 
-const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
+const ProjectDetail = ({ title, intro, content, details, relatedProjects }) => {
   return (
     <div className={styles.project}>
       <h1 className={styles.title}>
@@ -21,9 +21,9 @@ const ProjectDetail = ({ title, intro, content, credits, relatedProjects }) => {
         <RelatedProjectSlider relatedProjects={relatedProjects} />
       )}
       <dl aria-label="Project Details" className={styles.credits}>
-        {(credits || []).map(({ key, value }) => (
+        {Object.entries(details ?? {}).map(([key, value]) => (
           <React.Fragment key={`${key}-${value}`}>
-            <dt>{key}</dt>
+            <dt>{key}:</dt>
             <dd>
               <ReactMarkdown>{value}</ReactMarkdown>
             </dd>

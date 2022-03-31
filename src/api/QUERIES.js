@@ -50,6 +50,7 @@ export const SINGLE_PROJECT_QUERY = `
       content
       intro
       title
+      details
       ...Thumbnail
       relatedProjects {
         slug

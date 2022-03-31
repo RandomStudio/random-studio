@@ -14,7 +14,7 @@ const Project = ({
   intro,
   opengraph,
   content,
-  credits,
+  details,
   relatedProjects,
   slug,
   title,
@@ -40,7 +40,7 @@ const Project = ({
       <ProjectDetail
         allProjects={allProjects}
         content={content}
-        credits={credits}
+        details={details}
         intro={intro}
         relatedProjects={relatedProjects}
         title={title}
