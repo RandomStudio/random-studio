@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const request = require('request');
 
 const mailChimpAPI = process.env.MAILCHIMP_API_KEY;
@@ -35,13 +36,15 @@ module.exports.handler = (event, context, callback) => {
       if (error) {
         callback(error, null);
       }
+
       const bodyObj = JSON.parse(body);
 
-      console.log('Mailchimp body: ' + JSON.stringify(bodyObj));
-      console.log('Status Code: ' + response.statusCode);
+      console.log(`Mailchimp body: ${JSON.stringify(bodyObj)}`);
+      console.log(`Status Code: ${response.statusCode}`);
 
       if (response.statusCode < 300) {
         console.log('Added to list in Mailchimp subscriber list');
+
         callback(null, {
           statusCode: 201,
           headers: {
