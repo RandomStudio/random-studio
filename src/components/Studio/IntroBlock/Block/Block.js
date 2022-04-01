@@ -93,8 +93,8 @@ const Block = ({ image, index, copy, title, video }) => {
           ) : (
             <Image
               alt={title}
+              className={styles.image}
               data={image.imageData}
-              sizes="(max-width: 960px) 100vw, 50vw"
             />
           )}
           <div className={styles.overlay} ref={overlayRef} />

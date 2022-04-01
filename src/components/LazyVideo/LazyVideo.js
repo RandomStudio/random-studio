@@ -1,8 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import styles from './LazyVideo.module.scss';
 
-const vimeoLookup = {};
-
 const LazyVideo = React.forwardRef(
   (
     { alt, className, hasControls, videoSrc, loops, isMuted, autoPlays },
@@ -13,22 +11,6 @@ const LazyVideo = React.forwardRef(
     const [hasJs, setHasJs] = useState(false);
     const [intersected, setIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
-
-    const id = useMemo(() => {
-      if (!videoSrc) {
-        return null;
-      }
-
-      const matches = videoSrc.match(
-        /https:\/\/player\.vimeo\.com\/external\/(.*)\./,
-      );
-
-      if (!matches) {
-        return null;
-      }
-
-      return matches[1].split('.')[0];
-    }, [videoSrc]);
 
     useEffect(() => {
       // Reference for cleanup
@@ -71,8 +53,6 @@ const LazyVideo = React.forwardRef(
       };
     }, [videoRef, autoPlays]);
 
-    const { height, thumb, width } = vimeoLookup?.[id] ?? {};
-
     /* eslint-disable jsx-a11y/media-has-caption */
     const videoElement = (
       <>
@@ -82,7 +62,6 @@ const LazyVideo = React.forwardRef(
           muted={isMuted}
           onPlaying={() => setIsLoaded(true)}
           playsInline
-          poster={thumb ? `data:image/jpeg;base64,${thumb}` : null}
           ref={videoRef}
           src={intersected ? videoSrc : ''}
         />
@@ -92,7 +71,6 @@ const LazyVideo = React.forwardRef(
             loop={loops}
             muted={isMuted}
             playsInline
-            poster={thumb ? `data:image/jpeg;base64,${thumb}` : null}
             src={videoSrc}
           />
         </noscript>
@@ -100,26 +78,14 @@ const LazyVideo = React.forwardRef(
     );
     /* eslint-enable jsx-a11y/media-has-caption */
 
-    if (!vimeoLookup[id]) {
-      return videoElement;
-    }
-
     // Prevents autoplay conflicting
     return (
       <div
         className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
           }
         ${hasJs ? styles.hasJs : ''}`}
-        style={{
-          aspectRatio: `${width} / ${height}`,
-        }}
       >
-        <img
-          alt={alt}
-          aria-hidden
-          className={styles.placeholder}
-          src={`data:image/jpeg;base64,${thumb}`}
-        />
+        <img alt={alt} aria-hidden className={styles.placeholder} />
         {videoElement}
       </div>
     );
