@@ -42,6 +42,8 @@ jobs:
       - name: "build"
         run: |
           npm run build
+        env:
+          NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
       - name: "publish"
         run: |
           npx -p "@getmeli/cli" meli upload ./out \
@@ -51,6 +53,5 @@ jobs:
             --release "$GITHUB_SHA"
         env:
           MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
-          NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MELI_SITE: ${{ inputs.MELI_SITE }}
