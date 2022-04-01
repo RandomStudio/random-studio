@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import Image from '../../../Image/Image';
 import LazyVideo from '../../../LazyVideo/LazyVideo';
 import styles from './Block.module.scss';
+import { Image } from 'react-datocms';
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
@@ -93,8 +93,8 @@ const Block = ({ image, index, copy, title, video }) => {
           ) : (
             <Image
               alt={title}
+              data={image.imageData}
               sizes="(max-width: 960px) 100vw, 50vw"
-              src={image}
             />
           )}
           <div className={styles.overlay} ref={overlayRef} />

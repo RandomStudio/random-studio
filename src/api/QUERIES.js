@@ -1,4 +1,4 @@
-import { IMAGE_DATA_OBJECT_FRAGMENT, THUMBNAIL_FRAGMENT } from './FRAGMENTS';
+import { IMAGE_DATA_OBJECT_FRAGMENT, RELATED_PROJECT_THUMBNAIL_FRAGMENT, THUMBNAIL_FRAGMENT } from './FRAGMENTS';
 
 export const INDEX_PAGE_QUERY = `
   ${THUMBNAIL_FRAGMENT}
@@ -52,6 +52,7 @@ export const SINGLE_PROJECT_QUERY = `
       title
       details
       ...Thumbnail
+      relatedProjectsTitle
       relatedProjects {
         slug
         title

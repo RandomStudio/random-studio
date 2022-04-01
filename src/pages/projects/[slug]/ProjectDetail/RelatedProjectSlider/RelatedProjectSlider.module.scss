@@ -1,6 +1,20 @@
 .wrapper {
   --spacing-left: 20px;
-  margin-top: 72px;
+  margin-top: 10%;
+
+  @media (min-width: 576px) {
+    --spacing-left: 64px;
+  }
+
+  @media (min-width: 864px) {
+    --spacing-left: 0;
+    max-width: 640px;
+    margin: 10% auto 0;
+  }
+
+  @media (min-width: 1152px) {
+    max-width: 896px;
+  }
 
   h4 {
     font-size: var(--font-small);
@@ -16,19 +30,6 @@
     h4 {
       text-align: center;
     }
-  }
-  @media (min-width: 576px) {
-    --spacing-left: 64px;
-  }
-
-  @media (min-width: 864px) {
-    --spacing-left: 0;
-    max-width: 640px;
-    margin: 72px auto 0;
-  }
-
-  @media (min-width: 1152px) {
-    max-width: 896px;
   }
 }
 

@@ -6,10 +6,10 @@ import Link from 'next/link';
 import styles from './Project.module.scss';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 
-const Project = ({ featuredImage, featuredVideo, left, title, top, slug, width }) => (
+const Project = ({ className, featuredImage, featuredVideo, left, title, top, slug, width }) => (
   <Link href={`/projects/${slug}`} id={slug}>
     <a
-      className={styles.thumbnail}
+      className={`${styles.thumbnail} ${className}`}
       style={{
         marginLeft: `${left}%`,
         marginTop: `${top}%`,

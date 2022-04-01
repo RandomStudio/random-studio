@@ -1,42 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import { Image } from 'react-datocms';
 import styles from './RelatedProjectSlider.module.scss';
-import Image from '../../../../../components/Image/Image';
+import Project from '../../../../../components/Project/Project';
+import VideoWithControls from '../../../../../components/VideoWithControls/VideoWithControls';
 
-const RelatedProjectSlider = ({ relatedProjects }) => {
-  const { blockTitle, marginTop, projects } = relatedProjects;
-
-  if (!projects || projects.length <= 0 || !projects[0]?.projects?.[0]?.slug) {
-    return null;
-  }
-
-  const wrapperClass = `${styles.wrapper} ${projects.length === 1 ? styles.isSingle : ''
+const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
+  const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
     }`;
 
   return (
-    <section
-      className={wrapperClass}
-      style={{ marginTop: `${marginTop}%` ?? 0 }}
-    >
-      {blockTitle && <h4>{blockTitle}</h4>}
+    <section className={wrapperClass}>
+      {relatedProjectsTitle && <h4>{relatedProjectsTitle}</h4>}
       <div className={styles.worksWrapper}>
-        {projects.map(({ image, title, subtitle, slug }) => (
-          <Link href={slug} key={title}>
-            <a className={styles.card}>
-              {image && (
-                <Image
-                  alt={title}
-                  className={styles.imageWrapper}
-                  sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
-                  src={image}
-                />
-              )}
-              {title && <p>{title}</p>}
-              {subtitle && <p>{subtitle}</p>}
-            </a>
-          </Link>
-        ))}
+        {relatedProjects.map(
+          ({ featuredImage, featuredVideo, title, slug }) => (
+            <Link href={slug} key={title}>
+              <a className={styles.card}>
+                {featuredImage && (
+                  <Image
+                    alt={title}
+                    className={styles.imageWrapper}
+                    data={featuredImage.imageData}
+                    sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
+                  />
+                )}
+                {featuredVideo && (
+                  <VideoWithControls
+                    autoplay
+                    hasControls={false}
+                    isAlwaysMuted
+                    isMuted
+                    loops
+                    url={featuredVideo}
+                  />
+                )}
+                {title && <p>{title}</p>}
+              </a>
+            </Link>
+          ),
+        )}
         <span className={styles.cardSpacer} />
       </div>
     </section>

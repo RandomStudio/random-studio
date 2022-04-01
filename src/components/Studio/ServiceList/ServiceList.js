@@ -1,7 +1,7 @@
+import { Image } from 'react-datocms';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ServiceList.module.scss';
-import Image from '../../Image/Image';
 
 const imageSizes = [
   '(max-width: 960px) 40vw, 80vw',
@@ -23,7 +23,7 @@ const ServiceList = ({ services }) => (
             alt={title}
             className={styles.imageWrapper}
             sizes={imageSizes[index]}
-            src={image}
+            data={image.imageData}
           />
         </div>
       ))}

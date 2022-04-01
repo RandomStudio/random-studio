@@ -16,6 +16,7 @@ const Project = ({
   content,
   details,
   relatedProjects,
+  relatedProjectsTitle,
   title,
 }) => {
   const socialTitle =
@@ -41,6 +42,7 @@ const Project = ({
         details={details}
         intro={intro}
         relatedProjects={relatedProjects}
+        relatedProjectsTitle={relatedProjectsTitle}
         title={title}
       />
       <BackScrim />
