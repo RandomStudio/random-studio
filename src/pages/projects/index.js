@@ -7,7 +7,7 @@ import getDataFromBackend from '../../api/getDataFromBackend';
 
 const Projects = ({ projects }) => (
   <Layout>
-    <Head pathName="/projects" title="Projects" />
+    <Head title="Projects" />
     <ProjectList hasFilters projects={projects} />
   </Layout>
 );

@@ -15,7 +15,6 @@ import getDataFromBackend from '../../api/getDataFromBackend';
 const mediumBreakpoint = 960; // BP of 60rem
 
 const Studio = ({
-  slug,
   title,
   introBlocks,
   services,
@@ -63,7 +62,7 @@ const Studio = ({
           }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
-        <Head pathName={slug} title="Studio" />
+        <Head title="Studio" />
         <IntroBlock intros={introBlocks} ref={introRef} title={title} />
 
         <ServiceList services={services} />

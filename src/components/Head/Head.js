@@ -1,17 +1,19 @@
 import React from 'react';
 import NextHead from 'next/head';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 
 const defaultPageTitle = 'Random Studio';
 
 const Head = ({
   description,
   image,
-  pathName,
   socialDescription,
   socialTitle,
   title,
 }) => {
+  const router = useRouter();
+
   const siteUrl = 'https://random.studio';
 
   const formatTitle = string =>
@@ -20,8 +22,6 @@ const Head = ({
       .replace('<br /> ', '')} - ${defaultPageTitle}`;
 
   const pageTitle = title ? formatTitle(title) : defaultPageTitle;
-
-  const pageUrl = `${siteUrl}${pathName}`;
 
   const ogImage = `${siteUrl}${image}`;
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
@@ -45,7 +45,7 @@ const Head = ({
       <meta content={ogDescription} property="og:description" />
       <meta content="website'" property="og:type" />
       <meta content="en_US'" property="og:locale" />
-      <meta content={pageUrl} property="og:url" />
+      <meta content={`${siteUrl}${router.pathname}`} property="og:url" />
       <meta content={ogImage} property="og:image" />
       <meta content="800" property="og:image:width" />
       <meta content="800" property="og:image:height" />
@@ -55,6 +55,7 @@ const Head = ({
       <meta content={ogImage} name="twitter:image" />
       <meta content="summary_large_image" name="twitter:card" />
       <meta content="@random.studio" name="twitter:site" />
+
       <link
         href="/favicons/apple-touch-icon.png"
         rel="apple-touch-icon"
@@ -99,7 +100,6 @@ const Head = ({
 Head.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
-  pathName: PropTypes.string.isRequired,
   socialDescription: PropTypes.string,
   socialTitle: PropTypes.string,
   title: PropTypes.string,

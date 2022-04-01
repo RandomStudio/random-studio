@@ -16,7 +16,6 @@ const Project = ({
   content,
   details,
   relatedProjects,
-  slug,
   title,
 }) => {
   const socialTitle =
@@ -32,7 +31,6 @@ const Project = ({
       <Head
         description={intro}
         image={SEOImage}
-        pathName={slug}
         socialDescription={socialDescription}
         socialTitle={socialTitle}
         title={title}

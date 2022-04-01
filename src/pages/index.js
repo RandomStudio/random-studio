@@ -12,11 +12,10 @@ const Home = ({
   intro,
   layout,
   projects,
-  slug,
   videoUrl,
 }) => (
   <Layout layout={layout}>
-    <Head pathName={slug} />
+    <Head />
     <HomeVideo
       collaborationUrl={collaborationUrl}
       collaborator={collaborator}
