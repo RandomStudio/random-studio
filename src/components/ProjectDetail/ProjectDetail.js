@@ -21,7 +21,7 @@ const ProjectDetail = ({
       <div className={styles.intro}>
         <ReactMarkdown>{intro}</ReactMarkdown>
       </div>
-      {content.map(block => (
+      {content?.map(block => (
         <ContentBlock {...block} key={block.id} />
       ))}
       {relatedProjects && relatedProjects.length > 0 && (
@@ -31,7 +31,7 @@ const ProjectDetail = ({
         />
       )}
       <dl aria-label="Project Details" className={styles.credits}>
-        {Object.entries(details ?? {}).map(([key, value]) => (
+        {Object.entries(details ?? {})?.map(([key, value]) => (
           <React.Fragment key={`${key}-${value}`}>
             <dt>{key}:</dt>
             <dd>
@@ -48,11 +48,13 @@ ProjectDetail.propTypes = {
   title: PropTypes.string.isRequired,
   intro: PropTypes.string.isRequired,
   content: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  credits: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  relatedProjects: PropTypes.shape({
-    blockTitle: PropTypes.string,
-    projects: PropTypes.arrayOf(PropTypes.object),
-  }),
+  details: PropTypes.object.isRequired,
+  relatedProjects: PropTypes.arrayOf(
+    PropTypes.shape({
+      blockTitle: PropTypes.string,
+      projects: PropTypes.arrayOf(PropTypes.object),
+    }),
+  ),
   allProjects: PropTypes.arrayOf(PropTypes.object),
 };
 

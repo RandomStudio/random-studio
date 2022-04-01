@@ -6,5 +6,5 @@ module.exports = withBundleAnalyzer({
   experimental: { esmExternals: true },
   eslint: {
     ignoreDuringBuilds: true,
-  }
+  },
 });

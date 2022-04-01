@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Image } from 'react-datocms';
-import Caption from '../../../../../components/Caption/Caption';
-import Carousel from '../../../../../components/Carousel/Carousel';
-import VideoWithControls from '../../../../../components/VideoWithControls/VideoWithControls';
+import Caption from '../../Caption/Caption';
+import Carousel from '../../Carousel/Carousel';
+import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import styles from './ContentBlock.module.scss';
 
 const BLOCK_TYPES = {

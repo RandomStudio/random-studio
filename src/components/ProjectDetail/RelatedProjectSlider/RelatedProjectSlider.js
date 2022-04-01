@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Image } from 'react-datocms';
 import styles from './RelatedProjectSlider.module.scss';
-import Project from '../../../../../components/Project/Project';
-import VideoWithControls from '../../../../../components/VideoWithControls/VideoWithControls';
+import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 
 const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
   const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
