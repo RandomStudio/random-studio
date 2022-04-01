@@ -6,8 +6,8 @@ import {
 import Head from '../../../components/Head/Head';
 import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
-import BackScrim from '../../../components/Project/BackScrim/BackScrim';
 import getDataFromBackend from '../../../api/getDataFromBackend';
+import styles from './index.module.scss';
 
 const Project = ({
   allProjects,
@@ -28,7 +28,7 @@ const Project = ({
   const SEOImage = (opengraph ? opengraph.ogImage : null) || undefined;
 
   return (
-    <Layout>
+    <Layout className={styles.layout}>
       <Head
         description={intro}
         image={SEOImage}
@@ -45,7 +45,6 @@ const Project = ({
         relatedProjectsTitle={relatedProjectsTitle}
         title={title}
       />
-      <BackScrim />
     </Layout>
   );
 };

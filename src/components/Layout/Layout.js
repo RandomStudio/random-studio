@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 
 const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
-const Layout = ({ children, layout }) => {
+const Layout = ({ children, className, layout }) => {
   const toastVisiblity = useToastVisibility();
   const [randomStyle, setRandomStyle] = useState({});
 
@@ -32,7 +32,7 @@ const Layout = ({ children, layout }) => {
         {'Skip Navigation'}
       </a>
       <Navigation layout={layout} />
-      <div className={styles.container} id="main-content">
+      <div className={`${styles.container} ${className}`} id="main-content">
         {children}
         <Footer />
       </div>

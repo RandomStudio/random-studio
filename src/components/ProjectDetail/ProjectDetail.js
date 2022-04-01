@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
+import BackScrim from '../Project/BackScrim/BackScrim';
 
 const ProjectDetail = ({
   title,
@@ -40,6 +41,7 @@ const ProjectDetail = ({
           </React.Fragment>
         ))}
       </dl>
+      <BackScrim />
     </div>
   );
 };
