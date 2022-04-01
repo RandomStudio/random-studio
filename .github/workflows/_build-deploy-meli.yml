@@ -27,7 +27,7 @@ jobs:
           key: modules-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm install --dev
       - name: Cache Next
         uses: actions/cache@v2
         with:
