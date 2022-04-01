@@ -6,6 +6,8 @@ on:
         required: true
         type: string
     secrets:
+      NEXT_DATOCMS_API_TOKEN:
+        required: true
       MELI_TOKEN:
         required: true
 jobs:
@@ -49,5 +51,6 @@ jobs:
             --release "$GITHUB_SHA"
         env:
           MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
+          NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MELI_SITE: ${{ inputs.MELI_SITE }}

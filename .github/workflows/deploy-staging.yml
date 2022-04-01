@@ -11,3 +11,4 @@ jobs:
       MELI_SITE: "82ece754-578d-42dd-965d-7761523f28ef"
     secrets:
       MELI_TOKEN: ${{ secrets.MELI_TOKEN }}
+      NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
