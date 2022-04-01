@@ -20,8 +20,8 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/398004212.hd.mp4?s=00b78ca74a165fcbb04ed4c46cd70749b90c3538&profile_id=174
@@ -38,16 +38,16 @@ content:
     marginTop: 12
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/1.1.jpg
     marginLeft: 16
     marginTop: 14
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 34
   - image: /img/2.jpg
@@ -55,8 +55,8 @@ content:
     marginTop: -15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 35
   - image: /img/3.jpg
@@ -64,16 +64,16 @@ content:
     marginTop: -6
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 55
   - marginLeft: 15
     marginTop: 18
     video:
       autoplay: true
-      hasControls: true
-      isMuted: false
+      has_controls: true
+      is_muted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/398005018.hd.mp4?s=18417787d590d6a66bc58fc04b7517c419152192&profile_id=174
@@ -88,16 +88,16 @@ content:
     marginTop: 15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/4.jpg
     marginLeft: 8.75
     marginTop: 18
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 57
   - image: /img/6.jpg
@@ -105,8 +105,8 @@ content:
     marginTop: 15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 38
   - image: /img/5.jpg
@@ -114,8 +114,8 @@ content:
     marginTop: -47.5
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 40
   - image: /img/7.png
@@ -123,8 +123,8 @@ content:
     marginTop: 35
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 70
   - image: /img/8.png
@@ -132,8 +132,8 @@ content:
     marginTop: 5
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 70
   - caption: >-
@@ -146,16 +146,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/9.jpg
     marginLeft: 0
     marginTop: 9
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 115
 credits:
@@ -168,10 +168,10 @@ credits:
       Art Direction, Photography, Animation,
       Web Development, Casting, Styling
 opengraph:
-  ogDescription: >-
+  description: >-
     For this new interactive lookbook, the SS20 collection is seen through the
     eyes of many. With no single perspective, the story unfolds from
     gaze-to-gaze.
-  ogImage: /img/1.jpg
-  ogTitle: A Lookbook of Many Gazes for Fred Perry x Raf Simons
+  image: /img/1.jpg
+  title: A Lookbook of Many Gazes for Fred Perry x Raf Simons
 ---

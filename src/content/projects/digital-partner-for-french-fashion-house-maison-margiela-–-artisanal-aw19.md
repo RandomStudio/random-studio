@@ -15,20 +15,20 @@ intro: >-
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408015045.hd.mp4?s=286f1f34f2c39e9dcf925468cefce05b36f38a0b&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption: >-
@@ -39,28 +39,28 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 62
     carousel:
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408406053.sd.mp4?s=0788e88abdfdb0d980649d0fe232950fa83a91ff&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408406146.sd.mp4?s=fecd8eb09359e38c175d98ae366f0cde41772ba0&profile_id=165
     width: 38
     caption: Teasers
     zIndex: 1
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408420712.sd.mp4?s=cc26647d778743ca076f5d5048c1ea306a105a36&profile_id=165
     marginTop: 7
     marginLeft: 9
@@ -69,10 +69,10 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption:
@@ -86,10 +86,10 @@ content:
     zIndex: 1
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408398073.sd.mp4?s=f0f2115818eebc22082f21194199061063ad4519&profile_id=165
     marginTop: 0
     marginLeft: 60
@@ -97,86 +97,86 @@ content:
     zIndex: 1
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: ''
     marginTop: -10
     marginLeft: 10
     width: 40
     carousel:
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408770992.sd.mp4?s=6e7aa39587338e967f54207965d0abc5beba97b3&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771055.sd.mp4?s=9a28c3c3395b2e558a3530a2478c801b06922832&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771118.sd.mp4?s=b2813a69725fcf4ff287446ffa198abc1b7f4706&profile_id=165
     zIndex: 1
     caption: Vignettes
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 65
     carousel:
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771212.sd.mp4?s=1770b9268d87d2689328780d31bce8aee7e7371e&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771296.sd.mp4?s=0778bde00913120ac8b68baf5a8d61d870ade2cc&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771385.sd.mp4?s=fa4a21069b9f2e9afe76347ca7193b424ed12bd0&profile_id=165
     width: 35
     zIndex: 1
     caption: Vignettes
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: ''
     marginTop: -10
     marginLeft: 0
     carousel:
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771454.sd.mp4?s=f161c7bc345d5f43d346ab956644044327aa9b36&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771504.sd.mp4?s=711b3bfbd6b218cb8623107b34dcdfd6ce611739&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771589.sd.mp4?s=4427a18cb20231fa67d030743b99d22da0718a23&profile_id=165
     width: 39
     zIndex: 1
     caption: Vignettes
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 53
     carousel:
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771678.sd.mp4?s=1719a1354b32740c4f3a78757a5c5af1dfd0213a&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://player.vimeo.com/external/408771787.sd.mp4?s=143d3e1861021ef114d4787c044a1076e31837f4&profile_id=165
       - type: video
-        isMuted: true
+        is_muted: true
         url: https://vimeo.com/408771899/323303f841
     width: 35
     zIndex: 1
@@ -218,9 +218,9 @@ credits:
       With:
     value: Lonneke van der Palen – Photography
 opengraph:
-  ogImage: /img/Artisanal_AW19.png
-  ogTitle: Maison Margiela – Artisanal AW19
-  ogDescription: The final stage of this cycle of decadence, this collection
+  image: /img/Artisanal_AW19.png
+  title: Maison Margiela – Artisanal AW19
+  description: The final stage of this cycle of decadence, this collection
     presents a breakdown of social structure and a carte-blanche for the future.
     Feeding this sense of decay into the garments themselves, the show featured
     projections of the nudes and fleshy close-ups of artist Katerina Jebb,

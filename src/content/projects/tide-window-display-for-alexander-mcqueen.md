@@ -10,20 +10,20 @@ intro: We worked with Alexander McQueen to design a display for their flagship
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: false
-      isAlwaysMuted: false
+      is_muted: false
+      is_always_muted: false
       url: https://player.vimeo.com/external/542050918.hd.mp4?s=80e9dcf043bbb21ce05317813d8a34ced395789d&profile_id=175&download=1
     ratio: 0
     marginTop: 0
     marginLeft: 0
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: 10
     marginLeft: 0
@@ -34,10 +34,10 @@ content:
       the river’s slow and steady ‘breath’ in real-time.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: 0
     marginLeft: 0
@@ -45,10 +45,10 @@ content:
     width: 50
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: -5
     marginLeft: 55
@@ -56,10 +56,10 @@ content:
     width: 40
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: 0
     marginLeft: 0
@@ -71,10 +71,10 @@ content:
       taking the tide and its cycle to different cities.
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/542060484.hd.mp4?s=14cd3e54e848eb72f432d4df3c56e41830c22f45&profile_id=174&download=1
     ratio: 1
     marginTop: 0
@@ -82,10 +82,10 @@ content:
     width: 35
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: -8
     marginLeft: 45
@@ -93,20 +93,20 @@ content:
     width: 50
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: Next up on the world tour is Shanghai, where we created a new environment for the Curve bag in the form of a pop-up store at the IAPM Atrium. This time it was a microscopic view of nature that informed our design of the space, set in motion by several life-size kaleidoscopic screens activated by the presence of each visitor.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: 0
     marginLeft: 0
@@ -122,10 +122,10 @@ content:
     width: 50
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: -25
     marginLeft: 64
@@ -133,10 +133,10 @@ content:
     width: 28
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: -5
     marginLeft: 15
@@ -150,20 +150,20 @@ content:
         image: /img/AMQ_image3c.jpg
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     ratio: 0
     marginTop: 0
     marginLeft: 0
     caption: Visitors enter a symmetrical space, reflecting the architecture of a kaleidoscope. Drawing on a recurrent motif across Alexander McQueen's history – the butterfly – each of the five screens positioned throughout the space hosts an ever-evolving sequence of abstract natural patterns, taking their colour palette from the bag’s design. Inspired by the metamorphosis of a butterfly, the visuals shift and transform, delving further into the patterns the longer a visitor is present. Once they leave, the kaleidoscope slowly reverses to its original state, ready to restart its hypnotic life cycle the next time someone steps in front of the screen. Visitors are also invited to enter the kaleidoscope on their own screens via a face filter, taking a memory of the pop-up home with them or experiencing it from afar.
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/644756017.sd.mp4?s=99695fb4b8b523014206786e08266d745776c98b&profile_id=165
     ratio: 1
     marginTop: 10
@@ -171,10 +171,10 @@ content:
     width: 17
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/644757269.sd.mp4?s=a5c07aa19a599b3f7f5a6d350063bebd8f02c7fc&profile_id=165
     ratio: 1
     marginTop: -30.3
@@ -182,10 +182,10 @@ content:
     width: 17
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/644756945.sd.mp4?s=76dcfd8f1f7a1c784169cb025a6714c8990dd307&profile_id=165
     ratio: 1
     marginTop: -30.3
@@ -193,10 +193,10 @@ content:
     width: 17
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: true
+      is_muted: true
+      is_always_muted: true
       url: https://player.vimeo.com/external/644756353.sd.mp4?s=7ff1b14b94a7ed11062669510608ed885908f2b7&profile_id=165
     ratio: 1
     marginTop: -30.3
@@ -211,12 +211,12 @@ credits:
   - key: 'With:'
     value: Souvenir
 opengraph:
-  ogTitle: Tide Window Display for Alexander McQueen
-  ogDescription: We worked with Alexander McQueen to design a display for their
+  title: Tide Window Display for Alexander McQueen
+  description: We worked with Alexander McQueen to design a display for their
     flagship store in London to showcase the new Curve bag. Drawing inspiration
     from the SS21 campaign film directed by Jonathan Glazer – a dystopian short
     unfolding on the banks of the capital’s iconic River Thames – we created a
     display that mirrors the movement of the tide to bring the peace and
     tranquility of the natural world into the heart of the city.
-  ogImage: /img/screenshot-2021-04-26-at-12.59.13.png
+  image: /img/screenshot-2021-04-26-at-12.59.13.png
 ---

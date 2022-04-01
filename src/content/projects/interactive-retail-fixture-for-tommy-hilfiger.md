@@ -27,8 +27,8 @@ content:
     marginTop: 10
     video:
       autoplay: true
-      hasControls: true
-      isMuted: false
+      has_controls: true
+      is_muted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/370848080.hd.mp4?s=029022badf948ec7d53dc83dd22cca19551a59c9&profile_id=175
@@ -42,16 +42,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/TommyKidsMachine-13.jpg
     marginLeft: 0
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 80
   - caption: >-
@@ -64,16 +64,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/TommyKidsMachine-08.jpg
     marginLeft: 50
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 40
   - image: /img/TommyKidsMachine-05.jpg
@@ -81,8 +81,8 @@ content:
     marginTop: -21
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 40
   - image: /img/TommyKidsMachine-09.jpg
@@ -90,8 +90,8 @@ content:
     marginTop: -9
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 35
   - caption: >-
@@ -107,16 +107,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/TommyKidsMachine-12.jpg
     marginLeft: 10
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 32
   - image: /img/TommyKidsMachine-11.jpg
@@ -124,8 +124,8 @@ content:
     marginTop: -18
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 44
   - caption: >-
@@ -138,8 +138,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
 credits:
   - key: 'For:  '

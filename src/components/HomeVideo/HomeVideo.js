@@ -2,7 +2,7 @@ import React from 'react';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import styles from './HomeVideo.module.scss';
 
-const HomeVideo = ({ collaborationCredits, videoUrl }) => {
+const HomeVideo = ({ collaborator, collaborationUrl, videoUrl }) => {
   return (
     <div className={styles.video}>
       <VideoWithControls
@@ -13,17 +13,17 @@ const HomeVideo = ({ collaborationCredits, videoUrl }) => {
         loops
         url={videoUrl}
       />
-      {collaborationCredits && (
+      {collaborator && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>
           <span aria-label="with">{' × '}</span>
           <span>
             <a
-              href={collaborationCredits.url}
+              href={collaborationUrl}
               rel="noopener noreferrer"
               target="_blank"
             >
-              {collaborationCredits.collaborator}
+              {collaborator}
             </a>
           </span>
         </div>

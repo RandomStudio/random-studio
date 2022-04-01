@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { countBy } from 'lodash-es';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
-import PROJECT_FILTERS from './PROJECT_FILTERS';
+import LAYOUT from './LAYOUT';
 import Project from '../Project/Project';
-import ResearchBlock from './IntermittentBlock/ResearchBlock';
 
-const ProjectList = ({ articles, hasFilters, intro, limit, projects }) => {
+const ProjectList = ({ hasFilters, intro, limit, projects }) => {
   const projectFilters = projects
     .map(({ tags }) => tags)
     .filter(Boolean)
@@ -20,59 +19,61 @@ const ProjectList = ({ articles, hasFilters, intro, limit, projects }) => {
 
   const [activeTag, setActiveTag] = useState(null);
 
+  const visibleProjects = useMemo(
+    () =>
+      projects.filter(
+        ({ featuredImage, featuredVideo, tags }) =>
+          (!activeTag || tags?.includes(activeTag)) &&
+          (!!featuredVideo || !!featuredImage),
+      ),
+    [activeTag, projects],
+  );
+
   return (
     <>
       {hasFilters && (
         <Filters
           activeTag={activeTag}
           filterCount={filterCount}
-          filterList={PROJECT_FILTERS}
           setActiveTag={setActiveTag}
         />
       )}
       <ul aria-label="Highlighted projects" className={styles.projects}>
         {intro && (
           <div className={styles.statement}>
-            <ReactMarkdown escapeHtml={false} source={intro} />
+            <ReactMarkdown>{intro}</ReactMarkdown>
           </div>
         )}
-        {projects.map(({ thumbnail, title, slug, tags }, index) => {
-          const article = (articles || []).find(
-            ({ position }) => position === index + 1,
-          );
+        {visibleProjects.map(
+          ({ featuredImage, featuredVideo, title, slug }, index) => {
+            if (index >= limit) {
+              return null;
+            }
 
-          const isHidden = activeTag !== null && !tags?.includes(activeTag);
+            const { left, top, width } = LAYOUT[index];
 
-          if (index >= limit) {
-            return null;
-          }
-
-          return (
-            <React.Fragment key={slug}>
-              {thumbnail && !isHidden && (
-                <Project
-                  key={slug}
-                  slug={slug}
-                  thumbnail={thumbnail}
-                  title={title}
-                />
-              )}
-              {article && (
-                <ResearchBlock
-                  articleUrl={article.articleUrl}
-                  quote={article.quote}
-                />
-              )}
-              {limit && index === projects.length - 1 && (
-                <div className={`${styles.seeMore}`}>
-                  <Link href="/projects">
-                    <a>{'See all projects'}</a>
-                  </Link>
-                </div>
-              )}
-            </React.Fragment>
-          );
-        })}
+            return (
+              <Project
+                featuredImage={featuredImage}
+                featuredVideo={featuredVideo}
+                index={index}
+                left={left}
+                top={top}
+                width={width}
+                key={slug}
+                slug={slug}
+                title={title}
+              />
+            );
+          },
+        )}
+        {limit && (
+          <div className={styles.seeMore}>
+            <Link href="/projects">
+              <a>{'See all projects'}</a>
+            </Link>
+          </div>
+        )}
       </ul>
     </>
   );

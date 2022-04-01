@@ -18,8 +18,8 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: https://player.vimeo.com/external/323718464.hd.mp4?s=bd90a5b3f772786683c7c27efd785fc178cdeb6c&profile_id=175
     width: 100
@@ -35,15 +35,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 0
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: https://player.vimeo.com/external/323732456.hd.mp4?s=f48518364794407d4839f05886fae630f4507f09&profile_id=175
     width: 100
@@ -56,15 +56,15 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 10
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: https://player.vimeo.com/external/323733416.hd.mp4?s=0fa31cd68099a054665f50639759620a24a12af8&profile_id=175
     width: 80
@@ -77,16 +77,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/93329ef8a50c1ae92159783fd2275f58-1-.m-dogs-jpg.jpg
     marginLeft: 0
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 100
 relatedProjects:

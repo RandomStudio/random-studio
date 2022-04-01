@@ -1,53 +1,27 @@
 import React from 'react';
 import Layout from '../../components/Layout/Layout';
-import Footer from '../../components/Footer/Footer';
 import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
+import { PROJECTS_LIST_QUERY } from '../../api/QUERIES';
+import getDataFromBackend from '../../api/getDataFromBackend';
 
-const Projects = ({ address, email, phone, projects, slug }) => {
-  return (
-    <Layout>
-      <Head pathName={slug} title="Projects" />
-      <ProjectList hasFilters projects={projects} />
-      <Footer address={address} email={email} phone={phone} />
-    </Layout>
-  );
-};
+const Projects = ({ projects }) => (
+  <Layout>
+    <Head title="Projects" />
+    <ProjectList hasFilters projects={projects} />
+  </Layout>
+);
 
-export async function getStaticProps() {
-  const {
-    getAllProjects,
-    getContentFromFile,
-  } = require('../../utils/contentUtils');
-
-  const data = getContentFromFile('projects');
-  const allProjects = getAllProjects();
-
-  const projectDetails = data.projects
-    .map(({ caption, project: projectTitle, thumbnail, tags }) => {
-      const project = allProjects.find(
-        ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
-      );
-
-      if (!project) {
-        return null;
-      }
-
-      return {
-        slug: project.slug,
-        tags: tags ?? null,
-        thumbnail: thumbnail ?? null,
-        title: caption || project.title,
-      };
-    })
-    .filter(project => project !== null);
+export const getStaticProps = async () => {
+  const { projects } = await getDataFromBackend({
+    query: PROJECTS_LIST_QUERY,
+  });
 
   return {
     props: {
-      ...data,
-      projects: projectDetails,
+      projects,
     },
   };
-}
+};
 
 export default Projects;

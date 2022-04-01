@@ -24,8 +24,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/317991972.hd.mp4?s=9ed81e2894b01f7fc8b957a3582865d9e8b3c516&profile_id=175
@@ -42,15 +42,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 0
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/317995342.hd.mp4?s=f175dc4dab3af65a96b1a928eeb062af107a64be&profile_id=175
@@ -60,8 +60,8 @@ content:
     marginTop: -12
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - image: /img/digitalmaps.jpeg
@@ -69,8 +69,8 @@ content:
     marginTop: -20
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 25
   - image: /img/digitalmaps3.jpeg
@@ -78,8 +78,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 100
   - caption: >-
@@ -91,15 +91,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 45
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/317996812.hd.mp4?s=e5a77825ac1fe2d2072a984ae525f64262d7c42b&profile_id=175
@@ -109,8 +109,8 @@ content:
     marginTop: -15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - image: /img/digitalmaps5.jpeg
@@ -118,8 +118,8 @@ content:
     marginTop: -15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 25
   - image: /img/digitalmaps6.jpeg
@@ -127,8 +127,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 100
 credits:

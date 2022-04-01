@@ -19,8 +19,8 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/164323555.hd.mp4?s=a28f1806bea7340079cd554c56b82240d9544f4e&profile_id=119
@@ -47,8 +47,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - caption: >-
       The lights pulse along with audio, launching into a faster loop as the
@@ -58,8 +58,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 75
   - caption: >-
@@ -71,8 +71,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 45
   - caption: >-
@@ -82,8 +82,8 @@ content:
     marginTop: -10
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206284409.sd.mp4?s=711d668df070bf3f5a0b1cb0e7b43fd6a60ec380&profile_id=164
@@ -92,8 +92,8 @@ content:
     marginTop: -10
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206284397.sd.mp4?s=56d90320e027d3775975d6c6e209fcbb6487b56f&profile_id=164

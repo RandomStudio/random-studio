@@ -17,21 +17,21 @@ intro: >-
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408355369.hd.mp4?s=7b97222b1b36edde5967c3b804b9f98b95e216ec&profile_id=175
     marginTop: 0
     marginLeft: 0
-    caption: ''
+    
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption: >-
@@ -42,10 +42,10 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 59
     carousel:
@@ -57,10 +57,10 @@ content:
     zIndex: 1
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/408424464.sd.mp4?s=e21da5bbc0d1f7b94e6d2a78a11dd73401824cc8&profile_id=165
     marginTop: 7
     marginLeft: 9
@@ -69,10 +69,10 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption:
@@ -87,10 +87,10 @@ content:
     zIndex: 1
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 49
     carousel:
@@ -142,13 +142,13 @@ credits:
       With:
     value: Lonneke van der Palen – Photography
 opengraph:
-  ogImage: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
-  ogDescription:
+  image: /img/maisonmargiela_50612709_239155373654049_3130579058022923543_n.jpg
+  description:
     'Our documentation of the show played on the borders of fake and
     real. The show itself was a spectacle-like affair so we captured it from
     every angle and perspective, creating a stream of different images and
     content including the main runway video, live-editing for Instagram Live, a
     pre-show teaser, a podcast teaser, a series of backstage videos and
     backstage and empty-set photography. '
-  ogTitle: Maison Margiela – Artisanal SS19
+  title: Maison Margiela – Artisanal SS19
 ---

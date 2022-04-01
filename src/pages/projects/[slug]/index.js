@@ -1,18 +1,22 @@
 import React from 'react';
-import { uniqueId } from 'lodash-es';
+import {
+  PROJECT_PATHS_QUERY,
+  SINGLE_PROJECT_QUERY,
+} from '../../../api/QUERIES';
 import Head from '../../../components/Head/Head';
 import Layout from '../../../components/Layout/Layout';
-import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
+import ProjectDetail from './ProjectDetail/ProjectDetail';
 import BackScrim from '../../../components/Project/BackScrim/BackScrim';
+import getDataFromBackend from '../../../api/getDataFromBackend';
 
 const Project = ({
   allProjects,
   intro,
   opengraph,
   content,
-  credits,
+  details,
   relatedProjects,
-  slug,
+  relatedProjectsTitle,
   title,
 }) => {
   const socialTitle =
@@ -28,7 +32,6 @@ const Project = ({
       <Head
         description={intro}
         image={SEOImage}
-        pathName={slug}
         socialDescription={socialDescription}
         socialTitle={socialTitle}
         title={title}
@@ -36,9 +39,10 @@ const Project = ({
       <ProjectDetail
         allProjects={allProjects}
         content={content}
-        credits={credits}
+        details={details}
         intro={intro}
         relatedProjects={relatedProjects}
+        relatedProjectsTitle={relatedProjectsTitle}
         title={title}
       />
       <BackScrim />
@@ -47,53 +51,28 @@ const Project = ({
 };
 
 export const getStaticProps = async ({ params }) => {
-  const {
-    getAllProjects,
-    getContentFromFile,
-  } = require('../../../utils/contentUtils');
-
-  const data = getContentFromFile(`projects/${params.slug}`);
-  const allProjects = getAllProjects();
-
-  const { relatedProjects } = data;
-
-  const relatedWork =
-    relatedProjects &&
-    (relatedProjects.projects || []).map(relatedProject => {
-      const foundProject =
-        allProjects.length &&
-        allProjects.find(project => relatedProject.project === project.title);
-
-      return {
-        ...relatedProject,
-        slug: foundProject ? foundProject.slug : null,
-      };
-    });
+  const { project } = await getDataFromBackend({
+    query: SINGLE_PROJECT_QUERY,
+    variables: {
+      slug: params.slug,
+    },
+  });
 
   return {
-    props: {
-      ...data,
-      content: data.content.map(block => ({
-        ...block,
-        id: uniqueId(),
-      })),
-      relatedProjects: {
-        ...relatedProjects,
-        projects: relatedWork ?? [],
-      },
-    },
+    props: project,
   };
 };
 
 export async function getStaticPaths() {
-  const { getAllProjects } = require('../../../utils/contentUtils');
-  const projects = getAllProjects();
+  const { projects } = await getDataFromBackend({
+    query: PROJECT_PATHS_QUERY,
+  });
 
   return {
     fallback: false,
-    paths: projects.map(project => ({
+    paths: projects.map(({ slug }) => ({
       params: {
-        slug: project.slug.replace('/projects/', ''),
+        slug,
       },
     })),
   };

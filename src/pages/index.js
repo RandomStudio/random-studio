@@ -1,61 +1,39 @@
 import React from 'react';
-import Footer from '../components/Footer/Footer';
+import getDataFromBackend from '../api/getDataFromBackend';
+import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
 
 const Home = ({
-  address,
-  collaborationCredits,
-  email,
+  collaborator,
+  collaborationUrl,
   intro,
   layout,
-  phone,
   projects,
-  slug,
-  video,
+  videoUrl,
 }) => (
   <Layout layout={layout}>
-    <Head pathName={slug} />
-    <HomeVideo collaborationCredits={collaborationCredits} videoUrl={video} />
+    <Head />
+    <HomeVideo
+      collaborationUrl={collaborationUrl}
+      collaborator={collaborator}
+      videoUrl={videoUrl}
+    />
     <ProjectList intro={intro} limit={projects.length} projects={projects} />
-    <Footer address={address} email={email} phone={phone} />
   </Layout>
 );
 
 export const getStaticProps = async () => {
-  const {
-    getAllProjects,
-    getContentFromFile,
-  } = require('../utils/contentUtils');
-
-  const data = getContentFromFile('index');
-  const allProjects = getAllProjects();
-
-  const projectDetails = data.projects
-    .map(({ caption, project: projectTitle, thumbnail }) => {
-      const project = allProjects.find(
-        ({ title }) => title.toLowerCase() === projectTitle.toLowerCase(),
-      );
-
-      if (!project) {
-        return null;
-      }
-
-      return {
-        priority: project.priority ?? null,
-        slug: project.slug,
-        thumbnail: thumbnail ?? null,
-        title: caption || project.title,
-      };
-    })
-    .filter(project => project !== null);
+  const { page, projects } = await getDataFromBackend({
+    query: INDEX_PAGE_QUERY,
+  });
 
   return {
     props: {
-      ...data,
-      projects: projectDetails,
+      ...page,
+      projects,
     },
   };
 };

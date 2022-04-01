@@ -13,8 +13,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: true
-      isMuted: false
+      has_controls: true
+      is_muted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/293518292.hd.mp4?s=b11e4290593a62d2912567e3b343954c1d93356b&profile_id=175
@@ -28,8 +28,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - caption: >-
       The experience started outside. The store windows were fitted with cameras
@@ -39,8 +39,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 50
   - image: /img/67626df4e2cce1b37e48ebf46165b19e.ike-milaan-36.jpg
@@ -48,16 +48,16 @@ content:
     marginTop: -30
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - marginLeft: 5
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/293523956.hd.mp4?s=60079e02fd585595b28119ac617854f3af4a5ad6&profile_id=175
@@ -70,8 +70,8 @@ content:
     marginTop: -10
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/293521607.hd.mp4?s=75f4eb0c83c54d3769dadb33918260ec588ae9c7&profile_id=174
@@ -84,8 +84,8 @@ content:
     marginTop: -10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 45
   - caption: >-
@@ -96,8 +96,8 @@ content:
     marginTop: -28
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - caption: >-
@@ -109,16 +109,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/a47b8da915c5bb367243d4d399c8ab1e.ike-milaan-30.jpg
     marginLeft: 0
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 100
   - image: /img/89af27d8031439f32ae732750e897e75.ike-milaan-19.jpg
@@ -126,8 +126,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 100
   - image: /img/fcaca4d9c0c5053e311fd2fbeca63006.ike-milaan-23.jpg
@@ -135,8 +135,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 100
 credits:
@@ -149,10 +149,10 @@ credits:
   - key: 'With:'
     value: Fiction Factory
 opengraph:
-  ogDescription: >-
+  description: >-
     On the first floor, a conveyor belt scanned items from the collection,
     triggering product content on the screens above. A series of screens on the
     other side streamed and analysed live footage from the floor below.
-  ogImage: /img/67626df4e2cce1b37e48ebf46165b19e.ike-milaan-36.jpg
-  ogTitle: An immersive in-store environment for NikeLab Milano
+  image: /img/67626df4e2cce1b37e48ebf46165b19e.ike-milaan-36.jpg
+  title: An immersive in-store environment for NikeLab Milano
 ---

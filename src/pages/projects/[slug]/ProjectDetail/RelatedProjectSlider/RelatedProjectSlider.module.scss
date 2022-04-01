@@ -1,0 +1,159 @@
+.wrapper {
+  --spacing-left: 20px;
+  margin-top: 10%;
+
+  @media (min-width: 576px) {
+    --spacing-left: 64px;
+  }
+
+  @media (min-width: 864px) {
+    --spacing-left: 0;
+    max-width: 640px;
+    margin: 10% auto 0;
+  }
+
+  @media (min-width: 1152px) {
+    max-width: 896px;
+  }
+
+  h4 {
+    font-size: var(--font-small);
+    font-weight: normal;
+    margin-bottom: 28px;
+    padding-left: var(--spacing-left);
+    @media (min-width: 864px) {
+      font-size: var(--font-med);
+    }
+  }
+
+  &.isSingle {
+    h4 {
+      text-align: center;
+    }
+  }
+}
+
+
+.worksWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+  width: 100vw;
+  padding-left: var(--spacing-left);
+  scroll-padding-left: var(--spacing-left);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  .isSingle &{
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+    padding-left: 0%;
+
+}
+}
+
+
+
+.card {
+  text-decoration: none;
+
+  p {
+    font-size: var(--font-xxs);
+    font-weight: normal;
+    text-decoration: none;
+    @media (min-width: 864px){
+      font-size: var(--font-small);
+    }
+  }
+
+  &:nth-of-type(1n + 2) {
+    margin-left: 12px;
+    @media (min-width: 864px){
+      margin-left: 24px;
+    }
+  }
+
+  .isSingle & {
+    width: 679px;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    text-decoration: none;
+    @media (min-width: 864px){
+      width: 322px;
+    }
+    @media (min-width: 1152px) {
+      width: 679px;
+    }
+
+    p {
+      font-size: var(--font-xxs);
+      font-weight: normal;
+      text-decoration: none;
+      text-align: center;
+      @media (min-width: 864px){
+        font-size: var(--font-small);
+      }
+    }
+
+    &:nth-of-type(1n + 2) {
+      margin-left: 12px;
+      @media (min-width: 864px){
+        margin-left: 24px;
+      }
+    }
+  }
+}
+
+.cardSpacer {
+  padding-right: calc(100% - 268px);
+}
+
+.isSingle {
+  .cardSpacer {
+    padding-right: 0px;
+  }
+}
+
+.imageWrapper {
+  width: 268px;
+  height: 336px;
+  overflow: hidden;
+
+  & + p {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 864px) {
+    width: 322px;
+    height: 404px;
+  }
+
+  @media (min-width: 1152px) {
+    width: 408px;
+    height: 512px;
+  }
+  .isSingle &{
+    width: 679px;
+    height: 452px;
+
+    & + p {
+      margin-top: 20px;
+    }
+
+    @media (min-width: 864px) {
+      width: 322px;
+      height: 404px;
+    }
+
+    @media (min-width: 1152px) {
+      width: 679px;
+      height: 452px;
+    }
+  }
+}

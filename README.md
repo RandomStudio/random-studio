@@ -18,3 +18,18 @@ Statically built website for Random Studio, built using Next.js.
   2. Check the `public/img` folder for any images that have been added or changed. In turn, pass each changed filepath to `npm run process:image`. This generates a super low res `base64` encoded placeholder, uploads to Cloudflare, and saves both the placeholder and Cloudflare image ID to `infrastructure/imageLookup.json`
   3. Run through the content markdown files and `grep` any Vimeo URLs they contain. In turn, pass each changed URL to `npm run process:vimeo`. This generates a super low res `base64` encoded placeholder, using the thumbnail image, and saves to `infrastructure/vimeoLookup.json`
 - Finally, if either steps 2 or 3 encountered changed files (and thus updated either of the lookup files), we rerun task 1 again. _Why? Because this ensures we start creating and push live a build as soon as possible, without waiting for assets to be processed. If there have been assets changed, we quickly do a second build to reflect those in live_
+
+## Possible issues
+
+### Node Gyp fails during `npm install` while running via ZSH
+```
+npm ERR! error: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/otool-classic: can't open file: /usr/lib/libcurl.dylib (No such file or directory)
+npm ERR! gyp: Call to 'otool -D `curl-config --prefix`/lib/libcurl.dylib | sed -n 2p' returned exit status 0 while in binding.gyp. while trying to load binding.gyp
+```
+
+To fix, make sure curl is installed and is in ZSH path:
+```
+brew install curl-openssl
+export PATH="/opt/homebrew/opt/curl/bin:$PATH" >> ~/.zshrc
+npm install
+```

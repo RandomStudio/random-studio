@@ -16,8 +16,8 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/353969796.hd.mp4?s=d5892522f7944b0161e7ca701f9cdd30369168b3&profile_id=175
@@ -34,24 +34,24 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/eb12bfba419e63ba1d43cb67c42d6353.jpg
     marginLeft: 10
     marginTop: 1
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 35
   - marginLeft: 54
     marginTop: -15
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/353981290.hd.mp4?s=925cef8f8bc61799e5a613282950f911f247ceb5&profile_id=175
@@ -59,8 +59,8 @@ content:
     marginTop: 10
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/353970629.hd.mp4?s=1d4881eab64d04937ae407e97e1d9f5010f422d8&profile_id=175
@@ -74,8 +74,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - caption: The retail fixture that brings part of the digital world into the store.
     image: /img/9794e60b7b6160b3cdf6ec727781aafc.jpg
@@ -83,8 +83,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: ''
     width: 47
@@ -96,8 +96,8 @@ content:
     marginTop: -15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - image: /img/c16cad212e2faeddcb486ad3dcc0d7e2.jpg
@@ -105,8 +105,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 33
   - image: /img/89cc32f552f626abf45611d9ee92f562.jpg
@@ -114,8 +114,8 @@ content:
     marginTop: -10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - image: /img/category_page_banner_-_desktop.jpg
@@ -123,8 +123,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 100
 credits:
@@ -135,7 +135,7 @@ credits:
       Concept Development, Creative Direction, Art Direction, 3D and
       Photography, Animation, Web Development, Retail Fixture Concept & Design
 opengraph:
-  ogDescription: The experience invites you to step into multiple narratively connected three-dimensional photographs, that display the evening of a regular house party - familiar to all of us. The 80s Youth Archive photographs are centre stage of the Fred Perry x Raf Simons AW19 collection. \LThey are also the main source of reference for this season’s interactive lookbook which pays homage to the energy and feel of the era.
-  ogImage: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
-  ogTitle: Interactive lookbook for Fred Perry x Raf Simons
+  description: The experience invites you to step into multiple narratively connected three-dimensional photographs, that display the evening of a regular house party - familiar to all of us. The 80s Youth Archive photographs are centre stage of the Fred Perry x Raf Simons AW19 collection. \LThey are also the main source of reference for this season’s interactive lookbook which pays homage to the energy and feel of the era.
+  image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg
+  title: Interactive lookbook for Fred Perry x Raf Simons
 ---

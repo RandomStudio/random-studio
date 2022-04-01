@@ -16,13 +16,13 @@ thumbnail:
   marginTop: -25
   width: 40
 content:
-  - caption: ''
+  - 
     marginLeft: 10
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/252337735.hd.mp4?s=3ae79dcd729aeac2fd09d982c4ce7cf8dba36b0c&profile_id=175
@@ -39,16 +39,16 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - image: /img/shot_01_nb.jpeg
     marginLeft: 0
     marginTop: 2
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 41
   - image: /img/shot_02_NB.jpeg
@@ -56,8 +56,8 @@ content:
     marginTop: -20
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 45
   - image: /img/shot_03_NB.jpeg
@@ -65,8 +65,8 @@ content:
     marginTop: -11
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 34
   - caption: >-
@@ -92,15 +92,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 15
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/244662870.hd.mp4?s=e9d08719864362b32305caddd70012d2c6dbf4ea&profile_id=175
@@ -112,8 +112,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: ''
 credits:

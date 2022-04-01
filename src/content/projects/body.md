@@ -12,8 +12,8 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/314018273.hd.mp4?s=7aa13dd86f5cd714dd1527d479381739663e8d33&profile_id=174
@@ -27,15 +27,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 0
     marginTop: 4
     video:
       autoplay: true
-      hasControls: false
-      isMuted: false
+      has_controls: false
+      is_muted: false
       loops: true
       url: >-
         https://player.vimeo.com/external/391187386.sd.mp4?s=d8f3ceade8690ea994de9694d4301e0f1c6affeb&profile_id=164
@@ -45,8 +45,8 @@ content:
     marginTop: -10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - image: /img/cinekid4.jpg
@@ -54,8 +54,8 @@ content:
     marginTop: -21
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 30
   - caption: >-
@@ -74,15 +74,15 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - marginLeft: 45
     marginTop: 0
     video:
       autoplay: true
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/391188886.sd.mp4?s=168c6080cf66d3d7713f0755196c45c367ebe90e&profile_id=164
@@ -92,8 +92,8 @@ content:
     marginTop: -8
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 35
   - image: /img/cinekid11.jpg
@@ -101,8 +101,8 @@ content:
     marginTop: -15
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 40
   - caption: >-
@@ -116,8 +116,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - caption: >-
       Read more about how this project was conceived technically in [this article](https://medium.com/random-studio/body-using-your-self-as-a-search-tool-a5d8480988b9) on [Medium](https://medium.com/random-studio).
@@ -125,8 +125,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
 credits:
   - key: 'For:'
@@ -136,9 +136,9 @@ credits:
   - key: 'With:'
     value: Philip Schuette
 opengraph:
-  ogDescription: >-
+  description: >-
     BODY presented the opportunity to play with hyper-responsive code that
     allows for novel and physical interactions between people and algorithms.
-  ogImage: /img/cinekid12.jpg
-  ogTitle: BODY with Philip Schuette
+  image: /img/cinekid12.jpg
+  title: BODY with Philip Schuette
 ---

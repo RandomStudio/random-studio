@@ -62,23 +62,19 @@ projects:
     project: Nike Move to Zero House of Innovation Takeover
     caption: Nike Move to Zero House of Innovation takeover
   - caption: |-
-      Kinetic architecture <br>
+      Kinetic architecture \n
       for A/D/O by MINI
-    project: Kinetic architecture <br> for A/D/O by MINI
+    project: Kinetic architecture \n for A/D/O by MINI
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
       marginLeft: 58
       marginTop: -5
       width: 37
-  - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
-    project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+  - caption: A store takeover at Place Vendôme \nfor the launch of Chanel's new watch
+    project: A store takeover at Place Vendôme \nfor the launch of Chanel's new watch
     thumbnail:
       image: /img/thumbnail_chanel-1-.png
       marginLeft: 23
       marginTop: 0
       width: 52
-articles: null
-address: '> Gillis van Ledenberchstraat 112<br />1052 VK Amsterdam<br />The Netherlands<br />[Directions](https://goo.gl/maps/2sJnCcLummnmvrVb9)'
-phone: +31 20 779 7735
-email: hello@random.studio
 ---

@@ -52,45 +52,10 @@
       display: none;
     }
   }
-  .emailDesktop {
-    display: inline-block !important;
-  }
-  .emailMobile {
-    display: none !important;
-  }
 }
 
-.name {
-  opacity: 0.5;
-}
-
-.address {
-  display: block;
-  min-width: 300px;
-  padding-top: 1.375em;
-  padding-bottom: 1.375em;
-
-  :global(a) {
-    display: inline-block;
-  }
-}
-
-.location {
-  margin-bottom: 1.375em;
-
-  :global(a) {
-    text-decoration: underline;
-  }
-}
-
-.phone::after,
 .social::after {
   display: none;
-}
-
-.emailDesktop,
-.emailValue {
-  display: none !important;
 }
 
 .column {

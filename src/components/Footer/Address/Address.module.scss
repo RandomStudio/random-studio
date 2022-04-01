@@ -1,0 +1,26 @@
+.address {
+  display: block;
+  min-width: 300px;
+  padding-top: 1.375em;
+  padding-bottom: 1.375em;
+
+  :global(a) {
+    display: inline-block;
+  }
+}
+
+.name {
+  opacity: 0.5;
+}
+
+.location {
+  margin-bottom: 1.375em;
+
+  :global(a) {
+    text-decoration: underline;
+  }
+}
+
+.phone::after {
+  display: none;
+}

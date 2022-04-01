@@ -9,23 +9,23 @@ priority: 1
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/485605110.hd.mp4?s=6a45ff575297c3c262533396ba6f100daa4bfb4f&profile_id=175
     marginTop: 0
     marginLeft: 0
     image: ''
     alt: Nike kids pod immersive installation at House of Innovation in Paris
     width: 101
-    caption: ''
+    
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption: 'The Kid’s Pod is a game station with a difference: you are the
@@ -35,10 +35,10 @@ content:
       end: all you need to do is step in front of the screen and explore.'
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 9
     image: /img/RND04373.jpg
@@ -46,10 +46,10 @@ content:
     width: 37
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 8
     marginLeft: 40
     image: /img/RND04908.jpg
@@ -57,10 +57,10 @@ content:
     width: 60
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption:
@@ -71,10 +71,10 @@ content:
       you play, the more you learn.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     image: /img/RND05020.jpg
@@ -82,10 +82,10 @@ content:
     width: 50
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -12
     marginLeft: 66
     image: /img/RND04762.ARW.jpg
@@ -93,10 +93,10 @@ content:
     width: 34
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -15
     marginLeft: 15
     image: /img/RND05036.jpg
@@ -104,10 +104,10 @@ content:
     width: 41
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 17
     marginLeft: 26
     image: /img/RND04938.ARW.jpg
@@ -122,9 +122,9 @@ credits:
       Design, Prototyping, Software Development, Installation Engineering,
       Research
 opengraph:
-  ogTitle: Your body as a controller in Nike's House of Innovation Paris
-  ogImage: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
-  ogDescription:
+  title: Your body as a controller in Nike's House of Innovation Paris
+  image: /img/20033bd_nike_hoi_paris_4697_pr02_original.jpg
+  description:
     Nike opened the doors of its third House of Innovation, in Paris,
     July 2020. A store unlike any other, it exists to celebrate and challenge
     the future of sport. We created a long term immersive installation for the

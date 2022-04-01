@@ -13,20 +13,20 @@ intro: >-
 content:
   - video:
       autoplay: true
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/565538673.hd.mp4?s=40130cc9de82dd4aeef93737e9656d87e18309f5&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 0
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -43,10 +43,10 @@ content:
       look into a sustainable cycle of production in action.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -54,10 +54,10 @@ content:
     width: 50
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -8
     marginLeft: 57
     zIndex: 0
@@ -71,10 +71,10 @@ content:
     width: 43
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -91,10 +91,10 @@ content:
       infrastructure to be reusable for future campaigns.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 15
     zIndex: 0
@@ -102,10 +102,10 @@ content:
     width: 70
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 9
     marginLeft: 9
     zIndex: 0
@@ -127,10 +127,10 @@ content:
     width: 34
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -55.5
     marginLeft: 57
     zIndex: 0
@@ -144,10 +144,10 @@ content:
     width: 43
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 6
     marginLeft: 57
     zIndex: 0
@@ -165,10 +165,10 @@ content:
     width: 28
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -184,10 +184,10 @@ content:
       inspired to play a role in sustainability too.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -195,10 +195,10 @@ content:
     width: 55
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -19
     marginLeft: 64
     zIndex: 0
@@ -220,8 +220,8 @@ credits:
   - key: 'Video:'
     value: '[Dixhuit](https://dix-huit.com/)'
 opengraph:
-  ogTitle: Nike Move to Zero House of Innovation Takeover
-  ogDescription: >
+  title: Nike Move to Zero House of Innovation Takeover
+  description: >
     We teamed up with Nike to help translate their Move to Zero campaign into a
     physical environment for a store takeover at the House of Innovation in
     Paris. The brand’s longterm journey towards zero carbon and waste is a
@@ -230,5 +230,5 @@ opengraph:
 
 
     We were excited to tackle the challenge of transforming the website into a dynamic physical space, full of tangible, moving parts; one that both brings customers into the brand’s sustainability story, but also informs, educates and inspires them to become part of the journey by getting involved in caring for their own products.
-  ogImage: /img/HOI PAR002_SU21_MTZ_02.jpg
+  image: /img/HOI PAR002_SU21_MTZ_02.jpg
 ---

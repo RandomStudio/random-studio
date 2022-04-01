@@ -9,19 +9,19 @@ intro: Like many studios, we’re based in the city. Located in a courtyard with
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/417218625.hd.mp4?s=5c5170af31e4fa52a06c0273e409d89fa20f6abd&profile_id=175
     marginTop: 0
     marginLeft: 0
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption:
@@ -32,40 +32,40 @@ content:
       light that we were missing out on.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     image: /img/new-random_licht_stills_5.jpg
     width: 55
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -10
     marginLeft: 65
     image: /img/new-random_licht_stills_3.jpg
     width: 35
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/440247305.hd.mp4?s=2b8ab9994bb5c943f41f345a270595f9f5f9d064&profile_id=175
     marginTop: 10
     marginLeft: 15
     width: 70
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption:
@@ -79,19 +79,19 @@ content:
       energy of the sun.'
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/440254376.hd.mp4?s=081e98c46c8716bf1ffe723b25202518f7e4ffcd&profile_id=175
     marginTop: 0
     marginLeft: 0
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     caption: >-
@@ -106,20 +106,20 @@ content:
       A programmable space like this creates a dialogue with the people that occupy it. Rather than isolating us from the physical world, it infuses real spaces with tech to make us aware of our surroundings.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     image: /img/random_licht_stills_4 (1).jpg
     width: 60
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: -11
     marginLeft: 63
     image: /img/random_licht_stills_2 (1).jpg
@@ -136,10 +136,10 @@ credits:
     value: Creative Direction, Art Direction, Experience Design, Creative
       Technology, Software Development
 opengraph:
-  ogTitle: A studio sun system with light-artist Arnout Meijer
-  ogDescription:
+  title: A studio sun system with light-artist Arnout Meijer
+  description:
     Collaborating with light artist Arnout Meijer the ambient system
     we created mimics the behaviour of the sun travelling overhead in our
     studio.
-  ogImage: /img/random_licht_stills_4 (1).jpg
+  image: /img/random_licht_stills_4 (1).jpg
 ---

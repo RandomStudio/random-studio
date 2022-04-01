@@ -10,20 +10,20 @@ intro: We’ve been thinking about the future of in-store experiences. What if y
 content:
   - video:
       autoplay: true
-      hasControls: true
+      has_controls: true
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
       url: https://player.vimeo.com/external/487156362.hd.mp4?s=fbd6cd1e6d91af3267cd7972bf43ba975c41b808&profile_id=175
     marginTop: 0
     marginLeft: 0
     zIndex: 0
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -35,10 +35,10 @@ content:
       remember your experience and share it online.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -46,10 +46,10 @@ content:
     width: 60
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 13
     marginLeft: 52
     zIndex: 0
@@ -57,10 +57,10 @@ content:
     width: 48
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 12
     marginLeft: 9
     zIndex: 0
@@ -68,10 +68,10 @@ content:
     width: 55
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 0
     zIndex: 0
@@ -85,10 +85,10 @@ content:
       memorable customer journey.
   - video:
       autoplay: false
-      hasControls: false
+      has_controls: false
       loops: true
-      isMuted: true
-      isAlwaysMuted: false
+      is_muted: true
+      is_always_muted: false
     marginTop: 0
     marginLeft: 14
     zIndex: 0
@@ -112,5 +112,5 @@ credits:
       Software Development,
       Installation Engineering
 opengraph:
-  ogImage: /img/RND05466.jpg
+  image: /img/RND05466.jpg
 ---

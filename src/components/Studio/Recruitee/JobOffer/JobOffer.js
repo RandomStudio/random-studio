@@ -15,17 +15,12 @@ const JobOffer = ({
           className={styles.closeButton}
           onClick={closeOpenOffer}
           type="button"
-          // eslint-disable-next-line react/jsx-no-literals
         >
           &times;
         </button>
       </header>
 
-      <ReactMarkdown
-        className={styles.description}
-        escapeHtml={false}
-        source={jobDescription}
-      />
+      <ReactMarkdown className={styles.description}>{jobDescription}</ReactMarkdown>
       <OutboundLink
         className={styles.applyButton}
         eventLabel={`Apply for ${jobTitle}`}

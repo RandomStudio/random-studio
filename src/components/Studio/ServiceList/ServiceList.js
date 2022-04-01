@@ -1,7 +1,7 @@
+import { Image } from 'react-datocms';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ServiceList.module.scss';
-import Image from '../../Image/Image';
 
 const imageSizes = [
   '(max-width: 960px) 40vw, 80vw',
@@ -9,9 +9,9 @@ const imageSizes = [
   '75vw',
 ];
 
-const ServiceList = ({ headerTitle, services }) => (
+const ServiceList = ({ services }) => (
   <>
-    {headerTitle && <h2 className={styles.header}>{headerTitle}</h2>}
+    <h2 className={styles.header}>{'Our Areas of Expertise'}</h2>
     <section className={styles.wrapper}>
       {services.map(({ title, copy, image }, index) => (
         <div className={styles.serviceBlock} key={`${title}-${image.id}`}>
@@ -23,7 +23,7 @@ const ServiceList = ({ headerTitle, services }) => (
             alt={title}
             className={styles.imageWrapper}
             sizes={imageSizes[index]}
-            src={image}
+            data={image.imageData}
           />
         </div>
       ))}

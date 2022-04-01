@@ -4,24 +4,21 @@ import Layout from '../../components/Layout/Layout';
 import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
 import ServiceList from '../../components/Studio/ServiceList/ServiceList';
 import Head from '../../components/Head/Head';
-import Footer from '../../components/Footer/Footer';
 import Recruitee from '../../components/Studio/Recruitee/Recruitee';
 import Carousel from '../../components/Carousel/Carousel';
 import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
 import supportsIntersectionObserver from '../../utils/supportsIntersectionObserver';
+import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
+import getDataFromBackend from '../../api/getDataFromBackend';
 
 const mediumBreakpoint = 960; // BP of 60rem
 
 const Studio = ({
-  address,
-  phone,
-  slug,
   title,
-  introBlock,
+  introBlocks,
   services,
   skillset,
-  email,
   jobOpenings,
   studioImpression,
 }) => {
@@ -61,47 +58,38 @@ const Studio = ({
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${
-          width > mediumBreakpoint ? themeClass : ''
-        }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
+          }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
-        <Head pathName={slug} title="Studio" />
-        <IntroBlock intros={introBlock} ref={introRef} title={title} />
+        <Head title="Studio" />
+        <IntroBlock intros={introBlocks} ref={introRef} title={title} />
 
-        <ServiceList headerTitle={services.title} services={services.list} />
+        <ServiceList services={services} />
 
-        <SkillBlock email={email} skillset={skillset} />
+        <SkillBlock skillset={skillset} />
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee jobOpenings={jobOpenings} />
           <Carousel
-            carousel={studioImpression.images}
+            carousel={studioImpression}
             className={styles.carouselWrapper}
-            showIndicator={studioImpression.showIndicator}
-            title={studioImpression.title}
+            showIndicator
+            title="Studio Impressions"
           />
         </div>
-
-        <Footer address={address} email={email} phone={phone} />
       </div>
     </Layout>
   );
 };
 
 export const getStaticProps = async () => {
-  const { getContentFromFile } = require('../../utils/contentUtils');
-
-  const { address, email, phone } = getContentFromFile('index');
-  const studio = getContentFromFile('studio');
+  const { page } = await getDataFromBackend({
+    query: STUDIO_PAGE_QUERY,
+  });
 
   return {
-    props: {
-      ...studio,
-      address,
-      email,
-      phone,
-    },
+    props: page,
   };
 };
 

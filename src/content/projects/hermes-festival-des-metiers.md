@@ -18,8 +18,8 @@ content:
     marginTop: 0
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/183997213.hd.mp4?s=6f6be4e352ae26aa0014e6f85b9f199ae723dad7&profile_id=119
@@ -42,8 +42,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
   - caption: >-
       Magnifying goggles traditionally used by the specialized metalworkers
@@ -54,8 +54,8 @@ content:
     marginTop: 0
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 40
   - caption: >-
@@ -66,8 +66,8 @@ content:
     marginTop: -17
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206084610.hd.mp4?s=f23ed0b5b9800fbdfd0ce7ba7ddbad0a51b05cf1&profile_id=174
@@ -77,8 +77,8 @@ content:
     marginTop: 10
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 60
   - caption: >-
@@ -89,8 +89,8 @@ content:
     marginTop: 12
     video:
       autoplay: true
-      hasControls: true
-      isMuted: true
+      has_controls: true
+      is_muted: true
       loops: true
       url: >-
         https://player.vimeo.com/external/206100743.hd.mp4?s=c8d52816a0f6d2352864ecabb2b02947aeaa56f2&profile_id=119
@@ -103,8 +103,8 @@ content:
     marginTop: -12
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 38
   - caption: >-
@@ -115,8 +115,8 @@ content:
     marginTop: -21
     video:
       autoplay: false
-      hasControls: false
-      isMuted: true
+      has_controls: false
+      is_muted: true
       loops: true
     width: 51
 credits:
