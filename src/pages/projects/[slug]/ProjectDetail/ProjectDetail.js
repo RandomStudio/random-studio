@@ -5,7 +5,14 @@ import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
 
-const ProjectDetail = ({ title, intro, content, details, relatedProjects, relatedProjectsTitle }) => {
+const ProjectDetail = ({
+  title,
+  intro,
+  content,
+  details,
+  relatedProjects,
+  relatedProjectsTitle,
+}) => {
   return (
     <div className={styles.project}>
       <h1 className={styles.title}>
@@ -17,8 +24,11 @@ const ProjectDetail = ({ title, intro, content, details, relatedProjects, relate
       {content.map(block => (
         <ContentBlock {...block} key={block.id} />
       ))}
-      {relatedProjects && (
-        <RelatedProjectSlider relatedProjects={relatedProjects} relatedProjectsTitle={relatedProjectsTitle} />
+      {relatedProjects && relatedProjects.length > 0 && (
+        <RelatedProjectSlider
+          relatedProjects={relatedProjects}
+          relatedProjectsTitle={relatedProjectsTitle}
+        />
       )}
       <dl aria-label="Project Details" className={styles.credits}>
         {Object.entries(details ?? {}).map(([key, value]) => (
