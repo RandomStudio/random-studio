@@ -11,7 +11,8 @@ const ProjectList = ({ hasFilters, intro, limit, projects }) => {
   const projectFilters = projects
     .map(({ tags }) => tags)
     .filter(Boolean)
-    .flat();
+    .flat()
+    .map(tag => tag.toLowerCase());
   // Was previously constructed dynamically but because the filterList has to be ordered in a certain way we have to hardcode it
   // const filterList = [...new Set([...projectFilters])];
 
@@ -23,7 +24,7 @@ const ProjectList = ({ hasFilters, intro, limit, projects }) => {
     () =>
       projects.filter(
         ({ featuredImage, featuredVideo, tags }) =>
-          (!activeTag || tags?.includes(activeTag)) &&
+          (!activeTag || tags?.includes(activeTag.toLowerCase())) &&
           (!!featuredVideo || !!featuredImage),
       ),
     [activeTag, projects],

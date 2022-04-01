@@ -31,7 +31,7 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
   const filtersWithEntries = LOWERCASE_PROJECT_FILTESR.filter(
     filter => (filterCount?.[filter] ?? 0) > 0,
   );
-
+  console.log(filterCount)
   return (
     <>
       <ul

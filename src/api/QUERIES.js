@@ -33,6 +33,7 @@ ${THUMBNAIL_FRAGMENT}
 query {
   projects: allProjects {
     title
+    isVisible
     slug
     tags
     ...Thumbnail

@@ -19,7 +19,12 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      projects,
+      projects: projects
+        .filter(({ isVisible }) => isVisible === true || isVisible === null)
+        .map(project => ({
+          ...project,
+          tags: project.tags.map(tag => tag.toLowerCase()),
+        })),
     },
   };
 };
