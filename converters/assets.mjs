@@ -4,7 +4,7 @@ import { parse } from 'path';
 const log = (...string) =>
   process.stdout.write(`Assets:: ${string.join(', ')}\n`);
 
-const client = new SiteClient('d4ade14e68bc9b263bfdfcc85cf2f5');
+const client = new SiteClient(process.env.KEY);
 
 let uploads;
 

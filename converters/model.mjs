@@ -2,7 +2,7 @@ import { SiteClient } from 'datocms-client';
 
 const log = (...string) => process.stdout.write(`Models:: ${string.join(', ')}\n`);
 
-const client = new SiteClient('d4ade14e68bc9b263bfdfcc85cf2f5');
+const client = new SiteClient(process.env.KEY);
 
 export const eraseExistingItems = async models => {
   const items = await client.items.all({ filter: { type: models.join(',') } }, { allPages: true });

@@ -4,7 +4,7 @@ import { basename } from 'path';
 import { uploadAsset } from './assets.mjs';
 import { getContentFromFile } from './filesystem.mjs';
 
-const IMAGE_BASE_PATH = '../public/img';
+const IMAGE_BASE_PATH = '../cms/img';
 
 const getAdditionalInfo = async () => {
   const indexPage = await getContentFromFile('../src/content', 'index.md');

@@ -4,7 +4,7 @@ import { eraseExistingItems, uploadItem } from './model.mjs';
 import { getAllFilenames, getContentFromFile } from './filesystem.mjs';
 import { transformProject } from './transformer.mjs';
 
-const ERASE_ALL_DATA_BEFORE_CONVERSION = true;
+const ERASE_ALL_DATA_BEFORE_CONVERSION = false;
 
 const PATHS = {
   project: '../src/content/projects',
