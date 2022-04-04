@@ -3,14 +3,11 @@ import ReactMarkdown from 'react-markdown';
 import { OutboundLink } from 'react-ga';
 import styles from './JobOffer.module.scss';
 
-const JobOffer = ({
-  closeOpenOffer,
-  opening: { jobTitle, jobDescription, jobURL },
-}) => (
+const JobOffer = ({ closeOpenOffer, opening: { title, description, url } }) => (
   <section className={styles.jobOffer}>
     <div>
       <header>
-        <strong>{jobTitle}</strong>
+        <strong>{title}</strong>
         <button
           className={styles.closeButton}
           onClick={closeOpenOffer}
@@ -19,13 +16,14 @@ const JobOffer = ({
           &times;
         </button>
       </header>
-
-      <ReactMarkdown className={styles.description}>{jobDescription}</ReactMarkdown>
+      <ReactMarkdown className={styles.description}>
+        {description}
+      </ReactMarkdown>
       <OutboundLink
         className={styles.applyButton}
-        eventLabel={`Apply for ${jobTitle}`}
+        eventLabel={`Apply for ${title}`}
         target="_blank"
-        to={jobURL}
+        to={url}
       >
         {'Apply for this position'}
       </OutboundLink>

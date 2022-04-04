@@ -125,6 +125,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
         ...ImageDataObject
       }
     }
+    skillset
     services {
       title
       copy
@@ -134,6 +135,13 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
     }
     studioImpression {
       ...ImageDataObject
+    }
+    jobOpenings {
+      title
+      description(markdown: false)
+      url
+      id
+      _publishedAt
     }
   }
 }`;

@@ -55,6 +55,9 @@
 }
 
 .role {
+  appearance: none;
+  border: none;
+  text-align: left;
   transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   background: linear-gradient(transparent, transparent),
     linear-gradient(transparent, transparent), linear-gradient(black, black);
@@ -63,6 +66,7 @@
   background-position: 0 87%, 100% 87%, 0 100%;
   text-decoration: none;
   line-height: 52px;
+  margin-bottom: 0.5em;
 
   &:hover {
     opacity: 0.5;
