@@ -46,9 +46,11 @@ const Project = ({
       <div
         className={styles.title}
         style={
-          {
-            // marginLeft: !thumbnail.marginLeft && '1.4rem',
-          }
+          !left || left < 1
+            ? {}
+            : {
+              marginLeft: '0',
+            }
         }
       >
         <ReactMarkdown>
