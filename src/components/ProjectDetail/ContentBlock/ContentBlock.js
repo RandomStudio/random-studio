@@ -16,7 +16,6 @@ const BLOCK_TYPES = {
 
 const ContentBlock = ({
   __typename,
-  url,
   width,
   loops,
   isMuted,
@@ -31,6 +30,7 @@ const ContentBlock = ({
   marginLeft,
   marginTop,
   text,
+  video,
 }) => (
   <div
     className={styles.item}
@@ -61,7 +61,7 @@ const ContentBlock = ({
           isAlwaysMuted={isAlwaysMuted}
           isMuted={isMuted}
           loops={loops}
-          url={url}
+          video={video}
           width={width}
         />
         <Caption caption={caption} marginLeft={marginLeft} />

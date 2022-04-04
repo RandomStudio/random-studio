@@ -27,8 +27,8 @@ const VideoWithControls = ({
   hasControls,
   isMuted: isStartingMuted,
   loops,
-  url,
   isAlwaysMuted,
+  video,
 }) => {
   const videoRef = useRef(null);
 
@@ -81,7 +81,7 @@ const VideoWithControls = ({
         isMuted={isAlwaysMuted || isCurrentlyMuted}
         loops={loops}
         ref={videoRef}
-        videoSrc={url}
+        video={video}
       />
       {hasControls &&
         (hasPlayed ? (
@@ -108,7 +108,7 @@ VideoWithControls.propTypes = {
   isAlwaysMuted: PropTypes.bool,
   isMuted: PropTypes.bool,
   loops: PropTypes.bool,
-  url: PropTypes.string.isRequired,
+  video: PropTypes.shape({}).isRequired,
 };
 
 VideoWithControls.defaultProps = {

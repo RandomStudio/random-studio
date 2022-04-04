@@ -1,5 +1,6 @@
 import React from 'react';
 import getDataFromBackend from '../api/getDataFromBackend';
+import { addVimeoVideoDataToObject } from '../api/getVideoData';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
@@ -12,14 +13,14 @@ const Home = ({
   intro,
   layout,
   projects,
-  videoUrl,
+  video,
 }) => (
   <Layout layout={layout}>
     <Head />
     <HomeVideo
       collaborationUrl={collaborationUrl}
       collaborator={collaborator}
-      videoUrl={videoUrl}
+      video={video}
     />
     <ProjectList intro={intro} limit={projects.length} projects={projects} />
   </Layout>
@@ -33,7 +34,13 @@ export const getStaticProps = async () => {
   return {
     props: {
       ...page,
-      projects,
+      video: await addVimeoVideoDataToObject(page.video),
+      projects: await Promise.all(
+        projects.map(async project => ({
+          ...project,
+          featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
+        })),
+      ),
     },
   };
 };

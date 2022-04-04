@@ -19,6 +19,6 @@ module.exports = withBundleAnalyzer({
         destination: '/nikelab-tech-pack',
         permanent: false,
       },
-    ],
+    ];
   },
 });

@@ -177,7 +177,7 @@ content:
         url: https://player.vimeo.com/external/408771787.sd.mp4?s=143d3e1861021ef114d4787c044a1076e31837f4&profile_id=165
       - type: video
         is_muted: true
-        url: https://vimeo.com/408771899/323303f841
+        url: https://player.vimeo.com/external/408771899.sd.mp4?s=143d3e1861021ef114d4787c044a1076e31837f4&profile_id=165
     width: 35
     zIndex: 1
     caption: Vignettes

@@ -1,9 +1,9 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './LazyVideo.module.scss';
 
 const LazyVideo = React.forwardRef(
   (
-    { alt, className, hasControls, videoSrc, loops, isMuted, autoPlays },
+    { alt, className, hasControls, video, loops, isMuted, autoPlays },
     parentRef,
   ) => {
     const localRef = useRef();
@@ -53,7 +53,17 @@ const LazyVideo = React.forwardRef(
       };
     }, [videoRef, autoPlays]);
 
+    const { sources, blur, height, width } = video;
+
     /* eslint-disable jsx-a11y/media-has-caption */
+    const sourceElements = (
+      <>
+        {/*<source src={sources?.hls} type="application/x-mpegurl" />*/}
+        <source src={sources?.hd1080} type="video/mp4" />
+        <source src={sources?.hd720} type="video/mp4" />
+      </>
+    );
+
     const videoElement = (
       <>
         <video
@@ -62,17 +72,21 @@ const LazyVideo = React.forwardRef(
           muted={isMuted}
           onPlaying={() => setIsLoaded(true)}
           playsInline
+          poster={`data:image/jpeg;base64,${blur}`}
           ref={videoRef}
-          src={intersected ? videoSrc : ''}
-        />
+        >
+          {intersected ? sourceElements : null}
+        </video>
         <noscript>
           <video
             controls={hasControls}
             loop={loops}
             muted={isMuted}
             playsInline
-            src={videoSrc}
-          />
+            poster={`data:image/jpeg;base64,${blur}`}
+          >
+            {sourceElements}
+          </video>
         </noscript>
       </>
     );
@@ -84,8 +98,16 @@ const LazyVideo = React.forwardRef(
         className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
           }
         ${hasJs ? styles.hasJs : ''}`}
+        style={{
+          aspectRatio: `${width} / ${height}`,
+        }}
       >
-        <img alt={alt} aria-hidden className={styles.placeholder} />
+        <img
+          alt={alt}
+          aria-hidden
+          className={styles.placeholder}
+          src={`data:image/jpeg;base64,${blur}`}
+        />
         {videoElement}
       </div>
     );

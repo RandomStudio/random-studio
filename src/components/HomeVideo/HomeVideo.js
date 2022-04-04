@@ -2,7 +2,7 @@ import React from 'react';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import styles from './HomeVideo.module.scss';
 
-const HomeVideo = ({ collaborator, collaborationUrl, videoUrl }) => {
+const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
   return (
     <div className={styles.video}>
       <VideoWithControls
@@ -11,7 +11,7 @@ const HomeVideo = ({ collaborator, collaborationUrl, videoUrl }) => {
         hasControls={false}
         isMuted
         loops
-        url={videoUrl}
+        video={video}
       />
       {collaborator && (
         <div className={styles.featuredAuthor}>

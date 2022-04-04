@@ -4,6 +4,7 @@ import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
 import { PROJECTS_LIST_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
+import { addVimeoVideoDataToObject } from '../../api/getVideoData';
 
 const Projects = ({ projects }) => (
   <Layout>
@@ -19,12 +20,13 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      projects: projects
-        .filter(({ isVisible }) => isVisible === true || isVisible === null)
-        .map(project => ({
+      projects: await Promise.all(
+        projects.map(async project => ({
           ...project,
+          featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
           tags: project.tags.map(tag => tag.toLowerCase()),
         })),
+      ),
     },
   };
 };

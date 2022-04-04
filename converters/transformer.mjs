@@ -3,6 +3,7 @@ import { buildModularBlock } from 'datocms-client';
 import { basename } from 'path';
 import { uploadAsset } from './assets.mjs';
 import { getContentFromFile } from './filesystem.mjs';
+import getVimeoDetails from './video.mjs';
 
 const IMAGE_BASE_PATH = '../cms/img';
 
@@ -58,7 +59,6 @@ const transformContentBlock = async ({
 
     return {
       itemType: '1641762',
-      url,
       hasControls,
       loops,
       autoplay,
@@ -68,6 +68,7 @@ const transformContentBlock = async ({
       marginLeft: Math.round(marginLeft),
       marginTop: Math.round(marginTop),
       width: Math.round(width),
+      video: await getVimeoDetails(url),
     };
   }
 
@@ -165,7 +166,7 @@ export const transformProject = async (filename, content) => {
       thumbnail?.image && !thumbnail?.video
         ? await uploadAsset(IMAGE_BASE_PATH, basename(thumbnail?.image))
         : null,
-    featuredVideo: thumbnail?.video,
+    featuredVideo: await getVimeoDetails(thumbnail?.video),
     isHomepage,
     isVisible,
     details: credits

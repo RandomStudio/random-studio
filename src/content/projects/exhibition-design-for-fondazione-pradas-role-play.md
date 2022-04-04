@@ -9,7 +9,7 @@ thumbnail:
   width: 36
 content:
   - video: 
-      url: https://player.vimeo.com/progressive_redirect/playback/686654010/rendition/1080p?loc=external&signature=04b53b08954ca16ca37686f1e61b5407c211f7eae9c7bb4dbefda26cbcc2f370 
+      url: https://player.vimeo.com/external/686654010.hd.mp4?s=8ed04ae1552ce15c4de6f09b14949d02655f034b&profile_id=175
       marginLeft: 0
       marginTop: 0
       width: 100

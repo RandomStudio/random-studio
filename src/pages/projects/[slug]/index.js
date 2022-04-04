@@ -8,6 +8,7 @@ import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
 import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
+import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
 
 const Project = ({
   allProjects,
@@ -58,7 +59,10 @@ export const getStaticProps = async ({ params }) => {
   });
 
   return {
-    props: project,
+    props: {
+      ...project,
+      content: await addAdditionalInfoToBlocks(project.content),
+    },
   };
 };
 

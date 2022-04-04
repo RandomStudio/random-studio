@@ -32,7 +32,7 @@ const Project = ({
             hasControls={false}
             isMuted
             loops
-            url={featuredVideo}
+            video={featuredVideo}
           />
         ) : (
           <Image

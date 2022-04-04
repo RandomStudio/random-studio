@@ -7,7 +7,13 @@ export const INDEX_PAGE_QUERY = `
     page: indexPage {
       intro
       middle(markdown: true)
-      videoUrl
+      video {
+        height
+        providerUid
+        thumbnailUrl
+        url
+        width
+      }
       collaborator
       collaborationUrl
     }
@@ -31,9 +37,8 @@ export const PROJECTS_LIST_QUERY = `
 ${THUMBNAIL_FRAGMENT}
 
 query {
-  projects: allProjects(first: "100", orderBy: position_ASC) {
+  projects: allProjects(first: "100", orderBy: position_ASC, filter: {isVisible: {eq: "true"}}) {
     title
-    isVisible
     slug
     tags
     ...Thumbnail
@@ -66,7 +71,6 @@ export const SINGLE_PROJECT_QUERY = `
           id
           marginTop
           marginLeft
-          url
           width
           loops
           isMuted
@@ -74,6 +78,13 @@ export const SINGLE_PROJECT_QUERY = `
           hasControls
           caption
           autoplay
+          video {
+            height
+            providerUid
+            thumbnailUrl
+            url
+            width
+          }
         }
         ... on TextBlockRecord {
           id

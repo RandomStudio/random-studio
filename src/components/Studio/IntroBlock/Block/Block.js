@@ -88,7 +88,7 @@ const Block = ({ image, index, copy, title, video }) => {
               className={styles.fluidVideo}
               isMuted
               loops
-              videoSrc={video}
+              video={video}
             />
           ) : (
             <Image

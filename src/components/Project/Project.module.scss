@@ -31,6 +31,9 @@
   width: 100%;
   background: var(--off-white);
 
+  :global(div) {
+    max-width: none !important;
+  }
   & video {
     width: 100%;
     height: 100%;
