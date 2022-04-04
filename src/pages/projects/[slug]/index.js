@@ -28,7 +28,7 @@ const Project = ({
   const SEOImage = (opengraph ? opengraph.ogImage : null) || undefined;
 
   return (
-    <Layout className={styles.layout}>
+    <Layout className={styles.layout} hasFooter={false}>
       <Head
         description={intro}
         image={SEOImage}

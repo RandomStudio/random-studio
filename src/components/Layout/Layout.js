@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 
 const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
-const Layout = ({ children, className, layout }) => {
+const Layout = ({ children, className, hasFooter, layout }) => {
   const toastVisiblity = useToastVisibility();
   const [randomStyle, setRandomStyle] = useState({});
 
@@ -34,12 +34,16 @@ const Layout = ({ children, className, layout }) => {
       <Navigation layout={layout} />
       <div className={`${styles.container} ${className}`} id="main-content">
         {children}
-        <Footer />
+        {hasFooter && <Footer />}
       </div>
       <div className={styles.backgroundTransition} style={randomStyle} />
       <Toast copy="Copied to clipboard" />
     </AppProvider>
   );
+};
+
+Layout.defaultProps = {
+  hasFooter: true,
 };
 
 export default Layout;

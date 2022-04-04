@@ -143,6 +143,10 @@
     padding: 128px 64px 0;
     display: grid;
     grid-template-columns: min-content 1fr;
+
+    :global(dt) {
+      white-space: nowrap;
+    }
   }
 }
 

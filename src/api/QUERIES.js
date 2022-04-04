@@ -1,4 +1,4 @@
-import { IMAGE_DATA_OBJECT_FRAGMENT, RELATED_PROJECT_THUMBNAIL_FRAGMENT, THUMBNAIL_FRAGMENT } from './FRAGMENTS';
+import { IMAGE_DATA_OBJECT_FRAGMENT, THUMBNAIL_FRAGMENT } from './FRAGMENTS';
 
 export const INDEX_PAGE_QUERY = `
   ${THUMBNAIL_FRAGMENT}
@@ -21,7 +21,7 @@ export const INDEX_PAGE_QUERY = `
 
 export const PROJECT_PATHS_QUERY = `
 {
-  projects: allProjects(orderBy: position_ASC) {
+  projects: allProjects(first: "100", orderBy: position_ASC) {
     slug
   }
 }
@@ -31,7 +31,7 @@ export const PROJECTS_LIST_QUERY = `
 ${THUMBNAIL_FRAGMENT}
 
 query {
-  projects: allProjects {
+  projects: allProjects(first: "100", orderBy: position_ASC) {
     title
     isVisible
     slug

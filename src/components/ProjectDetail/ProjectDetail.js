@@ -34,7 +34,7 @@ const ProjectDetail = ({
       <dl aria-label="Project Details" className={styles.credits}>
         {Object.entries(details ?? {})?.map(([key, value]) => (
           <React.Fragment key={`${key}-${value}`}>
-            <dt>{key}:</dt>
+            <dt>{`${key}:`}</dt>
             <dd>
               <ReactMarkdown>{value}</ReactMarkdown>
             </dd>

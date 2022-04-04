@@ -25,7 +25,7 @@ const ProjectList = ({ hasFilters, intro, limit, projects }) => {
       projects.filter(
         ({ featuredImage, featuredVideo, tags }) =>
           (!activeTag || tags?.includes(activeTag.toLowerCase())) &&
-          (!!featuredVideo || !!featuredImage),
+          ((featuredVideo && featuredVideo !== '') || featuredImage),
       ),
     [activeTag, projects],
   );
@@ -58,12 +58,12 @@ const ProjectList = ({ hasFilters, intro, limit, projects }) => {
                 featuredImage={featuredImage}
                 featuredVideo={featuredVideo}
                 index={index}
-                left={left}
-                top={top}
-                width={width}
                 key={slug}
+                left={left}
                 slug={slug}
                 title={title}
+                top={top}
+                width={width}
               />
             );
           },
