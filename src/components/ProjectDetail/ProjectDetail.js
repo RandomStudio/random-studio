@@ -17,7 +17,7 @@ const ProjectDetail = ({
   return (
     <div className={styles.project}>
       <h1 className={styles.title}>
-        <ReactMarkdown>{title}</ReactMarkdown>
+        <ReactMarkdown>{title.replace('<br>', '\n\n')}</ReactMarkdown>
       </h1>
       <div className={styles.intro}>
         <ReactMarkdown>{intro}</ReactMarkdown>
