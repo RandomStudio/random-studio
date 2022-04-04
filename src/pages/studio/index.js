@@ -72,9 +72,9 @@ const Studio = ({
         <div className={styles.jobsImpressionBlock}>
           <Recruitee jobOpenings={jobOpenings} />
           <Carousel
-            carousel={studioImpression}
             className={styles.carouselWrapper}
             showIndicator
+            slides={studioImpression}
             title="Studio Impressions"
           />
         </div>

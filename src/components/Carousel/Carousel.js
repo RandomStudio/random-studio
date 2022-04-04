@@ -23,7 +23,7 @@ const Carousel = ({ slides, caption, className }) => {
   return (
     <div className={`${styles.carousel} ${className}`}>
       <div className={styles.carouselInner}>
-        {slides.map(({ id, video, image }, index) => (
+        {slides.map(({ id, video, imageData, image }, index) => (
           <div
             className={`
             ${styles.image}
@@ -38,10 +38,10 @@ const Carousel = ({ slides, caption, className }) => {
               {video ? (
                 <video autoPlay loop muted playsInline src={video} />
               ) : (
-                image && (
+                (image || imageData) && (
                   <Image
                     alt={`${caption} – slide ${index + 1}`}
-                    data={image.imageData}
+                    data={imageData ?? image.imageData}
                   />
                 )
               )}
