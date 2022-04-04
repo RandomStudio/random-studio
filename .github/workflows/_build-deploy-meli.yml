@@ -46,7 +46,7 @@ jobs:
           npm run build
         env:
           NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
-          VIMEO_TOKEN: ${{ inputs.VIMEO_TOKEN }}
+          VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
       - name: "publish"
         run: |
           npx -p "@getmeli/cli" meli upload ./out \
