@@ -18,8 +18,9 @@ const Head = ({
 
   const formatTitle = string =>
     `${string
-      .replace('<br> ', '')
-      .replace('<br /> ', '')} - ${defaultPageTitle}`;
+      .replaceAll('<br>', '')
+      .replaceAll('<br /> ', '')
+      .replaceAll('  ', ' ')} - ${defaultPageTitle}`;
 
   const pageTitle = title ? formatTitle(title) : defaultPageTitle;
 

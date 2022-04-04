@@ -36,9 +36,9 @@ const ContentBlock = ({
     className={styles.item}
     key={id}
     style={{
-      '--marginLeft': `${marginLeft}%`,
-      '--marginTop': `${marginTop}%`,
-      '--width': `${width}%`,
+      '--marginLeft': `${marginLeft}vw`,
+      '--marginTop': `calc(${width}vw * ${marginTop / 100})`,
+      '--width': `${width}vw`,
     }}
   >
     {__typename === BLOCK_TYPES.ImageBlockRecord && (
@@ -77,22 +77,5 @@ const ContentBlock = ({
     )}
   </div>
 );
-
-ContentBlock.propTypes = {
-  title: PropTypes.string.isRequired,
-  intro: PropTypes.string.isRequired,
-  content: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  credits: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  relatedProjects: PropTypes.shape({
-    blockTitle: PropTypes.string,
-    projects: PropTypes.arrayOf(PropTypes.object),
-  }),
-  allProjects: PropTypes.arrayOf(PropTypes.object),
-};
-
-ContentBlock.defaultProps = {
-  allProjects: [],
-  relatedProjects: null,
-};
 
 export default ContentBlock;
