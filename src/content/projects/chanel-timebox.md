@@ -1,6 +1,6 @@
 ---
 templateKey: Project
-title: A vertical journey through time \n for Chanel
+title: A vertical journey through time <br>for Chanel
 intro: >-
   French fashion house Chanel is known for a continuous strive for excellence
   and perfection. For the introduction of the Chanel Première Camélia Skeleton

@@ -4,7 +4,7 @@ import { eraseExistingItems, uploadItem } from './model.mjs';
 import { getAllFilenames, getContentFromFile } from './filesystem.mjs';
 import { transformProject } from './transformer.mjs';
 
-const ERASE_ALL_DATA_BEFORE_CONVERSION = false;
+const ERASE_ALL_DATA_BEFORE_CONVERSION = true;
 
 const PATHS = {
   project: '../src/content/projects',
@@ -28,14 +28,14 @@ const getModelData = async path => {
 
 const start = async () => {
   if (ERASE_ALL_DATA_BEFORE_CONVERSION) {
-    await eraseExistingAssets();
+    // await eraseExistingAssets();
     await eraseExistingItems(MODELS);
   }
 
   MODELS.forEach(async model => {
     const modelData = await getModelData(PATHS[model]);
 
-    let transformedData = [];
+    const transformedData = [];
 
     for await (const [filename, content] of modelData) {
       const data = await TRANSFORMER[model](filename, content);

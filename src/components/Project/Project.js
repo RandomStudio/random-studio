@@ -6,7 +6,16 @@ import Link from 'next/link';
 import styles from './Project.module.scss';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 
-const Project = ({ className, featuredImage, featuredVideo, left, title, top, slug, width }) => (
+const Project = ({
+  className,
+  featuredImage,
+  featuredVideo,
+  left,
+  title,
+  top,
+  slug,
+  width,
+}) => (
   <Link href={`/projects/${slug}`} id={slug}>
     <a
       className={`${styles.thumbnail} ${className}`}
@@ -28,7 +37,7 @@ const Project = ({ className, featuredImage, featuredVideo, left, title, top, sl
         ) : (
           <Image
             alt="" // Keeps the screen reader focused on project list
-            //sizes={`(max-width: 576px) 100vw, ${thumbnail.width}vw`}
+            // sizes={`(max-width: 576px) 100vw, ${thumbnail.width}vw`}
             data={featuredImage.imageData}
           />
         )}
@@ -36,11 +45,15 @@ const Project = ({ className, featuredImage, featuredVideo, left, title, top, sl
 
       <div
         className={styles.title}
-        style={{
-          // marginLeft: !thumbnail.marginLeft && '1.4rem',
-        }}
+        style={
+          {
+            // marginLeft: !thumbnail.marginLeft && '1.4rem',
+          }
+        }
       >
-        <ReactMarkdown>{title}</ReactMarkdown>
+        <ReactMarkdown>
+          {title.replace('<br />', '<br>').replace('<br>', '\n\n')}
+        </ReactMarkdown>
       </div>
     </a>
   </Link>

@@ -50,17 +50,17 @@ projects:
     caption: Nike Move to Zero House of Innovation Takeover
     tags: ['Spaces', 'Installations', 'Exhibitions', 'Digital']
   - caption: |-
-      Kinetic architecture \n
+      Kinetic architecture <br>
       for A/D/O by MINI
-    project: Kinetic architecture \n for A/D/O by MINI
+    project: Kinetic architecture <br>for A/D/O by MINI
     thumbnail:
       image: /img/ADO_Perpetuum_15.jpg
       marginLeft: 58
       marginTop: -5
       width: 37
     tags: ['Installations']
-  - caption: A store takeover at Place Vendôme \nfor the launch of Chanel's new watch
-    project: A store takeover at Place Vendôme \nfor the launch of Chanel's new watch
+  - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
+    project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     thumbnail:
       image: /img/thumbnail_chanel-1-.png
       marginLeft: 25
@@ -264,7 +264,7 @@ projects:
     project: A series of digital experiments for SPACE10
     tags: ['Research', 'Digital']
   - caption: A vertical journey through time for Chanel
-    project: A vertical journey through time \n for Chanel
+    project: A vertical journey through time <br>for Chanel
     thumbnail:
       image: /img/chanel1.jpg
       marginLeft: 0

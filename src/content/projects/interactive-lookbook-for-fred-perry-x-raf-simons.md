@@ -4,7 +4,7 @@ title: |-
   Interactive lookbook
 
   for Fred Perry x Raf Simons
-intro: "The experience invites you to step into multiple narratively connected three-dimensional photographs, that display the evening of a regular house party - familiar to all of us.\n\nThe 80s Youth Archive photographs are centre stage of the Fred Perry x Raf Simons AW19 collection. \LThey are also the main source of reference for this season’s interactive lookbook which pays homage to the energy and feel of the era.<br /><br />[home.fredperryxrafsimons.com](https://home.fredperryxrafsimons.com)"
+intro: "The experience invites you to step into multiple narratively connected three-dimensional photographs, that display the evening of a regular house party - familiar to all of us.<br>The 80s Youth Archive photographs are centre stage of the Fred Perry x Raf Simons AW19 collection. \LThey are also the main source of reference for this season’s interactive lookbook which pays homage to the energy and feel of the era.<br /><br />[home.fredperryxrafsimons.com](https://home.fredperryxrafsimons.com)"
 priority: 10
 thumbnail:
   image: /img/e7b90cccd1448c652d6c3c10737a2e5a.nstagram-01-jpg.jpg

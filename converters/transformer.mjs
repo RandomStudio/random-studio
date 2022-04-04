@@ -134,6 +134,8 @@ export const transformProject = async (filename, content) => {
   const { thumbnail, tags } =
     projects.find(({ project }) => project === title) ?? {};
 
+  const isVisible = !!thumbnail;
+
   if (!thumbnail) {
     console.log(title, 'is missing from projects listings');
   }
@@ -165,6 +167,7 @@ export const transformProject = async (filename, content) => {
         : null,
     featuredVideo: thumbnail?.video,
     isHomepage,
+    isVisible,
     details: credits
       ? JSON.stringify(
         (credits ?? []).reduce(
