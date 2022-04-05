@@ -73,9 +73,10 @@ export const getVimeoVideoData = async id => {
   const data = {
     sources: {
       hls: files.find(({ quality }) => quality === 'hls')?.link ?? null,
-      hd1080:
-        files.find(({ rendition }) => rendition === '1080p')?.link ?? null,
-      hd720: files.find(({ rendition }) => rendition === '720p')?.link ?? null,
+      mp4:
+        files
+          .sort((a, b) => b.width - a.width)
+          .find(({ type }) => type === 'video/mp4')?.link ?? null,
     },
     blur: placeholder,
     fallback: largest,

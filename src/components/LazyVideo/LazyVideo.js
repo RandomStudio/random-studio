@@ -65,8 +65,7 @@ const LazyVideo = React.forwardRef(
     const sourceElements = (
       <>
         <source src={sources?.hls} type="application/x-mpegurl" />
-        <source src={sources?.hd1080} type="video/mp4" />
-        <source src={sources?.hd720} type="video/mp4" />
+        <source src={sources?.mp4} type="video/mp4" />
       </>
     );
 
