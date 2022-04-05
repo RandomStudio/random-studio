@@ -19,7 +19,8 @@ const LazyVideo = React.forwardRef(
 
       const handlePlayer = () => {
         if (autoPlays) {
-          ref.play();
+          // eslint-disable-next-line no-console
+          ref.play().catch(console.log);
         }
       };
 
@@ -64,7 +65,7 @@ const LazyVideo = React.forwardRef(
     /* eslint-disable jsx-a11y/media-has-caption */
     const sourceElements = (
       <>
-        <source src={sources?.hls} type="application/x-mpegurl" />
+        {/* <source src={sources?.hls} type="application/x-mpegurl" /> */}
         <source src={sources?.mp4} type="video/mp4" />
       </>
     );
@@ -77,7 +78,6 @@ const LazyVideo = React.forwardRef(
           muted={isMuted}
           onPlaying={() => setIsLoaded(true)}
           playsInline
-          poster={blurThumbnail}
           ref={videoRef}
         >
           {intersected ? sourceElements : null}
@@ -88,7 +88,6 @@ const LazyVideo = React.forwardRef(
             loop={loops}
             muted={isMuted}
             playsInline
-            poster={blurThumbnail}
           >
             {sourceElements}
           </video>

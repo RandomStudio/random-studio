@@ -2,7 +2,6 @@ import React, { useMemo, useState } from 'react';
 import { countBy } from 'lodash-es';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
-import TinyTransition from 'react-tiny-transition';
 import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
 import LAYOUT from './LAYOUT';
