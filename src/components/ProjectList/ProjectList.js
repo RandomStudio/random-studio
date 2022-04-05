@@ -6,8 +6,9 @@ import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
 import LAYOUT from './LAYOUT';
 import Project from '../Project/Project';
+import { HOMEPAGE_POSTS_LIMIT } from '../../CONSTANTS';
 
-const ProjectList = ({ hasFilters, intro, limit, projects }) => {
+const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
   const projectFilters = projects
     .map(({ tags }) => tags)
     .filter(Boolean)
@@ -47,30 +48,31 @@ const ProjectList = ({ hasFilters, intro, limit, projects }) => {
         )}
         {visibleProjects.map(
           ({ featuredImage, featuredVideo, title, slug }, index) => {
-            if (index >= limit) {
-              return null;
-            }
-
             const { left, top, width } = LAYOUT[index];
 
             return (
-              <Project
-                featuredImage={featuredImage}
-                featuredVideo={featuredVideo}
-                index={index}
-                key={slug}
-                left={left}
-                slug={slug}
-                title={title}
-                top={top}
-                width={width}
-              />
+              <>
+                {!hasLimit && HOMEPAGE_POSTS_LIMIT === index && (
+                  <div className={styles.continued} id="continued" />
+                )}
+                <Project
+                  featuredImage={featuredImage}
+                  featuredVideo={featuredVideo}
+                  index={index}
+                  key={slug}
+                  left={left}
+                  slug={slug}
+                  title={title}
+                  top={top}
+                  width={width}
+                />
+              </>
             );
           },
         )}
-        {limit && (
+        {hasLimit && (
           <div className={styles.seeMore}>
-            <Link href="/projects">
+            <Link href="/projects#continued">
               <a>{'See all projects'}</a>
             </Link>
           </div>

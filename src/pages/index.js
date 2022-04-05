@@ -22,7 +22,7 @@ const Home = ({
       collaborator={collaborator}
       video={video}
     />
-    <ProjectList intro={intro} limit={projects.length} projects={projects} />
+    <ProjectList hasLimit intro={intro} projects={projects} />
   </Layout>
 );
 

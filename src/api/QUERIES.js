@@ -1,3 +1,4 @@
+import { HOMEPAGE_POSTS_LIMIT } from '../CONSTANTS';
 import { IMAGE_DATA_OBJECT_FRAGMENT, THUMBNAIL_FRAGMENT } from './FRAGMENTS';
 
 export const INDEX_PAGE_QUERY = `
@@ -17,7 +18,7 @@ export const INDEX_PAGE_QUERY = `
       collaborator
       collaborationUrl
     }
-    projects: allProjects(filter: {isHomepage: {eq: "true"}}) {
+    projects: allProjects(first: "${HOMEPAGE_POSTS_LIMIT}", orderBy: position_ASC, filter: {isVisible: {eq: "true"}}) {
       title
       slug
       ...Thumbnail
