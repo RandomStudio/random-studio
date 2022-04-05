@@ -4,9 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
-import LAYOUT from './LAYOUT';
 import Project from '../Project/Project';
-import { HOMEPAGE_POSTS_LIMIT } from '../../CONSTANTS';
+import { HOMEPAGE_POSTS_LIMIT, LAYOUT } from '../../CONSTANTS';
 import Crossfade from '../Crossfade/Crossfade';
 
 const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {

@@ -1,7 +1,7 @@
-import { useContext, useRef } from "react";
-import { AppContext } from "../../utils/context/AppContext";
-import copyStringToClipboard from "../../utils/copyStringToClipboard";
+import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { AppContext } from '../../utils/context/AppContext';
+import copyStringToClipboard from '../../utils/copyStringToClipboard';
 
 const Email = ({ email }) => {
   const emailRef = useRef();
@@ -11,8 +11,9 @@ const Email = ({ email }) => {
     if (!matchMedia('(pointer:fine)').matches) {
       return;
     }
+
     copyStringToClipboard(event, email, setIsToastVisible);
-  }
+  };
 
   return (
     <a
@@ -23,15 +24,15 @@ const Email = ({ email }) => {
     >
       {email}
     </a>
-  )
-}
+  );
+};
 
 Email.propTypes = {
   email: PropTypes.string,
-}
+};
 
 Email.defaultProps = {
   email: 'hello@random.studio',
-}
+};
 
 export default Email;

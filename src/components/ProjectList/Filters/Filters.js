@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import PROJECT_FILTERS from '../PROJECT_FILTERS';
+import { PROJECT_FILTERS } from '../../../CONSTANTS';
 import styles from './Filters.module.scss';
 
-const LOWERCASE_PROJECT_FILTESR = PROJECT_FILTERS.map(filter => filter.toLowerCase());
+const LOWERCASE_PROJECT_FILTESR = PROJECT_FILTERS.map(filter =>
+  filter.toLowerCase(),
+);
 
 const Filters = ({ filterCount, activeTag, setActiveTag }) => {
   const router = useRouter();
@@ -42,8 +44,9 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
         {filtersWithEntries.map(filter => (
           <button
             aria-pressed={filter === activeTag}
-            className={`${styles.filterEntry} ${activeTag !== null ? styles.activeFilter : ''
-              } ${filter === activeTag ? styles.activeTag : ''}`}
+            className={`${styles.filterEntry} ${
+              activeTag !== null ? styles.activeFilter : ''
+            } ${filter === activeTag ? styles.activeTag : ''}`}
             key={filter}
             onClick={() => {
               handleSelectFilter(filter);

@@ -6,12 +6,13 @@ const Address = ({ address, aria, directions, email, name, phone }) => (
   <address aria-label={aria} className={`${styles.address}`}>
     <span className={styles.name}>{name}</span>
     <div className={styles.location}>
-      {address.map(line => <React.Fragment key={line}>{line}<br /></React.Fragment>)}
-      <a
-        href={directions}
-        rel="noreferrer"
-        target="_blank"
-      >
+      {address.map(line => (
+        <React.Fragment key={line}>
+          {line}
+          <br />
+        </React.Fragment>
+      ))}
+      <a href={directions} rel="noreferrer" target="_blank">
         {'Directions'}
       </a>
     </div>
@@ -24,7 +25,7 @@ const Address = ({ address, aria, directions, email, name, phone }) => (
     </a>
     <br />
     {email && <Email email={email} />}
-  </address >
+  </address>
 );
 
 export default Address;

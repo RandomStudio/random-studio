@@ -58,7 +58,6 @@ const Carousel = ({ slides, caption, className }) => {
 };
 
 Carousel.propTypes = {
-  carousel: PropTypes.arrayOf(PropTypes.object).isRequired,
   className: PropTypes.string,
 };
 

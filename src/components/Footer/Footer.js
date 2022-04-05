@@ -1,7 +1,7 @@
+import React from 'react';
 import styles from './Footer.module.scss';
 import Address from './Address/Address';
 import Newsletter from './Newsletter/Newsletter';
-import React from 'react';
 
 const Footer = () => (
   <footer className={styles.footer}>
@@ -10,7 +10,8 @@ const Footer = () => (
         address={[
           'Gillis van Ledenberchstraat 112',
           '1052 VK Amsterdam',
-          'The Netherlands']}
+          'The Netherlands',
+        ]}
         aria="Amsterdam address"
         directions="https://goo.gl/maps/2sJnCcLummnmvrVb9"
         email="hello@random.studio"
@@ -18,10 +19,7 @@ const Footer = () => (
         phone="+31 20 779 7735"
       />
       <Address
-        address={[
-          '174 Quai de Jemmapes',
-          '75010 Paris',
-          'France']}
+        address={['174 Quai de Jemmapes', '75010 Paris', 'France']}
         aria="Paris address"
         directions="https://goo.gl/maps/8JhU7KsTLAaZZtGA9"
         email="morgan.maccari@random.studio"
@@ -59,7 +57,7 @@ const Footer = () => (
         </a>
       </nav>
     </div>
-  </footer >
+  </footer>
 );
 
 export default Footer;

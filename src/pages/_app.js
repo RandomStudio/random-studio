@@ -31,7 +31,15 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
   return (
     <>
       <Component {...pageProps} />
-      {isPreview && <div className={styles.preview}>{'Viewing preview'}<br /><a href={`/api/clear-preview?slug=${window.location.pathname}`}>(Switch to live)</a></div>}
+      {isPreview && (
+        <div className={styles.preview}>
+          {'Viewing preview'}
+          <br />
+          <a href={`/api/clear-preview?slug=${window.location.pathname}`}>
+            {'(Switch to live)'}
+          </a>
+        </div>
+      )}
     </>
   );
 };

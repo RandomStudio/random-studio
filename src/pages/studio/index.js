@@ -59,8 +59,9 @@ const Studio = ({
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
-          }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${
+          width > mediumBreakpoint ? themeClass : ''
+        }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
         <Head title="Studio" />
