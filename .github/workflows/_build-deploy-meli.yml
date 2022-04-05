@@ -28,9 +28,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ./node_modules
-            ./.next/cache
-            ./.videoCache.json
+            ${{ github.workspace }}/node_modules
+            ${{ github.workspace }}/.next/cache
+            ${{ github.workspace }}/.videoCache.json
           key: nextjs-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.js') }}-${{ hashFiles('**/*.json') }}
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
