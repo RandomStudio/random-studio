@@ -159,7 +159,7 @@ jobOpenings:
       ### Requirements
 
       - You have in-depth knowledge of HTML, CSS and Javascript and are skilled in React or a similar component-based front-end library.
-      
+
       - You have knowledge of Node.js and npm, and are comfortable using a command line to run scripts and GIT.
 
       - You have good communication skills in English and can work directly with designers, other developers, and clients in a clear and professional way.
@@ -169,7 +169,8 @@ jobOpenings:
       - You are available for at least 4 days a week.
 
 
-      ## Nice to have
+
+      ### Nice to have
 
       - You have experience with SCRUM, Agile or a similar process structure.
 
@@ -183,6 +184,7 @@ jobOpenings:
 
 
       At Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a studio, we value new ideas, new insight, new ways of seeing the world. Our studio is high freedom and low control, so we value those with an experimental and independent spirit. We are looking for someone who feels comfortable working in a dynamic and ever-changing environment.
+
 
       Our culture fosters an open, curious and creative mindset, relentlessly looking for the new. We encourage autonomy and authenticity to help you shape your own role. We are not bound to a studio signature. The people are the studio. We offer a humane studio that includes daily chef prepared vegetarian lunches, as well as an open space filled with light and plants. We empower and enable the team by providing hardware and software of your choice, and have a commitment to employee growth/development with education/conference budgets, scheduled speakers, and regular social events.
 
