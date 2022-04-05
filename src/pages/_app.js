@@ -1,10 +1,10 @@
 import '../styles/global.scss';
+import styles from './App.module.scss';
 import React, { useEffect } from 'react';
 import { pageview, initialize, set } from 'react-ga';
 import { useRouter } from 'next/router';
-import DefaultApp from 'next/app';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -28,23 +28,12 @@ const App = ({ Component, pageProps }) => {
     };
   }, [router.events, router.pathname]);
 
-  return <Component {...pageProps} />;
-};
-
-App.getInitialProps = async appContext => {
-  const { req, res } = appContext.ctx;
-  const url = new URL(`http://fakeurl.com${req.url}`);
-  const isPreview = url.searchParams.get('preview');
-
-  // Important: we check for null explicitly so that `?preview` without a value is still valid
-  if (isPreview === null) {
-    res.setHeader('Set-Cookie', [
-      '__next_preview_data=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT',
-      '__prerender_bypass=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT',
-    ]);
-  }
-
-  return DefaultApp.getInitialProps(appContext);
+  return (
+    <>
+      <Component {...pageProps} />
+      {isPreview && <div className={styles.preview}>{'Viewing preview'}<br /><a href={`/api/clear-preview?slug=${window.location.pathname}`}>(Switch to live)</a></div>}
+    </>
+  );
 };
 
 export default App;

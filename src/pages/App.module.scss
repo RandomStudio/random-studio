@@ -22,3 +22,13 @@
     opacity: 0;
   }
 }
+
+.preview {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+}
