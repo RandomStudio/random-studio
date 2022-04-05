@@ -1,5 +1,9 @@
 import { HOMEPAGE_POSTS_LIMIT } from '../CONSTANTS';
-import { IMAGE_DATA_OBJECT_FRAGMENT, THUMBNAIL_FRAGMENT } from './FRAGMENTS';
+import {
+  IMAGE_DATA_OBJECT_FRAGMENT,
+  IMAGE_DATA_OBJECT_FRAGMENT_FUNC,
+  THUMBNAIL_FRAGMENT,
+} from './FRAGMENTS';
 
 export const INDEX_PAGE_QUERY = `
   ${THUMBNAIL_FRAGMENT}
@@ -49,6 +53,7 @@ query {
 
 export const SINGLE_PROJECT_QUERY = `
   ${THUMBNAIL_FRAGMENT}
+  ${IMAGE_DATA_OBJECT_FRAGMENT_FUNC('OpenGraphImageDataObject', 1200, 630)}
 
   query ProjectQuery($slug: String!) {
     project(orderBy: position_ASC, filter: {slug: {eq: $slug}}) {
@@ -64,6 +69,14 @@ export const SINGLE_PROJECT_QUERY = `
         title
         intro
         ...Thumbnail
+      }
+      opengraph {
+        description
+        title
+        twitterCard
+        image {
+          ...OpenGraphImageDataObject
+        }
       }
       content {
         __typename

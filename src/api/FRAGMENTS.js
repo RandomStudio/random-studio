@@ -1,8 +1,8 @@
-export const IMAGE_DATA_OBJECT_FRAGMENT = `
-  fragment ImageDataObject on FileField {
+export const IMAGE_DATA_OBJECT_FRAGMENT_FUNC = (name, width, height) => `
+  fragment ${name} on FileField {
     id
     imageData: responsiveImage (
-      imgixParams: { fit: max, w: 3840, h: 2160, auto: format }
+      imgixParams: { fit: max, w: ${width}, h: ${height}, auto: format }
     ) {
       # HTML5 src/srcset/sizes attributes
       srcSet
@@ -27,6 +27,12 @@ export const IMAGE_DATA_OBJECT_FRAGMENT = `
     }
   }
 `;
+
+export const IMAGE_DATA_OBJECT_FRAGMENT = IMAGE_DATA_OBJECT_FRAGMENT_FUNC(
+  'ImageDataObject',
+  3840,
+  2160,
+);
 
 export const THUMBNAIL_FRAGMENT = `
   ${IMAGE_DATA_OBJECT_FRAGMENT}

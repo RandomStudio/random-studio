@@ -95,6 +95,13 @@ export const relatedProjectPropType = PropTypes.shape({
   featuredVideo: videoPropType,
 });
 
+export const opengraphPropType = PropTypes.shape({
+  description: PropTypes.string,
+  title: PropTypes.string,
+  twitterCard: PropTypes.string,
+  image: imageDataPropType,
+});
+
 export const projectPropTypeObject = {
   id: PropTypes.string,
   slug: PropTypes.string,
@@ -107,6 +114,7 @@ export const projectPropTypeObject = {
   relatedProjects: PropTypes.arrayOf(relatedProjectPropType),
   tags: PropTypes.arrayOf(PropTypes.string),
   content: PropTypes.arrayOf(blockPropType),
+  opengraph: opengraphPropType,
 };
 
 export const projectPropType = PropTypes.shape(projectPropTypeObject);

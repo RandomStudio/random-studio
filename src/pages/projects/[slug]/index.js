@@ -10,10 +10,12 @@ import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
 import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
 import { projectPropTypeObject } from '../../../propTypes';
+import { addVimeoVideoDataToObject } from '../../../api/getVideoData';
 
 const Project = ({
+  featuredImage,
   intro,
-  opengraph: { ogTitle, ogDescription, ogImage },
+  opengraph: { description: ogDescription, image, title: ogTitle },
   content,
   details,
   relatedProjects,
@@ -24,7 +26,7 @@ const Project = ({
     <Layout className={styles.layout} hasFooter={false}>
       <Head
         description={intro}
-        image={ogImage}
+        image={image ?? featuredImage}
         socialDescription={ogDescription}
         socialTitle={ogTitle}
         title={title}
@@ -54,6 +56,7 @@ export const getStaticProps = async ({ params, preview }) => {
   return {
     props: {
       ...project,
+      featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
       content: await addAdditionalInfoToBlocks(project.content),
     },
   };
@@ -75,9 +78,5 @@ export async function getStaticPaths() {
 }
 
 Project.propTypes = projectPropTypeObject;
-
-Project.defaultProps = {
-  opengraph: {},
-};
 
 export default Project;

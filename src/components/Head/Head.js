@@ -2,6 +2,7 @@ import React from 'react';
 import NextHead from 'next/head';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import { imageDataPropType } from '../../propTypes';
 
 const defaultPageTitle = 'Random Studio';
 
@@ -24,7 +25,7 @@ const Head = ({
 
   const pageTitle = title ? formatTitle(title) : defaultPageTitle;
 
-  const ogImage = `${siteUrl}${image}`;
+  const ogImage = `${siteUrl}${image?.imageData?.src ?? image}`;
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
   const ogDescription = socialDescription || description;
 
@@ -127,7 +128,7 @@ const Head = ({
 
 Head.propTypes = {
   description: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.oneOfType([imageDataPropType, PropTypes.string]),
   socialDescription: PropTypes.string,
   socialTitle: PropTypes.string,
   title: PropTypes.string,
