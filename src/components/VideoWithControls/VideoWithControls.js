@@ -22,6 +22,7 @@ const trackIsCurrentlyMuted = isCurrentlyMuted => {
 
 const VideoWithControls = ({
   className,
+  hasClickControls,
   hasControls,
   isMuted: isStartingMuted,
   isAutoplaying,
@@ -47,6 +48,10 @@ const VideoWithControls = ({
 
   const handleTapPlayPause = e => {
     e.stopPropagation();
+
+    if (!hasClickControls) {
+      return;
+    }
 
     if (!hasPlayed) {
       setHasPlayed(true);
@@ -101,6 +106,7 @@ const VideoWithControls = ({
 
 VideoWithControls.propTypes = {
   className: PropTypes.string,
+  hasClickControls: PropTypes.bool,
   hasControls: PropTypes.bool,
   isAlwaysMuted: PropTypes.bool,
   isAutoplaying: PropTypes.bool,
@@ -111,6 +117,7 @@ VideoWithControls.propTypes = {
 
 VideoWithControls.defaultProps = {
   className: '',
+  hasClickControls: false,
   hasControls: true,
   isAlwaysMuted: false,
   isAutoplaying: true,

@@ -41,7 +41,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
 
           <br />
 
-          <a href={`/api/clear-preview?slug=${window.location.pathname}`}>
+          <a href={`/api/clear-preview?slug=${router.pathname}`}>
             {'(Switch to live)'}
           </a>
         </div>

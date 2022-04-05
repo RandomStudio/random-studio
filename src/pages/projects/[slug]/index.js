@@ -56,7 +56,9 @@ export const getStaticProps = async ({ params, preview }) => {
   return {
     props: {
       ...project,
-      featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
+      featuredVideo: project.featuredVideo
+        ? await addVimeoVideoDataToObject(project.featuredVideo)
+        : null,
       content: await addAdditionalInfoToBlocks(project.content),
     },
   };
