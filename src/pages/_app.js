@@ -1,8 +1,8 @@
 import '../styles/global.scss';
-import styles from './App.module.scss';
+import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import { pageview, initialize, set } from 'react-ga';
-import { useRouter } from 'next/router';
+import styles from './App.module.scss';
 
 const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
   const router = useRouter();
