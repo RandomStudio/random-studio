@@ -20,6 +20,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16"
+      - uses: snow-actions/sparse-checkout@v1.1.0
+        with:
+          patterns: |
+            /*
+            !converters
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
