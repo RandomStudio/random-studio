@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16"
-      - uses: snow-actions/sparse-checkout@v1.1.0
+      - uses: gogaille/sparse-checkout@v0.1
         with:
           patterns: |
             public
