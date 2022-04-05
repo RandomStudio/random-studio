@@ -20,20 +20,30 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16"
-      - uses: actions/checkout@v2
+      - uses: snow-actions/sparse-checkout@v1.1.0
         with:
-          ref: ${{ github.ref }}
-      - name: Cache dependencies
-        id: cache
+          patterns: |
+            public
+            src
+            *.js
+            *.json
+            !cms
+      - name: Load cached dependencies
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: nextjs-${{ hashFiles('**/package.json') }}
+      - name: Load cached build
+        id: cache-build
         uses: actions/cache@v3
         with:
           path: |
-            ${{ github.workspace }}/node_modules
             ${{ github.workspace }}/.next/cache
             ${{ github.workspace }}/.videoCache.json
-          key: nextjs-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.js') }}-${{ hashFiles('**/*.json') }}
+          key: nextjs-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.js') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: npm install --dev
       - name: "build"
         run: |
