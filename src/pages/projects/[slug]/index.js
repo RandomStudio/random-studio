@@ -50,9 +50,10 @@ const Project = ({
   );
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, preview }) => {
   const { project } = await getDataFromBackend({
     query: SINGLE_PROJECT_QUERY,
+    preview,
     variables: {
       slug: params.slug,
     },

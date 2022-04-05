@@ -84,9 +84,10 @@ const Studio = ({
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ preview }) => {
   const { page } = await getDataFromBackend({
     query: STUDIO_PAGE_QUERY,
+    preview,
   });
 
   return {
