@@ -15,7 +15,7 @@ const JobOffer = ({ handleClose, opening: { title, description, url } }) => (
           className={styles.closeButton}
           onClick={handleClose}
           type="button"
-        // eslint-disable-next-line react/jsx-no-literals
+          // eslint-disable-next-line react/jsx-no-literals
         >
           &times;
         </button>

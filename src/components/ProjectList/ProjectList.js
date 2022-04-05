@@ -53,7 +53,7 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
         <Crossfade>
           <React.Fragment key={activeTag ?? 'all'}>
             {visibleProjects.map(
-              ({ featuredImage, featuredVideo, id, title, slug }, index) => {
+              ({ featuredImage, featuredVideo, title, slug }, index) => {
                 const { left, top, width } = LAYOUT[index];
 
                 return (

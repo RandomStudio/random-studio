@@ -4,7 +4,7 @@ import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
 import BackScrim from './BackScrim/BackScrim';
-import { projectPropType, projectPropTypeObject } from '../../propTypes';
+import { projectPropTypeObject } from '../../propTypes';
 
 const ProjectDetail = ({
   title,

@@ -50,8 +50,8 @@ const Project = ({
           !left || left < 1
             ? {}
             : {
-              marginLeft: '0',
-            }
+                marginLeft: '0',
+              }
         }
       >
         <ReactMarkdown>
@@ -68,6 +68,11 @@ Project.propTypes = {
     imageData: imageDataPropType,
   }),
   featuredVideo: videoPropType,
+  left: PropTypes.number.isRequired,
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  top: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
 };
 
 Project.defaultProps = {
