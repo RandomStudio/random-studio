@@ -182,6 +182,7 @@ jobOpenings:
       ### Random Studio Diversity & Inclusion Statement
 
       We believe that an inclusive work environment and a diverse team are key to creating fresh and inspiring work. We’re looking for candidates who enrich our culture and challenge the status quo. We encourage everyone to bring their whole selves to work, and we strive to provide all candidates with an unbiased and accessible recruitment process. If you require any help due to a disability when applying please let us know in your application so we can accommodate.
+    jobIsVisible: false
   - jobTitle: Job function title
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>
     jobDescription: Job description
