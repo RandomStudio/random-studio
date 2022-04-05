@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { blockPropType } from '../../../propTypes';
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
@@ -14,22 +15,24 @@ const BLOCK_TYPES = {
 };
 
 const ContentBlock = ({
-  __typename,
-  width,
-  loops,
-  isMuted,
-  isAlwaysMuted,
-  isCentered, // missing
-  hasControls,
-  caption,
-  autoplay,
-  id,
-  image,
-  slides,
-  marginLeft,
-  marginTop,
-  text,
-  video,
+  block: {
+    __typename,
+    width,
+    loops,
+    isMuted,
+    isAlwaysMuted,
+    isCentered, // missing
+    hasControls,
+    caption,
+    autoplay,
+    id,
+    image,
+    slides,
+    marginLeft,
+    marginTop,
+    text,
+    video,
+  },
 }) => (
   <div
     className={styles.item}
@@ -49,9 +52,11 @@ const ContentBlock = ({
           objectPosition="50% 50%"
           sizes={`(max-width: 576px) 100vw, ${width}vw`}
         />
+
         <Caption caption={caption} marginLeft={marginLeft} />
       </>
     )}
+
     {__typename === BLOCK_TYPES.VideoBlockRecord && (
       <>
         <VideoWithControls
@@ -64,12 +69,15 @@ const ContentBlock = ({
           video={video}
           width={width}
         />
+
         <Caption caption={caption} marginLeft={marginLeft} />
       </>
     )}
+
     {__typename === BLOCK_TYPES.CarouselBlockRecord && (
       <Carousel className={styles.carouselWrapper} slides={slides} />
     )}
+
     {__typename === BLOCK_TYPES.TextBlockRecord && (
       <div className={`${styles.text} ${isCentered ? styles.isCentered : ''}`}>
         <ReactMarkdown>{text}</ReactMarkdown>
@@ -77,5 +85,9 @@ const ContentBlock = ({
     )}
   </div>
 );
+
+ContentBlock.propTypes = {
+  block: blockPropType.isRequired,
+};
 
 export default ContentBlock;

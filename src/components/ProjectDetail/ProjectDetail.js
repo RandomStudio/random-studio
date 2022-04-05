@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
 import BackScrim from './BackScrim/BackScrim';
+import { projectPropType, projectPropTypeObject } from '../../propTypes';
 
 const ProjectDetail = ({
   title,
@@ -19,49 +19,42 @@ const ProjectDetail = ({
       <h1 className={styles.title}>
         <ReactMarkdown>{title.replace('<br>', '\n\n')}</ReactMarkdown>
       </h1>
+
       <div className={styles.intro}>
         <ReactMarkdown>{intro}</ReactMarkdown>
       </div>
+
       {content?.map(block => (
-        <ContentBlock {...block} key={block.id} />
+        <ContentBlock block={block} key={block.id} />
       ))}
+
       {relatedProjects && relatedProjects.length > 0 && (
         <RelatedProjectSlider
           relatedProjects={relatedProjects}
           relatedProjectsTitle={relatedProjectsTitle}
         />
       )}
+
       <dl aria-label="Project Details" className={styles.credits}>
         {Object.entries(details ?? {})?.map(([key, value]) => (
           <React.Fragment key={`${key}-${value}`}>
             <dt>{`${key}:`}</dt>
+
             <dd>
               <ReactMarkdown>{value}</ReactMarkdown>
             </dd>
           </React.Fragment>
         ))}
       </dl>
+
       <BackScrim />
     </div>
   );
 };
 
-ProjectDetail.propTypes = {
-  title: PropTypes.string.isRequired,
-  intro: PropTypes.string.isRequired,
-  content: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  details: PropTypes.object.isRequired,
-  relatedProjects: PropTypes.arrayOf(
-    PropTypes.shape({
-      blockTitle: PropTypes.string,
-      projects: PropTypes.arrayOf(PropTypes.object),
-    }),
-  ),
-  allProjects: PropTypes.arrayOf(PropTypes.object),
-};
+ProjectDetail.propTypes = projectPropTypeObject;
 
 ProjectDetail.defaultProps = {
-  allProjects: [],
   relatedProjects: null,
 };
 

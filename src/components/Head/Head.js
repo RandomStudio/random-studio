@@ -31,30 +31,48 @@ const Head = ({
   return (
     <NextHead>
       <title>{pageTitle}</title>
+
       <meta content="'Random Studio'" name="author" />
+
       <meta
         content="Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio"
         name="keywords"
       />
+
       <meta content="/favicons/browserconfig.xml" name="msapplication-config" />
+
       <meta content="'#ffffff'" name="theme-color" />
+
       <meta content="'#ffffff'" name="msapplication-TileColor" />
+
       <meta content="pageDescription" name="description" />
 
       <meta content={ogTitle} property="og:title" />
+
       <meta content="Random Studio" property="og:site_name" />
+
       <meta content={ogDescription} property="og:description" />
+
       <meta content="website'" property="og:type" />
+
       <meta content="en_US'" property="og:locale" />
+
       <meta content={`${siteUrl}${router.pathname}`} property="og:url" />
+
       <meta content={ogImage} property="og:image" />
+
       <meta content="800" property="og:image:width" />
+
       <meta content="800" property="og:image:height" />
 
       <meta content={ogTitle} name="twitter:title" />
+
       <meta content={ogDescription} name="twitter:description" />
+
       <meta content={ogImage} name="twitter:image" />
+
       <meta content="summary_large_image" name="twitter:card" />
+
       <meta content="@random.studio" name="twitter:site" />
 
       <link
@@ -62,33 +80,42 @@ const Head = ({
         rel="apple-touch-icon"
         sizes="180x180"
       />
+
       <link href="/favicons/apple-touch-icon.png" />
+
       <link
         href="/favicons/favicon-32x32.png"
         rel="icon"
         sizes="32x32"
         type="image/png"
       />
+
       <link
         href="/favicons/favicon-16x16.png"
         rel="icon"
         sizes="16x16"
         type="image/png"
       />
+
       <link
         href="/favicons/android-chrome-192x192.png"
         rel="icon"
         sizes="192x192"
         type="image/png"
       />
+
       <link href="/favicons/site.webmanifest" rel="manifest" />
+
       <link
         color="#0000ff"
         href="/favicons/safari-pinned-tab.svg"
         rel="mask-icon"
       />
+
       <link href="/favicons/manifest.json" rel="manifest" />
+
       <link href="/favicons/favicon.ico" rel="icon" />
+
       <script
         data-domain="random.studio"
         defer

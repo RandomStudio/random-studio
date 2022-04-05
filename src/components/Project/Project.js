@@ -5,6 +5,7 @@ import Link from 'next/link';
 import styles from './Project.module.scss';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import Image from '../Image/Image';
+import { imageDataPropType, videoPropType } from '../../propTypes';
 
 const Project = ({
   className,
@@ -49,8 +50,8 @@ const Project = ({
           !left || left < 1
             ? {}
             : {
-                marginLeft: '0',
-              }
+              marginLeft: '0',
+            }
         }
       >
         <ReactMarkdown>
@@ -62,11 +63,17 @@ const Project = ({
 );
 
 Project.propTypes = {
-  slug: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  featuredImage: PropTypes.object,
-  featuredVideo: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  featuredImage: PropTypes.shape({
+    imageData: imageDataPropType,
+  }),
+  featuredVideo: videoPropType,
+};
+
+Project.defaultProps = {
+  className: '',
+  featuredImage: null,
+  featuredVideo: null,
 };
 
 export default Project;

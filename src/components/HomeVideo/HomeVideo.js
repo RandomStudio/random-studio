@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import { videoPropType } from '../../propTypes';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import styles from './HomeVideo.module.scss';
 
@@ -13,10 +15,13 @@ const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
         loops
         video={video}
       />
+
       {collaborator && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>
+
           <span aria-label="with">{' × '}</span>
+
           <span>
             <a
               href={collaborationUrl}
@@ -30,6 +35,12 @@ const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
       )}
     </div>
   );
+};
+
+HomeVideo.propTypes = {
+  collaborationUrl: PropTypes.string.isRequired,
+  collaborator: PropTypes.string.isRequired,
+  video: videoPropType.isRequired,
 };
 
 export default HomeVideo;

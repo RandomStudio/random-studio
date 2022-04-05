@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import styles from './LazyVideo.module.scss';
 
 const LazyVideo = React.forwardRef(
   (
-    { alt, className, hasControls, video, loops, isMuted, autoPlays },
+    { alt, className, hasControls, video, isAutoplaying, isLooping, isMuted },
     parentRef,
   ) => {
     const localRef = useRef();
@@ -18,7 +19,7 @@ const LazyVideo = React.forwardRef(
       setHasJs(true);
 
       const handlePlayer = () => {
-        if (autoPlays) {
+        if (isAutoplaying) {
           ref.play().catch(() => null);
         }
       };
@@ -51,7 +52,7 @@ const LazyVideo = React.forwardRef(
 
         observer.disconnect();
       };
-    }, [videoRef, autoPlays]);
+    }, [videoRef, isAutoplaying]);
 
     if (!video) {
       return null;
@@ -65,6 +66,7 @@ const LazyVideo = React.forwardRef(
     const sourceElements = (
       <>
         {/* <source src={sources?.hls} type="application/x-mpegurl" /> */}
+
         <source src={sources?.mp4} type="video/mp4" />
       </>
     );
@@ -73,7 +75,7 @@ const LazyVideo = React.forwardRef(
       <>
         <video
           className={styles.jsVideo}
-          loop={loops}
+          loop={isLooping}
           muted={isMuted}
           onPlaying={() => setIsLoaded(true)}
           playsInline
@@ -81,10 +83,11 @@ const LazyVideo = React.forwardRef(
         >
           {intersected ? sourceElements : null}
         </video>
+
         <noscript>
           <video
             controls={hasControls}
-            loop={loops}
+            loop={isLooping}
             muted={isMuted}
             playsInline
           >
@@ -98,9 +101,8 @@ const LazyVideo = React.forwardRef(
     // Prevents autoplay conflicting
     return (
       <div
-        className={`${styles.frame} ${className} ${
-          isLoaded ? styles.isLoaded : ''
-        }
+        className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
+          }
         ${hasJs ? styles.hasJs : ''}`}
         style={{
           aspectRatio: `${width} / ${height}`,
@@ -112,11 +114,37 @@ const LazyVideo = React.forwardRef(
           className={styles.placeholder}
           src={blurThumbnail}
         />
+
         {videoElement}
       </div>
     );
   },
 );
+
+LazyVideo.propTypes = {
+  alt: PropTypes.string,
+  className: PropTypes.string,
+  hasControls: PropTypes.bool,
+  isAutoplaying: PropTypes.bool,
+  isLooping: PropTypes.bool,
+  isMuted: PropTypes.bool.isRequired,
+  video: PropTypes.shape({
+    blur: PropTypes.string.isRequired,
+    sources: PropTypes.shape({
+      mp4: PropTypes.string.isRequired,
+    }).isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }).isRequired,
+};
+
+LazyVideo.defaultProps = {
+  alt: null,
+  className: '',
+  hasControls: false,
+  isAutoplaying: true,
+  isLooping: true,
+};
 
 LazyVideo.displayName = 'LazyVideo';
 

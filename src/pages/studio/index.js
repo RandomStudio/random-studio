@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Studio.module.scss';
 import Layout from '../../components/Layout/Layout';
 import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
@@ -12,6 +13,12 @@ import supportsIntersectionObserver from '../../utils/supportsIntersectionObserv
 import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import addAdditionalInfoToBlocks from '../../api/addAdditionalInfoToBlocks';
+import {
+  introBlockPropType,
+  jobOpeningPropType,
+  servicePropType,
+  slidePropType,
+} from '../../propTypes';
 
 const mediumBreakpoint = 960; // BP of 60rem
 
@@ -59,12 +66,12 @@ const Studio = ({
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${
-          width > mediumBreakpoint ? themeClass : ''
-        }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
+          }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
         <Head title="Studio" />
+
         <IntroBlock intros={introBlocks} ref={introRef} title={title} />
 
         <ServiceList services={services} />
@@ -73,11 +80,11 @@ const Studio = ({
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee jobOpenings={jobOpenings} />
+
           <Carousel
+            caption="Studio Impressions"
             className={styles.carouselWrapper}
-            showIndicator
             slides={studioImpression}
-            title="Studio Impressions"
           />
         </div>
       </div>
@@ -97,6 +104,15 @@ export const getStaticProps = async ({ preview }) => {
       introBlocks: await addAdditionalInfoToBlocks(page.introBlocks),
     },
   };
+};
+
+Studio.propTypes = {
+  introBlocks: PropTypes.arrayOf(introBlockPropType).isRequired,
+  jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
+  services: PropTypes.arrayOf(servicePropType).isRequired,
+  skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
+  studioImpression: PropTypes.arrayOf(slidePropType).isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Studio;

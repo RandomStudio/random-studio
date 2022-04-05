@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import LazyVideo from '../../../LazyVideo/LazyVideo';
 import styles from './Block.module.scss';
 import Image from '../../../Image/Image';
+import { imageDataPropType, videoPropType } from '../../../../propTypes';
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
@@ -97,6 +98,7 @@ const Block = ({ image, index, copy, title, video }) => {
               data={image.imageData}
             />
           )}
+
           <div className={styles.overlay} ref={overlayRef} />
         </div>
 
@@ -120,13 +122,16 @@ const Block = ({ image, index, copy, title, video }) => {
 };
 
 Block.propTypes = {
-  image: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
   copy: PropTypes.string.isRequired,
+  image: imageDataPropType,
+  index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  video: PropTypes.string,
+  video: videoPropType,
 };
 
-Block.defaultProps = {};
+Block.defaultProps = {
+  image: null,
+  video: null,
+};
 
 export default Block;

@@ -7,8 +7,10 @@ import SkillList from './SkillList/SkillList';
 const SkillBlock = ({ skillset }) => (
   <div className={styles.wrapper}>
     {skillset && <SkillList skillset={skillset} />}
+
     <div className={styles.conversationWrapper}>
       <p>{'Start a conversation'}</p>
+
       <Email />
     </div>
   </div>

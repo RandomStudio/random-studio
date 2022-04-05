@@ -18,6 +18,7 @@ const Footer = () => (
         name="Random Amsterdam"
         phone="+31 20 779 7735"
       />
+
       <Address
         address={['174 Quai de Jemmapes', '75010 Paris', 'France']}
         aria="Paris address"
@@ -27,6 +28,7 @@ const Footer = () => (
         phone="+33 1 40 36 41 44"
       />
     </div>
+
     <div className={styles.column}>
       <Newsletter />
 
@@ -39,6 +41,7 @@ const Footer = () => (
         >
           {'Instagram'}
         </a>
+
         <a
           className={styles.social}
           href="https://www.linkedin.com/company/random-studio/"
@@ -47,6 +50,7 @@ const Footer = () => (
         >
           {'LinkedIn'}
         </a>
+
         <a
           className={styles.social}
           href="https://medium.com/random-studio/"

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Recruitee.module.scss';
 import JobOffer from './JobOffer/JobOffer';
+import { jobOpeningPropType } from '../../../propTypes';
 
 const Recruitee = ({ jobOpenings }) => {
   const [openRoleId, setOpenRoleId] = useState(null);
@@ -49,6 +51,7 @@ const Recruitee = ({ jobOpenings }) => {
     <>
       <aside className={styles.recruitee}>
         <p className={styles.title}>{'Open Positions'}</p>
+
         <ul className={styles.list}>
           {jobOpenings.map(opening => (
             <li className={styles.item} key={opening.url}>
@@ -65,11 +68,13 @@ const Recruitee = ({ jobOpenings }) => {
         </ul>
       </aside>
 
-      {openJob && (
-        <JobOffer closeOpenOffer={handleChangeRole} opening={openJob} />
-      )}
+      {openJob && <JobOffer handleClose={handleChangeRole} opening={openJob} />}
     </>
   );
+};
+
+Recruitee.propTypes = {
+  jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
 };
 
 export default Recruitee;

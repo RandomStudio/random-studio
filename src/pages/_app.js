@@ -1,3 +1,6 @@
+// This is a weird file, disable two ESLint rules to match next.js style
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-props-no-spreading */
 import '../styles/global.scss';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
@@ -31,10 +34,13 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
   return (
     <>
       <Component {...pageProps} />
+
       {isPreview && (
         <div className={styles.preview}>
           {'Viewing preview'}
+
           <br />
+
           <a href={`/api/clear-preview?slug=${window.location.pathname}`}>
             {'(Switch to live)'}
           </a>

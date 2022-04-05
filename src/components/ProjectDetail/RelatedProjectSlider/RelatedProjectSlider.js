@@ -13,6 +13,7 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
   return (
     <section className={wrapperClass}>
       {relatedProjectsTitle && <h4>{relatedProjectsTitle}</h4>}
+
       <div className={styles.worksWrapper}>
         {relatedProjects.map(
           ({ featuredImage, featuredVideo, title, slug }) => (
@@ -26,6 +27,7 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
                     sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
                   />
                 )}
+
                 {featuredVideo && (
                   <VideoWithControls
                     autoplay
@@ -36,11 +38,13 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
                     url={featuredVideo}
                   />
                 )}
+
                 {title && <p>{title}</p>}
               </a>
             </Link>
           ),
         )}
+
         <span className={styles.cardSpacer} />
       </div>
     </section>
@@ -48,15 +52,14 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
 };
 
 RelatedProjectSlider.propTypes = {
-  relatedProjects: PropTypes.shape({
-    blockTitle: PropTypes.string,
-    marginTop: PropTypes.number,
-    projects: PropTypes.string,
-  }),
-};
-
-RelatedProjectSlider.defaultProps = {
-  relatedProjects: {},
+  relatedProjects: PropTypes.arrayOf(
+    PropTypes.shape({
+      blockTitle: PropTypes.string,
+      marginTop: PropTypes.number,
+      projects: PropTypes.string,
+    }),
+  ).isRequired,
+  relatedProjectsTitle: PropTypes.string.isRequired,
 };
 
 export default RelatedProjectSlider;

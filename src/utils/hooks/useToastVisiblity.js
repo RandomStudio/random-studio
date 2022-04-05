@@ -1,11 +1,7 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 
 const useToastVisibility = () => {
-  const [isToastVisible, setIsVisible] = useState(false);
-
-  const setIsToastVisible = useCallback(isVisible => {
-    setIsVisible(isVisible);
-  }, []);
+  const [isToastVisible, setIsToastVisible] = useState(false);
 
   return {
     isToastVisible,

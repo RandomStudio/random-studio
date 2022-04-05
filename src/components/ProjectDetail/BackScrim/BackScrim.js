@@ -34,6 +34,7 @@ const BackScrim = () => {
           <a className={styles.backButton}>{'Back to projects'}</a>
         </Link>
       </div>
+
       <div className={styles.intersectionLine} ref={intersectionRef} />
     </>
   );

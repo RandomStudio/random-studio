@@ -9,36 +9,28 @@ import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
 import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
 import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
+import { projectPropType, projectPropTypeObject } from '../../../propTypes';
 
 const Project = ({
-  allProjects,
   intro,
-  opengraph,
+  opengraph: { ogTitle, ogDescription, ogImage },
   content,
   details,
   relatedProjects,
   relatedProjectsTitle,
   title,
 }) => {
-  const socialTitle =
-    opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
-
-  const socialDescription =
-    opengraph && opengraph.ogDescription ? opengraph.ogDescription : undefined;
-
-  const SEOImage = (opengraph ? opengraph.ogImage : null) || undefined;
-
   return (
     <Layout className={styles.layout} hasFooter={false}>
       <Head
         description={intro}
-        image={SEOImage}
-        socialDescription={socialDescription}
-        socialTitle={socialTitle}
+        image={ogImage}
+        socialDescription={ogDescription}
+        socialTitle={ogTitle}
         title={title}
       />
+
       <ProjectDetail
-        allProjects={allProjects}
         content={content}
         details={details}
         intro={intro}
@@ -81,5 +73,11 @@ export async function getStaticPaths() {
     })),
   };
 }
+
+Project.propTypes = projectPropTypeObject;
+
+Project.defaultProps = {
+  opengraph: {},
+};
 
 export default Project;

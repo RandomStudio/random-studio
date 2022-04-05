@@ -21,24 +21,23 @@ const trackIsCurrentlyMuted = isCurrentlyMuted => {
 };
 
 const VideoWithControls = ({
-  autoplay,
   className,
-  hasClickControls,
   hasControls,
   isMuted: isStartingMuted,
-  loops,
+  isAutoplaying,
+  isLooping,
   isAlwaysMuted,
   video,
 }) => {
   const videoRef = useRef(null);
 
-  const [hasPlayed, setHasPlayed] = useState(autoplay);
+  const [hasPlayed, setHasPlayed] = useState(isAutoplaying);
 
   const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
-    autoplay || isStartingMuted,
+    isAutoplaying || isStartingMuted,
   );
 
-  const [isPlaying, setIsPlaying] = useState(autoplay);
+  const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
   const handleTapVolumeToggle = e => {
     setIsCurrentlyMuted(prevState => !prevState);
@@ -48,10 +47,6 @@ const VideoWithControls = ({
 
   const handleTapPlayPause = e => {
     e.stopPropagation();
-
-    if (!hasClickControls) {
-      return;
-    }
 
     if (!hasPlayed) {
       setHasPlayed(true);
@@ -76,19 +71,21 @@ const VideoWithControls = ({
       onClick={handleTapPlayPause}
     >
       <LazyVideo
-        autoPlays={isPlaying}
         hasControls
+        isAutoplaying={isPlaying}
+        isLooping={isLooping}
         isMuted={isAlwaysMuted || isCurrentlyMuted}
-        loops={loops}
         ref={videoRef}
         video={video}
       />
+
       {hasControls &&
         (hasPlayed ? (
           <div className={styles.videoControls}>
             <button onClick={handleTapPlayPause} type="button">
               {isPlaying ? 'Pause' : 'Play'}
             </button>
+
             {!isAlwaysMuted && (
               <button onClick={handleTapVolumeToggle} type="button">
                 {isCurrentlyMuted ? 'Unmute' : 'Mute'}
@@ -103,20 +100,22 @@ const VideoWithControls = ({
 };
 
 VideoWithControls.propTypes = {
-  autoplay: PropTypes.bool,
+  className: PropTypes.string,
   hasControls: PropTypes.bool,
   isAlwaysMuted: PropTypes.bool,
+  isAutoplaying: PropTypes.bool,
+  isLooping: PropTypes.bool,
   isMuted: PropTypes.bool,
-  loops: PropTypes.bool,
   video: PropTypes.shape({}).isRequired,
 };
 
 VideoWithControls.defaultProps = {
-  autoplay: true,
+  className: '',
   hasControls: true,
   isAlwaysMuted: false,
+  isAutoplaying: true,
+  isLooping: true,
   isMuted: true,
-  loops: true,
 };
 
 export default VideoWithControls;

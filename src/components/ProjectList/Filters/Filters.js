@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { PROJECT_FILTERS } from '../../../CONSTANTS';
 import styles from './Filters.module.scss';
 
@@ -44,9 +45,8 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
         {filtersWithEntries.map(filter => (
           <button
             aria-pressed={filter === activeTag}
-            className={`${styles.filterEntry} ${
-              activeTag !== null ? styles.activeFilter : ''
-            } ${filter === activeTag ? styles.activeTag : ''}`}
+            className={`${styles.filterEntry} ${activeTag !== null ? styles.activeFilter : ''
+              } ${filter === activeTag ? styles.activeTag : ''}`}
             key={filter}
             onClick={() => {
               handleSelectFilter(filter);
@@ -67,6 +67,7 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
           onClick={() => setIsOpen(!isOpen)}
         >
           {activeTag !== null ? activeTag : 'All Projects'}
+
           <div className={`${styles.accordionIcon}`}>
             <img
               alt={isOpen ? 'open' : 'close'}
@@ -75,6 +76,7 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
             />
           </div>
         </div>
+
         {isOpen &&
           filtersWithEntries.map(filter => (
             <span
@@ -89,13 +91,26 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
               }}
               value={filter}
             >
-              {filter}{' '}
-              <span className={styles.filterCount}> {filterCount[filter]}</span>
+              {`${filter} ${(
+                <span className={styles.filterCount}>
+                  {filterCount[filter]}
+                </span>
+              )}`}
             </span>
           ))}
       </div>
     </>
   );
+};
+
+Filters.propTypes = {
+  activeTag: PropTypes.string,
+  filterCount: PropTypes.objectOf(PropTypes.number).isRequired,
+  setActiveTag: PropTypes.func.isRequired,
+};
+
+Filters.defaultProps = {
+  activeTag: null,
 };
 
 export default Filters;

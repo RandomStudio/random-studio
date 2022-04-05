@@ -35,7 +35,7 @@ const Crossfade = ({ children, duration }) => {
 };
 
 Crossfade.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   duration: PropTypes.number,
 };
 

@@ -2,11 +2,13 @@ import React, { useMemo, useState } from 'react';
 import { countBy } from 'lodash-es';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
 import Project from '../Project/Project';
 import { HOMEPAGE_POSTS_LIMIT, LAYOUT } from '../../CONSTANTS';
 import Crossfade from '../Crossfade/Crossfade';
+import { projectPropType } from '../../propTypes';
 
 const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
   const projectFilters = projects
@@ -40,40 +42,43 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
           setActiveTag={setActiveTag}
         />
       )}
+
       <ul aria-label="Highlighted projects" className={styles.projects}>
         {intro && (
           <div className={styles.statement}>
             <ReactMarkdown>{intro}</ReactMarkdown>
           </div>
         )}
+
         <Crossfade>
           <React.Fragment key={activeTag ?? 'all'}>
             {visibleProjects.map(
-              ({ featuredImage, featuredVideo, title, slug }, index) => {
+              ({ featuredImage, featuredVideo, id, title, slug }, index) => {
                 const { left, top, width } = LAYOUT[index];
 
                 return (
-                  <>
+                  <React.Fragment key={slug}>
                     {!hasLimit && HOMEPAGE_POSTS_LIMIT === index && (
                       <div className={styles.continued} id="continued" />
                     )}
+
                     <Project
                       featuredImage={featuredImage}
                       featuredVideo={featuredVideo}
                       index={index}
-                      key={slug}
                       left={left}
                       slug={slug}
                       title={title}
                       top={top}
                       width={width}
                     />
-                  </>
+                  </React.Fragment>
                 );
               },
             )}
           </React.Fragment>
         </Crossfade>
+
         {hasLimit && (
           <div className={styles.seeMore}>
             <Link href="/projects#continued">
@@ -84,6 +89,19 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
       </ul>
     </>
   );
+};
+
+ProjectList.propTypes = {
+  hasFilters: PropTypes.bool,
+  hasLimit: PropTypes.bool,
+  intro: PropTypes.string,
+  projects: PropTypes.arrayOf(projectPropType).isRequired,
+};
+
+ProjectList.defaultProps = {
+  hasFilters: false,
+  hasLimit: false,
+  intro: null,
 };
 
 export default ProjectList;

@@ -54,7 +54,6 @@ export const SINGLE_PROJECT_QUERY = `
     project(orderBy: position_ASC, filter: {slug: {eq: $slug}}) {
       id
       slug
-      content
       intro
       title
       details

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { Image } from 'react-datocms';
 import styles from './Carousel.module.scss';
 import Caption from '../Caption/Caption';
+import { slidePropType } from '../../propTypes';
 
-const Carousel = ({ slides, caption, className }) => {
+const Carousel = ({ caption, className, slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -49,6 +50,7 @@ const Carousel = ({ slides, caption, className }) => {
           </div>
         ))}
       </div>
+
       <Caption
         caption={caption}
         carouselIndicator={`${currentIndex + 1} of ${slides.length}`}
@@ -58,10 +60,13 @@ const Carousel = ({ slides, caption, className }) => {
 };
 
 Carousel.propTypes = {
+  caption: PropTypes.string,
   className: PropTypes.string,
+  slides: PropTypes.arrayOf(slidePropType).isRequired,
 };
 
 Carousel.defaultProps = {
+  caption: '',
   className: '',
 };
 

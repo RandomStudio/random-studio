@@ -14,14 +14,22 @@ const Caption = ({ marginLeft, caption, carouselIndicator }) => {
       style={{ marginLeft: !marginLeft && '1.4rem' }}
     >
       <ReactMarkdown>{caption}</ReactMarkdown>
+
       <ReactMarkdown>{carouselIndicator}</ReactMarkdown>
     </div>
   );
 };
 
 Caption.propTypes = {
-  marginLeft: PropTypes.number,
   caption: PropTypes.string,
+  carouselIndicator: PropTypes.string,
+  marginLeft: PropTypes.number,
+};
+
+Caption.defaultProps = {
+  caption: '',
+  carouselIndicator: '',
+  marginLeft: null,
 };
 
 export default Caption;
