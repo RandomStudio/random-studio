@@ -159,18 +159,26 @@ jobOpenings:
       ### Requirements
 
       - You have in-depth knowledge of HTML, CSS and Javascript and are skilled in React or a similar component-based front-end library.
+      
       - You have knowledge of Node.js and npm, and are comfortable using a command line to run scripts and GIT.
+
       - You have good communication skills in English and can work directly with designers, other developers, and clients in a clear and professional way.
+
       - You are able to work at our Amsterdam office at least some of the time.
+
       - You are available for at least 4 days a week.
 
 
       ## Nice to have
 
       - You have experience with SCRUM, Agile or a similar process structure.
+
       - You have experience with mobile development and developing for touch screens.
+
       - You are interested in working with sensors, light control, arduino or other physical hardware.
+
       - You have knowledge of Three.js, BabylonJS or WebGL in some other way.
+
       - You have experience developing for retail or ecommerce.
 
 
@@ -182,7 +190,7 @@ jobOpenings:
       ### Random Studio Diversity & Inclusion Statement
 
       We believe that an inclusive work environment and a diverse team are key to creating fresh and inspiring work. We’re looking for candidates who enrich our culture and challenge the status quo. We encourage everyone to bring their whole selves to work, and we strive to provide all candidates with an unbiased and accessible recruitment process. If you require any help due to a disability when applying please let us know in your application so we can accommodate.
-    jobIsVisible: false
+    jobIsVisible: true
   - jobTitle: Job function title
     jobURL: https://randomstudio.bamboohr.com/jobs/view.php?id=<ID here>
     jobDescription: Job description
