@@ -36,6 +36,8 @@
   opacity: 1;
   transition: opacity 300ms ease-in;
   display: none;
+  filter: blur(20px);
+  transform: scale(1.1);
 
   .hasJs & {
     display: block;

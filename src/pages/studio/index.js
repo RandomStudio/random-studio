@@ -11,6 +11,7 @@ import useWindowSize from '../../utils/hooks/useWindowSize';
 import supportsIntersectionObserver from '../../utils/supportsIntersectionObserver';
 import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
+import addAdditionalInfoToBlocks from '../../api/addAdditionalInfoToBlocks';
 
 const mediumBreakpoint = 960; // BP of 60rem
 
@@ -89,7 +90,10 @@ export const getStaticProps = async () => {
   });
 
   return {
-    props: page,
+    props: {
+      ...page,
+      introBlocks: await addAdditionalInfoToBlocks(page.introBlocks),
+    },
   };
 };
 

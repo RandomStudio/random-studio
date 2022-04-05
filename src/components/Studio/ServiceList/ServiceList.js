@@ -1,7 +1,7 @@
-import { Image } from 'react-datocms';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ServiceList.module.scss';
+import Image from '../../Image/Image';
 
 const imageSizes = [
   '(max-width: 960px) 40vw, 80vw',
@@ -19,12 +19,13 @@ const ServiceList = ({ services }) => (
             <h3>{title}</h3>
             <p>{copy}</p>
           </div>
-          <Image
-            alt={title}
-            className={styles.imageWrapper}
-            sizes={imageSizes[index]}
-            data={image.imageData}
-          />
+          <div className={styles.imageWrapper}>
+            <Image
+              alt={title}
+              data={image.imageData}
+              sizes={imageSizes[index]}
+            />
+          </div>
         </div>
       ))}
     </section>
@@ -32,17 +33,12 @@ const ServiceList = ({ services }) => (
 );
 
 ServiceList.propTypes = {
-  headerTitle: PropTypes.string,
   services: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       copy: PropTypes.string.isRequired,
     }),
   ).isRequired,
-};
-
-ServiceList.defaultProps = {
-  headerTitle: '',
 };
 
 export default ServiceList;

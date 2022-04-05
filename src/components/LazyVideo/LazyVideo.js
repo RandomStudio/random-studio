@@ -53,12 +53,18 @@ const LazyVideo = React.forwardRef(
       };
     }, [videoRef, autoPlays]);
 
+    if (!video) {
+      return null;
+    }
+
     const { sources, blur, height, width } = video;
+
+    const blurThumbnail = `data:image/jpeg;base64,${blur}`;
 
     /* eslint-disable jsx-a11y/media-has-caption */
     const sourceElements = (
       <>
-        {/*<source src={sources?.hls} type="application/x-mpegurl" />*/}
+        <source src={sources?.hls} type="application/x-mpegurl" />
         <source src={sources?.hd1080} type="video/mp4" />
         <source src={sources?.hd720} type="video/mp4" />
       </>
@@ -72,7 +78,7 @@ const LazyVideo = React.forwardRef(
           muted={isMuted}
           onPlaying={() => setIsLoaded(true)}
           playsInline
-          poster={`data:image/jpeg;base64,${blur}`}
+          poster={blurThumbnail}
           ref={videoRef}
         >
           {intersected ? sourceElements : null}
@@ -83,7 +89,7 @@ const LazyVideo = React.forwardRef(
             loop={loops}
             muted={isMuted}
             playsInline
-            poster={`data:image/jpeg;base64,${blur}`}
+            poster={blurThumbnail}
           >
             {sourceElements}
           </video>
@@ -106,7 +112,7 @@ const LazyVideo = React.forwardRef(
           alt={alt}
           aria-hidden
           className={styles.placeholder}
-          src={`data:image/jpeg;base64,${blur}`}
+          src={blurThumbnail}
         />
         {videoElement}
       </div>

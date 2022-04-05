@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Image } from 'react-datocms';
 import Link from 'next/link';
 import styles from './Project.module.scss';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
+import Image from '../Image/Image';
 
 const Project = ({
   className,
@@ -37,8 +37,8 @@ const Project = ({
         ) : (
           <Image
             alt="" // Keeps the screen reader focused on project list
-            // sizes={`(max-width: 576px) 100vw, ${thumbnail.width}vw`}
             data={featuredImage.imageData}
+            sizes={`(max-width: 576px) 100vw, ${width}vw`}
           />
         )}
       </div>

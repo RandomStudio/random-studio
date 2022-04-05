@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Image } from 'react-datocms';
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
+import Image from '../../Image/Image';
 import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import styles from './ContentBlock.module.scss';
 
@@ -48,6 +47,7 @@ const ContentBlock = ({
           layout="intrinsic"
           objectFit="cover"
           objectPosition="50% 50%"
+          sizes={`(max-width: 576px) 100vw, ${width}vw`}
         />
         <Caption caption={caption} marginLeft={marginLeft} />
       </>

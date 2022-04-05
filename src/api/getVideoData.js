@@ -1,13 +1,36 @@
 const sharp = require('sharp');
+const { readFileSync, writeFileSync } = require('fs');
 
-const buildTimeCache = {};
+const CACHE_FILE = './.videoCache.json';
+
+const loadCache = () => {
+  try {
+    const cacheString = readFileSync(CACHE_FILE);
+
+    return JSON.parse(cacheString);
+  } catch (error) {
+    return {};
+  }
+};
+
+const cache = loadCache();
+
+const updateCache = (id, data) => {
+  cache[id] = data;
+
+  try {
+    writeFileSync(CACHE_FILE, JSON.stringify(cache));
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 const createPlaceholder = async filePath => {
   const buffer = await sharp(filePath)
     .raw()
     .ensureAlpha()
-    .resize(10, 10, { fit: 'inside' })
-    .toFormat(sharp.format.jpeg)
+    .resize(12, 12, { fit: 'inside' })
+    .toFormat(sharp.format.png)
     .toBuffer();
 
   return buffer.toString('base64');
@@ -30,8 +53,8 @@ const getImage = async url => {
 };
 
 export const getVimeoVideoData = async id => {
-  if (buildTimeCache[id]) {
-    return buildTimeCache[id];
+  if (cache[id]) {
+    return cache[id];
   }
 
   const details = await getVideoDetails(id);
@@ -47,17 +70,20 @@ export const getVimeoVideoData = async id => {
   const image = await getImage(smallest);
   const placeholder = await createPlaceholder(image);
 
-  buildTimeCache[id] = {
+  const data = {
     sources: {
       hls: files.find(({ quality }) => quality === 'hls')?.link ?? null,
-      hd1080: files.find(({ rendition }) => rendition === '1080p')?.link ?? null,
+      hd1080:
+        files.find(({ rendition }) => rendition === '1080p')?.link ?? null,
       hd720: files.find(({ rendition }) => rendition === '720p')?.link ?? null,
     },
     blur: placeholder,
     fallback: largest,
   };
 
-  return buildTimeCache[id];
+  updateCache(id, data);
+
+  return data;
 };
 
 export const addVimeoVideoDataToObject = async video => {

@@ -130,7 +130,14 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
     skillset
     title
     introBlocks {
-      video
+      __typename
+      video {
+        height
+        providerUid
+        thumbnailUrl
+        url
+        width
+      }
       copy
       image {
         ...ImageDataObject

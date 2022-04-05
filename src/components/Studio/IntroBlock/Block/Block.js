@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import LazyVideo from '../../../LazyVideo/LazyVideo';
 import styles from './Block.module.scss';
-import { Image } from 'react-datocms';
+import Image from '../../../Image/Image';
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
