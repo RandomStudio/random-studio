@@ -5,8 +5,6 @@ on:
       - "staging"
   # Allows external webhook trigger
   repository_dispatch:
-    types:
-      - webhook
 jobs:
   build:
     name: Build and deploy immediately
