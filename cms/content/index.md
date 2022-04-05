@@ -12,7 +12,7 @@ middle: >-
   invite people to play, reflect and connect.
 
 
-  [More about our studio](/studio)
+  [More about our studio](/studio)test
 projects:
   - thumbnail:
         marginTop: 0
