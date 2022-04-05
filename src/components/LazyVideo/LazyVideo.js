@@ -19,8 +19,7 @@ const LazyVideo = React.forwardRef(
 
       const handlePlayer = () => {
         if (autoPlays) {
-          // eslint-disable-next-line no-console
-          ref.play().catch(console.log);
+          ref.play().catch(() => null);
         }
       };
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import { buildModularBlock } from 'datocms-client';
 import { basename } from 'path';
 import { uploadAsset } from './assets.mjs';

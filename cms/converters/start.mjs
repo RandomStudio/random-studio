@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-import { eraseExistingAssets } from './assets.mjs';
 import { eraseExistingItems, uploadItem } from './model.mjs';
 import { getAllFilenames, getContentFromFile } from './filesystem.mjs';
 import { transformProject } from './transformer.mjs';

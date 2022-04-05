@@ -1,7 +1,6 @@
-/* eslint-disable import/prefer-default-export */
 import { useCallback, useState } from 'react';
 
-export const useToastVisibility = () => {
+const useToastVisibility = () => {
   const [isToastVisible, setIsVisible] = useState(false);
 
   const setIsToastVisible = useCallback(isVisible => {
@@ -13,3 +12,5 @@ export const useToastVisibility = () => {
     setIsToastVisible,
   };
 };
+
+export default useToastVisibility;
