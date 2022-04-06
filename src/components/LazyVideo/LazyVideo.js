@@ -101,9 +101,8 @@ const LazyVideo = React.forwardRef(
     // Prevents autoplay conflicting
     return (
       <div
-        className={`${styles.frame} ${className} ${
-          isLoaded ? styles.isLoaded : ''
-        }
+        className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
+          }
         ${hasJs ? styles.hasJs : ''}`}
         style={{
           aspectRatio: `${width} / ${height}`,
@@ -128,7 +127,7 @@ LazyVideo.propTypes = {
   hasControls: PropTypes.bool,
   isAutoplaying: PropTypes.bool,
   isLooping: PropTypes.bool,
-  isMuted: PropTypes.bool.isRequired,
+  isMuted: PropTypes.bool,
   video: PropTypes.shape({
     blur: PropTypes.string.isRequired,
     sources: PropTypes.shape({
@@ -145,6 +144,7 @@ LazyVideo.defaultProps = {
   hasControls: false,
   isAutoplaying: true,
   isLooping: true,
+  isMuted: true,
 };
 
 LazyVideo.displayName = 'LazyVideo';

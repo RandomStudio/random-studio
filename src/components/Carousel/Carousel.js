@@ -4,6 +4,7 @@ import { Image } from 'react-datocms';
 import styles from './Carousel.module.scss';
 import Caption from '../Caption/Caption';
 import { slidePropType } from '../../propTypes';
+import LazyVideo from '../LazyVideo/LazyVideo';
 
 const Carousel = ({ caption, className, slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,7 +38,7 @@ const Carousel = ({ caption, className, slides }) => {
               onClick={handleNext}
             >
               {video ? (
-                <video autoPlay loop muted playsInline src={video} />
+                <LazyVideo isMuted video={video} />
               ) : (
                 (image || imageData) && (
                   <Image

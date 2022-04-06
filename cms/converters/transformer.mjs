@@ -2,20 +2,16 @@ import { buildModularBlock } from 'datocms-client';
 import { basename } from 'path';
 import { uploadAsset } from './assets.mjs';
 import { getContentFromFile } from './filesystem.mjs';
+import { PATHS } from './start.mjs';
 import getVimeoDetails from './video.mjs';
 
-const IMAGE_BASE_PATH = '../cms/img';
-
 const getAdditionalInfo = async () => {
-  const indexPage = await getContentFromFile('../src/content', 'index.md');
-
   const projectsPage = await getContentFromFile(
-    '../src/content',
+    PATHS.pages,
     'projects.md',
   );
 
   return {
-    indexPage,
     projectsPage,
   };
 };
@@ -25,7 +21,7 @@ const transformOpengraph = async ({ title, description, image }) => {
     string.length > length ? `${string.slice(0, length - 3)}...` : string;
 
   const { uploadId } = image
-    ? await uploadAsset(IMAGE_BASE_PATH, basename(image))
+    ? await uploadAsset(PATHS.images, basename(image))
     : {};
 
   return {
@@ -83,9 +79,9 @@ const transformContentBlock = async ({
             itemType: '1641803',
             image:
               slide.type === 'image'
-                ? await uploadAsset(IMAGE_BASE_PATH, basename(slide.image))
+                ? await uploadAsset(PATHS.images, basename(slide.image))
                 : null,
-            video: slide.type === 'video' ? slide.url : null,
+            video: slide.type === 'video' ? await getVimeoDetails(slide.url) : null,
           }),
         ),
       ),
@@ -95,7 +91,7 @@ const transformContentBlock = async ({
   if (image && image !== '') {
     return {
       itemType: '1643992',
-      image: await uploadAsset(IMAGE_BASE_PATH, basename(image)),
+      image: await uploadAsset(PATHS.images, basename(image)),
       caption: caption ?? alt,
       marginLeft: Math.round(marginLeft),
       marginTop: Math.round(marginTop),
@@ -122,14 +118,9 @@ export const transformProject = async (filename, content) => {
     opengraph,
   } = content;
 
-  const { indexPage, projectsPage } = await getAdditionalInfo();
+  const { projectsPage } = await getAdditionalInfo();
 
-  const [, { projects: homepageProjects }] = indexPage;
   const [, { projects }] = projectsPage;
-
-  const isHomepage = !!homepageProjects.find(
-    ({ project }) => project === title,
-  );
 
   const { thumbnail, tags } =
     projects.find(({ project }) => project === title) ?? {};
@@ -163,10 +154,9 @@ export const transformProject = async (filename, content) => {
       .replaceAll('---', '-'),
     featuredImage:
       thumbnail?.image && !thumbnail?.video
-        ? await uploadAsset(IMAGE_BASE_PATH, basename(thumbnail?.image))
+        ? await uploadAsset(PATHS.images, basename(thumbnail?.image))
         : null,
     featuredVideo: await getVimeoDetails(thumbnail?.video),
-    isHomepage,
     isVisible,
     details: credits
       ? JSON.stringify(

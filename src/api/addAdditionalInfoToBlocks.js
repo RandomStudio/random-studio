@@ -10,6 +10,22 @@ const addAdditionalInfoToBlocks = async content =>
         };
       }
 
+      if (block.slides) {
+        return {
+          ...block,
+          slides: await Promise.all(
+            block.slides.map(async slide =>
+              slide.video
+                ? {
+                  ...slide,
+                  video: await addVimeoVideoDataToObject(slide.video),
+                }
+                : slide,
+            ),
+          ),
+        };
+      }
+
       return block;
     }),
   );

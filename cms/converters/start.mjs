@@ -4,18 +4,22 @@ import { transformProject } from './transformer.mjs';
 
 const ERASE_ALL_DATA_BEFORE_CONVERSION = false;
 
-const PATHS = {
-  project: '../src/content/projects',
+export const PATHS = {
+  images: '../img',
+  pages: '../content',
+  project: '../content/projects',
 };
+
+const FILTER = filename => filename.includes('digital-partner-for-french-fashion-house-maison-margiela')
 
 const TRANSFORMER = {
   project: transformProject,
 };
 
-const MODELS = Object.keys(PATHS);
+const MODELS = ['project'];
 
 const getModelData = async path => {
-  const files = await getAllFilenames(path);
+  const files = await (await getAllFilenames(path)).filter(FILTER);
 
   const modelData = await Promise.all(
     files.map(file => getContentFromFile(path, file)),
@@ -27,12 +31,11 @@ const getModelData = async path => {
 const start = async () => {
   if (ERASE_ALL_DATA_BEFORE_CONVERSION) {
     // await eraseExistingAssets();
-    await eraseExistingItems(MODELS);
+    // await eraseExistingItems(MODELS);
   }
 
   MODELS.forEach(async model => {
     const modelData = await getModelData(PATHS[model]);
-
     const transformedData = [];
 
     for await (const [filename, content] of modelData) {
