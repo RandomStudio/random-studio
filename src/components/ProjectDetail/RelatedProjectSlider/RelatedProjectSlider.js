@@ -6,9 +6,8 @@ import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import Image from '../../Image/Image';
 
 const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
-  const wrapperClass = `${styles.wrapper} ${
-    relatedProjects.length === 1 ? styles.isSingle : ''
-  }`;
+  const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
+    }`;
 
   return (
     <section className={wrapperClass}>
@@ -20,12 +19,13 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
             <Link href={slug} key={title}>
               <a className={styles.card}>
                 {featuredImage && (
-                  <Image
-                    alt={title}
-                    className={styles.imageWrapper}
-                    data={featuredImage.imageData}
-                    sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
-                  />
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      alt={title}
+                      data={featuredImage.imageData}
+                      sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
+                    />
+                  </div>
                 )}
 
                 {featuredVideo && (

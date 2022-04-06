@@ -33,7 +33,7 @@ export const videoPropType = PropTypes.shape({
 
 export const slidePropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
-  video: PropTypes.string,
+  video: videoPropType,
   image: imageDataPropType,
 });
 
