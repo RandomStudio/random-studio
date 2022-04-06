@@ -49,10 +49,6 @@ const VideoWithControls = ({
   const handleTapPlayPause = e => {
     e.stopPropagation();
 
-    if (!hasClickControls) {
-      return;
-    }
-
     if (!hasPlayed) {
       setHasPlayed(true);
     }
@@ -70,11 +66,16 @@ const VideoWithControls = ({
     trackPausePlay(isPlaying);
   };
 
+  const handleTap = e => {
+    if (!hasClickControls) {
+      return;
+    }
+
+    handleTapPlayPause(e);
+  };
+
   return (
-    <div
-      className={`${styles.videoWrapper} ${className}`}
-      onClick={handleTapPlayPause}
-    >
+    <div className={`${styles.videoWrapper} ${className}`} onClick={handleTap}>
       <LazyVideo
         hasControls
         isAutoplaying={isPlaying}
