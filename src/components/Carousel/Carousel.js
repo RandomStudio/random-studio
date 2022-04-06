@@ -6,7 +6,7 @@ import Caption from '../Caption/Caption';
 import { slidePropType } from '../../propTypes';
 import LazyVideo from '../LazyVideo/LazyVideo';
 
-const Carousel = ({ caption, className, slides }) => {
+const Carousel = ({ caption, className, slides, sizes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -44,6 +44,7 @@ const Carousel = ({ caption, className, slides }) => {
                   <Image
                     alt={`${caption} – slide ${index + 1}`}
                     data={imageData ?? image.imageData}
+                    sizes={sizes}
                   />
                 )
               )}
@@ -63,6 +64,7 @@ const Carousel = ({ caption, className, slides }) => {
 Carousel.propTypes = {
   caption: PropTypes.string,
   className: PropTypes.string,
+  sizes: PropTypes.string.isRequired,
   slides: PropTypes.arrayOf(slidePropType).isRequired,
 };
 

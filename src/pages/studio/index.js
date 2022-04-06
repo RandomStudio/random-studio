@@ -66,9 +66,8 @@ const Studio = ({
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${
-          width > mediumBreakpoint ? themeClass : ''
-        }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
+          }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
         <Head title="Studio" />
@@ -85,6 +84,7 @@ const Studio = ({
           <Carousel
             caption="Studio Impressions"
             className={styles.carouselWrapper}
+            sizes="(max-width: 768px) 100vw, 50vw"
             slides={studioImpression}
           />
         </div>

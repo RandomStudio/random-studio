@@ -75,7 +75,11 @@ const ContentBlock = ({
     )}
 
     {__typename === BLOCK_TYPES.CarouselBlockRecord && (
-      <Carousel className={styles.carouselWrapper} slides={slides} />
+      <Carousel
+        className={styles.carouselWrapper}
+        sizes={`(max-width: 576px) 100vw, ${width}vw`}
+        slides={slides}
+      />
     )}
 
     {__typename === BLOCK_TYPES.TextBlockRecord && (
