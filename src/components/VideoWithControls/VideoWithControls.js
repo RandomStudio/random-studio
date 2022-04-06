@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { event } from 'react-ga';
 import styles from './VideoWithControls.module.scss';
@@ -52,15 +52,11 @@ const VideoWithControls = ({
       setHasPlayed(true);
     }
 
-    setIsPlaying(prevState => {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-
-      return !prevState;
-    });
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
 
     trackPausePlay(isPlaying);
   };
@@ -80,6 +76,7 @@ const VideoWithControls = ({
         isAutoplaying={isAutoplaying}
         isLooping={isLooping}
         isMuted={!hasAudio || isCurrentlyMuted}
+        onPlayStateChange={setIsPlaying}
         ref={videoRef}
         video={video}
       />
