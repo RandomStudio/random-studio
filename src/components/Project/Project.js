@@ -30,8 +30,8 @@ const Project = ({
         {featuredVideo ? (
           <VideoWithControls
             autoplay
+            hasAudio={false}
             hasControls={false}
-            isMuted
             loops
             video={featuredVideo}
           />
@@ -50,8 +50,8 @@ const Project = ({
           !left || left < 1
             ? {}
             : {
-                marginLeft: '0',
-              }
+              marginLeft: '0',
+            }
         }
       >
         <ReactMarkdown>

@@ -19,8 +19,7 @@ const ContentBlock = ({
     __typename,
     width,
     loops,
-    isMuted,
-    isAlwaysMuted,
+    hasAudio,
     isCentered, // missing
     hasControls,
     caption,
@@ -62,9 +61,8 @@ const ContentBlock = ({
         <VideoWithControls
           autoplay={autoplay}
           caption={caption}
+          hasAudio={hasAudio}
           hasControls={hasControls}
-          isAlwaysMuted={isAlwaysMuted}
-          isMuted={isMuted}
           loops={loops}
           video={video}
           width={width}

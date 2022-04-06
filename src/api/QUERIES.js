@@ -86,8 +86,7 @@ export const SINGLE_PROJECT_QUERY = `
           marginLeft
           width
           loops
-          isMuted
-          isAlwaysMuted
+          hasAudio
           hasControls
           caption
           autoplay

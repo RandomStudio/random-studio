@@ -20,7 +20,7 @@ const LazyVideo = React.forwardRef(
 
       const handlePlayer = () => {
         if (isAutoplaying) {
-          ref.play().catch(() => null);
+          ref.play().catch(err => console.warn(err));
         }
       };
 

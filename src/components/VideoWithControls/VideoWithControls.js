@@ -24,10 +24,9 @@ const VideoWithControls = ({
   className,
   hasClickControls,
   hasControls,
-  isMuted: isStartingMuted,
+  hasAudio,
   isAutoplaying,
   isLooping,
-  isAlwaysMuted,
   video,
 }) => {
   const videoRef = useRef(null);
@@ -35,7 +34,7 @@ const VideoWithControls = ({
   const [hasPlayed, setHasPlayed] = useState(isAutoplaying);
 
   const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
-    isAutoplaying || isStartingMuted,
+    isAutoplaying || !hasAudio,
   );
 
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
@@ -78,9 +77,9 @@ const VideoWithControls = ({
     <div className={`${styles.videoWrapper} ${className}`} onClick={handleTap}>
       <LazyVideo
         hasControls
-        isAutoplaying={isPlaying}
+        isAutoplaying={isAutoplaying}
         isLooping={isLooping}
-        isMuted={isAlwaysMuted || isCurrentlyMuted}
+        isMuted={!hasAudio || isCurrentlyMuted}
         ref={videoRef}
         video={video}
       />
@@ -92,7 +91,7 @@ const VideoWithControls = ({
               {isPlaying ? 'Pause' : 'Play'}
             </button>
 
-            {!isAlwaysMuted && (
+            {hasAudio && (
               <button onClick={handleTapVolumeToggle} type="button">
                 {isCurrentlyMuted ? 'Unmute' : 'Mute'}
               </button>
@@ -107,23 +106,21 @@ const VideoWithControls = ({
 
 VideoWithControls.propTypes = {
   className: PropTypes.string,
+  hasAudio: PropTypes.bool,
   hasClickControls: PropTypes.bool,
   hasControls: PropTypes.bool,
-  isAlwaysMuted: PropTypes.bool,
   isAutoplaying: PropTypes.bool,
   isLooping: PropTypes.bool,
-  isMuted: PropTypes.bool,
   video: PropTypes.shape({}).isRequired,
 };
 
 VideoWithControls.defaultProps = {
   className: '',
+  hasAudio: false,
   hasClickControls: false,
   hasControls: true,
-  isAlwaysMuted: false,
   isAutoplaying: true,
   isLooping: true,
-  isMuted: true,
 };
 
 export default VideoWithControls;
