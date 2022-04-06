@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "backup": "node ./cms/backups/backup-dato.mjs",
     "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
   },
   "dependencies": {
