@@ -19,8 +19,7 @@ jobs:
           DATOCMS_BACKUP_TOKEN: ${{ secrets.DATOCMS_BACKUP_TOKEN }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          branch: backups
-          create_branch: true
+          branch: master
           commit_message: "Automated CMS backup"
           commit_user_name: Automated Backups
           commit_author: Automated Backups <actions@github.com>

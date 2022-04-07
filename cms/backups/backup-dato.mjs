@@ -3,12 +3,13 @@ import { createWriteStream, mkdir, writeFileSync } from 'fs';
 import { basename } from 'path';
 import fetch from 'node-fetch';
 
+const PATH = './cms/backups';
 const client = new SiteClient(process.env.DATOCMS_BACKUP_TOKEN);
 
 const backupRecords = async () => {
   console.log('Downloading records...');
   const response = await client.items.all({}, { allPages: true });
-  writeFileSync('records.json', JSON.stringify(response, null, 2));
+  writeFileSync(PATH + '/records.json', JSON.stringify(response, null, 2));
 }
 
 const saveAsset = (path, blob) => new Promise((resolve, reject) => {
@@ -23,7 +24,7 @@ const backupAssets = async () => {
   const site = await client.site.find();
   const uploads = await client.uploads.all({}, { allPages: true })
 
-  mkdir('./assets', { recursive: true }, err => {
+  mkdir(PATH + '/assets', { recursive: true }, err => {
     if (err) {
       console.error(err);
     }
@@ -34,7 +35,7 @@ const backupAssets = async () => {
     console.log(`Downloading ${imageUrl}...`);
 
     const response = await fetch(imageUrl);
-    await saveAsset('./assets/' + basename(upload.path), response.body)
+    await saveAsset(PATH + '/assets/' + basename(upload.path), response.body)
     console.log('Done')
   }
 }
