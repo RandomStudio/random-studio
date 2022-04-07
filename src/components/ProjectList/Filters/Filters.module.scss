@@ -1,32 +1,42 @@
 .filters {
-  padding-top: 230px;
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 50px;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
 
   @media (min-width: 768px) {
-    display: flex;
-    width: 100%;
+    flex-direction: row;
     padding: 315px 150px 0;
     user-select: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+    pointer-events: auto;
+    opacity: 1;
   }
 }
 
-.filterEntry {
+.entry {
   --count: 0;
   appearance: none;
   border: none;
   background: none;
   display: block;
   cursor: pointer;
-  padding: 20px;
   text-transform: capitalize;
+  text-align: center;
+  padding: 10px;
 
-  &:hover {
-    opacity: 0.75;
-    transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+  @media (min-width: 768px) {
+    padding: 20px;
+    text-align: initial;
+
+    &:hover {
+      opacity: 0.75;
+      transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+    }
   }
 
   &::after {
@@ -47,50 +57,47 @@
   }
 }
 
-.filterCount {
-  color: #d0d0d0;
-}
+.accordionTitle {
+  margin-top: 232px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  user-select: none;
+  text-transform: capitalize;
 
-.accordion {
-  padding-top: 315px;
-  padding-bottom: 50px;
-  display: none;
+  @media (min-width: 768px) {
+    display: none;
+  }
 
-  @media (max-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    padding-top: 230px;
+  p {
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+    width: auto;
+    display: inline-block;
+
+    &::after {
+      position: absolute;
+      left: 100%;
+      margin-left: 0.5em;
+      content: url('/icons/arrow-up.svg');
+    }
   }
 }
 
-.accordionEntry {
-  display: block;
-  text-align: center;
-  cursor: pointer;
-  padding: 10px;
-}
+.checkbox {
+  display: none;
 
-.accordionLabel {
-  text-align: center;
-  position: relative;
-  padding: 10px;
-  cursor: pointer;
-}
+  &:checked {
+    + .accordionTitle p:after {
+      content: url('/icons/arrow-down.svg');
+    }
 
-.accordionIcon {
-  display: inline;
-  margin-left: 20px;
-}
-
-.icon {
-  display: inline;
-  position: absolute;
-  top: 16px;
-
-  @media (min-width: 450px) {
-    top: 20px;
+    ~ .filters {
+      max-height: 999px;
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }
