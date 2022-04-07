@@ -63,6 +63,13 @@ jobs:
           SERVER_IP: "195.114.30.143"
           USERNAME: random-studio
           SERVER_DESTINATION: "/var/www/random.studio/"
+      - name: Relaunch site
+        uses: garygrossgarten/github-action-ssh@0.6.4
+        with:
+          command: "cd /var/www/random.studio && npm run launch"
+          host: "195.114.30.143"
+          username: random-studio
+          privateKey: ${{ secrets.PRODUCTION_SSH_KEY }}
   failure-notify:
     name: Notify of failure
     runs-on: ubuntu-latest
