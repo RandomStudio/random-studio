@@ -5,10 +5,11 @@ on:
       MELI_SITE:
         required: true
         type: string
-      NEXT_PUBLIC_CDN_URL:
-        required: true
-        type: string
     secrets:
+      VIMEO_TOKEN:
+        required: true
+      NEXT_DATOCMS_API_TOKEN:
+        required: true
       MELI_TOKEN:
         required: true
 jobs:
@@ -19,33 +20,32 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16"
-      - uses: actions/checkout@v2
+      - uses: gogaille/sparse-checkout@v0.1
         with:
-          ref: ${{ github.ref }}
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v2
+          patterns: public src *.js *.json !cms
+      - name: Load cached dependencies
+        id: cache-dependencies
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
+          path: ${{ github.workspace }}/node_modules
+          key: nextjs-${{ hashFiles('**/package.json') }}
+      - name: Load cached build
+        id: cache-build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/.next/cache
+            ${{ github.workspace }}/.videoCache.json
+          key: nextjs-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.js') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-      - name: Cache Next
-        uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}/.next/cache # [I]
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: npm install --dev
       - name: "build"
         run: |
           npm run build
         env:
-          NEXT_PUBLIC_CDN_URL: ${{ inputs.NEXT_PUBLIC_CDN_URL }}
-
+          NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
+          VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
       - name: "publish"
         run: |
           npx -p "@getmeli/cli" meli upload ./out \

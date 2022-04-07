@@ -2,6 +2,7 @@
   max-width: 17em;
   line-height: 1.375;
   padding: 16px 22px 0;
+  margin-left: 1.4rem;
 
   @media (max-width: 450px) {
     br {
@@ -30,6 +31,9 @@
   width: 100%;
   background: var(--off-white);
 
+  :global(div) {
+    max-width: none !important;
+  }
   & video {
     width: 100%;
     height: 100%;

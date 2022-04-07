@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { OutboundLink } from 'react-ga';
+import PropTypes from 'prop-types';
 import styles from './JobOffer.module.scss';
+import { jobOpeningPropType } from '../../../../propTypes';
 
-const JobOffer = ({
-  closeOpenOffer,
-  opening: { jobTitle, jobDescription, jobURL },
-}) => (
+const JobOffer = ({ handleClose, opening: { title, description, url } }) => (
   <section className={styles.jobOffer}>
     <div>
       <header>
-        <strong>{jobTitle}</strong>
+        <strong>{title}</strong>
+
         <button
           className={styles.closeButton}
-          onClick={closeOpenOffer}
+          onClick={handleClose}
           type="button"
           // eslint-disable-next-line react/jsx-no-literals
         >
@@ -21,21 +21,25 @@ const JobOffer = ({
         </button>
       </header>
 
-      <ReactMarkdown
-        className={styles.description}
-        escapeHtml={false}
-        source={jobDescription}
-      />
+      <ReactMarkdown className={styles.description}>
+        {description}
+      </ReactMarkdown>
+
       <OutboundLink
         className={styles.applyButton}
-        eventLabel={`Apply for ${jobTitle}`}
+        eventLabel={`Apply for ${title}`}
         target="_blank"
-        to={jobURL}
+        to={url}
       >
         {'Apply for this position'}
       </OutboundLink>
     </div>
   </section>
 );
+
+JobOffer.propTypes = {
+  handleClose: PropTypes.func.isRequired,
+  opening: jobOpeningPropType.isRequired,
+};
 
 export default JobOffer;

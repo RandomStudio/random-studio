@@ -1,43 +1,68 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
+import PropTypes from 'prop-types';
 import styles from './LazyVideo.module.scss';
-import vimeoLookup from '../../../infrastructure/vimeoLookup.json';
 
 const LazyVideo = React.forwardRef(
   (
-    { alt, className, hasControls, videoSrc, loops, isMuted, autoPlays },
+    {
+      alt,
+      className,
+      hasControls,
+      video,
+      isAutoplaying,
+      isLooping,
+      isMuted,
+      onPlayStateChange,
+    },
     parentRef,
   ) => {
-    const localRef = useRef();
-    const videoRef = parentRef ?? localRef;
+    const videoRef = useRef();
     const [hasJs, setHasJs] = useState(false);
-    const [intersected, setIntersected] = useState(false);
+
+    const [isIntersected, setIsIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const id = useMemo(() => {
-      if (!videoSrc) {
-        return null;
+    const { sources, blur, height, width } = video;
+
+    const blurThumbnail = `data:image/jpeg;base64,${blur}`;
+
+    const handlePlay = async () => {
+      try {
+        await videoRef.current.play();
+        onPlayStateChange(true);
+      } catch (err) {
+        console.warn(err);
+        onPlayStateChange(false);
+      } finally {
+        setIsLoaded(true);
       }
+    };
 
-      const matches = videoSrc.match(
-        /https:\/\/player\.vimeo\.com\/external\/(.*)\./,
-      );
+    const handlePause = () => {
+      videoRef.current.pause();
+      onPlayStateChange(false);
+    };
 
-      if (!matches) {
-        return null;
-      }
-
-      return matches[1].split('.')[0];
-    }, [videoSrc]);
+    useImperativeHandle(
+      parentRef,
+      () => ({
+        play: handlePlay,
+        pause: handlePause,
+      }),
+      [],
+    );
 
     useEffect(() => {
       // Reference for cleanup
       const ref = videoRef.current;
       setHasJs(true);
 
-      const handlePlayer = () => {
-        if (autoPlays) {
-          ref.play();
+      const handleAutoplay = async () => {
+        if (!isAutoplaying) {
+          return;
         }
+
+        handlePlay();
       };
 
       if (!ref) {
@@ -48,8 +73,8 @@ const LazyVideo = React.forwardRef(
         entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              setIntersected(true);
-              handlePlayer();
+              setIsIntersected(true);
+              handleAutoplay();
               observer.disconnect();
             }
           });
@@ -68,47 +93,52 @@ const LazyVideo = React.forwardRef(
 
         observer.disconnect();
       };
-    }, [videoRef, autoPlays]);
+    }, [videoRef, isAutoplaying]);
 
-    const { height, thumb, width } = vimeoLookup?.[id] ?? {};
+    if (!video) {
+      return null;
+    }
 
     /* eslint-disable jsx-a11y/media-has-caption */
+    const sourceElements = (
+      <>
+        {/* <source src={sources?.hls} type="application/x-mpegurl" /> */}
+
+        <source src={sources?.mp4} type="video/mp4" />
+      </>
+    );
+
     const videoElement = (
       <>
         <video
           className={styles.jsVideo}
-          loop={loops}
+          loop={isLooping}
           muted={isMuted}
-          onPlaying={() => setIsLoaded(true)}
           playsInline
-          poster={thumb ? `data:image/jpeg;base64,${thumb}` : null}
           ref={videoRef}
-          src={intersected ? videoSrc : ''}
-        />
+        >
+          {isIntersected ? sourceElements : null}
+        </video>
+
         <noscript>
           <video
             controls={hasControls}
-            loop={loops}
+            loop={isLooping}
             muted={isMuted}
             playsInline
-            poster={thumb ? `data:image/jpeg;base64,${thumb}` : null}
-            src={videoSrc}
-          />
+          >
+            {sourceElements}
+          </video>
         </noscript>
       </>
     );
     /* eslint-enable jsx-a11y/media-has-caption */
 
-    if (!vimeoLookup[id]) {
-      return videoElement;
-    }
-
     // Prevents autoplay conflicting
     return (
       <div
-        className={`${styles.frame} ${className} ${
-          isLoaded ? styles.isLoaded : ''
-        }
+        className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
+          }
         ${hasJs ? styles.hasJs : ''}`}
         style={{
           aspectRatio: `${width} / ${height}`,
@@ -118,13 +148,42 @@ const LazyVideo = React.forwardRef(
           alt={alt}
           aria-hidden
           className={styles.placeholder}
-          src={`data:image/jpeg;base64,${thumb}`}
+          src={blurThumbnail}
         />
+
         {videoElement}
       </div>
     );
   },
 );
+
+LazyVideo.propTypes = {
+  alt: PropTypes.string,
+  className: PropTypes.string,
+  hasControls: PropTypes.bool,
+  isAutoplaying: PropTypes.bool,
+  isLooping: PropTypes.bool,
+  isMuted: PropTypes.bool,
+  onPlayStateChange: PropTypes.func,
+  video: PropTypes.shape({
+    blur: PropTypes.string.isRequired,
+    sources: PropTypes.shape({
+      mp4: PropTypes.string.isRequired,
+    }).isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }).isRequired,
+};
+
+LazyVideo.defaultProps = {
+  alt: null,
+  className: '',
+  hasControls: false,
+  isAutoplaying: true,
+  isLooping: true,
+  isMuted: true,
+  onPlayStateChange: () => null,
+};
 
 LazyVideo.displayName = 'LazyVideo';
 

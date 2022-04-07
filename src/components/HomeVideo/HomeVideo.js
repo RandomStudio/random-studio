@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import { videoPropType } from '../../propTypes';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import styles from './HomeVideo.module.scss';
 
-const HomeVideo = ({ collaborationCredits, videoUrl }) => {
+const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
   return (
     <div className={styles.video}>
       <VideoWithControls
@@ -11,25 +13,34 @@ const HomeVideo = ({ collaborationCredits, videoUrl }) => {
         hasControls={false}
         isMuted
         loops
-        url={videoUrl}
+        video={video}
       />
-      {collaborationCredits && (
+
+      {collaborator && (
         <div className={styles.featuredAuthor}>
           <span className={styles.creditsLogo}>{'Random Studio'}</span>
+
           <span aria-label="with">{' × '}</span>
+
           <span>
             <a
-              href={collaborationCredits.url}
+              href={collaborationUrl}
               rel="noopener noreferrer"
               target="_blank"
             >
-              {collaborationCredits.collaborator}
+              {collaborator}
             </a>
           </span>
         </div>
       )}
     </div>
   );
+};
+
+HomeVideo.propTypes = {
+  collaborationUrl: PropTypes.string.isRequired,
+  collaborator: PropTypes.string.isRequired,
+  video: videoPropType.isRequired,
 };
 
 export default HomeVideo;

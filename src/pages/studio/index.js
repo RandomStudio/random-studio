@@ -1,27 +1,32 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Studio.module.scss';
 import Layout from '../../components/Layout/Layout';
 import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
 import ServiceList from '../../components/Studio/ServiceList/ServiceList';
 import Head from '../../components/Head/Head';
-import Footer from '../../components/Footer/Footer';
 import Recruitee from '../../components/Studio/Recruitee/Recruitee';
 import Carousel from '../../components/Carousel/Carousel';
 import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
 import useWindowSize from '../../utils/hooks/useWindowSize';
 import supportsIntersectionObserver from '../../utils/supportsIntersectionObserver';
+import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
+import getDataFromBackend from '../../api/getDataFromBackend';
+import addAdditionalInfoToBlocks from '../../api/addAdditionalInfoToBlocks';
+import {
+  introBlockPropType,
+  jobOpeningPropType,
+  servicePropType,
+  slidePropType,
+} from '../../propTypes';
 
 const mediumBreakpoint = 960; // BP of 60rem
 
 const Studio = ({
-  address,
-  phone,
-  slug,
   title,
-  introBlock,
+  introBlocks,
   services,
   skillset,
-  email,
   jobOpenings,
   studioImpression,
 }) => {
@@ -61,48 +66,54 @@ const Studio = ({
   return (
     <Layout>
       <div
-        className={`${styles.wrapper} ${
-          width > mediumBreakpoint ? themeClass : ''
-        }`} // Makes it scrollable with keyboard
+        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
+          }`} // Makes it scrollable with keyboard
         tabIndex="-1"
       >
-        <Head pathName={slug} title="Studio" />
-        <IntroBlock intros={introBlock} ref={introRef} title={title} />
+        <Head title="Studio" />
 
-        <ServiceList headerTitle={services.title} services={services.list} />
+        <IntroBlock intros={introBlocks} ref={introRef} title={title} />
 
-        <SkillBlock email={email} skillset={skillset} />
+        <ServiceList services={services} />
+
+        <SkillBlock skillset={skillset} />
 
         <div className={styles.jobsImpressionBlock}>
           <Recruitee jobOpenings={jobOpenings} />
+
           <Carousel
-            carousel={studioImpression.images}
+            caption="Studio Impressions"
             className={styles.carouselWrapper}
-            showIndicator={studioImpression.showIndicator}
-            title={studioImpression.title}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            slides={studioImpression}
           />
         </div>
-
-        <Footer address={address} email={email} phone={phone} />
       </div>
     </Layout>
   );
 };
 
-export const getStaticProps = async () => {
-  const { getContentFromFile } = require('../../utils/contentUtils');
-
-  const { address, email, phone } = getContentFromFile('index');
-  const studio = getContentFromFile('studio');
+export const getStaticProps = async ({ preview }) => {
+  const { page } = await getDataFromBackend({
+    query: STUDIO_PAGE_QUERY,
+    preview,
+  });
 
   return {
     props: {
-      ...studio,
-      address,
-      email,
-      phone,
+      ...page,
+      introBlocks: await addAdditionalInfoToBlocks(page.introBlocks),
     },
   };
+};
+
+Studio.propTypes = {
+  introBlocks: PropTypes.arrayOf(introBlockPropType).isRequired,
+  jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
+  services: PropTypes.arrayOf(servicePropType).isRequired,
+  skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
+  studioImpression: PropTypes.arrayOf(slidePropType).isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Studio;

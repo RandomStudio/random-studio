@@ -34,9 +34,11 @@ const Newsletter = () => {
   return (
     <form onSubmit={handleSubmit}>
       <p className={styles.title}>{'Newsletter'}</p>
+
       {isSuccessful ? (
         <>
           <div className={styles.input}>{'Thank you!'}</div>
+
           <div className={styles.submit}>
             <img
               alt="success"
@@ -54,12 +56,14 @@ const Newsletter = () => {
             type="text"
             value={email}
           />
+
           <input
             alt="submit"
             className={styles.submit}
             src="/icons/arrow.svg"
             type="image"
           />
+
           {error !== '' && <p className={styles.error}>{error}</p>}
         </>
       )}

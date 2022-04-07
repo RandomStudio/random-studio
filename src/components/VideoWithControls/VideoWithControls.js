@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { event } from 'react-ga';
 import styles from './VideoWithControls.module.scss';
@@ -21,24 +21,23 @@ const trackIsCurrentlyMuted = isCurrentlyMuted => {
 };
 
 const VideoWithControls = ({
-  autoplay,
   className,
   hasClickControls,
   hasControls,
-  isMuted: isStartingMuted,
-  loops,
-  url,
-  isAlwaysMuted,
+  hasAudio,
+  isAutoplaying,
+  isLooping,
+  video,
 }) => {
   const videoRef = useRef(null);
 
-  const [hasPlayed, setHasPlayed] = useState(autoplay);
+  const [hasPlayed, setHasPlayed] = useState(isAutoplaying);
 
   const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
-    autoplay || isStartingMuted,
+    isAutoplaying || !hasAudio,
   );
 
-  const [isPlaying, setIsPlaying] = useState(autoplay);
+  const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
   const handleTapVolumeToggle = e => {
     setIsCurrentlyMuted(prevState => !prevState);
@@ -49,47 +48,47 @@ const VideoWithControls = ({
   const handleTapPlayPause = e => {
     e.stopPropagation();
 
-    if (!hasClickControls) {
-      return;
-    }
-
     if (!hasPlayed) {
       setHasPlayed(true);
     }
 
-    setIsPlaying(prevState => {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-
-      return !prevState;
-    });
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
 
     trackPausePlay(isPlaying);
   };
 
+  const handleTap = e => {
+    if (!hasClickControls) {
+      return;
+    }
+
+    handleTapPlayPause(e);
+  };
+
   return (
-    <div
-      className={`${styles.videoWrapper} ${className}`}
-      onClick={handleTapPlayPause}
-    >
+    <div className={`${styles.videoWrapper} ${className}`} onClick={handleTap}>
       <LazyVideo
-        autoPlays={isPlaying}
         hasControls
-        isMuted={isAlwaysMuted || isCurrentlyMuted}
-        loops={loops}
+        isAutoplaying={isAutoplaying}
+        isLooping={isLooping}
+        isMuted={!hasAudio || isCurrentlyMuted}
+        onPlayStateChange={setIsPlaying}
         ref={videoRef}
-        videoSrc={url}
+        video={video}
       />
+
       {hasControls &&
         (hasPlayed ? (
           <div className={styles.videoControls}>
             <button onClick={handleTapPlayPause} type="button">
               {isPlaying ? 'Pause' : 'Play'}
             </button>
-            {!isAlwaysMuted && (
+
+            {hasAudio && (
               <button onClick={handleTapVolumeToggle} type="button">
                 {isCurrentlyMuted ? 'Unmute' : 'Mute'}
               </button>
@@ -103,20 +102,22 @@ const VideoWithControls = ({
 };
 
 VideoWithControls.propTypes = {
-  autoplay: PropTypes.bool,
+  className: PropTypes.string,
+  hasAudio: PropTypes.bool,
+  hasClickControls: PropTypes.bool,
   hasControls: PropTypes.bool,
-  isAlwaysMuted: PropTypes.bool,
-  isMuted: PropTypes.bool,
-  loops: PropTypes.bool,
-  url: PropTypes.string.isRequired,
+  isAutoplaying: PropTypes.bool,
+  isLooping: PropTypes.bool,
+  video: PropTypes.shape({}).isRequired,
 };
 
 VideoWithControls.defaultProps = {
-  autoplay: true,
+  className: '',
+  hasAudio: false,
+  hasClickControls: false,
   hasControls: true,
-  isAlwaysMuted: false,
-  isMuted: true,
-  loops: true,
+  isAutoplaying: true,
+  isLooping: true,
 };
 
 export default VideoWithControls;

@@ -89,6 +89,10 @@
   }
 }
 
+.continued {
+  position: relative;
+  top: -100px;
+}
 // Force overwrite the inline programmeticly set styles for small screens/mobile
 @media (max-width: 480px) {
   .projects {

@@ -5,52 +5,80 @@ import Link from 'next/link';
 import styles from './Project.module.scss';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import Image from '../Image/Image';
+import { imageDataPropType, videoPropType } from '../../propTypes';
 
-const Project = ({ thumbnail, title, slug }) => (
-  <Link href={slug} id={slug}>
+const Project = ({
+  className,
+  featuredImage,
+  featuredVideo,
+  left,
+  title,
+  top,
+  slug,
+  width,
+}) => (
+  <Link href={`/projects/${slug}`} id={slug}>
     <a
-      className={styles.thumbnail}
+      className={`${styles.thumbnail} ${className}`}
       style={{
-        marginLeft: `${thumbnail.marginLeft}%`,
-        marginTop: `${thumbnail.marginTop}%`,
-        width: `${thumbnail.width}%`,
+        marginLeft: `${left}%`,
+        marginTop: `${top}%`,
+        width: `${width}%`,
       }}
     >
       <div className={styles.media}>
-        {thumbnail.video ? (
+        {featuredVideo ? (
           <VideoWithControls
             autoplay
+            hasAudio={false}
             hasControls={false}
-            isMuted
             loops
-            url={thumbnail.video}
+            video={featuredVideo}
           />
         ) : (
           <Image
             alt="" // Keeps the screen reader focused on project list
-            sizes={`(max-width: 576px) 100vw, ${thumbnail.width}vw`}
-            src={thumbnail.image}
+            data={featuredImage.imageData}
+            sizes={`(max-width: 576px) 100vw, ${width}vw`}
           />
         )}
       </div>
 
       <div
         className={styles.title}
-        style={{
-          marginLeft: !thumbnail.marginLeft && '1.4rem',
-        }}
+        style={
+          !left || left < 1
+            ? {}
+            : {
+              marginLeft: '0',
+            }
+        }
       >
-        <ReactMarkdown escapeHtml={false} source={title} />
+        <ReactMarkdown>
+          {title.replace('<br />', '<br>').replace('<br>', '\n\n')}
+        </ReactMarkdown>
       </div>
     </a>
   </Link>
 );
 
 Project.propTypes = {
+  className: PropTypes.string,
+  featuredImage: PropTypes.shape({
+    imageData: imageDataPropType,
+  }),
+  featuredVideo: videoPropType,
+  left: PropTypes.number.isRequired,
   slug: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  thumbnail: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
+  top: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+};
+
+Project.defaultProps = {
+  className: '',
+  featuredImage: null,
+  featuredVideo: null,
 };
 
 export default Project;

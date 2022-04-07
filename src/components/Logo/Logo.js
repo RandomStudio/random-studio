@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import styles from './Logo.module.scss';
 
-const Logo = ({ layout }) => {
+const Logo = ({ isCentred }) => {
   const logoClass = `${styles.logo} ${
-    layout === 'center' ? styles.isCenter : styles.isTop
+    isCentred ? styles.isCenter : styles.isTop
   }`;
 
   return (
@@ -12,12 +13,18 @@ const Logo = ({ layout }) => {
       <Link href="/">
         <a>
           {'Random '}
+
           <br aria-hidden />
+
           {'Studio'}
         </a>
       </Link>
     </h1>
   );
+};
+
+Logo.propTypes = {
+  isCentred: PropTypes.bool.isRequired,
 };
 
 export default Logo;

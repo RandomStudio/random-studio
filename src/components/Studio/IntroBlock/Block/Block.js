@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import Image from '../../../Image/Image';
 import LazyVideo from '../../../LazyVideo/LazyVideo';
 import styles from './Block.module.scss';
+import Image from '../../../Image/Image';
+import { imageDataPropType, videoPropType } from '../../../../propTypes';
 
 const Block = ({ image, index, copy, title, video }) => {
   const imageRef = useRef();
@@ -88,15 +89,16 @@ const Block = ({ image, index, copy, title, video }) => {
               className={styles.fluidVideo}
               isMuted
               loops
-              videoSrc={video}
+              video={video}
             />
           ) : (
             <Image
               alt={title}
-              sizes="(max-width: 960px) 100vw, 50vw"
-              src={image}
+              className={styles.image}
+              data={image.imageData}
             />
           )}
+
           <div className={styles.overlay} ref={overlayRef} />
         </div>
 
@@ -112,7 +114,7 @@ const Block = ({ image, index, copy, title, video }) => {
 
       <div className={`${styles.listItem} ${styles.parallaxFront}`}>
         <div className={styles.copyWrapper}>
-          <ReactMarkdown escapeHtml={false} source={copy} />
+          <ReactMarkdown>{copy}</ReactMarkdown>
         </div>
       </div>
     </>
@@ -120,13 +122,16 @@ const Block = ({ image, index, copy, title, video }) => {
 };
 
 Block.propTypes = {
-  image: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
   copy: PropTypes.string.isRequired,
+  image: imageDataPropType,
+  index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  video: PropTypes.string,
+  video: videoPropType,
 };
 
-Block.defaultProps = {};
+Block.defaultProps = {
+  image: null,
+  video: null,
+};
 
 export default Block;

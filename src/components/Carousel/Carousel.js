@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { Image } from 'react-datocms';
 import styles from './Carousel.module.scss';
-import Caption from '../Project/ProjectDetail/Caption/Caption';
-import Image from '../Image/Image';
+import Caption from '../Caption/Caption';
+import { slidePropType } from '../../propTypes';
+import LazyVideo from '../LazyVideo/LazyVideo';
 
-const Carousel = ({ carousel, caption, className, width }) => {
+const Carousel = ({ caption, className, slides, sizes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -13,37 +15,36 @@ const Carousel = ({ carousel, caption, className, width }) => {
       videoRef.current.currentTime = 0;
     }
 
-    setCurrentIndex((currentIndex + 1) % carousel.length);
+    setCurrentIndex((currentIndex + 1) % slides.length);
   };
 
-  if (!carousel) {
+  if (!slides) {
     return null;
   }
 
   return (
     <div className={`${styles.carousel} ${className}`}>
       <div className={styles.carouselInner}>
-        {carousel.map(({ url, image }, index) => (
+        {slides.map(({ id, video, imageData, image }, index) => (
           <div
             className={`
             ${styles.image}
             ${index === currentIndex && styles.imageVisible}
           `}
-            key={image ?? url}
+            key={id}
           >
             <div
-              className={`${carousel.length > 1 && styles.hasMultiple}`}
+              className={`${slides.length > 1 && styles.hasMultiple}`}
               onClick={handleNext}
             >
-              {url ? (
-                <video autoPlay loop muted playsInline src={url} />
+              {video ? (
+                <LazyVideo isMuted video={video} />
               ) : (
-                image && (
+                (image || imageData) && (
                   <Image
                     alt={`${caption} – slide ${index + 1}`}
-                    loading="auto"
-                    sizes={`(max-width: 576px) 100vw, ${width}vw`}
-                    src={image}
+                    data={imageData ?? image.imageData}
+                    sizes={sizes}
                   />
                 )
               )}
@@ -51,20 +52,24 @@ const Carousel = ({ carousel, caption, className, width }) => {
           </div>
         ))}
       </div>
+
       <Caption
         caption={caption}
-        carouselIndicator={`${currentIndex + 1} of ${carousel.length}`}
+        carouselIndicator={`${currentIndex + 1} of ${slides.length}`}
       />
     </div>
   );
 };
 
 Carousel.propTypes = {
-  carousel: PropTypes.arrayOf(PropTypes.object).isRequired,
+  caption: PropTypes.string,
   className: PropTypes.string,
+  sizes: PropTypes.string.isRequired,
+  slides: PropTypes.arrayOf(slidePropType).isRequired,
 };
 
 Carousel.defaultProps = {
+  caption: '',
   className: '',
 };
 

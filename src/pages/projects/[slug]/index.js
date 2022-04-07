@@ -1,102 +1,84 @@
 import React from 'react';
-import { uniqueId } from 'lodash-es';
+import {
+  PROJECT_PATHS_QUERY,
+  SINGLE_PROJECT_QUERY,
+} from '../../../api/QUERIES';
 import Head from '../../../components/Head/Head';
 import Layout from '../../../components/Layout/Layout';
-import ProjectDetail from '../../../components/Project/ProjectDetail/ProjectDetail';
-import BackScrim from '../../../components/Project/BackScrim/BackScrim';
+import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
+import getDataFromBackend from '../../../api/getDataFromBackend';
+import styles from './index.module.scss';
+import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
+import { projectPropTypeObject } from '../../../propTypes';
+import { addVimeoVideoDataToObject } from '../../../api/getVideoData';
 
 const Project = ({
-  allProjects,
+  featuredImage,
   intro,
-  opengraph,
+  opengraph: { description: ogDescription, image, title: ogTitle },
   content,
-  credits,
+  details,
   relatedProjects,
-  slug,
+  relatedProjectsTitle,
   title,
 }) => {
-  const socialTitle =
-    opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
-
-  const socialDescription =
-    opengraph && opengraph.ogDescription ? opengraph.ogDescription : undefined;
-
-  const SEOImage = (opengraph ? opengraph.ogImage : null) || undefined;
-
   return (
-    <Layout>
+    <Layout className={styles.layout} hasFooter={false}>
       <Head
         description={intro}
-        image={SEOImage}
-        pathName={slug}
-        socialDescription={socialDescription}
-        socialTitle={socialTitle}
+        image={image ?? featuredImage}
+        socialDescription={ogDescription}
+        socialTitle={ogTitle}
         title={title}
       />
+
       <ProjectDetail
-        allProjects={allProjects}
         content={content}
-        credits={credits}
+        details={details}
         intro={intro}
         relatedProjects={relatedProjects}
+        relatedProjectsTitle={relatedProjectsTitle}
         title={title}
       />
-      <BackScrim />
     </Layout>
   );
 };
 
-export const getStaticProps = async ({ params }) => {
-  const {
-    getAllProjects,
-    getContentFromFile,
-  } = require('../../../utils/contentUtils');
-
-  const data = getContentFromFile(`projects/${params.slug}`);
-  const allProjects = getAllProjects();
-
-  const { relatedProjects } = data;
-
-  const relatedWork =
-    relatedProjects &&
-    (relatedProjects.projects || []).map(relatedProject => {
-      const foundProject =
-        allProjects.length &&
-        allProjects.find(project => relatedProject.project === project.title);
-
-      return {
-        ...relatedProject,
-        slug: foundProject ? foundProject.slug : null,
-      };
-    });
+export const getStaticProps = async ({ params, preview }) => {
+  const { project } = await getDataFromBackend({
+    query: SINGLE_PROJECT_QUERY,
+    preview,
+    variables: {
+      slug: params.slug,
+    },
+  });
 
   return {
     props: {
-      ...data,
-      content: data.content.map(block => ({
-        ...block,
-        id: uniqueId(),
-      })),
-      relatedProjects: {
-        ...relatedProjects,
-        projects: relatedWork ?? [],
-      },
+      ...project,
+      featuredVideo: project.featuredVideo
+        ? await addVimeoVideoDataToObject(project.featuredVideo)
+        : null,
+      content: await addAdditionalInfoToBlocks(project.content),
     },
   };
 };
 
 export async function getStaticPaths() {
-  const { getAllProjects } = require('../../../utils/contentUtils');
-  const projects = getAllProjects();
+  const { projects } = await getDataFromBackend({
+    query: PROJECT_PATHS_QUERY,
+  });
 
   return {
     fallback: false,
-    paths: projects.map(project => ({
+    paths: projects.map(({ slug }) => ({
       params: {
-        slug: project.slug.replace('/projects/', ''),
+        slug,
       },
     })),
   };
 }
+
+Project.propTypes = projectPropTypeObject;
 
 export default Project;

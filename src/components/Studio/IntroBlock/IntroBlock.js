@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './IntroBlock.module.scss';
 import Block from './Block/Block';
+import { introBlockPropType } from '../../../propTypes';
 
 const IntroBlock = React.forwardRef(({ title, intros }, ref) => (
   <section className={styles.wrapper} ref={ref}>
@@ -19,13 +20,8 @@ const IntroBlock = React.forwardRef(({ title, intros }, ref) => (
 ));
 
 IntroBlock.propTypes = {
-  intros: PropTypes.arrayOf(
-    PropTypes.shape({
-      copy: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      video: PropTypes.string,
-    }),
-  ).isRequired,
+  intros: PropTypes.arrayOf(introBlockPropType).isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 IntroBlock.displayName = 'IntroBlock';

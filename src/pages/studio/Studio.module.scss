@@ -32,18 +32,6 @@
 .wrapper {
   transition: background 0.35s ease-in-out, color 0.35s ease-in-out;
   will-change: background, color;
-
-  @media (min-width: 960px) {
-    width: 100%;
-    perspective: 1px;
-    perspective-origin: 0 0;
-
-    :global(.prevent-scroll) & {
-      overflow-y: hidden;
-      // See here why: https://css-tricks.com/things-watch-working-css-3d/
-      perspective: initial;
-    }
-  }
 }
 
 .darkTheme {

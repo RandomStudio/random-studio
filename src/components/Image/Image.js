@@ -1,130 +1,32 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+// This is a wrapper around the Dato component. We therefore allow spreading of props to pass anything provided down
+/* eslint-disable react/jsx-props-no-spreading */
+import { Image as DatoCMSImage } from 'react-datocms';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Image.module.scss';
+import { imageDataPropType } from '../../propTypes';
 
-const getSrc = (src, width) => {
-  if (process.env.NODE_ENV !== 'production') {
-    const safeSrc = src.replaceAll(' ', '%20');
-
-    return `${safeSrc}?wouldBeWidth=${width}`;
-  }
-
-  const { full } = src;
-
-  return `${process.env.NEXT_PUBLIC_CDN_URL}/${full}/${width}`;
-};
-
-// Should match variant options on Cloudflare1
-const CLOUDFLARE_VARIANTS = [
-  320, 512, 640, 720, 864, 1024, 1280, 1440, 1920, 2048, 2560, 3840, 4096,
-];
-
-const CustomImage = ({ alt, className, sizes, src }) => {
-  const imageRef = useRef();
-
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isRendered, setIsRendered] = useState(false);
-  const [hasJs, setHasJs] = useState(false);
-
-  const srcset = useMemo(
-    () =>
-      CLOUDFLARE_VARIANTS.map(size => `${getSrc(src, size)} ${size}w`).join(
-        ', ',
-      ),
-    [src],
-  );
-
-  useEffect(() => {
-    setHasJs(true);
-
-    const ref = imageRef.current;
-
-    const loadImage = async () => {
-      const image = new Image();
-      image.decoding = 'async';
-      image.alt = alt;
-      image.className = styles.image;
-      image.sizes = sizes;
-      image.srcset = srcset;
-
-      try {
-        await image.decode();
-        setIsLoaded(true);
-      } catch (error) {
-        console.error(error, src);
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting) {
-          loadImage();
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: `${window.innerHeight}px`,
-      },
-    );
-
-    observer.observe(ref);
-
-    return () => {
-      observer.unobserve(ref);
-      observer.disconnect();
-    };
-  }, [alt, sizes, src, srcset]);
-
-  return (
-    <div
-      className={`${styles.wrapper} ${className} ${
-        isRendered ? styles.isRendered : ''
-      }
-      ${hasJs ? styles.hasJs : ''}`}
-      ref={imageRef}
-    >
-      <img
-        aria-hidden
-        className={styles.placeholder}
-        src={src.thumb ? `data:image/jpeg;base64,${src?.thumb}` : src}
-      />
-      <img
-        alt={alt}
-        className={styles.image}
-        decoding="async"
-        onLoad={() => setIsRendered(true)}
-        sizes={sizes}
-        src={isLoaded ? src : null}
-        srcSet={isLoaded ? srcset : null}
-      />
-      <noscript>
-        <img
-          alt={alt}
-          decoding="async"
-          sizes={sizes}
-          src={src}
-          srcSet={srcset}
-        />
-      </noscript>
-    </div>
-  );
-};
-
-CustomImage.propTypes = {
-  alt: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  sizes: PropTypes.string.isRequired,
-  src: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      full: PropTypes.string,
-      thumb: PropTypes.string,
+const Image = ({ alt, data, sizes, ...rest }) => {
+  const imageData = useMemo(
+    () => ({
+      ...data,
+      alt: alt ?? data.alt,
+      sizes: sizes ?? data.sizes,
     }),
-  ]).isRequired,
+    [alt, data, sizes],
+  );
+
+  return <DatoCMSImage data={imageData} {...rest} />;
 };
 
-CustomImage.defaultProps = {
-  className: '',
+Image.propTypes = {
+  alt: PropTypes.string,
+  data: imageDataPropType.isRequired,
+  sizes: PropTypes.string,
 };
 
-export default CustomImage;
+Image.defaultProps = {
+  alt: null,
+  sizes: null,
+};
+
+export default Image;

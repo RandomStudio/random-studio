@@ -1,29 +1,49 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Recruitee.module.scss';
 import JobOffer from './JobOffer/JobOffer';
+import { jobOpeningPropType } from '../../../propTypes';
 
 const Recruitee = ({ jobOpenings }) => {
-  const router = useRouter();
-  const [openOpening, setOpenOpening] = useState();
+  const [openRoleId, setOpenRoleId] = useState(null);
+  const openJob = jobOpenings.find(({ id }) => openRoleId === id);
 
-  const handleOpenOpening = offer => {
-    document.body.classList.add('prevent-scroll');
-    setOpenOpening(offer);
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const role = url.searchParams.get('role');
+
+    if (role) {
+      setOpenRoleId(role);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!openRoleId) {
+      window.history.pushState(null, '', window.location.pathname);
+
+      return;
+    }
+
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set('role', openRoleId);
+
+    window.history.pushState(
+      null,
+      '',
+      `${window.location.pathname}?${searchParams.toString()}`,
+    );
+  }, [openRoleId]);
+
+  const handleChangeRole = event => {
+    const {
+      target: { id },
+    } = event;
+
+    setOpenRoleId(id ?? null);
+    event.preventDefault();
   };
 
-  const handleCloseOpening = () => {
-    setOpenOpening(null);
-    // Replace as offer is programmatically opened
-    router.replace('/studio');
-    document.body.classList.remove('prevent-scroll');
-  };
-
-  if (
-    !jobOpenings ||
-    !jobOpenings.length ||
-    !jobOpenings.some(opening => opening.jobIsVisible)
-  ) {
+  if (!jobOpenings || !jobOpenings.length) {
     return null;
   }
 
@@ -31,29 +51,30 @@ const Recruitee = ({ jobOpenings }) => {
     <>
       <aside className={styles.recruitee}>
         <p className={styles.title}>{'Open Positions'}</p>
+
         <ul className={styles.list}>
-          {jobOpenings.map(
-            opening =>
-              opening.jobIsVisible && (
-                <li className={styles.item} key={opening.jobURL}>
-                  <a
-                    className={styles.role}
-                    href={`#${opening.jobURL}`}
-                    onClick={() => handleOpenOpening(opening)}
-                  >
-                    {opening.jobTitle}
-                  </a>
-                </li>
-              ),
-          )}
+          {jobOpenings.map(opening => (
+            <li className={styles.item} key={opening.url}>
+              <a
+                className={styles.role}
+                href={`?role=${opening.id}`}
+                id={opening.id}
+                onClick={handleChangeRole}
+              >
+                {opening.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </aside>
 
-      {openOpening && (
-        <JobOffer closeOpenOffer={handleCloseOpening} opening={openOpening} />
-      )}
+      {openJob && <JobOffer handleClose={handleChangeRole} opening={openJob} />}
     </>
   );
+};
+
+Recruitee.propTypes = {
+  jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
 };
 
 export default Recruitee;
