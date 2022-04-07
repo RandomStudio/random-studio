@@ -1,0 +1,51 @@
+name: Deploy site to Production
+on:
+  push:
+    branches:
+      - non-static-test
+  # Allows external webhook trigger
+  repository_dispatch:
+jobs:
+  build:
+    name: Build application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16"
+      - uses: gogaille/sparse-checkout@v0.1
+        with:
+          patterns: public src *.js *.json !cms
+      - name: Load cached dependencies
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: nextjs-${{ hashFiles('**/package.json') }}
+      - name: Load cached build
+        id: cache-build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/.next/cache
+            ${{ github.workspace }}/.videoCache.json
+          key: nextjs-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.js') }}
+      - name: Install dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: npm install --dev
+      - name: "build"
+        run: |
+          npm run build
+        env:
+          NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
+          VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
+      - name: Deploy to server
+        uses: AEnterprise/rsync-deploy@1.0.1
+        env:
+          DEPLOY_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
+          ARGS: "-e -c -r --delete"
+          SERVER_PORT: 22
+          FOLDER: "./"
+          SERVER_IP: "195.114.30.143"
+          USERNAME: random-studio
+          SERVER_DESTINATION: "/var/www/next.random.studio/"

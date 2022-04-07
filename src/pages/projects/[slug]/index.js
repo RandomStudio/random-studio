@@ -60,6 +60,7 @@ export const getStaticProps = async ({ params, preview }) => {
         ? await addVimeoVideoDataToObject(project.featuredVideo)
         : null,
       content: await addAdditionalInfoToBlocks(project.content),
+      opengraph: project.opengraph ?? {},
     },
   };
 };
