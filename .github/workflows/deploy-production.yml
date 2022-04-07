@@ -60,7 +60,7 @@ jobs:
           SERVER_PORT: 22
           FOLDER: "."
           SERVER_IP: "195.114.30.143"
-          USERNAME: random-studio
+          USERNAME: ubuntu
           SERVER_DESTINATION: "/var/www/random.studio/"
   failure-notify:
     name: Notify of failure
