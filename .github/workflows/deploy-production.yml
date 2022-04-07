@@ -1,28 +1,16 @@
-name: Deploy Production
+name: Deploy site to Production
 on:
   push:
     branches:
       - master
-  workflow_dispatch:
+  # Allows external webhook trigger
+  repository_dispatch:
 jobs:
-  process-images:
-    uses: RandomStudio/random-studio/.github/workflows/_process-images.yml@master
-    secrets:
-      RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
-  process-vimeo:
-    uses: RandomStudio/random-studio/.github/workflows/_process-vimeo.yml@master
-    secrets:
-      RS_BOT_TOKEN: ${{ secrets.RS_BOT_TOKEN }}
   build:
     name: Build and deploy immediately
-    needs: [process-images, process-vimeo]
     uses: RandomStudio/random-studio/.github/workflows/_build-deploy-production.yml@master
-    with:
-      BUILD_DIR: "out"
-      SERVER_IP: "195.114.30.143"
-      SSH_USERNAME: random-studio
-      NEXT_PUBLIC_CDN_URL: "https://imagedelivery.net/NydGZxxgUj2Qjv652N6Njw"
-      BUILD_MESSAGE: Production deploy started
     secrets:
       SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
+      NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
+      VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
