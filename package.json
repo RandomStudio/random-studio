@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "export": "next build && next export",
+    "start": "next start -p 8080",
     "launch": "pm2 stop next && pm2 start npm --name 'next' -- start && pm2 save",
     "backup": "node ./cms/backups/backup-dato.mjs",
     "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"

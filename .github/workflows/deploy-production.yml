@@ -49,7 +49,7 @@ jobs:
         run: npm install --dev
       - name: "build"
         run: |
-          npm run build
+          npm run export
         env:
           NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
           VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
@@ -59,17 +59,10 @@ jobs:
           DEPLOY_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
           ARGS: "-e -c -r --delete"
           SERVER_PORT: 22
-          FOLDER: "./"
+          FOLDER: "out/"
           SERVER_IP: "195.114.30.143"
           USERNAME: random-studio
           SERVER_DESTINATION: "/var/www/random.studio/"
-      - name: Relaunch site
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: "cd /var/www/random.studio && npm run launch"
-          host: "195.114.30.143"
-          username: random-studio
-          privateKey: ${{ secrets.PRODUCTION_SSH_KEY }}
   failure-notify:
     name: Notify of failure
     runs-on: ubuntu-latest
