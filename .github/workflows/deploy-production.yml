@@ -6,11 +6,90 @@ on:
   # Allows external webhook trigger
   repository_dispatch:
 jobs:
+  notify:
+    name: Send start Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Random.Studio Github
+          SLACK_ICON: https://avatars.githubusercontent.com/u/8861680?s=400&u=c7c52458389708902d47179e1f1a9419196b0420&v=4
+          SLACK_COLOR: "#000000"
+          SLACK_MESSAGE: Production deploy started
+          SLACK_FOOTER: I hope you know what you are doing!!
+          MSG_MINIMAL: true
   build:
-    name: Build and deploy immediately
-    uses: RandomStudio/random-studio/.github/workflows/_build-deploy-production.yml@master
-    secrets:
-      SSH_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
-      NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
-      VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
-      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+    name: Build application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16"
+      - uses: gogaille/sparse-checkout@v0.1
+        with:
+          patterns: public src *.js *.json !cms
+      - name: Load cached dependencies
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: nextjs-${{ hashFiles('**/package.json') }}
+      - name: Load cached build
+        id: cache-build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/.next/cache
+            ${{ github.workspace }}/.videoCache.json
+          key: nextjs-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/*.js') }}
+      - name: Install dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: npm install --dev
+      - name: "build"
+        run: |
+          npm run build
+        env:
+          NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
+          VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
+      - name: Deploy to server
+        uses: AEnterprise/rsync-deploy@1.0.1
+        env:
+          DEPLOY_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
+          ARGS: "-e -c -r --delete"
+          SERVER_PORT: 22
+          FOLDER: "out"
+          SERVER_IP: "195.114.30.143"
+          USERNAME: random-studio
+          SERVER_DESTINATION: "/var/www/random.studio/"
+  failure-notify:
+    name: Notify of failure
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: [build]
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Random.Studio Github
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: Deploy to production failed
+          SLACK_FOOTER: I can't believe you've done this
+          MSG_MINIMAL: true
+  success-notify:
+    name: Notify of success
+    runs-on: ubuntu-latest
+    if: success()
+    needs: [build]
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Random.Studio Github
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: Deploy to production succeeded
+          SLACK_FOOTER: Quality
+          MSG_MINIMAL: true
