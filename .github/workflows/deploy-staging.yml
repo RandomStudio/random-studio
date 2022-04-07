@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - "staging"
-  # Allows external webhook trigger
-  repository_dispatch:
 jobs:
   build:
     name: Build and deploy immediately
