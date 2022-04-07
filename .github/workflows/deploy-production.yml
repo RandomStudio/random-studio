@@ -48,7 +48,8 @@ jobs:
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: npm install --dev
       - name: "build"
-        run: npm run build
+        run: |
+          npm run export
         env:
           NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
           VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
@@ -58,9 +59,9 @@ jobs:
           DEPLOY_KEY: ${{ secrets.PRODUCTION_SSH_KEY }}
           ARGS: "-e -c -r --delete"
           SERVER_PORT: 22
-          FOLDER: "."
+          FOLDER: "out/"
           SERVER_IP: "195.114.30.143"
-          USERNAME: ubuntu
+          USERNAME: random-studio
           SERVER_DESTINATION: "/var/www/random.studio/"
   failure-notify:
     name: Notify of failure
