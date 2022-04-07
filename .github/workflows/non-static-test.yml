@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - non-static-test
-  # Allows external webhook trigger
-  repository_dispatch:
 jobs:
   build:
     name: Build application
