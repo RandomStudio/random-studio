@@ -9,13 +9,12 @@
     "build": "next build",
     "export": "next build && next export",
     "start": "next start -p 8080",
-    "launch": "pm2 stop next && pm2 start npm --name 'next' -- start && pm2 save",
+    "launch": "pm2 start npm --name 'randomstudio' -- start && pm2 save",
     "backup": "node ./cms/backups/backup-dato.mjs",
     "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
   },
   "dependencies": {
     "graphql-request": "4.2.0",
-    "gray-matter": "4.0.3",
     "lodash-es": "4.17.21",
     "next": "12.1.2",
     "prop-types": "15.8.1",
@@ -23,8 +22,7 @@
     "react-datocms": "3.0.12",
     "react-dom": "17.0.2",
     "react-ga": "3.3.0",
-    "react-markdown": "8.0.1",
-    "sharp": "0.30.3"
+    "react-markdown": "8.0.1"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "12.1.2",
@@ -39,11 +37,13 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
+    "gray-matter": "4.0.3",
     "mime-types": "2.1.35",
     "node-fetch": "3.2.3",
     "postcss": "8.4.12",
     "prettier": "2.6.1",
-    "sass": "1.49.9"
+    "sass": "1.49.9",
+    "sharp": "0.30.3"
   },
   "engines": {
     "node": ">=16.13.0"
