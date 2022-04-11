@@ -41,4 +41,4 @@ const backupAssets = async () => {
 }
 
 backupRecords();
-//backupAssets();
+backupAssets();
