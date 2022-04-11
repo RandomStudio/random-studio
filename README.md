@@ -3,7 +3,7 @@
 ![The Random Studio logo](https://github.com/RandomStudio/random-studio/blob/master/public/og-image.jpg?raw=true)
 
 
-Statically built website for Random Studio, built using Next.js.
+Static website for Random Studio, built using Next.js.
 
 ## Important information
 
@@ -13,23 +13,16 @@ Statically built website for Random Studio, built using Next.js.
 
 ## Deploy workflow
 - Push to either `staging` or `master` branches on Github to start deploy to either staging or production site
-- Workflow fires off three separate _simultaneous_ tasks:
-  1. Configure environment and build site via `npm run build`, statically export to `.out` folder, and upload to the server
-  2. Check the `public/img` folder for any images that have been added or changed. In turn, pass each changed filepath to `npm run process:image`. This generates a super low res `base64` encoded placeholder, uploads to Cloudflare, and saves both the placeholder and Cloudflare image ID to `infrastructure/imageLookup.json`
-  3. Run through the content markdown files and `grep` any Vimeo URLs they contain. In turn, pass each changed URL to `npm run process:vimeo`. This generates a super low res `base64` encoded placeholder, using the thumbnail image, and saves to `infrastructure/vimeoLookup.json`
-- Finally, if either steps 2 or 3 encountered changed files (and thus updated either of the lookup files), we rerun task 1 again. _Why? Because this ensures we start creating and push live a build as soon as possible, without waiting for assets to be processed. If there have been assets changed, we quickly do a second build to reflect those in live_
+- Workflow configures environment, builds site via `npm run build`, statically exports to `.out` folder, and uploads to the server
 
-## Possible issues
+## Backup workflow
+- Runs automatically at 3am Monday, Wednesday and Friday
+- Uses DatoCMS API to download a copy of all records (projects, pages, etc) from CMS as JSON
+- Uses DatoCMS API to download a copy of all assets (images, videos, etc) from CMS to local folders
+- Files are saved under `/cms/backups` and committed to master branch
 
-### Node Gyp fails during `npm install` while running via ZSH
-```
-npm ERR! error: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/otool-classic: can't open file: /usr/lib/libcurl.dylib (No such file or directory)
-npm ERR! gyp: Call to 'otool -D `curl-config --prefix`/lib/libcurl.dylib | sed -n 2p' returned exit status 0 while in binding.gyp. while trying to load binding.gyp
-```
-
-To fix, make sure curl is installed and is in ZSH path:
-```
-brew install curl-openssl
-export PATH="/opt/homebrew/opt/curl/bin:$PATH" >> ~/.zshrc
-npm install
-```
+## Technical notes
+-  `package-lock.json` has been disabled. This avoids an issue with Next.js's new SWC Rust based compiler package. If lock file exists, npm will always try to install the same build that is supported by the CPU of the user who first create the lock file. When collaborating across ARM, x86 etc it is easier to disable the lock file and let npm pull the right version on each run.
+-  Based on above point, all package versions should be explicitly locked.
+-  We do not host video files on DatoCMS, rather we host videos on Vimeo and use the CMS's built in external videos block to link to these. Dato will pull a good amount of basic info for each video, but we run an additional script at build time to add further info to each video. This allows us to generate blurred thumbnails etc.
+-  Each time we get information from the Vimeo API, we cache it for future runs in `.videoCache.json`. This should be kept out of version control to avoid conflicts.
