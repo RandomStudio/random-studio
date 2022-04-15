@@ -4,10 +4,10 @@ import getDataFromBackend from '../api/getDataFromBackend';
 import { addVimeoVideoDataToObject } from '../api/getVideoData';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
-import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
 import { projectPropType, videoPropType } from '../propTypes';
+import PartyHeader from '../components/PartyHeader/PartyHeader';
 
 const Home = ({
   collaborator,
@@ -20,11 +20,7 @@ const Home = ({
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
 
-    <HomeVideo
-      collaborationUrl={collaborationUrl}
-      collaborator={collaborator}
-      video={video}
-    />
+    <PartyHeader />
 
     <ProjectList hasLimit intro={intro} projects={projects} />
   </Layout>
