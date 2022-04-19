@@ -6,7 +6,6 @@ import {
   PerspectiveCamera,
   SpotLight,
   Scene,
-  Color,
 } from 'three';
 import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader';
 import styles from './World.module.scss';
