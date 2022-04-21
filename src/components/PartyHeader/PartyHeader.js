@@ -33,7 +33,7 @@ const PartyHeader = ({ isLive }) => {
       setShapes(
         data.map(({ coords, ...rest }) => ({
           ...rest,
-          coords: JSON.parse(coords),
+          coords,
         })),
       );
     };

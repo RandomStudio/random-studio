@@ -79,6 +79,7 @@ let camera;
 let canvasEl;
 let canvasMaterial;
 let ctx;
+let points;
 let renderer;
 let scene;
 
@@ -96,7 +97,8 @@ const World = ({ isLive, shapes }) => {
       canvasMaterial = material;
       canvasEl = canvas;
       ctx = canvasEl.getContext('2d');
-      const model = await loadModel();
+      const [model, pointsMaterial] = await loadModel();
+      points = pointsMaterial;
       const group = new Group();
       group.add(model);
       group.add(plane);
@@ -115,7 +117,7 @@ const World = ({ isLive, shapes }) => {
       };
 
       scene.add(group);
-
+      resizeRendererToDisplaySize(renderer, camera, points);
       setIsLoaded(true);
     };
 
@@ -127,8 +129,7 @@ const World = ({ isLive, shapes }) => {
       return;
     }
 
-    const resize = () => resizeRendererToDisplaySize(renderer, camera);
-
+    const resize = () => resizeRendererToDisplaySize(renderer, camera, points);
     window.addEventListener('resize', resize, false);
     window.addEventListener('orientationchange', resize, false);
 

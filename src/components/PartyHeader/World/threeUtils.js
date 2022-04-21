@@ -55,14 +55,19 @@ export const loadModel = () =>
       'models/evolution-party.ply',
       geometry => {
         geometry.scale(20, 20, 20);
-        const material = new PointsMaterial({ size: 0.01 });
+
+        const material = new PointsMaterial({
+          size: 0.01,
+          transparent: true,
+        });
+
         material.vertexColors = geometry.hasAttribute('color');
 
         const object = new Points(geometry, material);
         object.rotateY(Math.PI * -0.1);
         object.position.setX(-40);
         object.position.setZ(-120);
-        resolve(object);
+        resolve([object, material]);
       },
       null,
       error => {
@@ -95,7 +100,7 @@ export const createCanvas = () => {
   geometry.rotateZ(Math.PI);
   const plane = new Mesh(geometry, material);
   plane.position.x = -20;
-  plane.position.z = -165;
+  plane.position.z = -174;
   plane.rotation.x = -0.01;
   plane.rotation.y = -0.3;
   plane.rotation.z = -0;
@@ -103,7 +108,7 @@ export const createCanvas = () => {
   return [plane, canvas, material];
 };
 
-export const resizeRendererToDisplaySize = (renderer, camera) => {
+export const resizeRendererToDisplaySize = (renderer, camera, points) => {
   const aspect = window.innerWidth / window.innerHeight;
 
   camera.aspect = aspect;
@@ -112,8 +117,11 @@ export const resizeRendererToDisplaySize = (renderer, camera) => {
   const DIAMETER = 20;
 
   if (aspect > 1.0) {
+    points.opacity = 1;
     camera.fov = 2 * Math.atan(DIAMETER / (2 * DISTANCE)) * (180 / Math.PI);
   } else {
+    points.opacity = 0.3;
+
     camera.fov =
       2 * Math.atan(DIAMETER / aspect / (2 * DISTANCE)) * (180 / Math.PI); // in degrees
   }
