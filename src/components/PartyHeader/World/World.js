@@ -127,6 +127,22 @@ const World = ({ isLive, shapes }) => {
       return;
     }
 
+    const resize = () => resizeRendererToDisplaySize(renderer, camera);
+
+    window.addEventListener('resize', resize, false);
+    window.addEventListener('orientationchange', resize, false);
+
+    return () => {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', resize);
+    };
+  }, [isLoaded]);
+
+  useEffect(() => {
+    if (!isLoaded) {
+      return;
+    }
+
     window.cancelAnimationFrame(raf);
 
     const adjustedShapes = shapes.map(shape =>

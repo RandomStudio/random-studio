@@ -103,17 +103,22 @@ export const createCanvas = () => {
   return [plane, canvas, material];
 };
 
-export const resizeRendererToDisplaySize = renderer => {
-  const canvas = renderer.domElement;
+export const resizeRendererToDisplaySize = (renderer, camera) => {
+  const aspect = window.innerWidth / window.innerHeight;
 
-  const pixelRatio = window.devicePixelRatio;
-  const width = canvas.clientWidth * pixelRatio ?? 0;
-  const height = canvas.clientHeight * pixelRatio ?? 0;
-  const needResize = canvas.width !== width || canvas.height !== height;
+  camera.aspect = aspect;
 
-  if (needResize) {
-    renderer.setSize(width, height, false);
+  const DISTANCE = 20;
+  const DIAMETER = 20;
+
+  if (aspect > 1.0) {
+    camera.fov = 2 * Math.atan(DIAMETER / (2 * DISTANCE)) * (180 / Math.PI);
+  } else {
+    camera.fov =
+      2 * Math.atan(DIAMETER / aspect / (2 * DISTANCE)) * (180 / Math.PI); // in degrees
   }
 
-  return needResize;
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  // Don't forget this
+  camera.updateProjectionMatrix();
 };
