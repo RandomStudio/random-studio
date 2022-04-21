@@ -22,7 +22,7 @@ const PartyHeader = ({ isLive }) => {
         ...currentShapes,
         {
           ...rest,
-          coords: JSON.parse(coords),
+          coords,
         },
       ]);
     };
@@ -57,7 +57,7 @@ PartyHeader.propTypes = {
 };
 
 PartyHeader.defaultProps = {
-  isLive: false,
+  isLive: true,
 };
 
 export default PartyHeader;
