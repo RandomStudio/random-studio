@@ -14,7 +14,7 @@ import {
 import styles from './World.module.scss';
 
 const drawShapes = (ctx, frameCount, shapes) => {
-  for (const { color, coords, id, end, start } of shapes) {
+  for (const { color, coords, end, start } of shapes) {
     if (frameCount < start) {
       continue;
     }
@@ -27,7 +27,7 @@ const drawShapes = (ctx, frameCount, shapes) => {
 
     // ctx.strokeStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${alpha})`;
     ctx.beginPath();
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = `rgba(0,0,0,${alpha})`;
     ctx.lineWidth = 5;
     ctx.lineCap = 'round';
 
@@ -58,6 +58,8 @@ const animate = ({ camera, canvasMaterial, ctx, renderer, scene, shapes }) => {
   //   camera.aspect = canvas.clientWidth / canvas.clientHeight;
   //   camera.updateProjectionMatrix();
   // }
+  ctx.clearRect(0, 0, 1920, 1080);
+
   drawShapes(ctx, frame, shapes);
   canvasMaterial.map.needsUpdate = true;
 
