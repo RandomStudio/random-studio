@@ -1,13 +1,14 @@
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import PropTypes from 'prop-types';
 import styles from './PartyHeader.module.scss';
 
 const LazyLoadedWorld = dynamic(() => import('./World/World'), {
   ssr: false,
 });
 
-const PartyHeader = () => {
+const PartyHeader = ({ isLive }) => {
   const [shapes, setShapes] = useState([]);
 
   useEffect(() => {
@@ -16,25 +17,47 @@ const PartyHeader = () => {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     );
 
-    const handleUpdates = ({ new: newShape }) => {
-      setShapes(currentShapes => [...currentShapes, newShape]);
+    const handleUpdates = ({ new: { coords, ...rest } }) => {
+      setShapes(currentShapes => [
+        ...currentShapes,
+        {
+          ...rest,
+          coords: JSON.parse(coords),
+        },
+      ]);
     };
 
-    const getData = async () => {
+    const getInitialData = async () => {
       const { data } = await supabase.from('shapes');
-      await supabase.from('shapes').on('INSERT', handleUpdates).subscribe();
 
-      setShapes(data);
+      setShapes(
+        data.map(({ coords, ...rest }) => ({
+          ...rest,
+          coords: JSON.parse(coords),
+        })),
+      );
     };
 
-    getData();
-  }, []);
+    if (!isLive) {
+      getInitialData();
+    }
+
+    supabase.from('shapes').on('INSERT', handleUpdates).subscribe();
+  }, [isLive]);
 
   return (
     <div className={styles.frame}>
-      <LazyLoadedWorld shapes={shapes} />
+      <LazyLoadedWorld isLive={isLive} shapes={shapes} />
     </div>
   );
+};
+
+PartyHeader.propTypes = {
+  isLive: PropTypes.bool,
+};
+
+PartyHeader.defaultProps = {
+  isLive: false,
 };
 
 export default PartyHeader;
