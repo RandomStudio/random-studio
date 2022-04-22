@@ -1,8 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-param-reassign */
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Vector3, Group } from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import React, { useEffect, useRef, useState } from 'react';
+import { Group } from 'three';
 import {
   createCamera,
   createCanvas,
@@ -87,15 +86,16 @@ let scene;
 
 const World = ({ isLive, shapes }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const targetRef = useRef();
+  const canvasRef = useRef();
+  const textureCanvasRef = useRef();
 
   useEffect(() => {
     const handleLoad = async () => {
-      renderer = setupRenderer(targetRef);
+      renderer = setupRenderer(canvasRef.current);
       scene = setupScene();
       camera = createCamera();
 
-      const [plane, canvas, material] = createCanvas();
+      const [plane, canvas, material] = createCanvas(textureCanvasRef.current);
       canvasMaterial = material;
       canvasEl = canvas;
       ctx = canvasEl.getContext('2d');
@@ -104,19 +104,6 @@ const World = ({ isLive, shapes }) => {
       const group = new Group();
       group.add(model);
       group.add(plane);
-
-      //      camera.position.x = 40;
-      //      camera.position.z = -150;
-      //      camera.rotation.y = 1.2;
-      //
-      window.updateCamera = (x, y, z, rotateX, rotateY, rotateZ) => {
-        camera.position.x = x;
-        camera.position.y = y;
-        camera.position.z = z;
-        camera.rotation.x = rotateX;
-        camera.rotation.y = rotateY;
-        camera.rotation.z = rotateZ;
-      };
 
       scene.add(group);
       resizeRendererToDisplaySize(renderer, camera, points);
@@ -143,10 +130,8 @@ const World = ({ isLive, shapes }) => {
 
   useEffect(() => {
     if (!isLoaded) {
-      return;
+      return undefined;
     }
-
-    window.cancelAnimationFrame(raf);
 
     const adjustedShapes = shapes.map(shape =>
       shape.hasAdjustedForLive || !isLive
@@ -180,13 +165,18 @@ const World = ({ isLive, shapes }) => {
       scene,
       shapes: transformedShapes,
     });
+
+    return () => {
+      window.cancelAnimationFrame(raf);
+    };
   }, [shapes, isLoaded, isLive]);
 
   return (
-    <div
-      className={`${styles.target} ${isLoaded ? styles.isLoaded : ''}`}
-      ref={targetRef}
-    />
+    <div className={`${styles.target} ${isLoaded ? styles.isLoaded : ''}`}>
+      <canvas ref={canvasRef} />
+
+      <canvas ref={textureCanvasRef} />
+    </div>
   );
 };
 

@@ -14,10 +14,13 @@ import {
 } from 'three';
 import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader';
 
-export const setupRenderer = targetRef => {
-  const renderer = new WebGLRenderer({ alpha: true });
+export const setupRenderer = canvas => {
+  const renderer = new WebGLRenderer({
+    alpha: true,
+    canvas,
+  });
+
   renderer.setSize(window.innerWidth, window.innerHeight);
-  targetRef.current.appendChild(renderer.domElement);
 
   return renderer;
 };
@@ -57,8 +60,9 @@ export const loadModel = () =>
         geometry.scale(20, 20, 20);
 
         const material = new PointsMaterial({
-          size: 0.01,
+          size: 1,
           transparent: true,
+          sizeAttenuation: false,
         });
 
         material.vertexColors = geometry.hasAttribute('color');
@@ -77,9 +81,7 @@ export const loadModel = () =>
     );
   });
 
-export const createCanvas = () => {
-  const canvas = document.createElement('canvas');
-  document.body.appendChild(canvas);
+export const createCanvas = canvas => {
   canvas.width = 1920;
   canvas.height = 1080;
   const ctx = canvas.getContext('2d');
@@ -120,7 +122,7 @@ export const resizeRendererToDisplaySize = (renderer, camera, points) => {
     points.opacity = 1;
     camera.fov = 2 * Math.atan(DIAMETER / (2 * DISTANCE)) * (180 / Math.PI);
   } else {
-    points.opacity = 0.3;
+    points.opacity = 0.6;
 
     camera.fov =
       2 * Math.atan(DIAMETER / aspect / (2 * DISTANCE)) * (180 / Math.PI); // in degrees
