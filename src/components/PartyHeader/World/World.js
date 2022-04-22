@@ -27,7 +27,9 @@ const drawShapes = (ctx, frameCount, shapes, onDeleteShape) => {
 
     // ctx.strokeStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${alpha})`;
     ctx.beginPath();
-    ctx.strokeStyle = `rgba(0,0,0,${alpha})`;
+    const rgba = color.replace('rgb', 'rgba').replace(')', '');
+    ctx.strokeStyle = `${rgba}, ${alpha})`;
+
     ctx.lineWidth = 5;
     ctx.lineCap = 'round';
 
