@@ -49,43 +49,7 @@ const drawShapes = (ctx, frameCount, shapes, onDeleteShape) => {
   }
 };
 
-let frame = 0;
 let raf;
-
-const animate = ({
-  camera,
-  canvasMaterial,
-  ctx,
-  onDeleteShape,
-  renderer,
-  scene,
-  shapes,
-}) => {
-  frame += 1;
-  // if (resizeRendererToDisplaySize(renderer)) {
-  //   camera.aspect = canvas.clientWidth / canvas.clientHeight;
-  //   camera.updateProjectionMatrix();
-  // }
-  ctx.clearRect(0, 0, 1920, 1080);
-
-  drawShapes(ctx, frame, shapes, onDeleteShape);
-  canvasMaterial.map.needsUpdate = true;
-
-  renderer.render(scene, camera);
-
-  raf = requestAnimationFrame(() =>
-    animate({
-      camera,
-      canvasMaterial,
-      ctx,
-      onDeleteShape,
-      renderer,
-      scene,
-      shapes,
-    }),
-  );
-};
-
 let camera;
 let canvasEl;
 let canvasMaterial;
@@ -94,7 +58,7 @@ let points;
 let renderer;
 let scene;
 
-const World = ({ isLive, onDeleteShape, shapes }) => {
+const World = ({ frameRef, isLive, onDeleteShape, shapes }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const canvasRef = useRef();
   const textureCanvasRef = useRef();
@@ -125,36 +89,10 @@ const World = ({ isLive, onDeleteShape, shapes }) => {
 
   useEffect(() => {
     if (!isLoaded) {
-      return;
-    }
-
-    const resize = () => resizeRendererToDisplaySize(renderer, camera, points);
-    window.addEventListener('resize', resize, false);
-    window.addEventListener('orientationchange', resize, false);
-
-    return () => {
-      window.removeEventListener('resize', resize);
-      window.removeEventListener('orientationchange', resize);
-    };
-  }, [isLoaded]);
-
-  useEffect(() => {
-    if (!isLoaded) {
       return undefined;
     }
 
-    const adjustedShapes = shapes.map(shape =>
-      shape.hasAdjustedForLive || !isLive
-        ? shape
-        : {
-          ...shape,
-          end: frame + (shape.end - shape.start),
-          hasAdjustedForLive: true,
-          start: frame,
-        },
-    );
-
-    const transformedShapes = adjustedShapes.map(shape =>
+    const transformedShapes = shapes.map(shape =>
       shape.hasTransformed
         ? shape
         : {
@@ -167,20 +105,42 @@ const World = ({ isLive, onDeleteShape, shapes }) => {
         },
     );
 
-    animate({
-      camera,
-      canvasMaterial,
-      ctx,
-      onDeleteShape,
-      renderer,
-      scene,
-      shapes: transformedShapes,
-    });
+    const animate = () => {
+      frameRef.current += 1;
+      // if (resizeRendererToDisplaySize(renderer)) {
+      //   camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      //   camera.updateProjectionMatrix();
+      // }
+      ctx.clearRect(0, 0, 1920, 1080);
+      drawShapes(ctx, frameRef.current, transformedShapes, onDeleteShape);
+      canvasMaterial.map.needsUpdate = true;
+
+      renderer.render(scene, camera);
+
+      raf = requestAnimationFrame(animate);
+    };
+
+    raf = window.requestAnimationFrame(animate);
 
     return () => {
       window.cancelAnimationFrame(raf);
     };
-  }, [shapes, isLoaded, isLive, onDeleteShape]);
+  }, [frameRef, isLive, isLoaded, onDeleteShape, shapes]);
+
+  useEffect(() => {
+    if (!isLoaded) {
+      return undefined;
+    }
+
+    const resize = () => resizeRendererToDisplaySize(renderer, camera, points);
+    window.addEventListener('resize', resize, false);
+    window.addEventListener('orientationchange', resize, false);
+
+    return () => {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', resize);
+    };
+  }, [isLoaded]);
 
   return (
     <div className={`${styles.target} ${isLoaded ? styles.isLoaded : ''}`}>
