@@ -12,8 +12,8 @@ import {
 } from './threeUtils';
 import styles from './World.module.scss';
 
-const drawShapes = (ctx, frameCount, shapes) => {
-  for (const { color, coords, end, start } of shapes) {
+const drawShapes = (ctx, frameCount, shapes, onDeleteShape) => {
+  for (const { color, coords, end, id, start } of shapes) {
     if (frameCount < start) {
       continue;
     }
@@ -21,6 +21,7 @@ const drawShapes = (ctx, frameCount, shapes) => {
     const alpha = frameCount < end ? 1 : 1 - (frameCount - end) / 100;
 
     if (alpha <= 0) {
+      onDeleteShape(id);
       continue;
     }
 
@@ -51,7 +52,15 @@ const drawShapes = (ctx, frameCount, shapes) => {
 let frame = 0;
 let raf;
 
-const animate = ({ camera, canvasMaterial, ctx, renderer, scene, shapes }) => {
+const animate = ({
+  camera,
+  canvasMaterial,
+  ctx,
+  onDeleteShape,
+  renderer,
+  scene,
+  shapes,
+}) => {
   frame += 1;
   // if (resizeRendererToDisplaySize(renderer)) {
   //   camera.aspect = canvas.clientWidth / canvas.clientHeight;
@@ -59,7 +68,7 @@ const animate = ({ camera, canvasMaterial, ctx, renderer, scene, shapes }) => {
   // }
   ctx.clearRect(0, 0, 1920, 1080);
 
-  drawShapes(ctx, frame, shapes);
+  drawShapes(ctx, frame, shapes, onDeleteShape);
   canvasMaterial.map.needsUpdate = true;
 
   renderer.render(scene, camera);
@@ -69,6 +78,7 @@ const animate = ({ camera, canvasMaterial, ctx, renderer, scene, shapes }) => {
       camera,
       canvasMaterial,
       ctx,
+      onDeleteShape,
       renderer,
       scene,
       shapes,
@@ -84,7 +94,7 @@ let points;
 let renderer;
 let scene;
 
-const World = ({ isLive, shapes }) => {
+const World = ({ isLive, onDeleteShape, shapes }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const canvasRef = useRef();
   const textureCanvasRef = useRef();
@@ -161,6 +171,7 @@ const World = ({ isLive, shapes }) => {
       camera,
       canvasMaterial,
       ctx,
+      onDeleteShape,
       renderer,
       scene,
       shapes: transformedShapes,
@@ -169,7 +180,7 @@ const World = ({ isLive, shapes }) => {
     return () => {
       window.cancelAnimationFrame(raf);
     };
-  }, [shapes, isLoaded, isLive]);
+  }, [shapes, isLoaded, isLive, onDeleteShape]);
 
   return (
     <div className={`${styles.target} ${isLoaded ? styles.isLoaded : ''}`}>

@@ -1,5 +1,6 @@
+/* eslint-disable react/no-multi-comp */
 import dynamic from 'next/dynamic';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import PropTypes from 'prop-types';
 import styles from './PartyHeader.module.scss';
@@ -52,9 +53,17 @@ const PartyHeader = ({ isLive }) => {
     supabase.from('shapes').on('INSERT', handleUpdates).subscribe();
   }, [isLive]);
 
+  const handleDeleteShape = useCallback(id => {
+    setShapes(current => current.filter(shape => shape.id !== id));
+  }, []);
+
   return (
     <div className={styles.frame}>
-      <LazyLoadedWorld isLive={isLive} shapes={shapes} />
+      <LazyLoadedWorld
+        isLive={isLive}
+        onDeleteShape={handleDeleteShape}
+        shapes={shapes}
+      />
     </div>
   );
 };
