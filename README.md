@@ -1,7 +1,6 @@
 ## Random.studio
 
-![The Random Studio logo](https://github.com/RandomStudio/random-studio/blob/master/public/og-image.jpg?raw=true)
-
+[![The Random Studio logo](https://github.com/RandomStudio/random-studio/blob/master/public/og-image.jpg?raw=true)](https://random.studio/)
 
 Static website for Random Studio, built using Next.js.
 

@@ -1,5 +1,92 @@
 [
   {
+    "id": "120718363",
+    "title": "Random Studio",
+    "introBlocks": [
+      "120718365",
+      "120718369"
+    ],
+    "services": [
+      "120801063",
+      "120801394",
+      "120801395"
+    ],
+    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
+    "studioImpression": [
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270514"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270517"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270522"
+      }
+    ],
+    "jobOpenings": [
+      "120803831",
+      "120803832",
+      "120803833",
+      "120803834",
+      "120804189",
+      "120872774"
+    ],
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-04-13T11:08:33.322+02:00",
+    "createdAt": "2022-03-31T15:35:58.069+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T15:35:58.069+02:00",
+      "updatedAt": "2022-04-13T11:08:33.322+02:00",
+      "publishedAt": "2022-04-13T11:08:33.378+02:00",
+      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "250040417",
+      "stage": null
+    },
+    "itemType": "1989580",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
+    "id": "120803834",
+    "title": "Senior Experience Designer",
+    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=10&source=aWQ9Nw%3D%3D",
+    "description": "Random is an experience design studio based in Amsterdam and Paris. Our work comes to life in the Interactive Space, a new domain, where the digital and the physical are fluid. We use technology in a human, tangible way and so invite people to connect to each other and the space they are in.\n\n\nWe are looking for a Senior Experience Designer who can lead projects from start to end.\n\n\n### You will be responsible for:\n\nLeading your project team\nCreating concepts, designs and overseeing prototypes\nLeading client conversations and bringing them along the project process\n\n\nLeading Teams\n\nLeading a team at Random means that you are responsible for the creative part of the project from A-Z. However, it does not mean that you are a hierarchical boss. Our team consists of different people from all kinds of disciplines, characters and strengths. You will shape and be part of the team and nurture a strong creative dynamic.\n\nProcess\n\nFor this role it is important that you understand which steps have to be taken to complete a project from strategic briefing to a fully delivered end result. You will work as a project lead and facilitate a team through research, ideation, art direction, prototypes and presentations. Furthermore, you will be responsible for instructing vendors (in collaboration with our producers) and delegating tasks to the project team.\n\nClient Connection\n\nWe always try to make something new, this means instead of making something predefined, we will enter a creative process with our team and the client. It is important that you feel comfortable managing the creative energy between the client and us.\n\n\n### By joining our team you will have the opportunity to:\n\nExplore new ways for physical spaces to merge with digital technologies to create elevated experiences and services\nWork on concepts for forward-thinking brands\nBe involved throughout the full design process, from strategy to prototype to production\nDirectly collaborate with art directors, ux designers, producers and technologists, external and internal. We don’t have a set signature and so enjoy working with many different people also outside of our own studio.\nWork in a high autonomy, low control environment \n\n\n### We expect you:\n\nTo have minimal 4 years of experience in the field of spatial design, architecture, brand communication or interactive technologies\nAre not fundamental about one approach to design and are able to synthesise various modes of thinking\nTo have a strong need to explore and make new things\n\n### Random Studio Diversity & Inclusion Statement:\n\nAt Random Studio, we believe that an inclusive work environment and a diverse team are key to creating fresh and inspiring work. We’re looking for candidates who enrich our culture and challenge the status quo. We encourage everyone to bring their whole selves to work, and we strive to provide all candidates with an unbiased and accessible recruitment process. If you require assistance due to a disability when applying please let us know in your application so we can accommodate your needs.\n\n\n",
+    "updatedAt": "2022-04-13T11:08:33.256+02:00",
+    "createdAt": "2022-04-04T13:33:56.083+02:00",
+    "meta": {
+      "createdAt": "2022-04-04T13:33:56.083+02:00",
+      "updatedAt": "2022-04-13T11:08:33.256+02:00",
+      "publishedAt": "2022-04-13T11:08:33.489+02:00",
+      "firstPublishedAt": "2022-04-04T13:33:56.283+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "250040416",
+      "stage": null
+    },
+    "itemType": "1989582"
+  },
+  {
     "id": "120810554",
     "relatedProjectsTitle": "More on our celebration of CP Company’s  50th anniversary",
     "intro": "We were proud to join C.P. Company’s 50th anniversary Cinquanta celebrations to help them bring their rich archive to life – in both a physical and digital form. Working with five-decade’s worth of their hybrid urban sportswear, objects, sketches and editorials, we created an interactive spatial archive in a repurposed car park in Darwen, UK, as part of the 2021 British Textile Biennale, [as well as a dynamic online archive](https://archive.cpcompany.com). A hybrid of physical and digital space, the exhibition offers visitors an embodied experience of the often-hidden brand archive.",
@@ -1009,72 +1096,6 @@
     "itemType": "1643994"
   },
   {
-    "id": "120718363",
-    "title": "Random Studio",
-    "introBlocks": [
-      "120718365",
-      "120718369"
-    ],
-    "services": [
-      "120801063",
-      "120801394",
-      "120801395"
-    ],
-    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
-    "studioImpression": [
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270514"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270517"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270522"
-      }
-    ],
-    "jobOpenings": [
-      "120803831",
-      "120803832",
-      "120803833",
-      "120803834",
-      "120804189",
-      "120872774"
-    ],
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-04-07T16:08:26.592+02:00",
-    "createdAt": "2022-03-31T15:35:58.069+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T15:35:58.069+02:00",
-      "updatedAt": "2022-04-07T16:08:26.592+02:00",
-      "publishedAt": "2022-04-07T16:08:26.641+02:00",
-      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "249574048",
-      "stage": null
-    },
-    "itemType": "1989580",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
-  },
-  {
     "id": "120811003",
     "relatedProjectsTitle": "Other work",
     "intro": "We worked with Alexander McQueen to design a display for their flagship store in London to showcase the new Curve bag. Drawing inspiration from the SS21 campaign film directed by Jonathan Glazer – a dystopian short unfolding on the banks of the capital’s iconic River Thames – we created a display that mirrors the movement of the tide to bring the peace and tranquility of the natural world into the heart of the city.",
@@ -1646,27 +1667,6 @@
       "status": "published",
       "isValid": true,
       "currentVersion": "249409581",
-      "stage": null
-    },
-    "itemType": "1989582"
-  },
-  {
-    "id": "120803834",
-    "title": "Senior Experience Designer",
-    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=10&source=aWQ9Nw%3D%3D",
-    "description": "As a front-end developer at Random Studio you will be responsible for developing applications and interactive experiences for web-based devices and physical installations. You will work in a team of creative developers, designers, testers and project managers to expand a platform of highly contextual touch-screen applications used in stores. Our default tech stack is based on web technologies like React but we embrace experimentation and pragmatism in using new frameworks and tools wherever they make sense. \n\n### Requirements\n\n- You have in-depth knowledge of HTML, CSS and Javascript and are skilled in React or a similar component-based front-end library.\n\n- You have knowledge of Node.js and npm, and are comfortable using a command line to run scripts and GIT.\n\n- You have good communication skills in English and can work directly with designers, other developers, and clients in a clear and professional way.\n\n- You are able to work at our Amsterdam office at least some of the time.\n\n- You are available for at least 4 days a week.\n\n\n\n### Nice to have\n\n- You have experience with SCRUM, Agile or a similar process structure.\n\n- You have experience with mobile development and developing for touch screens.\n\n- You are interested in working with sensors, light control, arduino or other physical hardware.\n\n- You have knowledge of Three.js, BabylonJS or WebGL in some other way.\n\n- You have experience developing for retail or ecommerce.\n\n\nAt Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a studio, we value new ideas, new insight, new ways of seeing the world. Our studio is high freedom and low control, so we value those with an experimental and independent spirit. We are looking for someone who feels comfortable working in a dynamic and ever-changing environment.\n\n\nOur culture fosters an open, curious and creative mindset, relentlessly looking for the new. We encourage autonomy and authenticity to help you shape your own role. We are not bound to a studio signature. The people are the studio. We offer a humane studio that includes daily chef prepared vegetarian lunches, as well as an open space filled with light and plants. We empower and enable the team by providing hardware and software of your choice, and have a commitment to employee growth/development with education/conference budgets, scheduled speakers, and regular social events.\n\n\n### Random Studio Diversity & Inclusion Statement\n\nWe believe that an inclusive work environment and a diverse team are key to creating fresh and inspiring work. We’re looking for candidates who enrich our culture and challenge the status quo. We encourage everyone to bring their whole selves to work, and we strive to provide all candidates with an unbiased and accessible recruitment process. If you require any help due to a disability when applying please let us know in your application so we can accommodate.\n",
-    "updatedAt": "2022-04-06T08:57:17.962+02:00",
-    "createdAt": "2022-04-04T13:33:56.083+02:00",
-    "meta": {
-      "createdAt": "2022-04-04T13:33:56.083+02:00",
-      "updatedAt": "2022-04-06T08:57:17.962+02:00",
-      "publishedAt": "2022-04-06T08:57:18.165+02:00",
-      "firstPublishedAt": "2022-04-04T13:33:56.283+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "249409550",
       "stage": null
     },
     "itemType": "1989582"
