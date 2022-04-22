@@ -12,6 +12,10 @@ on:
         required: true
       MELI_TOKEN:
         required: true
+      NEXT_PUBLIC_SUPABASE_URL:
+        required: true
+      NEXT_PUBLIC_SUPABASE_ANON_KEY:
+        required: true
 jobs:
   build:
     name: Build application
@@ -42,10 +46,12 @@ jobs:
         run: npm install --dev
       - name: "build"
         run: |
-          npm run build
+          npm run export
         env:
           NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
           VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       - name: "publish"
         run: |
           npx -p "@getmeli/cli" meli upload ./out \
