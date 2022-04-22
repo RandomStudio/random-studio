@@ -5,6 +5,13 @@ import PropTypes from 'prop-types';
 import styles from './PartyHeader.module.scss';
 
 const LazyLoadedWorld = dynamic(() => import('./World/World'), {
+  loading: () => (
+    <div className={styles.loader}>
+      <div className={styles.spinner} />
+
+      <p>Loading...</p>
+    </div>
+  ),
   ssr: false,
 });
 
