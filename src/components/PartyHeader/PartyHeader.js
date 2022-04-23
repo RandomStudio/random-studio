@@ -2,7 +2,6 @@
 import dynamic from 'next/dynamic';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import PropTypes from 'prop-types';
 import styles from './PartyHeader.module.scss';
 
 const LazyLoadedWorld = dynamic(() => import('./World/World'), {
@@ -16,7 +15,7 @@ const LazyLoadedWorld = dynamic(() => import('./World/World'), {
   ssr: false,
 });
 
-const PartyHeader = ({ isLive }) => {
+const PartyHeader = () => {
   const frameRef = useRef(0);
   const [shapes, setShapes] = useState([]);
 
@@ -26,39 +25,63 @@ const PartyHeader = ({ isLive }) => {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     );
 
-    const handleUpdates = ({ new: shape }) => {
-      setShapes(currentShapes => [
-        ...currentShapes,
-        {
-          ...shape,
-          end: frameRef.current + (shape.end - shape.start),
-          hasAdjustedForLive: true,
-          start: frameRef.current,
-        },
-      ]);
-    };
-
     const getInitialData = async () => {
+      const { data: earlyData } = await supabase.from('shapes_first');
       const { data } = await supabase.from('shapes');
 
-      setShapes(
-        data.map(({ coords, ...rest }) => ({
-          ...rest,
-          coords,
-        })),
+      const set1 = earlyData.reduce(
+        ([result, lastFrame], { coords, start, end, ...rest }) => {
+          const adjustment =
+            start > lastFrame + 100 ? start - lastFrame - 100 : 0;
+
+          const endFrame = end - adjustment;
+
+          return [
+            [
+              ...result,
+              {
+                ...rest,
+                coords: JSON.parse(coords),
+                end: endFrame,
+                set: 1,
+                start: start - adjustment,
+              },
+            ],
+            endFrame,
+          ];
+        },
+        [[], 0],
       );
+
+      const set2 = data.reduce(
+        ([result, lastFrame], { coords, start, end, ...rest }) => {
+          const adjustment =
+            start > lastFrame + 100 ? start - lastFrame - 100 : 0;
+
+          const endFrame = end - adjustment;
+
+          return [
+            [
+              ...result,
+              {
+                ...rest,
+                coords: JSON.parse(coords),
+                end: endFrame,
+                set: 1,
+                start: start - adjustment,
+              },
+            ],
+            endFrame,
+          ];
+        },
+        [[], 0],
+      );
+
+      setShapes([...set1[0], ...set2[0]]);
     };
 
-    if (!isLive) {
-      getInitialData();
-    }
-
-    supabase.from('shapes').on('INSERT', handleUpdates).subscribe();
-
-    return () => {
-      supabase.removeAllSubscriptions();
-    };
-  }, [isLive]);
+    getInitialData();
+  }, []);
 
   const handleDeleteShape = useCallback(id => {
     setShapes(current => current.filter(shape => shape.id !== id));
@@ -68,20 +91,11 @@ const PartyHeader = ({ isLive }) => {
     <div className={styles.frame}>
       <LazyLoadedWorld
         frameRef={frameRef}
-        isLive={isLive}
         onDeleteShape={handleDeleteShape}
         shapes={shapes}
       />
     </div>
   );
-};
-
-PartyHeader.propTypes = {
-  isLive: PropTypes.bool,
-};
-
-PartyHeader.defaultProps = {
-  isLive: true,
 };
 
 export default PartyHeader;
