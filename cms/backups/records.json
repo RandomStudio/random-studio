@@ -1,5 +1,66 @@
 [
   {
+    "id": "120810607",
+    "relatedProjectsTitle": "Other work",
+    "intro": "To celebrate its SS20 collection, Bottega Veneta commissioned us to take over the windows of New York’s Saks Fifth Avenue and create 5 pop-up areas indoors. We partnered with spatial designers Bonsoir Paris to concept and design. Together, we took the takeover task literally; through subtle interventions into the architecture of Saks itself, we created a bold stage for Bottega’s collection.",
+    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role \": \"Concept, Creative Direction, Art Direction, Installation Overview, Production Management\",\n  \"With\": \"Bonsoir Paris\"\n}",
+    "title": "Bottega Veneta takeover at Saks Fifth Avenue ",
+    "relatedProjects": [],
+    "content": [
+      "120810593",
+      "120810594",
+      "120810595",
+      "120810596",
+      "120810597",
+      "120810598",
+      "120810599",
+      "120810600",
+      "120810601",
+      "120810602",
+      "120810604",
+      "120810605",
+      "120810606"
+    ],
+    "tags": "[\n  \"spaces\"\n]",
+    "slug": "bottega-veneta-takeover-at-saks-fifth-avenue",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221600"
+    },
+    "opengraph": {
+      "image": "46221600",
+      "title": "Bottega Veneta Takeover at Saks Fifth Avenue",
+      "description": "To celebrate its SS20 collection, Bottega Veneta commissioned us to take over the windows of New York’s Saks Fifth Avenue and create 5 pop-up areas indoors.",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-04-25T14:45:49.216+02:00",
+    "createdAt": "2022-04-04T16:13:22.812+02:00",
+    "position": 25,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:22.812+02:00",
+      "updatedAt": "2022-04-25T14:45:49.216+02:00",
+      "publishedAt": "2022-04-25T14:46:30.980+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:23.121+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "250889745",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
     "id": "120718363",
     "title": "Random Studio",
     "introBlocks": [
@@ -41,22 +102,23 @@
       "120803833",
       "120803834",
       "120804189",
-      "120872774"
+      "120872774",
+      "121316165"
     ],
     "preview": null,
     "opengraph": null,
-    "updatedAt": "2022-04-13T11:08:33.322+02:00",
+    "updatedAt": "2022-04-25T11:21:40.108+02:00",
     "createdAt": "2022-03-31T15:35:58.069+02:00",
     "meta": {
       "createdAt": "2022-03-31T15:35:58.069+02:00",
-      "updatedAt": "2022-04-13T11:08:33.322+02:00",
-      "publishedAt": "2022-04-13T11:08:33.378+02:00",
+      "updatedAt": "2022-04-25T11:21:40.108+02:00",
+      "publishedAt": "2022-04-25T11:21:40.171+02:00",
       "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "250040417",
+      "currentVersion": "250854343",
       "stage": null
     },
     "itemType": "1989580",
@@ -64,6 +126,27 @@
       "id": "49286",
       "type": "account"
     }
+  },
+  {
+    "id": "121316165",
+    "title": "Senior UX Designer (embedded)",
+    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=19",
+    "description": "We are looking for a senior UX Designer who can lead and advance the user experience for an omnichannel retail platform. As an embedded team member you will equally split your time between the Membership & Loyalty team as well as the Digital Selling (checkout) team.\n\n### Opportunity\nA chance to innovate the retail experience for a large fashion brand\nThink outside of the browser and explore how Membership & Loyalty and checkout experiences can come to life in a digital-physical retail environment\nWork across multiple teams\nYou will be in direct contact with the team at Random Studio to share knowledge, exchange ideas and discuss ways of working\n\n### Qualities we are looking for (you are)\nA natural facilitator, you can lead meetings and create alignment across multiple teams and stakeholders\nAn excellent communicator, ready to explain design decisions to Product Owners and the rest of the team\nAbility to substantiate your design decisions with user research and business strategy insights\nAbility to navigate and structure complex systems, processes and flows\n\n### Your key responsibilities\nDefine and plan design processes, such as selecting research activities, workshops formats et cetera\nPerform UX research activities such as stakeholder interviews, user interviews, desk and field research\nFacilitate research, concepting workshops and design sprints\nCreate concepts for new parts of the experience as well as continuously improve existing elements\nDeliver both user experience flows and UI designs\nCommunicate decisions through various artefacts, such as: concept documents, storyboards, sitemaps, user journeys and wireframes\nCreate prototypes for user testing and internal alignment\n\n### Competencies and Experience (you have)\n4+ years of relevant experience\nUX Design experience for mid- to large-scale digital platforms or products\nProfessional proficiency in English",
+    "updatedAt": "2022-04-25T11:21:40.068+02:00",
+    "createdAt": "2022-04-25T11:01:48.895+02:00",
+    "meta": {
+      "createdAt": "2022-04-25T11:01:48.895+02:00",
+      "updatedAt": "2022-04-25T11:21:40.068+02:00",
+      "publishedAt": "2022-04-25T11:21:40.310+02:00",
+      "firstPublishedAt": "2022-04-25T11:01:49.083+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "250854341",
+      "stage": null
+    },
+    "itemType": "1989582"
   },
   {
     "id": "120803834",
@@ -1264,9 +1347,9 @@
       "firstPublishedAt": "2022-04-04T16:13:14.742+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "249529171",
+      "currentVersion": "250858137",
       "stage": null
     },
     "itemType": "1641543",
@@ -6502,67 +6585,6 @@
       "status": "published",
       "isValid": true,
       "currentVersion": "249305906",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
-    "id": "120810607",
-    "relatedProjectsTitle": "Other work",
-    "intro": "To celebrate its SS20 collection, Bottega Veneta commissioned us to take over the windows of New York’s Saks Fifth Avenue and create 5 pop-up areas indoors. We partnered with spatial designers Bonsoir Paris to concept and design. Together, we took the takeover task literally; through subtle interventions into the architecture of Saks itself, we created a bold stage for Bottega’s collection.",
-    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role \": \"Concept, Creative Direction, Art Direction, Installation Overview, Production Management\",\n  \"With\": \"Bonsoir Paris\"\n}",
-    "title": "Bottega Veneta takeover at Saks Fifth Avenue ",
-    "relatedProjects": [],
-    "content": [
-      "120810593",
-      "120810594",
-      "120810595",
-      "120810596",
-      "120810597",
-      "120810598",
-      "120810599",
-      "120810600",
-      "120810601",
-      "120810602",
-      "120810604",
-      "120810605",
-      "120810606"
-    ],
-    "tags": "[]",
-    "slug": "bottega-veneta-takeover-at-saks-fifth-avenue",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221600"
-    },
-    "opengraph": {
-      "image": "46221600",
-      "title": "Bottega Veneta Takeover at Saks Fifth Avenue",
-      "description": "To celebrate its SS20 collection, Bottega Veneta commissioned us to take over the windows of New York’s Saks Fifth Avenue and create 5 pop-up areas indoors.",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-04-05T11:18:25.139+02:00",
-    "createdAt": "2022-04-04T16:13:22.812+02:00",
-    "position": 25,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:22.812+02:00",
-      "updatedAt": "2022-04-05T11:18:25.139+02:00",
-      "publishedAt": "2022-04-05T11:18:27.539+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:23.121+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "249305484",
       "stage": null
     },
     "itemType": "1641543",
@@ -15826,9 +15848,9 @@
       "firstPublishedAt": "2022-04-04T16:13:15.028+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "249235979",
+      "currentVersion": "250858136",
       "stage": null
     },
     "itemType": "1643992"
@@ -15851,9 +15873,9 @@
       "firstPublishedAt": "2022-04-04T16:13:14.984+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "249235978",
+      "currentVersion": "250858135",
       "stage": null
     },
     "itemType": "1643994"
@@ -15951,9 +15973,9 @@
       "firstPublishedAt": "2022-04-04T16:13:14.915+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "249235974",
+      "currentVersion": "250858134",
       "stage": null
     },
     "itemType": "1643994"
@@ -16055,9 +16077,9 @@
       "firstPublishedAt": "2022-04-04T16:13:14.845+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "249235970",
+      "currentVersion": "250858133",
       "stage": null
     },
     "itemType": "1643994"
@@ -16159,9 +16181,9 @@
       "firstPublishedAt": "2022-04-04T16:13:14.788+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "249235966",
+      "currentVersion": "250858132",
       "stage": null
     },
     "itemType": "1643994"
@@ -16288,9 +16310,9 @@
       "firstPublishedAt": "2022-04-04T16:13:14.761+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "249235961",
+      "currentVersion": "250858131",
       "stage": null
     },
     "itemType": "1643992"
