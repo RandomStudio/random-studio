@@ -40,7 +40,9 @@ const ProjectDetail = ({
           <React.Fragment key={`${key}-${value}`}>
             <dt>{`${key}:`}</dt>
 
-            <dd>{value.replace('<br >', '<br>').replace('<br>', '\n')}</dd>
+            <dd>
+              {value.replaceAll('<br />', '<br>').replaceAll('<br>', '\n')}
+            </dd>
           </React.Fragment>
         ))}
       </dl>
