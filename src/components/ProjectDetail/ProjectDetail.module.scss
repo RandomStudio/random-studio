@@ -78,7 +78,9 @@
       max-width: 115px;
       padding-right: 38px;
     }
-
+    dd {
+      white-space: pre-line;
+    }
   &.creditsAdjustedSpacing {
     margin-top: 100px;
     padding-top: 0;
