@@ -26,7 +26,7 @@ jobs:
           node-version: "16"
       - uses: gogaille/sparse-checkout@v0.1
         with:
-          patterns: public src *.js *.json !cms
+          patterns: public src package.json next.config.js
       - name: Load cached dependencies
         id: cache-dependencies
         uses: actions/cache@v3
