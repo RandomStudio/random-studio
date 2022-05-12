@@ -1,26 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
 import getDataFromBackend from '../api/getDataFromBackend';
 import { addVimeoVideoDataToObject } from '../api/getVideoData';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
+import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
-import { projectPropType } from '../propTypes';
+import { projectPropType, videoPropType } from '../propTypes';
 
-const ChunkedPartyHeader = dynamic(
-  () => import('../components/PartyHeader/PartyHeader'),
-  {
-    ssr: false,
-  },
-);
-
-const Home = ({ intro, isLogoCentred, projects }) => (
+const Home = ({
+  collaborator,
+  collaborationUrl,
+  intro,
+  isLogoCentred,
+  projects,
+  video,
+}) => (
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
 
-    <ChunkedPartyHeader />
+    <HomeVideo
+      collaborationUrl={collaborationUrl}
+      collaborator={collaborator}
+      video={video}
+    />
 
     <ProjectList hasLimit intro={intro} projects={projects} />
   </Layout>
@@ -47,9 +51,12 @@ export const getStaticProps = async ({ preview }) => {
 };
 
 Home.propTypes = {
+  collaborationUrl: PropTypes.string.isRequired,
+  collaborator: PropTypes.string.isRequired,
   intro: PropTypes.string.isRequired,
   isLogoCentred: PropTypes.bool,
   projects: PropTypes.arrayOf(projectPropType).isRequired,
+  video: videoPropType.isRequired,
 };
 
 Home.defaultProps = {
