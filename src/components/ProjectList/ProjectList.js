@@ -54,7 +54,7 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
           <React.Fragment key={activeTag ?? 'all'}>
             {visibleProjects.map(
               ({ featuredImage, featuredVideo, title, slug }, index) => {
-                const { left, top, width } = LAYOUT[index];
+                const { left, top, width } = LAYOUT[index % LAYOUT.length];
 
                 return (
                   <React.Fragment key={slug}>
