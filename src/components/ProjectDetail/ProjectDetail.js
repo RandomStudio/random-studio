@@ -40,9 +40,7 @@ const ProjectDetail = ({
           <React.Fragment key={`${key}-${value}`}>
             <dt>{`${key}:`}</dt>
 
-            <dd>
-              <ReactMarkdown>{value}</ReactMarkdown>
-            </dd>
+            <dd>{value}</dd>
           </React.Fragment>
         ))}
       </dl>
