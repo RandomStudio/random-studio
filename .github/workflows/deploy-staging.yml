@@ -5,7 +5,6 @@ on:
       - "staging"
 jobs:
   build:
-  build:
     name: Build application
     runs-on: ubuntu-latest
     steps:
