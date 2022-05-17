@@ -2,7 +2,7 @@ name: Deploy dynamic site to Production
 on:
   push:
     branches:
-      - non-static-test
+      - master
 jobs:
   build:
     name: Build application
@@ -35,6 +35,7 @@ jobs:
         run: |
           npm run build
         env:
+          DATOCMS_PREVIEW_SECRET: ${{ secrets.DATOCMS_PREVIEW_SECRET }}
           NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
           VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
