@@ -1,8 +1,8 @@
-name: Deploy site to Production
+name: Deploy dynamic site to Production
 on:
   push:
     branches:
-      - non-static-test
+      - master
 jobs:
   build:
     name: Build application
@@ -13,7 +13,7 @@ jobs:
           node-version: "16"
       - uses: gogaille/sparse-checkout@v0.1
         with:
-          patterns: public src *.js *.json !cms
+          patterns: public src package.json next.config.js
       - name: Load cached dependencies
         id: cache-dependencies
         uses: actions/cache@v3
@@ -37,6 +37,8 @@ jobs:
         env:
           NEXT_DATOCMS_API_TOKEN: ${{ secrets.NEXT_DATOCMS_API_TOKEN }}
           VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       - name: Deploy to server
         uses: AEnterprise/rsync-deploy@1.0.1
         env:
@@ -45,5 +47,5 @@ jobs:
           SERVER_PORT: 22
           FOLDER: "."
           SERVER_IP: "195.114.30.143"
-          USERNAME: random-studio
+          USERNAME: ubuntu
           SERVER_DESTINATION: "/var/www/next.random.studio/"
