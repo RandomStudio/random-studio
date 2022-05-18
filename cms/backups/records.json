@@ -1,10 +1,47 @@
 [
   {
+    "id": "120717266",
+    "video": {
+      "url": "https://vimeo.com/293916662",
+      "title": "Random Studio Header Piece by Luciano Foglia",
+      "width": 640,
+      "height": 360,
+      "provider": "vimeo",
+      "providerUid": "293916662",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/730680405-b55d4992ada3f559294ee3c563ca5b9f1f851bfa8dda943ce7e2d0f676274fc5-d_640"
+    },
+    "collaborator": "Luciano Foglia ",
+    "collaborationUrl": "https://lucianofoglia.com/",
+    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
+    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-05-17T15:21:47.111+02:00",
+    "createdAt": "2022-03-31T14:34:25.908+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T14:34:25.908+02:00",
+      "updatedAt": "2022-05-17T15:21:47.111+02:00",
+      "publishedAt": "2022-05-17T15:21:47.137+02:00",
+      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "252479081",
+      "stage": null
+    },
+    "itemType": "1989572",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
     "id": "121605686",
     "relatedProjectsTitle": "Other work",
     "intro": "On the occasion of its new collection Le Bleu, we made a multi-sensory experience for Jacquemus that unfolded in and around London’s Selfridges. Our series of playful indoor and outdoor spatial interventions, each accented by a commissioned scent scape infused the store with waves of nostalgia for the hot summers of the South of France and a dash of the brand’s signature wit. Intermingling spatial design and interactive scenography with smell, we offered visitors a memorable holiday away from the everyday.",
     "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management, Production Partners\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
-    "title": "Spatial Design and Interactive Scenography for Jacquemus at Selfridges",
+    "title": "Intermingling spatial design and interactive scenography for Jacquemus",
     "relatedProjects": [],
     "content": [
       "121612718",
@@ -21,7 +58,7 @@
       "121613056"
     ],
     "tags": "[\n  \"spaces\",\n  \"installations\",\n  \"digital\"\n]",
-    "slug": "interactive-scenography-for-jacquemus-at-selfridges",
+    "slug": "intermingling-spatial-design-and-interactive-scenography-for-jacquemus",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -33,59 +70,22 @@
     "featuredVideo": null,
     "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-05-13T13:09:07.449+02:00",
+    "updatedAt": "2022-05-16T12:04:57.053+02:00",
     "createdAt": "2022-05-12T10:01:40.636+02:00",
     "position": 1,
     "meta": {
       "createdAt": "2022-05-12T10:01:40.636+02:00",
-      "updatedAt": "2022-05-13T13:09:07.449+02:00",
-      "publishedAt": "2022-05-13T13:09:09.864+02:00",
+      "updatedAt": "2022-05-16T12:04:57.053+02:00",
+      "publishedAt": "2022-05-16T12:04:58.588+02:00",
       "firstPublishedAt": "2022-05-12T15:12:40.153+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "252277867",
+      "currentVersion": "252475576",
       "stage": null
     },
     "itemType": "1641543",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
-  },
-  {
-    "id": "120717266",
-    "video": {
-      "url": "https://vimeo.com/293916662",
-      "title": "Random Studio Header Piece by Luciano Foglia",
-      "width": 640,
-      "height": 360,
-      "provider": "vimeo",
-      "providerUid": "293916662",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/730680405-b55d4992ada3f559294ee3c563ca5b9f1f851bfa8dda943ce7e2d0f676274fc5-d_640"
-    },
-    "collaborator": "Random Studio",
-    "collaborationUrl": "https://random.studio/studio",
-    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
-    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-05-12T18:47:01.982+02:00",
-    "createdAt": "2022-03-31T14:34:25.908+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T14:34:25.908+02:00",
-      "updatedAt": "2022-05-12T18:47:01.982+02:00",
-      "publishedAt": "2022-05-12T18:47:02.003+02:00",
-      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225877",
-      "stage": null
-    },
-    "itemType": "1989572",
     "creator": {
       "id": "49286",
       "type": "account"
