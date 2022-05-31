@@ -2,7 +2,7 @@ name: Deploy dynamic site to Production
 on:
   push:
     branches:
-      - non-static-test
+      - master
 jobs:
   build:
     name: Build application
