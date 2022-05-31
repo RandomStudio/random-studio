@@ -59,11 +59,13 @@ export const getVimeoVideoData = async id => {
 
   const details = await getVideoDetails(id);
 
-  const {
-    files,
-    pictures: { sizes },
-  } = details;
+  const { files, pictures } = details;
 
+  if (!pictures) {
+    console.error('Error getting images', details);
+  }
+
+  const { sizes } = pictures;
   const { link: smallest } = sizes[0];
   const { link: largest } = sizes.at(-1);
 
