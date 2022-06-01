@@ -1,5 +1,904 @@
 [
   {
+    "id": "121605686",
+    "relatedProjectsTitle": "Other work",
+    "intro": "On the occasion of its new collection Le Bleu, we made a multi-sensory experience for Jacquemus that unfolded in and around London’s Selfridges. Our series of playful indoor and outdoor spatial interventions,each accented by a commissioned scent scape infused the store with waves of nostalgia for the hot summers of the South of France and a dash of the brand’s signature wit. Intermingling spatial design and interactive scenography with smell, we offered visitors a memorable holiday away from the everyday.",
+    "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management, Production Partners\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
+    "title": "Intermingling spatial design and interactive scenography for Jacquemus",
+    "relatedProjects": [],
+    "content": [
+      "121938793",
+      "121608813",
+      "121613699",
+      "121613700",
+      "121612835",
+      "121613978",
+      "121614005",
+      "121938798",
+      "121939003",
+      "121939004",
+      "121939005",
+      "121939011",
+      "121939012",
+      "121939013",
+      "121939014",
+      "121939015",
+      "121939016",
+      "121939017",
+      "121939018",
+      "121939019",
+      "121939020"
+    ],
+    "tags": "[\n  \"spaces\",\n  \"installations\",\n  \"digital\"\n]",
+    "slug": "intermingling-spatial-design-and-interactive-scenography-for-jacquemus",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46586218"
+    },
+    "opengraph": {
+      "image": "46783421",
+      "title": "A real-life interactive store scenography for Jacquemus",
+      "description": "On the occasion of its new collection Le Bleu, we made a multi-sensory experience for Jacquemus that unfolded in and around London’s Selfridges. ",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-05-31T10:35:22.294+02:00",
+    "createdAt": "2022-05-12T10:01:40.636+02:00",
+    "position": 2,
+    "meta": {
+      "createdAt": "2022-05-12T10:01:40.636+02:00",
+      "updatedAt": "2022-05-31T10:35:22.294+02:00",
+      "publishedAt": "2022-05-31T10:35:31.897+02:00",
+      "firstPublishedAt": "2022-05-12T15:12:40.153+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253411538",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
+    "id": "121939011",
+    "slides": [
+      "121939006",
+      "121939007",
+      "121939008",
+      "121939009",
+      "121939010"
+    ],
+    "width": 70,
+    "marginTop": 20,
+    "marginLeft": 15,
+    "updatedAt": "2022-05-31T10:35:22.255+02:00",
+    "createdAt": "2022-05-30T22:18:12.132+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.132+02:00",
+      "updatedAt": "2022-05-31T10:35:22.255+02:00",
+      "publishedAt": "2022-05-31T10:35:32.076+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.407+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253411537",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "121938798",
+    "slides": [
+      "121938794",
+      "121938795",
+      "121938796",
+      "121938797"
+    ],
+    "width": 70,
+    "marginTop": 20,
+    "marginLeft": 15,
+    "updatedAt": "2022-05-31T10:35:22.227+02:00",
+    "createdAt": "2022-05-30T22:01:07.924+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:01:07.924+02:00",
+      "updatedAt": "2022-05-31T10:35:22.227+02:00",
+      "publishedAt": "2022-05-31T10:35:31.990+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.281+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253411536",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "121614005",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783339"
+    },
+    "caption": "",
+    "width": 36,
+    "marginTop": -100,
+    "marginLeft": 64,
+    "updatedAt": "2022-05-31T10:21:48.539+02:00",
+    "createdAt": "2022-05-12T15:02:40.876+02:00",
+    "meta": {
+      "createdAt": "2022-05-12T15:02:40.876+02:00",
+      "updatedAt": "2022-05-31T10:21:48.539+02:00",
+      "publishedAt": "2022-05-31T10:22:04.093+02:00",
+      "firstPublishedAt": "2022-05-12T15:12:40.254+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253409693",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121613978",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783335"
+    },
+    "caption": "",
+    "width": 49,
+    "marginTop": 10,
+    "marginLeft": 0,
+    "updatedAt": "2022-05-31T10:21:48.510+02:00",
+    "createdAt": "2022-05-12T15:00:51.299+02:00",
+    "meta": {
+      "createdAt": "2022-05-12T15:00:51.299+02:00",
+      "updatedAt": "2022-05-31T10:21:48.510+02:00",
+      "publishedAt": "2022-05-31T10:22:04.081+02:00",
+      "firstPublishedAt": "2022-05-12T15:12:40.240+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253409692",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121939020",
+    "width": 100,
+    "marginTop": 20,
+    "marginLeft": 0,
+    "text": "Finally, for the outdoor Terrace, we designed a space to host the Jacquemus pop-up Vending Machines that were previously shown in Milan and Paris. Reinterpreted in a striking blue with the brand's signature circle used as an entry point, the convenience store-esque machine is open and accessible to passersby 24/7. For those not in London, souvenirs from these three spaces can be experienced online too in the form of 3D content that we have created for social media. ",
+    "updatedAt": "2022-05-31T10:20:42.083+02:00",
+    "createdAt": "2022-05-30T22:18:12.204+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.204+02:00",
+      "updatedAt": "2022-05-31T10:20:42.083+02:00",
+      "publishedAt": "2022-05-31T10:22:04.294+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.610+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253409668",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "121939019",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783469"
+    },
+    "caption": "",
+    "width": 31,
+    "marginTop": -105,
+    "marginLeft": 69,
+    "updatedAt": "2022-05-31T10:20:19.157+02:00",
+    "createdAt": "2022-05-30T22:18:12.195+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.195+02:00",
+      "updatedAt": "2022-05-31T10:20:19.157+02:00",
+      "publishedAt": "2022-05-31T10:22:04.269+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.596+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253409654",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121939005",
+    "video": {
+      "url": "https://vimeo.com/715219377",
+      "title": "Social_02_Occupee_proRes",
+      "width": 240,
+      "height": 300,
+      "provider": "vimeo",
+      "providerUid": "715219377",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1441549175-0b522925d3281bfbce787d49ad4c462de8d5e32023de35af18885f0f1f5a86c7-d_200x150"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 40,
+    "marginTop": -110,
+    "marginLeft": 60,
+    "updatedAt": "2022-05-31T10:19:01.967+02:00",
+    "createdAt": "2022-05-30T22:18:12.077+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.077+02:00",
+      "updatedAt": "2022-05-31T10:19:01.967+02:00",
+      "publishedAt": "2022-05-31T10:22:04.160+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.392+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253409607",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "121939004",
+    "video": {
+      "url": "https://vimeo.com/715221038",
+      "title": "Social_03_Peephole_proRes",
+      "width": 240,
+      "height": 300,
+      "provider": "vimeo",
+      "providerUid": "715221038",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1441552624-a286953040a84db7fe26917241d018c01a88df6a112863ba786b4edac8d91897-d_200x150"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 30,
+    "marginTop": 60,
+    "marginLeft": 15,
+    "updatedAt": "2022-05-31T10:17:26.803+02:00",
+    "createdAt": "2022-05-30T22:18:12.069+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.069+02:00",
+      "updatedAt": "2022-05-31T10:17:26.803+02:00",
+      "publishedAt": "2022-05-31T10:22:04.148+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.378+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253409538",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "121613700",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783331"
+    },
+    "caption": "",
+    "width": 61,
+    "marginTop": -30,
+    "marginLeft": 39,
+    "updatedAt": "2022-05-31T10:10:31.401+02:00",
+    "createdAt": "2022-05-12T14:58:42.559+02:00",
+    "meta": {
+      "createdAt": "2022-05-12T14:58:42.559+02:00",
+      "updatedAt": "2022-05-31T10:10:31.401+02:00",
+      "publishedAt": "2022-05-31T10:22:04.064+02:00",
+      "firstPublishedAt": "2022-05-12T15:12:40.213+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253408991",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121938793",
+    "video": {
+      "url": "https://vimeo.com/715204356",
+      "title": "Window_Walkthrough_final_proRes",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "715204356",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1441535082-268f6f7857660a3b407a993f20f87488bbfec914b07516565995f907cc472777-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-05-31T08:37:07.209+02:00",
+    "createdAt": "2022-05-30T22:01:07.683+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:01:07.683+02:00",
+      "updatedAt": "2022-05-31T08:37:07.209+02:00",
+      "publishedAt": "2022-05-31T08:37:10.967+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.174+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253381007",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "121939018",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783467"
+    },
+    "caption": "",
+    "width": 59,
+    "marginTop": 0,
+    "marginLeft": 3,
+    "updatedAt": "2022-05-30T23:05:11.222+02:00",
+    "createdAt": "2022-05-30T22:18:12.186+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.186+02:00",
+      "updatedAt": "2022-05-30T23:05:11.222+02:00",
+      "publishedAt": "2022-05-31T08:34:22.582+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.582+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253367627",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121939016",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783445"
+    },
+    "caption": "",
+    "width": 82,
+    "marginTop": 0,
+    "marginLeft": 9,
+    "updatedAt": "2022-05-30T23:05:11.184+02:00",
+    "createdAt": "2022-05-30T22:18:12.170+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.170+02:00",
+      "updatedAt": "2022-05-30T23:05:11.184+02:00",
+      "publishedAt": "2022-05-31T08:34:22.554+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.554+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253367626",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121939014",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783433"
+    },
+    "caption": "",
+    "width": 31,
+    "marginTop": 0,
+    "marginLeft": 69,
+    "updatedAt": "2022-05-30T23:05:11.153+02:00",
+    "createdAt": "2022-05-30T22:18:12.151+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.151+02:00",
+      "updatedAt": "2022-05-30T23:05:11.153+02:00",
+      "publishedAt": "2022-05-31T08:34:22.526+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.526+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253367625",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121939013",
+    "video": {
+      "url": "https://vimeo.com/715189583",
+      "title": "PC_Walkthrough_final_proRes",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "715189583",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1441521377-222b4ad457e17ff51ae056f4b1721c71bc5a3f620024d5d308482bf886355acf-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 62,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-05-30T23:05:11.124+02:00",
+    "createdAt": "2022-05-30T22:18:12.145+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.145+02:00",
+      "updatedAt": "2022-05-30T23:05:11.124+02:00",
+      "publishedAt": "2022-05-31T08:34:22.512+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.512+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253367624",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "121613699",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783327"
+    },
+    "caption": "",
+    "width": 29,
+    "marginTop": 0,
+    "marginLeft": 3,
+    "updatedAt": "2022-05-30T22:47:09.519+02:00",
+    "createdAt": "2022-05-12T14:58:42.545+02:00",
+    "meta": {
+      "createdAt": "2022-05-12T14:58:42.545+02:00",
+      "updatedAt": "2022-05-30T22:47:09.519+02:00",
+      "publishedAt": "2022-05-31T08:34:22.197+02:00",
+      "firstPublishedAt": "2022-05-12T15:12:40.199+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366888",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "121939017",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Other cabins only open half-way as if visitors have walked in on someone changing, before a towel appears over the edge accompanied by a voice announcing 'occupé.' The space is filled with the commissioned scent Public Pool which uses the nostalgic smell of chlorine as a base, accented by cassis. Nearer the exit, a frosted glass entry to the 'pool' where life-size projections of people can be seen, the smell transforms into Sunscreen – a trace of creamy, coconut aroma bound to resurface childhood memories before visitors take the door back to the streets of London. ",
+    "updatedAt": "2022-05-30T22:18:12.181+02:00",
+    "createdAt": "2022-05-30T22:18:12.179+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.179+02:00",
+      "updatedAt": "2022-05-30T22:18:12.181+02:00",
+      "publishedAt": "2022-05-31T08:34:22.568+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.568+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366022",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "121939015",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The changing room is animated by a soundscape and lighting gestures that bring life to each cabin, from pacing and humming to light play that suggests a human presence behind the door. Like a joke unfolding around them, visitors become part of the choreography of the space. They can enter several of the cabins where several mini-scenes play out, from a Russian doll-like cabin with multiple versions of itself inside to a cabin rattled by an unexpected gust of wind. ",
+    "updatedAt": "2022-05-30T22:18:12.164+02:00",
+    "createdAt": "2022-05-30T22:18:12.162+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.162+02:00",
+      "updatedAt": "2022-05-30T22:18:12.164+02:00",
+      "publishedAt": "2022-05-31T08:34:22.540+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.540+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366020",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "121939012",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The  Porte Crochère transports visitors away from London's grey skies and into a bustling swimming pool changing room in the South of France. This immersive experience is inspired by Jacques Tati, whose films transformed the banality of modern life into snippets of absurd humour. After being greeted by a nonchalant pool attendant decked out in Jacquemus, visitors enter a modernist, seemingly-infinite monochrome space partitioned by cabins. ",
+    "updatedAt": "2022-05-30T22:18:12.140+02:00",
+    "createdAt": "2022-05-30T22:18:12.138+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.138+02:00",
+      "updatedAt": "2022-05-30T22:18:12.140+02:00",
+      "publishedAt": "2022-05-31T08:34:22.499+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.499+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366017",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "121939010",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783421"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:18:12.122+02:00",
+    "createdAt": "2022-05-30T22:18:12.120+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.120+02:00",
+      "updatedAt": "2022-05-30T22:18:12.122+02:00",
+      "publishedAt": "2022-05-31T08:34:22.483+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.483+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366015",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121939009",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783420"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:18:12.113+02:00",
+    "createdAt": "2022-05-30T22:18:12.111+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.111+02:00",
+      "updatedAt": "2022-05-30T22:18:12.113+02:00",
+      "publishedAt": "2022-05-31T08:34:22.469+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.469+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366014",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121939008",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783419"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:18:12.104+02:00",
+    "createdAt": "2022-05-30T22:18:12.102+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.102+02:00",
+      "updatedAt": "2022-05-30T22:18:12.104+02:00",
+      "publishedAt": "2022-05-31T08:34:22.455+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.455+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366013",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121939007",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783418"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:18:12.095+02:00",
+    "createdAt": "2022-05-30T22:18:12.093+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.093+02:00",
+      "updatedAt": "2022-05-30T22:18:12.095+02:00",
+      "publishedAt": "2022-05-31T08:34:22.441+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.441+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366012",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121939006",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783416"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:18:12.085+02:00",
+    "createdAt": "2022-05-30T22:18:12.083+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.083+02:00",
+      "updatedAt": "2022-05-30T22:18:12.085+02:00",
+      "publishedAt": "2022-05-31T08:34:22.427+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.427+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366011",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121939003",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The experience is not only visual: tapping into the universal aromas of these objects, we collaborated with in'n'out fragrances to make three 'trompe-nez' that interact with the different spaces. Soap, which takes the herbal blend of the iconic Savon de Marseille as its base, Paracetamol, which plays on citrus, medicinal notes and Toothpaste, a familiar fresh and minty scent.",
+    "updatedAt": "2022-05-30T22:18:12.062+02:00",
+    "createdAt": "2022-05-30T22:18:12.060+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.060+02:00",
+      "updatedAt": "2022-05-30T22:18:12.062+02:00",
+      "publishedAt": "2022-05-31T08:34:22.363+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.363+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253366008",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "121938797",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783357"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:01:07.913+02:00",
+    "createdAt": "2022-05-30T22:01:07.910+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:01:07.910+02:00",
+      "updatedAt": "2022-05-30T22:01:07.913+02:00",
+      "publishedAt": "2022-05-31T08:34:22.348+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.348+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253365339",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121938796",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783352"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:01:07.901+02:00",
+    "createdAt": "2022-05-30T22:01:07.898+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:01:07.898+02:00",
+      "updatedAt": "2022-05-30T22:01:07.901+02:00",
+      "publishedAt": "2022-05-31T08:34:22.334+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.334+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253365338",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121938795",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783350"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:01:07.887+02:00",
+    "createdAt": "2022-05-30T22:01:07.885+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:01:07.885+02:00",
+      "updatedAt": "2022-05-30T22:01:07.887+02:00",
+      "publishedAt": "2022-05-31T08:34:22.320+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.320+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253365337",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121938794",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46783346"
+    },
+    "video": null,
+    "updatedAt": "2022-05-30T22:01:07.869+02:00",
+    "createdAt": "2022-05-30T22:01:07.866+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:01:07.866+02:00",
+      "updatedAt": "2022-05-30T22:01:07.869+02:00",
+      "publishedAt": "2022-05-31T08:34:22.303+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.303+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253365336",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "121612835",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Against the backdrop of fresh blue tiles, products are displayed in the bathtub, the shower, the sinks and a towering wall made of soap. Visitors can take a seat on a huge sponge to watch digital droplets splash onto the floor of the shower, activated by their presence. ",
+    "updatedAt": "2022-05-30T22:01:07.771+02:00",
+    "createdAt": "2022-05-12T14:34:28.795+02:00",
+    "meta": {
+      "createdAt": "2022-05-12T14:34:28.795+02:00",
+      "updatedAt": "2022-05-30T22:01:07.771+02:00",
+      "publishedAt": "2022-05-31T08:34:22.231+02:00",
+      "firstPublishedAt": "2022-05-12T15:12:40.226+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253365333",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "120717266",
+    "video": {
+      "url": "https://vimeo.com/715189583",
+      "title": "PC_Walkthrough_final_proRes",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "715189583",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1441521377-222b4ad457e17ff51ae056f4b1721c71bc5a3f620024d5d308482bf886355acf-d_295x166"
+    },
+    "collaborator": "Jacquemus ",
+    "collaborationUrl": "https://random.studio/projects/intermingling-spatial-design-and-interactive-scenography-for-jacquemus",
+    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
+    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-05-30T16:21:19.188+02:00",
+    "createdAt": "2022-03-31T14:34:25.908+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T14:34:25.908+02:00",
+      "updatedAt": "2022-05-30T16:21:19.188+02:00",
+      "publishedAt": "2022-05-30T16:21:19.223+02:00",
+      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "253343659",
+      "stage": null
+    },
+    "itemType": "1989572",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
     "id": "120872252",
     "relatedProjectsTitle": "Other work",
     "intro": "Since Spring-Summer 19, we have been collaborating with Maison Margiela as a digital partner for six of their collections. Guided by John Galliano’s radical and unique vision, the collections are highly-considered constellations of ideas, craftsmanship and performance. Our job has been to understand the core concepts of each collection, and translate them into a multifaceted contemporary visual experience: from runway videos and live show streams to podcasts and photoshoots.\n\nRather than ‘documenting’ an end-product, we have become part of the making-process itself. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
@@ -2343,367 +3242,6 @@
     }
   },
   {
-    "id": "120717266",
-    "video": {
-      "url": "https://vimeo.com/293916662",
-      "title": "Random Studio Header Piece by Luciano Foglia",
-      "width": 640,
-      "height": 360,
-      "provider": "vimeo",
-      "providerUid": "293916662",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/730680405-b55d4992ada3f559294ee3c563ca5b9f1f851bfa8dda943ce7e2d0f676274fc5-d_640"
-    },
-    "collaborator": "Luciano Foglia ",
-    "collaborationUrl": "https://lucianofoglia.com/",
-    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
-    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-05-17T15:21:47.111+02:00",
-    "createdAt": "2022-03-31T14:34:25.908+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T14:34:25.908+02:00",
-      "updatedAt": "2022-05-17T15:21:47.111+02:00",
-      "publishedAt": "2022-05-17T15:21:47.137+02:00",
-      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252479081",
-      "stage": null
-    },
-    "itemType": "1989572",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
-  },
-  {
-    "id": "121605686",
-    "relatedProjectsTitle": "Other work",
-    "intro": "On the occasion of its new collection Le Bleu, we made a multi-sensory experience for Jacquemus that unfolded in and around London’s Selfridges. Our series of playful indoor and outdoor spatial interventions, each accented by a commissioned scent scape infused the store with waves of nostalgia for the hot summers of the South of France and a dash of the brand’s signature wit. Intermingling spatial design and interactive scenography with smell, we offered visitors a memorable holiday away from the everyday.",
-    "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management, Production Partners\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
-    "title": "Intermingling spatial design and interactive scenography for Jacquemus",
-    "relatedProjects": [],
-    "content": [
-      "121612718",
-      "121608813",
-      "121613699",
-      "121613700",
-      "121612835",
-      "121613978",
-      "121614005",
-      "121614083",
-      "121614126",
-      "121613031",
-      "121614127",
-      "121613056"
-    ],
-    "tags": "[\n  \"spaces\",\n  \"installations\",\n  \"digital\"\n]",
-    "slug": "intermingling-spatial-design-and-interactive-scenography-for-jacquemus",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46583655"
-    },
-    "opengraph": null,
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-05-16T12:04:57.053+02:00",
-    "createdAt": "2022-05-12T10:01:40.636+02:00",
-    "position": 1,
-    "meta": {
-      "createdAt": "2022-05-12T10:01:40.636+02:00",
-      "updatedAt": "2022-05-16T12:04:57.053+02:00",
-      "publishedAt": "2022-05-16T12:04:58.588+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.153+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "currentVersion": "252641208",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
-  },
-  {
-    "id": "121613056",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "Other cabins only open half-way as if visitors have walked in on someone changing, before a towel appears over the edge accompanied by a voice announcing 'occupé.' The space is filled with the commissioned scent Public Pool which uses the nostalgic smell of chlorine as a base, accented by cassis. Nearer the exit, a frosted glass entry to the 'pool' where life-size projections of people can be seen, the smell transforms into Sunscreen – a trace of creamy, coconut aroma bound to resurface childhood memories before visitors take the door back to the streets of London. \n\nFinally, for the outdoor Terrace, we designed a space to host the Jacquemus pop-up Vending Machines that were previously shown in Milan and Paris. Reinterpreted in a striking blue with the brand's signature circle used as an entry point, the convenience store-esque machine is open and accessible to passersby 24/7.",
-    "updatedAt": "2022-05-12T18:45:35.173+02:00",
-    "createdAt": "2022-05-12T14:42:19.777+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T14:42:19.777+02:00",
-      "updatedAt": "2022-05-12T18:45:35.173+02:00",
-      "publishedAt": "2022-05-12T18:48:06.124+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.328+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225836",
-      "stage": null
-    },
-    "itemType": "1643993"
-  },
-  {
-    "id": "121614127",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46586231"
-    },
-    "caption": "",
-    "width": 67,
-    "marginTop": 0,
-    "marginLeft": 33,
-    "updatedAt": "2022-05-12T18:45:35.154+02:00",
-    "createdAt": "2022-05-12T15:09:03.163+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T15:09:03.163+02:00",
-      "updatedAt": "2022-05-12T18:45:35.154+02:00",
-      "publishedAt": "2022-05-12T18:48:06.107+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.312+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225835",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "121613031",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "Le Vestiaire transports visitors away from London's grey skies and into a bustling swimming pool changing room in the South of France. This immersive experience is inspired by Jacques Tati, whose films transformed the banality of modern life into snippets of absurd humour. After being greeted by a nonchalant pool attendant decked out in Jacquemus, visitors enter a modernist, seemingly-infinite monochrome space partitioned by cabins. The changing room is animated by a soundscape and lighting gestures that bring life to each cabin, from pacing and humming to light play that suggests a human presence behind the door. Like a joke unfolding around them, visitors become part of the choreography of the space. They can enter several of the cabins where several mini-scenes play out, from a Russian doll-like cabin with multiple versions of itself inside to a cabin rattled by an unexpected gust of wind.",
-    "updatedAt": "2022-05-12T18:45:35.138+02:00",
-    "createdAt": "2022-05-12T14:41:25.408+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T14:41:25.408+02:00",
-      "updatedAt": "2022-05-12T18:45:35.138+02:00",
-      "publishedAt": "2022-05-12T18:48:06.089+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.294+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225834",
-      "stage": null
-    },
-    "itemType": "1643993"
-  },
-  {
-    "id": "121614126",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46586218"
-    },
-    "caption": "",
-    "width": 45,
-    "marginTop": 15,
-    "marginLeft": 5,
-    "updatedAt": "2022-05-12T18:45:35.119+02:00",
-    "createdAt": "2022-05-12T15:09:03.149+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T15:09:03.149+02:00",
-      "updatedAt": "2022-05-12T18:45:35.119+02:00",
-      "publishedAt": "2022-05-12T18:48:06.072+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.281+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225833",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "121614083",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46586151"
-    },
-    "caption": "",
-    "width": 65,
-    "marginTop": -20,
-    "marginLeft": 40,
-    "updatedAt": "2022-05-12T18:45:35.098+02:00",
-    "createdAt": "2022-05-12T15:06:47.024+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T15:06:47.024+02:00",
-      "updatedAt": "2022-05-12T18:45:35.098+02:00",
-      "publishedAt": "2022-05-12T18:48:06.052+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.267+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225832",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "121614005",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46586116"
-    },
-    "caption": "",
-    "width": 20,
-    "marginTop": 25,
-    "marginLeft": 5,
-    "updatedAt": "2022-05-12T18:45:35.071+02:00",
-    "createdAt": "2022-05-12T15:02:40.876+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T15:02:40.876+02:00",
-      "updatedAt": "2022-05-12T18:45:35.071+02:00",
-      "publishedAt": "2022-05-12T18:48:06.019+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.254+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225831",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "121613978",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46583655"
-    },
-    "caption": "",
-    "width": 80,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-05-12T18:45:35.054+02:00",
-    "createdAt": "2022-05-12T15:00:51.299+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T15:00:51.299+02:00",
-      "updatedAt": "2022-05-12T18:45:35.054+02:00",
-      "publishedAt": "2022-05-12T18:48:06.003+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.240+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225830",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "121612835",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "Against the backdrop of fresh blue tiles, products are displayed in the bathtub, the shower, the sinks and a towering wall made of soap. Visitors can take a seat on a huge sponge to watch digital droplets splash onto the floor of the shower, activated by their presence. The experience is not only visual: tapping into the universal aromas of these objects, we collaborated with in'n'out fragrances to make three 'trompe-nez' that interact with the different spaces. Soap, which takes the herbal blend of the iconic Savon de Marseille as its base, Paracetamol, which plays on citrus, medicinal notes and Toothpaste, a familiar fresh and minty scent.",
-    "updatedAt": "2022-05-12T18:45:35.040+02:00",
-    "createdAt": "2022-05-12T14:34:28.795+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T14:34:28.795+02:00",
-      "updatedAt": "2022-05-12T18:45:35.040+02:00",
-      "publishedAt": "2022-05-12T18:48:05.986+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.226+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225829",
-      "stage": null
-    },
-    "itemType": "1643993"
-  },
-  {
-    "id": "121613700",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46585822"
-    },
-    "caption": "",
-    "width": 25,
-    "marginTop": -80,
-    "marginLeft": 65,
-    "updatedAt": "2022-05-12T18:45:35.023+02:00",
-    "createdAt": "2022-05-12T14:58:42.559+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T14:58:42.559+02:00",
-      "updatedAt": "2022-05-12T18:45:35.023+02:00",
-      "publishedAt": "2022-05-12T18:48:05.970+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.213+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225828",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "121613699",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46585820"
-    },
-    "caption": "",
-    "width": 45,
-    "marginTop": 0,
-    "marginLeft": 5,
-    "updatedAt": "2022-05-12T18:45:35.005+02:00",
-    "createdAt": "2022-05-12T14:58:42.545+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T14:58:42.545+02:00",
-      "updatedAt": "2022-05-12T18:45:35.005+02:00",
-      "publishedAt": "2022-05-12T18:48:05.953+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.199+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225827",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
     "id": "121608813",
     "width": 100,
     "marginTop": 0,
@@ -2724,35 +3262,6 @@
       "stage": null
     },
     "itemType": "1643993"
-  },
-  {
-    "id": "121612718",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46585629"
-    },
-    "caption": "",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "updatedAt": "2022-05-12T18:45:34.973+02:00",
-    "createdAt": "2022-05-12T14:28:20.679+02:00",
-    "meta": {
-      "createdAt": "2022-05-12T14:28:20.679+02:00",
-      "updatedAt": "2022-05-12T18:45:34.973+02:00",
-      "publishedAt": "2022-05-12T18:48:05.920+02:00",
-      "firstPublishedAt": "2022-05-12T15:12:40.172+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "252225825",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "120718363",
