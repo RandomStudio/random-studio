@@ -36,7 +36,7 @@
       "title": null,
       "customData": {},
       "focalPoint": null,
-      "uploadId": "46586218"
+      "uploadId": "46783421"
     },
     "opengraph": {
       "image": "46783421",
@@ -47,19 +47,19 @@
     "featuredVideo": null,
     "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-05-31T10:35:22.294+02:00",
+    "updatedAt": "2022-06-02T10:36:57.799+02:00",
     "createdAt": "2022-05-12T10:01:40.636+02:00",
     "position": 2,
     "meta": {
       "createdAt": "2022-05-12T10:01:40.636+02:00",
-      "updatedAt": "2022-05-31T10:35:22.294+02:00",
-      "publishedAt": "2022-05-31T10:35:31.897+02:00",
+      "updatedAt": "2022-06-02T10:36:57.799+02:00",
+      "publishedAt": "2022-06-02T10:37:00.598+02:00",
       "firstPublishedAt": "2022-05-12T15:12:40.153+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "253411538",
+      "currentVersion": "253597404",
       "stage": null
     },
     "itemType": "1641543",
@@ -80,18 +80,18 @@
     "width": 70,
     "marginTop": 20,
     "marginLeft": 15,
-    "updatedAt": "2022-05-31T10:35:22.255+02:00",
+    "updatedAt": "2022-06-02T10:36:57.745+02:00",
     "createdAt": "2022-05-30T22:18:12.132+02:00",
     "meta": {
       "createdAt": "2022-05-30T22:18:12.132+02:00",
-      "updatedAt": "2022-05-31T10:35:22.255+02:00",
-      "publishedAt": "2022-05-31T10:35:32.076+02:00",
+      "updatedAt": "2022-06-02T10:36:57.745+02:00",
+      "publishedAt": "2022-06-02T10:37:00.793+02:00",
       "firstPublishedAt": "2022-05-31T08:34:22.407+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "253411537",
+      "currentVersion": "253597403",
       "stage": null
     },
     "itemType": "1643994"
@@ -107,18 +107,18 @@
     "width": 70,
     "marginTop": 20,
     "marginLeft": 15,
-    "updatedAt": "2022-05-31T10:35:22.227+02:00",
+    "updatedAt": "2022-06-02T10:36:57.705+02:00",
     "createdAt": "2022-05-30T22:01:07.924+02:00",
     "meta": {
       "createdAt": "2022-05-30T22:01:07.924+02:00",
-      "updatedAt": "2022-05-31T10:35:22.227+02:00",
-      "publishedAt": "2022-05-31T10:35:31.990+02:00",
+      "updatedAt": "2022-06-02T10:36:57.705+02:00",
+      "publishedAt": "2022-06-02T10:37:00.694+02:00",
       "firstPublishedAt": "2022-05-31T08:34:22.281+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "253411536",
+      "currentVersion": "253597402",
       "stage": null
     },
     "itemType": "1643994"
