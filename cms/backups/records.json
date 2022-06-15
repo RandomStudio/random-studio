@@ -1,9 +1,64 @@
 [
   {
+    "id": "120810775",
+    "relatedProjectsTitle": "Other work",
+    "intro": "In Fondazione Prada’s new exhibition 'Role Play', held at Osservatorio Milan and Prada Aoyama Tokyo, 11 international image-based artists bend and stretch the concept of identity. Embracing fluidity, the art works on view create a constellation of different perspectives, each with its own character. For both spaces we designed a space aimed to erase the influence of the building on the art work, drawing the individuality of each piece into sharp focus.",
+    "details": "{\n  \"For\": \"Fondazione Prada\",\n  \"Role\": \"Exhibition Design\",\n  \"With\": \"Melissa Harris – Curator\"\n}",
+    "title": "Exhibition design for Fondazione Prada’s ‘Role Play’",
+    "relatedProjects": [],
+    "content": [
+      "120810749",
+      "120810750",
+      "120810751",
+      "120810752",
+      "120810753",
+      "120810754",
+      "120810759",
+      "120810765",
+      "120810766",
+      "120810767",
+      "120810773",
+      "120810774"
+    ],
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
+    "slug": "exhibition-design-for-fondazione-pradas-role-play",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221621"
+    },
+    "opengraph": null,
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-06-13T16:09:40.028+02:00",
+    "createdAt": "2022-04-04T16:13:39.266+02:00",
+    "position": 4,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:39.266+02:00",
+      "updatedAt": "2022-06-13T16:09:40.028+02:00",
+      "publishedAt": "2022-04-07T16:28:28.068+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:39.663+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "254284647",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
     "id": "121605686",
     "relatedProjectsTitle": "Other work",
     "intro": "On the occasion of its new collection Le Bleu, we made a multi-sensory experience for Jacquemus that unfolded in and around London’s Selfridges. Our series of playful indoor and outdoor spatial interventions, each accented by a commissioned scent scape infused the store with waves of nostalgia for the hot summers of the South of France and a dash of the brand’s signature wit. Intermingling spatial design and interactive scenography with smell, we offered visitors a memorable holiday away from the everyday.",
-    "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management, Production Partners\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
+    "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir Scenic Studios – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
     "title": "Intermingling spatial design and interactive scenography for Jacquemus",
     "relatedProjects": [],
     "content": [
@@ -47,19 +102,19 @@
     "featuredVideo": null,
     "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-06-10T14:53:41.517+02:00",
+    "updatedAt": "2022-06-13T16:09:40.014+02:00",
     "createdAt": "2022-05-12T10:01:40.636+02:00",
     "position": 3,
     "meta": {
       "createdAt": "2022-05-12T10:01:40.636+02:00",
-      "updatedAt": "2022-06-10T14:53:41.517+02:00",
-      "publishedAt": "2022-06-09T15:11:59.111+02:00",
+      "updatedAt": "2022-06-13T16:09:40.014+02:00",
+      "publishedAt": "2022-06-13T16:09:40.200+02:00",
       "firstPublishedAt": "2022-05-12T15:12:40.153+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "254105239",
+      "currentVersion": "254284646",
       "stage": null
     },
     "itemType": "1641543",
@@ -67,6 +122,61 @@
       "id": "49286",
       "type": "account"
     }
+  },
+  {
+    "id": "121939011",
+    "slides": [
+      "121939006",
+      "121939007",
+      "121939008",
+      "121939009",
+      "121939010"
+    ],
+    "width": 70,
+    "marginTop": 20,
+    "marginLeft": 15,
+    "updatedAt": "2022-06-13T11:20:45.452+02:00",
+    "createdAt": "2022-05-30T22:18:12.132+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:18:12.132+02:00",
+      "updatedAt": "2022-06-13T11:20:45.452+02:00",
+      "publishedAt": "2022-06-13T11:20:47.096+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.407+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "254254527",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "121938798",
+    "slides": [
+      "121938794",
+      "121938795",
+      "121938796",
+      "121938797"
+    ],
+    "width": 70,
+    "marginTop": 20,
+    "marginLeft": 15,
+    "updatedAt": "2022-06-13T11:20:45.422+02:00",
+    "createdAt": "2022-05-30T22:01:07.924+02:00",
+    "meta": {
+      "createdAt": "2022-05-30T22:01:07.924+02:00",
+      "updatedAt": "2022-06-13T11:20:45.422+02:00",
+      "publishedAt": "2022-06-13T11:20:47.036+02:00",
+      "firstPublishedAt": "2022-05-31T08:34:22.281+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "254254526",
+      "stage": null
+    },
+    "itemType": "1643994"
   },
   {
     "id": "120872252",
@@ -1388,61 +1498,6 @@
     }
   },
   {
-    "id": "120810775",
-    "relatedProjectsTitle": "Other work",
-    "intro": "In Fondazione Prada’s new exhibition 'Role Play', held at Osservatorio Milan and Prada Aoyama Tokyo, 11 international image-based artists bend and stretch the concept of identity. Embracing fluidity, the art works on view create a constellation of different perspectives, each with its own character. For both spaces we designed a space aimed to erase the influence of the building on the art work, drawing the individuality of each piece into sharp focus.",
-    "details": "{\n  \"For\": \"Fondazione Prada\",\n  \"Role\": \"Exhibition Design\",\n  \"With\": \"Melissa Harris – Curator\"\n}",
-    "title": "Exhibition design for Fondazione Prada’s ‘Role Play’",
-    "relatedProjects": [],
-    "content": [
-      "120810749",
-      "120810750",
-      "120810751",
-      "120810752",
-      "120810753",
-      "120810754",
-      "120810759",
-      "120810765",
-      "120810766",
-      "120810767",
-      "120810773",
-      "120810774"
-    ],
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
-    "slug": "exhibition-design-for-fondazione-pradas-role-play",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221621"
-    },
-    "opengraph": null,
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-06-10T14:53:40.087+02:00",
-    "createdAt": "2022-04-04T16:13:39.266+02:00",
-    "position": 4,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:39.266+02:00",
-      "updatedAt": "2022-06-10T14:53:40.087+02:00",
-      "publishedAt": "2022-04-07T16:28:28.068+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:39.663+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "254105163",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "120810628",
     "relatedProjectsTitle": "Other work",
     "intro": "COS commissioned us to create a pop-up concept store during Salone del Mobile in Milan. Located in the Lambrate district, our installation transformed the brand’s signature minimalism into a spatial experience.",
@@ -2410,61 +2465,6 @@
       "id": "138284",
       "type": "access_token"
     }
-  },
-  {
-    "id": "121939011",
-    "slides": [
-      "121939006",
-      "121939007",
-      "121939008",
-      "121939009",
-      "121939010"
-    ],
-    "width": 70,
-    "marginTop": 20,
-    "marginLeft": 15,
-    "updatedAt": "2022-06-09T15:11:47.791+02:00",
-    "createdAt": "2022-05-30T22:18:12.132+02:00",
-    "meta": {
-      "createdAt": "2022-05-30T22:18:12.132+02:00",
-      "updatedAt": "2022-06-09T15:11:47.791+02:00",
-      "publishedAt": "2022-06-09T15:11:59.303+02:00",
-      "firstPublishedAt": "2022-05-31T08:34:22.407+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "254022480",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "121938798",
-    "slides": [
-      "121938794",
-      "121938795",
-      "121938796",
-      "121938797"
-    ],
-    "width": 70,
-    "marginTop": 20,
-    "marginLeft": 15,
-    "updatedAt": "2022-06-09T15:11:47.753+02:00",
-    "createdAt": "2022-05-30T22:01:07.924+02:00",
-    "meta": {
-      "createdAt": "2022-05-30T22:01:07.924+02:00",
-      "updatedAt": "2022-06-09T15:11:47.753+02:00",
-      "publishedAt": "2022-06-09T15:11:59.204+02:00",
-      "firstPublishedAt": "2022-05-31T08:34:22.281+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "254022479",
-      "stage": null
-    },
-    "itemType": "1643994"
   },
   {
     "id": "121939012",
