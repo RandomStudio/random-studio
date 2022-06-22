@@ -1,5 +1,93 @@
 [
   {
+    "id": "120718363",
+    "title": "Random Studio",
+    "introBlocks": [
+      "120718365",
+      "120718369"
+    ],
+    "services": [
+      "120801063",
+      "120801394",
+      "120801395"
+    ],
+    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
+    "studioImpression": [
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270514"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270517"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270522"
+      }
+    ],
+    "jobOpenings": [
+      "120803831",
+      "120803832",
+      "120803833",
+      "120803834",
+      "120804189",
+      "120872774",
+      "121316165"
+    ],
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-06-20T14:33:46.062+02:00",
+    "createdAt": "2022-03-31T15:35:58.069+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T15:35:58.069+02:00",
+      "updatedAt": "2022-06-20T14:33:46.062+02:00",
+      "publishedAt": "2022-06-20T14:33:46.120+02:00",
+      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "254840764",
+      "stage": null
+    },
+    "itemType": "1989580",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
+    "id": "120803832",
+    "title": "Creative Technologist",
+    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=20&source=aWQ9Nw%3D%3D",
+    "description": "Random Studio is currently recruiting a full time creative technologist to expand our Creative Technology team based in Amsterdam, NL.\n\nThe role includes working closely with the current design + production team on generating creative hardware and software solutions. Primarily to create compelling interactive installations using a wide range of technologies, but also to form part of our studio culture and process. The role involves a certain amount of tinkering and experimentation and has been created as we see an influx in projects and ambition studio-wide",
+    "updatedAt": "2022-06-20T14:33:46.029+02:00",
+    "createdAt": "2022-04-04T13:33:56.014+02:00",
+    "meta": {
+      "createdAt": "2022-04-04T13:33:56.014+02:00",
+      "updatedAt": "2022-06-20T14:33:46.029+02:00",
+      "publishedAt": "2022-06-20T14:33:46.186+02:00",
+      "firstPublishedAt": "2022-04-04T13:33:56.249+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "254840763",
+      "stage": null
+    },
+    "itemType": "1989582"
+  },
+  {
     "id": "120810775",
     "relatedProjectsTitle": "Other work",
     "intro": "In Fondazione Prada’s new exhibition 'Role Play', held at Osservatorio Milan and Prada Aoyama Tokyo, 11 international image-based artists bend and stretch the concept of identity. Embracing fluidity, the art works on view create a constellation of different perspectives, each with its own character. For both spaces we designed a space aimed to erase the influence of the building on the art work, drawing the individuality of each piece into sharp focus.",
@@ -3262,73 +3350,6 @@
       "stage": null
     },
     "itemType": "1643993"
-  },
-  {
-    "id": "120718363",
-    "title": "Random Studio",
-    "introBlocks": [
-      "120718365",
-      "120718369"
-    ],
-    "services": [
-      "120801063",
-      "120801394",
-      "120801395"
-    ],
-    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
-    "studioImpression": [
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270514"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270517"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270522"
-      }
-    ],
-    "jobOpenings": [
-      "120803831",
-      "120803832",
-      "120803833",
-      "120803834",
-      "120804189",
-      "120872774",
-      "121316165"
-    ],
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-04-25T11:21:40.108+02:00",
-    "createdAt": "2022-03-31T15:35:58.069+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T15:35:58.069+02:00",
-      "updatedAt": "2022-04-25T11:21:40.108+02:00",
-      "publishedAt": "2022-04-25T11:21:40.171+02:00",
-      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "250854343",
-      "stage": null
-    },
-    "itemType": "1989580",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
   },
   {
     "id": "121316165",
@@ -20043,27 +20064,6 @@
       "status": "published",
       "isValid": true,
       "currentVersion": "249214868",
-      "stage": null
-    },
-    "itemType": "1989582"
-  },
-  {
-    "id": "120803832",
-    "title": "Operations Manager / Project Manager",
-    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=15&source=aWQ9Nw%3D%3D",
-    "description": "We are looking for an Operations Manager who can lead our Paris operations.\n\nRandom is an independent experience design studio based in Paris and Amsterdam. Our work comes to life where the digital and the physical are fluid.\n\nWe use technology in a human, tangible way and invite people to connect to both each other and the space they are in.",
-    "updatedAt": "2022-04-04T13:33:56.016+02:00",
-    "createdAt": "2022-04-04T13:33:56.014+02:00",
-    "meta": {
-      "createdAt": "2022-04-04T13:33:56.014+02:00",
-      "updatedAt": "2022-04-04T13:33:56.016+02:00",
-      "publishedAt": "2022-04-04T13:33:56.249+02:00",
-      "firstPublishedAt": "2022-04-04T13:33:56.249+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "249214867",
       "stage": null
     },
     "itemType": "1989582"
