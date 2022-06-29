@@ -1,8 +1,13 @@
-export const IMAGE_DATA_OBJECT_FRAGMENT_FUNC = (name, width, height) => `
+export const IMAGE_DATA_OBJECT_FRAGMENT_FUNC = (
+  name,
+  width,
+  height,
+  fit = 'max',
+) => `
   fragment ${name} on FileField {
     id
     imageData: responsiveImage (
-      imgixParams: { fit: max, w: ${width}, h: ${height}, auto: format }
+      imgixParams: { fit: ${fit}, w: ${width}, h: ${height}, auto: format }
     ) {
       # HTML5 src/srcset/sizes attributes
       srcSet
@@ -50,7 +55,29 @@ export const THUMBNAIL_FRAGMENT = `
   }
 `;
 
+export const RELATED_THUMBNAIL_FRAGMENT = `
+  ${IMAGE_DATA_OBJECT_FRAGMENT_FUNC(
+  'RelatedImageDataObject',
+  816,
+  1024,
+  'crop',
+)}
+  fragment RelatedThumbnail on ProjectRecord {
+    featuredVideo {
+      height
+      providerUid
+      thumbnailUrl
+      url
+      width
+    }
+    featuredImage {
+      ...RelatedImageDataObject
+    }
+  }
+`;
+
 export default {
   IMAGE_DATA_OBJECT_FRAGMENT,
+  RELATED_THUMBNAIL_FRAGMENT,
   THUMBNAIL_FRAGMENT,
 };
