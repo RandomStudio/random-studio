@@ -1,5 +1,42 @@
 [
   {
+    "id": "120717266",
+    "video": {
+      "url": "https://vimeo.com/724843709",
+      "title": "An Audio Visual Jambox for Vans in Milan",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "724843709",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1459394762-c2100105438e7b53467ac84ad8c87b07a6a01c7ce873ad11b3768c40a2cd7bb1-d_295x166"
+    },
+    "collaborator": "Vans",
+    "collaborationUrl": "https://random.studio/projects/an-audio-visual-jambox-for-vans-in-milan",
+    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
+    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-07-08T11:13:14.783+02:00",
+    "createdAt": "2022-03-31T14:34:25.908+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T14:34:25.908+02:00",
+      "updatedAt": "2022-07-08T11:13:14.783+02:00",
+      "publishedAt": "2022-07-08T11:13:14.811+02:00",
+      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "255989728",
+      "stage": null
+    },
+    "itemType": "1989572",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
     "id": "121739451",
     "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Spatial Design, Interior Design, Interactive Design, Creative Technology\",\n  \"With\": \"X+L Amsterdam – Interior Design, Photos by Kasia Gatkowska\"\n}",
     "intro": "How can we create a dialogue between people and the space they are in? How do we invite people to reconnect to their physical surroundings without losing our rich digital culture?  ",
@@ -290,9 +327,9 @@
       "firstPublishedAt": "2022-06-29T11:47:43.289+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
-      "currentVersion": "255761344",
+      "currentVersion": "256078197",
       "stage": null
     },
     "itemType": "1641543",
@@ -434,43 +471,6 @@
       "stage": null
     },
     "itemType": "1641803"
-  },
-  {
-    "id": "120717266",
-    "video": {
-      "url": "https://vimeo.com/715204356",
-      "title": "A surreal bathroom for Jacquemus",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "715204356",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1441535082-268f6f7857660a3b407a993f20f87488bbfec914b07516565995f907cc472777-d_295x166"
-    },
-    "collaborator": "Jacquemus ",
-    "collaborationUrl": "https://random.studio/projects/intermingling-spatial-design-and-interactive-scenography-for-jacquemus",
-    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
-    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-06-29T11:51:09.439+02:00",
-    "createdAt": "2022-03-31T14:34:25.908+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T14:34:25.908+02:00",
-      "updatedAt": "2022-06-29T11:51:09.439+02:00",
-      "publishedAt": "2022-06-29T11:51:09.465+02:00",
-      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "255428764",
-      "stage": null
-    },
-    "itemType": "1989572",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
   },
   {
     "id": "121605686",
