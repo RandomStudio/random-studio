@@ -1,5 +1,71 @@
 [
   {
+    "id": "120718363",
+    "title": "Random Studio",
+    "introBlocks": [
+      "120718365",
+      "120718369"
+    ],
+    "services": [
+      "120801063",
+      "120801394",
+      "120801395"
+    ],
+    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
+    "studioImpression": [
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270514"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270517"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270522"
+      }
+    ],
+    "jobOpenings": [
+      "120803831",
+      "120803832",
+      "120803833",
+      "120803834",
+      "120872774",
+      "122388523"
+    ],
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-07-18T08:51:16.812+02:00",
+    "createdAt": "2022-03-31T15:35:58.069+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T15:35:58.069+02:00",
+      "updatedAt": "2022-07-18T08:51:16.812+02:00",
+      "publishedAt": "2022-07-18T08:51:16.854+02:00",
+      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "256497014",
+      "stage": null
+    },
+    "itemType": "1989580",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
     "id": "121739451",
     "intro": "How can we create a dialogue between people and the space they are in? How do we invite people to reconnect to their physical surroundings without losing our rich digital culture?  ",
     "relatedProjectsTitle": "Other work",
@@ -1039,74 +1105,6 @@
       "stage": null
     },
     "itemType": "1643994"
-  },
-  {
-    "id": "120718363",
-    "title": "Random Studio",
-    "introBlocks": [
-      "120718365",
-      "120718369"
-    ],
-    "services": [
-      "120801063",
-      "120801394",
-      "120801395"
-    ],
-    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
-    "studioImpression": [
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270514"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270517"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270522"
-      }
-    ],
-    "jobOpenings": [
-      "120803831",
-      "120803832",
-      "120803833",
-      "120803834",
-      "120804189",
-      "120872774",
-      "121316165",
-      "122388523"
-    ],
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-06-23T15:30:31.335+02:00",
-    "createdAt": "2022-03-31T15:35:58.069+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T15:35:58.069+02:00",
-      "updatedAt": "2022-06-23T15:30:31.335+02:00",
-      "publishedAt": "2022-06-23T15:30:31.381+02:00",
-      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "255090460",
-      "stage": null
-    },
-    "itemType": "1989580",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
   },
   {
     "id": "122388523",
@@ -4943,27 +4941,6 @@
       "stage": null
     },
     "itemType": "1643992"
-  },
-  {
-    "id": "121316165",
-    "title": "Senior UX Designer (embedded)",
-    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=19",
-    "description": "We are looking for a senior UX Designer who can lead and advance the user experience for an omnichannel retail platform. As an embedded team member you will equally split your time between the Membership & Loyalty team as well as the Digital Selling (checkout) team.\n\n### Opportunity\nA chance to innovate the retail experience for a large fashion brand\nThink outside of the browser and explore how Membership & Loyalty and checkout experiences can come to life in a digital-physical retail environment\nWork across multiple teams\nYou will be in direct contact with the team at Random Studio to share knowledge, exchange ideas and discuss ways of working\n\n### Qualities we are looking for (you are)\nA natural facilitator, you can lead meetings and create alignment across multiple teams and stakeholders\nAn excellent communicator, ready to explain design decisions to Product Owners and the rest of the team\nAbility to substantiate your design decisions with user research and business strategy insights\nAbility to navigate and structure complex systems, processes and flows\n\n### Your key responsibilities\nDefine and plan design processes, such as selecting research activities, workshops formats et cetera\nPerform UX research activities such as stakeholder interviews, user interviews, desk and field research\nFacilitate research, concepting workshops and design sprints\nCreate concepts for new parts of the experience as well as continuously improve existing elements\nDeliver both user experience flows and UI designs\nCommunicate decisions through various artefacts, such as: concept documents, storyboards, sitemaps, user journeys and wireframes\nCreate prototypes for user testing and internal alignment\n\n### Competencies and Experience (you have)\n4+ years of relevant experience\nUX Design experience for mid- to large-scale digital platforms or products\nProfessional proficiency in English",
-    "updatedAt": "2022-04-25T11:21:40.068+02:00",
-    "createdAt": "2022-04-25T11:01:48.895+02:00",
-    "meta": {
-      "createdAt": "2022-04-25T11:01:48.895+02:00",
-      "updatedAt": "2022-04-25T11:21:40.068+02:00",
-      "publishedAt": "2022-04-25T11:21:40.310+02:00",
-      "firstPublishedAt": "2022-04-25T11:01:49.083+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "250854341",
-      "stage": null
-    },
-    "itemType": "1989582"
   },
   {
     "id": "120803834",
@@ -21318,27 +21295,6 @@
       "stage": null
     },
     "itemType": "1643993"
-  },
-  {
-    "id": "120804189",
-    "title": "Senior UX Designer",
-    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=11&source=aWQ9Nw%3D%3D",
-    "description": "At Random Studio, we create brand and service experiences that trigger a sense of wonder. Our work comes to life in the space where the digital meets the physical. As a studio, we value new ideas, new insight, new ways of seeing the world — and we are currently searching for a User Experience Designer to work primarily on one of our key accounts who can bring that to the table.",
-    "updatedAt": "2022-04-04T13:36:15.744+02:00",
-    "createdAt": "2022-04-04T13:36:15.741+02:00",
-    "meta": {
-      "createdAt": "2022-04-04T13:36:15.741+02:00",
-      "updatedAt": "2022-04-04T13:36:15.744+02:00",
-      "publishedAt": "2022-04-04T13:36:15.910+02:00",
-      "firstPublishedAt": "2022-04-04T13:36:15.910+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "249215367",
-      "stage": null
-    },
-    "itemType": "1989582"
   },
   {
     "id": "120803833",
