@@ -6,7 +6,7 @@ import Caption from '../Caption/Caption';
 import { slidePropType } from '../../propTypes';
 import LazyVideo from '../LazyVideo/LazyVideo';
 
-const Carousel = ({ caption, className, slides, sizes }) => {
+const Carousel = ({ caption, className, slides, sizes, width }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef();
 
@@ -38,7 +38,7 @@ const Carousel = ({ caption, className, slides, sizes }) => {
               onClick={handleNext}
             >
               {video ? (
-                <LazyVideo isMuted video={video} />
+                <LazyVideo isMuted video={video} width={width} />
               ) : (
                 (image || imageData) && (
                   <Image

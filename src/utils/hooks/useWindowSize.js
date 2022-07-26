@@ -4,8 +4,9 @@ const isClient = typeof window === 'object';
 
 function getSize() {
   return {
-    width: isClient ? window.innerWidth : undefined,
+    dpr: isClient ? window.devicePixelRatio : undefined,
     height: isClient ? window.innerHeight : undefined,
+    width: isClient ? window.innerWidth : undefined,
   };
 }
 

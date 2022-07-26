@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { event } from 'react-ga';
 import styles from './VideoWithControls.module.scss';
 import LazyVideo from '../LazyVideo/LazyVideo';
+import { videoPropType } from '../../propTypes';
 
 const trackPausePlay = isPlaying => {
   event({
@@ -28,6 +29,7 @@ const VideoWithControls = ({
   isAutoplaying,
   isLooping,
   video,
+  width,
 }) => {
   const videoRef = useRef(null);
 
@@ -79,6 +81,7 @@ const VideoWithControls = ({
         onPlayStateChange={setIsPlaying}
         ref={videoRef}
         video={video}
+        width={width}
       />
 
       {hasControls &&
@@ -108,7 +111,8 @@ VideoWithControls.propTypes = {
   hasControls: PropTypes.bool,
   isAutoplaying: PropTypes.bool,
   isLooping: PropTypes.bool,
-  video: PropTypes.shape({}).isRequired,
+  video: videoPropType.isRequired,
+  width: PropTypes.number,
 };
 
 VideoWithControls.defaultProps = {
@@ -118,6 +122,7 @@ VideoWithControls.defaultProps = {
   hasControls: true,
   isAutoplaying: true,
   isLooping: true,
+  width: 100,
 };
 
 export default VideoWithControls;

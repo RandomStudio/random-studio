@@ -34,6 +34,7 @@ const Project = ({
             hasControls={false}
             loops
             video={featuredVideo}
+            width={width}
           />
         ) : (
           <Image

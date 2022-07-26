@@ -73,13 +73,14 @@ export const getVimeoVideoData = async id => {
   const placeholder = await createPlaceholder(image);
 
   const data = {
-    sources: {
-      hls: files.find(({ quality }) => quality === 'hls')?.link ?? null,
-      mp4:
-        files
-          .sort((a, b) => b.width - a.width)
-          .find(({ type }) => type === 'video/mp4')?.link ?? null,
-    },
+    sources: files
+      .filter(({ type, quality }) => type === 'video/mp4' && quality !== 'hls')
+      .sort((a, b) => a.width - b.width)
+      .map(({ quality, width, link }) => ({
+        quality,
+        width,
+        link,
+      })),
     blur: placeholder,
     fallback: largest,
   };

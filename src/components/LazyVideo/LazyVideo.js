@@ -1,6 +1,15 @@
-import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useImperativeHandle,
+  useMemo,
+  useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import styles from './LazyVideo.module.scss';
+import { videoPropType } from '../../propTypes';
+import useWindowSize from '../../utils/hooks/useWindowSize';
 
 const LazyVideo = React.forwardRef(
   (
@@ -13,6 +22,7 @@ const LazyVideo = React.forwardRef(
       isLooping,
       isMuted,
       onPlayStateChange,
+      width,
     },
     parentRef,
   ) => {
@@ -22,11 +32,11 @@ const LazyVideo = React.forwardRef(
     const [isIntersected, setIsIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const { sources, blur, height, width } = video;
+    const { sources, blur } = video;
 
     const blurThumbnail = `data:image/jpeg;base64,${blur}`;
 
-    const handlePlay = async () => {
+    const handlePlay = useCallback(async () => {
       try {
         await videoRef.current.play();
         onPlayStateChange(true);
@@ -36,7 +46,7 @@ const LazyVideo = React.forwardRef(
       } finally {
         setIsLoaded(true);
       }
-    };
+    }, [onPlayStateChange]);
 
     const handlePause = () => {
       videoRef.current.pause();
@@ -93,20 +103,24 @@ const LazyVideo = React.forwardRef(
 
         observer.disconnect();
       };
-    }, [videoRef, isAutoplaying]);
+    }, [videoRef, isAutoplaying, handlePlay]);
+
+    const { dpr, width: windowWidth } = useWindowSize();
+
+    const sourceElements = useMemo(() => {
+      const videoWidth = (windowWidth / 100) * width * dpr;
+
+      const orderedSizes = sources.sort(
+        (a, b) =>
+          Math.abs(a.width - videoWidth) - Math.abs(b.width - videoWidth),
+      );
+
+      return <source src={orderedSizes[0]?.link} type="video/mp4" />;
+    }, [sources, width, windowWidth]);
 
     if (!video) {
       return null;
     }
-
-    /* eslint-disable jsx-a11y/media-has-caption */
-    const sourceElements = (
-      <>
-        {/* <source src={sources?.hls} type="application/x-mpegurl" /> */}
-
-        <source src={sources?.mp4} type="video/mp4" />
-      </>
-    );
 
     const videoElement = (
       <>
@@ -141,7 +155,7 @@ const LazyVideo = React.forwardRef(
           }
         ${hasJs ? styles.hasJs : ''}`}
         style={{
-          aspectRatio: `${width} / ${height}`,
+          aspectRatio: `${video.width} / ${video.height}`,
         }}
       >
         <img
@@ -165,14 +179,8 @@ LazyVideo.propTypes = {
   isLooping: PropTypes.bool,
   isMuted: PropTypes.bool,
   onPlayStateChange: PropTypes.func,
-  video: PropTypes.shape({
-    blur: PropTypes.string.isRequired,
-    sources: PropTypes.shape({
-      mp4: PropTypes.string.isRequired,
-    }).isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-  }).isRequired,
+  video: videoPropType.isRequired,
+  width: PropTypes.number,
 };
 
 LazyVideo.defaultProps = {
@@ -183,6 +191,7 @@ LazyVideo.defaultProps = {
   isLooping: true,
   isMuted: true,
   onPlayStateChange: () => null,
+  width: 100,
 };
 
 LazyVideo.displayName = 'LazyVideo';

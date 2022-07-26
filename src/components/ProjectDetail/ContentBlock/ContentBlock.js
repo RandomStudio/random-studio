@@ -68,7 +68,7 @@ const ContentBlock = ({
           width={width}
         />
 
-        <Caption caption={caption} marginLeft={marginLeft} />
+        <Caption caption={caption} marginLeft={marginLeft} width={width} />
       </>
     )}
 
