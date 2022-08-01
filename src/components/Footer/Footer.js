@@ -29,37 +29,51 @@ const Footer = () => (
       />
     </div>
 
-    <div className={styles.column}>
-      <Newsletter />
+    <div className={styles.right}>
+      <a
+        className={styles.bcorp}
+        href="https://www.bcorporation.net/en-us/find-a-b-corp/company/random-studio"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Arrow pointing down. Indicating more content further down."
+          src="/icons/bcorp.svg"
+        />
+      </a>
 
-      <nav aria-label="Social media profiles" className={styles.socials}>
-        <a
-          className={styles.social}
-          href="https://instagram.com/random_studio/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {'Instagram'}
-        </a>
+      <div className={styles.column}>
+        <Newsletter />
 
-        <a
-          className={styles.social}
-          href="https://www.linkedin.com/company/random-studio/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {'LinkedIn'}
-        </a>
+        <nav aria-label="Social media profiles" className={styles.socials}>
+          <a
+            className={styles.social}
+            href="https://instagram.com/random_studio/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {'Instagram'}
+          </a>
 
-        <a
-          className={styles.social}
-          href="https://medium.com/random-studio/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {'Medium'}
-        </a>
-      </nav>
+          <a
+            className={styles.social}
+            href="https://www.linkedin.com/company/random-studio/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {'LinkedIn'}
+          </a>
+
+          <a
+            className={styles.social}
+            href="https://medium.com/random-studio/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {'Medium'}
+          </a>
+        </nav>
+      </div>
     </div>
   </footer>
 );
