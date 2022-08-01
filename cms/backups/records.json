@@ -2,13 +2,13 @@
   {
     "id": "120717266",
     "video": {
-      "url": "https://vimeo.com/734292430",
-      "title": "Random Studio is a certified B Corporation",
+      "url": "https://vimeo.com/734372168",
+      "title": "Video_2_Landscape_Filter_Day.mov",
       "width": 426,
       "height": 240,
       "provider": "vimeo",
-      "providerUid": "734292430",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1477543262-2aaa4f8d87f452167aff3f486b7bf01f1ff186f28aa6445d83f734bcc8560a14-d_295x166"
+      "providerUid": "734372168",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1477714697-d856c304f813c378f5243a584250b4e315f5dc60cb79c038be1956adc858b468-d_295x166"
     },
     "collaborator": "B Corporation",
     "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
@@ -16,18 +16,18 @@
     "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
     "preview": null,
     "opengraph": null,
-    "updatedAt": "2022-07-28T11:40:59.579+02:00",
+    "updatedAt": "2022-07-30T10:10:08.248+02:00",
     "createdAt": "2022-03-31T14:34:25.908+02:00",
     "meta": {
       "createdAt": "2022-03-31T14:34:25.908+02:00",
-      "updatedAt": "2022-07-28T11:40:59.579+02:00",
-      "publishedAt": "2022-07-28T11:40:59.598+02:00",
+      "updatedAt": "2022-07-30T10:10:08.248+02:00",
+      "publishedAt": "2022-07-30T10:10:08.270+02:00",
       "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "256985173",
+      "currentVersion": "257067448",
       "stage": null
     },
     "itemType": "1989572",
