@@ -54,9 +54,6 @@
   }
 }
 
-.social::after {
-  display: none;
-}
 
 .right {
   position: relative;
@@ -102,11 +99,12 @@
     margin-left: 0;
     margin-right: 50px;
   }
+
+  &::after {
+    display: none;
+  }
 }
 
-.bcorp::after {
-  display: none;
-}
 
 .socials {
   display: block;
@@ -120,5 +118,9 @@
     margin: 10px 0px;
     margin-right: 25px;
     display: inline-block;
+
+    &::after {
+      display: none;
+    }
   }
 }
