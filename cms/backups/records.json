@@ -2,13 +2,13 @@
   {
     "id": "120717266",
     "video": {
-      "url": "https://vimeo.com/734372168",
-      "title": "Video_2_Landscape_Filter_Day.mov",
+      "url": "https://vimeo.com/736170692",
+      "title": "Video_3_Landscape_Filter_Day.mov",
       "width": 426,
       "height": 240,
       "provider": "vimeo",
-      "providerUid": "734372168",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1477714697-d856c304f813c378f5243a584250b4e315f5dc60cb79c038be1956adc858b468-d_295x166"
+      "providerUid": "736170692",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1481330601-cda8df66fd0d7ca6f60bea9b93d49bd16ac47aac213cc5f09b665e5a49f03dc7-d_295x166"
     },
     "collaborator": "B Corporation",
     "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
@@ -16,18 +16,18 @@
     "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
     "preview": null,
     "opengraph": null,
-    "updatedAt": "2022-07-30T10:10:08.248+02:00",
+    "updatedAt": "2022-08-03T17:26:29.048+02:00",
     "createdAt": "2022-03-31T14:34:25.908+02:00",
     "meta": {
       "createdAt": "2022-03-31T14:34:25.908+02:00",
-      "updatedAt": "2022-07-30T10:10:08.248+02:00",
-      "publishedAt": "2022-07-30T10:10:08.270+02:00",
+      "updatedAt": "2022-08-03T17:26:29.048+02:00",
+      "publishedAt": "2022-08-03T17:26:29.067+02:00",
       "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "257067448",
+      "currentVersion": "257244295",
       "stage": null
     },
     "itemType": "1989572",
