@@ -1,5 +1,99 @@
 [
   {
+    "id": "120810445",
+    "intro": "To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul, we were enlisted to design a pop-up experience and store scenography. Drawing inspiration from its location next to the iconic Hyundai Card Music Library, we created a spatial listening experience based on the ‘Acousmonium’ sonic installations as pioneered by Francois Bayle in the 1970s.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A spatial listening experience for Bottega Veneta",
+    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Ben Kreukniet – Sound design & arrangement \\n\\nWárms Korea – Physical production\\n\\nSeungmin Cha – Field recordings and daegeum flute performance\"\n}",
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
+    "relatedProjects": [],
+    "content": [
+      "120810428",
+      "120810429",
+      "120810432",
+      "120810433",
+      "120810434",
+      "120810435",
+      "120810438",
+      "120810439",
+      "120810442",
+      "120810443",
+      "120810444"
+    ],
+    "slug": "a-spatial-listening-experience-for-bottega-veneta",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221548"
+    },
+    "opengraph": {
+      "image": "46221548",
+      "title": null,
+      "description": "A shiny take on the Acousmoniums of the 1970s as pioneered by Francois Bayle, we made an inflatable sonic installation to mark the launch of Daniel Lee’s AW ...",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-08-10T13:42:54.190+02:00",
+    "createdAt": "2022-04-04T16:13:08.112+02:00",
+    "position": 3,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:08.112+02:00",
+      "updatedAt": "2022-08-10T13:42:54.190+02:00",
+      "publishedAt": "2022-08-10T13:42:55.811+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:08.519+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257551434",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810428",
+    "video": {
+      "url": "https://vimeo.com/485603898",
+      "title": "A Spatial Listening Experience for Bottega Veneta",
+      "width": 100,
+      "height": 75,
+      "provider": "vimeo",
+      "providerUid": "485603898",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1005460138-dbd46039ab48ca0ab0b23a4edb093103f0229bd842751dee1f18e3ce7e792e57-d_100x75?r=pad"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-08-10T13:42:54.167+02:00",
+    "createdAt": "2022-04-04T16:13:07.807+02:00",
+    "meta": {
+      "createdAt": "2022-04-04T16:13:07.807+02:00",
+      "updatedAt": "2022-08-10T13:42:54.167+02:00",
+      "publishedAt": "2022-08-10T13:42:55.826+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:08.535+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257551433",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
     "id": "120717266",
     "video": {
       "url": "https://vimeo.com/736170692",
@@ -217,65 +311,6 @@
       "status": "published",
       "isValid": true,
       "currentVersion": "255761347",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
-    "id": "120810445",
-    "intro": "To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul, we were enlisted to design a pop-up experience and store scenography. Drawing inspiration from its location next to the iconic Hyundai Card Music Library, we created a spatial listening experience based on the ‘Acousmonium’ sonic installations as pioneered by Francois Bayle in the 1970s.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A spatial listening experience for Bottega Veneta",
-    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Ben Kreukniet – Sound design & arrangement \\n\\nWárms Korea – Physical production\\n\\nSeungmin Cha – Field recordings and daegeum flute performance\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
-    "relatedProjects": [],
-    "content": [
-      "120810428",
-      "120810429",
-      "120810432",
-      "120810433",
-      "120810434",
-      "120810435",
-      "120810438",
-      "120810439",
-      "120810442",
-      "120810443",
-      "120810444"
-    ],
-    "slug": "a-spatial-listening-experience-for-bottega-veneta",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221548"
-    },
-    "opengraph": {
-      "image": "46221548",
-      "title": null,
-      "description": "A shiny take on the Acousmoniums of the 1970s as pioneered by Francois Bayle, we made an inflatable sonic installation to mark the launch of Daniel Lee’s AW ...",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-07-04T10:09:09.036+02:00",
-    "createdAt": "2022-04-04T16:13:08.112+02:00",
-    "position": 3,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:08.112+02:00",
-      "updatedAt": "2022-07-04T10:09:09.036+02:00",
-      "publishedAt": "2022-06-22T10:25:58.491+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:08.519+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "255761346",
       "stage": null
     },
     "itemType": "1641543",
@@ -20117,41 +20152,6 @@
       "stage": null
     },
     "itemType": "1643993"
-  },
-  {
-    "id": "120810428",
-    "video": {
-      "url": "https://vimeo.com/485603898",
-      "title": "A Spatial Listening Experience for Bottega Veneta",
-      "width": 100,
-      "height": 75,
-      "provider": "vimeo",
-      "providerUid": "485603898",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1005460138-dbd46039ab48ca0ab0b23a4edb093103f0229bd842751dee1f18e3ce7e792e57-d_100x75?r=pad"
-    },
-    "autoplay": true,
-    "hasControls": true,
-    "loops": true,
-    "hasAudio": false,
-    "caption": "",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "updatedAt": "2022-04-04T16:13:07.810+02:00",
-    "createdAt": "2022-04-04T16:13:07.807+02:00",
-    "meta": {
-      "createdAt": "2022-04-04T16:13:07.807+02:00",
-      "updatedAt": "2022-04-04T16:13:07.810+02:00",
-      "publishedAt": "2022-04-04T16:13:08.535+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:08.535+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "249235881",
-      "stage": null
-    },
-    "itemType": "1641762"
   },
   {
     "id": "120810424",
