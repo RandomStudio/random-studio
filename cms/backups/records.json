@@ -1,12 +1,10 @@
 [
   {
     "id": "120810445",
+    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Ben Kreukniet – Sound design & arrangement \\n\\nWárms Korea – Physical production\\n\\nSeungmin Cha – Field recordings and daegeum flute performance\"\n}",
     "intro": "To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul, we were enlisted to design a pop-up experience and store scenography. Drawing inspiration from its location next to the iconic Hyundai Card Music Library, we created a spatial listening experience based on the ‘Acousmonium’ sonic installations as pioneered by Francois Bayle in the 1970s.",
     "relatedProjectsTitle": "Other work",
     "title": "A spatial listening experience for Bottega Veneta",
-    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Ben Kreukniet – Sound design & arrangement \\n\\nWárms Korea – Physical production\\n\\nSeungmin Cha – Field recordings and daegeum flute performance\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810428",
       "120810429",
@@ -20,7 +18,9 @@
       "120810443",
       "120810444"
     ],
+    "relatedProjects": [],
     "slug": "a-spatial-listening-experience-for-bottega-veneta",
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -105,8 +105,8 @@
       "thumbnailUrl": "https://i.vimeocdn.com/video/1481330601-cda8df66fd0d7ca6f60bea9b93d49bd16ac47aac213cc5f09b665e5a49f03dc7-d_295x166"
     },
     "collaborator": "B Corporation",
-    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
     "collaborationUrl": "https://medium.com/@random.studio/we-are-now-a-certified-b-corp-373ded3c50e0",
+    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
     "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
     "preview": null,
     "opengraph": null,
@@ -198,12 +198,10 @@
   },
   {
     "id": "121739451",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Spatial Design, Interior Design, Interactive Design, Creative Technology\",\n  \"With\": \"X+L Amsterdam – Interior Design, Light Installation – Aernout Meijer Studio,  Photos by Kasia Gatkowska\"\n}",
     "intro": "How can we create a dialogue between people and the space they are in? How do we invite people to reconnect to their physical surroundings without losing our rich digital culture?  ",
     "relatedProjectsTitle": "Other work",
     "title": "An iteration of Interactive Space for our new home in Amsterdam",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Spatial Design, Interior Design, Interactive Design, Creative Technology\",\n  \"With\": \"X+L Amsterdam – Interior Design, Light Installation – Aernout Meijer Studio,  Photos by Kasia Gatkowska\"\n}",
-    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"research\"\n]",
-    "relatedProjects": [],
     "content": [
       "122309450",
       "122309449",
@@ -226,7 +224,9 @@
       "122312367",
       "122310497"
     ],
+    "relatedProjects": [],
     "slug": "our-dynamic-studio",
+    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"research\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -266,12 +266,10 @@
   },
   {
     "id": "120810775",
+    "details": "{\n  \"For\": \"Fondazione Prada\",\n  \"Role\": \"Exhibition Design\",\n  \"With\": \"Melissa Harris – Curator\"\n}",
     "intro": "In Fondazione Prada’s new exhibition 'Role Play', held at Osservatorio Milan and Prada Aoyama Tokyo, 11 international image-based artists bend and stretch the concept of identity. Embracing fluidity, the art works on view create a constellation of different perspectives, each with its own character. For both spaces we designed a space aimed to erase the influence of the building on the art work, drawing the individuality of each piece into sharp focus.",
     "relatedProjectsTitle": "Other work",
     "title": "Exhibition design for Fondazione Prada’s ‘Role Play’",
-    "details": "{\n  \"For\": \"Fondazione Prada\",\n  \"Role\": \"Exhibition Design\",\n  \"With\": \"Melissa Harris – Curator\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810749",
       "120810750",
@@ -286,7 +284,9 @@
       "120810773",
       "120810774"
     ],
+    "relatedProjects": [],
     "slug": "exhibition-design-for-fondazione-pradas-role-play",
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -321,12 +321,10 @@
   },
   {
     "id": "120810396",
+    "details": "{\n  \"For\": \"Dom Pérignon\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Installation Engineering, Research\",\n  \"With\": \"Fiction Factory – Physical Production\"\n}",
     "intro": "We were invited by Dom Pérignon to design and build the scenography  for a series of pop-up spaces in London, Berlin, Madrid and Tokyo to  showcase their collaboration with Lady Gaga. Revolving around their  shared passion for creative freedom, we drew on the energy of the  campaign to translate its lavish digital aesthetic into a physical  space: the Glitch Palace.",
     "relatedProjectsTitle": "Other work",
     "title": "A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration",
-    "details": "{\n  \"For\": \"Dom Pérignon\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Installation Engineering, Research\",\n  \"With\": \"Fiction Factory – Physical Production\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810383",
       "120810384",
@@ -339,7 +337,9 @@
       "120810394",
       "120810395"
     ],
+    "relatedProjects": [],
     "slug": "a-glitch-palace-for-the-dom-perignon-lady-gaga-collaboration",
+    "tags": "[]",
     "featuredImage": null,
     "opengraph": {
       "image": "46221571",
@@ -381,16 +381,10 @@
   },
   {
     "id": "122156436",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Art Direction, Installation Design, Interactive Design, Creative Technology\"\n}",
     "intro": "We were commissioned by Vans to make an in-store installation at Milan’s concept store OREFICI 11. Channelling the brand’s longtime connections to music and self-expression, we created the AV jambox; a playful intervention that transforms the store into a place to hang out with friends.",
     "relatedProjectsTitle": "Other work",
     "title": "An audio-visual jambox for Vans in Milan",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Art Direction, Installation Design, Interactive Design, Creative Technology\"\n}",
-    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"installations\"\n]",
-    "relatedProjects": [
-      "120810445",
-      "120810903",
-      "120810884"
-    ],
     "content": [
       "122439448",
       "122156435",
@@ -406,7 +400,13 @@
       "122440503",
       "122440542"
     ],
+    "relatedProjects": [
+      "120810445",
+      "120810903",
+      "120810884"
+    ],
     "slug": "an-audio-visual-jambox-for-vans-in-milan",
+    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"installations\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -575,12 +575,10 @@
   },
   {
     "id": "121605686",
+    "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir Scenic Studios – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
     "intro": "On the occasion of its new collection Le Bleu, we made a multi-sensory experience for Jacquemus that unfolded in and around London’s Selfridges. Our series of playful indoor and outdoor spatial interventions, each accented by a commissioned scent scape infused the store with waves of nostalgia for the hot summers of the South of France and a dash of the brand’s signature wit. Intermingling spatial design and interactive scenography with smell, we offered visitors a memorable holiday away from the everyday.",
     "relatedProjectsTitle": "Other work",
     "title": "Intermingling spatial design and interactive scenography for Jacquemus",
-    "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir Scenic Studios – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
-    "tags": "[\n  \"spaces\",\n  \"installations\",\n  \"digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "121938793",
       "121608813",
@@ -604,7 +602,9 @@
       "121939019",
       "121939020"
     ],
+    "relatedProjects": [],
     "slug": "intermingling-spatial-design-and-interactive-scenography-for-jacquemus",
+    "tags": "[\n  \"spaces\",\n  \"installations\",\n  \"digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -1352,12 +1352,10 @@
   },
   {
     "id": "120810405",
+    "details": "{\n  \"For \": \"A/D/O by MINI \",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Matthijs Munnik, Vincent de Belleval, Showman Fabricators,\\nDaniel Seung Lee – Photography\"\n}",
     "intro": "In celebration of the 2020 launch of the new MINI Electric vehicle, we were commissioned by A/D/O to create a work themed around the future of mobility.",
     "relatedProjectsTitle": "Other work",
     "title": "Kinetic architecture <br>for A/D/O by MINI",
-    "details": "{\n  \"For \": \"A/D/O by MINI \",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Matthijs Munnik, Vincent de Belleval, Showman Fabricators,\\nDaniel Seung Lee – Photography\"\n}",
-    "tags": "[\n  \"Installations\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810397",
       "120810398",
@@ -1368,7 +1366,9 @@
       "120810403",
       "120810404"
     ],
+    "relatedProjects": [],
     "slug": "a-kinetic-architecture-piece-br-for-a-d-o-by-mini",
+    "tags": "[\n  \"Installations\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -1408,12 +1408,10 @@
   },
   {
     "id": "120810521",
+    "details": "{\n  \"For\": \"C.P. Company\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
     "intro": "To round off C.P. Company’s 50th anniversary Cinquanta celebrations, we brought the interactive spatial archive we made for the brand last year to its home turf of Milan for the finnisage of their anniversary celebrations. Designed and built as a modular hybrid of physical and digital space, the exhibition premiered in Florence at Pitti Uomo 2021, then was installed in Darwen, UK, as part of the British Textile Biennale before travelling to BASE, a cultural center in Milan.",
     "relatedProjectsTitle": "Other work",
     "title": "An archival experience celebrating C.P. Company’s anniversary – Milan edition",
-    "details": "{\n  \"For\": \"C.P. Company\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810502",
       "120810503",
@@ -1424,7 +1422,9 @@
       "120810519",
       "120810520"
     ],
+    "relatedProjects": [],
     "slug": "an-archival-experience-celebrating-c-p-companys-50th-anniversary-milan-edition",
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -1464,12 +1464,10 @@
   },
   {
     "id": "120811003",
+    "details": "{\n  \"For\": \"Alexander McQueen\",\n  \"Role\": \"Creative Concept, Art Direction and Experience Design\\n\",\n  \"With\": \"Souvenir\"\n}",
     "intro": "We worked with Alexander McQueen to design a display for their flagship store in London to showcase the new Curve bag. Drawing inspiration from the SS21 campaign film directed by Jonathan Glazer – a dystopian short unfolding on the banks of the capital’s iconic River Thames – we created a display that mirrors the movement of the tide to bring the peace and tranquility of the natural world into the heart of the city.",
     "relatedProjectsTitle": "Other work",
     "title": "Tide, a kinetic window display for Alexander McQueen",
-    "details": "{\n  \"For\": \"Alexander McQueen\",\n  \"Role\": \"Creative Concept, Art Direction and Experience Design\\n\",\n  \"With\": \"Souvenir\"\n}",
-    "tags": "[\n  \"Installations\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810980",
       "120810981",
@@ -1488,7 +1486,9 @@
       "120811001",
       "120811002"
     ],
+    "relatedProjects": [],
     "slug": "tide-window-display-for-alexander-mcqueen",
+    "tags": "[\n  \"Installations\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -1528,12 +1528,10 @@
   },
   {
     "id": "120810949",
+    "details": "{\n  \"For\": \"Nike France\",\n  \"Role\": \"Creative Concept, Experience Design, Art Direction, Spatial Design, Design Development, Prototyping, Software Development, Creative Technology, Installation Engineering\",\n  \"With\": \"[Satis&Fy](https://satis-fy.com/), [Jean-Baptiste Fastrez](http://www.jeanbaptistefastrez.com/), [Thomas Hervé](https://www.hervethomas.com/)\",\n  \"Photos\": \"[Benoit Florençon](https://www.benoitflorencon.com/)\",\n  \"Video\": \"[Dixhuit](https://dix-huit.com/)\"\n}",
     "intro": "We teamed up with Nike to help translate their Move to Zero campaign into a physical environment for a store takeover at the House of Innovation in Paris. The brand’s longterm journey towards zero carbon and waste is a constellation of different stories and ideas that has so far mostly lived online as a [Circular Design Guide](https://www.nikecirculardesign.com/). \n\nWe were excited to tackle the challenge of transforming the website into a dynamic physical space, full of tangible, moving parts; one that both brings customers into the brand’s sustainability story, but also informs, educates and inspires them to become part of the journey by getting involved in caring for their own products.",
     "relatedProjectsTitle": "Other work",
     "title": "Nike Move to Zero House of Innovation takeover",
-    "details": "{\n  \"For\": \"Nike France\",\n  \"Role\": \"Creative Concept, Experience Design, Art Direction, Spatial Design, Design Development, Prototyping, Software Development, Creative Technology, Installation Engineering\",\n  \"With\": \"[Satis&Fy](https://satis-fy.com/), [Jean-Baptiste Fastrez](http://www.jeanbaptistefastrez.com/), [Thomas Hervé](https://www.hervethomas.com/)\",\n  \"Photos\": \"[Benoit Florençon](https://www.benoitflorencon.com/)\",\n  \"Video\": \"[Dixhuit](https://dix-huit.com/)\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810919",
       "120810920",
@@ -1548,7 +1546,9 @@
       "120810947",
       "120810948"
     ],
+    "relatedProjects": [],
     "slug": "nike-move-to-zero-house-of-innovation-takeover",
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -1960,12 +1960,10 @@
   },
   {
     "id": "120872252",
+    "details": "{\n  \"For\": \"Maison Margiela\",\n  \"Role\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography.\",\n  \"With\": \"Lonneke van der Palen – Photography\"\n}",
     "intro": "Since Spring-Summer 19, we have been collaborating with Maison Margiela as a digital partner for six of their collections. Guided by John Galliano’s radical and unique vision, the collections are highly-considered constellations of ideas, craftsmanship and performance. Our job has been to understand the core concepts of each collection, and translate them into a multifaceted contemporary visual experience: from runway videos and live show streams to podcasts and photoshoots.\n\nRather than ‘documenting’ an end-product, we have become part of the making-process itself. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
     "relatedProjectsTitle": "Other work",
     "title": "Digital Partner for French Fashion House Maison Margiela – Artisanal SS20",
-    "details": "{\n  \"For\": \"Maison Margiela\",\n  \"Role\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography.\",\n  \"With\": \"Lonneke van der Palen – Photography\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120872221",
       "120872222",
@@ -1976,7 +1974,9 @@
       "120872247",
       "120872251"
     ],
+    "relatedProjects": [],
     "slug": "digital-partner-for-french-fashion-house-maison-margiela-artisanal-ss20",
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2016,12 +2016,10 @@
   },
   {
     "id": "120872220",
+    "details": "{\n  \"For\\n\\n\": \"Maison Margiela\",\n  \"\\nRole\\n\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\\n\",\n  \"\\nWith\\n\": \"Lonneke van der Palen – Photography\"\n}",
     "intro": "Since Spring-Summer 19, we have been collaborating with Maison Margiela as a digital partner for six of their collections. Guided by John Galliano’s radical and unique vision, the collections are highly-considered constellations of ideas, craftsmanship and performance. Our job has been to understand the core concepts of each collection, and translate them into a multifaceted contemporary visual experience: from runway videos and live show streams to podcasts and photoshoots.\n\n\n\nRather than ‘documenting’ an end-product, we have become part of the making-process itself. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
     "relatedProjectsTitle": "Other work",
     "title": "Digital Partner for French Fashion House Maison Margiela – Artisanal SS19",
-    "details": "{\n  \"For\\n\\n\": \"Maison Margiela\",\n  \"\\nRole\\n\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\\n\",\n  \"\\nWith\\n\": \"Lonneke van der Palen – Photography\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120872210",
       "120872211",
@@ -2030,7 +2028,9 @@
       "120872216",
       "120872219"
     ],
+    "relatedProjects": [],
     "slug": "digital-partner-for-french-fashion-house-maison-margiela-artisanal-ss19",
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2070,12 +2070,10 @@
   },
   {
     "id": "120872209",
+    "details": "{\n  \"For\\n\": \"Maison Margiela\",\n  \"Role\\n\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\",\n  \"With\\n\": \"Lonneke van der Palen – Photography\"\n}",
     "intro": "Since Spring-Summer 19, we have been collaborating with Maison Margiela as a digital partner for six of their collections. Guided by John Galliano’s radical and unique vision, the collections are highly-considered constellations of ideas, craftsmanship and performance. Our job has been to understand the core concepts of each collection, and translate them into a multifaceted contemporary visual experience: from runway videos and live show streams to podcasts and photoshoots.\n\nRather than ‘documenting’ an end-product, we have become part of the making-process itself. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
     "relatedProjectsTitle": "Other work",
     "title": "Digital Partner for French Fashion House Maison Margiela – Artisanal AW19",
-    "details": "{\n  \"For\\n\": \"Maison Margiela\",\n  \"Role\\n\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\",\n  \"With\\n\": \"Lonneke van der Palen – Photography\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120872185",
       "120872186",
@@ -2088,7 +2086,9 @@
       "120872204",
       "120872208"
     ],
+    "relatedProjects": [],
     "slug": "digital-partner-for-french-fashion-house-maison-margiela-artisanal-aw19",
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2128,12 +2128,10 @@
   },
   {
     "id": "120872184",
+    "details": "{\n  \"For \": \"Maison Margiela \",\n  \"Role\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\",\n  \"With \": \"Lonneke van der Palen – Photography  \"\n}",
     "intro": "Since Spring-Summer 19, we have been collaborating with Maison Margiela as a digital partner for six of their collections. Guided by John Galliano’s radical and unique vision, the collections are highly-considered constellations of ideas, craftsmanship and performance. Our job has been to understand the core concepts of each collection, and translate them into a multifaceted contemporary visual experience: from runway videos and live show streams to podcasts and photoshoots.\n\nRather than ‘documenting’ an end-product, we have become part of the making-process itself. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
     "relatedProjectsTitle": "Other work",
     "title": "Digital Partner for French Fashion House Maison Margiela – Défilé SS20",
-    "details": "{\n  \"For \": \"Maison Margiela \",\n  \"Role\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\",\n  \"With \": \"Lonneke van der Palen – Photography  \"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120872147",
       "120872148",
@@ -2146,7 +2144,9 @@
       "120872179",
       "120872183"
     ],
+    "relatedProjects": [],
     "slug": "digital-partner-for-french-fashion-house-maison-margiela-defile-ss20",
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2186,11 +2186,16 @@
   },
   {
     "id": "120872146",
+    "details": "{\n  \"For \": \"Maison Margiela \",\n  \"Role\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography.\",\n  \"With \": \"Lonneke van der Palen – Photography \"\n}",
     "intro": "Since Spring-Summer 19, we have been collaborating with Maison Margiela as a digital partner for six of their collections. Guided by John Galliano’s radical and unique vision, the collections are highly-considered constellations of ideas, craftsmanship and performance. Our job has been to understand the core concepts of each collection, and translate them into a multifaceted contemporary visual experience: from runway videos and live show streams to podcasts and photoshoots.\n\n\n\nRather than ‘documenting’ an end-product, we have become part of the making-process itself. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
     "relatedProjectsTitle": "Other work",
     "title": "Digital Partner for French Fashion House Maison Margiela – Défilé AW20",
-    "details": "{\n  \"For \": \"Maison Margiela \",\n  \"Role\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography.\",\n  \"With \": \"Lonneke van der Palen – Photography \"\n}",
-    "tags": "[\n  \"Digital\"\n]",
+    "content": [
+      "120872140",
+      "120872141",
+      "120872144",
+      "120872145"
+    ],
     "relatedProjects": [
       "120872252",
       "120872184",
@@ -2198,13 +2203,8 @@
       "120872139",
       "120872220"
     ],
-    "content": [
-      "120872140",
-      "120872141",
-      "120872144",
-      "120872145"
-    ],
     "slug": "digital-partner-for-french-fashion-house-maison-margiela-defile-aw20",
+    "tags": "[\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2244,12 +2244,10 @@
   },
   {
     "id": "120872139",
+    "details": "{\n  \"For\\n\": \"Maison Margiela\",\n  \"Role\\n\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\",\n  \"With\\n\": \"Lonneke van der Palen – Photography\"\n}",
     "intro": "Since SS19, we have been collaborating with Maison Margiela as a digital partner for six of their collections. Guided by John Galliano’s radical vision, each collection is a constellation of ideas, craftsmanship and performance.\n\nOur job has been to translate the core concept of each collection into a multifaceted visual experience,crafting tailor-made formats and visual communication strategies each season: from runway videos and live show streams to podcasts and photoshoots. Building new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
     "relatedProjectsTitle": "Other work",
     "title": "Digital Partner for French Fashion House Maison Margiela – Défilé AW19 ",
-    "details": "{\n  \"For\\n\": \"Maison Margiela\",\n  \"Role\\n\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography\",\n  \"With\\n\": \"Lonneke van der Palen – Photography\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120872134",
       "120872135",
@@ -2257,7 +2255,9 @@
       "120872137",
       "120872138"
     ],
+    "relatedProjects": [],
     "slug": "digital-partner-for-french-fashion-house-maison-margiela-defile-aw19",
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2297,12 +2297,10 @@
   },
   {
     "id": "120811020",
+    "details": "{\n  \"For\": \"Louis Vuitton\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development, Installation\",\n  \"With\": \"Naivi — Unreal development\"\n}",
     "intro": "Louis Vuitton’s traveling exhibition “Volez, Voguez, Voyagez” (Fly, Sail, Travel) retraces the adventure of the House of Louis Vuitton from 1854 to the present. For the Seoul, New York City and Shanghai editions of this exhibition, we created high-impact entrance statements to welcome guests into Louis Vuitton's world of travel.",
     "relatedProjectsTitle": "Other work",
     "title": "Travel exhibition ‘Volez, Voguez, Voyagez’ for Louis Vuitton",
-    "details": "{\n  \"For\": \"Louis Vuitton\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development, Installation\",\n  \"With\": \"Naivi — Unreal development\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120811004",
       "120811005",
@@ -2321,7 +2319,9 @@
       "120811018",
       "120811019"
     ],
+    "relatedProjects": [],
     "slug": "travel-exhibition-louis-vuitton",
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2361,12 +2361,10 @@
   },
   {
     "id": "120810978",
+    "details": "{\n  \"Role\": \"Concept Development, Creative Direction, Development\",\n  \"With\": \"Philip Schütte\"\n}",
     "intro": "This interactive installation was made in collaboration with our Creative Lead and artist Philip Schuette and turns one of nature’s most mediated phenomena– the rising and setting of the sun – into a playful sensory experience.",
     "relatedProjectsTitle": "Other work",
     "title": "An interactive sunrise in collaboration with Philip Schuette",
-    "details": "{\n  \"Role\": \"Concept Development, Creative Direction, Development\",\n  \"With\": \"Philip Schütte\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Research\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810970",
       "120810971",
@@ -2377,7 +2375,9 @@
       "120810976",
       "120810977"
     ],
+    "relatedProjects": [],
     "slug": "sun",
+    "tags": "[\n  \"Installations\",\n  \"Research\",\n  \"Digital\"\n]",
     "featuredImage": null,
     "opengraph": {
       "image": null,
@@ -2419,12 +2419,10 @@
   },
   {
     "id": "120810969",
+    "details": "{\n  \"For\": \"Raf Simons\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development, Installation\",\n  \"With\": \"Naivi — Unreal development\"\n}",
     "intro": "Fashion designer Raf Simons constantly investigates the very perception of men and clothing. Each collection of his namesake label tells a story. Therefore, showing the context in which the clothing is conceived in an enticing way seemed essential to the new website.\n\nRafsimons.com invites the viewer to take a detailed look at the garments, and moreover narrates conceptual, emotional and psychological layers of information. Phrases, sound, video footage and other contextual stimuli that are appropriate for the most recent creative output of the designer persuade the viewer to see the collection with different eyes — maybe, his eyes.\n\nThe end result is a experimental digital experience that resonates the world of Raf Simons in a dynamic way.",
     "relatedProjectsTitle": "Other work",
     "title": "Digital partner\n\nfor Raf Simons",
-    "details": "{\n  \"For\": \"Raf Simons\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development, Installation\",\n  \"With\": \"Naivi — Unreal development\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Installations\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810962",
       "120810963",
@@ -2434,7 +2432,9 @@
       "120810967",
       "120810968"
     ],
+    "relatedProjects": [],
     "slug": "rafsimons",
+    "tags": "[\n  \"Spaces\",\n  \"Installations\",\n  \"Digital\"\n]",
     "featuredImage": null,
     "opengraph": {
       "image": null,
@@ -2476,12 +2476,10 @@
   },
   {
     "id": "120810961",
+    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"\\nConcept Design, Art Direction, Spatial Design, Interior Design, Fixture Design, Technical Development\",\n  \"With \": \"Bonsoir Paris\"\n}",
     "intro": "We were commissioned to create a campaign around the Nike x JFS collection. Centered on the theme of modularity, the collection responded to the different needs of the body in motion. We drew inspiration from this core concept, playing with sequence, function and versatility through campaign photography, an event and in-store retail displays in all of Nike Lab’s locations, and select retailers across the world.",
     "relatedProjectsTitle": "Other work",
     "title": "Nike x JFS Collection ",
-    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"\\nConcept Design, Art Direction, Spatial Design, Interior Design, Fixture Design, Technical Development\",\n  \"With \": \"Bonsoir Paris\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810951",
       "120810952",
@@ -2492,7 +2490,9 @@
       "120810959",
       "120810960"
     ],
+    "relatedProjects": [],
     "slug": "nike-x-jfs-collection",
+    "tags": "[]",
     "featuredImage": null,
     "opengraph": {
       "image": "46221656",
@@ -2526,12 +2526,10 @@
   },
   {
     "id": "120810910",
+    "details": "{\n  \"For\": \"Nike NRG\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Hardware/System Architecture, Software Development, Animation, Set Construction, Installation, and Operation\",\n  \"With\": \"Ink Associates — Set Construction and Installation\"\n}",
     "intro": "NikeLab fuses physical retail, online commerce and digital engagement environments in order to provide customers with Nike’s innovative expressions. For the launch of the LunarEpic Flyknit shoe in the London store, we conceived an immersive space that invited visitors to put the shoe to the test in an experiential set up.",
     "relatedProjectsTitle": "Other work",
     "title": "An infinity room for NikeLab",
-    "details": "{\n  \"For\": \"Nike NRG\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Hardware/System Architecture, Software Development, Animation, Set Construction, Installation, and Operation\",\n  \"With\": \"Ink Associates — Set Construction and Installation\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810904",
       "120810905",
@@ -2540,7 +2538,9 @@
       "120810908",
       "120810909"
     ],
+    "relatedProjects": [],
     "slug": "nike-lab-infinity-room",
+    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
     "featuredImage": null,
     "opengraph": {
       "image": null,
@@ -2582,12 +2582,10 @@
   },
   {
     "id": "120810903",
+    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
     "intro": "Nike opened the doors of its third House of Innovation, in Paris, July 2020. A store unlike any other, it exists to celebrate and challenge the future of sport. We created a long term immersive installation for the launch of this European flagship store.",
     "relatedProjectsTitle": "Other work",
     "title": "Your body as a controller in Nike's House of Innovation Paris",
-    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810894",
       "120810895",
@@ -2599,7 +2597,9 @@
       "120810901",
       "120810902"
     ],
+    "relatedProjects": [],
     "slug": "nike-kids-pod",
+    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2639,12 +2639,10 @@
   },
   {
     "id": "120810884",
+    "details": "{\n  \"For\": \"New Balance, Topys\",\n  \"Role\": \"Concept Development, Creative Direction, Art Direction, Software Development, Sound Design, Installation\",\n  \"With\": \"Fiction Factory — Prototype Construction, InventDesign — LED partner\"\n}",
     "intro": "To celebrate the launch of the New Balance 574S in Shanghai, we created an installation literally centred around the product: a pair of sneakers became interactive controllers for an immersive sound and light experience.",
     "relatedProjectsTitle": "Other work",
     "title": "Interactive sneakers\n\nfor New Balance",
-    "details": "{\n  \"For\": \"New Balance, Topys\",\n  \"Role\": \"Concept Development, Creative Direction, Art Direction, Software Development, Sound Design, Installation\",\n  \"With\": \"Fiction Factory — Prototype Construction, InventDesign — LED partner\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810876",
       "120810877",
@@ -2655,7 +2653,9 @@
       "120810882",
       "120810883"
     ],
+    "relatedProjects": [],
     "slug": "new-balance",
+    "tags": "[\n  \"Spaces\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2695,12 +2695,10 @@
   },
   {
     "id": "120810873",
+    "details": "{\n  \"For\": \"Maison Margiela\",\n  \"Role\": \"Creative Direction of Film Production, Editing, Asset production, Photography\"\n}",
     "intro": "Headed up by John Galliano, Maison Margiela’s ‘Artisanal’ is a high concept collection that embodies the radical spirit of the house, whilst pushing the boundaries of its ever-evolving language. For Spring-Summer 19 Couture, Galliano enlisted us as a digital partner to amplify the coverage of his extravagant runway show.",
     "relatedProjectsTitle": "Other work",
     "title": "Creative direction of film production for Maison Margiela",
-    "details": "{\n  \"For\": \"Maison Margiela\",\n  \"Role\": \"Creative Direction of Film Production, Editing, Asset production, Photography\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810866",
       "120810867",
@@ -2710,7 +2708,9 @@
       "120810871",
       "120810872"
     ],
+    "relatedProjects": [],
     "slug": "margiela-ss-19",
+    "tags": "[]",
     "featuredImage": null,
     "opengraph": {
       "image": null,
@@ -2744,12 +2744,10 @@
   },
   {
     "id": "120810865",
+    "details": "{\n  \"For\": \"Louis Vuitton\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development\"\n}",
     "intro": "Louis Vuitton X celebrates 160 years of the brands pioneering creative exchanges and artistic collaborations. Tasked with bringing the brand’s heritage into the now, we designed LED paneling into the walls and ceiling of the ‘Origins Room’. A space that re-stages the fashion house’s early artistic collaborations through a collection of items from the archive. From early sketches to one-of-a-kind pieces.",
     "relatedProjectsTitle": "Other work",
     "title": "An exhibition space for Louis Vuitton X",
-    "details": "{\n  \"For\": \"Louis Vuitton\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810853",
       "120810854",
@@ -2764,7 +2762,9 @@
       "120810863",
       "120810864"
     ],
+    "relatedProjects": [],
     "slug": "louis-vuitton-x-exhibition-1",
+    "tags": "[]",
     "featuredImage": null,
     "opengraph": {
       "image": "46221650",
@@ -2798,12 +2798,10 @@
   },
   {
     "id": "120810849",
+    "details": "{\n  \"For \": \"Chanel\",\n  \"Role \": \"Scenography Design, Software development, Creative Direction, Installation\\n\",\n  \"With\": \"K2, Lighting & Show Design Ltd\"\n}",
     "intro": "For its biggest ever global watch launch, Chanel enlisted us to create the scenography for a temporary takeover of its flagship boutique on Place Vendôme in Paris.\n\nThe new J12 watch series revolves around encounters and decisive moments, and needed a fittingly momentous occasion to celebrate its launch. Through shaping the colour and light inside the building, our design aimed to hijack visitors’ sense of time, giving them a surreal and sensory experience inspired and directed by a series of short campaign films.",
     "relatedProjectsTitle": "Other work",
     "title": "A store takeover at Place Vendôme <br>for the launch of Chanel's new watch",
-    "details": "{\n  \"For \": \"Chanel\",\n  \"Role \": \"Scenography Design, Software development, Creative Direction, Installation\\n\",\n  \"With\": \"K2, Lighting & Show Design Ltd\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810839",
       "120810840",
@@ -2816,7 +2814,9 @@
       "120810847",
       "120810848"
     ],
+    "relatedProjects": [],
     "slug": "j12-place-vendome-takeover",
+    "tags": "[\n  \"Spaces\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2856,12 +2856,10 @@
   },
   {
     "id": "120810838",
+    "details": "{\n  \"For  \": \"Tommy Hilfiger\",\n  \"Role\": \"Creative Direction, Art Direction, Experience Design, Engineering, Fixture Design\"\n}",
     "intro": "While the Tommy Hilfiger Kids’ Collection is extensive, it is usually only available in a handful of their stores. Without taking up too much floor space or introducing new stock, how could you make people aware that this collection exists? Through play.\n\nWe drew on our two areas of specialisation – experiential installations and retail platforms – to create an interactive store fixture that provides a solution to the puzzle: the Tommy Hilfiger Kids Machine.",
     "relatedProjectsTitle": "Other work",
     "title": "Interactive retail fixture\n\nfor Tommy Hilfiger",
-    "details": "{\n  \"For  \": \"Tommy Hilfiger\",\n  \"Role\": \"Creative Direction, Art Direction, Experience Design, Engineering, Fixture Design\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810827",
       "120810828",
@@ -2875,7 +2873,9 @@
       "120810836",
       "120810837"
     ],
+    "relatedProjects": [],
     "slug": "interactive-retail-fixture-for-tommy-hilfiger",
+    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
     "featuredImage": null,
     "opengraph": {
       "image": null,
@@ -2917,12 +2917,10 @@
   },
   {
     "id": "120810825",
+    "details": "{\n  \"For\": \"Fred Perry\",\n  \"Role\": \"Concept Development, Creative Direction, Art Direction, 3D and Photography, Animation, Web Development, Retail Fixture Concept & Design\"\n}",
     "intro": "The experience invites you to step into multiple narratively connected three-dimensional photographs, that display the evening of a regular house party - familiar to all of us.<br>The 80s Youth Archive photographs are centre stage of the Fred Perry x Raf Simons AW19 collection.  They are also the main source of reference for this season’s interactive lookbook which pays homage to the energy and feel of the era.\n\n[home.fredperryxrafsimons.com](https://home.fredperryxrafsimons.com)",
     "relatedProjectsTitle": "Other work",
     "title": "Interactive lookbook for Fred Perry x Raf Simons",
-    "details": "{\n  \"For\": \"Fred Perry\",\n  \"Role\": \"Concept Development, Creative Direction, Art Direction, 3D and Photography, Animation, Web Development, Retail Fixture Concept & Design\"\n}",
-    "tags": "[\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810814",
       "120810815",
@@ -2936,7 +2934,9 @@
       "120810823",
       "120810824"
     ],
+    "relatedProjects": [],
     "slug": "interactive-lookbook-for-fred-perry-x-raf-simons",
+    "tags": "[\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -2976,12 +2976,10 @@
   },
   {
     "id": "120810813",
+    "details": "{\n  \"For\": \"Fred Perry\\n\",\n  \"Role\": \"Concept Development, Creative Direction,\\nArt Direction, Photography, Animation,\\nWeb Development, Casting, Styling\"\n}",
     "intro": "What would it be like to trade perspectives with someone? To look at the world through their eyes? And how can you unlock a story by piecing together multiple perspectives?\n\nThis was on our mind for our third collaboration with Fred Perry x Raf Simons. For this new lookbook, the SS20 collection is seen through the eyes of many. With no single perspective, the story unfolds from gaze-to-gaze.\n\n[fredperry.com/rafsimons-20](https://www.fredperry.com/rafsimons-20)",
     "relatedProjectsTitle": "Other work",
     "title": "A Lookbook of Many Gazes for Fred Perry x Raf Simons\n\n",
-    "details": "{\n  \"For\": \"Fred Perry\\n\",\n  \"Role\": \"Concept Development, Creative Direction,\\nArt Direction, Photography, Animation,\\nWeb Development, Casting, Styling\"\n}",
-    "tags": "[\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810799",
       "120810800",
@@ -2998,7 +2996,9 @@
       "120810811",
       "120810812"
     ],
+    "relatedProjects": [],
     "slug": "interactive-lookbook-for-fred-perry-x-raf-simons-2",
+    "tags": "[\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3038,12 +3038,10 @@
   },
   {
     "id": "120810797",
+    "details": "{\n  \"For \": \"Hermès\",\n  \"Role\": \"Concept Development, Creative Direction, Interaction Design, Software Development, Installation\",\n  \"With\": \"Robert Hoffman — Product Design, Artis Engineering — Fabrication and Engineering\"\n}",
     "intro": "At its core, the world of Hermès is a world of beautiful materials, mastered by highly skilled artisans. Festival des Métiers is a travelling exhibition that offers visitors the chance to meet the craftsmen of the house. We created three interactive exhibits that reveal the manufacturing details that normally remain invisible to the naked eye.",
     "relatedProjectsTitle": "Other work",
     "title": "An exhibition for Hermès",
-    "details": "{\n  \"For \": \"Hermès\",\n  \"Role\": \"Concept Development, Creative Direction, Interaction Design, Software Development, Installation\",\n  \"With\": \"Robert Hoffman — Product Design, Artis Engineering — Fabrication and Engineering\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Exhibitions\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810789",
       "120810790",
@@ -3054,7 +3052,9 @@
       "120810795",
       "120810796"
     ],
+    "relatedProjects": [],
     "slug": "hermes-festival-des-metiers",
+    "tags": "[\n  \"Installations\",\n  \"Exhibitions\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3094,12 +3094,10 @@
   },
   {
     "id": "120810788",
+    "details": "{\n  \"For \": \"Fred Perry \",\n  \"Role \": \"Concept Development, Creative Direction, Art Direction, Videography and Photography, Animation, Web Development.\"\n}",
     "intro": "The Fred Perry x Raf Simons SS19 collaboration is presented within an immersive editorial lookbook, honouring an everyday interface familiar to many.\n\nWorn by anonymised individuals, the garments can be viewed in a navigable environment, where modified stills create the setting of a universal suburb.\n\n[maps.fredperryxrafsimons.com](https://maps.fredperryxrafsimons.com/)",
     "relatedProjectsTitle": "Other work",
     "title": "Interactive editorial lookbook SS19 for Fred Perry",
-    "details": "{\n  \"For \": \"Fred Perry \",\n  \"Role \": \"Concept Development, Creative Direction, Art Direction, Videography and Photography, Animation, Web Development.\"\n}",
-    "tags": "[\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810777",
       "120810778",
@@ -3113,7 +3111,9 @@
       "120810786",
       "120810787"
     ],
+    "relatedProjects": [],
     "slug": "fred-perry-lookbook-ss2019",
+    "tags": "[\n  \"Digital\"\n]",
     "featuredImage": null,
     "opengraph": {
       "image": null,
@@ -3155,12 +3155,10 @@
   },
   {
     "id": "120810628",
+    "details": "{\n  \"For\": \"COS\",\n  \"With\": \"Bonsoir Paris\",\n  \"Role\": \"Concept Design, Art Direction, Technical development\"\n}",
     "intro": "COS commissioned us to create a pop-up concept store during Salone del Mobile in Milan. Located in the Lambrate district, our installation transformed the brand’s signature minimalism into a spatial experience.",
     "relatedProjectsTitle": "Other work",
     "title": "A Pop-Up Installation for COS",
-    "details": "{\n  \"For\": \"COS\",\n  \"With\": \"Bonsoir Paris\",\n  \"Role\": \"Concept Design, Art Direction, Technical development\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810617",
       "120810618",
@@ -3172,7 +3170,9 @@
       "120810626",
       "120810627"
     ],
+    "relatedProjects": [],
     "slug": "cos-pop-up-installation",
+    "tags": "[\n  \"Spaces\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3212,12 +3212,10 @@
   },
   {
     "id": "120810616",
+    "details": "{\n  \"For\": \"Chanel\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Content Production, Software Development, App Design and Development, Video Editing, Animation, Sound Design, Set Design.\",\n  \"With\": \"Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction, Marius Denisse — 3D Animation\"\n}",
     "intro": "French fashion house Chanel is known for a continuous strive for excellence and perfection. For the introduction of the Chanel Première Camélia Skeleton watch at the international watch show Baselworld 2017, we translated the qualities of the precious watch into a memorable, intimate voyage.",
     "relatedProjectsTitle": "Other work",
     "title": "A vertical journey through time <br>for Chanel",
-    "details": "{\n  \"For\": \"Chanel\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Content Production, Software Development, App Design and Development, Video Editing, Animation, Sound Design, Set Design.\",\n  \"With\": \"Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction, Marius Denisse — 3D Animation\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810608",
       "120810609",
@@ -3228,7 +3226,9 @@
       "120810614",
       "120810615"
     ],
+    "relatedProjects": [],
     "slug": "chanel-timebox",
+    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3268,12 +3268,10 @@
   },
   {
     "id": "120810607",
+    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role \": \"Concept, Creative Direction, Art Direction, Installation Overview, Production Management\",\n  \"With\": \"Bonsoir Paris\"\n}",
     "intro": "To celebrate its SS20 collection, Bottega Veneta commissioned us to take over the windows of New York’s Saks Fifth Avenue and create 5 pop-up areas indoors. We partnered with spatial designers Bonsoir Paris to concept and design. Together, we took the takeover task literally; through subtle interventions into the architecture of Saks itself, we created a bold stage for Bottega’s collection.",
     "relatedProjectsTitle": "Other work",
     "title": "Bottega Veneta takeover at Saks Fifth Avenue ",
-    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role \": \"Concept, Creative Direction, Art Direction, Installation Overview, Production Management\",\n  \"With\": \"Bonsoir Paris\"\n}",
-    "tags": "[\n  \"spaces\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810593",
       "120810594",
@@ -3289,7 +3287,9 @@
       "120810605",
       "120810606"
     ],
+    "relatedProjects": [],
     "slug": "bottega-veneta-takeover-at-saks-fifth-avenue",
+    "tags": "[\n  \"spaces\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3329,12 +3329,10 @@
   },
   {
     "id": "120810591",
+    "details": "{\n  \"For\": \"Cinekid Festival\",\n  \"Role\": \"Technical Direction, Development, Art Direction\",\n  \"With\": \"Philip Schuette\"\n}",
     "intro": "In another collaboration with artist Philip Schuette, this installation invites you to get physical and use your body as a search term for images. Strike a pose and watch it reflected back through images, excavated from the bottomless global bin of the internet.",
     "relatedProjectsTitle": "Other work",
     "title": "A playful interactive search engine for Cinekid Festival",
-    "details": "{\n  \"For\": \"Cinekid Festival\",\n  \"Role\": \"Technical Direction, Development, Art Direction\",\n  \"With\": \"Philip Schuette\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Research\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810580",
       "120810581",
@@ -3348,7 +3346,9 @@
       "120810589",
       "120810590"
     ],
+    "relatedProjects": [],
     "slug": "body",
+    "tags": "[\n  \"Installations\",\n  \"Research\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3388,12 +3388,10 @@
   },
   {
     "id": "120810579",
+    "details": "{}",
     "intro": "Commissioned by Cinekid Medialab 2020, we created an immersive Internet creation myth for kids in collaboration with artist Geoffrey Lillemon. \n\nPlunging visitors down the deep, dark rabbit hole of a parallel Internet, we made both a physical version at the Eye Filmmuseum, and an online version that worked across all devices. \n\nFind the digital experience here: http://parallelarchaeologies.geoffreylillemon.com/",
     "relatedProjectsTitle": "Other work",
     "title": "An internet creation myth for kids",
-    "details": "{}",
-    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810567",
       "120810568",
@@ -3408,7 +3406,9 @@
       "120810577",
       "120810578"
     ],
+    "relatedProjects": [],
     "slug": "an-internet-creation-myth-for-kids",
+    "tags": "[\n  \"Installations\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3448,12 +3448,10 @@
   },
   {
     "id": "120810565",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept,\\nUser Experience/Customer Experience Design,\\nExperience Design,\\nArt Direction,\\nSpatial Design,\\nPrototyping,\\nSoftware Development,\\nInstallation Engineering\\n\"\n}",
     "intro": "We’ve been thinking about the future of in-store experiences. What if you could literally step into the world of a product? Mixed reality (XR) experiences propose a new kind of immersive and adaptable brand encounter. Transforming any space into a pop-up dynamic visual landscape, customers are invited to step into the creative vision of a collection.",
     "relatedProjectsTitle": "Other work",
     "title": "An exploration into mixed reality setups\n",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept,\\nUser Experience/Customer Experience Design,\\nExperience Design,\\nArt Direction,\\nSpatial Design,\\nPrototyping,\\nSoftware Development,\\nInstallation Engineering\\n\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810556",
       "120810557",
@@ -3463,7 +3461,9 @@
       "120810561",
       "120810564"
     ],
+    "relatedProjects": [],
     "slug": "an-exploration-into-xr-stage-setups",
+    "tags": "[]",
     "featuredImage": null,
     "opengraph": {
       "image": "46221592",
@@ -3497,14 +3497,10 @@
   },
   {
     "id": "120810554",
+    "details": "{\n  \"For\": \"C.P. Company\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\",\n  \"With\": \"H-Farm – Web Development\\n\\nSparklestreet studio – Exhibition Build\"\n}",
     "intro": "We were proud to join C.P. Company’s 50th anniversary Cinquanta celebrations to help them bring their rich archive to life – in both a physical and digital form. Working with five-decade’s worth of their hybrid urban sportswear, objects, sketches and editorials, we created an interactive spatial archive in a repurposed car park in Darwen, UK, as part of the 2021 British Textile Biennale, [as well as a dynamic online archive](https://archive.cpcompany.com). A hybrid of physical and digital space, the exhibition offers visitors an embodied experience of the often-hidden brand archive.",
     "relatedProjectsTitle": "More on our celebration of CP Company’s  50th anniversary",
     "title": "An archival experience celebrating C.P. Company’s 50th anniversary",
-    "details": "{\n  \"For\": \"C.P. Company\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\",\n  \"With\": \"H-Farm – Web Development\\n\\nSparklestreet studio – Exhibition Build\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Installations\",\n  \"Exhibitions\",\n  \"Digital\"\n]",
-    "relatedProjects": [
-      "120810521"
-    ],
     "content": [
       "120810523",
       "120810524",
@@ -3522,7 +3518,11 @@
       "120810552",
       "120810553"
     ],
+    "relatedProjects": [
+      "120810521"
+    ],
     "slug": "an-archival-experience-celebrating-c-p-companys-50th-anniversary",
+    "tags": "[\n  \"Spaces\",\n  \"Installations\",\n  \"Exhibitions\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3562,12 +3562,10 @@
   },
   {
     "id": "120810499",
+    "details": "{\n  \"For\": \"Antwerp Fashion Department, Royal Academy of Antwerp\",\n  \"Role\": \"Creative Direction, Art Direction, 3D Stylist, Virtual Set Design, Software Development, Interface Design\\n\"\n}",
     "intro": "\n\nThe Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?\n\nHow to bring the energy and experience of the physical runway to the screen? We used the opportunity to think forward to the possibilities of future fashion shows.",
     "relatedProjectsTitle": "Other work",
     "title": "A virtual fashion graduation show for the Royal Academy of Antwerp",
-    "details": "{\n  \"For\": \"Antwerp Fashion Department, Royal Academy of Antwerp\",\n  \"Role\": \"Creative Direction, Art Direction, 3D Stylist, Virtual Set Design, Software Development, Interface Design\\n\"\n}",
-    "tags": "[\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810479",
       "120810480",
@@ -3590,7 +3588,9 @@
       "120810497",
       "120810498"
     ],
+    "relatedProjects": [],
     "slug": "a-virtual-fashion-graduation-show-for-the-royal-academy-of-antwerp",
+    "tags": "[\n  \"Digital\"\n]",
     "featuredImage": null,
     "opengraph": {
       "image": "46221558",
@@ -3632,12 +3632,10 @@
   },
   {
     "id": "120810476",
+    "details": "{\n  \"For\": \"Random Studio \",\n  \"With\": \"Arnout Meijer – Light Design\\n\\n RWA Electronics –  Electronics Design\",\n  \"Roles \": \"Creative Direction, Art Direction, Experience Design, Creative Technology, Software Development\"\n}",
     "intro": "Like many studios, we’re based in the city. Located in a courtyard within a housing block, our space doesn’t get much direct sunlight in winter. Using this problem as a tool in our research into interactive space, we started to think about how we could connect our physical space to the outdoors in order to bring our workspace back to life during these winter months.",
     "relatedProjectsTitle": "Other work",
     "title": "A studio sun system with light-artist Arnout Meijer",
-    "details": "{\n  \"For\": \"Random Studio \",\n  \"With\": \"Arnout Meijer – Light Design\\n\\n RWA Electronics –  Electronics Design\",\n  \"Roles \": \"Creative Direction, Art Direction, Experience Design, Creative Technology, Software Development\"\n}",
-    "tags": "[\n  \"Installations\",\n  \"Research\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810466",
       "120810467",
@@ -3650,7 +3648,9 @@
       "120810474",
       "120810475"
     ],
+    "relatedProjects": [],
     "slug": "a-studio-sun-system-with-light-artist-arnout-meijer",
+    "tags": "[\n  \"Installations\",\n  \"Research\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3690,12 +3690,10 @@
   },
   {
     "id": "120810465",
+    "details": "{\n  \"Role\": \"In collaboration with creative unit POIUYTRE we realised the Creative Concept, Choreography, Set Design, Art Direction, Videography, Creative Production Management, Videography, Live Video Direction\\n\",\n  \"For \": \"Chloé\"\n}",
     "intro": "\n\nFor their SS21 collection, we worked with Natacha Ramsay-Levi from Chloé to imagine and create a live spectacle spilling through the streets of Paris, its grand finale unfolding against the backdrop of the Palais de Tokyo.\n\nAn ambitious collision between going to the movies, the theatre and a fashion show, we conceptualised, choreographed and executed the multilayered event from start to finish; from trailers and teasers to the live event, to livestream, to its digital afterlife.",
     "relatedProjectsTitle": "Other work",
     "title": "A live spectacle for Chloé's SS21 Collection",
-    "details": "{\n  \"Role\": \"In collaboration with creative unit POIUYTRE we realised the Creative Concept, Choreography, Set Design, Art Direction, Videography, Creative Production Management, Videography, Live Video Direction\\n\",\n  \"For \": \"Chloé\"\n}",
-    "tags": "[\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810447",
       "120810448",
@@ -3716,7 +3714,9 @@
       "120810463",
       "120810464"
     ],
+    "relatedProjects": [],
     "slug": "a-ss21-collection-experience-for-chloe",
+    "tags": "[\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3756,12 +3756,10 @@
   },
   {
     "id": "120810427",
+    "details": "{\n  \"For\": \"SPACE10\\n\",\n  \"Role\": \"Creative Direction, Art Direction, UX Design, Prototyping, Software Development\\n\",\n  \"With \": \"Anton Hjertstedt – 3D Artist\"\n}",
     "intro": "Initiated by IKEA and its research and design lab SPACE10, Everyday Experiments is a series of digital experiments that explores new ways of interacting with the spaces we live in.\n\nAlong with some of the world’s most forward-thinking design and technology studios, we were commissioned to reimagine the space we call home. We researched and prototyped three different applications that transform the home into a dynamic and innovative space of new encounters.\n\n<https://www.everydayexperiments.com/>",
     "relatedProjectsTitle": "Other work",
     "title": "A series of digital experiments for SPACE10",
-    "details": "{\n  \"For\": \"SPACE10\\n\",\n  \"Role\": \"Creative Direction, Art Direction, UX Design, Prototyping, Software Development\\n\",\n  \"With \": \"Anton Hjertstedt – 3D Artist\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810406",
       "120810407",
@@ -3785,7 +3783,9 @@
       "120810425",
       "120810426"
     ],
+    "relatedProjects": [],
     "slug": "a-series-of-digital-experiments-for-space10",
+    "tags": "[]",
     "featuredImage": null,
     "opengraph": {
       "image": "46221545",
@@ -3827,12 +3827,10 @@
   },
   {
     "id": "120810382",
+    "details": "{\n  \"For\": \"NikeLab\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development, Installation\",\n  \"With\": \"Fiction Factory\"\n}",
     "intro": "For NikeLab’s FA18 Tech Pack launch in Milan, we were asked to transform the store into an immersive retail experience and hub for the city’s sharpest creatives to come together for a series of in-store events. We designed and created a Tech Pack ‘Atelier’ that made visible, and physical, the inner workings of the collection.",
     "relatedProjectsTitle": "Other work",
     "title": "An immersive in-store environment for NikeLab Milano",
-    "details": "{\n  \"For\": \"NikeLab\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Software Development, Installation\",\n  \"With\": \"Fiction Factory\"\n}",
-    "tags": "[]",
-    "relatedProjects": [],
     "content": [
       "120810370",
       "120810371",
@@ -3847,7 +3845,9 @@
       "120810380",
       "120810381"
     ],
+    "relatedProjects": [],
     "slug": "nikelab-tech-pack",
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
@@ -3887,12 +3887,10 @@
   },
   {
     "id": "120810368",
+    "details": "{\n  \"For\": \"NikeLab Global\",\n  \"Role\": \"Concept Development, Creative Direction, Interaction Design, Production, Hardware Architecture, Software Development\",\n  \"With\": \"Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948 London)\"\n}",
     "intro": "NikeLab is a retail destination that serves to spark consumer discovery in new and unexpected ways. For the launch of the 2017 ACG (All Conditions Gear) collection, we created various stylised weather conditions (wind, rain and fog) that seized two of the brand’s stores around the globe.",
     "relatedProjectsTitle": "Other work",
     "title": "Various in-store installations for NikeLab",
-    "details": "{\n  \"For\": \"NikeLab Global\",\n  \"Role\": \"Concept Development, Creative Direction, Interaction Design, Production, Hardware Architecture, Software Development\",\n  \"With\": \"Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948 London)\"\n}",
-    "tags": "[\n  \"Spaces\",\n  \"Installations\",\n  \"Digital\"\n]",
-    "relatedProjects": [],
     "content": [
       "120810354",
       "120810355",
@@ -3909,7 +3907,9 @@
       "120810366",
       "120810367"
     ],
+    "relatedProjects": [],
     "slug": "nikelab-acg",
+    "tags": "[\n  \"Spaces\",\n  \"Installations\",\n  \"Digital\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
