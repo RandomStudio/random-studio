@@ -1,5 +1,587 @@
 [
   {
+    "id": "123032928",
+    "details": "{\n  \"Role\": \"\"\n}",
+    "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
+    "relatedProjectsTitle": "Other work",
+    "title": "Endless sunsets for Paco Rabanne in Paris",
+    "content": [
+      "129346327",
+      "123033274",
+      "123033275",
+      "123033154",
+      "123033424",
+      "123033742",
+      "123033442",
+      "123033671",
+      "123033807",
+      "123914805",
+      "123033850",
+      "123033851"
+    ],
+    "relatedProjects": [],
+    "slug": "endless-sunsets-for-paco-rabanne",
+    "tags": null,
+    "featuredImage": null,
+    "opengraph": null,
+    "featuredVideo": {
+      "url": "https://vimeo.com/744612424/a6d9236953",
+      "title": "Paco Rabanne 03 1920x1080.mp4",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "744612424",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
+    },
+    "isVisible": false,
+    "preview": null,
+    "updatedAt": "2022-08-30T16:34:50.913+02:00",
+    "createdAt": "2022-08-04T10:36:17.308+02:00",
+    "position": 51,
+    "meta": {
+      "createdAt": "2022-08-04T10:36:17.308+02:00",
+      "updatedAt": "2022-08-30T16:34:50.913+02:00",
+      "publishedAt": "2022-08-30T16:34:55.106+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.754+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "currentVersion": "264962087",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "29417",
+      "type": "user"
+    }
+  },
+  {
+    "id": "129346327",
+    "video": {
+      "url": "https://vimeo.com/744612424/a6d9236953",
+      "title": "Paco Rabanne 03 1920x1080.mp4",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "744612424",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-08-30T16:34:50.884+02:00",
+    "createdAt": "2022-08-30T16:27:51.144+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T16:27:51.144+02:00",
+      "updatedAt": "2022-08-30T16:34:50.884+02:00",
+      "publishedAt": "2022-08-30T16:34:55.124+02:00",
+      "firstPublishedAt": "2022-08-30T16:34:55.124+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "currentVersion": "264962086",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "123515639",
+    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
+    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? In 2020, we got the oppurtunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A future work space for the Dutch Ministry of Justice",
+    "content": [
+      "128557132",
+      "123515736",
+      "129053593",
+      "129053606",
+      "129054345",
+      "129054707",
+      "123515738",
+      "123516583",
+      "123516584",
+      "123516585",
+      "123516586",
+      "123515739",
+      "129058980",
+      "129120306"
+    ],
+    "relatedProjects": [],
+    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
+    "tags": null,
+    "featuredImage": null,
+    "opengraph": null,
+    "featuredVideo": {
+      "url": "https://vimeo.com/739577418/c19fabceb1",
+      "title": "Ministry of Justice",
+      "width": 360,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "739577418",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1488361625-ad495d121d7bb738a05a1bcf90dc01729a395f2232a240be6edece42ea46ef02-d_295x166"
+    },
+    "isVisible": false,
+    "preview": null,
+    "updatedAt": "2022-08-30T14:22:27.457+02:00",
+    "createdAt": "2022-08-15T10:52:52.503+02:00",
+    "position": 52,
+    "meta": {
+      "createdAt": "2022-08-15T10:52:52.503+02:00",
+      "updatedAt": "2022-08-30T14:22:27.457+02:00",
+      "publishedAt": "2022-08-30T14:33:57.001+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264831682",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "28650",
+      "type": "user"
+    }
+  },
+  {
+    "id": "129054345",
+    "slides": [
+      "129054343",
+      "129054344"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 10,
+    "updatedAt": "2022-08-30T14:22:27.417+02:00",
+    "createdAt": "2022-08-30T11:33:08.273+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:33:08.273+02:00",
+      "updatedAt": "2022-08-30T14:22:27.417+02:00",
+      "publishedAt": "2022-08-30T14:33:57.055+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.055+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264831681",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129054707",
+    "slides": [
+      "129054705",
+      "129054706"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 55,
+    "updatedAt": "2022-08-30T14:17:32.727+02:00",
+    "createdAt": "2022-08-30T11:34:43.122+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.122+02:00",
+      "updatedAt": "2022-08-30T14:17:32.727+02:00",
+      "publishedAt": "2022-08-30T14:33:57.072+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.072+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264830606",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129053606",
+    "slides": [
+      "129053605"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 55,
+    "updatedAt": "2022-08-30T14:17:32.707+02:00",
+    "createdAt": "2022-08-30T11:29:55.880+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:55.880+02:00",
+      "updatedAt": "2022-08-30T14:17:32.707+02:00",
+      "publishedAt": "2022-08-30T14:33:57.041+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.041+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264830605",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129120306",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014885"
+    },
+    "caption": "",
+    "width": 35,
+    "marginTop": -167,
+    "marginLeft": 45,
+    "updatedAt": "2022-08-30T12:49:54.779+02:00",
+    "createdAt": "2022-08-30T12:45:37.533+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T12:45:37.533+02:00",
+      "updatedAt": "2022-08-30T12:49:54.779+02:00",
+      "publishedAt": "2022-08-30T14:33:57.096+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.096+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264708029",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "129058980",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014693"
+    },
+    "caption": "",
+    "width": 35,
+    "marginTop": 0,
+    "marginLeft": 15,
+    "updatedAt": "2022-08-30T12:48:47.811+02:00",
+    "createdAt": "2022-08-30T11:47:03.060+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:47:03.060+02:00",
+      "updatedAt": "2022-08-30T12:48:47.811+02:00",
+      "publishedAt": "2022-08-30T14:33:57.090+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.090+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264707648",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "129054706",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014587"
+    },
+    "video": null,
+    "updatedAt": "2022-08-30T11:34:43.102+02:00",
+    "createdAt": "2022-08-30T11:34:43.098+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.098+02:00",
+      "updatedAt": "2022-08-30T11:34:43.102+02:00",
+      "publishedAt": "2022-08-30T14:33:57.087+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.087+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264633519",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129054705",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014584"
+    },
+    "video": null,
+    "updatedAt": "2022-08-30T11:34:43.078+02:00",
+    "createdAt": "2022-08-30T11:34:43.074+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.074+02:00",
+      "updatedAt": "2022-08-30T11:34:43.078+02:00",
+      "publishedAt": "2022-08-30T14:33:57.083+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.083+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264633518",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129054344",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014555"
+    },
+    "video": null,
+    "updatedAt": "2022-08-30T11:33:08.255+02:00",
+    "createdAt": "2022-08-30T11:33:08.251+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:33:08.251+02:00",
+      "updatedAt": "2022-08-30T11:33:08.255+02:00",
+      "publishedAt": "2022-08-30T14:33:57.069+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.069+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264633098",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129054343",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014550"
+    },
+    "video": null,
+    "updatedAt": "2022-08-30T11:33:08.233+02:00",
+    "createdAt": "2022-08-30T11:33:08.229+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:33:08.229+02:00",
+      "updatedAt": "2022-08-30T11:33:08.233+02:00",
+      "publishedAt": "2022-08-30T14:33:57.065+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.065+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264633097",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053605",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014531"
+    },
+    "video": null,
+    "updatedAt": "2022-08-30T11:31:13.053+02:00",
+    "createdAt": "2022-08-30T11:29:55.862+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:55.862+02:00",
+      "updatedAt": "2022-08-30T11:31:13.053+02:00",
+      "publishedAt": "2022-08-30T14:33:57.051+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.051+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264632565",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053593",
+    "slides": [
+      "129053591",
+      "129053592"
+    ],
+    "width": 40,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-08-30T11:29:22.855+02:00",
+    "createdAt": "2022-08-30T11:29:22.851+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.851+02:00",
+      "updatedAt": "2022-08-30T11:29:22.855+02:00",
+      "publishedAt": "2022-08-30T14:33:57.022+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.022+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264632188",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129053592",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014524"
+    },
+    "video": null,
+    "updatedAt": "2022-08-30T11:29:22.830+02:00",
+    "createdAt": "2022-08-30T11:29:22.826+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.826+02:00",
+      "updatedAt": "2022-08-30T11:29:22.830+02:00",
+      "publishedAt": "2022-08-30T14:33:57.039+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.039+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264632187",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053591",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48014527"
+    },
+    "video": null,
+    "updatedAt": "2022-08-30T11:29:22.805+02:00",
+    "createdAt": "2022-08-30T11:29:22.800+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.800+02:00",
+      "updatedAt": "2022-08-30T11:29:22.805+02:00",
+      "publishedAt": "2022-08-30T14:33:57.034+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.034+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264632186",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "123515736",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The bridge between the Ministry of Justice and the Ministry of the Interior, the space in question is bustling with activity between 12pm and 1pm when it hosts lunch for up to ....? employees, yet is mostly unused for the rest of the day apart from special events and receptions. In collaboration with Studio LONK, we embarked on a longterm R&D project to transform the third floor into a fluid, dynamic and multifunctional space – without touching the existing architecture. Working in 3 phases, Discovery, Define and Design, our process aims to bring a human-scale back to this static, formal architecture by putting people at the heart of it. Drawing on our experience in Interactive Space, we wanted to rethink the third floor as a character that responds to the needs of those that use it.",
+    "updatedAt": "2022-08-29T14:19:48.106+02:00",
+    "createdAt": "2022-08-15T10:56:54.512+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T10:56:54.512+02:00",
+      "updatedAt": "2022-08-29T14:19:48.106+02:00",
+      "publishedAt": "2022-08-29T14:19:49.270+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.284+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264129442",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "128557132",
+    "video": {
+      "url": "https://vimeo.com/739577418/c19fabceb1",
+      "title": "Ministry of Justice",
+      "width": 360,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "739577418",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1488361625-ad495d121d7bb738a05a1bcf90dc01729a395f2232a240be6edece42ea46ef02-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": false,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-08-29T14:06:34.107+02:00",
+    "createdAt": "2022-08-29T14:06:34.103+02:00",
+    "meta": {
+      "createdAt": "2022-08-29T14:06:34.103+02:00",
+      "updatedAt": "2022-08-29T14:06:34.107+02:00",
+      "publishedAt": "2022-08-29T14:15:12.280+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.280+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "264069546",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "123914805",
+    "video": {
+      "url": "https://vimeo.com/743411586/ab3c8438a2",
+      "title": "Paco Rabanne 01 1920x1080",
+      "width": 640,
+      "height": 360,
+      "provider": "vimeo",
+      "providerUid": "743411586",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1495548524-902c2a59415dd90b0661bd1727c9a34ff1e967d7db9c41a8a219801ad3daef3d-d_640"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 83,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-08-26T14:19:54.728+02:00",
+    "createdAt": "2022-08-26T14:19:54.722+02:00",
+    "meta": {
+      "createdAt": "2022-08-26T14:19:54.722+02:00",
+      "updatedAt": "2022-08-26T14:19:54.728+02:00",
+      "publishedAt": "2022-08-30T16:19:38.112+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.112+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "258974626",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
     "id": "120718363",
     "title": "Random Studio",
     "introBlocks": [
@@ -107,6 +689,166 @@
     "itemType": "1989582"
   },
   {
+    "id": "123516586",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774338"
+    },
+    "caption": "",
+    "width": 50,
+    "marginTop": -5,
+    "marginLeft": 60,
+    "updatedAt": "2022-08-15T12:11:55.578+02:00",
+    "createdAt": "2022-08-15T11:47:17.558+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.558+02:00",
+      "updatedAt": "2022-08-15T12:11:55.578+02:00",
+      "publishedAt": "2022-08-29T14:15:12.393+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.393+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "258315077",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123516585",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774337"
+    },
+    "caption": "",
+    "width": 30,
+    "marginTop": -25,
+    "marginLeft": 0,
+    "updatedAt": "2022-08-15T12:10:36.717+02:00",
+    "createdAt": "2022-08-15T11:47:17.543+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.543+02:00",
+      "updatedAt": "2022-08-15T12:10:36.717+02:00",
+      "publishedAt": "2022-08-29T14:15:12.390+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.390+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "258315053",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123516584",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774336"
+    },
+    "caption": "",
+    "width": 55,
+    "marginTop": 10,
+    "marginLeft": 40,
+    "updatedAt": "2022-08-15T12:09:31.815+02:00",
+    "createdAt": "2022-08-15T11:47:17.528+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.528+02:00",
+      "updatedAt": "2022-08-15T12:09:31.815+02:00",
+      "publishedAt": "2022-08-29T14:15:12.387+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.387+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "258315002",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123516583",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774335"
+    },
+    "caption": "",
+    "width": 33,
+    "marginTop": 0,
+    "marginLeft": 12,
+    "updatedAt": "2022-08-15T12:02:34.438+02:00",
+    "createdAt": "2022-08-15T11:47:17.514+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.514+02:00",
+      "updatedAt": "2022-08-15T12:02:34.438+02:00",
+      "publishedAt": "2022-08-29T14:15:12.383+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "258314798",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123515739",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "A digital map will communicate the state of each Sluispoort, giving insight to the current situation, including available spaces and a preview of scheduled events. During this testing phase, we are collecting data on how people use these new structures, how the Sluispoorten interact with each other and how the digital map influences their use. Using data from this prototyping phase, the final design will be fully influenced by how the structures are used on the ground.",
+    "updatedAt": "2022-08-15T10:56:54.559+02:00",
+    "createdAt": "2022-08-15T10:56:54.556+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T10:56:54.556+02:00",
+      "updatedAt": "2022-08-15T10:56:54.559+02:00",
+      "publishedAt": "2022-08-29T14:15:12.396+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.396+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "258311343",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123515738",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Informed by detailed data of how people move through the space, we came up with the Sluispoort – a responsive mechanism that optimises the flow of water – as the backbone for a series of modular spatial interventions. Intelligent structures that can both create new spaces that facilitate exchange whilst also influencing the existing architecture around it, these Sluispoorten can be customised to respond to a range of needs. Depending on the activity in the space, they will also be able to change state, opening or closing as required – for example, to create a quiet, clean portal through a busy space during rush hour then change into smaller meeting compartments later in the day. At this prototyping stage, there are four archetypes that are operated manually but they will eventually be autonomous and responsive to data received through sensors and able to predict the activity of the space.",
+    "updatedAt": "2022-08-15T10:56:54.546+02:00",
+    "createdAt": "2022-08-15T10:56:54.542+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T10:56:54.542+02:00",
+      "updatedAt": "2022-08-15T10:56:54.546+02:00",
+      "publishedAt": "2022-08-29T14:15:12.380+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.380+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "258311342",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
     "id": "120810445",
     "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Ben Kreukniet – Sound design & arrangement \\n\\nWárms Korea – Physical production\\n\\nSeungmin Cha – Field recordings and daegeum flute performance\"\n}",
     "intro": "To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul, we were enlisted to design a pop-up experience and store scenography. Drawing inspiration from its location next to the iconic Hyundai Card Music Library, we created a spatial listening experience based on the ‘Acousmonium’ sonic installations as pioneered by Francois Bayle in the 1970s.",
@@ -199,6 +941,363 @@
       "stage": null
     },
     "itemType": "1641762"
+  },
+  {
+    "id": "123033154",
+    "video": {
+      "url": "https://vimeo.com/736443717",
+      "title": "Screen Recording 2022-07-13 at 16.40.50",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "736443717",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1481831685-90b35f9f8b3a2353c07fe648125a51e5c23cc78b5205f75ad4583eb31eb372ad-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 60,
+    "marginTop": 15,
+    "marginLeft": 20,
+    "updatedAt": "2022-08-08T11:47:42.823+02:00",
+    "createdAt": "2022-08-04T10:48:45.916+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:48:45.916+02:00",
+      "updatedAt": "2022-08-08T11:47:42.823+02:00",
+      "publishedAt": "2022-08-30T16:19:38.076+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.772+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257415176",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "123033850",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514621"
+    },
+    "caption": "",
+    "width": 34,
+    "marginTop": 30,
+    "marginLeft": 7,
+    "updatedAt": "2022-08-04T11:34:21.221+02:00",
+    "createdAt": "2022-08-04T11:27:36.239+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:27:36.239+02:00",
+      "updatedAt": "2022-08-04T11:34:21.221+02:00",
+      "publishedAt": "2022-08-30T16:19:38.114+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.114+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257284312",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123033742",
+    "slides": [
+      "123033741",
+      "123033740",
+      "123033739"
+    ],
+    "width": 81,
+    "marginTop": 20,
+    "marginLeft": 2,
+    "updatedAt": "2022-08-04T11:33:34.540+02:00",
+    "createdAt": "2022-08-04T11:21:13.551+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:21:13.551+02:00",
+      "updatedAt": "2022-08-04T11:33:34.540+02:00",
+      "publishedAt": "2022-08-30T16:19:38.084+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.084+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257284018",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "123033274",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514477"
+    },
+    "caption": "",
+    "width": 41,
+    "marginTop": 30,
+    "marginLeft": 11,
+    "updatedAt": "2022-08-04T11:31:09.704+02:00",
+    "createdAt": "2022-08-04T10:54:50.144+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:54:50.144+02:00",
+      "updatedAt": "2022-08-04T11:31:09.704+02:00",
+      "publishedAt": "2022-08-30T16:19:38.070+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.777+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257283695",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123033851",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514622"
+    },
+    "caption": "",
+    "width": 42,
+    "marginTop": -55,
+    "marginLeft": 50,
+    "updatedAt": "2022-08-04T11:27:58.548+02:00",
+    "createdAt": "2022-08-04T11:27:36.256+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:27:36.256+02:00",
+      "updatedAt": "2022-08-04T11:27:58.548+02:00",
+      "publishedAt": "2022-08-30T16:19:38.117+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.117+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257283573",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123033807",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "For the window display, we drew on the analogue language of lenticular printing to create a series of giant postcards that act as backdrops to mannequins sporting the collection. Created in Blender, each sunset is sculpted to echo the colour of the looks and contain 3 different movements. Framed by a sharp and industrial aluminium structure, the sun in these kitsch ‘static’ landscapes sets and rises depending on where you’re standing, inviting visitors to interact with the image using their bodies.",
+    "updatedAt": "2022-08-04T11:23:20.053+02:00",
+    "createdAt": "2022-08-04T11:23:20.049+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:23:20.049+02:00",
+      "updatedAt": "2022-08-04T11:23:20.053+02:00",
+      "publishedAt": "2022-08-30T16:19:38.110+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.110+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257283419",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123033741",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514607"
+    },
+    "video": null,
+    "updatedAt": "2022-08-04T11:21:13.537+02:00",
+    "createdAt": "2022-08-04T11:21:13.533+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:21:13.533+02:00",
+      "updatedAt": "2022-08-04T11:21:13.537+02:00",
+      "publishedAt": "2022-08-30T16:19:38.094+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.094+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257283282",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "123033740",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514602"
+    },
+    "video": null,
+    "updatedAt": "2022-08-04T11:21:13.521+02:00",
+    "createdAt": "2022-08-04T11:21:13.517+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:21:13.517+02:00",
+      "updatedAt": "2022-08-04T11:21:13.521+02:00",
+      "publishedAt": "2022-08-30T16:19:38.098+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.098+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257283281",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "123033739",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514598"
+    },
+    "video": null,
+    "updatedAt": "2022-08-04T11:21:13.502+02:00",
+    "createdAt": "2022-08-04T11:21:13.498+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:21:13.498+02:00",
+      "updatedAt": "2022-08-04T11:21:13.502+02:00",
+      "publishedAt": "2022-08-30T16:19:38.101+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.101+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257283280",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "123033671",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514545"
+    },
+    "caption": "",
+    "width": 32,
+    "marginTop": -18,
+    "marginLeft": 53,
+    "updatedAt": "2022-08-04T11:16:32.420+02:00",
+    "createdAt": "2022-08-04T11:15:10.128+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:15:10.128+02:00",
+      "updatedAt": "2022-08-04T11:16:32.420+02:00",
+      "publishedAt": "2022-08-30T16:19:38.107+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.107+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257283141",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123033442",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514536"
+    },
+    "caption": "",
+    "width": 33,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-08-04T11:09:58.656+02:00",
+    "createdAt": "2022-08-04T11:09:58.650+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:09:58.650+02:00",
+      "updatedAt": "2022-08-04T11:09:58.656+02:00",
+      "publishedAt": "2022-08-30T16:19:38.104+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.104+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257282695",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123033424",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Inside the store, the sunset multiplies in digital form in an immersive room. In this variation, two screens are filled with a dynamic patchwork of different miniature sunsets, generated in real time and reflected by two mirrored walls. Triggered by LIDAR sensor technology lining the floor, the suns set and rise in response to visitors’ movements, the colours flickering between night and day to ‘mirror’ the shape of their bodies moving through the space. ",
+    "updatedAt": "2022-08-04T11:05:49.119+02:00",
+    "createdAt": "2022-08-04T11:05:49.115+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:05:49.115+02:00",
+      "updatedAt": "2022-08-04T11:05:49.119+02:00",
+      "publishedAt": "2022-08-30T16:19:38.079+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.079+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257282594",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123033275",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514486"
+    },
+    "caption": "",
+    "width": 30,
+    "marginTop": -29,
+    "marginLeft": 64,
+    "updatedAt": "2022-08-04T10:56:02.767+02:00",
+    "createdAt": "2022-08-04T10:54:50.160+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:54:50.160+02:00",
+      "updatedAt": "2022-08-04T10:56:02.767+02:00",
+      "publishedAt": "2022-08-30T16:19:38.073+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.780+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "257282045",
+      "stage": null
+    },
+    "itemType": "1643992"
   },
   {
     "id": "120717266",
