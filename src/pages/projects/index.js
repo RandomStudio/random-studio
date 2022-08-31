@@ -28,7 +28,7 @@ export const getStaticProps = async ({ preview }) => {
         projects.map(async project => ({
           ...project,
           featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
-          tags: project.tags.map(tag => tag.toLowerCase()),
+          tags: project.tags?.map(tag => tag.toLowerCase()) ?? [],
         })),
       ),
     },
