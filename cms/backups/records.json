@@ -1,12 +1,506 @@
 [
   {
+    "id": "123515639",
+    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
+    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? In 2020, we got the opportunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A future work space for the Dutch Ministry of Justice",
+    "content": [
+      "128557132",
+      "123515736",
+      "129053593",
+      "129053606",
+      "129054345",
+      "129054707",
+      "123515738",
+      "123516583",
+      "123516584",
+      "123516585",
+      "123515739",
+      "132655995"
+    ],
+    "relatedProjects": [],
+    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
+    "tags": null,
+    "featuredImage": null,
+    "opengraph": null,
+    "featuredVideo": {
+      "url": "https://vimeo.com/739577418/c19fabceb1",
+      "title": "Ministry of Justice",
+      "width": 360,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "739577418",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1488361625-ad495d121d7bb738a05a1bcf90dc01729a395f2232a240be6edece42ea46ef02-d_295x166"
+    },
+    "isVisible": false,
+    "preview": null,
+    "updatedAt": "2022-09-01T15:16:12.543+02:00",
+    "createdAt": "2022-08-15T10:52:52.503+02:00",
+    "position": 52,
+    "meta": {
+      "createdAt": "2022-08-15T10:52:52.503+02:00",
+      "updatedAt": "2022-09-01T15:16:12.543+02:00",
+      "publishedAt": "2022-09-01T16:39:12.725+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "currentVersion": "268642300",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "28650",
+      "type": "user"
+    }
+  },
+  {
+    "id": "132655995",
+    "slides": [
+      "132655993",
+      "132655994"
+    ],
+    "width": 80,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-01T15:16:12.518+02:00",
+    "createdAt": "2022-09-01T15:16:12.512+02:00",
+    "meta": {
+      "createdAt": "2022-09-01T15:16:12.512+02:00",
+      "updatedAt": "2022-09-01T15:16:12.518+02:00",
+      "publishedAt": "2022-09-01T16:39:12.751+02:00",
+      "firstPublishedAt": "2022-09-01T16:39:12.751+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268642299",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "132655994",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48048327"
+    },
+    "video": null,
+    "updatedAt": "2022-09-01T15:16:12.493+02:00",
+    "createdAt": "2022-09-01T15:16:12.488+02:00",
+    "meta": {
+      "createdAt": "2022-09-01T15:16:12.488+02:00",
+      "updatedAt": "2022-09-01T15:16:12.493+02:00",
+      "publishedAt": "2022-09-01T16:39:12.764+02:00",
+      "firstPublishedAt": "2022-09-01T16:39:12.764+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268642298",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "132655993",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48048323"
+    },
+    "video": null,
+    "updatedAt": "2022-09-01T15:16:12.467+02:00",
+    "createdAt": "2022-09-01T15:16:12.461+02:00",
+    "meta": {
+      "createdAt": "2022-09-01T15:16:12.461+02:00",
+      "updatedAt": "2022-09-01T15:16:12.467+02:00",
+      "publishedAt": "2022-09-01T16:39:12.760+02:00",
+      "firstPublishedAt": "2022-09-01T16:39:12.760+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268642297",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "120811003",
+    "details": "{\n  \"For\": \"Alexander McQueen\",\n  \"Role\": \"Creative Concept, Art Direction and Experience Design\\n\",\n  \"With\": \"Souvenir\"\n}",
+    "intro": "We worked with Alexander McQueen to design a display for their flagship store in London to showcase the new Curve bag. Drawing inspiration from the SS21 campaign film directed by Jonathan Glazer – a dystopian short unfolding on the banks of the capital’s iconic River Thames – we created a display that mirrors the movement of the tide to bring the peace and tranquility of the natural world into the heart of the city.",
+    "relatedProjectsTitle": "Other work",
+    "title": "Tide, a kinetic window display for Alexander McQueen",
+    "content": [
+      "120810980",
+      "120810981",
+      "120810982",
+      "120810983",
+      "120810984",
+      "120810985",
+      "120810986",
+      "120810987",
+      "120810992",
+      "120810993",
+      "120810997",
+      "120810998",
+      "120810999",
+      "120811000",
+      "120811001",
+      "120811002"
+    ],
+    "relatedProjects": [],
+    "slug": "tide-window-display-for-alexander-mcqueen",
+    "tags": "[\n  \"Installations\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221660"
+    },
+    "opengraph": {
+      "image": "46221660",
+      "title": "Tide Window Display for Alexander McQueen",
+      "description": "We worked with Alexander McQueen to design a display for their flagship store in London to showcase the new Curve bag. Drawing inspiration from the SS21 camp...",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-01T14:09:40.224+02:00",
+    "createdAt": "2022-04-04T16:14:00.737+02:00",
+    "position": 7,
+    "meta": {
+      "createdAt": "2022-04-04T16:14:00.737+02:00",
+      "updatedAt": "2022-09-01T14:09:40.224+02:00",
+      "publishedAt": "2022-09-01T14:09:40.286+02:00",
+      "firstPublishedAt": "2022-04-04T16:14:01.109+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268586989",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810405",
+    "details": "{\n  \"For \": \"A/D/O by MINI \",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Matthijs Munnik, Vincent de Belleval, Showman Fabricators,\\nDaniel Seung Lee – Photography\"\n}",
+    "intro": "In celebration of the 2020 launch of the new MINI Electric vehicle, we were commissioned by A/D/O to create a work themed around the future of mobility.",
+    "relatedProjectsTitle": "Other work",
+    "title": "Kinetic architecture <br>for A/D/O by MINI",
+    "content": [
+      "120810397",
+      "120810398",
+      "120810399",
+      "120810400",
+      "120810401",
+      "120810402",
+      "120810403",
+      "120810404"
+    ],
+    "relatedProjects": [],
+    "slug": "a-kinetic-architecture-piece-br-for-a-d-o-by-mini",
+    "tags": "[\n  \"Installations\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221573"
+    },
+    "opengraph": {
+      "image": "46221575",
+      "title": "Perpetuum – A kinetic architecture piece for A/D/O by MINI",
+      "description": null,
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-01T14:09:28.698+02:00",
+    "createdAt": "2022-04-04T16:13:04.961+02:00",
+    "position": 6,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:04.961+02:00",
+      "updatedAt": "2022-09-01T14:09:28.698+02:00",
+      "publishedAt": "2022-09-01T14:09:28.741+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:05.309+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268586510",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810775",
+    "details": "{\n  \"For\": \"Fondazione Prada\",\n  \"Role\": \"Exhibition Design\",\n  \"With\": \"Melissa Harris – Curator\"\n}",
+    "intro": "In Fondazione Prada’s new exhibition 'Role Play', held at Osservatorio Milan and Prada Aoyama Tokyo, 11 international image-based artists bend and stretch the concept of identity. Embracing fluidity, the art works on view create a constellation of different perspectives, each with its own character. For both spaces we designed a space aimed to erase the influence of the building on the art work, drawing the individuality of each piece into sharp focus.",
+    "relatedProjectsTitle": "Other work",
+    "title": "Exhibition design for Fondazione Prada’s ‘Role Play’",
+    "content": [
+      "120810749",
+      "120810750",
+      "120810751",
+      "120810752",
+      "120810753",
+      "120810754",
+      "120810759",
+      "120810765",
+      "120810766",
+      "120810767",
+      "120810773",
+      "120810774"
+    ],
+    "relatedProjects": [],
+    "slug": "exhibition-design-for-fondazione-pradas-role-play",
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46222141"
+    },
+    "opengraph": null,
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-01T14:09:21.963+02:00",
+    "createdAt": "2022-04-04T16:13:39.266+02:00",
+    "position": 3,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:39.266+02:00",
+      "updatedAt": "2022-09-01T14:09:21.963+02:00",
+      "publishedAt": "2022-09-01T14:09:22.023+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:39.663+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268586239",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "121739451",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Spatial Design, Interior Design, Interactive Design, Creative Technology\",\n  \"With\": \"X+L Amsterdam – Interior Design, Light Installation – Aernout Meijer Studio,  Photos by Kasia Gatkowska\"\n}",
+    "intro": "How can we create a dialogue between people and the space they are in? How do we invite people to reconnect to their physical surroundings without losing our rich digital culture?  ",
+    "relatedProjectsTitle": "Other work",
+    "title": "An iteration of Interactive Space for our new home in Amsterdam",
+    "content": [
+      "122309450",
+      "122309449",
+      "121740054",
+      "121780700",
+      "121739760",
+      "122308990",
+      "121739798",
+      "121780701",
+      "121781193",
+      "121739800",
+      "121781384",
+      "121780923",
+      "121739808",
+      "121781170",
+      "121781481",
+      "121739809",
+      "122310468",
+      "122312079",
+      "122312367",
+      "122310497"
+    ],
+    "relatedProjects": [],
+    "slug": "our-dynamic-studio",
+    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"research\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46658722"
+    },
+    "opengraph": {
+      "image": "46658674",
+      "title": "Our Dynamic Studio",
+      "description": "We brought to life our own interactive studio in Amsterdam",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-01T14:09:20.788+02:00",
+    "createdAt": "2022-05-19T16:04:20.186+02:00",
+    "position": 5,
+    "meta": {
+      "createdAt": "2022-05-19T16:04:20.186+02:00",
+      "updatedAt": "2022-09-01T14:09:20.788+02:00",
+      "publishedAt": "2022-09-01T14:09:20.868+02:00",
+      "firstPublishedAt": "2022-06-22T10:18:13.465+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268586182",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
+    "id": "120810445",
+    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Ben Kreukniet – Sound design & arrangement \\n\\nWárms Korea – Physical production\\n\\nSeungmin Cha – Field recordings and daegeum flute performance\"\n}",
+    "intro": "To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul, we were enlisted to design a pop-up experience and store scenography. Drawing inspiration from its location next to the iconic Hyundai Card Music Library, we created a spatial listening experience based on the ‘Acousmonium’ sonic installations as pioneered by Francois Bayle in the 1970s.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A spatial listening experience for Bottega Veneta",
+    "content": [
+      "120810428",
+      "120810429",
+      "120810432",
+      "120810433",
+      "120810434",
+      "120810435",
+      "120810438",
+      "120810439",
+      "120810442",
+      "120810443",
+      "120810444"
+    ],
+    "relatedProjects": [],
+    "slug": "a-spatial-listening-experience-for-bottega-veneta",
+    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221548"
+    },
+    "opengraph": {
+      "image": "46221548",
+      "title": null,
+      "description": "A shiny take on the Acousmoniums of the 1970s as pioneered by Francois Bayle, we made an inflatable sonic installation to mark the launch of Daniel Lee’s AW ...",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-01T14:09:17.283+02:00",
+    "createdAt": "2022-04-04T16:13:08.112+02:00",
+    "position": 2,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:08.112+02:00",
+      "updatedAt": "2022-09-01T14:09:17.283+02:00",
+      "publishedAt": "2022-09-01T14:09:17.357+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:08.519+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "268586038",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "123516583",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774335"
+    },
+    "caption": "",
+    "width": 50,
+    "marginTop": 0,
+    "marginLeft": 12,
+    "updatedAt": "2022-08-31T14:08:13.785+02:00",
+    "createdAt": "2022-08-15T11:47:17.514+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.514+02:00",
+      "updatedAt": "2022-08-31T14:08:13.785+02:00",
+      "publishedAt": "2022-09-01T16:39:12.740+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "currentVersion": "266832179",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123516585",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774337"
+    },
+    "caption": "",
+    "width": 30,
+    "marginTop": -45,
+    "marginLeft": 0,
+    "updatedAt": "2022-08-31T14:06:42.147+02:00",
+    "createdAt": "2022-08-15T11:47:17.543+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.543+02:00",
+      "updatedAt": "2022-08-31T14:06:42.147+02:00",
+      "publishedAt": "2022-09-01T16:39:12.747+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.390+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "266823870",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
     "id": "123032928",
     "details": "{\n  \"Role\": \"\"\n}",
     "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
     "relatedProjectsTitle": "Other work",
     "title": "Endless sunsets for Paco Rabanne in Paris",
     "content": [
-      "129346327",
+      "130830148",
       "123033274",
       "123033275",
       "123033154",
@@ -33,21 +527,21 @@
       "providerUid": "744612424",
       "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
     },
-    "isVisible": false,
+    "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-08-30T16:34:50.913+02:00",
+    "updatedAt": "2022-08-31T13:14:36.120+02:00",
     "createdAt": "2022-08-04T10:36:17.308+02:00",
     "position": 51,
     "meta": {
       "createdAt": "2022-08-04T10:36:17.308+02:00",
-      "updatedAt": "2022-08-30T16:34:50.913+02:00",
-      "publishedAt": "2022-08-30T16:34:55.106+02:00",
+      "updatedAt": "2022-08-31T13:14:36.120+02:00",
+      "publishedAt": "2022-08-31T13:15:44.082+02:00",
       "firstPublishedAt": "2022-08-04T10:58:26.754+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "updated",
+      "status": "published",
       "isValid": true,
-      "currentVersion": "264962087",
+      "currentVersion": "266800866",
       "stage": null
     },
     "itemType": "1641543",
@@ -57,7 +551,151 @@
     }
   },
   {
-    "id": "129346327",
+    "id": "123033154",
+    "video": {
+      "url": "https://vimeo.com/736443717",
+      "title": "Screen Recording 2022-07-13 at 16.40.50",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "736443717",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1481831685-90b35f9f8b3a2353c07fe648125a51e5c23cc78b5205f75ad4583eb31eb372ad-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 70,
+    "marginTop": 15,
+    "marginLeft": 5,
+    "updatedAt": "2022-08-31T11:21:04.069+02:00",
+    "createdAt": "2022-08-04T10:48:45.916+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:48:45.916+02:00",
+      "updatedAt": "2022-08-31T11:21:04.069+02:00",
+      "publishedAt": "2022-08-31T11:21:18.915+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.772+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "266663940",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "123033274",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514477"
+    },
+    "caption": "",
+    "width": 35,
+    "marginTop": 30,
+    "marginLeft": 11,
+    "updatedAt": "2022-08-31T11:04:43.934+02:00",
+    "createdAt": "2022-08-04T10:54:50.144+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:54:50.144+02:00",
+      "updatedAt": "2022-08-31T11:04:43.934+02:00",
+      "publishedAt": "2022-08-31T11:21:18.908+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.777+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "266604060",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123033275",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514486"
+    },
+    "caption": "",
+    "width": 20,
+    "marginTop": -45,
+    "marginLeft": 64,
+    "updatedAt": "2022-08-31T11:04:17.504+02:00",
+    "createdAt": "2022-08-04T10:54:50.160+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:54:50.160+02:00",
+      "updatedAt": "2022-08-31T11:04:17.504+02:00",
+      "publishedAt": "2022-08-31T11:21:18.912+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.780+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "266603965",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "129053606",
+    "slides": [
+      "129053605",
+      "130831716"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 55,
+    "updatedAt": "2022-08-31T10:38:53.777+02:00",
+    "createdAt": "2022-08-30T11:29:55.880+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:55.880+02:00",
+      "updatedAt": "2022-08-31T10:38:53.777+02:00",
+      "publishedAt": "2022-08-31T10:40:33.249+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.041+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "266598332",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "130831716",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48030055"
+    },
+    "video": null,
+    "updatedAt": "2022-08-31T10:38:53.756+02:00",
+    "createdAt": "2022-08-31T10:38:53.752+02:00",
+    "meta": {
+      "createdAt": "2022-08-31T10:38:53.752+02:00",
+      "updatedAt": "2022-08-31T10:38:53.756+02:00",
+      "publishedAt": "2022-08-31T10:40:33.261+02:00",
+      "firstPublishedAt": "2022-08-31T10:40:33.261+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "currentVersion": "266598331",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "123914805",
     "video": {
       "url": "https://vimeo.com/744612424/a6d9236953",
       "title": "Paco Rabanne 03 1920x1080.mp4",
@@ -70,85 +708,61 @@
     "autoplay": true,
     "hasControls": true,
     "loops": true,
-    "hasAudio": false,
+    "hasAudio": true,
     "caption": "",
-    "width": 100,
+    "width": 83,
     "marginTop": 0,
-    "marginLeft": 0,
-    "updatedAt": "2022-08-30T16:34:50.884+02:00",
-    "createdAt": "2022-08-30T16:27:51.144+02:00",
+    "marginLeft": 10,
+    "updatedAt": "2022-08-31T10:37:13.236+02:00",
+    "createdAt": "2022-08-26T14:19:54.722+02:00",
     "meta": {
-      "createdAt": "2022-08-30T16:27:51.144+02:00",
-      "updatedAt": "2022-08-30T16:34:50.884+02:00",
-      "publishedAt": "2022-08-30T16:34:55.124+02:00",
-      "firstPublishedAt": "2022-08-30T16:34:55.124+02:00",
+      "createdAt": "2022-08-26T14:19:54.722+02:00",
+      "updatedAt": "2022-08-31T10:37:13.236+02:00",
+      "publishedAt": "2022-08-31T11:21:18.918+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.112+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "updated",
+      "status": "published",
       "isValid": true,
-      "currentVersion": "264962086",
+      "currentVersion": "266597828",
       "stage": null
     },
     "itemType": "1641762"
   },
   {
-    "id": "123515639",
-    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? In 2020, we got the oppurtunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A future work space for the Dutch Ministry of Justice",
-    "content": [
-      "128557132",
-      "123515736",
-      "129053593",
-      "129053606",
-      "129054345",
-      "129054707",
-      "123515738",
-      "123516583",
-      "123516584",
-      "123516585",
-      "123516586",
-      "123515739",
-      "129058980",
-      "129120306"
-    ],
-    "relatedProjects": [],
-    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
-    "tags": null,
-    "featuredImage": null,
-    "opengraph": null,
-    "featuredVideo": {
-      "url": "https://vimeo.com/739577418/c19fabceb1",
-      "title": "Ministry of Justice",
-      "width": 360,
+    "id": "130830148",
+    "video": {
+      "url": "https://vimeo.com/743411586/ab3c8438a2",
+      "title": "Paco Rabanne 01 1920x1080",
+      "width": 426,
       "height": 240,
       "provider": "vimeo",
-      "providerUid": "739577418",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1488361625-ad495d121d7bb738a05a1bcf90dc01729a395f2232a240be6edece42ea46ef02-d_295x166"
+      "providerUid": "743411586",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1495548524-902c2a59415dd90b0661bd1727c9a34ff1e967d7db9c41a8a219801ad3daef3d-d_295x166"
     },
-    "isVisible": false,
-    "preview": null,
-    "updatedAt": "2022-08-30T14:22:27.457+02:00",
-    "createdAt": "2022-08-15T10:52:52.503+02:00",
-    "position": 52,
+    "autoplay": true,
+    "hasControls": false,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-08-31T10:33:17.278+02:00",
+    "createdAt": "2022-08-31T10:30:46.511+02:00",
     "meta": {
-      "createdAt": "2022-08-15T10:52:52.503+02:00",
-      "updatedAt": "2022-08-30T14:22:27.457+02:00",
-      "publishedAt": "2022-08-30T14:33:57.001+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "createdAt": "2022-08-31T10:30:46.511+02:00",
+      "updatedAt": "2022-08-31T10:33:17.278+02:00",
+      "publishedAt": "2022-08-31T11:21:18.903+02:00",
+      "firstPublishedAt": "2022-08-31T11:21:18.903+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "264831682",
+      "currentVersion": "266596826",
       "stage": null
     },
-    "itemType": "1641543",
-    "creator": {
-      "id": "28650",
-      "type": "user"
-    }
+    "itemType": "1641762"
   },
   {
     "id": "129054345",
@@ -199,88 +813,6 @@
       "stage": null
     },
     "itemType": "1643994"
-  },
-  {
-    "id": "129053606",
-    "slides": [
-      "129053605"
-    ],
-    "width": 40,
-    "marginTop": -25,
-    "marginLeft": 55,
-    "updatedAt": "2022-08-30T14:17:32.707+02:00",
-    "createdAt": "2022-08-30T11:29:55.880+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:55.880+02:00",
-      "updatedAt": "2022-08-30T14:17:32.707+02:00",
-      "publishedAt": "2022-08-30T14:33:57.041+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.041+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "264830605",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "129120306",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014885"
-    },
-    "caption": "",
-    "width": 35,
-    "marginTop": -167,
-    "marginLeft": 45,
-    "updatedAt": "2022-08-30T12:49:54.779+02:00",
-    "createdAt": "2022-08-30T12:45:37.533+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T12:45:37.533+02:00",
-      "updatedAt": "2022-08-30T12:49:54.779+02:00",
-      "publishedAt": "2022-08-30T14:33:57.096+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.096+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "264708029",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "129058980",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014693"
-    },
-    "caption": "",
-    "width": 35,
-    "marginTop": 0,
-    "marginLeft": 15,
-    "updatedAt": "2022-08-30T12:48:47.811+02:00",
-    "createdAt": "2022-08-30T11:47:03.060+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:47:03.060+02:00",
-      "updatedAt": "2022-08-30T12:48:47.811+02:00",
-      "publishedAt": "2022-08-30T14:33:57.090+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.090+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "264707648",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "129054706",
@@ -539,44 +1071,9 @@
       "firstPublishedAt": "2022-08-29T14:15:12.280+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "currentVersion": "264069546",
-      "stage": null
-    },
-    "itemType": "1641762"
-  },
-  {
-    "id": "123914805",
-    "video": {
-      "url": "https://vimeo.com/743411586/ab3c8438a2",
-      "title": "Paco Rabanne 01 1920x1080",
-      "width": 640,
-      "height": 360,
-      "provider": "vimeo",
-      "providerUid": "743411586",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1495548524-902c2a59415dd90b0661bd1727c9a34ff1e967d7db9c41a8a219801ad3daef3d-d_640"
-    },
-    "autoplay": true,
-    "hasControls": true,
-    "loops": true,
-    "hasAudio": true,
-    "caption": "",
-    "width": 83,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-08-26T14:19:54.728+02:00",
-    "createdAt": "2022-08-26T14:19:54.722+02:00",
-    "meta": {
-      "createdAt": "2022-08-26T14:19:54.722+02:00",
-      "updatedAt": "2022-08-26T14:19:54.728+02:00",
-      "publishedAt": "2022-08-30T16:19:38.112+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.112+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "258974626",
       "stage": null
     },
     "itemType": "1641762"
@@ -689,64 +1186,6 @@
     "itemType": "1989582"
   },
   {
-    "id": "123516586",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47774338"
-    },
-    "caption": "",
-    "width": 50,
-    "marginTop": -5,
-    "marginLeft": 60,
-    "updatedAt": "2022-08-15T12:11:55.578+02:00",
-    "createdAt": "2022-08-15T11:47:17.558+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.558+02:00",
-      "updatedAt": "2022-08-15T12:11:55.578+02:00",
-      "publishedAt": "2022-08-29T14:15:12.393+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.393+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "258315077",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123516585",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47774337"
-    },
-    "caption": "",
-    "width": 30,
-    "marginTop": -25,
-    "marginLeft": 0,
-    "updatedAt": "2022-08-15T12:10:36.717+02:00",
-    "createdAt": "2022-08-15T11:47:17.543+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.543+02:00",
-      "updatedAt": "2022-08-15T12:10:36.717+02:00",
-      "publishedAt": "2022-08-29T14:15:12.390+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.390+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "258315053",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
     "id": "123516584",
     "image": {
       "alt": null,
@@ -771,35 +1210,6 @@
       "status": "published",
       "isValid": true,
       "currentVersion": "258315002",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123516583",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47774335"
-    },
-    "caption": "",
-    "width": 33,
-    "marginTop": 0,
-    "marginLeft": 12,
-    "updatedAt": "2022-08-15T12:02:34.438+02:00",
-    "createdAt": "2022-08-15T11:47:17.514+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.514+02:00",
-      "updatedAt": "2022-08-15T12:02:34.438+02:00",
-      "publishedAt": "2022-08-29T14:15:12.383+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "258314798",
       "stage": null
     },
     "itemType": "1643992"
@@ -849,65 +1259,6 @@
     "itemType": "1643993"
   },
   {
-    "id": "120810445",
-    "details": "{\n  \"For\": \"Bottega Veneta\",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Ben Kreukniet – Sound design & arrangement \\n\\nWárms Korea – Physical production\\n\\nSeungmin Cha – Field recordings and daegeum flute performance\"\n}",
-    "intro": "To showcase Daniel Lee’s AW 2020 collection for Bottega Veneta in Seoul, we were enlisted to design a pop-up experience and store scenography. Drawing inspiration from its location next to the iconic Hyundai Card Music Library, we created a spatial listening experience based on the ‘Acousmonium’ sonic installations as pioneered by Francois Bayle in the 1970s.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A spatial listening experience for Bottega Veneta",
-    "content": [
-      "120810428",
-      "120810429",
-      "120810432",
-      "120810433",
-      "120810434",
-      "120810435",
-      "120810438",
-      "120810439",
-      "120810442",
-      "120810443",
-      "120810444"
-    ],
-    "relatedProjects": [],
-    "slug": "a-spatial-listening-experience-for-bottega-veneta",
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221548"
-    },
-    "opengraph": {
-      "image": "46221548",
-      "title": null,
-      "description": "A shiny take on the Acousmoniums of the 1970s as pioneered by Francois Bayle, we made an inflatable sonic installation to mark the launch of Daniel Lee’s AW ...",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-08-10T13:42:54.190+02:00",
-    "createdAt": "2022-04-04T16:13:08.112+02:00",
-    "position": 3,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:08.112+02:00",
-      "updatedAt": "2022-08-10T13:42:54.190+02:00",
-      "publishedAt": "2022-08-10T13:42:55.811+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:08.519+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "257551434",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "120810428",
     "video": {
       "url": "https://vimeo.com/485603898",
@@ -938,41 +1289,6 @@
       "status": "published",
       "isValid": true,
       "currentVersion": "257551433",
-      "stage": null
-    },
-    "itemType": "1641762"
-  },
-  {
-    "id": "123033154",
-    "video": {
-      "url": "https://vimeo.com/736443717",
-      "title": "Screen Recording 2022-07-13 at 16.40.50",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "736443717",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1481831685-90b35f9f8b3a2353c07fe648125a51e5c23cc78b5205f75ad4583eb31eb372ad-d_295x166"
-    },
-    "autoplay": true,
-    "hasControls": true,
-    "loops": true,
-    "hasAudio": false,
-    "caption": "",
-    "width": 60,
-    "marginTop": 15,
-    "marginLeft": 20,
-    "updatedAt": "2022-08-08T11:47:42.823+02:00",
-    "createdAt": "2022-08-04T10:48:45.916+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T10:48:45.916+02:00",
-      "updatedAt": "2022-08-08T11:47:42.823+02:00",
-      "publishedAt": "2022-08-30T16:19:38.076+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.772+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "257415176",
       "stage": null
     },
     "itemType": "1641762"
@@ -1031,35 +1347,6 @@
       "stage": null
     },
     "itemType": "1643994"
-  },
-  {
-    "id": "123033274",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514477"
-    },
-    "caption": "",
-    "width": 41,
-    "marginTop": 30,
-    "marginLeft": 11,
-    "updatedAt": "2022-08-04T11:31:09.704+02:00",
-    "createdAt": "2022-08-04T10:54:50.144+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T10:54:50.144+02:00",
-      "updatedAt": "2022-08-04T11:31:09.704+02:00",
-      "publishedAt": "2022-08-30T16:19:38.070+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.777+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "257283695",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "123033851",
@@ -1271,35 +1558,6 @@
     "itemType": "1643993"
   },
   {
-    "id": "123033275",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514486"
-    },
-    "caption": "",
-    "width": 30,
-    "marginTop": -29,
-    "marginLeft": 64,
-    "updatedAt": "2022-08-04T10:56:02.767+02:00",
-    "createdAt": "2022-08-04T10:54:50.160+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T10:54:50.160+02:00",
-      "updatedAt": "2022-08-04T10:56:02.767+02:00",
-      "publishedAt": "2022-08-30T16:19:38.073+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.780+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "257282045",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
     "id": "120717266",
     "video": {
       "url": "https://vimeo.com/736170692",
@@ -1337,126 +1595,62 @@
     }
   },
   {
-    "id": "121739451",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Spatial Design, Interior Design, Interactive Design, Creative Technology\",\n  \"With\": \"X+L Amsterdam – Interior Design, Light Installation – Aernout Meijer Studio,  Photos by Kasia Gatkowska\"\n}",
-    "intro": "How can we create a dialogue between people and the space they are in? How do we invite people to reconnect to their physical surroundings without losing our rich digital culture?  ",
+    "id": "122156436",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Art Direction, Installation Design, Interactive Design, Creative Technology\"\n}",
+    "intro": "We were commissioned by Vans to make an in-store installation at Milan’s concept store OREFICI 11. Channelling the brand’s longtime connections to music and self-expression, we created the AV jambox; a playful intervention that transforms the store into a place to hang out with friends.",
     "relatedProjectsTitle": "Other work",
-    "title": "An iteration of Interactive Space for our new home in Amsterdam",
+    "title": "An audio-visual jambox for Vans in Milan",
     "content": [
-      "122309450",
-      "122309449",
-      "121740054",
-      "121780700",
-      "121739760",
-      "122308990",
-      "121739798",
-      "121780701",
-      "121781193",
-      "121739800",
-      "121781384",
-      "121780923",
-      "121739808",
-      "121781170",
-      "121781481",
-      "121739809",
-      "122310468",
-      "122312079",
-      "122312367",
-      "122310497"
+      "122439448",
+      "122156435",
+      "122439542",
+      "122439580",
+      "122440023",
+      "122440039",
+      "122440045",
+      "122440122",
+      "122440139",
+      "122440342",
+      "122440395",
+      "122440503",
+      "122440542"
     ],
-    "relatedProjects": [],
-    "slug": "our-dynamic-studio",
-    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"research\"\n]",
+    "relatedProjects": [
+      "120810903",
+      "120810884"
+    ],
+    "slug": "an-audio-visual-jambox-for-vans-in-milan",
+    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"installations\"\n]",
     "featuredImage": {
       "alt": null,
       "title": null,
       "customData": {},
       "focalPoint": null,
-      "uploadId": "46658722"
+      "uploadId": "46914493"
     },
-    "opengraph": {
-      "image": "46658674",
-      "title": "Our Dynamic Studio",
-      "description": "We brought to life our own interactive studio in Amsterdam",
-      "twitterCard": null
-    },
+    "opengraph": null,
     "featuredVideo": null,
     "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-07-14T11:20:49.454+02:00",
-    "createdAt": "2022-05-19T16:04:20.186+02:00",
+    "updatedAt": "2022-07-08T14:54:52.722+02:00",
+    "createdAt": "2022-06-10T14:53:18.102+02:00",
     "position": 4,
     "meta": {
-      "createdAt": "2022-05-19T16:04:20.186+02:00",
-      "updatedAt": "2022-07-14T11:20:49.454+02:00",
-      "publishedAt": "2022-07-14T11:20:51.633+02:00",
-      "firstPublishedAt": "2022-06-22T10:18:13.465+02:00",
+      "createdAt": "2022-06-10T14:53:18.102+02:00",
+      "updatedAt": "2022-07-08T14:54:52.722+02:00",
+      "publishedAt": "2022-09-01T14:09:49.658+02:00",
+      "firstPublishedAt": "2022-06-29T11:47:43.289+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
       "status": "published",
       "isValid": true,
-      "currentVersion": "256363323",
+      "currentVersion": "256078197",
       "stage": null
     },
     "itemType": "1641543",
     "creator": {
       "id": "49286",
       "type": "account"
-    }
-  },
-  {
-    "id": "120810775",
-    "details": "{\n  \"For\": \"Fondazione Prada\",\n  \"Role\": \"Exhibition Design\",\n  \"With\": \"Melissa Harris – Curator\"\n}",
-    "intro": "In Fondazione Prada’s new exhibition 'Role Play', held at Osservatorio Milan and Prada Aoyama Tokyo, 11 international image-based artists bend and stretch the concept of identity. Embracing fluidity, the art works on view create a constellation of different perspectives, each with its own character. For both spaces we designed a space aimed to erase the influence of the building on the art work, drawing the individuality of each piece into sharp focus.",
-    "relatedProjectsTitle": "Other work",
-    "title": "Exhibition design for Fondazione Prada’s ‘Role Play’",
-    "content": [
-      "120810749",
-      "120810750",
-      "120810751",
-      "120810752",
-      "120810753",
-      "120810754",
-      "120810759",
-      "120810765",
-      "120810766",
-      "120810767",
-      "120810773",
-      "120810774"
-    ],
-    "relatedProjects": [],
-    "slug": "exhibition-design-for-fondazione-pradas-role-play",
-    "tags": "[\n  \"Spaces\",\n  \"Exhibitions\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46222141"
-    },
-    "opengraph": null,
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-07-04T10:09:09.107+02:00",
-    "createdAt": "2022-04-04T16:13:39.266+02:00",
-    "position": 5,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:39.266+02:00",
-      "updatedAt": "2022-07-04T10:09:09.107+02:00",
-      "publishedAt": "2022-06-22T16:08:04.945+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:39.663+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "255761347",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
     }
   },
   {
@@ -1500,7 +1694,7 @@
     "preview": null,
     "updatedAt": "2022-07-04T10:09:08.975+02:00",
     "createdAt": "2022-04-04T16:13:03.710+02:00",
-    "position": 6,
+    "position": 8,
     "meta": {
       "createdAt": "2022-04-04T16:13:03.710+02:00",
       "updatedAt": "2022-07-04T10:09:08.975+02:00",
@@ -1517,66 +1711,6 @@
     "creator": {
       "id": "138284",
       "type": "access_token"
-    }
-  },
-  {
-    "id": "122156436",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Art Direction, Installation Design, Interactive Design, Creative Technology\"\n}",
-    "intro": "We were commissioned by Vans to make an in-store installation at Milan’s concept store OREFICI 11. Channelling the brand’s longtime connections to music and self-expression, we created the AV jambox; a playful intervention that transforms the store into a place to hang out with friends.",
-    "relatedProjectsTitle": "Other work",
-    "title": "An audio-visual jambox for Vans in Milan",
-    "content": [
-      "122439448",
-      "122156435",
-      "122439542",
-      "122439580",
-      "122440023",
-      "122440039",
-      "122440045",
-      "122440122",
-      "122440139",
-      "122440342",
-      "122440395",
-      "122440503",
-      "122440542"
-    ],
-    "relatedProjects": [
-      "120810445",
-      "120810903",
-      "120810884"
-    ],
-    "slug": "an-audio-visual-jambox-for-vans-in-milan",
-    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"installations\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46914493"
-    },
-    "opengraph": null,
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-07-04T10:09:08.958+02:00",
-    "createdAt": "2022-06-10T14:53:18.102+02:00",
-    "position": 2,
-    "meta": {
-      "createdAt": "2022-06-10T14:53:18.102+02:00",
-      "updatedAt": "2022-07-04T10:09:08.958+02:00",
-      "publishedAt": "2022-07-04T10:09:09.295+02:00",
-      "firstPublishedAt": "2022-06-29T11:47:43.289+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "currentVersion": "255761344",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "49286",
-      "type": "account"
     }
   },
   {
@@ -2470,62 +2604,6 @@
     "itemType": "1641762"
   },
   {
-    "id": "120810405",
-    "details": "{\n  \"For \": \"A/D/O by MINI \",\n  \"Role\": \"Concept Design, Design Development, Creative Technology, Technical development\",\n  \"With\": \"Matthijs Munnik, Vincent de Belleval, Showman Fabricators,\\nDaniel Seung Lee – Photography\"\n}",
-    "intro": "In celebration of the 2020 launch of the new MINI Electric vehicle, we were commissioned by A/D/O to create a work themed around the future of mobility.",
-    "relatedProjectsTitle": "Other work",
-    "title": "Kinetic architecture <br>for A/D/O by MINI",
-    "content": [
-      "120810397",
-      "120810398",
-      "120810399",
-      "120810400",
-      "120810401",
-      "120810402",
-      "120810403",
-      "120810404"
-    ],
-    "relatedProjects": [],
-    "slug": "a-kinetic-architecture-piece-br-for-a-d-o-by-mini",
-    "tags": "[\n  \"Installations\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221573"
-    },
-    "opengraph": {
-      "image": "46221575",
-      "title": "Perpetuum – A kinetic architecture piece for A/D/O by MINI",
-      "description": null,
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-06-22T10:31:16.604+02:00",
-    "createdAt": "2022-04-04T16:13:04.961+02:00",
-    "position": 8,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:04.961+02:00",
-      "updatedAt": "2022-06-22T10:31:16.604+02:00",
-      "publishedAt": "2022-06-22T10:27:28.462+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:05.309+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "254964361",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "120810521",
     "details": "{\n  \"For\": \"C.P. Company\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
     "intro": "To round off C.P. Company’s 50th anniversary Cinquanta celebrations, we brought the interactive spatial archive we made for the brand last year to its home turf of Milan for the finnisage of their anniversary celebrations. Designed and built as a modular hybrid of physical and digital space, the exhibition premiered in Florence at Pitti Uomo 2021, then was installed in Darwen, UK, as part of the British Textile Biennale before travelling to BASE, a cultural center in Milan.",
@@ -2562,7 +2640,7 @@
     "preview": null,
     "updatedAt": "2022-06-22T10:31:16.593+02:00",
     "createdAt": "2022-04-04T16:13:14.390+02:00",
-    "position": 7,
+    "position": 9,
     "meta": {
       "createdAt": "2022-04-04T16:13:14.390+02:00",
       "updatedAt": "2022-06-22T10:31:16.593+02:00",
@@ -2573,70 +2651,6 @@
       "status": "published",
       "isValid": true,
       "currentVersion": "254964360",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
-    "id": "120811003",
-    "details": "{\n  \"For\": \"Alexander McQueen\",\n  \"Role\": \"Creative Concept, Art Direction and Experience Design\\n\",\n  \"With\": \"Souvenir\"\n}",
-    "intro": "We worked with Alexander McQueen to design a display for their flagship store in London to showcase the new Curve bag. Drawing inspiration from the SS21 campaign film directed by Jonathan Glazer – a dystopian short unfolding on the banks of the capital’s iconic River Thames – we created a display that mirrors the movement of the tide to bring the peace and tranquility of the natural world into the heart of the city.",
-    "relatedProjectsTitle": "Other work",
-    "title": "Tide, a kinetic window display for Alexander McQueen",
-    "content": [
-      "120810980",
-      "120810981",
-      "120810982",
-      "120810983",
-      "120810984",
-      "120810985",
-      "120810986",
-      "120810987",
-      "120810992",
-      "120810993",
-      "120810997",
-      "120810998",
-      "120810999",
-      "120811000",
-      "120811001",
-      "120811002"
-    ],
-    "relatedProjects": [],
-    "slug": "tide-window-display-for-alexander-mcqueen",
-    "tags": "[\n  \"Installations\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221660"
-    },
-    "opengraph": {
-      "image": "46221660",
-      "title": "Tide Window Display for Alexander McQueen",
-      "description": "We worked with Alexander McQueen to design a display for their flagship store in London to showcase the new Curve bag. Drawing inspiration from the SS21 camp...",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-06-22T10:26:28.247+02:00",
-    "createdAt": "2022-04-04T16:14:00.737+02:00",
-    "position": 10,
-    "meta": {
-      "createdAt": "2022-04-04T16:14:00.737+02:00",
-      "updatedAt": "2022-06-22T10:26:28.247+02:00",
-      "publishedAt": "2022-04-05T10:43:39.539+02:00",
-      "firstPublishedAt": "2022-04-04T16:14:01.109+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "254964042",
       "stage": null
     },
     "itemType": "1641543",
@@ -2686,7 +2700,7 @@
     "preview": null,
     "updatedAt": "2022-06-22T10:26:28.127+02:00",
     "createdAt": "2022-04-04T16:13:55.627+02:00",
-    "position": 9,
+    "position": 10,
     "meta": {
       "createdAt": "2022-04-04T16:13:55.627+02:00",
       "updatedAt": "2022-06-22T10:26:28.127+02:00",
