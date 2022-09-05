@@ -6,7 +6,7 @@
     "relatedProjectsTitle": "Other work",
     "title": "A future work space for the Dutch Ministry of Justice",
     "content": [
-      "128557132",
+      "123516584",
       "123515736",
       "129053593",
       "129053606",
@@ -14,7 +14,7 @@
       "129054707",
       "123515738",
       "123516583",
-      "123516584",
+      "128557132",
       "123516585",
       "123515739",
       "132655995"
@@ -22,9 +22,99 @@
     "relatedProjects": [],
     "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
     "tags": null,
-    "featuredImage": null,
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48065978"
+    },
     "opengraph": null,
-    "featuredVideo": {
+    "featuredVideo": null,
+    "isVisible": false,
+    "preview": null,
+    "updatedAt": "2022-09-02T16:02:32.513+02:00",
+    "createdAt": "2022-08-15T10:52:52.503+02:00",
+    "position": 52,
+    "meta": {
+      "createdAt": "2022-08-15T10:52:52.503+02:00",
+      "updatedAt": "2022-09-02T16:02:32.513+02:00",
+      "publishedAt": "2022-09-02T16:03:00.345+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "currentVersion": "271016977",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "28650",
+      "type": "user"
+    }
+  },
+  {
+    "id": "123516583",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774338"
+    },
+    "caption": "",
+    "width": 80,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-02T16:02:32.482+02:00",
+    "createdAt": "2022-08-15T11:47:17.514+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.514+02:00",
+      "updatedAt": "2022-09-02T16:02:32.482+02:00",
+      "publishedAt": "2022-09-02T16:03:00.366+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "currentVersion": "271016976",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123516584",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47774336"
+    },
+    "caption": "",
+    "width": 100,
+    "marginTop": 10,
+    "marginLeft": 0,
+    "updatedAt": "2022-09-02T16:01:19.710+02:00",
+    "createdAt": "2022-08-15T11:47:17.528+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.528+02:00",
+      "updatedAt": "2022-09-02T16:01:19.710+02:00",
+      "publishedAt": "2022-09-02T16:03:00.360+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.387+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "currentVersion": "271016584",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "128557132",
+    "video": {
       "url": "https://vimeo.com/739577418/c19fabceb1",
       "title": "Ministry of Justice",
       "width": 360,
@@ -33,28 +123,29 @@
       "providerUid": "739577418",
       "thumbnailUrl": "https://i.vimeocdn.com/video/1488361625-ad495d121d7bb738a05a1bcf90dc01729a395f2232a240be6edece42ea46ef02-d_295x166"
     },
-    "isVisible": false,
-    "preview": null,
-    "updatedAt": "2022-09-01T15:16:12.543+02:00",
-    "createdAt": "2022-08-15T10:52:52.503+02:00",
-    "position": 52,
+    "autoplay": true,
+    "hasControls": false,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 30,
+    "marginTop": 0,
+    "marginLeft": 60,
+    "updatedAt": "2022-09-02T16:00:19.305+02:00",
+    "createdAt": "2022-08-29T14:06:34.103+02:00",
     "meta": {
-      "createdAt": "2022-08-15T10:52:52.503+02:00",
-      "updatedAt": "2022-09-01T15:16:12.543+02:00",
-      "publishedAt": "2022-09-01T16:39:12.725+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "createdAt": "2022-08-29T14:06:34.103+02:00",
+      "updatedAt": "2022-09-02T16:00:19.305+02:00",
+      "publishedAt": "2022-09-02T16:03:00.370+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.280+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "updated",
+      "status": "published",
       "isValid": true,
-      "currentVersion": "268642300",
+      "currentVersion": "271016303",
       "stage": null
     },
-    "itemType": "1641543",
-    "creator": {
-      "id": "28650",
-      "type": "user"
-    }
+    "itemType": "1641762"
   },
   {
     "id": "132655995",
@@ -434,35 +525,6 @@
       "id": "138284",
       "type": "access_token"
     }
-  },
-  {
-    "id": "123516583",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47774335"
-    },
-    "caption": "",
-    "width": 50,
-    "marginTop": 0,
-    "marginLeft": 12,
-    "updatedAt": "2022-08-31T14:08:13.785+02:00",
-    "createdAt": "2022-08-15T11:47:17.514+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.514+02:00",
-      "updatedAt": "2022-08-31T14:08:13.785+02:00",
-      "publishedAt": "2022-09-01T16:39:12.740+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "currentVersion": "266832179",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "123516585",
@@ -1044,41 +1106,6 @@
     "itemType": "1643993"
   },
   {
-    "id": "128557132",
-    "video": {
-      "url": "https://vimeo.com/739577418/c19fabceb1",
-      "title": "Ministry of Justice",
-      "width": 360,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "739577418",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1488361625-ad495d121d7bb738a05a1bcf90dc01729a395f2232a240be6edece42ea46ef02-d_295x166"
-    },
-    "autoplay": true,
-    "hasControls": false,
-    "loops": true,
-    "hasAudio": false,
-    "caption": "",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "updatedAt": "2022-08-29T14:06:34.107+02:00",
-    "createdAt": "2022-08-29T14:06:34.103+02:00",
-    "meta": {
-      "createdAt": "2022-08-29T14:06:34.103+02:00",
-      "updatedAt": "2022-08-29T14:06:34.107+02:00",
-      "publishedAt": "2022-08-29T14:15:12.280+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.280+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "currentVersion": "264069546",
-      "stage": null
-    },
-    "itemType": "1641762"
-  },
-  {
     "id": "120718363",
     "title": "Random Studio",
     "introBlocks": [
@@ -1184,35 +1211,6 @@
       "stage": null
     },
     "itemType": "1989582"
-  },
-  {
-    "id": "123516584",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47774336"
-    },
-    "caption": "",
-    "width": 55,
-    "marginTop": 10,
-    "marginLeft": 40,
-    "updatedAt": "2022-08-15T12:09:31.815+02:00",
-    "createdAt": "2022-08-15T11:47:17.528+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.528+02:00",
-      "updatedAt": "2022-08-15T12:09:31.815+02:00",
-      "publishedAt": "2022-08-29T14:15:12.387+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.387+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "currentVersion": "258315002",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "123515739",
