@@ -1,5 +1,128 @@
 [
   {
+    "id": "140797744",
+    "details": "{\n  \"For\": \"PANGAIA\",\n  \"Role\": \"Experience Design, Art Direction, Creative Technology, Prototyping, Spatial Design, Sound Design\"\n}",
+    "intro": "We designed a sensory forest experience housed in a Nature Capsule for Pangaia’s pop-up at The Grove in LA. The brand is driven by a commitment to the environment, creating bio-engineered, sustainable materials through new technologies, and we wanted this space to embody their inspiration: the symphonic ecosystem of the natural world. ",
+    "relatedProjectsTitle": "Other work",
+    "title": "A nature capsule for Pangaia",
+    "content": [
+      "140797737",
+      "140797742",
+      "140797738",
+      "140799693",
+      "140797740",
+      "140797743",
+      "140797741"
+    ],
+    "relatedProjects": [
+      "120810445",
+      "121605686",
+      "120810884"
+    ],
+    "slug": "a-nature-capsule-for-pangaia",
+    "tags": "[\n  \"installations\",\n  \"spaces\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190464"
+    },
+    "opengraph": {
+      "image": "48190237",
+      "title": "a nature capsule for Pangaia",
+      "description": "A pop up store with a scent and soundscape for Pangaia in Los Angeles",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-08T17:12:57.825+02:00",
+    "createdAt": "2022-09-08T10:11:20.422+02:00",
+    "position": 2,
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.422+02:00",
+      "updatedAt": "2022-09-08T17:12:57.825+02:00",
+      "publishedAt": "2022-09-08T17:13:06.696+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.525+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278496667",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "29417",
+      "type": "user"
+    }
+  },
+  {
+    "id": "140797742",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190233"
+    },
+    "caption": "",
+    "width": 45,
+    "marginTop": -60,
+    "marginLeft": 55,
+    "updatedAt": "2022-09-08T17:12:57.793+02:00",
+    "createdAt": "2022-09-08T10:11:20.369+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.369+02:00",
+      "updatedAt": "2022-09-08T17:12:57.793+02:00",
+      "publishedAt": "2022-09-08T17:13:06.724+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.543+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278496666",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "140797737",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190237"
+    },
+    "caption": "",
+    "width": 35,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-08T17:12:40.356+02:00",
+    "createdAt": "2022-09-08T10:11:20.257+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.257+02:00",
+      "updatedAt": "2022-09-08T17:12:40.356+02:00",
+      "publishedAt": "2022-09-08T17:13:06.717+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.539+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278496650",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
     "id": "123515639",
     "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
     "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? In 2020, we got the opportunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
@@ -14,32 +137,32 @@
       "129054707",
       "123515738",
       "123516583",
-      "128557132",
       "123516585",
+      "140598805",
       "123515739",
       "132655995"
     ],
     "relatedProjects": [],
     "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
-    "tags": null,
+    "tags": "[]",
     "featuredImage": {
       "alt": null,
       "title": null,
       "customData": {},
       "focalPoint": null,
-      "uploadId": "48065978"
+      "uploadId": "48160606"
     },
     "opengraph": null,
     "featuredVideo": null,
     "isVisible": false,
     "preview": null,
-    "updatedAt": "2022-09-05T10:22:56.964+02:00",
+    "updatedAt": "2022-09-08T16:50:21.846+02:00",
     "createdAt": "2022-08-15T10:52:52.503+02:00",
-    "position": 52,
+    "position": 53,
     "meta": {
       "createdAt": "2022-08-15T10:52:52.503+02:00",
-      "updatedAt": "2022-09-05T10:22:56.964+02:00",
-      "publishedAt": "2022-09-05T10:23:00.480+02:00",
+      "updatedAt": "2022-09-08T16:50:21.846+02:00",
+      "publishedAt": "2022-09-08T16:50:23.297+02:00",
       "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
@@ -47,7 +170,7 @@
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "275508427",
+      "currentVersion": "278488566",
       "stage": null
     },
     "itemType": "1641543",
@@ -57,119 +180,20 @@
     }
   },
   {
-    "id": "123516583",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48079736"
-    },
-    "caption": "",
-    "width": 40,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-09-05T10:22:56.936+02:00",
-    "createdAt": "2022-08-15T11:47:17.514+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.514+02:00",
-      "updatedAt": "2022-09-05T10:22:56.936+02:00",
-      "publishedAt": "2022-09-05T10:23:00.500+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "275508426",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123516584",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48079731"
-    },
-    "caption": "",
-    "width": 100,
-    "marginTop": 10,
-    "marginLeft": 0,
-    "updatedAt": "2022-09-05T10:22:56.902+02:00",
-    "createdAt": "2022-08-15T11:47:17.528+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.528+02:00",
-      "updatedAt": "2022-09-05T10:22:56.902+02:00",
-      "publishedAt": "2022-09-05T10:23:00.495+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.387+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "275508425",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "128557132",
-    "video": {
-      "url": "https://vimeo.com/739577418/c19fabceb1",
-      "title": "Ministry of Justice",
-      "width": 360,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "739577418",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1488361625-ad495d121d7bb738a05a1bcf90dc01729a395f2232a240be6edece42ea46ef02-d_295x166"
-    },
-    "autoplay": true,
-    "hasControls": false,
-    "loops": true,
-    "hasAudio": false,
-    "caption": "",
-    "width": 30,
-    "marginTop": 0,
-    "marginLeft": 60,
-    "updatedAt": "2022-09-02T16:00:19.305+02:00",
-    "createdAt": "2022-08-29T14:06:34.103+02:00",
-    "meta": {
-      "createdAt": "2022-08-29T14:06:34.103+02:00",
-      "updatedAt": "2022-09-02T16:00:19.305+02:00",
-      "publishedAt": "2022-09-02T16:03:00.370+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.280+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "271016303",
-      "stage": null
-    },
-    "itemType": "1641762"
-  },
-  {
     "id": "132655995",
     "slides": [
       "132655993",
       "132655994"
     ],
-    "width": 80,
+    "width": 60,
     "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-09-01T15:16:12.518+02:00",
+    "marginLeft": 20,
+    "updatedAt": "2022-09-08T16:50:21.828+02:00",
     "createdAt": "2022-09-01T15:16:12.512+02:00",
     "meta": {
       "createdAt": "2022-09-01T15:16:12.512+02:00",
-      "updatedAt": "2022-09-01T15:16:12.518+02:00",
-      "publishedAt": "2022-09-01T16:39:12.751+02:00",
+      "updatedAt": "2022-09-08T16:50:21.828+02:00",
+      "publishedAt": "2022-09-08T16:50:23.317+02:00",
       "firstPublishedAt": "2022-09-01T16:39:12.751+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
@@ -177,7 +201,7 @@
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "268642299",
+      "currentVersion": "278488565",
       "stage": null
     },
     "itemType": "1643994"
@@ -189,15 +213,15 @@
       "title": null,
       "customData": {},
       "focalPoint": null,
-      "uploadId": "48048327"
+      "uploadId": "48192657"
     },
     "video": null,
-    "updatedAt": "2022-09-01T15:16:12.493+02:00",
+    "updatedAt": "2022-09-08T16:46:45.392+02:00",
     "createdAt": "2022-09-01T15:16:12.488+02:00",
     "meta": {
       "createdAt": "2022-09-01T15:16:12.488+02:00",
-      "updatedAt": "2022-09-01T15:16:12.493+02:00",
-      "publishedAt": "2022-09-01T16:39:12.764+02:00",
+      "updatedAt": "2022-09-08T16:46:45.392+02:00",
+      "publishedAt": "2022-09-08T16:47:20.982+02:00",
       "firstPublishedAt": "2022-09-01T16:39:12.764+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
@@ -205,7 +229,7 @@
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "268642298",
+      "currentVersion": "278487287",
       "stage": null
     },
     "itemType": "1641803"
@@ -217,15 +241,15 @@
       "title": null,
       "customData": {},
       "focalPoint": null,
-      "uploadId": "48048323"
+      "uploadId": "48192654"
     },
     "video": null,
-    "updatedAt": "2022-09-01T15:16:12.467+02:00",
+    "updatedAt": "2022-09-08T16:46:45.361+02:00",
     "createdAt": "2022-09-01T15:16:12.461+02:00",
     "meta": {
       "createdAt": "2022-09-01T15:16:12.461+02:00",
-      "updatedAt": "2022-09-01T15:16:12.467+02:00",
-      "publishedAt": "2022-09-01T16:39:12.760+02:00",
+      "updatedAt": "2022-09-08T16:46:45.361+02:00",
+      "publishedAt": "2022-09-08T16:47:20.976+02:00",
       "firstPublishedAt": "2022-09-01T16:39:12.760+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
@@ -233,7 +257,972 @@
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "268642297",
+      "currentVersion": "278487286",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140797738",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The capsule offers visitors a soothing experience that transports them into the diverse woodland biomes of a Californian forest. Forgoing the visual, this forest engages the body with scent and sound to recreate the feeling of being immersed in nature. \n\n\nComposed with a spatial audio software, the sonic landscape teases out the different sounds of a forest based on in-depth research on the area’s local species and weather. From the insects in the earth and the birds in the sky to the gentle patter of rain on the leaves and the distant sounds of the Pacific Ocean, the sounds play out from a set-up of many speakers placed at different heights to build a textured, dynamic sonic space that evolves throughout the day. Against the clean and white laboratory aesthetic of the interior design, the speaker installation takes centre stage, drawing attention to the sound experience. \n",
+    "updatedAt": "2022-09-08T11:27:21.856+02:00",
+    "createdAt": "2022-09-08T10:11:20.284+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.284+02:00",
+      "updatedAt": "2022-09-08T11:27:21.856+02:00",
+      "publishedAt": "2022-09-08T11:27:23.358+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.546+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278458525",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "140799693",
+    "slides": [
+      "140799691",
+      "140799692"
+    ],
+    "width": 30,
+    "marginTop": 0,
+    "marginLeft": 15,
+    "updatedAt": "2022-09-08T11:15:31.309+02:00",
+    "createdAt": "2022-09-08T11:15:31.304+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T11:15:31.304+02:00",
+      "updatedAt": "2022-09-08T11:15:31.309+02:00",
+      "publishedAt": "2022-09-08T11:15:33.367+02:00",
+      "firstPublishedAt": "2022-09-08T11:15:33.368+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278458187",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "140799692",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190452"
+    },
+    "video": null,
+    "updatedAt": "2022-09-08T11:15:31.289+02:00",
+    "createdAt": "2022-09-08T11:15:31.285+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T11:15:31.285+02:00",
+      "updatedAt": "2022-09-08T11:15:31.289+02:00",
+      "publishedAt": "2022-09-08T11:15:33.382+02:00",
+      "firstPublishedAt": "2022-09-08T11:15:33.382+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278458186",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140799691",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190236"
+    },
+    "video": null,
+    "updatedAt": "2022-09-08T11:15:31.265+02:00",
+    "createdAt": "2022-09-08T11:15:31.260+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T11:15:31.260+02:00",
+      "updatedAt": "2022-09-08T11:15:31.265+02:00",
+      "publishedAt": "2022-09-08T11:15:33.377+02:00",
+      "firstPublishedAt": "2022-09-08T11:15:33.377+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278458185",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140797740",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190234"
+    },
+    "caption": "",
+    "width": 35,
+    "marginTop": 0,
+    "marginLeft": 65,
+    "updatedAt": "2022-09-08T11:11:33.397+02:00",
+    "createdAt": "2022-09-08T10:11:20.328+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.328+02:00",
+      "updatedAt": "2022-09-08T11:11:33.397+02:00",
+      "publishedAt": "2022-09-08T11:11:34.746+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.553+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278457757",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "122156436",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Art Direction, Installation Design, Interactive Design, Creative Technology\"\n}",
+    "intro": "We were commissioned by Vans to make an in-store installation at Milan’s concept store OREFICI 11. Channelling the brand’s longtime connections to music and self-expression, we created the AV jambox; a playful intervention that transforms the store into a place to hang out with friends.",
+    "relatedProjectsTitle": "Other work",
+    "title": "An audio-visual jambox for Vans in Milan",
+    "content": [
+      "122439448",
+      "122156435",
+      "122439542",
+      "122439580",
+      "122440023",
+      "122440039",
+      "122440045",
+      "122440122",
+      "122440139",
+      "122440342",
+      "122440395",
+      "122440503",
+      "122440542"
+    ],
+    "relatedProjects": [
+      "120810903",
+      "120810884"
+    ],
+    "slug": "an-audio-visual-jambox-for-vans-in-milan",
+    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"installations\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46914493"
+    },
+    "opengraph": null,
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-08T10:54:37.288+02:00",
+    "createdAt": "2022-06-10T14:53:18.102+02:00",
+    "position": 10,
+    "meta": {
+      "createdAt": "2022-06-10T14:53:18.102+02:00",
+      "updatedAt": "2022-09-08T10:54:37.288+02:00",
+      "publishedAt": "2022-09-08T10:54:37.417+02:00",
+      "firstPublishedAt": "2022-06-29T11:47:43.289+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278454394",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
+    "id": "140797743",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190244"
+    },
+    "caption": "",
+    "width": 25,
+    "marginTop": -80,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-08T10:37:36.265+02:00",
+    "createdAt": "2022-09-08T10:11:20.391+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.391+02:00",
+      "updatedAt": "2022-09-08T10:37:36.265+02:00",
+      "publishedAt": "2022-09-08T10:38:19.793+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.555+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278452261",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "140797741",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "With notes of moss, pinecones, wood and rain, the capsule is infused with a custom scent to heighten the experience of the forest. Immersed in a calm sensory experience, visitors can explore the brand’s ready-to-wear bio-based products which line the space, watch a mini-documentary on deforestation and even plant a tree. Once outside again, a small window on the capsule’s exterior showcases Pangaia’s textile innovation. ",
+    "updatedAt": "2022-09-08T10:11:20.354+02:00",
+    "createdAt": "2022-09-08T10:11:20.349+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.349+02:00",
+      "updatedAt": "2022-09-08T10:11:20.354+02:00",
+      "publishedAt": "2022-09-08T10:16:29.557+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.557+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278449931",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123516583",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48160612"
+    },
+    "caption": "",
+    "width": 50,
+    "marginTop": 0,
+    "marginLeft": 50,
+    "updatedAt": "2022-09-07T15:38:10.811+02:00",
+    "createdAt": "2022-08-15T11:47:17.514+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.514+02:00",
+      "updatedAt": "2022-09-07T15:38:10.811+02:00",
+      "publishedAt": "2022-09-08T16:47:20.958+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277936330",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "140598805",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48160742"
+    },
+    "caption": "",
+    "width": 40,
+    "marginTop": 0,
+    "marginLeft": 40,
+    "updatedAt": "2022-09-07T15:36:39.897+02:00",
+    "createdAt": "2022-09-07T15:35:40.256+02:00",
+    "meta": {
+      "createdAt": "2022-09-07T15:35:40.256+02:00",
+      "updatedAt": "2022-09-07T15:36:39.897+02:00",
+      "publishedAt": "2022-09-07T15:36:54.609+02:00",
+      "firstPublishedAt": "2022-09-07T15:36:54.609+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277936234",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123515739",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "A digital map will communicate the state of each Sluispoort, giving insight to the current situation, including available spaces and a preview of scheduled events. During this testing phase, we are collecting data on how people use these new structures, how the Sluispoorten interact with each other and how the digital map influences their use. Using data from this prototyping phase, the final design will be fully influenced by how the structures are used on the ground.\n\n",
+    "updatedAt": "2022-09-07T15:26:52.564+02:00",
+    "createdAt": "2022-08-15T10:56:54.556+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T10:56:54.556+02:00",
+      "updatedAt": "2022-09-07T15:26:52.564+02:00",
+      "publishedAt": "2022-09-07T15:27:33.634+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.396+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277933427",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123515738",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Informed by detailed data of how employeespeople move through the space and what they would like to use it for, we came up with the Sluispoort – a responsive mechanism that optimises the flow of water – as the backbone for a series of modular spatial interventions. Intelligent structures that can both create new spaces that facilitate exchange whilst also influencing the existing architecture around it, these Sluispoorten can be customised to respond to a range of needs. \n\nDepending on the activity in the space, they will also be able to change state, opening or closing as required – for example, to create a quiet, clean portal through a busy space during rush hour then change into smaller meeting compartments later in the day. At this prototyping stage, there are four archetypes that are operated manually but they will eventually be autonomous and responsive to data received through sensors and able to predict the activity of the space. ",
+    "updatedAt": "2022-09-07T15:26:52.505+02:00",
+    "createdAt": "2022-08-15T10:56:54.542+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T10:56:54.542+02:00",
+      "updatedAt": "2022-09-07T15:26:52.505+02:00",
+      "publishedAt": "2022-09-07T15:27:33.622+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.380+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277933425",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123515736",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The bridge between the Ministry of Justice and the Ministry of the Interior, the space in question is bustling with activity between 12pm and 1pm when it hosts lunch for up to 750 employees, yet is mostly unused for the rest of the day apart from special events and receptions. In collaboration with Studio LONK, we embarked on a longterm R&D project to transform the third floor into a fluid, dynamic and multifunctional space – without touching the existing architecture.",
+    "updatedAt": "2022-09-07T15:25:05.549+02:00",
+    "createdAt": "2022-08-15T10:56:54.512+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T10:56:54.512+02:00",
+      "updatedAt": "2022-09-07T15:25:05.549+02:00",
+      "publishedAt": "2022-09-07T15:27:33.614+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.284+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277932994",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123516585",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48160613"
+    },
+    "caption": "",
+    "width": 30,
+    "marginTop": -45,
+    "marginLeft": 0,
+    "updatedAt": "2022-09-07T15:17:23.430+02:00",
+    "createdAt": "2022-08-15T11:47:17.543+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.543+02:00",
+      "updatedAt": "2022-09-07T15:17:23.430+02:00",
+      "publishedAt": "2022-09-07T15:17:28.681+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.390+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277932559",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123516584",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48160610"
+    },
+    "caption": "",
+    "width": 100,
+    "marginTop": 10,
+    "marginLeft": 0,
+    "updatedAt": "2022-09-07T15:17:23.371+02:00",
+    "createdAt": "2022-08-15T11:47:17.528+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.528+02:00",
+      "updatedAt": "2022-09-07T15:17:23.371+02:00",
+      "publishedAt": "2022-09-07T15:17:28.670+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.387+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277932557",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123032928",
+    "details": "{\n  \"Role\": \"Creative Concept, Art Direction, Spatial Design, Experience Design, Software Development, Prototyping\",\n  \"For\": \"Paco Rabanne\"\n}",
+    "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
+    "relatedProjectsTitle": "Other work",
+    "title": "Endless sunsets for Paco Rabanne in Paris",
+    "content": [
+      "130830148",
+      "123033274",
+      "123033275",
+      "123033154",
+      "123033424",
+      "123033742",
+      "123033442",
+      "123033671",
+      "123033807",
+      "123914805",
+      "123033850",
+      "123033851"
+    ],
+    "relatedProjects": [],
+    "slug": "endless-sunsets-for-paco-rabanne",
+    "tags": null,
+    "featuredImage": null,
+    "opengraph": null,
+    "featuredVideo": {
+      "url": "https://vimeo.com/744612424/a6d9236953",
+      "title": "Paco Rabanne 03 1920x1080.mp4",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "744612424",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
+    },
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-07T11:57:41.773+02:00",
+    "createdAt": "2022-08-04T10:36:17.308+02:00",
+    "position": 52,
+    "meta": {
+      "createdAt": "2022-08-04T10:36:17.308+02:00",
+      "updatedAt": "2022-09-07T11:57:41.773+02:00",
+      "publishedAt": "2022-09-07T11:57:59.782+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.754+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "updated",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277458651",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "29417",
+      "type": "user"
+    }
+  },
+  {
+    "id": "120810949",
+    "details": "{\n  \"For\": \"Nike France\",\n  \"Role\": \"Creative Concept, Experience Design, Art Direction, Spatial Design, Design Development, Prototyping, Software Development, Creative Technology, Installation Engineering\",\n  \"With\": \"[Satis&Fy](https://satis-fy.com/), [Jean-Baptiste Fastrez](http://www.jeanbaptistefastrez.com/), [Thomas Hervé](https://www.hervethomas.com/)\",\n  \"Photos\": \"[Benoit Florençon](https://www.benoitflorencon.com/)\",\n  \"Video\": \"[Dixhuit](https://dix-huit.com/)\"\n}",
+    "intro": "We teamed up with Nike to help translate their Move to Zero campaign into a physical environment for a store takeover at the House of Innovation in Paris. The brand’s longterm journey towards zero carbon and waste is a constellation of different stories and ideas that has so far mostly lived online as a [Circular Design Guide](https://www.nikecirculardesign.com/). \n\nWe were excited to tackle the challenge of transforming the website into a dynamic physical space, full of tangible, moving parts; one that both brings customers into the brand’s sustainability story, but also informs, educates and inspires them to become part of the journey by getting involved in caring for their own products.",
+    "relatedProjectsTitle": "Other work",
+    "title": "Nike move-to-zero House of Innovation takeover",
+    "content": [
+      "120810919",
+      "120810920",
+      "120810921",
+      "120810925",
+      "120810926",
+      "120810927",
+      "120810935",
+      "120810939",
+      "120810945",
+      "120810946",
+      "120810947",
+      "120810948"
+    ],
+    "relatedProjects": [],
+    "slug": "nike-move-to-zero-house-of-innovation-takeover",
+    "tags": "[]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46222290"
+    },
+    "opengraph": {
+      "image": "46221655",
+      "title": "Nike Move to Zero House of Innovation Takeover",
+      "description": "We teamed up with Nike to help translate their Move to Zero campaign into a physical environment for a store takeover at the House of Innovation in Paris. Th...",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-07T11:48:31.863+02:00",
+    "createdAt": "2022-04-04T16:13:55.627+02:00",
+    "position": 11,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:55.627+02:00",
+      "updatedAt": "2022-09-07T11:48:31.863+02:00",
+      "publishedAt": "2022-09-07T11:48:35.418+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:55.999+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277458080",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810396",
+    "details": "{\n  \"For\": \"Dom Pérignon\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Installation Engineering, Research\",\n  \"With\": \"Fiction Factory – Physical Production\"\n}",
+    "intro": "We were invited by Dom Pérignon to design and build the scenography  for a series of pop-up spaces in London, Berlin, Madrid and Tokyo to  showcase their collaboration with Lady Gaga. Revolving around their  shared passion for creative freedom, we drew on the energy of the  campaign to translate its lavish digital aesthetic into a physical  space: the Glitch Palace.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A glitch palace for the Dom Pérignon x Lady Gaga collaboration",
+    "content": [
+      "120810383",
+      "120810384",
+      "120810385",
+      "120810386",
+      "120810387",
+      "120810388",
+      "120810389",
+      "120810393",
+      "120810394",
+      "120810395"
+    ],
+    "relatedProjects": [],
+    "slug": "a-glitch-palace-for-the-dom-perignon-lady-gaga-collaboration",
+    "tags": "[]",
+    "featuredImage": null,
+    "opengraph": {
+      "image": "46221571",
+      "title": null,
+      "description": "How can you build a digital world in physical space? We were invited by Dom Pérignon to create the scenography for a series of pop-up spaces in London, Berli...",
+      "twitterCard": null
+    },
+    "featuredVideo": {
+      "url": "https://vimeo.com/639898328/d0bca9630e",
+      "title": "Table Morping Isolated_GridFloor",
+      "width": 100,
+      "height": 75,
+      "provider": "vimeo",
+      "providerUid": "639898328",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1286987415-818cf6d7024f2e9d061b9963160cfb5b3e772bd06b01b967c_100x75?r=pad"
+    },
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-09-07T11:47:36.633+02:00",
+    "createdAt": "2022-04-04T16:13:03.710+02:00",
+    "position": 8,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:03.710+02:00",
+      "updatedAt": "2022-09-07T11:47:36.633+02:00",
+      "publishedAt": "2022-09-07T11:47:41.098+02:00",
+      "firstPublishedAt": "2022-04-04T16:13:04.039+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277458053",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "129054707",
+    "slides": [
+      "129054705",
+      "129054706"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 55,
+    "updatedAt": "2022-09-07T11:23:57.612+02:00",
+    "createdAt": "2022-08-30T11:34:43.122+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.122+02:00",
+      "updatedAt": "2022-09-07T11:23:57.612+02:00",
+      "publishedAt": "2022-09-07T11:24:00.762+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.072+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457085",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129054706",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125080"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.586+02:00",
+    "createdAt": "2022-08-30T11:34:43.098+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.098+02:00",
+      "updatedAt": "2022-09-07T11:23:57.586+02:00",
+      "publishedAt": "2022-09-07T11:24:00.777+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.087+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457084",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129054705",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125079"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.553+02:00",
+    "createdAt": "2022-08-30T11:34:43.074+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.074+02:00",
+      "updatedAt": "2022-09-07T11:23:57.553+02:00",
+      "publishedAt": "2022-09-07T11:24:00.772+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.083+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457083",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129054345",
+    "slides": [
+      "129054343",
+      "129054344"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-07T11:23:57.523+02:00",
+    "createdAt": "2022-08-30T11:33:08.273+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:33:08.273+02:00",
+      "updatedAt": "2022-09-07T11:23:57.523+02:00",
+      "publishedAt": "2022-09-07T11:24:00.742+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.055+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457082",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129054344",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125078"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.479+02:00",
+    "createdAt": "2022-08-30T11:33:08.251+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:33:08.251+02:00",
+      "updatedAt": "2022-09-07T11:23:57.479+02:00",
+      "publishedAt": "2022-09-07T11:24:00.758+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.069+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457081",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129054343",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125077"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.450+02:00",
+    "createdAt": "2022-08-30T11:33:08.229+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:33:08.229+02:00",
+      "updatedAt": "2022-09-07T11:23:57.450+02:00",
+      "publishedAt": "2022-09-07T11:24:00.751+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.065+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457080",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053606",
+    "slides": [
+      "129053605",
+      "130831716"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 55,
+    "updatedAt": "2022-09-07T11:23:57.422+02:00",
+    "createdAt": "2022-08-30T11:29:55.880+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:55.880+02:00",
+      "updatedAt": "2022-09-07T11:23:57.422+02:00",
+      "publishedAt": "2022-09-07T11:24:00.722+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.041+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457079",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "130831716",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125076"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.397+02:00",
+    "createdAt": "2022-08-31T10:38:53.752+02:00",
+    "meta": {
+      "createdAt": "2022-08-31T10:38:53.752+02:00",
+      "updatedAt": "2022-09-07T11:23:57.397+02:00",
+      "publishedAt": "2022-09-07T11:24:00.738+02:00",
+      "firstPublishedAt": "2022-08-31T10:40:33.261+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457078",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053605",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125075"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.372+02:00",
+    "createdAt": "2022-08-30T11:29:55.862+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:55.862+02:00",
+      "updatedAt": "2022-09-07T11:23:57.372+02:00",
+      "publishedAt": "2022-09-07T11:24:00.732+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.051+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457077",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053593",
+    "slides": [
+      "129053591",
+      "129053592"
+    ],
+    "width": 40,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-07T11:23:57.337+02:00",
+    "createdAt": "2022-08-30T11:29:22.851+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.851+02:00",
+      "updatedAt": "2022-09-07T11:23:57.337+02:00",
+      "publishedAt": "2022-09-07T11:24:00.699+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.022+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457076",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129053592",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125073"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.310+02:00",
+    "createdAt": "2022-08-30T11:29:22.826+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.826+02:00",
+      "updatedAt": "2022-09-07T11:23:57.310+02:00",
+      "publishedAt": "2022-09-07T11:24:00.717+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.039+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457075",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053591",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125072"
+    },
+    "video": null,
+    "updatedAt": "2022-09-07T11:23:57.271+02:00",
+    "createdAt": "2022-08-30T11:29:22.800+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.800+02:00",
+      "updatedAt": "2022-09-07T11:23:57.271+02:00",
+      "publishedAt": "2022-09-07T11:24:00.711+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.034+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277457074",
       "stage": null
     },
     "itemType": "1641803"
@@ -398,7 +1387,7 @@
     "preview": null,
     "updatedAt": "2022-09-01T14:09:21.963+02:00",
     "createdAt": "2022-04-04T16:13:39.266+02:00",
-    "position": 3,
+    "position": 4,
     "meta": {
       "createdAt": "2022-04-04T16:13:39.266+02:00",
       "updatedAt": "2022-09-01T14:09:21.963+02:00",
@@ -529,7 +1518,7 @@
     "preview": null,
     "updatedAt": "2022-09-01T14:09:17.283+02:00",
     "createdAt": "2022-04-04T16:13:08.112+02:00",
-    "position": 2,
+    "position": 3,
     "meta": {
       "createdAt": "2022-04-04T16:13:08.112+02:00",
       "updatedAt": "2022-09-01T14:09:17.283+02:00",
@@ -548,96 +1537,6 @@
     "creator": {
       "id": "138284",
       "type": "access_token"
-    }
-  },
-  {
-    "id": "123516585",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47774337"
-    },
-    "caption": "",
-    "width": 30,
-    "marginTop": -45,
-    "marginLeft": 0,
-    "updatedAt": "2022-08-31T14:06:42.147+02:00",
-    "createdAt": "2022-08-15T11:47:17.543+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.543+02:00",
-      "updatedAt": "2022-08-31T14:06:42.147+02:00",
-      "publishedAt": "2022-09-01T16:39:12.747+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.390+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266823870",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123032928",
-    "details": "{\n  \"Role\": \"\"\n}",
-    "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
-    "relatedProjectsTitle": "Other work",
-    "title": "Endless sunsets for Paco Rabanne in Paris",
-    "content": [
-      "130830148",
-      "123033274",
-      "123033275",
-      "123033154",
-      "123033424",
-      "123033742",
-      "123033442",
-      "123033671",
-      "123033807",
-      "123914805",
-      "123033850",
-      "123033851"
-    ],
-    "relatedProjects": [],
-    "slug": "endless-sunsets-for-paco-rabanne",
-    "tags": null,
-    "featuredImage": null,
-    "opengraph": null,
-    "featuredVideo": {
-      "url": "https://vimeo.com/744612424/a6d9236953",
-      "title": "Paco Rabanne 03 1920x1080.mp4",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "744612424",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
-    },
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-08-31T13:14:36.120+02:00",
-    "createdAt": "2022-08-04T10:36:17.308+02:00",
-    "position": 51,
-    "meta": {
-      "createdAt": "2022-08-04T10:36:17.308+02:00",
-      "updatedAt": "2022-08-31T13:14:36.120+02:00",
-      "publishedAt": "2022-08-31T13:15:44.082+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.754+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266800866",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "29417",
-      "type": "user"
     }
   },
   {
@@ -668,7 +1567,7 @@
       "firstPublishedAt": "2022-08-04T10:58:26.772+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -699,7 +1598,7 @@
       "firstPublishedAt": "2022-08-04T10:58:26.777+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -730,7 +1629,7 @@
       "firstPublishedAt": "2022-08-04T10:58:26.780+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -738,61 +1637,6 @@
       "stage": null
     },
     "itemType": "1643992"
-  },
-  {
-    "id": "129053606",
-    "slides": [
-      "129053605",
-      "130831716"
-    ],
-    "width": 40,
-    "marginTop": -25,
-    "marginLeft": 55,
-    "updatedAt": "2022-08-31T10:38:53.777+02:00",
-    "createdAt": "2022-08-30T11:29:55.880+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:55.880+02:00",
-      "updatedAt": "2022-08-31T10:38:53.777+02:00",
-      "publishedAt": "2022-08-31T10:40:33.249+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.041+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266598332",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "130831716",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48030055"
-    },
-    "video": null,
-    "updatedAt": "2022-08-31T10:38:53.756+02:00",
-    "createdAt": "2022-08-31T10:38:53.752+02:00",
-    "meta": {
-      "createdAt": "2022-08-31T10:38:53.752+02:00",
-      "updatedAt": "2022-08-31T10:38:53.756+02:00",
-      "publishedAt": "2022-08-31T10:40:33.261+02:00",
-      "firstPublishedAt": "2022-08-31T10:40:33.261+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266598331",
-      "stage": null
-    },
-    "itemType": "1641803"
   },
   {
     "id": "123914805",
@@ -822,7 +1666,7 @@
       "firstPublishedAt": "2022-08-30T16:19:38.112+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -867,307 +1711,6 @@
       "stage": null
     },
     "itemType": "1641762"
-  },
-  {
-    "id": "129054345",
-    "slides": [
-      "129054343",
-      "129054344"
-    ],
-    "width": 40,
-    "marginTop": -25,
-    "marginLeft": 10,
-    "updatedAt": "2022-08-30T14:22:27.417+02:00",
-    "createdAt": "2022-08-30T11:33:08.273+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:33:08.273+02:00",
-      "updatedAt": "2022-08-30T14:22:27.417+02:00",
-      "publishedAt": "2022-08-30T14:33:57.055+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.055+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264831681",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "129054707",
-    "slides": [
-      "129054705",
-      "129054706"
-    ],
-    "width": 40,
-    "marginTop": -25,
-    "marginLeft": 55,
-    "updatedAt": "2022-08-30T14:17:32.727+02:00",
-    "createdAt": "2022-08-30T11:34:43.122+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:34:43.122+02:00",
-      "updatedAt": "2022-08-30T14:17:32.727+02:00",
-      "publishedAt": "2022-08-30T14:33:57.072+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.072+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264830606",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "129054706",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014587"
-    },
-    "video": null,
-    "updatedAt": "2022-08-30T11:34:43.102+02:00",
-    "createdAt": "2022-08-30T11:34:43.098+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:34:43.098+02:00",
-      "updatedAt": "2022-08-30T11:34:43.102+02:00",
-      "publishedAt": "2022-08-30T14:33:57.087+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.087+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264633519",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129054705",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014584"
-    },
-    "video": null,
-    "updatedAt": "2022-08-30T11:34:43.078+02:00",
-    "createdAt": "2022-08-30T11:34:43.074+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:34:43.074+02:00",
-      "updatedAt": "2022-08-30T11:34:43.078+02:00",
-      "publishedAt": "2022-08-30T14:33:57.083+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.083+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264633518",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129054344",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014555"
-    },
-    "video": null,
-    "updatedAt": "2022-08-30T11:33:08.255+02:00",
-    "createdAt": "2022-08-30T11:33:08.251+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:33:08.251+02:00",
-      "updatedAt": "2022-08-30T11:33:08.255+02:00",
-      "publishedAt": "2022-08-30T14:33:57.069+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.069+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264633098",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129054343",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014550"
-    },
-    "video": null,
-    "updatedAt": "2022-08-30T11:33:08.233+02:00",
-    "createdAt": "2022-08-30T11:33:08.229+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:33:08.229+02:00",
-      "updatedAt": "2022-08-30T11:33:08.233+02:00",
-      "publishedAt": "2022-08-30T14:33:57.065+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.065+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264633097",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129053605",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014531"
-    },
-    "video": null,
-    "updatedAt": "2022-08-30T11:31:13.053+02:00",
-    "createdAt": "2022-08-30T11:29:55.862+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:55.862+02:00",
-      "updatedAt": "2022-08-30T11:31:13.053+02:00",
-      "publishedAt": "2022-08-30T14:33:57.051+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.051+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264632565",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129053593",
-    "slides": [
-      "129053591",
-      "129053592"
-    ],
-    "width": 40,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-08-30T11:29:22.855+02:00",
-    "createdAt": "2022-08-30T11:29:22.851+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:22.851+02:00",
-      "updatedAt": "2022-08-30T11:29:22.855+02:00",
-      "publishedAt": "2022-08-30T14:33:57.022+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.022+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264632188",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "129053592",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014524"
-    },
-    "video": null,
-    "updatedAt": "2022-08-30T11:29:22.830+02:00",
-    "createdAt": "2022-08-30T11:29:22.826+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:22.826+02:00",
-      "updatedAt": "2022-08-30T11:29:22.830+02:00",
-      "publishedAt": "2022-08-30T14:33:57.039+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.039+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264632187",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129053591",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48014527"
-    },
-    "video": null,
-    "updatedAt": "2022-08-30T11:29:22.805+02:00",
-    "createdAt": "2022-08-30T11:29:22.800+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:22.800+02:00",
-      "updatedAt": "2022-08-30T11:29:22.805+02:00",
-      "publishedAt": "2022-08-30T14:33:57.034+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.034+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264632186",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "123515736",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "The bridge between the Ministry of Justice and the Ministry of the Interior, the space in question is bustling with activity between 12pm and 1pm when it hosts lunch for up to ....? employees, yet is mostly unused for the rest of the day apart from special events and receptions. In collaboration with Studio LONK, we embarked on a longterm R&D project to transform the third floor into a fluid, dynamic and multifunctional space – without touching the existing architecture. Working in 3 phases, Discovery, Define and Design, our process aims to bring a human-scale back to this static, formal architecture by putting people at the heart of it. Drawing on our experience in Interactive Space, we wanted to rethink the third floor as a character that responds to the needs of those that use it.",
-    "updatedAt": "2022-08-29T14:19:48.106+02:00",
-    "createdAt": "2022-08-15T10:56:54.512+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T10:56:54.512+02:00",
-      "updatedAt": "2022-08-29T14:19:48.106+02:00",
-      "publishedAt": "2022-08-29T14:19:49.270+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.284+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "264129442",
-      "stage": null
-    },
-    "itemType": "1643993"
   },
   {
     "id": "120718363",
@@ -1283,54 +1826,6 @@
     "itemType": "1989582"
   },
   {
-    "id": "123515739",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "A digital map will communicate the state of each Sluispoort, giving insight to the current situation, including available spaces and a preview of scheduled events. During this testing phase, we are collecting data on how people use these new structures, how the Sluispoorten interact with each other and how the digital map influences their use. Using data from this prototyping phase, the final design will be fully influenced by how the structures are used on the ground.",
-    "updatedAt": "2022-08-15T10:56:54.559+02:00",
-    "createdAt": "2022-08-15T10:56:54.556+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T10:56:54.556+02:00",
-      "updatedAt": "2022-08-15T10:56:54.559+02:00",
-      "publishedAt": "2022-08-29T14:15:12.396+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.396+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "258311343",
-      "stage": null
-    },
-    "itemType": "1643993"
-  },
-  {
-    "id": "123515738",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "Informed by detailed data of how people move through the space, we came up with the Sluispoort – a responsive mechanism that optimises the flow of water – as the backbone for a series of modular spatial interventions. Intelligent structures that can both create new spaces that facilitate exchange whilst also influencing the existing architecture around it, these Sluispoorten can be customised to respond to a range of needs. Depending on the activity in the space, they will also be able to change state, opening or closing as required – for example, to create a quiet, clean portal through a busy space during rush hour then change into smaller meeting compartments later in the day. At this prototyping stage, there are four archetypes that are operated manually but they will eventually be autonomous and responsive to data received through sensors and able to predict the activity of the space.",
-    "updatedAt": "2022-08-15T10:56:54.546+02:00",
-    "createdAt": "2022-08-15T10:56:54.542+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T10:56:54.542+02:00",
-      "updatedAt": "2022-08-15T10:56:54.546+02:00",
-      "publishedAt": "2022-08-29T14:15:12.380+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.380+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "258311342",
-      "stage": null
-    },
-    "itemType": "1643993"
-  },
-  {
     "id": "120810428",
     "video": {
       "url": "https://vimeo.com/485603898",
@@ -1389,7 +1884,7 @@
       "firstPublishedAt": "2022-08-30T16:19:38.114+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -1417,7 +1912,7 @@
       "firstPublishedAt": "2022-08-30T16:19:38.084+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -1448,7 +1943,7 @@
       "firstPublishedAt": "2022-08-30T16:19:38.117+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -1587,7 +2082,7 @@
       "firstPublishedAt": "2022-08-30T16:19:38.107+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -1618,7 +2113,7 @@
       "firstPublishedAt": "2022-08-30T16:19:38.104+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "published",
+      "status": "updated",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
@@ -1688,129 +2183,6 @@
     "creator": {
       "id": "49286",
       "type": "account"
-    }
-  },
-  {
-    "id": "122156436",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Art Direction, Installation Design, Interactive Design, Creative Technology\"\n}",
-    "intro": "We were commissioned by Vans to make an in-store installation at Milan’s concept store OREFICI 11. Channelling the brand’s longtime connections to music and self-expression, we created the AV jambox; a playful intervention that transforms the store into a place to hang out with friends.",
-    "relatedProjectsTitle": "Other work",
-    "title": "An audio-visual jambox for Vans in Milan",
-    "content": [
-      "122439448",
-      "122156435",
-      "122439542",
-      "122439580",
-      "122440023",
-      "122440039",
-      "122440045",
-      "122440122",
-      "122440139",
-      "122440342",
-      "122440395",
-      "122440503",
-      "122440542"
-    ],
-    "relatedProjects": [
-      "120810903",
-      "120810884"
-    ],
-    "slug": "an-audio-visual-jambox-for-vans-in-milan",
-    "tags": "[\n  \"spaces\",\n  \"digital\",\n  \"installations\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46914493"
-    },
-    "opengraph": null,
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-07-08T14:54:52.722+02:00",
-    "createdAt": "2022-06-10T14:53:18.102+02:00",
-    "position": 4,
-    "meta": {
-      "createdAt": "2022-06-10T14:53:18.102+02:00",
-      "updatedAt": "2022-07-08T14:54:52.722+02:00",
-      "publishedAt": "2022-09-01T14:09:49.658+02:00",
-      "firstPublishedAt": "2022-06-29T11:47:43.289+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "256078197",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
-  },
-  {
-    "id": "120810396",
-    "details": "{\n  \"For\": \"Dom Pérignon\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Installation Engineering, Research\",\n  \"With\": \"Fiction Factory – Physical Production\"\n}",
-    "intro": "We were invited by Dom Pérignon to design and build the scenography  for a series of pop-up spaces in London, Berlin, Madrid and Tokyo to  showcase their collaboration with Lady Gaga. Revolving around their  shared passion for creative freedom, we drew on the energy of the  campaign to translate its lavish digital aesthetic into a physical  space: the Glitch Palace.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A Glitch Palace for the Dom Pérignon x Lady Gaga collaboration",
-    "content": [
-      "120810383",
-      "120810384",
-      "120810385",
-      "120810386",
-      "120810387",
-      "120810388",
-      "120810389",
-      "120810393",
-      "120810394",
-      "120810395"
-    ],
-    "relatedProjects": [],
-    "slug": "a-glitch-palace-for-the-dom-perignon-lady-gaga-collaboration",
-    "tags": "[]",
-    "featuredImage": null,
-    "opengraph": {
-      "image": "46221571",
-      "title": null,
-      "description": "How can you build a digital world in physical space? We were invited by Dom Pérignon to create the scenography for a series of pop-up spaces in London, Berli...",
-      "twitterCard": null
-    },
-    "featuredVideo": {
-      "url": "https://vimeo.com/639898328/d0bca9630e",
-      "title": "Table Morping Isolated_GridFloor",
-      "width": 100,
-      "height": 75,
-      "provider": "vimeo",
-      "providerUid": "639898328",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1286987415-818cf6d7024f2e9d061b9963160cfb5b3e772bd06b01b967c_100x75?r=pad"
-    },
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-07-04T10:09:08.975+02:00",
-    "createdAt": "2022-04-04T16:13:03.710+02:00",
-    "position": 8,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:03.710+02:00",
-      "updatedAt": "2022-07-04T10:09:08.975+02:00",
-      "publishedAt": "2022-06-22T10:31:14.315+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:04.039+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "255761345",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
     }
   },
   {
@@ -2824,68 +3196,6 @@
     }
   },
   {
-    "id": "120810949",
-    "details": "{\n  \"For\": \"Nike France\",\n  \"Role\": \"Creative Concept, Experience Design, Art Direction, Spatial Design, Design Development, Prototyping, Software Development, Creative Technology, Installation Engineering\",\n  \"With\": \"[Satis&Fy](https://satis-fy.com/), [Jean-Baptiste Fastrez](http://www.jeanbaptistefastrez.com/), [Thomas Hervé](https://www.hervethomas.com/)\",\n  \"Photos\": \"[Benoit Florençon](https://www.benoitflorencon.com/)\",\n  \"Video\": \"[Dixhuit](https://dix-huit.com/)\"\n}",
-    "intro": "We teamed up with Nike to help translate their Move to Zero campaign into a physical environment for a store takeover at the House of Innovation in Paris. The brand’s longterm journey towards zero carbon and waste is a constellation of different stories and ideas that has so far mostly lived online as a [Circular Design Guide](https://www.nikecirculardesign.com/). \n\nWe were excited to tackle the challenge of transforming the website into a dynamic physical space, full of tangible, moving parts; one that both brings customers into the brand’s sustainability story, but also informs, educates and inspires them to become part of the journey by getting involved in caring for their own products.",
-    "relatedProjectsTitle": "Other work",
-    "title": "Nike Move to Zero House of Innovation takeover",
-    "content": [
-      "120810919",
-      "120810920",
-      "120810921",
-      "120810925",
-      "120810926",
-      "120810927",
-      "120810935",
-      "120810939",
-      "120810945",
-      "120810946",
-      "120810947",
-      "120810948"
-    ],
-    "relatedProjects": [],
-    "slug": "nike-move-to-zero-house-of-innovation-takeover",
-    "tags": "[]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46222290"
-    },
-    "opengraph": {
-      "image": "46221655",
-      "title": "Nike Move to Zero House of Innovation Takeover",
-      "description": "We teamed up with Nike to help translate their Move to Zero campaign into a physical environment for a store takeover at the House of Innovation in Paris. Th...",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-06-22T10:26:28.127+02:00",
-    "createdAt": "2022-04-04T16:13:55.627+02:00",
-    "position": 10,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:55.627+02:00",
-      "updatedAt": "2022-06-22T10:26:28.127+02:00",
-      "publishedAt": "2022-04-07T11:18:33.517+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:55.999+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "254964041",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "121780700",
     "image": {
       "alt": null,
@@ -3322,7 +3632,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.441+02:00",
     "createdAt": "2022-04-06T08:08:04.178+02:00",
-    "position": 40,
+    "position": 41,
     "meta": {
       "createdAt": "2022-04-06T08:08:04.178+02:00",
       "updatedAt": "2022-06-10T14:53:41.441+02:00",
@@ -3378,7 +3688,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.384+02:00",
     "createdAt": "2022-04-06T08:08:02.474+02:00",
-    "position": 44,
+    "position": 45,
     "meta": {
       "createdAt": "2022-04-06T08:08:02.474+02:00",
       "updatedAt": "2022-06-10T14:53:41.384+02:00",
@@ -3438,7 +3748,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.306+02:00",
     "createdAt": "2022-04-06T08:08:00.911+02:00",
-    "position": 42,
+    "position": 43,
     "meta": {
       "createdAt": "2022-04-06T08:08:00.911+02:00",
       "updatedAt": "2022-06-10T14:53:41.306+02:00",
@@ -3498,7 +3808,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.205+02:00",
     "createdAt": "2022-04-06T08:07:58.529+02:00",
-    "position": 41,
+    "position": 42,
     "meta": {
       "createdAt": "2022-04-06T08:07:58.529+02:00",
       "updatedAt": "2022-06-10T14:53:41.205+02:00",
@@ -3558,7 +3868,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.139+02:00",
     "createdAt": "2022-04-06T08:07:56.756+02:00",
-    "position": 39,
+    "position": 40,
     "meta": {
       "createdAt": "2022-04-06T08:07:56.756+02:00",
       "updatedAt": "2022-06-10T14:53:41.139+02:00",
@@ -3613,7 +3923,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.082+02:00",
     "createdAt": "2022-04-06T08:07:55.592+02:00",
-    "position": 43,
+    "position": 44,
     "meta": {
       "createdAt": "2022-04-06T08:07:55.592+02:00",
       "updatedAt": "2022-06-10T14:53:41.082+02:00",
@@ -3679,7 +3989,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.017+02:00",
     "createdAt": "2022-04-04T16:14:02.368+02:00",
-    "position": 14,
+    "position": 15,
     "meta": {
       "createdAt": "2022-04-04T16:14:02.368+02:00",
       "updatedAt": "2022-06-10T14:53:41.017+02:00",
@@ -3739,7 +4049,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.906+02:00",
     "createdAt": "2022-04-04T16:13:59.452+02:00",
-    "position": 16,
+    "position": 17,
     "meta": {
       "createdAt": "2022-04-04T16:13:59.452+02:00",
       "updatedAt": "2022-06-10T14:53:40.906+02:00",
@@ -3798,7 +4108,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.857+02:00",
     "createdAt": "2022-04-04T16:13:58.368+02:00",
-    "position": 30,
+    "position": 31,
     "meta": {
       "createdAt": "2022-04-04T16:13:58.368+02:00",
       "updatedAt": "2022-06-10T14:53:40.857+02:00",
@@ -3850,7 +4160,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.797+02:00",
     "createdAt": "2022-04-04T16:13:57.312+02:00",
-    "position": 50,
+    "position": 51,
     "meta": {
       "createdAt": "2022-04-04T16:13:57.312+02:00",
       "updatedAt": "2022-06-10T14:53:40.797+02:00",
@@ -3908,7 +4218,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.674+02:00",
     "createdAt": "2022-04-04T16:13:54.063+02:00",
-    "position": 26,
+    "position": 27,
     "meta": {
       "createdAt": "2022-04-04T16:13:54.063+02:00",
       "updatedAt": "2022-06-10T14:53:40.674+02:00",
@@ -3967,7 +4277,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.627+02:00",
     "createdAt": "2022-04-04T16:13:52.772+02:00",
-    "position": 13,
+    "position": 14,
     "meta": {
       "createdAt": "2022-04-04T16:13:52.772+02:00",
       "updatedAt": "2022-06-10T14:53:40.627+02:00",
@@ -4025,7 +4335,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.580+02:00",
     "createdAt": "2022-04-04T16:13:51.514+02:00",
-    "position": 15,
+    "position": 16,
     "meta": {
       "createdAt": "2022-04-04T16:13:51.514+02:00",
       "updatedAt": "2022-06-10T14:53:40.580+02:00",
@@ -4076,7 +4386,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.537+02:00",
     "createdAt": "2022-04-04T16:13:50.428+02:00",
-    "position": 49,
+    "position": 50,
     "meta": {
       "createdAt": "2022-04-04T16:13:50.428+02:00",
       "updatedAt": "2022-06-10T14:53:40.537+02:00",
@@ -4132,7 +4442,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.490+02:00",
     "createdAt": "2022-04-04T16:13:49.203+02:00",
-    "position": 48,
+    "position": 49,
     "meta": {
       "createdAt": "2022-04-04T16:13:49.203+02:00",
       "updatedAt": "2022-06-10T14:53:40.490+02:00",
@@ -4192,7 +4502,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.436+02:00",
     "createdAt": "2022-04-04T16:13:47.740+02:00",
-    "position": 11,
+    "position": 12,
     "meta": {
       "createdAt": "2022-04-04T16:13:47.740+02:00",
       "updatedAt": "2022-06-10T14:53:40.436+02:00",
@@ -4255,7 +4565,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.384+02:00",
     "createdAt": "2022-04-04T16:13:46.389+02:00",
-    "position": 27,
+    "position": 28,
     "meta": {
       "createdAt": "2022-04-04T16:13:46.389+02:00",
       "updatedAt": "2022-06-10T14:53:40.384+02:00",
@@ -4316,7 +4626,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.328+02:00",
     "createdAt": "2022-04-04T16:13:45.077+02:00",
-    "position": 19,
+    "position": 20,
     "meta": {
       "createdAt": "2022-04-04T16:13:45.077+02:00",
       "updatedAt": "2022-06-10T14:53:40.328+02:00",
@@ -4380,7 +4690,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.264+02:00",
     "createdAt": "2022-04-04T16:13:43.720+02:00",
-    "position": 18,
+    "position": 19,
     "meta": {
       "createdAt": "2022-04-04T16:13:43.720+02:00",
       "updatedAt": "2022-06-10T14:53:40.264+02:00",
@@ -4438,7 +4748,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.213+02:00",
     "createdAt": "2022-04-04T16:13:42.078+02:00",
-    "position": 46,
+    "position": 47,
     "meta": {
       "createdAt": "2022-04-04T16:13:42.078+02:00",
       "updatedAt": "2022-06-10T14:53:40.213+02:00",
@@ -4501,7 +4811,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.163+02:00",
     "createdAt": "2022-04-04T16:13:40.910+02:00",
-    "position": 20,
+    "position": 21,
     "meta": {
       "createdAt": "2022-04-04T16:13:40.910+02:00",
       "updatedAt": "2022-06-10T14:53:40.163+02:00",
@@ -4560,7 +4870,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.028+02:00",
     "createdAt": "2022-04-04T16:13:25.528+02:00",
-    "position": 23,
+    "position": 24,
     "meta": {
       "createdAt": "2022-04-04T16:13:25.528+02:00",
       "updatedAt": "2022-06-10T14:53:40.028+02:00",
@@ -4618,7 +4928,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.948+02:00",
     "createdAt": "2022-04-04T16:13:24.147+02:00",
-    "position": 32,
+    "position": 33,
     "meta": {
       "createdAt": "2022-04-04T16:13:24.147+02:00",
       "updatedAt": "2022-06-10T14:53:39.948+02:00",
@@ -4681,7 +4991,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.899+02:00",
     "createdAt": "2022-04-04T16:13:22.812+02:00",
-    "position": 28,
+    "position": 29,
     "meta": {
       "createdAt": "2022-04-04T16:13:22.812+02:00",
       "updatedAt": "2022-06-10T14:53:39.899+02:00",
@@ -4742,7 +5052,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.850+02:00",
     "createdAt": "2022-04-04T16:13:21.409+02:00",
-    "position": 21,
+    "position": 22,
     "meta": {
       "createdAt": "2022-04-04T16:13:21.409+02:00",
       "updatedAt": "2022-06-10T14:53:39.850+02:00",
@@ -4804,7 +5114,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.800+02:00",
     "createdAt": "2022-04-04T16:13:20.126+02:00",
-    "position": 24,
+    "position": 25,
     "meta": {
       "createdAt": "2022-04-04T16:13:20.126+02:00",
       "updatedAt": "2022-06-10T14:53:39.800+02:00",
@@ -4855,7 +5165,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.743+02:00",
     "createdAt": "2022-04-04T16:13:18.195+02:00",
-    "position": 47,
+    "position": 48,
     "meta": {
       "createdAt": "2022-04-04T16:13:18.195+02:00",
       "updatedAt": "2022-06-10T14:53:39.743+02:00",
@@ -4922,7 +5232,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.670+02:00",
     "createdAt": "2022-04-04T16:13:16.334+02:00",
-    "position": 12,
+    "position": 13,
     "meta": {
       "createdAt": "2022-04-04T16:13:16.334+02:00",
       "updatedAt": "2022-06-10T14:53:39.670+02:00",
@@ -4994,7 +5304,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.555+02:00",
     "createdAt": "2022-04-04T16:13:12.695+02:00",
-    "position": 25,
+    "position": 26,
     "meta": {
       "createdAt": "2022-04-04T16:13:12.695+02:00",
       "updatedAt": "2022-06-10T14:53:39.555+02:00",
@@ -5054,7 +5364,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.503+02:00",
     "createdAt": "2022-04-04T16:13:11.244+02:00",
-    "position": 22,
+    "position": 23,
     "meta": {
       "createdAt": "2022-04-04T16:13:11.244+02:00",
       "updatedAt": "2022-06-10T14:53:39.503+02:00",
@@ -5122,7 +5432,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.433+02:00",
     "createdAt": "2022-04-04T16:13:09.805+02:00",
-    "position": 45,
+    "position": 46,
     "meta": {
       "createdAt": "2022-04-04T16:13:09.805+02:00",
       "updatedAt": "2022-06-10T14:53:39.433+02:00",
@@ -5195,7 +5505,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.274+02:00",
     "createdAt": "2022-04-04T16:13:06.423+02:00",
-    "position": 31,
+    "position": 32,
     "meta": {
       "createdAt": "2022-04-04T16:13:06.423+02:00",
       "updatedAt": "2022-06-10T14:53:39.274+02:00",
@@ -5257,7 +5567,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.094+02:00",
     "createdAt": "2022-04-04T16:13:02.198+02:00",
-    "position": 29,
+    "position": 30,
     "meta": {
       "createdAt": "2022-04-04T16:13:02.198+02:00",
       "updatedAt": "2022-06-10T14:53:39.094+02:00",
@@ -5321,7 +5631,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.033+02:00",
     "createdAt": "2022-04-04T16:13:00.714+02:00",
-    "position": 17,
+    "position": 18,
     "meta": {
       "createdAt": "2022-04-04T16:13:00.714+02:00",
       "updatedAt": "2022-06-10T14:53:39.033+02:00",
