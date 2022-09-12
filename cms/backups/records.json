@@ -1,5 +1,98 @@
 [
   {
+    "id": "123515639",
+    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
+    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? We got the opportunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A future work space for the Dutch Ministry of Justice",
+    "content": [
+      "123516584",
+      "123515736",
+      "129053593",
+      "129053606",
+      "129054345",
+      "129054707",
+      "123515738",
+      "140825424",
+      "123516585",
+      "123516583",
+      "123515739",
+      "132655995"
+    ],
+    "relatedProjects": [],
+    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
+    "tags": "[]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48160606"
+    },
+    "opengraph": {
+      "image": "48192939",
+      "title": "A future work space for the Dutch Ministry of Justice",
+      "description": "A future work space for the Dutch Ministry of Justice",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": false,
+    "preview": null,
+    "updatedAt": "2022-09-09T11:35:39.858+02:00",
+    "createdAt": "2022-08-15T10:52:52.503+02:00",
+    "position": 53,
+    "meta": {
+      "createdAt": "2022-08-15T10:52:52.503+02:00",
+      "updatedAt": "2022-09-09T11:35:39.858+02:00",
+      "publishedAt": "2022-09-09T11:35:51.493+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278522335",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "28650",
+      "type": "user"
+    }
+  },
+  {
+    "id": "123516584",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48192939"
+    },
+    "caption": "",
+    "width": 80,
+    "marginTop": 10,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-09T11:35:39.816+02:00",
+    "createdAt": "2022-08-15T11:47:17.528+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.528+02:00",
+      "updatedAt": "2022-09-09T11:35:39.816+02:00",
+      "publishedAt": "2022-09-09T11:35:51.511+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.387+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278522334",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
     "id": "140797744",
     "details": "{\n  \"For\": \"PANGAIA\",\n  \"Role\": \"Experience Design, Art Direction, Creative Technology, Prototyping, Spatial Design, Sound Design\"\n}",
     "intro": "We designed a sensory forest experience housed in a Nature Capsule for Pangaia’s pop-up at The Grove in LA. The brand is driven by a commitment to the environment, creating bio-engineered, sustainable materials through new technologies, and we wanted this space to embody their inspiration: the symphonic ecosystem of the natural world. ",
@@ -37,13 +130,13 @@
     "featuredVideo": null,
     "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-09-08T17:12:57.825+02:00",
+    "updatedAt": "2022-09-09T11:05:29.053+02:00",
     "createdAt": "2022-09-08T10:11:20.422+02:00",
     "position": 2,
     "meta": {
       "createdAt": "2022-09-08T10:11:20.422+02:00",
-      "updatedAt": "2022-09-08T17:12:57.825+02:00",
-      "publishedAt": "2022-09-08T17:13:06.696+02:00",
+      "updatedAt": "2022-09-09T11:05:29.053+02:00",
+      "publishedAt": "2022-09-09T11:05:30.660+02:00",
       "firstPublishedAt": "2022-09-08T10:16:29.525+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
@@ -51,7 +144,7 @@
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "278496667",
+      "currentVersion": "278520502",
       "stage": null
     },
     "itemType": "1641543",
@@ -59,6 +152,318 @@
       "id": "29417",
       "type": "user"
     }
+  },
+  {
+    "id": "140797738",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The capsule offers visitors a soothing experience that transports them into the diverse woodland biomes of a Californian forest. Forgoing the visual, this forest engages the body with scent and sound to recreate the feeling of being immersed in nature. \n\n\nComposed with spatial audio software, the sonic landscape teases out the different sounds of a forest based on in-depth research into the area’s local species and weather. From the insects in the earth and the birds in the sky to the gentle patter of rain on the leaves, the sounds play out from a set-up of many speakers placed at different heights to build a textured, dynamic sonic space that evolves throughout the day. Against the clean and white laboratory aesthetic of the interior design, the speaker installation takes centre stage, drawing attention to the sound experience. \n",
+    "updatedAt": "2022-09-09T11:05:29.028+02:00",
+    "createdAt": "2022-09-08T10:11:20.284+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.284+02:00",
+      "updatedAt": "2022-09-09T11:05:29.028+02:00",
+      "publishedAt": "2022-09-09T11:05:30.682+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.546+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520501",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123516583",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48192967"
+    },
+    "caption": "",
+    "width": 40,
+    "marginTop": -30,
+    "marginLeft": 55,
+    "updatedAt": "2022-09-09T11:04:20.893+02:00",
+    "createdAt": "2022-08-15T11:47:17.514+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.514+02:00",
+      "updatedAt": "2022-09-09T11:04:20.893+02:00",
+      "publishedAt": "2022-09-09T11:04:33.680+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520425",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "123516585",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48192943"
+    },
+    "caption": "",
+    "width": 30,
+    "marginTop": -50,
+    "marginLeft": 0,
+    "updatedAt": "2022-09-09T11:03:59.614+02:00",
+    "createdAt": "2022-08-15T11:47:17.543+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T11:47:17.543+02:00",
+      "updatedAt": "2022-09-09T11:03:59.614+02:00",
+      "publishedAt": "2022-09-09T11:04:33.676+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.390+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520409",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "140825424",
+    "slides": [
+      "140825423",
+      "140825440",
+      "140825441",
+      "140825442",
+      "140825443",
+      "140825444"
+    ],
+    "width": 50,
+    "marginTop": 0,
+    "marginLeft": 40,
+    "updatedAt": "2022-09-09T11:03:44.070+02:00",
+    "createdAt": "2022-09-09T10:51:24.116+02:00",
+    "meta": {
+      "createdAt": "2022-09-09T10:51:24.116+02:00",
+      "updatedAt": "2022-09-09T11:03:44.070+02:00",
+      "publishedAt": "2022-09-09T11:04:33.651+02:00",
+      "firstPublishedAt": "2022-09-09T11:04:33.651+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520404",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "132655995",
+    "slides": [
+      "132655993",
+      "132655994"
+    ],
+    "width": 60,
+    "marginTop": 10,
+    "marginLeft": 20,
+    "updatedAt": "2022-09-09T10:57:43.840+02:00",
+    "createdAt": "2022-09-01T15:16:12.512+02:00",
+    "meta": {
+      "createdAt": "2022-09-01T15:16:12.512+02:00",
+      "updatedAt": "2022-09-09T10:57:43.840+02:00",
+      "publishedAt": "2022-09-09T11:04:33.683+02:00",
+      "firstPublishedAt": "2022-09-01T16:39:12.751+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520106",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "140825444",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48209649"
+    },
+    "video": null,
+    "updatedAt": "2022-09-09T10:55:28.418+02:00",
+    "createdAt": "2022-09-09T10:55:28.414+02:00",
+    "meta": {
+      "createdAt": "2022-09-09T10:55:28.414+02:00",
+      "updatedAt": "2022-09-09T10:55:28.418+02:00",
+      "publishedAt": "2022-09-09T11:04:33.674+02:00",
+      "firstPublishedAt": "2022-09-09T11:04:33.674+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520048",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140825443",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48209536"
+    },
+    "video": null,
+    "updatedAt": "2022-09-09T10:55:28.396+02:00",
+    "createdAt": "2022-09-09T10:55:28.392+02:00",
+    "meta": {
+      "createdAt": "2022-09-09T10:55:28.392+02:00",
+      "updatedAt": "2022-09-09T10:55:28.396+02:00",
+      "publishedAt": "2022-09-09T11:04:33.671+02:00",
+      "firstPublishedAt": "2022-09-09T11:04:33.671+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520047",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140825442",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48209638"
+    },
+    "video": null,
+    "updatedAt": "2022-09-09T10:55:28.368+02:00",
+    "createdAt": "2022-09-09T10:55:28.364+02:00",
+    "meta": {
+      "createdAt": "2022-09-09T10:55:28.364+02:00",
+      "updatedAt": "2022-09-09T10:55:28.368+02:00",
+      "publishedAt": "2022-09-09T11:04:33.669+02:00",
+      "firstPublishedAt": "2022-09-09T11:04:33.669+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520046",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140825441",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48209628"
+    },
+    "video": null,
+    "updatedAt": "2022-09-09T10:55:28.346+02:00",
+    "createdAt": "2022-09-09T10:55:28.342+02:00",
+    "meta": {
+      "createdAt": "2022-09-09T10:55:28.342+02:00",
+      "updatedAt": "2022-09-09T10:55:28.346+02:00",
+      "publishedAt": "2022-09-09T11:04:33.666+02:00",
+      "firstPublishedAt": "2022-09-09T11:04:33.666+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520045",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140825440",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48209607"
+    },
+    "video": null,
+    "updatedAt": "2022-09-09T10:55:28.325+02:00",
+    "createdAt": "2022-09-09T10:55:28.321+02:00",
+    "meta": {
+      "createdAt": "2022-09-09T10:55:28.321+02:00",
+      "updatedAt": "2022-09-09T10:55:28.325+02:00",
+      "publishedAt": "2022-09-09T11:04:33.663+02:00",
+      "firstPublishedAt": "2022-09-09T11:04:33.663+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520044",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "140825423",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48209617"
+    },
+    "video": null,
+    "updatedAt": "2022-09-09T10:55:28.303+02:00",
+    "createdAt": "2022-09-09T10:51:24.094+02:00",
+    "meta": {
+      "createdAt": "2022-09-09T10:51:24.094+02:00",
+      "updatedAt": "2022-09-09T10:55:28.303+02:00",
+      "publishedAt": "2022-09-09T11:04:33.659+02:00",
+      "firstPublishedAt": "2022-09-09T11:04:33.659+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "278520043",
+      "stage": null
+    },
+    "itemType": "1641803"
   },
   {
     "id": "140797742",
@@ -123,90 +528,6 @@
     "itemType": "1643992"
   },
   {
-    "id": "123515639",
-    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? In 2020, we got the opportunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A future work space for the Dutch Ministry of Justice",
-    "content": [
-      "123516584",
-      "123515736",
-      "129053593",
-      "129053606",
-      "129054345",
-      "129054707",
-      "123515738",
-      "123516583",
-      "123516585",
-      "140598805",
-      "123515739",
-      "132655995"
-    ],
-    "relatedProjects": [],
-    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
-    "tags": "[]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48160606"
-    },
-    "opengraph": null,
-    "featuredVideo": null,
-    "isVisible": false,
-    "preview": null,
-    "updatedAt": "2022-09-08T16:50:21.846+02:00",
-    "createdAt": "2022-08-15T10:52:52.503+02:00",
-    "position": 53,
-    "meta": {
-      "createdAt": "2022-08-15T10:52:52.503+02:00",
-      "updatedAt": "2022-09-08T16:50:21.846+02:00",
-      "publishedAt": "2022-09-08T16:50:23.297+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278488566",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "28650",
-      "type": "user"
-    }
-  },
-  {
-    "id": "132655995",
-    "slides": [
-      "132655993",
-      "132655994"
-    ],
-    "width": 60,
-    "marginTop": 0,
-    "marginLeft": 20,
-    "updatedAt": "2022-09-08T16:50:21.828+02:00",
-    "createdAt": "2022-09-01T15:16:12.512+02:00",
-    "meta": {
-      "createdAt": "2022-09-01T15:16:12.512+02:00",
-      "updatedAt": "2022-09-08T16:50:21.828+02:00",
-      "publishedAt": "2022-09-08T16:50:23.317+02:00",
-      "firstPublishedAt": "2022-09-01T16:39:12.751+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278488565",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
     "id": "132655994",
     "image": {
       "alt": null,
@@ -261,30 +582,6 @@
       "stage": null
     },
     "itemType": "1641803"
-  },
-  {
-    "id": "140797738",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "The capsule offers visitors a soothing experience that transports them into the diverse woodland biomes of a Californian forest. Forgoing the visual, this forest engages the body with scent and sound to recreate the feeling of being immersed in nature. \n\n\nComposed with a spatial audio software, the sonic landscape teases out the different sounds of a forest based on in-depth research on the area’s local species and weather. From the insects in the earth and the birds in the sky to the gentle patter of rain on the leaves and the distant sounds of the Pacific Ocean, the sounds play out from a set-up of many speakers placed at different heights to build a textured, dynamic sonic space that evolves throughout the day. Against the clean and white laboratory aesthetic of the interior design, the speaker installation takes centre stage, drawing attention to the sound experience. \n",
-    "updatedAt": "2022-09-08T11:27:21.856+02:00",
-    "createdAt": "2022-09-08T10:11:20.284+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T10:11:20.284+02:00",
-      "updatedAt": "2022-09-08T11:27:21.856+02:00",
-      "publishedAt": "2022-09-08T11:27:23.358+02:00",
-      "firstPublishedAt": "2022-09-08T10:16:29.546+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278458525",
-      "stage": null
-    },
-    "itemType": "1643993"
   },
   {
     "id": "140799693",
@@ -517,68 +814,6 @@
     "itemType": "1643993"
   },
   {
-    "id": "123516583",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48160612"
-    },
-    "caption": "",
-    "width": 50,
-    "marginTop": 0,
-    "marginLeft": 50,
-    "updatedAt": "2022-09-07T15:38:10.811+02:00",
-    "createdAt": "2022-08-15T11:47:17.514+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.514+02:00",
-      "updatedAt": "2022-09-07T15:38:10.811+02:00",
-      "publishedAt": "2022-09-08T16:47:20.958+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.383+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277936330",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "140598805",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48160742"
-    },
-    "caption": "",
-    "width": 40,
-    "marginTop": 0,
-    "marginLeft": 40,
-    "updatedAt": "2022-09-07T15:36:39.897+02:00",
-    "createdAt": "2022-09-07T15:35:40.256+02:00",
-    "meta": {
-      "createdAt": "2022-09-07T15:35:40.256+02:00",
-      "updatedAt": "2022-09-07T15:36:39.897+02:00",
-      "publishedAt": "2022-09-07T15:36:54.609+02:00",
-      "firstPublishedAt": "2022-09-07T15:36:54.609+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277936234",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
     "id": "123515739",
     "width": 100,
     "marginTop": 0,
@@ -649,68 +884,6 @@
       "stage": null
     },
     "itemType": "1643993"
-  },
-  {
-    "id": "123516585",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48160613"
-    },
-    "caption": "",
-    "width": 30,
-    "marginTop": -45,
-    "marginLeft": 0,
-    "updatedAt": "2022-09-07T15:17:23.430+02:00",
-    "createdAt": "2022-08-15T11:47:17.543+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.543+02:00",
-      "updatedAt": "2022-09-07T15:17:23.430+02:00",
-      "publishedAt": "2022-09-07T15:17:28.681+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.390+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277932559",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123516584",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48160610"
-    },
-    "caption": "",
-    "width": 100,
-    "marginTop": 10,
-    "marginLeft": 0,
-    "updatedAt": "2022-09-07T15:17:23.371+02:00",
-    "createdAt": "2022-08-15T11:47:17.528+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T11:47:17.528+02:00",
-      "updatedAt": "2022-09-07T15:17:23.371+02:00",
-      "publishedAt": "2022-09-07T15:17:28.670+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.387+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277932557",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "123032928",
