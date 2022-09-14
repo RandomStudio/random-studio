@@ -1,5 +1,309 @@
 [
   {
+    "id": "123032928",
+    "details": "{\n  \"Role\": \"Creative Concept, Art Direction, Spatial Design, Experience Design, Software Development, Prototyping, Content Creation\",\n  \"For\": \"Paco Rabanne\"\n}",
+    "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
+    "relatedProjectsTitle": "Other work",
+    "title": "Endless sunsets for Paco Rabanne in Paris",
+    "content": [
+      "130830148",
+      "123033424",
+      "123033274",
+      "123033154",
+      "123033807",
+      "123033742",
+      "123914805",
+      "123033851",
+      "123033671",
+      "140408856",
+      "141065672"
+    ],
+    "relatedProjects": [],
+    "slug": "endless-sunsets-for-paco-rabanne",
+    "tags": null,
+    "featuredImage": null,
+    "opengraph": null,
+    "featuredVideo": {
+      "url": "https://vimeo.com/744612424/a6d9236953",
+      "title": "Paco Rabanne 03 1920x1080.mp4",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "744612424",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
+    },
+    "isVisible": false,
+    "preview": null,
+    "updatedAt": "2022-09-12T17:44:01.788+02:00",
+    "createdAt": "2022-08-04T10:36:17.308+02:00",
+    "position": 52,
+    "meta": {
+      "createdAt": "2022-08-04T10:36:17.308+02:00",
+      "updatedAt": "2022-09-12T17:44:01.788+02:00",
+      "publishedAt": "2022-09-12T17:44:09.099+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.754+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120524",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "29417",
+      "type": "user"
+    }
+  },
+  {
+    "id": "123033671",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514545"
+    },
+    "caption": "",
+    "width": 25,
+    "marginTop": -40,
+    "marginLeft": 55,
+    "updatedAt": "2022-09-12T17:44:01.760+02:00",
+    "createdAt": "2022-08-04T11:15:10.128+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:15:10.128+02:00",
+      "updatedAt": "2022-09-12T17:44:01.760+02:00",
+      "publishedAt": "2022-09-12T17:44:09.116+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.107+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120523",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "141065672",
+    "slides": [
+      "141065669",
+      "141065670",
+      "141065671",
+      "141065710"
+    ],
+    "width": 33,
+    "marginTop": 0,
+    "marginLeft": 33,
+    "updatedAt": "2022-09-12T17:43:12.585+02:00",
+    "createdAt": "2022-09-12T17:42:24.729+02:00",
+    "meta": {
+      "createdAt": "2022-09-12T17:42:24.729+02:00",
+      "updatedAt": "2022-09-12T17:43:12.585+02:00",
+      "publishedAt": "2022-09-12T17:43:13.902+02:00",
+      "firstPublishedAt": "2022-09-12T17:43:13.903+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120491",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "141065710",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48249017"
+    },
+    "video": null,
+    "updatedAt": "2022-09-12T17:43:12.562+02:00",
+    "createdAt": "2022-09-12T17:43:12.558+02:00",
+    "meta": {
+      "createdAt": "2022-09-12T17:43:12.558+02:00",
+      "updatedAt": "2022-09-12T17:43:12.562+02:00",
+      "publishedAt": "2022-09-12T17:43:13.919+02:00",
+      "firstPublishedAt": "2022-09-12T17:43:13.919+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120490",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "141065671",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48249020"
+    },
+    "video": null,
+    "updatedAt": "2022-09-12T17:42:24.707+02:00",
+    "createdAt": "2022-09-12T17:42:24.702+02:00",
+    "meta": {
+      "createdAt": "2022-09-12T17:42:24.702+02:00",
+      "updatedAt": "2022-09-12T17:42:24.707+02:00",
+      "publishedAt": "2022-09-12T17:43:13.917+02:00",
+      "firstPublishedAt": "2022-09-12T17:43:13.917+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120445",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "141065670",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48249017"
+    },
+    "video": null,
+    "updatedAt": "2022-09-12T17:42:24.678+02:00",
+    "createdAt": "2022-09-12T17:42:24.673+02:00",
+    "meta": {
+      "createdAt": "2022-09-12T17:42:24.673+02:00",
+      "updatedAt": "2022-09-12T17:42:24.678+02:00",
+      "publishedAt": "2022-09-12T17:43:13.914+02:00",
+      "firstPublishedAt": "2022-09-12T17:43:13.914+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120444",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "141065669",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48249008"
+    },
+    "video": null,
+    "updatedAt": "2022-09-12T17:42:24.647+02:00",
+    "createdAt": "2022-09-12T17:42:24.642+02:00",
+    "meta": {
+      "createdAt": "2022-09-12T17:42:24.642+02:00",
+      "updatedAt": "2022-09-12T17:42:24.647+02:00",
+      "publishedAt": "2022-09-12T17:43:13.910+02:00",
+      "firstPublishedAt": "2022-09-12T17:43:13.910+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120443",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "123914805",
+    "video": {
+      "url": "https://vimeo.com/744612424/a6d9236953",
+      "title": "Paco Rabanne 03 1920x1080.mp4",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "744612424",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": true,
+    "caption": "",
+    "width": 45,
+    "marginTop": 30,
+    "marginLeft": 50,
+    "updatedAt": "2022-09-12T17:34:09.179+02:00",
+    "createdAt": "2022-08-26T14:19:54.722+02:00",
+    "meta": {
+      "createdAt": "2022-08-26T14:19:54.722+02:00",
+      "updatedAt": "2022-09-12T17:34:09.179+02:00",
+      "publishedAt": "2022-09-12T17:34:27.471+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.112+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120177",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "123033154",
+    "video": {
+      "url": "https://vimeo.com/748823888",
+      "title": "Paco Rabanne 05 1920x1080.mp4",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "748823888",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1505932172-8ca6ff4f93f1faf8464c070e8a8d9c49b7c78959596c11513946f327551e508a-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": false,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 55,
+    "marginTop": -45,
+    "marginLeft": 45,
+    "updatedAt": "2022-09-12T17:32:48.979+02:00",
+    "createdAt": "2022-08-04T10:48:45.916+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:48:45.916+02:00",
+      "updatedAt": "2022-09-12T17:32:48.979+02:00",
+      "publishedAt": "2022-09-12T17:34:27.451+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.772+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279120136",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
     "id": "123515639",
     "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
     "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? We got the opportunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
@@ -886,63 +1190,118 @@
     "itemType": "1643993"
   },
   {
-    "id": "123032928",
-    "details": "{\n  \"Role\": \"Creative Concept, Art Direction, Spatial Design, Experience Design, Software Development, Prototyping\",\n  \"For\": \"Paco Rabanne\"\n}",
-    "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
-    "relatedProjectsTitle": "Other work",
-    "title": "Endless sunsets for Paco Rabanne in Paris",
-    "content": [
-      "130830148",
-      "123033274",
-      "123033275",
-      "123033154",
-      "123033424",
-      "123033742",
-      "123033442",
-      "123033671",
-      "123033807",
-      "123914805",
-      "123033850",
-      "123033851"
-    ],
-    "relatedProjects": [],
-    "slug": "endless-sunsets-for-paco-rabanne",
-    "tags": null,
-    "featuredImage": null,
-    "opengraph": null,
-    "featuredVideo": {
-      "url": "https://vimeo.com/744612424/a6d9236953",
-      "title": "Paco Rabanne 03 1920x1080.mp4",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "744612424",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
+    "id": "123033851",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514622"
     },
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-09-07T11:57:41.773+02:00",
-    "createdAt": "2022-08-04T10:36:17.308+02:00",
-    "position": 52,
+    "caption": "",
+    "width": 30,
+    "marginTop": -30,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-07T12:37:07.367+02:00",
+    "createdAt": "2022-08-04T11:27:36.256+02:00",
     "meta": {
-      "createdAt": "2022-08-04T10:36:17.308+02:00",
-      "updatedAt": "2022-09-07T11:57:41.773+02:00",
-      "publishedAt": "2022-09-07T11:57:59.782+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.754+02:00",
+      "createdAt": "2022-08-04T11:27:36.256+02:00",
+      "updatedAt": "2022-09-07T12:37:07.367+02:00",
+      "publishedAt": "2022-09-12T17:34:27.476+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.117+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
-      "status": "updated",
+      "status": "published",
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "277458651",
+      "currentVersion": "277460596",
       "stage": null
     },
-    "itemType": "1641543",
-    "creator": {
-      "id": "29417",
-      "type": "user"
-    }
+    "itemType": "1643992"
+  },
+  {
+    "id": "140408856",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Created in Blender, each sunset is sculpted to echo the colour of the looks and contain 3 different movements. Framed by a sharp and industrial aluminium structure, the sun in these kitsch ‘static’ landscapes sets and rises depending on where you’re standing, inviting visitors to interact with the image using their bodies.",
+    "updatedAt": "2022-09-07T12:31:23.423+02:00",
+    "createdAt": "2022-09-07T12:31:23.419+02:00",
+    "meta": {
+      "createdAt": "2022-09-07T12:31:23.419+02:00",
+      "updatedAt": "2022-09-07T12:31:23.423+02:00",
+      "publishedAt": "2022-09-12T17:34:27.486+02:00",
+      "firstPublishedAt": "2022-09-12T17:34:27.486+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277460374",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "123033742",
+    "slides": [
+      "123033741",
+      "123033740",
+      "123033739"
+    ],
+    "width": 65,
+    "marginTop": 20,
+    "marginLeft": 0,
+    "updatedAt": "2022-09-07T12:25:02.322+02:00",
+    "createdAt": "2022-08-04T11:21:13.551+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:21:13.551+02:00",
+      "updatedAt": "2022-09-07T12:25:02.322+02:00",
+      "publishedAt": "2022-09-12T17:34:27.458+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.084+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277459927",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "123033274",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "47514477"
+    },
+    "caption": "",
+    "width": 35,
+    "marginTop": 30,
+    "marginLeft": 0,
+    "updatedAt": "2022-09-07T12:03:39.789+02:00",
+    "createdAt": "2022-08-04T10:54:50.144+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T10:54:50.144+02:00",
+      "updatedAt": "2022-09-07T12:03:39.789+02:00",
+      "publishedAt": "2022-09-12T17:34:27.443+02:00",
+      "firstPublishedAt": "2022-08-04T10:58:26.777+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "277458874",
+      "stage": null
+    },
+    "itemType": "1643992"
   },
   {
     "id": "120810949",
@@ -1713,142 +2072,6 @@
     }
   },
   {
-    "id": "123033154",
-    "video": {
-      "url": "https://vimeo.com/736443717",
-      "title": "Screen Recording 2022-07-13 at 16.40.50",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "736443717",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1481831685-90b35f9f8b3a2353c07fe648125a51e5c23cc78b5205f75ad4583eb31eb372ad-d_295x166"
-    },
-    "autoplay": true,
-    "hasControls": true,
-    "loops": true,
-    "hasAudio": false,
-    "caption": "",
-    "width": 70,
-    "marginTop": 15,
-    "marginLeft": 5,
-    "updatedAt": "2022-08-31T11:21:04.069+02:00",
-    "createdAt": "2022-08-04T10:48:45.916+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T10:48:45.916+02:00",
-      "updatedAt": "2022-08-31T11:21:04.069+02:00",
-      "publishedAt": "2022-08-31T11:21:18.915+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.772+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266663940",
-      "stage": null
-    },
-    "itemType": "1641762"
-  },
-  {
-    "id": "123033274",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514477"
-    },
-    "caption": "",
-    "width": 35,
-    "marginTop": 30,
-    "marginLeft": 11,
-    "updatedAt": "2022-08-31T11:04:43.934+02:00",
-    "createdAt": "2022-08-04T10:54:50.144+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T10:54:50.144+02:00",
-      "updatedAt": "2022-08-31T11:04:43.934+02:00",
-      "publishedAt": "2022-08-31T11:21:18.908+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.777+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266604060",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123033275",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514486"
-    },
-    "caption": "",
-    "width": 20,
-    "marginTop": -45,
-    "marginLeft": 64,
-    "updatedAt": "2022-08-31T11:04:17.504+02:00",
-    "createdAt": "2022-08-04T10:54:50.160+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T10:54:50.160+02:00",
-      "updatedAt": "2022-08-31T11:04:17.504+02:00",
-      "publishedAt": "2022-08-31T11:21:18.912+02:00",
-      "firstPublishedAt": "2022-08-04T10:58:26.780+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266603965",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123914805",
-    "video": {
-      "url": "https://vimeo.com/744612424/a6d9236953",
-      "title": "Paco Rabanne 03 1920x1080.mp4",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "744612424",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
-    },
-    "autoplay": true,
-    "hasControls": true,
-    "loops": true,
-    "hasAudio": true,
-    "caption": "",
-    "width": 83,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-08-31T10:37:13.236+02:00",
-    "createdAt": "2022-08-26T14:19:54.722+02:00",
-    "meta": {
-      "createdAt": "2022-08-26T14:19:54.722+02:00",
-      "updatedAt": "2022-08-31T10:37:13.236+02:00",
-      "publishedAt": "2022-08-31T11:21:18.918+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.112+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "266597828",
-      "stage": null
-    },
-    "itemType": "1641762"
-  },
-  {
     "id": "130830148",
     "video": {
       "url": "https://vimeo.com/743411586/ab3c8438a2",
@@ -2036,96 +2259,6 @@
     "itemType": "1641762"
   },
   {
-    "id": "123033850",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514621"
-    },
-    "caption": "",
-    "width": 34,
-    "marginTop": 30,
-    "marginLeft": 7,
-    "updatedAt": "2022-08-04T11:34:21.221+02:00",
-    "createdAt": "2022-08-04T11:27:36.239+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T11:27:36.239+02:00",
-      "updatedAt": "2022-08-04T11:34:21.221+02:00",
-      "publishedAt": "2022-08-30T16:19:38.114+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.114+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "257284312",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123033742",
-    "slides": [
-      "123033741",
-      "123033740",
-      "123033739"
-    ],
-    "width": 81,
-    "marginTop": 20,
-    "marginLeft": 2,
-    "updatedAt": "2022-08-04T11:33:34.540+02:00",
-    "createdAt": "2022-08-04T11:21:13.551+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T11:21:13.551+02:00",
-      "updatedAt": "2022-08-04T11:33:34.540+02:00",
-      "publishedAt": "2022-08-30T16:19:38.084+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.084+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "257284018",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "123033851",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514622"
-    },
-    "caption": "",
-    "width": 42,
-    "marginTop": -55,
-    "marginLeft": 50,
-    "updatedAt": "2022-08-04T11:27:58.548+02:00",
-    "createdAt": "2022-08-04T11:27:36.256+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T11:27:36.256+02:00",
-      "updatedAt": "2022-08-04T11:27:58.548+02:00",
-      "publishedAt": "2022-08-30T16:19:38.117+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.117+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "257283573",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
     "id": "123033807",
     "width": 100,
     "marginTop": 0,
@@ -2232,68 +2365,6 @@
       "stage": null
     },
     "itemType": "1641803"
-  },
-  {
-    "id": "123033671",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514545"
-    },
-    "caption": "",
-    "width": 32,
-    "marginTop": -18,
-    "marginLeft": 53,
-    "updatedAt": "2022-08-04T11:16:32.420+02:00",
-    "createdAt": "2022-08-04T11:15:10.128+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T11:15:10.128+02:00",
-      "updatedAt": "2022-08-04T11:16:32.420+02:00",
-      "publishedAt": "2022-08-30T16:19:38.107+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.107+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "257283141",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "123033442",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "47514536"
-    },
-    "caption": "",
-    "width": 33,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-08-04T11:09:58.656+02:00",
-    "createdAt": "2022-08-04T11:09:58.650+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T11:09:58.650+02:00",
-      "updatedAt": "2022-08-04T11:09:58.656+02:00",
-      "publishedAt": "2022-08-30T16:19:38.104+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.104+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "updated",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "257282695",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "123033424",
