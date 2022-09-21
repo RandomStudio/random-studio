@@ -22,7 +22,12 @@
     "slug": "endless-sunsets-for-paco-rabanne",
     "tags": null,
     "featuredImage": null,
-    "opengraph": null,
+    "opengraph": {
+      "image": "47514459",
+      "title": null,
+      "description": null,
+      "twitterCard": null
+    },
     "featuredVideo": {
       "url": "https://vimeo.com/744612424/a6d9236953",
       "title": "Paco Rabanne 03 1920x1080.mp4",
@@ -32,15 +37,15 @@
       "providerUid": "744612424",
       "thumbnailUrl": "https://i.vimeocdn.com/video/1497882985-71f3c54eef8131c99f25f4ab45d15e2aa2ac4e19acef18f4934cc2ad8276c599-d_295x166"
     },
-    "isVisible": false,
+    "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-09-12T17:44:01.788+02:00",
+    "updatedAt": "2022-09-20T16:30:53.652+02:00",
     "createdAt": "2022-08-04T10:36:17.308+02:00",
-    "position": 52,
+    "position": 1,
     "meta": {
       "createdAt": "2022-08-04T10:36:17.308+02:00",
-      "updatedAt": "2022-09-12T17:44:01.788+02:00",
-      "publishedAt": "2022-09-12T17:44:09.099+02:00",
+      "updatedAt": "2022-09-20T16:30:53.652+02:00",
+      "publishedAt": "2022-09-20T16:30:55.221+02:00",
       "firstPublishedAt": "2022-08-04T10:58:26.754+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
@@ -48,7 +53,7 @@
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "279120524",
+      "currentVersion": "279420368",
       "stage": null
     },
     "itemType": "1641543",
@@ -56,6 +61,30 @@
       "id": "29417",
       "type": "user"
     }
+  },
+  {
+    "id": "123033807",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "For the window display, we drew on the analogue language of lenticular printing to create a series of giant postcards that act as backdrops to mannequins sporting the collection.",
+    "updatedAt": "2022-09-19T10:13:55.159+02:00",
+    "createdAt": "2022-08-04T11:23:20.049+02:00",
+    "meta": {
+      "createdAt": "2022-08-04T11:23:20.049+02:00",
+      "updatedAt": "2022-09-19T10:13:55.159+02:00",
+      "publishedAt": "2022-09-19T10:13:56.917+02:00",
+      "firstPublishedAt": "2022-08-30T16:19:38.110+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279348538",
+      "stage": null
+    },
+    "itemType": "1643993"
   },
   {
     "id": "123033671",
@@ -436,7 +465,7 @@
     "preview": null,
     "updatedAt": "2022-09-09T11:05:29.053+02:00",
     "createdAt": "2022-09-08T10:11:20.422+02:00",
-    "position": 2,
+    "position": 3,
     "meta": {
       "createdAt": "2022-09-08T10:11:20.422+02:00",
       "updatedAt": "2022-09-09T11:05:29.053+02:00",
@@ -1041,7 +1070,7 @@
     "preview": null,
     "updatedAt": "2022-09-08T10:54:37.288+02:00",
     "createdAt": "2022-06-10T14:53:18.102+02:00",
-    "position": 10,
+    "position": 11,
     "meta": {
       "createdAt": "2022-06-10T14:53:18.102+02:00",
       "updatedAt": "2022-09-08T10:54:37.288+02:00",
@@ -1344,7 +1373,7 @@
     "preview": null,
     "updatedAt": "2022-09-07T11:48:31.863+02:00",
     "createdAt": "2022-04-04T16:13:55.627+02:00",
-    "position": 11,
+    "position": 12,
     "meta": {
       "createdAt": "2022-04-04T16:13:55.627+02:00",
       "updatedAt": "2022-09-07T11:48:31.863+02:00",
@@ -1406,7 +1435,7 @@
     "preview": null,
     "updatedAt": "2022-09-07T11:47:36.633+02:00",
     "createdAt": "2022-04-04T16:13:03.710+02:00",
-    "position": 8,
+    "position": 9,
     "meta": {
       "createdAt": "2022-04-04T16:13:03.710+02:00",
       "updatedAt": "2022-09-07T11:47:36.633+02:00",
@@ -1804,7 +1833,7 @@
     "preview": null,
     "updatedAt": "2022-09-01T14:09:40.224+02:00",
     "createdAt": "2022-04-04T16:14:00.737+02:00",
-    "position": 7,
+    "position": 8,
     "meta": {
       "createdAt": "2022-04-04T16:14:00.737+02:00",
       "updatedAt": "2022-09-01T14:09:40.224+02:00",
@@ -1862,7 +1891,7 @@
     "preview": null,
     "updatedAt": "2022-09-01T14:09:28.698+02:00",
     "createdAt": "2022-04-04T16:13:04.961+02:00",
-    "position": 6,
+    "position": 7,
     "meta": {
       "createdAt": "2022-04-04T16:13:04.961+02:00",
       "updatedAt": "2022-09-01T14:09:28.698+02:00",
@@ -1919,7 +1948,7 @@
     "preview": null,
     "updatedAt": "2022-09-01T14:09:21.963+02:00",
     "createdAt": "2022-04-04T16:13:39.266+02:00",
-    "position": 4,
+    "position": 5,
     "meta": {
       "createdAt": "2022-04-04T16:13:39.266+02:00",
       "updatedAt": "2022-09-01T14:09:21.963+02:00",
@@ -1989,7 +2018,7 @@
     "preview": null,
     "updatedAt": "2022-09-01T14:09:20.788+02:00",
     "createdAt": "2022-05-19T16:04:20.186+02:00",
-    "position": 5,
+    "position": 6,
     "meta": {
       "createdAt": "2022-05-19T16:04:20.186+02:00",
       "updatedAt": "2022-09-01T14:09:20.788+02:00",
@@ -2050,7 +2079,7 @@
     "preview": null,
     "updatedAt": "2022-09-01T14:09:17.283+02:00",
     "createdAt": "2022-04-04T16:13:08.112+02:00",
-    "position": 3,
+    "position": 4,
     "meta": {
       "createdAt": "2022-04-04T16:13:08.112+02:00",
       "updatedAt": "2022-09-01T14:09:17.283+02:00",
@@ -2257,30 +2286,6 @@
       "stage": null
     },
     "itemType": "1641762"
-  },
-  {
-    "id": "123033807",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "For the window display, we drew on the analogue language of lenticular printing to create a series of giant postcards that act as backdrops to mannequins sporting the collection. Created in Blender, each sunset is sculpted to echo the colour of the looks and contain 3 different movements. Framed by a sharp and industrial aluminium structure, the sun in these kitsch ‘static’ landscapes sets and rises depending on where you’re standing, inviting visitors to interact with the image using their bodies.",
-    "updatedAt": "2022-08-04T11:23:20.053+02:00",
-    "createdAt": "2022-08-04T11:23:20.049+02:00",
-    "meta": {
-      "createdAt": "2022-08-04T11:23:20.049+02:00",
-      "updatedAt": "2022-08-04T11:23:20.053+02:00",
-      "publishedAt": "2022-08-30T16:19:38.110+02:00",
-      "firstPublishedAt": "2022-08-30T16:19:38.110+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "257283419",
-      "stage": null
-    },
-    "itemType": "1643993"
   },
   {
     "id": "123033741",
@@ -2623,7 +2628,7 @@
     "preview": null,
     "updatedAt": "2022-06-29T11:47:38.891+02:00",
     "createdAt": "2022-05-12T10:01:40.636+02:00",
-    "position": 1,
+    "position": 2,
     "meta": {
       "createdAt": "2022-05-12T10:01:40.636+02:00",
       "updatedAt": "2022-06-29T11:47:38.891+02:00",
@@ -3418,7 +3423,7 @@
     "preview": null,
     "updatedAt": "2022-06-22T10:31:16.593+02:00",
     "createdAt": "2022-04-04T16:13:14.390+02:00",
-    "position": 9,
+    "position": 10,
     "meta": {
       "createdAt": "2022-04-04T16:13:14.390+02:00",
       "updatedAt": "2022-06-22T10:31:16.593+02:00",
@@ -3876,7 +3881,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.441+02:00",
     "createdAt": "2022-04-06T08:08:04.178+02:00",
-    "position": 41,
+    "position": 42,
     "meta": {
       "createdAt": "2022-04-06T08:08:04.178+02:00",
       "updatedAt": "2022-06-10T14:53:41.441+02:00",
@@ -3932,7 +3937,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.384+02:00",
     "createdAt": "2022-04-06T08:08:02.474+02:00",
-    "position": 45,
+    "position": 46,
     "meta": {
       "createdAt": "2022-04-06T08:08:02.474+02:00",
       "updatedAt": "2022-06-10T14:53:41.384+02:00",
@@ -3992,7 +3997,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.306+02:00",
     "createdAt": "2022-04-06T08:08:00.911+02:00",
-    "position": 43,
+    "position": 44,
     "meta": {
       "createdAt": "2022-04-06T08:08:00.911+02:00",
       "updatedAt": "2022-06-10T14:53:41.306+02:00",
@@ -4052,7 +4057,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.205+02:00",
     "createdAt": "2022-04-06T08:07:58.529+02:00",
-    "position": 42,
+    "position": 43,
     "meta": {
       "createdAt": "2022-04-06T08:07:58.529+02:00",
       "updatedAt": "2022-06-10T14:53:41.205+02:00",
@@ -4112,7 +4117,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.139+02:00",
     "createdAt": "2022-04-06T08:07:56.756+02:00",
-    "position": 40,
+    "position": 41,
     "meta": {
       "createdAt": "2022-04-06T08:07:56.756+02:00",
       "updatedAt": "2022-06-10T14:53:41.139+02:00",
@@ -4167,7 +4172,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.082+02:00",
     "createdAt": "2022-04-06T08:07:55.592+02:00",
-    "position": 44,
+    "position": 45,
     "meta": {
       "createdAt": "2022-04-06T08:07:55.592+02:00",
       "updatedAt": "2022-06-10T14:53:41.082+02:00",
@@ -4233,7 +4238,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:41.017+02:00",
     "createdAt": "2022-04-04T16:14:02.368+02:00",
-    "position": 15,
+    "position": 16,
     "meta": {
       "createdAt": "2022-04-04T16:14:02.368+02:00",
       "updatedAt": "2022-06-10T14:53:41.017+02:00",
@@ -4293,7 +4298,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.906+02:00",
     "createdAt": "2022-04-04T16:13:59.452+02:00",
-    "position": 17,
+    "position": 18,
     "meta": {
       "createdAt": "2022-04-04T16:13:59.452+02:00",
       "updatedAt": "2022-06-10T14:53:40.906+02:00",
@@ -4352,7 +4357,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.857+02:00",
     "createdAt": "2022-04-04T16:13:58.368+02:00",
-    "position": 31,
+    "position": 32,
     "meta": {
       "createdAt": "2022-04-04T16:13:58.368+02:00",
       "updatedAt": "2022-06-10T14:53:40.857+02:00",
@@ -4404,7 +4409,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.797+02:00",
     "createdAt": "2022-04-04T16:13:57.312+02:00",
-    "position": 51,
+    "position": 52,
     "meta": {
       "createdAt": "2022-04-04T16:13:57.312+02:00",
       "updatedAt": "2022-06-10T14:53:40.797+02:00",
@@ -4462,7 +4467,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.674+02:00",
     "createdAt": "2022-04-04T16:13:54.063+02:00",
-    "position": 27,
+    "position": 28,
     "meta": {
       "createdAt": "2022-04-04T16:13:54.063+02:00",
       "updatedAt": "2022-06-10T14:53:40.674+02:00",
@@ -4521,7 +4526,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.627+02:00",
     "createdAt": "2022-04-04T16:13:52.772+02:00",
-    "position": 14,
+    "position": 15,
     "meta": {
       "createdAt": "2022-04-04T16:13:52.772+02:00",
       "updatedAt": "2022-06-10T14:53:40.627+02:00",
@@ -4579,7 +4584,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.580+02:00",
     "createdAt": "2022-04-04T16:13:51.514+02:00",
-    "position": 16,
+    "position": 17,
     "meta": {
       "createdAt": "2022-04-04T16:13:51.514+02:00",
       "updatedAt": "2022-06-10T14:53:40.580+02:00",
@@ -4630,7 +4635,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.537+02:00",
     "createdAt": "2022-04-04T16:13:50.428+02:00",
-    "position": 50,
+    "position": 51,
     "meta": {
       "createdAt": "2022-04-04T16:13:50.428+02:00",
       "updatedAt": "2022-06-10T14:53:40.537+02:00",
@@ -4686,7 +4691,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.490+02:00",
     "createdAt": "2022-04-04T16:13:49.203+02:00",
-    "position": 49,
+    "position": 50,
     "meta": {
       "createdAt": "2022-04-04T16:13:49.203+02:00",
       "updatedAt": "2022-06-10T14:53:40.490+02:00",
@@ -4746,7 +4751,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.436+02:00",
     "createdAt": "2022-04-04T16:13:47.740+02:00",
-    "position": 12,
+    "position": 13,
     "meta": {
       "createdAt": "2022-04-04T16:13:47.740+02:00",
       "updatedAt": "2022-06-10T14:53:40.436+02:00",
@@ -4809,7 +4814,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.384+02:00",
     "createdAt": "2022-04-04T16:13:46.389+02:00",
-    "position": 28,
+    "position": 29,
     "meta": {
       "createdAt": "2022-04-04T16:13:46.389+02:00",
       "updatedAt": "2022-06-10T14:53:40.384+02:00",
@@ -4870,7 +4875,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.328+02:00",
     "createdAt": "2022-04-04T16:13:45.077+02:00",
-    "position": 20,
+    "position": 21,
     "meta": {
       "createdAt": "2022-04-04T16:13:45.077+02:00",
       "updatedAt": "2022-06-10T14:53:40.328+02:00",
@@ -4934,7 +4939,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.264+02:00",
     "createdAt": "2022-04-04T16:13:43.720+02:00",
-    "position": 19,
+    "position": 20,
     "meta": {
       "createdAt": "2022-04-04T16:13:43.720+02:00",
       "updatedAt": "2022-06-10T14:53:40.264+02:00",
@@ -4992,7 +4997,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.213+02:00",
     "createdAt": "2022-04-04T16:13:42.078+02:00",
-    "position": 47,
+    "position": 48,
     "meta": {
       "createdAt": "2022-04-04T16:13:42.078+02:00",
       "updatedAt": "2022-06-10T14:53:40.213+02:00",
@@ -5055,7 +5060,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.163+02:00",
     "createdAt": "2022-04-04T16:13:40.910+02:00",
-    "position": 21,
+    "position": 22,
     "meta": {
       "createdAt": "2022-04-04T16:13:40.910+02:00",
       "updatedAt": "2022-06-10T14:53:40.163+02:00",
@@ -5114,7 +5119,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:40.028+02:00",
     "createdAt": "2022-04-04T16:13:25.528+02:00",
-    "position": 24,
+    "position": 25,
     "meta": {
       "createdAt": "2022-04-04T16:13:25.528+02:00",
       "updatedAt": "2022-06-10T14:53:40.028+02:00",
@@ -5172,7 +5177,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.948+02:00",
     "createdAt": "2022-04-04T16:13:24.147+02:00",
-    "position": 33,
+    "position": 34,
     "meta": {
       "createdAt": "2022-04-04T16:13:24.147+02:00",
       "updatedAt": "2022-06-10T14:53:39.948+02:00",
@@ -5235,7 +5240,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.899+02:00",
     "createdAt": "2022-04-04T16:13:22.812+02:00",
-    "position": 29,
+    "position": 30,
     "meta": {
       "createdAt": "2022-04-04T16:13:22.812+02:00",
       "updatedAt": "2022-06-10T14:53:39.899+02:00",
@@ -5296,7 +5301,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.850+02:00",
     "createdAt": "2022-04-04T16:13:21.409+02:00",
-    "position": 22,
+    "position": 23,
     "meta": {
       "createdAt": "2022-04-04T16:13:21.409+02:00",
       "updatedAt": "2022-06-10T14:53:39.850+02:00",
@@ -5358,7 +5363,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.800+02:00",
     "createdAt": "2022-04-04T16:13:20.126+02:00",
-    "position": 25,
+    "position": 26,
     "meta": {
       "createdAt": "2022-04-04T16:13:20.126+02:00",
       "updatedAt": "2022-06-10T14:53:39.800+02:00",
@@ -5409,7 +5414,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.743+02:00",
     "createdAt": "2022-04-04T16:13:18.195+02:00",
-    "position": 48,
+    "position": 49,
     "meta": {
       "createdAt": "2022-04-04T16:13:18.195+02:00",
       "updatedAt": "2022-06-10T14:53:39.743+02:00",
@@ -5476,7 +5481,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.670+02:00",
     "createdAt": "2022-04-04T16:13:16.334+02:00",
-    "position": 13,
+    "position": 14,
     "meta": {
       "createdAt": "2022-04-04T16:13:16.334+02:00",
       "updatedAt": "2022-06-10T14:53:39.670+02:00",
@@ -5548,7 +5553,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.555+02:00",
     "createdAt": "2022-04-04T16:13:12.695+02:00",
-    "position": 26,
+    "position": 27,
     "meta": {
       "createdAt": "2022-04-04T16:13:12.695+02:00",
       "updatedAt": "2022-06-10T14:53:39.555+02:00",
@@ -5608,7 +5613,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.503+02:00",
     "createdAt": "2022-04-04T16:13:11.244+02:00",
-    "position": 23,
+    "position": 24,
     "meta": {
       "createdAt": "2022-04-04T16:13:11.244+02:00",
       "updatedAt": "2022-06-10T14:53:39.503+02:00",
@@ -5676,7 +5681,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.433+02:00",
     "createdAt": "2022-04-04T16:13:09.805+02:00",
-    "position": 46,
+    "position": 47,
     "meta": {
       "createdAt": "2022-04-04T16:13:09.805+02:00",
       "updatedAt": "2022-06-10T14:53:39.433+02:00",
@@ -5749,7 +5754,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.274+02:00",
     "createdAt": "2022-04-04T16:13:06.423+02:00",
-    "position": 32,
+    "position": 33,
     "meta": {
       "createdAt": "2022-04-04T16:13:06.423+02:00",
       "updatedAt": "2022-06-10T14:53:39.274+02:00",
@@ -5811,7 +5816,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.094+02:00",
     "createdAt": "2022-04-04T16:13:02.198+02:00",
-    "position": 30,
+    "position": 31,
     "meta": {
       "createdAt": "2022-04-04T16:13:02.198+02:00",
       "updatedAt": "2022-06-10T14:53:39.094+02:00",
@@ -5875,7 +5880,7 @@
     "preview": null,
     "updatedAt": "2022-06-10T14:53:39.033+02:00",
     "createdAt": "2022-04-04T16:13:00.714+02:00",
-    "position": 18,
+    "position": 19,
     "meta": {
       "createdAt": "2022-04-04T16:13:00.714+02:00",
       "updatedAt": "2022-06-10T14:53:39.033+02:00",
