@@ -1,5 +1,257 @@
 [
   {
+    "id": "123515639",
+    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
+    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? We got the opportunity to rethink the whole third floor of the Ministry of Justice and Ministry of the Interior building. It offered a chance to explore these questions at the second largest office space in The Netherlands.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A future work space for the Dutch Ministry of Justice",
+    "content": [
+      "123516584",
+      "123515736",
+      "129053593",
+      "129053606",
+      "129054345",
+      "129054707",
+      "123515738",
+      "140825424",
+      "123516585",
+      "123516583",
+      "123515739",
+      "132655995"
+    ],
+    "relatedProjects": [],
+    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
+    "tags": "[]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48160606"
+    },
+    "opengraph": {
+      "image": "48192939",
+      "title": "A future work space for the Dutch Ministry of Justice",
+      "description": "A future work space for the Dutch Ministry of Justice",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": false,
+    "preview": null,
+    "updatedAt": "2022-09-22T16:01:42.690+02:00",
+    "createdAt": "2022-08-15T10:52:52.503+02:00",
+    "position": 53,
+    "meta": {
+      "createdAt": "2022-08-15T10:52:52.503+02:00",
+      "updatedAt": "2022-09-22T16:01:42.690+02:00",
+      "publishedAt": "2022-09-22T16:01:44.606+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280004738",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "28650",
+      "type": "user"
+    }
+  },
+  {
+    "id": "129054707",
+    "slides": [
+      "129054705",
+      "129054706"
+    ],
+    "width": 40,
+    "marginTop": -25,
+    "marginLeft": 55,
+    "updatedAt": "2022-09-22T16:01:42.655+02:00",
+    "createdAt": "2022-08-30T11:34:43.122+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.122+02:00",
+      "updatedAt": "2022-09-22T16:01:42.655+02:00",
+      "publishedAt": "2022-09-22T16:01:44.643+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.072+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280004737",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129054706",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125073"
+    },
+    "video": null,
+    "updatedAt": "2022-09-22T16:01:42.632+02:00",
+    "createdAt": "2022-08-30T11:34:43.098+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.098+02:00",
+      "updatedAt": "2022-09-22T16:01:42.632+02:00",
+      "publishedAt": "2022-09-22T16:01:44.658+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.087+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280004736",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129054705",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125072"
+    },
+    "video": null,
+    "updatedAt": "2022-09-22T16:01:42.604+02:00",
+    "createdAt": "2022-08-30T11:34:43.074+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:34:43.074+02:00",
+      "updatedAt": "2022-09-22T16:01:42.604+02:00",
+      "publishedAt": "2022-09-22T16:01:44.652+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.083+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280004735",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053593",
+    "slides": [
+      "129053591",
+      "129053592"
+    ],
+    "width": 40,
+    "marginTop": 0,
+    "marginLeft": 10,
+    "updatedAt": "2022-09-22T16:01:42.569+02:00",
+    "createdAt": "2022-08-30T11:29:22.851+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.851+02:00",
+      "updatedAt": "2022-09-22T16:01:42.569+02:00",
+      "publishedAt": "2022-09-22T16:01:44.623+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.022+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280004734",
+      "stage": null
+    },
+    "itemType": "1643994"
+  },
+  {
+    "id": "129053592",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125080"
+    },
+    "video": null,
+    "updatedAt": "2022-09-22T16:01:42.545+02:00",
+    "createdAt": "2022-08-30T11:29:22.826+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.826+02:00",
+      "updatedAt": "2022-09-22T16:01:42.545+02:00",
+      "publishedAt": "2022-09-22T16:01:44.639+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.039+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280004733",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "129053591",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48125079"
+    },
+    "video": null,
+    "updatedAt": "2022-09-22T16:01:42.513+02:00",
+    "createdAt": "2022-08-30T11:29:22.800+02:00",
+    "meta": {
+      "createdAt": "2022-08-30T11:29:22.800+02:00",
+      "updatedAt": "2022-09-22T16:01:42.513+02:00",
+      "publishedAt": "2022-09-22T16:01:44.633+02:00",
+      "firstPublishedAt": "2022-08-30T14:33:57.034+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280004732",
+      "stage": null
+    },
+    "itemType": "1641803"
+  },
+  {
+    "id": "123515738",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Informed by detailed data of how people move through the space and what they would like to use it for, we came up with the Sluispoort – a responsive mechanism that optimises the flow of water – as the backbone for a series of modular spatial interventions. Intelligent structures that can both create new spaces that facilitate exchange whilst also influencing the existing architecture around it, these Sluispoorten can be customised to respond to a range of needs. \n\nDepending on the activity in the space, they will also be able to change state, opening or closing as required – for example, to create a quiet, clean portal through a busy space during rush hour then change into smaller meeting compartments later in the day. At this prototyping stage, there are four archetypes that are operated manually but they will eventually be autonomous and responsive to data received through sensors and able to predict the activity of the space. ",
+    "updatedAt": "2022-09-21T15:49:00.934+02:00",
+    "createdAt": "2022-08-15T10:56:54.542+02:00",
+    "meta": {
+      "createdAt": "2022-08-15T10:56:54.542+02:00",
+      "updatedAt": "2022-09-21T15:49:00.934+02:00",
+      "publishedAt": "2022-09-21T15:49:02.598+02:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.380+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "279467652",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
     "id": "123032928",
     "details": "{\n  \"Role\": \"Creative Concept, Art Direction, Spatial Design, Experience Design, Software Development, Prototyping, Content Creation\",\n  \"For\": \"Paco Rabanne\"\n}",
     "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
@@ -331,68 +583,6 @@
       "stage": null
     },
     "itemType": "1641762"
-  },
-  {
-    "id": "123515639",
-    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? We got the opportunity rethink the whole third floor of the Ministry of Justice and, with it, a chance to explore these questions at the second largest office space in The Netherlands.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A future work space for the Dutch Ministry of Justice",
-    "content": [
-      "123516584",
-      "123515736",
-      "129053593",
-      "129053606",
-      "129054345",
-      "129054707",
-      "123515738",
-      "140825424",
-      "123516585",
-      "123516583",
-      "123515739",
-      "132655995"
-    ],
-    "relatedProjects": [],
-    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
-    "tags": "[]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48160606"
-    },
-    "opengraph": {
-      "image": "48192939",
-      "title": "A future work space for the Dutch Ministry of Justice",
-      "description": "A future work space for the Dutch Ministry of Justice",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": false,
-    "preview": null,
-    "updatedAt": "2022-09-09T11:35:39.858+02:00",
-    "createdAt": "2022-08-15T10:52:52.503+02:00",
-    "position": 53,
-    "meta": {
-      "createdAt": "2022-08-15T10:52:52.503+02:00",
-      "updatedAt": "2022-09-09T11:35:39.858+02:00",
-      "publishedAt": "2022-09-09T11:35:51.493+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278522335",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "28650",
-      "type": "user"
-    }
   },
   {
     "id": "123516584",
@@ -1171,30 +1361,6 @@
     "itemType": "1643993"
   },
   {
-    "id": "123515738",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "Informed by detailed data of how employeespeople move through the space and what they would like to use it for, we came up with the Sluispoort – a responsive mechanism that optimises the flow of water – as the backbone for a series of modular spatial interventions. Intelligent structures that can both create new spaces that facilitate exchange whilst also influencing the existing architecture around it, these Sluispoorten can be customised to respond to a range of needs. \n\nDepending on the activity in the space, they will also be able to change state, opening or closing as required – for example, to create a quiet, clean portal through a busy space during rush hour then change into smaller meeting compartments later in the day. At this prototyping stage, there are four archetypes that are operated manually but they will eventually be autonomous and responsive to data received through sensors and able to predict the activity of the space. ",
-    "updatedAt": "2022-09-07T15:26:52.505+02:00",
-    "createdAt": "2022-08-15T10:56:54.542+02:00",
-    "meta": {
-      "createdAt": "2022-08-15T10:56:54.542+02:00",
-      "updatedAt": "2022-09-07T15:26:52.505+02:00",
-      "publishedAt": "2022-09-07T15:27:33.622+02:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.380+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277933425",
-      "stage": null
-    },
-    "itemType": "1643993"
-  },
-  {
     "id": "123515736",
     "width": 100,
     "marginTop": 0,
@@ -1457,89 +1623,6 @@
     }
   },
   {
-    "id": "129054707",
-    "slides": [
-      "129054705",
-      "129054706"
-    ],
-    "width": 40,
-    "marginTop": -25,
-    "marginLeft": 55,
-    "updatedAt": "2022-09-07T11:23:57.612+02:00",
-    "createdAt": "2022-08-30T11:34:43.122+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:34:43.122+02:00",
-      "updatedAt": "2022-09-07T11:23:57.612+02:00",
-      "publishedAt": "2022-09-07T11:24:00.762+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.072+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277457085",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "129054706",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48125080"
-    },
-    "video": null,
-    "updatedAt": "2022-09-07T11:23:57.586+02:00",
-    "createdAt": "2022-08-30T11:34:43.098+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:34:43.098+02:00",
-      "updatedAt": "2022-09-07T11:23:57.586+02:00",
-      "publishedAt": "2022-09-07T11:24:00.777+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.087+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277457084",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129054705",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48125079"
-    },
-    "video": null,
-    "updatedAt": "2022-09-07T11:23:57.553+02:00",
-    "createdAt": "2022-08-30T11:34:43.074+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:34:43.074+02:00",
-      "updatedAt": "2022-09-07T11:23:57.553+02:00",
-      "publishedAt": "2022-09-07T11:24:00.772+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.083+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277457083",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
     "id": "129054345",
     "slides": [
       "129054343",
@@ -1701,89 +1784,6 @@
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
       "currentVersion": "277457077",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129053593",
-    "slides": [
-      "129053591",
-      "129053592"
-    ],
-    "width": 40,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-09-07T11:23:57.337+02:00",
-    "createdAt": "2022-08-30T11:29:22.851+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:22.851+02:00",
-      "updatedAt": "2022-09-07T11:23:57.337+02:00",
-      "publishedAt": "2022-09-07T11:24:00.699+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.022+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277457076",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "129053592",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48125073"
-    },
-    "video": null,
-    "updatedAt": "2022-09-07T11:23:57.310+02:00",
-    "createdAt": "2022-08-30T11:29:22.826+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:22.826+02:00",
-      "updatedAt": "2022-09-07T11:23:57.310+02:00",
-      "publishedAt": "2022-09-07T11:24:00.717+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.039+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277457075",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "129053591",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48125072"
-    },
-    "video": null,
-    "updatedAt": "2022-09-07T11:23:57.271+02:00",
-    "createdAt": "2022-08-30T11:29:22.800+02:00",
-    "meta": {
-      "createdAt": "2022-08-30T11:29:22.800+02:00",
-      "updatedAt": "2022-09-07T11:23:57.271+02:00",
-      "publishedAt": "2022-09-07T11:24:00.711+02:00",
-      "firstPublishedAt": "2022-08-30T14:33:57.034+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "277457074",
       "stage": null
     },
     "itemType": "1641803"
