@@ -33,13 +33,13 @@
     },
     "isVisible": true,
     "preview": null,
-    "updatedAt": "2022-09-29T17:03:20.774+02:00",
+    "updatedAt": "2022-10-04T15:12:33.596+02:00",
     "createdAt": "2022-09-29T14:20:39.576+02:00",
     "position": 1,
     "meta": {
       "createdAt": "2022-09-29T14:20:39.576+02:00",
-      "updatedAt": "2022-09-29T17:03:20.774+02:00",
-      "publishedAt": "2022-09-29T17:03:21.703+02:00",
+      "updatedAt": "2022-10-04T15:12:33.596+02:00",
+      "publishedAt": "2022-10-04T15:12:39.801+02:00",
       "firstPublishedAt": "2022-09-29T16:28:58.681+02:00",
       "publicationScheduledAt": null,
       "unpublishingScheduledAt": null,
@@ -47,13 +47,110 @@
       "isValid": true,
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
-      "currentVersion": "280327274",
+      "currentVersion": "280583999",
       "stage": null
     },
     "itemType": "1641543",
     "creator": {
       "id": "29417",
       "type": "user"
+    }
+  },
+  {
+    "id": "141583233",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48467218"
+    },
+    "caption": "",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-10-04T15:12:33.555+02:00",
+    "createdAt": "2022-09-29T15:14:56.422+02:00",
+    "meta": {
+      "createdAt": "2022-09-29T15:14:56.422+02:00",
+      "updatedAt": "2022-10-04T15:12:33.555+02:00",
+      "publishedAt": "2022-10-04T15:12:39.819+02:00",
+      "firstPublishedAt": "2022-09-29T16:28:58.695+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280583998",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "120718363",
+    "title": "Random Studio",
+    "introBlocks": [
+      "120718365",
+      "120718369"
+    ],
+    "services": [
+      "120801063",
+      "120801394",
+      "120801395"
+    ],
+    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
+    "studioImpression": [
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270514"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270517"
+      },
+      {
+        "alt": null,
+        "title": null,
+        "customData": {},
+        "focalPoint": null,
+        "uploadId": "46270522"
+      }
+    ],
+    "jobOpenings": [
+      "120803831",
+      "120803834",
+      "123869136",
+      "122388523"
+    ],
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-10-03T11:21:22.702+02:00",
+    "createdAt": "2022-03-31T15:35:58.069+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T15:35:58.069+02:00",
+      "updatedAt": "2022-10-03T11:21:22.702+02:00",
+      "publishedAt": "2022-10-03T11:21:22.785+02:00",
+      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "280494395",
+      "stage": null
+    },
+    "itemType": "1989580",
+    "creator": {
+      "id": "49286",
+      "type": "account"
     }
   },
   {
@@ -439,37 +536,6 @@
       "stage": null
     },
     "itemType": "1643993"
-  },
-  {
-    "id": "141583233",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48449369"
-    },
-    "caption": "",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "updatedAt": "2022-09-29T15:14:56.427+02:00",
-    "createdAt": "2022-09-29T15:14:56.422+02:00",
-    "meta": {
-      "createdAt": "2022-09-29T15:14:56.422+02:00",
-      "updatedAt": "2022-09-29T15:14:56.427+02:00",
-      "publishedAt": "2022-09-29T16:28:58.695+02:00",
-      "firstPublishedAt": "2022-09-29T16:28:58.695+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "280311400",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "120717266",
@@ -2586,73 +2652,6 @@
     "itemType": "1641762"
   },
   {
-    "id": "120718363",
-    "title": "Random Studio",
-    "introBlocks": [
-      "120718365",
-      "120718369"
-    ],
-    "services": [
-      "120801063",
-      "120801394",
-      "120801395"
-    ],
-    "skillset": "[\n  \"Strategy\",\n  \"Concept\",\n  \"Art Direction\",\n  \"Spatial Design\",\n  \"UX Design\",\n  \"Engineering\"\n]",
-    "studioImpression": [
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270514"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270517"
-      },
-      {
-        "alt": null,
-        "title": null,
-        "customData": {},
-        "focalPoint": null,
-        "uploadId": "46270522"
-      }
-    ],
-    "jobOpenings": [
-      "120803831",
-      "120803832",
-      "120803834",
-      "123869136",
-      "122388523"
-    ],
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-08-25T12:00:54.052+02:00",
-    "createdAt": "2022-03-31T15:35:58.069+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T15:35:58.069+02:00",
-      "updatedAt": "2022-08-25T12:00:54.052+02:00",
-      "publishedAt": "2022-08-25T12:00:54.117+02:00",
-      "firstPublishedAt": "2022-03-31T15:35:58.100+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "258898012",
-      "stage": null
-    },
-    "itemType": "1989580",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
-  },
-  {
     "id": "122388523",
     "title": "UI Design Intern",
     "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=22",
@@ -3883,29 +3882,6 @@
       "stage": null
     },
     "itemType": "1643992"
-  },
-  {
-    "id": "120803832",
-    "title": "Creative Technologist",
-    "url": "https://randomstudio.bamboohr.com/jobs/view.php?id=20&source=aWQ9Nw%3D%3D",
-    "description": "Random Studio is currently recruiting a full time creative technologist to expand our Creative Technology team based in Amsterdam, NL.\n\nThe role includes working closely with the current design + production team on generating creative hardware and software solutions. Primarily to create compelling interactive installations using a wide range of technologies, but also to form part of our studio culture and process. The role involves a certain amount of tinkering and experimentation and has been created as we see an influx in projects and ambition studio-wide",
-    "updatedAt": "2022-06-20T14:33:46.029+02:00",
-    "createdAt": "2022-04-04T13:33:56.014+02:00",
-    "meta": {
-      "createdAt": "2022-04-04T13:33:56.014+02:00",
-      "updatedAt": "2022-06-20T14:33:46.029+02:00",
-      "publishedAt": "2022-06-20T14:33:46.186+02:00",
-      "firstPublishedAt": "2022-04-04T13:33:56.249+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "254840763",
-      "stage": null
-    },
-    "itemType": "1989582"
   },
   {
     "id": "121781481",
