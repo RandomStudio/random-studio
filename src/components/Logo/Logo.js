@@ -1,12 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import styles from './Logo.module.scss';
+import styles from './Logo.module.css';
 
 const Logo = ({ isCentred }) => {
-  const logoClass = `${styles.logo} ${
-    isCentred ? styles.isCenter : styles.isTop
-  }`;
+  const logoClass = `${styles.logo} ${isCentred ? styles.isCenter : styles.isTop
+    }`;
 
   return (
     <h1 className={logoClass}>

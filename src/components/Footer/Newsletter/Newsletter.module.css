@@ -1,28 +1,29 @@
+.container {
+  position: relative;
+  margin-bottom: 32px;
+}
+
 .title {
-  margin-bottom: 8px;
+  @mixin body-4;
+  margin-bottom: 12px;
 }
 
 .input {
+  @mixin body-4;
   min-width: 100%;
   background-color: transparent;
   border: none;
-  padding: 0 0 3px;
+  padding: 0 0 12px;
   outline: none;
   border-bottom: 1px solid black;
   border-radius: 0;
-
-  @media (min-width: 864px) {
-    min-width: 300px;
-  }
 }
 
 .error {
+  @mixin body-4;
   position: absolute;
   top: 100%;
-  left: 0;
   color: red;
-  font-size: 10px;
-  margin-top: 4px;
 }
 
 .submit {

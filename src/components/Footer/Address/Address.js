@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Email from '../../Email/Email';
-import styles from './Address.module.scss';
+import Email from './Email/Email';
+import styles from './Address.module.css';
 
 const Address = ({ address, aria, directions, email, name, phone }) => (
   <address aria-label={aria} className={`${styles.address}`}>
@@ -31,7 +31,7 @@ const Address = ({ address, aria, directions, email, name, phone }) => (
 
     <br />
 
-    {email && <Email email={email} />}
+    {email && <Email className={styles.email} email={email} />}
   </address>
 );
 

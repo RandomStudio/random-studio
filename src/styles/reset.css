@@ -39,6 +39,17 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.375;
+  overscroll-behavior-y: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: inherit;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */

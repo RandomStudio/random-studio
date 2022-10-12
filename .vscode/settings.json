@@ -21,5 +21,8 @@
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   }
 }

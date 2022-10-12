@@ -1,0 +1,16 @@
+.address {
+  @mixin body-4;
+  margin-bottom: 40px;
+}
+
+.name {
+  color: var(--dark-grey);
+}
+
+.location {
+  margin-bottom: 20px;
+}
+
+.phone {
+  text-decoration: none;
+}

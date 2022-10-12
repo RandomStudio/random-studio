@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Footer.module.scss';
+import styles from './Footer.module.css';
 import Address from './Address/Address';
 import Newsletter from './Newsletter/Newsletter';
 

@@ -1,0 +1,21 @@
+
+.block {
+  width: 100vw;
+  padding-right: 80px;
+  margin-bottom: 80px;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1 / 1.27;
+  margin-bottom: 32px;
+}
+
+.text {
+  @mixin body-4;
+  margin-left: 20px;
+
+  & :global(p) {
+    margin-bottom: 1em;
+  }
+}

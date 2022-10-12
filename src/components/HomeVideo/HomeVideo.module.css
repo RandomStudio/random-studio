@@ -1,5 +1,3 @@
-@import '../../styles/mixins';
-
 .video {
   display: block;
   position: relative;
@@ -49,7 +47,7 @@
 }
 
 .featuredAuthor {
-  @include blendedText;
+  @mixin blendedText;
   position: absolute;
   bottom: 0;
   width: 100%;

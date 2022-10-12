@@ -1,0 +1,12 @@
+.vacancies {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin-bottom: 12px;
+}
+
+.role {
+  margin-bottom: 20px;
+}

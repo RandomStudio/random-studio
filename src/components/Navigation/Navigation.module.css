@@ -1,0 +1,37 @@
+.nav {
+  @mixin blendedText black, normal;
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 32px;
+  position: fixed;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  pointer-events: all;
+  z-index: 5;
+
+  @media (--standard-desktop) {
+    padding: 40px;
+    display: block;
+    text-align: right;
+  }
+
+  & :global(a) {
+    text-decoration: none;
+  }
+}
+
+.links {
+  @mixin body-3;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  column-gap: 32px;
+  padding: 0;
+  margin: 0;
+
+  @media (--standard-desktop) {
+    @mixin body-2;
+    column-gap: 60px;
+  }
+}

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { videoPropType } from '../../propTypes';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
-import styles from './HomeVideo.module.scss';
+import styles from './HomeVideo.module.css';
 
 const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
   return (

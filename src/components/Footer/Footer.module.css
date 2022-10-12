@@ -1,0 +1,36 @@
+.footer {
+  @mixin body-4;
+  padding: 100px 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.studio {
+  order: 2;
+}
+
+.right {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+
+  & .column {
+    order: 1;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+  margin-bottom: 60px;
+
+  & :global(a) {
+    text-decoration: none;
+  }
+}
+
+.bcorp {
+  order: 2;
+  margin-bottom: 52px;
+}

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Recruitee.module.scss';
+import styles from './Vacancies.module.css';
 import JobOffer from './JobOffer/JobOffer';
 import { jobOpeningPropType } from '../../../propTypes';
 
-const Recruitee = ({ jobOpenings }) => {
+const Vacancies = ({ className, jobOpenings }) => {
   const [openRoleId, setOpenRoleId] = useState(null);
   const openJob = jobOpenings.find(({ id }) => openRoleId === id);
 
@@ -35,37 +35,26 @@ const Recruitee = ({ jobOpenings }) => {
   }, [openRoleId]);
 
   const handleChangeRole = event => {
-    const {
-      target: { id },
-    } = event;
-
-    setOpenRoleId(id ?? null);
+    setOpenRoleId(event?.target?.id ?? null);
     event.preventDefault();
   };
 
-  if (!jobOpenings || !jobOpenings.length) {
-    return null;
-  }
-
   return (
     <>
-      <aside className={styles.recruitee}>
-        <p className={styles.title}>{'Open Positions'}</p>
+      <aside className={`${styles.vacancies} ${className}`}>
+        <p className={styles.heading}>{'Open Positions'}</p>
 
-        <ul className={styles.list}>
-          {jobOpenings.map(opening => (
-            <li className={styles.item} key={opening.url}>
-              <a
-                className={styles.role}
-                href={`?role=${opening.id}`}
-                id={opening.id}
-                onClick={handleChangeRole}
-              >
-                {opening.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {jobOpenings.map(opening => (
+          <a
+            className={styles.role}
+            href={`?role=${opening.id}`}
+            id={opening.id}
+            key={opening.id}
+            onClick={handleChangeRole}
+          >
+            {opening.title}
+          </a>
+        ))}
       </aside>
 
       {openJob && <JobOffer handleClose={handleChangeRole} opening={openJob} />}
@@ -73,8 +62,8 @@ const Recruitee = ({ jobOpenings }) => {
   );
 };
 
-Recruitee.propTypes = {
+Vacancies.propTypes = {
   jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
 };
 
-export default Recruitee;
+export default Vacancies;

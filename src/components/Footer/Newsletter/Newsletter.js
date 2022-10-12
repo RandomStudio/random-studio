@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import styles from './Newsletter.module.scss';
+import styles from './Newsletter.module.css';
 
 const Newsletter = () => {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState('EMAIL');
+  const [error, setError] = useState('THERE IS AN ERROR');
   const [isSuccessful, setIsSuccessful] = useState(false);
 
   const handleInput = e => setEmail(e.target.value);
 
   const handleSubmit = async event => {
     event.preventDefault();
-    setError('');
+    setError(null);
 
     try {
       const response = await fetch(
@@ -19,20 +19,20 @@ const Newsletter = () => {
 
       if (response.ok) {
         setIsSuccessful(true);
-      } else {
-        const body = await response.json();
-        setError(body.errorMessage);
+
+        return;
       }
+
+      const body = await response.json();
+      setError(body.errorMessage);
     } catch (responseError) {
       console.error(responseError);
       setError('Failed to submit. Please check email and try again.');
     }
-
-    return false;
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.container} onSubmit={handleSubmit}>
       <p className={styles.title}>{'Newsletter'}</p>
 
       {isSuccessful ? (
@@ -64,7 +64,7 @@ const Newsletter = () => {
             type="image"
           />
 
-          {error !== '' && <p className={styles.error}>{error}</p>}
+          {error && <p className={styles.error}>{error}</p>}
         </>
       )}
     </form>

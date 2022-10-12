@@ -183,3 +183,22 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
     }
   }
 }`;
+
+export const NEW_STUDIO_PAGE_QUERY = `
+${IMAGE_DATA_OBJECT_FRAGMENT}
+
+{
+  page: studioPageNew {
+    blurb
+    blocks {
+      __typename
+      copy
+      image {
+        ...ImageDataObject
+      }
+      nightImage {
+        ...ImageDataObject
+      }
+    }
+  }
+}`;
