@@ -36,6 +36,10 @@
     margin-bottom: 36px;
   }
 
+  & :global(li) {
+    margin-bottom: 12px;
+  }
+
   & .heading {
     color: var(--link-color);
     margin-bottom: 16px;

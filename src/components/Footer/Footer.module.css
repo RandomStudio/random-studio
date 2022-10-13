@@ -57,10 +57,6 @@
     margin-bottom: 0;
     margin-top: auto;
   }
-
-  & :global(a) {
-    text-decoration: none;
-  }
 }
 
 .column {

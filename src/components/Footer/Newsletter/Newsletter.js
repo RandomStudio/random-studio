@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styles from './Newsletter.module.css';
 
 const Newsletter = ({ className }) => {
-  const [email, setEmail] = useState('EMAIL');
-  const [error, setError] = useState('THERE IS AN ERROR');
+  const [email, setEmail] = useState(null);
+  const [error, setError] = useState(null);
   const [isSuccessful, setIsSuccessful] = useState(false);
 
   const handleInput = e => setEmail(e.target.value);

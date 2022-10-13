@@ -38,7 +38,7 @@
     &::after {
       background-color: currentColor;
       position: absolute;
-      bottom: 0;
+      bottom: 0.15em;
       left: 0;
       height: 1px;
       right: 0;
