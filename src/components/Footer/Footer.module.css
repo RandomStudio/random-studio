@@ -29,6 +29,10 @@
 .address {
   margin-bottom: 40px;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @media (--desktop) {
     margin-bottom: 0;
   }
@@ -80,6 +84,9 @@
 .bcorp {
   order: 2;
   margin-bottom: 52px;
+  width: 60px;
+  height: 104px;
+  text-decoration: none;
 
   @media (--desktop) {
     margin: 0 112px 0 0;

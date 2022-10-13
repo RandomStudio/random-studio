@@ -79,15 +79,11 @@ const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => {
 
           <div className={styles.social}>
             {Object.entries(socialLinks).map(([name, url]) => (
-              <a
-                className={styles.link}
-                href={url}
-                key={name}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                {name}
-              </a>
+              <div className={styles.link} key={name}>
+                <a href={url} rel="noopener noreferrer" target="_blank">
+                  {name}
+                </a>
+              </div>
             ))}
           </div>
         </div>

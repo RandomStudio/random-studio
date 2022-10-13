@@ -6,6 +6,6 @@
   margin-bottom: 20px;
 }
 
-.phone::after {
-  display: none;
+.phone {
+  text-decoration: none;
 }

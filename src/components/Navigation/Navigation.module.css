@@ -20,10 +20,7 @@
 
   & :global(a) {
     color: white !important;
-
-    &::after {
-      display: none;
-    }
+    text-decoration: none;
   }
 }
 
