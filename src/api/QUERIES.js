@@ -184,6 +184,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
   }
 }`;
 
+// NOTE: for ease while CMS is still serving live page. Will be deprecated on deploy
 export const NEW_STUDIO_PAGE_QUERY = `
 ${IMAGE_DATA_OBJECT_FRAGMENT}
 

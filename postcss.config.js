@@ -2,7 +2,6 @@ const { join } = require('path');
 
 module.exports = {
   plugins: [
-    'postcss-browser-reporter',
     [
       'postcss-mixins',
       {
