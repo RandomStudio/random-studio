@@ -1,15 +1,21 @@
+import { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import Image from '../../Image/Image';
+import AfterDarkContext from '../../Layout/AfterDarkContext';
 import styles from './Block.module.css';
 
-const Block = ({ block: { image, copy }, className }) => (
-  <div className={`${styles.block} ${className}`}>
-    <div className={styles.image}>
-      <Image alt={copy} data={image.imageData} />
-    </div>
+const Block = ({ block: { copy, image, nightImage }, className }) => {
+  const isAfterDark = useContext(AfterDarkContext);
 
-    <ReactMarkdown className={styles.text}>{copy}</ReactMarkdown>
-  </div>
-);
+  return (
+    <div className={`${styles.block} ${className}`}>
+      <div className={styles.image}>
+        <Image alt={copy} data={(isAfterDark ? nightImage : image).imageData} />
+      </div>
+
+      <ReactMarkdown className={styles.text}>{copy}</ReactMarkdown>
+    </div>
+  );
+};
 
 export default Block;
