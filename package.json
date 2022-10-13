@@ -15,7 +15,6 @@
     "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
   },
   "dependencies": {
-    "@supabase/supabase-js": "1.35.0",
     "graphql-request": "4.2.0",
     "lodash-es": "4.17.21",
     "next": "12.1.2",
