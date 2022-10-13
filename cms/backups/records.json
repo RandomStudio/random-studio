@@ -1,5 +1,320 @@
 [
   {
+    "id": "140797744",
+    "details": "{\n  \"For\": \"PANGAIA\",\n  \"Role\": \"Experience Design, Art Direction, Creative Technology, Prototyping, Spatial Design, Sound Design\"\n}",
+    "intro": "We designed a sensory forest experience housed in a Nature Capsule for Pangaia’s pop-up at The Grove in LA. The brand is driven by a commitment to the environment, creating bio-engineered, sustainable materials through new technologies, and we wanted this space to embody their inspiration: the symphonic ecosystem of the natural world. ",
+    "relatedProjectsTitle": "Other work",
+    "title": "A nature capsule for Pangaia",
+    "content": [
+      "142242239",
+      "140797738",
+      "142242261",
+      "140797742",
+      "142243683",
+      "142243442",
+      "142243579",
+      "140797741",
+      "142243441"
+    ],
+    "relatedProjects": [
+      "120810445",
+      "121605686",
+      "120810884"
+    ],
+    "slug": "a-nature-capsule-for-pangaia",
+    "tags": "[\n  \"installations\",\n  \"spaces\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190464"
+    },
+    "opengraph": {
+      "image": "48190237",
+      "title": "a nature capsule for Pangaia",
+      "description": "A pop up store with a scent and soundscape for Pangaia in Los Angeles",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-10-11T11:15:12.374+02:00",
+    "createdAt": "2022-09-08T10:11:20.422+02:00",
+    "position": 3,
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.422+02:00",
+      "updatedAt": "2022-10-11T11:15:12.374+02:00",
+      "publishedAt": "2022-10-11T11:15:13.741+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.525+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "282365806",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "29417",
+      "type": "user"
+    }
+  },
+  {
+    "id": "142243442",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48563469"
+    },
+    "caption": "",
+    "width": 60,
+    "marginTop": 0,
+    "marginLeft": 20,
+    "updatedAt": "2022-10-11T11:15:12.343+02:00",
+    "createdAt": "2022-10-10T16:41:48.848+02:00",
+    "meta": {
+      "createdAt": "2022-10-10T16:41:48.848+02:00",
+      "updatedAt": "2022-10-11T11:15:12.343+02:00",
+      "publishedAt": "2022-10-11T11:15:13.767+02:00",
+      "firstPublishedAt": "2022-10-10T16:56:34.046+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "282365805",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "142243579",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48542466"
+    },
+    "caption": "",
+    "width": 100,
+    "marginTop": 10,
+    "marginLeft": 0,
+    "updatedAt": "2022-10-11T10:22:55.889+02:00",
+    "createdAt": "2022-10-10T16:50:31.831+02:00",
+    "meta": {
+      "createdAt": "2022-10-10T16:50:31.831+02:00",
+      "updatedAt": "2022-10-11T10:22:55.889+02:00",
+      "publishedAt": "2022-10-11T10:22:58.225+02:00",
+      "firstPublishedAt": "2022-10-10T16:56:34.059+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "282361259",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "142243683",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "Composed with spatial audio software, the sonic landscape teases out the different sounds of a forest based on in-depth research into the area’s local species and weather. From the insects in the earth and the birds in the sky to the gentle patter of rain on the leaves, the sounds play out from a set-up of many speakers placed at different heights to build a textured, dynamic sonic space that evolves throughout the day. Against the clean and white laboratory aesthetic of the interior design, the speaker installation takes centre stage, drawing attention to the sound experience. ",
+    "updatedAt": "2022-10-10T16:56:20.220+02:00",
+    "createdAt": "2022-10-10T16:56:20.217+02:00",
+    "meta": {
+      "createdAt": "2022-10-10T16:56:20.217+02:00",
+      "updatedAt": "2022-10-10T16:56:20.220+02:00",
+      "publishedAt": "2022-10-10T16:56:34.034+02:00",
+      "firstPublishedAt": "2022-10-10T16:56:34.034+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "281841619",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "140797738",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "text": "The capsule offers visitors a soothing experience that transports them into the diverse woodland biomes of a Californian forest. Forgoing the visual, this forest engages the body with scent and sound to recreate the feeling of being immersed in nature. \n",
+    "updatedAt": "2022-10-10T16:56:20.200+02:00",
+    "createdAt": "2022-09-08T10:11:20.284+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.284+02:00",
+      "updatedAt": "2022-10-10T16:56:20.200+02:00",
+      "publishedAt": "2022-10-10T16:56:34.018+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.546+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "281841618",
+      "stage": null
+    },
+    "itemType": "1643993"
+  },
+  {
+    "id": "142243441",
+    "video": {
+      "url": "https://vimeo.com/758739750/37aa436cc3",
+      "title": "Insta edit Inside FINAL",
+      "width": 240,
+      "height": 300,
+      "provider": "vimeo",
+      "providerUid": "758739750",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1524053264-35648f772694f2232d2289caa7e8451ad270863daddc6a9112a39c2428accd3c-d_200x150"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 35,
+    "marginTop": 30,
+    "marginLeft": 15,
+    "updatedAt": "2022-10-10T16:54:26.480+02:00",
+    "createdAt": "2022-10-10T16:41:48.832+02:00",
+    "meta": {
+      "createdAt": "2022-10-10T16:41:48.832+02:00",
+      "updatedAt": "2022-10-10T16:54:26.480+02:00",
+      "publishedAt": "2022-10-10T16:56:34.076+02:00",
+      "firstPublishedAt": "2022-10-10T16:56:34.076+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "281841436",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "140797742",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48190233"
+    },
+    "caption": "",
+    "width": 45,
+    "marginTop": -20,
+    "marginLeft": 55,
+    "updatedAt": "2022-10-10T16:27:10.064+02:00",
+    "createdAt": "2022-09-08T10:11:20.369+02:00",
+    "meta": {
+      "createdAt": "2022-09-08T10:11:20.369+02:00",
+      "updatedAt": "2022-10-10T16:27:10.064+02:00",
+      "publishedAt": "2022-10-10T16:56:34.028+02:00",
+      "firstPublishedAt": "2022-09-08T10:16:29.543+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "281838085",
+      "stage": null
+    },
+    "itemType": "1643992"
+  },
+  {
+    "id": "142242261",
+    "video": {
+      "url": "https://vimeo.com/758739896/f0c0c0053d",
+      "title": "Insta edit Window FINAL",
+      "width": 240,
+      "height": 300,
+      "provider": "vimeo",
+      "providerUid": "758739896",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1524052834-ac4b539554f6b580b7fee2a163d5e3acaa3df5eae04edb95c7f3a1be218f2546-d_200x150"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 35,
+    "marginTop": 20,
+    "marginLeft": 10,
+    "updatedAt": "2022-10-10T16:26:22.524+02:00",
+    "createdAt": "2022-10-10T16:25:40.168+02:00",
+    "meta": {
+      "createdAt": "2022-10-10T16:25:40.168+02:00",
+      "updatedAt": "2022-10-10T16:26:22.524+02:00",
+      "publishedAt": "2022-10-10T16:56:34.024+02:00",
+      "firstPublishedAt": "2022-10-10T16:56:34.024+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "281838062",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
+    "id": "142242239",
+    "video": {
+      "url": "https://vimeo.com/758740062/fd6e97a51c",
+      "title": "RandomxPangaia FINAL 4K",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "758740062",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1524056755-4c4e2c245981b48cefb887ebd143716674ee2dfa7b50899a093207726b87dec3-d_295x166"
+    },
+    "autoplay": true,
+    "hasControls": true,
+    "loops": true,
+    "hasAudio": false,
+    "caption": "",
+    "width": 100,
+    "marginTop": 0,
+    "marginLeft": 0,
+    "updatedAt": "2022-10-10T16:23:04.529+02:00",
+    "createdAt": "2022-10-10T16:23:04.525+02:00",
+    "meta": {
+      "createdAt": "2022-10-10T16:23:04.525+02:00",
+      "updatedAt": "2022-10-10T16:23:04.529+02:00",
+      "publishedAt": "2022-10-10T16:56:34.014+02:00",
+      "firstPublishedAt": "2022-10-10T16:56:34.014+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "281837990",
+      "stage": null
+    },
+    "itemType": "1641762"
+  },
+  {
     "id": "141562213",
     "details": "{\n  \"For\": \"PANGAIA\",\n  \"Role\": \"Art Direction, Spatial Design, Fixture Design\"\n}",
     "intro": "We were commissioned to design and create Pangaia’s first semi-permanent physical store in the new offspring of one of Paris’ oldest fashion institutions – Magazine Galeries Lafayette Champs-Élysées. Providing a blueprint for the brand's upcoming physical presence in stores across the world, our paired-back interior design centres on adaptability and sustainability. Featuring a series of core elements, the set-up can be easily replicated, scaled up or down and modified according to location and season. ",
@@ -1552,91 +1867,6 @@
     "itemType": "1643992"
   },
   {
-    "id": "140797744",
-    "details": "{\n  \"For\": \"PANGAIA\",\n  \"Role\": \"Experience Design, Art Direction, Creative Technology, Prototyping, Spatial Design, Sound Design\"\n}",
-    "intro": "We designed a sensory forest experience housed in a Nature Capsule for Pangaia’s pop-up at The Grove in LA. The brand is driven by a commitment to the environment, creating bio-engineered, sustainable materials through new technologies, and we wanted this space to embody their inspiration: the symphonic ecosystem of the natural world. ",
-    "relatedProjectsTitle": "Other work",
-    "title": "A nature capsule for Pangaia",
-    "content": [
-      "140797737",
-      "140797742",
-      "140797738",
-      "140799693",
-      "140797740",
-      "140797743",
-      "140797741"
-    ],
-    "relatedProjects": [
-      "120810445",
-      "121605686",
-      "120810884"
-    ],
-    "slug": "a-nature-capsule-for-pangaia",
-    "tags": "[\n  \"installations\",\n  \"spaces\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48190464"
-    },
-    "opengraph": {
-      "image": "48190237",
-      "title": "a nature capsule for Pangaia",
-      "description": "A pop up store with a scent and soundscape for Pangaia in Los Angeles",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-09-09T11:05:29.053+02:00",
-    "createdAt": "2022-09-08T10:11:20.422+02:00",
-    "position": 3,
-    "meta": {
-      "createdAt": "2022-09-08T10:11:20.422+02:00",
-      "updatedAt": "2022-09-09T11:05:29.053+02:00",
-      "publishedAt": "2022-09-09T11:05:30.660+02:00",
-      "firstPublishedAt": "2022-09-08T10:16:29.525+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278520502",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "29417",
-      "type": "user"
-    }
-  },
-  {
-    "id": "140797738",
-    "width": 100,
-    "marginTop": 0,
-    "marginLeft": 0,
-    "text": "The capsule offers visitors a soothing experience that transports them into the diverse woodland biomes of a Californian forest. Forgoing the visual, this forest engages the body with scent and sound to recreate the feeling of being immersed in nature. \n\n\nComposed with spatial audio software, the sonic landscape teases out the different sounds of a forest based on in-depth research into the area’s local species and weather. From the insects in the earth and the birds in the sky to the gentle patter of rain on the leaves, the sounds play out from a set-up of many speakers placed at different heights to build a textured, dynamic sonic space that evolves throughout the day. Against the clean and white laboratory aesthetic of the interior design, the speaker installation takes centre stage, drawing attention to the sound experience. \n",
-    "updatedAt": "2022-09-09T11:05:29.028+02:00",
-    "createdAt": "2022-09-08T10:11:20.284+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T10:11:20.284+02:00",
-      "updatedAt": "2022-09-09T11:05:29.028+02:00",
-      "publishedAt": "2022-09-09T11:05:30.682+02:00",
-      "firstPublishedAt": "2022-09-08T10:16:29.546+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278520501",
-      "stage": null
-    },
-    "itemType": "1643993"
-  },
-  {
     "id": "123516583",
     "image": {
       "alt": null,
@@ -1925,68 +2155,6 @@
     "itemType": "1641803"
   },
   {
-    "id": "140797742",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48190233"
-    },
-    "caption": "",
-    "width": 45,
-    "marginTop": -60,
-    "marginLeft": 55,
-    "updatedAt": "2022-09-08T17:12:57.793+02:00",
-    "createdAt": "2022-09-08T10:11:20.369+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T10:11:20.369+02:00",
-      "updatedAt": "2022-09-08T17:12:57.793+02:00",
-      "publishedAt": "2022-09-08T17:13:06.724+02:00",
-      "firstPublishedAt": "2022-09-08T10:16:29.543+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278496666",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
-    "id": "140797737",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48190237"
-    },
-    "caption": "",
-    "width": 35,
-    "marginTop": 0,
-    "marginLeft": 10,
-    "updatedAt": "2022-09-08T17:12:40.356+02:00",
-    "createdAt": "2022-09-08T10:11:20.257+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T10:11:20.257+02:00",
-      "updatedAt": "2022-09-08T17:12:40.356+02:00",
-      "publishedAt": "2022-09-08T17:13:06.717+02:00",
-      "firstPublishedAt": "2022-09-08T10:16:29.539+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278496650",
-      "stage": null
-    },
-    "itemType": "1643992"
-  },
-  {
     "id": "132655994",
     "image": {
       "alt": null,
@@ -2041,120 +2209,6 @@
       "stage": null
     },
     "itemType": "1641803"
-  },
-  {
-    "id": "140799693",
-    "slides": [
-      "140799691",
-      "140799692"
-    ],
-    "width": 30,
-    "marginTop": 0,
-    "marginLeft": 15,
-    "updatedAt": "2022-09-08T11:15:31.309+02:00",
-    "createdAt": "2022-09-08T11:15:31.304+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T11:15:31.304+02:00",
-      "updatedAt": "2022-09-08T11:15:31.309+02:00",
-      "publishedAt": "2022-09-08T11:15:33.367+02:00",
-      "firstPublishedAt": "2022-09-08T11:15:33.368+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278458187",
-      "stage": null
-    },
-    "itemType": "1643994"
-  },
-  {
-    "id": "140799692",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48190452"
-    },
-    "video": null,
-    "updatedAt": "2022-09-08T11:15:31.289+02:00",
-    "createdAt": "2022-09-08T11:15:31.285+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T11:15:31.285+02:00",
-      "updatedAt": "2022-09-08T11:15:31.289+02:00",
-      "publishedAt": "2022-09-08T11:15:33.382+02:00",
-      "firstPublishedAt": "2022-09-08T11:15:33.382+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278458186",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "140799691",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48190236"
-    },
-    "video": null,
-    "updatedAt": "2022-09-08T11:15:31.265+02:00",
-    "createdAt": "2022-09-08T11:15:31.260+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T11:15:31.260+02:00",
-      "updatedAt": "2022-09-08T11:15:31.265+02:00",
-      "publishedAt": "2022-09-08T11:15:33.377+02:00",
-      "firstPublishedAt": "2022-09-08T11:15:33.377+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278458185",
-      "stage": null
-    },
-    "itemType": "1641803"
-  },
-  {
-    "id": "140797740",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48190234"
-    },
-    "caption": "",
-    "width": 35,
-    "marginTop": 0,
-    "marginLeft": 65,
-    "updatedAt": "2022-09-08T11:11:33.397+02:00",
-    "createdAt": "2022-09-08T10:11:20.328+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T10:11:20.328+02:00",
-      "updatedAt": "2022-09-08T11:11:33.397+02:00",
-      "publishedAt": "2022-09-08T11:11:34.746+02:00",
-      "firstPublishedAt": "2022-09-08T10:16:29.553+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278457757",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "122156436",
@@ -2216,37 +2270,6 @@
       "id": "49286",
       "type": "account"
     }
-  },
-  {
-    "id": "140797743",
-    "image": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48190244"
-    },
-    "caption": "",
-    "width": 25,
-    "marginTop": -80,
-    "marginLeft": 10,
-    "updatedAt": "2022-09-08T10:37:36.265+02:00",
-    "createdAt": "2022-09-08T10:11:20.391+02:00",
-    "meta": {
-      "createdAt": "2022-09-08T10:11:20.391+02:00",
-      "updatedAt": "2022-09-08T10:37:36.265+02:00",
-      "publishedAt": "2022-09-08T10:38:19.793+02:00",
-      "firstPublishedAt": "2022-09-08T10:16:29.555+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "278452261",
-      "stage": null
-    },
-    "itemType": "1643992"
   },
   {
     "id": "140797741",
