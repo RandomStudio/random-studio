@@ -5,6 +5,8 @@
   --light-grey: lab(94.10 0 0);
   --off-white: lab(100 0 0);
 
+  --blue: lab(49.827 31.172 -78.866);
+
   --background-color: var(--light-grey);
   --text-color: var(--black);
   --link-color: var(--dark-grey);
@@ -56,7 +58,30 @@
 }
 
 .oldLayout {
+  --blue: lab(49.827 31.172 -78.866);
+
   & .newLayout {
     background-color: var(--white);
+  }
+}
+
+
+.transitionColorFlash {
+  background: var(--blue);
+  animation: fadeOut 0.5s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

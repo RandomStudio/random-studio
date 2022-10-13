@@ -38,6 +38,8 @@ const Layout = ({
         </div>
 
         <div className={styles.newLayout}>{hasFooter && <Footer />}</div>
+
+        <div className={styles.transitionColorFlash} />
       </div>
     </AfterDarkContext.Provider>
   );
