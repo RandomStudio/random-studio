@@ -7,7 +7,7 @@
 }
 
 @define-mixin base-text-styles {
-  font-family: Random;
+  font-family: 'Random Regular', 'Random', serif;
   font-weight: 400;
   letter-spacing: 0em;
   text-align: left;
