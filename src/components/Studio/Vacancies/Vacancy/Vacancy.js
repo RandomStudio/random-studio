@@ -2,20 +2,20 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { OutboundLink } from 'react-ga';
 import PropTypes from 'prop-types';
-import styles from './Vacancy.module.scss';
+import styles from './Vacancy.module.css';
 import { vacancyPropType } from '../../../../propTypes';
 
 const Vacancy = ({ handleClose, opening: { title, description, url } }) => (
   <section className={styles.vacancy}>
-    <div>
-      <header>
-        <strong>{title}</strong>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <p className={styles.title}>{title}</p>
 
         <button
           className={styles.closeButton}
           onClick={handleClose}
           type="button"
-          // eslint-disable-next-line react/jsx-no-literals
+        // eslint-disable-next-line react/jsx-no-literals
         >
           &times;
         </button>
