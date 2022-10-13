@@ -18,6 +18,7 @@ const Layout = ({
   const layoutClasses = classNames({
     className,
     [styles.newLayout]: isNewDesign,
+    [styles.oldLayout]: !isNewDesign,
     [styles.isAfterDark]: isAfterDark,
   });
 
@@ -28,13 +29,15 @@ const Layout = ({
           {'Skip Navigation'}
         </a>
 
-        <Navigation isLogoCentred={isLogoCentred} />
+        <div className={styles.newLayout}>
+          <Navigation isLogoCentred={isLogoCentred} />
+        </div>
 
         <div className={styles.wrapper} id="main-content">
           {children}
         </div>
 
-        {hasFooter && <Footer />}
+        <div className={styles.newLayout}>{hasFooter && <Footer />}</div>
       </div>
     </AfterDarkContext.Provider>
   );
@@ -52,7 +55,7 @@ Layout.defaultProps = {
   className: '',
   hasFooter: true,
   isLogoCentred: false,
-  isNewDesign: true,
+  isNewDesign: false,
 };
 
 export default Layout;

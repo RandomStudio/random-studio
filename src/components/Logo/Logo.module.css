@@ -1,5 +1,4 @@
 .logo {
-  @mixin blendedText;
   @mixin logo;
   font-size: var(--font-logo-small);
   margin: 0;

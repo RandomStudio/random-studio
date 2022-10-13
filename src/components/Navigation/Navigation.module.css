@@ -1,5 +1,4 @@
 .nav {
-  @mixin blendedText black, normal;
   display: flex;
   flex-direction: column-reverse;
   row-gap: 32px;
@@ -9,6 +8,7 @@
   right: 20px;
   pointer-events: all;
   z-index: 5;
+  mix-blend-mode: difference;
 
   @media (--desktop) {
     flex-direction: row;
@@ -19,7 +19,11 @@
   }
 
   & :global(a) {
-    text-decoration: none;
+    color: white !important;
+
+    &::after {
+      display: none;
+    }
   }
 }
 

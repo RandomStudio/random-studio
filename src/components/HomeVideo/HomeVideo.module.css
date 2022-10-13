@@ -39,7 +39,8 @@
 }
 
 .featuredAuthor {
-  @mixin blendedText;
+  color: white;
+  mix-blend-mode: difference;
   position: absolute;
   bottom: 0;
   width: 100%;
