@@ -96,13 +96,13 @@ const World = ({ frameRef, onDeleteShape, shapes }) => {
       shape.hasTransformed
         ? shape
         : {
-          ...shape,
-          coords: shape.coords.map(({ x, y }) => ({
-            x: canvasEl.clientWidth - x * canvasEl.clientWidth,
-            y: canvasEl.clientHeight - y * canvasEl.clientHeight,
-          })),
-          hasTransformed: true,
-        },
+            ...shape,
+            coords: shape.coords.map(({ x, y }) => ({
+              x: canvasEl.clientWidth - x * canvasEl.clientWidth,
+              y: canvasEl.clientHeight - y * canvasEl.clientHeight,
+            })),
+            hasTransformed: true,
+          },
     );
 
     const animate3D = () => {

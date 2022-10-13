@@ -33,10 +33,12 @@ const Email = ({ className, email }) => {
 };
 
 Email.propTypes = {
+  className: PropTypes.string,
   email: PropTypes.string,
 };
 
 Email.defaultProps = {
+  className: '',
   email: 'hello@random.studio',
 };
 

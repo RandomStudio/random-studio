@@ -46,6 +46,7 @@ const Address = ({
 Address.propTypes = {
   address: PropTypes.arrayOf(PropTypes.string).isRequired,
   aria: PropTypes.string.isRequired,
+  className: PropTypes.string,
   directions: PropTypes.string.isRequired,
   email: PropTypes.string,
   name: PropTypes.string.isRequired,
@@ -53,6 +54,7 @@ Address.propTypes = {
 };
 
 Address.defaultProps = {
+  className: '',
   email: null,
 };
 

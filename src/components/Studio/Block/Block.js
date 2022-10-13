@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { dayNightImageBlockPropType } from '../../../propTypes';
 import Image from '../../Image/Image';
 import AfterDarkContext from '../../Layout/AfterDarkContext';
 import styles from './Block.module.css';
@@ -16,6 +18,15 @@ const Block = ({ block: { copy, image, nightImage }, className }) => {
       <ReactMarkdown className={styles.text}>{copy}</ReactMarkdown>
     </div>
   );
+};
+
+Block.propTypes = {
+  block: dayNightImageBlockPropType.isRequired,
+  className: PropTypes.string,
+};
+
+Block.defaultProps = {
+  className: '',
 };
 
 export default Block;

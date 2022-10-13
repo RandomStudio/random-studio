@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Image } from 'react-datocms';
 import styles from './Carousel.module.css';
-import Caption from '../Caption/Caption';
 import { slidePropType } from '../../propTypes';
 import LazyVideo from '../LazyVideo/LazyVideo';
 
@@ -63,6 +62,7 @@ Carousel.propTypes = {
   className: PropTypes.string,
   sizes: PropTypes.string.isRequired,
   slides: PropTypes.arrayOf(slidePropType).isRequired,
+  width: PropTypes.number.isRequired,
 };
 
 Carousel.defaultProps = {

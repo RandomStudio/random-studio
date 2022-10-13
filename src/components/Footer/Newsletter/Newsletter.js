@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Newsletter.module.css';
 
 const Newsletter = ({ className }) => {
@@ -72,6 +73,14 @@ const Newsletter = ({ className }) => {
       )}
     </form>
   );
+};
+
+Newsletter.propTypes = {
+  className: PropTypes.string,
+};
+
+Newsletter.defaultProps = {
+  className: '',
 };
 
 export default Newsletter;

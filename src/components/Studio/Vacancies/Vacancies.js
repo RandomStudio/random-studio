@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Vacancies.module.css';
-import JobOffer from './JobOffer/JobOffer';
-import { jobOpeningPropType } from '../../../propTypes';
+import Vacancy from './Vacancy/Vacancy';
+import { vacancyPropType } from '../../../propTypes';
 
-const Vacancies = ({ className, jobOpenings }) => {
+const Vacancies = ({ className, vacancies }) => {
   const [openRoleId, setOpenRoleId] = useState(null);
-  const openJob = jobOpenings.find(({ id }) => openRoleId === id);
+  const openJob = vacancies.find(({ id }) => openRoleId === id);
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -44,7 +44,7 @@ const Vacancies = ({ className, jobOpenings }) => {
       <aside className={`${styles.vacancies} ${className}`}>
         <p className={styles.heading}>{'Open Positions'}</p>
 
-        {jobOpenings.map(opening => (
+        {vacancies.map(opening => (
           <a
             className={styles.role}
             href={`?role=${opening.id}`}
@@ -57,13 +57,18 @@ const Vacancies = ({ className, jobOpenings }) => {
         ))}
       </aside>
 
-      {openJob && <JobOffer handleClose={handleChangeRole} opening={openJob} />}
+      {openJob && <Vacancy handleClose={handleChangeRole} opening={openJob} />}
     </>
   );
 };
 
 Vacancies.propTypes = {
-  jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
+  className: PropTypes.string,
+  vacancies: PropTypes.arrayOf(vacancyPropType).isRequired,
+};
+
+Vacancies.defaultProps = {
+  className: '',
 };
 
 export default Vacancies;

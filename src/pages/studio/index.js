@@ -4,25 +4,16 @@ import styles from './Studio.module.css';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import addAdditionalInfoToBlocks from '../../api/addAdditionalInfoToBlocks';
 import {
-  introBlockPropType,
-  jobOpeningPropType,
-  servicePropType,
+  dayNightImageBlockPropType,
   slidePropType,
+  vacancyPropType,
 } from '../../propTypes';
-import { NEW_STUDIO_PAGE_QUERY, STUDIO_PAGE_QUERY } from '../../api/QUERIES';
+import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
 import Layout from '../../components/Layout/Layout';
 import Block from '../../components/Studio/Block/Block';
 import Vacancies from '../../components/Studio/Vacancies/Vacancies';
-import useSunset from '../../utils/hooks/useSunset';
 
-const Studio = ({
-  introBlocks,
-  services,
-  skillset,
-  jobOpenings,
-  newPage: { blurb, blocks },
-  studioImpression,
-}) => {
+const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => {
   const socialLinks = {
     Instagram: 'https://instagram.com/random_studio/',
     LinkedIn: 'https://www.linkedin.com/company/random-studio/',
@@ -35,7 +26,7 @@ const Studio = ({
 
       <div className={styles.skills}>
         <ul className={styles.list}>
-          <li className={styles.heading}>Design</li>
+          <li className={styles.heading}>{'Design'}</li>
 
           {skillset.map(designArea => (
             <li key={designArea}>{designArea}</li>
@@ -43,7 +34,7 @@ const Studio = ({
         </ul>
 
         <ul className={styles.list}>
-          <li className={styles.heading}>Technology</li>
+          <li className={styles.heading}>{'Technology'}</li>
 
           {skillset.map(technologyArea => (
             <li key={technologyArea}>{technologyArea}</li>
@@ -51,7 +42,7 @@ const Studio = ({
         </ul>
 
         <ul className={styles.list}>
-          <li className={styles.heading}>Product</li>
+          <li className={styles.heading}>{'Product'}</li>
 
           {skillset.map(productArea => (
             <li key={productArea}>{productArea}</li>
@@ -72,19 +63,19 @@ const Studio = ({
 
       <div className={styles.links}>
         <div className={styles.list}>
-          <h3 className={styles.heading}>Start a conversation</h3>
+          <h3 className={styles.heading}>{'Start a conversation'}</h3>
 
-          <a href="mailto:hello@random.studio">hello@random.studio</a>
+          <a href="mailto:hello@random.studio">{'hello@random.studio'}</a>
         </div>
 
         <div className={styles.list}>
-          <h3 className={styles.heading}>Press inquiries</h3>
+          <h3 className={styles.heading}>{'Press inquiries'}</h3>
 
-          <a href="mailto:press@random.studio">press@random.studio</a>
+          <a href="mailto:press@random.studio">{'press@random.studio'}</a>
         </div>
 
         <div className={styles.list}>
-          <h3 className={styles.heading}>Follow us</h3>
+          <h3 className={styles.heading}>{'Follow us'}</h3>
 
           <div className={styles.social}>
             {Object.entries(socialLinks).map(([name, url]) => (
@@ -101,42 +92,36 @@ const Studio = ({
           </div>
         </div>
 
-        <Vacancies className={styles.vacancies} jobOpenings={jobOpenings} />
+        <Vacancies className={styles.vacancies} vacancies={vacancies} />
       </div>
     </Layout>
   );
 };
 
 export const getStaticProps = async ({ preview }) => {
-  const { page } = await getDataFromBackend({
+  const {
+    page,
+    newPage: { blurb, blocks },
+  } = await getDataFromBackend({
     query: STUDIO_PAGE_QUERY,
-    preview,
-  });
-
-  const { page: newPage } = await getDataFromBackend({
-    query: NEW_STUDIO_PAGE_QUERY,
     preview,
   });
 
   return {
     props: {
       ...page,
-      newPage: {
-        ...newPage,
-        blocks: await addAdditionalInfoToBlocks(newPage.blocks),
-      },
-      introBlocks: await addAdditionalInfoToBlocks(page.introBlocks),
+      blurb,
+      blocks: await addAdditionalInfoToBlocks(blocks),
     },
   };
 };
 
 Studio.propTypes = {
-  introBlocks: PropTypes.arrayOf(introBlockPropType).isRequired,
-  jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
-  services: PropTypes.arrayOf(servicePropType).isRequired,
+  blocks: PropTypes.arrayOf(dayNightImageBlockPropType).isRequired,
+  blurb: PropTypes.string.isRequired,
   skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
   studioImpression: PropTypes.arrayOf(slidePropType).isRequired,
-  title: PropTypes.string.isRequired,
+  vacancies: PropTypes.arrayOf(vacancyPropType).isRequired,
 };
 
 export default Studio;

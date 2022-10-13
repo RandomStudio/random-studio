@@ -2,11 +2,11 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { OutboundLink } from 'react-ga';
 import PropTypes from 'prop-types';
-import styles from './JobOffer.module.scss';
-import { jobOpeningPropType } from '../../../../propTypes';
+import styles from './Vacancy.module.scss';
+import { vacancyPropType } from '../../../../propTypes';
 
-const JobOffer = ({ handleClose, opening: { title, description, url } }) => (
-  <section className={styles.jobOffer}>
+const Vacancy = ({ handleClose, opening: { title, description, url } }) => (
+  <section className={styles.vacancy}>
     <div>
       <header>
         <strong>{title}</strong>
@@ -37,9 +37,9 @@ const JobOffer = ({ handleClose, opening: { title, description, url } }) => (
   </section>
 );
 
-JobOffer.propTypes = {
+Vacancy.propTypes = {
   handleClose: PropTypes.func.isRequired,
-  opening: jobOpeningPropType.isRequired,
+  opening: vacancyPropType.isRequired,
 };
 
-export default JobOffer;
+export default Vacancy;
