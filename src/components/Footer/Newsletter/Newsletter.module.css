@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  margin-bottom: 32px;
 }
 
 .title {
@@ -22,7 +21,7 @@
 .error {
   @mixin body-4;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.5em);
   color: red;
 }
 

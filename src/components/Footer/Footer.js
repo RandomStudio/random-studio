@@ -13,6 +13,7 @@ const Footer = () => (
           'The Netherlands',
         ]}
         aria="Amsterdam address"
+        className={styles.address}
         directions="https://goo.gl/maps/2sJnCcLummnmvrVb9"
         email="hello@random.studio"
         name="Random Amsterdam"
@@ -22,6 +23,7 @@ const Footer = () => (
       <Address
         address={['174 Quai de Jemmapes', '75010 Paris', 'France']}
         aria="Paris address"
+        className={styles.address}
         directions="https://goo.gl/maps/8JhU7KsTLAaZZtGA9"
         email="morgan.maccari@random.studio"
         name="Random Paris"
@@ -43,7 +45,7 @@ const Footer = () => (
       </a>
 
       <div className={styles.column}>
-        <Newsletter />
+        <Newsletter className={styles.newsletter} />
 
         <nav aria-label="Social media profiles" className={styles.socials}>
           <a

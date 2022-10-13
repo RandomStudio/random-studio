@@ -10,13 +10,13 @@
   width: 100%;
   height: 100%;
 
-  :global(div) {
+  & :global(div) {
     position: absolute;
     width: 100%;
     height: 100%;
   }
 
-  :global(video) {
+  & :global(video) {
     @media screen and (orientation: landscape) {
       width: 100%;
       height: auto;
@@ -25,14 +25,6 @@
     @media screen and (orientation: portrait) {
       height: 100%;
       width: auto;
-    }
-
-    // Microsoft Edge (pre-chromium) supports object-fit: cover only on img tags, but
-    // CSS (obviously) has no concept of element type.
-    @supports (object-fit: cover) and (not (-ms-ime-align: auto)) {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
     }
   }
 }

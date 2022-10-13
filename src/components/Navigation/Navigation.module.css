@@ -10,10 +10,12 @@
   pointer-events: all;
   z-index: 5;
 
-  @media (--standard-desktop) {
-    padding: 40px;
-    display: block;
-    text-align: right;
+  @media (--desktop) {
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    left: 40px;
+    right: 40px;
   }
 
   & :global(a) {
@@ -30,7 +32,7 @@
   padding: 0;
   margin: 0;
 
-  @media (--standard-desktop) {
+  @media (--desktop) {
     @mixin body-2;
     column-gap: 60px;
   }

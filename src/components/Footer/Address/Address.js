@@ -3,8 +3,16 @@ import React from 'react';
 import Email from './Email/Email';
 import styles from './Address.module.css';
 
-const Address = ({ address, aria, directions, email, name, phone }) => (
-  <address aria-label={aria} className={`${styles.address}`}>
+const Address = ({
+  address,
+  aria,
+  className,
+  directions,
+  email,
+  name,
+  phone,
+}) => (
+  <address aria-label={aria} className={`${styles.address} ${className}`}>
     <span className={styles.name}>{name}</span>
 
     <div className={styles.location}>

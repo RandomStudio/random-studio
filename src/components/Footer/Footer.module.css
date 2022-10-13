@@ -1,12 +1,37 @@
 .footer {
-  @mixin body-4;
-  padding: 100px 20px 0;
+  padding-bottom: 84px;
   display: flex;
   flex-direction: column;
+
+  @media (--tablet) {
+    @mixin body-4;
+    padding-bottom: 104px;;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
 }
 
 .studio {
   order: 2;
+
+  @media (--tablet) {
+    order: 1;
+  }
+
+  @media (--desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+  }
+}
+
+.address {
+  margin-bottom: 40px;
+
+  @media (--desktop) {
+    margin-bottom: 0;
+  }
 }
 
 .right {
@@ -14,8 +39,11 @@
   display: flex;
   flex-direction: column;
 
-  & .column {
-    order: 1;
+  @media (--desktop) {
+    order: 2;
+    width: 50%;
+    flex-direction: row-reverse;
+    align-items: flex-end;
   }
 }
 
@@ -25,12 +53,39 @@
   column-gap: 24px;
   margin-bottom: 60px;
 
+  @media (--desktop) {
+    margin-bottom: 0;
+    margin-top: auto;
+  }
+
   & :global(a) {
     text-decoration: none;
+  }
+}
+
+.column {
+  order: 1;
+
+  @media (--desktop) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+  }
+}
+
+.newsletter {
+  margin-bottom: 32px;
+  @media (--desktop) {
+    margin: 0;
   }
 }
 
 .bcorp {
   order: 2;
   margin-bottom: 52px;
+
+  @media (--desktop) {
+    margin: 0 112px 0 0;
+  }
 }

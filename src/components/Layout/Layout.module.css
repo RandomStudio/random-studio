@@ -1,0 +1,49 @@
+.newLayout {
+  --black: lab(0.07 0.35 0.12);
+  --dark-grey: lab(43.19 0 0);
+  --grey: lab(66.99 0 0);
+  --light-grey: lab(94.10 0 0);
+  --off-white: lab(100 0 0);
+
+  --background-color: var(--light-grey);
+  --text-color: var(--black);
+  --link-color: var(--dark-grey);
+
+  --wrapper-width: 1192px;
+
+  &.isAfterDark {
+    --background-color: var(--black);
+    --text-color: var(--off-white);
+    --link-color: var(--grey);
+  }
+}
+
+.newLayout {
+  @mixin body-4;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 100%;
+  padding: 0 20px;
+
+  @media (--tablet) {
+    @mixin body-2;
+    padding: 0 40px;
+  }
+
+  & :global(a) {
+    //text-decoration: none;
+    color: var(--link-color);
+  }
+
+  & .wrapper {
+    padding-top: 268px;
+    padding-bottom: 104px;
+    max-width: 1192px;
+    margin: 0 auto;
+
+    @media (--desktop) {
+      padding-top: 304px;
+      padding-bottom: 228px;
+    }
+  }
+}

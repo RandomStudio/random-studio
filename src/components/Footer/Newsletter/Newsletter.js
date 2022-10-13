@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Newsletter.module.css';
 
-const Newsletter = () => {
+const Newsletter = ({ className }) => {
   const [email, setEmail] = useState('EMAIL');
   const [error, setError] = useState('THERE IS AN ERROR');
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -32,7 +32,10 @@ const Newsletter = () => {
   };
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.container} ${className}`}
+      onSubmit={handleSubmit}
+    >
       <p className={styles.title}>{'Newsletter'}</p>
 
       {isSuccessful ? (

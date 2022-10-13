@@ -1,21 +1,35 @@
 
 .block {
-  width: 100vw;
-  padding-right: 80px;
-  margin-bottom: 80px;
+  width: 100%;
+  padding-right: 60px;
+
+  @media (--desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding-right: 0;
+  }
 }
 
 .image {
   width: 100%;
   aspect-ratio: 1 / 1.27;
   margin-bottom: 32px;
+
+  @media (--desktop) {
+    position: relative;
+    right: 120px;
+  }
 }
 
 .text {
-  @mixin body-4;
   margin-left: 20px;
 
   & :global(p) {
     margin-bottom: 1em;
+
+    @media (--desktop) {
+      max-width: 500px;
+    }
   }
 }

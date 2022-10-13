@@ -1,6 +1,6 @@
 .logo {
   @mixin blendedText;
-  @mixin logo-text-styles;
+  @mixin logo;
   font-size: var(--font-logo-small);
   margin: 0;
   pointer-events: all;
@@ -11,7 +11,7 @@
     left: 45px;
   }
 
-  @media (--standard-desktop) {
+  @media (--desktop) {
     top: 40px;
   }
 
@@ -27,7 +27,7 @@
       top: 78px;
     }
 
-    @media (--standard-desktop) {
+    @media (--desktop) {
       top: 40px;
     }
   }
