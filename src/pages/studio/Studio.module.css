@@ -77,7 +77,6 @@
   }
 
   @media (--hd) {
-    padding-left: 0;
     margin-left: calc((1920px - var(--wrapper-width)) / 2);
   }
 }
