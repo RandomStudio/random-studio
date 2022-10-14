@@ -31,7 +31,7 @@ const Footer = () => (
       />
     </div>
 
-    <div className={styles.right}>
+    <div className={styles.rightColumn}>
       <a
         className={styles.bcorp}
         href="https://www.bcorporation.net/en-us/find-a-b-corp/company/random-studio"
