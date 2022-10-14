@@ -1,0 +1,93 @@
+/*
+New Layout allows us to gradually adopt new styles on a per page/component basis.
+For this reason, we also have some weird newLayout within newLayout nesting, to accomodate the fact header and footer are globally wrapped in newLayout divs
+When change is live everywhere, newLayout can become :root and other code can be stripped out
+*/
+.newLayout {
+  --black: lab(0.07 0.35 0.12);
+  --dark-grey: lab(43.19 0 0);
+  --grey: lab(66.99 0 0);
+  --light-grey: lab(94.10 0 0);
+  --off-white: lab(100 0 0);
+
+  --blue: lab(49.827 31.172 -78.866);
+
+  --background-color: var(--light-grey);
+  --text-color: var(--black);
+  --link-color: var(--dark-grey);
+
+  --wrapper-width: 1192px;
+
+  @nest .isAfterDark &,
+  &.isAfterDark {
+    --background-color: var(--black);
+    --text-color: var(--off-white);
+    --link-color: var(--grey);
+  }
+}
+
+.newLayout {
+  @mixin body-4;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 100%;
+  padding: 0 20px;
+
+  @media (--tablet) {
+    @mixin body-2;
+    padding: 0 40px;
+  }
+
+  & .newLayout {
+    padding: 0;
+  }
+
+  & a {
+    position: relative;
+    color: var(--link-color);
+    text-decoration-clor: currentColor;
+    text-decoration-thickness: 1px;
+    text-underline-position: from-font;
+  }
+
+  & .wrapper {
+    padding-top: 268px;
+    padding-bottom: 104px;
+    max-width: 1192px;
+    margin: 0 auto;
+
+    @media (--desktop) {
+      padding-top: 304px;
+      padding-bottom: 228px;
+    }
+  }
+}
+
+.oldLayout {
+  --blue: lab(49.827 31.172 -78.866);
+
+  & .newLayout {
+    background-color: var(--white);
+  }
+}
+
+
+.transitionColorFlash {
+  background: var(--blue);
+  animation: fadeOut 0.5s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

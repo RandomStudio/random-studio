@@ -1,97 +1,96 @@
-import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Studio.module.scss';
-import Layout from '../../components/Layout/Layout';
-import IntroBlock from '../../components/Studio/IntroBlock/IntroBlock';
-import ServiceList from '../../components/Studio/ServiceList/ServiceList';
-import Head from '../../components/Head/Head';
-import Recruitee from '../../components/Studio/Recruitee/Recruitee';
 import Carousel from '../../components/Carousel/Carousel';
-import SkillBlock from '../../components/Studio/SkillBlock/SkillBlock';
-import useWindowSize from '../../utils/hooks/useWindowSize';
-import supportsIntersectionObserver from '../../utils/supportsIntersectionObserver';
-import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
+import styles from './Studio.module.css';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import addAdditionalInfoToBlocks from '../../api/addAdditionalInfoToBlocks';
 import {
-  introBlockPropType,
-  jobOpeningPropType,
-  servicePropType,
+  dayNightImageBlockPropType,
   slidePropType,
+  vacancyPropType,
 } from '../../propTypes';
+import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
+import Layout from '../../components/Layout/Layout';
+import Block from '../../components/Studio/Block/Block';
+import Vacancies from '../../components/Studio/Vacancies/Vacancies';
 
-const mediumBreakpoint = 960; // BP of 60rem
+const socialLinks = {
+  Instagram: 'https://instagram.com/random_studio/',
+  LinkedIn: 'https://www.linkedin.com/company/random-studio/',
+  Medium: 'https://medium.com/random-studio/',
+};
 
-const Studio = ({
-  title,
-  introBlocks,
-  services,
-  skillset,
-  jobOpenings,
-  studioImpression,
-}) => {
-  const introRef = useRef();
-  const [themeClass, setThemeClass] = useState('');
-  const { width } = useWindowSize();
+const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => (
+  <Layout isNewDesign>
+    <p className={styles.blurb}>{blurb}</p>
 
-  useEffect(() => {
-    if (!supportsIntersectionObserver) {
-      return undefined;
-    }
+    <div className={styles.skills}>
+      <ul className={styles.list}>
+        <li className={styles.heading}>{'Design'}</li>
 
-    setThemeClass(styles.darkTheme);
+        {skillset.map(designArea => (
+          <li key={designArea}>{designArea}</li>
+        ))}
+      </ul>
 
-    const options = {
-      rootMargin: '-120px 0px 0px 0px',
-    };
+      <ul className={styles.list}>
+        <li className={styles.heading}>{'Technology'}</li>
 
-    const cb = entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setThemeClass(styles.darkTheme);
-        } else {
-          setThemeClass('');
-        }
-      });
-    };
+        {skillset.map(technologyArea => (
+          <li key={technologyArea}>{technologyArea}</li>
+        ))}
+      </ul>
 
-    const observer = new IntersectionObserver(cb, options);
-    observer.observe(introRef.current);
+      <ul className={styles.list}>
+        <li className={styles.heading}>{'Product'}</li>
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+        {skillset.map(productArea => (
+          <li key={productArea}>{productArea}</li>
+        ))}
+      </ul>
+    </div>
 
-  return (
-    <Layout>
-      <div
-        className={`${styles.wrapper} ${width > mediumBreakpoint ? themeClass : ''
-          }`} // Makes it scrollable with keyboard
-        tabIndex="-1"
-      >
-        <Head title="Studio" />
+    <Carousel
+      caption="Studio Impressions"
+      className={styles.carousel}
+      sizes="(max-width: 768px) 100vw, 50vw"
+      slides={studioImpression}
+    />
 
-        <IntroBlock intros={introBlocks} ref={introRef} title={title} />
+    {blocks.map(block => (
+      <Block block={block} className={styles.block} key={block.copy} />
+    ))}
 
-        <ServiceList services={services} />
+    <div className={styles.links}>
+      <div className={styles.list}>
+        <h3 className={styles.heading}>{'Start a conversation'}</h3>
 
-        <SkillBlock skillset={skillset} />
+        <a href="mailto:hello@random.studio">{'hello@random.studio'}</a>
+      </div>
 
-        <div className={styles.jobsImpressionBlock}>
-          <Recruitee jobOpenings={jobOpenings} />
+      <div className={styles.list}>
+        <h3 className={styles.heading}>{'Press inquiries'}</h3>
 
-          <Carousel
-            caption="Studio Impressions"
-            className={styles.carouselWrapper}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            slides={studioImpression}
-          />
+        <a href="mailto:press@random.studio">{'press@random.studio'}</a>
+      </div>
+
+      <div className={styles.list}>
+        <h3 className={styles.heading}>{'Follow us'}</h3>
+
+        <div className={styles.social}>
+          {Object.entries(socialLinks).map(([name, url]) => (
+            <div className={styles.link} key={name}>
+              <a href={url} rel="noopener noreferrer" target="_blank">
+                {name}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
-    </Layout>
-  );
-};
+
+      <Vacancies className={styles.vacancies} vacancies={vacancies} />
+    </div>
+  </Layout>
+);
 
 export const getStaticProps = async ({ preview }) => {
   const { page } = await getDataFromBackend({
@@ -102,18 +101,17 @@ export const getStaticProps = async ({ preview }) => {
   return {
     props: {
       ...page,
-      introBlocks: await addAdditionalInfoToBlocks(page.introBlocks),
+      blocks: await addAdditionalInfoToBlocks(page.blocks),
     },
   };
 };
 
 Studio.propTypes = {
-  introBlocks: PropTypes.arrayOf(introBlockPropType).isRequired,
-  jobOpenings: PropTypes.arrayOf(jobOpeningPropType).isRequired,
-  services: PropTypes.arrayOf(servicePropType).isRequired,
+  blocks: PropTypes.arrayOf(dayNightImageBlockPropType).isRequired,
+  blurb: PropTypes.string.isRequired,
   skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
   studioImpression: PropTypes.arrayOf(slidePropType).isRequired,
-  title: PropTypes.string.isRequired,
+  vacancies: PropTypes.arrayOf(vacancyPropType).isRequired,
 };
 
 export default Studio;

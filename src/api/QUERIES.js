@@ -143,38 +143,24 @@ export const SINGLE_PROJECT_QUERY = `
 
 export const STUDIO_PAGE_QUERY = `
 ${IMAGE_DATA_OBJECT_FRAGMENT}
-
 {
   page: studioPage {
-    id
-    skillset
-    title
-    introBlocks {
+    blurb
+    blocks {
       __typename
-      video {
-        height
-        providerUid
-        thumbnailUrl
-        url
-        width
-      }
       copy
       image {
+        ...ImageDataObject
+      }
+      nightImage {
         ...ImageDataObject
       }
     }
     skillset
-    services {
-      title
-      copy
-      image {
-        ...ImageDataObject
-      }
-    }
     studioImpression {
       ...ImageDataObject
     }
-    jobOpenings {
+    vacancies: jobOpenings {
       title
       description(markdown: false)
       url

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, {
   useState,
   useEffect,
@@ -48,10 +49,10 @@ const LazyVideo = React.forwardRef(
       }
     }, [onPlayStateChange]);
 
-    const handlePause = () => {
+    const handlePause = useCallback(() => {
       videoRef.current.pause();
       onPlayStateChange(false);
-    };
+    }, [onPlayStateChange]);
 
     useImperativeHandle(
       parentRef,
@@ -59,7 +60,7 @@ const LazyVideo = React.forwardRef(
         play: handlePlay,
         pause: handlePause,
       }),
-      [],
+      [handlePause, handlePlay],
     );
 
     useEffect(() => {
@@ -116,7 +117,7 @@ const LazyVideo = React.forwardRef(
       );
 
       return <source src={orderedSizes[0]?.link} type="video/mp4" />;
-    }, [sources, width, windowWidth]);
+    }, [dpr, sources, width, windowWidth]);
 
     if (!video) {
       return null;

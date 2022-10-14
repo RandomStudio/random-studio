@@ -122,20 +122,14 @@ export const projectPropTypeObject = {
 
 export const projectPropType = PropTypes.shape(projectPropTypeObject);
 
-export const introBlockPropType = PropTypes.shape({
+export const dayNightImageBlockPropType = PropTypes.shape({
   __typename: PropTypes.string.isRequired,
-  video: videoPropType,
   copy: PropTypes.string.isRequired,
   image: imageDataPropType,
+  nightImage: imageDataPropType,
 });
 
-export const servicePropType = PropTypes.shape({
-  title: PropTypes.string.isRequired,
-  copy: PropTypes.string.isRequired,
-  image: imageDataPropType.isRequired,
-});
-
-export const jobOpeningPropType = PropTypes.shape({
+export const vacancyPropType = PropTypes.shape({
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

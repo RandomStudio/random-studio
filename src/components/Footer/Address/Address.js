@@ -1,10 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Email from '../../Email/Email';
-import styles from './Address.module.scss';
+import Email from './Email/Email';
+import styles from './Address.module.css';
 
-const Address = ({ address, aria, directions, email, name, phone }) => (
-  <address aria-label={aria} className={`${styles.address}`}>
+const Address = ({
+  address,
+  aria,
+  className,
+  directions,
+  email,
+  name,
+  phone,
+}) => (
+  <address aria-label={aria} className={`${styles.address} ${className}`}>
     <span className={styles.name}>{name}</span>
 
     <div className={styles.location}>
@@ -31,13 +39,14 @@ const Address = ({ address, aria, directions, email, name, phone }) => (
 
     <br />
 
-    {email && <Email email={email} />}
+    {email && <Email className={styles.email} email={email} />}
   </address>
 );
 
 Address.propTypes = {
   address: PropTypes.arrayOf(PropTypes.string).isRequired,
   aria: PropTypes.string.isRequired,
+  className: PropTypes.string,
   directions: PropTypes.string.isRequired,
   email: PropTypes.string,
   name: PropTypes.string.isRequired,
@@ -45,6 +54,7 @@ Address.propTypes = {
 };
 
 Address.defaultProps = {
+  className: '',
   email: null,
 };
 

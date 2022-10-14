@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 32px;
+  position: fixed;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  pointer-events: all;
+  z-index: 5;
+  mix-blend-mode: difference;
+
+  @media (--desktop) {
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    left: 40px;
+    right: 40px;
+  }
+
+  & a {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
+.links {
+  @mixin body-3;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  column-gap: 32px;
+  padding: 0;
+  margin: 0;
+
+  @media (--desktop) {
+    @mixin body-2;
+    column-gap: 60px;
+  }
+}

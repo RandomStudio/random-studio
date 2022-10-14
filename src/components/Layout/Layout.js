@@ -1,50 +1,49 @@
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { AppProvider } from '../../utils/context/AppContext';
-import styles from './Layout.module.scss';
 import Navigation from '../Navigation/Navigation';
-import Toast from '../Toast/Toast';
-import useToastVisibility from '../../utils/hooks/useToastVisiblity';
 import Footer from '../Footer/Footer';
+import styles from './Layout.module.css';
+import useSunset from '../../utils/hooks/useSunset';
+import classNames from '../../utils/classNames';
+import AfterDarkContext from './AfterDarkContext';
 
-const backgroundTransitionColors = ['#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
+const Layout = ({
+  children,
+  className,
+  hasFooter,
+  isLogoCentred,
+  isNewDesign,
+}) => {
+  const isAfterDark = useSunset();
 
-const Layout = ({ children, className, hasFooter, isLogoCentred }) => {
-  const toastVisiblity = useToastVisibility();
-  const [randomStyle, setRandomStyle] = useState({});
+  const isDarkStyleActive = isAfterDark && isNewDesign;
 
-  useEffect(() => {
-    if (!process.browser) {
-      return;
-    }
-
-    const randomOffset = Math.floor(
-      Math.random() * backgroundTransitionColors.length,
-    );
-
-    setRandomStyle({
-      '--backgroundColor': backgroundTransitionColors[randomOffset],
-    });
-  }, []);
+  const layoutClasses = classNames({
+    className,
+    [styles.newLayout]: isNewDesign,
+    [styles.oldLayout]: !isNewDesign,
+    [styles.isAfterDark]: isDarkStyleActive,
+  });
 
   return (
-    <AppProvider value={toastVisiblity}>
-      <a className="screen-reader-only" href="#main-content" id="skip-nav">
-        {'Skip Navigation'}
-      </a>
+    <AfterDarkContext.Provider value={isAfterDark}>
+      <div className={`${layoutClasses} ${isDarkStyleActive && 'isAfterDark'}`}>
+        <a className="screen-reader-only" href="#main-content" id="skip-nav">
+          {'Skip Navigation'}
+        </a>
 
-      <Navigation isLogoCentred={isLogoCentred} />
+        <div className={styles.newLayout}>
+          <Navigation isLogoCentred={isLogoCentred} />
+        </div>
 
-      <div className={`${styles.container} ${className}`} id="main-content">
-        {children}
+        <div className={styles.wrapper} id="main-content">
+          {children}
+        </div>
 
-        {hasFooter && <Footer />}
+        <div className={styles.newLayout}>{hasFooter && <Footer />}</div>
+
+        <div className={styles.transitionColorFlash} />
       </div>
-
-      <div className={styles.backgroundTransition} style={randomStyle} />
-
-      <Toast copy="Copied to clipboard" />
-    </AppProvider>
+    </AfterDarkContext.Provider>
   );
 };
 
@@ -53,12 +52,14 @@ Layout.propTypes = {
   className: PropTypes.string,
   hasFooter: PropTypes.bool,
   isLogoCentred: PropTypes.bool,
+  isNewDesign: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   className: '',
   hasFooter: true,
   isLogoCentred: false,
+  isNewDesign: false,
 };
 
 export default Layout;

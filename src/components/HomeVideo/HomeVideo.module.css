@@ -1,0 +1,99 @@
+.video {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.videoWrapper {
+  width: 100%;
+  height: 100%;
+
+  & div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  & video {
+    height: 100%;
+    width: auto;
+
+    @media screen and (orientation: landscape) {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+}
+
+.featuredAuthor {
+  color: white;
+  mix-blend-mode: difference;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1;
+  padding: 16px 22px;
+}
+
+.creditsLogo {
+  font-family: 'Larish Neue', serif;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 576px) {
+  .featuredAuthor {
+    text-align: right;
+  }
+
+  .logo {
+    left: 64px;
+
+    &.isCenter {
+      font-size: var(--font-logo-medium);
+    }
+
+    &.isTop {
+      top: 45px;
+    }
+  }
+}
+
+@media (min-width: 864px) {
+  .logo {
+    right: 0;
+    left: 0;
+    max-width: 768px;
+
+    &.isCenter {
+      margin: 0 auto;
+      padding-left: 64px;
+    }
+
+    &.isTop {
+      margin: 0;
+      padding-left: 38px;
+    }
+  }
+}
+
+@media (min-width: 1152px) {
+  .logo {
+    max-width: 1152px;
+
+    &.isCenter {
+      font-size: var(--font-logo-large);
+    }
+  }
+}
