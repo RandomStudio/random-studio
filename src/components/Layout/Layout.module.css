@@ -13,6 +13,7 @@
 
   --wrapper-width: 1192px;
 
+  @nest .isAfterDark &,
   &.isAfterDark {
     --background-color: var(--black);
     --text-color: var(--off-white);
