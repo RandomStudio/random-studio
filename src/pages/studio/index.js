@@ -93,10 +93,7 @@ const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => (
 );
 
 export const getStaticProps = async ({ preview }) => {
-  const {
-    page,
-    newPage: { blurb, blocks },
-  } = await getDataFromBackend({
+  const { page } = await getDataFromBackend({
     query: STUDIO_PAGE_QUERY,
     preview,
   });
@@ -104,8 +101,7 @@ export const getStaticProps = async ({ preview }) => {
   return {
     props: {
       ...page,
-      blurb,
-      blocks: await addAdditionalInfoToBlocks(blocks),
+      blocks: await addAdditionalInfoToBlocks(page.blocks),
     },
   };
 };

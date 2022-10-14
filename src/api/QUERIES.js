@@ -145,19 +145,6 @@ export const STUDIO_PAGE_QUERY = `
 ${IMAGE_DATA_OBJECT_FRAGMENT}
 {
   page: studioPage {
-    skillset
-    studioImpression {
-      ...ImageDataObject
-    }
-    vacancies: jobOpenings {
-      title
-      description(markdown: false)
-      url
-      id
-      _publishedAt
-    }
-  }
-  newPage: studioPageNew {
     blurb
     blocks {
       __typename
@@ -168,6 +155,17 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
       nightImage {
         ...ImageDataObject
       }
+    }
+    skillset
+    studioImpression {
+      ...ImageDataObject
+    }
+    vacancies: jobOpenings {
+      title
+      description(markdown: false)
+      url
+      id
+      _publishedAt
     }
   }
 }`;
