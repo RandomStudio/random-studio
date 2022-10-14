@@ -27,7 +27,7 @@ const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => (
       <ul className={styles.list}>
         <li className={styles.heading}>{'Design'}</li>
 
-        {skillset.map(designArea => (
+        {skillset.design?.map(designArea => (
           <li key={designArea}>{designArea}</li>
         ))}
       </ul>
@@ -35,7 +35,7 @@ const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => (
       <ul className={styles.list}>
         <li className={styles.heading}>{'Technology'}</li>
 
-        {skillset.map(technologyArea => (
+        {skillset.technology?.map(technologyArea => (
           <li key={technologyArea}>{technologyArea}</li>
         ))}
       </ul>
@@ -43,7 +43,7 @@ const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => (
       <ul className={styles.list}>
         <li className={styles.heading}>{'Product'}</li>
 
-        {skillset.map(productArea => (
+        {skillset.product?.map(productArea => (
           <li key={productArea}>{productArea}</li>
         ))}
       </ul>
