@@ -14,7 +14,8 @@
   border: none;
   padding: 0 0 12px;
   outline: none;
-  border-bottom: 1px solid black;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
   border-radius: 0;
 }
 
@@ -33,6 +34,10 @@
   height: 12px;
   width: 20px;
   right: 0;
+
+  @nest :global(.isAfterDark) & {
+    filter: invert();
+  }
 }
 
 .check {

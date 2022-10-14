@@ -15,16 +15,18 @@ const Layout = ({
 }) => {
   const isAfterDark = useSunset();
 
+  const isDarkStyleActive = isAfterDark && isNewDesign;
+
   const layoutClasses = classNames({
     className,
     [styles.newLayout]: isNewDesign,
     [styles.oldLayout]: !isNewDesign,
-    [styles.isAfterDark]: isAfterDark && isNewDesign,
+    [styles.isAfterDark]: isDarkStyleActive,
   });
 
   return (
     <AfterDarkContext.Provider value={isAfterDark}>
-      <div className={layoutClasses}>
+      <div className={`${layoutClasses} ${isDarkStyleActive && 'isAfterDark'}`}>
         <a className="screen-reader-only" href="#main-content" id="skip-nav">
           {'Skip Navigation'}
         </a>
