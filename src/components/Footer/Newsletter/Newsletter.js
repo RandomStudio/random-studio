@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Newsletter.module.css';
 
 const Newsletter = ({ className }) => {
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
   const [isSuccessful, setIsSuccessful] = useState(false);
 
