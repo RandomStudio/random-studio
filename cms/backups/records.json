@@ -1,5 +1,68 @@
 [
   {
+    "id": "142475784",
+    "blurb": "We are a team of artists, designers and engineers who use technology in an emotional way, inviting people to connect to each other in the space they are in.",
+    "blocks": [
+      "142476766"
+    ],
+    "updatedAt": "2022-10-13T16:43:33.532+02:00",
+    "createdAt": "2022-10-12T11:04:01.625+02:00",
+    "meta": {
+      "createdAt": "2022-10-12T11:04:01.625+02:00",
+      "updatedAt": "2022-10-13T16:43:33.532+02:00",
+      "publishedAt": "2022-10-13T16:43:33.566+02:00",
+      "firstPublishedAt": "2022-10-12T11:04:01.670+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "283026345",
+      "stage": null
+    },
+    "itemType": "2017471",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
+    "id": "142476766",
+    "image": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48568689"
+    },
+    "nightImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48568690"
+    },
+    "copy": "We are a Certified B Corporation®\n\nWe believe in taking active steps towards a system of responsibility, care and regeneration.\n\nYou can read more about our journey and what all of this means to us [here](https://medium.com/random-studio/becoming-a-b-corp-3efb4dbe04b7).",
+    "updatedAt": "2022-10-13T16:43:33.508+02:00",
+    "createdAt": "2022-10-12T11:46:24.744+02:00",
+    "meta": {
+      "createdAt": "2022-10-12T11:46:24.744+02:00",
+      "updatedAt": "2022-10-13T16:43:33.508+02:00",
+      "publishedAt": "2022-10-13T16:43:33.581+02:00",
+      "firstPublishedAt": "2022-10-12T11:46:24.847+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "283026344",
+      "stage": null
+    },
+    "itemType": "2017473"
+  },
+  {
     "id": "140797744",
     "details": "{\n  \"For\": \"PANGAIA\",\n  \"Role\": \"Experience Design, Art Direction, Creative Technology, Prototyping, Spatial Design, Sound Design\"\n}",
     "intro": "We designed a sensory forest experience housed in a Nature Capsule for Pangaia’s pop-up at The Grove in LA. The brand is driven by a commitment to the environment, creating bio-engineered, sustainable materials through new technologies, and we wanted this space to embody their inspiration: the symphonic ecosystem of the natural world. ",
@@ -58,8 +121,8 @@
     },
     "itemType": "1641543",
     "creator": {
-      "id": "29417",
-      "type": "user"
+      "id": "49286",
+      "type": "account"
     }
   },
   {
@@ -365,8 +428,8 @@
     },
     "itemType": "1641543",
     "creator": {
-      "id": "33712",
-      "type": "user"
+      "id": "49286",
+      "type": "account"
     }
   },
   {
@@ -555,8 +618,8 @@
     },
     "itemType": "1641543",
     "creator": {
-      "id": "29417",
-      "type": "user"
+      "id": "49286",
+      "type": "account"
     }
   },
   {
@@ -739,8 +802,8 @@
     },
     "itemType": "1641543",
     "creator": {
-      "id": "29417",
-      "type": "user"
+      "id": "49286",
+      "type": "account"
     }
   },
   {
