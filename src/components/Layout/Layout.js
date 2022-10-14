@@ -19,7 +19,7 @@ const Layout = ({
     className,
     [styles.newLayout]: isNewDesign,
     [styles.oldLayout]: !isNewDesign,
-    [styles.isAfterDark]: isAfterDark,
+    [styles.isAfterDark]: isAfterDark && isNewDesign,
   });
 
   return (
