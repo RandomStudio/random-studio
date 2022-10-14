@@ -1,3 +1,8 @@
+/*
+New Layout allows us to gradually adopt new styles on a per page/component basis.
+For this reason, we also have some weird newLayout within newLayout nesting, to accomodate the fact header and footer are globally wrapped in newLayout divs
+When change is live everywhere, newLayout can become :root and other code can be stripped out
+*/
 .newLayout {
   --black: lab(0.07 0.35 0.12);
   --dark-grey: lab(43.19 0 0);
