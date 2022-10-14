@@ -25,7 +25,7 @@
 .text {
   margin-left: 20px;
 
-  & :global(p) {
+  & p {
     margin-bottom: 1em;
 
     @media (--desktop) {

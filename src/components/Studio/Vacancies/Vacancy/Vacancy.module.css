@@ -11,7 +11,7 @@
   -webkit-overflow-scrolling: touch;
   pointer-events: all;
 
-  & :global(button) {
+  & button {
     border: none;
     border-radius: 0;
     background: none;

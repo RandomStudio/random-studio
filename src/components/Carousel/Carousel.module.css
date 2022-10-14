@@ -20,7 +20,7 @@
     bottom: 0;
   }
 
-  & :global(video) {
+  & video {
     width: 100%;
   }
 
