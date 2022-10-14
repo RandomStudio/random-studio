@@ -12,6 +12,7 @@ import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
 import Layout from '../../components/Layout/Layout';
 import Block from '../../components/Studio/Block/Block';
 import Vacancies from '../../components/Studio/Vacancies/Vacancies';
+import Head from '../../components/Head/Head';
 
 const socialLinks = {
   Instagram: 'https://instagram.com/random_studio/',
@@ -19,8 +20,10 @@ const socialLinks = {
   Medium: 'https://medium.com/random-studio/',
 };
 
-const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => (
+const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
   <Layout isNewDesign>
+    <Head />
+
     <p className={styles.blurb}>{blurb}</p>
 
     <div className={styles.skills}>
@@ -57,7 +60,11 @@ const Studio = ({ blurb, blocks, skillset, vacancies, studioImpression }) => (
     />
 
     {blocks.map(block => (
-      <Block block={block} className={styles.block} key={block.copy} />
+      <Block
+        block={block}
+        className={`${styles.block} ${styles.bcorp}`}
+        key={block.copy}
+      />
     ))}
 
     <div className={styles.links}>
@@ -109,7 +116,7 @@ export const getStaticProps = async ({ preview }) => {
 Studio.propTypes = {
   blocks: PropTypes.arrayOf(dayNightImageBlockPropType).isRequired,
   blurb: PropTypes.string.isRequired,
-  skillset: PropTypes.arrayOf(PropTypes.string).isRequired,
+  skillset: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
   studioImpression: PropTypes.arrayOf(slidePropType).isRequired,
   vacancies: PropTypes.arrayOf(vacancyPropType).isRequired,
 };

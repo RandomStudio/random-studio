@@ -50,6 +50,18 @@
   }
 }
 
+.bcorp :global(.image) {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 20px;
+    mix-blend-mode: multiply;
+    right: 28px;
+    content: url(/icons/bcorp.svg);
+  }
+}
+
 
 .carousel,
 .block {

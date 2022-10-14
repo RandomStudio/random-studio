@@ -11,7 +11,7 @@ const Block = ({ block: { copy, image, nightImage }, className }) => {
 
   return (
     <div className={`${styles.block} ${className}`}>
-      <div className={styles.image}>
+      <div className={`${styles.image} image`}>
         <Image alt={copy} data={(isAfterDark ? nightImage : image).imageData} />
       </div>
 
