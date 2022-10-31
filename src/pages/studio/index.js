@@ -24,7 +24,7 @@ const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
   <Layout isNewDesign>
     <Head />
 
-    <p className={styles.blurb}>{blurb}</p>
+    <p className={styles.blurb} dangerouslySetInnerHTML={{ __html: blurb }} />
 
     <div className={styles.skills}>
       <ul className={styles.list}>
