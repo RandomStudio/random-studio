@@ -21,7 +21,9 @@ const ProjectDetail = ({
       </h1>
 
       <div className={styles.intro}>
-        <ReactMarkdown>{intro.replace('<br>', '\n\n')}</ReactMarkdown>
+        <ReactMarkdown linkTarget="_blank">
+          {intro.replace('<br>', '\n\n')}
+        </ReactMarkdown>
       </div>
 
       {content?.map(block => (
