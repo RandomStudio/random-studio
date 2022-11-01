@@ -5,6 +5,9 @@ on:
       - master
   # Allows external webhook trigger
   repository_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build:
     name: Build application
