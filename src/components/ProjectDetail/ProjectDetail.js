@@ -28,13 +28,6 @@ const ProjectDetail = ({
         <ContentBlock block={block} key={block.id} />
       ))}
 
-      {relatedProjects && relatedProjects.length > 0 && (
-        <RelatedProjectSlider
-          relatedProjects={relatedProjects}
-          relatedProjectsTitle={relatedProjectsTitle}
-        />
-      )}
-
       <dl aria-label="Project Details" className={styles.credits}>
         {Object.entries(details ?? {})?.map(([key, value]) => (
           <React.Fragment key={`${key}-${value}`}>
@@ -46,6 +39,13 @@ const ProjectDetail = ({
           </React.Fragment>
         ))}
       </dl>
+
+      {relatedProjects && relatedProjects.length > 0 && (
+        <RelatedProjectSlider
+          relatedProjects={relatedProjects}
+          relatedProjectsTitle={relatedProjectsTitle}
+        />
+      )}
 
       <BackScrim />
     </div>
