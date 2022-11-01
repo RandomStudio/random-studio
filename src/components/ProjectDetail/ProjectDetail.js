@@ -34,7 +34,9 @@ const ProjectDetail = ({
             <dt>{`${key}:`}</dt>
 
             <dd>
-              {value.replaceAll('<br />', '<br>').replaceAll('<br>', '\n')}
+              <ReactMarkdown linkTarget="_blank">
+                {value.replaceAll('<br />', '<br>').replaceAll('<br>', '\n')}
+              </ReactMarkdown>
             </dd>
           </React.Fragment>
         ))}
