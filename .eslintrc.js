@@ -150,7 +150,7 @@ module.exports = {
     'react/no-array-index-key': 2,
     'react/no-arrow-function-lifecycle': 2,
     'react/no-children-prop': 2,
-    'react/no-danger': 2,
+    'react/no-danger': 0,
     'react/no-danger-with-children': 2,
     'react/no-deprecated': 2,
     'react/no-did-mount-set-state': 2,
