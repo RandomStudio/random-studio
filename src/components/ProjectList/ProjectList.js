@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import { countBy } from 'lodash-es';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
@@ -11,16 +10,6 @@ import Crossfade from '../Crossfade/Crossfade';
 import { projectPropType } from '../../propTypes';
 
 const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
-  const projectFilters = projects
-    .map(({ tags }) => tags)
-    .filter(Boolean)
-    .flat()
-    .map(tag => tag.toLowerCase());
-  // Was previously constructed dynamically but because the filterList has to be ordered in a certain way we have to hardcode it
-  // const filterList = [...new Set([...projectFilters])];
-
-  const filterCount = countBy(projectFilters);
-
   const [activeTag, setActiveTag] = useState(null);
 
   const visibleProjects = useMemo(
@@ -38,7 +27,7 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
       {hasFilters && (
         <Filters
           activeTag={activeTag}
-          filterCount={filterCount}
+          projects={projects}
           setActiveTag={setActiveTag}
         />
       )}

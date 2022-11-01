@@ -162,11 +162,3 @@ export const LAYOUT = [
     left: 20,
   },
 ];
-
-export const PROJECT_FILTERS = [
-  'Spaces',
-  'Installations',
-  'Exhibitions',
-  'Research',
-  'Digital',
-];

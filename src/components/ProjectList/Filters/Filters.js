@@ -1,63 +1,50 @@
 import { useRouter } from 'next/router';
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { PROJECT_FILTERS } from '../../../CONSTANTS';
 import styles from './Filters.module.scss';
 import classNames from '../../../utils/classNames';
+import { projectPropType } from '../../../propTypes';
 
-const LOWERCASE_PROJECT_FILTESR = PROJECT_FILTERS.map(filter =>
-  filter.toLowerCase(),
-);
-
-const Filters = ({ filterCount, activeTag, setActiveTag }) => {
+const Filters = ({ activeTag, projects, setActiveTag }) => {
   const router = useRouter();
   const checkboxRef = useRef();
+
+  const projectFilters = useMemo(() => {
+    const projectFiltersWithDupes = projects
+      .map(({ tags }) => tags)
+      .filter(Boolean)
+      .flat()
+      .map(tag => tag.toLowerCase());
+
+    return [...new Set(projectFiltersWithDupes)];
+  }, [projects]);
 
   useEffect(() => {
     const requestedFilter = router.query.filter;
 
-    if (
-      requestedFilter &&
-      LOWERCASE_PROJECT_FILTESR.includes(requestedFilter)
-    ) {
+    if (requestedFilter && projectFilters.includes(requestedFilter)) {
       setActiveTag(requestedFilter);
     }
-  }, [router.query.filter, setActiveTag]);
+  }, [projectFilters, router.query.filter, setActiveTag]);
 
-  const filters = useMemo(() => {
-    const filtersWithEntries = LOWERCASE_PROJECT_FILTESR.filter(
-      filter => (filterCount?.[filter] ?? 0) > 0,
-    );
-
-    const handleSelectFilter = ({ target }) => {
+  const handleSelectFilter = useCallback(
+    ({ target }) => {
       const filter = target.id;
       const tag = filter === activeTag ? null : filter;
       setActiveTag(tag);
 
       router.replace(`/projects${tag ? `?filter=${tag}` : ''}`);
       checkboxRef.current.checked = false;
-    };
+    },
+    [activeTag, router, setActiveTag],
+  );
 
-    const createClasses = filter =>
-      classNames({
-        [styles.entry]: true,
-        [styles.activeFilter]: activeTag !== null,
-        [styles.activeTag]: filter === activeTag,
-      });
-
-    return filtersWithEntries.map(filter => (
-      <button
-        aria-pressed={filter === activeTag}
-        className={createClasses(filter)}
-        id={filter}
-        key={filter}
-        onClick={handleSelectFilter}
-        type="button"
-      >
-        {filter}
-      </button>
-    ));
-  }, [activeTag, filterCount, router, setActiveTag]);
+  const createClasses = filter =>
+    classNames({
+      [styles.entry]: true,
+      [styles.activeFilter]: activeTag !== null,
+      [styles.activeTag]: filter === activeTag,
+    });
 
   return (
     <>
@@ -77,7 +64,18 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
         className={styles.filters}
         role="navigation"
       >
-        {filters}
+        {projectFilters.map(filter => (
+          <button
+            aria-pressed={filter === activeTag}
+            className={createClasses(filter)}
+            id={filter}
+            key={filter}
+            onClick={handleSelectFilter}
+            type="button"
+          >
+            {filter}
+          </button>
+        ))}
       </ul>
     </>
   );
@@ -85,7 +83,7 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
 
 Filters.propTypes = {
   activeTag: PropTypes.string,
-  filterCount: PropTypes.objectOf(PropTypes.number).isRequired,
+  projects: PropTypes.arrayOf(projectPropType).isRequired,
   setActiveTag: PropTypes.func.isRequired,
 };
 
