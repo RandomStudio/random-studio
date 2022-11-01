@@ -6,9 +6,8 @@ import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import Image from '../../Image/Image';
 
 const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
-  const wrapperClass = `${styles.wrapper} ${
-    relatedProjects.length === 1 ? styles.isSingle : ''
-  }`;
+  const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
+    }`;
 
   return (
     <section className={wrapperClass}>
@@ -36,7 +35,7 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
                     isAlwaysMuted
                     isMuted
                     loops
-                    url={featuredVideo}
+                    video={featuredVideo}
                   />
                 )}
 
