@@ -21,7 +21,7 @@ const ProjectDetail = ({
       </h1>
 
       <div className={styles.intro}>
-        <ReactMarkdown>{intro}</ReactMarkdown>
+        <ReactMarkdown>{intro.replace('<br>', '\n\n')}</ReactMarkdown>
       </div>
 
       {content?.map(block => (
@@ -35,7 +35,7 @@ const ProjectDetail = ({
 
             <dd>
               <ReactMarkdown linkTarget="_blank">
-                {value.replaceAll('<br />', '<br>').replaceAll('<br>', '\n')}
+                {value.replaceAll('<br />', '<br>').replaceAll('<br>', '\n\n')}
               </ReactMarkdown>
             </dd>
           </React.Fragment>
