@@ -39,15 +39,6 @@
     }
   }
 
-  &::after {
-    color: #d0d0d0;
-    position: relative;
-    display: inline-block;
-    margin-left: 0.5em;
-    counter-reset: count var(--count);
-    content: counter(count);
-  }
-
   &:not(.activeTag) {
     color: #d0d0d0;
   }

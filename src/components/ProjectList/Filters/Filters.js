@@ -52,9 +52,6 @@ const Filters = ({ filterCount, activeTag, setActiveTag }) => {
         id={filter}
         key={filter}
         onClick={handleSelectFilter}
-        style={{
-          '--count': filterCount[filter],
-        }}
         type="button"
       >
         {filter}
