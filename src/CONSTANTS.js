@@ -162,3 +162,5 @@ export const LAYOUT = [
     left: 20,
   },
 ];
+// Tags have an order in the CMS, but can't find a way to access it.
+export const ORDERED_TAGS = ['retail', 'exhibition', 'research'];

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Filters.module.scss';
 import classNames from '../../../utils/classNames';
 import { projectPropType } from '../../../propTypes';
+import { ORDERED_TAGS } from '../../../CONSTANTS';
 
 const Filters = ({ activeTag, projects, setActiveTag }) => {
   const router = useRouter();
@@ -64,7 +65,7 @@ const Filters = ({ activeTag, projects, setActiveTag }) => {
         className={styles.filters}
         role="navigation"
       >
-        {projectFilters.map(filter => (
+        {ORDERED_TAGS.map(filter => (
           <button
             aria-pressed={filter === activeTag}
             className={createClasses(filter)}

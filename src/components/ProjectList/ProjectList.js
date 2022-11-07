@@ -5,12 +5,15 @@ import PropTypes from 'prop-types';
 import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
 import Project from '../Project/Project';
-import { HOMEPAGE_POSTS_LIMIT, LAYOUT } from '../../CONSTANTS';
+import { HOMEPAGE_POSTS_LIMIT, LAYOUT, ORDERED_TAGS } from '../../CONSTANTS';
 import Crossfade from '../Crossfade/Crossfade';
 import { projectPropType } from '../../propTypes';
 
 const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
   const [activeTag, setActiveTag] = useState(null);
+
+  const activeTagIndex =
+    ORDERED_TAGS.findIndex(tag => tag === activeTag) + 1 ?? 0;
 
   const visibleProjects = useMemo(
     () =>
@@ -42,7 +45,8 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
         <Crossfade>
           <React.Fragment key={activeTag ?? 'all'}>
             {visibleProjects.map(
-              ({ featuredImage, featuredVideo, title, slug }, index) => {
+              ({ featuredImage, featuredVideo, title, slug }, projectIndex) => {
+                const index = projectIndex + activeTagIndex;
                 const { left, top, width } = LAYOUT[index % LAYOUT.length];
 
                 return (
