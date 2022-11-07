@@ -1,5 +1,197 @@
 [
   {
+    "id": "120810616",
+    "details": "{\n  \"For\": \"Chanel\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Content Production, Software Development, App Design and Development, Video Editing, Animation, Sound Design, Set Design.\",\n  \"With\": \"Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction, Marius Denisse — 3D Animation\"\n}",
+    "intro": "French fashion house Chanel is known for a continuous strive for excellence and perfection. For the introduction of the Chanel Première Camélia Skeleton watch at the international watch show Baselworld 2017, we translated the qualities of the precious watch into a memorable, intimate voyage.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A vertical journey through time <br>for Chanel",
+    "content": [
+      "120810608",
+      "120810609",
+      "120810610",
+      "120810611",
+      "120810612",
+      "120810613",
+      "120810614",
+      "120810615"
+    ],
+    "relatedProjects": [],
+    "slug": "chanel-timebox",
+    "tags": "[\n  \"retail\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221604"
+    },
+    "opengraph": {
+      "image": "46221606",
+      "title": "A vertical journey through time\nfor Chanel",
+      "description": null,
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-04T16:17:34.787+01:00",
+    "createdAt": "2022-04-04T16:13:24.147+02:00",
+    "position": 38,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:24.147+02:00",
+      "updatedAt": "2022-11-04T16:17:34.787+01:00",
+      "publishedAt": "2022-11-04T16:17:36.903+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:24.466+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284665152",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810591",
+    "details": "{\n  \"For\": \"Cinekid Festival\",\n  \"Role\": \"Technical Direction, Development, Art Direction\",\n  \"With\": \"Philip Schuette\"\n}",
+    "intro": "In another collaboration with artist Philip Schuette, this installation invites you to get physical and use your body as a search term for images. Strike a pose and watch it reflected back through images, excavated from the bottomless global bin of the internet.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A playful interactive search engine for Cinekid Festival",
+    "content": [
+      "120810580",
+      "120810581",
+      "120810582",
+      "120810583",
+      "120810584",
+      "120810585",
+      "120810586",
+      "120810587",
+      "120810588",
+      "120810589",
+      "120810590"
+    ],
+    "relatedProjects": [
+      "123515639",
+      "120810775"
+    ],
+    "slug": "body",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221598"
+    },
+    "opengraph": {
+      "image": "46221598",
+      "title": "BODY with Philip Schuette",
+      "description": "BODY presented the opportunity to play with hyper-responsive code that allows for novel and physical interactions between people and algorithms.",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-04T16:13:28.798+01:00",
+    "createdAt": "2022-04-04T16:13:21.409+02:00",
+    "position": 23,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:21.409+02:00",
+      "updatedAt": "2022-11-04T16:13:28.798+01:00",
+      "publishedAt": "2022-11-04T16:13:30.046+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:21.858+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284664941",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "121739451",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Spatial Design, Interior Design, Interactive Design, Creative Technology\",\n  \"With\": \"X+L Amsterdam – Interior Design, Light Installation – Aernout Meijer Studio,  Photos by Kasia Gatkowska\"\n}",
+    "intro": "How can we create a dialogue between people and the space they are in? How do we invite people to reconnect to their physical surroundings without losing our rich digital culture?  ",
+    "relatedProjectsTitle": "Other work",
+    "title": "An iteration of Interactive Space for our new home in Amsterdam",
+    "content": [
+      "122309450",
+      "122309449",
+      "121740054",
+      "121780700",
+      "121739760",
+      "122308990",
+      "121739798",
+      "121780701",
+      "121781193",
+      "121739800",
+      "121781384",
+      "121780923",
+      "121739808",
+      "121781170",
+      "121781481",
+      "121739809",
+      "122310468",
+      "122312079",
+      "122312367",
+      "122310497"
+    ],
+    "relatedProjects": [],
+    "slug": "our-dynamic-studio",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46658722"
+    },
+    "opengraph": {
+      "image": "46658674",
+      "title": "Our Dynamic Studio",
+      "description": "We brought to life our own interactive studio in Amsterdam",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-04T12:40:54.494+01:00",
+    "createdAt": "2022-05-19T16:04:20.186+02:00",
+    "position": 8,
+    "meta": {
+      "createdAt": "2022-05-19T16:04:20.186+02:00",
+      "updatedAt": "2022-11-04T12:40:54.494+01:00",
+      "publishedAt": "2022-11-04T12:40:56.979+01:00",
+      "firstPublishedAt": "2022-06-22T10:18:13.465+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284654552",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
     "id": "120872252",
     "details": "{\n  \"For\": \"Maison Margiela\",\n  \"Role\": \"Creative Direction, Production Oversight, Post Production, Main Show Video Edit, Teaser Video, Podcast Video, Key Look Photography, Product Launch Photography.\",\n  \"With\": \"Lonneke van der Palen – Photography\"\n}",
     "intro": "We have been collaborating with Maison Margiela as a digital partner for six of their collections. Drawing on the maison’s craft-based approach, we have come up with tailor-made formats and visual communication strategies that respond to the specific themes and language of each season.\n\nBuilding new forms that work alongside Galliano’s avant-garde thought-process, the digital universes we have created are an extension of the collection, rather than a documentation of it.",
@@ -1444,70 +1636,6 @@
     }
   },
   {
-    "id": "120810591",
-    "details": "{\n  \"For\": \"Cinekid Festival\",\n  \"Role\": \"Technical Direction, Development, Art Direction\",\n  \"With\": \"Philip Schuette\"\n}",
-    "intro": "In another collaboration with artist Philip Schuette, this installation invites you to get physical and use your body as a search term for images. Strike a pose and watch it reflected back through images, excavated from the bottomless global bin of the internet.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A playful interactive search engine for Cinekid Festival",
-    "content": [
-      "120810580",
-      "120810581",
-      "120810582",
-      "120810583",
-      "120810584",
-      "120810585",
-      "120810586",
-      "120810587",
-      "120810588",
-      "120810589",
-      "120810590"
-    ],
-    "relatedProjects": [
-      "123515639",
-      "120810775"
-    ],
-    "slug": "body",
-    "tags": "[\n  \"research\",\n  \"digital\",\n  \"installations\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221598"
-    },
-    "opengraph": {
-      "image": "46221598",
-      "title": "BODY with Philip Schuette",
-      "description": "BODY presented the opportunity to play with hyper-responsive code that allows for novel and physical interactions between people and algorithms.",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T13:21:45.655+01:00",
-    "createdAt": "2022-04-04T16:13:21.409+02:00",
-    "position": 23,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:21.409+02:00",
-      "updatedAt": "2022-11-01T13:21:45.655+01:00",
-      "publishedAt": "2022-11-01T13:21:46.674+01:00",
-      "firstPublishedAt": "2022-04-04T16:13:21.858+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283998000",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "120810368",
     "details": "{\n  \"For\": \"NikeLab Global\",\n  \"Role\": \"Concept Development, Creative Direction, Interaction Design, Production, Hardware Architecture, Software Development\",\n  \"With\": \"Fiction Factory — Physical Fabrication and Installation (NikeLabs 1948 London)\"\n}",
     "intro": "NikeLab is a retail destination that serves to spark consumer discovery in new and unexpected ways. For the launch of the 2017 ACG (All Conditions Gear) collection, we created various stylised weather conditions (wind, rain and fog) that seized two of the brand’s stores around the globe.",
@@ -2920,134 +3048,6 @@
       "stage": null
     },
     "itemType": "1989580",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
-  },
-  {
-    "id": "120810616",
-    "details": "{\n  \"For\": \"Chanel\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Content Production, Software Development, App Design and Development, Video Editing, Animation, Sound Design, Set Design.\",\n  \"With\": \"Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction, Marius Denisse — 3D Animation\"\n}",
-    "intro": "French fashion house Chanel is known for a continuous strive for excellence and perfection. For the introduction of the Chanel Première Camélia Skeleton watch at the international watch show Baselworld 2017, we translated the qualities of the precious watch into a memorable, intimate voyage.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A vertical journey through time <br>for Chanel",
-    "content": [
-      "120810608",
-      "120810609",
-      "120810610",
-      "120810611",
-      "120810612",
-      "120810613",
-      "120810614",
-      "120810615"
-    ],
-    "relatedProjects": [],
-    "slug": "chanel-timebox",
-    "tags": "[\n  \"installations\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221604"
-    },
-    "opengraph": {
-      "image": "46221606",
-      "title": "A vertical journey through time\nfor Chanel",
-      "description": null,
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-10-24T12:34:05.479+02:00",
-    "createdAt": "2022-04-04T16:13:24.147+02:00",
-    "position": 38,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:24.147+02:00",
-      "updatedAt": "2022-10-24T12:34:05.479+02:00",
-      "publishedAt": "2022-10-24T12:34:09.711+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:24.466+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283483031",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
-    "id": "121739451",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept, Spatial Design, Interior Design, Interactive Design, Creative Technology\",\n  \"With\": \"X+L Amsterdam – Interior Design, Light Installation – Aernout Meijer Studio,  Photos by Kasia Gatkowska\"\n}",
-    "intro": "How can we create a dialogue between people and the space they are in? How do we invite people to reconnect to their physical surroundings without losing our rich digital culture?  ",
-    "relatedProjectsTitle": "Other work",
-    "title": "An iteration of Interactive Space for our new home in Amsterdam",
-    "content": [
-      "122309450",
-      "122309449",
-      "121740054",
-      "121780700",
-      "121739760",
-      "122308990",
-      "121739798",
-      "121780701",
-      "121781193",
-      "121739800",
-      "121781384",
-      "121780923",
-      "121739808",
-      "121781170",
-      "121781481",
-      "121739809",
-      "122310468",
-      "122312079",
-      "122312367",
-      "122310497"
-    ],
-    "relatedProjects": [],
-    "slug": "our-dynamic-studio",
-    "tags": "[\n  \"spaces\",\n  \"research\",\n  \"digital\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46658722"
-    },
-    "opengraph": {
-      "image": "46658674",
-      "title": "Our Dynamic Studio",
-      "description": "We brought to life our own interactive studio in Amsterdam",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-10-24T11:44:44.289+02:00",
-    "createdAt": "2022-05-19T16:04:20.186+02:00",
-    "position": 8,
-    "meta": {
-      "createdAt": "2022-05-19T16:04:20.186+02:00",
-      "updatedAt": "2022-10-24T11:44:44.289+02:00",
-      "publishedAt": "2022-10-24T11:44:48.962+02:00",
-      "firstPublishedAt": "2022-06-22T10:18:13.465+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283477763",
-      "stage": null
-    },
-    "itemType": "1641543",
     "creator": {
       "id": "49286",
       "type": "account"
