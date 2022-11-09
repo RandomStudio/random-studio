@@ -1,5 +1,453 @@
 [
   {
+    "id": "120810961",
+    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"\\nConcept Design, Art Direction, Spatial Design, Interior Design, Fixture Design, Technical Development\",\n  \"With \": \"Bonsoir Paris\"\n}",
+    "intro": "We were commissioned to create a campaign around the Nike x JFS collection. Centered on the theme of modularity, the collection responded to the different needs of the body in motion. We drew inspiration from this core concept, playing with sequence, function and versatility through campaign photography, an event and in-store retail displays in all of Nike Lab’s locations, and select retailers across the world.",
+    "relatedProjectsTitle": "Other work",
+    "title": "Nike x JFS Collection ",
+    "content": [
+      "120810951",
+      "120810952",
+      "120810955",
+      "120810956",
+      "120810957",
+      "120810958",
+      "120810959",
+      "120810960"
+    ],
+    "relatedProjects": [],
+    "slug": "nike-x-jfs-collection",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": null,
+    "opengraph": {
+      "image": "46221656",
+      "title": "Nike x JFS Collection",
+      "description": "Revolving around the theme of modularity, the Nike x JFS collection captured the body in motion. We created campaign photography, an event and a blueprint fo...",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-07T14:28:45.264+01:00",
+    "createdAt": "2022-04-04T16:13:57.312+02:00",
+    "position": 55,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:57.312+02:00",
+      "updatedAt": "2022-11-07T14:28:45.264+01:00",
+      "publishedAt": "2022-11-07T14:28:47.586+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:57.570+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284785845",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810565",
+    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept,\\nUser Experience/Customer Experience Design,\\nExperience Design,\\nArt Direction,\\nSpatial Design,\\nPrototyping,\\nSoftware Development,\\nInstallation Engineering\\n\"\n}",
+    "intro": "We’ve been thinking about the future of in-store experiences. What if you could literally step into the world of a product? Mixed reality (XR) experiences propose a new kind of immersive and adaptable brand encounter. Transforming any space into a pop-up dynamic visual landscape, customers are invited to step into the creative vision of a collection.",
+    "relatedProjectsTitle": "Other work",
+    "title": "An exploration into mixed reality setups\n",
+    "content": [
+      "120810556",
+      "120810557",
+      "120810558",
+      "120810559",
+      "120810560",
+      "120810561",
+      "120810564"
+    ],
+    "relatedProjects": [
+      "123515639",
+      "141577419",
+      "120810978"
+    ],
+    "slug": "an-exploration-into-xr-stage-setups",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": null,
+    "opengraph": {
+      "image": "46221592",
+      "title": null,
+      "description": null,
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-07T14:28:33.088+01:00",
+    "createdAt": "2022-04-04T16:13:18.195+02:00",
+    "position": 52,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:18.195+02:00",
+      "updatedAt": "2022-11-07T14:28:33.088+01:00",
+      "publishedAt": "2022-11-07T14:28:34.531+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:19.195+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284785840",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810476",
+    "details": "{\n  \"For\": \"Random Studio \",\n  \"With\": \"Arnout Meijer – Light Design\\n\\n RWA Electronics –  Electronics Design\",\n  \"Roles \": \"Creative Direction, Art Direction, Experience Design, Creative Technology, Software Development\"\n}",
+    "intro": "Like many studios, we’re based in the city. Located in a courtyard within a housing block, our space doesn’t get much direct sunlight in winter. Using this problem as a tool in our research into interactive space, we started to think about how we could connect our physical space to the outdoors in order to bring our workspace back to life during these winter months.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A studio sun system with light-artist Arnout Meijer",
+    "content": [
+      "120810466",
+      "120810467",
+      "120810468",
+      "120810469",
+      "120810470",
+      "120810471",
+      "120810472",
+      "120810473",
+      "120810474",
+      "120810475"
+    ],
+    "relatedProjects": [
+      "123515639"
+    ],
+    "slug": "a-studio-sun-system-with-light-artist-arnout-meijer",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221553"
+    },
+    "opengraph": {
+      "image": "46221556",
+      "title": "A studio sun system with light-artist Arnout Meijer",
+      "description": "Collaborating with light artist Arnout Meijer the ambient system we created mimics the behaviour of the sun travelling overhead in our studio.",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-07T14:16:59.773+01:00",
+    "createdAt": "2022-04-04T16:13:11.244+02:00",
+    "position": 28,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:11.244+02:00",
+      "updatedAt": "2022-11-07T14:16:59.773+01:00",
+      "publishedAt": "2022-11-07T14:17:01.506+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:11.561+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284785573",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "123515639",
+    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
+    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? We got the opportunity to rethink the whole third floor of the Ministry of Justice and Ministry of the Interior building. It offered a chance to explore these questions at the second largest office space in The Netherlands.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A future work space for the Dutch Ministry of Justice",
+    "content": [
+      "123516584",
+      "123515736",
+      "129053593",
+      "129053606",
+      "129054345",
+      "129054707",
+      "123515738",
+      "140825424",
+      "123516585",
+      "123516583",
+      "123515739",
+      "132655995"
+    ],
+    "relatedProjects": [
+      "141577419"
+    ],
+    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "48160606"
+    },
+    "opengraph": {
+      "image": "48192939",
+      "title": "A future work space for the Dutch Ministry of Justice",
+      "description": "A future work space for the Dutch Ministry of Justice",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-07T14:16:32.752+01:00",
+    "createdAt": "2022-08-15T10:52:52.503+02:00",
+    "position": 2,
+    "meta": {
+      "createdAt": "2022-08-15T10:52:52.503+02:00",
+      "updatedAt": "2022-11-07T14:16:32.752+01:00",
+      "publishedAt": "2022-11-07T14:16:34.230+01:00",
+      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284785557",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "28650",
+      "type": "user"
+    }
+  },
+  {
+    "id": "120810499",
+    "details": "{\n  \"For\": \"Antwerp Fashion Department, Royal Academy of Antwerp\",\n  \"Role\": \"Creative Direction, Art Direction, 3D Stylist, Virtual Set Design, Software Development, Interface Design\\n\"\n}",
+    "intro": "\n\nThe Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?\n\nHow to bring the energy and experience of the physical runway to the screen? We used the opportunity to think forward to the possibilities of future fashion shows.",
+    "relatedProjectsTitle": "Other work",
+    "title": "A virtual fashion graduation show for the Royal Academy of Antwerp",
+    "content": [
+      "120810479",
+      "120810480",
+      "120810481",
+      "120810482",
+      "120810483",
+      "120810484",
+      "120810485",
+      "120810486",
+      "120810487",
+      "120810488",
+      "120810489",
+      "120810490",
+      "120810491",
+      "120810492",
+      "120810493",
+      "120810494",
+      "120810495",
+      "120810496",
+      "120810497",
+      "120810498"
+    ],
+    "relatedProjects": [
+      "120810813",
+      "120810579",
+      "120810825"
+    ],
+    "slug": "a-virtual-fashion-graduation-show-for-the-royal-academy-of-antwerp",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": null,
+    "opengraph": {
+      "image": "46221558",
+      "title": "A virtual fashion graduation show for the Royal Academy o...",
+      "description": "How can you translate the energy and experience of the fashion show to the digital? We reimagined the choreographies of the catwalk for the screen, building ...",
+      "twitterCard": null
+    },
+    "featuredVideo": {
+      "url": "https://vimeo.com/435711991/b3ab58adf8",
+      "title": "08",
+      "width": 100,
+      "height": 75,
+      "provider": "vimeo",
+      "providerUid": "435711991",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/919981211-23e64b6467b7e338537c1e2c0d4e483d5cdd1a580ef8068192b4b9a07e1d8893-d_100x75?r=pad"
+    },
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-07T14:10:11.021+01:00",
+    "createdAt": "2022-04-04T16:13:12.695+02:00",
+    "position": 31,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:12.695+02:00",
+      "updatedAt": "2022-11-07T14:10:11.021+01:00",
+      "publishedAt": "2022-11-07T14:10:12.332+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:13.064+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284785293",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810427",
+    "details": "{\n  \"For\": \"SPACE10\\n\",\n  \"Role\": \"Creative Direction, Art Direction, UX Design, Prototyping, Software Development\\n\",\n  \"With \": \"Anton Hjertstedt – 3D Artist\"\n}",
+    "intro": "Initiated by IKEA and its research and design lab SPACE10, Everyday Experiments is a series of digital experiments that explores new ways of interacting with the spaces we live in.\n\nAlong with some of the world’s most forward-thinking design and technology studios, we were commissioned to reimagine the space we call home. We researched and prototyped three different applications that transform the home into a dynamic and innovative space of new encounters.\n\n<https://www.everydayexperiments.com/>",
+    "relatedProjectsTitle": "Other work",
+    "title": "A series of digital experiments for SPACE10",
+    "content": [
+      "120810406",
+      "120810407",
+      "120810408",
+      "120810409",
+      "120810410",
+      "120810411",
+      "120810412",
+      "120810413",
+      "120810414",
+      "120810415",
+      "120810416",
+      "120810417",
+      "120810418",
+      "120810419",
+      "120810420",
+      "120810421",
+      "120810422",
+      "120810423",
+      "120810424",
+      "120810425",
+      "120810426"
+    ],
+    "relatedProjects": [
+      "141577419",
+      "123515639"
+    ],
+    "slug": "a-series-of-digital-experiments-for-space10",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": null,
+    "opengraph": {
+      "image": "46221545",
+      "title": "A series of Digital Experiments for SPACE10",
+      "description": "We’ve dreamt up a few digital experiments with SPACE10 to rethink our relationship with the place we call home, and how digital technology can merge with the...",
+      "twitterCard": null
+    },
+    "featuredVideo": {
+      "url": "https://vimeo.com/429970176/8c1704789d",
+      "title": "SPACE10 - thumbnail",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "429970176",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/910321569-684895af2a57993dbd8ba095dfb6805ea88f5f827634d0cb8d2e4ad52881c6a7-d_295x166"
+    },
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-07T14:09:55.474+01:00",
+    "createdAt": "2022-04-04T16:13:06.423+02:00",
+    "position": 37,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:06.423+02:00",
+      "updatedAt": "2022-11-07T14:09:55.474+01:00",
+      "publishedAt": "2022-11-07T14:09:57.096+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:06.798+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284785285",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810788",
+    "details": "{\n  \"For \": \"Fred Perry \",\n  \"Role \": \"Concept Development, Creative Direction, Art Direction, Videography and Photography, Animation, Web Development.\"\n}",
+    "intro": "The Fred Perry x Raf Simons SS19 collaboration is presented within an immersive editorial lookbook, honouring an everyday interface familiar to many.\n\nWorn by anonymised individuals, the garments can be viewed in a navigable environment, where modified stills create the setting of a universal suburb.\n\n[maps.fredperryxrafsimons.com](https://maps.fredperryxrafsimons.com/)",
+    "relatedProjectsTitle": "Other work",
+    "title": "Interactive editorial lookbook SS19 for Fred Perry",
+    "content": [
+      "120810777",
+      "120810778",
+      "120810779",
+      "120810780",
+      "120810781",
+      "120810782",
+      "120810783",
+      "120810784",
+      "120810785",
+      "120810786",
+      "120810787"
+    ],
+    "relatedProjects": [],
+    "slug": "fred-perry-lookbook-ss2019",
+    "tags": "[\n  \"research\"\n]",
+    "featuredImage": null,
+    "opengraph": {
+      "image": null,
+      "title": "Interactive editorial lookbook SS19 for Fred Perry",
+      "description": "The Fred Perry x Raf Simons SS19 collaboration is presented within an immersive editorial lookbook, honouring an everyday interface familiar to many.\n\nWorn b...",
+      "twitterCard": null
+    },
+    "featuredVideo": {
+      "url": "https://vimeo.com/345418873",
+      "title": "FP_RandomThumbnail",
+      "width": 100,
+      "height": 75,
+      "provider": "vimeo",
+      "providerUid": "345418873",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/795183617-de7b3bfca974580f100de718a3c4feada2ea3527a1907d965541ffd73dad4975-d_100x75?r=pad"
+    },
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-07T14:09:38.083+01:00",
+    "createdAt": "2022-04-04T16:13:40.910+02:00",
+    "position": 27,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:40.910+02:00",
+      "updatedAt": "2022-11-07T14:09:38.083+01:00",
+      "publishedAt": "2022-11-07T14:09:39.463+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:41.218+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "284785276",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
     "id": "120810616",
     "details": "{\n  \"For\": \"Chanel\",\n  \"Role\": \"Concept Development, Creative Direction, Design, Content Production, Software Development, App Design and Development, Video Editing, Animation, Sound Design, Set Design.\",\n  \"With\": \"Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction, Marius Denisse — 3D Animation\"\n}",
     "intro": "French fashion house Chanel is known for a continuous strive for excellence and perfection. For the introduction of the Chanel Première Camélia Skeleton watch at the international watch show Baselworld 2017, we translated the qualities of the precious watch into a memorable, intimate voyage.",
@@ -649,137 +1097,6 @@
     }
   },
   {
-    "id": "120810565",
-    "details": "{\n  \"For\": \"Random Studio\",\n  \"Role\": \"Creative Concept,\\nUser Experience/Customer Experience Design,\\nExperience Design,\\nArt Direction,\\nSpatial Design,\\nPrototyping,\\nSoftware Development,\\nInstallation Engineering\\n\"\n}",
-    "intro": "We’ve been thinking about the future of in-store experiences. What if you could literally step into the world of a product? Mixed reality (XR) experiences propose a new kind of immersive and adaptable brand encounter. Transforming any space into a pop-up dynamic visual landscape, customers are invited to step into the creative vision of a collection.",
-    "relatedProjectsTitle": "Other work",
-    "title": "An exploration into mixed reality setups\n",
-    "content": [
-      "120810556",
-      "120810557",
-      "120810558",
-      "120810559",
-      "120810560",
-      "120810561",
-      "120810564"
-    ],
-    "relatedProjects": [
-      "123515639",
-      "141577419",
-      "120810978"
-    ],
-    "slug": "an-exploration-into-xr-stage-setups",
-    "tags": "[\n  \"spaces\",\n  \"research\"\n]",
-    "featuredImage": null,
-    "opengraph": {
-      "image": "46221592",
-      "title": null,
-      "description": null,
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T14:05:31.226+01:00",
-    "createdAt": "2022-04-04T16:13:18.195+02:00",
-    "position": 52,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:18.195+02:00",
-      "updatedAt": "2022-11-01T14:05:31.226+01:00",
-      "publishedAt": "2022-11-01T14:05:32.278+01:00",
-      "firstPublishedAt": "2022-04-04T16:13:19.195+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283999335",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
-    "id": "120810427",
-    "details": "{\n  \"For\": \"SPACE10\\n\",\n  \"Role\": \"Creative Direction, Art Direction, UX Design, Prototyping, Software Development\\n\",\n  \"With \": \"Anton Hjertstedt – 3D Artist\"\n}",
-    "intro": "Initiated by IKEA and its research and design lab SPACE10, Everyday Experiments is a series of digital experiments that explores new ways of interacting with the spaces we live in.\n\nAlong with some of the world’s most forward-thinking design and technology studios, we were commissioned to reimagine the space we call home. We researched and prototyped three different applications that transform the home into a dynamic and innovative space of new encounters.\n\n<https://www.everydayexperiments.com/>",
-    "relatedProjectsTitle": "Other work",
-    "title": "A series of digital experiments for SPACE10",
-    "content": [
-      "120810406",
-      "120810407",
-      "120810408",
-      "120810409",
-      "120810410",
-      "120810411",
-      "120810412",
-      "120810413",
-      "120810414",
-      "120810415",
-      "120810416",
-      "120810417",
-      "120810418",
-      "120810419",
-      "120810420",
-      "120810421",
-      "120810422",
-      "120810423",
-      "120810424",
-      "120810425",
-      "120810426"
-    ],
-    "relatedProjects": [
-      "141577419",
-      "123515639"
-    ],
-    "slug": "a-series-of-digital-experiments-for-space10",
-    "tags": "[\n  \"digital\",\n  \"research\"\n]",
-    "featuredImage": null,
-    "opengraph": {
-      "image": "46221545",
-      "title": "A series of Digital Experiments for SPACE10",
-      "description": "We’ve dreamt up a few digital experiments with SPACE10 to rethink our relationship with the place we call home, and how digital technology can merge with the...",
-      "twitterCard": null
-    },
-    "featuredVideo": {
-      "url": "https://vimeo.com/429970176/8c1704789d",
-      "title": "SPACE10 - thumbnail",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "429970176",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/910321569-684895af2a57993dbd8ba095dfb6805ea88f5f827634d0cb8d2e4ad52881c6a7-d_295x166"
-    },
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T14:04:33.156+01:00",
-    "createdAt": "2022-04-04T16:13:06.423+02:00",
-    "position": 37,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:06.423+02:00",
-      "updatedAt": "2022-11-01T14:04:33.156+01:00",
-      "publishedAt": "2022-11-01T14:04:34.716+01:00",
-      "firstPublishedAt": "2022-04-04T16:13:06.798+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283999245",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "120810797",
     "details": "{\n  \"For \": \"Hermès\",\n  \"Role\": \"Concept Development, Creative Direction, Interaction Design, Software Development, Installation\",\n  \"With\": \"Robert Hoffman — Product Design, Artis Engineering — Fabrication and Engineering\"\n}",
     "intro": "At its core, the world of Hermès is a world of beautiful materials, mastered by highly skilled artisans. Festival des Métiers is a travelling exhibition that offers visitors the chance to meet the craftsmen of the house. We created three interactive exhibits that reveal the manufacturing details that normally remain invisible to the naked eye.",
@@ -1166,82 +1483,6 @@
     }
   },
   {
-    "id": "120810499",
-    "details": "{\n  \"For\": \"Antwerp Fashion Department, Royal Academy of Antwerp\",\n  \"Role\": \"Creative Direction, Art Direction, 3D Stylist, Virtual Set Design, Software Development, Interface Design\\n\"\n}",
-    "intro": "\n\nThe Fashion Department of the Royal Academy of Fine Arts Antwerp commissioned us to think about how to translate this year’s event into the digital. What kind of platform accommodates the diverse – and potentially last minute – range of works created by their large group of students?\n\nHow to bring the energy and experience of the physical runway to the screen? We used the opportunity to think forward to the possibilities of future fashion shows.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A virtual fashion graduation show for the Royal Academy of Antwerp",
-    "content": [
-      "120810479",
-      "120810480",
-      "120810481",
-      "120810482",
-      "120810483",
-      "120810484",
-      "120810485",
-      "120810486",
-      "120810487",
-      "120810488",
-      "120810489",
-      "120810490",
-      "120810491",
-      "120810492",
-      "120810493",
-      "120810494",
-      "120810495",
-      "120810496",
-      "120810497",
-      "120810498"
-    ],
-    "relatedProjects": [
-      "120810813",
-      "120810579",
-      "120810825"
-    ],
-    "slug": "a-virtual-fashion-graduation-show-for-the-royal-academy-of-antwerp",
-    "tags": "[\n  \"digital\",\n  \"research\"\n]",
-    "featuredImage": null,
-    "opengraph": {
-      "image": "46221558",
-      "title": "A virtual fashion graduation show for the Royal Academy o...",
-      "description": "How can you translate the energy and experience of the fashion show to the digital? We reimagined the choreographies of the catwalk for the screen, building ...",
-      "twitterCard": null
-    },
-    "featuredVideo": {
-      "url": "https://vimeo.com/435711991/b3ab58adf8",
-      "title": "08",
-      "width": 100,
-      "height": 75,
-      "provider": "vimeo",
-      "providerUid": "435711991",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/919981211-23e64b6467b7e338537c1e2c0d4e483d5cdd1a580ef8068192b4b9a07e1d8893-d_100x75?r=pad"
-    },
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T13:57:51.582+01:00",
-    "createdAt": "2022-04-04T16:13:12.695+02:00",
-    "position": 31,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:12.695+02:00",
-      "updatedAt": "2022-11-01T13:57:51.582+01:00",
-      "publishedAt": "2022-11-01T13:57:52.410+01:00",
-      "firstPublishedAt": "2022-04-04T16:13:13.064+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283999018",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "120810579",
     "details": "{}",
     "intro": "Commissioned by Cinekid Medialab 2020, we created an immersive Internet creation myth for kids in collaboration with artist Geoffrey Lillemon. \n\nPlunging visitors down the deep, dark rabbit hole of a parallel Internet, we made both a physical version at the Eye Filmmuseum, and an online version that worked across all devices. \n\nFind the digital experience here: [http://parallelarchaeologies.geoffreylillemon.com/](http://parallelarchaeologies.geoffreylillemon.com/)",
@@ -1361,68 +1602,6 @@
       "isCurrentVersionValid": true,
       "isPublishedVersionValid": true,
       "currentVersion": "283998129",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
-    "id": "120810476",
-    "details": "{\n  \"For\": \"Random Studio \",\n  \"With\": \"Arnout Meijer – Light Design\\n\\n RWA Electronics –  Electronics Design\",\n  \"Roles \": \"Creative Direction, Art Direction, Experience Design, Creative Technology, Software Development\"\n}",
-    "intro": "Like many studios, we’re based in the city. Located in a courtyard within a housing block, our space doesn’t get much direct sunlight in winter. Using this problem as a tool in our research into interactive space, we started to think about how we could connect our physical space to the outdoors in order to bring our workspace back to life during these winter months.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A studio sun system with light-artist Arnout Meijer",
-    "content": [
-      "120810466",
-      "120810467",
-      "120810468",
-      "120810469",
-      "120810470",
-      "120810471",
-      "120810472",
-      "120810473",
-      "120810474",
-      "120810475"
-    ],
-    "relatedProjects": [
-      "123515639"
-    ],
-    "slug": "a-studio-sun-system-with-light-artist-arnout-meijer",
-    "tags": "[\n  \"spaces\",\n  \"research\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221553"
-    },
-    "opengraph": {
-      "image": "46221556",
-      "title": "A studio sun system with light-artist Arnout Meijer",
-      "description": "Collaborating with light artist Arnout Meijer the ambient system we created mimics the behaviour of the sun travelling overhead in our studio.",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T13:27:08.369+01:00",
-    "createdAt": "2022-04-04T16:13:11.244+02:00",
-    "position": 28,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:11.244+02:00",
-      "updatedAt": "2022-11-01T13:27:08.369+01:00",
-      "publishedAt": "2022-11-01T13:27:14.424+01:00",
-      "firstPublishedAt": "2022-04-04T16:13:11.561+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283998110",
       "stage": null
     },
     "itemType": "1641543",
@@ -2856,70 +3035,6 @@
     }
   },
   {
-    "id": "123515639",
-    "details": "{\n  \"For\": \"Ministry of Justice and Security (Ministerie van Justitie en Veiligheid)\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "intro": "What does the workspace of the future look and feel like? Can a space take responsibility for its occupants, adapting to a variety of different needs? What challenges do we face in a new era of hybrid work? We got the opportunity to rethink the whole third floor of the Ministry of Justice and Ministry of the Interior building. It offered a chance to explore these questions at the second largest office space in The Netherlands.",
-    "relatedProjectsTitle": "Other work",
-    "title": "A future work space for the Dutch Ministry of Justice",
-    "content": [
-      "123516584",
-      "123515736",
-      "129053593",
-      "129053606",
-      "129054345",
-      "129054707",
-      "123515738",
-      "140825424",
-      "123516585",
-      "123516583",
-      "123515739",
-      "132655995"
-    ],
-    "relatedProjects": [
-      "141577419"
-    ],
-    "slug": "a-future-work-space-for-the-dutch-ministry-of-justice",
-    "tags": "[\n  \"spaces\",\n  \"research\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "48160606"
-    },
-    "opengraph": {
-      "image": "48192939",
-      "title": "A future work space for the Dutch Ministry of Justice",
-      "description": "A future work space for the Dutch Ministry of Justice",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T12:09:49.298+01:00",
-    "createdAt": "2022-08-15T10:52:52.503+02:00",
-    "position": 2,
-    "meta": {
-      "createdAt": "2022-08-15T10:52:52.503+02:00",
-      "updatedAt": "2022-11-01T12:09:49.298+01:00",
-      "publishedAt": "2022-11-01T12:09:59.862+01:00",
-      "firstPublishedAt": "2022-08-29T14:15:12.263+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283994050",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "28650",
-      "type": "user"
-    }
-  },
-  {
     "id": "121605686",
     "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management\",\n  \"For\": \"Jacquemus\",\n  \"With\": \"Souvenir Scenic Studios – Porte Cochère (Le Vestiaire) + Corner Shop,<br />MDM Props – 24/24,<br />In’n’out Fragrance – Fragrance design\"\n}",
     "intro": "On the occasion of its new collection Le Bleu, we made a multi-sensory experience for Jacquemus that unfolded in and around London’s Selfridges. Our series of playful indoor and outdoor spatial interventions, each accented by a commissioned scent scape infused the store with waves of nostalgia for the hot summers of the South of France and a dash of the brand’s signature wit. Intermingling spatial design and interactive scenography with smell, we offered visitors a memorable holiday away from the everyday.",
@@ -3051,58 +3166,6 @@
     "creator": {
       "id": "49286",
       "type": "account"
-    }
-  },
-  {
-    "id": "120810961",
-    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"\\nConcept Design, Art Direction, Spatial Design, Interior Design, Fixture Design, Technical Development\",\n  \"With \": \"Bonsoir Paris\"\n}",
-    "intro": "We were commissioned to create a campaign around the Nike x JFS collection. Centered on the theme of modularity, the collection responded to the different needs of the body in motion. We drew inspiration from this core concept, playing with sequence, function and versatility through campaign photography, an event and in-store retail displays in all of Nike Lab’s locations, and select retailers across the world.",
-    "relatedProjectsTitle": "Other work",
-    "title": "Nike x JFS Collection ",
-    "content": [
-      "120810951",
-      "120810952",
-      "120810955",
-      "120810956",
-      "120810957",
-      "120810958",
-      "120810959",
-      "120810960"
-    ],
-    "relatedProjects": [],
-    "slug": "nike-x-jfs-collection",
-    "tags": "[\n  \"spaces\"\n]",
-    "featuredImage": null,
-    "opengraph": {
-      "image": "46221656",
-      "title": "Nike x JFS Collection",
-      "description": "Revolving around the theme of modularity, the Nike x JFS collection captured the body in motion. We created campaign photography, an event and a blueprint fo...",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-10-24T11:21:06.171+02:00",
-    "createdAt": "2022-04-04T16:13:57.312+02:00",
-    "position": 55,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:57.312+02:00",
-      "updatedAt": "2022-10-24T11:21:06.171+02:00",
-      "publishedAt": "2022-10-24T11:22:02.236+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:57.570+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283474215",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
     }
   },
   {
@@ -6728,69 +6791,6 @@
       "stage": null
     },
     "itemType": "1643994"
-  },
-  {
-    "id": "120810788",
-    "details": "{\n  \"For \": \"Fred Perry \",\n  \"Role \": \"Concept Development, Creative Direction, Art Direction, Videography and Photography, Animation, Web Development.\"\n}",
-    "intro": "The Fred Perry x Raf Simons SS19 collaboration is presented within an immersive editorial lookbook, honouring an everyday interface familiar to many.\n\nWorn by anonymised individuals, the garments can be viewed in a navigable environment, where modified stills create the setting of a universal suburb.\n\n[maps.fredperryxrafsimons.com](https://maps.fredperryxrafsimons.com/)",
-    "relatedProjectsTitle": "Other work",
-    "title": "Interactive editorial lookbook SS19 for Fred Perry",
-    "content": [
-      "120810777",
-      "120810778",
-      "120810779",
-      "120810780",
-      "120810781",
-      "120810782",
-      "120810783",
-      "120810784",
-      "120810785",
-      "120810786",
-      "120810787"
-    ],
-    "relatedProjects": [],
-    "slug": "fred-perry-lookbook-ss2019",
-    "tags": "[\n  \"Digital\"\n]",
-    "featuredImage": null,
-    "opengraph": {
-      "image": null,
-      "title": "Interactive editorial lookbook SS19 for Fred Perry",
-      "description": "The Fred Perry x Raf Simons SS19 collaboration is presented within an immersive editorial lookbook, honouring an everyday interface familiar to many.\n\nWorn b...",
-      "twitterCard": null
-    },
-    "featuredVideo": {
-      "url": "https://vimeo.com/345418873",
-      "title": "FP_RandomThumbnail",
-      "width": 100,
-      "height": 75,
-      "provider": "vimeo",
-      "providerUid": "345418873",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/795183617-de7b3bfca974580f100de718a3c4feada2ea3527a1907d965541ffd73dad4975-d_100x75?r=pad"
-    },
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-06-10T14:53:40.163+02:00",
-    "createdAt": "2022-04-04T16:13:40.910+02:00",
-    "position": 27,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:40.910+02:00",
-      "updatedAt": "2022-06-10T14:53:40.163+02:00",
-      "publishedAt": "2022-04-05T10:46:03.397+02:00",
-      "firstPublishedAt": "2022-04-04T16:13:41.218+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "254105164",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
   },
   {
     "id": "121939012",
