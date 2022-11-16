@@ -1,5 +1,44 @@
 [
   {
+    "id": "120717266",
+    "video": {
+      "url": "https://vimeo.com/770774420",
+      "title": "Mugler Pop Up at Selfridges",
+      "width": 426,
+      "height": 240,
+      "provider": "vimeo",
+      "providerUid": "770774420",
+      "thumbnailUrl": "https://i.vimeocdn.com/video/1547079166-48d93f489fd969816de34645b91a9575f729bdbe7a35aa33a2797f9722a23886-d_295x166"
+    },
+    "collaborator": "Mugler at Selfridges",
+    "collaborationUrl": "https://random.studio/projects/the-body-space-a-multi-sensory-pop-up-store-for-mugler",
+    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
+    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
+    "preview": null,
+    "opengraph": null,
+    "updatedAt": "2022-11-14T16:59:32.339+01:00",
+    "createdAt": "2022-03-31T14:34:25.908+02:00",
+    "meta": {
+      "createdAt": "2022-03-31T14:34:25.908+02:00",
+      "updatedAt": "2022-11-14T16:59:32.339+01:00",
+      "publishedAt": "2022-11-14T16:59:32.374+01:00",
+      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "285225230",
+      "stage": null
+    },
+    "itemType": "1989572",
+    "creator": {
+      "id": "49286",
+      "type": "account"
+    }
+  },
+  {
     "id": "143416474",
     "details": "{\n  \"Role\": \"Creative Concept, Spatial Design, Experience Design, Software Development, Sound Design, Lighting Design, Prototyping, Content Design and Production, Production Management\",\n  \"For\": \"Mugler\",\n  \"With\": \"Spatial – Immersive audio<br />Beau Nox – Sound<br />Xylotek – Physical production<br />\"\n}",
     "intro": "In celebration of the 30th anniversary of Mugler’s iconic scent Angel, we created a pop-up that blends fragrance and fashion at the Cornershop in London’s Selfridges. Amplifying Mugler’s signature emphasis on volume and proportions, the pop-up is made up of giant fragments of a woman’s body that break up the space into a variety of retail experiences. ",
@@ -88,45 +127,6 @@
       "stage": null
     },
     "itemType": "1643992"
-  },
-  {
-    "id": "120717266",
-    "video": {
-      "url": "https://vimeo.com/734292430",
-      "title": "Random Studio is a certified B Corporation",
-      "width": 426,
-      "height": 240,
-      "provider": "vimeo",
-      "providerUid": "734292430",
-      "thumbnailUrl": "https://i.vimeocdn.com/video/1477543262-2aaa4f8d87f452167aff3f486b7bf01f1ff186f28aa6445d83f734bcc8560a14-d_295x166"
-    },
-    "collaborator": "B Corporation",
-    "collaborationUrl": "https://medium.com/@random.studio/we-are-now-a-certified-b-corp-373ded3c50e0",
-    "intro": "How can we reimagine the digital as a living, breathing part of our  physical world?",
-    "middle": "We create spaces where the physical and non-physical merge; environments that invite people to play, reflect and connect.\n\n[More about our studio](/studio)",
-    "preview": null,
-    "opengraph": null,
-    "updatedAt": "2022-11-10T20:36:52.250+01:00",
-    "createdAt": "2022-03-31T14:34:25.908+02:00",
-    "meta": {
-      "createdAt": "2022-03-31T14:34:25.908+02:00",
-      "updatedAt": "2022-11-10T20:36:52.250+01:00",
-      "publishedAt": "2022-11-10T20:36:52.279+01:00",
-      "firstPublishedAt": "2022-03-31T14:34:25.943+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "285083983",
-      "stage": null
-    },
-    "itemType": "1989572",
-    "creator": {
-      "id": "49286",
-      "type": "account"
-    }
   },
   {
     "id": "143416472",
