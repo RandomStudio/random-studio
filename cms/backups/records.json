@@ -1,5 +1,130 @@
 [
   {
+    "id": "120810903",
+    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
+    "intro": "Nike opened the doors of its third House of Innovation, in Paris, July 2020. A store unlike any other, it exists to celebrate and challenge the future of sport. We created a long term immersive installation for the launch of this European flagship store.",
+    "relatedProjectsTitle": "Other work",
+    "title": "Your body as a controller in Nike's House of Innovation Paris",
+    "content": [
+      "120810894",
+      "120810895",
+      "120810896",
+      "120810897",
+      "120810898",
+      "120810899",
+      "120810900",
+      "120810901",
+      "120810902"
+    ],
+    "relatedProjects": [
+      "120810949",
+      "120810961",
+      "120810910"
+    ],
+    "slug": "nike-kids-pod",
+    "tags": "[\n  \"retail\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221652"
+    },
+    "opengraph": {
+      "image": "46221652",
+      "title": "Your body as a controller in Nike's House of Innovation P...",
+      "description": "Nike opened the doors of its third House of Innovation, in Paris, July 2020. A store unlike any other, it exists to celebrate and challenge the future of spo...",
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-17T15:47:55.820+01:00",
+    "createdAt": "2022-04-04T16:13:52.772+02:00",
+    "position": 19,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:52.772+02:00",
+      "updatedAt": "2022-11-17T15:47:55.820+01:00",
+      "publishedAt": "2022-11-17T15:47:57.574+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:53.275+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "285425180",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
+    "id": "120810521",
+    "details": "{\n  \"For\": \"C.P. Company\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
+    "intro": "To round off C.P. Company’s 50th anniversary Cinquanta celebrations, we brought the interactive spatial archive we made for the brand last year to its home turf of Milan for the finnisage of their anniversary celebrations. Designed and built as a modular hybrid of physical and digital space, the exhibition premiered in Florence at Pitti Uomo 2021, then was installed in Darwen, UK, as part of the British Textile Biennale before travelling to BASE, a cultural center in Milan.",
+    "relatedProjectsTitle": "Other work",
+    "title": "An archival experience celebrating C.P. Company’s anniversary – Milan edition",
+    "content": [
+      "120810502",
+      "120810503",
+      "120810507",
+      "120810511",
+      "120810515",
+      "120810516",
+      "120810519",
+      "120810520"
+    ],
+    "relatedProjects": [
+      "120810554",
+      "120810775",
+      "120810949"
+    ],
+    "slug": "an-archival-experience-celebrating-c-p-companys-50th-anniversary-milan-edition",
+    "tags": "[\n  \"exhibition\"\n]",
+    "featuredImage": {
+      "alt": null,
+      "title": null,
+      "customData": {},
+      "focalPoint": null,
+      "uploadId": "46221560"
+    },
+    "opengraph": {
+      "image": null,
+      "title": null,
+      "description": null,
+      "twitterCard": null
+    },
+    "featuredVideo": null,
+    "isVisible": true,
+    "preview": null,
+    "updatedAt": "2022-11-17T15:17:47.677+01:00",
+    "createdAt": "2022-04-04T16:13:14.390+02:00",
+    "position": 13,
+    "meta": {
+      "createdAt": "2022-04-04T16:13:14.390+02:00",
+      "updatedAt": "2022-11-17T15:17:47.677+01:00",
+      "publishedAt": "2022-11-17T15:17:50.148+01:00",
+      "firstPublishedAt": "2022-04-04T16:13:14.742+02:00",
+      "publicationScheduledAt": null,
+      "unpublishingScheduledAt": null,
+      "status": "published",
+      "isValid": true,
+      "isCurrentVersionValid": true,
+      "isPublishedVersionValid": true,
+      "currentVersion": "285423414",
+      "stage": null
+    },
+    "itemType": "1641543",
+    "creator": {
+      "id": "138284",
+      "type": "access_token"
+    }
+  },
+  {
     "id": "120717266",
     "video": {
       "url": "https://vimeo.com/770774420",
@@ -2317,69 +2442,6 @@
     }
   },
   {
-    "id": "120810903",
-    "details": "{\n  \"For\": \"Nike\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "intro": "Nike opened the doors of its third House of Innovation, in Paris, July 2020. A store unlike any other, it exists to celebrate and challenge the future of sport. We created a long term immersive installation for the launch of this European flagship store.",
-    "relatedProjectsTitle": "Other work",
-    "title": "Your body as a controller in Nike's House of Innovation Paris",
-    "content": [
-      "120810894",
-      "120810895",
-      "120810896",
-      "120810897",
-      "120810898",
-      "120810899",
-      "120810900",
-      "120810901",
-      "120810902"
-    ],
-    "relatedProjects": [
-      "121605686",
-      "123032928",
-      "140797744"
-    ],
-    "slug": "nike-kids-pod",
-    "tags": "[\n  \"retail\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221652"
-    },
-    "opengraph": {
-      "image": "46221652",
-      "title": "Your body as a controller in Nike's House of Innovation P...",
-      "description": "Nike opened the doors of its third House of Innovation, in Paris, July 2020. A store unlike any other, it exists to celebrate and challenge the future of spo...",
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T12:31:19.962+01:00",
-    "createdAt": "2022-04-04T16:13:52.772+02:00",
-    "position": 19,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:52.772+02:00",
-      "updatedAt": "2022-11-01T12:31:19.962+01:00",
-      "publishedAt": "2022-11-01T12:31:21.040+01:00",
-      "firstPublishedAt": "2022-04-04T16:13:53.275+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283995129",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
-    }
-  },
-  {
     "id": "123032928",
     "details": "{\n  \"Role\": \"Creative Concept, Art Direction, Spatial Design, Experience Design, Software Development, Prototyping, Content Creation\",\n  \"For\": \"Paco Rabanne\"\n}",
     "intro": "We brought Paco Rabanne’s search for an ‘endless sunset’ to two of its Parisian stores to mark the launch of its SS22 beachwear collection. Embracing kitsch and the retro luxury of 70s beach resorts in equal measure, we reimagined the cliché of the sunset in two different variations that encouraged visitors to interact with images with their bodies: a window display and an in-store experience. ",
@@ -2706,67 +2768,6 @@
     "creator": {
       "id": "49286",
       "type": "account"
-    }
-  },
-  {
-    "id": "120810521",
-    "details": "{\n  \"For\": \"C.P. Company\",\n  \"Role\": \"Creative Concept, UX/CX Design, Experience Design, Art Direction, Spatial Design, Prototyping, Software Development, Installation Engineering, Research\"\n}",
-    "intro": "To round off C.P. Company’s 50th anniversary Cinquanta celebrations, we brought the interactive spatial archive we made for the brand last year to its home turf of Milan for the finnisage of their anniversary celebrations. Designed and built as a modular hybrid of physical and digital space, the exhibition premiered in Florence at Pitti Uomo 2021, then was installed in Darwen, UK, as part of the British Textile Biennale before travelling to BASE, a cultural center in Milan.",
-    "relatedProjectsTitle": "Other work",
-    "title": "An archival experience celebrating C.P. Company’s anniversary – Milan edition",
-    "content": [
-      "120810502",
-      "120810503",
-      "120810507",
-      "120810511",
-      "120810515",
-      "120810516",
-      "120810519",
-      "120810520"
-    ],
-    "relatedProjects": [
-      "120810775",
-      "120810405"
-    ],
-    "slug": "an-archival-experience-celebrating-c-p-companys-50th-anniversary-milan-edition",
-    "tags": "[\n  \"exhibition\"\n]",
-    "featuredImage": {
-      "alt": null,
-      "title": null,
-      "customData": {},
-      "focalPoint": null,
-      "uploadId": "46221560"
-    },
-    "opengraph": {
-      "image": null,
-      "title": null,
-      "description": null,
-      "twitterCard": null
-    },
-    "featuredVideo": null,
-    "isVisible": true,
-    "preview": null,
-    "updatedAt": "2022-11-01T12:25:16.332+01:00",
-    "createdAt": "2022-04-04T16:13:14.390+02:00",
-    "position": 13,
-    "meta": {
-      "createdAt": "2022-04-04T16:13:14.390+02:00",
-      "updatedAt": "2022-11-01T12:25:16.332+01:00",
-      "publishedAt": "2022-11-01T12:25:17.457+01:00",
-      "firstPublishedAt": "2022-04-04T16:13:14.742+02:00",
-      "publicationScheduledAt": null,
-      "unpublishingScheduledAt": null,
-      "status": "published",
-      "isValid": true,
-      "isCurrentVersionValid": true,
-      "isPublishedVersionValid": true,
-      "currentVersion": "283994995",
-      "stage": null
-    },
-    "itemType": "1641543",
-    "creator": {
-      "id": "138284",
-      "type": "access_token"
     }
   },
   {
