@@ -1,11 +1,13 @@
-import { buildClient, Client } from '@datocms/cma-client-node';
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import { buildClient, buildBlockRecord, Client } from '@datocms/cma-client-node';
+dotenv.config()
 const tus = require("tus-js-client");
 const YoutubeDlWrap = require('youtube-dl-wrap');
 const fs = require('fs')
 
 var crypto = require('crypto');
 
-const youtubeDlWrap = new YoutubeDlWrap("/usr/local/bin/youtube-dl");
+const youtubeDlWrap = new YoutubeDlWrap("/opt/homebrew/bin/youtube-dl");
 
 const PATH = './output.mp4';
 const client: Client = buildClient({ apiToken: process.env.DATOCMS_BACKUP_TOKEN });
@@ -27,12 +29,9 @@ interface VideoBlock {
 const libraryId = 86047;
 const apiKey = process.env.BUNNY_TOKEN
 
-const updateRecord = async (post) => {
-  const { id, title } = post;
-
+const updateRecord = async (id, post) => {
   const item = await client.items.update(id, post);
-
-  console.log('Updated', title)
+  console.log('Updated', item.title)
 }
 
 const uploadVideo = (metadata) => new Promise(async (resolve) => {
@@ -102,7 +101,7 @@ const updateVideoBlock = async (block) => {
   let metadata = await youtubeDlWrap.getVideoInfo(block.video.url);
 
   await new Promise((resolve) => {
-    youtubeDlWrap.exec([block.video.url, '--no-continue', '--username', 'tools@random.studio', '--password', 'tintin0!', "-f", "best", "-o", PATH])
+    youtubeDlWrap.exec([block.video.url, '--no-continue', '--username', 'tools@random.studio', '--password', process.env.VIMEO_PASS, "-f", "best", "-o", PATH])
       .on("progress", (progress) =>
         console.log(progress.percent, progress.totalSize, progress.currentSpeed, progress.eta))
       .on("youtubeDlEvent", (eventType, eventData) => console.log(eventType, eventData))
@@ -110,8 +109,13 @@ const updateVideoBlock = async (block) => {
       .on("close", resolve);
   })
   const id = await uploadVideo(metadata);
-  block.video_new = `https://vz-911ddaca-c18.b-cdn.net/${id}/original`;
-  return block;
+
+  return buildBlockRecord({
+    id: block.id,
+    item_type: block.item_type,
+    video_new: `https://vz-911ddaca-c18.b-cdn.net/${id}/original`,
+  });
+
 };
 
 const getPosts = async () => {
@@ -119,22 +123,20 @@ const getPosts = async () => {
 
   for await (const post of await client.items.listPagedIterator({ filter: { type: 'project' } })) {
     console.log('Starting', i + 1)
-    console.log(post.content)
-    const blocks = await client.items.list({
+    const blockDetails = await client.items.list({
       filter: {
         // you can also use models IDs instead of API keys!
         ids: post.content,
       },
     });
-    const updatedBlocks = await Promise.all(blocks.map(block => block.video ? updateVideoBlock(block) : block));
+    const blocks = post.content.map(id => blockDetails.find(details => details.id === id))
+    const updatedBlocks = await Promise.all(
+      blocks.map(block => block.video ? updateVideoBlock(block) : block.id));
     const updatedPost = {
-      ...post,
       content: updatedBlocks,
     }
-    console.log(updatedPost)
-    updateRecord(updatedPost);
+    updateRecord(post.id, updatedPost);
     i++
-    return;
   }
 }
 
