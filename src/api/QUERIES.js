@@ -99,6 +99,7 @@ export const SINGLE_PROJECT_QUERY = `
             url
             width
           }
+          videoNew
         }
         ... on TextBlockRecord {
           id
