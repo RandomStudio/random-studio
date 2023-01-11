@@ -20,6 +20,7 @@ export const INDEX_PAGE_QUERY = `
         url
         width
       }
+      videoNew
       collaborator
       collaborationUrl
     }

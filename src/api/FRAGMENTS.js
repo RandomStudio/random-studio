@@ -52,16 +52,17 @@ export const THUMBNAIL_FRAGMENT = `
     featuredImage {
       ...ImageDataObject
     }
+    featuredVideoNew
   }
 `;
 
 export const RELATED_THUMBNAIL_FRAGMENT = `
   ${IMAGE_DATA_OBJECT_FRAGMENT_FUNC(
-    'RelatedImageDataObject',
-    816,
-    1024,
-    'crop',
-  )}
+  'RelatedImageDataObject',
+  816,
+  1024,
+  'crop',
+)}
   fragment RelatedThumbnail on ProjectRecord {
     featuredVideo {
       height
@@ -73,6 +74,7 @@ export const RELATED_THUMBNAIL_FRAGMENT = `
     featuredImage {
       ...RelatedImageDataObject
     }
+    featuredVideoNew
   }
 `;
 

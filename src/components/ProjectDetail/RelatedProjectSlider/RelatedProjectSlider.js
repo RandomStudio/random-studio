@@ -15,7 +15,7 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
 
       <div className={styles.worksWrapper}>
         {relatedProjects.map(
-          ({ featuredImage, featuredVideo, title, slug }) => (
+          ({ featuredImage, featuredVideo, featuredVideoNew, title, slug }) => (
             <Link href={slug} key={title}>
               <a className={styles.card}>
                 {featuredImage && (
@@ -28,7 +28,7 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
                   </div>
                 )}
 
-                {featuredVideo && (
+                {(featuredVideo || featuredVideoNew) && (
                   <VideoWithControls
                     autoplay
                     hasControls={false}
@@ -36,6 +36,7 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
                     isMuted
                     loops
                     video={featuredVideo}
+                    videoNew={featuredVideoNew}
                   />
                 )}
 

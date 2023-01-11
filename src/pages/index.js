@@ -16,6 +16,7 @@ const Home = ({
   isLogoCentred,
   projects,
   video,
+  videoNew,
 }) => (
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
@@ -24,6 +25,7 @@ const Home = ({
       collaborationUrl={collaborationUrl}
       collaborator={collaborator}
       video={video}
+      videoNew={videoNew}
     />
 
     <ProjectList hasLimit intro={intro} projects={projects} />

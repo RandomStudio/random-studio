@@ -4,7 +4,7 @@ import { videoPropType } from '../../propTypes';
 import VideoWithControls from '../VideoWithControls/VideoWithControls';
 import styles from './HomeVideo.module.css';
 
-const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
+const HomeVideo = ({ collaborator, collaborationUrl, video, videoNew }) => {
   return (
     <div className={styles.video}>
       <VideoWithControls
@@ -14,6 +14,7 @@ const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
         isMuted
         loops
         video={video}
+        videoNew={videoNew}
       />
 
       {collaborator && (
