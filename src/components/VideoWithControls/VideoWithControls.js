@@ -29,6 +29,7 @@ const VideoWithControls = ({
   isAutoplaying,
   isLooping,
   video,
+  videoNew,
   width,
 }) => {
   const videoRef = useRef(null);
@@ -81,6 +82,7 @@ const VideoWithControls = ({
         onPlayStateChange={setIsPlaying}
         ref={videoRef}
         video={video}
+        videoNew={videoNew}
         width={width}
       />
 
