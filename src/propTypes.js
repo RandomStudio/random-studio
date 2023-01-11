@@ -52,6 +52,7 @@ export const videoBlockPropType = PropTypes.shape({
   marginTop: PropTypes.number.isRequired,
   marginLeft: PropTypes.number.isRequired,
   video: videoPropType.isRequired,
+  videoNew: PropTypes.string,
   width: PropTypes.number.isRequired,
 });
 
