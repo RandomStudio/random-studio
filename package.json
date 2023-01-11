@@ -28,7 +28,6 @@
     "three": "0.139.2"
   },
   "devDependencies": {
-    "@datocms/cma-client-node": "^1.1.22",
     "@next/bundle-analyzer": "12.1.2",
     "@next/eslint-plugin-next": "12.1.2",
     "datocms-client": "3.5.19",
@@ -51,9 +50,6 @@
     "postcss-preset-env": "7.8.2",
     "prettier": "2.6.1",
     "sass": "1.49.9",
-    "sharp": "0.30.3",
-    "tus-js-client": "^3.0.1",
-    "youtube-dl-wrap": "^2.1.1"
   },
   "engines": {
     "node": ">=16.13.0"
