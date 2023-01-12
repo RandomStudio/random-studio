@@ -26,31 +26,33 @@ const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
 
     <p className={styles.blurb} dangerouslySetInnerHTML={{ __html: blurb }} />
 
-    <div className={styles.skills}>
-      <ul className={styles.list}>
-        <li className={styles.heading}>{'Design'}</li>
+    {skillset && (
+      <div className={styles.skills}>
+        <ul className={styles.list}>
+          <li className={styles.heading}>{'Design'}</li>
 
-        {skillset.design?.map(designArea => (
-          <li key={designArea}>{designArea}</li>
-        ))}
-      </ul>
+          {skillset.design?.map(designArea => (
+            <li key={designArea}>{designArea}</li>
+          ))}
+        </ul>
 
-      <ul className={styles.list}>
-        <li className={styles.heading}>{'Technology'}</li>
+        <ul className={styles.list}>
+          <li className={styles.heading}>{'Technology'}</li>
 
-        {skillset.technology?.map(technologyArea => (
-          <li key={technologyArea}>{technologyArea}</li>
-        ))}
-      </ul>
+          {skillset.technology?.map(technologyArea => (
+            <li key={technologyArea}>{technologyArea}</li>
+          ))}
+        </ul>
 
-      <ul className={styles.list}>
-        <li className={styles.heading}>{'Product'}</li>
+        <ul className={styles.list}>
+          <li className={styles.heading}>{'Product'}</li>
 
-        {skillset.product?.map(productArea => (
-          <li key={productArea}>{productArea}</li>
-        ))}
-      </ul>
-    </div>
+          {skillset.product?.map(productArea => (
+            <li key={productArea}>{productArea}</li>
+          ))}
+        </ul>
+      </div>
+    )}
 
     <Carousel
       caption="Studio Impressions"
