@@ -34,10 +34,6 @@ const LazyVideo = React.forwardRef(
     const [isIntersected, setIsIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const { sources, blur } = video;
-
-    const blurThumbnail = `data:image/jpeg;base64,${blur}`;
-
     const handlePlay = useCallback(async () => {
       try {
         await videoRef.current.play();
@@ -110,9 +106,13 @@ const LazyVideo = React.forwardRef(
     const { dpr, width: windowWidth } = useWindowSize();
 
     const sourceElements = useMemo(() => {
+      if (!video) {
+        return null;
+      }
+
       const videoWidth = (windowWidth / 100) * width * dpr;
 
-      const orderedSizes = sources.sort(
+      const orderedSizes = video.sources.sort(
         (a, b) =>
           Math.abs(a.width - videoWidth) - Math.abs(b.width - videoWidth),
       );
@@ -120,11 +120,13 @@ const LazyVideo = React.forwardRef(
       return (
         <source src={videoNew ?? orderedSizes[0]?.link} type="video/mp4" />
       );
-    }, [dpr, sources, videoNew, width, windowWidth]);
+    }, [dpr, video, videoNew, width, windowWidth]);
 
     if (!video) {
       return null;
     }
+
+    const { blur } = video;
 
     const videoElement = (
       <>
@@ -166,7 +168,7 @@ const LazyVideo = React.forwardRef(
           alt={alt}
           aria-hidden
           className={styles.placeholder}
-          src={blurThumbnail}
+          src={`data:image/jpeg;base64,${blur}`}
         />
 
         {videoElement}
