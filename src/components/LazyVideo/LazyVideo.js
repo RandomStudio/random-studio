@@ -117,9 +117,7 @@ const LazyVideo = React.forwardRef(
           Math.abs(a.width - videoWidth) - Math.abs(b.width - videoWidth),
       );
 
-      return (
-        <source src={videoNew ?? orderedSizes[0]?.link} type="video/mp4" />
-      );
+      return <source src={orderedSizes[0]?.link} type="video/mp4" />;
     }, [dpr, video, videoNew, width, windowWidth]);
 
     if (!video) {
