@@ -2,21 +2,29 @@ import sharp from 'sharp';
 import { getVideoDetailsById, getVideosList } from './bunnyCdn.mjs';
 import { getCachedValue, updateCache } from './cache.mjs';
 
-const createPlaceholder = async filePath => {
-  const buffer = await sharp(filePath)
-    .raw()
-    .ensureAlpha()
-    .resize(12, 12, { fit: 'inside' })
-    .toFormat(sharp.format.png)
-    .toBuffer();
-
-  return buffer.toString('base64');
-};
-
 const getImage = async url => {
   const response = await fetch(url);
 
   return Buffer.from(await response.arrayBuffer());
+};
+
+const createPlaceholder = async url => {
+  try {
+    const image = await getImage(url);
+
+    const buffer = await sharp(image)
+      .raw()
+      .ensureAlpha()
+      .resize(12, 12, { fit: 'inside' })
+      .toFormat(sharp.format.png)
+      .toBuffer();
+
+    return buffer.toString('base64');
+  } catch (error) {
+    console.error(error);
+
+    return null;
+  }
 };
 
 export const getVideoData = async url => {
@@ -42,14 +50,11 @@ export const getVideoData = async url => {
 
   const thumbnailUrl = `${baseUrl}/thumbnail.jpg`;
 
-  const image = await getImage(thumbnailUrl);
-  const placeholder = await createPlaceholder(image);
-
   const data = {
     baseUrl,
-    sources: details?.availableResolutions?.split(',')?.reverse(),
+    sources: details?.availableResolutions?.split(',')?.reverse() ?? null,
     hls: `${baseUrl}/playlist.m3u8`,
-    blur: placeholder,
+    blur: await createPlaceholder(thumbnailUrl),
     fallback: thumbnailUrl,
   };
 

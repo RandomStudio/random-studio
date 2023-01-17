@@ -122,6 +122,10 @@ const LazyVideo = React.forwardRef(
 
     const getMp4FallbackSrc = useCallback(
       sources => {
+        if (!sources) {
+          return null;
+        }
+
         const videoWidth = (windowWidth / 100) * width * dpr;
 
         const sizes = sources.map(source => parseInt(source.replace('p', '')));
