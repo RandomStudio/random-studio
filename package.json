@@ -52,6 +52,7 @@
     "sass": "1.49.9",
     "sharp": "0.30.3"
   },
+  "browserslist": "last 2 versions, iOS > 14",
   "engines": {
     "node": ">=16.13.0"
   },

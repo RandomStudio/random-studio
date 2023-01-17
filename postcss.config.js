@@ -20,6 +20,7 @@ module.exports = {
       {
         autoprefixer: {
           grid: false,
+          flexbox: false,
         },
         stage: 0,
       },
