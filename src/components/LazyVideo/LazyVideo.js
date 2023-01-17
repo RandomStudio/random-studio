@@ -131,7 +131,9 @@ const LazyVideo = React.forwardRef(
 
         const videoWidth = (windowWidth / 100) * width * dpr;
 
-        const sizes = sources.map(source => parseInt(source.replace('p', '')));
+        const sizes = sources
+          .map(source => parseInt(source.replace('p', '')))
+          .filter(size => size < 721);
 
         const transformedSizes = sizes.map(source =>
           Math.abs(source - videoWidth),
@@ -204,7 +206,7 @@ const LazyVideo = React.forwardRef(
           }
             ${hasJs ? styles.hasJs : ''}`}
         style={{
-          aspectRatio: `${video.width} / ${video.height}`,
+          '--aspectRatio': `${video.width} / ${video.height}`,
         }}
       >
         <img
