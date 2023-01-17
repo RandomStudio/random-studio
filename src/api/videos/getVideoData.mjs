@@ -48,14 +48,17 @@ export const getVideoData = async url => {
     return null;
   }
 
+  const { width, height, availableResolutions } = details;
   const thumbnailUrl = `${baseUrl}/thumbnail.jpg`;
 
   const data = {
     baseUrl,
-    sources: details?.availableResolutions?.split(',')?.reverse() ?? null,
+    sources: availableResolutions?.split(',')?.reverse() ?? null,
     hls: `${baseUrl}/playlist.m3u8`,
     blur: await createPlaceholder(thumbnailUrl),
     fallback: thumbnailUrl,
+    width,
+    height,
   };
 
   updateCache(id, data);
