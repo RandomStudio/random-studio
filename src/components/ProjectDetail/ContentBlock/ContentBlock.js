@@ -31,7 +31,6 @@ const ContentBlock = ({
     marginTop,
     text,
     video,
-    videoNew,
   },
 }) => (
   <div
@@ -66,7 +65,6 @@ const ContentBlock = ({
           hasControls={hasControls}
           loops={loops}
           video={video}
-          videoNew={videoNew}
           width={width}
         />
 

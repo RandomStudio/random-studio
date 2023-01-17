@@ -10,7 +10,7 @@ import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
 import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
 import { projectPropTypeObject } from '../../../propTypes';
-import { addVimeoVideoDataToObject } from '../../../api/getVideoData';
+import { getVideoData } from '../../../api/videos/getVideoData.mjs';
 
 const Project = ({
   featuredImage,
@@ -56,13 +56,13 @@ export const getStaticProps = async ({ params, preview }) => {
   return {
     props: {
       ...project,
-      featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
+      featuredVideo: await getVideoData(project.featuredVideoNew),
       content: await addAdditionalInfoToBlocks(project.content),
       opengraph: project.opengraph ?? {},
       relatedProjects: await Promise.all(
         project.relatedProjects?.map(async related => ({
           ...related,
-          featuredVideo: await addVimeoVideoDataToObject(related.featuredVideo),
+          featuredVideo: await getVideoData(related.featuredVideoNew),
         })),
       ),
     },

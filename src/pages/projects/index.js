@@ -5,7 +5,7 @@ import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
 import { PROJECTS_LIST_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
-import { addVimeoVideoDataToObject } from '../../api/getVideoData';
+import { getVideoData } from '../../api/videos/getVideoData.mjs';
 import { projectPropType } from '../../propTypes';
 
 const Projects = ({ projects }) => (
@@ -27,7 +27,7 @@ export const getStaticProps = async ({ preview }) => {
       projects: await Promise.all(
         projects.map(async project => ({
           ...project,
-          featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
+          featuredVideo: await getVideoData(project.featuredVideoNew),
           tags: project.tags?.map(tag => tag.toLowerCase()) ?? [],
         })),
       ),

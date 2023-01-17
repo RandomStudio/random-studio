@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getDataFromBackend from '../api/getDataFromBackend';
-import { addVimeoVideoDataToObject } from '../api/getVideoData';
+import { getVideoData } from '../api/videos/getVideoData.mjs';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
@@ -16,7 +16,6 @@ const Home = ({
   isLogoCentred,
   projects,
   video,
-  videoNew,
 }) => (
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
@@ -25,7 +24,6 @@ const Home = ({
       collaborationUrl={collaborationUrl}
       collaborator={collaborator}
       video={video}
-      videoNew={videoNew}
     />
 
     <ProjectList hasLimit intro={intro} projects={projects} />
@@ -38,14 +36,16 @@ export const getStaticProps = async ({ preview }) => {
     preview,
   });
 
+  console.log(await getVideoData(page.videoNew));
+
   return {
     props: {
       ...page,
-      video: await addVimeoVideoDataToObject(page.video),
+      video: await getVideoData(page.videoNew),
       projects: await Promise.all(
         projects.map(async project => ({
           ...project,
-          featuredVideo: await addVimeoVideoDataToObject(project.featuredVideo),
+          featuredVideo: await getVideoData(project.featuredVideoNew),
         })),
       ),
     },

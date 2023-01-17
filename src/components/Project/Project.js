@@ -11,7 +11,6 @@ const Project = ({
   className,
   featuredImage,
   featuredVideo,
-  featuredVideoNew,
   left,
   title,
   top,
@@ -35,7 +34,6 @@ const Project = ({
             hasControls={false}
             loops
             video={featuredVideo}
-            videoNew={featuredVideoNew}
             width={width}
           />
         ) : (
@@ -71,7 +69,6 @@ Project.propTypes = {
     imageData: imageDataPropType,
   }),
   featuredVideo: videoPropType,
-  featuredVideoNew: PropTypes.string,
   left: PropTypes.number.isRequired,
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -83,7 +80,6 @@ Project.defaultProps = {
   className: '',
   featuredImage: null,
   featuredVideo: null,
-  featuredVideoNew: '',
 };
 
 export default Project;

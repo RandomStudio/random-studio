@@ -18,20 +18,11 @@ export const imageDataPropType = PropTypes.shape({
 });
 
 export const videoPropType = PropTypes.shape({
-  fallback: PropTypes.string.isRequired,
+  baseUrl: PropTypes.string.isRequired,
   blur: PropTypes.string.isRequired,
-  sources: PropTypes.arrayOf(
-    PropTypes.shape({
-      quality: PropTypes.string.isRequired,
-      width: PropTypes.number.isRequired,
-      link: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  height: PropTypes.number.isRequired,
-  providerUid: PropTypes.string.isRequired,
-  thumbnailUrl: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
+  fallback: PropTypes.string.isRequired,
+  originalSource: PropTypes.string,
+  sources: PropTypes.arrayOf(PropTypes.string).isRequired,
 });
 
 export const slidePropType = PropTypes.shape({
@@ -52,7 +43,6 @@ export const videoBlockPropType = PropTypes.shape({
   marginTop: PropTypes.number.isRequired,
   marginLeft: PropTypes.number.isRequired,
   video: videoPropType.isRequired,
-  videoNew: PropTypes.string,
   width: PropTypes.number.isRequired,
 });
 

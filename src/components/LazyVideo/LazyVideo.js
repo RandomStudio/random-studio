@@ -19,7 +19,6 @@ const LazyVideo = React.forwardRef(
       className,
       hasControls,
       video,
-      videoNew,
       isAutoplaying,
       isLooping,
       isMuted,
@@ -112,13 +111,27 @@ const LazyVideo = React.forwardRef(
 
       const videoWidth = (windowWidth / 100) * width * dpr;
 
-      const orderedSizes = video.sources.sort(
-        (a, b) =>
-          Math.abs(a.width - videoWidth) - Math.abs(b.width - videoWidth),
+      const sizes = video.sources.map(source =>
+        parseInt(source.replace('p', '')),
       );
 
-      return <source src={orderedSizes[0]?.link} type="video/mp4" />;
-    }, [dpr, video, videoNew, width, windowWidth]);
+      const transformedSizes = sizes.map(source =>
+        Math.abs(source - videoWidth),
+      );
+
+      const orderedSizes = [...transformedSizes].sort((a, b) => a - b);
+
+      const indexOfClosest = transformedSizes.findIndex(
+        value => value === orderedSizes[0],
+      );
+
+      const sourceUrl =
+        video.sources[indexOfClosest] === video.originalSource
+          ? 'original'
+          : `play_${video.sources[indexOfClosest]}.mp4`;
+
+      return <source src={`${video.baseUrl}/${sourceUrl}`} type="video/mp4" />;
+    }, [dpr, video, width, windowWidth]);
 
     if (!video) {
       return null;

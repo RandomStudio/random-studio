@@ -1,4 +1,4 @@
-import { addVimeoVideoDataToObject } from './getVideoData';
+import { getVideoData } from './videos/getVideoData.mjs';
 
 const addAdditionalInfoToBlocks = async content =>
   Promise.all(
@@ -6,7 +6,7 @@ const addAdditionalInfoToBlocks = async content =>
       if (block.video) {
         return {
           ...block,
-          video: await addVimeoVideoDataToObject(block.video),
+          video: await getVideoData(block.videoNew),
         };
       }
 
@@ -17,9 +17,9 @@ const addAdditionalInfoToBlocks = async content =>
             block.slides.map(async slide =>
               slide.video
                 ? {
-                    ...slide,
-                    video: await addVimeoVideoDataToObject(slide.video),
-                  }
+                  ...slide,
+                  video: await getVideoData(slide.videoNew),
+                }
                 : slide,
             ),
           ),
