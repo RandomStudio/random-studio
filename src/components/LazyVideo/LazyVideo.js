@@ -42,7 +42,10 @@ const LazyVideo = React.forwardRef(
         return;
       }
 
-      const hls = new Hls();
+      const hls = new Hls({
+        startLevel: window.innerWidth > 1280 ? 4 : 2,
+      });
+
       hls.loadSource(videoRef.current.children[0].src);
       hls.attachMedia(videoRef.current);
     }, []);

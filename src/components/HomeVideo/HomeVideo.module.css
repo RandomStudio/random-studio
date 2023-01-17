@@ -12,6 +12,8 @@
   & video {
     width: 100%;
     height: auto;
+    min-height: 60vh;
+    min-height: 60svh;
     max-height: 100vh;
     max-height: 100svh;
   }

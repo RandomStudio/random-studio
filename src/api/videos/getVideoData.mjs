@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { getVideoDetailsById, getVideosList } from './bunnyCdn.mjs';
+import { getVideoDetailsById } from './bunnyCdn.mjs';
 import { getCachedValue, updateCache } from './cache.mjs';
 
 const getImage = async url => {
