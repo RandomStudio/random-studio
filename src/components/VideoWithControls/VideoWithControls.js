@@ -28,6 +28,7 @@ const VideoWithControls = ({
   hasAudio,
   isAutoplaying,
   isLooping,
+  startsAutoplaying,
   video,
   width,
 }) => {
@@ -80,6 +81,7 @@ const VideoWithControls = ({
         isMuted={!hasAudio || isCurrentlyMuted}
         onPlayStateChange={setIsPlaying}
         ref={videoRef}
+        startsAutoplaying={startsAutoplaying}
         video={video}
         width={width}
       />

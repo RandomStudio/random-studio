@@ -20,6 +20,7 @@ const LazyVideo = React.forwardRef(
       className,
       hasControls,
       video,
+      startsAutoplaying,
       isAutoplaying,
       isLooping,
       isMuted,
@@ -53,7 +54,6 @@ const LazyVideo = React.forwardRef(
     const handlePlay = useCallback(async () => {
       try {
         handleInitializeHls();
-
         await videoRef.current.play();
         onPlayStateChange(true);
       } catch (err) {
@@ -91,7 +91,7 @@ const LazyVideo = React.forwardRef(
         handlePlay();
       };
 
-      if (!ref) {
+      if (!ref || startsAutoplaying) {
         return undefined;
       }
 
@@ -119,7 +119,7 @@ const LazyVideo = React.forwardRef(
 
         observer.disconnect();
       };
-    }, [videoRef, isAutoplaying, handlePlay]);
+    }, [videoRef, isAutoplaying, startsAutoplaying, handlePlay]);
 
     const { dpr, width: windowWidth } = useWindowSize();
 
@@ -176,6 +176,7 @@ const LazyVideo = React.forwardRef(
     const videoElement = (
       <>
         <video
+          autoPlay={startsAutoplaying}
           className={styles.jsVideo}
           loop={isLooping}
           muted={isMuted}
@@ -230,6 +231,7 @@ LazyVideo.propTypes = {
   isLooping: PropTypes.bool,
   isMuted: PropTypes.bool,
   onPlayStateChange: PropTypes.func,
+  startsAutoplaying: PropTypes.bool,
   video: videoPropType.isRequired,
   width: PropTypes.number,
 };
@@ -242,6 +244,7 @@ LazyVideo.defaultProps = {
   isLooping: true,
   isMuted: true,
   onPlayStateChange: () => null,
+  startsAutoplaying: false,
   width: 100,
 };
 
