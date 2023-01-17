@@ -20,7 +20,6 @@ const LazyVideo = React.forwardRef(
       className,
       hasControls,
       video,
-      startsAutoplaying,
       isAutoplaying,
       isLooping,
       isMuted,
@@ -34,6 +33,7 @@ const LazyVideo = React.forwardRef(
 
     const [isIntersected, setIsIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [hasFailed, setHasFailed] = useState(false);
 
     const handleInitializeHls = useCallback(() => {
       if (
@@ -58,6 +58,7 @@ const LazyVideo = React.forwardRef(
         onPlayStateChange(true);
       } catch (err) {
         console.warn(err);
+        setHasFailed(true);
         onPlayStateChange(false);
       } finally {
         setIsLoaded(true);
@@ -91,7 +92,7 @@ const LazyVideo = React.forwardRef(
         handlePlay();
       };
 
-      if (!ref || startsAutoplaying) {
+      if (!ref) {
         return undefined;
       }
 
@@ -119,7 +120,7 @@ const LazyVideo = React.forwardRef(
 
         observer.disconnect();
       };
-    }, [videoRef, isAutoplaying, startsAutoplaying, handlePlay]);
+    }, [videoRef, isAutoplaying, handlePlay]);
 
     const { dpr, width: windowWidth } = useWindowSize();
 
@@ -171,16 +172,16 @@ const LazyVideo = React.forwardRef(
       return null;
     }
 
-    const { blur } = video;
+    const { blur, fallback } = video;
 
     const videoElement = (
       <>
         <video
-          autoPlay={startsAutoplaying}
           className={styles.jsVideo}
           loop={isLooping}
           muted={isMuted}
           playsInline
+          poster={fallback}
           ref={videoRef}
         >
           {isIntersected ? sourceElements : null}
@@ -218,6 +219,10 @@ const LazyVideo = React.forwardRef(
         />
 
         {videoElement}
+
+        {hasFailed && (
+          <img alt={alt} className={styles.placeholder} src={fallback} />
+        )}
       </div>
     );
   },
@@ -231,7 +236,6 @@ LazyVideo.propTypes = {
   isLooping: PropTypes.bool,
   isMuted: PropTypes.bool,
   onPlayStateChange: PropTypes.func,
-  startsAutoplaying: PropTypes.bool,
   video: videoPropType.isRequired,
   width: PropTypes.number,
 };
@@ -244,7 +248,6 @@ LazyVideo.defaultProps = {
   isLooping: true,
   isMuted: true,
   onPlayStateChange: () => null,
-  startsAutoplaying: false,
   width: 100,
 };
 

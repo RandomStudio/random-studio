@@ -13,7 +13,6 @@ const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
         hasControls={false}
         isMuted
         loops
-        startsAutoplaying
         video={video}
       />
 
