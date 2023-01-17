@@ -8,6 +8,7 @@ import React, {
   useCallback,
 } from 'react';
 import PropTypes from 'prop-types';
+import Hls from 'hls.js';
 import styles from './LazyVideo.module.scss';
 import { videoPropType } from '../../propTypes';
 import useWindowSize from '../../utils/hooks/useWindowSize';
@@ -33,8 +34,23 @@ const LazyVideo = React.forwardRef(
     const [isIntersected, setIsIntersected] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
+    const handleInitializeHls = useCallback(() => {
+      if (
+        videoRef.current.canPlayType('application/vnd.apple.mpegurl') ||
+        !Hls.isSupported()
+      ) {
+        return;
+      }
+
+      const hls = new Hls();
+      hls.loadSource(videoRef.current.children[0].src);
+      hls.attachMedia(videoRef.current);
+    }, []);
+
     const handlePlay = useCallback(async () => {
       try {
+        handleInitializeHls();
+
         await videoRef.current.play();
         onPlayStateChange(true);
       } catch (err) {
@@ -43,7 +59,7 @@ const LazyVideo = React.forwardRef(
       } finally {
         setIsLoaded(true);
       }
-    }, [onPlayStateChange]);
+    }, [handleInitializeHls, onPlayStateChange]);
 
     const handlePause = useCallback(() => {
       videoRef.current.pause();
@@ -104,34 +120,43 @@ const LazyVideo = React.forwardRef(
 
     const { dpr, width: windowWidth } = useWindowSize();
 
+    const getMp4FallbackSrc = useCallback(
+      sources => {
+        const videoWidth = (windowWidth / 100) * width * dpr;
+
+        const sizes = sources.map(source => parseInt(source.replace('p', '')));
+
+        const transformedSizes = sizes.map(source =>
+          Math.abs(source - videoWidth),
+        );
+
+        const orderedSizes = [...transformedSizes].sort((a, b) => a - b);
+
+        const indexOfClosest = transformedSizes.findIndex(
+          value => value === orderedSizes[0],
+        );
+
+        return `play_${sources[indexOfClosest]}.mp4`;
+      },
+      [dpr, width, windowWidth],
+    );
+
     const sourceElements = useMemo(() => {
       if (!video) {
         return null;
       }
 
-      const videoWidth = (windowWidth / 100) * width * dpr;
+      const { sources, hls } = video;
+      const mp4Fallback = getMp4FallbackSrc(sources);
 
-      const sizes = video.sources.map(source =>
-        parseInt(source.replace('p', '')),
+      return (
+        <>
+          <source src={hls} type="vnd.apple.mpegURL" />
+
+          <source src={`${video.baseUrl}/${mp4Fallback}`} type="video/mp4" />
+        </>
       );
-
-      const transformedSizes = sizes.map(source =>
-        Math.abs(source - videoWidth),
-      );
-
-      const orderedSizes = [...transformedSizes].sort((a, b) => a - b);
-
-      const indexOfClosest = transformedSizes.findIndex(
-        value => value === orderedSizes[0],
-      );
-
-      const sourceUrl =
-        video.sources[indexOfClosest] === video.originalSource
-          ? 'original'
-          : `play_${video.sources[indexOfClosest]}.mp4`;
-
-      return <source src={`${video.baseUrl}/${sourceUrl}`} type="video/mp4" />;
-    }, [dpr, video, width, windowWidth]);
+    }, [getMp4FallbackSrc, video]);
 
     if (!video) {
       return null;
@@ -170,7 +195,7 @@ const LazyVideo = React.forwardRef(
       <div
         className={`${styles.frame} ${className} ${isLoaded ? styles.isLoaded : ''
           }
-        ${hasJs ? styles.hasJs : ''}`}
+            ${hasJs ? styles.hasJs : ''}`}
         style={{
           aspectRatio: `${video.width} / ${video.height}`,
         }}
