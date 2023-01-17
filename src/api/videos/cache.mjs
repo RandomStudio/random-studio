@@ -23,10 +23,11 @@ export const getCachedValue = id => {
 };
 
 export const updateCache = (id, data) => {
-  cache[id] = data;
+  const freshCache = loadCache();
+  freshCache[id] = data;
 
   try {
-    writeFileSync(CACHE_FILE, JSON.stringify(cache));
+    writeFileSync(CACHE_FILE, JSON.stringify(freshCache));
   } catch (err) {
     console.error(err);
   }

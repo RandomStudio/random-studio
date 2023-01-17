@@ -36,7 +36,7 @@ export const getVideoData = async url => {
 
   const details = await getVideoDetailsById(id);
 
-  if (!details) {
+  if (!details || !details.availableResolutions) {
     return null;
   }
 
@@ -51,9 +51,10 @@ export const getVideoData = async url => {
   const data = {
     baseUrl,
     sources: resolutions,
-    originalSource: resolutions.find(
-      source => parseInt(source.replace('p', '')) === height,
-    ),
+    originalSource:
+      resolutions.find(
+        source => parseInt(source.replace('p', '')) === height,
+      ) ?? null,
     blur: placeholder,
     fallback: thumbnailUrl,
   };
