@@ -20,7 +20,9 @@ const Newsletter = ({ className }) => {
 
       if (response.ok) {
         window.plausible?.('Newsletter Submission', {
-          state: 'success',
+          props: {
+            result: 'success',
+          },
         });
 
         setIsSuccessful(true);
@@ -31,7 +33,9 @@ const Newsletter = ({ className }) => {
       const body = await response.json();
 
       window.plausible?.('Newsletter Submission', {
-        state: 'error_mailchimp',
+        props: {
+          result: 'error_mailchimp',
+        },
       });
 
       setError(body.error);
@@ -39,7 +43,9 @@ const Newsletter = ({ className }) => {
       console.error(responseError);
 
       window.plausible?.('Newsletter Submission', {
-        state: 'error_backend',
+        props: {
+          result: 'error_backend',
+        },
       });
 
       setError('Failed to submit to backend, sorry about that!');

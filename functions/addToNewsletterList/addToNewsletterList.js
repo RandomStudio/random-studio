@@ -53,9 +53,9 @@ export async function handler(event) {
     const json = await response.json();
 
     console.log(`Mailchimp body: ${JSON.stringify(json)}`);
-    console.log(`Status Code: ${response.statusCode}`);
+    console.log(`Status Code: ${response.status}`);
 
-    if (response.statusCode < 300) {
+    if (response.ok) {
       console.log('Added to list in Mailchimp subscriber list');
 
       return createResponse({
