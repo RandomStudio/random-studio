@@ -15,7 +15,7 @@ const Newsletter = ({ className }) => {
 
     try {
       const response = await fetch(
-        `https://random-studio.netlify.app/.netlify/functions/addToNewsletterList?email=${email}`,
+        `https://63da24c64c798860c404a652--sage-melomakarona-00e1a3.netlify.app/.netlify/functions/addToNewsletterList?email=${email}`,
       );
 
       if (response.ok) {
