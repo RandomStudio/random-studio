@@ -15,20 +15,34 @@ const Newsletter = ({ className }) => {
 
     try {
       const response = await fetch(
-        `https://63da24c64c798860c404a652--sage-melomakarona-00e1a3.netlify.app/.netlify/functions/addToNewsletterList?email=${email}`,
+        `https://staging.random.studio/.netlify/functions/addToNewsletterList?email=${email}`,
       );
 
       if (response.ok) {
+        window.plausible?.('Newsletter Submission', {
+          state: 'success',
+        });
+
         setIsSuccessful(true);
 
         return;
       }
 
       const body = await response.json();
-      setError(body.errorMessage);
+
+      window.plausible?.('Newsletter Submission', {
+        state: 'error_mailchimp',
+      });
+
+      setError(body.error);
     } catch (responseError) {
       console.error(responseError);
-      setError('Failed to submit. Please check email and try again.');
+
+      window.plausible?.('Newsletter Submission', {
+        state: 'error_backend',
+      });
+
+      setError('Failed to submit to backend, sorry about that!');
     }
   };
 
