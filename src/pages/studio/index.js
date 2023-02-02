@@ -77,6 +77,12 @@ const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
       </div>
 
       <div className={styles.list}>
+        <h3 className={styles.heading}>{'New business inquiries'}</h3>
+
+        <a href="mailto:business@random.studio">{'business@random.studio'}</a>
+      </div>
+
+      <div className={styles.list}>
         <h3 className={styles.heading}>{'Press inquiries'}</h3>
 
         <a href="mailto:press@random.studio">{'press@random.studio'}</a>
