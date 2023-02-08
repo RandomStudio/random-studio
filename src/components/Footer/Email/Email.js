@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import copyStringToClipboard from '../../../../utils/copyStringToClipboard';
+import copyStringToClipboard from '../../../utils/copyStringToClipboard';
 import Toast from './Toast/Toast';
 
 const Email = ({ className, email }) => {

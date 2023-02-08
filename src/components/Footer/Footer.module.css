@@ -38,6 +38,20 @@
   }
 }
 
+.emails {
+  order: 2;
+  margin-top: 40px;
+
+  @media (--tablet) {
+    order: 1;
+    margin-top: 0;
+  }
+}
+
+.email {
+  display: block;
+}
+
 .rightColumn {
   order: 1;
   display: flex;
