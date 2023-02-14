@@ -171,3 +171,18 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
     }
   }
 }`;
+export const SUSTAINABILITY_PAGE_QUERY = `
+${IMAGE_DATA_OBJECT_FRAGMENT}
+{
+  page: sustainabilityPage {
+    intro(markdown: true)
+    content {
+      textFirst
+      text
+      title
+      image {
+        ...ImageDataObject
+      }
+    }
+  }
+}`;
