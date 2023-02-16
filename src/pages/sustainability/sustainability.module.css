@@ -1,0 +1,14 @@
+.blurb {
+  @mixin body-3;
+  width: 100%;
+  margin-bottom: 80px;
+
+  @media (--tablet) {
+    @mixin body-1;
+  }
+
+  @media (--desktop) {
+    max-width: 1020px;
+    margin-bottom: 112px;
+  }
+}

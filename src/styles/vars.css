@@ -9,7 +9,11 @@
   --font-logo-large: 90px;
 
   /* Colors */
-  --red: #ff0000;
+  --green: #D9EFA9;
+  --black: #000000;
+  --white: #f8f8f8;
+  --off-white: #eee;
+  --red: #a7423f;
 
   /* To replace the rems above later on & better naming system */
   --px-font-xxs: 16px;

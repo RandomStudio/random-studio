@@ -1,0 +1,74 @@
+.section {
+  margin: 0 -20px;
+
+  @media screen and (min-width: 720px){
+
+    margin: 0 -40px;
+
+  }
+
+  @media screen and (min-width: 1080px){
+    display: flex;
+    > div {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media screen and (min-width: 1280px){
+    margin: 0 calc((100vw - 1120px - 80px) / 2 * -1);
+  }
+
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.content {
+  max-width: 257px;
+  margin: 0 auto;
+
+
+  padding: 4rem 0;
+
+  @media screen and (min-width: 768px){
+    max-width: 498px;
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.title {
+
+  @mixin body-3;
+
+  @media screen and (min-width: 768px){
+    @mixin body-1;
+  }
+
+  margin-bottom: 3.125rem;
+}
+
+
+
+/* Below class names must match
+ * the options available on DATO CMS
+ */
+
+.green {
+  background: var(--green);
+}
+
+.black {
+  background: var(--black);
+  color: var(--white);
+}
+
+.grey {
+  background: var(--off-white);
+}

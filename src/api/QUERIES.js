@@ -180,6 +180,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
       textFirst
       text
       title
+      color
       image {
         ...ImageDataObject
       }
