@@ -16,10 +16,9 @@ const Projects = ({ projects }) => (
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async () => {
   const { projects } = await getDataFromBackend({
     query: PROJECTS_LIST_QUERY,
-    preview,
   });
 
   return {
