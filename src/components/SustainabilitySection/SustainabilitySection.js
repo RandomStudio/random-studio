@@ -17,7 +17,7 @@ const SustainabilitySection = ({ section }) => {
   return (
     <section className={sectionClasses}>
       <div>
-        <Image data={image.imageData} />
+        <Image data={image.imageData} layout="responsive" />
       </div>
 
       <div>
