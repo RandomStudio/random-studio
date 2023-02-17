@@ -30,10 +30,9 @@ const Home = ({
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async () => {
   const { page, projects } = await getDataFromBackend({
     query: INDEX_PAGE_QUERY,
-    preview,
   });
 
   return {

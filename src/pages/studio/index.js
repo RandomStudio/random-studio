@@ -107,10 +107,9 @@ const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async () => {
   const { page } = await getDataFromBackend({
     query: STUDIO_PAGE_QUERY,
-    preview,
   });
 
   return {

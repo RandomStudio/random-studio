@@ -25,10 +25,9 @@ const Sustainability = ({ intro, content, seoTitle, seoDescription }) => {
 
 export default Sustainability;
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async () => {
   const { page } = await getDataFromBackend({
     query: SUSTAINABILITY_PAGE_QUERY,
-    preview,
   });
 
   return {
