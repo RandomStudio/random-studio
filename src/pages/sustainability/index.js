@@ -14,7 +14,6 @@ const Sustainability = ({ intro, content, seoTitle, seoDescription }) => {
       <div
         className={styles.blurb}
         dangerouslySetInnerHTML={{ __html: intro }}
-        z
       />
 
       {content.map(section => (
