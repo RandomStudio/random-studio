@@ -12,7 +12,6 @@ const Layout = ({
   hasFooter,
   isLogoCentred,
   isNewDesign,
-  isWhiteBg,
 }) => {
   const isAfterDark = useSunset();
 
@@ -23,7 +22,6 @@ const Layout = ({
     [styles.newLayout]: isNewDesign,
     [styles.oldLayout]: !isNewDesign,
     [styles.isAfterDark]: isDarkStyleActive,
-    [styles.whiteBg]: isWhiteBg,
   });
 
   return (
@@ -55,7 +53,6 @@ Layout.propTypes = {
   hasFooter: PropTypes.bool,
   isLogoCentred: PropTypes.bool,
   isNewDesign: PropTypes.bool,
-  isWhiteBg: PropTypes.bool,
 };
 
 Layout.defaultProps = {
@@ -63,7 +60,6 @@ Layout.defaultProps = {
   hasFooter: true,
   isLogoCentred: false,
   isNewDesign: false,
-  isWhiteBg: false,
 };
 
 export default Layout;
