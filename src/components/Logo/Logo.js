@@ -4,20 +4,17 @@ import PropTypes from 'prop-types';
 import styles from './Logo.module.css';
 
 const Logo = ({ isCentred }) => {
-  const logoClass = `${styles.logo} ${
-    isCentred ? styles.isCenter : styles.isTop
-  }`;
+  const centeredClass = isCentred ? styles.isCenter : styles.isTop;
+  const logoClass = `${styles.logo} ${centeredClass}`;
 
   return (
     <h1 className={logoClass}>
       <Link href="/">
-        <a>
-          {'Random '}
+        {'Random '}
 
-          <br aria-hidden />
+        <br aria-hidden />
 
-          {'Studio'}
-        </a>
+        {'Studio'}
       </Link>
     </h1>
   );

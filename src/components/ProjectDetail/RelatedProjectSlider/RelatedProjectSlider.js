@@ -16,31 +16,29 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
       <div className={styles.worksWrapper}>
         {relatedProjects.map(
           ({ featuredImage, featuredVideo, title, slug }) => (
-            <Link href={slug} key={title}>
-              <a className={styles.card}>
-                {featuredImage && (
-                  <div className={styles.imageWrapper}>
-                    <Image
-                      alt={title}
-                      data={featuredImage.imageData}
-                      sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
-                    />
-                  </div>
-                )}
-
-                {featuredVideo && (
-                  <VideoWithControls
-                    autoplay
-                    hasControls={false}
-                    isAlwaysMuted
-                    isMuted
-                    loops
-                    video={featuredVideo}
+            <Link className={styles.card} href={slug} key={title}>
+              {featuredImage && (
+                <div className={styles.imageWrapper}>
+                  <Image
+                    alt={title}
+                    data={featuredImage.imageData}
+                    sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
                   />
-                )}
+                </div>
+              )}
 
-                {title && <p>{title}</p>}
-              </a>
+              {featuredVideo && (
+                <VideoWithControls
+                  autoplay
+                  hasControls={false}
+                  isAlwaysMuted
+                  isMuted
+                  loops
+                  video={featuredVideo}
+                />
+              )}
+
+              {title && <p>{title}</p>}
             </Link>
           ),
         )}
