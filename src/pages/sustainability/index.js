@@ -1,27 +1,23 @@
-import ReactMarkdown from 'react-markdown';
+import PropTypes from 'prop-types';
 import { SUSTAINABILITY_PAGE_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import Layout from '../../components/Layout/Layout';
 import Head from '../../components/Head/Head';
 import SustainabilitySection from '../../components/SustainabilitySection/SustainabilitySection';
-
 import styles from './Sustainability.module.css';
 
-const Sustainability = props => {
-  const { intro, content: sections } = props;
-
+const Sustainability = ({ intro, content, seoTitle, seoDescription }) => {
   return (
     <Layout isNewDesign>
-      <Head description={intro} title="Sustainability" />
+      <Head description={seoDescription} title={seoTitle} />
 
-      <p className={styles.blurb}>
-        Green is our Default <br />
+      <div
+        className={styles.blurb}
+        dangerouslySetInnerHTML={{ __html: intro }}
+        z
+      />
 
-        <br />
-        When we work on a project we work as sustainable as possible
-      </p>
-
-      {sections.map(section => (
+      {content.map(section => (
         <SustainabilitySection key={section.title} section={section} />
       ))}
     </Layout>
@@ -30,10 +26,10 @@ const Sustainability = props => {
 
 export default Sustainability;
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async ({ preview = true }) => {
   const { page } = await getDataFromBackend({
     query: SUSTAINABILITY_PAGE_QUERY,
-    preview: true,
+    preview,
   });
 
   return {
@@ -41,4 +37,16 @@ export const getStaticProps = async ({ preview }) => {
       ...page,
     },
   };
+};
+
+Sustainability.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  intro: PropTypes.string.isRequired,
+  seoDescription: PropTypes.string,
+  seoTitle: PropTypes.string,
+};
+
+Sustainability.defaultProps = {
+  seoDescription: null,
+  seoTitle: null,
 };

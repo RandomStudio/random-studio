@@ -176,6 +176,8 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
 {
   page: sustainabilityPage {
     intro(markdown: true)
+    seoTitle
+    seoDescription
     content {
       textFirst
       text
