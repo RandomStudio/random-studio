@@ -18,10 +18,9 @@
   @media screen and (min-width: 1280px){
     /*
     * Bootstrap approach to making full-width row in a fixed width container
-    * 1120px is container width
-    * 80px is the padding of the container (40 each side)
+    * 1192px is the container width
     */
-    margin: 0 calc((100vw - 1120px - 80px) / 2 * -1);
+    margin: 0 calc((100vw - 1192px) / 2 * -1);
   }
 
 }
