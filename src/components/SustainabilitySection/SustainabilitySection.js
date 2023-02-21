@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import styles from './SustainabilitySection.module.css';
-import Image from '../Image/Image';
 import classNames from '../../utils/classNames';
 import { externalLinkRenderer } from '../../utils/externalLinkRenderer';
+import PixelatedImage from '../PixelatedImage/PixelatedImage';
 
 const SustainabilitySection = ({ section }) => {
   const { image, text, title, textFirst, color } = section;
@@ -17,7 +17,7 @@ const SustainabilitySection = ({ section }) => {
   return (
     <section className={sectionClasses}>
       <div>
-        <Image data={image.imageData} layout="responsive" />
+        <PixelatedImage image={image.imageData} />
       </div>
 
       <div>
