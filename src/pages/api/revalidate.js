@@ -4,10 +4,9 @@ export default async function handler(req, res) {
     return res.status(401).json({ message: 'Invalid token' });
   }
 
-  const slug = req.body?.entity?.collaboration_url?.replace(
-    'https://random.studio',
-    '',
-  );
+  const collaborationUrl = new URL(req.body?.entity?.collaboration_url);
+
+  const slug = collaborationUrl?.pathname;
 
   if (!slug) {
     return res.status(401).json({ message: 'You need to pass a slug' });
