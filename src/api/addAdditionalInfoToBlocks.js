@@ -6,7 +6,7 @@ const addAdditionalInfoToBlocks = async content =>
       if (block.video) {
         return {
           ...block,
-          // video: await getVideoData(block.videoNew),
+          video: await getVideoData(block.videoNew),
         };
       }
 
@@ -18,7 +18,7 @@ const addAdditionalInfoToBlocks = async content =>
               slide.video
                 ? {
                   ...slide,
-                  // video: await getVideoData(slide.videoNew),
+                  video: await getVideoData(slide.videoNew),
                 }
                 : slide,
             ),

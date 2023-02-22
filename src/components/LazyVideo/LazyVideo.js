@@ -181,7 +181,7 @@ const LazyVideo = React.forwardRef(
 
     const videoElement = (
       <>
-        {/* <video
+        <video
           className={styles.jsVideo}
           loop={isLooping}
           muted={isMuted}
@@ -201,7 +201,7 @@ const LazyVideo = React.forwardRef(
           >
             {sourceElements}
           </video>
-        </noscript> */}
+        </noscript>
       </>
     );
     /* eslint-enable jsx-a11y/media-has-caption */
