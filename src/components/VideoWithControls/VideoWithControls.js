@@ -73,7 +73,7 @@ const VideoWithControls = ({
 
   return (
     <div className={`${styles.videoWrapper} ${className}`} onClick={handleTap}>
-      <LazyVideo
+      {/* <LazyVideo
         hasControls
         isAutoplaying={isAutoplaying}
         isLooping={isLooping}
@@ -82,7 +82,7 @@ const VideoWithControls = ({
         ref={videoRef}
         video={video}
         width={width}
-      />
+      /> */}
 
       {hasControls &&
         (hasPlayed ? (
