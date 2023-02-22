@@ -1,3 +1,5 @@
+import React from 'react';
+
 /* eslint-disable react/destructuring-assignment */
 // eslint-disable-next-line react/require-optimization
 class ErrorBoundary extends React.Component {
@@ -12,7 +14,6 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    // You can also log the error to an error reporting service
     console.error({
       error,
       errorInfo,
