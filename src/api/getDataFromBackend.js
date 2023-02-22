@@ -1,14 +1,12 @@
 import { GraphQLClient } from 'graphql-request';
 
-const getDataFromBackend = async ({ query, variables }) => {
+const getDataFromBackend = async ({ query, variables, preview }) => {
   const endpoint = `https://graphql.datocms.com/`;
-
-  const includeDrafts = process.env.NODE_ENV !== 'production';
 
   const client = new GraphQLClient(endpoint, {
     headers: {
       authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-      ...(includeDrafts ? { 'X-Include-Drafts': 'true' } : {}),
+      ...(preview ? { 'X-Include-Drafts': 'true' } : {}),
     },
   });
 
