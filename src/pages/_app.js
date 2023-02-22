@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import { pageview, initialize, set } from 'react-ga';
 import styles from './App.module.scss';
+import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
   const router = useRouter();
@@ -32,7 +33,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
   }, [router.events, router.pathname]);
 
   return (
-    <>
+    <ErrorBoundary>
       <Component {...pageProps} />
 
       {isPreview && (
@@ -46,7 +47,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
           </a>
         </div>
       )}
-    </>
+    </ErrorBoundary>
   );
 };
 
