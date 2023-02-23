@@ -1,9 +1,19 @@
 .blurb {
+
+
   @mixin body-3;
+
+
   width: 100%;
   margin-bottom: 80px;
 
-  @media (--tablet) {
+  @media screen and (min-width: 768px){
+    max-width: 768px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+
+  @media screen and (min-width: 960px){
     @mixin body-1;
   }
 
@@ -12,7 +22,6 @@
   }
 
   @media (--desktop) {
-    max-width: 1020px;
     margin-bottom: 112px;
   }
 }
