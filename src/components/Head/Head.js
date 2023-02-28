@@ -46,7 +46,7 @@ const Head = ({
 
       <meta content="'#ffffff'" name="msapplication-TileColor" />
 
-      <meta content="pageDescription" name="description" />
+      <meta content={ogDescription} name="description" />
 
       <meta content={ogTitle} property="og:title" />
 
