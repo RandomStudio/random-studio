@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { imageDataPropType } from '../../propTypes';
 
-const defaults = {
-  title: 'Random Studio',
-  description:
+const DEFAULTS = {
+  TITLE: 'Random Studio',
+  DESCRIPTION:
     'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.',
-  image: '/og-image.png',
-  siteUrl: 'https://random.studio',
-  keywords:
+  IMAGE: '/og-image.png',
+  SITE_URL: 'https://random.studio',
+  KEYWORDS:
     'Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio',
 };
 
@@ -18,7 +18,7 @@ const formatTitle = string =>
   `${string
     .replaceAll('<br>', '')
     .replaceAll('<br /> ', '')
-    .replaceAll('  ', ' ')} - ${defaults.title}`;
+    .replaceAll('  ', ' ')} - ${DEFAULTS.TITLE}`;
 
 const Head = ({
   description,
@@ -29,16 +29,16 @@ const Head = ({
 }) => {
   const router = useRouter();
 
-  const pageTitle = title ? formatTitle(title) : defaults.title;
+  const pageTitle = title ? formatTitle(title) : DEFAULTS.TITLE;
 
-  const imagePath = image?.imageData?.src ? image : defaults.image;
+  const imagePath = image?.imageData?.src ? image : DEFAULTS.IMAGE;
 
-  const ogImage = `${defaults.siteUrl}${imagePath}`;
+  const ogImage = `${DEFAULTS.SITE_URL}${imagePath}`;
 
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
 
   const pageDescription =
-    socialDescription || description || defaults.description;
+    socialDescription || description || DEFAULTS.DESCRIPTION;
 
   return (
     <NextHead>
@@ -46,7 +46,7 @@ const Head = ({
 
       <meta content="Random Studio" name="author" />
 
-      <meta content={defaults.keywords} name="keywords" />
+      <meta content={DEFAULTS.KEYWORDS} name="keywords" />
 
       <meta content="/favicons/browserconfig.xml" name="msapplication-config" />
 
@@ -58,7 +58,7 @@ const Head = ({
 
       <meta content={ogTitle} property="og:title" />
 
-      <meta content={defaults.title} property="og:site_name" />
+      <meta content={DEFAULTS.TITLE} property="og:site_name" />
 
       <meta content={pageDescription} property="og:description" />
 
@@ -67,7 +67,7 @@ const Head = ({
       <meta content="en_US" property="og:locale" />
 
       <meta
-        content={`${defaults.siteUrl}${router.pathname}`}
+        content={`${DEFAULTS.SITE_URL}${router.pathname}`}
         property="og:url"
       />
 
