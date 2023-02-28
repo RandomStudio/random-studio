@@ -45,7 +45,6 @@ const Project = ({
         />
       )}
     </div>
-
     <div
       className={styles.title}
       style={
