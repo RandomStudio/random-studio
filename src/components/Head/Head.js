@@ -4,7 +4,21 @@ import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { imageDataPropType } from '../../propTypes';
 
-const defaultPageTitle = 'Random Studio';
+const defaults = {
+  title: 'Random Studio',
+  description:
+    'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.',
+  image: '/og-image.png',
+  siteUrl: 'https://random.studio',
+  keywords:
+    'Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio',
+};
+
+const formatTitle = string =>
+  `${string
+    .replaceAll('<br>', '')
+    .replaceAll('<br /> ', '')
+    .replaceAll('  ', ' ')} - ${defaults.title}`;
 
 const Head = ({
   description,
@@ -15,50 +29,47 @@ const Head = ({
 }) => {
   const router = useRouter();
 
-  const siteUrl = 'https://random.studio';
+  const pageTitle = title ? formatTitle(title) : defaults.title;
 
-  const formatTitle = string =>
-    `${string
-      .replaceAll('<br>', '')
-      .replaceAll('<br /> ', '')
-      .replaceAll('  ', ' ')} - ${defaultPageTitle}`;
+  const imagePath = image?.imageData?.src ? image : defaults.image;
 
-  const pageTitle = title ? formatTitle(title) : defaultPageTitle;
+  const ogImage = `${defaults.siteUrl}${imagePath}`;
 
-  const ogImage = `${siteUrl}${image?.imageData?.src ?? image}`;
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
-  const ogDescription = socialDescription || description;
+
+  const pageDescription =
+    socialDescription || description || defaults.description;
 
   return (
     <NextHead>
       <title>{pageTitle}</title>
 
-      <meta content="'Random Studio'" name="author" />
+      <meta content="Random Studio" name="author" />
 
-      <meta
-        content="Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio"
-        name="keywords"
-      />
+      <meta content={defaults.keywords} name="keywords" />
 
       <meta content="/favicons/browserconfig.xml" name="msapplication-config" />
 
-      <meta content="'#ffffff'" name="theme-color" />
+      <meta content="#ffffff" name="theme-color" />
 
-      <meta content="'#ffffff'" name="msapplication-TileColor" />
+      <meta content="#ffffff" name="msapplication-TileColor" />
 
-      <meta content={ogDescription} name="description" />
+      <meta content={pageDescription} name="description" />
 
       <meta content={ogTitle} property="og:title" />
 
-      <meta content="Random Studio" property="og:site_name" />
+      <meta content={defaults.title} property="og:site_name" />
 
-      <meta content={ogDescription} property="og:description" />
+      <meta content={pageDescription} property="og:description" />
 
       <meta content="website'" property="og:type" />
 
-      <meta content="en_US'" property="og:locale" />
+      <meta content="en_US" property="og:locale" />
 
-      <meta content={`${siteUrl}${router.pathname}`} property="og:url" />
+      <meta
+        content={`${defaults.siteUrl}${router.pathname}`}
+        property="og:url"
+      />
 
       <meta content={ogImage} property="og:image" />
 
@@ -68,7 +79,7 @@ const Head = ({
 
       <meta content={ogTitle} name="twitter:title" />
 
-      <meta content={ogDescription} name="twitter:description" />
+      <meta content={pageDescription} name="twitter:description" />
 
       <meta content={ogImage} name="twitter:image" />
 
@@ -135,9 +146,8 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  description:
-    'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.',
-  image: '/og-image.png',
+  description: null,
+  image: null,
   socialDescription: null,
   socialTitle: null,
   title: null,
