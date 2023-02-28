@@ -36,8 +36,6 @@ export const getStaticProps = async ({ preview }) => {
     preview,
   });
 
-  console.log(await getVideoData(page.videoNew));
-
   return {
     props: {
       ...page,
