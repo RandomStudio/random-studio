@@ -1,21 +1,14 @@
-@import './reset.css';
-@import './vars.css';
+@import "./reset.css";
+@import "./vars.css";
 
 @font-face {
-  font-family: 'Random Regular';
-  src: url('/fonts/Random-Regular.woff2') format('woff2');
+  font-family: "Random Regular";
+  src: url("/fonts/Random-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Larish Neue';
-  src: url('/fonts/LarishNeueSemiboldRegSubsetted.woff2') format('woff2');
-}
-
-:root {
-  --black: #000000;
-  --white: #f8f8f8;
-  --off-white: #eee;
-  --red: #a7423f;
+  font-family: "Larish Neue";
+  src: url("/fonts/LarishNeueSemiboldRegSubsetted.woff2") format("woff2");
 }
 
 html,
@@ -28,7 +21,7 @@ body {
 }
 
 body {
-  font-family: 'Random Regular';
+  font-family: "Random Regular";
   font-size: 16px;
   font-weight: 100;
   line-height: 1.3;
@@ -63,7 +56,7 @@ a:hover {
 .screen-reader-only {
   position: absolute;
   left: -999px;
-  width:1px;
+  width: 1px;
   height: 1px;
   top: auto;
 
@@ -75,11 +68,10 @@ a:hover {
     position: static;
     margin: auto;
   }
-
 }
 
 button,
-[type='submit'] {
+[type="submit"] {
   cursor: pointer;
 }
 

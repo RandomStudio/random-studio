@@ -58,7 +58,7 @@ When change is live everywhere, newLayout can become :root and other code can be
 
     @media (--desktop) {
       padding-top: 304px;
-      padding-bottom: 228px;
+      padding-bottom: 100px;
     }
   }
 }

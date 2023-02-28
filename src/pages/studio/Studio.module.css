@@ -97,6 +97,14 @@
   display: grid;
   column-gap: 32px;
   grid-template-columns: repeat(2, 1fr);
+
+  margin-bottom: 104px;
+
+  @media (--desktop) {
+    margin-bottom: 128px;
+  }
+
+
 }
 
 .list {
