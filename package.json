@@ -52,7 +52,7 @@
   },
   "browserslist": "last 2 versions, iOS > 14",
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=18.12.0"
   },
   "repository": {
     "type": "git",
