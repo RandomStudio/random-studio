@@ -23,15 +23,14 @@ const BackScrim = () => {
     };
   }, []);
 
-  const scrimClassNames = `${styles.backScrim} ${
-    isVisible && styles.isVisible
-  }`;
+  const visibilityClass = isVisible ? styles.isVisible : '';
+  const scrimClassNames = `${styles.backScrim} ${visibilityClass}`;
 
   return (
     <>
       <div className={scrimClassNames}>
-        <Link href="/projects">
-          <a className={styles.backButton}>{'Back to projects'}</a>
+        <Link className={styles.backButton} href="/projects">
+          {'Back to projects'}
         </Link>
       </div>
 
