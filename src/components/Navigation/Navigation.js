@@ -9,12 +9,12 @@ const Navigation = ({ isLogoCentred }) => (
     <Logo isCentred={isLogoCentred} />
 
     <div className={styles.links}>
-      <Link href="/projects">
-        <a className={styles.link}>{'Projects'}</a>
+      <Link className={styles.link} href="/projects">
+        {'Projects'}
       </Link>
 
-      <Link href="/studio">
-        <a className={styles.link}>{'Studio'}</a>
+      <Link className={styles.link} href="/studio">
+        {'Studio'}
       </Link>
     </div>
   </nav>

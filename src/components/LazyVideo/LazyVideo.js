@@ -36,6 +36,11 @@ const LazyVideo = React.forwardRef(
     const [hasFailed, setHasFailed] = useState(false);
 
     const handleInitializeHls = useCallback(() => {
+      // Not available sometimes on preview mode
+      if (!videoRef.current?.children?.length) {
+        return;
+      }
+
       if (
         videoRef.current.canPlayType('application/vnd.apple.mpegurl') ||
         !Hls.isSupported()
@@ -201,13 +206,13 @@ const LazyVideo = React.forwardRef(
     );
     /* eslint-enable jsx-a11y/media-has-caption */
 
+    const loadedStyle = isLoaded ? styles.isLoaded : '';
+    const jsStyle = hasJs ? styles.hasJs : '';
+
     // Prevents autoplay conflicting
     return (
       <div
-        className={`${styles.frame} ${className} ${
-          isLoaded ? styles.isLoaded : ''
-        }
-            ${hasJs ? styles.hasJs : ''}`}
+        className={`${styles.frame} ${className} ${loadedStyle} ${jsStyle}`}
         style={{
           '--aspectRatio': `${video.width} / ${video.height}`,
         }}

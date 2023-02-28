@@ -78,9 +78,7 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
 
         {hasLimit && (
           <div className={styles.seeMore}>
-            <Link href="/projects#continued">
-              <a>{'See all projects'}</a>
-            </Link>
+            <Link href="/projects#continued">{'See all projects'}</Link>
           </div>
         )}
       </ul>
