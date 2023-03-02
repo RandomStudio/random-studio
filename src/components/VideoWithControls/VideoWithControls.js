@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './VideoWithControls.module.scss';
 import LazyVideo from '../LazyVideo/LazyVideo.tsx';

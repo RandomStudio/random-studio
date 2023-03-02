@@ -45,14 +45,15 @@ const Project = ({
         />
       )}
     </div>
+
     <div
       className={styles.title}
       style={
         !left || left < 1
           ? {}
           : {
-            marginLeft: '0',
-          }
+              marginLeft: '0',
+            }
       }
     >
       <ReactMarkdown>
