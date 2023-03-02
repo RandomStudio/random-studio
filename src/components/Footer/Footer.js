@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.css';
 import Address from './Address/Address';
+import Email from './Email/Email';
 import Newsletter from './Newsletter/Newsletter';
 
 const Footer = () => (
@@ -15,7 +16,6 @@ const Footer = () => (
         aria="Amsterdam address"
         className={styles.address}
         directions="https://goo.gl/maps/2sJnCcLummnmvrVb9"
-        email="hello@random.studio"
         name="Random Amsterdam"
         phone="+31 20 779 7735"
       />
@@ -25,10 +25,19 @@ const Footer = () => (
         aria="Paris address"
         className={styles.address}
         directions="https://goo.gl/maps/8JhU7KsTLAaZZtGA9"
-        email="bonjour@random.studio"
         name="Random Paris"
         phone="+33 1 40 36 41 44"
       />
+    </div>
+
+    <div className={styles.emails}>
+      {[
+        'business@random.studio',
+        'press@random.studio',
+        'hello@random.studio',
+      ].map(email => (
+        <Email className={styles.email} email={email} key={email} />
+      ))}
     </div>
 
     <div className={styles.rightColumn}>
