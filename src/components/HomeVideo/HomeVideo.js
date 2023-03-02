@@ -10,8 +10,9 @@ const HomeVideo = ({ collaborator, collaborationUrl, video }) => {
       <VideoWithControls
         autoPlay
         className={styles.videoWrapper}
+        hasAudio={false}
         hasControls={false}
-        isMuted
+        isAutoplaying
         loops
         video={video}
       />

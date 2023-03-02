@@ -2,6 +2,7 @@ import React from 'react';
 import NextHead from 'next/head';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 import { imageDataPropType } from '../../propTypes';
 
 const DEFAULTS = {
@@ -128,7 +129,7 @@ const Head = ({
 
       <link href="/favicons/favicon.ico" rel="icon" />
 
-      <script
+      <Script
         data-domain="random.studio"
         defer
         src="https://plausible.io/js/plausible.tagged-events.outbound-links.js"
