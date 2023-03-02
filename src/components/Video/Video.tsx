@@ -51,6 +51,7 @@ const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, 
   // Initialize HLs in an effect
   useEffect(() => {
     if (
+      !isMounted ||
       !ref.current ||
       ref.current.canPlayType('application/vnd.apple.mpegurl') ||
       !Hls.isSupported()
@@ -67,7 +68,7 @@ const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, 
     if (isAutoplaying) {
       handlePlay()
     }
-  }, [isAutoplaying, ref.current, video.hls]);
+  }, [isAutoplaying,isMounted, ref, video.hls]);
 
   useEffect(() => {
     if (!ref.current) {
@@ -94,7 +95,6 @@ const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, 
   }, [video.sources])
 
   const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
-
 
   return (
     <div
