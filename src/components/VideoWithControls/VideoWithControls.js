@@ -55,6 +55,10 @@ const VideoWithControls = ({
     handleTapPlayPause(e);
   };
 
+  if (!video || !video.sources) {
+    return null;
+  }
+
   return (
     <div className={`${styles.videoWrapper} ${className}`} onClick={handleTap}>
       <LazyVideo
