@@ -1,25 +1,12 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { event } from 'react-ga';
 import styles from './VideoWithControls.module.scss';
-import LazyVideo from '../LazyVideo/LazyVideo';
+import LazyVideo from '../LazyVideo/LazyVideo.tsx';
 import { videoPropType } from '../../propTypes';
-
-const trackPausePlay = isPlaying => {
-  event({
-    action: isPlaying ? 'Pause' : 'Play',
-    category: isPlaying ? 'Pause Button' : 'Play Button',
-    label: 'Video Player Interactions',
-  });
-};
-
-const trackIsCurrentlyMuted = isCurrentlyMuted => {
-  event({
-    category: isCurrentlyMuted ? 'Unmute Button' : 'Mute Button',
-    action: isCurrentlyMuted ? 'Unmute' : 'Mute',
-    label: 'Video Player Interactions',
-  });
-};
+import {
+  trackIsCurrentlyMuted,
+  trackPausePlay,
+} from '../../utils/analyticsUtils';
 
 const VideoWithControls = ({
   className,
@@ -31,14 +18,13 @@ const VideoWithControls = ({
   video,
   width,
 }) => {
-  const videoRef = useRef(null);
-
   const [hasPlayed, setHasPlayed] = useState(isAutoplaying);
 
   const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
     isAutoplaying || !hasAudio,
   );
 
+  console.log('isCurrentlyMuted', isCurrentlyMuted);
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
   const handleTapVolumeToggle = e => {
@@ -54,13 +40,12 @@ const VideoWithControls = ({
       setHasPlayed(true);
     }
 
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
+    setIsPlaying(prevState => {
+      const newPlayingState = !prevState;
+      trackPausePlay(newPlayingState);
 
-    trackPausePlay(isPlaying);
+      return newPlayingState;
+    });
   };
 
   const handleTap = e => {
@@ -74,12 +59,11 @@ const VideoWithControls = ({
   return (
     <div className={`${styles.videoWrapper} ${className}`} onClick={handleTap}>
       <LazyVideo
-        hasControls
         isAutoplaying={isAutoplaying}
         isLooping={isLooping}
         isMuted={!hasAudio || isCurrentlyMuted}
+        isPlaying={isPlaying}
         onPlayStateChange={setIsPlaying}
-        ref={videoRef}
         video={video}
         width={width}
       />

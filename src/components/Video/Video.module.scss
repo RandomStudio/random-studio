@@ -14,14 +14,6 @@
     bottom: 0;
     object-fit: cover;
   }
-
-  .jsVideo {
-    display: none;
-  }
-
-  &.hasJs .jsVideo {
-    display: block;
-  }
 }
 
 .placeholder {
