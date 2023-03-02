@@ -24,7 +24,6 @@ const VideoWithControls = ({
     isAutoplaying || !hasAudio,
   );
 
-  console.log('isCurrentlyMuted', isCurrentlyMuted);
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
   const handleTapVolumeToggle = e => {
