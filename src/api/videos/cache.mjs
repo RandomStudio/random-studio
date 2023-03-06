@@ -29,6 +29,7 @@ export const updateCache = (id, data) => {
   try {
     writeFileSync(CACHE_FILE, JSON.stringify(freshCache));
   } catch (err) {
+    console.log('something happened');
     console.error(err);
   }
 };
