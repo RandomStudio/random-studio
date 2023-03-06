@@ -13,7 +13,7 @@ export const INDEX_PAGE_QUERY = `
     page: indexPage {
       intro
       middle(markdown: true)
-      videoNew
+      video
       collaborator
       collaborationUrl
     }
@@ -86,7 +86,7 @@ export const SINGLE_PROJECT_QUERY = `
           hasControls
           caption
           autoplay
-          videoNew
+          video
         }
         ... on TextBlockRecord {
           id

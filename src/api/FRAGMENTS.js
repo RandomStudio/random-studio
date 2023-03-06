@@ -45,7 +45,7 @@ export const THUMBNAIL_FRAGMENT = `
     featuredImage {
       ...ImageDataObject
     }
-    featuredVideoNew
+    featuredVideo
   }
 `;
 
@@ -60,7 +60,7 @@ export const RELATED_THUMBNAIL_FRAGMENT = `
     featuredImage {
       ...RelatedImageDataObject
     }
-    featuredVideoNew
+    featuredVideo
   }
 `;
 
