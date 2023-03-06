@@ -86,13 +86,6 @@ export const SINGLE_PROJECT_QUERY = `
           hasControls
           caption
           autoplay
-          video {
-            height
-            providerUid
-            thumbnailUrl
-            url
-            width
-          }
           videoNew
         }
         ... on TextBlockRecord {
