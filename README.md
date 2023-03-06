@@ -6,7 +6,8 @@ Static website for Random Studio, built using Next.js.
 
 ## Important information
 
-- Staging and Production sites are hosted on sustainable host, Leafcloud
+- Staging site is hosted on Netlify
+- Production site is hosted on sustainable host, Leafcloud
 - Deploys are handled by Github Workflows (see `.github/worfklows` for config) and automatically triggered on `staging` and `master` branches
 - SSH keys are stored in Github secrets
 
@@ -25,4 +26,4 @@ Static website for Random Studio, built using Next.js.
 -  `package-lock.json` has been disabled. This avoids an issue with Next.js's new SWC Rust based compiler package. If lock file exists, npm will always try to install the same build that is supported by the CPU of the user who first create the lock file. When collaborating across ARM, x86 etc it is easier to disable the lock file and let npm pull the right version on each run.
 -  Based on above point, all package versions should be explicitly locked.
 -  We do not host video files on DatoCMS, rather we host videos on Vimeo and use the CMS's built in external videos block to link to these. Dato will pull a good amount of basic info for each video, but we run an additional script at build time to add further info to each video. This allows us to generate blurred thumbnails etc.
--  Each time we get information from the Vimeo API, we cache it for future runs in `.videoCache.json`. This should be kept out of version control to avoid conflicts.
+-  Each time we get video information from the Bunny CDN, we cache it for future runs in `.videoCache.json`. This should be kept out of version control to avoid conflicts.

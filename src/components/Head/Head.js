@@ -2,9 +2,24 @@ import React from 'react';
 import NextHead from 'next/head';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 import { imageDataPropType } from '../../propTypes';
 
-const defaultPageTitle = 'Random Studio';
+const DEFAULTS = {
+  TITLE: 'Random Studio',
+  DESCRIPTION:
+    'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.',
+  IMAGE: '/og-image.png',
+  SITE_URL: 'https://random.studio',
+  KEYWORDS:
+    'Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio',
+};
+
+const formatTitle = string =>
+  `${string
+    .replaceAll('<br>', '')
+    .replaceAll('<br /> ', '')
+    .replaceAll('  ', ' ')} - ${DEFAULTS.TITLE}`;
 
 const Head = ({
   description,
@@ -15,50 +30,47 @@ const Head = ({
 }) => {
   const router = useRouter();
 
-  const siteUrl = 'https://random.studio';
+  const pageTitle = title ? formatTitle(title) : DEFAULTS.TITLE;
 
-  const formatTitle = string =>
-    `${string
-      .replaceAll('<br>', '')
-      .replaceAll('<br /> ', '')
-      .replaceAll('  ', ' ')} - ${defaultPageTitle}`;
+  const imagePath = image?.imageData?.src ? image : DEFAULTS.IMAGE;
 
-  const pageTitle = title ? formatTitle(title) : defaultPageTitle;
+  const ogImage = `${DEFAULTS.SITE_URL}${imagePath}`;
 
-  const ogImage = `${siteUrl}${image?.imageData?.src ?? image}`;
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
-  const ogDescription = socialDescription || description;
+
+  const pageDescription =
+    socialDescription || description || DEFAULTS.DESCRIPTION;
 
   return (
     <NextHead>
       <title>{pageTitle}</title>
 
-      <meta content="'Random Studio'" name="author" />
+      <meta content="Random Studio" name="author" />
 
-      <meta
-        content="Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio"
-        name="keywords"
-      />
+      <meta content={DEFAULTS.KEYWORDS} name="keywords" />
 
       <meta content="/favicons/browserconfig.xml" name="msapplication-config" />
 
-      <meta content="'#ffffff'" name="theme-color" />
+      <meta content="#ffffff" name="theme-color" />
 
-      <meta content="'#ffffff'" name="msapplication-TileColor" />
+      <meta content="#ffffff" name="msapplication-TileColor" />
 
-      <meta content="pageDescription" name="description" />
+      <meta content={pageDescription} name="description" />
 
       <meta content={ogTitle} property="og:title" />
 
-      <meta content="Random Studio" property="og:site_name" />
+      <meta content={DEFAULTS.TITLE} property="og:site_name" />
 
-      <meta content={ogDescription} property="og:description" />
+      <meta content={pageDescription} property="og:description" />
 
       <meta content="website'" property="og:type" />
 
-      <meta content="en_US'" property="og:locale" />
+      <meta content="en_US" property="og:locale" />
 
-      <meta content={`${siteUrl}${router.pathname}`} property="og:url" />
+      <meta
+        content={`${DEFAULTS.SITE_URL}${router.pathname}`}
+        property="og:url"
+      />
 
       <meta content={ogImage} property="og:image" />
 
@@ -68,7 +80,7 @@ const Head = ({
 
       <meta content={ogTitle} name="twitter:title" />
 
-      <meta content={ogDescription} name="twitter:description" />
+      <meta content={pageDescription} name="twitter:description" />
 
       <meta content={ogImage} name="twitter:image" />
 
@@ -117,7 +129,7 @@ const Head = ({
 
       <link href="/favicons/favicon.ico" rel="icon" />
 
-      <script
+      <Script
         data-domain="random.studio"
         defer
         src="https://plausible.io/js/plausible.tagged-events.outbound-links.js"
@@ -135,9 +147,8 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  description:
-    'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.',
-  image: '/og-image.png',
+  description: null,
+  image: null,
   socialDescription: null,
   socialTitle: null,
   title: null,

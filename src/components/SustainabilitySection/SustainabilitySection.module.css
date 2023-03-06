@@ -1,11 +1,13 @@
 .section {
   margin: 0 -20px;
 
+
+
   @media screen and (min-width: 720px){
     margin: 0 -40px;
   }
 
-  @media screen and (min-width: 1080px){
+  @media screen and (min-width: 720px){
     display: flex;
     > div {
       flex-basis: 50%;
@@ -23,13 +25,22 @@
     margin: 0 calc((100vw - 1192px) / 2 * -1);
   }
 
+
+  p {
+    @mixin body-4;
+
+    @media screen and (min-width: 960px){
+      @mixin body-2;
+    }
+  }
 }
 
 .reverse {
-  @media screen and (min-width: 1080px){
+  @media screen and (min-width: 720px){
     flex-direction: row-reverse;
   }
 }
+
 
 .content {
   max-width: 257px;
@@ -38,7 +49,7 @@
 
   padding: 3.1rem 0;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 960px){
     max-width: 498px;
   }
 
@@ -51,7 +62,7 @@
 
   @mixin body-3;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 960px){
     @mixin body-1;
   }
 

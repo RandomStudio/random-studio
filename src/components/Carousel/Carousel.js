@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Image } from 'react-datocms';
 import styles from './Carousel.module.css';
 import { slidePropType } from '../../propTypes';
-import LazyVideo from '../LazyVideo/LazyVideo';
+import LazyVideo from '../LazyVideo/LazyVideo.tsx';
 
 const Carousel = ({ caption, className, slides, sizes, width }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

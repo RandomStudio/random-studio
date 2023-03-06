@@ -50,6 +50,7 @@ export const getStaticProps = async ({ params }) => {
     variables: {
       slug: params.slug,
     },
+    preview,
   });
 
   return {
