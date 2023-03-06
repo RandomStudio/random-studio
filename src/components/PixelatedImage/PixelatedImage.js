@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
+import PropTypes from 'prop-types';
 import styles from './PixelatedImage.module.css';
 import useInView from '../../hooks/useInView';
 
@@ -22,28 +23,17 @@ const PixelatedImage = ({ image }) => {
     threshold: 0.75,
   });
 
-  const steps = [12, 16, 22, 24, 32, image.width];
+  const steps = useMemo(() => [12, 16, 22, 24, 32, image.width], [image.width]);
 
   const delay = 40;
 
-  useEffect(() => {
-    canvasImage.current = new Image();
-    mainImageRef.current = new Image();
-
-    canvasImage.current.src = getPixelatedImage(image.src, '64');
-
-    mainImageRef.current.src = image.src;
-
-    canvasImage.current.onload = () => renderPixelated();
-  }, []);
-
-  const renderImage = (context, image, imageSize) => {
+  const renderImage = (context, imageSrc, imageSize) => {
     context.webkitImageSmoothingEnabled = false;
     context.mozImageSmoothingEnabled = false;
     context.msImageSmoothingEnabled = false;
     context.imageSmoothingEnabled = false;
 
-    context.drawImage(image, 0, 0, imageSize, imageSize);
+    context.drawImage(imageSrc, 0, 0, imageSize, imageSize);
 
     context.drawImage(
       context.canvas,
@@ -58,22 +48,34 @@ const PixelatedImage = ({ image }) => {
     );
   };
 
-  const renderPixelated = () => {
+  const renderPixelated = useCallback(() => {
     const context = canvasRef.current.getContext('2d');
 
     context.canvas.width = image.width * window.devicePixelRatio;
     context.canvas.height = image.height * window.devicePixelRatio;
 
     renderImage(context, canvasImage.current, steps[0]);
-  };
+  }, [image.height, image.width, steps]);
 
-  const nextStep = useCallback(
+  useEffect(() => {
+    canvasImage.current = new Image();
+    mainImageRef.current = new Image();
+
+    canvasImage.current.src = getPixelatedImage(image.src, '64');
+
+    mainImageRef.current.src = image.src;
+
+    canvasImage.current.onload = () => renderPixelated();
+  }, [image.src, renderPixelated]);
+
+  const renderStep = useCallback(
     step => {
       const context = canvasRef.current.getContext('2d');
       context.webkitImageSmoothingEnabled = false;
       context.mozImageSmoothingEnabled = false;
       context.msImageSmoothingEnabled = false;
       context.imageSmoothingEnabled = false;
+
       const newSize = steps[step];
       renderImage(context, mainImageRef.current, newSize);
 
@@ -83,22 +85,30 @@ const PixelatedImage = ({ image }) => {
         return;
       }
 
-      window.setTimeout(() => nextStep(step + 1), delay);
+      window.setTimeout(() => renderStep(step + 1), delay);
     },
     [delay, steps],
   );
 
   useEffect(() => {
     if (isIntersecting && !isRendered) {
-      nextStep(1);
+      renderStep(1);
     }
-  }, [isIntersecting, isRendered, nextStep]);
+  }, [isIntersecting, isRendered, renderStep]);
 
   return (
     <div>
       <canvas className={styles.canvas} ref={canvasRef} />
     </div>
   );
+};
+
+PixelatedImage.propTypes = {
+  image: PropTypes.shape({
+    width: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default PixelatedImage;
