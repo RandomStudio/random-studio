@@ -13,13 +13,6 @@ export const INDEX_PAGE_QUERY = `
     page: indexPage {
       intro
       middle(markdown: true)
-      video {
-        height
-        providerUid
-        thumbnailUrl
-        url
-        width
-      }
       videoNew
       collaborator
       collaborationUrl
