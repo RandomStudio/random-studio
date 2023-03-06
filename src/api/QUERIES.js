@@ -112,13 +112,7 @@ export const SINGLE_PROJECT_QUERY = `
           width
           slides {
             id
-            video {
-              height
-              providerUid
-              thumbnailUrl
-              url
-              width
-            }
+            video
             image {
               ...ImageDataObject
             }
