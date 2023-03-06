@@ -42,7 +42,6 @@ export const IMAGE_DATA_OBJECT_FRAGMENT = IMAGE_DATA_OBJECT_FRAGMENT_FUNC(
 export const THUMBNAIL_FRAGMENT = `
   ${IMAGE_DATA_OBJECT_FRAGMENT}
   fragment Thumbnail on ProjectRecord {
-    featuredVideo {
     featuredImage {
       ...ImageDataObject
     }
