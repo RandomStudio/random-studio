@@ -3,7 +3,7 @@ import { getVideoData } from './videos/getVideoData.mjs';
 const addAdditionalInfoToBlocks = async content =>
   Promise.all(
     content.map(async block => {
-      if (block.video) {
+      if (block.video || block.videoNew) {
         return {
           ...block,
           video: await getVideoData(block.video),
