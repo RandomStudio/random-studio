@@ -49,8 +49,8 @@ export const getStaticProps = async ({ params, preview }) => {
     query: SINGLE_PROJECT_QUERY,
     variables: {
       slug: params.slug,
-      preview,
     },
+    preview,
   });
 
   return {
