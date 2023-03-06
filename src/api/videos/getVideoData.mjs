@@ -27,13 +27,16 @@ const createPlaceholder = async url => {
   }
 };
 
-export const getVideoData = async url => {
-  if (!url) {
+export const getVideoData = async videoRef => {
+  if (!videoRef) {
     return null;
   }
 
   // We could later save just ID via CMS to skip this step
-  const id = url.replace('/original', '').split('/').at(-1);
+  const id = videoRef.includes('http')
+    ? videoRef.replace('/original', '').split('/').at(-1)
+    : videoRef;
+
   const baseUrl = `https://videos.random.studio/${id}`;
 
   const cached = getCachedValue(id);
