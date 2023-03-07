@@ -53,11 +53,13 @@ jobs:
           SERVER_IP: "195.114.30.143"
           USERNAME: ubuntu
           SERVER_DESTINATION: "/var/www/random.studio/"
-  failure-notify:
-    name: Notify of failure on Slack
+  merge-notify:
+    name: Notify of merge on Slack
     runs-on: ubuntu-latest
-    if: failure()
+    if: github.event.pull_request.merged == 'true'
     needs: [build]
+    env:
+      BASE_BRANCH: ${{ github.base_ref }}
     steps:
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
@@ -66,7 +68,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: Random.Studio Github
           SLACK_ICON: https://avatars.githubusercontent.com/u/8861680?s=400&u=c7c52458389708902d47179e1f1a9419196b0420&v=4
-          SLACK_COLOR: "#FF0000"
-          SLACK_TITLE: Deploy failed
-          SLACK_FOOTER: I can't believe you've done this
-          MSG_MINIMAL: commit,actions url
+          SLACK_COLOR: "#00FF00"
+          SLACK_TITLE: Merged ${{ BASE_BRANCH }}
+          SLACK_FOOTER: ""
+          MSG_MINIMAL: true
