@@ -27,7 +27,7 @@ export const getStaticProps = async ({ preview }) => {
       projects: await Promise.all(
         projects.map(async project => ({
           ...project,
-          featuredVideo: await getVideoData(project.featuredVideoNew),
+          featuredVideo: await getVideoData(project.featuredVideo),
           tags: project.tags?.map(tag => tag.toLowerCase()) ?? [],
         })),
       ),
