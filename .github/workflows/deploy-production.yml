@@ -69,6 +69,6 @@ jobs:
           SLACK_USERNAME: Random.Studio Github
           SLACK_ICON: https://avatars.githubusercontent.com/u/8861680?s=400&u=c7c52458389708902d47179e1f1a9419196b0420&v=4
           SLACK_COLOR: "#00FF00"
-          SLACK_TITLE: Merged ${{ BASE_BRANCH }}
+          SLACK_TITLE: Merged ${{ env.BASE_BRANCH }}
           SLACK_FOOTER: ""
           MSG_MINIMAL: true
