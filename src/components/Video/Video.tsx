@@ -10,11 +10,13 @@ import Hls from 'hls.js';
 import styles from './Video.module.scss';
 
 export type VideoProps = {
+  alt: string,
   isAutoplaying?: boolean
   isLooping?: boolean,
   isMounted?: boolean,
   isMuted?: boolean,
   isPlaying?: boolean,
+  onPlayStateChange: (isPlaying: boolean) => void
   video: {
     baseUrl: string,
     blur: string,
@@ -25,7 +27,7 @@ export type VideoProps = {
   width: number,
 };
 
-const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, isMounted = true, isMuted = true, onPlayStateChange, video, width = 100 }: VideoProps) => {
+const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, isMounted = true, isMuted = true, onPlayStateChange = () => null, video, width = 100 }: VideoProps) => {
   const ref = useRef<HTMLVideoElement>(null);
 
   const [hasFailed, setHasFailed] = useState(false);
