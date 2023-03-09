@@ -77,6 +77,7 @@ const ContentBlock = ({
         className={styles.carouselWrapper}
         sizes={`(max-width: 576px) 100vw, ${width}vw`}
         slides={slides}
+        width={width}
       />
     )}
 

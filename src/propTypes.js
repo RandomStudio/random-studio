@@ -21,13 +21,15 @@ export const videoPropType = PropTypes.shape({
   baseUrl: PropTypes.string.isRequired,
   blur: PropTypes.string.isRequired,
   fallback: PropTypes.string.isRequired,
-  originalSource: PropTypes.string,
+  height: PropTypes.number.isRequired,
+  hls: PropTypes.string.isRequired,
   sources: PropTypes.arrayOf(PropTypes.string).isRequired,
+  width: PropTypes.number.isRequired,
 });
 
 export const slidePropType = PropTypes.shape({
   id: PropTypes.string.isRequired,
-  video: videoPropType,
+  video: PropTypes.oneOfType([videoPropType, PropTypes.oneOf([''])]),
   image: imageDataPropType,
 });
 

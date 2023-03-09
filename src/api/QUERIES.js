@@ -77,16 +77,16 @@ export const SINGLE_PROJECT_QUERY = `
       content {
         __typename
         ... on VideoBlockRecord {
-          id
-          marginTop
-          marginLeft
-          width
-          loops
+          autoplay
+          caption
           hasAudio
           hasControls
-          caption
-          autoplay
+          id
+          loops
+          marginLeft
+          marginTop
           video
+          width
         }
         ... on TextBlockRecord {
           id

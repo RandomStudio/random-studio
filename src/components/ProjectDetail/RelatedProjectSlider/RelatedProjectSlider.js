@@ -6,9 +6,8 @@ import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import Image from '../../Image/Image';
 
 const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
-  const wrapperClass = `${styles.wrapper} ${
-    relatedProjects.length === 1 ? styles.isSingle : ''
-  }`;
+  const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
+    }`;
 
   return (
     <section className={wrapperClass}>
@@ -18,26 +17,26 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
         {relatedProjects.map(
           ({ featuredImage, featuredVideo, title, slug }) => (
             <Link className={styles.card} href={slug} key={title}>
-              {featuredImage && (
-                <div className={styles.imageWrapper}>
+              <div className={styles.imageWrapper}>
+                {featuredImage && (
                   <Image
                     alt={title}
                     data={featuredImage.imageData}
                     sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
                   />
-                </div>
-              )}
+                )}
 
-              {featuredVideo && (
-                <VideoWithControls
-                  autoplay
-                  hasControls={false}
-                  isAlwaysMuted
-                  isMuted
-                  loops
-                  video={featuredVideo}
-                />
-              )}
+                {featuredVideo && (
+                  <VideoWithControls
+                    autoplay
+                    hasControls={false}
+                    isAlwaysMuted
+                    isMuted
+                    loops
+                    video={featuredVideo}
+                  />
+                )}
+              </div>
 
               {title && <p>{title}</p>}
             </Link>
