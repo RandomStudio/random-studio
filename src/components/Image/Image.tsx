@@ -1,11 +1,16 @@
 // This is a wrapper around the Dato component. We therefore allow spreading of props to pass anything provided down
-/* eslint-disable react/jsx-props-no-spreading */
-import { Image as DatoCMSImage } from 'react-datocms';
+import { Image as DatoCMSImage, ImagePropTypes } from 'react-datocms';
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { imageDataPropType } from '../../propTypes';
 
-const Image = ({ alt, data, sizes, ...rest }) => {
+type ImageProps = {
+  alt: string,
+  data: ImageData,
+  sizes: string,
+} & ImagePropTypes;
+
+const Image = ({ alt, data, sizes, ...rest }: ImageProps) => {
   const imageData = useMemo(
     () => ({
       ...data,

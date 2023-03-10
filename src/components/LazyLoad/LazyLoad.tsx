@@ -1,7 +1,6 @@
-import Video, { VideoProps } from "../Video/Video";
 import React, { useEffect, useRef, useState } from 'react';
 
-const LazyVideo = (props: VideoProps) => {
+const LazyLoad = ({ children }) => {
   const ref = useRef(null);
 
   const [hasIntersected, setHasIntersected] = useState(false);
@@ -39,12 +38,9 @@ const LazyVideo = (props: VideoProps) => {
 
   return (
       <div ref={ref}>
-        <Video {...props} isMounted={hasIntersected} />
-        <noscript>
-          <Video {...props} />
-        </noscript>
+        {children({ hasIntersected })}
       </div>
   );
 }
 
-export default LazyVideo;
+export default LazyLoad;

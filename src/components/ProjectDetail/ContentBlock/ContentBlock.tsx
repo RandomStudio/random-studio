@@ -1,26 +1,18 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { blockPropType } from '../../../propTypes';
+import { BLOCK_TYPES, ContentBlockType } from '../../../types';
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
 import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import styles from './ContentBlock.module.scss';
 
-const BLOCK_TYPES = {
-  CarouselBlockRecord: 'CarouselBlockRecord',
-  ImageBlockRecord: 'ImageBlockRecord',
-  TextBlockRecord: 'TextBlockRecord',
-  VideoBlockRecord: 'VideoBlockRecord',
-};
-
 const ContentBlock = ({
-  block: {
     __typename,
     width,
     loops,
     hasAudio,
-    isCentered, // missing
     hasControls,
     caption,
     autoplay,
@@ -31,8 +23,7 @@ const ContentBlock = ({
     marginTop,
     text,
     video,
-  },
-}) => (
+}: ContentBlockType) => (
   <div
     className={styles.item}
     key={id}
@@ -40,7 +31,7 @@ const ContentBlock = ({
       '--marginLeft': `${marginLeft}vw`,
       '--marginTop': `calc(${width}vw * ${marginTop / 100})`,
       '--width': `${width}vw`,
-    }}
+    } as CSSProperties}
   >
     {__typename === BLOCK_TYPES.ImageBlockRecord && (
       <>
@@ -59,16 +50,15 @@ const ContentBlock = ({
     {__typename === BLOCK_TYPES.VideoBlockRecord && (
       <>
         <VideoWithControls
-          autoplay={autoplay}
-          caption={caption}
           hasAudio={hasAudio}
           hasControls={hasControls}
-          loops={loops}
+          isAutoplaying={autoplay}
+          isLooping={loops}
           video={video}
           width={width}
         />
 
-        <Caption caption={caption} marginLeft={marginLeft} width={width} />
+        <Caption caption={caption} marginLeft={marginLeft} />
       </>
     )}
 
@@ -82,15 +72,11 @@ const ContentBlock = ({
     )}
 
     {__typename === BLOCK_TYPES.TextBlockRecord && (
-      <div className={`${styles.text} ${isCentered ? styles.isCentered : ''}`}>
+      <div className={styles.text}>
         <ReactMarkdown>{text}</ReactMarkdown>
       </div>
     )}
   </div>
 );
-
-ContentBlock.propTypes = {
-  block: blockPropType.isRequired,
-};
 
 export default ContentBlock;

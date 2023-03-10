@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
-import VideoWithControls from '../../VideoWithControls/VideoWithControls';
-import Image from '../../Image/Image';
+import VideoWithControls from '../../VideoWithControls/VideoWithControls.tsx';
+import Image from '../../Image/Image.tsx';
 
 const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
   const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''

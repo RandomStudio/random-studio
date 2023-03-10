@@ -4,16 +4,25 @@ import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
 import BackScrim from './BackScrim/BackScrim';
-import { projectPropTypeObject } from '../../propTypes';
+import { ContentBlockType, OpenGraph, RelatedProject, VideoData } from '../../types';
+
+type ProjectDetailProps = {
+  content: ContentBlockType[],
+  details: {[key:string]: string},
+  intro: string,
+  relatedProjectsTitle: string,
+  relatedProjects: RelatedProject[],
+  title: string,
+}
 
 const ProjectDetail = ({
-  title,
-  intro,
   content,
   details,
+  intro,
   relatedProjects,
   relatedProjectsTitle,
-}) => {
+  title,
+}: ProjectDetailProps) => {
   return (
     <div className={styles.project}>
       <h1 className={styles.title}>
@@ -54,12 +63,6 @@ const ProjectDetail = ({
       <BackScrim />
     </div>
   );
-};
-
-ProjectDetail.propTypes = projectPropTypeObject;
-
-ProjectDetail.defaultProps = {
-  relatedProjects: null,
 };
 
 export default ProjectDetail;
