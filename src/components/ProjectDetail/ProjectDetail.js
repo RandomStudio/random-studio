@@ -14,8 +14,6 @@ const ProjectDetail = ({
   relatedProjects,
   relatedProjectsTitle,
 }) => {
-  console.log(content);
-
   return (
     <div className={styles.project}>
       <h1 className={styles.title}>
