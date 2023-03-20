@@ -152,6 +152,7 @@ export const SINGLE_PROJECT_QUERY = `
           id
           __typename
           blocks {
+            __typename
             ${addBlockQuery({
   hasVideo: true,
   hasImage: true,
