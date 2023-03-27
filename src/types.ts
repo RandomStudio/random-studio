@@ -8,20 +8,6 @@ export interface VideoData {
   width,
 }
 
-type ImageData = {
-  srcSet: string,
-  webpSrcSet: string,
-  sizes: string,
-  src: string,
-  width: number,
-  height: number,
-  aspectRatio: number,
-  alt: string,
-  title: string,
-  bgColor: string,
-  base64: string,
-}
-
 export type OpenGraph = {
   description: string,
   title: string,
@@ -75,7 +61,10 @@ export type TextBlock = {
 export type ImageBlock = {
   __typename: "ImageBlockRecord",
   caption: string,
-  image: ImageData
+  image: {
+    id: string,
+    imageData: ImageData
+  }
 } & GenericBlockAttributes;
 
 export type CarouselBlock = {
@@ -85,4 +74,4 @@ export type CarouselBlock = {
   image: ImageData
 } & GenericBlockAttributes;
 
-export type ContentBlockType = CarouselBlock & ImageBlock & TextBlock & VideoBlock;
+export type ContentBlockType = CarouselBlock | ImageBlock | TextBlock | VideoBlock;

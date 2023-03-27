@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import Hls from 'hls.js';
 import styles from './Video.module.scss';
-import { Video } from '../../../types';
+import { VideoData } from '../../../types';
 
 export type VideoProps = {
   isAutoplaying: boolean
@@ -18,7 +18,7 @@ export type VideoProps = {
   isMuted: boolean,
   isPlaying: boolean,
   onPlayStateChange: (isPlaying: boolean) => void
-  video: Video,
+  video: VideoData,
   width: number,
 };
 

@@ -36,7 +36,7 @@ const ProjectDetail = ({
       </div>
 
       {content?.map(block => (
-        <ContentBlock block={block} key={block.id} />
+        <ContentBlock {...block} key={block.id} />
       ))}
 
       <dl aria-label="Project Details" className={styles.credits}>
