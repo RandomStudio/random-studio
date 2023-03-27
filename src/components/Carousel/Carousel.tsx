@@ -40,7 +40,6 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
 
               {image && (
                 <Image
-                  alt={`${caption} – slide ${index + 1}`}
                   data={image}
                   sizes={sizes}
                 />
