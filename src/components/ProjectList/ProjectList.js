@@ -45,10 +45,7 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
         <Crossfade>
           <React.Fragment key={activeTag ?? 'all'}>
             {visibleProjects.map(
-              (
-                { featuredImage, featuredVideo, featuredVideoNew, title, slug },
-                projectIndex,
-              ) => {
+              ({ featuredImage, featuredVideo, title, slug }, projectIndex) => {
                 const index = projectIndex + activeTagIndex;
                 const { left, top, width } = LAYOUT[index % LAYOUT.length];
 
@@ -61,7 +58,6 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
                     <Project
                       featuredImage={featuredImage}
                       featuredVideo={featuredVideo}
-                      featuredVideoNew={featuredVideoNew}
                       index={index}
                       left={left}
                       slug={slug}

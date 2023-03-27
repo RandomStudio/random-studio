@@ -13,14 +13,7 @@ export const INDEX_PAGE_QUERY = `
     page: indexPage {
       intro
       middle(markdown: true)
-      video {
-        height
-        providerUid
-        thumbnailUrl
-        url
-        width
-      }
-      videoNew
+      video
       collaborator
       collaborationUrl
     }
@@ -93,14 +86,7 @@ export const SINGLE_PROJECT_QUERY = `
           hasControls
           caption
           autoplay
-          video {
-            height
-            providerUid
-            thumbnailUrl
-            url
-            width
-          }
-          videoNew
+          video
         }
         ... on TextBlockRecord {
           id
@@ -126,13 +112,7 @@ export const SINGLE_PROJECT_QUERY = `
           width
           slides {
             id
-            video {
-              height
-              providerUid
-              thumbnailUrl
-              url
-              width
-            }
+            video
             image {
               ...ImageDataObject
             }

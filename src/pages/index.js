@@ -38,11 +38,11 @@ export const getStaticProps = async () => {
   return {
     props: {
       ...page,
-      video: await getVideoData(page.videoNew),
+      video: await getVideoData(page.video),
       projects: await Promise.all(
         projects.map(async project => ({
           ...project,
-          featuredVideo: await getVideoData(project.featuredVideoNew),
+          featuredVideo: await getVideoData(project.featuredVideo),
         })),
       ),
     },
