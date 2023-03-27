@@ -19,7 +19,10 @@ export type RelatedProject = {
   title: string,
   slug: string,
   intro: string,
-  featuredImage: ImageData,
+  featuredImage: {
+    id: string,
+    imageData: ImageData
+  },
   featuredVideo: VideoData,
 };
 

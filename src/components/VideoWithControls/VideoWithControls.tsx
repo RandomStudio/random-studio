@@ -16,7 +16,6 @@ type VideoWithControlsProps = {
   isAutoplaying?: boolean,
   isLooping?: boolean,
   video: VideoData,
-  width?: number,
 };
 
 const VideoWithControls = ({
@@ -27,7 +26,6 @@ const VideoWithControls = ({
   isAutoplaying = true,
   isLooping = true,
   video,
-  width = 100,
 }: VideoWithControlsProps) => {
   const [hasPlayed, setHasPlayed] = useState(isAutoplaying);
 
@@ -72,7 +70,7 @@ const VideoWithControls = ({
 
   return (
     <LazyLoad>
-      {({ hasIntersected }) => {
+      {({ hasIntersected }) => (
         <div className={`${styles.videoWrapper} ${className}`} onClick={handleTap}>
           <Video
             isAutoplaying={isAutoplaying}
@@ -82,7 +80,6 @@ const VideoWithControls = ({
             isPlaying={isPlaying}
             onPlayStateChange={setIsPlaying}
             video={video}
-            width={width}
           />
 
           {hasControls &&
@@ -102,7 +99,7 @@ const VideoWithControls = ({
               <div className={styles.beforeFirstPlay}>{'Play video'}</div>
             ))}
         </div>
-      }}
+      )}
     </LazyLoad>
   );
 };

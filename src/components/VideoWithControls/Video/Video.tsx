@@ -19,10 +19,9 @@ export type VideoProps = {
   isPlaying: boolean,
   onPlayStateChange: (isPlaying: boolean) => void
   video: VideoData,
-  width: number,
 };
 
-const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMounted = true, isMuted = true, onPlayStateChange = () => null, video, width = 100 }: VideoProps) => {
+const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMounted = true, isMuted = true, onPlayStateChange = () => null, video }: VideoProps) => {
   const ref = useRef<HTMLVideoElement>(null);
 
   const [hasFailed, setHasFailed] = useState(true);

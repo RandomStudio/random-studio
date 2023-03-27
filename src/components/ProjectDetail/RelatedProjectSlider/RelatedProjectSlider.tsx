@@ -2,12 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
-import VideoWithControls from '../../VideoWithControls/VideoWithControls.tsx';
-import Image from '../../Image/Image.tsx';
+import VideoWithControls from '../../VideoWithControls/VideoWithControls';
+import Image from '../../Image/Image';
+import { RelatedProject  } from '../../../types';
 
-const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
+type RelatedProjectSliderProps = {
+  relatedProjects: RelatedProject[],
+  relatedProjectsTitle: string,
+};
+
+const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }: RelatedProjectSliderProps) => {
   const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
     }`;
+
 
   return (
     <section className={wrapperClass}>
@@ -28,11 +35,10 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
 
                 {featuredVideo && (
                   <VideoWithControls
-                    autoplay
                     hasControls={false}
-                    isAlwaysMuted
-                    isMuted
-                    loops
+                    hasAudio={false}
+                    isAutoplaying
+                    isLooping
                     video={featuredVideo}
                   />
                 )}
@@ -47,17 +53,6 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
       </div>
     </section>
   );
-};
-
-RelatedProjectSlider.propTypes = {
-  relatedProjects: PropTypes.arrayOf(
-    PropTypes.shape({
-      blockTitle: PropTypes.string,
-      marginTop: PropTypes.number,
-      projects: PropTypes.string,
-    }),
-  ).isRequired,
-  relatedProjectsTitle: PropTypes.string.isRequired,
 };
 
 export default RelatedProjectSlider;

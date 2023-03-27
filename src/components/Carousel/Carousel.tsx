@@ -35,7 +35,7 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
               onClick={handleNext}
             >
               {video && (
-                <VideoWithControls video={video} width={width} />
+                <VideoWithControls video={video} />
               )}
 
               {image && (

@@ -51,7 +51,6 @@ const ContentBlock = ({
             isAutoplaying={autoplay}
             isLooping={loops}
             video={video}
-            width={width}
           />
 
           <Caption caption={caption} marginLeft={marginLeft} />
