@@ -28,6 +28,7 @@
     "sharp": "0.30.3"
   },
   "devDependencies": {
+    "@datocms/cma-client-node": "^1.2.9",
     "@next/bundle-analyzer": "13.2.1",
     "@next/eslint-plugin-next": "13.2.1",
     "datocms-client": "3.5.21",
