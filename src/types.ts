@@ -36,6 +36,7 @@ export type Slide = {
 
 export const BLOCK_TYPES = {
   CarouselBlockRecord: 'CarouselBlockRecord',
+  HorizontalRowRecord: 'HorizontalRowRecord',
   ImageBlockRecord: 'ImageBlockRecord',
   TextBlockRecord: 'TextBlockRecord',
   VideoBlockRecord: 'VideoBlockRecord',
@@ -74,6 +75,11 @@ export type CarouselBlock = {
   slides: Slide[]
   video: VideoData,
   image: ImageData
+} & GenericBlockAttributes;
+
+export type HorizontalRowBlock = {
+  __typename: "HorizontalRowRecord",
+  blocks: ContentBlockType[],
 } & GenericBlockAttributes;
 
 export type ContentBlockType = CarouselBlock | ImageBlock | TextBlock | VideoBlock;
