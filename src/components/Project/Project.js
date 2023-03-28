@@ -3,8 +3,8 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './Project.module.scss';
-import VideoWithControls from '../VideoWithControls/VideoWithControls';
-import Image from '../Image/Image';
+import VideoWithControls from '../VideoWithControls/VideoWithControls.tsx';
+import Image from '../Image/Image.tsx';
 import { imageDataPropType, videoPropType } from '../../propTypes';
 
 const Project = ({
@@ -52,8 +52,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-              marginLeft: '0',
-            }
+            marginLeft: '0',
+          }
       }
     >
       <ReactMarkdown>

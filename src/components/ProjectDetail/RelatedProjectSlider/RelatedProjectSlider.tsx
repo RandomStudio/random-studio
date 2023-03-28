@@ -4,11 +4,17 @@ import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
 import VideoWithControls from '../../VideoWithControls/VideoWithControls';
 import Image from '../../Image/Image';
+import { RelatedProject  } from '../../../types';
 
-const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
-  const wrapperClass = `${styles.wrapper} ${
-    relatedProjects.length === 1 ? styles.isSingle : ''
-  }`;
+type RelatedProjectSliderProps = {
+  relatedProjects: RelatedProject[],
+  relatedProjectsTitle: string,
+};
+
+const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }: RelatedProjectSliderProps) => {
+  const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
+    }`;
+
 
   return (
     <section className={wrapperClass}>
@@ -18,26 +24,25 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
         {relatedProjects.map(
           ({ featuredImage, featuredVideo, title, slug }) => (
             <Link className={styles.card} href={slug} key={title}>
-              {featuredImage && (
-                <div className={styles.imageWrapper}>
+              <div className={styles.imageWrapper}>
+                {featuredImage && (
                   <Image
                     alt={title}
                     data={featuredImage.imageData}
                     sizes="(max-width: 864px) 268px, (max-width: 1152px) 322px, 408px"
                   />
-                </div>
-              )}
+                )}
 
-              {featuredVideo && (
-                <VideoWithControls
-                  autoplay
-                  hasControls={false}
-                  isAlwaysMuted
-                  isMuted
-                  loops
-                  video={featuredVideo}
-                />
-              )}
+                {featuredVideo && (
+                  <VideoWithControls
+                    hasControls={false}
+                    hasAudio={false}
+                    isAutoplaying
+                    isLooping
+                    video={featuredVideo}
+                  />
+                )}
+              </div>
 
               {title && <p>{title}</p>}
             </Link>
@@ -48,17 +53,6 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }) => {
       </div>
     </section>
   );
-};
-
-RelatedProjectSlider.propTypes = {
-  relatedProjects: PropTypes.arrayOf(
-    PropTypes.shape({
-      blockTitle: PropTypes.string,
-      marginTop: PropTypes.number,
-      projects: PropTypes.string,
-    }),
-  ).isRequired,
-  relatedProjectsTitle: PropTypes.string.isRequired,
 };
 
 export default RelatedProjectSlider;

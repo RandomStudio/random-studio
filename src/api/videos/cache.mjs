@@ -1,10 +1,23 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { accessSync, constants, readFileSync, writeFileSync } from 'fs';
 
-const CACHE_FILE = './.videoCache.json';
+const CACHE_FILE = '.videoCache.json';
+
+const getCacheFilePath = () => {
+  const localFile = `./${CACHE_FILE}`;
+  const tmpFile = `./tmp/${CACHE_FILE}`;
+
+  try {
+    accessSync(localFile, constants.W_OK);
+
+    return localFile;
+  } catch (err) {
+    return tmpFile;
+  }
+};
 
 export const loadCache = () => {
   try {
-    const cacheString = readFileSync(CACHE_FILE);
+    const cacheString = readFileSync(getCacheFilePath());
 
     return JSON.parse(cacheString);
   } catch (error) {
@@ -27,7 +40,7 @@ export const updateCache = (id, data) => {
   freshCache[id] = data;
 
   try {
-    writeFileSync(CACHE_FILE, JSON.stringify(freshCache));
+    writeFileSync(getCacheFilePath(), JSON.stringify(freshCache));
   } catch (err) {
     console.error(err);
   }

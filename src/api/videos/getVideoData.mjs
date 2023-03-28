@@ -56,12 +56,12 @@ export const getVideoData = async videoRef => {
 
   const data = {
     baseUrl,
-    sources: availableResolutions?.split(',')?.reverse() ?? null,
-    hls: `${baseUrl}/playlist.m3u8`,
     blur: await createPlaceholder(thumbnailUrl),
     fallback: thumbnailUrl,
-    width,
     height,
+    hls: `${baseUrl}/playlist.m3u8`,
+    sources: availableResolutions?.split(',')?.reverse() ?? null,
+    width,
   };
 
   updateCache(id, data);

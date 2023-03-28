@@ -54,16 +54,16 @@ const addBlockQuery = ({
 }) => `
 ${hasVideo
     ? `... on VideoBlockRecord {
-  id
-  marginTop
-  marginLeft
-  width
-  loops
-  hasAudio
-  hasControls
-  caption
-  autoplay
-  video
+          autoplay
+          caption
+          hasAudio
+          hasControls
+          id
+          loops
+          marginLeft
+          marginTop
+          video
+          width
 }
 `
     : ''

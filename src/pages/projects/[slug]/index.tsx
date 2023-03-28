@@ -9,19 +9,31 @@ import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
 import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
 import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
-import { projectPropTypeObject } from '../../../propTypes';
 import { getVideoData } from '../../../api/videos/getVideoData.mjs';
+import { ContentBlockType, OpenGraph, RelatedProject, VideoData } from '../../../types';
+
+type ProjectProps = {
+  content: ContentBlockType[],
+  details: { [key: string]: string },
+  featuredImage: ImageData,
+  id: string,
+  intro: string,
+  relatedProjectsTitle: string,
+  relatedProjects: RelatedProject[],
+  opengraph: OpenGraph,
+  title: string,
+}
 
 const Project = ({
+  content,
+  details,
   featuredImage,
   intro,
   opengraph: { description: ogDescription, image, title: ogTitle },
-  content,
-  details,
   relatedProjects,
   relatedProjectsTitle,
   title,
-}) => {
+}: ProjectProps) => {
   return (
     <Layout className={styles.layout} hasFooter={false}>
       <Head
@@ -83,7 +95,5 @@ export async function getStaticPaths() {
     })),
   };
 }
-
-Project.propTypes = projectPropTypeObject;
 
 export default Project;

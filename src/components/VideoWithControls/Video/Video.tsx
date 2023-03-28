@@ -5,45 +5,38 @@ import React, {
   useRef,
   useMemo,
   useCallback,
+  CSSProperties,
 } from 'react';
 import Hls from 'hls.js';
 import styles from './Video.module.scss';
+import { VideoData } from '../../../types';
 
 export type VideoProps = {
-  alt: string,
-  isAutoplaying?: boolean
-  isLooping?: boolean,
-  isMounted?: boolean,
-  isMuted?: boolean,
-  isPlaying?: boolean,
+  isAutoplaying: boolean
+  isLooping: boolean,
+  isMounted: boolean,
+  isMuted: boolean,
+  isPlaying: boolean,
   onPlayStateChange: (isPlaying: boolean) => void
-  video: {
-    baseUrl: string,
-    blur: string,
-    fallback: string,
-    hls: string,
-    sources: string[],
-  },
-  width: number,
+  video: VideoData,
 };
 
-const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, isMounted = true, isMuted = true, onPlayStateChange = () => null, video, width = 100 }: VideoProps) => {
+const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMounted = true, isMuted = true, onPlayStateChange = () => null, video }: VideoProps) => {
   const ref = useRef<HTMLVideoElement>(null);
 
-  const [hasFailed, setHasFailed] = useState(false);
+  const [hasFailed, setHasFailed] = useState(true);
   const [hasLoaded, setHasLoaded] = useState(false);
   const handlePlay = useCallback(async () => {
     if (!ref.current) {
       return;
     }
 
-    try {
-      await ref.current.play();
-      onPlayStateChange(true);
-      setHasFailed(false);
-    } catch (err) {
+try {
+  await ref.current.play();
+  onPlayStateChange(true);
+  setHasFailed(false);
+} catch (err) {
       console.warn(err);
-      setHasFailed(true);
       onPlayStateChange(false);
     } finally {
       setHasLoaded(true);
@@ -103,17 +96,9 @@ const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, 
       className={`${styles.frame} ${hasLoadedClassName}`}
       style={{
         '--aspectRatio': `${video.width} / ${video.height}`,
-      }}
+      } as CSSProperties}
     >
-      {!hasLoaded && (
-        <img
-          alt={alt}
-          aria-hidden
-          className={styles.placeholder}
-          src={`data:image/jpeg;base64,${video.blur}`}
-        />
-      )}
-      {isMounted && (
+      {isMounted ? (
         <>
           <video
             autoPlay={isAutoplaying}
@@ -126,8 +111,14 @@ const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, 
             <source src={video.hls} type="application/x-mpegURL" />
             <source src={fallbackMp4Src} type="video/mp4" />
           </video>
-          {hasLoaded && hasFailed && <img alt={alt} className={styles.placeholder} src={video.fallback} />}
+          {hasFailed && <img className={styles.placeholder} src={video.fallback} />}
         </>
+      ) : (
+        <img
+          aria-hidden
+          className={styles.placeholder}
+          src={`data:image/jpeg;base64,${video.blur}`}
+        />
       )}
     </div>
   );
