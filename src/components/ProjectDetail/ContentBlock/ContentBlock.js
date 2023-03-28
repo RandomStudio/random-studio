@@ -9,6 +9,7 @@ import styles from './ContentBlock.module.scss';
 
 const BLOCK_TYPES = {
   CarouselBlockRecord: 'CarouselBlockRecord',
+  HorizontalRowRecord: 'HorizontalRowRecord',
   ImageBlockRecord: 'ImageBlockRecord',
   TextBlockRecord: 'TextBlockRecord',
   VideoBlockRecord: 'VideoBlockRecord',
@@ -18,6 +19,7 @@ const ContentBlock = ({
   block: {
     __typename,
     width,
+    blocks,
     loops,
     hasAudio,
     isCentered, // missing
@@ -83,6 +85,14 @@ const ContentBlock = ({
     {__typename === BLOCK_TYPES.TextBlockRecord && (
       <div className={`${styles.text} ${isCentered ? styles.isCentered : ''}`}>
         <ReactMarkdown>{text}</ReactMarkdown>
+      </div>
+    )}
+
+    {__typename === BLOCK_TYPES.HorizontalRowRecord && blocks && (
+      <div className={styles.horizontalRow}>
+        {blocks?.map(subblock => (
+          <ContentBlock block={subblock} key={subblock.id} />
+        ))}
       </div>
     )}
   </div>
