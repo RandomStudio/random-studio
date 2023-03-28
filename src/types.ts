@@ -8,6 +8,11 @@ export interface VideoData {
   width,
 }
 
+export interface Image {
+  id: string,
+  imageData: ImageData
+};
+
 export type OpenGraph = {
   description: string,
   title: string,
@@ -19,16 +24,13 @@ export type RelatedProject = {
   title: string,
   slug: string,
   intro: string,
-  featuredImage: {
-    id: string,
-    imageData: ImageData
-  },
+  featuredImage: Image
   featuredVideo: VideoData,
 };
 
 export type Slide = {
   id: string,
-  image: ImageData,
+  image: Image,
   video: VideoData,
 }
 
@@ -64,10 +66,7 @@ export type TextBlock = {
 export type ImageBlock = {
   __typename: "ImageBlockRecord",
   caption: string,
-  image: {
-    id: string,
-    imageData: ImageData
-  }
+  image: Image,
 } & GenericBlockAttributes;
 
 export type CarouselBlock = {

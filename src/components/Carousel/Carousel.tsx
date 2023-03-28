@@ -20,7 +20,7 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
   if (!slides) {
     return null;
   }
-
+console.log(slides)
   return (
     <div className={`${styles.carousel} ${className}`}>
       <div className={styles.slides}>
@@ -40,7 +40,7 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
 
               {image && (
                 <Image
-                  data={image}
+                  data={image.imageData}
                   sizes={sizes}
                 />
               )}
