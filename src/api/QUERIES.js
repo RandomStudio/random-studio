@@ -46,6 +46,72 @@ query {
 }
 `;
 
+const addBlockQuery = ({
+  hasVideo = false,
+  hasText = false,
+  hasImage = false,
+  hasCarousel = false,
+}) => `
+${hasVideo
+    ? `... on VideoBlockRecord {
+          autoplay
+          caption
+          hasAudio
+          hasControls
+          id
+          loops
+          marginLeft
+          marginTop
+          video
+          width
+}
+`
+    : ''
+  }
+${hasText
+    ? `... on TextBlockRecord {
+  id
+  text
+  width
+  marginTop
+  marginLeft
+}
+`
+    : ''
+  }
+${hasImage
+    ? `... on ImageBlockRecord {
+  id
+  width
+  marginTop
+  marginLeft
+  caption
+  image {
+    ...ImageDataObject
+  }
+}
+`
+    : ''
+  }
+${hasCarousel
+    ? `... on CarouselBlockRecord {
+  id
+  marginLeft
+  marginTop
+  width
+  slides {
+    id
+    video
+    image {
+      ...ImageDataObject
+    }
+  }
+}
+`
+    : ''
+  }
+`;
+
 export const SINGLE_PROJECT_QUERY = `
   ${THUMBNAIL_FRAGMENT}
   ${RELATED_THUMBNAIL_FRAGMENT}
@@ -76,46 +142,22 @@ export const SINGLE_PROJECT_QUERY = `
       }
       content {
         __typename
-        ... on VideoBlockRecord {
-          autoplay
-          caption
-          hasAudio
-          hasControls
+        ${addBlockQuery({
+  hasVideo: true,
+  hasImage: true,
+  hasCarousel: true,
+  hasText: true,
+})}
+        ... on HorizontalRowRecord {
           id
-          loops
-          marginLeft
-          marginTop
-          video
-          width
-        }
-        ... on TextBlockRecord {
-          id
-          text
-          width
-          marginTop
-          marginLeft
-        }
-        ... on ImageBlockRecord {
-          id
-          width
-          marginTop
-          marginLeft
-          caption
-          image {
-            ...ImageDataObject
-          }
-        }
-        ... on CarouselBlockRecord {
-          id
-          marginLeft
-          marginTop
-          width
-          slides {
-            id
-            video
-            image {
-              ...ImageDataObject
-            }
+          __typename
+          blocks {
+            __typename
+            ${addBlockQuery({
+  hasVideo: true,
+  hasImage: true,
+  hasText: true,
+})}
           }
         }
       }

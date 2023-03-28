@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import { dayNightImageBlockPropType } from '../../../propTypes';
 import Image from '../../Image/Image';
 import AfterDarkContext from '../../Layout/AfterDarkContext';
@@ -15,7 +16,9 @@ const Block = ({ block: { copy, image, nightImage }, className }) => {
         <Image alt={copy} data={(isAfterDark ? nightImage : image).imageData} />
       </div>
 
-      <ReactMarkdown className={styles.text}>{copy}</ReactMarkdown>
+      <ReactMarkdown className={styles.text} rehypePlugins={[rehypeRaw]}>
+        {copy}
+      </ReactMarkdown>
     </div>
   );
 };

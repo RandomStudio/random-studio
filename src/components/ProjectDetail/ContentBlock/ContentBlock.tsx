@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { blockPropType } from '../../../propTypes';
 import { BLOCK_TYPES, CarouselBlock, ImageBlock, TextBlock, VideoBlock } from '../../../types';
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
@@ -10,6 +9,7 @@ import styles from './ContentBlock.module.scss';
 
 type ContentBlockProps = {
   __typename: string,
+  blocks?: ContentBlockProps[]
   width: number,
   id: string,
   marginLeft: number,
@@ -18,6 +18,7 @@ type ContentBlockProps = {
 
 const ContentBlock = ({
     __typename,
+    blocks,
     width,
     id,
     marginLeft,
@@ -76,6 +77,14 @@ const ContentBlock = ({
         </div>
       )
     }
+
+    {__typename === BLOCK_TYPES.HorizontalRowRecord && blocks && (
+      <div className={styles.horizontalRow}>
+        {blocks?.map(subblock => (
+          <ContentBlock {...subblock} key={subblock.id} />
+        ))}
+      </div>
+    )}
   };
 
   return (

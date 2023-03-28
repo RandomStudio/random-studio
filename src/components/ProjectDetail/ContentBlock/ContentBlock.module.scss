@@ -96,6 +96,16 @@
   }
 }
 
+.horizontalRow {
+  @media (min-width: 576px) {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-between;
+  }
+
+}
+
 @media (min-width: 576px) {
   .project {
     padding-top: 200px;
