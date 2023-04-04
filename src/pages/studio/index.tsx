@@ -58,7 +58,7 @@ const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
       caption="Studio Impressions"
       className={styles.carousel}
       sizes="(max-width: 768px) 100vw, 50vw"
-      slides={studioImpression}
+      slides={studioImpression.map(content => ({ image: content }))}
     />
 
     {blocks.map(block => (
