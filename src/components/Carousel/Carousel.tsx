@@ -9,7 +9,7 @@ type CarouselProps = {
   className?: string,
   sizes: string,
   slides: Slide[],
-  width: number,
+  width?: number,
 };
 
 const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) => {
@@ -20,7 +20,7 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
   if (!slides) {
     return null;
   }
-console.log(slides)
+
   return (
     <div className={`${styles.carousel} ${className}`}>
       <div className={styles.slides}>
