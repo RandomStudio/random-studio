@@ -1,6 +1,5 @@
 import sharp from 'sharp';
 import { getVideoDetailsById } from './bunnyCdn.mjs';
-import { getCachedValue, updateCache } from './cache.mjs';
 
 const getImage = async url => {
   const response = await fetch(url);
@@ -8,10 +7,8 @@ const getImage = async url => {
   return Buffer.from(await response.arrayBuffer());
 };
 
-const createPlaceholder = async url => {
+const createPlaceholder = async image => {
   try {
-    const image = await getImage(url);
-
     const buffer = await sharp(image)
       .raw()
       .ensureAlpha()
@@ -39,24 +36,20 @@ export const getVideoData = async videoRef => {
 
   const baseUrl = `https://videos.random.studio/${id}`;
 
-  const cached = getCachedValue(id);
-
-  if (cached) {
-    return cached;
-  }
-
+  //  const cached = getCachedValue(id);
   const details = await getVideoDetailsById(id);
 
   if (!details) {
     return null;
   }
 
+  const thumbnailUrl = `${baseUrl}/${details.thumbnailFileName}`;
+  const image = await getImage(thumbnailUrl);
   const { width, height, availableResolutions } = details;
-  const thumbnailUrl = `${baseUrl}/thumbnail.jpg`;
 
   const data = {
     baseUrl,
-    blur: await createPlaceholder(thumbnailUrl),
+    blur: await createPlaceholder(image),
     fallback: thumbnailUrl,
     height,
     hls: `${baseUrl}/playlist.m3u8`,
@@ -64,7 +57,7 @@ export const getVideoData = async videoRef => {
     width,
   };
 
-  updateCache(id, data);
+  //  updateCache(id, data);
 
   return data;
 };
