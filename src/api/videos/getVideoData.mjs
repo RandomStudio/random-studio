@@ -1,4 +1,5 @@
 import sharp from 'sharp';
+import { createHash } from 'crypto';
 import { getVideoDetailsById } from './bunnyCdn.mjs';
 import { getCachedValue, updateCache } from './cache.mjs';
 
@@ -8,10 +9,8 @@ const getImage = async url => {
   return Buffer.from(await response.arrayBuffer());
 };
 
-const createPlaceholder = async url => {
+const createPlaceholder = async image => {
   try {
-    const image = await getImage(url);
-
     const buffer = await sharp(image)
       .raw()
       .ensureAlpha()
@@ -41,7 +40,11 @@ export const getVideoData = async videoRef => {
 
   const cached = getCachedValue(id);
 
-  if (cached) {
+  const thumbnailUrl = `${baseUrl}/thumbnail.jpg`;
+  const image = await getImage(thumbnailUrl);
+  const checksum = createHash('md5').update(image).digest('hex');
+
+  if (cached && cached.checksum === checksum) {
     return cached;
   }
 
@@ -52,11 +55,11 @@ export const getVideoData = async videoRef => {
   }
 
   const { width, height, availableResolutions } = details;
-  const thumbnailUrl = `${baseUrl}/thumbnail.jpg`;
 
   const data = {
     baseUrl,
-    blur: await createPlaceholder(thumbnailUrl),
+    blur: await createPlaceholder(image),
+    checksum,
     fallback: thumbnailUrl,
     height,
     hls: `${baseUrl}/playlist.m3u8`,
