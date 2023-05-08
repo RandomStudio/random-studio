@@ -38,17 +38,11 @@ export const getVideoData = async videoRef => {
 
   const baseUrl = `https://videos.random.studio/${id}`;
 
-  const cached = getCachedValue(id);
-
-  const thumbnailUrl = `${baseUrl}/thumbnail.jpg`;
-  const image = await getImage(thumbnailUrl);
-  const checksum = createHash('md5').update(image).digest('hex');
-
-  if (cached && cached.checksum === checksum) {
-    return cached;
-  }
-
+  //  const cached = getCachedValue(id);
   const details = await getVideoDetailsById(id);
+
+  const thumbnailUrl = `${baseUrl}/${details.thumbnailFileName}`;
+  const image = await getImage(thumbnailUrl);
 
   if (!details) {
     return null;
@@ -59,7 +53,6 @@ export const getVideoData = async videoRef => {
   const data = {
     baseUrl,
     blur: await createPlaceholder(image),
-    checksum,
     fallback: thumbnailUrl,
     height,
     hls: `${baseUrl}/playlist.m3u8`,
@@ -67,7 +60,7 @@ export const getVideoData = async videoRef => {
     width,
   };
 
-  updateCache(id, data);
+  //  updateCache(id, data);
 
   return data;
 };
