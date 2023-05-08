@@ -1,7 +1,5 @@
 import sharp from 'sharp';
-import { createHash } from 'crypto';
 import { getVideoDetailsById } from './bunnyCdn.mjs';
-import { getCachedValue, updateCache } from './cache.mjs';
 
 const getImage = async url => {
   const response = await fetch(url);
