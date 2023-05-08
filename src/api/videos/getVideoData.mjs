@@ -39,13 +39,12 @@ export const getVideoData = async videoRef => {
   //  const cached = getCachedValue(id);
   const details = await getVideoDetailsById(id);
 
-  const thumbnailUrl = `${baseUrl}/${details.thumbnailFileName}`;
-  const image = await getImage(thumbnailUrl);
-
   if (!details) {
     return null;
   }
 
+  const thumbnailUrl = `${baseUrl}/${details.thumbnailFileName}`;
+  const image = await getImage(thumbnailUrl);
   const { width, height, availableResolutions } = details;
 
   const data = {
