@@ -3,34 +3,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import '../styles/global.scss';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
-import { pageview, initialize, set } from 'react-ga';
+import React from 'react';
 import styles from './App.module.scss';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 const App = ({ Component, pageProps, __N_PREVIEW: isPreview }) => {
   const router = useRouter();
-
-  useEffect(() => {
-    const handleRouteChange = url => {
-      set({ page: url });
-      pageview(url);
-    };
-
-    initialize('UA-9384788-13', { debug: false });
-
-    set({
-      anonymizeIp: true,
-      page: router.pathname,
-    });
-
-    pageview(router.pathname);
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events, router.pathname]);
 
   return (
     <ErrorBoundary>
