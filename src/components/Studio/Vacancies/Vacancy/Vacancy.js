@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { OutboundLink } from 'react-ga';
 import PropTypes from 'prop-types';
 import styles from './Vacancy.module.css';
 import { vacancyPropType } from '../../../../propTypes';
@@ -25,14 +24,14 @@ const Vacancy = ({ handleClose, opening: { title, description, url } }) => (
         {description}
       </ReactMarkdown>
 
-      <OutboundLink
+      <a
         className={styles.applyButton}
         eventLabel={`Apply for ${title}`}
         target="_blank"
         to={url}
       >
         {'Apply for this position'}
-      </OutboundLink>
+      </a>
     </div>
   </section>
 );
