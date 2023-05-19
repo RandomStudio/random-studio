@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import styles from './Vacancy.module.css';
 import { vacancyPropType } from '../../../../propTypes';
+import Link from 'next/link';
 
 type VacancyProps = {
   handleClose: () => void;
@@ -44,14 +45,13 @@ const Vacancy = ({ handleClose, opening: { title, description, url } }: VacancyP
         {description}
       </ReactMarkdown>
 
-      <a
+      <Link
         className={styles.applyButton}
-        eventLabel={`Apply for ${title}`}
         target="_blank"
-        to={url}
+        href={url}
       >
         {'Apply for this position'}
-      </a>
+      </Link>
     </div>
   </section>
 );
