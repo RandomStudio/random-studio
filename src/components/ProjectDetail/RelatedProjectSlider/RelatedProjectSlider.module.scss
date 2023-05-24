@@ -82,6 +82,7 @@
   .isSingle & {
     display: flex;
     align-items: center;
+    width: min-content;
     flex-flow: column wrap;
   }
 }
