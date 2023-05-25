@@ -3,7 +3,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
-  experimental: { esmExternals: true },
+  experimental: {
+    esmExternals: true,
+    scrollRestoration: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

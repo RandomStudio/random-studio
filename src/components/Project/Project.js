@@ -19,7 +19,12 @@ const Project = ({
 }) => (
   <Link
     className={`${styles.thumbnail} ${className}`}
-    href={`/projects/${slug}`}
+    href={{
+      pathname: `/projects/${slug}`,
+      query: {
+        hasHistory: true,
+      },
+    }}
     id={slug}
     style={{
       marginLeft: `${left}%`,

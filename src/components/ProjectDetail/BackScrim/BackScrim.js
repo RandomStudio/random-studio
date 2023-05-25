@@ -1,11 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './BackScrim.module.scss';
 import supportsIntersectionObserver from '../../../utils/supportsIntersectionObserver';
 
 const BackScrim = () => {
   const intersectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
+  const router = useRouter();
+
+  const { hasHistory } = router.query;
+
+  const handleback = () => {
+    if (hasHistory) {
+      return router.back();
+    }
+
+    return router.push('/projects');
+  };
 
   useEffect(() => {
     if (!supportsIntersectionObserver) {
@@ -29,9 +40,9 @@ const BackScrim = () => {
   return (
     <>
       <div className={scrimClassNames}>
-        <Link className={styles.backButton} href="/projects">
+        <button className={styles.backButton} onClick={() => handleback()}>
           {'Back to projects'}
-        </Link>
+        </button>
       </div>
 
       <div className={styles.intersectionLine} ref={intersectionRef} />
