@@ -4,18 +4,28 @@ import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
 import BackScrim from './BackScrim/BackScrim';
-import { ContentBlockType, OpenGraph, RelatedProject, VideoData } from '../../types';
+import {
+  ContentBlockType,
+  CreditsType,
+  OpenGraph,
+  RelatedProject,
+  VideoData,
+} from '../../types'
+
+import Credits from './Credits/Credits';
 
 type ProjectDetailProps = {
-  content: ContentBlockType[],
-  details: {[key:string]: string},
-  intro: string,
-  relatedProjectsTitle: string,
-  relatedProjects: RelatedProject[],
-  title: string,
-}
+  credits: CreditsType[];
+  content: ContentBlockType[];
+  details: { [key: string]: string };
+  intro: string;
+  relatedProjectsTitle: string;
+  relatedProjects: RelatedProject[];
+  title: string;
+};
 
 const ProjectDetail = ({
+  credits,
   content,
   details,
   intro,
@@ -39,19 +49,7 @@ const ProjectDetail = ({
         <ContentBlock {...block} key={block.id} />
       ))}
 
-      <dl aria-label="Project Details" className={styles.credits}>
-        {Object.entries(details ?? {})?.map(([key, value]) => (
-          <React.Fragment key={`${key}-${value}`}>
-            <dt>{`${key}:`}</dt>
-
-            <dd>
-              <ReactMarkdown linkTarget="_blank">
-                {value.replaceAll('<br />', '<br>').replaceAll('<br>', '\n\n')}
-              </ReactMarkdown>
-            </dd>
-          </React.Fragment>
-        ))}
-      </dl>
+      <Credits credits={credits} details={details} />
 
       {relatedProjects && relatedProjects.length > 0 && (
         <RelatedProjectSlider

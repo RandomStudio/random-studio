@@ -10,23 +10,30 @@ import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
 import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
 import { getVideoData } from '../../../api/videos/getVideoData.mjs';
-import { ContentBlockType, OpenGraph, RelatedProject, VideoData } from '../../../types';
+import {
+  ContentBlockType,
+  CreditsType,
+  OpenGraph,
+  RelatedProject,
+} from '../../../types';
 
 type ProjectProps = {
-  content: ContentBlockType[],
-  details: { [key: string]: string },
-  featuredImage: ImageData,
-  id: string,
-  intro: string,
-  relatedProjectsTitle: string,
-  relatedProjects: RelatedProject[],
-  opengraph: OpenGraph,
-  title: string,
-}
+  content: ContentBlockType[];
+  credits?: CreditsType[];
+  details: { [key: string]: string };
+  featuredImage: ImageData;
+  id: string;
+  intro: string;
+  relatedProjectsTitle: string;
+  relatedProjects: RelatedProject[];
+  opengraph: OpenGraph;
+  title: string;
+};
 
 const Project = ({
   content,
   details,
+  credits,
   featuredImage,
   intro,
   opengraph: { description: ogDescription, image, title: ogTitle },
@@ -47,6 +54,7 @@ const Project = ({
       <ProjectDetail
         content={content}
         details={details}
+        credits={credits}
         intro={intro}
         relatedProjects={relatedProjects}
         relatedProjectsTitle={relatedProjectsTitle}
@@ -72,10 +80,10 @@ export const getStaticProps = async ({ params, preview }) => {
       content: await addAdditionalInfoToBlocks(project.content),
       opengraph: project.opengraph ?? {},
       relatedProjects: await Promise.all(
-        project.relatedProjects?.map(async related => ({
+        project.relatedProjects?.map(async (related) => ({
           ...related,
           featuredVideo: await getVideoData(related.featuredVideo),
-        })),
+        }))
       ),
     },
   };
