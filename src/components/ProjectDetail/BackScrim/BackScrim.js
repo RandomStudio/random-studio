@@ -40,7 +40,7 @@ const BackScrim = () => {
   return (
     <>
       <div className={scrimClassNames}>
-        <button className={styles.backButton} onClick={() => handleback()}>
+        <button className={styles.backButton} onClick={handleback}>
           {'Back to projects'}
         </button>
       </div>
