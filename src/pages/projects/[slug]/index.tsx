@@ -80,7 +80,7 @@ export const getStaticProps = async ({ params, preview }) => {
       content: await addAdditionalInfoToBlocks(project.content),
       opengraph: project.opengraph ?? {},
       relatedProjects: await Promise.all(
-        project.relatedProjects?.map(async (related) => ({
+        project.relatedProjects?.map(async related => ({
           ...related,
           featuredVideo: await getVideoData(related.featuredVideo),
         }))
