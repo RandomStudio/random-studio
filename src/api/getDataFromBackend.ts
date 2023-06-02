@@ -1,6 +1,6 @@
-import { GraphQLClient, RequestDocument } from "graphql-request";
+import { GraphQLClient, RequestDocument } from 'graphql-request';
 
-const getDataFromBackend = async ({ query, variables, preview, }: { query: RequestDocument; variables?: unknown; preview?: boolean; }) => {
+const getDataFromBackend = async ({ query, variables, preview, }: { query: RequestDocument, variables?: unknown, preview?: boolean, }) => {
   const endpoint = 'https://graphql.datocms.com/';
 
   const includeDrafts = preview ?? process.env.CONTEXT !== 'production';
