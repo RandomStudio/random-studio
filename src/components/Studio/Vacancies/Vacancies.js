@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Vacancies.module.css';
-import Vacancy from './Vacancy/Vacancy';
+import Vacancy from './Vacancy/Vacancy.tsx';
 import { vacancyPropType } from '../../../propTypes';
 
 const Vacancies = ({ className, vacancies }) => {
