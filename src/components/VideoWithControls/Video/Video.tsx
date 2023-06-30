@@ -31,11 +31,11 @@ const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMou
       return;
     }
 
-try {
-  await ref.current.play();
-  onPlayStateChange(true);
-  setHasFailed(false);
-} catch (err) {
+    try {
+      await ref.current.play();
+      onPlayStateChange(true);
+      setHasFailed(false);
+    } catch (err) {
       console.warn(err);
       onPlayStateChange(false);
     } finally {
@@ -118,6 +118,9 @@ try {
           aria-hidden
           className={styles.placeholder}
           src={`data:image/jpeg;base64,${video.blur}`}
+          style={{
+            aspectRatio: video.width / video.height
+          }}
         />
       )}
     </div>
