@@ -18,7 +18,7 @@ When change is live everywhere, newLayout can become :root and other code can be
 
   --wrapper-width: 1192px;
 
-  @nest .isAfterDark &,
+  .isAfterDark &,
   &.isAfterDark {
     --background-color: var(--black);
     --text-color: var(--off-white);
