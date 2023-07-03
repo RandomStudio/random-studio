@@ -29,6 +29,7 @@
   &.isSingle {
     h4 {
       text-align: center;
+      padding-left: 0;
     }
   }
 }
@@ -82,6 +83,7 @@
   .isSingle & {
     display: flex;
     align-items: center;
+    width: min-content;
     flex-flow: column wrap;
   }
 }

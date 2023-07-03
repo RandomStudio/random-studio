@@ -24,6 +24,10 @@
     width: 100%;
   }
 
+  &[data-visible="false"] {
+    pointer-events: none;
+  }
+
   &[data-visible="true"] {
     transition: opacity 1.2s;
     opacity: 1;
