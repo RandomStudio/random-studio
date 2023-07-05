@@ -34,6 +34,12 @@ export type Slide = {
   video: VideoData,
 }
 
+export type CreditsType = {
+  link: string,
+  label: string,
+  text: string,
+}
+
 export const BLOCK_TYPES = {
   CarouselBlockRecord: 'CarouselBlockRecord',
   HorizontalRowRecord: 'HorizontalRowRecord',

@@ -73,7 +73,7 @@ const ContentBlock = ({
       const { text } = blockProps as TextBlock;
       return (
         <div className={styles.text}>
-          <ReactMarkdown>{text}</ReactMarkdown>
+          <ReactMarkdown linkTarget="_blank">{text}</ReactMarkdown>
         </div>
       )
     }
