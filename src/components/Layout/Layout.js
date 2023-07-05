@@ -17,16 +17,16 @@ const Layout = ({
 
   const isDarkStyleActive = isAfterDark && isNewDesign;
 
-  const layoutClasses = classNames({
-    className,
+  const layoutClasses = classNames(className, {
     [styles.newLayout]: isNewDesign,
     [styles.oldLayout]: !isNewDesign,
     [styles.isAfterDark]: isDarkStyleActive,
+    isAfterDark: isDarkStyleActive,
   });
 
   return (
     <AfterDarkContext.Provider value={isAfterDark}>
-      <div className={`${layoutClasses} ${isDarkStyleActive && 'isAfterDark'}`}>
+      <div className={layoutClasses}>
         <a className="screen-reader-only" href="#main-content" id="skip-nav">
           {'Skip Navigation'}
         </a>
