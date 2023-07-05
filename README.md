@@ -6,14 +6,12 @@ Static website for Random Studio, built using Next.js.
 
 ## Important information
 
-- Staging site is hosted on Netlify
-- Production site is hosted on sustainable host, Leafcloud
-- Deploys are handled by Github Workflows (see `.github/worfklows` for config) and automatically triggered on `staging` and `master` branches
-- SSH keys are stored in Github secrets
+- Hosted on Netlify, content managed via DatoCMS
+- Deploys are handled by Netlify and automatically triggered on pushing to any branch, as well as when content is updated in DatoCMS
 
 ## Deploy workflow
-- Push to either `staging` or `master` branches on Github to start deploy to either staging or production site
-- Workflow configures environment, builds site via `npm run build`, statically exports to `.out` folder, and uploads to the server
+- Push to a branch on Github to start a deploy to Netlify
+- You can view the status of a deploy, or name of a subdomain, via the Netlify control panel
 
 ## Backup workflow
 - Runs automatically at 3am Monday, Wednesday and Friday

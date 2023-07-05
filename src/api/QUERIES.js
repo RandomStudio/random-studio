@@ -124,6 +124,11 @@ export const SINGLE_PROJECT_QUERY = `
       intro
       title
       details
+      credits {
+        label
+        text
+        link
+      }
       ...Thumbnail
       relatedProjectsTitle
       relatedProjects {
