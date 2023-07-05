@@ -4,20 +4,22 @@
 
 .slides {
   position: relative;
-}
-
-.hasMultiple {
   cursor: e-resize;
 }
 
 .image {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   opacity: 0;
 
-  &:not(:first-of-type) {
-    position: absolute;
+  &:not(:first-of-type),
+  &:not(:first-of-type) > div {
+    position: absolute !important;
     bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   & video {
@@ -32,6 +34,7 @@
     transition: opacity 1.2s;
     opacity: 1;
   }
+
 }
 
 .caption {

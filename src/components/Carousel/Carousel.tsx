@@ -29,22 +29,18 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
             className={styles.image}
             data-visible={index === currentIndex}
             key={id}
+            onClick={handleNext}
           >
-            <div
-              className={slides.length > 1 && styles.hasMultiple}
-              onClick={handleNext}
-            >
-              {video && (
-                <VideoWithControls video={video} />
-              )}
+            {video && (
+              <VideoWithControls video={video} />
+            )}
 
-              {image && (
-                <Image
-                  data={image.imageData}
-                  sizes={sizes}
-                />
-              )}
-            </div>
+            {image && (
+              <Image
+                data={image.imageData}
+                sizes={sizes}
+              />
+            )}
           </div>
         ))}
       </div>
