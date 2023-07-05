@@ -6,11 +6,12 @@ import { CreditsType } from "../../../types";
 import styles from "./Credits.module.scss";
 
 type CreditsProps = {
-  details: { [key: string]: string };
   credits: CreditsType[];
+  details: { [key: string]: string };
+  externalUrl: string;
 };
 
-export const Credits = ({ credits, details }: CreditsProps) => {
+export const Credits = ({ credits, details, externalUrl }: CreditsProps) => {
   // Until we refactor the content on the CMS
   if (!credits.length) {
     return (
@@ -47,6 +48,7 @@ export const Credits = ({ credits, details }: CreditsProps) => {
           </dd>
         </React.Fragment>
       ))}
+      {externalUrl && <a className={styles.externalUrl} href={externalUrl} target="_blank" rel="noreferrer noopener">View website</a>}
     </dl>
   );
 };

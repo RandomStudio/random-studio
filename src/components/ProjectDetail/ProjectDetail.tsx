@@ -18,6 +18,7 @@ type ProjectDetailProps = {
   credits: CreditsType[];
   content: ContentBlockType[];
   details: { [key: string]: string };
+  externalUrl: string;
   intro: string;
   relatedProjectsTitle: string;
   relatedProjects: RelatedProject[];
@@ -28,6 +29,7 @@ const ProjectDetail = ({
   credits,
   content,
   details,
+  externalUrl,
   intro,
   relatedProjects,
   relatedProjectsTitle,
@@ -49,7 +51,7 @@ const ProjectDetail = ({
         <ContentBlock {...block} key={block.id} />
       ))}
 
-      <Credits credits={credits} details={details} />
+      <Credits credits={credits} externalUrl={externalUrl} details={details} />
 
       {relatedProjects && relatedProjects.length > 0 && (
         <RelatedProjectSlider

@@ -124,6 +124,7 @@ export const SINGLE_PROJECT_QUERY = `
       intro
       title
       details
+      externalUrl
       credits {
         label
         text

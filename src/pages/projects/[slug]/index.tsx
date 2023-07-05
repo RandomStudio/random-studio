@@ -21,6 +21,7 @@ type ProjectProps = {
   content: ContentBlockType[];
   credits?: CreditsType[];
   details: { [key: string]: string };
+  externalUrl: string;
   featuredImage: ImageData;
   id: string;
   intro: string;
@@ -32,8 +33,9 @@ type ProjectProps = {
 
 const Project = ({
   content,
-  details,
   credits,
+  details,
+  externalUrl,
   featuredImage,
   intro,
   opengraph: { description: ogDescription, image, title: ogTitle },
@@ -55,6 +57,7 @@ const Project = ({
         content={content}
         details={details}
         credits={credits}
+        externalUrl={externalUrl}
         intro={intro}
         relatedProjects={relatedProjects}
         relatedProjectsTitle={relatedProjectsTitle}
