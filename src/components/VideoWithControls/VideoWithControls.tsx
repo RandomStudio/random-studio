@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styles from './VideoWithControls.module.scss';
 import {
-  trackIsCurrentlyMuted,
   trackPausePlay,
 } from '../../utils/analyticsUtils';
 import Video from './Video/Video';
 import LazyLoad from '../LazyLoad/LazyLoad';
 import { VideoData } from '../../types';
+import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 
 type VideoWithControlsProps = {
   className?: String,
@@ -29,16 +29,13 @@ const VideoWithControls = ({
 }: VideoWithControlsProps) => {
   const [hasPlayed, setHasPlayed] = useState(isAutoplaying);
 
-  const [isCurrentlyMuted, setIsCurrentlyMuted] = useState(
-    isAutoplaying || !hasAudio,
-  );
+  const [isMuted, handleToggleMuted] = useSharedUnmutedVideoState(video.hls);
 
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
   const handleTapVolumeToggle = e => {
-    setIsCurrentlyMuted(prevState => !prevState);
+    handleToggleMuted();
     e.stopPropagation();
-    trackIsCurrentlyMuted(isCurrentlyMuted);
   };
 
   const handleTapPlayPause = e => {
@@ -76,7 +73,7 @@ const VideoWithControls = ({
             isAutoplaying={isAutoplaying}
             isLooping={isLooping}
             isMounted={hasIntersected}
-            isMuted={!hasAudio || isCurrentlyMuted}
+            isMuted={!hasAudio || isMuted}
             isPlaying={isPlaying}
             onPlayStateChange={setIsPlaying}
             video={video}
@@ -91,7 +88,7 @@ const VideoWithControls = ({
 
                 {hasAudio && (
                   <button onClick={handleTapVolumeToggle} type="button">
-                    {isCurrentlyMuted ? 'Unmute' : 'Mute'}
+                    {isMuted ? 'Unmute' : 'Mute'}
                   </button>
                 )}
               </div>
