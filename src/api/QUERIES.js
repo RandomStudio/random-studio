@@ -123,7 +123,6 @@ export const SINGLE_PROJECT_QUERY = `
       slug
       intro
       title
-      details
       credits {
         label
         text

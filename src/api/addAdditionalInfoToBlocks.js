@@ -17,9 +17,9 @@ const addAdditionalInfoToBlocks = async content =>
             block.slides.map(async slide =>
               slide.video
                 ? {
-                  ...slide,
-                  video: await getVideoData(slide.video),
-                }
+                    ...slide,
+                    video: await getVideoData(slide.video),
+                  }
                 : slide,
             ),
           ),
@@ -33,9 +33,9 @@ const addAdditionalInfoToBlocks = async content =>
             block.blocks.map(async subBlock =>
               subBlock.video
                 ? {
-                  ...subBlock,
-                  video: await getVideoData(subBlock.video),
-                }
+                    ...subBlock,
+                    video: await getVideoData(subBlock.video),
+                  }
                 : subBlock,
             ),
           ),
