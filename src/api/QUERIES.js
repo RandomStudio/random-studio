@@ -46,6 +46,13 @@ query {
 }
 `;
 
+const sharedValues = `
+id
+anchorId
+width
+marginTop
+marginLeft`;
+
 const addBlockQuery = ({
   hasVideo = false,
   hasText = false,
@@ -58,47 +65,34 @@ ${hasVideo
           caption
           hasAudio
           hasControls
-          id
           loops
-          marginLeft
-          marginTop
           video
-          width
+          ${sharedValues}
 }
 `
     : ''
   }
 ${hasText
     ? `... on TextBlockRecord {
-  id
   text
-  width
-  marginTop
-  marginLeft
+  ${sharedValues}
 }
 `
     : ''
   }
 ${hasImage
     ? `... on ImageBlockRecord {
-  id
-  width
-  marginTop
-  marginLeft
   caption
   image {
     ...ImageDataObject
   }
+  ${sharedValues}
 }
 `
     : ''
   }
 ${hasCarousel
     ? `... on CarouselBlockRecord {
-  id
-  marginLeft
-  marginTop
-  width
   slides {
     id
     video
@@ -106,6 +100,7 @@ ${hasCarousel
       ...ImageDataObject
     }
   }
+  ${sharedValues}
 }
 `
     : ''
