@@ -48,7 +48,8 @@ export const BLOCK_TYPES = {
   VideoBlockRecord: 'VideoBlockRecord',
 } as const;
 
-type GenericBlockAttributes = {
+export type GenericBlockAttributes = {
+  anchorId: string,
   id: string,
   marginLeft: number,
   marginTop: number,

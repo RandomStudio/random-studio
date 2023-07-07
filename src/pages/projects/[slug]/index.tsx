@@ -20,7 +20,6 @@ import {
 type ProjectProps = {
   content: ContentBlockType[];
   credits?: CreditsType[];
-  details: { [key: string]: string };
   externalUrl: string;
   featuredImage: ImageData;
   id: string;
@@ -34,7 +33,6 @@ type ProjectProps = {
 const Project = ({
   content,
   credits,
-  details,
   externalUrl,
   featuredImage,
   intro,
@@ -55,7 +53,6 @@ const Project = ({
 
       <ProjectDetail
         content={content}
-        details={details}
         credits={credits}
         externalUrl={externalUrl}
         intro={intro}

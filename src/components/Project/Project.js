@@ -52,8 +52,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-            marginLeft: '0',
-          }
+              marginLeft: '0',
+            }
       }
     >
       <ReactMarkdown>

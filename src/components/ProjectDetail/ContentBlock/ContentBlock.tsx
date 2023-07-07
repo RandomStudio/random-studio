@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { BLOCK_TYPES, CarouselBlock, ImageBlock, TextBlock, VideoBlock } from '../../../types';
+import { BLOCK_TYPES, CarouselBlock, GenericBlockAttributes, ImageBlock, TextBlock, VideoBlock } from '../../../types';
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
@@ -10,20 +10,17 @@ import styles from './ContentBlock.module.scss';
 type ContentBlockProps = {
   __typename: string,
   blocks?: ContentBlockProps[]
-  width: number,
-  id: string,
-  marginLeft: number,
-  marginTop: number,
-}
+} & GenericBlockAttributes;
 
 const ContentBlock = ({
-    __typename,
-    blocks,
-    width,
-    id,
-    marginLeft,
-    marginTop,
-    ...blockProps
+  __typename,
+  blocks,
+  width,
+  id,
+  marginLeft,
+  marginTop,
+  anchorId,
+  ...blockProps
 }: ContentBlockProps) => {
   const renderBlock = () => {
     if (__typename === BLOCK_TYPES.ImageBlockRecord) {
@@ -78,19 +75,22 @@ const ContentBlock = ({
       )
     }
 
-    {__typename === BLOCK_TYPES.HorizontalRowRecord && blocks && (
-      <div className={styles.horizontalRow}>
-        {blocks?.map(subblock => (
-          <ContentBlock {...subblock} key={subblock.id} />
-        ))}
-      </div>
-    )}
+    {
+      __typename === BLOCK_TYPES.HorizontalRowRecord && blocks && (
+        <div className={styles.horizontalRow}>
+          {blocks?.map(subblock => (
+            <ContentBlock {...subblock} key={subblock.id} />
+          ))}
+        </div>
+      )
+    }
   };
 
   return (
     <div
       className={styles.item}
       key={id}
+      id={anchorId}
       style={{
         '--marginLeft': `${marginLeft}vw`,
         '--marginTop': `calc(${width}vw * ${marginTop / 100})`,
