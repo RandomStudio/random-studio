@@ -6,7 +6,6 @@ import styles from "./Credits.module.scss";
 
 type CreditsProps = {
   credits: CreditsType[];
-  details: { [key: string]: string };
   externalUrl: string;
 };
 
