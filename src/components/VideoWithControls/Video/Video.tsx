@@ -63,7 +63,7 @@ const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMou
     if (isAutoplaying) {
       handlePlay()
     }
-  }, [isAutoplaying,isMounted, ref, video.hls]);
+  }, [isAutoplaying, isMounted, ref, video.hls]);
 
   useEffect(() => {
     if (!ref.current) {
@@ -79,7 +79,7 @@ const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMou
 
 
   const fallbackMp4Src = useMemo<string>(() => {
-    const {baseUrl, sources} = video;
+    const { baseUrl, sources } = video;
 
     const sizes = sources
       .map(source => parseInt(source.replace('p', '')))
