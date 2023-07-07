@@ -31,11 +31,11 @@ const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMou
       return;
     }
 
-try {
-  await ref.current.play();
-  onPlayStateChange(true);
-  setHasFailed(false);
-} catch (err) {
+    try {
+      await ref.current.play();
+      onPlayStateChange(true);
+      setHasFailed(false);
+    } catch (err) {
       console.warn(err);
       onPlayStateChange(false);
     } finally {
@@ -63,7 +63,7 @@ try {
     if (isAutoplaying) {
       handlePlay()
     }
-  }, [isAutoplaying,isMounted, ref, video.hls]);
+  }, [isAutoplaying, isMounted, ref, video.hls]);
 
   useEffect(() => {
     if (!ref.current) {
@@ -79,7 +79,7 @@ try {
 
 
   const fallbackMp4Src = useMemo<string>(() => {
-    const {baseUrl, sources} = video;
+    const { baseUrl, sources } = video;
 
     const sizes = sources
       .map(source => parseInt(source.replace('p', '')))
