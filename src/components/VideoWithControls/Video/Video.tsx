@@ -95,7 +95,7 @@ const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMou
     <div
       className={`${styles.frame} ${hasLoadedClassName}`}
       style={{
-        '--aspectRatio': `${video.width} / ${video.height}`,
+        aspectRatio: video.width / video.height
       } as CSSProperties}
     >
       {isMounted ? (
