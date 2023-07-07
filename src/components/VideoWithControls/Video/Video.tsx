@@ -95,7 +95,7 @@ const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMou
     <div
       className={`${styles.frame} ${hasLoadedClassName}`}
       style={{
-        '--aspectRatio': `${video.width} / ${video.height}`,
+        aspectRatio: video.width / video.height
       } as CSSProperties}
     >
       {isMounted ? (
@@ -118,6 +118,9 @@ const Video = ({ isAutoplaying = true, isPlaying = true, isLooping = true, isMou
           aria-hidden
           className={styles.placeholder}
           src={`data:image/jpeg;base64,${video.blur}`}
+          style={{
+            aspectRatio: video.width / video.height
+          }}
         />
       )}
     </div>
