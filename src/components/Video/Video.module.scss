@@ -5,12 +5,9 @@
   overflow: hidden;
   width: auto;
   height: auto;
-
-  video {
-    &::-webkit-media-controls-panel {
-      background: none;
-    }
-    // position: absolute;
+  > div {
+    width: 100%;
+    height: 100%;
     top: 0;
     width: 100%;
     height: 100%;
@@ -18,6 +15,15 @@
     right: 0;
     bottom: 0;
     object-fit: cover;
+  }
+  :global(.video-js) {
+    width: 100%;
+    height: 100% !important;
+    padding: 0 !important;
+
+    video {
+      position: relative;
+    }
   }
 }
 
@@ -33,6 +39,7 @@
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: 1;
 
   .isLoaded & {
     opacity: 0;

@@ -4,7 +4,7 @@ import { BLOCK_TYPES, CarouselBlock, GenericBlockAttributes, ImageBlock, TextBlo
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
-import VideoWithControls from '../../VideoWithControls/VideoWithControls';
+import Video from '../../Video/Video';
 import styles from './ContentBlock.module.scss';
 
 type ContentBlockProps = {
@@ -43,8 +43,8 @@ const ContentBlock = ({
       const { caption, hasAudio, hasControls, autoplay, loops, video } = blockProps as VideoBlock;
       return (
         <>
-          <VideoWithControls
-            hasAudio={hasAudio}
+          <Video
+            isMuted={autoplay}
             hasControls={hasControls}
             isAutoplaying={autoplay}
             isLooping={loops}

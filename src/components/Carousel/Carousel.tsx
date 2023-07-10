@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Image } from 'react-datocms';
 import styles from './Carousel.module.css';
-import VideoWithControls from '../VideoWithControls/VideoWithControls';
+import Video from '../Video/Video';
 import { Slide } from '../../types';
 
 type CarouselProps = {
@@ -35,7 +35,7 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
               onClick={handleNext}
             >
               {video && (
-                <VideoWithControls video={video} />
+                <Video video={video} isAutoplaying={true} isLooping={true} hasControls={false} isMuted={true} />
               )}
 
               {image && (

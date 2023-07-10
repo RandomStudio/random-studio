@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const LazyLoad = ({ children }) => {
+const LazyLoad = ({ children, callback }) => {
   const ref = useRef(null);
 
   const [hasIntersected, setHasIntersected] = useState(false);
@@ -15,7 +15,11 @@ const LazyLoad = ({ children }) => {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            console.log(callback)
             setHasIntersected(true);
+            if (callback) {
+              callback();
+            }
             observer.disconnect();
           }
         });
@@ -37,9 +41,9 @@ const LazyLoad = ({ children }) => {
   }, [ref]);
 
   return (
-      <div ref={ref}>
-        {children({ hasIntersected })}
-      </div>
+    <div ref={ref}>
+      {children({ hasIntersected })}
+    </div>
   );
 }
 

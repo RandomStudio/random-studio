@@ -3,7 +3,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './Project.module.scss';
-import VideoWithControls from '../VideoWithControls/VideoWithControls.tsx';
+import Video from '../Video/Video.tsx';
 import Image from '../Image/Image.tsx';
 import { imageDataPropType, videoPropType } from '../../propTypes';
 
@@ -29,10 +29,10 @@ const Project = ({
   >
     <div className={styles.media}>
       {featuredVideo ? (
-        <VideoWithControls
+        <Video
           autoplay
           hasAudio={false}
-          hasControls={false}
+          hasControls
           loops
           video={featuredVideo}
           width={width}
@@ -52,8 +52,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-              marginLeft: '0',
-            }
+            marginLeft: '0',
+          }
       }
     >
       <ReactMarkdown>

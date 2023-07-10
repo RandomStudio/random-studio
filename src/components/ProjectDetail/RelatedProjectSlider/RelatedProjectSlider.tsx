@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
-import VideoWithControls from '../../VideoWithControls/VideoWithControls';
+import Video from '../../Video/Video';
 import Image from '../../Image/Image';
-import { RelatedProject  } from '../../../types';
+import { RelatedProject } from '../../../types';
 
 type RelatedProjectSliderProps = {
   relatedProjects: RelatedProject[],
@@ -34,9 +34,9 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }: Related
                 )}
 
                 {featuredVideo && (
-                  <VideoWithControls
+                  <Video
                     hasControls={false}
-                    hasAudio={false}
+                    isMuted={true}
                     isAutoplaying
                     isLooping
                     video={featuredVideo}
