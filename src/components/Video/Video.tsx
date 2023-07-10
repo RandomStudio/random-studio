@@ -3,8 +3,6 @@ import React, {
   useState,
   useEffect,
   useRef,
-  useMemo,
-  useCallback,
   CSSProperties,
 } from 'react';
 import styles from './Video.module.scss';
@@ -13,8 +11,6 @@ import LazyLoad from '../LazyLoad/LazyLoad';
 
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-
-
 
 export type VideoProps = {
   hasControls: boolean,
@@ -26,17 +22,17 @@ export type VideoProps = {
 };
 
 const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isLooping = true, isMuted = true, video }: VideoProps) => {
-  const videoRef = React.useRef(null);
-  const playerRef = React.useRef(null);
-  const initLoad = useRef(true);
+  const videoRef = useRef(null);
+  const playerRef = useRef(null);
+  const isFirstLoad = useRef(true);
 
   const [hasLoaded, setHasLoaded] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
 
-    if (initLoad.current && videoRef.current) {
-      initLoad.current = false;
+    if (isFirstLoad.current && videoRef.current) {
+      isFirstLoad.current = false;
       const videoElement = document.createElement("video-js");
 
       videoElement.classList.add('vjs-big-play-centered');
