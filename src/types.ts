@@ -20,7 +20,7 @@ export type OpenGraph = {
   image: ImageData,
 };
 
-export type RelatedProject = {
+export type ProjectSummary = {
   title: string,
   slug: string,
   intro: string,

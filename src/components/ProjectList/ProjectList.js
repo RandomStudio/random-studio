@@ -8,6 +8,7 @@ import Project from '../Project/Project';
 import { HOMEPAGE_POSTS_LIMIT, LAYOUT, ORDERED_TAGS } from '../../CONSTANTS';
 import Crossfade from '../Crossfade/Crossfade';
 import { projectPropType } from '../../propTypes';
+import Markdown from '../Markdown/Markdown';
 
 const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
   const [activeTag, setActiveTag] = useState(null);
@@ -38,7 +39,7 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
       <ul aria-label="Highlighted projects" className={styles.projects}>
         {intro && (
           <div className={styles.statement}>
-            <ReactMarkdown>{intro}</ReactMarkdown>
+            <Markdown markdown={intro} />
           </div>
         )}
 
