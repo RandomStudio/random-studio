@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import styles from './Layout.module.css';
 import useSunset from '../../utils/hooks/useSunset';
-import classNames from '../../utils/classNames';
 import AfterDarkContext from './AfterDarkContext';
 
 const Layout = ({
@@ -21,12 +21,11 @@ const Layout = ({
     [styles.newLayout]: isNewDesign,
     [styles.oldLayout]: !isNewDesign,
     [styles.isAfterDark]: isDarkStyleActive,
-    isAfterDark: isDarkStyleActive,
   });
 
   return (
     <AfterDarkContext.Provider value={isAfterDark}>
-      <div className={layoutClasses}>
+      <div className={`${layoutClasses} ${isDarkStyleActive && 'isAfterDark'}`}>
         <a className="screen-reader-only" href="#main-content" id="skip-nav">
           {'Skip Navigation'}
         </a>

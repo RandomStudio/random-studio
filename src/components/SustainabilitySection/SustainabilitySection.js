@@ -1,17 +1,15 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import styles from './SustainabilitySection.module.css';
 import Image from '../Image/Image';
-import classNames from '../../utils/classNames';
 import { externalLinkRenderer } from '../../utils/externalLinkRenderer';
 
 const SustainabilitySection = ({ section }) => {
   const { image, text, title, textFirst, color } = section;
 
-  const sectionClasses = classNames({
-    [styles.section]: true,
+  const sectionClasses = classNames(styles.section, styles[color], {
     [styles.reverse]: textFirst,
-    [styles[color]]: true,
   });
 
   return (
