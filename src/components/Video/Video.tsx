@@ -33,7 +33,6 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
   const [hasLoaded, setHasLoaded] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-
   useEffect(() => {
 
     if (initLoad.current && videoRef.current) {
@@ -112,9 +111,11 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
             }}
           />
 
-          {isMounted ? <div ref={videoRef} className={styles.video} style={aspectRatioStyle as CSSProperties} /> : null}
+          {isMounted && <div ref={videoRef} className={styles.video} style={aspectRatioStyle as CSSProperties} />}
 
-        </div>)}</LazyLoad>
+        </div>
+      )}
+    </LazyLoad>
   );
 }
 export default Video;
