@@ -88,26 +88,23 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
 
   const aspectRatioStyle = { aspectRatio: video.width / video.height }
 
-
   return (
     <LazyLoad callback={() => setIsMounted(true)}>
       {({ hasIntersected }) => (
         <div
           data-vjs-player
           className={`${styles.frame} ${hasLoadedClassName}`}
-          style={aspectRatioStyle as CSSProperties}
+          style={aspectRatioStyle}
         >
 
           <img
             aria-hidden
             className={styles.placeholder}
             src={`data:image/jpeg;base64,${video.blur}`}
-            style={{
-              aspectRatio: video.width / video.height
-            }}
+            style={aspectRatioStyle}
           />
 
-          {isMounted && <div ref={videoRef} className={styles.video} style={aspectRatioStyle as CSSProperties} />}
+          {isMounted && <div ref={videoRef} className={styles.video} style={aspectRatioStyle} />}
 
         </div>
       )}
