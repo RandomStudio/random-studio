@@ -3,9 +3,14 @@
   position: relative;
   contain: layout style paint;
   overflow: hidden;
+  width: auto;
+  height: auto;
 
   video {
-   // position: absolute;
+    &::-webkit-media-controls-panel {
+      background: none;
+    }
+    // position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
@@ -24,6 +29,10 @@
   transition: opacity 300ms ease-in;
   filter: blur(20px);
   transform: scale(1.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 
   .isLoaded & {
     opacity: 0;

@@ -76,28 +76,13 @@ const VideoWithControls = ({
             isAutoplaying={isAutoplaying}
             isLooping={isLooping}
             isMounted={hasIntersected}
+            hasControls={hasControls}
             isMuted={!hasAudio || isCurrentlyMuted}
             isPlaying={isPlaying}
             onPlayStateChange={setIsPlaying}
             video={video}
           />
 
-          {hasControls &&
-            (hasPlayed ? (
-              <div className={styles.videoControls}>
-                <button onClick={handleTapPlayPause} type="button">
-                  {isPlaying ? 'Pause' : 'Play'}
-                </button>
-
-                {hasAudio && (
-                  <button onClick={handleTapVolumeToggle} type="button">
-                    {isCurrentlyMuted ? 'Unmute' : 'Mute'}
-                  </button>
-                )}
-              </div>
-            ) : (
-              <div className={styles.beforeFirstPlay}>{'Play video'}</div>
-            ))}
         </div>
       )}
     </LazyLoad>
