@@ -15,12 +15,12 @@ const LazyLoad = ({ children, callback }) => {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log(callback)
             setHasIntersected(true);
+            observer.disconnect();
+
             if (callback) {
               callback();
             }
-            observer.disconnect();
           }
         });
       },
