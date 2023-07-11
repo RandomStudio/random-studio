@@ -7,9 +7,7 @@ import BackScrim from './BackScrim/BackScrim';
 import {
   ContentBlockType,
   CreditsType,
-  OpenGraph,
-  RelatedProject,
-  VideoData,
+  ProjectSummary,
 } from '../../types'
 
 import Credits from './Credits/Credits';
@@ -21,7 +19,7 @@ type ProjectDetailProps = {
   externalUrl: string;
   intro: string;
   relatedProjectsTitle: string;
-  relatedProjects: RelatedProject[];
+  relatedProjects: ProjectSummary[];
   title: string;
 };
 
