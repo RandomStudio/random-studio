@@ -20,8 +20,8 @@ Static website for Random Studio, built using Next.js.
 - Files are saved under `/cms/backups` and committed to master branch
 
 ## Technical notes
-- For development, environment variable `NEXT_DATOCMS_API_TOKEN` should be set. Normally devs would create a `.env` file (ignored by git) to store these variables. The values for these tokens can be found in Lastpass as a note called "random.studio .env file".
+- For development, environment variables `NEXT_DATOCMS_API_TOKEN` and `BUNNY_TOKEN` should be set. Normally devs would create a `.env` file (ignored by git) to store these variables. The values for these tokens can be found in Lastpass as a note called "random.studio .env file".
 -  `package-lock.json` has been disabled. This avoids an issue with Next.js's new SWC Rust based compiler package. If lock file exists, npm will always try to install the same build that is supported by the CPU of the user who first create the lock file. When collaborating across ARM, x86 etc it is easier to disable the lock file and let npm pull the right version on each run.
 -  Based on above point, all package versions should be explicitly locked.
--  We do not host video files on DatoCMS, rather we host videos on Vimeo and use the CMS's built in external videos block to link to these. Dato will pull a good amount of basic info for each video, but we run an additional script at build time to add further info to each video. This allows us to generate blurred thumbnails etc.
+-  We do not host video files on DatoCMS, rather we host videos on BunnyCDN and add the video's ID to Dato. When fetching the data at build time, we look for these fields and fetch additional info about the video – eg: aspect ratio, thumbnail, etc – from Bunny to be able to better lay out the video content blocks.
 -  Each time we get video information from the Bunny CDN, we cache it for future runs in `.videoCache.json`. This should be kept out of version control to avoid conflicts.
