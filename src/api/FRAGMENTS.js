@@ -51,11 +51,11 @@ export const THUMBNAIL_FRAGMENT = `
 
 export const RELATED_THUMBNAIL_FRAGMENT = `
   ${IMAGE_DATA_OBJECT_FRAGMENT_FUNC(
-  'RelatedImageDataObject',
-  816,
-  1024,
-  'crop',
-)}
+    'RelatedImageDataObject',
+    816,
+    1024,
+    'crop',
+  )}
   fragment RelatedThumbnail on ProjectRecord {
     featuredImage {
       ...RelatedImageDataObject

@@ -39,3 +39,25 @@
     white-space: pre-line;
   }
 }
+
+.externalUrl {
+  grid-column: 1 / 3;
+  padding-top: 44px;
+  position: relative;
+  color: var(--dark-grey);
+
+  @supports (width: fit-content) {
+    text-decoration: none;
+    width: fit-content;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--dark-grey);
+      content: '';
+    }
+  }
+}
