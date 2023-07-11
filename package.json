@@ -12,7 +12,6 @@
     "launch-server": "npm install --dev && npm run start",
     "launch": "pm2 start npm --name 'randomstudio' -- run launch-server && pm2 save",
     "backup": "node ./cms/backups/backup-dato.mjs",
-    "migrate": "nodemon ./cms/tools/migrate-vimeo.ts",
     "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
   },
   "dependencies": {
