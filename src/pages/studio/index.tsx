@@ -114,10 +114,7 @@ export const getStaticProps = async ({ preview }) => {
   });
 
   return {
-    props: {
-      ...page,
-      blocks: await addAdditionalInfoToBlocks(page.blocks),
-    },
+    props: page,
   };
 };
 
