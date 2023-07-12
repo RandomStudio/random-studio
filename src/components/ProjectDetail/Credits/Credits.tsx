@@ -6,9 +6,10 @@ import styles from "./Credits.module.scss";
 
 type CreditsProps = {
   credits: CreditsType[];
+  externalUrl: string;
 };
 
-export const Credits = ({ credits }: CreditsProps) => {
+export const Credits = ({ credits, externalUrl }: CreditsProps) => {
   return (
     <dl aria-label="Project Details" className={styles.wrapper}>
       {credits.map((credit) => (
@@ -26,6 +27,7 @@ export const Credits = ({ credits }: CreditsProps) => {
           </dd>
         </React.Fragment>
       ))}
+      {externalUrl && <a className={styles.externalUrl} href={externalUrl} target="_blank" rel="noreferrer noopener">View website</a>}
     </dl>
   );
 };
