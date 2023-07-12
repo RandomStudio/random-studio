@@ -66,7 +66,8 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
         controls: hasControls,
         fluid: true,
         controlBar: {
-          pictureInPictureToggle: false
+          pictureInPictureToggle: false, //firefox
+          subsCapsButton: false //safari
         },
         loop: isLooping,
       }, () => onPlayerReady(player));
