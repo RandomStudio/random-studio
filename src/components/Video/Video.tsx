@@ -1,9 +1,7 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 import React, {
   useState,
   useEffect,
-  useRef,
-  CSSProperties,
+  useRef
 } from 'react';
 import styles from './Video.module.scss';
 import { VideoData } from '../../types';
