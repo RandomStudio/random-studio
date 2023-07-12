@@ -28,6 +28,11 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
   const [isMounted, setIsMounted] = useState(false);
 
 
+  if (!video) {
+    return <div className={`${styles.frame} ${styles.brokenVideo}`} />
+  }
+
+
   const onPlayerReady = (player) => {
 
     // TODO: Add custom buttons on the player (download)
@@ -44,7 +49,7 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
 
   useEffect(() => {
 
-    if (isFirstLoad.current && videoRef.current) {
+    if (isFirstLoad.current && videoRef.current && video) {
       isFirstLoad.current = false;
       const videoElement = document.createElement("video-js");
 
@@ -69,7 +74,6 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
       // Only consider the video loaded after it starts playing
       player.on('progress', () => {
         if (!hasLoaded) {
-          console.log('goo')
           setHasLoaded(true)
         }
       })
