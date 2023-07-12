@@ -27,6 +27,21 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
   const [hasLoaded, setHasLoaded] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
+
+  const onPlayerReady = (player) => {
+
+    // TODO: Add custom buttons on the player (download)
+
+    // let downloadButtonElement = document.createElement('button')
+    // downloadButtonElement.innerHTML = '⤓';
+
+    // console.log(player.controlBar);
+
+    // player.controlBar.el().insertBefore(downloadButtonElement, player.controlBar.getChild('FullscreenToggle').el());
+
+    // player.addClass('vjs-vjsdownload');
+  };
+
   useEffect(() => {
 
     if (isFirstLoad.current && videoRef.current) {
@@ -45,10 +60,11 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
         muted: isMuted,
         controls: hasControls,
         fluid: true,
+        controlBar: {
+          pictureInPictureToggle: false
+        },
         loop: isLooping,
-      }, () => {
-        videojs.log('player is ready');
-      });
+      }, () => onPlayerReady(player));
 
       // Only consider the video loaded after it starts playing
       player.on('progress', () => {
