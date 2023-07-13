@@ -32,7 +32,6 @@ const Project = ({
         <Video
           autoplay
           hasAudio={false}
-          hasControls
           loops
           video={featuredVideo}
           width={width}

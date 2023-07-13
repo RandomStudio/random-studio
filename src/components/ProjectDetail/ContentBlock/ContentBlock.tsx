@@ -94,7 +94,7 @@ const ContentBlock = ({
       style={{
         '--marginLeft': `${marginLeft}vw`,
         '--marginTop': `calc(${width}vw * ${marginTop / 100})`,
-        '--width': `${width}vw`,
+        '--width': `${width}%`,
       } as CSSProperties}
     >
       {renderBlock()}
