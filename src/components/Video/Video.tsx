@@ -110,7 +110,7 @@ const Video = ({
   const aspectRatioStyle = { aspectRatio: video.width / video.height }
 
   return (
-    <LazyLoad handleOnIntersected={handleLoadVideo}>
+    <LazyLoad onIntersect={handleLoadVideo}>
       <div
         data-vjs-player
         className={`${styles.frame} ${hasLoadedClassName}`}
