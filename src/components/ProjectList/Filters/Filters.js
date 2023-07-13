@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './Filters.module.scss';
-import classNames from '../../../utils/classNames';
 import { projectPropType } from '../../../propTypes';
 import { ORDERED_TAGS } from '../../../CONSTANTS';
 
