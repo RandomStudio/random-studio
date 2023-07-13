@@ -27,9 +27,8 @@ const Video = ({
   isMuted = true,
   video
 }: VideoProps) => {
-  const videoRef = useRef(null);
+  const videoContainerRef = useRef(null);
   const playerRef = useRef(null);
-  const isFirstLoad = useRef(true);
 
   const [hasLoaded, setHasLoaded] = useState(false);
 
@@ -54,10 +53,9 @@ const Video = ({
   };
 
   const handleLoadVideo = () => {
-    isFirstLoad.current = false;
-    const videoElement = document.createElement("video-js");
 
-    videoRef.current.appendChild(videoElement);
+    const videoElement = document.createElement("video-js");
+    videoContainerRef.current.appendChild(videoElement);
 
     const player = playerRef.current = videojs(videoElement, {
       sources: [{
@@ -123,7 +121,7 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
-        <div ref={videoRef} className={styles.video} style={aspectRatioStyle} />
+        <div ref={videoContainerRef} style={aspectRatioStyle} />
 
       </div>
     </LazyLoad>
