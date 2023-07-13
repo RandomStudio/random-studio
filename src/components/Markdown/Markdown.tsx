@@ -3,7 +3,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import rehypeRaw from "rehype-raw";
 
 const externalLinkRenderer = ({ href, children }: { href?: string, children: ReactNode & ReactNode[] }) => {
-  const isInternalLink = new URL(href).hostname.includes('https://random.studio');
+  const isInternalLink = new URL(href).hostname.includes('random.studio');
 
   return (
     <a href={href} rel="noreferrer" target={isInternalLink ? '' : '_blank'}>
