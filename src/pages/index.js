@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getDataFromBackend from '../api/getDataFromBackend';
-import { getVideoData } from '../api/videos/getVideoData.mjs';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
@@ -39,13 +38,7 @@ export const getStaticProps = async ({ preview }) => {
   return {
     props: {
       ...page,
-      video: await getVideoData(page.video),
-      projects: await Promise.all(
-        projects.map(async project => ({
-          ...project,
-          featuredVideo: await getVideoData(project.featuredVideo),
-        })),
-      ),
+      projects,
     },
   };
 };
