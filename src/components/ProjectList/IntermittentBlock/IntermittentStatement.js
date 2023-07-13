@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import styles from './IntermittentBlock.module.scss';
+import Markdown from '../../Markdown/Markdown';
 
 const IntermittentStatement = ({ middle }) => (
   <div className={`${styles.wrapper} ${styles.statementBlock}`}>
-    <ReactMarkdown>{middle}</ReactMarkdown>
+    <Markdown markdown={middle} />
   </div>
 );
 

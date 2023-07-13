@@ -26,25 +26,23 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
       <div className={styles.slides}>
         {slides.map(({ id, video, image }, index) => (
           <div
-            className={styles.image}
+            className={styles.slide}
             data-visible={index === currentIndex}
             key={id}
+            onClick={handleNext}
           >
-            <div
-              className={slides.length > 1 && styles.hasMultiple}
-              onClick={handleNext}
-            >
-              {video && (
+            {video && (
                 <Video video={video} isAutoplaying={true} isLooping={true} hasControls={false} isMuted={true} />
               )}
 
-              {image && (
-                <Image
-                  data={image.imageData}
-                  sizes={sizes}
-                />
-              )}
-            </div>
+            {image && (
+              <Image
+                className={styles.image}
+                data={image.imageData}
+                sizes={sizes}
+                layout={index === 0 ? 'responsive' : 'fill'}
+              />
+            )}
           </div>
         ))}
       </div>

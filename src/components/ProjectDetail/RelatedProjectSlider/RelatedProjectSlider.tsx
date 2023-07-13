@@ -4,10 +4,10 @@ import Link from 'next/link';
 import styles from './RelatedProjectSlider.module.scss';
 import Video from '../../Video/Video';
 import Image from '../../Image/Image';
-import { RelatedProject } from '../../../types';
+import { ProjectSummary } from '../../../types';
 
 type RelatedProjectSliderProps = {
-  relatedProjects: RelatedProject[],
+  relatedProjects: ProjectSummary[],
   relatedProjectsTitle: string,
 };
 

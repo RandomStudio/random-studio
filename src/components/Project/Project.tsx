@@ -1,14 +1,20 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import Markdown from '../Markdown/Markdown';
 import styles from './Project.module.scss';
-import Video from '../Video/Video.tsx';
-import Image from '../Image/Image.tsx';
-import { imageDataPropType, videoPropType } from '../../propTypes';
+import Video from '../Video/Video';
+import Image from '../Image/Image';
+import { ProjectSummary } from '../../types.js';
+
+type Project = ProjectSummary & {
+  className?: string,
+  left: number,
+  top: number,
+  width: number,
+};
 
 const Project = ({
-  className,
+  className = '',
   featuredImage,
   featuredVideo,
   left,
@@ -34,7 +40,6 @@ const Project = ({
           hasAudio={false}
           loops
           video={featuredVideo}
-          width={width}
         />
       ) : (
         <Image
@@ -55,30 +60,9 @@ const Project = ({
           }
       }
     >
-      <ReactMarkdown>
-        {title.replace('<br />', '<br>').replace('<br>', '\n\n')}
-      </ReactMarkdown>
+      <Markdown markdown={title} />
     </div>
   </Link>
 );
-
-Project.propTypes = {
-  className: PropTypes.string,
-  featuredImage: PropTypes.shape({
-    imageData: imageDataPropType,
-  }),
-  featuredVideo: videoPropType,
-  left: PropTypes.number.isRequired,
-  slug: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  top: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired,
-};
-
-Project.defaultProps = {
-  className: '',
-  featuredImage: null,
-  featuredVideo: null,
-};
 
 export default Project;

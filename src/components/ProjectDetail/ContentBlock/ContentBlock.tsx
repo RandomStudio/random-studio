@@ -6,6 +6,7 @@ import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
 import Video from '../../Video/Video';
 import styles from './ContentBlock.module.scss';
+import Markdown from '../../Markdown/Markdown';
 
 type ContentBlockProps = {
   __typename: string,
@@ -70,7 +71,7 @@ const ContentBlock = ({
       const { text } = blockProps as TextBlock;
       return (
         <div className={styles.text}>
-          <ReactMarkdown linkTarget="_blank">{text}</ReactMarkdown>
+          <Markdown markdown={text} />
         </div>
       )
     }
