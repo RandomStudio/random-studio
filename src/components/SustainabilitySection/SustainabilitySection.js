@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import styles from './SustainabilitySection.module.css';
 import Image from '../Image/Image';
-import { externalLinkRenderer } from '../../utils/externalLinkRenderer';
+import Markdown from '../Markdown/Markdown';
 
 const SustainabilitySection = ({ section }) => {
   const { image, text, title, textFirst, color } = section;
@@ -22,9 +22,7 @@ const SustainabilitySection = ({ section }) => {
         <div className={styles.content}>
           {title && <h2 className={styles.title}>{title}</h2>}
 
-          <ReactMarkdown components={{ a: externalLinkRenderer }}>
-            {text}
-          </ReactMarkdown>
+          <Markdown markdown={text} />
         </div>
       </div>
     </section>

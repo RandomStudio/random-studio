@@ -13,7 +13,7 @@ import {
   ContentBlockType,
   CreditsType,
   OpenGraph,
-  RelatedProject,
+  ProjectSummary,
 } from '../../../types';
 
 type ProjectProps = {
@@ -24,7 +24,7 @@ type ProjectProps = {
   id: string;
   intro: string;
   relatedProjectsTitle: string;
-  relatedProjects: RelatedProject[];
+  relatedProjects: ProjectSummary[];
   opengraph: OpenGraph;
   title: string;
 };

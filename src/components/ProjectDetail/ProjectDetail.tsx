@@ -7,12 +7,11 @@ import BackScrim from './BackScrim/BackScrim';
 import {
   ContentBlockType,
   CreditsType,
-  OpenGraph,
-  RelatedProject,
-  VideoData,
+  ProjectSummary,
 } from '../../types'
 
 import Credits from './Credits/Credits';
+import Markdown from '../Markdown/Markdown';
 
 type ProjectDetailProps = {
   credits: CreditsType[];
@@ -20,7 +19,7 @@ type ProjectDetailProps = {
   externalUrl: string;
   intro: string;
   relatedProjectsTitle: string;
-  relatedProjects: RelatedProject[];
+  relatedProjects: ProjectSummary[];
   title: string;
 };
 
@@ -36,13 +35,11 @@ const ProjectDetail = ({
   return (
     <div className={styles.project}>
       <h1 className={styles.title}>
-        <ReactMarkdown>{title.replace('<br>', '\n\n')}</ReactMarkdown>
+        <Markdown markdown={title} />
       </h1>
 
       <div className={styles.intro}>
-        <ReactMarkdown linkTarget="_blank">
-          {intro.replace('<br>', '\n\n')}
-        </ReactMarkdown>
+        <Markdown markdown={intro} />
       </div>
 
       {content?.map(block => (
