@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const LazyLoad = ({ children }) => {
+const LazyLoad = ({ children, onIntersect }) => {
   const ref = useRef(null);
 
   const [hasIntersected, setHasIntersected] = useState(false);
@@ -17,6 +17,10 @@ const LazyLoad = ({ children }) => {
           if (entry.isIntersecting) {
             setHasIntersected(true);
             observer.disconnect();
+
+            if (onIntersect) {
+              onIntersect();
+            }
           }
         });
       },
@@ -37,9 +41,9 @@ const LazyLoad = ({ children }) => {
   }, [ref]);
 
   return (
-      <div ref={ref}>
-        {children({ hasIntersected })}
-      </div>
+    <div ref={ref}>
+      {children}
+    </div>
   );
 }
 

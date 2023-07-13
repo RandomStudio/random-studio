@@ -4,7 +4,7 @@ import { BLOCK_TYPES, CarouselBlock, GenericBlockAttributes, ImageBlock, TextBlo
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
-import VideoWithControls from '../../VideoWithControls/VideoWithControls';
+import Video from '../../Video/Video';
 import styles from './ContentBlock.module.scss';
 import Markdown from '../../Markdown/Markdown';
 
@@ -44,8 +44,8 @@ const ContentBlock = ({
       const { caption, hasAudio, hasControls, autoplay, loops, video } = blockProps as VideoBlock;
       return (
         <>
-          <VideoWithControls
-            hasAudio={hasAudio}
+          <Video
+            isMuted={autoplay}
             hasControls={hasControls}
             isAutoplaying={autoplay}
             isLooping={loops}
@@ -95,7 +95,7 @@ const ContentBlock = ({
       style={{
         '--marginLeft': `${marginLeft}vw`,
         '--marginTop': `calc(${width}vw * ${marginTop / 100})`,
-        '--width': `${width}vw`,
+        '--width': `${width}%`,
       } as CSSProperties}
     >
       {renderBlock()}

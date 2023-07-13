@@ -29,6 +29,7 @@ type ProjectProps = {
   title: string;
 };
 
+
 const Project = ({
   content,
   credits,

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Markdown from '../Markdown/Markdown';
 import styles from './Project.module.scss';
-import VideoWithControls from '../VideoWithControls/VideoWithControls';
+import Video from '../Video/Video';
 import Image from '../Image/Image';
 import { ProjectSummary } from '../../types.js';
 
@@ -35,8 +35,7 @@ const Project = ({
   >
     <div className={styles.media}>
       {featuredVideo ? (
-        <VideoWithControls
-          hasControls={false}
+        <Video
           video={featuredVideo}
         />
       ) : (

@@ -1,18 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import getDataFromBackend from '../api/getDataFromBackend';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
-import { projectPropType, videoPropType } from '../propTypes';
+import { Project, VideoData } from '../types';
+
+type HomeTypes = {
+  collaborator: string;
+  collaborationurl: string;
+  intro: string;
+  isLogoCentred: boolean;
+  projects: Project[];
+  video: VideoData;
+}
 
 const Home = ({
   collaborator,
   collaborationUrl,
   intro,
-  isLogoCentred,
+  isLogoCentred = false,
   projects,
   video,
 }) => (
@@ -41,19 +49,6 @@ export const getStaticProps = async ({ preview }) => {
       projects,
     },
   };
-};
-
-Home.propTypes = {
-  collaborationUrl: PropTypes.string.isRequired,
-  collaborator: PropTypes.string.isRequired,
-  intro: PropTypes.string.isRequired,
-  isLogoCentred: PropTypes.bool,
-  projects: PropTypes.arrayOf(projectPropType).isRequired,
-  video: videoPropType.isRequired,
-};
-
-Home.defaultProps = {
-  isLogoCentred: false,
 };
 
 export default Home;
