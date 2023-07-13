@@ -1,4 +1,5 @@
 import { GraphQLClient, RequestDocument } from 'graphql-request';
+import addAdditionalInfoToBlocks from './addAdditionalInfoToBlocks';
 
 const getDataFromBackend = async ({ query, variables, preview, }: { query: RequestDocument, variables?: unknown, preview?: boolean, }) => {
   const endpoint = 'https://graphql.datocms.com/';
@@ -13,8 +14,7 @@ const getDataFromBackend = async ({ query, variables, preview, }: { query: Reque
   });
 
   const data = await client.request(query, variables);
-
-  return data;
+  return await addAdditionalInfoToBlocks(data);
 };
 
 export default getDataFromBackend;
