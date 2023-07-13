@@ -19,13 +19,19 @@ export type VideoProps = {
   video: VideoData,
 };
 
-const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isLooping = true, isMuted = true, video }: VideoProps) => {
+const Video = ({
+  isAutoplaying = true,
+  hasControls = false,
+  isPlaying = true,
+  isLooping = true,
+  isMuted = true,
+  video
+}: VideoProps) => {
   const videoRef = useRef(null);
   const playerRef = useRef(null);
   const isFirstLoad = useRef(true);
 
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
 
   if (!video) {
@@ -47,44 +53,40 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
     // player.addClass('vjs-vjsdownload');
   };
 
-  useEffect(() => {
+  const handleLoadVideo = () => {
+    isFirstLoad.current = false;
+    const videoElement = document.createElement("video-js");
 
-    if (isFirstLoad.current && videoRef.current && video) {
-      isFirstLoad.current = false;
-      const videoElement = document.createElement("video-js");
+    videoRef.current.appendChild(videoElement);
 
-      videoElement.classList.add('vjs-big-play-centered');
-      videoRef.current.appendChild(videoElement);
+    const player = playerRef.current = videojs(videoElement, {
+      sources: [{
+        src: video.hls,
+        type: "application/x-mpegURL"
+      }],
+      autoplay: isAutoplaying,
+      muted: isMuted,
+      controls: hasControls,
+      fluid: true,
+      controlBar: {
+        pictureInPictureToggle: false, //firefox
+        subsCapsButton: false //safari
+      },
+      loop: isLooping,
+    }, () => onPlayerReady(player));
 
-      const player = playerRef.current = videojs(videoElement, {
-        sources: [{
-          src: video.hls,
-          type: "application/x-mpegURL"
-        }],
-        autoplay: isAutoplaying,
-        muted: isMuted,
-        controls: hasControls,
-        fluid: true,
-        controlBar: {
-          pictureInPictureToggle: false, //firefox
-          subsCapsButton: false //safari
-        },
-        loop: isLooping,
-      }, () => onPlayerReady(player));
+    // Only consider the video loaded after it starts playing
+    player.on('progress', () => {
+      if (!hasLoaded) {
+        setHasLoaded(true)
+      }
+    })
 
-      // Only consider the video loaded after it starts playing
-      player.on('progress', () => {
-        if (!hasLoaded) {
-          setHasLoaded(true)
-        }
-      })
-
-      // TODO: Connect to shared muted state
-      player.on('volumechange', () => {
-        console.log(player.muted())
-      })
-    }
-  }, [isMounted]);
+    // TODO: Connect to shared muted state
+    player.on('volumechange', () => {
+      console.log(player.muted())
+    })
+  };
 
   useEffect(() => {
     if (playerRef.current) {
@@ -108,25 +110,22 @@ const Video = ({ isAutoplaying = true, hasControls = true, isPlaying = true, isL
   const aspectRatioStyle = { aspectRatio: video.width / video.height }
 
   return (
-    <LazyLoad callback={() => setIsMounted(true)}>
-      {({ hasIntersected }) => (
-        <div
-          data-vjs-player
-          className={`${styles.frame} ${hasLoadedClassName}`}
+    <LazyLoad handleOnIntersected={handleLoadVideo}>
+      <div
+        data-vjs-player
+        className={`${styles.frame} ${hasLoadedClassName}`}
+      >
+
+        <img
+          aria-hidden
+          className={styles.placeholder}
+          src={`data:image/jpeg;base64,${video.blur}`}
           style={aspectRatioStyle}
-        >
+        />
 
-          <img
-            aria-hidden
-            className={styles.placeholder}
-            src={`data:image/jpeg;base64,${video.blur}`}
-            style={aspectRatioStyle}
-          />
+        <div ref={videoRef} className={styles.video} style={aspectRatioStyle} />
 
-          {isMounted && <div ref={videoRef} className={styles.video} style={aspectRatioStyle} />}
-
-        </div>
-      )}
+      </div>
     </LazyLoad>
   );
 }
