@@ -6,7 +6,7 @@ const externalLinkRenderer = ({ href, children }: { href?: string, children: Rea
   const isInternalLink = new URL(href).hostname.includes('random.studio');
 
   return (
-    <a href={href} rel="noreferrer" target={isInternalLink ? '' : '_blank'}>
+    <a href={href} rel={isInternalLink ? '' : 'noopener noreferrer'} target={isInternalLink ? '' : '_blank'}>
       {children}
     </a>
   );
