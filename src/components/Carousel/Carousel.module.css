@@ -4,25 +4,23 @@
 
 .slides {
   position: relative;
-}
-
-.hasMultiple {
   cursor: e-resize;
 }
 
-.image {
+.slide {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   opacity: 0;
 
-  &:not(:first-of-type) {
+  &:not(:first-child) {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
   }
 
-  & video {
-    width: 100%;
-  }
 
   &[data-visible="false"] {
     pointer-events: none;
@@ -32,6 +30,7 @@
     transition: opacity 1.2s;
     opacity: 1;
   }
+
 }
 
 .caption {
