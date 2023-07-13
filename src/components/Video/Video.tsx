@@ -11,10 +11,10 @@ import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 
 export type VideoProps = {
-  hasControls: boolean,
-  isAutoplaying: boolean
-  isLooping: boolean,
-  isMuted: boolean,
+  hasControls?: boolean,
+  isAutoplaying?: boolean
+  isLooping?: boolean,
+  isMuted?: boolean,
   isPlaying?: boolean,
   video: VideoData,
 };

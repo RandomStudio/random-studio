@@ -36,9 +36,6 @@ const Project = ({
     <div className={styles.media}>
       {featuredVideo ? (
         <Video
-          autoplay
-          hasAudio={false}
-          loops
           video={featuredVideo}
         />
       ) : (
