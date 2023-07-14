@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-/* eslint-disable react/destructuring-assignment */
-// eslint-disable-next-line react/require-optimization
-class ErrorBoundary extends React.Component {
+type ErrorBoundaryProps = {
+  children: ReactElement[];
+};
+
+type ErrorBoundaryState = {
+  hasError: boolean;
+};
+
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props) {
     super(props);
     this.state = { hasError: false };

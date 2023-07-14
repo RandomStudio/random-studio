@@ -7,9 +7,9 @@ import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
 import { Project, VideoData } from '../types';
 
-type HomeTypes = {
+type HomeProps = {
   collaborator: string;
-  collaborationurl: string;
+  collaborationUrl: string;
   intro: string;
   isLogoCentred: boolean;
   projects: Project[];
@@ -23,7 +23,7 @@ const Home = ({
   isLogoCentred = false,
   projects,
   video,
-}) => (
+}: HomeProps) => (
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
 

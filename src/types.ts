@@ -54,8 +54,8 @@ export type ProjectSummary = {
 
 export type Slide = {
   id: string;
-  imageData: Image;
-  video: VideoData;
+  imageData?: Image;
+  video?: VideoData;
 };
 
 export type CreditsType = {

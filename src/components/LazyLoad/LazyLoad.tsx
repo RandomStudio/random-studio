@@ -11,6 +11,7 @@ const LazyLoad = ({ children, onIntersect }) => {
     if (!currentRef || hasIntersected) {
       return undefined;
     }
+
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -35,7 +36,7 @@ const LazyLoad = ({ children, onIntersect }) => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
-
+      setHasIntersected(false)
       observer.disconnect();
     };
   }, [ref]);

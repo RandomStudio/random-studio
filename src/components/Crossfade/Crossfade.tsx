@@ -1,8 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Crossfade.module.scss';
 
-const Crossfade = ({ children, duration }) => {
+type CrossfadeProps = {
+  children: ReactElement;
+  duration?: number;
+};
+
+const Crossfade = ({ children, duration = 250 }: CrossfadeProps) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [visibleChildren, setVisibleChildren] = useState(children);
 
@@ -32,15 +37,6 @@ const Crossfade = ({ children, duration }) => {
       {visibleChildren}
     </div>
   );
-};
-
-Crossfade.propTypes = {
-  children: PropTypes.node.isRequired,
-  duration: PropTypes.number,
-};
-
-Crossfade.defaultProps = {
-  duration: 250,
 };
 
 export default Crossfade;
