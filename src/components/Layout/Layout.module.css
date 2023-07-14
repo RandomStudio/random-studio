@@ -65,6 +65,8 @@ When change is live everywhere, newLayout can become :root and other code can be
 
 .oldLayout {
   --blue: lab(49.827 31.172 -78.866);
+  --dark-grey: lab(43.19 0 0);
+  --light-grey: lab(94.10 0 0);
 
   & .newLayout {
     background-color: var(--white);

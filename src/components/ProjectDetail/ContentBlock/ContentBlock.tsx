@@ -1,29 +1,27 @@
 import React, { CSSProperties } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { BLOCK_TYPES, CarouselBlock, ImageBlock, TextBlock, VideoBlock } from '../../../types';
+import { BLOCK_TYPES, CarouselBlock, GenericBlockAttributes, ImageBlock, TextBlock, VideoBlock } from '../../../types';
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
-import VideoWithControls from '../../VideoWithControls/VideoWithControls';
+import Video from '../../Video/Video';
 import styles from './ContentBlock.module.scss';
+import Markdown from '../../Markdown/Markdown';
 
 type ContentBlockProps = {
   __typename: string,
   blocks?: ContentBlockProps[]
-  width: number,
-  id: string,
-  marginLeft: number,
-  marginTop: number,
-}
+} & GenericBlockAttributes;
 
 const ContentBlock = ({
-    __typename,
-    blocks,
-    width,
-    id,
-    marginLeft,
-    marginTop,
-    ...blockProps
+  __typename,
+  blocks,
+  width,
+  id,
+  marginLeft,
+  marginTop,
+  anchorId,
+  ...blockProps
 }: ContentBlockProps) => {
   const renderBlock = () => {
     if (__typename === BLOCK_TYPES.ImageBlockRecord) {
@@ -46,8 +44,8 @@ const ContentBlock = ({
       const { caption, hasAudio, hasControls, autoplay, loops, video } = blockProps as VideoBlock;
       return (
         <>
-          <VideoWithControls
-            hasAudio={hasAudio}
+          <Video
+            isMuted={autoplay}
             hasControls={hasControls}
             isAutoplaying={autoplay}
             isLooping={loops}
@@ -73,28 +71,31 @@ const ContentBlock = ({
       const { text } = blockProps as TextBlock;
       return (
         <div className={styles.text}>
-          <ReactMarkdown linkTarget="_blank">{text}</ReactMarkdown>
+          <Markdown markdown={text} />
         </div>
       )
     }
 
-    {__typename === BLOCK_TYPES.HorizontalRowRecord && blocks && (
-      <div className={styles.horizontalRow}>
-        {blocks?.map(subblock => (
-          <ContentBlock {...subblock} key={subblock.id} />
-        ))}
-      </div>
-    )}
+    {
+      __typename === BLOCK_TYPES.HorizontalRowRecord && blocks && (
+        <div className={styles.horizontalRow}>
+          {blocks?.map(subblock => (
+            <ContentBlock {...subblock} key={subblock.id} />
+          ))}
+        </div>
+      )
+    }
   };
 
   return (
     <div
       className={styles.item}
       key={id}
+      id={anchorId}
       style={{
         '--marginLeft': `${marginLeft}vw`,
         '--marginTop': `calc(${width}vw * ${marginTop / 100})`,
-        '--width': `${width}vw`,
+        '--width': `${width}%`,
       } as CSSProperties}
     >
       {renderBlock()}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Image } from 'react-datocms';
 import styles from './Carousel.module.css';
-import VideoWithControls from '../VideoWithControls/VideoWithControls';
+import Video from '../Video/Video';
 import { Slide } from '../../types';
 
 type CarouselProps = {
@@ -24,27 +24,26 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
   return (
     <div className={`${styles.carousel} ${className}`}>
       <div className={styles.slides}>
+        {/* @ts-expect-error */}
         {slides.map(({ id, video, image }, index) => (
           <div
-            className={styles.image}
+            className={styles.slide}
             data-visible={index === currentIndex}
             key={id}
+            onClick={handleNext}
           >
-            <div
-              className={slides.length > 1 && styles.hasMultiple}
-              onClick={handleNext}
-            >
-              {video && (
-                <VideoWithControls video={video} />
-              )}
+            {video && (
+              <Video video={video} isAutoplaying={true} isLooping={true} hasControls={false} isMuted={true} />
+            )}
 
-              {image && (
-                <Image
-                  data={image.imageData}
-                  sizes={sizes}
-                />
-              )}
-            </div>
+            {image && (
+              <Image
+                className={styles.image}
+                data={image.imageData}
+                sizes={sizes}
+                layout={index === 0 ? 'responsive' : 'fill'}
+              />
+            )}
           </div>
         ))}
       </div>

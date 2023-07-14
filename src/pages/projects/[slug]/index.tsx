@@ -8,32 +8,32 @@ import Layout from '../../../components/Layout/Layout';
 import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
 import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
-import addAdditionalInfoToBlocks from '../../../api/addAdditionalInfoToBlocks';
-import { getVideoData } from '../../../api/videos/getVideoData.mjs';
+
 import {
   ContentBlockType,
   CreditsType,
   OpenGraph,
-  RelatedProject,
+  ProjectSummary,
 } from '../../../types';
 
 type ProjectProps = {
   content: ContentBlockType[];
   credits?: CreditsType[];
-  details: { [key: string]: string };
+  externalUrl: string;
   featuredImage: ImageData;
   id: string;
   intro: string;
   relatedProjectsTitle: string;
-  relatedProjects: RelatedProject[];
+  relatedProjects: ProjectSummary[];
   opengraph: OpenGraph;
   title: string;
 };
 
+
 const Project = ({
   content,
-  details,
   credits,
+  externalUrl,
   featuredImage,
   intro,
   opengraph: { description: ogDescription, image, title: ogTitle },
@@ -53,8 +53,8 @@ const Project = ({
 
       <ProjectDetail
         content={content}
-        details={details}
         credits={credits}
+        externalUrl={externalUrl}
         intro={intro}
         relatedProjects={relatedProjects}
         relatedProjectsTitle={relatedProjectsTitle}
@@ -76,15 +76,7 @@ export const getStaticProps = async ({ params, preview }) => {
   return {
     props: {
       ...project,
-      featuredVideo: await getVideoData(project.featuredVideo),
-      content: await addAdditionalInfoToBlocks(project.content),
       opengraph: project.opengraph ?? {},
-      relatedProjects: await Promise.all(
-        project.relatedProjects?.map(async related => ({
-          ...related,
-          featuredVideo: await getVideoData(related.featuredVideo),
-        }))
-      ),
     },
   };
 };
@@ -93,7 +85,6 @@ export async function getStaticPaths() {
   const { projects } = await getDataFromBackend({
     query: PROJECT_PATHS_QUERY,
   });
-
   return {
     fallback: false,
     paths: projects.map(({ slug }) => ({

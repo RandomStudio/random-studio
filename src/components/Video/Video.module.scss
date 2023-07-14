@@ -1,0 +1,63 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  > div {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  // overwrite playerjs styles to make the video fluid
+  :global(.video-js) {
+    width: 100%;
+    height: 100% !important;
+    padding: 0 !important;
+
+    video {
+      position: relative;
+    }
+
+    // Custom video player styling
+    :global(.vjs-control) {
+      height: 3em;
+    }
+
+    :global(.vjs-control-bar) {
+      height: 3.5em;
+      background-color: none;
+      background: linear-gradient(transparent, rgb(0 0 0 / 0.35));
+    }
+
+    :global(.vjs-control):focus {
+      text-shadow: none;
+    }
+  }
+}
+
+.brokenVideo {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: 100%;
+  background: var(--light-grey);
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+  filter: blur(5px);
+  transform: scale(1.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  .isLoaded & {
+    opacity: 0;
+  }
+}
