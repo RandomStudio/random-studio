@@ -8,7 +8,7 @@ import {
   ContentBlockType,
   CreditsType,
   ProjectSummary,
-} from '../../types'
+} from '../../types/types';
 
 import Credits from './Credits/Credits';
 import Markdown from '../Markdown/Markdown';

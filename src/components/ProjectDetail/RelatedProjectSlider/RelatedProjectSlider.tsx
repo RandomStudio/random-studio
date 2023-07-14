@@ -1,23 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
+import classNames from 'classnames';
 import styles from './RelatedProjectSlider.module.scss';
 import Video from '../../Video/Video';
 import Image from '../../Image/Image';
-import { ProjectSummary } from '../../../types';
+import { ProjectSummary } from '../../../types/types';
 
 type RelatedProjectSliderProps = {
-  relatedProjects: ProjectSummary[],
-  relatedProjectsTitle: string,
+  relatedProjects: ProjectSummary[];
+  relatedProjectsTitle: string;
 };
 
-const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }: RelatedProjectSliderProps) => {
-  const wrapperClass = `${styles.wrapper} ${relatedProjects.length === 1 ? styles.isSingle : ''
-    }`;
-
+const RelatedProjectSlider = ({
+  relatedProjects,
+  relatedProjectsTitle,
+}: RelatedProjectSliderProps) => {
+  const wrapperClassNames = classNames(styles.wrapper, {
+    [styles.isSingle]: relatedProjects.length === 1,
+  });
 
   return (
-    <section className={wrapperClass}>
+    <section className={wrapperClassNames}>
       {relatedProjectsTitle && <h4>{relatedProjectsTitle}</h4>}
 
       <div className={styles.worksWrapper}>
@@ -36,7 +39,6 @@ const RelatedProjectSlider = ({ relatedProjects, relatedProjectsTitle }: Related
                 {featuredVideo && (
                   <Video
                     hasControls={false}
-                    isMuted={true}
                     isAutoplaying
                     isLooping
                     video={featuredVideo}

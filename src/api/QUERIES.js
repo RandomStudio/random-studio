@@ -59,7 +59,8 @@ const addBlockQuery = ({
   hasImage = false,
   hasCarousel = false,
 }) => `
-${hasVideo
+${
+  hasVideo
     ? `... on VideoBlockRecord {
           autoplay
           caption
@@ -71,16 +72,18 @@ ${hasVideo
 }
 `
     : ''
-  }
-${hasText
+}
+${
+  hasText
     ? `... on TextBlockRecord {
   text
   ${sharedValues}
 }
 `
     : ''
-  }
-${hasImage
+}
+${
+  hasImage
     ? `... on ImageBlockRecord {
   caption
   image {
@@ -90,8 +93,9 @@ ${hasImage
 }
 `
     : ''
-  }
-${hasCarousel
+}
+${
+  hasCarousel
     ? `... on CarouselBlockRecord {
   slides {
     id
@@ -104,7 +108,7 @@ ${hasCarousel
 }
 `
     : ''
-  }
+}
 `;
 
 export const SINGLE_PROJECT_QUERY = `
@@ -143,21 +147,21 @@ export const SINGLE_PROJECT_QUERY = `
       content {
         __typename
         ${addBlockQuery({
-  hasVideo: true,
-  hasImage: true,
-  hasCarousel: true,
-  hasText: true,
-})}
+          hasVideo: true,
+          hasImage: true,
+          hasCarousel: true,
+          hasText: true,
+        })}
         ... on HorizontalRowRecord {
           id
           __typename
           blocks {
             __typename
             ${addBlockQuery({
-  hasVideo: true,
-  hasImage: true,
-  hasText: true,
-})}
+              hasVideo: true,
+              hasImage: true,
+              hasText: true,
+            })}
           }
         }
       }

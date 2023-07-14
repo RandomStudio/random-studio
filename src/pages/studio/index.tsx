@@ -1,18 +1,12 @@
-import PropTypes from 'prop-types';
 import Carousel from '../../components/Carousel/Carousel';
 import styles from './Studio.module.css';
 import getDataFromBackend from '../../api/getDataFromBackend';
-import addAdditionalInfoToBlocks from '../../api/addAdditionalInfoToBlocks';
-import {
-  dayNightImageBlockPropType,
-  slidePropType,
-  vacancyPropType,
-} from '../../propTypes';
 import { STUDIO_PAGE_QUERY } from '../../api/QUERIES';
 import Layout from '../../components/Layout/Layout';
 import Block from '../../components/Studio/Block/Block';
 import Vacancies from '../../components/Studio/Vacancies/Vacancies';
 import Head from '../../components/Head/Head';
+import { DayNightImageBlockType, Image, Vacancy } from '../../types/types';
 
 const socialLinks = {
   Instagram: 'https://instagram.com/random_studio/',
@@ -20,7 +14,25 @@ const socialLinks = {
   Medium: 'https://medium.com/random-studio/',
 };
 
-const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
+type StudioProps = {
+  blocks: DayNightImageBlockType[];
+  blurb: string;
+  skillset?: {
+    design: string[];
+    technology: string[];
+    product: string[];
+  };
+  studioImpression: Image[];
+  vacancies: Vacancy[];
+};
+
+const Studio = ({
+  blurb,
+  blocks,
+  skillset = null,
+  studioImpression,
+  vacancies,
+}: StudioProps) => (
   <Layout isNewDesign>
     <Head />
 
@@ -58,7 +70,10 @@ const Studio = ({ blurb, blocks, skillset, studioImpression, vacancies }) => (
       caption="Studio Impressions"
       className={styles.carousel}
       sizes="(max-width: 768px) 100vw, 50vw"
-      slides={studioImpression.map(content => ({ image: content }))}
+      slides={studioImpression.map(({ id, imageData }) => ({
+        id,
+        image: { imageData },
+      }))}
     />
 
     {blocks.map(block => (
@@ -116,14 +131,6 @@ export const getStaticProps = async ({ preview }) => {
   return {
     props: page,
   };
-};
-
-Studio.propTypes = {
-  blocks: PropTypes.arrayOf(dayNightImageBlockPropType).isRequired,
-  blurb: PropTypes.string.isRequired,
-  skillset: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
-  studioImpression: PropTypes.arrayOf(slidePropType).isRequired,
-  vacancies: PropTypes.arrayOf(vacancyPropType).isRequired,
 };
 
 export default Studio;

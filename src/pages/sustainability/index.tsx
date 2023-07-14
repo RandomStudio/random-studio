@@ -1,20 +1,24 @@
-import PropTypes from "prop-types";
-import { SUSTAINABILITY_PAGE_QUERY } from "../../api/QUERIES";
-import getDataFromBackend from "../../api/getDataFromBackend";
-import Layout from "../../components/Layout/Layout";
-import Head from "../../components/Head/Head";
-import SustainabilitySection from "../../components/SustainabilitySection/SustainabilitySection";
-import styles from "./Sustainability.module.css";
-import { ContentBlockType } from "../../types";
+import { SUSTAINABILITY_PAGE_QUERY } from '../../api/QUERIES';
+import getDataFromBackend from '../../api/getDataFromBackend';
+import Layout from '../../components/Layout/Layout';
+import Head from '../../components/Head/Head';
+import SustainabilitySection from '../../components/SustainabilitySection/SustainabilitySection';
+import styles from './Sustainability.module.css';
+import { ContentBlockType } from '../../types/types';
 
 type SustainabilityTypes = {
-  content: ContentBlockType[],
+  content: ContentBlockType[];
   intro: string;
   seoDescription?: string;
   seoTitle?: string;
-}
+};
 
-const Sustainability = ({ intro, content, seoTitle = null, seoDescription = null }: SustainabilityTypes) => {
+const Sustainability = ({
+  intro,
+  content,
+  seoTitle = null,
+  seoDescription = null,
+}: SustainabilityTypes) => {
   return (
     <Layout isNewDesign>
       <Head description={seoDescription} title={seoTitle} />
@@ -24,7 +28,7 @@ const Sustainability = ({ intro, content, seoTitle = null, seoDescription = null
         dangerouslySetInnerHTML={{ __html: intro }}
       />
 
-      {content.map((section) => (
+      {content.map(section => (
         <SustainabilitySection key={section.title || ''} section={section} />
       ))}
     </Layout>

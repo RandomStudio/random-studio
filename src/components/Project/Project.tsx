@@ -4,13 +4,13 @@ import Markdown from '../Markdown/Markdown';
 import styles from './Project.module.scss';
 import Video from '../Video/Video';
 import Image from '../Image/Image';
-import { ProjectSummary } from '../../types.js';
+import { ProjectSummary } from '../../types/types.js';
 
 type Project = ProjectSummary & {
-  className?: string,
-  left: number,
-  top: number,
-  width: number,
+  className?: string;
+  left: number;
+  top: number;
+  width: number;
 };
 
 const Project = ({
@@ -35,9 +35,7 @@ const Project = ({
   >
     <div className={styles.media}>
       {featuredVideo ? (
-        <Video
-          video={featuredVideo}
-        />
+        <Video video={featuredVideo} />
       ) : (
         <Image
           alt="" // Keeps the screen reader focused on project list
@@ -53,8 +51,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-            marginLeft: '0',
-          }
+              marginLeft: '0',
+            }
       }
     >
       <Markdown markdown={title} />

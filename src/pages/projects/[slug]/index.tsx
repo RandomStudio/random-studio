@@ -14,21 +14,19 @@ import {
   CreditsType,
   OpenGraph,
   ProjectSummary,
-} from '../../../types';
+} from '../../../types/types';
 
 type ProjectProps = {
   content: ContentBlockType[];
-  credits?: CreditsType[];
+  credits: CreditsType[];
   externalUrl: string;
   featuredImage: ImageData;
-  id: string;
   intro: string;
   relatedProjectsTitle: string;
   relatedProjects: ProjectSummary[];
   opengraph: OpenGraph;
   title: string;
 };
-
 
 const Project = ({
   content,
@@ -85,6 +83,7 @@ export async function getStaticPaths() {
   const { projects } = await getDataFromBackend({
     query: PROJECT_PATHS_QUERY,
   });
+
   return {
     fallback: false,
     paths: projects.map(({ slug }) => ({

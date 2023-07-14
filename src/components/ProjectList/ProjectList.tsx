@@ -1,15 +1,26 @@
 import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import styles from './ProjectList.module.scss';
 import Filters from './Filters/Filters';
-import Project from '../Project/Project.tsx';
+import Project from '../Project/Project';
 import { HOMEPAGE_POSTS_LIMIT, LAYOUT, ORDERED_TAGS } from '../../CONSTANTS';
 import Crossfade from '../Crossfade/Crossfade';
-import { projectPropType } from '../../propTypes';
-import Markdown from '../Markdown/Markdown.tsx';
+import Markdown from '../Markdown/Markdown';
+import { ProjectSummary } from '../../types/types';
 
-const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
+type ProjectListProps = {
+  hasFilters?: boolean;
+  hasLimit?: boolean;
+  intro?: string;
+  projects: ProjectSummary[];
+};
+
+const ProjectList = ({
+  hasFilters = false,
+  hasLimit = false,
+  intro = null,
+  projects,
+}: ProjectListProps) => {
   const [activeTag, setActiveTag] = useState(null);
 
   const activeTagIndex =
@@ -20,7 +31,7 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
       projects.filter(
         ({ featuredImage, featuredVideo, tags }) =>
           (!activeTag || tags?.includes(activeTag.toLowerCase())) &&
-          ((featuredVideo && featuredVideo !== '') || featuredImage),
+          (featuredVideo || featuredImage),
       ),
     [activeTag, projects],
   );
@@ -58,7 +69,6 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
                     <Project
                       featuredImage={featuredImage}
                       featuredVideo={featuredVideo}
-                      index={index}
                       left={left}
                       slug={slug}
                       title={title}
@@ -80,19 +90,6 @@ const ProjectList = ({ hasFilters, hasLimit, intro, projects }) => {
       </ul>
     </>
   );
-};
-
-ProjectList.propTypes = {
-  hasFilters: PropTypes.bool,
-  hasLimit: PropTypes.bool,
-  intro: PropTypes.string,
-  projects: PropTypes.arrayOf(projectPropType).isRequired,
-};
-
-ProjectList.defaultProps = {
-  hasFilters: false,
-  hasLimit: false,
-  intro: null,
 };
 
 export default ProjectList;

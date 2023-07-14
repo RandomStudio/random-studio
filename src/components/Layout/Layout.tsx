@@ -1,18 +1,26 @@
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { ReactNode } from 'react';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import styles from './Layout.module.css';
 import useSunset from '../../utils/hooks/useSunset';
 import AfterDarkContext from './AfterDarkContext';
 
+type LayoutProps = {
+  children: ReactNode[];
+  className?: string;
+  hasFooter?: boolean;
+  isLogoCentred?: boolean;
+  isNewDesign?: boolean;
+};
+
 const Layout = ({
   children,
-  className,
-  hasFooter,
-  isLogoCentred,
-  isNewDesign,
-}) => {
+  className = '',
+  hasFooter = true,
+  isLogoCentred = false,
+  isNewDesign = false,
+}: LayoutProps) => {
   const isAfterDark = useSunset();
 
   const isDarkStyleActive = isAfterDark && isNewDesign;
@@ -44,21 +52,6 @@ const Layout = ({
       </div>
     </AfterDarkContext.Provider>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  hasFooter: PropTypes.bool,
-  isLogoCentred: PropTypes.bool,
-  isNewDesign: PropTypes.bool,
-};
-
-Layout.defaultProps = {
-  className: '',
-  hasFooter: true,
-  isLogoCentred: false,
-  isNewDesign: false,
 };
 
 export default Layout;

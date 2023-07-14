@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import styles from './Vacancy.module.css';
 import Link from 'next/link';
+import styles from './Vacancy.module.css';
 import Markdown from '../../../Markdown/Markdown';
 
 type VacancyProps = {
@@ -14,7 +14,10 @@ type VacancyProps = {
   };
 };
 
-const Vacancy = ({ handleClose, opening: { title, description, url } }: VacancyProps) => {
+const Vacancy = ({
+  handleClose,
+  opening: { title, description, url },
+}: VacancyProps) => {
   useEffect(() => {
     window.plausible?.('Vacancy viewed', {
       props: {
@@ -33,7 +36,7 @@ const Vacancy = ({ handleClose, opening: { title, description, url } }: VacancyP
             className={styles.closeButton}
             onClick={handleClose}
             type="button"
-          // eslint-disable-next-line react/jsx-no-literals
+            // eslint-disable-next-line react/jsx-no-literals
           >
             &times;
           </button>
@@ -41,11 +44,7 @@ const Vacancy = ({ handleClose, opening: { title, description, url } }: VacancyP
 
         <Markdown className={styles.description} markdown={description} />
 
-        <Link
-          className={styles.applyButton}
-          target="_blank"
-          href={url}
-        >
+        <Link className={styles.applyButton} href={url} target="_blank">
           {'Apply for this position'}
         </Link>
       </div>

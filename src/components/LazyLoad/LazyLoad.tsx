@@ -6,11 +6,12 @@ const LazyLoad = ({ children, onIntersect }) => {
   const [hasIntersected, setHasIntersected] = useState(false);
 
   useEffect(() => {
-    let currentRef = ref.current;
+    const currentRef = ref.current;
 
     if (!currentRef || hasIntersected) {
       return undefined;
     }
+
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -36,15 +37,12 @@ const LazyLoad = ({ children, onIntersect }) => {
         observer.unobserve(currentRef);
       }
 
+      setHasIntersected(false);
       observer.disconnect();
     };
   }, [ref]);
 
-  return (
-    <div ref={ref}>
-      {children}
-    </div>
-  );
-}
+  return <div ref={ref}>{children}</div>;
+};
 
 export default LazyLoad;

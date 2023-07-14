@@ -5,16 +5,16 @@ import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
-import { Project, VideoData } from '../types';
+import { Project, VideoData } from '../types/types';
 
-type HomeTypes = {
+type HomeProps = {
   collaborator: string;
-  collaborationurl: string;
+  collaborationUrl: string;
   intro: string;
   isLogoCentred: boolean;
   projects: Project[];
   video: VideoData;
-}
+};
 
 const Home = ({
   collaborator,
@@ -23,7 +23,7 @@ const Home = ({
   isLogoCentred = false,
   projects,
   video,
-}) => (
+}: HomeProps) => (
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
 

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { imageDataPropType } from '../../propTypes';
 
 type ImageProps = {
-  alt: string,
-  data: ImageData,
-  sizes: string,
+  alt: string;
+  data: ImageData;
+  sizes: string;
 } & ImagePropTypes;
 
 const Image = ({ alt, data, sizes, ...rest }: ImageProps) => {
