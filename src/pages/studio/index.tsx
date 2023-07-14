@@ -6,7 +6,7 @@ import Layout from '../../components/Layout/Layout';
 import Block from '../../components/Studio/Block/Block';
 import Vacancies from '../../components/Studio/Vacancies/Vacancies';
 import Head from '../../components/Head/Head';
-import { DayNightImageBlockType, Image, Slide, Vacancy } from '../../types';
+import { DayNightImageBlockType, Image, Vacancy } from '../../types/types';
 
 const socialLinks = {
   Instagram: 'https://instagram.com/random_studio/',
@@ -26,7 +26,13 @@ type StudioProps = {
   vacancies: Vacancy[];
 };
 
-const Studio = ({ blurb, blocks, skillset = null, studioImpression, vacancies }: StudioProps) => (
+const Studio = ({
+  blurb,
+  blocks,
+  skillset = null,
+  studioImpression,
+  vacancies,
+}: StudioProps) => (
   <Layout isNewDesign>
     <Head />
 
@@ -64,7 +70,10 @@ const Studio = ({ blurb, blocks, skillset = null, studioImpression, vacancies }:
       caption="Studio Impressions"
       className={styles.carousel}
       sizes="(max-width: 768px) 100vw, 50vw"
-      slides={studioImpression.map(({ id, imageData }) => ({ id, image: { imageData } }))}
+      slides={studioImpression.map(({ id, imageData }) => ({
+        id,
+        image: { imageData },
+      }))}
     />
 
     {blocks.map(block => (

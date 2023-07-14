@@ -6,16 +6,21 @@ import Project from '../Project/Project';
 import { HOMEPAGE_POSTS_LIMIT, LAYOUT, ORDERED_TAGS } from '../../CONSTANTS';
 import Crossfade from '../Crossfade/Crossfade';
 import Markdown from '../Markdown/Markdown';
-import { Project as ProjectType } from '../../types';
+import { ProjectSummary } from '../../types/types';
 
 type ProjectListProps = {
   hasFilters?: boolean;
   hasLimit?: boolean;
   intro?: string;
-  projects: ProjectType[];
+  projects: ProjectSummary[];
 };
 
-const ProjectList = ({ hasFilters = false, hasLimit = false, intro = null, projects }: ProjectListProps) => {
+const ProjectList = ({
+  hasFilters = false,
+  hasLimit = false,
+  intro = null,
+  projects,
+}: ProjectListProps) => {
   const [activeTag, setActiveTag] = useState(null);
 
   const activeTagIndex =

@@ -32,6 +32,7 @@ export type Project = {
   opengraph: OpenGraph;
   content: ContentBlockType[];
 };
+
 export interface Image {
   id: string;
   imageData: ImageData;
@@ -50,6 +51,7 @@ export type ProjectSummary = {
   intro: string;
   featuredImage: Image;
   featuredVideo: VideoData;
+  tags: string[];
 };
 
 export type Slide = {
@@ -65,11 +67,11 @@ export type CreditsType = {
 };
 
 export const BLOCK_TYPES = {
-  CarouselBlockRecord: "CarouselBlockRecord",
-  HorizontalRowRecord: "HorizontalRowRecord",
-  ImageBlockRecord: "ImageBlockRecord",
-  TextBlockRecord: "TextBlockRecord",
-  VideoBlockRecord: "VideoBlockRecord",
+  CarouselBlockRecord: 'CarouselBlockRecord',
+  HorizontalRowRecord: 'HorizontalRowRecord',
+  ImageBlockRecord: 'ImageBlockRecord',
+  TextBlockRecord: 'TextBlockRecord',
+  VideoBlockRecord: 'VideoBlockRecord',
 } as const;
 
 export type GenericBlockAttributes = {
@@ -82,7 +84,7 @@ export type GenericBlockAttributes = {
 };
 
 export type VideoBlock = {
-  __typename: "VideoBlockRecord";
+  __typename: 'VideoBlockRecord';
   autoplay: boolean;
   caption: string;
   hasAudio: boolean;
@@ -92,18 +94,18 @@ export type VideoBlock = {
 } & GenericBlockAttributes;
 
 export type TextBlock = {
-  __typename: "TextBlockRecord";
+  __typename: 'TextBlockRecord';
   text: string;
 } & GenericBlockAttributes;
 
 export type ImageBlock = {
-  __typename: "ImageBlockRecord";
+  __typename: 'ImageBlockRecord';
   caption: string;
   image: Image;
 } & GenericBlockAttributes;
 
 export type CarouselBlock = {
-  __typename: "CarouselBlockRecord";
+  __typename: 'CarouselBlockRecord';
   slides: Slide[];
   title: string;
   video: VideoData;
@@ -111,7 +113,7 @@ export type CarouselBlock = {
 } & GenericBlockAttributes;
 
 export type HorizontalRowBlock = {
-  __typename: "HorizontalRowRecord";
+  __typename: 'HorizontalRowRecord';
   blocks: ContentBlockType[];
 } & GenericBlockAttributes;
 

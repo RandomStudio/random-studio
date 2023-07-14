@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { CreditsType } from "../../../types";
+import { CreditsType } from '../../../types/types';
 
-import styles from "./Credits.module.scss";
+import styles from './Credits.module.scss';
 
 type CreditsProps = {
   credits: CreditsType[];
@@ -12,13 +12,13 @@ type CreditsProps = {
 export const Credits = ({ credits, externalUrl }: CreditsProps) => {
   return (
     <dl aria-label="Project Details" className={styles.wrapper}>
-      {credits.map((credit) => (
+      {credits.map(credit => (
         <React.Fragment key={credit.label}>
           <dt>{`${credit.label}:`}</dt>
 
           <dd>
             {credit.link ? (
-              <a href={credit.link} target="_blank" rel="noreferrer noopener">
+              <a href={credit.link} rel="noreferrer noopener" target="_blank">
                 {credit.text}
               </a>
             ) : (
@@ -27,7 +27,17 @@ export const Credits = ({ credits, externalUrl }: CreditsProps) => {
           </dd>
         </React.Fragment>
       ))}
-      {externalUrl && <a className={styles.externalUrl} href={externalUrl} target="_blank" rel="noreferrer noopener">View website</a>}
+
+      {externalUrl && (
+        <a
+          className={styles.externalUrl}
+          href={externalUrl}
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          View website
+        </a>
+      )}
     </dl>
   );
 };

@@ -1,11 +1,11 @@
+import React from 'react';
 import styles from './Caption.module.scss';
 import Markdown from '../Markdown/Markdown';
-import React from 'react';
 
 type CaptionProps = {
-  marginLeft: number,
-  caption: string,
-}
+  marginLeft: number;
+  caption: string;
+};
 
 const Caption = ({ marginLeft, caption }: CaptionProps) => (
   <div

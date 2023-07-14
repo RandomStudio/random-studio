@@ -1,11 +1,11 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo } from 'react';
 import { create } from 'zustand';
 
 interface Store {
-  activeSrc: string | null
-};
+  activeSrc: string | null;
+}
 
-const useStore = create<Store>(set => ({
+const useStore = create<Store>(() => ({
   activeSrc: null,
 }));
 
@@ -16,12 +16,12 @@ const useSharedUnmutedVideoState = (src: string) => {
     useStore.setState({
       activeSrc: isMuted ? src : null,
     });
-  }, [isMuted]);
+  }, [isMuted, src]);
 
-  return useMemo(() =>
-    [isMuted, toggleIsMuted] as [boolean, () => void],
-    [isMuted, toggleIsMuted]
+  return useMemo(
+    () => [isMuted, toggleIsMuted] as [boolean, () => void],
+    [isMuted, toggleIsMuted],
   );
-}
+};
 
 export default useSharedUnmutedVideoState;

@@ -1,5 +1,4 @@
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import styles from './Crossfade.module.scss';
 
 type CrossfadeProps = {

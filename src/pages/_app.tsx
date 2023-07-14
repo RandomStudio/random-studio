@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import '../styles/global.scss';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -6,7 +7,11 @@ import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 type AppProps = {
   Component: React.FC;
-  pageProps: any;
+  pageProps: {
+    [key: string]: unknown;
+  };
+  // Next prop is named by Nextjs
+  // eslint-disable-next-line react/boolean-prop-naming
   __N_PREVIEW: boolean;
 };
 

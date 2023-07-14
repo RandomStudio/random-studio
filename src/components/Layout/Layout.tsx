@@ -1,10 +1,10 @@
 import classNames from 'classnames';
+import { ReactNode } from 'react';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import styles from './Layout.module.css';
 import useSunset from '../../utils/hooks/useSunset';
 import AfterDarkContext from './AfterDarkContext';
-import { ReactNode } from 'react';
 
 type LayoutProps = {
   children: ReactNode[];

@@ -12,7 +12,7 @@
     "launch-server": "npm install --dev && npm run start",
     "launch": "pm2 start npm --name 'randomstudio' -- run launch-server && pm2 save",
     "backup": "node ./cms/backups/backup-dato.mjs",
-    "lint": "eslint \"src/**/*.{js,jsx,json}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
+    "lint": "eslint \"src/**/*.{js,jsx,json,ts,tsx}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
   },
   "dependencies": {
     "@types/video.js": "^7.3.52",
@@ -34,6 +34,8 @@
     "@datocms/cma-client-node": "^1.3.5",
     "@next/bundle-analyzer": "13.2.1",
     "@next/eslint-plugin-next": "13.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "datocms-client": "3.5.21",
     "dotenv": "16.0.3",
     "eslint-config-airbnb": "19.0.4",

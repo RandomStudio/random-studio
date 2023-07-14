@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import { Image } from 'react-datocms';
 import styles from './Carousel.module.css';
 import Video from '../Video/Video';
-import { Slide } from '../../types';
+import { Slide } from '../../types/types';
 
 type CarouselProps = {
-  caption?: string,
-  className?: string,
-  sizes: string,
-  slides: Slide[],
-  width?: number,
+  caption?: string;
+  className?: string;
+  sizes: string;
+  slides: Slide[];
 };
 
-const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) => {
+const Carousel = ({
+  caption = '',
+  className = '',
+  slides,
+  sizes,
+}: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => setCurrentIndex((currentIndex + 1) % slides.length);
@@ -33,15 +37,20 @@ const Carousel = ({ caption, className, slides, sizes, width }: CarouselProps) =
             onClick={handleNext}
           >
             {video && (
-              <Video video={video} isAutoplaying={true} isLooping={true} hasControls={false} isMuted={true} />
+              <Video
+                hasControls={false}
+                isAutoplaying
+                isLooping
+                video={video}
+              />
             )}
 
             {image && (
               <Image
                 className={styles.image}
                 data={image.imageData}
-                sizes={sizes}
                 layout={index === 0 ? 'responsive' : 'fill'}
+                sizes={sizes}
               />
             )}
           </div>
