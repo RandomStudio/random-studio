@@ -17,14 +17,14 @@ export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
-  video: VideoData;
+  video?: VideoData;
 };
 
 const Video = ({
   isAutoplaying = true,
   hasControls = false,
   isLooping = true,
-  video,
+  video = null,
 }: VideoProps) => {
   const videoContainerRef = useRef(null);
 
@@ -96,13 +96,12 @@ const Video = ({
     player.muted(isMuted);
   }, [isMuted, player]);
 
-  const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
-
-  const aspectRatioStyle = { aspectRatio: video.width / video.height };
-
   if (!video) {
     return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
   }
+
+  const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
+  const aspectRatioStyle = { aspectRatio: video.width / video.height };
 
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
