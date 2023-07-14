@@ -9,9 +9,14 @@ import LazyLoad from '../LazyLoad/LazyLoad';
 
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-import useSharedUnmutedVideoState from './useSharedActivePlayerState';
-import useSharedActivePlayerState from './useSharedActivePlayerState';
+import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import Player from 'video.js/dist/types/player';
+import Component from 'video.js/dist/types/component';
+
+// This is available but not typed in video.js
+type VideoJsComponent = Component & {
+  handleClick: () => void
+}
 
 export type VideoProps = {
   hasControls?: boolean,
@@ -30,27 +35,16 @@ const Video = ({
   video
 }: VideoProps) => {
   const videoContainerRef = useRef(null);
-  const playerRef = useRef<Player>(null);
 
+  const [player, setPlayer] = useState<Player>(null);
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [isActivePlayer, setIsActivePlayer] = useSharedActivePlayerState(video.hls);
-
-  useEffect(() => {
-    const player = playerRef.current;
-
-    return () => {
-      if (player && !player.isDisposed()) {
-        player.dispose();
-        playerRef.current = null;
-      }
-    };
-  }, [playerRef]);
+  const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(video.hls);
 
   const handleLoadVideo = () => {
     const videoElement = document.createElement("video-js");
     videoContainerRef.current.appendChild(videoElement);
 
-    const player = videojs(videoElement, {
+    const videoJsPlayer = videojs(videoElement, {
       sources: [{
         src: video.hls,
         type: "application/x-mpegURL"
@@ -66,22 +60,35 @@ const Video = ({
       loop: isLooping,
     });
 
-    playerRef.current = player;
+    setPlayer(videoJsPlayer);
+  };
+
+  useEffect(() => {
+    if (!player || hasLoaded) {
+      return;
+    }
 
     // Only consider the video loaded after it starts playing
-    player.on('progress', () => {
-      if (!hasLoaded) {
-        setHasLoaded(true)
-      }
+    player.one('progress', () => {
+      setHasLoaded(true);
     })
+  }, [hasLoaded, player]);
 
-    player.controlBar.volumePanel.muteToggle.el().addEventListener('pointerdown', (event) => {
-      setIsActivePlayer(!player.muted());
-      event.stopPropagation();
-      event.preventDefault();
-      return false;
-    })
-  };
+  useEffect(() => {
+    if (!player) {
+      return;
+    }
+    const muteComponent = player.getChild('ControlBar').getChild('VolumePanel').getChild('MuteToggle') as VideoJsComponent;
+    muteComponent.handleClick = toggleIsMuted;
+  }, [player, toggleIsMuted]);
+
+  useEffect(() => {
+    if (!player) {
+      return;
+    }
+
+    player.muted(isMuted);
+  }, [isMuted]);
 
   const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
 
