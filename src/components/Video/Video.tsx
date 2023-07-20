@@ -59,6 +59,7 @@ const Video = ({
         subsCapsButton: false, // safari
       },
       loop: isLooping,
+      playsinline: true
     });
 
     setPlayer(videoJsPlayer);
