@@ -59,7 +59,7 @@ const Video = ({
         subsCapsButton: false, // safari
       },
       loop: isLooping,
-      playsinline: true
+      playsinline: true,
     });
 
     setPlayer(videoJsPlayer);
@@ -102,7 +102,7 @@ const Video = ({
   }
 
   const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
-  const aspectRatioStyle = { aspectRatio: video.width / video.height };
+  const aspectRatioStyle = { aspectRatio: `${video.width} / ${video.height}` };
 
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
