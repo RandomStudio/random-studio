@@ -115,7 +115,7 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
-        <div ref={videoContainerRef} />
+        <div ref={videoContainerRef} style={aspectRatioStyle} />
       </div>
     </LazyLoad>
   );
