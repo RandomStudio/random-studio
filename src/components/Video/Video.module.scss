@@ -29,6 +29,21 @@
       height: 3.5em;
       background-color: none;
       background: linear-gradient(transparent, rgb(0 0 0 / 0.35));
+
+      // Custom Controls
+      .playerPlayPause {
+        --content: "Pause";
+
+        &:global(.vjs-paused) {
+          --content: "Play";
+        }
+
+        :global(.vjs-icon-placeholder) {
+          &::before {
+            content: var(--content);
+          }
+        }
+      }
     }
 
     :global(.vjs-control):focus {

@@ -7,12 +7,12 @@ import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
+import { addCustomComponentToVideo } from './utils';
 
 // This is available but not typed in video.js
 type VideoJsComponent = Component & {
   handleClick: () => void;
 };
-
 export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
@@ -34,6 +34,22 @@ const Video = ({
   const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(
     video?.hls ?? 'unknown',
   );
+
+  const addCustomControls = (videoJsPlayer: Player) => {
+    const playPauseButton = addCustomComponentToVideo(
+      videoJsPlayer,
+      'PlayToggle',
+      {
+        className: styles.playerPlayPause,
+        clickHandler: () => {
+          videojs.log('custom button clicked');
+        },
+      },
+    );
+
+    // eslint-disable-next-line no-console
+    console.log(playPauseButton);
+  };
 
   const handleLoadVideo = useCallback(() => {
     if (!video) {
@@ -62,6 +78,7 @@ const Video = ({
       playsinline: true,
     });
 
+    addCustomControls(videoJsPlayer);
     setPlayer(videoJsPlayer);
   }, [hasControls, isAutoplaying, isLooping, video]);
 
