@@ -8,6 +8,8 @@ import LazyLoad from '../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
 
+// To delete: Comment so we can create an MR
+
 // This is available but not typed in video.js
 type VideoJsComponent = Component & {
   handleClick: () => void;
