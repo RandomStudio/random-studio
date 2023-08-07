@@ -8,7 +8,7 @@ type ComponentTypes =
 
 type OptionValuesTypes = string | (() => void);
 
-const addCustomComponentToVideo = (
+const replaceVideoPlayerComponent = (
   currentPlayer: Player,
   component: ComponentTypes,
   options: {
@@ -20,11 +20,17 @@ const addCustomComponentToVideo = (
   // @ts-expect-error Incomplete typings on the videojs library
   const customComponent = new ComponentConstructor(currentPlayer, options);
 
-  currentPlayer.getChild('ControlBar').addChild(customComponent);
+  const existingPlayButton = currentPlayer
+    .getChild('ControlBar')
+    .getChild(component);
+
+  currentPlayer.getChild('ControlBar').removeChild(existingPlayButton);
+
+  currentPlayer.getChild('ControlBar').addChild(customComponent, null, 0);
 
   return customComponent;
 };
 
 // New functions will be added
 // eslint-disable-next-line import/prefer-default-export
-export { addCustomComponentToVideo };
+export { replaceVideoPlayerComponent };

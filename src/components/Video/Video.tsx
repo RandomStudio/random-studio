@@ -7,7 +7,7 @@ import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
-import { addCustomComponentToVideo } from './utils';
+import { replaceVideoPlayerComponent } from './utils';
 
 // This is available but not typed in video.js
 type VideoJsComponent = Component & {
@@ -36,7 +36,7 @@ const Video = ({
   );
 
   const addCustomControls = (videoJsPlayer: Player) => {
-    const playPauseButton = addCustomComponentToVideo(
+    const playPauseButton = replaceVideoPlayerComponent(
       videoJsPlayer,
       'PlayToggle',
       {
