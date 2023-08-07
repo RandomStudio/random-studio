@@ -36,6 +36,8 @@ const Video = ({
   );
 
   const handleLoadVideo = useCallback(() => {
+    console.log(video);
+
     if (!video) {
       return;
     }
@@ -116,6 +118,17 @@ const Video = ({
         />
 
         <div ref={videoContainerRef} style={aspectRatioStyle} />
+
+        <a
+          href={`${video.baseUrl}/original`}
+          style={{
+            position: 'absolute',
+            zIndex: 4,
+            bottom: 0,
+          }}
+        >
+          Download
+        </a>
       </div>
     </LazyLoad>
   );
