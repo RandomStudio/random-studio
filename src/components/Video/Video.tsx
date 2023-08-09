@@ -1,18 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import videojs from 'video.js';
-import Component from 'video.js/dist/types/component.d';
 import Player from 'video.js/dist/types/player.d';
 import styles from './Video.module.scss';
 import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
-import { addDownloadButton, addMuteButton, addPlayToggle } from './utils';
-
-// This is available but not typed in video.js
-type VideoJsComponent = Component & {
-  handleClick: () => void;
-};
+import Controls from './Controls/Controls';
 
 export type VideoProps = {
   hasControls?: boolean;
@@ -31,52 +25,11 @@ const Video = ({
 
   const [player, setPlayer] = useState<Player>(null);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
   const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(
     video?.hls ?? 'unknown',
   );
-
-  const addCustomControls = useCallback((videoJsPlayer: Player) => {
-    const muteButton = addMuteButton(
-      videoJsPlayer,
-      {
-        className: styles.playerMute,
-        controlText: 'Mute/Unmute',
-      },
-      10,
-    );
-
-    const playToggle = addPlayToggle(
-      videoJsPlayer,
-      {
-        className: styles.playerPlayPause,
-        controlText: 'Play/Pause',
-      },
-      0,
-    );
-
-    const downloadButton = addDownloadButton(
-      videoJsPlayer,
-      {
-        className: styles.playerDownload,
-        controlText: 'Download',
-        // Find a way to set the video link as 'href'
-      },
-      3,
-    );
-
-    downloadButton.on('click', function () {
-      window.open(`${video.baseUrl}/original`);
-    });
-
-    muteButton.on('click', function () {
-      videojs.log('mute1/unmute button clicked');
-    });
-
-    playToggle.on('click', function () {
-      videojs.log('play toggle button clicked');
-    });
-  }, []);
 
   const handleLoadVideo = useCallback(() => {
     if (!video) {
@@ -108,9 +61,20 @@ const Video = ({
       playsinline: true,
     });
 
-    addCustomControls(videoJsPlayer);
     setPlayer(videoJsPlayer);
-  }, [addCustomControls, hasControls, isAutoplaying, isLooping, video]);
+  }, [hasControls, isAutoplaying, isLooping, video]);
+
+  useEffect(() => {
+    if (!player) {
+      return;
+    }
+
+    if (isPlaying) {
+      player.play();
+    } else {
+      player.pause();
+    }
+  }, [isPlaying, player]);
 
   useEffect(() => {
     if (!player || hasLoaded) {
@@ -122,16 +86,6 @@ const Video = ({
       setHasLoaded(true);
     });
   }, [hasLoaded, player]);
-
-  useEffect(() => {
-    // if (!player) {
-    // }
-    // const muteComponent = player
-    //   .getChild('ControlBar')
-    //   .getChild('VolumePanel')
-    //   .getChild('MuteToggle') as VideoJsComponent;
-    // muteComponent.handleClick = toggleIsMuted;
-  }, [player, toggleIsMuted]);
 
   useEffect(() => {
     if (!player) {
@@ -159,7 +113,17 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
-        <div ref={videoContainerRef} style={aspectRatioStyle} />
+        <Controls
+          handleMuteToggle={toggleIsMuted}
+          handlePlayToggle={() => setIsPlaying(prev => !prev)}
+          video={video}
+        />
+
+        <div
+          className={styles.video}
+          ref={videoContainerRef}
+          style={aspectRatioStyle}
+        />
       </div>
     </LazyLoad>
   );
