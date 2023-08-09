@@ -32,15 +32,32 @@
 
       // Custom Controls
       .playerPlayPause {
-        --content: "Pause";
+        --text: "Pause";
 
         &:global(.vjs-paused) {
-          --content: "Play";
+          --text: "Play";
         }
 
         :global(.vjs-icon-placeholder) {
           &::before {
-            content: var(--content);
+            content: var(--text);
+          }
+        }
+      }
+
+      .playerMute {
+        --text: "Mute";
+        &:global(.vjs-hover) {
+          width: initial;
+        }
+
+        :global(.vjs-vol-0) {
+          --text: "Unmute";
+        }
+
+        :global(.vjs-icon-placeholder) {
+          &::before {
+            content: var(--text);
           }
         }
       }

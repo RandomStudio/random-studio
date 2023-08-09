@@ -7,7 +7,7 @@ import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
-import { replaceVideoPlayerComponent } from './utils';
+import { addMuteButton, addPlayToggle } from './utils';
 
 // This is available but not typed in video.js
 type VideoJsComponent = Component & {
@@ -35,21 +35,23 @@ const Video = ({
     video?.hls ?? 'unknown',
   );
 
-  const addCustomControls = (videoJsPlayer: Player) => {
-    const playPauseButton = replaceVideoPlayerComponent(
-      videoJsPlayer,
-      'PlayToggle',
-      {
-        className: styles.playerPlayPause,
-        clickHandler: () => {
-          videojs.log('custom button clicked');
-        },
-      },
-    );
+  const addCustomControls = useCallback((videoJsPlayer: Player) => {
+    const muteButton = addMuteButton(videoJsPlayer, 2, {
+      className: styles.playerMute,
+    });
 
-    // eslint-disable-next-line no-console
-    console.log(playPauseButton);
-  };
+    const playToggle = addPlayToggle(videoJsPlayer, 2, {
+      className: styles.playerPlayPause,
+    });
+
+    muteButton.on('click', function () {
+      videojs.log('mute1/unmute button clicked');
+    });
+
+    playToggle.on('click', function () {
+      videojs.log('play toggle button clicked');
+    });
+  }, []);
 
   const handleLoadVideo = useCallback(() => {
     if (!video) {
@@ -73,6 +75,8 @@ const Video = ({
       controlBar: {
         pictureInPictureToggle: false, // firefox
         subsCapsButton: false, // safari
+        volumePanel: false,
+        playToggle: false,
       },
       loop: isLooping,
       playsinline: true,
@@ -80,7 +84,7 @@ const Video = ({
 
     addCustomControls(videoJsPlayer);
     setPlayer(videoJsPlayer);
-  }, [hasControls, isAutoplaying, isLooping, video]);
+  }, [addCustomControls, hasControls, isAutoplaying, isLooping, video]);
 
   useEffect(() => {
     if (!player || hasLoaded) {
@@ -94,16 +98,13 @@ const Video = ({
   }, [hasLoaded, player]);
 
   useEffect(() => {
-    if (!player) {
-      return;
-    }
-
-    const muteComponent = player
-      .getChild('ControlBar')
-      .getChild('VolumePanel')
-      .getChild('MuteToggle') as VideoJsComponent;
-
-    muteComponent.handleClick = toggleIsMuted;
+    // if (!player) {
+    // }
+    // const muteComponent = player
+    //   .getChild('ControlBar')
+    //   .getChild('VolumePanel')
+    //   .getChild('MuteToggle') as VideoJsComponent;
+    // muteComponent.handleClick = toggleIsMuted;
   }, [player, toggleIsMuted]);
 
   useEffect(() => {

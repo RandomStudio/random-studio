@@ -1,4 +1,5 @@
 import videojs from 'video.js';
+import Component from 'video.js/dist/types/component';
 import Player from 'video.js/dist/types/player.d';
 
 type ComponentTypes =
@@ -8,29 +9,54 @@ type ComponentTypes =
 
 type OptionValuesTypes = string | (() => void);
 
-const replaceVideoPlayerComponent = (
-  currentPlayer: Player,
-  component: ComponentTypes,
-  options: {
-    [key: string]: OptionValuesTypes;
-  },
-) => {
-  const ComponentConstructor = videojs.getComponent(component);
+type CustomComponentTypes = {
+  currentPlayer: Player;
+  index: number;
+  options: { [key: string]: OptionValuesTypes };
+};
+
+const addMuteButton = (currentPlayer, index, options): CustomComponentTypes => {
+  const MuteToggleConstructor = videojs.getComponent('VolumePanel');
+  // @ts-expect-error Incomplete typings on the videojs library
+  const MuteToggleComponent = new MuteToggleConstructor(currentPlayer, options);
+
+  MuteToggleComponent.removeChild('VolumeControl');
+
+  // const existingVolumePanel = currentPlayer.getChild('VolumePanel');
+  // .getChild('VolumePanel');
+
+  // currentPlayer.getChild('ControlBar').removeChild(existingVolumePanel);
+
+  currentPlayer
+    .getChild('ControlBar')
+    // .addChild(customComponent, null, index)
+    .addChild(MuteToggleComponent, options, index);
+
+  console.log(MuteToggleComponent.children());
+
+  return MuteToggleComponent as Component;
+};
+
+const addPlayToggle = (currentPlayer, index, options): CustomComponentTypes => {
+  const ComponentConstructor = videojs.getComponent('PlayToggle');
 
   // @ts-expect-error Incomplete typings on the videojs library
   const customComponent = new ComponentConstructor(currentPlayer, options);
 
-  const existingPlayButton = currentPlayer
+  currentPlayer
     .getChild('ControlBar')
-    .getChild(component);
+    .addChild(customComponent, options, index);
 
-  currentPlayer.getChild('ControlBar').removeChild(existingPlayButton);
+  return customComponent as Component;
+};
 
-  currentPlayer.getChild('ControlBar').addChild(customComponent, null, 0);
-
-  return customComponent;
+const replaceVideoPlayerComponents = (currentPlayer: Player) => {
+  // return {
+  //   playButton: replacePlayPauseButton(),
+  //   muteButton: replaceMuteButton(),
+  // };
 };
 
 // New functions will be added
 // eslint-disable-next-line import/prefer-default-export
-export { replaceVideoPlayerComponent };
+export { addPlayToggle, addMuteButton, replaceVideoPlayerComponents };
