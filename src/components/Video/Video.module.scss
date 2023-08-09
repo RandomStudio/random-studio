@@ -20,6 +20,10 @@
       position: relative;
     }
 
+    :global(.vjs-progress-control) {
+      max-width: 600px;
+    }
+
     // Custom video player styling
     :global(.vjs-control) {
       height: 3em;
@@ -45,6 +49,11 @@
         }
       }
 
+      .playerDownload {
+        &::after {
+          content: "Download";
+        }
+      }
       .playerMute {
         --text: "Mute";
         &:global(.vjs-hover) {

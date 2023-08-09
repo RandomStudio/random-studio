@@ -1,5 +1,4 @@
 import videojs from 'video.js';
-import Component from 'video.js/dist/types/component';
 import Player from 'video.js/dist/types/player.d';
 
 type ComponentTypes =
@@ -15,48 +14,63 @@ type CustomComponentTypes = {
   options: { [key: string]: OptionValuesTypes };
 };
 
-const addMuteButton = (currentPlayer, index, options): CustomComponentTypes => {
+const addMuteButton = (currentPlayer, options, index): CustomComponentTypes => {
   const MuteToggleConstructor = videojs.getComponent('VolumePanel');
+
   // @ts-expect-error Incomplete typings on the videojs library
-  const MuteToggleComponent = new MuteToggleConstructor(currentPlayer, options);
+  const MuteToggleComponent = new MuteToggleConstructor(
+    currentPlayer,
+    options,
+    index,
+  );
 
   MuteToggleComponent.removeChild('VolumeControl');
 
-  // const existingVolumePanel = currentPlayer.getChild('VolumePanel');
-  // .getChild('VolumePanel');
-
-  // currentPlayer.getChild('ControlBar').removeChild(existingVolumePanel);
-
   currentPlayer
     .getChild('ControlBar')
-    // .addChild(customComponent, null, index)
     .addChild(MuteToggleComponent, options, index);
 
-  console.log(MuteToggleComponent.children());
-
-  return MuteToggleComponent as Component;
+  return MuteToggleComponent;
 };
 
-const addPlayToggle = (currentPlayer, index, options): CustomComponentTypes => {
+const addPlayToggle = (currentPlayer, options, index): CustomComponentTypes => {
   const ComponentConstructor = videojs.getComponent('PlayToggle');
 
   // @ts-expect-error Incomplete typings on the videojs library
-  const customComponent = new ComponentConstructor(currentPlayer, options);
+  const customComponent = new ComponentConstructor(
+    currentPlayer,
+    options,
+    index,
+  );
 
   currentPlayer
     .getChild('ControlBar')
     .addChild(customComponent, options, index);
 
-  return customComponent as Component;
+  return customComponent;
 };
 
-const replaceVideoPlayerComponents = (currentPlayer: Player) => {
-  // return {
-  //   playButton: replacePlayPauseButton(),
-  //   muteButton: replaceMuteButton(),
-  // };
+const addDownloadButton = (
+  currentPlayer,
+  options,
+  index,
+): CustomComponentTypes => {
+  const ComponentConstructor = videojs.getComponent('Button');
+  // @ts-expect-error Incomplete typings on the videojs library
+
+  const DownloadButtonComponent = new ComponentConstructor(
+    currentPlayer,
+    options,
+    index,
+  );
+
+  currentPlayer.getChild('ControlBar').addChild(DownloadButtonComponent);
+
+  // console.log(MuteToggleComponent.children());
+
+  return DownloadButtonComponent;
 };
 
 // New functions will be added
 // eslint-disable-next-line import/prefer-default-export
-export { addPlayToggle, addMuteButton, replaceVideoPlayerComponents };
+export { addPlayToggle, addMuteButton, addDownloadButton };

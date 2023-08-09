@@ -7,12 +7,13 @@ import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
-import { addMuteButton, addPlayToggle } from './utils';
+import { addDownloadButton, addMuteButton, addPlayToggle } from './utils';
 
 // This is available but not typed in video.js
 type VideoJsComponent = Component & {
   handleClick: () => void;
 };
+
 export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
@@ -36,12 +37,36 @@ const Video = ({
   );
 
   const addCustomControls = useCallback((videoJsPlayer: Player) => {
-    const muteButton = addMuteButton(videoJsPlayer, 2, {
-      className: styles.playerMute,
-    });
+    const muteButton = addMuteButton(
+      videoJsPlayer,
+      {
+        className: styles.playerMute,
+        controlText: 'Mute/Unmute',
+      },
+      10,
+    );
 
-    const playToggle = addPlayToggle(videoJsPlayer, 2, {
-      className: styles.playerPlayPause,
+    const playToggle = addPlayToggle(
+      videoJsPlayer,
+      {
+        className: styles.playerPlayPause,
+        controlText: 'Play/Pause',
+      },
+      0,
+    );
+
+    const downloadButton = addDownloadButton(
+      videoJsPlayer,
+      {
+        className: styles.playerDownload,
+        controlText: 'Download',
+        // Find a way to set the video link as 'href'
+      },
+      3,
+    );
+
+    downloadButton.on('click', function () {
+      window.open(`${video.baseUrl}/original`);
     });
 
     muteButton.on('click', function () {
@@ -77,6 +102,7 @@ const Video = ({
         subsCapsButton: false, // safari
         volumePanel: false,
         playToggle: false,
+        fullscreenToggle: false,
       },
       loop: isLooping,
       playsinline: true,
