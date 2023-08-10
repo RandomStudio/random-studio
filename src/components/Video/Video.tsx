@@ -61,6 +61,11 @@ const Video = ({
       return;
     }
 
+    // Have to do it again manually here, since all searchParams from the
+    // useSearchParams hook are undefined on initial render
+    const searchParamsObject = new URLSearchParams(window.location.search);
+    const newControls = searchParamsObject.get('hasNewControls');
+
     const videoElement = document.createElement('video-js');
     videoContainerRef.current.appendChild(videoElement);
 
@@ -73,12 +78,12 @@ const Video = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls || hasNewControls,
+      controls: hasControls || newControls,
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
         subsCapsButton: false, // safari
-        ...(hasNewControls && {
+        ...(newControls && {
           volumePanel: false,
           playToggle: false,
           fullscreenToggle: false,
@@ -97,7 +102,7 @@ const Video = ({
     });
 
     setPlayer(videoJsPlayer);
-  }, [hasControls, hasNewControls, isAutoplaying, isLooping, video]);
+  }, [hasControls, isAutoplaying, isLooping, video]);
 
   useEffect(() => {
     if (!player) {
@@ -131,17 +136,24 @@ const Video = ({
   }, [isMuted, player]);
 
   useEffect(() => {
+    // Doesn't work with new controls yet
     if (!player) {
       return;
     }
 
-    const muteComponent = player
-      .getChild('ControlBar')
-      .getChild('VolumePanel')
-      .getChild('MuteToggle') as VideoJsComponent;
+    const VolumePanel = player.getChild('ControlBar').getChild('VolumePanel');
+
+    // With new controls we delete the Volume panel
+    if (!VolumePanel) {
+      return;
+    }
+
+    const muteComponent = VolumePanel.getChild(
+      'MuteToggle',
+    ) as VideoJsComponent;
 
     muteComponent.handleClick = toggleIsMuted;
-  }, [player, toggleIsMuted]);
+  }, [hasNewControls, player, toggleIsMuted]);
 
   if (!video) {
     return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
