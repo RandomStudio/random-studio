@@ -4,18 +4,26 @@ import { VideoData } from '../../../types/types';
 type ControlsTypes = {
   handlePlayToggle: () => void;
   handleMuteToggle: () => void;
+  isPlaying: boolean;
+  isMuted: boolean;
   video: VideoData;
 };
 
 const Controls = ({
   handlePlayToggle,
   handleMuteToggle,
+  isMuted,
+  isPlaying,
   video,
 }: ControlsTypes) => {
   return (
     <div className={styles.wrapper}>
-      <button onClick={handlePlayToggle} type="button">
-        {'Play/pause'}
+      <button
+        className={styles.playToggle}
+        onClick={handlePlayToggle}
+        type="button"
+      >
+        {isPlaying ? 'Pause' : 'Play'}
       </button>
 
       <button
@@ -23,14 +31,16 @@ const Controls = ({
         onClick={handleMuteToggle}
         type="button"
       >
-        {'Mute/unmute'}
+        {isMuted ? 'Sound On' : 'Sound Off'}
       </button>
 
-      <a download href={`${video.baseUrl}/original`}>
-        {'Download'}
-      </a>
+      <div className={styles.pullRight}>
+        <a download href={`${video.baseUrl}/original`}>
+          {'Download'}
+        </a>
 
-      <button type="button">{'Share'}</button>
+        <button type="button">{'Share'}</button>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+  useCallback,
+} from 'react';
 import videojs from 'video.js';
 import Player from 'video.js/dist/types/player.d';
 import styles from './Video.module.scss';
@@ -24,12 +30,26 @@ const Video = ({
   const videoContainerRef = useRef(null);
 
   const [player, setPlayer] = useState<Player>(null);
-  const [hasLoaded, setHasLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(
     video?.hls ?? 'unknown',
   );
+
+  const handlePlayToggle = () => {
+    if (!player) {
+      return;
+    }
+
+    if (player.paused()) {
+      player.play();
+
+      return;
+    }
+
+    player.pause();
+  };
 
   const handleLoadVideo = useCallback(() => {
     if (!video) {
@@ -59,6 +79,15 @@ const Video = ({
       },
       loop: isLooping,
       playsinline: true,
+    });
+
+    videoJsPlayer.on('play', () => {
+      setIsPlaying(true);
+      // handlePlayPause(false);
+    });
+
+    videoJsPlayer.on('pause', () => {
+      setIsPlaying(false);
     });
 
     setPlayer(videoJsPlayer);
@@ -113,9 +142,13 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
+        {isPlaying ? 'playing' : 'not playing'}
+
         <Controls
           handleMuteToggle={toggleIsMuted}
-          handlePlayToggle={() => setIsPlaying(prev => !prev)}
+          handlePlayToggle={handlePlayToggle}
+          isMuted={isMuted}
+          isPlaying={isPlaying}
           video={video}
         />
 

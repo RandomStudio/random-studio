@@ -14,7 +14,6 @@
     width: 100%;
     height: 100% !important;
     padding: 0 !important;
-    background-color: var(--background-color);
 
     video {
       position: relative;
@@ -23,8 +22,65 @@
     // Custom video player styling
     :global(.vjs-control-bar) {
       max-width: 600px;
-      background-color: none;
-      margin-left: 8rem;
+      background: none;
+      margin-left: 4rem;
+      z-index: 9;
+      margin-bottom: 19px; // Visually align with controls
+
+      * {
+        font-family: "Random Regular";
+      }
+    }
+
+    :global(.vjs-progress-control) {
+      // The minus in front of total duration
+      :global(.vjs-remaining-time) > span[aria-hidden="true"] {
+        display: none;
+      }
+
+      * {
+        font-size: 14px;
+      }
+      &.hover {
+        * {
+          font-size: 14px;
+        }
+      }
+
+      // Popup on mousehover with current time
+      :global(.vjs-play-progress .vjs-time-tooltip) {
+        color: white;
+        font-size: 14px;
+        background: none;
+        top: -2em;
+      }
+
+      :global(.vjs-progress-holder) {
+        * {
+          font-size: 14px;
+        }
+        height: 1px;
+        background: rgba(255, 255, 255, 0.4);
+
+        :global(.vjs-play-progress) {
+          background: white;
+          height: 3px;
+          transform: translateY(-1px);
+        }
+      }
+    }
+
+    // Total duration
+    :global(.vjs-remaining-time-display) {
+      font-size: 17px;
+    }
+
+    :global(.vjs-play-progress)::before {
+      content: "";
+    }
+
+    :global(.vjs-load-progress) {
+      display: none;
     }
   }
 }
