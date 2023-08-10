@@ -19,34 +19,34 @@
       position: relative;
     }
 
+    * {
+      font-size: 14px;
+    }
+    &.hover {
+      * {
+        font-size: 14px;
+      }
+    }
+
     // Custom video player styling
     :global(.vjs-control-bar) {
       max-width: 600px;
       background: none;
       margin-left: 4rem;
       z-index: 9;
-      margin-bottom: 19px; // Visually align with controls
+      margin-bottom: 13px; // Visually align with controls
 
       * {
         font-family: "Random Regular";
       }
     }
 
+    // The minus in front of total duration
+    :global(.vjs-remaining-time) > span[aria-hidden="true"] {
+      display: none;
+    }
+
     :global(.vjs-progress-control) {
-      // The minus in front of total duration
-      :global(.vjs-remaining-time) > span[aria-hidden="true"] {
-        display: none;
-      }
-
-      * {
-        font-size: 14px;
-      }
-      &.hover {
-        * {
-          font-size: 14px;
-        }
-      }
-
       // Popup on mousehover with current time
       :global(.vjs-play-progress .vjs-time-tooltip) {
         color: white;
@@ -67,6 +67,10 @@
           height: 3px;
           transform: translateY(-1px);
         }
+
+        :global(.vjs-load-progress) {
+          display: none;
+        }
       }
     }
 
@@ -77,10 +81,6 @@
 
     :global(.vjs-play-progress)::before {
       content: "";
-    }
-
-    :global(.vjs-load-progress) {
-      display: none;
     }
   }
 }

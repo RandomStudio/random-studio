@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useRef,
-  useCallback,
-} from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import videojs from 'video.js';
 import Player from 'video.js/dist/types/player.d';
 import styles from './Video.module.scss';
@@ -83,7 +77,6 @@ const Video = ({
 
     videoJsPlayer.on('play', () => {
       setIsPlaying(true);
-      // handlePlayPause(false);
     });
 
     videoJsPlayer.on('pause', () => {
