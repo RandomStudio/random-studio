@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import videojs from 'video.js';
+import Component from 'video.js/dist/types/component.d';
 import Player from 'video.js/dist/types/player.d';
+import classNames from 'classnames';
+import { useSearchParams } from 'next/navigation';
 import styles from './Video.module.scss';
 import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
@@ -11,9 +14,12 @@ import Controls from './Controls/Controls';
 export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
-  isFocused?: boolean;
   isLooping?: boolean;
   video?: VideoData;
+};
+
+type VideoJsComponent = Component & {
+  handleClick: () => void;
 };
 
 const Video = ({
@@ -21,9 +27,12 @@ const Video = ({
   hasControls = false,
   isLooping = true,
   video = null,
-  isFocused = false,
 }: VideoProps) => {
   const videoContainerRef = useRef(null);
+
+  const searchParams = useSearchParams();
+
+  const hasNewControls = searchParams.get('hasNewControls');
 
   const [player, setPlayer] = useState<Player>(null);
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
@@ -64,14 +73,16 @@ const Video = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls && isFocused,
+      controls: hasControls || hasNewControls,
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
         subsCapsButton: false, // safari
-        volumePanel: false,
-        playToggle: false,
-        fullscreenToggle: false,
+        ...(hasNewControls && {
+          volumePanel: false,
+          playToggle: false,
+          fullscreenToggle: false,
+        }),
       },
       loop: isLooping,
       playsinline: true,
@@ -86,7 +97,7 @@ const Video = ({
     });
 
     setPlayer(videoJsPlayer);
-  }, [hasControls, isAutoplaying, isFocused, isLooping, video]);
+  }, [hasControls, hasNewControls, isAutoplaying, isLooping, video]);
 
   useEffect(() => {
     if (!player) {
@@ -119,12 +130,29 @@ const Video = ({
     player.muted(isMuted);
   }, [isMuted, player]);
 
+  useEffect(() => {
+    if (!player) {
+      return;
+    }
+
+    const muteComponent = player
+      .getChild('ControlBar')
+      .getChild('VolumePanel')
+      .getChild('MuteToggle') as VideoJsComponent;
+
+    muteComponent.handleClick = toggleIsMuted;
+  }, [player, toggleIsMuted]);
+
   if (!video) {
     return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
   }
 
   const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
   const aspectRatioStyle = { aspectRatio: `${video.width} / ${video.height}` };
+
+  const videoClasses = classNames(styles.video, {
+    [styles.newControls]: hasNewControls,
+  });
 
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
@@ -137,7 +165,7 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
-        {isFocused && (
+        {hasNewControls && (
           <Controls
             handleMuteToggle={toggleIsMuted}
             handlePlayToggle={handlePlayToggle}
@@ -148,7 +176,7 @@ const Video = ({
         )}
 
         <div
-          className={styles.video}
+          className={videoClasses}
           ref={videoContainerRef}
           style={aspectRatioStyle}
         />
