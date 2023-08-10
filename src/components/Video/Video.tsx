@@ -86,7 +86,7 @@ const Video = ({
     });
 
     setPlayer(videoJsPlayer);
-  }, [hasControls, isAutoplaying, isLooping, video]);
+  }, [hasControls, isAutoplaying, isFocused, isLooping, video]);
 
   useEffect(() => {
     if (!player) {
