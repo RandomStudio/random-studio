@@ -11,6 +11,7 @@ import Controls from './Controls/Controls';
 export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
+  isFocused?: boolean;
   isLooping?: boolean;
   video?: VideoData;
 };
@@ -20,6 +21,7 @@ const Video = ({
   hasControls = false,
   isLooping = true,
   video = null,
+  isFocused = false,
 }: VideoProps) => {
   const videoContainerRef = useRef(null);
 
@@ -62,7 +64,7 @@ const Video = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls,
+      controls: hasControls && isFocused,
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
@@ -135,15 +137,15 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
-        {isPlaying ? 'playing' : 'not playing'}
-
-        <Controls
-          handleMuteToggle={toggleIsMuted}
-          handlePlayToggle={handlePlayToggle}
-          isMuted={isMuted}
-          isPlaying={isPlaying}
-          video={video}
-        />
+        {isFocused && (
+          <Controls
+            handleMuteToggle={toggleIsMuted}
+            handlePlayToggle={handlePlayToggle}
+            isMuted={isMuted}
+            isPlaying={isPlaying}
+            video={video}
+          />
+        )}
 
         <div
           className={styles.video}
