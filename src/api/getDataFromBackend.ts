@@ -1,4 +1,5 @@
 import { GraphQLClient, RequestDocument } from 'graphql-request';
+import addAdditionalInfoToBlocks from '../pages/api/addAdditionalDataToBlocks';
 
 const getDataFromBackend = async ({
   query,
@@ -22,7 +23,7 @@ const getDataFromBackend = async ({
 
   const data = await client.request(query, variables);
 
-  return data;
+  return addAdditionalInfoToBlocks(data);
 };
 
 export default getDataFromBackend;
