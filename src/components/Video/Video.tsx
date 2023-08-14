@@ -2,13 +2,14 @@ import useSwr from 'swr';
 import styles from './Video.module.scss';
 import VideoContent from './VideoContent/VideoContent';
 import { VideoData } from '../../types/types';
+import { getVideoDetailsById, sanitiseVideoId } from '../../utils/videoUtils';
 
 type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
-  id: string;
-  video: VideoData;
+  id?: string;
+  video?: VideoData;
 };
 
 // Fetcher function that fetches data from getVideoData netlify function
@@ -18,30 +19,24 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   }
 
   // Some old videos are a full URL, rather than an ID
-  const id = videoRef.includes('http')
-    ? videoRef.replace('/original', '').split('/').at(-1)
-    : videoRef;
+  const id = sanitiseVideoId(videoRef);
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL}/.netlify/functions/getVideoData/${id}`,
-  );
+  const details = await getVideoDetailsById(id);
 
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
+  if (!details) {
+    throw new Error('No details found for id');
   }
 
-  return response.json();
+  return details;
 };
 
 const Video = ({
   isAutoplaying = true,
   hasControls = false,
-  id,
+  id = '',
   isLooping = true,
   video = null,
 }: VideoProps) => {
-  console.log(video);
-
   const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
     fallbackData: video,
   });

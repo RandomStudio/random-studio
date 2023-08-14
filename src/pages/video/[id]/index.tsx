@@ -30,7 +30,7 @@ const VideoFocusModePage = () => {
         {projectId}
       </p>
 
-      <Video id={id} />
+      <Video id={id as unknown as string} />
     </Layout>
   );
 };

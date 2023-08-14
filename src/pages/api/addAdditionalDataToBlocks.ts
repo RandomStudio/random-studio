@@ -1,10 +1,14 @@
+import { sanitiseVideoId } from '../../utils/videoUtils';
+
 const VIDEO_URL_KEYS = ['video', 'featuredVideo'];
 
 // Do we need to manipulate a value returned by the Dato API response? Here's the place to do it.
 const manipulateValue = async (key, value) => {
   if (VIDEO_URL_KEYS.includes(key)) {
+    const id = sanitiseVideoId(value);
+
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL}/.netlify/functions/getVideoData/${value}`,
+      `${process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL}/.netlify/functions/getVideoData/${id}`,
     );
 
     return response.json();

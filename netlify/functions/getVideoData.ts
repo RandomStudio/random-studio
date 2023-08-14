@@ -1,48 +1,5 @@
 import type { HandlerEvent } from '@netlify/functions';
-import sharp from 'sharp';
-
-export const getImage = async url => {
-  const response = await fetch(url);
-
-  return Buffer.from(await response.arrayBuffer());
-};
-
-export const createPlaceholder = async (thumbnailUrl: string) => {
-  const image = await getImage(thumbnailUrl);
-
-  try {
-    const buffer = await sharp(image)
-      .raw()
-      .ensureAlpha()
-      .resize(12, 12, { fit: 'inside' })
-      .toFormat(sharp.format.png)
-      .toBuffer();
-
-    return buffer.toString('base64');
-  } catch (error) {
-    console.error(error);
-
-    return null;
-  }
-};
-
-export const formatVideoData = async details => {
-  const { guid, width, height, thumbnailFileName } = details;
-  const baseUrl = `https://videos.random.studio/${guid}`;
-
-  const thumbnailUrl = `${baseUrl}/${thumbnailFileName}`;
-
-  const data = {
-    baseUrl,
-    blur: await createPlaceholder(thumbnailUrl),
-    fallback: thumbnailUrl,
-    height,
-    hls: `${baseUrl}/playlist.m3u8`,
-    width,
-  };
-
-  return data;
-};
+import { formatVideoData } from '../../src/utils/videoUtils';
 
 const handler = async (event: HandlerEvent) => {
   const url = new URL(event.rawUrl);
@@ -55,7 +12,6 @@ const handler = async (event: HandlerEvent) => {
   if (!hasSpecifiedId) {
     return {
       statusCode: 404,
-      body: null,
     };
   }
 
@@ -66,7 +22,6 @@ const handler = async (event: HandlerEvent) => {
   if (!details) {
     return {
       statusCode: 400,
-      body: null,
     };
   }
 
