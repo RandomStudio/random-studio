@@ -2,7 +2,7 @@
 import React, { ReactElement } from 'react';
 
 type ErrorBoundaryProps = {
-  children: ReactElement[];
+  children: ReactElement;
 };
 
 type ErrorBoundaryState = {

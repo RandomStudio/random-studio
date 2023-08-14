@@ -1,6 +1,6 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import '../styles/global.scss';
 import { useRouter } from 'next/router';
+import { SWRConfig } from 'swr';
 import React from 'react';
 import styles from './App.module.scss';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
@@ -20,19 +20,22 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
 
   return (
     <ErrorBoundary>
-      <Component {...pageProps} />
+      <SWRConfig>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} />
 
-      {isPreview && (
-        <div className={styles.preview}>
-          {'Viewing preview'}
+        {isPreview && (
+          <div className={styles.preview}>
+            {'Viewing preview'}
 
-          <br />
+            <br />
 
-          <a href={`/api/clear-preview?slug=${router.pathname}`}>
-            {'(Switch to live)'}
-          </a>
-        </div>
-      )}
+            <a href={`/api/clear-preview?slug=${router.pathname}`}>
+              {'(Switch to live)'}
+            </a>
+          </div>
+        )}
+      </SWRConfig>
     </ErrorBoundary>
   );
 };

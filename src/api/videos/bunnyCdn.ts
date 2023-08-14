@@ -1,7 +1,3 @@
-import * as dotenv from 'dotenv';
-
-dotenv.config();
-
 let cachedItems = [];
 const libraryId = 87989;
 
@@ -25,6 +21,8 @@ export const getVideosList = async () => {
   const { items } = await f.json();
 
   cachedItems = [...cachedItems, ...items];
+
+  return cachedItems;
 };
 
 export const getVideoDetailsById = async id => {

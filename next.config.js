@@ -20,6 +20,11 @@ module.exports = withBundleAnalyzer({
         permanent: false,
       },
       {
+        source: '/video',
+        destination: '/',
+        permanent: false,
+      },
+      {
         source: '/chloe',
         destination:
           'https://random.studio/projects/a-ss21-collection-experience-for-chloe',
