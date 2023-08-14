@@ -37,7 +37,7 @@ const Video = ({
 
   const projectSlug = router.query.slug;
 
-  const hasNewControls = searchParams.get('hasNewControls');
+  const hasFocusMode = searchParams.get('hasFocusMode');
 
   const [player, setPlayer] = useState<Player>(null);
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
@@ -69,7 +69,7 @@ const Video = ({
     // Have to do it again manually here, since all searchParams from the
     // useSearchParams hook are undefined on initial render
     const searchParamsObject = new URLSearchParams(window.location.search);
-    const newControls = searchParamsObject.get('hasNewControls');
+    const focusMode = searchParamsObject.get('hasFocusMode');
 
     const videoElement = document.createElement('video-js');
     videoContainerRef.current.appendChild(videoElement);
@@ -83,12 +83,12 @@ const Video = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls || (hasControls && newControls),
+      controls: hasControls || (hasControls && focusMode),
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
         subsCapsButton: false, // safari
-        ...(newControls && {
+        ...(focusMode && {
           volumePanel: false,
           playToggle: false,
           fullscreenToggle: false,
@@ -158,7 +158,7 @@ const Video = ({
     ) as VideoJsComponent;
 
     muteComponent.handleClick = toggleIsMuted;
-  }, [hasNewControls, player, toggleIsMuted]);
+  }, [hasFocusMode, player, toggleIsMuted]);
 
   if (!video) {
     return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
@@ -168,8 +168,8 @@ const Video = ({
   const aspectRatioStyle = { aspectRatio: `${video.width} / ${video.height}` };
 
   const videoClasses = classNames(styles.video, {
-    [styles.newControls]: hasNewControls,
-    [styles.oldControls]: !hasNewControls,
+    [styles.newControls]: hasFocusMode,
+    [styles.oldControls]: !hasFocusMode,
   });
 
   const getCurrentTimeParam = () => {
@@ -192,7 +192,7 @@ const Video = ({
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
       <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
-        {!hasControls && hasNewControls && (
+        {!hasControls && hasFocusMode && (
           <PreviewControls handleClick={handleOpenFocusMode} />
         )}
 
@@ -204,7 +204,7 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
-        {hasNewControls && hasControls && (
+        {hasFocusMode && hasControls && (
           <Controls
             handleMuteToggle={toggleIsMuted}
             handlePlayToggle={handlePlayToggle}
