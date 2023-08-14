@@ -78,7 +78,7 @@ const Video = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls || newControls,
+      controls: hasControls && newControls,
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
@@ -164,6 +164,7 @@ const Video = ({
 
   const videoClasses = classNames(styles.video, {
     [styles.newControls]: hasNewControls,
+    [styles.oldControls]: !hasNewControls,
   });
 
   return (
@@ -177,7 +178,7 @@ const Video = ({
           style={aspectRatioStyle}
         />
 
-        {hasNewControls && (
+        {hasNewControls && hasControls && (
           <Controls
             handleMuteToggle={toggleIsMuted}
             handlePlayToggle={handlePlayToggle}

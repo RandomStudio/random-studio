@@ -66,6 +66,22 @@
   }
 }
 
+.oldControls {
+  :global(.vjs-control) {
+    height: 3em;
+  }
+
+  :global(.vjs-control-bar) {
+    height: 3.5em;
+    background-color: none;
+    background: linear-gradient(transparent, rgb(0 0 0 / 0.35));
+  }
+
+  :global(.vjs-control):focus {
+    text-shadow: none;
+  }
+}
+
 .frame {
   position: relative;
   overflow: hidden;
@@ -85,20 +101,6 @@
 
     video {
       position: relative;
-    }
-
-    :global(.vjs-control) {
-      height: 3em;
-    }
-
-    :global(.vjs-control-bar) {
-      height: 3.5em;
-      background-color: none;
-      background: linear-gradient(transparent, rgb(0 0 0 / 0.35));
-    }
-
-    :global(.vjs-control):focus {
-      text-shadow: none;
     }
   }
 }
