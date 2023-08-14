@@ -2,7 +2,9 @@ let cachedItems = [];
 
 export const getVideoThumbnail = async url => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL}/.netlify/functions/getVideoThumbnail?thumbnailUrl=${url}`,
+    `${
+      process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL ?? ''
+    }/.netlify/functions/getVideoThumbnail?thumbnailUrl=${url}`,
   );
 
   const { buffer } = await response.json();
@@ -34,7 +36,9 @@ export const getVideosList = async () => {
   }
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL}/.netlify/functions/getVideosList`,
+    `${
+      process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL ?? ''
+    }/.netlify/functions/getVideosList`,
   );
 
   if (!response.ok) {
@@ -55,7 +59,8 @@ export const getVideoDetailsById = async id => {
     await getVideosList();
   }
 
-  const details = cachedItems.find(video => video.guid === id);
+  const sanitisedId = sanitiseVideoId(id);
+  const details = cachedItems.find(video => video.guid === sanitisedId);
 
   return formatVideoData(details);
 };
