@@ -43,6 +43,8 @@ export const getVideosList = async () => {
 
   const items = await response.json();
   cachedItems = [...cachedItems, ...items];
+
+  return items;
 };
 
 export const sanitiseVideoId = id =>
