@@ -10,12 +10,14 @@ import LazyLoad from '../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
 import Controls from './Controls/Controls';
+import PreviewControls from './PreviewControls/PreviewControls';
 
 export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
   video?: VideoData;
+  focusUrl?: string;
 };
 
 type VideoJsComponent = Component & {
@@ -27,6 +29,7 @@ const Video = ({
   hasControls = false,
   isLooping = true,
   video = null,
+  focusUrl = '',
 }: VideoProps) => {
   const videoContainerRef = useRef(null);
 
@@ -78,7 +81,7 @@ const Video = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls && newControls,
+      controls: hasControls || (hasControls && newControls),
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
@@ -169,6 +172,10 @@ const Video = ({
 
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
+      {!hasControls && hasNewControls && (
+        <PreviewControls video={video} videoUrl="test" />
+      )}
+
       <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
         <img
           alt="video placeholder"

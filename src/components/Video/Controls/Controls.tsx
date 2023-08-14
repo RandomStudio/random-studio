@@ -16,6 +16,8 @@ const Controls = ({
   isPlaying,
   video,
 }: ControlsTypes) => {
+  const { baseUrl } = video;
+
   return (
     <div className={styles.wrapper}>
       <button
@@ -35,7 +37,7 @@ const Controls = ({
       </button>
 
       <div className={styles.pullRight}>
-        <a download href={`${video.baseUrl}/original`}>
+        <a download href={`${baseUrl}/original`}>
           {'Download'}
         </a>
 

@@ -1,0 +1,35 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  overflow: visible;
+  padding-left: 44px;
+  padding-bottom: 14px;
+  cursor: default;
+  mix-blend-mode: difference;
+
+  font-size: 18px;
+
+  span {
+    position: absolute;
+    color: white;
+    padding-left: 15px;
+    padding-top: 10px;
+    display: block;
+    top: 0;
+    left: 0;
+  }
+}
+
+.soundOnButton {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
