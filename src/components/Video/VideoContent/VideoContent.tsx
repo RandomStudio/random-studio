@@ -71,7 +71,7 @@ const VideoContent = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls && newControls,
+      controls: hasControls || (hasControls && newControls),
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
