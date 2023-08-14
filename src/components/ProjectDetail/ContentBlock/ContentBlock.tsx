@@ -55,7 +55,7 @@ const ContentBlock = ({
       return (
         <>
           <Video
-            hasControls={hasControls}
+            hasControls={false}
             isAutoplaying={autoplay}
             isLooping={loops}
             video={video}

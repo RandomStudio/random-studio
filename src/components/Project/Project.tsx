@@ -35,7 +35,7 @@ const Project = ({
   >
     <div className={styles.media}>
       {featuredVideo ? (
-        <Video video={featuredVideo} />
+        <Video hasControls={false} video={featuredVideo} />
       ) : (
         <Image
           alt="" // Keeps the screen reader focused on project list
@@ -51,8 +51,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-              marginLeft: '0',
-            }
+            marginLeft: '0',
+          }
       }
     >
       <Markdown markdown={title} />

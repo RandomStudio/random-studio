@@ -1,32 +1,43 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 type PositionType = {
   x: number | null;
   y: number | null;
 };
 
-const useMousePosition = () => {
+const useMousePosition = parentElement => {
   const [mousePosition, setMousePosition] = React.useState<PositionType>({
     x: null,
     y: null,
   });
 
-  React.useEffect(() => {
-    const updateMousePosition = (ev: MouseEvent) => {
-      setMousePosition({
-        x: ev.clientX,
-        y: ev.clientY,
-      });
-    };
+  const updateMousePosition = useCallback((ev: MouseEvent, parent) => {
+    const mouseX = ev.clientX;
+    const mouseY = ev.clientY;
 
-    window.addEventListener('mousemove', updateMousePosition);
+    const offsetTop = parent.getBoundingClientRect().top;
 
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-    };
+    setMousePosition({
+      x: mouseX,
+      y: mouseY - offsetTop,
+    });
   }, []);
 
-  console.log(mousePosition.x);
+  React.useEffect(() => {
+    if (!parentElement) {
+      return undefined;
+    }
+
+    window.addEventListener('mousemove', e =>
+      updateMousePosition(e, parentElement),
+    );
+
+    return () => {
+      window.removeEventListener('mousemove', e =>
+        updateMousePosition(e, parentElement),
+      );
+    };
+  }, [parentElement, updateMousePosition]);
 
   return mousePosition as PositionType;
 };

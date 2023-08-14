@@ -5,4 +5,5 @@ declare interface Window {
     event: string,
     options?: { props: { [key: string]: unknown } },
   ) => void;
+  DocumentTouch: any;
 }

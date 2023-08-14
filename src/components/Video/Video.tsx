@@ -4,6 +4,7 @@ import Component from 'video.js/dist/types/component.d';
 import Player from 'video.js/dist/types/player.d';
 import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import styles from './Video.module.scss';
 import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
@@ -17,7 +18,6 @@ export type VideoProps = {
   isAutoplaying?: boolean;
   isLooping?: boolean;
   video?: VideoData;
-  focusUrl?: string;
 };
 
 type VideoJsComponent = Component & {
@@ -29,11 +29,13 @@ const Video = ({
   hasControls = false,
   isLooping = true,
   video = null,
-  focusUrl = '',
 }: VideoProps) => {
   const videoContainerRef = useRef(null);
-
   const searchParams = useSearchParams();
+
+  const router = useRouter();
+
+  const projectSlug = router.query.slug;
 
   const hasNewControls = searchParams.get('hasNewControls');
 
@@ -170,13 +172,30 @@ const Video = ({
     [styles.oldControls]: !hasNewControls,
   });
 
+  const getCurrentTimeParam = () => {
+    if (!player) {
+      return null;
+    }
+
+    return `?time=${player.currentTime()}`;
+  };
+
+  const handleOpenFocusMode = () => {
+    // TODO: Update the id with a real one
+    const path = `/video/2c5d33bf-d194-42a5-b914-a342201c74e1/${projectSlug}`;
+
+    const queryParams = getCurrentTimeParam();
+
+    router.push(`${path}${queryParams}`);
+  };
+
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
-      {!hasControls && hasNewControls && (
-        <PreviewControls video={video} videoUrl="test" />
-      )}
-
       <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
+        {!hasControls && hasNewControls && (
+          <PreviewControls handleClick={handleOpenFocusMode} />
+        )}
+
         <img
           alt="video placeholder"
           aria-hidden

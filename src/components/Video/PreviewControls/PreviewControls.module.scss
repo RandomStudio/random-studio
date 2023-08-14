@@ -6,30 +6,38 @@
   height: 100%;
   z-index: 1;
   overflow: hidden;
-
   display: flex;
   align-items: flex-end;
   overflow: visible;
-  padding-left: 44px;
-  padding-bottom: 14px;
   cursor: default;
   mix-blend-mode: difference;
+  user-select: none;
 
-  font-size: 18px;
+  padding-left: 20px;
+  padding-bottom: 8px;
+  font-size: 15px;
 
-  span {
-    position: absolute;
-    color: white;
-    padding-left: 15px;
-    padding-top: 10px;
-    display: block;
-    top: 0;
-    left: 0;
+  @media screen and (min-width: 768px) {
+    padding-left: 44px;
+    padding-bottom: 14px;
+    font-size: 18px;
   }
+}
+
+.cursorFollowText {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-top: 14px;
+  padding-left: 10px;
 }
 
 .soundOnButton {
   color: white;
   text-decoration: none;
   cursor: pointer;
+  background: none;
+  border: none;
 }
