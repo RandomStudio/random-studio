@@ -28,6 +28,7 @@ const Carousel = ({
   return (
     <div className={`${styles.carousel} ${className}`}>
       <div className={styles.slides}>
+        {/* @ts-expect-error slide types */}
         {slides.map(({ id, video, image }, index) => (
           <div
             className={styles.slide}
