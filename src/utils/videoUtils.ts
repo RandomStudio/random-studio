@@ -1,10 +1,20 @@
 let cachedItems = [];
 
+const getFunctionUrl = (path: string) => {
+  const host =
+    process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL ??
+    (typeof window === 'undefined'
+      ? 'http://localhost:3000'
+      : window.location.host);
+
+  const url = new URL(path, host);
+
+  return url.href;
+};
+
 export const getVideoThumbnail = async url => {
   const response = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL ?? ''
-    }/.netlify/functions/getVideoThumbnail?thumbnailUrl=${url}`,
+    getFunctionUrl(`/.netlify/functions/getVideoThumbnail?thumbnailUrl=${url}`),
   );
 
   const { buffer } = await response.json();
@@ -36,9 +46,7 @@ export const getVideosList = async () => {
   }
 
   const response = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL ?? ''
-    }/.netlify/functions/getVideosList`,
+    getFunctionUrl(`/.netlify/functions/getVideosList`),
   );
 
   if (!response.ok) {
