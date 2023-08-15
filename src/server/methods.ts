@@ -4,6 +4,11 @@ import { getVideoDetailsById } from '../utils/videoUtils';
 
 export const getVideoDetailsByIdOnServer = async (id: string) => {
   const videoDetails = await getVideoDetailsById(id);
+
+  if (!videoDetails) {
+    return null;
+  }
+
   const imageString = await createBlurredImage(videoDetails.fallback);
 
   return {
