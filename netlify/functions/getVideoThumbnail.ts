@@ -7,31 +7,40 @@ const getImage = async url => {
   return Buffer.from(await response.arrayBuffer());
 };
 
-const handler = async (event: HandlerEvent) => {
-  const { thumbnailUrl } = event.queryStringParameters;
+export const createBlurredImage = async (thumbnailUrl: string) => {
   const image = await getImage(thumbnailUrl);
 
-  try {
-    const buffer = await sharp(image)
-      .raw()
-      .ensureAlpha()
-      .resize(12, 12, { fit: 'inside' })
-      .toFormat(sharp.format.png)
-      .toBuffer();
+  const buffer = await sharp(image)
+    .raw()
+    .ensureAlpha()
+    .resize(12, 12, { fit: 'inside' })
+    .toFormat(sharp.format.png)
+    .toBuffer();
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        buffer: buffer.toString('base64'),
-      }),
-    };
-  } catch (error) {
-    console.error(error);
-
-    return {
-      statusCode: 500,
-    };
-  }
+  return buffer.toString('base64');
 };
 
-export { handler };
+export const handler = async (event: HandlerEvent) => {
+  if (!event.queryStringParameters) {
+    return {
+      statusCode: 404,
+    };
+  }
+
+  const { thumbnailUrl } = event.queryStringParameters;
+
+  if (!thumbnailUrl) {
+    return {
+      statusCode: 400,
+    };
+  }
+
+  const imageString = await createBlurredImage(thumbnailUrl);
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      imageString,
+    }),
+  };
+};

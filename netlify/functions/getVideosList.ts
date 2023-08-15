@@ -1,16 +1,32 @@
-const handler = async () => {
-  const f = await fetch(
-    `https://video.bunnycdn.com/library/87989/videos?itemsPerPage=1000`,
-    {
-      headers: {
-        accept: 'application/json',
-        'content-type': 'application/*+json',
-        AccessKey: process.env.BUNNY_TOKEN,
+export const getVideosList = async () => {
+  try {
+    const response = await fetch(
+      `https://video.bunnycdn.com/library/87989/videos?itemsPerPage=1000`,
+      {
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/*+json',
+          AccessKey: process.env.BUNNY_TOKEN,
+        },
       },
-    },
-  );
+    );
 
-  const { items } = await f.json();
+    if (!response.ok) {
+      throw new Error('Unable to retrieve list of videos from Bunny');
+    }
+
+    const { items } = await response.json();
+
+    return items;
+  } catch (error) {
+    console.error(error);
+
+    return [];
+  }
+};
+
+const handler = async () => {
+  const items = await getVideosList();
 
   return {
     statusCode: 200,

@@ -1,11 +1,11 @@
-let cachedItems = [];
+import { getVideosList } from '../../netlify/functions/getVideosList';
 
 const getFunctionUrl = (path: string) => {
   const host =
     process.env.NEXT_PUBLIC_NETLIFY_FUNCTIONS_BASE_URL ??
     (typeof window === 'undefined'
       ? 'http://localhost:3000'
-      : window.location.host);
+      : window.location.origin);
 
   const url = new URL(path, host);
 
@@ -17,9 +17,9 @@ export const getVideoThumbnail = async url => {
     getFunctionUrl(`/.netlify/functions/getVideoThumbnail?thumbnailUrl=${url}`),
   );
 
-  const { buffer } = await response.json();
+  const { imageString } = await response.json();
 
-  return buffer;
+  return imageString;
 };
 
 export const formatVideoData = async details => {
@@ -30,51 +30,54 @@ export const formatVideoData = async details => {
 
   const data = {
     baseUrl,
-    blur: await getVideoThumbnail(thumbnailUrl),
     fallback: thumbnailUrl,
     height,
     hls: `${baseUrl}/playlist.m3u8`,
     width,
   };
 
-  return data;
+  if (typeof window === 'undefined') {
+    return data;
+  }
+
+  return {
+    ...data,
+    blur: await getVideoThumbnail(thumbnailUrl),
+  };
 };
 
-export const getVideosList = async () => {
+let cachedItems = [];
+
+export const getVideosListWithCache = async () => {
   if (cachedItems.length > 0) {
     return cachedItems;
   }
 
-  try {
-    const response = await fetch(
-      getFunctionUrl(`/.netlify/functions/getVideosList`),
-    );
-
-    if (!response.ok) {
-      throw new Error('Unable to retrieve list of videos from Function');
-    }
-
-    const items = await response.json();
+  if (typeof window === 'undefined') {
+    const items = await getVideosList();
     cachedItems = [...cachedItems, ...items];
 
     return items;
-  } catch (error) {
-    console.error(error);
-
-    return [];
   }
+
+  const response = await fetch(
+    getFunctionUrl('/.netlify/functions/getVideosList'),
+  );
+
+  const items = await response.json();
+
+  cachedItems = [...cachedItems, ...items];
+
+  return items;
 };
 
 export const sanitiseVideoId = id =>
   id.includes('http') ? id.replace('/original', '').split('/').at(-1) : id;
 
 export const getVideoDetailsById = async id => {
-  if (cachedItems.length === 0) {
-    await getVideosList();
-  }
-
+  const items = await getVideosListWithCache();
   const sanitisedId = sanitiseVideoId(id);
-  const details = cachedItems.find(video => video.guid === sanitisedId);
+  const details = items.find(video => video.guid === sanitisedId);
 
   if (!details) {
     console.error(`Unable to find video with id ${sanitisedId}`);

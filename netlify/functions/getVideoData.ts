@@ -1,11 +1,9 @@
 import type { HandlerEvent } from '@netlify/functions';
 import { formatVideoData } from '../../src/utils/videoUtils';
+import { getVideosList } from './getVideosList';
 
 const handler = async (event: HandlerEvent) => {
-  const url = new URL(event.rawUrl);
-  url.pathname = '/.netlify/functions/getVideosList';
-  const response = await fetch(url.href);
-  const items = await response.json();
+  const items = await getVideosList();
 
   const hasSpecifiedId = event.path.split('/').length > 4;
 
