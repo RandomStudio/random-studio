@@ -24,6 +24,8 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   const details = await getVideoDetailsById(id);
 
   if (!details) {
+    console.error('Unable to retrieve video details for ID', id);
+
     throw new Error('No details found for id');
   }
 

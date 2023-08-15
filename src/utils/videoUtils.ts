@@ -45,18 +45,24 @@ export const getVideosList = async () => {
     return cachedItems;
   }
 
-  const response = await fetch(
-    getFunctionUrl(`/.netlify/functions/getVideosList`),
-  );
+  try {
+    const response = await fetch(
+      getFunctionUrl(`/.netlify/functions/getVideosList`),
+    );
 
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
+    if (!response.ok) {
+      throw new Error('Unable to retrieve list of videos from Function');
+    }
+
+    const items = await response.json();
+    cachedItems = [...cachedItems, ...items];
+
+    return items;
+  } catch (error) {
+    console.error(error);
+
+    return [];
   }
-
-  const items = await response.json();
-  cachedItems = [...cachedItems, ...items];
-
-  return items;
 };
 
 export const sanitiseVideoId = id =>
@@ -69,6 +75,12 @@ export const getVideoDetailsById = async id => {
 
   const sanitisedId = sanitiseVideoId(id);
   const details = cachedItems.find(video => video.guid === sanitisedId);
+
+  if (!details) {
+    console.error(`Unable to find video with id ${sanitisedId}`);
+
+    return null;
+  }
 
   return formatVideoData(details);
 };
