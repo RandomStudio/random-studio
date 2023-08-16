@@ -1,7 +1,7 @@
 export const getVideosList = async () => {
   try {
     const response = await fetch(
-      `https://video.bunnycdn.com/library/87989/videos?itemsPerPage=1000`,
+      `https://video.bunnycdn.com/library/${process.env.BUNNY_LIBRARY_ID}/videos?itemsPerPage=1000`,
       {
         headers: {
           accept: 'application/json',
