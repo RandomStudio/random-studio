@@ -10,6 +10,7 @@ type VideoProps = {
   isLooping?: boolean;
   id?: string;
   video?: VideoData;
+  isFocusMode?: boolean;
 };
 
 // Fetcher function that fetches data from getVideoData netlify function
@@ -38,6 +39,7 @@ const Video = ({
   id = '',
   isLooping = true,
   video = null,
+  isFocusMode = false,
 }: VideoProps) => {
   const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
     fallbackData: video,
@@ -51,6 +53,7 @@ const Video = ({
     <VideoContent
       hasControls={hasControls}
       isAutoplaying={isAutoplaying}
+      isFocusMode={isFocusMode}
       isLooping={isLooping}
       video={data}
     />

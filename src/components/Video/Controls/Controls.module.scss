@@ -9,13 +9,18 @@
   padding-bottom: 24px;
   font-size: 17px;
 
+  &.isFocusMode {
+    padding: 0 6%;
+    bottom: 2.8%;
+  }
+
   button,
   a {
     background: none;
     border: none;
-    color: white;
+    color: black;
     text-decoration: none;
-    width: 7rem;
+    width: 5rem;
     display: flex;
     align-items: center;
     text-align: left;
@@ -24,7 +29,7 @@
   }
 
   .muteToggle {
-    margin-left: 590px; // Progress bar width
+    margin-left: 300px; // Progress bar width
   }
 
   .playToggle {
@@ -38,6 +43,8 @@
 
   a,
   button {
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 }

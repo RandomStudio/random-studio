@@ -16,6 +16,7 @@ export type VideoContentProps = {
   isAutoplaying: boolean;
   isLooping: boolean;
   video: VideoData;
+  isFocusMode?: boolean;
 };
 
 type VideoJsComponent = Component & {
@@ -27,6 +28,7 @@ const VideoContent = ({
   hasControls,
   isLooping,
   video: { baseUrl, blur, height, hls, width },
+  isFocusMode = false,
 }: VideoContentProps) => {
   const videoContainerRef = useRef(null);
 
@@ -156,9 +158,13 @@ const VideoContent = ({
     [styles.oldControls]: !hasFocusMode,
   });
 
+  const frameClasses = classNames(styles.frame, {
+    [styles.isFocusMode]: isFocusMode,
+  });
+
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
-      <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
+      <div className={`${frameClasses} ${hasLoadedClassName}`} data-vjs-player>
         <img
           alt="video placeholder"
           aria-hidden
@@ -172,6 +178,7 @@ const VideoContent = ({
             baseUrl={baseUrl}
             handleMuteToggle={toggleIsMuted}
             handlePlayToggle={handlePlayToggle}
+            isFocusMode={isFocusMode}
             isMuted={isMuted}
             isPlaying={isPlaying}
           />

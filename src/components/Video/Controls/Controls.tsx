@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import styles from './Controls.module.scss';
 
 type ControlsTypes = {
@@ -6,6 +7,7 @@ type ControlsTypes = {
   handleMuteToggle: () => void;
   isPlaying: boolean;
   isMuted: boolean;
+  isFocusMode?: boolean;
 };
 
 const Controls = ({
@@ -14,9 +16,14 @@ const Controls = ({
   handleMuteToggle,
   isMuted,
   isPlaying,
+  isFocusMode = false,
 }: ControlsTypes) => {
+  const wrapperClasses = classNames(styles.wrapper, {
+    [styles.isFocusMode]: isFocusMode,
+  });
+
   return (
-    <div className={styles.wrapper}>
+    <div className={wrapperClasses}>
       <button
         className={styles.playToggle}
         onClick={handlePlayToggle}

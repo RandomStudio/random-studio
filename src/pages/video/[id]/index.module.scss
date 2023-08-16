@@ -1,0 +1,18 @@
+.videoWrapper{
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkButton{
+  position: absolute;
+  margin-top:10px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

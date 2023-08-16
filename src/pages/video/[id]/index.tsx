@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Video from '../../../components/Video/Video';
 import Layout from '../../../components/Layout/Layout';
+import styles from './index.module.scss';
 import Head from '../../../components/Head/Head';
 
 const VideoFocusModePage = () => {
@@ -9,28 +10,18 @@ const VideoFocusModePage = () => {
   const { id, projectId } = router.query;
 
   return (
-    <Layout hasFooter={false}>
-      <Head />
+    <Layout hasFooter={false} hasNavigation={false}>
+      <div className={styles.linkButton}>
+        {projectId ? (
+          <Link href={`/project/${projectId}`}>View case study</Link>
+        ) : (
+          <Link href="/">Close</Link>
+        )}
+      </div>
 
-      {projectId ? (
-        <Link href={`/project/${projectId}`}>View case study</Link>
-      ) : (
-        <Link href="/">View website</Link>
-      )}
-
-      <h1>VideoFocusModePage</h1>
-
-      <p>
-        id:
-        {id}
-      </p>
-
-      <p>
-        projectId:
-        {projectId}
-      </p>
-
-      <Video id={id as unknown as string} />
+      <div className={styles.videoWrapper}>
+        <Video hasControls id={id as unknown as string} isFocusMode />
+      </div>
     </Layout>
   );
 };
