@@ -1,9 +1,6 @@
-/* eslint-disable no-console */
-import fetch from 'node-fetch';
-
 const mailChimpAPI = process.env.MAILCHIMP_API_KEY;
 
-export async function handler(event) {
+async function handler(event) {
   const createResponse = payload => ({
     statusCode: 201,
     ...payload,

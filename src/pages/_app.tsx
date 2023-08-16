@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import '../styles/global.scss';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -20,6 +19,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
 
   return (
     <ErrorBoundary>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
 
       {isPreview && (
