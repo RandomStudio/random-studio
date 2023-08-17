@@ -17,6 +17,7 @@ export type VideoContentProps = {
   isAutoplaying: boolean;
   isLooping: boolean;
   video: VideoData;
+  handleClick?: (time: number) => void;
 };
 
 type VideoJsComponent = Component & {
@@ -28,6 +29,7 @@ const VideoContent = ({
   hasControls,
   isLooping,
   video: { baseUrl, blur, height, hls, width },
+  handleClick = null,
 }: VideoContentProps) => {
   const videoContainerRef = useRef(null);
 
@@ -58,7 +60,7 @@ const VideoContent = ({
     // Have to do it again manually here, since all searchParams from the
     // useSearchParams hook are undefined on initial render
     const searchParamsObject = new URLSearchParams(window.location.search);
-    const newControls = searchParamsObject.get('hasFocusMode');
+    const focusModeControls = searchParamsObject.get('hasFocusMode');
 
     const videoElement = document.createElement('video-js');
     videoContainerRef.current.appendChild(videoElement);
@@ -72,12 +74,12 @@ const VideoContent = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: hasControls || (hasControls && newControls),
+      controls: !focusModeControls && hasControls,
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
         subsCapsButton: false, // safari
-        ...(newControls && {
+        ...(focusModeControls && {
           volumePanel: false,
           playToggle: false,
           fullscreenToggle: false,
@@ -159,7 +161,11 @@ const VideoContent = ({
 
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
-      <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
+      <div
+        className={`${styles.frame} ${hasLoadedClassName}`}
+        data-vjs-player
+        onClick={() => handleClick(123)}
+      >
         {hasControls && hasFocusMode && <FocusModeControls />}
 
         <img

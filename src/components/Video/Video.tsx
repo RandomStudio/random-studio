@@ -1,5 +1,6 @@
 import React from 'react';
 import useSwr from 'swr';
+import { useRouter } from 'next/router';
 import { getVideoDetailsById, sanitiseVideoId } from '../../utils/videoUtils';
 import styles from './Video.module.scss';
 import VideoContent from './VideoContent/VideoContent';
@@ -40,9 +41,17 @@ const Video = ({
   isLooping = true,
   video = null,
 }: VideoProps) => {
+  const router = useRouter();
+
   const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
     fallbackData: video,
   });
+
+  const { slug } = router.query;
+
+  const handleOpenFocusMode = time => {
+    router.push(`/video/${video.guid}/${slug}?time=1232`);
+  };
 
   if (isLoading || error || !data) {
     return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
@@ -50,6 +59,7 @@ const Video = ({
 
   return (
     <VideoContent
+      handleClick={handleOpenFocusMode}
       hasControls={hasControls}
       isAutoplaying={isAutoplaying}
       isLooping={isLooping}
