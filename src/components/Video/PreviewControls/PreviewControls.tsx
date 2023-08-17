@@ -1,31 +1,40 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import styles from './PreviewControls.module.scss';
 import isTouchDevice from '../../../utils/isTouchDevice';
-import useMousePosition from '../../../utils/hooks/useMousePosition';
 
 const PreviewControls = ({ handleClick }: { handleClick: () => void }) => {
-  const isMobile = isTouchDevice();
+  const isTouch = isTouchDevice();
 
   const parentRef = useRef<HTMLDivElement>();
   const followTextRef = useRef<HTMLSpanElement>();
 
-  const mousePosition = useMousePosition(parentRef.current);
-
-  useEffect(() => {
-    if (!followTextRef.current) {
+  const updateMousePosition = useCallback((ev: MouseEvent) => {
+    if (!followTextRef.current || !parentRef.current) {
       return;
     }
 
-    followTextRef.current.style.transform = `translate(${mousePosition.x}px, ${mousePosition.y}px)`;
-  }, [mousePosition]);
+    const offsetTop = parentRef.current.getBoundingClientRect().top;
+    const mouseX = ev.clientX;
+    const mouseY = ev.clientY - offsetTop;
+
+    followTextRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('mousemove', e => updateMousePosition(e));
+
+    return () => {
+      window.removeEventListener('mousemove', e => updateMousePosition(e));
+    };
+  }, [updateMousePosition]);
 
   return (
     <div className={styles.wrapper} onClick={handleClick} ref={parentRef}>
-      <button className={styles.soundOnButton} type="button">
-        {isMobile ? 'Show controls' : 'Sound on'}
-      </button>
+      <span className={styles.soundOnText}>
+        {isTouch ? 'Show controls' : 'Sound on'}
+      </span>
 
-      {!isMobile && (
+      {!isTouch && (
         <span className={styles.cursorFollowText} ref={followTextRef}>
           {'Show controls'}
         </span>

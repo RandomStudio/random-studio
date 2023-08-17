@@ -18,6 +18,7 @@ export type VideoProps = {
   isAutoplaying?: boolean;
   isLooping?: boolean;
   video?: VideoData;
+  handleFocusClick?: () => void;
 };
 
 type VideoJsComponent = Component & {
@@ -29,13 +30,10 @@ const Video = ({
   hasControls = false,
   isLooping = true,
   video = null,
+  handleFocusClick = null,
 }: VideoProps) => {
   const videoContainerRef = useRef(null);
   const searchParams = useSearchParams();
-
-  const router = useRouter();
-
-  const projectSlug = router.query.slug;
 
   const hasFocusMode = searchParams.get('hasFocusMode');
 
@@ -180,20 +178,11 @@ const Video = ({
     return `?time=${player.currentTime()}`;
   };
 
-  const handleOpenFocusMode = () => {
-    // TODO: Update the id with a real one
-    const path = `/video/2c5d33bf-d194-42a5-b914-a342201c74e1/${projectSlug}`;
-
-    const queryParams = getCurrentTimeParam();
-
-    router.push(`${path}${queryParams}`);
-  };
-
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
       <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
         {!hasControls && hasFocusMode && (
-          <PreviewControls handleClick={handleOpenFocusMode} />
+          <PreviewControls handleClick={handleFocusClick} />
         )}
 
         <img
