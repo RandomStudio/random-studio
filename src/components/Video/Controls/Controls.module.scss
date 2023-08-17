@@ -23,6 +23,13 @@
     padding: 0;
   }
 
+  &.hasInvertedColors {
+    button,
+    a {
+      color: black;
+    }
+  }
+
   .muteToggle {
     margin-left: 590px; // Progress bar width
   }

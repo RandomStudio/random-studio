@@ -17,6 +17,10 @@
       z-index: 9;
       margin-bottom: 13px; // Visually align with controls
 
+      .hasInvertedColors & {
+        filter: invert(1);
+      }
+
       * {
         font-family: "Random Regular";
       }
@@ -81,7 +85,7 @@
     :global(.vjs-control):focus {
       text-shadow: none;
     }
-}
+  }
 }
 
 .frame {

@@ -19,7 +19,10 @@ export const imageDataPropType = PropTypes.shape({
 
 export const videoPropType = PropTypes.shape({
   baseUrl: PropTypes.string.isRequired,
-  blur: PropTypes.string.isRequired,
+  blur: PropTypes.shape({
+    thumbnail: PropTypes.string.isRequired,
+    background: PropTypes.string.isRequired,
+  }).isRequired,
   height: PropTypes.number.isRequired,
   hls: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,

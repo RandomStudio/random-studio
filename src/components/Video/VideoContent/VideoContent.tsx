@@ -4,6 +4,7 @@ import Component from 'video.js/dist/types/component.d';
 import Player from 'video.js/dist/types/player.d';
 import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
+import tinycolor from 'tinycolor2';
 import styles from './VideoContent.module.scss';
 import LazyLoad from '../../LazyLoad/LazyLoad';
 import useSharedUnmutedVideoState from '../useSharedUnmutedVideoState';
@@ -148,22 +149,31 @@ const VideoContent = ({
     muteComponent.handleClick = toggleIsMuted;
   }, [hasFocusMode, player, toggleIsMuted]);
 
-  const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
   const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
+
+  const bgColor = tinycolor(blur.dominantColor);
+  const textColor = tinycolor('white');
+
+  const hasInvertedColors = !tinycolor.isReadable(bgColor, textColor);
 
   const videoClasses = classNames(styles.video, {
     [styles.newControls]: hasFocusMode,
     [styles.oldControls]: !hasFocusMode,
   });
 
+  const frameClasses = classNames(styles.frame, {
+    [styles.isLoaded]: hasLoaded,
+    [styles.hasInvertedColors]: hasInvertedColors,
+  });
+
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
-      <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
+      <div className={frameClasses} data-vjs-player>
         <img
           alt="video placeholder"
           aria-hidden
           className={styles.placeholder}
-          src={`data:image/jpeg;base64,${blur}`}
+          src={`data:image/jpeg;base64,${blur.background}`}
           style={aspectRatioStyle}
         />
 
@@ -172,6 +182,7 @@ const VideoContent = ({
             baseUrl={baseUrl}
             handleMuteToggle={toggleIsMuted}
             handlePlayToggle={handlePlayToggle}
+            hasInvertedColors={hasInvertedColors}
             isMuted={isMuted}
             isPlaying={isPlaying}
           />

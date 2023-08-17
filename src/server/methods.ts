@@ -9,11 +9,11 @@ export const getVideoDetailsByIdOnServer = async (id: string) => {
     return null;
   }
 
-  const imageString = await createBlurredImage(videoDetails.fallback);
+  const imageStrings = await createBlurredImage(videoDetails.fallback);
 
   return {
     ...videoDetails,
-    blur: imageString,
+    blur: imageStrings,
   };
 };
 
