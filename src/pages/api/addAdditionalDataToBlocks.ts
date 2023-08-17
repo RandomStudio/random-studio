@@ -1,11 +1,11 @@
-import { getVideoData } from './videos/getVideoData.mjs';
+import { getVideoDetailsByIdOnServer } from '../../server/methods';
 
 const VIDEO_URL_KEYS = ['video', 'featuredVideo'];
 
 // Do we need to manipulate a value returned by the Dato API response? Here's the place to do it.
 const manipulateValue = async (key, value) => {
   if (VIDEO_URL_KEYS.includes(key)) {
-    return getVideoData(value);
+    return getVideoDetailsByIdOnServer(value);
   }
 
   return value;

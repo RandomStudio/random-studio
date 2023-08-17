@@ -20,10 +20,8 @@ export const imageDataPropType = PropTypes.shape({
 export const videoPropType = PropTypes.shape({
   baseUrl: PropTypes.string.isRequired,
   blur: PropTypes.string.isRequired,
-  fallback: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   hls: PropTypes.string.isRequired,
-  sources: PropTypes.arrayOf(PropTypes.string).isRequired,
   width: PropTypes.number.isRequired,
 });
 
