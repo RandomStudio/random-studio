@@ -9,6 +9,7 @@ import { VideoData } from '../../types/types';
 type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
+  isFocused?: boolean;
   isLooping?: boolean;
   id?: string;
   video?: VideoData;
@@ -39,6 +40,7 @@ const Video = ({
   hasControls = false,
   id = '',
   isLooping = true,
+  isFocused = false,
   video = null,
 }: VideoProps) => {
   const router = useRouter();
@@ -50,7 +52,8 @@ const Video = ({
   const { slug } = router.query;
 
   const handleOpenFocusMode = time => {
-    router.push(`/video/${video.guid}/${slug}?time=1232`);
+    const timeParam = time ? `?time=${time}` : '';
+    router.push(`/video/${video.guid}/${slug}${timeParam}`);
   };
 
   if (isLoading || error || !data) {
@@ -62,6 +65,7 @@ const Video = ({
       handleClick={handleOpenFocusMode}
       hasControls={hasControls}
       isAutoplaying={isAutoplaying}
+      isFocused={isFocused}
       isLooping={isLooping}
       video={data}
     />

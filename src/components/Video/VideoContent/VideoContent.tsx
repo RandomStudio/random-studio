@@ -15,6 +15,7 @@ import FocusModeControls from '../FocusModeControls/FocusModeControls';
 export type VideoContentProps = {
   hasControls: boolean;
   isAutoplaying: boolean;
+  isFocused: boolean;
   isLooping: boolean;
   video: VideoData;
   handleClick?: (time: number) => void;
@@ -29,6 +30,7 @@ const VideoContent = ({
   hasControls,
   isLooping,
   video: { baseUrl, blur, height, hls, width },
+  isFocused,
   handleClick = null,
 }: VideoContentProps) => {
   const videoContainerRef = useRef(null);
@@ -62,6 +64,8 @@ const VideoContent = ({
     const searchParamsObject = new URLSearchParams(window.location.search);
     const focusModeControls = searchParamsObject.get('hasFocusMode');
 
+    const hideNativeControls = focusModeControls || isFocused;
+
     const videoElement = document.createElement('video-js');
     videoContainerRef.current.appendChild(videoElement);
 
@@ -74,12 +78,12 @@ const VideoContent = ({
       ],
       autoplay: isAutoplaying,
       muted: true,
-      controls: !focusModeControls && hasControls,
+      controls: !hideNativeControls,
       fluid: true,
       controlBar: {
         pictureInPictureToggle: false, // firefox
         subsCapsButton: false, // safari
-        ...(focusModeControls && {
+        ...(hideNativeControls && {
           volumePanel: false,
           playToggle: false,
           fullscreenToggle: false,
@@ -98,7 +102,7 @@ const VideoContent = ({
     });
 
     setPlayer(videoJsPlayer);
-  }, [hasControls, hls, isAutoplaying, isLooping]);
+  }, [hls, isAutoplaying, isFocused, isLooping]);
 
   useEffect(() => {
     if (!player) {
@@ -159,12 +163,19 @@ const VideoContent = ({
     [styles.oldControls]: !hasFocusMode,
   });
 
+  const handleVideoClick = () => {
+    if (hasControls && hasFocusMode && player) {
+      const currentTime = player.currentTime();
+      handleClick(currentTime);
+    }
+  };
+
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
       <div
         className={`${styles.frame} ${hasLoadedClassName}`}
         data-vjs-player
-        onClick={() => handleClick(123)}
+        onClick={handleVideoClick}
       >
         {hasControls && hasFocusMode && <FocusModeControls />}
 
@@ -176,7 +187,7 @@ const VideoContent = ({
           style={aspectRatioStyle}
         />
 
-        {!hasFocusMode && hasControls && (
+        {isFocused && (
           <Controls
             baseUrl={baseUrl}
             handleMuteToggle={toggleIsMuted}

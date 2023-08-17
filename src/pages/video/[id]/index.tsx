@@ -13,7 +13,7 @@ const VideoFocusModePage = () => {
       <Head />
 
       {projectId ? (
-        <Link href={`/project/${projectId}`}>View case study</Link>
+        <Link href={`/projects/${projectId}`}>View case study</Link>
       ) : (
         <Link href="/">View website</Link>
       )}
@@ -30,7 +30,7 @@ const VideoFocusModePage = () => {
         {projectId}
       </p>
 
-      <Video id={id as unknown as string} />
+      <Video id={id as unknown as string} isFocused />
     </Layout>
   );
 };
