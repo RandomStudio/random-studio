@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useCallback } from 'react';
-import styles from './PreviewControls.module.scss';
+import styles from './FocusModeControls.module.scss';
 import isTouchDevice from '../../../utils/isTouchDevice';
 
-const PreviewControls = ({ handleClick }: { handleClick: () => void }) => {
+const FocusModeControls = () => {
   const isTouch = isTouchDevice();
 
   const parentRef = useRef<HTMLDivElement>();
@@ -29,7 +29,7 @@ const PreviewControls = ({ handleClick }: { handleClick: () => void }) => {
   }, [updateMousePosition]);
 
   return (
-    <div className={styles.wrapper} onClick={handleClick} ref={parentRef}>
+    <div className={styles.wrapper} ref={parentRef}>
       <span className={styles.soundOnText}>
         {isTouch ? 'Show controls' : 'Sound on'}
       </span>
@@ -43,4 +43,4 @@ const PreviewControls = ({ handleClick }: { handleClick: () => void }) => {
   );
 };
 
-export default PreviewControls;
+export default FocusModeControls;

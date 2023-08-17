@@ -15,8 +15,6 @@ const Controls = ({
   isMuted,
   isPlaying,
 }: ControlsTypes) => {
-  const { baseUrl } = video;
-
   return (
     <div className={styles.wrapper}>
       <button

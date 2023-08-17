@@ -10,6 +10,7 @@ import useSharedUnmutedVideoState from '../useSharedUnmutedVideoState';
 import 'video.js/dist/video-js.css';
 import Controls from '../Controls/Controls';
 import { VideoData } from '../../../types/types';
+import FocusModeControls from '../FocusModeControls/FocusModeControls';
 
 export type VideoContentProps = {
   hasControls: boolean;
@@ -159,6 +160,8 @@ const VideoContent = ({
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
       <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
+        {hasControls && hasFocusMode && <FocusModeControls />}
+
         <img
           alt="video placeholder"
           aria-hidden
@@ -167,7 +170,7 @@ const VideoContent = ({
           style={aspectRatioStyle}
         />
 
-        {hasFocusMode && hasControls && (
+        {!hasFocusMode && hasControls && (
           <Controls
             baseUrl={baseUrl}
             handleMuteToggle={toggleIsMuted}
