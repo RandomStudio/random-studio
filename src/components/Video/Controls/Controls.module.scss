@@ -10,8 +10,14 @@
   font-size: 17px;
 
   &.isFocusMode {
-    padding: 0 6%;
-    bottom: 2.8%;
+    position: fixed;
+    width: 100vw;
+    padding-right: 1rem;
+
+    @media (--tablet){
+      padding: 0 6%;
+      bottom: 2.8%;
+    }
   }
 
   button,
@@ -29,7 +35,11 @@
   }
 
   .muteToggle {
-    margin-left: 300px; // Progress bar width
+    .isFocusMode & {
+      @media (--tablet) {
+        margin-left: 300px; // Progress bar width
+      }
+    }
   }
 
   .playToggle {
@@ -46,5 +56,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+  }
+
+  button {
+    width: 4rem;
   }
 }

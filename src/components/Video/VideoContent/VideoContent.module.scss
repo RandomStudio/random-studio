@@ -18,8 +18,12 @@
       margin-bottom: 13px; // Visually align with controls
 
       .isFocusMode & {
-        margin-bottom: -4.6%; // Visually align with controls when on focus page
-        color: black
+        display: none;
+
+        @media (--tablet) {
+          margin-bottom: -4.6%; // Visually align with controls when on focus page
+          color: black
+        }
       }
 
       * {
@@ -109,9 +113,14 @@
   justify-content: center;
 
   &.isFocusMode {
-    overflow: visible;
-    padding: 5% 6% 5%;
     width: 100vw;
+    overflow: visible;
+
+    @media (--tablet){
+      overflow: visible;
+      padding: 5% 6% 5%;
+      width: 100vw;
+    }
   }
 
   .video {
@@ -139,6 +148,12 @@
   aspect-ratio: 16/9;
   height: 100%;
   background: var(--light-grey);
+
+  &.isFocusMode {
+    overflow: visible;
+    padding: 5% 6% 5%;
+    width: 100vw;
+  }
 }
 
 .placeholder {
@@ -158,5 +173,11 @@
 
   .isLoaded & {
     opacity: 0;
+  }
+
+  &.isFocusMode {
+    overflow: visible;
+    padding: 5% 6% 5%;
+    width: 100vw;
   }
 }
