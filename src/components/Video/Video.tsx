@@ -4,7 +4,6 @@ import Component from 'video.js/dist/types/component.d';
 import Player from 'video.js/dist/types/player.d';
 import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/router';
 import styles from './Video.module.scss';
 import { VideoData } from '../../types/types';
 import LazyLoad from '../LazyLoad/LazyLoad';
@@ -18,7 +17,7 @@ export type VideoProps = {
   isAutoplaying?: boolean;
   isLooping?: boolean;
   video?: VideoData;
-  handleFocusClick?: () => void;
+  handleFocusClick?: (currentTime: number) => void;
 };
 
 type VideoJsComponent = Component & {
@@ -170,19 +169,21 @@ const Video = ({
     [styles.oldControls]: !hasFocusMode,
   });
 
-  const getCurrentTimeParam = () => {
-    if (!player) {
-      return null;
+  const handleClickPreviewControls = () => {
+    if (!player || !handleFocusClick) {
+      return;
     }
 
-    return `?time=${player.currentTime()}`;
+    const currentTime = player.currentTime();
+
+    handleFocusClick(currentTime);
   };
 
   return (
     <LazyLoad onIntersect={handleLoadVideo}>
       <div className={`${styles.frame} ${hasLoadedClassName}`} data-vjs-player>
         {!hasControls && hasFocusMode && (
-          <PreviewControls handleClick={handleFocusClick} />
+          <PreviewControls handleClick={handleClickPreviewControls} />
         )}
 
         <img
