@@ -173,7 +173,7 @@ const VideoContent = ({
           alt="video placeholder"
           aria-hidden
           className={styles.placeholder}
-          src={`data:image/jpeg;base64,${blur.background}`}
+          src={`data:image/jpeg;base64,${blur.thumbnail}`}
           style={aspectRatioStyle}
         />
 
