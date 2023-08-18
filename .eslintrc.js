@@ -35,6 +35,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/media-has-caption': 0,
     'react/jsx-filename-extension': 0,
     'arrow-parens': [1, 'as-needed'],
     'brace-style': [2, '1tbs'],

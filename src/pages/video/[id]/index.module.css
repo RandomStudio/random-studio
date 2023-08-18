@@ -1,0 +1,51 @@
+.grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.close {
+  @mixin body-4;
+  grid-row: 1 / 2;
+  text-align: center;
+  width: 100%;
+  margin: 12px auto;
+
+  @media (--tablet) {
+    order: 1;
+    margin: 24px auto ;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.controls {
+  color: black;
+  grid-row: 3 / 4;
+}
+
+.video {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  grid-row: 2 / 3;
+  height: 100%;
+}
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

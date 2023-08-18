@@ -1,4 +1,5 @@
 import useSwr from 'swr';
+import { forwardRef } from 'react';
 import styles from './Video.module.scss';
 import VideoContent from './VideoContent/VideoContent';
 import { VideoData } from '../../types/types';
@@ -9,8 +10,9 @@ type VideoProps = {
   isAutoplaying?: boolean;
   isLooping?: boolean;
   id?: string;
+  onClick?: () => void;
+  onReady?: () => void;
   video?: VideoData;
-  isFocusMode?: boolean;
 };
 
 // Fetcher function that fetches data from getVideoData netlify function
@@ -33,31 +35,43 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   return details;
 };
 
-const Video = ({
-  isAutoplaying = true,
-  hasControls = false,
-  id = '',
-  isLooping = true,
-  video = null,
-  isFocusMode = false,
-}: VideoProps) => {
-  const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
-    fallbackData: video,
-  });
+const Video = forwardRef<HTMLVideoElement, VideoProps>(
+  (
+    { isAutoplaying, hasControls, id, isLooping, onClick, onReady, video },
+    ref,
+  ) => {
+    const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
+      fallbackData: video,
+    });
 
-  if (isLoading || error || !data) {
-    return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
-  }
+    if (isLoading || error || !data) {
+      return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
+    }
 
-  return (
-    <VideoContent
-      hasControls={hasControls}
-      isAutoplaying={isAutoplaying}
-      isFocusMode={isFocusMode}
-      isLooping={isLooping}
-      video={data}
-    />
-  );
+    return (
+      <VideoContent
+        hasControls={hasControls}
+        isAutoplaying={isAutoplaying}
+        isLooping={isLooping}
+        onClick={onClick}
+        onReady={onReady}
+        ref={ref}
+        video={data}
+      />
+    );
+  },
+);
+
+Video.defaultProps = {
+  hasControls: false,
+  id: '',
+  isAutoplaying: true,
+  isLooping: true,
+  onClick: () => null,
+  onReady: () => null,
+  video: null,
 };
+
+Video.displayName = 'Video';
 
 export default Video;
