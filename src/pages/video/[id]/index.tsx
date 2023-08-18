@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import Video from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
@@ -24,15 +24,41 @@ const VideoFocusModePage = () => {
     setIsReady(true);
   }, []);
 
+  const closeJsx = useMemo(() => {
+    if (projectId) {
+      const handleBack = event => {
+        router.back();
+
+        event.preventDefault();
+
+        return false;
+      };
+
+      return (
+        <a href={`/projects/${projectId}`} onClick={handleBack}>
+          {'Back'}
+        </a>
+      );
+    }
+
+    if (projectId) {
+      return (
+        <Link href={`/projects/${projectId}`}>
+          <a>{'View case study'}</a>
+        </Link>
+      );
+    }
+
+    return (
+      <Link href="/">
+        <a>{'Close'}</a>
+      </Link>
+    );
+  }, [router, projectId]);
+
   return (
     <div className={styles.grid}>
-      <div className={styles.close}>
-        {projectId ? (
-          <Link href={`/projects/${projectId}`}>{'View case study'}</Link>
-        ) : (
-          <Link href="/">{'Close'}</Link>
-        )}
-      </div>
+      <div className={styles.close}>{closeJsx}</div>
 
       <div className={styles.video}>
         <Video
