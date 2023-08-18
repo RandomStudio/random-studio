@@ -10,7 +10,7 @@ type VideoProps = {
   isAutoplaying?: boolean;
   isLooping?: boolean;
   id?: string;
-  onClick?: () => void;
+  onClick?: (video: HTMLVideoElement) => void;
   onReady?: () => void;
   video?: VideoData;
 };

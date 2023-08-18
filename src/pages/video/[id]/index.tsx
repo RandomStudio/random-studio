@@ -28,7 +28,7 @@ const VideoFocusModePage = () => {
     <div className={styles.grid}>
       <div className={styles.close}>
         {projectId ? (
-          <Link href={`/project/${projectId}`}>{'View case study'}</Link>
+          <Link href={`/projects/${projectId}`}>{'View case study'}</Link>
         ) : (
           <Link href="/">{'Close'}</Link>
         )}

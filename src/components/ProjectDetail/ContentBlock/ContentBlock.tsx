@@ -1,4 +1,5 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useCallback } from 'react';
+import { useRouter } from 'next/router';
 import {
   BLOCK_TYPES,
   CarouselBlock,
@@ -29,6 +30,19 @@ const ContentBlock = ({
   anchorId,
   ...blockProps
 }: ContentBlockProps) => {
+  const router = useRouter();
+
+  const handleClickVideo = useCallback(
+    (videoEl: HTMLVideoElement) => {
+      const { slug } = router.query;
+
+      const time = videoEl.currentTime;
+      const timeParam = time ? `?time=${time}` : '';
+      router.push(`/video/${videoEl.id}/${slug}${timeParam}`);
+    },
+    [router],
+  );
+
   const renderBlock = () => {
     if (__typename === BLOCK_TYPES.ImageBlockRecord) {
       const { caption, image } = blockProps as ImageBlock;
@@ -58,6 +72,7 @@ const ContentBlock = ({
             hasControls={hasControls}
             isAutoplaying={autoplay}
             isLooping={loops}
+            onClick={handleClickVideo}
             video={video}
           />
 
