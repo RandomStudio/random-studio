@@ -6,6 +6,7 @@
       "esnext"
     ],
     "allowJs": true,
+    "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -22,6 +23,8 @@
     "next-env.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
+    "netlify/functions/*.tsx",
+    "netlify/functions/**/*.tsx",
     "src/types/index.d.ts"
   ],
   "exclude": [

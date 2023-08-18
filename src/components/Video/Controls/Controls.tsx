@@ -1,20 +1,19 @@
 import styles from './Controls.module.scss';
-import { VideoData } from '../../../types/types';
 
 type ControlsTypes = {
+  baseUrl: string;
   handlePlayToggle: () => void;
   handleMuteToggle: () => void;
   isPlaying: boolean;
   isMuted: boolean;
-  video: VideoData;
 };
 
 const Controls = ({
+  baseUrl,
   handlePlayToggle,
   handleMuteToggle,
   isMuted,
   isPlaying,
-  video,
 }: ControlsTypes) => {
   return (
     <div className={styles.wrapper}>
@@ -35,7 +34,7 @@ const Controls = ({
       </button>
 
       <div className={styles.pullRight}>
-        <a download href={`${video.baseUrl}/original`}>
+        <a download href={`${baseUrl}/original`}>
           {'Download'}
         </a>
 
