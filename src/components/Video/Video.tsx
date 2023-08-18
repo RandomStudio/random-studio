@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import useSwr from 'swr';
-import { useRouter } from 'next/router';
 import { getVideoDetailsById, sanitiseVideoId } from '../../utils/videoUtils';
 import styles from './Video.module.scss';
 import VideoContent from './VideoContent/VideoContent';
@@ -9,9 +8,10 @@ import { VideoData } from '../../types/types';
 type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
-  isFocused?: boolean;
   isLooping?: boolean;
   id?: string;
+  onClick?: () => void;
+  onReady?: () => void;
   video?: VideoData;
 };
 
@@ -35,41 +35,43 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   return details;
 };
 
-const Video = ({
-  isAutoplaying = true,
-  hasControls = false,
-  id = '',
-  isLooping = true,
-  isFocused = false,
-  video = null,
-}: VideoProps) => {
-  const router = useRouter();
+const Video = forwardRef<HTMLVideoElement, VideoProps>(
+  (
+    { isAutoplaying, hasControls, id, isLooping, onClick, onReady, video },
+    ref,
+  ) => {
+    const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
+      fallbackData: video,
+    });
 
-  const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
-    fallbackData: video,
-  });
+    if (isLoading || error || !data) {
+      return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
+    }
 
-  const { slug } = router.query;
+    return (
+      <VideoContent
+        hasControls={hasControls}
+        isAutoplaying={isAutoplaying}
+        isLooping={isLooping}
+        onClick={onClick}
+        onReady={onReady}
+        ref={ref}
+        video={data}
+      />
+    );
+  },
+);
 
-  const handleOpenFocusMode = time => {
-    const timeParam = time ? `?time=${time}` : '';
-    router.push(`/video/${video.guid}/${slug}${timeParam}`);
-  };
-
-  if (isLoading || error || !data) {
-    return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
-  }
-
-  return (
-    <VideoContent
-      handleClick={handleOpenFocusMode}
-      hasControls={hasControls}
-      isAutoplaying={isAutoplaying}
-      isFocused={isFocused}
-      isLooping={isLooping}
-      video={data}
-    />
-  );
+Video.defaultProps = {
+  hasControls: false,
+  id: '',
+  isAutoplaying: true,
+  isLooping: true,
+  onClick: () => null,
+  onReady: () => null,
+  video: null,
 };
+
+Video.displayName = 'Video';
 
 export default Video;
