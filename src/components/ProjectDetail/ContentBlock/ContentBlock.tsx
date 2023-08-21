@@ -1,5 +1,6 @@
 import React, { CSSProperties, useCallback } from 'react';
 import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
 import {
   BLOCK_TYPES,
   CarouselBlock,
@@ -31,16 +32,22 @@ const ContentBlock = ({
   ...blockProps
 }: ContentBlockProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const hasFocusMode = searchParams.get('hasFocusMode');
 
   const handleClickVideo = useCallback(
     (videoEl: HTMLVideoElement) => {
+      if (!hasFocusMode) {
+        return;
+      }
+
       const { slug } = router.query;
 
       const time = videoEl.currentTime;
       const timeParam = time ? `?time=${time}` : '';
       router.push(`/video/${videoEl.id}/${slug}${timeParam}`);
     },
-    [router],
+    [hasFocusMode, router],
   );
 
   const renderBlock = () => {
