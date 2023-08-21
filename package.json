@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -- --hostname=0.0.0.0",
     "build": "next build",
     "export": "next build && next export",
     "start": "next start -p 8080",
