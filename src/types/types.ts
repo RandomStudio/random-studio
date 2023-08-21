@@ -1,6 +1,9 @@
 export interface VideoData {
   baseUrl: string;
-  blur?: string;
+  blur?: {
+    thumbnail: string;
+    dominantColor: string;
+  };
   fallback: string;
   height;
   hls: string;
