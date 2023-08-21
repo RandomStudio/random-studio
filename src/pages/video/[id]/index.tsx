@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useCallback, useMemo, useRef, useState } from 'react';
-import tinycolor from 'tinycolor2';
+import { TinyColor, isReadable } from '@ctrl/tinycolor';
 import useSwr from 'swr';
 import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
@@ -71,10 +71,10 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
       return false;
     }
 
-    const bgColor = tinycolor(data.blur.dominantColor);
-    const textColor = tinycolor('white');
+    const bgColor = new TinyColor(data.blur.dominantColor);
+    const textColor = new TinyColor('white');
 
-    return !tinycolor.isReadable(bgColor, textColor);
+    return !isReadable(bgColor, textColor);
   }, [data]);
 
   const gridStyles = useMemo(

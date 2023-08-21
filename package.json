@@ -15,11 +15,10 @@
     "lint": "eslint \"src/**/*.{js,jsx,json,ts,tsx}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
   },
   "dependencies": {
-    "@types/video.js": "^7.3.52",
+    "@ctrl/tinycolor": "3.6.0",
     "classnames": "^2.3.2",
     "graphql-request": "5.1.0",
     "hls.js": "1.4.10",
-    "lodash-es": "4.17.21",
     "next": "^13.2.1",
     "prop-types": "15.8.1",
     "react": "^18.2.0",
@@ -27,8 +26,6 @@
     "react-markdown": "8.0.5",
     "rehype-raw": "^6.1.1",
     "swr": "2.2.1",
-    "tinycolor2": "^1.6.0",
-    "video.js": "^8.3.0",
     "zustand": "^4.3.9"
   },
   "devDependencies": {
