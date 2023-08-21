@@ -6,6 +6,7 @@ import React, {
   useState,
 } from 'react';
 import classNames from 'classnames';
+import { useSearchParams } from 'next/navigation';
 import styles from './VideoContent.module.scss';
 import LazyLoad from '../../LazyLoad/LazyLoad';
 import Controls from '../Controls/Controls';
@@ -59,6 +60,17 @@ const VideoContent = forwardRef<HTMLVideoElement, VideoContentProps>(
       src: hls,
     });
 
+    const searchParams = useSearchParams();
+    const hasFocusMode = searchParams.get('hasFocusMode');
+
+    const handleClick = useCallback(() => {
+      if (!hasFocusMode) {
+        return;
+      }
+
+      onClick(videoRef.current);
+    }, [hasFocusMode, onClick, videoRef]);
+
     const frameClasses = classNames(styles.frame, {
       [styles.isLoaded]: hasLoaded,
       [styles.hasSizeData]: width && height,
@@ -84,7 +96,7 @@ const VideoContent = forwardRef<HTMLVideoElement, VideoContentProps>(
                 id={guid}
                 loop={isLooping}
                 muted
-                onClick={() => onClick(videoRef.current)}
+                onClick={handleClick}
                 onPlaying={handleVideoReady}
                 playsInline
                 ref={videoRef}
