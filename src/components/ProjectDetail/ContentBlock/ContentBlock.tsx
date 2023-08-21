@@ -68,13 +68,15 @@ const ContentBlock = ({
 
       return (
         <>
-          <Video
-            hasControls={hasControls}
-            isAutoplaying={autoplay}
-            isLooping={loops}
-            onClick={handleClickVideo}
-            video={video}
-          />
+          {video && (
+            <Video
+              hasControls={hasControls}
+              isAutoplaying={autoplay}
+              isLooping={loops}
+              onClick={handleClickVideo}
+              video={video}
+            />
+          )}
 
           <Caption caption={caption} marginLeft={marginLeft} />
         </>

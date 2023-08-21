@@ -48,9 +48,6 @@ const Controls = ({
     videoRef.current?.src ?? 'unknown',
   );
 
-  console.log('isMuted', isMuted);
-  console.log(videoRef.current?.src);
-
   useEffect(() => {
     if (!videoRef.current) {
       return;

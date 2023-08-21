@@ -1,4 +1,5 @@
 import { getVideosList } from '../../netlify/functions/getVideosList';
+import { VideoData } from '../types/types';
 
 const getFunctionUrl = (path: string) => {
   const host =
@@ -22,7 +23,7 @@ export const getVideoThumbnail = async url => {
   return imageString;
 };
 
-export const formatVideoData = async details => {
+export const formatVideoData = async (details): Promise<VideoData> => {
   const { guid, width, height, thumbnailFileName } = details;
   const baseUrl = `https://videos.random.studio/${guid}`;
 

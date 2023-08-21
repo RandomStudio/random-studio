@@ -10,14 +10,25 @@ const getImage = async url => {
 export const createBlurredImage = async (thumbnailUrl: string) => {
   const image = await getImage(thumbnailUrl);
 
-  const buffer = await sharp(image)
+  const blurredSharpImage = await sharp(image)
     .raw()
     .ensureAlpha()
-    .resize(12, 12, { fit: 'inside' })
-    .toFormat(sharp.format.png)
-    .toBuffer();
+    .resize(400, 400, { fit: 'inside' })
+    .blur(20)
+    .toFormat(sharp.format.jpeg);
 
-  return buffer.toString('base64');
+  const { dominant } = await blurredSharpImage.stats();
+
+  const dominantColorString = `rgb(${Object.values(dominant).join(',')})`;
+
+  const thumbnailString = (await blurredSharpImage.toBuffer()).toString(
+    'base64',
+  );
+
+  return {
+    thumbnail: thumbnailString,
+    dominantColor: dominantColorString,
+  };
 };
 
 export const handler = async (event: HandlerEvent) => {
@@ -35,12 +46,10 @@ export const handler = async (event: HandlerEvent) => {
     };
   }
 
-  const imageString = await createBlurredImage(thumbnailUrl);
+  const imagesStrings = await createBlurredImage(thumbnailUrl);
 
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      imageString,
-    }),
+    body: imagesStrings,
   };
 };

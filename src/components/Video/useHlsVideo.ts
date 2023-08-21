@@ -15,7 +15,7 @@ const useHlsVideo = ({
   videoRef: MutableRefObject<HTMLVideoElement>;
 }) => {
   useEffect(() => {
-    if (!isMounted || !videoRef.current || !Hls.isSupported()) {
+    if (!isMounted || !videoRef.current) {
       return;
     }
 

@@ -1,16 +1,57 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useCallback, useMemo, useRef, useState } from 'react';
+import { TinyColor, isReadable } from '@ctrl/tinycolor';
+import useSwr from 'swr';
+import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import Video from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
+import { VideoData } from '../../../types/types';
+import {
+  getVideoDetailsById,
+  sanitiseVideoId,
+} from '../../../utils/videoUtils';
+import { getVideosList } from '../../../../netlify/functions/getVideosList';
+import { getVideoDetailsByIdOnServer } from '../../../server/methods';
 
-const VideoFocusModePage = () => {
+// Fetcher function that fetches data from getVideoData netlify function
+const fetcher = async (videoRef: string, video: VideoData) => {
+  if (video) {
+    return video;
+  }
+
+  // Some old videos are a full URL, rather than an ID
+  const id = sanitiseVideoId(videoRef);
+
+  const details = await getVideoDetailsById(id);
+
+  if (!details) {
+    console.error('Unable to retrieve video details for ID', id);
+
+    throw new Error('No details found for id');
+  }
+
+  return details;
+};
+
+type VideoFocusModePageProps = {
+  video: VideoData;
+};
+
+const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const videoRef = useRef<HTMLVideoElement>();
 
   const router = useRouter();
-  const { id, projectId } = router.query;
+
+  const { id } = router.query;
+  const searchParams = useSearchParams();
+  const projectId = searchParams.get('projectId');
+
+  const { data, error } = useSwr(id, () => fetcher(id as string, video), {
+    fallbackData: video,
+  });
 
   const params = useSearchParams();
   const time = params.get('time');
@@ -54,20 +95,50 @@ const VideoFocusModePage = () => {
     return <Link href="/">{'Close'}</Link>;
   }, [router, projectId]);
 
+  const hasInvertedColors = useMemo(() => {
+    if (!data) {
+      return false;
+    }
+
+    const bgColor = new TinyColor(data.blur.dominantColor);
+    const textColor = new TinyColor('white');
+
+    return !isReadable(bgColor, textColor);
+  }, [data]);
+
+  const gridStyles = useMemo(
+    () => ({
+      backgroundColor: data.blur.dominantColor,
+      backgroundImage: data.blur.thumbnail
+        ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
+        : 'none',
+    }),
+    [data.blur.thumbnail, data.blur.dominantColor],
+  );
+
+  const gridClassNames = classNames(styles.grid, {
+    [styles.hasInvertedColors]: hasInvertedColors,
+  });
+
   return (
-    <div className={styles.grid}>
+    <div className={gridClassNames} style={gridStyles}>
       <div className={styles.close}>{closeJsx}</div>
 
       <div className={styles.video}>
-        <Video
-          className={styles.frame}
-          hasControls={false}
-          id={id as unknown as string}
-          isAutoplaying
-          onClick={handleClick}
-          onReady={handleReady}
-          ref={videoRef}
-        />
+        {error || !data ? (
+          <div className={`${styles.frame} ${styles.brokenVideo}`} />
+        ) : (
+          <Video
+            className={styles.frame}
+            hasControls={false}
+            isAutoplaying
+            isLooping
+            onClick={handleClick}
+            onReady={handleReady}
+            ref={videoRef}
+            video={data}
+          />
+        )}
       </div>
 
       {isReady && (
@@ -81,5 +152,28 @@ const VideoFocusModePage = () => {
     </div>
   );
 };
+
+export const getStaticProps = async ({ params }) => {
+  const video = await getVideoDetailsByIdOnServer(params.id);
+
+  return {
+    props: {
+      video,
+    },
+  };
+};
+
+export async function getStaticPaths() {
+  const videos = await getVideosList();
+
+  return {
+    fallback: false,
+    paths: videos.map(({ guid }) => ({
+      params: {
+        id: guid,
+      },
+    })),
+  };
+}
 
 export default VideoFocusModePage;
