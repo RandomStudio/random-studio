@@ -1,14 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const LazyLoad = ({ children, onIntersect }) => {
+type LazyLoadProps = {
+  children: React.ReactNode;
+  onIntersect?: () => void;
+};
+
+const LazyLoad = ({ children, onIntersect = () => null }: LazyLoadProps) => {
   const ref = useRef(null);
 
   const [hasIntersected, setHasIntersected] = useState(false);
 
-  useEffect(() => {
-    const currentRef = ref.current;
+  const onIntersectFuncRef = useRef(onIntersect);
 
-    if (!currentRef || hasIntersected) {
+  useEffect(() => {
+    if (hasIntersected) {
       return undefined;
     }
 
@@ -19,9 +24,7 @@ const LazyLoad = ({ children, onIntersect }) => {
             setHasIntersected(true);
             observer.disconnect();
 
-            if (onIntersect) {
-              onIntersect();
-            }
+            onIntersectFuncRef.current?.();
           }
         });
       },
@@ -30,6 +33,7 @@ const LazyLoad = ({ children, onIntersect }) => {
       },
     );
 
+    const currentRef = ref.current;
     observer.observe(currentRef);
 
     return () => {
@@ -37,10 +41,13 @@ const LazyLoad = ({ children, onIntersect }) => {
         observer.unobserve(currentRef);
       }
 
-      setHasIntersected(false);
       observer.disconnect();
     };
-  }, [ref]);
+  }, [hasIntersected, ref]);
+
+  if (hasIntersected) {
+    return children;
+  }
 
   return <div ref={ref}>{children}</div>;
 };

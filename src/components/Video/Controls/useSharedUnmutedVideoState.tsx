@@ -12,6 +12,8 @@ const useStore = create<Store>(() => ({
 const useSharedUnmutedVideoState = (src: string) => {
   const isMuted = useStore(state => state.activeSrc !== src);
 
+  const activeSrc = useStore(state => state.activeSrc);
+
   const toggleIsMuted = useCallback(() => {
     useStore.setState({
       activeSrc: isMuted ? src : null,

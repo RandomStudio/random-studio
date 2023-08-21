@@ -12,6 +12,7 @@ type LayoutProps = {
   hasFooter?: boolean;
   isLogoCentred?: boolean;
   isNewDesign?: boolean;
+  hasNavigation?: boolean;
 };
 
 const Layout = ({
@@ -20,6 +21,7 @@ const Layout = ({
   hasFooter = true,
   isLogoCentred = false,
   isNewDesign = false,
+  hasNavigation = true,
 }: LayoutProps) => {
   const isAfterDark = useSunset();
 
@@ -38,9 +40,11 @@ const Layout = ({
           {'Skip Navigation'}
         </a>
 
-        <div className={styles.newLayout}>
-          <Navigation isLogoCentred={isLogoCentred} />
-        </div>
+        {hasNavigation && (
+          <div className={styles.newLayout}>
+            <Navigation isLogoCentred={isLogoCentred} />
+          </div>
+        )}
 
         <div className={styles.wrapper} id="main-content">
           {children}

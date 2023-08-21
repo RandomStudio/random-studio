@@ -1,0 +1,34 @@
+.wrapper {
+  @mixin body-4;
+
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 0 20px 12px;
+  color: white;
+
+  button,
+  a {
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .playToggle {
+    width: 3rem;
+    text-align: left;
+  }
+}
+
+.isLightControls {
+  > *:not(.muteToggle) {
+    display: none;
+  }
+}

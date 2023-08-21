@@ -1,14 +1,18 @@
 import useSwr from 'swr';
+import { forwardRef } from 'react';
 import styles from './Video.module.scss';
 import VideoContent from './VideoContent/VideoContent';
 import { VideoData } from '../../types/types';
 import { getVideoDetailsById, sanitiseVideoId } from '../../utils/videoUtils';
 
 type VideoProps = {
+  className?: string;
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
   id?: string;
+  onClick?: () => void;
+  onReady?: () => void;
   video?: VideoData;
 };
 
@@ -32,29 +36,55 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   return details;
 };
 
-const Video = ({
-  isAutoplaying = true,
-  hasControls = false,
-  id = '',
-  isLooping = true,
-  video = null,
-}: VideoProps) => {
-  const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
-    fallbackData: video,
-  });
+const Video = forwardRef<HTMLVideoElement, VideoProps>(
+  (
+    {
+      className,
+      isAutoplaying,
+      hasControls,
+      id,
+      isLooping,
+      onClick,
+      onReady,
+      video,
+    },
+    ref,
+  ) => {
+    const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
+      fallbackData: video,
+    });
 
-  if (isLoading || error || !data) {
-    return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
-  }
+    if (isLoading || error || !data) {
+      return (
+        <div className={`${styles.frame} ${styles.brokenVideo} ${className}`} />
+      );
+    }
 
-  return (
-    <VideoContent
-      hasControls={hasControls}
-      isAutoplaying={isAutoplaying}
-      isLooping={isLooping}
-      video={data}
-    />
-  );
+    return (
+      <VideoContent
+        className={className}
+        hasControls={hasControls}
+        isAutoplaying={isAutoplaying}
+        isLooping={isLooping}
+        onClick={onClick}
+        onReady={onReady}
+        ref={ref}
+        video={data}
+      />
+    );
+  },
+);
+
+Video.defaultProps = {
+  hasControls: false,
+  id: '',
+  isAutoplaying: true,
+  isLooping: true,
+  onClick: () => null,
+  onReady: () => null,
+  video: null,
 };
+
+Video.displayName = 'Video';
 
 export default Video;

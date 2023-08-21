@@ -1,25 +1,66 @@
 import classNames from 'classnames';
-import styles from './Controls.module.scss';
+import { MutableRefObject, useCallback, useEffect, useState } from 'react';
+import styles from './Controls.module.css';
+import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 
-type ControlsTypes = {
-  baseUrl: string;
-  handlePlayToggle: () => void;
-  handleMuteToggle: () => void;
-  hasInvertedColors?: boolean;
-  isPlaying: boolean;
-  isMuted: boolean;
+type ControlsProps = {
+  className?: string;
+  isAutoplaying: boolean;
+  hasExtendedControls?: boolean;
+  videoRef: MutableRefObject<HTMLVideoElement>;
 };
 
 const Controls = ({
-  baseUrl,
-  handlePlayToggle,
-  handleMuteToggle,
-  hasInvertedColors = false,
-  isMuted,
-  isPlaying,
-}: ControlsTypes) => {
-  const wrapperClasses = classNames(styles.wrapper, {
-    [styles.hasInvertedColors]: hasInvertedColors,
+  className = undefined,
+  isAutoplaying = false,
+  hasExtendedControls = false,
+  videoRef,
+}: ControlsProps) => {
+  /*
+  // Handle play pause
+  */
+  const [isPlaying, setIsPlaying] = useState(isAutoplaying);
+
+  const handlePlayToggle = useCallback(() => {
+    setIsPlaying(prev => !prev);
+  }, []);
+
+  useEffect(() => {
+    const changePlayState = isNowPlaying => setIsPlaying(isNowPlaying);
+
+    videoRef.current?.addEventListener('play', () => changePlayState(true));
+
+    videoRef.current?.addEventListener('pause', () => changePlayState(false));
+  }, [videoRef]);
+
+  useEffect(() => {
+    if (isPlaying) {
+      videoRef.current?.play();
+    } else {
+      videoRef.current?.pause();
+    }
+  }, [isPlaying, videoRef]);
+
+  /*
+  // Handle mute
+  */
+  const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(
+    videoRef.current?.src ?? 'unknown',
+  );
+
+  useEffect(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    videoRef.current.muted = isMuted;
+  }, [isMuted, videoRef]);
+
+  /*
+  // Render controls
+  */
+  const wrapperClasses = classNames(styles.wrapper, className, {
+    [styles.isLightControls]: !hasExtendedControls,
   });
 
   return (
@@ -34,19 +75,22 @@ const Controls = ({
 
       <button
         className={styles.muteToggle}
-        onClick={handleMuteToggle}
+        onClick={toggleIsMuted}
         type="button"
       >
         {isMuted ? 'Sound On' : 'Sound Off'}
       </button>
 
-      <div className={styles.pullRight}>
-        <a download href={`${baseUrl}/original`}>
-          {'Download'}
-        </a>
+      <button type="button">{'Share'}</button>
 
-        <button type="button">{'Share'}</button>
-      </div>
+      <a
+        download
+        href={videoRef.current?.dataset.downloadSrc}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {'Download'}
+      </a>
     </div>
   );
 };

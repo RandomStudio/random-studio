@@ -1,113 +1,24 @@
-.newControls {
-  :global(.video-js) {
-    * {
-      font-size: 14px;
-    }
-    &.hover {
-      * {
-        font-size: 14px;
-      }
-    }
-
-    // Custom video player styling
-    :global(.vjs-control-bar) {
-      max-width: 600px;
-      background: none;
-      margin-left: 4rem;
-      z-index: 9;
-      margin-bottom: 13px; // Visually align with controls
-
-      .hasInvertedColors & {
-        filter: invert(1);
-      }
-
-      * {
-        font-family: "Random Regular";
-      }
-    }
-
-    // The minus in front of total duration
-    :global(.vjs-remaining-time) > span[aria-hidden="true"] {
-      display: none;
-    }
-
-    :global(.vjs-progress-control) {
-      // Popup on mousehover with current time
-      :global(.vjs-play-progress .vjs-time-tooltip) {
-        color: white;
-        font-size: 14px;
-        background: none;
-        top: -2em;
-      }
-
-      :global(.vjs-progress-holder) {
-        * {
-          font-size: 14px;
-        }
-        height: 1px;
-        background: rgba(255, 255, 255, 0.4);
-
-        :global(.vjs-play-progress) {
-          background: white;
-          height: 3px;
-          transform: translateY(-1px);
-        }
-
-        :global(.vjs-load-progress) {
-          display: none;
-        }
-      }
-    }
-
-    // Total duration
-    :global(.vjs-remaining-time-display) {
-      font-size: 17px;
-    }
-
-    :global(.vjs-play-progress)::before {
-      content: "";
-    }
-  }
-}
-
-.oldControls {
-  :global(.video-js) {
-    :global(.vjs-control) {
-      height: 3em;
-    }
-
-    :global(.vjs-control-bar) {
-      height: 3.5em;
-      background-color: none;
-      background: linear-gradient(transparent, rgb(0 0 0 / 0.35));
-    }
-
-    :global(.vjs-control):focus {
-      text-shadow: none;
-    }
-  }
-}
-
 .frame {
   position: relative;
   overflow: hidden;
-  .video {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-  }
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  // overwrite playerjs styles to make the video fluid
-  :global(.video-js) {
-    width: 100%;
-    height: 100% !important;
-    padding: 0 !important;
+.video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
 
-    video {
-      position: relative;
-    }
+  .isLoaded & {
+    opacity: 1;
   }
 }
 
@@ -122,17 +33,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  transition: opacity 300ms ease-in;
+  opacity: 0;
   filter: blur(5px);
   transform: scale(1.1);
   position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 1;
+  transition: opacity 300ms ease-in;
 
-  .isLoaded & {
-    opacity: 0;
+  .hasSizeData & {
+    opacity: 1;
   }
 }
