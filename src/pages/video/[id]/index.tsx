@@ -1,14 +1,19 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useCallback, useMemo, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Video from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
 
 const VideoFocusModePage = () => {
   const videoRef = useRef<HTMLVideoElement>();
+
   const router = useRouter();
   const { id, projectId } = router.query;
+
+  const params = useSearchParams();
+  const time = params.get('time');
 
   const [isReady, setIsReady] = useState(false);
 
@@ -22,7 +27,8 @@ const VideoFocusModePage = () => {
 
   const handleReady = useCallback(() => {
     setIsReady(true);
-  }, []);
+    videoRef.current.currentTime = Number(time) || 0;
+  }, [time]);
 
   const closeJsx = useMemo(() => {
     if (projectId) {
