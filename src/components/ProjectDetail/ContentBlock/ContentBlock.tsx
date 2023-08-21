@@ -44,8 +44,12 @@ const ContentBlock = ({
       const { slug } = router.query;
 
       const time = videoEl.currentTime;
-      const timeParam = time ? `?time=${time}` : '';
-      router.push(`/video/${videoEl.id}/${slug}${timeParam}`);
+
+      const url = new URL(window.location.href);
+      url.pathname = `/video/${videoEl.id}/`;
+      url.searchParams.set('projectId', slug as string);
+      url.searchParams.set('time', time.toString());
+      router.push(url.href);
     },
     [hasFocusMode, router],
   );
