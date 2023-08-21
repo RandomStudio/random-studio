@@ -3,11 +3,7 @@ export interface VideoData {
   blur?: {
     thumbnail: string;
     background: string;
-    dominantColor: {
-      r: number;
-      g: number;
-      b: number;
-    };
+    dominantColor: string;
   };
   fallback: string;
   height;

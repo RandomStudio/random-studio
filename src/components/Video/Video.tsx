@@ -1,39 +1,25 @@
-import useSwr from 'swr';
-import { forwardRef } from 'react';
+import React, {
+  MutableRefObject,
+  forwardRef,
+  useCallback,
+  useRef,
+  useState,
+} from 'react';
+import classNames from 'classnames';
 import styles from './Video.module.scss';
-import VideoContent from './VideoContent/VideoContent';
+import LazyLoad from '../LazyLoad/LazyLoad';
+import Controls from './Controls/Controls';
 import { VideoData } from '../../types/types';
-import { getVideoDetailsById, sanitiseVideoId } from '../../utils/videoUtils';
+import useHlsVideo from './useHlsVideo';
 
-type VideoProps = {
-  className?: string;
-  hasControls?: boolean;
-  isAutoplaying?: boolean;
-  isLooping?: boolean;
-  id?: string;
-  onClick?: () => void;
-  onReady?: () => void;
-  video?: VideoData;
-};
-
-// Fetcher function that fetches data from getVideoData netlify function
-const fetcher = async (videoRef: string, video: VideoData) => {
-  if (video) {
-    return video;
-  }
-
-  // Some old videos are a full URL, rather than an ID
-  const id = sanitiseVideoId(videoRef);
-
-  const details = await getVideoDetailsById(id);
-
-  if (!details) {
-    console.error('Unable to retrieve video details for ID', id);
-
-    throw new Error('No details found for id');
-  }
-
-  return details;
+export type VideoProps = {
+  className: string;
+  hasControls: boolean;
+  isAutoplaying: boolean;
+  isLooping: boolean;
+  onClick: () => void;
+  onReady: () => void;
+  video: VideoData;
 };
 
 const Video = forwardRef<HTMLVideoElement, VideoProps>(
@@ -42,48 +28,81 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
       className,
       isAutoplaying,
       hasControls,
-      id,
       isLooping,
       onClick,
       onReady,
-      video,
+      video: { baseUrl, blur, height, hls, width },
     },
     ref,
   ) => {
-    const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
-      fallbackData: video,
+    const localRef = useRef<HTMLVideoElement>();
+
+    const videoRef =
+      (ref as unknown as MutableRefObject<HTMLVideoElement>) || localRef;
+
+    const [isMounted, setIsMounted] = useState(false);
+    const [hasLoaded, setHasLoaded] = useState(false);
+
+    const handleMount = useCallback(() => {
+      setIsMounted(true);
+    }, []);
+
+    const handleVideoReady = useCallback(() => {
+      setHasLoaded(true);
+    }, []);
+
+    const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
+
+    useHlsVideo({
+      isAutoplaying,
+      isMounted,
+      onReady,
+      videoRef,
+      src: hls,
     });
 
-    if (isLoading || error || !data) {
-      return (
-        <div className={`${styles.frame} ${styles.brokenVideo} ${className}`} />
-      );
-    }
+    const frameClasses = classNames(styles.frame, className, {
+      [styles.isLoaded]: hasLoaded,
+      [styles.hasSizeData]: width && height,
+    });
 
     return (
-      <VideoContent
-        className={className}
-        hasControls={hasControls}
-        isAutoplaying={isAutoplaying}
-        isLooping={isLooping}
-        onClick={onClick}
-        onReady={onReady}
-        ref={ref}
-        video={data}
-      />
+      <LazyLoad onIntersect={handleMount}>
+        <div className={frameClasses} style={aspectRatioStyle}>
+          <img
+            alt="video placeholder"
+            aria-hidden
+            className={styles.placeholder}
+            src={`data:image/jpeg;base64,${blur}`}
+          />
+
+          {isMounted && (
+            <>
+              <video
+                autoPlay
+                className={styles.video}
+                controls={false}
+                data-download-src={`${baseUrl}/original`}
+                loop={isLooping}
+                muted
+                onClick={onClick}
+                onPlaying={handleVideoReady}
+                playsInline
+                ref={videoRef}
+                src=""
+                style={aspectRatioStyle}
+              />
+
+              {hasControls && hasLoaded && (
+                <Controls isAutoplaying={isAutoplaying} videoRef={videoRef} />
+              )}
+            </>
+          )}
+        </div>
+      </LazyLoad>
     );
   },
 );
-
-Video.defaultProps = {
-  hasControls: false,
-  id: '',
-  isAutoplaying: true,
-  isLooping: true,
-  onClick: () => null,
-  onReady: () => null,
-  video: null,
-};
 
 Video.displayName = 'Video';
 

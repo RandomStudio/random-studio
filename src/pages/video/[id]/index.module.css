@@ -12,6 +12,12 @@
   width: 100vw;
   height: 100vh;
   padding: 0 20px;
+  background-size: cover;
+  color: white;
+
+  &.hasInvertedColors {
+    color: white;
+  }
 }
 
 .close {
@@ -31,11 +37,6 @@
   }
 }
 
-.controls {
-  color: black;
-  grid-row: 3 / 4;
-}
-
 .video {
   display: flex;
   place-content: center;
@@ -45,7 +46,16 @@
   height: 100%;
 
   .frame {
+    position: relative;
+    overflow: hidden;
     height: 100%;
+  }
+
+  .brokenVideo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: 100%;
+    background: var(--light-grey);
   }
 }
 
@@ -54,5 +64,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  grid-row: 3 / 4;
 }
 

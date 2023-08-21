@@ -25,6 +25,8 @@ export const createBlurredImage = async (thumbnailUrl: string) => {
 
   const { dominant } = await backgroundSharpObject.stats();
 
+  const dominantColorString = `rgb(${Object.values(dominant).join(',')})`;
+
   const thumbnailString = (await thumbnailSharpObject.toBuffer()).toString(
     'base64',
   );
@@ -36,7 +38,7 @@ export const createBlurredImage = async (thumbnailUrl: string) => {
   return {
     thumbnail: thumbnailString,
     background: backgroundString,
-    dominantColor: dominant,
+    dominantColor: dominantColorString,
   };
 };
 
