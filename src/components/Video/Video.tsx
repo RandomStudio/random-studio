@@ -31,7 +31,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
       isLooping,
       onClick,
       onReady,
-      video: { baseUrl, blur, height, hls, width },
+      video: { baseUrl, blur, guid, height, hls, width },
     },
     ref,
   ) => {
