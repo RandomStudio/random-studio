@@ -36,6 +36,7 @@ const VideoFocusModePage = () => {
 
       <div className={styles.video}>
         <Video
+          className={styles.frame}
           hasControls={false}
           id={id as unknown as string}
           isAutoplaying

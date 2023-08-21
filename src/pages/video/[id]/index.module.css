@@ -1,6 +1,8 @@
 .grid {
+  --ui-height: 70px;
+  --video-height: calc(100% - (var(--ui-height) * 2));
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: var(--ui-height) var(--video-height) var(--ui-height);
   grid-template-columns: 1fr;
   position: fixed;
   top: 0;
@@ -41,6 +43,10 @@
   width: 100%;
   grid-row: 2 / 3;
   height: 100%;
+
+  .frame {
+    height: 100%;
+  }
 }
 
 .controls {
@@ -49,3 +55,4 @@
   left: 0;
   width: 100%;
 }
+

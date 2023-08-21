@@ -6,6 +6,7 @@ import { VideoData } from '../../types/types';
 import { getVideoDetailsById, sanitiseVideoId } from '../../utils/videoUtils';
 
 type VideoProps = {
+  className?: string;
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
@@ -37,7 +38,16 @@ const fetcher = async (videoRef: string, video: VideoData) => {
 
 const Video = forwardRef<HTMLVideoElement, VideoProps>(
   (
-    { isAutoplaying, hasControls, id, isLooping, onClick, onReady, video },
+    {
+      className,
+      isAutoplaying,
+      hasControls,
+      id,
+      isLooping,
+      onClick,
+      onReady,
+      video,
+    },
     ref,
   ) => {
     const { data, error, isLoading } = useSwr(id, () => fetcher(id, video), {
@@ -45,11 +55,14 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
     });
 
     if (isLoading || error || !data) {
-      return <div className={`${styles.frame} ${styles.brokenVideo}`} />;
+      return (
+        <div className={`${styles.frame} ${styles.brokenVideo} ${className}`} />
+      );
     }
 
     return (
       <VideoContent
+        className={className}
         hasControls={hasControls}
         isAutoplaying={isAutoplaying}
         isLooping={isLooping}

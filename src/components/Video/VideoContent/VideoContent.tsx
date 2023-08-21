@@ -13,6 +13,7 @@ import { VideoData } from '../../../types/types';
 import useHlsVideo from './useHlsVideo';
 
 export type VideoContentProps = {
+  className: string;
   hasControls: boolean;
   isAutoplaying: boolean;
   isLooping: boolean;
@@ -24,6 +25,7 @@ export type VideoContentProps = {
 const VideoContent = forwardRef<HTMLVideoElement, VideoContentProps>(
   (
     {
+      className,
       isAutoplaying,
       hasControls,
       isLooping,
@@ -59,7 +61,7 @@ const VideoContent = forwardRef<HTMLVideoElement, VideoContentProps>(
       src: hls,
     });
 
-    const frameClasses = classNames(styles.frame, {
+    const frameClasses = classNames(styles.frame, className, {
       [styles.isLoaded]: hasLoaded,
       [styles.hasSizeData]: width && height,
     });
