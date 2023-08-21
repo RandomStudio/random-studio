@@ -4,6 +4,7 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 import tinycolor from 'tinycolor2';
 import useSwr from 'swr';
 import classNames from 'classnames';
+import { useSearchParams } from 'next/navigation';
 import Video from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
@@ -43,7 +44,9 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const videoRef = useRef<HTMLVideoElement>();
   const router = useRouter();
 
-  const { id, projectId } = router.query;
+  const { id } = router.query;
+  const searchParams = useSearchParams();
+  const projectId = searchParams.get('projectId');
 
   const { data, error } = useSwr(id, () => fetcher(id as string, video), {
     fallbackData: video,
@@ -74,18 +77,22 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
     return !tinycolor.isReadable(bgColor, textColor);
   }, [data]);
 
+  const gridStyles = useMemo(
+    () => ({
+      backgroundColor: data.blur.dominantColor,
+      backgroundImage: data.blur.thumbnail
+        ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
+        : 'none',
+    }),
+    [data.blur.thumbnail, data.blur.dominantColor],
+  );
+
   const gridClassNames = classNames(styles.grid, {
-    [styles.invertedColors]: hasInvertedColors,
+    [styles.hasInvertedColors]: hasInvertedColors,
   });
 
   return (
-    <div
-      className={gridClassNames}
-      style={{
-        backgroundColor: data.blur.dominantColor,
-        backgroundImage: `url(data:image/jpeg;base64,${data.blur.background})`,
-      }}
-    >
+    <div className={gridClassNames} style={gridStyles}>
       <div className={styles.close}>
         {projectId ? (
           <Link href={`/project/${projectId}`}>{'View case study'}</Link>

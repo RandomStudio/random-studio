@@ -13,10 +13,11 @@
   height: 100vh;
   padding: 0 20px;
   background-size: cover;
+  background-position: center center;
   color: white;
 
   &.hasInvertedColors {
-    color: white;
+    color: black;
   }
 }
 
@@ -65,5 +66,6 @@
   left: 0;
   width: 100%;
   grid-row: 3 / 4;
+  color: inherit;
 }
 

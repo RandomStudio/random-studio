@@ -13,12 +13,12 @@ import { VideoData } from '../../types/types';
 import useHlsVideo from './useHlsVideo';
 
 export type VideoProps = {
-  className: string;
+  className?: string;
   hasControls: boolean;
   isAutoplaying: boolean;
   isLooping: boolean;
-  onClick: () => void;
-  onReady: () => void;
+  onClick?: () => void;
+  onReady?: () => void;
   video: VideoData;
 };
 
@@ -73,7 +73,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
             alt="video placeholder"
             aria-hidden
             className={styles.placeholder}
-            src={`data:image/jpeg;base64,${blur}`}
+            src={`data:image/jpeg;base64,${blur.thumbnail}`}
           />
 
           {isMounted && (
@@ -105,5 +105,11 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 );
 
 Video.displayName = 'Video';
+
+Video.defaultProps = {
+  className: null,
+  onClick: () => null,
+  onReady: () => null,
+};
 
 export default Video;

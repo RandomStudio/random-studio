@@ -10,34 +10,23 @@ const getImage = async url => {
 export const createBlurredImage = async (thumbnailUrl: string) => {
   const image = await getImage(thumbnailUrl);
 
-  const thumbnailSharpObject = await sharp(image)
+  const blurredSharpImage = await sharp(image)
     .raw()
     .ensureAlpha()
-    .resize(12, 12, { fit: 'inside' })
-    .toFormat(sharp.format.png);
-
-  const backgroundSharpObject = await sharp(image)
-    .raw()
-    .ensureAlpha()
-    .resize(1200, 1200, { fit: 'inside' })
-    .blur(40)
+    .resize(400, 400, { fit: 'inside' })
+    .blur(20)
     .toFormat(sharp.format.jpeg);
 
-  const { dominant } = await backgroundSharpObject.stats();
+  const { dominant } = await blurredSharpImage.stats();
 
   const dominantColorString = `rgb(${Object.values(dominant).join(',')})`;
 
-  const thumbnailString = (await thumbnailSharpObject.toBuffer()).toString(
-    'base64',
-  );
-
-  const backgroundString = (await backgroundSharpObject.toBuffer()).toString(
+  const thumbnailString = (await blurredSharpImage.toBuffer()).toString(
     'base64',
   );
 
   return {
     thumbnail: thumbnailString,
-    background: backgroundString,
     dominantColor: dominantColorString,
   };
 };
