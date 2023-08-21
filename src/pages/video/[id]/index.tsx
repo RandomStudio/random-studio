@@ -42,18 +42,10 @@ const VideoFocusModePage = () => {
     }
 
     if (projectId) {
-      return (
-        <Link href={`/projects/${projectId}`}>
-          <a>{'View case study'}</a>
-        </Link>
-      );
+      return <Link href={`/projects/${projectId}`}>{'View case study'}</Link>;
     }
 
-    return (
-      <Link href="/">
-        <a>{'Close'}</a>
-      </Link>
-    );
+    return <Link href="/">{'Close'}</Link>;
   }, [router, projectId]);
 
   return (
