@@ -14,9 +14,9 @@ import useHlsVideo from './useHlsVideo';
 
 export type VideoProps = {
   className?: string;
-  hasControls: boolean;
-  isAutoplaying: boolean;
-  isLooping: boolean;
+  hasControls?: boolean;
+  isAutoplaying?: boolean;
+  isLooping?: boolean;
   onClick?: () => void;
   onReady?: () => void;
   video: VideoData;
@@ -108,6 +108,9 @@ Video.displayName = 'Video';
 
 Video.defaultProps = {
   className: null,
+  hasControls: false,
+  isAutoplaying: true,
+  isLooping: true,
   onClick: () => null,
   onReady: () => null,
 };
