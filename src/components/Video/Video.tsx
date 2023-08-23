@@ -17,7 +17,7 @@ export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
-  onClick?: () => void;
+  onClick?: (video: HTMLVideoElement) => void;
   onReady?: () => void;
   video: VideoData;
 };
@@ -31,7 +31,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
       isLooping,
       onClick,
       onReady,
-      video: { baseUrl, blur, height, hls, width },
+      video: { baseUrl, blur, guid, height, hls, width },
     },
     ref,
   ) => {
@@ -61,6 +61,10 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
       src: hls,
     });
 
+    const handleClick = useCallback(() => {
+      onClick?.(videoRef.current);
+    }, [onClick, videoRef]);
+
     const frameClasses = classNames(styles.frame, className, {
       [styles.isLoaded]: hasLoaded,
       [styles.hasSizeData]: width && height,
@@ -83,9 +87,10 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
                 className={styles.video}
                 controls={false}
                 data-download-src={`${baseUrl}/original`}
+                id={guid}
                 loop={isLooping}
                 muted
-                onClick={onClick}
+                onClick={handleClick}
                 onPlaying={handleVideoReady}
                 playsInline
                 ref={videoRef}

@@ -35,7 +35,7 @@ const Project = ({
   >
     <div className={styles.media}>
       {featuredVideo ? (
-        <Video video={featuredVideo} />
+        <Video hasControls={false} video={featuredVideo} />
       ) : (
         <Image
           alt="" // Keeps the screen reader focused on project list

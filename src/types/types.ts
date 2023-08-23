@@ -5,6 +5,7 @@ export interface VideoData {
     dominantColor: string;
   };
   fallback: string;
+  guid: string;
   height;
   hls: string;
   width;

@@ -1,4 +1,6 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useCallback } from 'react';
+import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
 import {
   BLOCK_TYPES,
   CarouselBlock,
@@ -29,6 +31,29 @@ const ContentBlock = ({
   anchorId,
   ...blockProps
 }: ContentBlockProps) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const hasFocusMode = searchParams.get('hasFocusMode');
+
+  const handleClickVideo = useCallback(
+    (videoEl: HTMLVideoElement) => {
+      if (!hasFocusMode) {
+        return;
+      }
+
+      const { slug } = router.query;
+
+      const time = videoEl.currentTime;
+
+      const url = new URL(window.location.href);
+      url.pathname = `/video/${videoEl.id}/`;
+      url.searchParams.set('projectId', slug as string);
+      url.searchParams.set('time', time.toString());
+      router.push(url.href);
+    },
+    [hasFocusMode, router],
+  );
+
   const renderBlock = () => {
     if (__typename === BLOCK_TYPES.ImageBlockRecord) {
       const { caption, image } = blockProps as ImageBlock;
@@ -59,6 +84,7 @@ const ContentBlock = ({
               hasControls={hasControls}
               isAutoplaying={autoplay}
               isLooping={loops}
+              onClick={handleClickVideo}
               video={video}
             />
           )}
