@@ -2,14 +2,24 @@
   @mixin body-4;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 1;
   padding: 0 20px 12px;
-  color: white;
+  align-items: center;
+  color: rgba(255 255 255 / 1);
+  transition: color 0.3s ease-in-out;
+
+  @media (--tablet) {
+    padding: 0 32px 24px;
+  }
+
+  &.isHoveringProgress {
+    color: rgba(255 255 255 / 0.2);
+  }
 
   button,
   a {
@@ -25,7 +35,16 @@
     width: 3rem;
     text-align: left;
   }
+
+  .muteToggle {
+    margin-right: auto;
+  }
+
+  .share {
+    display: none;
+  }
 }
+
 
 .isLightControls {
   > *:not(.muteToggle) {
