@@ -42,6 +42,7 @@ type VideoFocusModePageProps = {
 
 const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const videoRef = useRef<HTMLVideoElement>();
+
   const router = useRouter();
 
   const { id } = router.query;
@@ -51,6 +52,9 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const { data, error } = useSwr(id, () => fetcher(id as string, video), {
     fallbackData: video,
   });
+
+  const params = useSearchParams();
+  const time = params.get('time');
 
   const [isReady, setIsReady] = useState(false);
 
@@ -64,7 +68,32 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const handleReady = useCallback(() => {
     setIsReady(true);
-  }, []);
+    videoRef.current.currentTime = Number(time) || 0;
+  }, [time]);
+
+  const closeJsx = useMemo(() => {
+    if (projectId) {
+      const handleBack = event => {
+        router.back();
+
+        event.preventDefault();
+
+        return false;
+      };
+
+      return (
+        <a href={`/projects/${projectId}`} onClick={handleBack}>
+          {'Back'}
+        </a>
+      );
+    }
+
+    if (projectId) {
+      return <Link href={`/projects/${projectId}`}>{'View case study'}</Link>;
+    }
+
+    return <Link href="/">{'Close'}</Link>;
+  }, [router, projectId]);
 
   const hasInvertedColors = useMemo(() => {
     if (!data) {
@@ -93,13 +122,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   return (
     <div className={gridClassNames} style={gridStyles}>
-      <div className={styles.close}>
-        {projectId ? (
-          <Link href={`/project/${projectId}`}>{'View case study'}</Link>
-        ) : (
-          <Link href="/">{'Close'}</Link>
-        )}
-      </div>
+      <div className={styles.close}>{closeJsx}</div>
 
       <div className={styles.video}>
         {error || !data ? (

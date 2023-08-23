@@ -32,6 +32,7 @@ export const formatVideoData = async (details): Promise<VideoData> => {
   const data = {
     baseUrl,
     fallback: thumbnailUrl,
+    guid,
     height,
     hls: `${baseUrl}/playlist.m3u8`,
     width,
