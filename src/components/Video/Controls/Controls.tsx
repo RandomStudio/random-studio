@@ -64,7 +64,7 @@ const Controls = ({
   // Render controls
   */
   const wrapperClasses = classNames(styles.wrapper, className, {
-    [styles.isLightControls]: !hasExtendedControls,
+    [styles.isSimpleControls]: !hasExtendedControls,
     [styles.isHoveringProgress]: isHoveringProgress,
   });
 

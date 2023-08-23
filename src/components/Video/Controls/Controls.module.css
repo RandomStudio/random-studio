@@ -10,7 +10,7 @@
   z-index: 1;
   padding: 0 20px 12px;
   align-items: center;
-  color: rgba(255 255 255 / 1);
+  color: rgba(var(--text-color) / 1);
   transition: color 0.3s ease-in-out;
 
   @media (--tablet) {
@@ -19,7 +19,7 @@
   }
 
   &.isHoveringProgress {
-    color: rgba(255 255 255 / 0.2);
+    color: rgba(var(--text-color) / 0.2);
   }
 
   button,
@@ -49,16 +49,9 @@
 }
 
 
-.isLightControls {
+.isSimpleControls {
   > *:not(.muteToggle) {
     display: none;
   }
 }
 
-.progress {
-  display: none !important;
-
-  @media (--tablet) {
-    display: flex;
-  }
-}

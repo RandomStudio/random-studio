@@ -208,3 +208,24 @@
     font-size: var(--font-large);
   }
 }
+
+
+.videoWrapper {
+  --opacity: 1;
+  --x: 0;
+  --y: 0;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
+    margin: 1em 0 0 1em;
+    mix-blend-mode: difference;
+    transition: opacity 0.3s ease-out;
+    opacity: var(--opacity);
+    content: 'Show controls';
+  }
+}

@@ -1,6 +1,5 @@
-import React, { CSSProperties, useCallback } from 'react';
+import React, { CSSProperties, useCallback, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useSearchParams } from 'next/navigation';
 import {
   BLOCK_TYPES,
   CarouselBlock,
@@ -15,6 +14,7 @@ import Image from '../../Image/Image';
 import Video from '../../Video/Video';
 import styles from './ContentBlock.module.scss';
 import Markdown from '../../Markdown/Markdown';
+import useMouseHoverPosition from '../../Video/Controls/Progress/useMouseHoverPosition';
 
 type ContentBlockProps = {
   __typename: string;
@@ -32,15 +32,9 @@ const ContentBlock = ({
   ...blockProps
 }: ContentBlockProps) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const hasFocusMode = searchParams.get('hasFocusMode');
 
   const handleClickVideo = useCallback(
     (videoEl: HTMLVideoElement) => {
-      if (!hasFocusMode) {
-        return;
-      }
-
       const { slug } = router.query;
 
       const time = videoEl.currentTime;
@@ -51,8 +45,21 @@ const ContentBlock = ({
       url.searchParams.set('time', time.toString());
       router.push(url.href);
     },
-    [hasFocusMode, router],
+    [router],
   );
+
+  const videoRef = useRef<HTMLVideoElement>();
+
+  const [isVideoMounted, setIsVideoMounted] = useState(false);
+
+  const [isHovering, position] = useMouseHoverPosition(
+    videoRef,
+    isVideoMounted,
+  );
+
+  const handleVideoMounted = useCallback(() => {
+    setIsVideoMounted(true);
+  }, []);
 
   const renderBlock = () => {
     if (__typename === BLOCK_TYPES.ImageBlockRecord) {
@@ -80,13 +87,26 @@ const ContentBlock = ({
       return (
         <>
           {video && (
-            <Video
-              hasControls={hasControls}
-              isAutoplaying={autoplay}
-              isLooping={loops}
-              onClick={handleClickVideo}
-              video={video}
-            />
+            <div
+              className={styles.videoWrapper}
+              style={
+                {
+                  '--opacity': isHovering ? 1 : 0,
+                  '--x': position.x,
+                  '--y': position.y,
+                } as CSSProperties
+              }
+            >
+              <Video
+                hasControls={hasControls}
+                isAutoplaying={autoplay}
+                isLooping={loops}
+                onClick={handleClickVideo}
+                onMount={handleVideoMounted}
+                ref={videoRef}
+                video={video}
+              />
+            </div>
           )}
 
           <Caption caption={caption} marginLeft={marginLeft} />

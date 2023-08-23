@@ -3,14 +3,20 @@
   width: var(--width);
   height: 1em;
   position: relative;
-  margin: 0 40px 0 4px;
+  margin: 0 44px 0 4px;
   cursor: pointer;
-  display: flex;
   align-items: center;
   justify-content: center;
+  color: rgba(var(--text-color) / 1);
+
   /* Custom size */
   font-size: 14px;
   letter-spacing: 0.56px;
+  display: none;
+
+  @media (--tablet) {
+    display: flex;
+  }
 
   .back::before,
   .back::after,
@@ -28,7 +34,7 @@
 }
 
 .back {
-  background-color: rgba(255 255 255 / 0.4);
+  background-color: rgba(var(--text-color) / 0.4);
   width: 100%;
   height: 1px;
   pointer-events: none;
@@ -36,8 +42,7 @@
   &::before {
     position: absolute;
     left: 0%;
-    top: 50%;
-    color: white;
+    bottom: 50%;
     opacity: 0;
     content: attr(data-hover-offset);
 
@@ -50,7 +55,6 @@
     position: absolute;
     left: 100%;
     top: 50%;
-    color: white;
     content: attr(data-duration);
     opacity: 0;
     transform: translateY(-50%) translateX(4px);
@@ -68,7 +72,7 @@
 
   &::before {
     transform: scaleX(var(--progress));
-    background-color: white;
+    background-color: rgba(var(--text-color) / 1);
     transition: transform 0.01s linear;
     width: 100%;
     height: 100%;
@@ -81,13 +85,12 @@
   &::after {
     position: absolute;
     left: 0;
-    bottom: 100%;
-    color: white;
+    top: 100%;
     content: attr(data-current-time);
     opacity: 0;
 
     --move-with-progress-bar: calc((var(--width) * var(--progress)) - 100%);
     --contain-within-bounds: clamp(0px, var(--move-with-progress-bar), var(--width) - 100%);
-    transform: translateY(-2px) translateX(var(--contain-within-bounds));
+    transform: translateY(2px) translateX(var(--contain-within-bounds));
   }
 }

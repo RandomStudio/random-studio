@@ -1,6 +1,7 @@
 .grid {
   --ui-height: 70px;
   --video-height: calc(100% - (var(--ui-height) * 2));
+  --text-color: 255 255 255;
   display: grid;
   grid-template-rows: var(--ui-height) var(--video-height) var(--ui-height);
   grid-template-columns: 1fr;
@@ -14,10 +15,9 @@
   padding: 0 20px;
   background-size: cover;
   background-position: center center;
-  color: white;
 
   &.hasInvertedColors {
-    color: black;
+    --text-color: 0 0 0;
   }
 }
 
@@ -34,6 +34,7 @@
   }
 
   a {
+    color: rgb(var(--text-color));
     text-decoration: none;
   }
 }
@@ -77,6 +78,5 @@
   left: 0;
   width: 100%;
   grid-row: 3 / 4;
-  color: inherit;
 }
 

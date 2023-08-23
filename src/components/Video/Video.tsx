@@ -18,6 +18,7 @@ export type VideoProps = {
   isAutoplaying?: boolean;
   isLooping?: boolean;
   onClick?: (video: HTMLVideoElement) => void;
+  onMount?: () => void;
   onReady?: () => void;
   video: VideoData;
 };
@@ -31,6 +32,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
       isLooping,
       onClick,
       onReady,
+      onMount,
       video: { baseUrl, blur, guid, height, hls, width },
     },
     ref,
@@ -45,7 +47,8 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 
     const handleMount = useCallback(() => {
       setIsMounted(true);
-    }, []);
+      onMount?.();
+    }, [onMount]);
 
     const handleVideoReady = useCallback(() => {
       setHasLoaded(true);
@@ -117,6 +120,7 @@ Video.defaultProps = {
   isAutoplaying: true,
   isLooping: true,
   onClick: () => null,
+  onMount: () => null,
   onReady: () => null,
 };
 

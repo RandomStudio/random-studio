@@ -1,14 +1,13 @@
 import {
   CSSProperties,
-  MouseEvent,
   MutableRefObject,
   useCallback,
   useEffect,
   useRef,
-  useState,
 } from 'react';
 import styles from './Progress.module.css';
 import useReactiveVideoProperty from './useReactiveVideoProperty';
+import useMouseHoverPosition from './useMouseHoverPosition';
 
 type ProgressProps = {
   className: string;
@@ -28,6 +27,8 @@ const formatDecimalAsTimestamp = (seconds: number) => {
 };
 
 const Progress = ({ className, onHover, videoRef }: ProgressProps) => {
+  const containerRef = useRef<HTMLDivElement>();
+
   const duration = useReactiveVideoProperty(
     videoRef.current,
     'duration',
@@ -40,36 +41,13 @@ const Progress = ({ className, onHover, videoRef }: ProgressProps) => {
     'timeupdate',
   );
 
-  const [isHovering, setIsHovering] = useState(false);
-  const elementBoundingRect = useRef<DOMRect>(null);
-  const [hoverOffset, setHoverOffset] = useState(0);
+  const [isHovering, position] = useMouseHoverPosition(containerRef);
+
+  const hoverOffset = position.x / position.width;
 
   useEffect(() => {
     onHover(isHovering);
   }, [isHovering, onHover]);
-
-  const handleMouseOver = useCallback((e: MouseEvent<HTMLDivElement>) => {
-    setIsHovering(true);
-    const target = e.target as HTMLDivElement;
-    elementBoundingRect.current = target.getBoundingClientRect();
-  }, []);
-
-  const handleMouseMove = useCallback(
-    e => {
-      if (!isHovering) {
-        return;
-      }
-
-      const { left, width } = elementBoundingRect.current;
-
-      setHoverOffset((e.pageX - left) / width);
-    },
-    [isHovering],
-  );
-
-  const handleMouseOut = useCallback(() => {
-    setIsHovering(false);
-  }, []);
 
   const handleSeek = useCallback(() => {
     // eslint-disable-next-line no-param-reassign
@@ -81,9 +59,7 @@ const Progress = ({ className, onHover, videoRef }: ProgressProps) => {
     <div
       className={`${styles.container} ${className}`}
       onClick={handleSeek}
-      onMouseMove={handleMouseMove}
-      onMouseOut={handleMouseOut}
-      onMouseOver={handleMouseOver}
+      ref={containerRef}
       style={
         {
           '--hover-offset': hoverOffset,
