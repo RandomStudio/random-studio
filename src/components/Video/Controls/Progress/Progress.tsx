@@ -1,4 +1,5 @@
 import {
+  CSSProperties,
   MouseEvent,
   MutableRefObject,
   useCallback,
@@ -10,6 +11,7 @@ import styles from './Progress.module.css';
 import useReactiveVideoProperty from './useReactiveVideoProperty';
 
 type ProgressProps = {
+  className: string;
   onHover: (isHovering: boolean) => void;
   videoRef: MutableRefObject<HTMLVideoElement>;
 };
@@ -25,7 +27,7 @@ const formatDecimalAsTimestamp = (seconds: number) => {
     .replace('00:', '');
 };
 
-const Progress = ({ onHover, videoRef }: ProgressProps) => {
+const Progress = ({ className, onHover, videoRef }: ProgressProps) => {
   const duration = useReactiveVideoProperty(
     videoRef.current,
     'duration',
@@ -77,27 +79,27 @@ const Progress = ({ onHover, videoRef }: ProgressProps) => {
   return (
     // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
     <div
-      className={styles.container}
+      className={`${styles.container} ${className}`}
       onClick={handleSeek}
       onMouseMove={handleMouseMove}
       onMouseOut={handleMouseOut}
       onMouseOver={handleMouseOver}
+      style={
+        {
+          '--hover-offset': hoverOffset,
+          '--progress': `${progress / duration} `,
+        } as CSSProperties
+      }
     >
       <div
         className={styles.back}
         data-duration={formatDecimalAsTimestamp(duration)}
         data-hover-offset={formatDecimalAsTimestamp(duration * hoverOffset)}
-        style={{
-          '--hover-offset': hoverOffset,
-        }}
       />
 
       <div
         className={styles.progress}
         data-current-time={formatDecimalAsTimestamp(progress)}
-        style={{
-          '--progress': `${progress / duration}`,
-        }}
       />
     </div>
   );

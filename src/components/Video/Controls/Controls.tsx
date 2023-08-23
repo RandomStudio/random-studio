@@ -78,7 +78,11 @@ const Controls = ({
         {isPlaying ? 'Pause' : 'Play'}
       </button>
 
-      <Progress onHover={setIsHoveringProgress} videoRef={videoRef} />
+      <Progress
+        className={styles.progress}
+        onHover={setIsHoveringProgress}
+        videoRef={videoRef}
+      />
 
       <button
         className={styles.muteToggle}
