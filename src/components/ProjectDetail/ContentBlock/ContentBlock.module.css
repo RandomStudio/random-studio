@@ -217,6 +217,7 @@
   position: relative;
 
   &::after {
+    @mixin body-4;
     position: absolute;
     top: 0;
     left: 0;
@@ -227,5 +228,10 @@
     transition: opacity 0.3s ease-out;
     opacity: var(--opacity);
     content: 'Show controls';
+    display: none;
+
+    @media (hover: hover) and (pointer: fine) {
+      display: block;
+    }
   }
 }

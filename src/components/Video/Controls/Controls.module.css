@@ -32,15 +32,10 @@
     padding: 0;
   }
 
+
   .playToggle {
     width: 3rem;
     text-align: left;
-  }
-
-  .muteToggle {
-    @media (--tablet) {
-      margin-right: auto;
-    }
   }
 
   .share {
@@ -48,10 +43,33 @@
   }
 }
 
-
 .isSimpleControls {
-  > *:not(.muteToggle) {
+  > * {
     display: none;
   }
 }
 
+.muteToggle {
+  @media (--tablet) {
+    margin-right: auto !important;
+  }
+
+  .isSimpleControls & {
+    @media (hover: hover) and (pointer: fine){
+      display: block;
+    }
+  }
+}
+
+.showControls {
+  pointer-events: none;
+  display: none;
+
+  .isSimpleControls & {
+    display: block;
+
+    @media (hover: hover) and (pointer: fine){
+      display: none;
+    }
+  }
+}

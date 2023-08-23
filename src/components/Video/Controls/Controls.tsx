@@ -70,6 +70,8 @@ const Controls = ({
 
   return (
     <div className={wrapperClasses}>
+      <div className={styles.showControls}>{'Show Controls'}</div>
+
       <button
         className={styles.playToggle}
         onClick={handlePlayToggle}
@@ -78,11 +80,13 @@ const Controls = ({
         {isPlaying ? 'Pause' : 'Play'}
       </button>
 
-      <Progress
-        className={styles.progress}
-        onHover={setIsHoveringProgress}
-        videoRef={videoRef}
-      />
+      {hasExtendedControls && (
+        <Progress
+          className={styles.progress}
+          onHover={setIsHoveringProgress}
+          videoRef={videoRef}
+        />
+      )}
 
       <button
         className={styles.muteToggle}

@@ -1,4 +1,5 @@
 .container {
+  @mixin small;
   --width: 300px;
   width: var(--width);
   height: 1em;
@@ -9,9 +10,6 @@
   justify-content: center;
   color: rgba(var(--text-color) / 1);
 
-  /* Custom size */
-  font-size: 14px;
-  letter-spacing: 0.56px;
   display: none;
 
   @media (--tablet) {
