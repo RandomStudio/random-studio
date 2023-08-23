@@ -47,3 +47,11 @@
   font-size: 16px;
   line-height: 22px;
 }
+
+@define-mixin small {
+  /* Text Style Small */
+  @mixin base-text-styles;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.56px;
+}

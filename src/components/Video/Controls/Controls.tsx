@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { MutableRefObject, useCallback, useEffect, useState } from 'react';
 import styles from './Controls.module.css';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
+import Progress from './Progress/Progress';
 
 type ControlsProps = {
   className?: string;
@@ -53,18 +54,24 @@ const Controls = ({
       return;
     }
 
+    // eslint-disable-next-line no-param-reassign
     videoRef.current.muted = isMuted;
   }, [isMuted, videoRef]);
+
+  const [isHoveringProgress, setIsHoveringProgress] = useState(false);
 
   /*
   // Render controls
   */
   const wrapperClasses = classNames(styles.wrapper, className, {
-    [styles.isLightControls]: !hasExtendedControls,
+    [styles.isSimpleControls]: !hasExtendedControls,
+    [styles.isHoveringProgress]: isHoveringProgress,
   });
 
   return (
     <div className={wrapperClasses}>
+      <div className={styles.showControls}>{'Show Controls'}</div>
+
       <button
         className={styles.playToggle}
         onClick={handlePlayToggle}
@@ -72,6 +79,14 @@ const Controls = ({
       >
         {isPlaying ? 'Pause' : 'Play'}
       </button>
+
+      {hasExtendedControls && (
+        <Progress
+          className={styles.progress}
+          onHover={setIsHoveringProgress}
+          videoRef={videoRef}
+        />
+      )}
 
       <button
         className={styles.muteToggle}
@@ -81,7 +96,9 @@ const Controls = ({
         {isMuted ? 'Sound On' : 'Sound Off'}
       </button>
 
-      <button type="button">{'Share'}</button>
+      <button className={styles.share} type="button">
+        {'Share'}
+      </button>
 
       <a
         download
