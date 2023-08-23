@@ -1,5 +1,5 @@
 import Hls from 'hls.js';
-import { MutableRefObject, useCallback, useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 
 const useHlsVideo = ({
   isMounted,
@@ -14,33 +14,22 @@ const useHlsVideo = ({
   onReady: () => void;
   videoRef: MutableRefObject<HTMLVideoElement>;
 }) => {
-  const handlePlayOnCanPlay = useCallback(() => {
-    const play = () => {
-      if (isAutoplaying) {
-        videoRef.current.play();
-      }
-
-      onReady();
-    };
-
-    if (videoRef.current.readyState >= 3) {
-      play();
-
-      return;
-    }
-
-    videoRef.current.addEventListener('canplay', play);
-  }, [isAutoplaying, onReady, videoRef]);
-
   useEffect(() => {
-    if (!isMounted || !videoRef.current) {
+    if (!isMounted || !videoRef.current || !Hls.isSupported()) {
       return;
     }
 
     if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
       // eslint-disable-next-line no-param-reassign
       videoRef.current.src = src;
-      handlePlayOnCanPlay();
+
+      videoRef.current.addEventListener('canplay', () => {
+        if (isAutoplaying) {
+          videoRef.current.play();
+        }
+
+        onReady();
+      });
 
       return;
     }
@@ -52,8 +41,14 @@ const useHlsVideo = ({
     hls.loadSource(src);
     hls.attachMedia(videoRef.current);
 
-    hls.on(Hls.Events.MEDIA_ATTACHED, handlePlayOnCanPlay);
-  }, [handlePlayOnCanPlay, isMounted, src, videoRef]);
+    hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+      if (isAutoplaying) {
+        videoRef.current.play();
+      }
+
+      onReady();
+    });
+  }, [isMounted, videoRef, onReady, isAutoplaying, src]);
 };
 
 export default useHlsVideo;
