@@ -9,7 +9,18 @@
   width: 100%;
   z-index: 1;
   padding: 0 20px 12px;
-  color: white;
+  align-items: center;
+  color: rgba(var(--text-color) / 1);
+  transition: color 0.3s ease-in-out;
+
+  @media (--tablet) {
+    padding: 0 32px 24px;
+    justify-content: flex-start;
+  }
+
+  &.isHoveringProgress {
+    color: rgba(var(--text-color) / 0.2);
+  }
 
   button,
   a {
@@ -21,14 +32,44 @@
     padding: 0;
   }
 
+
   .playToggle {
     width: 3rem;
     text-align: left;
   }
+
+  .share {
+    display: none;
+  }
 }
 
-.isLightControls {
-  > *:not(.muteToggle) {
+.isSimpleControls {
+  > * {
     display: none;
+  }
+}
+
+.muteToggle {
+  @media (--tablet) {
+    margin-right: auto !important;
+  }
+
+  .isSimpleControls & {
+    @media (hover: hover) and (pointer: fine){
+      display: block;
+    }
+  }
+}
+
+.showControls {
+  pointer-events: none;
+  display: none;
+
+  .isSimpleControls & {
+    display: block;
+
+    @media (hover: hover) and (pointer: fine){
+      display: none;
+    }
   }
 }
