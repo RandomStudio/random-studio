@@ -27,8 +27,8 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
   (
     {
       className,
-      hasControls,
       isAutoplaying,
+      hasControls,
       isLooping,
       onClick,
       onReady,
