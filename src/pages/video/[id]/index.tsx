@@ -60,7 +60,11 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const handleClick = useCallback(() => {
     if (videoRef.current?.paused) {
-      videoRef.current?.play();
+      videoRef.current
+        .play()
+        .catch(e =>
+          console.warn('Unable to autoplay without user interaction', e),
+        );
     } else {
       videoRef.current?.pause();
     }
