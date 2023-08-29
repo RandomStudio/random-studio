@@ -36,7 +36,11 @@ const Controls = ({
 
   useEffect(() => {
     if (isPlaying) {
-      videoRef.current?.play();
+      videoRef.current
+        .play()
+        .catch(e =>
+          console.warn('Unable to autoplay without user interaction', e),
+        );
     } else {
       videoRef.current?.pause();
     }

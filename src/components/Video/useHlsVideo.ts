@@ -15,21 +15,21 @@ const useHlsVideo = ({
   videoRef: MutableRefObject<HTMLVideoElement>;
 }) => {
   useEffect(() => {
-    if (!isMounted || !videoRef.current || !Hls.isSupported()) {
+    if (!isMounted || !videoRef.current) {
       return;
     }
 
+    // if HLS is natively supported, we don't have to do anything
     if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
-      // eslint-disable-next-line no-param-reassign
-      videoRef.current.src = src;
+      onReady();
 
-      videoRef.current.addEventListener('canplay', () => {
-        if (isAutoplaying) {
-          videoRef.current.play();
-        }
-
-        onReady();
-      });
+      if (isAutoplaying) {
+        videoRef.current
+          .play()
+          .catch(e =>
+            console.warn('Unable to autoplay without user interaction', e),
+          );
+      }
 
       return;
     }
@@ -38,15 +38,22 @@ const useHlsVideo = ({
       startLevel: window.innerWidth > 1280 ? 4 : 2,
     });
 
-    hls.loadSource(src);
     hls.attachMedia(videoRef.current);
 
     hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-      if (isAutoplaying) {
-        videoRef.current.play();
-      }
+      hls.loadSource(src);
 
-      onReady();
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        if (isAutoplaying) {
+          try {
+            videoRef.current.play();
+          } catch (e) {
+            console.warn('Unable to autoplay without user interaction');
+          }
+        }
+
+        onReady();
+      });
     });
   }, [isMounted, videoRef, onReady, isAutoplaying, src]);
 };

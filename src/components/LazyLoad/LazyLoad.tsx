@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 type LazyLoadProps = {
-  children: React.ReactNode;
+  children: JSX.Element;
   onIntersect?: () => void;
 };
 

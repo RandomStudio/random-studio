@@ -52,14 +52,15 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 
     const handleVideoReady = useCallback(() => {
       setHasLoaded(true);
-    }, []);
+      onReady();
+    }, [onReady]);
 
     const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
 
     useHlsVideo({
       isAutoplaying,
       isMounted,
-      onReady,
+      onReady: handleVideoReady,
       videoRef,
       src: hls,
     });
@@ -94,10 +95,9 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
                 loop={isLooping}
                 muted
                 onClick={handleClick}
-                onPlaying={handleVideoReady}
                 playsInline
                 ref={videoRef}
-                src=""
+                src={hls}
                 style={aspectRatioStyle}
               />
 
