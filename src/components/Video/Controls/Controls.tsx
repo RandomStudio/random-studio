@@ -21,10 +21,38 @@ const Controls = ({
   // Handle play pause
   */
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
+  const [shareLinkText, setShareLinkText] = useState('Share');
+  const [isShareComponent, setIsShareComponent] = useState(false);
+
+  const hasNavigatorShare = !!navigator.share;
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
+
+  const handleShareVia = async () => {
+    navigator.share({
+      title: 'Video',
+      text: 'Video',
+      url: window.location.href,
+    });
+  };
 
   const handlePlayToggle = useCallback(() => {
     setIsPlaying(prev => !prev);
   }, []);
+
+  const handleShareToggle = useCallback(() => {
+    // If navigator.share is no available, copy url and show "copied" text
+    if (!hasNavigatorShare) {
+      setShareLinkText('Copied!');
+      navigator.clipboard.writeText(window.location.href);
+
+      return;
+    }
+
+    setIsShareComponent(true);
+  }, [hasNavigatorShare]);
 
   useEffect(() => {
     const changePlayState = isNowPlaying => setIsPlaying(isNowPlaying);
@@ -47,8 +75,8 @@ const Controls = ({
   }, [isPlaying, videoRef]);
 
   /*
-  // Handle mute
-  */
+    // Handle mute
+    */
   const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(
     videoRef.current?.src ?? 'unknown',
   );
@@ -65,8 +93,8 @@ const Controls = ({
   const [isHoveringProgress, setIsHoveringProgress] = useState(false);
 
   /*
-  // Render controls
-  */
+    // Render controls
+    */
   const wrapperClasses = classNames(styles.wrapper, className, {
     [styles.isSimpleControls]: !hasExtendedControls,
     [styles.isHoveringProgress]: isHoveringProgress,
@@ -75,6 +103,26 @@ const Controls = ({
   return (
     <div className={wrapperClasses}>
       <div className={styles.showControls}>{'Show Controls'}</div>
+
+      {isShareComponent && (
+        <>
+          <button
+            className={styles.share}
+            onClick={handleCopyLink}
+            type="button"
+          >
+            {'Copy Link'}
+          </button>
+
+          <button
+            className={styles.share}
+            onClick={handleShareVia}
+            type="button"
+          >
+            {'Share Via'}
+          </button>
+        </>
+      )}
 
       <button
         className={styles.playToggle}
@@ -100,8 +148,12 @@ const Controls = ({
         {isMuted ? 'Sound On' : 'Sound Off'}
       </button>
 
-      <button className={styles.share} type="button">
-        {'Share'}
+      <button
+        className={styles.share}
+        onClick={handleShareToggle}
+        type="button"
+      >
+        {shareLinkText}
       </button>
 
       <a
