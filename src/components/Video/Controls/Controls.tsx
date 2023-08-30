@@ -104,7 +104,7 @@ const Controls = ({
     <div className={wrapperClasses}>
       <div className={styles.showControls}>{'Show Controls'}</div>
 
-      {isShareComponent && (
+      {isShareComponent ? (
         <>
           <button
             className={styles.share}
@@ -122,48 +122,50 @@ const Controls = ({
             {'Share Via'}
           </button>
         </>
+      ) : (
+        <>
+          <button
+            className={styles.playToggle}
+            onClick={handlePlayToggle}
+            type="button"
+          >
+            {isPlaying ? 'Pause' : 'Play'}
+          </button>
+
+          {hasExtendedControls && (
+            <Progress
+              className={styles.progress}
+              onHover={setIsHoveringProgress}
+              videoRef={videoRef}
+            />
+          )}
+
+          <button
+            className={styles.muteToggle}
+            onClick={toggleIsMuted}
+            type="button"
+          >
+            {isMuted ? 'Sound On' : 'Sound Off'}
+          </button>
+
+          <button
+            className={styles.share}
+            onClick={handleShareToggle}
+            type="button"
+          >
+            {shareLinkText}
+          </button>
+
+          <a
+            download
+            href={videoRef.current?.dataset.downloadSrc}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {'Download'}
+          </a>
+        </>
       )}
-
-      <button
-        className={styles.playToggle}
-        onClick={handlePlayToggle}
-        type="button"
-      >
-        {isPlaying ? 'Pause' : 'Play'}
-      </button>
-
-      {hasExtendedControls && (
-        <Progress
-          className={styles.progress}
-          onHover={setIsHoveringProgress}
-          videoRef={videoRef}
-        />
-      )}
-
-      <button
-        className={styles.muteToggle}
-        onClick={toggleIsMuted}
-        type="button"
-      >
-        {isMuted ? 'Sound On' : 'Sound Off'}
-      </button>
-
-      <button
-        className={styles.share}
-        onClick={handleShareToggle}
-        type="button"
-      >
-        {shareLinkText}
-      </button>
-
-      <a
-        download
-        href={videoRef.current?.dataset.downloadSrc}
-        rel="noreferrer"
-        target="_blank"
-      >
-        {'Download'}
-      </a>
     </div>
   );
 };
