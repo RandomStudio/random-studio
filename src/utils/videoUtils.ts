@@ -34,7 +34,7 @@ export const formatVideoData = async (details): Promise<VideoData> => {
     fallback: thumbnailUrl,
     guid,
     height,
-    hls: `${baseUrl}/playlist.m3u8`,
+    hls: `${baseUrl}/play_720p.mp4`,
     width,
   };
 
