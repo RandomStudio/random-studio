@@ -104,12 +104,7 @@ const Controls = ({
         {'Share'}
       </button>
 
-      <a
-        download
-        href={videoRef.current?.dataset.downloadSrc}
-        rel="noreferrer"
-        target="_blank"
-      >
+      <a download href={videoRef.current?.dataset.downloadSrc}>
         {'Download'}
       </a>
     </div>
