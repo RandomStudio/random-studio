@@ -33,7 +33,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
       onClick,
       onReady,
       onMount,
-      video: { baseUrl, downloadUrl, blur, guid, height, hls, width },
+      video: { baseUrl, blur, guid, height, hls, width },
     },
     ref,
   ) => {
@@ -90,7 +90,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
                 autoPlay
                 className={styles.video}
                 controls={false}
-                data-download-src={downloadUrl}
+                data-download-src={`${baseUrl}/original`}
                 id={guid}
                 loop={isLooping}
                 muted
