@@ -43,7 +43,6 @@ const Controls = ({
   }, []);
 
   const handleShareToggle = useCallback(() => {
-    // If navigator.share is no available, copy url and show "copied" text
     if (!hasNavigatorShare) {
       setShareLinkText('Copied!');
       navigator.clipboard.writeText(window.location.href);
@@ -105,7 +104,15 @@ const Controls = ({
       <div className={styles.showControls}>{'Show Controls'}</div>
 
       {isShareComponent ? (
-        <>
+        <div className={styles.shareComponentWrapper}>
+          <button
+            className={styles.share}
+            onClick={() => setIsShareComponent(false)}
+            type="button"
+          >
+            {'Cancel'}
+          </button>
+
           <button
             className={styles.share}
             onClick={handleCopyLink}
@@ -121,7 +128,7 @@ const Controls = ({
           >
             {'Share Via'}
           </button>
-        </>
+        </div>
       ) : (
         <>
           <button
