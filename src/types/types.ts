@@ -4,7 +4,6 @@ export interface VideoData {
     thumbnail: string;
     dominantColor: string;
   };
-  downloadUrl: string;
   fallback: string;
   guid: string;
   height;
