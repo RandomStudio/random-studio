@@ -7,6 +7,7 @@ import Progress from './Progress/Progress';
 type ControlsProps = {
   className?: string;
   isAutoplaying: boolean;
+  onClick?: () => void;
   hasExtendedControls?: boolean;
   videoRef: MutableRefObject<HTMLVideoElement>;
 };
@@ -15,6 +16,7 @@ const Controls = ({
   className = undefined,
   isAutoplaying = false,
   hasExtendedControls = false,
+  onClick = null,
   videoRef,
 }: ControlsProps) => {
   /*
@@ -64,6 +66,8 @@ const Controls = ({
 
   const [isHoveringProgress, setIsHoveringProgress] = useState(false);
 
+  const handleClick = () => onClick?.();
+
   /*
   // Render controls
   */
@@ -74,7 +78,9 @@ const Controls = ({
 
   return (
     <div className={wrapperClasses}>
-      <div className={styles.showControls}>{'Show Controls'}</div>
+      <div className={styles.showControls} onClick={handleClick}>
+        {'Show Controls'}
+      </div>
 
       <button
         className={styles.playToggle}
