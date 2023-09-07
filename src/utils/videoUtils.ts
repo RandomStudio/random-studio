@@ -36,6 +36,7 @@ export const formatVideoData = async (details): Promise<VideoData> => {
     height,
     hls: `${baseUrl}/playlist.m3u8`,
     width,
+    downloadUrl: `${baseUrl}/play_720p.mp4`,
   };
 
   if (typeof window === 'undefined') {
