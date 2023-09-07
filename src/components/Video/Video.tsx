@@ -14,6 +14,7 @@ import useHlsVideo from './useHlsVideo';
 
 export type VideoProps = {
   className?: string;
+  hasAudio?: boolean;
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
@@ -27,6 +28,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
   (
     {
       className,
+      hasAudio,
       hasControls,
       isAutoplaying,
       isLooping,
@@ -102,7 +104,11 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
               />
 
               {hasControls && hasLoaded && (
-                <Controls isAutoplaying={isAutoplaying} videoRef={videoRef} />
+                <Controls
+                  hasAudio={hasAudio}
+                  isAutoplaying={isAutoplaying}
+                  videoRef={videoRef}
+                />
               )}
             </>
           )}
@@ -116,6 +122,7 @@ Video.displayName = 'Video';
 
 Video.defaultProps = {
   className: null,
+  hasAudio: false,
   hasControls: false,
   isAutoplaying: true,
   isLooping: true,

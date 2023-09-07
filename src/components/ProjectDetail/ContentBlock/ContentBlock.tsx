@@ -81,7 +81,7 @@ const ContentBlock = ({
     }
 
     if (__typename === BLOCK_TYPES.VideoBlockRecord) {
-      const { caption, hasControls, autoplay, loops, video } =
+      const { caption, hasControls, hasAudio, autoplay, loops, video } =
         blockProps as VideoBlock;
 
       return (
@@ -98,6 +98,7 @@ const ContentBlock = ({
               }
             >
               <Video
+                hasAudio={hasAudio}
                 hasControls={hasControls}
                 isAutoplaying={autoplay}
                 isLooping={loops}

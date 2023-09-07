@@ -6,15 +6,17 @@ import Progress from './Progress/Progress';
 
 type ControlsProps = {
   className?: string;
-  isAutoplaying: boolean;
+  hasAudio: boolean;
   hasExtendedControls?: boolean;
+  isAutoplaying: boolean;
   videoRef: MutableRefObject<HTMLVideoElement>;
 };
 
 const Controls = ({
   className = undefined,
-  isAutoplaying = false,
+  hasAudio,
   hasExtendedControls = false,
+  isAutoplaying,
   videoRef,
 }: ControlsProps) => {
   /*
@@ -68,6 +70,7 @@ const Controls = ({
   // Render controls
   */
   const wrapperClasses = classNames(styles.wrapper, className, {
+    [styles.hasNoAudio]: !hasAudio,
     [styles.isSimpleControls]: !hasExtendedControls,
     [styles.isHoveringProgress]: isHoveringProgress,
   });
@@ -105,6 +108,7 @@ const Controls = ({
       </button>
 
       <a
+        className={styles.download}
         download
         href={videoRef.current?.dataset.downloadSrc}
         rel="noreferrer"

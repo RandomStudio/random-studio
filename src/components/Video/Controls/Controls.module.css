@@ -28,7 +28,6 @@
     border: none;
     color: inherit;
     text-decoration: none;
-    margin: 0;
     padding: 0;
   }
 
@@ -50,14 +49,14 @@
 }
 
 .muteToggle {
-  @media (--tablet) {
-    margin-right: auto !important;
-  }
-
   .isSimpleControls & {
     @media (hover: hover) and (pointer: fine){
       display: block;
     }
+  }
+
+  .hasNoAudio & {
+    display: none !important;
   }
 }
 
@@ -71,5 +70,11 @@
     @media (hover: hover) and (pointer: fine){
       display: none;
     }
+  }
+}
+
+.download {
+  @media (--tablet) {
+    margin-left: auto;
   }
 }
