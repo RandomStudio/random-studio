@@ -66,8 +66,6 @@ const Controls = ({
 
   const [isHoveringProgress, setIsHoveringProgress] = useState(false);
 
-  const handleClick = () => onClick?.();
-
   /*
   // Render controls
   */
@@ -78,7 +76,7 @@ const Controls = ({
 
   return (
     <div className={wrapperClasses}>
-      <div className={styles.showControls} onClick={handleClick}>
+      <div className={styles.showControls} onClick={onClick}>
         {'Show Controls'}
       </div>
 
