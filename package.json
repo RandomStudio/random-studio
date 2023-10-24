@@ -20,7 +20,6 @@
     "graphql-request": "5.1.0",
     "hls.js": "1.4.10",
     "next": "^13.2.1",
-    "prop-types": "15.8.1",
     "react": "^18.2.0",
     "react-datocms": "4.0.9",
     "react-markdown": "8.0.5",
