@@ -27,7 +27,8 @@ const Controls = ({
   }, []);
 
   useEffect(() => {
-    const changePlayState = isNowPlaying => setIsPlaying(isNowPlaying);
+    const changePlayState = (isNowPlaying: boolean) =>
+      setIsPlaying(isNowPlaying);
 
     videoRef.current?.addEventListener('play', () => changePlayState(true));
 

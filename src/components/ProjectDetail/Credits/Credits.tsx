@@ -9,7 +9,7 @@ type CreditsProps = {
   externalUrl: string;
 };
 
-export const Credits = ({ credits, externalUrl }: CreditsProps) => {
+const Credits = ({ credits, externalUrl }: CreditsProps) => {
   return (
     <dl aria-label="Project Details" className={styles.wrapper}>
       {credits.map(credit => (
@@ -35,7 +35,7 @@ export const Credits = ({ credits, externalUrl }: CreditsProps) => {
           rel="noreferrer noopener"
           target="_blank"
         >
-          View website
+          {'View website'}
         </a>
       )}
     </dl>

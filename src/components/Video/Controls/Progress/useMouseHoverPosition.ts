@@ -2,7 +2,6 @@ import {
   MouseEvent,
   MutableRefObject,
   useCallback,
-  useEffect,
   useLayoutEffect,
   useMemo,
   useState,
@@ -36,8 +35,8 @@ const useMouseHoverPosition = (
   }, []);
 
   const handleMouseMove = useCallback(
-    e => {
-      if (!isHovering) {
+    (e: MouseEvent) => {
+      if (!isHovering || !elementBoundingRectRef.current) {
         return;
       }
 
@@ -61,11 +60,13 @@ const useMouseHoverPosition = (
     const element = ref.current;
     element.addEventListener('mouseover', handleMouseOver);
     element.addEventListener('mouseout', handleMouseOut);
+    // @ts-expect-error Mousemove has an unusual signature
     element.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       element.removeEventListener('mouseover', handleMouseOver);
       element.removeEventListener('mouseout', handleMouseOut);
+      // @ts-expect-error Mousemove has an unusual signature
       element.removeEventListener('mousemove', handleMouseMove);
     };
   }, [handleMouseMove, handleMouseOut, handleMouseOver, isActive, ref]);

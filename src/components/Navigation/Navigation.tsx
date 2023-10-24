@@ -1,10 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import styles from './Navigation.module.css';
 import Logo from '../Logo/Logo';
 
-const Navigation = ({ isLogoCentred }) => (
+type NavigationProps = {
+  isLogoCentred: boolean;
+};
+
+const Navigation = ({ isLogoCentred }: NavigationProps) => (
   <nav aria-label="Site navigation" className={styles.nav} role="navigation">
     <Logo isCentred={isLogoCentred} />
 
@@ -19,9 +22,5 @@ const Navigation = ({ isLogoCentred }) => (
     </div>
   </nav>
 );
-
-Navigation.propTypes = {
-  isLogoCentred: PropTypes.bool.isRequired,
-};
 
 export default Navigation;

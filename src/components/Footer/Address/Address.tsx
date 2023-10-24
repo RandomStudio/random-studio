@@ -1,8 +1,23 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './Address.module.css';
 
-const Address = ({ address, aria, className, directions, name, phone }) => (
+type AddressProps = {
+  address: string[];
+  aria: string;
+  className?: string;
+  directions: string;
+  name: string;
+  phone: string;
+};
+
+const Address = ({
+  address,
+  aria,
+  className = '',
+  directions,
+  name,
+  phone,
+}: AddressProps) => (
   <address aria-label={aria} className={`${styles.address} ${className}`}>
     <span className={styles.name}>{name}</span>
 
@@ -29,19 +44,5 @@ const Address = ({ address, aria, className, directions, name, phone }) => (
     </a>
   </address>
 );
-
-Address.propTypes = {
-  address: PropTypes.arrayOf(PropTypes.string).isRequired,
-  aria: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  directions: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
-};
-
-Address.defaultProps = {
-  className: '',
-  email: null,
-};
 
 export default Address;
