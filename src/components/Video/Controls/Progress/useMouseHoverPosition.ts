@@ -9,7 +9,7 @@ import {
 import useLazyBoundingClientRect from './useLazyBoundingClientRect';
 
 const useMouseHoverPosition = (
-  ref: MutableRefObject<HTMLElement>,
+  ref: MutableRefObject<HTMLElement | null>,
   isActive = true,
 ) => {
   const [isHovering, setIsHovering] = useState(false);

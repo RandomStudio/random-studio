@@ -48,7 +48,7 @@ const ContentBlock = ({
     [router],
   );
 
-  const videoRef = useRef<HTMLVideoElement>();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const [isVideoMounted, setIsVideoMounted] = useState(false);
 

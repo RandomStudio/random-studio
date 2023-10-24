@@ -1,3 +1,4 @@
+import { GetStaticPropsContext } from 'next';
 import Carousel from '../../components/Carousel/Carousel';
 import styles from './Studio.module.css';
 import getDataFromBackend from '../../api/getDataFromBackend';
@@ -29,7 +30,7 @@ type StudioProps = {
 const Studio = ({
   blurb,
   blocks,
-  skillset = null,
+  skillset = undefined,
   studioImpression,
   vacancies,
 }: StudioProps) => (
@@ -122,7 +123,7 @@ const Studio = ({
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async ({ preview }: GetStaticPropsContext) => {
   const { page } = await getDataFromBackend({
     query: STUDIO_PAGE_QUERY,
     preview,

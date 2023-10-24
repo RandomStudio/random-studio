@@ -11,7 +11,7 @@ const Crossfade = ({ children, duration = 250 }: CrossfadeProps) => {
   const [visibleChildren, setVisibleChildren] = useState(children);
 
   const transition = useCallback(
-    nextChildren => {
+    (nextChildren: ReactElement) => {
       setIsTransitioning(true);
 
       window.setTimeout(() => {

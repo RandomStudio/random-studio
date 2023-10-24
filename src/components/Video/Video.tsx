@@ -81,7 +81,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
             alt="video placeholder"
             aria-hidden
             className={styles.placeholder}
-            src={`data:image/jpeg;base64,${blur.thumbnail}`}
+            src={`data:image/jpeg;base64,${blur?.thumbnail}`}
           />
 
           {isMounted && (

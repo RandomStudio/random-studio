@@ -2,16 +2,10 @@ import classNames from 'classnames';
 import styles from './SustainabilitySection.module.css';
 import Image from '../Image/Image';
 import Markdown from '../Markdown/Markdown';
-import type { Image as ImageType } from '../../types/types';
+import type { SustainabilityBlock } from '../../types/types';
 
 type SustainabilitySectionProps = {
-  section: {
-    image: ImageType;
-    color: string[];
-    title: string;
-    text: string;
-    textFirst: boolean;
-  };
+  section: SustainabilityBlock;
 };
 
 const SustainabilitySection = ({ section }: SustainabilitySectionProps) => {

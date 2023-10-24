@@ -13,7 +13,9 @@ const LazyLoad = ({ children, onIntersect = () => null }: LazyLoadProps) => {
   const onIntersectFuncRef = useRef(onIntersect);
 
   useEffect(() => {
-    if (hasIntersected) {
+    const currentRef = ref.current;
+
+    if (hasIntersected || !currentRef) {
       return undefined;
     }
 
@@ -33,7 +35,6 @@ const LazyLoad = ({ children, onIntersect = () => null }: LazyLoadProps) => {
       },
     );
 
-    const currentRef = ref.current;
     observer.observe(currentRef);
 
     return () => {
