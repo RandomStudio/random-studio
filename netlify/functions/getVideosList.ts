@@ -1,3 +1,5 @@
+import { BunnyVideoDetails } from '../../src/types/types';
+
 export const getVideosList = async () => {
   try {
     const response = await fetch(
@@ -6,7 +8,7 @@ export const getVideosList = async () => {
         headers: {
           accept: 'application/json',
           'content-type': 'application/*+json',
-          AccessKey: process.env.BUNNY_TOKEN,
+          AccessKey: process.env.BUNNY_TOKEN ?? '',
         },
       },
     );
@@ -17,7 +19,7 @@ export const getVideosList = async () => {
 
     const { items } = await response.json();
 
-    return items;
+    return items as BunnyVideoDetails[];
   } catch (error) {
     console.error(error);
 

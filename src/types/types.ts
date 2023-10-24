@@ -1,3 +1,28 @@
+export type BunnyVideoDetails = {
+  videoLibraryId: number;
+  guid: string;
+  title: string;
+  dateUploaded: string;
+  views: number;
+  isPublic: boolean;
+  length: number;
+  status: number;
+  framerate: number;
+  rotation: number;
+  width: number;
+  height: number;
+  availableResolutions: string;
+  thumbnailCount: number;
+  encodeProgress: number;
+  storageSize: number;
+  hasMP4Fallback: boolean;
+  collectionId: string;
+  thumbnailFileName: string;
+  averageWatchTime: number;
+  totalWatchTime: number;
+  category: string;
+};
+
 export interface VideoData {
   baseUrl: string;
   blur?: {
@@ -7,9 +32,9 @@ export interface VideoData {
   downloadUrl: string;
   fallback: string;
   guid: string;
-  height;
+  height: number;
   hls: string;
-  width;
+  width: number;
 }
 
 export type RelatedProject = {
@@ -34,7 +59,7 @@ export type Project = {
   relatedProjects: RelatedProject[];
   tags: string[];
   opengraph: OpenGraph;
-  content: ContentBlockType[];
+  content: ContentBlock[];
 };
 
 export interface Image {
@@ -122,6 +147,14 @@ export type HorizontalRowBlock = {
 } & GenericBlockAttributes;
 
 export type ContentBlock = CarouselBlock | ImageBlock | TextBlock | VideoBlock;
+
+export type SustainabilityBlock = {
+  image: Image;
+  color: string[];
+  title: string;
+  text: string;
+  textFirst: boolean;
+};
 
 export type DayNightImageBlock = {
   __typename: string;

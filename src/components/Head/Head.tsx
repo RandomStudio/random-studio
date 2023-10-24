@@ -38,6 +38,7 @@ const Head = ({
 
   const pageTitle = title ? formatTitle(title) : DEFAULTS.TITLE;
 
+  // @ts-expect-error Need to correct ImageData type
   const imagePath = image?.imageData?.src ? image : DEFAULTS.IMAGE;
 
   const ogImage = `${DEFAULTS.SITE_URL}${imagePath}`;

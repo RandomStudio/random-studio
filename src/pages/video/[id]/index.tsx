@@ -24,7 +24,7 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   }
 
   // Some old videos are a full URL, rather than an ID
-  const id = sanitiseVideoId(videoRef);
+  const id = sanitiseVideoId(videoRef) as unknown as string;
 
   const details = await getVideoDetailsById(id);
 

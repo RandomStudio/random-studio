@@ -9,11 +9,11 @@ import React, {
 import classNames from 'classnames';
 import styles from './Filters.module.scss';
 import { ORDERED_TAGS } from '../../../CONSTANTS';
-import { Project } from '../../../types/types';
+import { ProjectSummary } from '../../../types/types';
 
 type FiltersProps = {
   activeTag?: string;
-  projects: Project[];
+  projects: ProjectSummary[];
   setActiveTag: (tag?: string) => void;
 };
 
@@ -32,6 +32,7 @@ const Filters = ({
       .flat()
       .map(tag => tag.toLowerCase());
 
+    // @ts-expect-error Need to look in to Set
     return [...new Set(projectFiltersWithDupes)];
   }, [projects]);
 

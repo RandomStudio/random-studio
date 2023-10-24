@@ -8,7 +8,7 @@ type ControlsProps = {
   className?: string;
   isAutoplaying: boolean;
   hasExtendedControls?: boolean;
-  videoRef: MutableRefObject<HTMLVideoElement>;
+  videoRef: MutableRefObject<HTMLVideoElement | null>;
 };
 
 const Controls = ({
@@ -36,6 +36,10 @@ const Controls = ({
   }, [videoRef]);
 
   useEffect(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
     if (isPlaying) {
       videoRef.current
         .play()
@@ -48,8 +52,8 @@ const Controls = ({
   }, [isPlaying, videoRef]);
 
   /*
-  // Handle mute
-  */
+// Handle mute
+*/
   const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(
     videoRef.current?.src ?? 'unknown',
   );
@@ -66,8 +70,8 @@ const Controls = ({
   const [isHoveringProgress, setIsHoveringProgress] = useState(false);
 
   /*
-  // Render controls
-  */
+// Render controls
+*/
   const wrapperClasses = classNames(styles.wrapper, className, {
     [styles.isSimpleControls]: !hasExtendedControls,
     [styles.isHoveringProgress]: isHoveringProgress,

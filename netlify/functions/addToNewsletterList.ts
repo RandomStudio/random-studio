@@ -13,7 +13,7 @@ async function handler(event) {
   });
 
   const { email } = event.queryStringParameters;
-  let errorMessage = null;
+  let errorMessage: string;
 
   if (!email) {
     errorMessage = 'No EMAIL supplied';

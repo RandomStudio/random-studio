@@ -4,11 +4,15 @@ import Markdown from '../Markdown/Markdown';
 import styles from './Project.module.scss';
 import Video from '../Video/Video';
 import Image from '../Image/Image';
-import { ProjectSummary, VideoData } from '../../types/types';
+import {
+  Image as ImageType,
+  ProjectSummary,
+  VideoData,
+} from '../../types/types';
 
-type Project = ProjectSummary & {
+type Project = Omit<ProjectSummary, 'intro' | 'tags'> & {
   className?: string;
-  featuredImage: ImageData;
+  featuredImage: ImageType;
   featuredVideo: VideoData;
   left: number;
   top: number;
