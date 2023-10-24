@@ -1,8 +1,7 @@
 import React from 'react';
 import NextHead from 'next/head';
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
-import { imageDataPropType } from '../../propTypes';
+import { Image } from '../../types/types';
 
 const DEFAULTS = {
   TITLE: 'Random Studio',
@@ -14,19 +13,27 @@ const DEFAULTS = {
     'Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio',
 };
 
-const formatTitle = string =>
+const formatTitle = (string: string) =>
   `${string
     .replaceAll('<br>', '')
     .replaceAll('<br /> ', '')
     .replaceAll('  ', ' ')} - ${DEFAULTS.TITLE}`;
 
+type HeadProps = {
+  description?: string;
+  image?: Image;
+  socialDescription?: string;
+  socialTitle?: string;
+  title?: string;
+};
+
 const Head = ({
-  description,
-  image,
-  socialDescription,
-  socialTitle,
-  title,
-}) => {
+  description = undefined,
+  image = undefined,
+  socialDescription = undefined,
+  socialTitle = undefined,
+  title = undefined,
+}: HeadProps) => {
   const router = useRouter();
 
   const pageTitle = title ? formatTitle(title) : DEFAULTS.TITLE;
@@ -135,22 +142,6 @@ const Head = ({
       />
     </NextHead>
   );
-};
-
-Head.propTypes = {
-  description: PropTypes.string,
-  image: PropTypes.oneOfType([imageDataPropType, PropTypes.string]),
-  socialDescription: PropTypes.string,
-  socialTitle: PropTypes.string,
-  title: PropTypes.string,
-};
-
-Head.defaultProps = {
-  description: null,
-  image: null,
-  socialDescription: null,
-  socialTitle: null,
-  title: null,
 };
 
 export default Head;

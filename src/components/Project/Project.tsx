@@ -4,13 +4,17 @@ import Markdown from '../Markdown/Markdown';
 import styles from './Project.module.scss';
 import Video from '../Video/Video';
 import Image from '../Image/Image';
-import { ProjectSummary } from '../../types/types.js';
+import { ProjectSummary, VideoData } from '../../types/types';
 
 type Project = ProjectSummary & {
   className?: string;
+  featuredImage: ImageData;
+  featuredVideo: VideoData;
   left: number;
   top: number;
   width: number;
+  title: string;
+  slug: string;
 };
 
 const Project = ({
@@ -22,7 +26,7 @@ const Project = ({
   top,
   slug,
   width,
-}) => (
+}: Project) => (
   <Link
     className={`${styles.thumbnail} ${className}`}
     href={`/projects/${slug}`}
@@ -51,8 +55,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-            marginLeft: '0',
-          }
+              marginLeft: '0',
+            }
       }
     >
       <Markdown markdown={title} />

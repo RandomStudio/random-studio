@@ -118,16 +118,12 @@ export type CarouselBlock = {
 
 export type HorizontalRowBlock = {
   __typename: 'HorizontalRowRecord';
-  blocks: ContentBlockType[];
+  blocks: ContentBlock[];
 } & GenericBlockAttributes;
 
-export type ContentBlockType =
-  | CarouselBlock
-  | ImageBlock
-  | TextBlock
-  | VideoBlock;
+export type ContentBlock = CarouselBlock | ImageBlock | TextBlock | VideoBlock;
 
-export type DayNightImageBlockType = {
+export type DayNightImageBlock = {
   __typename: string;
   copy: string;
   image: Image;

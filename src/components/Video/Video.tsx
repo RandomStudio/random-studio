@@ -28,7 +28,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
     {
       className,
       hasControls,
-      isAutoplaying,
+      isAutoplaying = false,
       isLooping,
       onClick,
       onReady,
@@ -52,7 +52,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 
     const handleVideoReady = useCallback(() => {
       setHasLoaded(true);
-      onReady();
+      onReady?.();
     }, [onReady]);
 
     const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
@@ -115,7 +115,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 Video.displayName = 'Video';
 
 Video.defaultProps = {
-  className: null,
+  className: undefined,
   hasControls: false,
   isAutoplaying: true,
   isLooping: true,

@@ -4,11 +4,11 @@ import styles from './BackScrim.module.scss';
 import supportsIntersectionObserver from '../../../utils/supportsIntersectionObserver';
 
 const BackScrim = () => {
-  const intersectionRef = useRef();
+  const intersectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!supportsIntersectionObserver) {
+    if (!supportsIntersectionObserver || !intersectionRef.current) {
       return undefined;
     }
 

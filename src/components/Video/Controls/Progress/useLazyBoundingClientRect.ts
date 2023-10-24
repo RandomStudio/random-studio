@@ -4,7 +4,7 @@ const useLazyBoundingClientRect = (
   targetRef: MutableRefObject<HTMLElement>,
   isActive = true,
 ) => {
-  const boundingRectRef = useRef<DOMRect>(null);
+  const boundingRectRef = useRef<DOMRect>();
 
   useEffect(() => {
     if (!isActive) {

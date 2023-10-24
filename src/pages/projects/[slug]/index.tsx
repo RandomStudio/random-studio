@@ -10,7 +10,7 @@ import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
 
 import {
-  ContentBlockType,
+  ContentBlock as ContentBlockType,
   CreditsType,
   OpenGraph,
   ProjectSummary,

@@ -126,7 +126,7 @@ module.exports = {
         noStrings: false,
       },
     ],
-    'react/jsx-sort-default-props': [
+    'react/sort-default-props': [
       2,
       {
         ignoreCase: false,
