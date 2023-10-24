@@ -6,7 +6,7 @@ export const getVideosList = async () => {
         headers: {
           accept: 'application/json',
           'content-type': 'application/*+json',
-          AccessKey: process.env.BUNNY_TOKEN,
+          AccessKey: process.env.BUNNY_TOKEN ?? '',
         },
       },
     );
