@@ -1,5 +1,6 @@
 import { Image as DatoCMSImage, ImagePropTypes } from 'react-datocms';
 import React, { useMemo } from 'react';
+import { ImageData } from '../../types/types';
 
 type ImageProps = {
   alt?: string;
