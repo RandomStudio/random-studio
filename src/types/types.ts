@@ -44,7 +44,13 @@ export type RelatedProject = {
   featuredImage: Image;
   featuredVideo: VideoData;
 };
-
+export type SimpleProject = {
+  featuredImage: Image;
+  id: string;
+  slug: string;
+  title: string;
+  intro: string;
+};
 export type Project = {
   id: string;
   slug: string;
@@ -62,6 +68,20 @@ export type Project = {
   content: ContentBlock[];
 };
 
+export type ImageData = {
+  alt?: string;
+  aspectRatio: number;
+  base64: string;
+  bgColor: string;
+  height: number;
+  sizes: string;
+  src: string;
+  srcSet: string;
+  title?: string;
+  webpSrcSet?: string;
+  width: number;
+};
+
 export interface Image {
   id: string;
   imageData: ImageData;
@@ -71,7 +91,7 @@ export type OpenGraph = {
   description: string;
   title: string;
   twitterCard: string;
-  image: ImageData;
+  image: Image;
 };
 
 export type ProjectSummary = {
@@ -85,7 +105,7 @@ export type ProjectSummary = {
 
 export type Slide = {
   id: string;
-  imageData?: Image;
+  imageData?: ImageData;
   video?: VideoData;
 };
 

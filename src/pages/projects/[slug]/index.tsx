@@ -45,7 +45,6 @@ const Project = ({
     <Layout className={styles.layout} hasFooter={false}>
       <Head
         description={intro}
-        // @ts-expect-error Need to correct ImageData type
         image={image ?? featuredImage}
         socialDescription={ogDescription}
         socialTitle={ogTitle}

@@ -1,13 +1,13 @@
 import React from 'react';
 import NextHead from 'next/head';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { Image } from '../../types/types';
 
 const DEFAULTS = {
   TITLE: 'Random Studio',
   DESCRIPTION:
     'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.',
-  IMAGE: '/og-image.png',
+  IMAGE: 'https://random.studio/og-image.png',
   SITE_URL: 'https://random.studio',
   KEYWORDS:
     'Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio',
@@ -34,15 +34,10 @@ const Head = ({
   socialTitle = undefined,
   title = undefined,
 }: HeadProps) => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   const pageTitle = title ? formatTitle(title) : DEFAULTS.TITLE;
-
-  // @ts-expect-error Need to correct ImageData type
-  const imagePath = image?.imageData?.src ? image : DEFAULTS.IMAGE;
-
-  const ogImage = `${DEFAULTS.SITE_URL}${imagePath}`;
-
+  const ogImage = image?.imageData?.src ?? DEFAULTS.IMAGE;
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
 
   const pageDescription =
@@ -74,10 +69,7 @@ const Head = ({
 
       <meta content="en_US" property="og:locale" />
 
-      <meta
-        content={`${DEFAULTS.SITE_URL}${router.pathname}`}
-        property="og:url"
-      />
+      <meta content={`${DEFAULTS.SITE_URL}${pathname}`} property="og:url" />
 
       <meta content={ogImage} property="og:image" />
 

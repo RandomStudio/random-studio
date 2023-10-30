@@ -1,15 +1,25 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { MouseEvent, useCallback, useMemo, useRef, useState } from 'react';
+import {
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { TinyColor, isReadable } from '@ctrl/tinycolor';
 import useSwr from 'swr';
 import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import { GetStaticPropsContext } from 'next';
+import Head from '../../../components/Head/Head';
+import getDataFromBackend from '../../../api/getDataFromBackend';
+import { PROJECTS_LIST_QUERY } from '../../../api/QUERIES';
 import Video from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
-import { VideoData } from '../../../types/types';
+import { SimpleProject, VideoData } from '../../../types/types';
 import {
   getVideoDetailsById,
   sanitiseVideoId,
@@ -39,9 +49,10 @@ const fetcher = async (videoRef: string, video: VideoData) => {
 
 type VideoFocusModePageProps = {
   video: VideoData;
+  projects: SimpleProject[];
 };
 
-const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
+const VideoFocusModePage = ({ video, projects }: VideoFocusModePageProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const router = useRouter();
@@ -49,6 +60,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const { id } = router.query;
   const searchParams = useSearchParams();
   const projectId = searchParams.get('projectId');
+  const [currentProject, setCurrentProject] = useState<SimpleProject>();
 
   const { data, error } = useSwr(id, () => fetcher(id as string, video), {
     fallbackData: video,
@@ -58,6 +70,16 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const time = params.get('time');
 
   const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    if (!projectId) {
+      return;
+    }
+
+    const targetProject = projects.find(project => project.slug === projectId);
+
+    setCurrentProject(targetProject);
+  }, [projectId, projects]);
 
   const handleClick = useCallback(() => {
     if (videoRef.current?.paused) {
@@ -131,6 +153,12 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   return (
     <div className={gridClassNames} style={gridStyles}>
+      <Head
+        description={currentProject?.intro}
+        image={currentProject?.featuredImage}
+        title={currentProject?.title}
+      />
+
       <div className={styles.close}>{closeJsx}</div>
 
       <div className={styles.video}>
@@ -171,9 +199,14 @@ export const getStaticProps = async ({
 
   const video = await getVideoDetailsByIdOnServer(params.id);
 
+  const { projects } = await getDataFromBackend({
+    query: PROJECTS_LIST_QUERY,
+  });
+
   return {
     props: {
       video,
+      projects,
     },
   };
 };
