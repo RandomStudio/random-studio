@@ -37,6 +37,29 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   return details;
 };
 
+type ExtendedHTMLVideoElement = HTMLVideoElement & {
+  mozHasAudio?: boolean;
+  webkitAudioDecodedByteCount?: number;
+  audioTracks?: MediaStreamTrack[];
+};
+
+const detectVideoAudioTrack = (video: ExtendedHTMLVideoElement): boolean => {
+  if (
+    !('mozHasAudio' in video) &&
+    !('webkitAudioDecodedByteCount' in video) &&
+    !('audioTracks' in video)
+  ) {
+    // If we can't detect, fallback to showing manual audio controls
+    return true;
+  }
+
+  return (
+    video.mozHasAudio ||
+    Boolean(video.webkitAudioDecodedByteCount) ||
+    Boolean(video.audioTracks && video.audioTracks.length)
+  );
+};
+
 type VideoFocusModePageProps = {
   video: VideoData;
 };
@@ -75,6 +98,8 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
     }
   }, [videoRef]);
 
+  const [hasAudio, setHasAudio] = useState(true);
+
   const handleReady = useCallback(() => {
     if (!videoRef.current) {
       return;
@@ -82,6 +107,10 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
     setIsReady(true);
     videoRef.current.currentTime = Number(time) || 0;
+
+    if (detectVideoAudioTrack(videoRef.current) === false) {
+      setHasAudio(false);
+    }
   }, [time]);
 
   const closeJsx = useMemo(() => {
@@ -161,7 +190,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
       {isReady && (
         <Controls
           className={styles.controls}
-          hasAudio
+          hasAudio={hasAudio}
           hasExtendedControls
           isAutoplaying
           videoRef={videoRef}
