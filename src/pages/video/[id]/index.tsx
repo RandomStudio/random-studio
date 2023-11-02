@@ -37,6 +37,8 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   return details;
 };
 
+// Extend HTMLVideoElement to include properties that are not part of the standard
+// Audiotracks is still not part of the standard, despite being present for years
 type ExtendedHTMLVideoElement = HTMLVideoElement & {
   mozHasAudio?: boolean;
   webkitAudioDecodedByteCount?: number;
