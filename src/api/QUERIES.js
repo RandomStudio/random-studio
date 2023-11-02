@@ -34,18 +34,14 @@ export const PROJECT_PATHS_QUERY = `
 `;
 
 export const PROJECTS_LIST_QUERY = `
-
-${IMAGE_DATA_OBJECT_FRAGMENT_FUNC('featuredImage', 1200, 630)}
+${THUMBNAIL_FRAGMENT}
 
 query {
   projects: allProjects(first: "100", orderBy: position_ASC, filter: {isVisible: {eq: "true"}}) {
     title
     slug
     tags
-    intro
-    featuredImage {
-      ...featuredImage
-    }
+    ...Thumbnail
   }
 }
 `;
@@ -63,7 +59,8 @@ const addBlockQuery = ({
   hasImage = false,
   hasCarousel = false,
 }) => `
-${hasVideo
+${
+  hasVideo
     ? `... on VideoBlockRecord {
           autoplay
           caption
@@ -75,16 +72,18 @@ ${hasVideo
 }
 `
     : ''
-  }
-${hasText
+}
+${
+  hasText
     ? `... on TextBlockRecord {
   text
   ${sharedValues}
 }
 `
     : ''
-  }
-${hasImage
+}
+${
+  hasImage
     ? `... on ImageBlockRecord {
   caption
   image {
@@ -94,8 +93,9 @@ ${hasImage
 }
 `
     : ''
-  }
-${hasCarousel
+}
+${
+  hasCarousel
     ? `... on CarouselBlockRecord {
   slides {
     id
@@ -108,7 +108,7 @@ ${hasCarousel
 }
 `
     : ''
-  }
+}
 `;
 
 export const SINGLE_PROJECT_QUERY = `
@@ -147,21 +147,21 @@ export const SINGLE_PROJECT_QUERY = `
       content {
         __typename
         ${addBlockQuery({
-  hasVideo: true,
-  hasImage: true,
-  hasCarousel: true,
-  hasText: true,
-})}
+          hasVideo: true,
+          hasImage: true,
+          hasCarousel: true,
+          hasText: true,
+        })}
         ... on HorizontalRowRecord {
           id
           __typename
           blocks {
             __typename
             ${addBlockQuery({
-  hasVideo: true,
-  hasImage: true,
-  hasText: true,
-})}
+              hasVideo: true,
+              hasImage: true,
+              hasText: true,
+            })}
           }
         }
       }
