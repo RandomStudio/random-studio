@@ -9,7 +9,9 @@ const externalLinkRenderer = ({
   href?: string;
   children: ReactNode & ReactNode[];
 }) => {
-  const isInternalLink = new URL(href).hostname.includes('random.studio');
+  const isInternalLink = href
+    ? new URL(href).hostname.includes('random.studio')
+    : false;
 
   return (
     <a

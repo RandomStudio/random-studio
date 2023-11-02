@@ -19,20 +19,22 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
 
   return (
     <ErrorBoundary>
-      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-      <Component {...pageProps} />
+      <>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} />
 
-      {isPreview && (
-        <div className={styles.preview}>
-          {'Viewing preview'}
+        {isPreview && (
+          <div className={styles.preview}>
+            {'Viewing preview'}
 
-          <br />
+            <br />
 
-          <a href={`/api/clear-preview?slug=${router.pathname}`}>
-            {'(Switch to live)'}
-          </a>
-        </div>
-      )}
+            <a href={`/api/clear-preview?slug=${router.pathname}`}>
+              {'(Switch to live)'}
+            </a>
+          </div>
+        )}
+      </>
     </ErrorBoundary>
   );
 };

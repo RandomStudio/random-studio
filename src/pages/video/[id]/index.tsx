@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { MouseEvent, useCallback, useMemo, useRef, useState } from 'react';
 import { TinyColor, isReadable } from '@ctrl/tinycolor';
 import useSwr from 'swr';
 import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
+import { GetStaticPropsContext } from 'next';
 import Video from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
@@ -23,7 +24,7 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   }
 
   // Some old videos are a full URL, rather than an ID
-  const id = sanitiseVideoId(videoRef);
+  const id = sanitiseVideoId(videoRef) as unknown as string;
 
   const details = await getVideoDetailsById(id);
 
@@ -41,7 +42,7 @@ type VideoFocusModePageProps = {
 };
 
 const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
-  const videoRef = useRef<HTMLVideoElement>();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const router = useRouter();
 
@@ -71,13 +72,17 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   }, [videoRef]);
 
   const handleReady = useCallback(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
     setIsReady(true);
     videoRef.current.currentTime = Number(time) || 0;
   }, [time]);
 
   const closeJsx = useMemo(() => {
     if (projectId) {
-      const handleBack = event => {
+      const handleBack = (event: MouseEvent<HTMLAnchorElement>) => {
         router.back();
 
         event.preventDefault();
@@ -100,7 +105,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   }, [router, projectId]);
 
   const hasInvertedColors = useMemo(() => {
-    if (!data) {
+    if (!data || !data.blur) {
       return false;
     }
 
@@ -112,12 +117,12 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const gridStyles = useMemo(
     () => ({
-      backgroundColor: data.blur.dominantColor,
-      backgroundImage: data.blur.thumbnail
+      backgroundColor: data.blur?.dominantColor,
+      backgroundImage: data.blur?.thumbnail
         ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
         : 'none',
     }),
-    [data.blur.thumbnail, data.blur.dominantColor],
+    [data.blur],
   );
 
   const gridClassNames = classNames(styles.grid, {
@@ -157,7 +162,13 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   );
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({
+  params,
+}: GetStaticPropsContext<{ id: string }>) => {
+  if (!params) {
+    throw new Error('No params found');
+  }
+
   const video = await getVideoDetailsByIdOnServer(params.id);
 
   return {

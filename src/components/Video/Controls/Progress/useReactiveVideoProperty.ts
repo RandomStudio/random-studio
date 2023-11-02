@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 
 const useReactiveVideoProperty = (
-  video: HTMLVideoElement,
+  video: HTMLVideoElement | null,
   property: keyof HTMLVideoElement,
   event: keyof HTMLVideoElementEventMap,
 ) => {
-  const [value, setValue] = useState(video[property]);
+  const [value, setValue] = useState(video?.[property]);
 
   useEffect(() => {
-    const listener = () => setValue(video[property]);
-    video.addEventListener(event, listener);
+    const listener = () => setValue(video?.[property]);
+    video?.addEventListener(event, listener);
 
-    return () => video.removeEventListener(event, listener);
+    return () => video?.removeEventListener(event, listener);
   }, [video, event, property]);
 
   return value;

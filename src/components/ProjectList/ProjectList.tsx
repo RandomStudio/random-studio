@@ -18,10 +18,10 @@ type ProjectListProps = {
 const ProjectList = ({
   hasFilters = false,
   hasLimit = false,
-  intro = null,
+  intro = undefined,
   projects,
 }: ProjectListProps) => {
-  const [activeTag, setActiveTag] = useState(null);
+  const [activeTag, setActiveTag] = useState<string | undefined>(undefined);
 
   const activeTagIndex =
     ORDERED_TAGS.findIndex(tag => tag === activeTag) + 1 ?? 0;

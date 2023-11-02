@@ -12,15 +12,14 @@
     "launch-server": "npm install --dev && npm run start",
     "launch": "pm2 start npm --name 'randomstudio' -- run launch-server && pm2 save",
     "backup": "node ./cms/backups/backup-dato.mjs",
-    "lint": "eslint \"src/**/*.{js,jsx,json,ts,tsx}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
+    "lint": "tsc && eslint \"{src,netlify,cms}/**/*.{js,jsx,json,ts,tsx}\" --fix --cache --cache-location ~/.eslintcache/eslintcache"
   },
   "dependencies": {
     "@ctrl/tinycolor": "3.6.0",
     "classnames": "^2.3.2",
     "graphql-request": "5.1.0",
     "hls.js": "1.4.10",
-    "next": "^13.2.1",
-    "prop-types": "15.8.1",
+    "next": "13.4.12",
     "react": "^18.2.0",
     "react-datocms": "4.0.9",
     "react-markdown": "8.0.5",

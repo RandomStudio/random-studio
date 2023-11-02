@@ -1,13 +1,14 @@
+import { GetStaticPropsContext } from 'next';
 import { SUSTAINABILITY_PAGE_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import Layout from '../../components/Layout/Layout';
 import Head from '../../components/Head/Head';
 import SustainabilitySection from '../../components/SustainabilitySection/SustainabilitySection';
 import styles from './Sustainability.module.css';
-import { ContentBlockType } from '../../types/types';
+import { SustainabilityBlock } from '../../types/types';
 
 type SustainabilityTypes = {
-  content: ContentBlockType[];
+  content: SustainabilityBlock[];
   intro: string;
   seoDescription?: string;
   seoTitle?: string;
@@ -16,8 +17,8 @@ type SustainabilityTypes = {
 const Sustainability = ({
   intro,
   content,
-  seoTitle = null,
-  seoDescription = null,
+  seoTitle = undefined,
+  seoDescription = undefined,
 }: SustainabilityTypes) => {
   return (
     <Layout isNewDesign>
@@ -37,7 +38,7 @@ const Sustainability = ({
 
 export default Sustainability;
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async ({ preview }: GetStaticPropsContext) => {
   const { page } = await getDataFromBackend({
     query: SUSTAINABILITY_PAGE_QUERY,
     preview,

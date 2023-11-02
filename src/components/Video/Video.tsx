@@ -30,7 +30,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
       className,
       hasAudio,
       hasControls,
-      isAutoplaying,
+      isAutoplaying = false,
       isLooping,
       onClick,
       onReady,
@@ -54,7 +54,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 
     const handleVideoReady = useCallback(() => {
       setHasLoaded(true);
-      onReady();
+      onReady?.();
     }, [onReady]);
 
     const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
@@ -83,7 +83,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
             alt="video placeholder"
             aria-hidden
             className={styles.placeholder}
-            src={`data:image/jpeg;base64,${blur.thumbnail}`}
+            src={`data:image/jpeg;base64,${blur?.thumbnail}`}
           />
 
           {isMounted && (
@@ -121,7 +121,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 Video.displayName = 'Video';
 
 Video.defaultProps = {
-  className: null,
+  className: undefined,
   hasAudio: false,
   hasControls: false,
   isAutoplaying: true,

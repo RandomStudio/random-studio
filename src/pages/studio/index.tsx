@@ -1,3 +1,4 @@
+import { GetStaticPropsContext } from 'next';
 import Carousel from '../../components/Carousel/Carousel';
 import styles from './Studio.module.css';
 import getDataFromBackend from '../../api/getDataFromBackend';
@@ -6,7 +7,7 @@ import Layout from '../../components/Layout/Layout';
 import Block from '../../components/Studio/Block/Block';
 import Vacancies from '../../components/Studio/Vacancies/Vacancies';
 import Head from '../../components/Head/Head';
-import { DayNightImageBlockType, Image, Vacancy } from '../../types/types';
+import { DayNightImageBlock, Image, Vacancy } from '../../types/types';
 
 const socialLinks = {
   Instagram: 'https://instagram.com/random_studio/',
@@ -15,7 +16,7 @@ const socialLinks = {
 };
 
 type StudioProps = {
-  blocks: DayNightImageBlockType[];
+  blocks: DayNightImageBlock[];
   blurb: string;
   skillset?: {
     design: string[];
@@ -29,7 +30,7 @@ type StudioProps = {
 const Studio = ({
   blurb,
   blocks,
-  skillset = null,
+  skillset = undefined,
   studioImpression,
   vacancies,
 }: StudioProps) => (
@@ -122,7 +123,7 @@ const Studio = ({
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async ({ preview }: GetStaticPropsContext) => {
   const { page } = await getDataFromBackend({
     query: STUDIO_PAGE_QUERY,
     preview,

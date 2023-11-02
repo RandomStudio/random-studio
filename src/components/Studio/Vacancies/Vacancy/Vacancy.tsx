@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { MouseEvent, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Vacancy.module.css';
 import Markdown from '../../../Markdown/Markdown';
 
 type VacancyProps = {
-  handleClose: () => void;
+  handleClose: (event: MouseEvent<HTMLElement>) => void;
   opening: {
     title: string;
     description: string;

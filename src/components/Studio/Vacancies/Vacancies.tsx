@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { MouseEvent, useEffect, useState } from 'react';
 import styles from './Vacancies.module.css';
-import Vacancy from './Vacancy/Vacancy.tsx';
-import { vacancyPropType } from '../../../propTypes';
+import Vacancy from './Vacancy/Vacancy';
+import { Vacancy as VacancyType } from '../../../types/types';
 
-const Vacancies = ({ className, vacancies }) => {
-  const [openRoleId, setOpenRoleId] = useState(null);
+type VacanciesProps = {
+  className?: string;
+  vacancies: VacancyType[];
+};
+
+const Vacancies = ({ className = undefined, vacancies }: VacanciesProps) => {
+  const [openRoleId, setOpenRoleId] = useState<string | undefined>(undefined);
   const openJob = vacancies.find(({ id }) => openRoleId === id);
 
   useEffect(() => {
     const url = new URL(window.location.href);
-    const role = url.searchParams.get('role');
+    const roleId = url.searchParams.get('role');
 
-    if (role) {
-      setOpenRoleId(role);
+    if (roleId) {
+      setOpenRoleId(roleId);
     }
   }, []);
 
@@ -25,7 +29,7 @@ const Vacancies = ({ className, vacancies }) => {
     }
 
     const searchParams = new URLSearchParams(window.location.search);
-    searchParams.set('role', openRoleId);
+    searchParams.set('role', openRoleId.toString());
 
     window.history.pushState(
       null,
@@ -34,8 +38,8 @@ const Vacancies = ({ className, vacancies }) => {
     );
   }, [openRoleId]);
 
-  const handleChangeRole = event => {
-    setOpenRoleId(event?.target?.id ?? null);
+  const handleChangeRole = (event: MouseEvent<HTMLElement>) => {
+    setOpenRoleId(event?.currentTarget?.id);
     event.preventDefault();
   };
 
@@ -60,15 +64,6 @@ const Vacancies = ({ className, vacancies }) => {
       {openJob && <Vacancy handleClose={handleChangeRole} opening={openJob} />}
     </>
   );
-};
-
-Vacancies.propTypes = {
-  className: PropTypes.string,
-  vacancies: PropTypes.arrayOf(vacancyPropType).isRequired,
-};
-
-Vacancies.defaultProps = {
-  className: '',
 };
 
 export default Vacancies;

@@ -1,10 +1,10 @@
 import { MutableRefObject, useEffect, useRef } from 'react';
 
 const useLazyBoundingClientRect = (
-  targetRef: MutableRefObject<HTMLElement>,
+  targetRef: MutableRefObject<HTMLElement | null>,
   isActive = true,
 ) => {
-  const boundingRectRef = useRef<DOMRect>(null);
+  const boundingRectRef = useRef<DOMRect>();
 
   useEffect(() => {
     if (!isActive) {

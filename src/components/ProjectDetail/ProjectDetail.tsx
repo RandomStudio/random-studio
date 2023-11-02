@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
 import styles from './ProjectDetail.module.scss';
 import ContentBlock from './ContentBlock/ContentBlock';
 import BackScrim from './BackScrim/BackScrim';
 import {
-  ContentBlockType,
+  ContentBlock as ContentBlockType,
   CreditsType,
   ProjectSummary,
 } from '../../types/types';
@@ -43,6 +42,7 @@ const ProjectDetail = ({
       </div>
 
       {content?.map(block => (
+        // eslint-disable-next-line react/jsx-props-no-spreading
         <ContentBlock {...block} key={block.id} />
       ))}
 

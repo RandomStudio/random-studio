@@ -12,7 +12,7 @@ import useMouseHoverPosition from './useMouseHoverPosition';
 type ProgressProps = {
   className: string;
   onHover: (isHovering: boolean) => void;
-  videoRef: MutableRefObject<HTMLVideoElement>;
+  videoRef: MutableRefObject<HTMLVideoElement | null>;
 };
 
 const formatDecimalAsTimestamp = (seconds: number) => {
@@ -27,7 +27,7 @@ const formatDecimalAsTimestamp = (seconds: number) => {
 };
 
 const Progress = ({ className, onHover, videoRef }: ProgressProps) => {
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const duration = useReactiveVideoProperty(
     videoRef.current,
@@ -50,6 +50,10 @@ const Progress = ({ className, onHover, videoRef }: ProgressProps) => {
   }, [isHovering, onHover]);
 
   const handleSeek = useCallback(() => {
+    if (!duration || !videoRef.current) {
+      return;
+    }
+
     // eslint-disable-next-line no-param-reassign
     videoRef.current.currentTime = duration * hoverOffset;
   }, [duration, hoverOffset, videoRef]);

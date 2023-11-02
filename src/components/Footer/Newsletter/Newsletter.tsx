@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import styles from './Newsletter.module.css';
 
-const Newsletter = ({ className }) => {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState(null);
+type NewsletterProps = {
+  className?: string;
+};
+
+const Newsletter = ({ className = undefined }: NewsletterProps) => {
+  const [email, setEmail] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [isSuccessful, setIsSuccessful] = useState(false);
 
-  const handleInput = e => setEmail(e.target.value);
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) =>
+    setEmail(e.target.value);
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setError(null);
+    setError('');
 
     try {
       const response = await fetch(
@@ -88,19 +92,11 @@ const Newsletter = ({ className }) => {
             type="image"
           />
 
-          {error && <p className={styles.error}>{error}</p>}
+          {error !== '' && <p className={styles.error}>{error}</p>}
         </>
       )}
     </form>
   );
-};
-
-Newsletter.propTypes = {
-  className: PropTypes.string,
-};
-
-Newsletter.defaultProps = {
-  className: '',
 };
 
 export default Newsletter;
