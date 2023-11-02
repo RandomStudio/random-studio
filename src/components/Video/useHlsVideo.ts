@@ -1,5 +1,5 @@
 import Hls from 'hls.js';
-import { MutableRefObject, useEffect } from 'react';
+import { MutableRefObject, useEffect, useRef } from 'react';
 
 const useHlsVideo = ({
   isMounted,
@@ -14,6 +14,8 @@ const useHlsVideo = ({
   onReady: () => void;
   videoRef: MutableRefObject<HTMLVideoElement>;
 }) => {
+  const onReadyRef = useRef(onReady);
+
   useEffect(() => {
     if (!isMounted || !videoRef.current) {
       return;
@@ -21,7 +23,7 @@ const useHlsVideo = ({
 
     // if HLS is natively supported, we don't have to do anything
     if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
-      onReady();
+      onReadyRef.current();
 
       if (isAutoplaying) {
         videoRef.current
@@ -52,10 +54,10 @@ const useHlsVideo = ({
           }
         }
 
-        onReady();
+        onReadyRef.current();
       });
     });
-  }, [isMounted, videoRef, onReady, isAutoplaying, src]);
+  }, [isMounted, videoRef, isAutoplaying, src]);
 };
 
 export default useHlsVideo;
