@@ -132,7 +132,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   return (
     <div className={gridClassNames} style={gridStyles}>
-      <Head image={data?.thumbnailUrl} />
+      <Head image={data?.thumbnailUrl} title="Video Player" />
 
       <div className={styles.close}>{closeJsx}</div>
 
