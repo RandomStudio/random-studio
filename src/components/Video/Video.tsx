@@ -1,3 +1,5 @@
+// Default props doesn't work with forwardRef
+/* eslint-disable react/require-default-props */
 import React, {
   MutableRefObject,
   forwardRef,
@@ -27,14 +29,14 @@ export type VideoProps = {
 const Video = forwardRef<HTMLVideoElement, VideoProps>(
   (
     {
-      className,
-      hasAudio,
-      hasControls,
+      className = undefined,
+      hasAudio = false,
+      hasControls = false,
       isAutoplaying = false,
-      isLooping,
-      onClick,
-      onReady,
-      onMount,
+      isLooping = true,
+      onClick = () => null,
+      onMount = () => null,
+      onReady = () => null,
       video: { downloadUrl, blur, guid, height, hls, width },
     },
     ref,
@@ -119,16 +121,5 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 );
 
 Video.displayName = 'Video';
-
-Video.defaultProps = {
-  className: undefined,
-  hasAudio: false,
-  hasControls: false,
-  isAutoplaying: true,
-  isLooping: true,
-  onClick: () => null,
-  onMount: () => null,
-  onReady: () => null,
-};
 
 export default Video;

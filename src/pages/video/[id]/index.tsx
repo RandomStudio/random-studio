@@ -50,9 +50,13 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const searchParams = useSearchParams();
   const projectId = searchParams.get('projectId');
 
-  const { data, error } = useSwr(id, () => fetcher(id as string, video), {
-    fallbackData: video,
-  });
+  const { data, error } = useSwr<VideoData>(
+    id,
+    () => fetcher(id as string, video),
+    {
+      fallbackData: video,
+    },
+  );
 
   const params = useSearchParams();
   const time = params.get('time');
@@ -116,13 +120,16 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   }, [data]);
 
   const gridStyles = useMemo(
-    () => ({
-      backgroundColor: data.blur?.dominantColor,
-      backgroundImage: data.blur?.thumbnail
-        ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
-        : 'none',
-    }),
-    [data.blur],
+    () =>
+      data
+        ? {
+          backgroundColor: data.blur?.dominantColor,
+          backgroundImage: data.blur?.thumbnail
+            ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
+            : 'none',
+        }
+        : {},
+    [data],
   );
 
   const gridClassNames = classNames(styles.grid, {
@@ -139,6 +146,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
         ) : (
           <Video
             className={styles.frame}
+            hasAudio
             hasControls={false}
             isAutoplaying
             isLooping
@@ -153,6 +161,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
       {isReady && (
         <Controls
           className={styles.controls}
+          hasAudio
           hasExtendedControls
           isAutoplaying
           videoRef={videoRef}

@@ -54,6 +54,7 @@ module.exports = {
       2,
       {
         functions: 'defaultArguments',
+        forbidDefaultForRequired: true,
       },
     ],
     'no-console': [2, { allow: ['warn', 'error'] }],
