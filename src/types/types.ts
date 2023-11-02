@@ -35,6 +35,7 @@ export interface VideoData {
   height: number;
   hls: string;
   width: number;
+  thumbnailUrl: string;
 }
 
 export type RelatedProject = {

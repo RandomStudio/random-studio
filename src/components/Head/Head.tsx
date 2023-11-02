@@ -21,7 +21,7 @@ const formatTitle = (string: string) =>
 
 type HeadProps = {
   description?: string;
-  image?: Image;
+  image?: Image | string;
   socialDescription?: string;
   socialTitle?: string;
   title?: string;
@@ -37,7 +37,15 @@ const Head = ({
   const pathname = usePathname();
 
   const pageTitle = title ? formatTitle(title) : DEFAULTS.TITLE;
-  const ogImage = image?.imageData?.src ?? DEFAULTS.IMAGE;
+
+  let ogImage = DEFAULTS.IMAGE;
+
+  if (typeof image === 'string') {
+    ogImage = image;
+  } else if (image?.imageData.src) {
+    ogImage = image.imageData.src;
+  }
+
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
 
   const pageDescription =
