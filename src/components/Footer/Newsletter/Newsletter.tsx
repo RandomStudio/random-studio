@@ -19,7 +19,7 @@ const Newsletter = ({ className = undefined }: NewsletterProps) => {
 
     try {
       const response = await fetch(
-        `https://staging.random.studio/.netlify/functions/addToNewsletterList?email=${email}`,
+        `https://random.studio/.netlify/functions/addToNewsletterList?email=${email}`,
       );
 
       if (response.ok) {
