@@ -76,6 +76,4 @@ async function handler(event) {
   }
 }
 
-export default {
-  handler,
-};
+export { handler };
