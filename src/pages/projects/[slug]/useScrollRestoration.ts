@@ -3,17 +3,22 @@ import { useEffect } from 'react';
 
 const useScrollRestoration = () => {
   const router = useRouter();
-  const { history } = window;
 
   // set scroll restoration to manual
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const { history } = window;
+
     if (
       'scrollRestoration' in history &&
       history.scrollRestoration !== 'manual'
     ) {
       history.scrollRestoration = 'manual';
     }
-  }, [history]);
+  }, []);
 
   // handle and store scroll position
   useEffect(() => {
