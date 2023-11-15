@@ -17,6 +17,7 @@ import {
   OpenGraph,
   ProjectSummary,
 } from '../../../types/types';
+import useScrollRestoration from './useScrollRestoration';
 
 type ProjectProps = {
   content: ContentBlockType[];
@@ -41,6 +42,8 @@ const Project = ({
   relatedProjectsTitle,
   title,
 }: ProjectProps) => {
+  useScrollRestoration();
+
   return (
     <Layout className={styles.layout} hasFooter={false}>
       <Head
