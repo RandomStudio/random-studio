@@ -127,6 +127,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const gridClassNames = classNames(styles.grid, {
     [styles.hasInvertedColors]: hasInvertedColors,
+    [styles.isVerticalVideo]: data?.height > data?.width,
   });
 
   return (
