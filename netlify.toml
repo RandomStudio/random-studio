@@ -4,4 +4,4 @@
   included_files = ["node_modules/sharp/**/*"]
 
 [build]
-  command = "NEXT_CONTEXT=$CONTEXT npm run build"
+  command = "NEXT_CONTEXT=$CONTEXT npm run netlify"

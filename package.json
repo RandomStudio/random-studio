@@ -8,7 +8,7 @@
     "dev": "next dev -- --hostname=0.0.0.0",
     "build": "next build",
     "export": "next build && next export",
-    "netlify": "npm run export && npm run test",
+    "netlify": "npm run build && npm run test",
     "start": "next start -p 8080",
     "test": "percy snapshot -b $DEPLOY_URL snapshots.yml",
     "launch-server": "npm install --dev && npm run start",
