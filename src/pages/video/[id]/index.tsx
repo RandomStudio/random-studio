@@ -150,7 +150,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
             hasControls={false}
             isAutoplaying
             isLooping
-            isMuted={isMuted === 'true'}
+            isMuted={isMuted}
             onClick={handleClick}
             onReady={handleReady}
             ref={videoRef}
