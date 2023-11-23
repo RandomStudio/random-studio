@@ -53,7 +53,7 @@
     "postcss-preset-env": "9.0.0",
     "prettier": "2.8.4",
     "sass": "1.58.3",
-    "sharp": "0.32.4",
+    "sharp": "0.32.6",
     "typescript": "^5.0.2"
   },
   "browserslist": "last 2 versions, iOS > 15",
