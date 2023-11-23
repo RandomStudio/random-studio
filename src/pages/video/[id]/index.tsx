@@ -111,6 +111,10 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
     videoRef.current.currentTime = Number(time) || 0;
 
     window.setTimeout(() => {
+      if (!videoRef.current) {
+        return;
+      }
+
       setHasAudio(detectVideoAudioTrack(videoRef.current));
     }, 250);
   }, [time]);
