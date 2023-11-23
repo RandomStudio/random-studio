@@ -6,6 +6,7 @@ import useSwr from 'swr';
 import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import { GetStaticPropsContext } from 'next';
+import Head from '../../../components/Head/Head';
 import Video from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
@@ -132,6 +133,8 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   return (
     <div className={gridClassNames} style={gridStyles}>
+      <Head image={data?.thumbnailUrl} title="Video Player" />
+
       <div className={styles.close}>{closeJsx}</div>
 
       <div className={styles.video}>
