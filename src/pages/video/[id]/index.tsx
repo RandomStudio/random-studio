@@ -110,9 +110,9 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
     setIsReady(true);
     videoRef.current.currentTime = Number(time) || 0;
 
-    if (detectVideoAudioTrack(videoRef.current) === false) {
-      setHasAudio(false);
-    }
+    window.setTimeout(() => {
+      setHasAudio(detectVideoAudioTrack(videoRef.current));
+    }, 250);
   }, [time]);
 
   const closeJsx = useMemo(() => {
