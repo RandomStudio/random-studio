@@ -4,6 +4,7 @@ import React, {
   MutableRefObject,
   forwardRef,
   useCallback,
+  useEffect,
   useRef,
   useState,
 } from 'react';
@@ -27,26 +28,36 @@ export type VideoProps = {
   video: VideoData;
 };
 
-const Video = forwardRef<HTMLVideoElement, VideoProps>(
+// Extend HTMLVideoElement to include properties that are not part of the standard
+// Audiotracks is still not part of the standard, despite being present for years
+export type ExtendedHTMLVideoElement = HTMLVideoElement & {
+  togglePlay: () => void;
+  mozHasAudio?: boolean;
+  webkitAudioDecodedByteCount?: number;
+  audioTracks?: MediaStreamTrack[];
+};
+
+const Video = forwardRef<ExtendedHTMLVideoElement, VideoProps>(
   (
     {
-      className,
-      hasAudio,
-      hasControls,
-      isAutoplaying,
-      isLooping,
-      isMuted,
-      onClick,
-      onReady,
-      onMount,
+      className = undefined,
+      hasAudio = true,
+      hasControls = false,
+      isAutoplaying = true,
+      isLooping = true,
+      isMuted = true,
+      onClick = () => null,
+      onMount = () => null,
+      onReady = () => null,
       video: { downloadUrl, blur, guid, height, hls, width },
     },
     ref,
   ) => {
-    const localRef = useRef<HTMLVideoElement>();
+    const localRef = useRef<ExtendedHTMLVideoElement>();
 
     const videoRef =
-      (ref as unknown as MutableRefObject<HTMLVideoElement>) || localRef;
+      (ref as unknown as MutableRefObject<ExtendedHTMLVideoElement>) ||
+      localRef;
 
     const [isMounted, setIsMounted] = useState(false);
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -63,17 +74,51 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 
     const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
 
+    const [isPlaying, setIsPlaying] = useState(isAutoplaying);
+
+    const handleChangePlayState = useCallback(
+      async (isNowPlaying: boolean) => {
+        if (!isNowPlaying) {
+          videoRef.current?.pause();
+          setIsPlaying(false);
+
+          return;
+        }
+
+        try {
+          await videoRef.current?.play();
+          setIsPlaying(true);
+        } catch (e) {
+          console.warn('Unable to autoplay without user interaction', e);
+        }
+      },
+      [videoRef],
+    );
+
+    useEffect(() => {
+      if (!isMounted) {
+        return;
+      }
+
+      videoRef.current.togglePlay = () => {
+        const isVideoElNowPlaying = !videoRef.current?.paused;
+        handleChangePlayState(!isVideoElNowPlaying);
+      };
+    }, [handleChangePlayState, isMounted, isPlaying, videoRef]);
+
     useHlsVideo({
       isAutoplaying,
       isMounted,
+      onPlay: () => handleChangePlayState(true),
       onReady: handleVideoReady,
       videoRef,
       src: hls,
     });
 
-    const handleClick = useCallback(() => {
-      onClick?.(videoRef.current);
-    }, [onClick, videoRef]);
+    const handleClick = useCallback(
+      () => onClick?.(videoRef.current),
+      [onClick, videoRef],
+    );
 
     const frameClasses = classNames(styles.frame, className, {
       [styles.isLoaded]: hasLoaded,
@@ -124,16 +169,5 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 );
 
 Video.displayName = 'Video';
-
-Video.defaultProps = {
-  className: undefined,
-  hasControls: false,
-  isAutoplaying: true,
-  isLooping: true,
-  isMuted: true,
-  onClick: () => null,
-  onMount: () => null,
-  onReady: () => null,
-};
 
 export default Video;

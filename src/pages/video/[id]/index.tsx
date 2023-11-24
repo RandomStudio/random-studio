@@ -7,7 +7,9 @@ import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import { GetStaticPropsContext } from 'next';
 import Head from '../../../components/Head/Head';
-import Video from '../../../components/Video/Video';
+import Video, {
+  ExtendedHTMLVideoElement,
+} from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
 import { VideoData } from '../../../types/types';
@@ -39,14 +41,6 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   return details;
 };
 
-// Extend HTMLVideoElement to include properties that are not part of the standard
-// Audiotracks is still not part of the standard, despite being present for years
-type ExtendedHTMLVideoElement = HTMLVideoElement & {
-  mozHasAudio?: boolean;
-  webkitAudioDecodedByteCount?: number;
-  audioTracks?: MediaStreamTrack[];
-};
-
 const detectVideoAudioTrack = (video: ExtendedHTMLVideoElement): boolean => {
   if (
     !('mozHasAudio' in video) &&
@@ -69,7 +63,7 @@ type VideoFocusModePageProps = {
 };
 
 const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<ExtendedHTMLVideoElement>(null);
 
   const router = useRouter();
 
@@ -90,18 +84,6 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const isMuted = params.get('isMuted') === 'true';
 
   const [isReady, setIsReady] = useState(false);
-
-  const handleClick = useCallback(() => {
-    if (videoRef.current?.paused) {
-      videoRef.current
-        .play()
-        .catch(e =>
-          console.warn('Unable to autoplay without user interaction', e),
-        );
-    } else {
-      videoRef.current?.pause();
-    }
-  }, [videoRef]);
 
   const [hasAudio, setHasAudio] = useState(true);
 
@@ -128,6 +110,14 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
       setHasAudio(detectVideoAudioTrack(videoRef.current));
     }, 250);
   }, [isMuted, time]);
+
+  const handleClick = useCallback(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    videoRef.current.togglePlay();
+  }, []);
 
   const closeJsx = useMemo(() => {
     if (isOpenedFromProject) {
@@ -164,21 +154,18 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   }, [data]);
 
   const gridStyles = useMemo(
-    () =>
-      data
-        ? {
-          backgroundColor: data.blur?.dominantColor,
-          backgroundImage: data.blur?.thumbnail
-            ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
-            : 'none',
-        }
-        : {},
+    () => ({
+      backgroundColor: data?.blur?.dominantColor || undefined,
+      backgroundImage: data?.blur?.thumbnail
+        ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
+        : 'none',
+    }),
     [data],
   );
 
   const gridClassNames = classNames(styles.grid, {
     [styles.hasInvertedColors]: hasInvertedColors,
-    [styles.isVerticalVideo]: data?.height > data?.width,
+    [styles.isVerticalVideo]: data ? data?.height > data?.width : false,
   });
 
   return (

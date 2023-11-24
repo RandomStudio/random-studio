@@ -11,7 +11,7 @@ import {
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
-import Video from '../../Video/Video';
+import Video, { ExtendedHTMLVideoElement } from '../../Video/Video';
 import styles from './ContentBlock.module.css';
 import Markdown from '../../Markdown/Markdown';
 import useMouseHoverPosition from '../../Video/Controls/Progress/useMouseHoverPosition';
@@ -50,7 +50,7 @@ const ContentBlock = ({
     [router],
   );
 
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<ExtendedHTMLVideoElement>(null);
 
   const [isVideoMounted, setIsVideoMounted] = useState(false);
 

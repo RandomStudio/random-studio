@@ -1,8 +1,9 @@
+import { MutableRefObject, RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { MutableRefObject, useCallback, useEffect, useState } from 'react';
 import styles from './Controls.module.css';
-import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
+import type { ExtendedHTMLVideoElement } from '../Video';
 import Progress from './Progress/Progress';
+import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 
 type ControlsProps = {
   className?: string;
@@ -10,50 +11,26 @@ type ControlsProps = {
   isAutoplaying: boolean;
   hasExtendedControls?: boolean;
   onClick?: () => void;
-  videoRef: MutableRefObject<HTMLVideoElement | null>;
+  videoRef:
+    | MutableRefObject<ExtendedHTMLVideoElement>
+    | RefObject<ExtendedHTMLVideoElement>;
 };
 
 const Controls = ({
   className = undefined,
   hasAudio,
+  isAutoplaying = false,
   hasExtendedControls = false,
-  isAutoplaying,
   onClick = () => null,
   videoRef,
 }: ControlsProps) => {
-  /*
-  // Handle play pause
-  */
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
-  const handlePlayToggle = useCallback(() => {
-    setIsPlaying(prev => !prev);
-  }, []);
-
   useEffect(() => {
-    const changePlayState = (isNowPlaying: boolean) =>
-      setIsPlaying(isNowPlaying);
+    videoRef.current?.addEventListener('play', () => setIsPlaying(true));
 
-    videoRef.current?.addEventListener('play', () => changePlayState(true));
-
-    videoRef.current?.addEventListener('pause', () => changePlayState(false));
+    videoRef.current?.addEventListener('pause', () => setIsPlaying(false));
   }, [videoRef]);
-
-  useEffect(() => {
-    if (!videoRef.current) {
-      return;
-    }
-
-    if (isPlaying) {
-      videoRef.current
-        .play()
-        .catch(e =>
-          console.warn('Unable to autoplay without user interaction', e),
-        );
-    } else {
-      videoRef.current?.pause();
-    }
-  }, [isPlaying, videoRef]);
 
   /*
 // Handle mute
@@ -90,7 +67,7 @@ const Controls = ({
 
       <button
         className={styles.playToggle}
-        onClick={handlePlayToggle}
+        onClick={() => videoRef.current?.togglePlay()}
         type="button"
       >
         {isPlaying ? 'Pause' : 'Play'}
