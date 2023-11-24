@@ -39,6 +39,7 @@ export const formatVideoData = async (
     hls: `${baseUrl}/playlist.m3u8`,
     width,
     downloadUrl: `${baseUrl}/play_720p.mp4`,
+    thumbnailUrl,
   };
 
   if (typeof window === 'undefined') {

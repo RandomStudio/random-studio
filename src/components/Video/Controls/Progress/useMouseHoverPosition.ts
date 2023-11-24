@@ -2,7 +2,7 @@ import {
   MouseEvent,
   MutableRefObject,
   useCallback,
-  useLayoutEffect,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -52,7 +52,7 @@ const useMouseHoverPosition = (
     [elementBoundingRectRef, isHovering],
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!isActive || !ref || !ref.current) {
       return undefined;
     }
