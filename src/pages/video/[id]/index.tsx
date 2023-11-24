@@ -17,6 +17,7 @@ import {
 } from '../../../utils/videoUtils';
 import { getVideosList } from '../../../../netlify/functions/getVideosList';
 import { getVideoDetailsByIdOnServer } from '../../../server/methods';
+import { useMutedStore } from '../../../components/Video/Controls/useSharedUnmutedVideoState';
 
 // Fetcher function that fetches data from getVideoData netlify function
 const fetcher = async (videoRef: string, video: VideoData) => {
@@ -48,8 +49,6 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
   const router = useRouter();
 
   const { id } = router.query;
-  const searchParams = useSearchParams();
-  const projectId = searchParams.get('projectId');
 
   const { data, error } = useSwr(id, () => fetcher(id as string, video), {
     fallbackData: video,
@@ -57,6 +56,9 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const params = useSearchParams();
   const time = params.get('time');
+  const projectId = params.get('time');
+  const isOpenedFromProject = params.get('isOpenedFromProject');
+  const isMuted = params.get('isMuted') === 'true';
 
   const [isReady, setIsReady] = useState(false);
 
@@ -78,23 +80,29 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
     }
 
     setIsReady(true);
+
+    if (!isMuted) {
+      useMutedStore.setState({
+        activeSrc: videoRef.current.src,
+      });
+    }
+
     videoRef.current.currentTime = Number(time) || 0;
-  }, [time]);
+  }, [isMuted, time]);
 
   const closeJsx = useMemo(() => {
-    if (projectId) {
+    if (isOpenedFromProject) {
       const handleBack = (event: MouseEvent<HTMLAnchorElement>) => {
-        router.back();
-
         event.preventDefault();
+        router.back();
 
         return false;
       };
 
       return (
-        <a href={`/projects/${projectId}`} onClick={handleBack}>
+        <Link href={`/projects/${projectId}`} onClick={handleBack}>
           {'Back'}
-        </a>
+        </Link>
       );
     }
 
@@ -103,7 +111,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
     }
 
     return <Link href="/">{'Close'}</Link>;
-  }, [router, projectId]);
+  }, [isOpenedFromProject, router, projectId]);
 
   const hasInvertedColors = useMemo(() => {
     if (!data || !data.blur) {
@@ -146,6 +154,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
             hasControls={false}
             isAutoplaying
             isLooping
+            isMuted={isMuted}
             onClick={handleClick}
             onReady={handleReady}
             ref={videoRef}

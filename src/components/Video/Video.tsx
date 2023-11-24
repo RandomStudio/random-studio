@@ -17,6 +17,7 @@ export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
+  isMuted?: boolean;
   onClick?: (video: HTMLVideoElement) => void;
   onMount?: () => void;
   onReady?: () => void;
@@ -28,8 +29,9 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
     {
       className,
       hasControls,
-      isAutoplaying = false,
+      isAutoplaying = true,
       isLooping,
+      isMuted = true,
       onClick,
       onReady,
       onMount,
@@ -93,7 +95,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
                 data-download-src={downloadUrl}
                 id={guid}
                 loop={isLooping}
-                muted
+                muted={isMuted}
                 onClick={handleClick}
                 playsInline
                 ref={videoRef}
@@ -123,6 +125,7 @@ Video.defaultProps = {
   hasControls: false,
   isAutoplaying: true,
   isLooping: true,
+  isMuted: true,
   onClick: () => null,
   onMount: () => null,
   onReady: () => null,

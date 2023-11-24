@@ -34,15 +34,19 @@ const useSunset = () => {
     const now = new Date(Date.now());
     let timer: number;
 
-    getSunriseSunsetTimes().then(([sunrise, sunset]) => {
-      const isNight = sunset > now;
-      setIsAfterDark(isNight);
+    getSunriseSunsetTimes()
+      .then(([sunrise, sunset]) => {
+        const isNight = sunset > now;
+        setIsAfterDark(isNight);
 
-      timer = window.setTimeout(
-        () => setIsAfterDark(value => !value),
-        (isNight ? sunrise : sunset).getTime() - now.getTime(),
-      );
-    });
+        timer = window.setTimeout(
+          () => setIsAfterDark(value => !value),
+          (isNight ? sunrise : sunset).getTime() - now.getTime(),
+        );
+      })
+      .catch(() => {
+        console.warn('Could not fetch sunrise/sunset times');
+      });
 
     return () => {
       clearTimeout(timer);

@@ -43,6 +43,8 @@ const ContentBlock = ({
       url.pathname = `/video/${videoEl.id}/`;
       url.searchParams.set('projectId', slug as string);
       url.searchParams.set('time', time.toString());
+      url.searchParams.set('isOpenedFromProject', 'true');
+      url.searchParams.set('isMuted', videoEl.muted ? 'true' : 'false');
       router.push(url.href);
     },
     [router],
