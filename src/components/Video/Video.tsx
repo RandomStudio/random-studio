@@ -102,7 +102,11 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
               />
 
               {hasControls && hasLoaded && (
-                <Controls isAutoplaying={isAutoplaying} videoRef={videoRef} />
+                <Controls
+                  isAutoplaying={isAutoplaying}
+                  onClick={handleClick}
+                  videoRef={videoRef}
+                />
               )}
             </>
           )}
