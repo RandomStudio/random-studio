@@ -1,7 +1,7 @@
 import sharp from 'sharp';
 import type { HandlerEvent } from '@netlify/functions';
 
-const getImage = async url => {
+const getImage = async (url: string) => {
   const response = await fetch(url);
 
   return Buffer.from(await response.arrayBuffer());

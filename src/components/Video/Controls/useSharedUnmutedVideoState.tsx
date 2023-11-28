@@ -5,17 +5,15 @@ interface Store {
   activeSrc: string | null;
 }
 
-const useStore = create<Store>(() => ({
+export const useMutedStore = create<Store>(() => ({
   activeSrc: null,
 }));
 
 const useSharedUnmutedVideoState = (src: string) => {
-  const isMuted = useStore(state => state.activeSrc !== src);
-
-  const activeSrc = useStore(state => state.activeSrc);
+  const isMuted = useMutedStore(state => state.activeSrc !== src);
 
   const toggleIsMuted = useCallback(() => {
-    useStore.setState({
+    useMutedStore.setState({
       activeSrc: isMuted ? src : null,
     });
   }, [isMuted, src]);

@@ -1,14 +1,41 @@
+export type BunnyVideoDetails = {
+  videoLibraryId: number;
+  guid: string;
+  title: string;
+  dateUploaded: string;
+  views: number;
+  isPublic: boolean;
+  length: number;
+  status: number;
+  framerate: number;
+  rotation: number;
+  width: number;
+  height: number;
+  availableResolutions: string;
+  thumbnailCount: number;
+  encodeProgress: number;
+  storageSize: number;
+  hasMP4Fallback: boolean;
+  collectionId: string;
+  thumbnailFileName: string;
+  averageWatchTime: number;
+  totalWatchTime: number;
+  category: string;
+};
+
 export interface VideoData {
   baseUrl: string;
   blur?: {
     thumbnail: string;
     dominantColor: string;
   };
+  downloadUrl: string;
   fallback: string;
   guid: string;
-  height;
+  height: number;
   hls: string;
-  width;
+  width: number;
+  thumbnailUrl: string;
 }
 
 export type RelatedProject = {
@@ -18,7 +45,13 @@ export type RelatedProject = {
   featuredImage: Image;
   featuredVideo: VideoData;
 };
-
+export type SimpleProject = {
+  featuredImage: Image;
+  id: string;
+  slug: string;
+  title: string;
+  intro: string;
+};
 export type Project = {
   id: string;
   slug: string;
@@ -33,7 +66,21 @@ export type Project = {
   relatedProjects: RelatedProject[];
   tags: string[];
   opengraph: OpenGraph;
-  content: ContentBlockType[];
+  content: ContentBlock[];
+};
+
+export type ImageData = {
+  alt?: string;
+  aspectRatio: number;
+  base64: string;
+  bgColor: string;
+  height: number;
+  sizes: string;
+  src: string;
+  srcSet: string;
+  title?: string;
+  webpSrcSet?: string;
+  width: number;
 };
 
 export interface Image {
@@ -45,7 +92,7 @@ export type OpenGraph = {
   description: string;
   title: string;
   twitterCard: string;
-  image: ImageData;
+  image: Image;
 };
 
 export type ProjectSummary = {
@@ -59,7 +106,7 @@ export type ProjectSummary = {
 
 export type Slide = {
   id: string;
-  imageData?: Image;
+  imageData?: ImageData;
   video?: VideoData;
 };
 
@@ -117,16 +164,20 @@ export type CarouselBlock = {
 
 export type HorizontalRowBlock = {
   __typename: 'HorizontalRowRecord';
-  blocks: ContentBlockType[];
+  blocks: ContentBlock[];
 } & GenericBlockAttributes;
 
-export type ContentBlockType =
-  | CarouselBlock
-  | ImageBlock
-  | TextBlock
-  | VideoBlock;
+export type ContentBlock = CarouselBlock | ImageBlock | TextBlock | VideoBlock;
 
-export type DayNightImageBlockType = {
+export type SustainabilityBlock = {
+  image: Image;
+  color: string[];
+  title: string;
+  text: string;
+  textFirst: boolean;
+};
+
+export type DayNightImageBlock = {
   __typename: string;
   copy: string;
   image: Image;

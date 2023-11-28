@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetStaticPropsContext } from 'next';
 import Layout from '../../components/Layout/Layout';
 import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
@@ -18,7 +19,7 @@ const Projects = ({ projects }: ProjectsProps) => (
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }) => {
+export const getStaticProps = async ({ preview }: GetStaticPropsContext) => {
   const { projects } = await getDataFromBackend({
     query: PROJECTS_LIST_QUERY,
     preview,

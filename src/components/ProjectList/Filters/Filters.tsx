@@ -1,14 +1,29 @@
 import { useRouter } from 'next/router';
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import React, {
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import styles from './Filters.module.scss';
-import { projectPropType } from '../../../propTypes';
 import { ORDERED_TAGS } from '../../../CONSTANTS';
+import { ProjectSummary } from '../../../types/types';
 
-const Filters = ({ activeTag, projects, setActiveTag }) => {
+type FiltersProps = {
+  activeTag?: string;
+  projects: ProjectSummary[];
+  setActiveTag: (tag?: string) => void;
+};
+
+const Filters = ({
+  activeTag = undefined,
+  projects,
+  setActiveTag,
+}: FiltersProps) => {
   const router = useRouter();
-  const checkboxRef = useRef();
+  const checkboxRef = useRef<HTMLInputElement>(null);
 
   const projectFilters = useMemo(() => {
     const projectFiltersWithDupes = projects
@@ -17,6 +32,7 @@ const Filters = ({ activeTag, projects, setActiveTag }) => {
       .flat()
       .map(tag => tag.toLowerCase());
 
+    // @ts-expect-error Need to look in to Set
     return [...new Set(projectFiltersWithDupes)];
   }, [projects]);
 
@@ -24,23 +40,32 @@ const Filters = ({ activeTag, projects, setActiveTag }) => {
     const requestedFilter = router.query.filter;
 
     if (requestedFilter && projectFilters.includes(requestedFilter)) {
-      setActiveTag(requestedFilter);
+      setActiveTag(
+        typeof requestedFilter === 'string'
+          ? requestedFilter
+          : requestedFilter[0],
+      );
     }
   }, [projectFilters, router.query.filter, setActiveTag]);
 
   const handleSelectFilter = useCallback(
-    ({ target }) => {
-      const filter = target.id;
-      const tag = filter === activeTag ? null : filter;
+    ({ currentTarget }: MouseEvent<HTMLButtonElement>) => {
+      const filter = currentTarget.id;
+      const tag = filter === activeTag ? undefined : filter;
       setActiveTag(tag);
 
       router.replace(`/projects${tag ? `?filter=${tag}` : ''}`);
+
+      if (!checkboxRef.current) {
+        return;
+      }
+
       checkboxRef.current.checked = false;
     },
     [activeTag, router, setActiveTag],
   );
 
-  const createClasses = filter =>
+  const createClasses = (filter: string) =>
     classNames({
       [styles.entry]: true,
       [styles.activeFilter]: activeTag !== null,
@@ -80,16 +105,6 @@ const Filters = ({ activeTag, projects, setActiveTag }) => {
       </ul>
     </>
   );
-};
-
-Filters.propTypes = {
-  activeTag: PropTypes.string,
-  projects: PropTypes.arrayOf(projectPropType).isRequired,
-  setActiveTag: PropTypes.func.isRequired,
-};
-
-Filters.defaultProps = {
-  activeTag: null,
 };
 
 export default Filters;

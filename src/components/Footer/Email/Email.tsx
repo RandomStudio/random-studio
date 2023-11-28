@@ -1,13 +1,20 @@
-import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { MouseEvent, useRef, useState } from 'react';
 import copyStringToClipboard from '../../../utils/copyStringToClipboard';
 import Toast from './Toast/Toast';
 
-const Email = ({ className, email }) => {
-  const emailRef = useRef();
+type EmailProps = {
+  className?: string;
+  email?: string;
+};
+
+const Email = ({
+  className = '',
+  email = 'hello@random.studio',
+}: EmailProps) => {
+  const emailRef = useRef<HTMLAnchorElement>(null);
   const [isToastVisible, setIsToastVisible] = useState(false);
 
-  const handleClickEmail = event => {
+  const handleClickEmail = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!matchMedia('(pointer:fine)').matches) {
       return;
     }
@@ -27,19 +34,9 @@ const Email = ({ className, email }) => {
         {email}
       </a>
 
-      <Toast isVisible={isToastVisible} setIsToastVisible={setIsToastVisible} />
+      <Toast isVisible={isToastVisible} />
     </>
   );
-};
-
-Email.propTypes = {
-  className: PropTypes.string,
-  email: PropTypes.string,
-};
-
-Email.defaultProps = {
-  className: '',
-  email: 'hello@random.studio',
 };
 
 export default Email;

@@ -62,7 +62,6 @@
 }
 
 .showControls {
-  pointer-events: none;
   display: none;
 
   .isSimpleControls & {

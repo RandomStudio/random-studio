@@ -17,6 +17,7 @@ export type VideoProps = {
   hasControls?: boolean;
   isAutoplaying?: boolean;
   isLooping?: boolean;
+  isMuted?: boolean;
   onClick?: (video: HTMLVideoElement) => void;
   onMount?: () => void;
   onReady?: () => void;
@@ -28,12 +29,13 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
     {
       className,
       hasControls,
-      isAutoplaying,
+      isAutoplaying = true,
       isLooping,
+      isMuted = true,
       onClick,
       onReady,
       onMount,
-      video: { baseUrl, blur, guid, height, hls, width },
+      video: { downloadUrl, blur, guid, height, hls, width },
     },
     ref,
   ) => {
@@ -52,7 +54,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 
     const handleVideoReady = useCallback(() => {
       setHasLoaded(true);
-      onReady();
+      onReady?.();
     }, [onReady]);
 
     const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
@@ -81,7 +83,7 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
             alt="video placeholder"
             aria-hidden
             className={styles.placeholder}
-            src={`data:image/jpeg;base64,${blur.thumbnail}`}
+            src={`data:image/jpeg;base64,${blur?.thumbnail}`}
           />
 
           {isMounted && (
@@ -90,10 +92,10 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
                 autoPlay
                 className={styles.video}
                 controls={false}
-                data-download-src={`${baseUrl}/original`}
+                data-download-src={downloadUrl}
                 id={guid}
                 loop={isLooping}
-                muted
+                muted={isMuted}
                 onClick={handleClick}
                 playsInline
                 ref={videoRef}
@@ -102,7 +104,11 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
               />
 
               {hasControls && hasLoaded && (
-                <Controls isAutoplaying={isAutoplaying} videoRef={videoRef} />
+                <Controls
+                  isAutoplaying={isAutoplaying}
+                  onClick={handleClick}
+                  videoRef={videoRef}
+                />
               )}
             </>
           )}
@@ -115,10 +121,11 @@ const Video = forwardRef<HTMLVideoElement, VideoProps>(
 Video.displayName = 'Video';
 
 Video.defaultProps = {
-  className: null,
+  className: undefined,
   hasControls: false,
   isAutoplaying: true,
   isLooping: true,
+  isMuted: true,
   onClick: () => null,
   onMount: () => null,
   onReady: () => null,

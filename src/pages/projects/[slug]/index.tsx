@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetStaticPropsContext } from 'next';
 import {
   PROJECT_PATHS_QUERY,
   SINGLE_PROJECT_QUERY,
@@ -10,17 +11,19 @@ import getDataFromBackend from '../../../api/getDataFromBackend';
 import styles from './index.module.scss';
 
 import {
-  ContentBlockType,
+  ContentBlock as ContentBlockType,
   CreditsType,
+  Image,
   OpenGraph,
   ProjectSummary,
 } from '../../../types/types';
+import useScrollRestoration from './useScrollRestoration';
 
 type ProjectProps = {
   content: ContentBlockType[];
   credits: CreditsType[];
   externalUrl: string;
-  featuredImage: ImageData;
+  featuredImage: Image;
   intro: string;
   relatedProjectsTitle: string;
   relatedProjects: ProjectSummary[];
@@ -39,6 +42,8 @@ const Project = ({
   relatedProjectsTitle,
   title,
 }: ProjectProps) => {
+  useScrollRestoration();
+
   return (
     <Layout className={styles.layout} hasFooter={false}>
       <Head
@@ -62,11 +67,14 @@ const Project = ({
   );
 };
 
-export const getStaticProps = async ({ params, preview }) => {
+export const getStaticProps = async ({
+  params,
+  preview,
+}: GetStaticPropsContext<{ slug: string }>) => {
   const { project } = await getDataFromBackend({
     query: SINGLE_PROJECT_QUERY,
     variables: {
-      slug: params.slug,
+      slug: params?.slug,
     },
     preview,
   });
@@ -86,7 +94,7 @@ export async function getStaticPaths() {
 
   return {
     fallback: false,
-    paths: projects.map(({ slug }) => ({
+    paths: projects.map(({ slug }: { slug: string }) => ({
       params: {
         slug,
       },

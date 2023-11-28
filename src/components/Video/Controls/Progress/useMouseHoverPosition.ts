@@ -3,14 +3,13 @@ import {
   MutableRefObject,
   useCallback,
   useEffect,
-  useLayoutEffect,
   useMemo,
   useState,
 } from 'react';
 import useLazyBoundingClientRect from './useLazyBoundingClientRect';
 
 const useMouseHoverPosition = (
-  ref: MutableRefObject<HTMLElement>,
+  ref: MutableRefObject<HTMLElement | null>,
   isActive = true,
 ) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -36,8 +35,8 @@ const useMouseHoverPosition = (
   }, []);
 
   const handleMouseMove = useCallback(
-    e => {
-      if (!isHovering) {
+    (e: MouseEvent) => {
+      if (!isHovering || !elementBoundingRectRef.current) {
         return;
       }
 
@@ -53,7 +52,7 @@ const useMouseHoverPosition = (
     [elementBoundingRectRef, isHovering],
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!isActive || !ref || !ref.current) {
       return undefined;
     }
@@ -61,11 +60,13 @@ const useMouseHoverPosition = (
     const element = ref.current;
     element.addEventListener('mouseover', handleMouseOver);
     element.addEventListener('mouseout', handleMouseOut);
+    // @ts-expect-error Mousemove has an unusual signature
     element.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       element.removeEventListener('mouseover', handleMouseOver);
       element.removeEventListener('mouseout', handleMouseOut);
+      // @ts-expect-error Mousemove has an unusual signature
       element.removeEventListener('mousemove', handleMouseMove);
     };
   }, [handleMouseMove, handleMouseOut, handleMouseOver, isActive, ref]);

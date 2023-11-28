@@ -1,5 +1,5 @@
 import { getVideosList } from '../../netlify/functions/getVideosList';
-import { VideoData } from '../types/types';
+import { BunnyVideoDetails, VideoData } from '../types/types';
 
 const getFunctionUrl = (path: string) => {
   const host =
@@ -13,7 +13,7 @@ const getFunctionUrl = (path: string) => {
   return url.href;
 };
 
-export const getVideoThumbnail = async url => {
+export const getVideoThumbnail = async (url: string) => {
   const response = await fetch(
     getFunctionUrl(`/.netlify/functions/getVideoThumbnail?thumbnailUrl=${url}`),
   );
@@ -23,7 +23,9 @@ export const getVideoThumbnail = async url => {
   return imageString;
 };
 
-export const formatVideoData = async (details): Promise<VideoData> => {
+export const formatVideoData = async (
+  details: BunnyVideoDetails,
+): Promise<VideoData> => {
   const { guid, width, height, thumbnailFileName } = details;
   const baseUrl = `https://videos.random.studio/${guid}`;
 
@@ -36,6 +38,8 @@ export const formatVideoData = async (details): Promise<VideoData> => {
     height,
     hls: `${baseUrl}/playlist.m3u8`,
     width,
+    downloadUrl: `${baseUrl}/play_720p.mp4`,
+    thumbnailUrl,
   };
 
   if (typeof window === 'undefined') {
@@ -48,7 +52,7 @@ export const formatVideoData = async (details): Promise<VideoData> => {
   };
 };
 
-let cachedItems = [];
+let cachedItems: BunnyVideoDetails[] = [];
 
 export const getVideosListWithCache = async () => {
   if (cachedItems.length > 0) {
@@ -73,13 +77,16 @@ export const getVideosListWithCache = async () => {
   return items;
 };
 
-export const sanitiseVideoId = id =>
+export const sanitiseVideoId = (id: string) =>
   id.includes('http') ? id.replace('/original', '').split('/').at(-1) : id;
 
-export const getVideoDetailsById = async id => {
+export const getVideoDetailsById = async (id: string) => {
   const items = await getVideosListWithCache();
   const sanitisedId = sanitiseVideoId(id);
-  const details = items.find(video => video.guid === sanitisedId);
+
+  const details = items.find(
+    (video: BunnyVideoDetails) => video.guid === sanitisedId,
+  );
 
   if (!details) {
     console.error(`Unable to find video with id ${sanitisedId}`);

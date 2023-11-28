@@ -13,7 +13,7 @@ async function handler(event) {
   });
 
   const { email } = event.queryStringParameters;
-  let errorMessage = null;
+  let errorMessage: string;
 
   if (!email) {
     errorMessage = 'No EMAIL supplied';
@@ -76,6 +76,4 @@ async function handler(event) {
   }
 }
 
-export default {
-  handler,
-};
+export { handler };

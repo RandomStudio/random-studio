@@ -1,39 +1,50 @@
 import React from 'react';
 import NextHead from 'next/head';
-import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
-import { imageDataPropType } from '../../propTypes';
+import { usePathname } from 'next/navigation';
+import { Image } from '../../types/types';
 
 const DEFAULTS = {
   TITLE: 'Random Studio',
   DESCRIPTION:
     'Random Studio is an experience design studio. We are an international team of visual artists, strategists and engineers who blur the boundaries between art, design and technology.',
-  IMAGE: '/og-image.png',
+  IMAGE: 'https://random.studio/og-image.png',
   SITE_URL: 'https://random.studio',
   KEYWORDS:
     'Random Studio, Digital Agency, Digital Production, Daan Lucas, Technology Workshop, Creative Studio',
 };
 
-const formatTitle = string =>
+const formatTitle = (string: string) =>
   `${string
     .replaceAll('<br>', '')
     .replaceAll('<br /> ', '')
     .replaceAll('  ', ' ')} - ${DEFAULTS.TITLE}`;
 
+type HeadProps = {
+  description?: string;
+  image?: Image | string;
+  socialDescription?: string;
+  socialTitle?: string;
+  title?: string;
+};
+
 const Head = ({
-  description,
-  image,
-  socialDescription,
-  socialTitle,
-  title,
-}) => {
-  const router = useRouter();
+  description = undefined,
+  image = undefined,
+  socialDescription = undefined,
+  socialTitle = undefined,
+  title = undefined,
+}: HeadProps) => {
+  const pathname = usePathname();
 
   const pageTitle = title ? formatTitle(title) : DEFAULTS.TITLE;
 
-  const imagePath = image?.imageData?.src ? image : DEFAULTS.IMAGE;
+  let ogImage = DEFAULTS.IMAGE;
 
-  const ogImage = `${DEFAULTS.SITE_URL}${imagePath}`;
+  if (typeof image === 'string') {
+    ogImage = image;
+  } else if (image?.imageData.src) {
+    ogImage = image.imageData.src;
+  }
 
   const ogTitle = socialTitle ? formatTitle(socialTitle) : pageTitle;
 
@@ -66,10 +77,7 @@ const Head = ({
 
       <meta content="en_US" property="og:locale" />
 
-      <meta
-        content={`${DEFAULTS.SITE_URL}${router.pathname}`}
-        property="og:url"
-      />
+      <meta content={`${DEFAULTS.SITE_URL}${pathname}`} property="og:url" />
 
       <meta content={ogImage} property="og:image" />
 
@@ -135,22 +143,6 @@ const Head = ({
       />
     </NextHead>
   );
-};
-
-Head.propTypes = {
-  description: PropTypes.string,
-  image: PropTypes.oneOfType([imageDataPropType, PropTypes.string]),
-  socialDescription: PropTypes.string,
-  socialTitle: PropTypes.string,
-  title: PropTypes.string,
-};
-
-Head.defaultProps = {
-  description: null,
-  image: null,
-  socialDescription: null,
-  socialTitle: null,
-  title: null,
 };
 
 export default Head;
