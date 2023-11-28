@@ -3,6 +3,7 @@ import { MutableRefObject, useCallback, useEffect, useState } from 'react';
 import styles from './Controls.module.css';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import Progress from './Progress/Progress';
+import ShareComponent from '../ShareComponent/ShareComponent';
 
 type ControlsProps = {
   className?: string;
@@ -24,21 +25,9 @@ const Controls = ({
   */
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
   const [shareLinkText, setShareLinkText] = useState('Share');
-  const [isShareComponent, setIsShareComponent] = useState(false);
+  const [showShareDialog, setShowShareDialog] = useState(false);
 
   const hasNavigatorShare = !!navigator.share;
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-  };
-
-  const handleShareVia = async () => {
-    navigator.share({
-      title: 'Video',
-      text: 'Video',
-      url: window.location.href,
-    });
-  };
 
   const handlePlayToggle = useCallback(() => {
     setIsPlaying(prev => !prev);
@@ -49,10 +38,14 @@ const Controls = ({
       setShareLinkText('Copied!');
       navigator.clipboard.writeText(window.location.href);
 
+      setTimeout(() => {
+        setShareLinkText('Share');
+      }, 5000);
+
       return;
     }
 
-    setIsShareComponent(true);
+    setShowShareDialog(true);
   }, [hasNavigatorShare]);
 
   useEffect(() => {
@@ -112,32 +105,8 @@ const Controls = ({
         {'Show Controls'}
       </div>
 
-      {isShareComponent ? (
-        <div className={styles.shareComponentWrapper}>
-          <button
-            className={styles.share}
-            onClick={() => setIsShareComponent(false)}
-            type="button"
-          >
-            {'Cancel'}
-          </button>
-
-          <button
-            className={styles.share}
-            onClick={handleCopyLink}
-            type="button"
-          >
-            {'Copy Link'}
-          </button>
-
-          <button
-            className={styles.share}
-            onClick={handleShareVia}
-            type="button"
-          >
-            {'Share Via'}
-          </button>
-        </div>
+      {showShareDialog ? (
+        <ShareComponent setShowShareDialog={setShowShareDialog} />
       ) : (
         <>
           <button
