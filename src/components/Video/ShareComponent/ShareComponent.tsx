@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './ShareComponent.module.scss';
 
 type ShareComponentProps = {
-  setShowShareDialog: (isShareComponent: boolean) => void;
+  hasCopiedShareLink: boolean;
+  onCopyLink: () => void;
+  setIsShowingShareOptions: (isShowing: boolean) => void;
 };
 
-const ShareComponent = ({ setShowShareDialog }: ShareComponentProps) => {
-  const [copyLinkText, setCopyLinkText] = useState('Copy Link');
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopyLinkText('Copied!');
-
-    setTimeout(() => {
-      setCopyLinkText('Copy Link');
-    }, 5000);
-  };
-
+const ShareComponent = ({
+  hasCopiedShareLink,
+  onCopyLink,
+  setIsShowingShareOptions,
+}: ShareComponentProps) => {
   const handleShareVia = async () => {
     navigator.share({
       title: 'Video',
@@ -29,14 +24,14 @@ const ShareComponent = ({ setShowShareDialog }: ShareComponentProps) => {
     <div className={styles.shareComponentWrapper}>
       <button
         className={styles.share}
-        onClick={() => setShowShareDialog(false)}
+        onClick={() => setIsShowingShareOptions(false)}
         type="button"
       >
         {'Cancel'}
       </button>
 
-      <button className={styles.share} onClick={handleCopyLink} type="button">
-        {copyLinkText}
+      <button className={styles.share} onClick={onCopyLink} type="button">
+        {hasCopiedShareLink ? 'Copied!' : 'Copy Link'}
       </button>
 
       <button className={styles.share} onClick={handleShareVia} type="button">

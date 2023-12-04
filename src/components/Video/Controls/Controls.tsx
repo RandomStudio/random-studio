@@ -24,29 +24,34 @@ const Controls = ({
   // Handle play pause
   */
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
-  const [shareLinkText, setShareLinkText] = useState('Share');
-  const [showShareDialog, setShowShareDialog] = useState(false);
 
-  const hasNavigatorShare = !!navigator.share;
+  const [hasCopiedShareLink, setHasCopiedShareLink] = useState(false);
+  const [isShowingShareOptions, setIsShowingShareOptions] = useState(false);
 
   const handlePlayToggle = useCallback(() => {
     setIsPlaying(prev => !prev);
   }, []);
 
-  const handleShareToggle = useCallback(() => {
-    if (!hasNavigatorShare) {
-      setShareLinkText('Copied!');
-      navigator.clipboard.writeText(window.location.href);
+  const handleCopyLink = useCallback(() => {
+    setHasCopiedShareLink(true);
+    navigator.clipboard.writeText(window.location.href);
 
-      setTimeout(() => {
-        setShareLinkText('Share');
-      }, 5000);
+    setTimeout(() => {
+      setHasCopiedShareLink(false);
+    }, 5000);
+  }, []);
+
+  const handleShareToggle = useCallback(() => {
+    const hasNavigatorShare = !!navigator.share;
+
+    if (!hasNavigatorShare) {
+      handleCopyLink();
 
       return;
     }
 
-    setShowShareDialog(true);
-  }, [hasNavigatorShare]);
+    setIsShowingShareOptions(true);
+  }, [handleCopyLink]);
 
   useEffect(() => {
     const changePlayState = (isNowPlaying: boolean) =>
@@ -105,8 +110,12 @@ const Controls = ({
         {'Show Controls'}
       </div>
 
-      {showShareDialog ? (
-        <ShareComponent setShowShareDialog={setShowShareDialog} />
+      {isShowingShareOptions ? (
+        <ShareComponent
+          hasCopiedShareLink={hasCopiedShareLink}
+          onCopyLink={handleCopyLink}
+          setIsShowingShareOptions={setIsShowingShareOptions}
+        />
       ) : (
         <>
           <button
@@ -138,7 +147,7 @@ const Controls = ({
             onClick={handleShareToggle}
             type="button"
           >
-            {shareLinkText}
+            {hasCopiedShareLink ? 'Copied!' : 'Share'}
           </button>
 
           <a
