@@ -17,7 +17,7 @@ const Controls = ({
   className = undefined,
   isAutoplaying = false,
   hasExtendedControls = false,
-  onClick = null,
+  onClick = () => null,
   videoRef,
 }: ControlsProps) => {
   /*
