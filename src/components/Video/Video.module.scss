@@ -1,41 +1,48 @@
 .frame {
-  display: block;
+  --text-color: 255 255 255;
   position: relative;
-  contain: layout style paint;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  video {
-   // position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    object-fit: cover;
+.video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+
+  .isLoaded & {
+    opacity: 1;
   }
 }
 
+.brokenVideo {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: 100%;
+  background: var(--light-grey);
+}
+
 .placeholder {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
-  left: 0;
-  right: 0;
-  bottom: 0;
   object-fit: cover;
-  opacity: 1;
-  transition: opacity 300ms ease-in;
-  display: none;
-  filter: blur(20px);
+  opacity: 0;
+  filter: blur(5px);
   transform: scale(1.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
 
-  .hasJs & {
-    display: block;
-  }
-
-  .isLoaded & {
-    opacity: 0;
+  .hasSizeData & {
+    opacity: 1;
   }
 }

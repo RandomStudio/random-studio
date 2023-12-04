@@ -1,0 +1,74 @@
+.wrapper {
+  @mixin body-4;
+
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 0 20px 12px;
+  align-items: center;
+  color: rgba(var(--text-color) / 1);
+  transition: color 0.3s ease-in-out;
+
+  @media (--tablet) {
+    padding: 0 32px 24px;
+    justify-content: flex-start;
+  }
+
+  &.isHoveringProgress {
+    color: rgba(var(--text-color) / 0.2);
+  }
+
+  button,
+  a {
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .playToggle {
+    width: 3rem;
+    text-align: left;
+  }
+
+  .share {
+    display: none;
+  }
+}
+
+.isSimpleControls {
+  > * {
+    display: none;
+  }
+}
+
+.muteToggle {
+  @media (--tablet) {
+    margin-right: auto !important;
+  }
+
+  .isSimpleControls & {
+    @media (hover: hover) and (pointer: fine){
+      display: block;
+    }
+  }
+}
+
+.showControls {
+  display: none;
+
+  .isSimpleControls & {
+    display: block;
+
+    @media (hover: hover) and (pointer: fine){
+      display: none;
+    }
+  }
+}

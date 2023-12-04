@@ -24,5 +24,11 @@
   },
   "[postcss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
 }

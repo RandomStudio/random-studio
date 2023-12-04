@@ -1,136 +1,134 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 import React, {
-  useState,
-  useEffect,
-  useRef,
-  useMemo,
+  MutableRefObject,
+  forwardRef,
   useCallback,
+  useRef,
+  useState,
 } from 'react';
-import Hls from 'hls.js';
+import classNames from 'classnames';
 import styles from './Video.module.scss';
+import LazyLoad from '../LazyLoad/LazyLoad';
+import Controls from './Controls/Controls';
+import { VideoData } from '../../types/types';
+import useHlsVideo from './useHlsVideo';
 
 export type VideoProps = {
-  alt: string,
-  isAutoplaying?: boolean
-  isLooping?: boolean,
-  isMounted?: boolean,
-  isMuted?: boolean,
-  isPlaying?: boolean,
-  onPlayStateChange: (isPlaying: boolean) => void
-  video: {
-    baseUrl: string,
-    blur: string,
-    fallback: string,
-    hls: string,
-    sources: string[],
-  },
-  width: number,
+  className?: string;
+  hasControls?: boolean;
+  isAutoplaying?: boolean;
+  isLooping?: boolean;
+  isMuted?: boolean;
+  onClick?: (video: HTMLVideoElement) => void;
+  onMount?: () => void;
+  onReady?: () => void;
+  video: VideoData;
 };
 
-const Video = ({ alt, isAutoplaying = true, isPlaying = true, isLooping = true, isMounted = true, isMuted = true, onPlayStateChange = () => null, video, width = 100 }: VideoProps) => {
-  const ref = useRef<HTMLVideoElement>(null);
+const Video = forwardRef<HTMLVideoElement, VideoProps>(
+  (
+    {
+      className,
+      hasControls,
+      isAutoplaying = true,
+      isLooping,
+      isMuted = true,
+      onClick,
+      onReady,
+      onMount,
+      video: { downloadUrl, blur, guid, height, hls, width },
+    },
+    ref,
+  ) => {
+    const localRef = useRef<HTMLVideoElement>();
 
-  const [hasFailed, setHasFailed] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const handlePlay = useCallback(async () => {
-    if (!ref.current) {
-      return;
-    }
+    const videoRef =
+      (ref as unknown as MutableRefObject<HTMLVideoElement>) || localRef;
 
-    try {
-      await ref.current.play();
-      onPlayStateChange(true);
-      setHasFailed(false);
-    } catch (err) {
-      console.warn(err);
-      setHasFailed(true);
-      onPlayStateChange(false);
-    } finally {
+    const [isMounted, setIsMounted] = useState(false);
+    const [hasLoaded, setHasLoaded] = useState(false);
+
+    const handleMount = useCallback(() => {
+      setIsMounted(true);
+      onMount?.();
+    }, [onMount]);
+
+    const handleVideoReady = useCallback(() => {
       setHasLoaded(true);
-    }
-  }, []);
+      onReady?.();
+    }, [onReady]);
 
-  // Initialize HLs in an effect
-  useEffect(() => {
-    if (
-      !isMounted ||
-      !ref.current ||
-      ref.current.canPlayType('application/vnd.apple.mpegurl') ||
-      !Hls.isSupported()
-    ) {
-      return;
-    }
+    const aspectRatioStyle = { aspectRatio: `${width} / ${height}` };
 
-    const hls = new Hls({
-      startLevel: window.innerWidth > 1280 ? 4 : 2,
+    useHlsVideo({
+      isAutoplaying,
+      isMounted,
+      onReady: handleVideoReady,
+      videoRef,
+      src: hls,
     });
-    hls.loadSource(video.hls);
-    hls.attachMedia(ref.current);
 
-    if (isAutoplaying) {
-      handlePlay()
-    }
-  }, [isAutoplaying,isMounted, ref, video.hls]);
+    const handleClick = useCallback(() => {
+      onClick?.(videoRef.current);
+    }, [onClick, videoRef]);
 
-  useEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    if (isPlaying) {
-      handlePlay();
-      return;
-    }
-    ref.current.pause();
-    onPlayStateChange(false);
-  }, [isPlaying]);
+    const frameClasses = classNames(styles.frame, className, {
+      [styles.isLoaded]: hasLoaded,
+      [styles.hasSizeData]: width && height,
+    });
 
+    return (
+      <LazyLoad onIntersect={handleMount}>
+        <div className={frameClasses} style={aspectRatioStyle}>
+          <img
+            alt="video placeholder"
+            aria-hidden
+            className={styles.placeholder}
+            src={`data:image/jpeg;base64,${blur?.thumbnail}`}
+          />
 
-  const fallbackMp4Src = useMemo<string>(() => {
-    const {baseUrl, sources} = video;
+          {isMounted && (
+            <>
+              <video
+                autoPlay
+                className={styles.video}
+                controls={false}
+                data-download-src={downloadUrl}
+                id={guid}
+                loop={isLooping}
+                muted={isMuted}
+                onClick={handleClick}
+                playsInline
+                ref={videoRef}
+                src={hls}
+                style={aspectRatioStyle}
+              />
 
-    const sizes = sources
-      .map(source => parseInt(source.replace('p', '')))
-      .filter(size => size < 721)
-      .sort((a, b) => a - b);
+              {hasControls && hasLoaded && (
+                <Controls
+                  isAutoplaying={isAutoplaying}
+                  onClick={handleClick}
+                  videoRef={videoRef}
+                />
+              )}
+            </>
+          )}
+        </div>
+      </LazyLoad>
+    );
+  },
+);
 
-    return `${baseUrl}/play_${sizes[0]}p.mp4`;
-  }, [video.sources])
+Video.displayName = 'Video';
 
-  const hasLoadedClassName = hasLoaded ? styles.isLoaded : '';
-
-  return (
-    <div
-      className={`${styles.frame} ${hasLoadedClassName}`}
-      style={{
-        '--aspectRatio': `${video.width} / ${video.height}`,
-      }}
-    >
-      {!hasLoaded && (
-        <img
-          alt={alt}
-          aria-hidden
-          className={styles.placeholder}
-          src={`data:image/jpeg;base64,${video.blur}`}
-        />
-      )}
-      {isMounted && (
-        <>
-          <video
-            autoPlay={isAutoplaying}
-            loop={isLooping}
-            muted={isMuted}
-            playsInline
-            poster={video.fallback}
-            ref={ref}
-          >
-            <source src={video.hls} type="application/x-mpegURL" />
-            <source src={fallbackMp4Src} type="video/mp4" />
-          </video>
-          {hasLoaded && hasFailed && <img alt={alt} className={styles.placeholder} src={video.fallback} />}
-        </>
-      )}
-    </div>
-  );
+Video.defaultProps = {
+  className: undefined,
+  hasControls: false,
+  isAutoplaying: true,
+  isLooping: true,
+  isMuted: true,
+  onClick: () => null,
+  onMount: () => null,
+  onReady: () => null,
 };
 
 export default Video;

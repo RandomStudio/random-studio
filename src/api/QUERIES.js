@@ -46,6 +46,71 @@ query {
 }
 `;
 
+const sharedValues = `
+id
+anchorId
+width
+marginTop
+marginLeft`;
+
+const addBlockQuery = ({
+  hasVideo = false,
+  hasText = false,
+  hasImage = false,
+  hasCarousel = false,
+}) => `
+${
+  hasVideo
+    ? `... on VideoBlockRecord {
+          autoplay
+          caption
+          hasAudio
+          hasControls
+          loops
+          video
+          ${sharedValues}
+}
+`
+    : ''
+}
+${
+  hasText
+    ? `... on TextBlockRecord {
+  text
+  ${sharedValues}
+}
+`
+    : ''
+}
+${
+  hasImage
+    ? `... on ImageBlockRecord {
+  caption
+  image {
+    ...ImageDataObject
+  }
+  ${sharedValues}
+}
+`
+    : ''
+}
+${
+  hasCarousel
+    ? `... on CarouselBlockRecord {
+  slides {
+    id
+    video
+    image {
+      ...ImageDataObject
+    }
+  }
+  ${sharedValues}
+}
+`
+    : ''
+}
+`;
+
 export const SINGLE_PROJECT_QUERY = `
   ${THUMBNAIL_FRAGMENT}
   ${RELATED_THUMBNAIL_FRAGMENT}
@@ -57,7 +122,12 @@ export const SINGLE_PROJECT_QUERY = `
       slug
       intro
       title
-      details
+      externalUrl
+      credits {
+        label
+        text
+        link
+      }
       ...Thumbnail
       relatedProjectsTitle
       relatedProjects {
@@ -76,46 +146,22 @@ export const SINGLE_PROJECT_QUERY = `
       }
       content {
         __typename
-        ... on VideoBlockRecord {
+        ${addBlockQuery({
+          hasVideo: true,
+          hasImage: true,
+          hasCarousel: true,
+          hasText: true,
+        })}
+        ... on HorizontalRowRecord {
           id
-          marginTop
-          marginLeft
-          width
-          loops
-          hasAudio
-          hasControls
-          caption
-          autoplay
-          video
-        }
-        ... on TextBlockRecord {
-          id
-          text
-          width
-          marginTop
-          marginLeft
-        }
-        ... on ImageBlockRecord {
-          id
-          width
-          marginTop
-          marginLeft
-          caption
-          image {
-            ...ImageDataObject
-          }
-        }
-        ... on CarouselBlockRecord {
-          id
-          marginLeft
-          marginTop
-          width
-          slides {
-            id
-            video
-            image {
-              ...ImageDataObject
-            }
+          __typename
+          blocks {
+            __typename
+            ${addBlockQuery({
+              hasVideo: true,
+              hasImage: true,
+              hasText: true,
+            })}
           }
         }
       }

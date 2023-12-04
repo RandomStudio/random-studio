@@ -2,3 +2,6 @@
   node_bundler = "esbuild"
   external_node_modules = ["sharp"]
   included_files = ["node_modules/sharp/**/*"]
+
+[build]
+  command = "NEXT_CONTEXT=$CONTEXT npm run build"

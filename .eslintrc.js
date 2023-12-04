@@ -9,6 +9,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:prettier/recommended',
     'plugin:@next/next/recommended',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   globals: {
     CSSUnitValue: 'readonly',
@@ -24,17 +26,36 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks', 'prettier'],
+  root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
   rules: {
     '@next/next/no-img-element': 0,
     // Clashes with next.js/link
     'jsx-a11y/anchor-is-valid': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/media-has-caption': 0,
     'react/jsx-filename-extension': 0,
     'arrow-parens': [1, 'as-needed'],
     'brace-style': [2, '1tbs'],
     curly: [2, 'all'],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'react/require-default-props': [
+      2,
+      {
+        functions: 'defaultArguments',
+      },
+    ],
     'no-console': [2, { allow: ['warn', 'error'] }],
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'object-property-newline': [
@@ -105,7 +126,7 @@ module.exports = {
         noStrings: false,
       },
     ],
-    'react/jsx-sort-default-props': [
+    'react/sort-default-props': [
       2,
       {
         ignoreCase: false,
@@ -147,6 +168,13 @@ module.exports = {
     'react/iframe-missing-sandbox': 2,
     'react/no-access-state-in-setstate': 2,
     'react/no-adjacent-inline-elements': 2,
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': [
+      2,
+      {
+        ignoreTypeReferences: true,
+      },
+    ],
     'react/no-array-index-key': 2,
     'react/no-arrow-function-lifecycle': 2,
     'react/no-children-prop': 2,
@@ -181,7 +209,6 @@ module.exports = {
     'react/prefer-stateless-function': 2,
     'react/prop-types': 2,
     'react/react-in-jsx-scope': 0,
-    'react/require-default-props': 2,
     'react/require-optimization': 2,
     'react/require-render-return': 2,
     'react/self-closing-comp': 2,
@@ -219,5 +246,13 @@ module.exports = {
     'react/jsx-props-no-spreading': 2,
     'react/jsx-tag-spacing': 2,
     'react/jsx-wrap-multilines': 2,
+  },
+  settings: {
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 };

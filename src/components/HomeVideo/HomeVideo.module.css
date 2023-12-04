@@ -8,14 +8,12 @@
 
 .videoWrapper {
   width: 100%;
+  max-height: 100vh;
+  min-height: 60vh;
 
   & video {
     width: 100%;
-    height: auto;
-    min-height: 60vh;
-    min-height: 60svh;
-    max-height: 100vh;
-    max-height: 100svh;
+    height: 100%;
   }
 }
 
