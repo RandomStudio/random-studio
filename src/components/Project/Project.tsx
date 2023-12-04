@@ -9,6 +9,7 @@ import {
   ProjectSummary,
   VideoData,
 } from '../../types/types';
+import PixelatedImage from '../PixelatedImage/PixelatedImage';
 
 type Project = Omit<ProjectSummary, 'intro' | 'tags'> & {
   className?: string;
@@ -45,11 +46,7 @@ const Project = ({
       {featuredVideo ? (
         <Video hasControls={false} video={featuredVideo} />
       ) : (
-        <Image
-          alt="" // Keeps the screen reader focused on project list
-          data={featuredImage.imageData}
-          sizes={`(max-width: 576px) 100vw, ${width}vw`}
-        />
+        <PixelatedImage image={featuredImage.imageData} />
       )}
     </div>
 
@@ -59,8 +56,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-              marginLeft: '0',
-            }
+            marginLeft: '0',
+          }
       }
     >
       <Markdown markdown={title} />
