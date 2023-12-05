@@ -77,6 +77,12 @@
     aspect-ratio: unset !important;
   }
 
+  .frame,
+  video {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
   .brokenVideo {
     width: 100%;
     aspect-ratio: 16/9;
