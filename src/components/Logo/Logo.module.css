@@ -2,7 +2,6 @@
   @mixin logo;
   font-size: var(--font-logo-small);
   margin: 0;
-  pointer-events: all;
   z-index: 1;
   text-align: left;
 
@@ -16,6 +15,7 @@
 
   & a {
     display: inline-block;
+    pointer-events: auto;
     text-decoration: none;
   }
 
