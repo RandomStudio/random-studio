@@ -6,7 +6,7 @@
   top: 40px;
   left: 20px;
   right: 20px;
-  pointer-events: all;
+  pointer-events: none;
   z-index: 5;
   mix-blend-mode: difference;
 
@@ -32,6 +32,7 @@
   column-gap: 32px;
   padding: 0;
   margin: 0;
+  pointer-events: auto;
 
   @media (--desktop) {
     @mixin body-2;
