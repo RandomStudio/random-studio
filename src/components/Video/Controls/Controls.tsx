@@ -3,6 +3,7 @@ import { MutableRefObject, useCallback, useEffect, useState } from 'react';
 import styles from './Controls.module.css';
 import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 import Progress from './Progress/Progress';
+import ShareComponent from '../ShareComponent/ShareComponent';
 
 type ControlsProps = {
   className?: string;
@@ -24,9 +25,33 @@ const Controls = ({
   */
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
+  const [hasCopiedShareLink, setHasCopiedShareLink] = useState(false);
+  const [isShowingShareOptions, setIsShowingShareOptions] = useState(false);
+
   const handlePlayToggle = useCallback(() => {
     setIsPlaying(prev => !prev);
   }, []);
+
+  const handleCopyLink = useCallback(() => {
+    setHasCopiedShareLink(true);
+    navigator.clipboard.writeText(window.location.href);
+
+    setTimeout(() => {
+      setHasCopiedShareLink(false);
+    }, 5000);
+  }, []);
+
+  const handleShareToggle = useCallback(() => {
+    const hasNavigatorShare = !!navigator.share;
+
+    if (!hasNavigatorShare) {
+      handleCopyLink();
+
+      return;
+    }
+
+    setIsShowingShareOptions(true);
+  }, [handleCopyLink]);
 
   useEffect(() => {
     const changePlayState = (isNowPlaying: boolean) =>
@@ -54,8 +79,8 @@ const Controls = ({
   }, [isPlaying, videoRef]);
 
   /*
-// Handle mute
-*/
+    // Handle mute
+    */
   const [isMuted, toggleIsMuted] = useSharedUnmutedVideoState(
     videoRef.current?.src ?? 'unknown',
   );
@@ -72,8 +97,8 @@ const Controls = ({
   const [isHoveringProgress, setIsHoveringProgress] = useState(false);
 
   /*
-// Render controls
-*/
+    // Render controls
+    */
   const wrapperClasses = classNames(styles.wrapper, className, {
     [styles.isSimpleControls]: !hasExtendedControls,
     [styles.isHoveringProgress]: isHoveringProgress,
@@ -85,42 +110,56 @@ const Controls = ({
         {'Show Controls'}
       </div>
 
-      <button
-        className={styles.playToggle}
-        onClick={handlePlayToggle}
-        type="button"
-      >
-        {isPlaying ? 'Pause' : 'Play'}
-      </button>
-
-      {hasExtendedControls && (
-        <Progress
-          className={styles.progress}
-          onHover={setIsHoveringProgress}
-          videoRef={videoRef}
+      {isShowingShareOptions ? (
+        <ShareComponent
+          hasCopiedShareLink={hasCopiedShareLink}
+          onCopyLink={handleCopyLink}
+          setIsShowingShareOptions={setIsShowingShareOptions}
         />
+      ) : (
+        <>
+          <button
+            className={styles.playToggle}
+            onClick={handlePlayToggle}
+            type="button"
+          >
+            {isPlaying ? 'Pause' : 'Play'}
+          </button>
+
+          {hasExtendedControls && (
+            <Progress
+              className={styles.progress}
+              onHover={setIsHoveringProgress}
+              videoRef={videoRef}
+            />
+          )}
+
+          <button
+            className={styles.muteToggle}
+            onClick={toggleIsMuted}
+            type="button"
+          >
+            {isMuted ? 'Sound On' : 'Sound Off'}
+          </button>
+
+          <button
+            className={styles.share}
+            onClick={handleShareToggle}
+            type="button"
+          >
+            {hasCopiedShareLink ? 'Copied!' : 'Share'}
+          </button>
+
+          <a
+            download
+            href={videoRef.current?.dataset.downloadSrc}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {'Download'}
+          </a>
+        </>
       )}
-
-      <button
-        className={styles.muteToggle}
-        onClick={toggleIsMuted}
-        type="button"
-      >
-        {isMuted ? 'Sound On' : 'Sound Off'}
-      </button>
-
-      <button className={styles.share} type="button">
-        {'Share'}
-      </button>
-
-      <a
-        download
-        href={videoRef.current?.dataset.downloadSrc}
-        rel="noreferrer"
-        target="_blank"
-      >
-        {'Download'}
-      </a>
     </div>
   );
 };
