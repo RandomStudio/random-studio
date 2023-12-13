@@ -87,6 +87,9 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const [hasAudio, setHasAudio] = useState(true);
 
+  const [hasPerformedAudioDetection, setHasPerformedAudioDetection] =
+    useState(false);
+
   const handleReady = useCallback(() => {
     if (!videoRef.current) {
       return;
@@ -108,6 +111,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
       }
 
       setHasAudio(detectVideoAudioTrack(videoRef.current));
+      setHasPerformedAudioDetection(true);
     }, 250);
   }, [isMuted, time]);
 
@@ -197,6 +201,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
         <Controls
           className={styles.controls}
           hasAudio={hasAudio}
+          hasAudioControls={hasPerformedAudioDetection}
           hasExtendedControls
           isAutoplaying
           videoRef={videoRef}

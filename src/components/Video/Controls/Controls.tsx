@@ -9,16 +9,18 @@ type ControlsProps = {
   className?: string;
   hasAudio: boolean;
   isAutoplaying: boolean;
+  hasAudioControls?: boolean;
   hasExtendedControls?: boolean;
   onClick?: () => void;
   videoRef:
-    | MutableRefObject<ExtendedHTMLVideoElement>
-    | RefObject<ExtendedHTMLVideoElement>;
+  | MutableRefObject<ExtendedHTMLVideoElement>
+  | RefObject<ExtendedHTMLVideoElement>;
 };
 
 const Controls = ({
   className = undefined,
   hasAudio,
+  hasAudioControls = true,
   isAutoplaying = false,
   hasExtendedControls = false,
   onClick = () => null,
@@ -54,7 +56,7 @@ const Controls = ({
 // Render controls
 */
   const wrapperClasses = classNames(styles.wrapper, className, {
-    [styles.hasNoAudio]: !hasAudio,
+    [styles.isAudioControlsHidden]: !hasAudio || !hasAudioControls,
     [styles.isSimpleControls]: !hasExtendedControls,
     [styles.isHoveringProgress]: isHoveringProgress,
   });
