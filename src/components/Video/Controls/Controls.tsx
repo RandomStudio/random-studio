@@ -1,28 +1,38 @@
+import {
+  MutableRefObject,
+  RefObject,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import classNames from 'classnames';
-import { MutableRefObject, useCallback, useEffect, useState } from 'react';
 import styles from './Controls.module.css';
-import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
+import type { ExtendedHTMLVideoElement } from '../Video';
 import Progress from './Progress/Progress';
 import ShareComponent from '../ShareComponent/ShareComponent';
+import useSharedUnmutedVideoState from './useSharedUnmutedVideoState';
 
 type ControlsProps = {
   className?: string;
+  hasAudio: boolean;
   isAutoplaying: boolean;
-  onClick?: () => void;
+  hasAudioControls?: boolean;
   hasExtendedControls?: boolean;
-  videoRef: MutableRefObject<HTMLVideoElement | null>;
+  onClick?: () => void;
+  videoRef:
+  | MutableRefObject<ExtendedHTMLVideoElement>
+  | RefObject<ExtendedHTMLVideoElement>;
 };
 
 const Controls = ({
   className = undefined,
+  hasAudio,
+  hasAudioControls = true,
   isAutoplaying = false,
   hasExtendedControls = false,
   onClick = () => null,
   videoRef,
 }: ControlsProps) => {
-  /*
-  // Handle play pause
-  */
   const [isPlaying, setIsPlaying] = useState(isAutoplaying);
 
   const [hasCopiedShareLink, setHasCopiedShareLink] = useState(false);
@@ -54,29 +64,10 @@ const Controls = ({
   }, [handleCopyLink]);
 
   useEffect(() => {
-    const changePlayState = (isNowPlaying: boolean) =>
-      setIsPlaying(isNowPlaying);
+    videoRef.current?.addEventListener('play', () => setIsPlaying(true));
 
-    videoRef.current?.addEventListener('play', () => changePlayState(true));
-
-    videoRef.current?.addEventListener('pause', () => changePlayState(false));
+    videoRef.current?.addEventListener('pause', () => setIsPlaying(false));
   }, [videoRef]);
-
-  useEffect(() => {
-    if (!videoRef.current) {
-      return;
-    }
-
-    if (isPlaying) {
-      videoRef.current
-        .play()
-        .catch(e =>
-          console.warn('Unable to autoplay without user interaction', e),
-        );
-    } else {
-      videoRef.current?.pause();
-    }
-  }, [isPlaying, videoRef]);
 
   /*
     // Handle mute
@@ -100,6 +91,7 @@ const Controls = ({
     // Render controls
     */
   const wrapperClasses = classNames(styles.wrapper, className, {
+    [styles.isAudioControlsHidden]: !hasAudio || !hasAudioControls,
     [styles.isSimpleControls]: !hasExtendedControls,
     [styles.isHoveringProgress]: isHoveringProgress,
   });

@@ -11,7 +11,7 @@ import {
 import Caption from '../../Caption/Caption';
 import Carousel from '../../Carousel/Carousel';
 import Image from '../../Image/Image';
-import Video from '../../Video/Video';
+import Video, { ExtendedHTMLVideoElement } from '../../Video/Video';
 import styles from './ContentBlock.module.css';
 import Markdown from '../../Markdown/Markdown';
 import useMouseHoverPosition from '../../Video/Controls/Progress/useMouseHoverPosition';
@@ -50,7 +50,7 @@ const ContentBlock = ({
     [router],
   );
 
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<ExtendedHTMLVideoElement>(null);
 
   const [isVideoMounted, setIsVideoMounted] = useState(false);
 
@@ -83,7 +83,7 @@ const ContentBlock = ({
     }
 
     if (__typename === BLOCK_TYPES.VideoBlockRecord) {
-      const { caption, hasControls, autoplay, loops, video } =
+      const { caption, hasControls, hasAudio, autoplay, loops, video } =
         blockProps as VideoBlock;
 
       return (
@@ -100,6 +100,7 @@ const ContentBlock = ({
               }
             >
               <Video
+                hasAudio={hasAudio}
                 hasControls={hasControls}
                 isAutoplaying={autoplay}
                 isLooping={loops}

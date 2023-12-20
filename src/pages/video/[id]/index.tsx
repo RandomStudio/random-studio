@@ -7,7 +7,9 @@ import classNames from 'classnames';
 import { useSearchParams } from 'next/navigation';
 import { GetStaticPropsContext } from 'next';
 import Head from '../../../components/Head/Head';
-import Video from '../../../components/Video/Video';
+import Video, {
+  ExtendedHTMLVideoElement,
+} from '../../../components/Video/Video';
 import styles from './index.module.css';
 import Controls from '../../../components/Video/Controls/Controls';
 import { VideoData } from '../../../types/types';
@@ -39,20 +41,41 @@ const fetcher = async (videoRef: string, video: VideoData) => {
   return details;
 };
 
+const detectVideoAudioTrack = (video: ExtendedHTMLVideoElement): boolean => {
+  if (
+    !('mozHasAudio' in video) &&
+    !('webkitAudioDecodedByteCount' in video) &&
+    !('audioTracks' in video)
+  ) {
+    // If we can't detect, fallback to showing manual audio controls
+    return true;
+  }
+
+  return (
+    video.mozHasAudio ||
+    Boolean(video.webkitAudioDecodedByteCount) ||
+    Boolean(video.audioTracks && video.audioTracks.length)
+  );
+};
+
 type VideoFocusModePageProps = {
   video: VideoData;
 };
 
 const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<ExtendedHTMLVideoElement>(null);
 
   const router = useRouter();
 
   const { id } = router.query;
 
-  const { data, error } = useSwr(id, () => fetcher(id as string, video), {
-    fallbackData: video,
-  });
+  const { data, error } = useSwr<VideoData>(
+    id,
+    () => fetcher(id as string, video),
+    {
+      fallbackData: video,
+    },
+  );
 
   const params = useSearchParams();
   const time = params.get('time');
@@ -62,17 +85,10 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const [isReady, setIsReady] = useState(false);
 
-  const handleClick = useCallback(() => {
-    if (videoRef.current?.paused) {
-      videoRef.current
-        .play()
-        .catch(e =>
-          console.warn('Unable to autoplay without user interaction', e),
-        );
-    } else {
-      videoRef.current?.pause();
-    }
-  }, [videoRef]);
+  const [hasAudio, setHasAudio] = useState(true);
+
+  const [hasPerformedAudioDetection, setHasPerformedAudioDetection] =
+    useState(false);
 
   const handleReady = useCallback(() => {
     if (!videoRef.current) {
@@ -88,7 +104,24 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
     }
 
     videoRef.current.currentTime = Number(time) || 0;
+
+    window.setTimeout(() => {
+      if (!videoRef.current) {
+        return;
+      }
+
+      setHasAudio(detectVideoAudioTrack(videoRef.current));
+      setHasPerformedAudioDetection(true);
+    }, 250);
   }, [isMuted, time]);
+
+  const handleClick = useCallback(() => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    videoRef.current.togglePlay();
+  }, []);
 
   const closeJsx = useMemo(() => {
     if (isOpenedFromProject) {
@@ -126,17 +159,17 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
 
   const gridStyles = useMemo(
     () => ({
-      backgroundColor: data.blur?.dominantColor,
-      backgroundImage: data.blur?.thumbnail
+      backgroundColor: data?.blur?.dominantColor || undefined,
+      backgroundImage: data?.blur?.thumbnail
         ? `url(data:image/jpeg;base64,${data.blur.thumbnail})`
         : 'none',
     }),
-    [data.blur],
+    [data],
   );
 
   const gridClassNames = classNames(styles.grid, {
     [styles.hasInvertedColors]: hasInvertedColors,
-    [styles.isVerticalVideo]: data?.height > data?.width,
+    [styles.isVerticalVideo]: data ? data?.height > data?.width : false,
   });
 
   return (
@@ -151,6 +184,7 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
         ) : (
           <Video
             className={styles.frame}
+            hasAudio
             hasControls={false}
             isAutoplaying
             isLooping
@@ -166,6 +200,8 @@ const VideoFocusModePage = ({ video }: VideoFocusModePageProps) => {
       {isReady && (
         <Controls
           className={styles.controls}
+          hasAudio={hasAudio}
+          hasAudioControls={hasPerformedAudioDetection}
           hasExtendedControls
           isAutoplaying
           videoRef={videoRef}
