@@ -2,10 +2,9 @@ import type { HandlerEvent } from '@netlify/functions';
 
 // This function is used to generate preview URLs for the side-by-side plugin in DatoCMS
 const handler = async (event: HandlerEvent) => {
-  const params = new URLSearchParams(event.rawQuery);
-  const slug = params.get('slug');
+  const item = JSON.parse(event?.body ?? '');
 
-  if (!slug) {
+  if (!item) {
     return {
       statusCode: 404,
     };
