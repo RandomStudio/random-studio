@@ -13,7 +13,13 @@ export const getStaticProps = async ({
     throw new Error('slug is undefined');
   }
 
-  return getProjectData(params?.slug);
+  const project = await getProjectData(params?.slug);
+
+  return {
+    props: {
+      ...project,
+    },
+  };
 };
 
 export async function getStaticPaths() {
