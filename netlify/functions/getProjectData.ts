@@ -10,7 +10,7 @@ const handler = async (event: HandlerEvent) => {
     };
   }
 
-  const project = getProjectData(slug);
+  const project = getProjectData(slug, true);
 
   return {
     statusCode: 200,
