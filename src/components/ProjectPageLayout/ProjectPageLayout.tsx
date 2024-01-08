@@ -3,7 +3,7 @@ import Head from '../Head/Head';
 import Layout from '../Layout/Layout';
 import ProjectDetail from '../ProjectDetail/ProjectDetail';
 import styles from './ProjectPageLayout.module.scss';
-import useScrollRestoration from '../../pages/projects/[slug]/useScrollRestoration';
+import useScrollRestoration from '../../hooks/useScrollRestoration';
 import {
   CreditsType,
   ContentBlock as ContentBlockType,
