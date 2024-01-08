@@ -1,4 +1,3 @@
-import { GetStaticPropsContext } from 'next';
 import Carousel from '../../components/Carousel/Carousel';
 import styles from './Studio.module.css';
 import getDataFromBackend from '../../api/getDataFromBackend';
@@ -123,10 +122,9 @@ const Studio = ({
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }: GetStaticPropsContext) => {
+export const getStaticProps = async () => {
   const { page } = await getDataFromBackend({
     query: STUDIO_PAGE_QUERY,
-    preview,
   });
 
   return {

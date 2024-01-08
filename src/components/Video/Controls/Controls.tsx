@@ -20,8 +20,8 @@ type ControlsProps = {
   hasExtendedControls?: boolean;
   onClick?: () => void;
   videoRef:
-  | MutableRefObject<ExtendedHTMLVideoElement>
-  | RefObject<ExtendedHTMLVideoElement>;
+    | MutableRefObject<ExtendedHTMLVideoElement>
+    | RefObject<ExtendedHTMLVideoElement>;
 };
 
 const Controls = ({

@@ -4,15 +4,16 @@ import addAdditionalInfoToBlocks from '../pages/api/addAdditionalDataToBlocks';
 const getDataFromBackend = async ({
   query,
   variables,
-  preview,
 }: {
   query: RequestDocument;
   variables?: unknown;
-  preview?: boolean;
 }) => {
   const endpoint = 'https://graphql.datocms.com/';
 
-  const includeDrafts = preview ?? process.env.NEXT_CONTEXT !== 'production';
+  const includeDrafts =
+    process.env.NEXT_CONTEXT !== 'production' ??
+    (typeof window !== 'undefined' &&
+      window.location.hostname === 'staging.random.studio');
 
   const client = new GraphQLClient(endpoint, {
     headers: {

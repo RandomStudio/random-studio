@@ -1,88 +1,23 @@
-import React from 'react';
 import { GetStaticPropsContext } from 'next';
-import {
-  PROJECT_PATHS_QUERY,
-  SINGLE_PROJECT_QUERY,
-} from '../../../api/QUERIES';
-import Head from '../../../components/Head/Head';
-import Layout from '../../../components/Layout/Layout';
-import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
+import { PROJECT_PATHS_QUERY } from '../../../api/QUERIES';
 import getDataFromBackend from '../../../api/getDataFromBackend';
-import styles from './index.module.scss';
+import ProjectPageLayout from '../../../components/ProjectPageLayout/ProjectPageLayout';
+import { getProjectData } from '../../../utils/productUtils';
 
-import {
-  ContentBlock as ContentBlockType,
-  CreditsType,
-  Image,
-  OpenGraph,
-  ProjectSummary,
-} from '../../../types/types';
-import useScrollRestoration from './useScrollRestoration';
-
-type ProjectProps = {
-  content: ContentBlockType[];
-  credits: CreditsType[];
-  externalUrl: string;
-  featuredImage: Image;
-  intro: string;
-  relatedProjectsTitle: string;
-  relatedProjects: ProjectSummary[];
-  opengraph: OpenGraph;
-  title: string;
-};
-
-const Project = ({
-  content,
-  credits,
-  externalUrl,
-  featuredImage,
-  intro,
-  opengraph: { description: ogDescription, image, title: ogTitle },
-  relatedProjects,
-  relatedProjectsTitle,
-  title,
-}: ProjectProps) => {
-  useScrollRestoration();
-
-  return (
-    <Layout className={styles.layout} hasFooter={false}>
-      <Head
-        description={intro}
-        image={image ?? featuredImage}
-        socialDescription={ogDescription}
-        socialTitle={ogTitle}
-        title={title}
-      />
-
-      <ProjectDetail
-        content={content}
-        credits={credits}
-        externalUrl={externalUrl}
-        intro={intro}
-        relatedProjects={relatedProjects}
-        relatedProjectsTitle={relatedProjectsTitle}
-        title={title}
-      />
-    </Layout>
-  );
-};
+const Project = ProjectPageLayout;
 
 export const getStaticProps = async ({
   params,
-  preview,
 }: GetStaticPropsContext<{ slug: string }>) => {
-  const { project } = await getDataFromBackend({
-    query: SINGLE_PROJECT_QUERY,
-    variables: {
-      slug: params?.slug,
-    },
-    preview,
-  });
+  if (!params?.slug) {
+    throw new Error('slug is undefined');
+  }
+
+  const project = await getProjectData(params?.slug);
 
   return {
     props: {
       ...project,
-      opengraph: project.opengraph ?? {},
     },
   };
 };
