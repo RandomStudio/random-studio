@@ -1,5 +1,4 @@
 import React from 'react';
-import { GetStaticPropsContext } from 'next';
 import getDataFromBackend from '../api/getDataFromBackend';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
 import Head from '../components/Head/Head';
@@ -38,10 +37,9 @@ const Home = ({
   </Layout>
 );
 
-export const getStaticProps = async ({ preview }: GetStaticPropsContext) => {
+export const getStaticProps = async () => {
   const { page, projects } = await getDataFromBackend({
     query: INDEX_PAGE_QUERY,
-    preview,
   });
 
   return {

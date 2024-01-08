@@ -1,4 +1,3 @@
-import { GetStaticPropsContext } from 'next';
 import { SUSTAINABILITY_PAGE_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import Layout from '../../components/Layout/Layout';
@@ -38,10 +37,9 @@ const Sustainability = ({
 
 export default Sustainability;
 
-export const getStaticProps = async ({ preview }: GetStaticPropsContext) => {
+export const getStaticProps = async () => {
   const { page } = await getDataFromBackend({
     query: SUSTAINABILITY_PAGE_QUERY,
-    preview,
   });
 
   return {
