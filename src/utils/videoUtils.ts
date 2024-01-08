@@ -78,7 +78,7 @@ export const getVideoDetailsById = async (id: string) => {
   );
 
   if (!details) {
-    console.error(`Unable to find video with id ${sanitisedId}`);
+    console.error(`WARN: Unable to find video with id ${sanitisedId}`);
 
     return null;
   }
