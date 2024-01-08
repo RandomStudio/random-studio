@@ -1,7 +1,7 @@
 import { GetStaticPropsContext } from 'next';
 import { PROJECT_PATHS_QUERY } from '../../../api/QUERIES';
 import getDataFromBackend from '../../../api/getDataFromBackend';
-import ProjectPageLayout from './ProjectPageLayout';
+import ProjectPageLayout from '../../../components/ProjectPageLayout/ProjectPageLayout';
 import { getProjectData } from '../../../utils/productUtils';
 
 const Project = ProjectPageLayout;

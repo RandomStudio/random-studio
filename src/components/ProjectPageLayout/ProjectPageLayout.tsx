@@ -1,16 +1,16 @@
 import React from 'react';
-import Head from '../../../components/Head/Head';
-import Layout from '../../../components/Layout/Layout';
-import ProjectDetail from '../../../components/ProjectDetail/ProjectDetail';
-import styles from './index.module.scss';
-import useScrollRestoration from './useScrollRestoration';
+import Head from '../Head/Head';
+import Layout from '../Layout/Layout';
+import ProjectDetail from '../ProjectDetail/ProjectDetail';
+import styles from './ProjectPageLayout.module.scss';
+import useScrollRestoration from '../../pages/projects/[slug]/useScrollRestoration';
 import {
   CreditsType,
   ContentBlock as ContentBlockType,
   Image,
   OpenGraph,
   ProjectSummary,
-} from '../../../types/types';
+} from '../../types/types';
 
 type ProjectPageLayoutProps = {
   content: ContentBlockType[];

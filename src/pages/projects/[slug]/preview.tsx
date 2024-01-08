@@ -1,6 +1,6 @@
 import { GetStaticPropsContext } from 'next';
 import useSWR from 'swr';
-import ProjectPageLayout from './ProjectPageLayout';
+import ProjectPageLayout from '../../../components/ProjectPageLayout/ProjectPageLayout';
 import { getFunctionUrl } from '../../../utils/netlifyUtils';
 import { getStaticPaths as getProjectStaticPaths } from './index';
 
