@@ -12,7 +12,7 @@ const getDataFromBackend = async ({
 }) => {
   const endpoint = 'https://graphql.datocms.com/';
 
-  const includeDrafts = process.env.NEXT_CONTEXT !== 'production' ?? isPreview;
+  const includeDrafts = process.env.NEXT_CONTEXT !== 'production' || isPreview;
 
   const client = new GraphQLClient(endpoint, {
     headers: {
