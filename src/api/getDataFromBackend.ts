@@ -13,7 +13,6 @@ const getDataFromBackend = async ({
   const endpoint = 'https://graphql.datocms.com/';
 
   const includeDrafts = process.env.NEXT_CONTEXT !== 'production' || isPreview;
-  console.log('Doing a fetch', includeDrafts);
 
   const client = new GraphQLClient(endpoint, {
     headers: {
@@ -23,7 +22,6 @@ const getDataFromBackend = async ({
   });
 
   const data = await client.request(query, variables);
-  console.log('Resolved a fetch');
 
   return addAdditionalInfoToBlocks(data);
 };
