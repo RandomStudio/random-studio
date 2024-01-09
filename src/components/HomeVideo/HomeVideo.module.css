@@ -31,11 +31,12 @@
   mix-blend-mode: difference;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  right: 0;
   font-size: 16px;
   line-height: 1;
   padding: 16px 22px;
   text-align: right;
+  z-index: 1;
 }
 
 .creditsLogo {
