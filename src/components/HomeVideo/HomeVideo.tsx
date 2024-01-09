@@ -17,7 +17,7 @@ const HomeVideo = ({
   <div className={styles.video}>
     <Video
       className={styles.videoWrapper}
-      hasControls={false}
+      hasControls
       isAutoplaying
       isLooping
       video={video}
@@ -25,9 +25,9 @@ const HomeVideo = ({
 
     {collaborator && (
       <div className={styles.featuredAuthor}>
-        <span className={styles.creditsLogo}>{'Random Studio'}</span>
+        {/* <span className={styles.creditsLogo}>{'Random Studio'}</span>
 
-        <span aria-label="with">{' × '}</span>
+        <span aria-label="with">{' × '}</span> */}
 
         <span>
           <a href={collaborationUrl} rel="noopener noreferrer" target="_blank">
