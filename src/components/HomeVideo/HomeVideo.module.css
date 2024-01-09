@@ -19,7 +19,7 @@
   :global(.controls) {
     display: none;
 
-    @media (min-width: 576px) {
+    @media (hover: hover) and (pointer: fine){
       display: block;
     }
   }
