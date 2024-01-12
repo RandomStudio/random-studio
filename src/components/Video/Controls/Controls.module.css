@@ -39,6 +39,10 @@
 
   .share {
     margin-right: 2vw;
+
+    @media (--tablet) {
+      margin-left: auto;
+    }
   }
 }
 
@@ -49,7 +53,7 @@
 }
 
 .muteToggle {
-  margin-right: 2vw;
+
   .isSimpleControls & {
     @media (hover: hover) and (pointer: fine){
       display: block;
