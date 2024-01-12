@@ -39,8 +39,14 @@ const Controls = ({
   const [isShowingShareOptions, setIsShowingShareOptions] = useState(false);
 
   const handlePlayToggle = useCallback(() => {
+    if (isPlaying) {
+      videoRef?.current?.pause();
+    } else {
+      videoRef?.current?.play();
+    }
+
     setIsPlaying(prev => !prev);
-  }, []);
+  }, [isPlaying, videoRef]);
 
   const handleCopyLink = useCallback(() => {
     setHasCopiedShareLink(true);
