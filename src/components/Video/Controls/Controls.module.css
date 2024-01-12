@@ -49,6 +49,7 @@
 }
 
 .muteToggle {
+  margin-right: 2vw;
   .isSimpleControls & {
     @media (hover: hover) and (pointer: fine){
       display: block;

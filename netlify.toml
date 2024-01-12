@@ -5,3 +5,8 @@
 
 [build]
   command = "NEXT_CONTEXT=$CONTEXT npm run build"
+
+[[redirects]]
+  from = "/future-forest"
+  to = "/video/fe4a1225-a115-4e7e-9170-402ca2b17b31"
+  status = 301
