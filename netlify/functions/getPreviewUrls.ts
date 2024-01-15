@@ -24,11 +24,11 @@ const handler = async (event: HandlerEvent) => {
       previewLinks: [
         {
           label: 'Published (en)',
-          url: `https://random.studio/projects/${item.attributes.slug}/preview`,
+          url: `https://random.studio/projects/${item.attributes.slug}`,
         },
         {
           label: 'Draft (en)',
-          url: `https://random.studio/projects/${item.attributes.slug}/preview`,
+          url: `https://random.studio/projects/preview?slug=${item.attributes.slug}`,
         },
       ],
     }),

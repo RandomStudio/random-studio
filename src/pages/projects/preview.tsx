@@ -1,10 +1,13 @@
-import { GetStaticPropsContext } from 'next';
 import useSWR from 'swr';
-import ProjectPageLayout from '../../../components/ProjectPageLayout/ProjectPageLayout';
-import { getFunctionUrl } from '../../../utils/netlifyUtils';
-import { getStaticPaths as getProjectStaticPaths } from './index';
+import { useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
+import ProjectPageLayout from '../../components/ProjectPageLayout/ProjectPageLayout';
+import { getFunctionUrl } from '../../utils/netlifyUtils';
 
-const PreviewProject = ({ slug }: { slug: string }) => {
+const PreviewProject = () => {
+  const params = useSearchParams();
+  const slug = useMemo(() => params.get('slug'), [params]);
+
   const { data, isLoading, error } = useSWR(slug, async () => {
     const response = await fetch(
       getFunctionUrl(`/.netlify/functions/getProjectData/${slug}`),
@@ -14,6 +17,10 @@ const PreviewProject = ({ slug }: { slug: string }) => {
 
     return project;
   });
+
+  if (!slug) {
+    return <div>{'No slug provided'}</div>;
+  }
 
   if (isLoading) {
     return <div>{'Loading preview...'}</div>;
@@ -39,17 +46,5 @@ const PreviewProject = ({ slug }: { slug: string }) => {
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <ProjectPageLayout {...data} />;
 };
-
-export const getStaticProps = async ({
-  params,
-}: GetStaticPropsContext<{ slug: string }>) => {
-  return {
-    props: {
-      slug: params?.slug,
-    },
-  };
-};
-
-export const getStaticPaths = getProjectStaticPaths;
 
 export default PreviewProject;
