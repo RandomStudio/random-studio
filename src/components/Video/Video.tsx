@@ -146,6 +146,7 @@ const Video = forwardRef<ExtendedHTMLVideoElement, VideoProps>(
                 loop={isLooping}
                 muted={isMuted}
                 onClick={handleClick}
+                onContextMenu={e => e.preventDefault()}
                 playsInline
                 ref={videoRef}
                 src={hls}
