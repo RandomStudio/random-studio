@@ -3,7 +3,7 @@
 .logo {
   @include blendedText;
   position: relative;
-  font-family: "Larish Neue", serif;
+  font-family: 'Larish Neue', serif;
   font-weight: normal;
   font-size: 3.2rem;
   mix-blend-mode: difference;
@@ -47,7 +47,7 @@
     display: inline-block;
     text-decoration: none;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 1px;
       left: 0;

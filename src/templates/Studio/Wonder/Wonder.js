@@ -3,17 +3,16 @@ import { Engine, Scene, Color3 } from 'babylonjs';
 import styles from './Wonder.module.scss';
 
 // Scenes
-import Sofa from './scenes/Sofa';
-// import Island from '../Wonder/scenes/Island';
+import Sculpture from './scenes/Sculpture';
 import Lighting from './Lighting/Lighting';
 import Camera from './Camera/Camera';
 import World from './World/World';
 import MouseAnimation from './MouseAnimation/MouseAnimation';
-import Mirrors from './Mirrors/Mirrors';
 import Shadows from './Shadows/Shadows';
 import Sun from './Sun/Sun';
+import checkAndroid from '../../../utils/checkAndroid';
 
-const Wonder = ({ introRef }) => {
+const Wonder = () => {
   const canvasRef = useRef();
   const [canvasVisible, setCanvasVisible] = useState(false);
   const [currentEngine, setCurrentEngine] = useState(null);
@@ -21,21 +20,11 @@ const Wonder = ({ introRef }) => {
   const [camera, setCamera] = useState(null);
   const [sun, setSun] = useState(null);
   const [world, setWorld] = useState(null);
-  // const layout = useMemo(() => [Sofa, Island][Math.round(Math.random())], []);
-  const layout = Sofa;
+  const layout = Sculpture;
 
   useEffect(() => {
     if (camera && currentScene && world) {
-      // In the future remove this hard coded model name
-      const model = currentScene.meshes.find(mesh => mesh.id === 'node0_primitive1');
-      if (model) {
-        const radius = model.getBoundingInfo().boundingSphere.radiusWorld;
-        const aspectRatio = currentEngine.getAspectRatio(camera);
-        const halfMinFov = aspectRatio < 1 ? Math.atan(aspectRatio * Math.tan(camera.fov / 2)) : camera.fov / 2;
-        const viewRadius = Math.abs(radius / Math.sin(halfMinFov));
-        camera.radius = viewRadius;
-        setCanvasVisible(true);
-      }
+      setCanvasVisible(true);
     }
 
     return () => {
@@ -51,14 +40,19 @@ const Wonder = ({ introRef }) => {
       engine = new Engine(canvasRef.current, true, {
         preserveDrawingBuffer: true,
         stencil: true,
+        adaptToDeviceRatio: true,
       });
       setCurrentEngine(engine);
     };
-
     const createScene = () => {
       scene = new Scene(engine);
       scene.clearColor = new Color3(0.972549, 0.972549, 0.972549);
+      // Code Used for showing a babylon GUI for easier tweaking
       // scene.debugLayer.show();
+    };
+
+    const onResize = () => {
+      engine.resize();
     };
 
     if (canvasRef.current) {
@@ -69,12 +63,12 @@ const Wonder = ({ introRef }) => {
         setCurrentScene(scene);
       });
 
-      window.addEventListener('resize', engine.resize);
+      window.addEventListener('resize', onResize);
     }
 
     return () => {
       setCurrentScene(null);
-      window.removeEventListener('resize', engine.resize);
+      window.removeEventListener('resize', onResize);
       engine.dispose();
     };
   }, [canvasRef, layout]);
@@ -86,19 +80,38 @@ const Wonder = ({ introRef }) => {
       });
     }
   }, [camera, currentEngine, currentScene]);
-
   return (
     <>
-      <canvas draggable="true" ref={canvasRef} className={`${styles.canvas} ${canvasVisible && styles.isVisible}`} />
+      <canvas
+        draggable="true"
+        ref={canvasRef}
+        className={`${styles.canvas} ${canvasVisible && styles.isVisible}`}
+      />
       {currentScene && !currentScene.isDisposed && (
         <>
-          <Camera canvasRef={canvasRef} layout={layout.camera} onCreateCamera={setCamera} scene={currentScene} />
-          <Lighting layout={layout.light} scene={currentScene} />
-          <World filename={layout.filename} layout={layout.model} onImportWorld={setWorld} scene={currentScene} />
-          <Sun layout={layout.sun} onAddSun={setSun} scene={currentScene} world={world} />
-          <Shadows scene={currentScene} sun={sun} world={world} />
+          <Camera
+            canvasRef={canvasRef}
+            layout={layout.camera}
+            onCreateCamera={setCamera}
+            scene={currentScene}
+          />
+          <Lighting hdr={layout.hdr} scene={currentScene} />
+          <World
+            filename={layout.filename}
+            layout={layout.model}
+            onImportWorld={setWorld}
+            scene={currentScene}
+          />
           <MouseAnimation layout={layout.model} target={world} />
-          <Mirrors layout={layout.mirrors} scene={currentScene} world={world} />
+          <Sun
+            layout={layout.sun}
+            onAddSun={setSun}
+            scene={currentScene}
+            world={world}
+          />
+          {!checkAndroid() && (
+            <Shadows scene={currentScene} sun={sun} world={world} />
+          )}
         </>
       )}
     </>
