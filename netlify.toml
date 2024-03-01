@@ -3,7 +3,7 @@
   command = "npm run build"
   functions = "functions"
   functionsSource = "functionsSrc"
-  publish = ""
+  publish = "public"
 
 [[redirects]]
   from = "/functions/addToNewsletterList"
