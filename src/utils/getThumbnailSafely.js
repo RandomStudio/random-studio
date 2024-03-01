@@ -8,6 +8,6 @@ const getThumbnailSafely = thumbnail => {
   }
 
   return thumbnail.childImageSharp.fixed.src;
-}
+};
 
 export default getThumbnailSafely;

@@ -1,0 +1,19 @@
+.notice {
+  font-size: var(--font-xs);
+  background-color: var(--black);
+  color:var(--white);
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 300ms ease-out 0ms, transform 1ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 301ms;
+  transform: translateX(-50%) translateY(4rem);
+  padding: 0 0.75rem;
+  border-radius: 1rem;
+}
+
+.notice-is-visible {
+  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}

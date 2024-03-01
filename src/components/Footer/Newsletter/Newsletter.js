@@ -11,8 +11,11 @@ const Newsletter = () => {
   const handleSubmit = async event => {
     event.preventDefault();
     setError('');
+
     try {
-      const response = await fetch(`/.netlify/functions/addToNewsletterList?email=${email}`);
+      const response = await fetch(
+        `https://random-studio.netlify.app/.netlify/functions/addToNewsletterList?email=${email}`,
+      );
 
       if (response.ok) {
         setIsSuccessful(true);
@@ -20,32 +23,46 @@ const Newsletter = () => {
         const body = await response.json();
         setError(body.errorMessage);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (responseError) {
+      console.log(responseError);
       setError('Failed to submit. Please check email and try again.');
     }
+
     return false;
   };
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
-      <p className={styles.title}>Newsletter</p>
-      {
-        isSuccessful ? (
-          <>
-            <div className={styles.input}>Thank you!</div>
-            <div className={styles.submit}>
-              <img alt="success" className={styles.check} src="/img/icons/check.svg" />
-            </div>
-          </>
-        ) : (
-          <>
-            <input className={styles.input} onChange={handleInput} placeholder="enter your email address" value={email} type="text" />
-            <input alt="submit" className={styles.submit} src="/img/icons/arrow.svg" type="image" />
-            {error !== '' && <p className={styles.error}>{error}</p>}
-          </>
-        )
-      }
+      <p className={styles.title}>{'Newsletter'}</p>
+      {isSuccessful ? (
+        <>
+          <div className={styles.input}>{'Thank you!'}</div>
+          <div className={styles.submit}>
+            <img
+              alt="success"
+              className={styles.check}
+              src="/img/icons/check.svg"
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <input
+            className={styles.input}
+            onChange={handleInput}
+            placeholder="enter your email address"
+            value={email}
+            type="text"
+          />
+          <input
+            alt="submit"
+            className={styles.submit}
+            src="/img/icons/arrow.svg"
+            type="image"
+          />
+          {error !== '' && <p className={styles.error}>{error}</p>}
+        </>
+      )}
     </form>
   );
 };

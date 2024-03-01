@@ -7,10 +7,10 @@
 .info {
   order: 2;
   margin-bottom: 20vh;
-  padding: 1.4rem;
+  padding: 22px;
 
   p {
-    margin-bottom: 1.2rem;
+    margin-bottom: 19px;
   }
 
   ul {
@@ -19,16 +19,16 @@
     list-style: none;
 
     li::before {
-      content: "- ";
+      content: '- ';
     }
   }
 }
 
 .carouselWrapper {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .infoBlock {
     &:nth-of-type(1),
     &:nth-of-type(2) {
@@ -47,7 +47,7 @@
         }
 
         .info {
-          max-width: 48rem;
+          max-width: 768px;
           margin: 0 auto;
         }
       }
@@ -62,20 +62,20 @@
 
   .info {
     margin: 0;
-    padding: 4.8rem 2rem 7.2rem;
+    padding: 77px 32px 115px;
 
     p {
-      margin-bottom: 1.8rem;
+      margin-bottom: 29px;
     }
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .infoBlock {
     flex-direction: row;
     margin: 0 auto;
     margin-bottom: 20vh;
-    font-size: 1.74rem;
+    font-size: 28px;
     align-items: center;
 
     &:nth-of-type(1) {
@@ -85,12 +85,12 @@
       }
 
       .info {
-        max-width: 53rem;
+        max-width: 848px;
       }
     }
 
     &:nth-of-type(2) {
-      max-width: 72rem;
+      max-width: 1152px;
 
       .carouselWrapper {
         min-width: 43%;
@@ -107,14 +107,14 @@
       }
 
       .info {
-        max-width: 72rem;
-        margin: 3.2rem auto 0;
+        max-width: 1152px;
+        margin: 51.2px auto 0;
       }
     }
   }
 
   .info {
     order: 0;
-    padding: 0 3.2rem;
+    padding: 0 51px;
   }
 }

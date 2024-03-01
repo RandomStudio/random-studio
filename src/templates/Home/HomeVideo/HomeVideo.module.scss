@@ -20,7 +20,7 @@
 
     // Microsoft Edge (pre-chromium) supports object-fit: cover only on img tags, but
     // CSS (obviously) has no concept of element type.
-    @supports (object-fit: cover) and (not (-ms-ime-align:auto)){
+    @supports (object-fit: cover) and (not (-ms-ime-align: auto)) {
       object-fit: cover;
       width: 100%;
       height: 100%;
@@ -42,21 +42,21 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1;
-  padding: 1rem 1.4rem;
+  padding: 16px 22px;
 }
 
 .credits-logo,
 .logo {
-  font-family: "Larish Neue", serif;
+  font-family: 'Larish Neue', serif;
   letter-spacing: -0.01em;
 }
 
 .logo {
   @include blendedText;
   position: absolute;
-  left: 1.4rem;
+  left: 22px;
   font-size: var(--font-logo-small);
   font-weight: normal;
   line-height: 1.1;
@@ -68,17 +68,17 @@
   }
 
   &.is-top {
-    top: 6.5rem;
+    top: 104px;
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .featured-author {
     text-align: right;
   }
 
   .logo {
-    left: 4rem;
+    left: 64px;
 
     &.is-center {
       font-size: var(--font-logo-medium);
@@ -86,27 +86,27 @@
   }
 }
 
-@media (min-width: 54rem) {
+@media (min-width: 864px) {
   .logo {
     right: 0;
     left: 0;
-    max-width: 48rem;
+    max-width: 768px;
 
     &.is-center {
       margin: 0 auto;
-      padding-left: 4rem;
+      padding-left: 64px;
     }
 
     &.is-top {
       margin: 0;
-      padding-left: 2.4rem;
+      padding-left: 38px;
     }
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .logo {
-    max-width: 72rem;
+    max-width: 1152px;
 
     &.is-center {
       font-size: var(--font-logo-large);

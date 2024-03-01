@@ -2,6 +2,40 @@ const postCssCustomProperties = require('postcss-custom-properties');
 
 const gatsbyConfig = {
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            // options: {
+            //   name: "uploads",
+            // },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+              quality: 90,
+              withWebp: {
+                quality: 90,
+              },
+            },
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'static',
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-netlify-cache',
       options: {
@@ -43,43 +77,12 @@ const gatsbyConfig = {
         name: 'site',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            // options: {
-            //   name: "uploads",
-            // },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
-              quality: 90,
-              withWebp: {
-                quality: 90,
-              },
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
-    },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
+        identityWidgetInitConfig: {
+          APIUrl: 'https://random.studio/.netlify/identity',
+        },
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
@@ -87,8 +90,9 @@ const gatsbyConfig = {
   ],
 };
 
-// CONTEXT is a netlify env
-if (process.env.CONTEXT === 'production') {
+if (
+  process.env.NODE_ENV === 'production'
+) {
   const gaConfig = {
     resolve: 'gatsby-plugin-google-analytics',
     options: {

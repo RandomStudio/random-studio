@@ -1,0 +1,20 @@
+.container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+
+	div, img {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.full {
+	opacity: 0;
+	transition: opacity 600ms ease-in;
+	&.isLoaded {
+		opacity: 1;
+	}
+}

@@ -1,11 +1,12 @@
 const checkAndroid = () => {
-  if (navigator.userAgent.match(/Android|webOS/)) {
-    console.log('hello android');
+  if (
+    typeof window !== 'undefined'
+    && window.navigator.userAgent.match(/Android|webOS/)
+  ) {
     return true;
-  } else {
-    console.log('not android');
-    return false;
   }
+
+  return false;
 };
 
 export default checkAndroid;

@@ -7,17 +7,10 @@ intro: >-
   watch at the international watch show Baselworld 2017, we translated the
   qualities of the precious watch into a memorable, intimate voyage.
 priority: 6
-thumbnail:
-  image: /img/chanel1.jpg
-  marginLeft: 0
-  marginTop: -29
-  ratio: 0
-  width: 35
 content:
   - image: /img/chanel2.jpg
     marginLeft: 5
     marginTop: 1
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -32,7 +25,6 @@ content:
       providing for an individual experience.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -40,7 +32,6 @@ content:
       loops: true
   - marginLeft: 6
     marginTop: 0
-    ratio: 56
     video:
       autoplay: true
       hasControls: false
@@ -56,7 +47,6 @@ content:
     image: /img/chanel3.jpg
     marginLeft: 56
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -66,7 +56,6 @@ content:
   - image: /img/chanel4.jpg
     marginLeft: 8
     marginTop: -40
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -76,7 +65,6 @@ content:
   - image: /img/chanel5.jpg
     marginLeft: 25
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -90,7 +78,6 @@ content:
       was offered to each participant afterwards.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -98,7 +85,6 @@ content:
       loops: true
   - marginLeft: 0
     marginTop: 0
-    ratio: 29
     video:
       autoplay: true
       hasControls: false
@@ -119,5 +105,9 @@ credits:
     value: >-
       Heerko Groefsema — 3D Animation, Menno Fokma — Film and Motion Direction,
       Marius Denisse — 3D Animation
+opengraph:
+  ogImage: /img/chanel5.jpg
+  ogTitle: |-
+    A vertical journey through time
+    for Chanel
 ---
-

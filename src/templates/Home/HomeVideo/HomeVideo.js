@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Link } from 'gatsby';
+import Loadable from '@loadable/component';
 import styles from './HomeVideo.module.scss';
+import TakeOverHeader from '../../../random-paris/components/TakeOverHeader/TakeOverHeader';
 
-export default ({ collaborationCredits, layout, videoUrl }) => {
+// const TakeOverHeader = Loadable(() => import(/* webpackPrefetch: true */ '../../../random-paris/components/TakeOverHeader/TakeOverHeader'), {
+// });
+// TakeOverHeader.preload()
+
+// const TakeOverHeader = React.lazy(() => import('../../../random-paris/components/TakeOverHeader/TakeOverHeader'));
+
+// import Loadable from 'react-loadable';
+
+// const TakeOverHeader = Loadable({
+//   loader: () => import('../../../random-paris/components/TakeOverHeader/TakeOverHeader'),
+//   loading() {
+//     return <div>Loading... (rendered from the server)</div>;
+//   },
+// });
+
+const HomeVideo = ({ collaborationCredits, layout, videoUrl }) => {
   const scrollToProjects = event => {
     const projectsBlock = document.getElementById('projects');
     projectsBlock.scrollIntoView({
@@ -12,27 +29,32 @@ export default ({ collaborationCredits, layout, videoUrl }) => {
     event.preventDefault();
   };
 
-  const logoClass = `${styles.logo} ${layout === 'top' ? styles.isTop : styles.isCenter}`;
+  const logoClass = `${styles.logo} ${layout === 'top' ? styles.isTop : styles.isCenter
+    }`;
 
   return (
     <div className={styles.video}>
-      <video src={videoUrl} muted loop autoPlay playsInline />
-      <h1 className={logoClass}>
-        Random
+
+      <TakeOverHeader />
+
+      {/* <video src={videoUrl} muted loop autoPlay playsInline /> */}
+      {/* <h1 className={logoClass}>
+        {'Random'}
         <br />
-        Studio
-      </h1>
-      <Link
+        {'Studio'}
+      </h1> */}
+      {/* <Link
         to="/#projects"
         className={styles.videoOverlay}
         onClick={scrollToProjects}
       >
-        Projects
-      </Link>
-      {collaborationCredits && (
+        {'Projects'}
+      </Link> */}
+
+      {/* {collaborationCredits && (
         <div className={styles.featuredAuthor}>
-          <span className={styles.creditsLogo}>Random Studio</span>
-          <span> × </span>
+          <span className={styles.creditsLogo}>{'Random Studio'}</span>
+          <span>{' × '}</span>
           <span>
             <a
               target="_blank"
@@ -43,7 +65,9 @@ export default ({ collaborationCredits, layout, videoUrl }) => {
             </a>
           </span>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
+
+export default HomeVideo;

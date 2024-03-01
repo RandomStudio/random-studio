@@ -9,17 +9,14 @@ intro: >-
   experiential set up.
 priority: 2
 thumbnail:
-  image: ''
   marginLeft: 3
   marginTop: -5
-  ratio: 56.25
   video: >-
     https://player.vimeo.com/external/210279283.hd.mp4?s=706d9c6149f5bd15d01856a15818b6e9a8702a80&profile_id=119
   width: 45
 content:
   - marginLeft: 5
     marginTop: 0
-    ratio: 53.958
     video:
       autoplay: true
       hasControls: true
@@ -48,7 +45,6 @@ content:
       created with Errolson Hugh of avant-garde label Acronym, NikeLab x ACRNM.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -60,7 +56,6 @@ content:
     image: /img/runner.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -74,7 +69,6 @@ content:
     image: /img/handheld.jpg
     marginLeft: 50
     marginTop: 10
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -86,7 +80,6 @@ content:
       to the runner’s inbox after review, complete with sharing instructions.
     marginLeft: 5
     marginTop: -10
-    ratio: 100
     video:
       autoplay: true
       hasControls: false
@@ -97,7 +90,6 @@ content:
     width: 25
   - marginLeft: 36
     marginTop: -10
-    ratio: 100
     video:
       autoplay: true
       hasControls: false
@@ -117,4 +109,3 @@ credits:
   - key: 'With:'
     value: Ink Associates — Set Construction and Installation
 ---
-

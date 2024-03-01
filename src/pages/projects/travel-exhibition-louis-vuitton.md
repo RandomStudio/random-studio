@@ -8,15 +8,9 @@ intro: >-
   exhibition, we created high-impact entrance statements to welcome guests into
   Louis Vuitton's world of travel.
 priority: 11
-thumbnail:
-  image: /img/6bea20f020e723539956196ada8b6b35.v-vvv-shanghai-49-r3-jpg.jpg
-  marginLeft: 20
-  marginTop: 1
-  width: 60
 content:
   - marginLeft: 15
     marginTop: -1
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -26,12 +20,12 @@ content:
         https://player.vimeo.com/external/315657115.hd.mp4?s=2c7ef7d81570e7789ba2e6e4141fe416027a3c0b&profile_id=175
     width: 70
   - caption: >-
-      For the Shanghai edition, we created an atmospheric space, in-between
-      night and day, adorned with lanterns and flooded by neon light. Hanging
-      from the ceiling in an assortment of shapes and sizes, each lantern was
-      embedded with LED panel with synchronised scrolling messages and graphics,
-      welcoming visitors. Overhead, we installed an ever-shifting digital
-      ‘skylight’, animated by moving clouds and glowing colours.
+      For the Shanghai edition, we created an entrance statement. An atmospheric
+      space, in-between night and day, adorned with lanterns and flooded by neon
+      light. Hanging from the ceiling in an assortment of shapes and sizes, each
+      lantern was embedded with LED panel with synchronised scrolling messages
+      and graphics, welcoming visitors. Overhead, we installed an ever-shifting
+      digital ‘skylight’, animated by moving clouds and glowing colours.
     marginLeft: -1
     marginTop: 0
   - image: /img/e2fbc4e07e3fbcb16864246249628322-1-.v-vvv-shanghai-22-jpg.jpg
@@ -54,7 +48,6 @@ content:
     marginTop: 0
   - marginLeft: 15
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -88,7 +81,6 @@ content:
       /img/4a4efa9d7ab8fd2119b33f2b1ff43bbe.andomstudio-louisvuitton-vvv-seoul-03-jpg.jpg
     marginLeft: 50
     marginTop: -20
-    ratio: 0
     width: 40
   - caption: >-
       For the New York edition of the exhibition, our space was a long corridor
@@ -105,7 +97,6 @@ content:
     width: 70
   - marginLeft: 18
     marginTop: 10
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: true
@@ -137,4 +128,3 @@ credits:
   - key: 'With:'
     value: Naivi — Unreal development
 ---
-

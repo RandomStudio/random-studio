@@ -9,7 +9,6 @@ priority: 7
 thumbnail:
   marginLeft: 45
   marginTop: -10
-  ratio: 66.66666
   video: >-
     https://player.vimeo.com/external/345424708.sd.mp4?s=a56e2835c27be9fff2b4f140eb5edc679a619e12&profile_id=165
   width: 52
@@ -17,7 +16,6 @@ content:
   - caption: ''
     marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -33,7 +31,6 @@ content:
       experience the world.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -41,7 +38,6 @@ content:
       loops: true
   - marginLeft: 0
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -60,7 +56,6 @@ content:
       photographed, placed in your hands in the shape of a giant bouncy ball.
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -69,7 +64,6 @@ content:
   - image: /img/ball.jpg
     marginLeft: 0
     marginTop: 0
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -84,10 +78,8 @@ content:
       physical space, the addictive experience of playing somewhere in-between
       the two triggers a split-second of awe when you realise what is in your
       power.
-    image: ''
     marginLeft: 0
     marginTop: 3
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -95,7 +87,6 @@ content:
       loops: true
   - marginLeft: 35
     marginTop: 0
-    ratio: 56.25
     video:
       autoplay: true
       hasControls: false
@@ -108,7 +99,6 @@ content:
     image: /img/sun1.jpg
     marginLeft: 12
     marginTop: 5
-    ratio: 0
     video:
       autoplay: false
       hasControls: false
@@ -121,4 +111,3 @@ credits:
   - key: 'With:'
     value: Philip Schütte
 ---
-

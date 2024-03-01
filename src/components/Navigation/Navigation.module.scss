@@ -1,46 +1,46 @@
 @import '../../styles/mixins';
 
 .nav {
-  @include blendedText;
+  @include blendedText(black, normal);
+
   display: flex;
   position: fixed;
   top: 0;
-  padding: 1.4rem;
+  padding: 22px;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 19px;
   line-height: 1;
-  mix-blend-mode: difference;
   pointer-events: all;
 
   a {
     display: inline-block;
     text-decoration: none;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.32px;
 
     & + a {
-      margin-left: 2rem;
+      margin-left: 32px;
     }
   }
 }
 
-@media (min-width: 36rem) {
+@media (min-width: 576px) {
   .nav {
     font-size: var(--font-small);
-    padding: 2rem;
+    padding: 32px;
 
     a + a {
-      margin-left: 2.4rem;
+      margin-left: 38px;
     }
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .nav {
-    font-size: 1.74rem;
-    padding: 2.4rem;
+    font-size: 28px;
+    padding: 38px;
 
     a + a {
-      margin-left: 3.2rem;
+      margin-left: 51px;
     }
   }
 }

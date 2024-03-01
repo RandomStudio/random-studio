@@ -8,6 +8,21 @@ import BackScrim from './BackScrim/BackScrim';
 
 export const pageQuery = graphql`
   query ProjectById($id: String!) {
+    allProjects: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Project" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+
     markdownRemark(id: { eq: $id }) {
       fields {
         slug
@@ -19,22 +34,50 @@ export const pageQuery = graphql`
           caption
           image {
             childImageSharp {
-              fluid(maxWidth: 1920, quality: 80) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 3840, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
+          alt
           marginTop
           marginLeft
-          ratio
+          zIndex
           video {
-            url
             autoplay
-            isMuted
             hasControls
+            isAlwaysMuted
+            isMuted
             loops
+            url
+          }
+          carousel {
+            url
+            caption
+            image {
+              childImageSharp {
+                fluid(maxHeight: 700, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           width
+        }
+        relatedProjects {
+          blockTitle
+          projects {
+            title
+            subtitle
+            image {
+              childImageSharp {
+                fluid(maxWidth: 3840, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+            project
+          }
         }
         credits {
           key
@@ -56,32 +99,30 @@ export const pageQuery = graphql`
   }
 `;
 
-export default ({
-  data: {
-    markdownRemark: {
-      fields: {
-        slug,
-      },
-      frontmatter: project,
-    },
-  },
-}) => {
+const Project = props => {
   const {
-    opengraph,
-  } = project;
+    data: {
+      allProjects: { edges: allProjects },
+      markdownRemark: {
+        fields: { slug },
+        frontmatter: project,
+      },
+    },
+  } = props;
+
+  const { opengraph } = project;
 
   const returnSlug = `#${slug}`;
 
-  const socialTitle = (opengraph && opengraph.ogTitle)
-    ? opengraph.ogTitle
-    : undefined;
+  const socialTitle = opengraph && opengraph.ogTitle ? opengraph.ogTitle : undefined;
 
-  const socialDescription = (opengraph && opengraph.ogDescription)
+  const socialDescription = opengraph && opengraph.ogDescription
     ? opengraph.ogDescription
     : undefined;
 
-  const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null)
-    || undefined;
+  const SEOImage = (opengraph ? getThumbnailSafely(opengraph.ogImage) : null) || undefined;
+
+  console.log(project);
 
   return (
     <Layout>
@@ -93,8 +134,10 @@ export default ({
         socialDescription={socialDescription}
         socialTitle={socialTitle}
       />
-      <ProjectDetail {...project} />
+      <ProjectDetail {...project} allProjects={allProjects} />
       {typeof window !== 'undefined' && <BackScrim returnUrl={returnSlug} />}
     </Layout>
   );
 };
+
+export default Project;

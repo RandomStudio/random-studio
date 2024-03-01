@@ -2,17 +2,18 @@
   width: 100%;
   font-weight: 100;
   line-height: 1.3;
-  background: rgb(191, 191, 191);
-  padding: 5rem 0;
+  background: var(--off-white);
+  padding: 80px 0;
+  overflow-x: hidden;
 }
 
 .item {
   line-height: 1.3;
   position: relative;
+  margin-bottom: 10%;
 
   video {
     display: block;
-    position: absolute;
     width: 100%;
   }
 
@@ -27,7 +28,7 @@
   line-height: 1.3;
   font-weight: normal;
   margin: 10vw 0;
-  padding: 0 1.4rem;
+  padding: 0 22px;
 }
 
 .title,
@@ -41,12 +42,6 @@
 
 .intro {
   margin-top: 1.2931578947em;
-}
-
-.caption {
-  font-size: 1rem;
-  line-height: 1.3;
-  padding: 1.4rem;
 }
 
 .intro,
@@ -63,27 +58,46 @@
 }
 
 .credits {
-  margin-bottom: 5%;
-  padding: 8rem 1.4rem 0;
-  max-width: 60rem;
+  margin: 10vw 0 5%;
+  padding: 128px 22px 0;
 
   ul {
-    padding-bottom: 1.4rem;
+    padding-bottom: 22px;
     line-height: 1.3;
 
     li:first-of-type {
-      max-width: 7.2rem;
-      padding-right: 2.4rem;
+      max-width: 115px;
+      padding-right: 38px;
     }
+  }
+
+  &.creditsAdjustedSpacing {
+    margin-top: 100px;
+    padding-top: 0;
   }
 }
 
-@media (min-width: 36rem) {
+.carouselWrapper {
+  flex: 1;
+  max-width: 88%;
+  margin-left: 6%;
+
+  @media (min-width: 48rem) {
+    max-width: 50%;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .project {
+    padding-top: 128px;
+  }
+
   .title,
   .intro,
   .text {
     margin: 8vw 0;
-    padding: 0 4rem;
+    padding: 0 64px;
   }
 
   .title,
@@ -98,19 +112,30 @@
 
   .item {
     margin-top: var(--marginTop);
+    margin-bottom: 0;
     margin-left: var(--marginLeft);
     width: var(--width);
   }
 
+  .carousel {
+    margin-top: var(--carouselMarginTop);
+    margin-bottom: 0;
+    margin-left: var(--carouselMarginLeft);
+    width: var(--carouselWidth);
+  }
+
   .caption {
-    max-width: 23rem;
-    padding: 0.4rem 0 0;
+    max-width: 368px;
+    padding: 6px 0 0;
   }
 
   .credits {
+    width: var(--width);
+    margin: 8vw 0;
+    padding: 128px 64px 0;
+
     ul {
       display: flex;
-      padding: 0 4rem;
       li {
         flex: 1;
       }
@@ -118,23 +143,29 @@
   }
 }
 
-@media (min-width: 54rem) {
+@media (min-width: 864px) {
+  .project {
+    padding-top: 192px;
+  }
+
   .title,
   .intro,
   .text {
-    max-width: 48rem;
-    margin: 0 auto;
+    max-width: 768px;
   }
 
   .title,
   .intro {
     font-size: var(--font-med);
-    margin: 1em auto;
   }
 
   .text,
   .credits {
-    font-size: 1.74rem;
+    font-size: 28px;
+  }
+
+  .title {
+    margin: 2em auto;
   }
 
   .intro {
@@ -146,18 +177,21 @@
   }
 
   .credits {
-    padding-right: 4.8rem;
-    padding-left: 4.8rem;
-    margin: 0 auto;
-    margin-bottom: 8%;
+    max-width: 768px;
+    margin: 0 auto 8%;
+
+    &.creditsAdjustedSpacing {
+      margin-top: 120px;
+    }
   }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 1152px) {
   .title,
   .intro,
-  .text {
-    max-width: 64rem;
+  .text,
+  .credits {
+    max-width: 1024px;
   }
 
   .title,

@@ -4,27 +4,26 @@ import styles from './JobOffer.module.scss';
 
 const JobOffer = ({
   closeOpenOffer,
-  offer: {
-    title, description, requirements, careers_apply_url,
+  opening: {
+    jobTitle, jobDescription, jobURL,
   },
 }) => (
   <section className={styles.jobOffer}>
     <div>
       <header>
-        <strong>{title}</strong>
+        <strong>{jobTitle}</strong>
         <button className={styles.closeButton} onClick={closeOpenOffer}>
-            &times;
+          &times;
         </button>
       </header>
 
-      <div dangerouslySetInnerHTML={{ __html: description }} />
-      <div dangerouslySetInnerHTML={{ __html: requirements }} />
+      <div dangerouslySetInnerHTML={{ __html: jobDescription }} />
       <OutboundLink
         target="blank"
-        href={careers_apply_url}
+        href={jobURL}
         className={styles.applyButton}
       >
-          Apply for this position
+        {'Apply for this position'}
       </OutboundLink>
     </div>
   </section>
