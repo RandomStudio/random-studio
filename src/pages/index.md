@@ -64,7 +64,7 @@ projects:
   - caption: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br> for the launch of Chanel's new watch
     thumbnail:
-      image: /img/thumbnail_chanel-1-.png
+      image: /img/thumbnail_chanel-1-.jpg
       width: 55
       marginLeft: 35
       marginTop: 15

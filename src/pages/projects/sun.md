@@ -105,7 +105,7 @@ content:
         https://player.vimeo.com/external/294743163.hd.mp4?s=4c383006babd7960c861d4503c5eec2601e80d69&profile_id=175
     width: 65
   - caption: Venice
-    image: /img/sun1.png
+    image: /img/sun1.jpg
     marginLeft: 12
     marginTop: 5
     ratio: 0

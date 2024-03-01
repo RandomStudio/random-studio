@@ -52,7 +52,7 @@ content:
       url: >-
         https://player.vimeo.com/external/213647797.hd.mp4?s=ffdefed446dbeb98b6dbb99476938f725c236a85&profile_id=119
     width: 56
-  - image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
+  - image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184fjpg
     marginLeft: 60
     marginTop: -15
     width: 40

@@ -16,7 +16,7 @@ intro: >-
   solution to the puzzle: the Tommy Hilfiger Kids Machine.
 priority: 7.5
 thumbnail:
-  image: /img/thumbnail_kidsmachine.png
+  image: /img/thumbnail_kidsmachine.jpg
   marginLeft: 5
   marginTop: 0
   ratio: 66.666666666

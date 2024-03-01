@@ -14,7 +14,7 @@ intro: >-
   directed by a series of short campaign films.
 priority: 7.75
 thumbnail:
-  image: /img/thumbnail_chanel-1-.png
+  image: /img/thumbnail_chanel-1-.jpg
   width: 55
   marginLeft: 35
   marginTop: 15
