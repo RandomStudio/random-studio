@@ -9,7 +9,7 @@ Static website for Random Studio, built using Next.js.
 - Hosted on Netlify, content managed via DatoCMS
 - Deploys are handled by Netlify and automatically triggered on pushing to any branch, as well as when content is updated in DatoCMS
 
-## Archived special editions\
+## Archived special editions
 
 - [Studio Photogrammetry wonder (Dec 2019)](https://archive-studio-wonder--sage-melomakarona-00e1a3.netlify.app/)
 - [Studio Photogrammetry with Daan wonder (unreleased)](https://archive-studio-with-daan-wonder--sage-melomakarona-00e1a3.netlify.app/)
