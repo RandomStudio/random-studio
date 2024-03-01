@@ -17,7 +17,7 @@ content:
     marginTop: 0
     marginLeft: 0
     zIndex: 0
-    image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
+    image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.jpg
   - video:
       autoplay: false
       hasControls: false
@@ -121,5 +121,5 @@ opengraph:
     collection captured the body in motion. We created campaign photography, an
     event and a blueprint for all in-store installations that played with
     sequence, function and change. "
-  ogImage: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
+  ogImage: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.jpg
 ---

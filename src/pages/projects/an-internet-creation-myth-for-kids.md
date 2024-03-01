@@ -52,7 +52,7 @@ content:
       isAlwaysMuted: false
     marginTop: -6
     marginLeft: 61
-    image: /img/parallel_archaeologies_geoffrey_lillemon_well_portrait.png
+    image: /img/parallel_archaeologies_geoffrey_lillemon_well_portrait.jpg
     width: 30
   - video:
       autoplay: false
@@ -83,7 +83,7 @@ content:
       isAlwaysMuted: false
     marginTop: -6
     marginLeft: 6
-    image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
+    image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.jpg
     width: 35
   - video:
       autoplay: false
@@ -127,7 +127,7 @@ content:
       isAlwaysMuted: false
     marginTop: -1
     marginLeft: 7
-    image: /img/parallel_archaeologies_geoffrey_lillemon_well.png
+    image: /img/parallel_archaeologies_geoffrey_lillemon_well.jpg
     width: 32
   - video:
       autoplay: false

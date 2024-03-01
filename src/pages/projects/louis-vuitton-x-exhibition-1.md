@@ -76,7 +76,7 @@ content:
       hasControls: false
       isMuted: true
       loops: true
-  - image: /img/65453893_815006268886585_7648533371953348608_n.png
+  - image: /img/65453893_815006268886585_7648533371953348608_n.jpg
     marginLeft: 20
     marginTop: 9
     video:
@@ -85,7 +85,7 @@ content:
       isMuted: true
       loops: true
     width: 8
-  - image: /img/65445113_893189817697135_6332105627778678784_n.png
+  - image: /img/65445113_893189817697135_6332105627778678784_n.jpg
     marginLeft: 46
     marginTop: -8
     video:
@@ -94,7 +94,7 @@ content:
       isMuted: true
       loops: true
     width: 8
-  - image: /img/65415586_385629605409287_4618380884599373824_n.png
+  - image: /img/65415586_385629605409287_4618380884599373824_n.jpg
     marginLeft: 72
     marginTop: -8
     video:
@@ -142,6 +142,6 @@ opengraph:
   ogDescription: >-
     Tasked with bringing the brand’s heritage into the now, we designed LED
     paneling into the walls and ceiling of the ‘Origins Room’.
-  ogImage: /img/65445113_893189817697135_6332105627778678784_n.png
+  ogImage: /img/65445113_893189817697135_6332105627778678784_n.jpg
   ogTitle: "Louis Vuitton X –\_ Exhibition Space and Filters"
 ---

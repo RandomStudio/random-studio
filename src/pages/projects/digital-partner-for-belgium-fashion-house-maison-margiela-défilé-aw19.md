@@ -91,7 +91,7 @@ relatedProjects:
     - title: Artisanal AW19
       project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
         AW19
-      image: /img/Artisanal_AW19.png
+      image: /img/Artisanal_AW19.jpg
     - title: Artisanal SS19
       project: Digital Partner for Belgium Fashion House Maison Margiela – Artisanal
         SS19
@@ -109,5 +109,5 @@ credits:
       With:
     value: Lonneke van der Palen – Photography
 opengraph:
-  ogImage: /img/Defile_AW19.png
+  ogImage: /img/Defile_AW19.jpg
 ---

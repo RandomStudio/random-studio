@@ -47,7 +47,7 @@ content:
             url: >-
               https://player.vimeo.com/external/213647797.hd.mp4?s=ffdefed446dbeb98b6dbb99476938f725c236a85&profile_id=119
           - carouselCaption: Caption under 3rd Image
-            image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
+            image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.jpg
             type: images
         ratio: 0
         showIndicator: true
@@ -111,7 +111,7 @@ opengraph:
     For the launch of the 2017 ACG (All Conditions Gear) collection, we created
     various stylised weather conditions (wind, rain and fog) that seized two of
     the brand’s stores around the globe.
-  ogImage: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
+  ogImage: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.jpg
   ogTitle: Various in-store installations for NikeLab
 ---
 

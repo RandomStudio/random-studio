@@ -43,7 +43,7 @@ projects:
       marginLeft: 11
       video: ""
       width: 40
-      image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.png
+      image: /img/parallel-archaeologies-google-chrome-2020-09-30-09-03-31-01811.jpg
     project: An internet creation myth for kids
     caption: An internet creation myth for kids
   - thumbnail:
@@ -87,7 +87,7 @@ projects:
   - caption: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     project: A store takeover at Place Vendôme <br>for the launch of Chanel's new watch
     thumbnail:
-      image: /img/thumbnail_chanel-1-.png
+      image: /img/thumbnail_chanel-1-.jpg
       marginLeft: 50
       marginTop: -14
       width: 50
@@ -242,7 +242,7 @@ projects:
   - thumbnail:
       marginTop: 0
       marginLeft: 0
-      image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.png
+      image: /img/054_Nike_JFS NYC WPR Event_LD_portfolio1 1.jpg
       width: 40
     caption: "Nike x JFS Collection "
 articles:

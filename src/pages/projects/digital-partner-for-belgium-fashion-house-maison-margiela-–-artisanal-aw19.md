@@ -194,7 +194,7 @@ relatedProjects:
       project: Digital Partner for Belgium Fashion House Maison Margiela – Défilé SS20
       image: /img/maisonmargiela_90027053_202638440836796_1048499944382231102_n.jpg
     - title: Défilé AW19
-      image: /img/Defile_AW19.png
+      image: /img/Defile_AW19.jpg
       project: "Digital Partner for Belgium Fashion House Maison Margiela – Défilé
         AW19 "
     - title: Artisanal SS19
@@ -214,7 +214,7 @@ credits:
       With:
     value: Lonneke van der Palen – Photography
 opengraph:
-  ogImage: /img/Artisanal_AW19.png
+  ogImage: /img/Artisanal_AW19.jpg
   ogTitle: Maison Margiela – Artisanal AW19
   ogDescription: The final stage of this cycle of decadence, this collection
     presents a breakdown of social structure and a carte-blanche for the future.

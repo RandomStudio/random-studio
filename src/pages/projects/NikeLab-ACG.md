@@ -57,7 +57,7 @@ content:
       loops: true
       isMuted: true
       isAlwaysMuted: false
-    image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.png
+    image: /img/1f20dde2a6cd5e4cdbe1d4aeba8d184f.jpg
     marginLeft: 60
     marginTop: -15
     width: 40

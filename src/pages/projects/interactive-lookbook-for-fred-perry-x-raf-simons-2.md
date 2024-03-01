@@ -118,7 +118,7 @@ content:
       isMuted: true
       loops: true
     width: 40
-  - image: /img/7.png
+  - image: /img/7.jpg
     marginLeft: 15
     marginTop: 35
     video:
@@ -127,7 +127,7 @@ content:
       isMuted: true
       loops: true
     width: 70
-  - image: /img/8.png
+  - image: /img/8.jpg
     marginLeft: 15
     marginTop: 5
     video:
