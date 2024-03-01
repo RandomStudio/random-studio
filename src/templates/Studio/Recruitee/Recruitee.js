@@ -17,7 +17,14 @@ const Recruitee = ({ location }) => {
     // IE11 and lower
     if (window.fetch) {
       fetch('https://career.recruitee.com/api/c/23038/widget/?widget=true')
-        .then(res => res.json())
+        .then(async res => {
+          try {
+            const json = await res.json();
+            return json;
+          } catch (e) {
+            return {};
+          }
+        })
         .then(json => {
           setRecruiteeData(json);
 
