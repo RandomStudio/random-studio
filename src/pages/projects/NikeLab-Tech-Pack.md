@@ -9,7 +9,7 @@ intro: >-
   workings of the collection.
 priority: 9
 thumbnail:
-  image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.png
+  image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.jpg
   marginLeft: 62
   marginTop: -30
   ratio: 0

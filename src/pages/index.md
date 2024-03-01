@@ -41,7 +41,7 @@ projects:
   - caption: An immersive in-store environment for NikeLab Milano
     project: 'An immersive in-store environment for NikeLab Milano'
     thumbnail:
-      image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.png
+      image: /img/28e8f9e69942cf38dcb142c3e245f4fe.ike-milaan-162.jpg
       marginLeft: 62
       marginTop: -30
       ratio: 0
