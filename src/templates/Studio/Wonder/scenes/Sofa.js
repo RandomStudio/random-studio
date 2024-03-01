@@ -6,8 +6,8 @@ const camera = {
 };
 
 const filename = {
-  path: '/models/sofa/Small/',
-  file: 'sittingisland-final.simplified.compressed.glb',
+  path: '/models/sofa/SmallWithDaan/',
+  file: 'sittingisland-newtable.simplified.optimized.glb',
 };
 
 const mirrors = [
