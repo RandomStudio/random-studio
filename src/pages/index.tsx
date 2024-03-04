@@ -35,7 +35,7 @@ const Home = ({
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
 
-    <ChunkedPartyHeader isLive={true} />
+    <ChunkedPartyHeader />
 
     <ProjectList hasLimit intro={intro} projects={projects} />
   </Layout>
