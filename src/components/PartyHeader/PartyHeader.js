@@ -39,7 +39,7 @@ const PartyHeader = ({ isLive }) => {
     };
 
     const getInitialData = async () => {
-      const { data } = await supabase.from('shapes');
+      const { data } = await supabase.from('postparty_shapes');
 
       setShapes(
         data.map(({ coords, ...rest }) => ({
@@ -53,7 +53,7 @@ const PartyHeader = ({ isLive }) => {
       getInitialData();
     }
 
-    supabase.from('shapes').on('INSERT', handleUpdates).subscribe();
+    supabase.from('postparty_shapes').on('INSERT', handleUpdates).subscribe();
 
     return () => {
       supabase.removeAllSubscriptions();
