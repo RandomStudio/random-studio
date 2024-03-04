@@ -15,6 +15,8 @@ Static website for Random Studio, built using Next.js.
 - [Studio Photogrammetry with Daan wonder (unreleased)](https://archive-studio-with-daan-wonder--sage-melomakarona-00e1a3.netlify.app/)
 - [Geoff/Jurgis Sculpture wonder (Feb 2020)](https://archive-sculpture--sage-melomakarona-00e1a3.netlify.app/)
 - [Paris announcement (May 2021)](https://archive-paris-announcement--sage-melomakarona-00e1a3.netlify.app/)
+- [Cave Painting live (Apr 2022)](https://archive-laser-painting--sage-melomakarona-00e1a3.netlify.app/)
+- [Cave Painting Evolution Party playback (Apr 2022)](https://archive-evolution-party--sage-melomakarona-00e1a3.netlify.app/)
 
 ## Deploy workflow
 - Push to a branch on Github to start a deploy to Netlify
