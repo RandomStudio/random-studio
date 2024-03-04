@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-param-reassign */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Group } from 'three';
 import {
   createCamera,
@@ -12,20 +12,26 @@ import {
 } from './threeUtils';
 import styles from './World.module.scss';
 
+let raf;
+let camera;
+let canvasEl;
+let canvasMaterial;
+let points;
+let renderer;
+let scene;
+
 const drawShapes = (ctx, frameCount, shapes, onDeleteShape) => {
   for (const { color, coords, end, id, start } of shapes) {
-    if (frameCount < start) {
+    if (frameCount < start || frameCount > end + 100) {
       continue;
     }
 
     const alpha = frameCount < end ? 1 : 1 - (frameCount - end) / 100;
 
     if (alpha <= 0) {
-      onDeleteShape(id);
       continue;
     }
 
-    // ctx.strokeStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${alpha})`;
     ctx.beginPath();
     const rgba = color.replace('rgb', 'rgba').replace(')', '');
     ctx.strokeStyle = `${rgba}, ${alpha})`;
@@ -42,7 +48,7 @@ const drawShapes = (ctx, frameCount, shapes, onDeleteShape) => {
       (coords.length / lifespan) * (frameCount - start),
     );
 
-    for (let i = 1; i < visibleCoords; i++) {
+    for (let i = 1; i < visibleCoords; i += 1) {
       ctx.lineTo(coords[i].x, coords[i].y);
     }
 
@@ -51,16 +57,7 @@ const drawShapes = (ctx, frameCount, shapes, onDeleteShape) => {
   }
 };
 
-let raf;
-let camera;
-let canvasEl;
-let canvasMaterial;
-let ctx;
-let points;
-let renderer;
-let scene;
-
-const World = ({ frameRef, isLive, onDeleteShape, shapes }) => {
+const World = ({ frameRef, onDeleteShape, shapes }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const canvasRef = useRef();
   const textureCanvasRef = useRef();
@@ -74,7 +71,6 @@ const World = ({ frameRef, isLive, onDeleteShape, shapes }) => {
       const [plane, canvas, material] = createCanvas(textureCanvasRef.current);
       canvasMaterial = material;
       canvasEl = canvas;
-      ctx = canvasEl.getContext('2d');
       const [model, pointsMaterial] = await loadModel();
       points = pointsMaterial;
       const group = new Group();
@@ -89,8 +85,10 @@ const World = ({ frameRef, isLive, onDeleteShape, shapes }) => {
     handleLoad();
   }, []);
 
+  const [isOffscreen, setIsOffscreen] = useState(false);
+
   useEffect(() => {
-    if (!isLoaded) {
+    if (!isLoaded || shapes.length < 1) {
       return undefined;
     }
 
@@ -107,27 +105,59 @@ const World = ({ frameRef, isLive, onDeleteShape, shapes }) => {
         },
     );
 
-    const animate = () => {
-      frameRef.current += 1;
-      // if (resizeRendererToDisplaySize(renderer)) {
-      //   camera.aspect = canvas.clientWidth / canvas.clientHeight;
-      //   camera.updateProjectionMatrix();
-      // }
-      ctx.clearRect(0, 0, 1920, 1080);
-      drawShapes(ctx, frameRef.current, transformedShapes, onDeleteShape);
+    const animate3D = () => {
       canvasMaterial.map.needsUpdate = true;
-
       renderer.render(scene, camera);
-
-      raf = requestAnimationFrame(animate);
+      raf = requestAnimationFrame(animate3D);
     };
 
-    raf = window.requestAnimationFrame(animate);
+    raf = window.requestAnimationFrame(animate3D);
+
+    if (
+      typeof textureCanvasRef.current.transferControlToOffscreen === 'function'
+    ) {
+      if (isOffscreen) {
+        return;
+      }
+
+      const offscreen = textureCanvasRef.current.transferControlToOffscreen();
+
+      const worker = new Worker('/workers/drawing.worker.js');
+
+      worker.postMessage(
+        {
+          canvas: offscreen,
+          shapes: transformedShapes,
+        },
+        [offscreen],
+      );
+
+      setIsOffscreen(true);
+    } else {
+      const startRendering = async () => {
+        const ctx = canvasEl.getContext('2d');
+
+        console.log('start');
+
+        const animate = () => {
+          frameRef.current += 5;
+
+          ctx.clearRect(0, 0, 1920, 1080);
+          drawShapes(ctx, frameRef.current, transformedShapes);
+
+          raf = requestAnimationFrame(animate);
+        };
+
+        raf = requestAnimationFrame(animate);
+      };
+
+      startRendering();
+    }
 
     return () => {
       window.cancelAnimationFrame(raf);
     };
-  }, [frameRef, isLive, isLoaded, onDeleteShape, shapes]);
+  }, [frameRef, isLoaded, isOffscreen, shapes]);
 
   useEffect(() => {
     if (!isLoaded) {
