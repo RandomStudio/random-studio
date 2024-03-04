@@ -6,6 +6,14 @@ import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
 import { Project, VideoData } from '../types/types';
+import dynamic from 'next/dynamic';
+
+const ChunkedPartyHeader = dynamic(
+  () => import('../components/PartyHeader/PartyHeader'),
+  {
+    ssr: false,
+  },
+);
 
 type HomeProps = {
   collaborator: string;
@@ -27,11 +35,7 @@ const Home = ({
   <Layout isLogoCentred={isLogoCentred}>
     <Head />
 
-    <HomeVideo
-      collaborationUrl={collaborationUrl}
-      collaborator={collaborator}
-      video={video}
-    />
+    <ChunkedPartyHeader isLive={true} />
 
     <ProjectList hasLimit intro={intro} projects={projects} />
   </Layout>
