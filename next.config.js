@@ -45,6 +45,11 @@ module.exports = withBundleAnalyzer({
         destination: '/projects/nikelab-tech-pack',
         permanent: false,
       },
+      {
+        source: '/cave',
+        destination: 'https://archive-laser-painting--sage-melomakarona-00e1a3.netlify.app/',
+        permanent: false,
+      },
     ];
   },
 });
