@@ -10,3 +10,7 @@
   from = "/future-forest"
   to = "/video/fe4a1225-a115-4e7e-9170-402ca2b17b31"
   status = 301
+
+  from = "/cave"
+  to = "https://archive-laser-painting--sage-melomakarona-00e1a3.netlify.app"
+  status = 301
