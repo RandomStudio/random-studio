@@ -14,4 +14,4 @@
 [[redirects]]
   from = "/cave"
   to = "https://archive-laser-painting--sage-melomakarona-00e1a3.netlify.app"
-  status = 200
+  status = 301
