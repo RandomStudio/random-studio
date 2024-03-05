@@ -47,7 +47,9 @@ module.exports = withBundleAnalyzer({
       },
       {
         source: '/cave',
-        destination: 'https://archive-laser-painting--sage-melomakarona-00e1a3.netlify.app/',
+        destination:
+          'https://archive-laser-painting--sage-melomakarona-00e1a3.netlify.app/',
+        basePath: false,
         permanent: false,
       },
     ];
