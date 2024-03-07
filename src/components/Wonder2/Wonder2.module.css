@@ -1,0 +1,21 @@
+.canvas {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  pointer-events: all;
+  width: 100vw;
+  height: 100vh;
+  transform-origin: bottom right;
+  transition: scale 0.3s;
+  contain: strict;
+  scale: var(--wonder-scale, 0);
+
+  &.isFocused {
+    scale: 1;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

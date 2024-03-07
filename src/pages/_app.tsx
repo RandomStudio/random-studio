@@ -1,8 +1,14 @@
 import '../styles/global.scss';
 import { useRouter } from 'next/router';
-import React from 'react';
+import dynamic from 'next/dynamic';
+import React, { useRef, useState } from 'react';
+import classNames from 'classnames';
 import styles from './App.module.scss';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
+
+const Wonder2 = dynamic(() => import('../components/Wonder2/Wonder2'), {
+  ssr: false,
+});
 
 type AppProps = {
   Component: React.FC;
@@ -16,12 +22,31 @@ type AppProps = {
 
 const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
   const router = useRouter();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const [isWonderFocused, setIsWonderFocused] = useState(false);
+
+  const hasWonder = typeof window !== 'undefined' && window.innerWidth > 768;
+
+  const pageClassNames = classNames(styles.page, {
+    [styles.isWonderFocused]: isWonderFocused,
+  });
 
   return (
     <ErrorBoundary>
-      <>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
+      <div ref={containerRef}>
+        <div className={pageClassNames}>
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+        </div>
+
+        {hasWonder && (
+          <Wonder2
+            containerRef={containerRef}
+            isWonderFocused={isWonderFocused}
+            setIsWonderFocused={setIsWonderFocused}
+          />
+        )}
 
         {isPreview && (
           <div className={styles.preview}>
@@ -34,7 +59,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
             </a>
           </div>
         )}
-      </>
+      </div>
     </ErrorBoundary>
   );
 };

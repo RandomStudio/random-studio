@@ -16,6 +16,10 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "3.6.0",
+    "@react-spring/web": "^9.7.3",
+    "@react-three/drei": "^9.99.7",
+    "@react-three/fiber": "^8.15.19",
+    "@types/three": "^0.162.0",
     "classnames": "^2.3.2",
     "graphql-request": "5.1.0",
     "hls.js": "1.4.10",
@@ -25,6 +29,7 @@
     "react-markdown": "8.0.5",
     "rehype-raw": "^6.1.1",
     "swr": "2.2.1",
+    "three": "^0.162.0",
     "zustand": "^4.3.9"
   },
   "devDependencies": {
