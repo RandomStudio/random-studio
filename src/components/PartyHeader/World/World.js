@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-param-reassign */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { use, useEffect, useRef, useState } from 'react';
 import { Group } from 'three';
 import {
   createCamera,
@@ -11,6 +11,7 @@ import {
   setupScene,
 } from './threeUtils';
 import styles from './World.module.scss';
+import { recordCanvas } from './recorderUtils';
 
 const drawShapes = (ctx, frameCount, shapes, onDeleteShape) => {
   for (const { color, coords, end, id, start } of shapes) {
@@ -128,6 +129,13 @@ const World = ({ frameRef, isLive, onDeleteShape, shapes }) => {
       window.cancelAnimationFrame(raf);
     };
   }, [frameRef, isLive, isLoaded, onDeleteShape, shapes]);
+
+  useEffect(() => {
+    window.recordVideo = (time = 4000) => {
+      frameRef.current += 0;
+      recordCanvas(canvasEl, time);
+    };
+  }, [frameRef, isLoaded]);
 
   useEffect(() => {
     if (!isLoaded) {
