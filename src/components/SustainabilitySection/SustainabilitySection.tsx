@@ -1,8 +1,9 @@
 import classNames from 'classnames';
 import styles from './SustainabilitySection.module.css';
-import Image from '../Image/Image';
+
 import Markdown from '../Markdown/Markdown';
 import type { SustainabilityBlock } from '../../types/types';
+import PixelatedImage from '../PixelatedImage/PixelatedImage';
 
 type SustainabilitySectionProps = {
   section: SustainabilityBlock;
@@ -18,7 +19,7 @@ const SustainabilitySection = ({ section }: SustainabilitySectionProps) => {
   return (
     <section className={sectionClasses}>
       <div>
-        <Image data={image.imageData} layout="responsive" />
+        <PixelatedImage image={image.imageData} />
       </div>
 
       <div>
