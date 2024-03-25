@@ -10,6 +10,7 @@ export const getVideoDetailsByIdOnServer = async (id: string) => {
   >;
 
   if (!videoDetails) {
+    // eslint-disable-next-line no-console
     console.log('No details retrieved for ID', id);
 
     return null;
