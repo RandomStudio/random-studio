@@ -74,3 +74,5 @@ yarn-error.log
 .next
 out
 package-lock.json
+
+assets/*

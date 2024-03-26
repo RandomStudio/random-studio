@@ -1,8 +1,11 @@
-import { Box, Sphere } from '@react-three/drei';
+import { PerspectiveCamera, RenderTexture } from '@react-three/drei';
 import { Dispatch, RefObject, SetStateAction, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import classNames from 'classnames';
+import { PCFSoftShadowMap } from 'three';
 import styles from './Wonder2.module.css';
+import World from './World/World';
+import MorphingGeometry from './MorphingGeometry/MorphingGeometry';
 
 type Wonder2Props = {
   containerRef: RefObject<HTMLDivElement>;
@@ -25,30 +28,53 @@ const Wonder2 = ({
     setIsWonderFocused(isCurrentlyFocused => !isCurrentlyFocused);
   };
 
+  const width = isWonderFocused ? '100vw' : 'auto';
+
   useEffect(() => {
     const wonderScale = 200 / window.innerWidth;
 
     containerRef.current?.style.setProperty('--wonder-scale', `${wonderScale}`);
   }, [containerRef]);
 
+  useEffect(() => {
+    console.log(canvasRef.current.invalidate);
+    canvasRef.current?.invalidate?.();
+  }, [isWonderFocused]);
+
+  const aspectRatio = window.innerWidth / window.innerHeight;
+  const boxPosition = [0, 0, -4];
+
   return (
     <div className={canvasClassNames}>
-      <Canvas onClick={handleCanvasClick} ref={canvasRef}>
-        <Box args={[2, 2, 2]} rotation={[0, 1, 0]}>
-          <meshBasicMaterial color="green" />
-        </Box>
-
-        <Sphere args={[1, 16, 16]} position={[-2, 0, 0]}>
-          <meshBasicMaterial color="hotpink" />
-        </Sphere>
-
-        <Box
-          args={[2, 2, 2]}
-          position={[2, 0, 0]}
-          rotation={[0.25, 0.25, 0.25]}
+      <Canvas
+        gl={{
+          physicallyCorrectLights: true,
+          shadowMap: {
+            enabled: true,
+            type: PCFSoftShadowMap,
+          },
+        }}
+        onClick={handleCanvasClick}
+        ref={canvasRef}
+        style={{
+          width,
+        }}
+      >
+        <MorphingGeometry
+          args={[6 * aspectRatio, 6, 3, 32, 32]}
+          isCube={isWonderFocused}
+          position={boxPosition}
         >
-          <meshBasicMaterial color="yellow" />
-        </Box>
+          <meshBasicMaterial color="transparent" transparent>
+            <RenderTexture anisotropy={4} attach="map">
+              <PerspectiveCamera makeDefault manual position={[0, 0, 5]} />
+
+              <ambientLight intensity={0.1} />
+
+              <World isExpanded={isWonderFocused} />
+            </RenderTexture>
+          </meshBasicMaterial>
+        </MorphingGeometry>
       </Canvas>
     </div>
   );

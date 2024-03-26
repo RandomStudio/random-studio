@@ -11,6 +11,7 @@ module.exports = {
     'plugin:@next/next/recommended',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@react-three/recommended',
   ],
   globals: {
     CSSUnitValue: 'readonly',
@@ -28,7 +29,13 @@ module.exports = {
   },
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'prettier',
+    '@react-three',
+  ],
   rules: {
     '@next/next/no-img-element': 0,
     // Clashes with next.js/link
