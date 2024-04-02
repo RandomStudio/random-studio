@@ -45,7 +45,7 @@ const ProjectPageLayout = ({
       socialTitle={ogTitle}
       title={title}
     >
-      <Container hasHorizontalConstraint>
+      <Container hasHorizontalConstraint={false}>
         <ProjectDetail
           content={content}
           credits={credits}
