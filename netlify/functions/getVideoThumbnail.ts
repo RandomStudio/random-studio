@@ -2,18 +2,24 @@ import sharp from 'sharp';
 import type { HandlerEvent } from '@netlify/functions';
 
 const getImage = async (url: string) => {
-  try {
-    const response = await fetch(url);
+  const response = await fetch(url);
 
-    return Buffer.from(await response.arrayBuffer());
-  } catch (error) {
-    console.error('Failed on URL', url);
-    throw error;
-  }
+  return Buffer.from(await response.arrayBuffer());
 };
 
 export const createBlurredImage = async (thumbnailUrl: string) => {
-  const image = await getImage(thumbnailUrl);
+  let image;
+
+  try {
+    image = await getImage(thumbnailUrl);
+  } catch (error) {
+    console.error('Failed on URL', thumbnailUrl);
+
+    return {
+      thumbnail: undefined,
+      dominantColor: undefined,
+    };
+  }
 
   console.error('Success for URL', thumbnailUrl);
 
