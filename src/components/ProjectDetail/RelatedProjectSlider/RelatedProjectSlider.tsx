@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import styles from './RelatedProjectSlider.module.scss';
+import styles from './RelatedProjectSlider.module.css';
 import Video from '../../Video/Video';
 import Image from '../../Image/Image';
 import { ProjectSummary } from '../../../types/types';

@@ -2,7 +2,7 @@ import React from 'react';
 import Head from '../Head/Head';
 import Layout from '../Layout/Layout';
 import ProjectDetail from '../ProjectDetail/ProjectDetail';
-import styles from './ProjectPageLayout.module.scss';
+import styles from './ProjectPageLayout.module.css';
 import useScrollRestoration from '../../hooks/useScrollRestoration';
 import {
   CreditsType,

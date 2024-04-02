@@ -3,7 +3,7 @@
   padding: 128px 22px 0;
 
   @media (min-width: 576px) {
-    font-size: var(--font-small);
+    @mixin body-3;
     width: var(--width);
     margin: 8vw 0;
     padding: 128px 64px 0;
@@ -16,7 +16,7 @@
   }
 
   @media (min-width: 864px) {
-    font-size: 28px;
+    @mixin body-2;
     max-width: 768px;
     margin: 0 auto 8%;
   }
@@ -28,7 +28,6 @@
   dt,
   dd {
     padding-bottom: 22px;
-    line-height: 1.3;
   }
 
   dt {

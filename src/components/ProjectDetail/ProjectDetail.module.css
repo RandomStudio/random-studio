@@ -1,15 +1,12 @@
 .project {
   background: var(--page-background-color);
   width: 100%;
-  font-weight: 100;
-  line-height: 1.3;
   padding: 210px 0;
   position: relative;
   overflow-x: hidden;
 }
 
 .item {
-  line-height: 1.3;
   position: relative;
   margin-bottom: 10%;
 
@@ -26,15 +23,13 @@
 .title,
 .intro,
 .text {
-  line-height: 1.3;
-  font-weight: normal;
   margin: 10vw 0;
   padding: 0 22px;
 }
 
 .title,
 .intro {
-  font-size: var(--font-small);
+  @mixin body-3;
 }
 
 .title {
@@ -93,11 +88,11 @@
 
   .title,
   .intro {
-    font-size: var(--font-med);
+    @mixin body-2;
   }
 
   .text {
-    font-size: var(--font-small);
+    @mixin body-3;
   }
 
   .item {
@@ -133,11 +128,11 @@
 
   .title,
   .intro {
-    font-size: var(--font-med);
+    @mixin body-2;
   }
 
   .text {
-    font-size: 28px;
+    @mixin body-2;
   }
 
   .title {
@@ -163,6 +158,6 @@
 
   .title,
   .intro {
-    font-size: var(--font-large);
+    @mixin body-1;
   }
 }

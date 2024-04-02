@@ -28,13 +28,16 @@ body {
 }
 
 body {
+  @mixin body-4;
   font-family: 'ABC Oracle', 'Random Regular', 'Random', Helvetica Neue, Helvetica, sans-serif;
-  font-weight: 300;
   letter-spacing: 0em;
-  text-align: left;
   background-color: #f8f8f8;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+
+  @media (min-width: 480px) {
+    @mixin body-3;
+  }
 }
 
 a {
@@ -80,12 +83,6 @@ button,
   cursor: pointer;
 }
 
-@media (min-width: 480px) {
-  body {
-    font-size: 22px;
-  }
-}
-
 /* Babylon inspector should be on top of anything */
 #scene-explorer-host,
 #inspector-host {
@@ -94,40 +91,37 @@ button,
 
 /* Used to add a title inside of a project caption text block */
 .content-section-title {
+  @mixin body-3;
   line-height: 1.3;
   font-weight: normal;
-  font-size: var(--font-small);
   margin-bottom: 1em;
+
+  @media (min-width: 576px) {
+    @mixin body-2;
+  }
+
+  @media (min-width: 1152px) {
+    @mixin body-1;
+    max-width: 1024px;
+  }
 }
 
 /* Used to add extra padding around a project caption text block */
 .content-section-padding {
   margin-top: 15%;
   margin-bottom: 15%;
-}
 
-@media (min-width: 576px) {
-  .content-section-title {
-    font-size: var(--font-med);
-  }
-
-  .content-section-padding {
+  @media (min-width: 576px) {
     margin-top: 20%;
     margin-bottom: 20%;
   }
-}
 
-@media (min-width: 1152px) {
-  .content-section-title {
-    max-width: 1024px;
-    font-size: var(--font-large);
-  }
-
-  .content-section-padding {
+  @media (min-width: 1152px) {
     margin-top: 25%;
     margin-bottom: 25%;
   }
 }
+
 
 sup {
   font-size: 0.75ex;

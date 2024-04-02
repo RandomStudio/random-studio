@@ -4,9 +4,8 @@
 }
 
 .statement {
-  font-size: var(--font-small);
+  @mixin body-3;
   max-width: 17em;
-  line-height: 1.25;
   margin: 10vw auto 25vw;
   padding: 0 1.4rem;
 }
@@ -36,7 +35,6 @@
 
 .title {
   max-width: 17em;
-  line-height: 1.375;
   padding: 16px 22px 0;
 }
 
@@ -64,9 +62,8 @@
 }
 
 .seeMore {
-  font-size: var(--font-small);
+  @mixin body-3;
   max-width: 21em;
-  line-height: 1.25;
   margin: 10vw auto 2vw;
   padding: 0 22px;
   display: flex;
@@ -93,7 +90,7 @@
   position: relative;
   top: -100px;
 }
-// Force overwrite the inline programmeticly set styles for small screens/mobile
+
 @media (max-width: 480px) {
   .projects {
     padding: 0 0 15vw;
@@ -112,7 +109,7 @@
 
 @media (min-width: 480px) {
   .statement {
-    font-size: var(--font-med);
+    @mixin body-2;
     margin: 0 auto 15vw;
     padding: 0 32px;
   }
@@ -120,6 +117,6 @@
 
 @media (min-width: 1152px) {
   .statement {
-    font-size: var(--font-large);
+    @mixin body-1;
   }
 }

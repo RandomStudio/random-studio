@@ -17,12 +17,12 @@
   }
 
   h4 {
-    font-size: var(--font-small);
-    font-weight: normal;
+    @mixin body-3;
     margin-bottom: 28px;
     padding-left: var(--spacing-left);
+
     @media (min-width: 864px) {
-      font-size: var(--font-med);
+      @mixin body-2;
     }
   }
 
@@ -43,7 +43,7 @@
   padding-left: var(--spacing-left);
   scroll-padding-left: var(--spacing-left);
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; // Firefox
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -63,12 +63,11 @@
   text-decoration: none;
 
   p {
-    font-size: var(--font-xxs);
-    font-weight: normal;
+    @mixin body-4;
     text-decoration: none;
 
     @media (min-width: 864px){
-      font-size: var(--font-small);
+      @mixin body-3;
     }
   }
 

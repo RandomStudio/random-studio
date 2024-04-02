@@ -35,12 +35,12 @@
 }
 
 .featuredAuthor {
+  @mixin body-4;
   color: white;
   mix-blend-mode: difference;
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 16px;
   line-height: 1;
   padding: 16px 22px;
   text-align: right;

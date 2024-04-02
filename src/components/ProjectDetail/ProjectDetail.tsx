@@ -1,6 +1,6 @@
 import React from 'react';
 import RelatedProjectSlider from './RelatedProjectSlider/RelatedProjectSlider';
-import styles from './ProjectDetail.module.scss';
+import styles from './ProjectDetail.module.css';
 import ContentBlock from './ContentBlock/ContentBlock';
 import BackScrim from './BackScrim/BackScrim';
 import {

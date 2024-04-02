@@ -1,0 +1,4 @@
+.caption {
+  @mixin body-4;
+  padding: 22px;
+}
