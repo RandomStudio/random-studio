@@ -6,22 +6,30 @@ import styles from './Layout.module.css';
 import useSunset from '../../utils/hooks/useSunset';
 import AfterDarkContext from './AfterDarkContext';
 import Head from '../Head/Head';
-import Container from './Container/Container';
+import { Image } from '../../types/types';
 
 type LayoutProps = {
   children: ReactNode[] | ReactNode;
   className?: string;
   hasFooter?: boolean;
-  isFullWidth?: boolean;
   isLogoCentred?: boolean;
+  description?: string;
+  title?: string;
+  image?: Image | string;
+  socialDescription?: string;
+  socialTitle?: string;
 };
 
 const Layout = ({
   children,
   className = '',
   hasFooter = true,
-  isFullWidth = true,
   isLogoCentred = false,
+  description = undefined,
+  title = undefined,
+  image = undefined,
+  socialDescription = undefined,
+  socialTitle = undefined,
 }: LayoutProps) => {
   const isAfterDark = useSunset();
 
@@ -33,20 +41,30 @@ const Layout = ({
 
   return (
     <AfterDarkContext.Provider value={isAfterDark}>
-      <Head />
+      <Head
+        description={description}
+        image={image}
+        socialDescription={socialDescription}
+        socialTitle={socialTitle}
+        title={title}
+      />
 
       <div className={`${layoutClasses} ${isDarkStyleActive && 'isAfterDark'}`}>
         <a className="screen-reader-only" href="#main-content" id="skip-nav">
           {'Skip Navigation'}
         </a>
 
-        <Navigation isLogoCentred={isLogoCentred} />
+        <div className={styles.padding}>
+          <Navigation isLogoCentred={isLogoCentred} />
+        </div>
 
-        <Container id="main-content" isFullWidth={isFullWidth}>
-          {children}
-        </Container>
+        {children}
 
-        {hasFooter && <Footer />}
+        {hasFooter && (
+          <div className={styles.padding}>
+            <Footer />
+          </div>
+        )}
 
         <div className={styles.transitionColorFlash} />
       </div>

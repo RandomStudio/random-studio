@@ -1,14 +1,12 @@
 .container {
-  max-width: 1192px;
   margin: 0 auto;
-
-  &.isFullWidth {
-    max-width: 100%;
-  }
 }
 
+.hasHorizontalConstraint {
+  max-width: 1192px;
+}
 
-.padding {
+.hasVerticalPadding {
   padding-top: 268px;
   padding-bottom: 104px;
 

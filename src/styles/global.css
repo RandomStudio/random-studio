@@ -55,7 +55,7 @@ body {
   @mixin body-4;
   font-family: 'ABC Oracle', 'Random Regular', 'Random', Helvetica Neue, Helvetica, sans-serif;
   letter-spacing: 0em;
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 
@@ -93,7 +93,7 @@ a:hover {
   top: auto;
 
   &:focus {
-    color: black;
+    color: var(--black);
     display: inline-block;
     height: auto;
     width: auto;

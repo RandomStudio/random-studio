@@ -2,11 +2,9 @@
   @mixin body-4;
   color: var(--text-color);
   width: 100%;
-  padding: 0 20px;
 
   @media (--tablet) {
     @mixin body-2;
-    padding: 0 40px;
   }
 
   & a {
@@ -27,6 +25,14 @@
         padding-bottom: 100px;
       }
     }
+  }
+}
+
+.padding {
+  padding: 0 20px;
+
+  @media (--tablet) {
+    padding: 0 40px;
   }
 }
 

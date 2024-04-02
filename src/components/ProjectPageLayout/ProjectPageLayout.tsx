@@ -9,6 +9,7 @@ import {
   OpenGraph,
   ProjectSummary,
 } from '../../types/types';
+import Container from '../Layout/Container/Container';
 
 type ProjectPageLayoutProps = {
   content: ContentBlockType[];
@@ -44,15 +45,17 @@ const ProjectPageLayout = ({
       socialTitle={ogTitle}
       title={title}
     >
-      <ProjectDetail
-        content={content}
-        credits={credits}
-        externalUrl={externalUrl}
-        intro={intro}
-        relatedProjects={relatedProjects}
-        relatedProjectsTitle={relatedProjectsTitle}
-        title={title}
-      />
+      <Container hasHorizontalConstraint>
+        <ProjectDetail
+          content={content}
+          credits={credits}
+          externalUrl={externalUrl}
+          intro={intro}
+          relatedProjects={relatedProjects}
+          relatedProjectsTitle={relatedProjectsTitle}
+          title={title}
+        />
+      </Container>
     </Layout>
   );
 };

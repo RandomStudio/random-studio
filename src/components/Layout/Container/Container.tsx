@@ -3,14 +3,19 @@ import styles from './Container.module.css';
 
 type ContainerProps = {
   children: ReactNode | ReactNode[];
-  isFullWidth: boolean;
-  id: string;
+  hasHorizontalConstraint?: boolean;
+  hasVerticalPadding?: boolean;
 };
 
-const Container = ({ children, id, isFullWidth }: ContainerProps) => (
+const Container = ({
+  children,
+  hasHorizontalConstraint = true,
+  hasVerticalPadding = true,
+}: ContainerProps) => (
   <div
-    className={`${styles.container} ${isFullWidth && styles.isFullWidth}`}
-    id={id}
+    className={`${styles.container}
+    ${hasHorizontalConstraint && styles.hasHorizontalConstraint}
+    ${hasVerticalPadding && styles.hasVerticalPadding}`}
   >
     {children}
   </div>

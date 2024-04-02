@@ -1,11 +1,11 @@
 import React from 'react';
 import getDataFromBackend from '../api/getDataFromBackend';
 import { INDEX_PAGE_QUERY } from '../api/QUERIES';
-import Head from '../components/Head/Head';
 import HomeVideo from '../components/HomeVideo/HomeVideo';
 import Layout from '../components/Layout/Layout';
 import ProjectList from '../components/ProjectList/ProjectList';
 import { Project, VideoData } from '../types/types';
+import Container from '../components/Layout/Container/Container';
 
 type HomeProps = {
   collaborator: string;
@@ -32,7 +32,9 @@ const Home = ({
     />
 
     <Layout isLogoCentred={isLogoCentred}>
-      <ProjectList hasLimit intro={intro} projects={projects} />
+      <Container>
+        <ProjectList hasLimit intro={intro} projects={projects} />
+      </Container>
     </Layout>
   </>
 );

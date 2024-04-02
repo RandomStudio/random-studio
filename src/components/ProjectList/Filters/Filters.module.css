@@ -11,7 +11,7 @@
 
   @media (min-width: 768px) {
     flex-direction: row;
-    padding: 315px 150px 0;
+    padding-bottom: 15vh;
     user-select: none;
     pointer-events: auto;
     opacity: 1;
@@ -40,11 +40,11 @@
   }
 
   &:not(.activeTag) {
-    color: #d0d0d0;
+    color: var(--grey);
   }
 
   &:not(.activeFilter) {
-    color: black;
+    color: var(--black);
   }
 }
 

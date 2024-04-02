@@ -1,6 +1,5 @@
 .projects {
-  padding: 15vw 0;
-  background: var(--white);
+  padding: 0;
 }
 
 .statement {
@@ -17,7 +16,7 @@
     margin-bottom: 26px;
   }
 
-  :global(a) {
+  a {
     position: relative;
     display: inline-block;
     text-decoration: none;
@@ -28,7 +27,7 @@
       left: 0;
       height: 2px;
       width: 100%;
-      background-color: black;
+      background-color: var(--black);
     }
   }
 }

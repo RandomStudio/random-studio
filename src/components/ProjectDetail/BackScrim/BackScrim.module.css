@@ -1,11 +1,15 @@
 .backScrim {
   @mixin body-4;
   position: absolute;
-  bottom: -80px;
+  bottom: -100px;
   width: 100%;
   pointer-events: none;
   opacity: 0;
   transition: opacity 300ms ease-out;
+
+  @media (min-width: 576px) {
+    bottom: -160px;
+  }
 }
 
 .isVisible {
