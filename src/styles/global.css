@@ -18,6 +18,30 @@
   src: url("/fonts/LarishNeueSemiboldRegSubsetted.woff2") format("woff2");
 }
 
+:root {
+  --black: lab(0.07 0.35 0.12);
+  --dark-grey: lab(43.19 0 0);
+  --grey: lab(66.99 0 0);
+  --light-grey: lab(94.10 0 0);
+  --off-white: lab(100 0 0);
+
+  --blue: lab(49.827 31.172 -78.866);
+
+  --background-color: var(--light-grey);
+  --text-color: var(--black);
+  --link-color: var(--dark-grey);
+
+  --wrapper-width: 1192px;
+
+  .isAfterDark &,
+  &.isAfterDark {
+    --background-color: var(--black);
+    --text-color: var(--off-white);
+    --link-color: var(--grey);
+  }
+}
+
+
 html,
 body {
   min-height: 100%;

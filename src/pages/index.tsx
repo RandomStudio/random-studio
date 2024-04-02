@@ -24,17 +24,17 @@ const Home = ({
   projects,
   video,
 }: HomeProps) => (
-  <Layout isLogoCentred={isLogoCentred}>
-    <Head />
-
+  <>
     <HomeVideo
       collaborationUrl={collaborationUrl}
       collaborator={collaborator}
       video={video}
     />
 
-    <ProjectList hasLimit intro={intro} projects={projects} />
-  </Layout>
+    <Layout isLogoCentred={isLogoCentred}>
+      <ProjectList hasLimit intro={intro} projects={projects} />
+    </Layout>
+  </>
 );
 
 export const getStaticProps = async () => {

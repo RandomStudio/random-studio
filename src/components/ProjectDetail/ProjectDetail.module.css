@@ -1,163 +1,50 @@
 .project {
   background: var(--page-background-color);
   width: 100%;
-  padding: 210px 0;
   position: relative;
-  overflow-x: hidden;
-}
-
-.item {
-  position: relative;
-  margin-bottom: 10%;
-
-  video {
-    display: block;
-    width: 100%;
-  }
-
-  img {
-    width: 100%;
-  }
-}
-
-.title,
-.intro,
-.text {
-  margin: 10vw 0;
-  padding: 0 22px;
 }
 
 .title,
 .intro {
   @mixin body-3;
+  margin: 0 0 10vw;
+  padding: 0 22px;
+
+  @media (min-width: 576px) {
+    @mixin body-2;
+    margin: 0 0 8vw;
+    padding: 0 64px;
+  }
+
+  @media (min-width: 864px) {
+    @mixin body-2;
+    max-width: 768px;
+  }
+
+  @media (min-width: 1152px) {
+    @mixin body-1;
+    max-width: 1024px;
+  }
 }
+
 
 .title {
   margin-bottom: 1em;
+
+  @media (min-width: 864px) {
+    margin: 0 auto 2em;
+  }
 }
 
 .intro {
   margin-top: 1.2931578947em;
 
-  :global(a) {
-    text-decoration-thickness: 0.05em;
-    text-underline-offset: 0.05em;
-  }
-}
-
-.intro,
-.text {
-  p + p {
-    margin-top: 1.375em;
-  }
-}
-
-.text {
-  :global(a) {
-    text-decoration: underline;
-  }
-}
-
-.isCentered {
-  text-align: center;
-}
-
-
-.carouselWrapper {
-  flex: 1;
-  max-width: 88%;
-  margin-left: 6%;
-
-  @media (min-width: 48rem) {
-    max-width: none;
-    margin-left: auto;
-  }
-}
-
-@media (min-width: 576px) {
-  .project {
-    padding-top: 200px;
-  }
-
-  .title,
-  .intro,
-  .text {
-    margin: 8vw 0;
-    padding: 0 64px;
-  }
-
-  .title,
-  .intro {
-    @mixin body-2;
-  }
-
-  .text {
-    @mixin body-3;
-  }
-
-  .item {
-    margin-top: var(--marginTop);
-    margin-bottom: 0;
-    margin-left: var(--marginLeft);
-    width: var(--width);
-  }
-
-  .carousel {
-    margin-top: var(--carouselMarginTop);
-    margin-bottom: 0;
-    margin-left: var(--carouselMarginLeft);
-    width: var(--carouselWidth);
-  }
-
-  .caption {
-    max-width: 368px;
-    padding: 6px 0 0;
-  }
-}
-
-@media (min-width: 864px) {
-  .project {
-    padding-top: 192px;
-  }
-
-  .title,
-  .intro,
-  .text {
-    max-width: 768px;
-  }
-
-  .title,
-  .intro {
-    @mixin body-2;
-  }
-
-  .text {
-    @mixin body-2;
-  }
-
-  .title {
-    margin: 2em auto;
-  }
-
-  .intro {
+  @media (min-width: 864px) {
     margin: 1em auto 8vw auto;
   }
 
-  .text {
-    margin: 8vw auto;
-  }
-
-}
-
-@media (min-width: 1152px) {
-  .title,
-  .intro,
-  .text {
-    max-width: 1024px;
-  }
-
-  .title,
-  .intro {
-    @mixin body-1;
+  :global(a) {
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.05em;
   }
 }

@@ -1,8 +1,6 @@
 import React from 'react';
-import Head from '../Head/Head';
 import Layout from '../Layout/Layout';
 import ProjectDetail from '../ProjectDetail/ProjectDetail';
-import styles from './ProjectPageLayout.module.css';
 import useScrollRestoration from '../../hooks/useScrollRestoration';
 import {
   CreditsType,
@@ -38,15 +36,14 @@ const ProjectPageLayout = ({
   useScrollRestoration();
 
   return (
-    <Layout className={styles.layout} hasFooter={false}>
-      <Head
-        description={intro}
-        image={image ?? featuredImage}
-        socialDescription={ogDescription}
-        socialTitle={ogTitle}
-        title={title}
-      />
-
+    <Layout
+      description={intro}
+      hasFooter={false}
+      image={image ?? featuredImage}
+      socialDescription={ogDescription}
+      socialTitle={ogTitle}
+      title={title}
+    >
       <ProjectDetail
         content={content}
         credits={credits}

@@ -20,9 +20,7 @@ const Sustainability = ({
   seoDescription = undefined,
 }: SustainabilityTypes) => {
   return (
-    <Layout isNewDesign>
-      <Head description={seoDescription} title={seoTitle} />
-
+    <Layout description={seoDescription} title={seoTitle}>
       <div
         className={styles.blurb}
         dangerouslySetInnerHTML={{ __html: intro }}

@@ -1,6 +1,5 @@
 .project {
-  --page-background-color: var(--off-white);
-  background: var(--page-background-color);
+  background: var(--background-color);
   width: 100%;
   padding: 160px 0;
   overflow-x: hidden;

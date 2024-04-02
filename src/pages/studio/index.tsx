@@ -33,9 +33,7 @@ const Studio = ({
   studioImpression,
   vacancies,
 }: StudioProps) => (
-  <Layout isNewDesign>
-    <Head />
-
+  <Layout isFullWidth={false}>
     <p className={styles.blurb} dangerouslySetInnerHTML={{ __html: blurb }} />
 
     {skillset && (

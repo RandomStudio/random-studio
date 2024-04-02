@@ -11,9 +11,7 @@ type ProjectsProps = {
 };
 
 const Projects = ({ projects }: ProjectsProps) => (
-  <Layout>
-    <Head title="Projects" />
-
+  <Layout title="Projects">
     <ProjectList hasFilters projects={projects} />
   </Layout>
 );
