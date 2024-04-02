@@ -21,8 +21,6 @@ export const createBlurredImage = async (thumbnailUrl: string) => {
     };
   }
 
-  console.error('Success for URL', thumbnailUrl);
-
   const blurredSharpImage = await sharp(image)
     .raw()
     .ensureAlpha()
