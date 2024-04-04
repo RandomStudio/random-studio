@@ -23,8 +23,6 @@ const Wonder2 = ({
     setIsWonderFocused(isCurrentlyFocused => !isCurrentlyFocused);
   };
 
-  const width = isWonderFocused ? '100vw' : 'auto';
-
   useEffect(() => {
     const wonderScale = 200 / window.innerWidth;
 
@@ -33,12 +31,7 @@ const Wonder2 = ({
 
   return (
     <div className={canvasClassNames}>
-      <Canvas
-        onClick={handleCanvasClick}
-        style={{
-          width,
-        }}
-      >
+      <Canvas onClick={handleCanvasClick}>
         <OuterWorld isExpanded={isWonderFocused} />
       </Canvas>
     </div>

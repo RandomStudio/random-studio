@@ -1,17 +1,23 @@
+/*
+ It would be better to animate scale property, but this doesn't correctly trigger
+  canvas resize in R3F. We're using width and height instead.
+*/
+
 .canvas {
   position: fixed;
   bottom: 0;
   right: 0;
   pointer-events: all;
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw * var(--wonder-scale));
+  height: calc(100vh * var(--wonder-scale));
+
   transform-origin: bottom right;
-  transition: scale 0.3s;
+  transition: width 0.3s, height 0.3s;
   contain: strict;
-  scale: var(--wonder-scale, 0);
 
   &.isFocused {
-    scale: 1;
+    width: 100vw;
+    height: 100vh;
   }
 
   canvas {
