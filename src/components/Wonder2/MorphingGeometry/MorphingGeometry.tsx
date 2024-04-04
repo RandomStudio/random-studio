@@ -1,17 +1,25 @@
-import React, { useRef } from 'react';
+import React, { ReactNode, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { BoxGeometry, Vector3, PerspectiveCamera, Mesh } from 'three';
-import { Box } from '@react-three/drei';
+import { Args, Box, ShapeProps } from '@react-three/drei';
 import { calculateScaleToFitViewport, getMorphedGeometry } from './morphUtils';
 
-export type SimplifiedBox = {
-  geometry: BoxGeometry;
-  position: Vector3;
-  scale: Vector3;
-};
+type Box = Omit<ShapeProps<typeof BoxGeometry>, 'position'>;
 
-const MorphingGeometry = ({ isCube, ...props }) => {
-  const ref = useRef<SimplifiedBox>();
+type MorphingGeometryProps = {
+  args: Args<typeof BoxGeometry>;
+  children: ReactNode;
+  isCube: boolean;
+  position: number[] | Vector3;
+} & Box;
+
+const MorphingGeometry = ({
+  args,
+  children,
+  isCube,
+  ...props
+}: MorphingGeometryProps) => {
+  const ref = useRef<Mesh>();
   const { camera, invalidate } = useThree();
   const lastMorphRef = useRef<number>(0);
   const morphRef = useRef<number>(0);
@@ -45,7 +53,14 @@ const MorphingGeometry = ({ isCube, ...props }) => {
     lastMorphRef.current = morphRef.current;
   });
 
-  return <Box {...props} ref={ref} />;
+  return (
+    /* eslint-disable */
+    // @ts-expect-error Weird ref typing
+    <Box args={args} {...props} ref={ref}>
+      {/* eslint-enable */}
+      {children}
+    </Box>
+  );
 };
 
 export default MorphingGeometry;

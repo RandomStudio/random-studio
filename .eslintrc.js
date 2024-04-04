@@ -176,6 +176,7 @@ module.exports = {
     'react/iframe-missing-sandbox': 2,
     'react/no-access-state-in-setstate': 2,
     'react/no-adjacent-inline-elements': 2,
+
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': [
       2,
@@ -204,7 +205,8 @@ module.exports = {
     'react/no-this-in-sfc': 2,
     'react/no-typos': 2,
     'react/no-unescaped-entities': 2,
-    'react/no-unknown-property': 2,
+    // Handled by Typescript, avoids conflicts with R3F
+    'react/no-unknown-property': ['off', { ignore: ['JSX'] }],
     'react/no-unsafe': 2,
     'react/no-unstable-nested-components': 2,
     'react/no-unused-class-component-methods': 2,

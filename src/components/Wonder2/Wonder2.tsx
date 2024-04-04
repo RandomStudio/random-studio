@@ -1,8 +1,7 @@
-import { PerspectiveCamera, RenderTexture } from '@react-three/drei';
-import { Dispatch, RefObject, SetStateAction, useEffect, useRef } from 'react';
+import { RenderTexture } from '@react-three/drei';
+import { Dispatch, RefObject, SetStateAction, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import classNames from 'classnames';
-import { PCFSoftShadowMap } from 'three';
 import styles from './Wonder2.module.css';
 import World from './World/World';
 import MorphingGeometry from './MorphingGeometry/MorphingGeometry';
@@ -18,8 +17,6 @@ const Wonder2 = ({
   isWonderFocused,
   setIsWonderFocused,
 }: Wonder2Props) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
   const canvasClassNames = classNames(styles.canvas, {
     [styles.isFocused]: isWonderFocused,
   });
@@ -36,26 +33,13 @@ const Wonder2 = ({
     containerRef.current?.style.setProperty('--wonder-scale', `${wonderScale}`);
   }, [containerRef]);
 
-  useEffect(() => {
-    console.log(canvasRef.current.invalidate);
-    canvasRef.current?.invalidate?.();
-  }, [isWonderFocused]);
-
   const aspectRatio = window.innerWidth / window.innerHeight;
   const boxPosition = [0, 0, -4];
 
   return (
     <div className={canvasClassNames}>
       <Canvas
-        gl={{
-          physicallyCorrectLights: true,
-          shadowMap: {
-            enabled: true,
-            type: PCFSoftShadowMap,
-          },
-        }}
         onClick={handleCanvasClick}
-        ref={canvasRef}
         style={{
           width,
         }}
