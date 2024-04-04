@@ -29,7 +29,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
   const hasWonder = typeof window !== 'undefined' && window.innerWidth > 768;
 
   const pageClassNames = classNames(styles.page, {
-    [styles.isWonderFocused]: isWonderFocused,
+    //   [styles.isWonderFocused]: isWonderFocused,
   });
 
   return (

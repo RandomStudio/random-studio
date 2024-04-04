@@ -67,8 +67,6 @@ const Wonder2 = ({
         >
           <meshBasicMaterial color="transparent" transparent>
             <RenderTexture anisotropy={4} attach="map">
-              <PerspectiveCamera makeDefault manual position={[0, 0, 5]} />
-
               <ambientLight intensity={0.1} />
 
               <World isExpanded={isWonderFocused} />

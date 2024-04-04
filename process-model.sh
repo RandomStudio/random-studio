@@ -1,6 +1,8 @@
 #!/bin/bash
-brew install imagemagick
+
+#brew install imagemagick
 npm install -g gltf-pipeline
+npm install -g @gltf-transform/cli
 
 # Check if filename argument is provided
 if [ "$#" -ne 1 ]; then
@@ -27,35 +29,23 @@ mkdir -p $componentDir
 # Step 1: Convert GLTF to separate GLTF + BIN + textures
 gltf-pipeline -i "$modelSourceDir/$filename.gltf" -o "$modelSourceDir/$filename-separated.gltf" --separate --separateTextures
 
-# Step 2: Convert all textures to JPG and resize if necessary
-find "$GLTF_PATH" -type f \( -iname \*.png -o -iname \*.jpg \) | while read -r texture; do
-    # Convert to JPG
-    convert "$texture" -format jpg -resize 1024x1024\> "${texture%.*}.jpg"
-
-    # Check if original texture is PNG, then remove it
-    if [[ "$texture" == *.png ]]; then
-        rm "$texture"
-    fi
-done
-
-
 outputFilename="$modelTargetDir/$filename.gltf"
-npx gltf-transform cp "$modelSourceDir/$filename-separated.gltf" $outputFilename
-npx gltf-transform validate $outputFilename
+gltf-transform cp "$modelSourceDir/$filename-separated.gltf" $outputFilename
+gltf-transform validate $outputFilename
 
-npx gltf-transform dedup $outputFilename $outputFilename
-npx gltf-transform prune $outputFilename $outputFilename
-npx gltf-transform simplify $outputFilename $outputFilename
-#npx gltf-transform metalrough $outputFilename $outputFilename
-npx gltf-transform reorder $outputFilename $outputFilename
-npx gltf-transform center $outputFilename $outputFilename
-npx gltf-transform jpg $outputFilename $outputFilename
-npx gltf-transform png $outputFilename $outputFilename
-npx gltf-transform resize $outputFilename $outputFilename --width 1024 --height 1024
-npx gltf-transform optimize $outputFilename $outputFilename
-npx gltf-transform validate $outputFilename
-#npx gltf-transform draco $outputFilename $outputFilename
-npx gltf-transform gzip $outputFilename
+gltf-transform dedup $outputFilename $outputFilename
+gltf-transform prune $outputFilename $outputFilename
+gltf-transform simplify $outputFilename $outputFilename
+#gltf-transform metalrough $outputFilename $outputFilename
+gltf-transform reorder $outputFilename $outputFilename
+gltf-transform center $outputFilename $outputFilename
+gltf-transform jpeg $outputFilename $outputFilename
+gltf-transform png $outputFilename $outputFilename
+gltf-transform resize $outputFilename $outputFilename --width 1024 --height 1024
+gltf-transform optimize $outputFilename $outputFilename
+gltf-transform validate $outputFilename
+#gltf-transform draco $outputFilename $outputFilename
+gltf-transform gzip $outputFilename
 
 # Convert GLTF to JSX component (TypeScript version)
 npx gltfjsx $outputFilename -t --types --output "$componentDir/${ComponentName}.tsx"

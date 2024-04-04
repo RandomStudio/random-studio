@@ -28,6 +28,8 @@ const World = ({ isExpanded }: { isExpanded: boolean }) => {
       return;
     }
 
+    return;
+
     camera.position.x =
       boxRef.current.position.x + radius * Math.cos(angle) * -1;
 
