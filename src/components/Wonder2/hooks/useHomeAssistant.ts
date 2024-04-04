@@ -8,9 +8,18 @@ let state: { [key: string]: [] } = {};
 
 const handleMessage = (event: MessageEvent) => {
   try {
+    if (event.data === 'Connection established') {
+      console.log('Connected to Home Assistant');
+
+      return;
+    }
+
     const payload = JSON.parse(event.data);
 
-    state = { ...state, ...payload };
+    state = {
+      ...state,
+      ...payload,
+    };
 
     console.log('Received message from Home Assistant', payload);
   } catch (e) {

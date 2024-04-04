@@ -1,10 +1,8 @@
-import { RenderTexture } from '@react-three/drei';
 import { Dispatch, RefObject, SetStateAction, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import classNames from 'classnames';
 import styles from './Wonder2.module.css';
-import World from './World/World';
-import MorphingGeometry from './MorphingGeometry/MorphingGeometry';
+import OuterWorld from './OuterWorld/OuterWorld';
 
 type Wonder2Props = {
   containerRef: RefObject<HTMLDivElement>;
@@ -33,9 +31,6 @@ const Wonder2 = ({
     containerRef.current?.style.setProperty('--wonder-scale', `${wonderScale}`);
   }, [containerRef]);
 
-  const aspectRatio = window.innerWidth / window.innerHeight;
-  const boxPosition = [0, 0, -4];
-
   return (
     <div className={canvasClassNames}>
       <Canvas
@@ -44,19 +39,7 @@ const Wonder2 = ({
           width,
         }}
       >
-        <MorphingGeometry
-          args={[6 * aspectRatio, 6, 3, 32, 32]}
-          isCube={isWonderFocused}
-          position={boxPosition}
-        >
-          <meshBasicMaterial color="transparent" transparent>
-            <RenderTexture anisotropy={4} attach="map">
-              <ambientLight intensity={0.1} />
-
-              <World isExpanded={isWonderFocused} />
-            </RenderTexture>
-          </meshBasicMaterial>
-        </MorphingGeometry>
+        <OuterWorld isExpanded={isWonderFocused} />
       </Canvas>
     </div>
   );

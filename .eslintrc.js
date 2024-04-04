@@ -64,7 +64,7 @@ module.exports = {
         forbidDefaultForRequired: true,
       },
     ],
-    'no-console': [2, { allow: ['warn', 'error'] }],
+    'no-console': 0,
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'object-property-newline': [
       2,

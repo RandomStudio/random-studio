@@ -2,7 +2,7 @@ import { Sphere } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
 import { DirectionalLight, DirectionalLightHelper } from 'three';
-import useHomeAssistant from '../useHomeAssistant';
+import useHomeAssistant from '../../hooks/useHomeAssistant';
 
 function elevationAzimuthToXYZ(
   elevationDeg: number,
