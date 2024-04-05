@@ -30,7 +30,7 @@ const handleMessage = (event: MessageEvent) => {
 socket.addEventListener('message', handleMessage);
 
 const useHomeAssistant = (id: string) => {
-  const [entityState, setEntityState] = useState(
+  const [entityState, setEntityState] = useState<unknown>(
     state[id]?.reverse()?.[0] || [],
   );
 

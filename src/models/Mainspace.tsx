@@ -108,6 +108,7 @@ const Mainspace = ({
 
       <instancedMesh
         args={[nodes.GILLIS250.geometry, materials['Wood Fine Veneer Oak'], 5]}
+        // @ts-expect-error InstanceMatrixBufferAttribute does exist
         instanceMatrix={nodes.GILLIS250.instanceMatrix}
       />
     </group>

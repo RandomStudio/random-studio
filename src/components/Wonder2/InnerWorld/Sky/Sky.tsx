@@ -1,7 +1,7 @@
 import { Sky as DreiSky } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
-import { MathUtils, Vector3 } from 'three';
+import { MathUtils, Mesh, ShaderMaterial, Vector3 } from 'three';
 import Sun from './Sun/Sun';
 import useHomeAssistant from '../../hooks/useHomeAssistant';
 import { DAY_NIGHT_CYCLE_STAGE, DAY_NIGHT_CYCLE_STAGES } from '../constants';
@@ -45,12 +45,110 @@ const interpolateSkyValue = (
   return lowerValue + ratio * (upperValue - lowerValue);
 };
 
+// Define key elevation points and corresponding values for sky uniforms
+const keyPoints = {
+  turbidity: [
+    {
+      elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DEEP_NIGHT][0],
+      value: 2,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.ASTRONOMICAL_TWILIGHT][0],
+      value: 6,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.NAUTICAL_TWILIGHT][0],
+      value: 10,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.CIVIL_TWILIGHT][0],
+      value: 20,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.SUNRISE_SUNSET][0],
+      value: 10,
+    }, // Assuming single point for sunrise/sunset
+    {
+      elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DAYTIME][1],
+      value: 6,
+    },
+  ],
+  rayleigh: [
+    {
+      elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DEEP_NIGHT][0],
+      value: 0.2,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.ASTRONOMICAL_TWILIGHT][0],
+      value: 0.5,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.NAUTICAL_TWILIGHT][0],
+      value: 1,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.CIVIL_TWILIGHT][0],
+      value: 2,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.SUNRISE_SUNSET][0],
+      value: 10,
+    },
+    {
+      elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DAYTIME][1],
+      value: 1,
+    },
+  ],
+
+  mieCoefficient: [
+    {
+      elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DEEP_NIGHT][0],
+      value: 0.0005,
+    },
+    // During twilight and day, the mieCoefficient might slightly increase due to more particles and moisture in the air
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.ASTRONOMICAL_TWILIGHT][0],
+      value: 0.0008,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.NAUTICAL_TWILIGHT][0],
+      value: 0.001,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.CIVIL_TWILIGHT][0],
+      value: 0.002,
+    },
+    {
+      elevation:
+        DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.SUNRISE_SUNSET][0],
+      value: 0.005,
+    },
+    {
+      elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DAYTIME][1],
+      value: 0.005,
+    },
+  ],
+};
+
 const centrePointVector = new Vector3(0, 0, -5);
 
 const Sky = () => {
-  const latestState = useHomeAssistant('sun.sun');
+  const latestState = useHomeAssistant('sun.sun') as {
+    attributes: { elevation: number; azimuth: number };
+  };
 
-  const skyRef = useRef<typeof DreiSky>(null);
+  const skyRef = useRef<Mesh & { material: ShaderMaterial }>(null);
 
   const { elevation, azimuth } = latestState?.attributes || {};
 
@@ -69,111 +167,6 @@ const Sky = () => {
     if (!skyRef.current) {
       return;
     }
-
-    // Define key elevation points and corresponding values for sky uniforms
-    const keyPoints = {
-      turbidity: [
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DEEP_NIGHT][0],
-          value: 2,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[
-            DAY_NIGHT_CYCLE_STAGE.ASTRONOMICAL_TWILIGHT
-            ][0],
-          value: 6,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.NAUTICAL_TWILIGHT][0],
-          value: 10,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.CIVIL_TWILIGHT][0],
-          value: 20,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.SUNRISE_SUNSET][0],
-          value: 10,
-        }, // Assuming single point for sunrise/sunset
-        {
-          elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DAYTIME][1],
-          value: 6,
-        },
-      ],
-      rayleigh: [
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DEEP_NIGHT][0],
-          value: 0.2,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[
-            DAY_NIGHT_CYCLE_STAGE.ASTRONOMICAL_TWILIGHT
-            ][0],
-          value: 0.5,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.NAUTICAL_TWILIGHT][0],
-          value: 1,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.CIVIL_TWILIGHT][0],
-          value: 2,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.SUNRISE_SUNSET][0],
-          value: 10,
-        },
-        {
-          elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DAYTIME][1],
-          value: 1,
-        },
-      ],
-
-      mieCoefficient: [
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DEEP_NIGHT][0],
-          value: 0.0005,
-        },
-        // During twilight and day, the mieCoefficient might slightly increase due to more particles and moisture in the air
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[
-            DAY_NIGHT_CYCLE_STAGE.ASTRONOMICAL_TWILIGHT
-            ][0],
-          value: 0.0008,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.NAUTICAL_TWILIGHT][0],
-          value: 0.001,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.CIVIL_TWILIGHT][0],
-          value: 0.002,
-        },
-        {
-          elevation:
-            DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.SUNRISE_SUNSET][0],
-          value: 0.005,
-        },
-        {
-          elevation: DAY_NIGHT_CYCLE_STAGES[DAY_NIGHT_CYCLE_STAGE.DAYTIME][1],
-          value: 0.005,
-        },
-      ],
-    };
 
     // Apply interpolated values to the sky's material uniforms
     skyRef.current.material.uniforms.turbidity.value = interpolateSkyValue(
