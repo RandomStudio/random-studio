@@ -19,8 +19,6 @@ const OuterWorld = ({ isExpanded }: OuterWorldProps) => {
     >
       <meshBasicMaterial color="white">
         <RenderTexture anisotropy={4} attach="map">
-          <ambientLight intensity={0.1} />
-
           <InnerWorld isExpanded={isExpanded} />
         </RenderTexture>
       </meshBasicMaterial>

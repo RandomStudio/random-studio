@@ -1,0 +1,30 @@
+export const simulateSunPosition = (elapsedSeconds: number) => {
+  // Convert elapsedSeconds to equivalent hours in the day-night cycle
+  const hours = (elapsedSeconds % 10) * 2.4;
+
+  // Simplify by using a sinusoidal function to simulate the sun's elevation
+  // This ranges from 0 to 180 degrees over the course of a day, but we'll shift and scale it
+  // to go from -90 (sunrise) to 90 (sunset) degrees
+  const elevation = 90 * Math.sin((hours / 24) * Math.PI * 2 - Math.PI / 2);
+
+  // Calculate azimuth to rotate 360 degrees across the 10-second cycle
+  const azimuth = ((360 * (elapsedSeconds % 10)) / 10) % 360;
+
+  return {
+    elevation,
+    azimuth,
+  };
+};
+
+export const getSunPositionFromElevationAndAzimuth = (
+  elevation: number,
+  azimuth: number,
+) => {
+  const phi = Math.PI * (0.5 - elevation / 180);
+  const theta = Math.PI * (azimuth / 180 - 0.5);
+  const x = Math.cos(phi) * Math.sin(theta);
+  const y = Math.sin(phi);
+  const z = Math.cos(phi) * Math.cos(theta);
+
+  return [x, y, z];
+};

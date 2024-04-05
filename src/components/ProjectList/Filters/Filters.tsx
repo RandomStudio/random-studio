@@ -32,7 +32,6 @@ const Filters = ({
       .flat()
       .map(tag => tag.toLowerCase());
 
-    // @ts-expect-error Need to look in to Set
     return [...new Set(projectFiltersWithDupes)];
   }, [projects]);
 

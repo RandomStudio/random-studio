@@ -49,10 +49,11 @@ const Video = forwardRef<ExtendedHTMLVideoElement, VideoProps>(
       onClick = () => null,
       onMount = () => null,
       onReady = () => null,
-      video: { downloadUrl, blur, guid, height, hls, width },
+      video,
     },
     ref,
   ) => {
+    const { downloadUrl, blur, guid, height, hls, width } = video;
     const localRef = useRef<ExtendedHTMLVideoElement>();
 
     const videoRef =
