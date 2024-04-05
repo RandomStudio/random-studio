@@ -22,7 +22,7 @@ const MorphingGeometry = ({
   const ref = useRef<Mesh>();
   const { camera, invalidate } = useThree();
   const lastMorphRef = useRef<number>(0);
-  const morphRef = useRef<number>(0);
+  const morphRef = useRef<number>(isCube ? 0 : 1);
 
   useFrame(() => {
     if (!ref.current) {
