@@ -21,7 +21,7 @@ const interpolateSkyValue = (
         (prevIndex === null || currElevation > elevationRange[prevIndex])
         ? index
         : prevIndex,
-    null,
+    0,
   );
 
   const upperBoundIndex =
@@ -64,7 +64,7 @@ const Sky = () => {
     sunPositionRef.current.add(centrePointVector);
   });
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     // Adjust sky properties for a smooth transition
     if (!skyRef.current) {
       return;
