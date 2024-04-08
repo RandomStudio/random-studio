@@ -12,7 +12,6 @@ type LayoutProps = {
   children: ReactNode[] | ReactNode;
   className?: string;
   hasFooter?: boolean;
-  isLogoCentred?: boolean;
   description?: string;
   title?: string;
   image?: Image | string;
