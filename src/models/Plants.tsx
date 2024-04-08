@@ -1,0 +1,85 @@
+import { Box3, Mesh, MeshStandardMaterial } from 'three';
+import { GLTF } from 'three-stdlib';
+import React, { ForwardedRef, forwardRef, useEffect, useMemo } from 'react';
+import { useGLTF } from '@react-three/drei';
+
+type GLTFResult = GLTF & {
+  nodes: {
+    plan1: Mesh;
+    plant3: Mesh;
+    plant2: Mesh;
+    plant4: Mesh;
+  };
+  materials: {
+    main: MeshStandardMaterial;
+    ['main.001']: MeshStandardMaterial;
+    ['main.002']: MeshStandardMaterial;
+    ['main.003']: MeshStandardMaterial;
+  };
+};
+
+type PlantsProps = JSX.IntrinsicElements['group'] & {
+  plant: 0 | 1 | 2 | 3;
+};
+
+const Plants = forwardRef(
+  ({ plant, ...props }: PlantsProps, ref: ForwardedRef<Mesh>) => {
+    const { nodes, materials } = useGLTF(
+      '/models/Plants/plants.gltf',
+    ) as GLTFResult;
+
+    const geometry = useMemo(() => {
+      if (plant === 0) {
+        return nodes.plant2.geometry;
+      }
+
+      if (plant === 1) {
+        return nodes.plant4.geometry;
+      }
+
+      if (plant === 2) {
+        return nodes.plan1.geometry;
+      }
+
+      return nodes.plant3.geometry;
+    }, [
+      nodes.plan1.geometry,
+      nodes.plant2.geometry,
+      nodes.plant3.geometry,
+      nodes.plant4.geometry,
+      plant,
+    ]);
+
+    const material = useMemo(() => {
+      if (plant === 0) {
+        return materials['main.002'];
+      }
+
+      if (plant === 1) {
+        return materials['main.003'];
+      }
+
+      if (plant === 2) {
+        return materials.main;
+      }
+
+      return materials['main.001'];
+    }, [materials, plant]);
+
+    return (
+      <group {...props} dispose={null} scale={1.8}>
+        <mesh
+          geometry={geometry}
+          material={material}
+          ref={ref}
+          rotation={[Math.PI / 2, 0, 0]}
+        />
+      </group>
+    );
+  },
+);
+
+Plants.displayName = 'Plants';
+
+useGLTF.preload('/models/Plants/plants.gltf');
+export default Plants;

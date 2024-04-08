@@ -37,7 +37,29 @@ const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
         rotation={[0, 0, 0]}
       />
 
-      <C02Plant position={[0.8, 0.5, -2]} />
+      <C02Plant
+        plant={0}
+        position={[1, -1.2, -2.4]}
+        roomId="sensor.knx_co2_main_space_2"
+      />
+
+      <C02Plant
+        plant={1}
+        position={[-1.5, -1.2, -0.1]}
+        roomId="sensor.knx_co2_lab"
+      />
+
+      <C02Plant
+        plant={2}
+        position={[0.7, -1.4, 2]}
+        roomId="sensor.knx_co2_kitchen"
+      />
+
+      <C02Plant
+        plant={3}
+        position={[-0.7, -1.2, 4.4]}
+        roomId="sensor.knx_co2_upstairs"
+      />
     </>
   );
 };

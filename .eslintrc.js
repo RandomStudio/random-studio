@@ -253,7 +253,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 2,
     'react/jsx-pascal-case': 2,
     'react/jsx-props-no-multi-spaces': 2,
-    'react/jsx-props-no-spreading': 2,
+    'react/jsx-props-no-spreading': 0,
     'react/jsx-tag-spacing': 2,
     'react/jsx-wrap-multilines': 2,
   },

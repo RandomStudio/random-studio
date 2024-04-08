@@ -29,10 +29,11 @@ const handleMessage = (event: MessageEvent) => {
 
 socket.addEventListener('message', handleMessage);
 
-const useHomeAssistant = (id: string) => {
-  const [entityState, setEntityState] = useState<unknown>(
-    state[id]?.reverse()?.[0] || [],
-  );
+function useHomeAssistant<Type>(id: string) {
+  const [entityState, setEntityState] = useState<{
+    value: Type;
+    attributes: { [key: string]: string | number };
+  }>(state[id]?.reverse()?.[0] || []);
 
   useEffect(() => {
     if (!id) {
@@ -51,6 +52,6 @@ const useHomeAssistant = (id: string) => {
   }, [id]);
 
   return entityState;
-};
+}
 
 export default useHomeAssistant;

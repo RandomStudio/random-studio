@@ -4,6 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Mesh, MeshStandardMaterial } from 'three';
 import Camera from '../components/Wonder2/InnerWorld/Camera/Camera';
+import useHomeAssistant from '../components/Wonder2/hooks/useHomeAssistant';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -37,11 +38,20 @@ const Mainspace = ({
     '/models/Mainspace/mainspace.gltf',
   ) as GLTFResult;
 
+  const { value } = useHomeAssistant<string>('binary_sensor.knx_alarm_main_2');
+
   materials['Cork Surface'].roughness = 0;
   materials['Cork Surface'].metalness = 0;
 
   useFrame(() => {
     if (!materials['Wood Fine Veneer Oak'].map) {
+      return;
+    }
+
+    // I believe off === alarm on, totally clear
+    if (value === 'off') {
+      materials['Wood Fine Veneer Oak'].map.offset.x = 0;
+
       return;
     }
 
