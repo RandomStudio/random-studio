@@ -20,8 +20,8 @@ const Wonder2 = ({
   });
 
   const handleCanvasClick = () => {
-    setIsWonderFocused(isCurrentlyFocused => !isCurrentlyFocused);
-    //    setIsWonderFocused(true);
+    //    setIsWonderFocused(isCurrentlyFocused => !isCurrentlyFocused);
+    setIsWonderFocused(true);
   };
 
   useEffect(() => {

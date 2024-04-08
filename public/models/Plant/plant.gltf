@@ -1,0 +1,196 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v3.10.1",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "SCALAR",
+      "componentType": 5125,
+      "count": 493395
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 82852,
+      "max": [
+        0.47558489441871643,
+        2.2731239795684814,
+        0.40450796484947205
+      ],
+      "min": [
+        -0.3573528230190277,
+        0.2609974443912506,
+        -0.4532812535762787
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 82852
+    },
+    {
+      "type": "VEC4",
+      "componentType": 5123,
+      "count": 82852,
+      "normalized": true,
+      "sparse": {
+        "count": 2690,
+        "indices": {
+          "bufferView": 0,
+          "byteOffset": 0,
+          "componentType": 5125
+        },
+        "values": {
+          "bufferView": 1,
+          "byteOffset": 0
+        }
+      }
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 10760
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10760,
+      "byteLength": 21520
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 32280,
+      "byteLength": 1811181
+    }
+  ],
+  "buffers": [
+    {
+      "name": "plant-separated",
+      "uri": "plant-separated.bin",
+      "byteLength": 1843461
+    }
+  ],
+  "materials": [
+    {
+      "name": "PlantBanjoFig001_4K",
+      "extras": {
+        "pmc_matprops": {
+          "workflow": "METALNESS",
+          "setname": "PlantBanjoFig001_4K",
+          "status": "{}",
+          "size": "4K",
+          "use_ao": 1,
+          "use_disp": 1,
+          "use_bump": 1,
+          "use_sixteenbit": 1,
+          "setpath": "D:/WORK/Poliigon/ASSETS/Dropbox (Poliigon)/release-assets/5258/PlantBanjoFig001/Software/Blender/PlantBanjoFig001_Blender_Cycles/PlantBanjoFig001_4K"
+        },
+        "flip_fluid_material_library": {}
+      },
+      "doubleSided": true,
+      "pbrMetallicRoughness": {}
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Mesh.023",
+      "primitives": [
+        {
+          "attributes": {
+            "COLOR_0": 3,
+            "POSITION": 1,
+            "NORMAL": 2
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 2,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "cameras": [
+    {
+      "name": "Camera.002",
+      "type": "perspective",
+      "perspective": {
+        "znear": 0.10000000149011612,
+        "zfar": 1000,
+        "yfov": 0.6911111454091888,
+        "aspectRatio": 1.25
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Camera",
+      "translation": [
+        1.5493340137567246,
+        -0.5783443003892899,
+        -6.160950422286987
+      ],
+      "rotation": [
+        0.0010128195863217115,
+        0.9999538660049438,
+        0.008437137119472027,
+        0.004477126058191061
+      ],
+      "camera": 0
+    },
+    {
+      "name": "PlantBanjoFig001.001",
+      "extras": {
+        "flip_fluid": {}
+      },
+      "translation": [
+        -0.05911604136565085,
+        -1.267060711979866,
+        0.02438664436340332
+      ],
+      "mesh": 0
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "extras": {
+        "vr_landmarks": [
+          {
+            "type": 0,
+            "base_scale": 1
+          }
+        ],
+        "SimpleBake_Props": {},
+        "sun_pos_properties": {
+          "day_of_year": 53,
+          "sun_object": {},
+          "object_collection": {}
+        },
+        "uuid": "66259735-8665-4e9b-b5d0-8dec6f6dbcd1",
+        "assets reported": {},
+        "send2ue": {}
+      },
+      "nodes": [
+        0,
+        1
+      ]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": [
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ]
+}
