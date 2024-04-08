@@ -1,4 +1,5 @@
 .filters {
+  @mixin font-small;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

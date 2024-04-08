@@ -5,11 +5,36 @@
   font-family: "ABC Oracle";
   src: url("/fonts/Oracle/ABCOracle-Light.woff2") format("woff2");
   font-weight: 300;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "ABC Oracle";
+  src: url("/fonts/Oracle/ABCOracle-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ABC Oracle";
+  src: url("/fonts/Oracle/ABCOracle-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ABC Oracle";
+  src: url("/fonts/Oracle/ABCOracle-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
 
 @font-face {
   font-family: "Larish Neue";
   src: url("/fonts/LarishNeueSemiboldRegSubsetted.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 :root {
