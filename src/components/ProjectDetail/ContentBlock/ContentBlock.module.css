@@ -27,7 +27,7 @@
 
 .title,
 .intro {
-  @mixin body-3;
+  @mixin font-small;
 }
 
 .title {
@@ -112,12 +112,12 @@
 
   .title,
   .intro {
-    @mixin body-2;
+    @mixin font-med;
   }
 
   .text,
   .credits {
-    @mixin body-3;
+    @mixin font-small;
   }
 
   .item {
@@ -161,12 +161,12 @@
 
   .title,
   .intro {
-    @mixin body-2;
+    @mixin font-med;
   }
 
   .text,
   .credits {
-    @mixin body-2;
+    @mixin font-med;
   }
 
   .title {
@@ -197,7 +197,7 @@
 
   .title,
   .intro {
-    @mixin body-1;
+    @mixin font-large;
   }
 }
 

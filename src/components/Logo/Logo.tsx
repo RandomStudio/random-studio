@@ -2,16 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './Logo.module.css';
 
-type LogoProps = {
-  isCentred: boolean;
-};
-
-const Logo = ({ isCentred }: LogoProps) => {
-  const centredClass = isCentred ? styles.isCentre : styles.isTop;
-  const logoClass = `${styles.logo} ${centredClass}`;
-
+const Logo = () => {
   return (
-    <h1 className={logoClass}>
+    <h1 className={styles.logo}>
       <Link href="/">
         {'Random '}
 

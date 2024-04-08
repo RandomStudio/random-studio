@@ -3,7 +3,7 @@
   padding: 128px 22px 0;
 
   @media (min-width: 576px) {
-    @mixin body-3;
+    @mixin font-small;
     width: var(--width);
     margin: 8vw 0;
     padding: 128px 64px 0;
@@ -16,7 +16,7 @@
   }
 
   @media (min-width: 864px) {
-    @mixin body-2;
+    @mixin font-med;
     max-width: 768px;
     margin: 0 auto 8%;
   }

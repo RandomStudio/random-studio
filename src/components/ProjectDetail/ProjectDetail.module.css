@@ -6,23 +6,23 @@
 
 .title,
 .intro {
-  @mixin body-3;
+  @mixin font-small;
   margin: 0 0 10vw;
   padding: 0 22px;
 
   @media (min-width: 576px) {
-    @mixin body-2;
+    @mixin font-med;
     margin: 0 0 8vw;
     padding: 0 64px;
   }
 
   @media (min-width: 864px) {
-    @mixin body-2;
+    @mixin font-med;
     max-width: 768px;
   }
 
   @media (min-width: 1152px) {
-    @mixin body-1;
+    @mixin font-large;
     max-width: 1024px;
   }
 }

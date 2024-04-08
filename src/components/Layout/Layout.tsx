@@ -24,7 +24,6 @@ const Layout = ({
   children,
   className = '',
   hasFooter = true,
-  isLogoCentred = false,
   description = undefined,
   title = undefined,
   image = undefined,
@@ -55,7 +54,7 @@ const Layout = ({
         </a>
 
         <div className={styles.padding}>
-          <Navigation isLogoCentred={isLogoCentred} />
+          <Navigation />
         </div>
 
         {children}

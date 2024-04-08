@@ -1,5 +1,5 @@
 .title {
-  @mixin body-4;
+  @mixin font-xxs;
   max-width: 17em;
   padding: 16px 22px 0;
   margin-left: 1.4rem;
@@ -10,11 +10,7 @@
   }
 
   @media (min-width: 864px) {
-    @mixin body-3;
-  }
-
-  @media (min-width: 1152px) {
-    @mixin body-2;
+    @mixin font-small;
   }
 
   @media (max-width: 450px) {

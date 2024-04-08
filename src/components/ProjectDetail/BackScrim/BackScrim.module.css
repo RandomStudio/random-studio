@@ -1,5 +1,5 @@
 .backScrim {
-  @mixin body-4;
+  @mixin font-xxs;
   position: absolute;
   bottom: -100px;
   width: 100%;

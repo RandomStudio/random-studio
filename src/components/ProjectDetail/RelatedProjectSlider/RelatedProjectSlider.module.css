@@ -17,12 +17,12 @@
   }
 
   h4 {
-    @mixin body-3;
+    @mixin font-small;
     margin-bottom: 28px;
     padding-left: var(--spacing-left);
 
     @media (min-width: 864px) {
-      @mixin body-2;
+      @mixin font-med;
     }
   }
 
@@ -63,11 +63,11 @@
   text-decoration: none;
 
   p {
-    @mixin body-4;
+    @mixin font-xxs;
     text-decoration: none;
 
     @media (min-width: 864px){
-      @mixin body-3;
+      @mixin font-small;
     }
   }
 

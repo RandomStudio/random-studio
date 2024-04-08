@@ -11,7 +11,6 @@ type HomeProps = {
   collaborator: string;
   collaborationUrl: string;
   intro: string;
-  isLogoCentred: boolean;
   projects: Project[];
   video: VideoData;
 };
@@ -20,7 +19,6 @@ const Home = ({
   collaborator,
   collaborationUrl,
   intro,
-  isLogoCentred = false,
   projects,
   video,
 }: HomeProps) => (
@@ -31,7 +29,7 @@ const Home = ({
       video={video}
     />
 
-    <Layout isLogoCentred={isLogoCentred}>
+    <Layout>
       <Container>
         <ProjectList hasLimit intro={intro} projects={projects} />
       </Container>
