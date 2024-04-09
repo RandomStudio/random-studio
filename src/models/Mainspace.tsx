@@ -48,8 +48,7 @@ const Mainspace = ({
       return;
     }
 
-    // I believe off === alarm on, totally clear
-    if (value === 'off') {
+    if (value === 'on') {
       materials['Wood Fine Veneer Oak'].map.offset.x = 0;
 
       return;

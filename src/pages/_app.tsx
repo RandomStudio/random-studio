@@ -28,14 +28,10 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
 
   const hasWonder = typeof window !== 'undefined' && window.innerWidth > 768;
 
-  const pageClassNames = classNames(styles.page, {
-    //   [styles.isWonderFocused]: isWonderFocused,
-  });
-
   return (
     <ErrorBoundary>
       <div ref={containerRef}>
-        <div className={pageClassNames}>
+        <div className={styles.page}>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           <Component {...pageProps} />
         </div>
@@ -43,7 +39,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
         {hasWonder && (
           <Wonder2
             containerRef={containerRef}
-            isWonderFocused
+            isWonderFocused={isWonderFocused}
             setIsWonderFocused={setIsWonderFocused}
           />
         )}

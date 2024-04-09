@@ -1,7 +1,7 @@
 import { Group, Mesh, MeshStandardMaterial } from 'three';
 import { GLTF } from 'three-stdlib';
 import React, { ForwardedRef, forwardRef, useMemo } from 'react';
-import { useGLTF } from '@react-three/drei';
+import { Instance, Instances, useGLTF } from '@react-three/drei';
 
 type GLTFResult = GLTF & {
   nodes: {

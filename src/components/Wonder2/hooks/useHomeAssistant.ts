@@ -31,8 +31,28 @@ socket.addEventListener('message', handleMessage);
 
 type DefaultAttributeType = { [key: string]: string | number };
 
+// Keep in sync with the entity IDs whitelisted in the Home Assistant EC2 proxy
+export const ENTITY_ID_WHITELIST = [
+  'sun',
+  'sensor.knx_co2_main_space_2',
+  'sensor.knx_co2_kitchen',
+  'sensor.knx_co2_lobby',
+  'sensor.knx_co2_lab',
+  'sensor.knx_co2_upstairs',
+  'sensor.knx_co2_meeting_view',
+  'sensor.knx_co2_meeting_stairs',
+  'binary_sensor.knx_alarm_main_2',
+  'binary_sensor.knx_motion_arena',
+  'binary_sensor.knx_motion_entrance',
+  'binary_sensor.knx_motion_lab',
+  'binary_sensor.knx_motion_main_area',
+  'binary_sensor.knx_motion_meeting_view',
+  'binary_sensor.knx_motion_meeting_stairs',
+  'binary_sensor.knx_motion_silent',
+] as const;
+
 function useHomeAssistant<ValueType, AttributeType = DefaultAttributeType>(
-  id: string,
+  id: (typeof ENTITY_ID_WHITELIST)[number],
 ) {
   const [entityState, setEntityState] = useState<{
     value: ValueType;

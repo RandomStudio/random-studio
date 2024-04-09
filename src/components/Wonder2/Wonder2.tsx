@@ -2,6 +2,7 @@ import { Dispatch, RefObject, SetStateAction, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import classNames from 'classnames';
 import { Perf } from 'r3f-perf';
+import { Float } from '@react-three/drei';
 import styles from './Wonder2.module.css';
 import OuterWorld from './OuterWorld/OuterWorld';
 
@@ -28,15 +29,22 @@ const Wonder2 = ({
   useEffect(() => {
     const wonderScale = 200 / window.innerWidth;
 
-    // containerRef.current?.style.setProperty('--wonder-scale', `${wonderScale}`);
+    containerRef.current?.style.setProperty('--wonder-scale', `${wonderScale}`);
   }, [containerRef]);
 
   return (
     <div className={canvasClassNames}>
-      <Canvas frameloop="demand" onClick={handleCanvasClick}>
-        <Perf deepAnalyze overClock />
+      <Canvas onClick={handleCanvasClick}>
+        {isWonderFocused && <Perf deepAnalyze overClock />}
 
-        <OuterWorld isExpanded={isWonderFocused} />
+        <Float
+          floatIntensity={isWonderFocused ? 0 : 1}
+          floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
+          rotationIntensity={0}
+          speed={isWonderFocused ? 10 : 1.5}
+        >
+          <OuterWorld isExpanded={isWonderFocused} />
+        </Float>
       </Canvas>
     </div>
   );

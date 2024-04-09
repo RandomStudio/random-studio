@@ -2,15 +2,17 @@ import { useEffect, useMemo, useRef } from 'react';
 import { Group, Mesh, MeshStandardMaterial, Plane, Vector3 } from 'three';
 import { useThree } from '@react-three/fiber';
 import Plants from '../../../../models/Plants';
-import useHomeAssistant from '../../hooks/useHomeAssistant';
+import useHomeAssistant, {
+  ENTITY_ID_WHITELIST,
+} from '../../hooks/useHomeAssistant';
 import useBoundingBox from '../../hooks/useBoundingBox';
 
-type C02Plant = JSX.IntrinsicElements['group'] & {
-  roomId: string;
+type CO2Plant = JSX.IntrinsicElements['group'] & {
+  roomId: (typeof ENTITY_ID_WHITELIST)[number];
   plant: 0 | 1 | 2 | 3;
 };
 
-const C02Plant = ({ roomId, plant, ...props }: C02Plant) => {
+const CO2Plant = ({ roomId, plant, ...props }: CO2Plant) => {
   const gl = useThree(three => three.gl);
 
   const { value } = useHomeAssistant<number>(roomId);
@@ -63,9 +65,9 @@ const C02Plant = ({ roomId, plant, ...props }: C02Plant) => {
     <group {...props}>
       <Plants opacity={1} plant={plant} ref={plantRef} />
 
-      <Plants opacity={0.1} plant={plant} />
+      <Plants opacity={0.2} plant={plant} />
     </group>
   );
 };
 
-export default C02Plant;
+export default CO2Plant;
