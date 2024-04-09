@@ -23,10 +23,11 @@ export const convertMaterial = (
 
   // Copy over the properties that exist on both materials
   const basicMaterialProps = Object.fromEntries(
+    // @ts-expect-error Expect error
     currentMaterialProps
       .map(prop => {
-        if (currentMaterialProps in dummyTargetMaterial) {
-          return [prop, currentMaterial[prop]];
+        if (prop in dummyTargetMaterial) {
+          return [prop, currentMaterial[prop as keyof typeof currentMaterial]];
         }
 
         return null;

@@ -33,7 +33,7 @@ type DefaultAttributeType = { [key: string]: string | number };
 
 // Keep in sync with the entity IDs whitelisted in the Home Assistant EC2 proxy
 export const ENTITY_ID_WHITELIST = [
-  'sun',
+  'sun.sun',
   'sensor.knx_co2_main_space_2',
   'sensor.knx_co2_kitchen',
   'sensor.knx_co2_lobby',
