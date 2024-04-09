@@ -1,6 +1,6 @@
 import { Sky as DreiSky } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { MathUtils, Mesh, ShaderMaterial, Vector3 } from 'three';
 import Sun from './Sun/Sun';
 import useHomeAssistant from '../../hooks/useHomeAssistant';
@@ -144,23 +144,24 @@ const keyPoints = {
 const centrePointVector = new Vector3(0, 0, -5);
 
 const Sky = () => {
-  const latestState = useHomeAssistant('sun.sun') as {
-    attributes: { elevation: number; azimuth: number };
-  };
+  const latestState = useHomeAssistant<
+    string,
+    { elevation: number; azimuth: number }
+  >('sun.sun');
 
   const skyRef = useRef<Mesh & { material: ShaderMaterial }>(null);
 
   const { elevation, azimuth } = latestState?.attributes || {};
 
-  const sunPositionRef = useRef<Vector3>(new Vector3());
-
-  useFrame(() => {
+  const sunPosition = useMemo(() => {
     const phi = MathUtils.degToRad(90 - elevation);
     const theta = MathUtils.degToRad(azimuth);
 
-    sunPositionRef.current.setFromSphericalCoords(7, phi, theta);
-    sunPositionRef.current.add(centrePointVector);
-  });
+    const position = new Vector3().setFromSphericalCoords(7, phi, theta);
+    position.add(centrePointVector);
+
+    return position;
+  }, [elevation, azimuth]);
 
   useFrame(() => {
     // Adjust sky properties for a smooth transition
@@ -184,9 +185,7 @@ const Sky = () => {
       keyPoints.mieCoefficient,
     );
 
-    skyRef.current.material.uniforms.sunPosition.value.set(
-      ...sunPositionRef.current,
-    );
+    skyRef.current.material.uniforms.sunPosition.value.set(...sunPosition);
   });
 
   return (
@@ -195,10 +194,10 @@ const Sky = () => {
         distance={450000}
         mieDirectionalG={0.8}
         ref={skyRef}
-        sunPosition={[0, 1, 0]}
+        sunPosition={sunPosition}
       />
 
-      <Sun elevation={elevation} sunPositionRef={sunPositionRef} />
+      <Sun elevation={elevation} sunPosition={sunPosition} />
     </>
   );
 };

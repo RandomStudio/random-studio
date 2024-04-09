@@ -9,7 +9,7 @@ import {
 // Morphvalue is a value between 0 and 1 that determines how much the box should morph between a box (0) and a sphere (1)
 export const getMorphedGeometry = (shape: Mesh, morphValue: number) => {
   const sphereRadius = Math.sqrt(5);
-  const geometry = shape.geometry.clone();
+  const { geometry } = shape;
   const positions = geometry.attributes.position as Float32BufferAttribute;
 
   if (!geometry.attributes.originalPositions) {

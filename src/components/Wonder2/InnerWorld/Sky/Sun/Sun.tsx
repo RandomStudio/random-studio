@@ -79,10 +79,10 @@ const lerp = (current: number, target: number, fraction: number) => {
 
 const Sun = ({
   elevation,
-  sunPositionRef,
+  sunPosition,
 }: {
   elevation: number;
-  sunPositionRef: MutableRefObject<Vector3>;
+  sunPosition: Vector3;
 }) => {
   const sphereRef = useRef<Mesh>(null);
   const targetRef = useRef<Mesh>(null);
@@ -102,11 +102,7 @@ const Sun = ({
       return;
     }
 
-    lightRef.current.position.set(
-      sunPositionRef.current.x,
-      sunPositionRef.current.y,
-      sunPositionRef.current.z,
-    );
+    lightRef.current.position.set(sunPosition.x, sunPosition.y, sunPosition.z);
 
     targetRef.current.position.set(0, 0, 8);
     lightRef.current.lookAt(0, 0, 8);
@@ -140,7 +136,7 @@ const Sun = ({
 
       <ambientLight ref={ambientLightRef} />
 
-      <hemisphereLight groundColor="0x080820" ref={hemisphereLightRef} />
+      <hemisphereLight groundColor="#080820" ref={hemisphereLightRef} />
 
       <Sphere args={[1, 32, 32]} ref={sphereRef}>
         <meshBasicMaterial />

@@ -1,24 +1,9 @@
-import { Box, OrbitControls, SoftShadows } from '@react-three/drei';
-import { useRef } from 'react';
-import { MeshBasicMaterial } from 'three';
-import { useFrame } from '@react-three/fiber';
+import { Box, OrbitControls } from '@react-three/drei';
 import Mainspace from '../../../models/Mainspace';
 import Sky from './Sky/Sky';
-import Plant from '../../../models/Plant';
 import C02Plant from './C02Plant/C02Plant';
 
 const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
-  const materialRef = useRef<MeshBasicMaterial>(null);
-
-  useFrame(({ clock }) => {
-    if (!materialRef.current) {
-      return;
-    }
-
-    const time = clock.getElapsedTime();
-    materialRef.current.color.r = Math.sin(time);
-  });
-
   return (
     <>
       <Box

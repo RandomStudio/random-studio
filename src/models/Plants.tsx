@@ -1,6 +1,6 @@
-import { Box3, Mesh, MeshStandardMaterial } from 'three';
+import { Group, Mesh, MeshStandardMaterial } from 'three';
 import { GLTF } from 'three-stdlib';
-import React, { ForwardedRef, forwardRef, useEffect, useMemo } from 'react';
+import React, { ForwardedRef, forwardRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 
 type GLTFResult = GLTF & {
@@ -19,11 +19,12 @@ type GLTFResult = GLTF & {
 };
 
 type PlantsProps = JSX.IntrinsicElements['group'] & {
+  opacity: number;
   plant: 0 | 1 | 2 | 3;
 };
 
 const Plants = forwardRef(
-  ({ plant, ...props }: PlantsProps, ref: ForwardedRef<Mesh>) => {
+  ({ opacity, plant, ...props }: PlantsProps, ref: ForwardedRef<Group>) => {
     const { nodes, materials } = useGLTF(
       '/models/Plants/plants.gltf',
     ) as GLTFResult;
@@ -66,12 +67,19 @@ const Plants = forwardRef(
       return materials['main.001'];
     }, [materials, plant]);
 
+    const modifiedMaterial = useMemo(() => {
+      const newMaterial = material.clone();
+      newMaterial.opacity = opacity;
+      newMaterial.transparent = newMaterial.opacity < 1;
+
+      return newMaterial;
+    }, [material, opacity]);
+
     return (
-      <group {...props} dispose={null} scale={1.8}>
+      <group {...props} dispose={null} ref={ref} scale={1.8}>
         <mesh
           geometry={geometry}
-          material={material}
-          ref={ref}
+          material={modifiedMaterial}
           rotation={[Math.PI / 2, 0, 0]}
         />
       </group>

@@ -43,7 +43,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
         {hasWonder && (
           <Wonder2
             containerRef={containerRef}
-            isWonderFocused={isWonderFocused}
+            isWonderFocused
             setIsWonderFocused={setIsWonderFocused}
           />
         )}

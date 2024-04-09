@@ -29,11 +29,20 @@ const handleMessage = (event: MessageEvent) => {
 
 socket.addEventListener('message', handleMessage);
 
-function useHomeAssistant<Type>(id: string) {
+type DefaultAttributeType = { [key: string]: string | number };
+
+function useHomeAssistant<ValueType, AttributeType = DefaultAttributeType>(
+  id: string,
+) {
   const [entityState, setEntityState] = useState<{
-    value: Type;
-    attributes: { [key: string]: string | number };
-  }>(state[id]?.reverse()?.[0] || []);
+    value: ValueType;
+    attributes: AttributeType;
+  }>(
+    state[id]?.reverse()?.[0] || {
+      value: null,
+      attributes: {},
+    },
+  );
 
   useEffect(() => {
     if (!id) {
