@@ -1,3 +1,5 @@
+import { DAY_NIGHT_CYCLE_STAGES } from '../InnerWorld/Sky/constants';
+
 export const simulateSunPosition = (elapsedSeconds: number) => {
   // Convert elapsedSeconds to equivalent hours in the day-night cycle
   const hours = (elapsedSeconds % 10) * 2.4;
@@ -27,4 +29,36 @@ export const getSunPositionFromElevationAndAzimuth = (
   const z = Math.cos(phi) * Math.cos(theta);
 
   return [x, y, z];
+};
+
+export const findStages = (elevation: number) => {
+  const sortedStages = [...DAY_NIGHT_CYCLE_STAGES].sort(
+    (a, b) => a.elevation - b.elevation,
+  );
+
+  let currentStageIndex =
+    sortedStages.findIndex(stage => stage.elevation >= elevation) - 1;
+
+  currentStageIndex = Math.max(currentStageIndex, 0);
+
+  if (
+    currentStageIndex === -1 ||
+    elevation > sortedStages[sortedStages.length - 1].elevation
+  ) {
+    currentStageIndex = sortedStages.length - 1;
+  }
+
+  const currentStage = sortedStages[currentStageIndex];
+
+  const nextStageIndex = Math.min(
+    currentStageIndex + 1,
+    sortedStages.length - 1,
+  );
+
+  const nextStage = sortedStages[nextStageIndex];
+
+  return {
+    currentStage,
+    nextStage,
+  };
 };
