@@ -51,11 +51,7 @@ const Sky = () => {
       delta,
     );
 
-    skyRef.current.material.uniforms.rayleigh.value = lerp(
-      currentStage.rayleigh,
-      nextStage.rayleigh,
-      delta,
-    );
+    skyRef.current.material.uniforms.rayleigh.value = lerp(0.3, 0.3, delta);
 
     skyRef.current.material.uniforms.mieCoefficient.value = lerp(
       currentStage.mieCoefficient,

@@ -36,6 +36,7 @@ const Sun = ({
 
     const { currentStage } = findStages(elevation);
     const { lightColor, intensity } = currentStage;
+
     lightRef.current.color.copy(lightColor);
     lightRef.current.intensity = intensity;
     setHasSetup(true);
@@ -59,7 +60,7 @@ const Sun = ({
     sphereRef.current.position.copy(lightRef.current.position);
 
     const { currentStage, nextStage } = findStages(elevation);
-    console.log(elevation, currentStage, nextStage);
+
     // Determine the transition progress between the current and next stage
     const elevationRange = nextStage.elevation - currentStage.elevation;
 

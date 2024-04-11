@@ -3,6 +3,8 @@ import Mainspace from '../../../models/Mainspace';
 import Sky from './Sky/Sky';
 import CO2Plant from './CO2Plant/CO2Plant';
 import MotionChair from './MotionChair/MotionChair';
+import Chair from '../../../models/Chair';
+import LunchPlates from './LunchPlates/LunchPlates';
 
 const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
   return (
@@ -83,6 +85,8 @@ const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
         position={[5, 0, 4.2]}
         rotation={[0, 0.9, 0]}
       />
+
+      <LunchPlates />
     </>
   );
 };

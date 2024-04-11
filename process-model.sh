@@ -27,10 +27,10 @@ mkdir -p $componentDir
 
 
 # Step 1: Convert GLTF to separate GLTF + BIN + textures
-gltf-pipeline -i "$modelSourceDir/$filename.gltf" -o "$modelSourceDir/$filename-separated.gltf" --separate --separateTextures
+gltf-pipeline -i "$modelSourceDir/$filename.gltf" -o "$modelSourceDir/$filename-transformed.glb" --separate --separateTextures
 
-outputFilename="$modelTargetDir/$filename.gltf"
-gltf-transform cp "$modelSourceDir/$filename-separated.gltf" $outputFilename
+outputFilename="$modelTargetDir/$filename.glb"
+gltf-transform cp "$modelSourceDir/$filename-transformed.glb" $outputFilename
 gltf-transform validate $outputFilename
 
 gltf-transform dedup $outputFilename $outputFilename
@@ -48,12 +48,14 @@ gltf-transform validate $outputFilename
 gltf-transform gzip $outputFilename
 
 # Convert GLTF to JSX component (TypeScript version)
-npx gltfjsx $outputFilename -t --types --output "$componentDir/${ComponentName}.tsx"
+npx gltfjsx $outputFilename -t --types --instanceall --output "$componentDir/${ComponentName}.tsx"
 
+mv "$componentDir/${ComponentName}-transformed.glb" $outputFilename
 # Reformat the outputted file to use ES6 arrow functions, adjust the component name, and export statement
 sed -i '' "s/export function Model/const $ComponentName = /" "${componentDir}/${filename}.tsx"
+sed -i '' "s/export function Instances/export const ${ComponentName}Instances = /" "${componentDir}/${filename}.tsx"
 sed -i '' "s/) {/) => {/" "${componentDir}/${filename}.tsx"
-sed -i '' "s/\/${filename}.gltf/\/models\/${ComponentName}\/${filename}.gltf/" "${componentDir}/${filename}.tsx"
+sed -i '' "s/\/${filename}-transformed.glb/\/models\/${ComponentName}\/${filename}.glb/" "${componentDir}/${filename}.tsx"
 echo "export default ${ComponentName};" >> "$componentDir/${ComponentName}.tsx"
 
 echo "GLTF processed and JSX component created: $componentDir/$filename.tsx"

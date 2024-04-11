@@ -41,6 +41,7 @@ export const ENTITY_ID_WHITELIST = [
   'sensor.knx_co2_upstairs',
   'sensor.knx_co2_meeting_view',
   'sensor.knx_co2_meeting_stairs',
+  'input_boolean.is_lunch_time',
   'binary_sensor.knx_alarm_main_2',
   'binary_sensor.knx_motion_arena',
   'binary_sensor.knx_motion_entrance',

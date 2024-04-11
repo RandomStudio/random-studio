@@ -61,7 +61,7 @@ export const DAY_NIGHT_CYCLE_STAGES = [
     lightColor: new Color(0xffa07a),
     intensity: 0.8,
     turbidity: 10,
-    rayleigh: 10,
+    rayleigh: 3,
     mieCoefficient: 0.005,
   },
   {
@@ -71,7 +71,7 @@ export const DAY_NIGHT_CYCLE_STAGES = [
     lightColor: new Color(0xffa07a),
     intensity: 0.8,
     turbidity: 10,
-    rayleigh: 10,
+    rayleigh: 3,
     mieCoefficient: 0.005,
   },
   {
@@ -98,6 +98,16 @@ export const DAY_NIGHT_CYCLE_STAGES = [
     elevation: 35,
     name: DAY_NIGHT_CYCLE_STAGE.NOON,
     skyColor: new Color(0xf0ffff), // Bright midday sky
+    lightColor: new Color(0xf0ffff),
+    intensity: 1.0,
+    turbidity: 5,
+    rayleigh: 1,
+    mieCoefficient: 0.005,
+  },
+  {
+    elevation: 91,
+    name: DAY_NIGHT_CYCLE_STAGE.NOON,
+    skyColor: new Color(0xf0ffff), // Catch-all for the sun being directly overhead
     lightColor: new Color(0xf0ffff),
     intensity: 1.0,
     turbidity: 5,

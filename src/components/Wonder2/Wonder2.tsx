@@ -5,6 +5,8 @@ import { Perf } from 'r3f-perf';
 import { Float } from '@react-three/drei';
 import styles from './Wonder2.module.css';
 import OuterWorld from './OuterWorld/OuterWorld';
+import R3FErrorBoundary from './R3FErrorBoundary/R3FErrorBoundary';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 type Wonder2Props = {
   containerRef: RefObject<HTMLDivElement>;
@@ -34,18 +36,22 @@ const Wonder2 = ({
 
   return (
     <div className={canvasClassNames}>
-      <Canvas onClick={handleCanvasClick}>
-        {isWonderFocused && <Perf deepAnalyze overClock />}
+      <ErrorBoundary>
+        <Canvas onClick={handleCanvasClick}>
+          <R3FErrorBoundary>
+            {isWonderFocused && <Perf deepAnalyze overClock />}
 
-        <Float
-          floatIntensity={isWonderFocused ? 0 : 1}
-          floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
-          rotationIntensity={0}
-          speed={isWonderFocused ? 10 : 1.5}
-        >
-          <OuterWorld isExpanded={isWonderFocused} />
-        </Float>
-      </Canvas>
+            <Float
+              floatIntensity={isWonderFocused ? 0 : 1}
+              floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
+              rotationIntensity={0}
+              speed={isWonderFocused ? 10 : 1.5}
+            >
+              <OuterWorld isExpanded={isWonderFocused} />
+            </Float>
+          </R3FErrorBoundary>
+        </Canvas>
+      </ErrorBoundary>
     </div>
   );
 };
