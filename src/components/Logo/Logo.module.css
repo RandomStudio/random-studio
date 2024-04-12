@@ -1,11 +1,12 @@
 .logo {
   @mixin logo;
-  font-size: var(--font-logo-small);
   margin: 0;
   z-index: 1;
   text-align: left;
+  top: 65px;
 
   @media (--tablet) {
+    top: 78px;
     left: 45px;
   }
 
@@ -17,21 +18,5 @@
     display: inline-block;
     pointer-events: auto;
     text-decoration: none;
-  }
-
-  &.isTop {
-    top: 65px;
-
-    @media (--tablet) {
-      top: 78px;
-    }
-
-    @media (--desktop) {
-      top: 40px;
-    }
-  }
-
-  &.isCentre {
-    top: 40vh;
   }
 }

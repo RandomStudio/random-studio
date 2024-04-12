@@ -1,0 +1,18 @@
+.container {
+  margin: 0 auto;
+}
+
+.hasHorizontalConstraint {
+  max-width: 1192px;
+}
+
+.hasVerticalPadding {
+  padding-top: 268px;
+  padding-bottom: 104px;
+
+  @media (--desktop) {
+    padding-top: 304px;
+    padding-bottom: 100px;
+  }
+}
+

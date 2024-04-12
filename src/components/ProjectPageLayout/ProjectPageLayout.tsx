@@ -1,8 +1,6 @@
 import React from 'react';
-import Head from '../Head/Head';
 import Layout from '../Layout/Layout';
 import ProjectDetail from '../ProjectDetail/ProjectDetail';
-import styles from './ProjectPageLayout.module.scss';
 import useScrollRestoration from '../../hooks/useScrollRestoration';
 import {
   CreditsType,
@@ -11,6 +9,7 @@ import {
   OpenGraph,
   ProjectSummary,
 } from '../../types/types';
+import Container from '../Layout/Container/Container';
 
 type ProjectPageLayoutProps = {
   content: ContentBlockType[];
@@ -38,24 +37,25 @@ const ProjectPageLayout = ({
   useScrollRestoration();
 
   return (
-    <Layout className={styles.layout} hasFooter={false}>
-      <Head
-        description={intro}
-        image={image ?? featuredImage}
-        socialDescription={ogDescription}
-        socialTitle={ogTitle}
-        title={title}
-      />
-
-      <ProjectDetail
-        content={content}
-        credits={credits}
-        externalUrl={externalUrl}
-        intro={intro}
-        relatedProjects={relatedProjects}
-        relatedProjectsTitle={relatedProjectsTitle}
-        title={title}
-      />
+    <Layout
+      description={intro}
+      hasFooter={false}
+      image={image ?? featuredImage}
+      socialDescription={ogDescription}
+      socialTitle={ogTitle}
+      title={title}
+    >
+      <Container hasHorizontalConstraint={false}>
+        <ProjectDetail
+          content={content}
+          credits={credits}
+          externalUrl={externalUrl}
+          intro={intro}
+          relatedProjects={relatedProjects}
+          relatedProjectsTitle={relatedProjectsTitle}
+          title={title}
+        />
+      </Container>
     </Layout>
   );
 };

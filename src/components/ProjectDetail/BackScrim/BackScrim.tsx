@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import styles from './BackScrim.module.scss';
+import styles from './BackScrim.module.css';
 import supportsIntersectionObserver from '../../../utils/supportsIntersectionObserver';
 
 const BackScrim = () => {

@@ -5,52 +5,64 @@ import Footer from '../Footer/Footer';
 import styles from './Layout.module.css';
 import useSunset from '../../utils/hooks/useSunset';
 import AfterDarkContext from './AfterDarkContext';
+import Head from '../Head/Head';
+import { Image } from '../../types/types';
 
 type LayoutProps = {
-  children: ReactNode[];
+  children: ReactNode[] | ReactNode;
   className?: string;
   hasFooter?: boolean;
-  isLogoCentred?: boolean;
-  isNewDesign?: boolean;
-  hasNavigation?: boolean;
+  description?: string;
+  title?: string;
+  image?: Image | string;
+  socialDescription?: string;
+  socialTitle?: string;
 };
 
 const Layout = ({
   children,
   className = '',
   hasFooter = true,
-  isLogoCentred = false,
-  isNewDesign = false,
-  hasNavigation = true,
+  description = undefined,
+  title = undefined,
+  image = undefined,
+  socialDescription = undefined,
+  socialTitle = undefined,
 }: LayoutProps) => {
   const isAfterDark = useSunset();
 
-  const isDarkStyleActive = isAfterDark && isNewDesign;
+  const isDarkStyleActive = isAfterDark;
 
-  const layoutClasses = classNames(className, {
-    [styles.newLayout]: isNewDesign,
-    [styles.oldLayout]: !isNewDesign,
+  const layoutClasses = classNames(className, styles.layout, {
     [styles.isAfterDark]: isDarkStyleActive,
   });
 
   return (
     <AfterDarkContext.Provider value={isAfterDark}>
+      <Head
+        description={description}
+        image={image}
+        socialDescription={socialDescription}
+        socialTitle={socialTitle}
+        title={title}
+      />
+
       <div className={`${layoutClasses} ${isDarkStyleActive && 'isAfterDark'}`}>
         <a className="screen-reader-only" href="#main-content" id="skip-nav">
           {'Skip Navigation'}
         </a>
 
-        {hasNavigation && (
-          <div className={styles.newLayout}>
-            <Navigation isLogoCentred={isLogoCentred} />
-          </div>
-        )}
-
-        <div className={styles.wrapper} id="main-content">
-          {children}
+        <div className={styles.padding}>
+          <Navigation />
         </div>
 
-        <div className={styles.newLayout}>{hasFooter && <Footer />}</div>
+        {children}
+
+        {hasFooter && (
+          <div className={styles.padding}>
+            <Footer />
+          </div>
+        )}
 
         <div className={styles.transitionColorFlash} />
       </div>

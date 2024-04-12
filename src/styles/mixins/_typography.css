@@ -1,44 +1,45 @@
 @define-mixin logo-text-styles {
   font-family: 'Larish Neue', serif;
   font-weight: normal;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-align: left;
 }
 
 @define-mixin base-text-styles {
-  font-family: 'Random Regular', 'Random', serif;
-  font-weight: 400;
-  letter-spacing: 0em;
-  text-align: left;
+  font-family: 'ABC Oracle', 'Random Regular', 'Random', Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 300;
+  font-feature-settings: 'ss09';
 }
 
+/* NEW SCALE */
 @define-mixin logo {
   /* Text Style Body-1 */
   @mixin logo-text-styles;
   font-size: 46px;
-  line-height: 54px;
+  line-height: 52px;
+  letter-spacing: -0.9px;
 }
 
 @define-mixin body-1 {
   /* Text Style Body-1 */
   @mixin base-text-styles;
   font-size: 40px;
-  line-height: 52px;
+  line-height: 47px;
+  letter-spacing: -1.2px;
 }
 
 @define-mixin body-2 {
   /* Text Style Body-2 */
   @mixin base-text-styles;
   font-size: 28px;
-  line-height: 36px;
+  line-height: 34px;
+  letter-spacing: -0.3px;
 }
 
 @define-mixin body-3 {
   /* Text Style Body-3 */
   @mixin base-text-styles;
   font-size: 22px;
-  line-height: 30px;
+  line-height: 27px;
+  letter-spacing: -0.044px;
 }
 
 @define-mixin body-4 {
@@ -46,12 +47,46 @@
   @mixin base-text-styles;
   font-size: 16px;
   line-height: 22px;
+  letter-spacing: 0.2px;
 }
 
 @define-mixin small {
   /* Text Style Small */
   @mixin base-text-styles;
   font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.56px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+
+/* OLD SCALE: deprecated, phase out */
+@define-mixin font-large {
+  /* Text Style font-large */
+  @mixin base-text-styles;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: -1.2px;
+}
+
+@define-mixin font-med {
+  /* Text Style font-med */
+  @mixin base-text-styles;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -1px;
+}
+
+@define-mixin font-small {
+  /* Text Style Body-2 */
+  @mixin base-text-styles;
+  font-size: 23px;
+  line-height: 29px;
+  letter-spacing: -0.2px;
+}
+
+@define-mixin font-xxs {
+  /* Text Style Body-3 */
+  @mixin base-text-styles;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
 }
