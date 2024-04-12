@@ -16,7 +16,6 @@ type GLTFResult = GLTF & {
   materials: {
     ['SEAT_CASTER.005']: THREE.MeshStandardMaterial;
   };
-  animations: GLTFAction[];
 };
 
 type ContextType = Record<

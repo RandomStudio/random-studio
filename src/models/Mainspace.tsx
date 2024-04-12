@@ -89,6 +89,7 @@ const Mainspace = (props: JSX.IntrinsicElements['group']) => {
 
       <instancedMesh
         args={[nodes.GILLIS250.geometry, materials['Wood Fine Veneer Oak'], 5]}
+        // @ts-expect-error Ignore
         instanceMatrix={nodes.GILLIS250.instanceMatrix}
       />
     </group>
