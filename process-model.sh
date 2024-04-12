@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #brew install imagemagick
-npm install -g gltf-pipeline
-npm install -g @gltf-transform/cli
+#npm install -g gltf-pipeline
+#npm install -g @gltf-transform/cli
 
 # Check if filename argument is provided
 if [ "$#" -ne 1 ]; then
@@ -27,10 +27,10 @@ mkdir -p $componentDir
 
 
 # Step 1: Convert GLTF to separate GLTF + BIN + textures
-gltf-pipeline -i "$modelSourceDir/$filename.gltf" -o "$modelSourceDir/$filename-transformed.glb" --separate --separateTextures
+gltf-pipeline -i "$modelSourceDir/$filename.gltf" -o "$modelSourceDir/$filename-transformed.gltf" --separate --separateTextures
 
-outputFilename="$modelTargetDir/$filename.glb"
-gltf-transform cp "$modelSourceDir/$filename-transformed.glb" $outputFilename
+outputFilename="$modelTargetDir/$filename.gltf"
+gltf-transform cp "$modelSourceDir/$filename-transformed.gltf" $outputFilename
 gltf-transform validate $outputFilename
 
 gltf-transform dedup $outputFilename $outputFilename
@@ -50,12 +50,12 @@ gltf-transform gzip $outputFilename
 # Convert GLTF to JSX component (TypeScript version)
 npx gltfjsx $outputFilename -t --types --instanceall --output "$componentDir/${ComponentName}.tsx"
 
-mv "$componentDir/${ComponentName}-transformed.glb" $outputFilename
+mv "$componentDir/${ComponentName}-transformed.gltf" $outputFilename
 # Reformat the outputted file to use ES6 arrow functions, adjust the component name, and export statement
 sed -i '' "s/export function Model/const $ComponentName = /" "${componentDir}/${filename}.tsx"
 sed -i '' "s/export function Instances/export const ${ComponentName}Instances = /" "${componentDir}/${filename}.tsx"
 sed -i '' "s/) {/) => {/" "${componentDir}/${filename}.tsx"
-sed -i '' "s/\/${filename}-transformed.glb/\/models\/${ComponentName}\/${filename}.glb/" "${componentDir}/${filename}.tsx"
+sed -i '' "s/\/${filename}.gltf/\/models\/${ComponentName}\/${filename}.gltf/" "${componentDir}/${filename}.tsx"
 echo "export default ${ComponentName};" >> "$componentDir/${ComponentName}.tsx"
 
 echo "GLTF processed and JSX component created: $componentDir/$filename.tsx"

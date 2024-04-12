@@ -2,9 +2,10 @@ import { Box, OrbitControls } from '@react-three/drei';
 import Mainspace from '../../../models/Mainspace';
 import Sky from './Sky/Sky';
 import CO2Plant from './CO2Plant/CO2Plant';
-import MotionChair from './MotionChair/MotionChair';
-import Chair from '../../../models/Chair';
 import LunchPlates from './LunchPlates/LunchPlates';
+import MotionChairs from './MotionChairs/MotionChairs';
+import Camera from './Camera/Camera';
+import Desk, { DeskInstances } from '../../../models/Desk';
 
 const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
   return (
@@ -17,13 +18,11 @@ const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
 
       <Sky />
 
+      <Camera isExpanded={isExpanded} />
+
       <OrbitControls />
 
-      <Mainspace
-        isExpanded={isExpanded}
-        position={[0, 1, 4]}
-        rotation={[0, 0, 0]}
-      />
+      <Mainspace position={[0, 1, 4]} rotation={[0, 0, 0]} />
 
       <CO2Plant
         plant={0}
@@ -49,42 +48,39 @@ const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
         roomId="sensor.knx_co2_upstairs"
       />
 
-      <MotionChair
-        id="binary_sensor.knx_motion_meeting_view"
-        isSpinning
-        position={[6, 0, 3]}
-        rotation={[0, Math.PI / -4, 0]}
+      {
+        //
+      }
+
+      <CO2Plant
+        plant={1}
+        position={[1, -1.2, 6.5]}
+        roomId="sensor.knx_co2_meeting_view"
+        rotation={[0, Math.PI, 0]}
+        scale={1.2}
       />
 
-      <MotionChair
-        id="binary_sensor.knx_motion_entrance"
-        position={[5, 0, 2.2]}
-        rotation={[0, -Math.PI, 0]}
+      <CO2Plant
+        plant={3}
+        position={[5.8, -1.2, 9.8]}
+        roomId="sensor.knx_co2_meeting_red"
+        rotation={[0, Math.PI / -1.1, 0]}
       />
 
-      <MotionChair
-        id="binary_sensor.knx_motion_lab"
-        position={[5, 0, 4.2]}
-        rotation={[0, 0.9, 0]}
+      <CO2Plant
+        plant={3}
+        position={[-5.6, -1.2, 10.2]}
+        roomId="sensor.knx_co2_meeting_stairs"
+        rotation={[0, Math.PI / -2.1, 0]}
       />
 
-      <MotionChair
-        id="binary_sensor.knx_motion_arena"
-        position={[4, 0, 2.2]}
-        rotation={[0, 0, 0]}
-      />
+      <DeskInstances position={[0, -0.75, 3]}>
+        <Desk position={[4.5, 0, 0]} />
 
-      <MotionChair
-        id="binary_sensor.knx_motion_meeting_stairs"
-        position={[2.8, 0, 3]}
-        rotation={[0, Math.PI / -4, 0]}
-      />
+        <Desk position={[-5, 0, 0]} rotation={[0, Math.PI / 2, 0]} />
+      </DeskInstances>
 
-      <MotionChair
-        id="binary_sensor.knx_motion_main_area"
-        position={[5, 0, 4.2]}
-        rotation={[0, 0.9, 0]}
-      />
+      <MotionChairs />
 
       <LunchPlates />
     </>

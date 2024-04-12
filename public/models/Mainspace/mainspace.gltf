@@ -32,61 +32,6 @@
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 822
-    },
-    {
-      "type": "VEC3",
-      "componentType": 5126,
-      "count": 376,
-      "max": [
-        0.8462724685668945,
-        0.018499916419386864,
-        1.5876274108886719
-      ],
-      "min": [
-        -0.5797090530395508,
-        -0.733491063117981,
-        -0.9803400039672852
-      ]
-    },
-    {
-      "type": "VEC3",
-      "componentType": 5126,
-      "count": 376
-    },
-    {
-      "type": "VEC2",
-      "componentType": 5126,
-      "count": 376
-    },
-    {
-      "type": "SCALAR",
-      "componentType": 5123,
-      "count": 94293
-    },
-    {
-      "type": "VEC3",
-      "componentType": 5126,
-      "count": 16787,
-      "max": [
-        11.495063781738281,
-        13.6285400390625,
-        19.061086654663086
-      ],
-      "min": [
-        -15.576736450195312,
-        -13.644760131835938,
-        -19.13361358642578
-      ]
-    },
-    {
-      "type": "VEC3",
-      "componentType": 5126,
-      "count": 16787
-    },
-    {
-      "type": "SCALAR",
-      "componentType": 5123,
       "count": 60
     },
     {
@@ -288,41 +233,31 @@
     {
       "buffer": 0,
       "byteOffset": 275,
-      "byteLength": 1935
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 2210,
-      "byteLength": 99115
-    },
-    {
-      "buffer": 0,
-      "byteOffset": 101325,
       "byteLength": 360
     },
     {
       "buffer": 0,
-      "byteOffset": 101685,
+      "byteOffset": 635,
       "byteLength": 2056
     },
     {
       "buffer": 0,
-      "byteOffset": 103741,
+      "byteOffset": 2691,
       "byteLength": 1589
     },
     {
       "buffer": 0,
-      "byteOffset": 105330,
-      "byteLength": 747
+      "byteOffset": 4280,
+      "byteLength": 746
     },
     {
       "buffer": 0,
-      "byteOffset": 106077,
-      "byteLength": 899
+      "byteOffset": 5026,
+      "byteLength": 897
     },
     {
       "buffer": 0,
-      "byteOffset": 106976,
+      "byteOffset": 5923,
       "byteLength": 1236
     }
   ],
@@ -356,19 +291,11 @@
       "sampler": 0
     },
     {
-      "source": 5,
-      "sampler": 0
-    },
-    {
-      "source": 7,
-      "sampler": 0
-    },
-    {
       "source": 6,
       "sampler": 0
     },
     {
-      "source": 9,
+      "source": 5,
       "sampler": 0
     },
     {
@@ -376,34 +303,15 @@
       "sampler": 0
     },
     {
-      "source": 11,
+      "source": 7,
       "sampler": 0
     },
     {
-      "source": 10,
-      "sampler": 0
-    },
-    {
-      "source": 12,
+      "source": 9,
       "sampler": 0
     }
   ],
   "images": [
-    {
-      "name": "qkflyop_4K_Normal",
-      "mimeType": "image/jpeg",
-      "uri": "qkflyop_4K_Normal.jpg"
-    },
-    {
-      "name": "qkflyop_4K_Albedo",
-      "mimeType": "image/jpeg",
-      "uri": "qkflyop_4K_Albedo.jpg"
-    },
-    {
-      "name": "qkflyop_4K_Roughness",
-      "mimeType": "image/png",
-      "uri": "qkflyop_4K_Roughness.png"
-    },
     {
       "name": "WoodFineVeneerOak001_NRM_4K",
       "mimeType": "image/jpeg",
@@ -457,9 +365,9 @@
   ],
   "buffers": [
     {
-      "name": "mainspace-separated",
-      "uri": "mainspace-separated.bin",
-      "byteLength": 108212
+      "name": "mainspace-transformed",
+      "uri": "mainspace-transformed.bin",
+      "byteLength": 7159
     }
   ],
   "materials": [
@@ -481,7 +389,7 @@
       }
     },
     {
-      "name": "MDF Gray",
+      "name": "Wood Fine Veneer Oak",
       "extras": {
         "flip_fluid_material_library": {}
       },
@@ -496,43 +404,7 @@
         }
       },
       "normalTexture": {
-        "index": 1,
-        "scale": 0.20000000298023224
-      }
-    },
-    {
-      "name": "SEAT_FABRIC",
-      "extras": {
-        "flip_fluid_material_library": {}
-      },
-      "doubleSided": true,
-      "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          0.05000000074505806,
-          0.05000000074505806,
-          0.05000000074505806,
-          1
-        ],
-        "metallicFactor": 0
-      }
-    },
-    {
-      "name": "Wood Fine Veneer Oak",
-      "extras": {
-        "flip_fluid_material_library": {}
-      },
-      "doubleSided": true,
-      "pbrMetallicRoughness": {
-        "metallicFactor": 0,
-        "baseColorTexture": {
-          "index": 3
-        },
-        "metallicRoughnessTexture": {
-          "index": 5
-        }
-      },
-      "normalTexture": {
-        "index": 4
+        "index": 1
       }
     },
     {
@@ -544,11 +416,11 @@
       "pbrMetallicRoughness": {
         "metallicFactor": 0,
         "baseColorTexture": {
-          "index": 6
+          "index": 3
         }
       },
       "normalTexture": {
-        "index": 7
+        "index": 4
       }
     },
     {
@@ -561,11 +433,11 @@
         "roughnessFactor": 0.4000000059604645,
         "metallicFactor": 0.949999988079071,
         "baseColorTexture": {
-          "index": 8
+          "index": 5
         }
       },
       "normalTexture": {
-        "index": 9
+        "index": 6
       }
     },
     {
@@ -577,14 +449,14 @@
       "pbrMetallicRoughness": {
         "metallicFactor": 0,
         "baseColorTexture": {
-          "index": 10
+          "index": 7
         },
         "metallicRoughnessTexture": {
-          "index": 12
+          "index": 9
         }
       },
       "normalTexture": {
-        "index": 11,
+        "index": 8,
         "scale": 0.20000000298023224
       }
     },
@@ -603,7 +475,7 @@
             "NORMAL": 2
           },
           "mode": 4,
-          "material": 7,
+          "material": 5,
           "indices": 0,
           "extensions": {
             "KHR_draco_mesh_compression": {
@@ -618,7 +490,7 @@
       ]
     },
     {
-      "name": "GILLIS.070",
+      "name": "GILLIS.250",
       "primitives": [
         {
           "attributes": {
@@ -643,68 +515,20 @@
       ]
     },
     {
-      "name": "HMI_Aeron_Chair_B_Size_Fully_Adjustable_Arms",
-      "primitives": [
-        {
-          "attributes": {
-            "POSITION": 8,
-            "NORMAL": 9
-          },
-          "mode": 4,
-          "material": 2,
-          "indices": 7,
-          "extensions": {
-            "KHR_draco_mesh_compression": {
-              "bufferView": 3,
-              "attributes": {
-                "POSITION": 0,
-                "NORMAL": 1
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "name": "GILLIS.250",
-      "primitives": [
-        {
-          "attributes": {
-            "POSITION": 11,
-            "NORMAL": 12,
-            "TEXCOORD_0": 13
-          },
-          "mode": 4,
-          "material": 3,
-          "indices": 10,
-          "extensions": {
-            "KHR_draco_mesh_compression": {
-              "bufferView": 4,
-              "attributes": {
-                "POSITION": 0,
-                "NORMAL": 1,
-                "TEXCOORD_0": 2
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
       "name": "GILLIS.247",
       "primitives": [
         {
           "attributes": {
-            "POSITION": 15,
-            "NORMAL": 16,
-            "TEXCOORD_0": 17
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
           },
           "mode": 4,
-          "material": 3,
-          "indices": 14,
+          "material": 1,
+          "indices": 7,
           "extensions": {
             "KHR_draco_mesh_compression": {
-              "bufferView": 5,
+              "bufferView": 3,
               "attributes": {
                 "POSITION": 0,
                 "NORMAL": 1,
@@ -720,16 +544,16 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 19,
-            "NORMAL": 20,
-            "TEXCOORD_0": 21
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
           },
           "mode": 4,
-          "material": 4,
-          "indices": 18,
+          "material": 2,
+          "indices": 11,
           "extensions": {
             "KHR_draco_mesh_compression": {
-              "bufferView": 6,
+              "bufferView": 4,
               "attributes": {
                 "POSITION": 0,
                 "NORMAL": 1,
@@ -745,16 +569,16 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 23,
-            "NORMAL": 24,
-            "TEXCOORD_0": 25
+            "POSITION": 16,
+            "NORMAL": 17,
+            "TEXCOORD_0": 18
           },
           "mode": 4,
-          "material": 5,
-          "indices": 22,
+          "material": 3,
+          "indices": 15,
           "extensions": {
             "KHR_draco_mesh_compression": {
-              "bufferView": 7,
+              "bufferView": 5,
               "attributes": {
                 "POSITION": 0,
                 "NORMAL": 1,
@@ -765,16 +589,16 @@
         },
         {
           "attributes": {
-            "POSITION": 27,
-            "NORMAL": 28,
-            "TEXCOORD_0": 29
+            "POSITION": 20,
+            "NORMAL": 21,
+            "TEXCOORD_0": 22
           },
           "mode": 4,
-          "material": 6,
-          "indices": 26,
+          "material": 4,
+          "indices": 19,
           "extensions": {
             "KHR_draco_mesh_compression": {
-              "bufferView": 8,
+              "bufferView": 6,
               "attributes": {
                 "POSITION": 0,
                 "NORMAL": 1,
@@ -790,15 +614,15 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 31,
-            "NORMAL": 32
+            "POSITION": 24,
+            "NORMAL": 25
           },
           "mode": 4,
           "material": 0,
-          "indices": 30,
+          "indices": 23,
           "extensions": {
             "KHR_draco_mesh_compression": {
-              "bufferView": 9,
+              "bufferView": 7,
               "attributes": {
                 "POSITION": 0,
                 "NORMAL": 1
@@ -809,34 +633,7 @@
       ]
     }
   ],
-  "cameras": [
-    {
-      "name": "Camera.002",
-      "type": "perspective",
-      "perspective": {
-        "znear": 0.10000000149011612,
-        "zfar": 1000,
-        "yfov": 0.6911111454091888,
-        "aspectRatio": 1.25
-      }
-    }
-  ],
   "nodes": [
-    {
-      "name": "Camera",
-      "translation": [
-        -0.06714954521488892,
-        -1.026087760925293,
-        -10.281329631275035
-      ],
-      "rotation": [
-        0.0010128195863217115,
-        0.9999538660049438,
-        0.008437137119472027,
-        0.004477126058191061
-      ],
-      "camera": 0
-    },
     {
       "name": "Cube.032",
       "extras": {
@@ -859,48 +656,7 @@
         0.08499860763549805,
         2.0002560620843397
       ],
-      "mesh": 7
-    },
-    {
-      "name": "Desk_Studio.007",
-      "extras": {
-        "flip_fluid": {}
-      },
-      "translation": [
-        4.070439551808121,
-        -1.4189796447753906,
-        -0.557710170215465
-      ],
-      "rotation": [
-        0,
-        0.7071067094802856,
-        0,
-        0.7071068286895752
-      ],
-      "mesh": 1
-    },
-    {
-      "name": "HMI_Aeron_Chair_B_Size_Fully_Adjustable_Arms.029",
-      "extras": {
-        "flip_fluid": {}
-      },
-      "translation": [
-        3.7973568186538245,
-        -1.6759436130523682,
-        0.2625565534173475
-      ],
-      "rotation": [
-        0.6062092185020447,
-        0.3640199303627014,
-        -0.3640199899673462,
-        0.6062090396881104
-      ],
-      "scale": [
-        0.02500000037252903,
-        0.02500000037252903,
-        0.02500000037252903
-      ],
-      "mesh": 2
+      "mesh": 5
     },
     {
       "name": "Runway_Wood.005",
@@ -918,7 +674,7 @@
         0,
         0.9914448857307434
       ],
-      "mesh": 4
+      "mesh": 2
     },
     {
       "name": "Plant_pots",
@@ -930,7 +686,7 @@
         -1.5882890224456787,
         0.4498562818109022
       ],
-      "mesh": 5
+      "mesh": 3
     },
     {
       "name": "group_57.017",
@@ -942,15 +698,15 @@
         -1.130581021308899,
         5.530508518749379
       ],
-      "mesh": 6
+      "mesh": 4
     },
     {
-      "mesh": 3,
+      "mesh": 1,
       "extensions": {
         "EXT_mesh_gpu_instancing": {
           "attributes": {
-            "TRANSLATION": 33,
-            "ROTATION": 34
+            "TRANSLATION": 26,
+            "ROTATION": 27
           }
         }
       }
@@ -982,10 +738,7 @@
         2,
         3,
         4,
-        5,
-        6,
-        7,
-        8
+        5
       ]
     }
   ],

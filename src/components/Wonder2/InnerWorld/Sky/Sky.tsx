@@ -17,7 +17,7 @@ const Sky = () => {
 
   const skyRef = useRef<Mesh & { material: ShaderMaterial }>(null);
 
-  const { elevation, azimuth } = latestState?.attributes || {};
+  const { azimuth, elevation } = latestState?.attributes || {};
 
   const sunPosition = useMemo(() => {
     const phi = MathUtils.degToRad(90 - elevation);
