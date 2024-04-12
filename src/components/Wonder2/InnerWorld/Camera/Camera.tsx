@@ -1,8 +1,9 @@
 import { useSpring } from '@react-spring/web';
-import { PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import type { PerspectiveCamera as PerspectiveCameraType } from 'three';
+import type { OrbitControls as OrbitControlsType } from 'three-stdlib';
 
 type CameraProps = {
   isExpanded: boolean;
@@ -32,15 +33,50 @@ const Camera = ({ isExpanded }: CameraProps) => {
     cameraRef.current.updateProjectionMatrix();
   });
 
+  const controlsRef = useRef<OrbitControlsType>(null);
+  const [rotateDirection, setRotateDirection] = useState(1); // 1 for clockwise, -1 for counter-clockwise
+
+  useFrame(() => {
+    if (!controlsRef.current) {
+      return;
+    }
+
+    const azimuthalAngle = controlsRef.current.getAzimuthalAngle();
+
+    // Check and reverse direction at boundaries
+    if (azimuthalAngle === rotateDirection * (Math.PI - Math.PI / 4)) {
+      setRotateDirection(-1 * rotateDirection);
+    }
+
+    // Update the azimuth angle to make the rotation go back and forth
+    controlsRef.current.autoRotateSpeed = 0.1 * rotateDirection;
+    controlsRef.current.update();
+  });
+
   return (
-    <PerspectiveCamera
-      far={1000}
-      makeDefault
-      near={0.1}
-      position={[-0.067, 1.026, -14.281]}
-      ref={cameraRef}
-      rotation={[-3.125 + 0.15, 0.009, -3.14]}
-    />
+    <>
+      <PerspectiveCamera
+        far={1000}
+        makeDefault
+        near={0.1}
+        position={[-0.067, 3, -14.281]}
+        ref={cameraRef}
+        rotation={[Math.PI / -1.07, 0.009, -3.14]}
+      />
+
+      <OrbitControls
+        autoRotate
+        autoRotateSpeed={1}
+        enableDamping
+        enablePan={false}
+        enableZoom={false}
+        maxAzimuthAngle={Math.PI + Math.PI / 4}
+        maxPolarAngle={Math.PI / 2.2}
+        minAzimuthAngle={Math.PI - Math.PI / 4}
+        minPolarAngle={Math.PI / 2.2}
+        ref={controlsRef}
+      />
+    </>
   );
 };
 

@@ -20,8 +20,6 @@ const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
 
       <Camera isExpanded={isExpanded} />
 
-      <OrbitControls />
-
       <Mainspace position={[0, 1, 4]} rotation={[0, 0, 0]} />
 
       <CO2Plant
