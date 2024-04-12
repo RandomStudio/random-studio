@@ -48,7 +48,7 @@ const Mainspace = ({
       return;
     }
 
-    if (value === 'on') {
+    if (value === 'off') {
       materials['Wood Fine Veneer Oak'].map.offset.x = 0;
 
       return;
