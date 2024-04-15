@@ -10,8 +10,8 @@ import {
   Vector3,
 } from 'three';
 import { lerp } from 'three/src/math/MathUtils';
-import { findStages } from '../../../utils/skyUtils';
-import { lerpColor } from '../../../utils/animationUtils';
+import { findStages } from '../../../../utils/skyUtils';
+import { lerpColor } from '../../../../utils/animationUtils';
 
 const Sun = ({
   elevation,

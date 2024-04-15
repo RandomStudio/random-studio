@@ -1,5 +1,5 @@
-import Plate, { PlateInstances } from '../../../../models/Plate';
-import useHomeAssistant from '../../hooks/useHomeAssistant';
+import Plate, { PlateInstances } from '../../../../../models/Plate';
+import useHomeAssistant from '../../../hooks/useHomeAssistant';
 
 const LunchPlates = () => {
   const { value } = useHomeAssistant<string>('input_boolean.is_lunch_time');

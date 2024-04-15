@@ -1,4 +1,4 @@
-import { DAY_NIGHT_CYCLE_STAGES } from '../InnerWorld/Sky/constants';
+import { DAY_NIGHT_CYCLE_STAGES } from '../components/InnerWorld/Sky/constants';
 
 export const simulateSunPosition = (elapsedSeconds: number) => {
   // Convert elapsedSeconds to equivalent hours in the day-night cycle

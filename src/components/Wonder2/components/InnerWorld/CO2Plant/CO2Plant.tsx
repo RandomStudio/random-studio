@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { Group, Mesh, MeshStandardMaterial, Plane, Vector3 } from 'three';
 import { useThree } from '@react-three/fiber';
-import Plants from '../../../../models/Plants';
+import Plants from '../../../../../models/Plants';
 import useHomeAssistant, {
   ENTITY_ID_WHITELIST,
-} from '../../hooks/useHomeAssistant';
-import useBoundingBox from '../../hooks/useBoundingBox';
+} from '../../../hooks/useHomeAssistant';
+import useBoundingBox from '../../../hooks/useBoundingBox';
 
 type CO2Plant = JSX.IntrinsicElements['group'] & {
   roomId: (typeof ENTITY_ID_WHITELIST)[number];

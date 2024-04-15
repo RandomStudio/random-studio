@@ -3,9 +3,9 @@ import { useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import { MathUtils, Mesh, ShaderMaterial, Vector3 } from 'three';
 import Sun from './Sun/Sun';
-import useHomeAssistant from '../../hooks/useHomeAssistant';
-import { findStages } from '../../utils/skyUtils';
-import { lerp } from '../../utils/animationUtils';
+import useHomeAssistant from '../../../hooks/useHomeAssistant';
+import { findStages } from '../../../utils/skyUtils';
+import { lerp } from '../../../utils/animationUtils';
 
 const centrePointVector = new Vector3(0, 0, -5);
 

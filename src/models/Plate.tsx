@@ -4,17 +4,17 @@ Command: npx gltfjsx@6.2.16 public/models/Plate/plate.glb -t --types --instancea
 Files: public/models/Plate/plate.glb [10.29KB] > /Users/andrew/repos/random/random-studio/src/models/models/Plate/plate.glb [10.38KB] (-1%)
 */
 
-import * as THREE from 'three';
+
 import React, { useMemo, useContext, createContext } from 'react';
 import { useGLTF, Merged } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
 
 type GLTFResult = GLTF & {
   nodes: {
-    Kitchen_Plate: THREE.Mesh;
+    Kitchen_Plate: Mesh;
   };
   materials: {
-    Kitchen_Plate01: THREE.MeshStandardMaterial;
+    Kitchen_Plate01: MeshStandardMaterial;
   };
 };
 

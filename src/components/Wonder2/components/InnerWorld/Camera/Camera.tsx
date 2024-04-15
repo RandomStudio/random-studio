@@ -6,10 +6,11 @@ import type { PerspectiveCamera as PerspectiveCameraType } from 'three';
 import type { OrbitControls as OrbitControlsType } from 'three-stdlib';
 
 type CameraProps = {
+  hasOpenedUi: boolean;
   isExpanded: boolean;
 };
 
-const Camera = ({ isExpanded }: CameraProps) => {
+const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
   const cameraRef = useRef<PerspectiveCameraType>(null);
 
   const [spring] = useSpring(
@@ -37,7 +38,7 @@ const Camera = ({ isExpanded }: CameraProps) => {
   const [rotateDirection, setRotateDirection] = useState(1); // 1 for clockwise, -1 for counter-clockwise
 
   useFrame(() => {
-    if (!controlsRef.current) {
+    if (!controlsRef.current || hasOpenedUi) {
       return;
     }
 
@@ -65,7 +66,7 @@ const Camera = ({ isExpanded }: CameraProps) => {
       />
 
       <OrbitControls
-        autoRotate
+        autoRotate={!hasOpenedUi}
         autoRotateSpeed={1}
         enableDamping
         enablePan={false}

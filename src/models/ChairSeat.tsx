@@ -4,17 +4,17 @@ Command: npx gltfjsx@6.2.16 public/models/ChairSeat/ChairSeat.glb -t --types --i
 Files: public/models/ChairSeat/ChairSeat.glb [86.42KB] > /Users/andrew/repos/random/random-studio/src/models/models/ChairSeat/ChairSeat.glb [86.51KB] (0%)
 */
 
-import * as THREE from 'three';
 import React, { useRef, useMemo, useContext, createContext } from 'react';
 import { useGLTF, Merged } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
+import { Mesh, MeshStandardMaterial } from 'three';
 
 type GLTFResult = GLTF & {
   nodes: {
-    Chair: THREE.Mesh;
+    Chair: Mesh;
   };
   materials: {
-    ['SEAT_FABRIC.004']: THREE.MeshStandardMaterial;
+    ['SEAT_FABRIC.004']: MeshStandardMaterial;
   };
 };
 

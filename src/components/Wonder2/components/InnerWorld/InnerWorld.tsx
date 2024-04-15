@@ -1,13 +1,18 @@
 import { Box, OrbitControls } from '@react-three/drei';
-import Mainspace from '../../../models/Mainspace';
+import Mainspace from '../../../../models/Mainspace';
 import Sky from './Sky/Sky';
 import CO2Plant from './CO2Plant/CO2Plant';
 import LunchPlates from './LunchPlates/LunchPlates';
 import MotionChairs from './MotionChairs/MotionChairs';
 import Camera from './Camera/Camera';
-import Desk, { DeskInstances } from '../../../models/Desk';
+import Desk, { DeskInstances } from '../../../../models/Desk';
 
-const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
+type InnerWorldProps = {
+  hasOpenedUi: boolean;
+  isExpanded: boolean;
+};
+
+const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
   return (
     <>
       <Box
@@ -18,7 +23,7 @@ const InnerWorld = ({ isExpanded }: { isExpanded: boolean }) => {
 
       <Sky />
 
-      <Camera isExpanded={isExpanded} />
+      <Camera hasOpenedUi={hasOpenedUi} isExpanded={isExpanded} />
 
       <Mainspace position={[0, 1, 4]} rotation={[0, 0, 0]} />
 

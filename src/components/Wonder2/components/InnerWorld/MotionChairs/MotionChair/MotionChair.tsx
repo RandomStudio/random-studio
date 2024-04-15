@@ -4,9 +4,9 @@ import { useRef } from 'react';
 import { animated, useSpring } from '@react-spring/three';
 import useHomeAssistant, {
   ENTITY_ID_WHITELIST,
-} from '../../../hooks/useHomeAssistant';
-import ChairLegs from '../../../../../models/ChairLegs';
-import ChairSeat from '../../../../../models/ChairSeat';
+} from '../../../../hooks/useHomeAssistant';
+import ChairLegs from '../../../../../../models/ChairLegs';
+import ChairSeat from '../../../../../../models/ChairSeat';
 
 type MotionChairProps = Omit<JSX.IntrinsicElements['group'], 'id'> & {
   id: (typeof ENTITY_ID_WHITELIST)[number];

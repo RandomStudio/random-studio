@@ -1,13 +1,14 @@
 import { RenderTexture } from '@react-three/drei';
 import MorphingGeometry from './MorphingGeometry/MorphingGeometry';
 import InnerWorld from '../InnerWorld/InnerWorld';
-import useWindowSize from '../hooks/useWindowSize';
+import useWindowSize from '../../hooks/useWindowSize';
 
 type OuterWorldProps = {
+  hasOpenedUi: boolean;
   isExpanded: boolean;
 };
 
-const OuterWorld = ({ isExpanded }: OuterWorldProps) => {
+const OuterWorld = ({ hasOpenedUi, isExpanded }: OuterWorldProps) => {
   const { width, height } = useWindowSize();
   const aspectRatio = width / height;
 
@@ -19,7 +20,7 @@ const OuterWorld = ({ isExpanded }: OuterWorldProps) => {
     >
       <meshBasicMaterial color="white">
         <RenderTexture anisotropy={4} attach="map">
-          <InnerWorld isExpanded={isExpanded} />
+          <InnerWorld hasOpenedUi={hasOpenedUi} isExpanded={isExpanded} />
         </RenderTexture>
       </meshBasicMaterial>
     </MorphingGeometry>

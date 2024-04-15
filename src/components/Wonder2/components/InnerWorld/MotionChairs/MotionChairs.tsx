@@ -1,6 +1,6 @@
 import { Sphere } from '@react-three/drei';
-import { ChairLegsInstances } from '../../../../models/ChairLegs';
-import { ChairSeatInstances } from '../../../../models/ChairSeat';
+import { ChairLegsInstances } from '../../../../../models/ChairLegs';
+import { ChairSeatInstances } from '../../../../../models/ChairSeat';
 import MotionChair from './MotionChair/MotionChair';
 
 const MotionChairs = () => {

@@ -3,7 +3,7 @@ import React from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Mesh, MeshStandardMaterial } from 'three';
-import Camera from '../components/Wonder2/InnerWorld/Camera/Camera';
+import Camera from '../components/Wonder2/components/InnerWorld/Camera/Camera';
 import useHomeAssistant from '../components/Wonder2/hooks/useHomeAssistant';
 
 type GLTFResult = GLTF & {
