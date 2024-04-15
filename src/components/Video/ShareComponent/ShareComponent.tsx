@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ShareComponent.module.scss';
+import styles from './ShareComponent.module.css';
 
 type ShareComponentProps = {
   hasCopiedShareLink: boolean;

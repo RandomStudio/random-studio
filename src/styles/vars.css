@@ -1,9 +1,4 @@
 :root {
-  --font-xxs: 16px;
-  --font-xs: 22px;
-  --font-small: 23px;
-  --font-med: 32px;
-  --font-large: 40px;
   --font-logo-small: 51px;
   --font-logo-medium: 80px;
   --font-logo-large: 90px;
@@ -14,12 +9,4 @@
   --white: #f8f8f8;
   --off-white: #eee;
   --red: #a7423f;
-
-  /* To replace the rems above later on & better naming system */
-  --px-font-xxs: 16px;
-  --px-font-xs: 20px;
-  --px-font-small: 24px;
-  --px-font-xmed: 28px;
-  --px-font-med: 32px;
-  --px-font-large: 42px;
 }

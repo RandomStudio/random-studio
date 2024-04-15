@@ -1,7 +1,7 @@
-import '../styles/global.scss';
+import '../styles/global.css';
 import { useRouter } from 'next/router';
 import React from 'react';
-import styles from './App.module.scss';
+import styles from './App.module.css';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 type AppProps = {

@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react';
 import classNames from 'classnames';
-import styles from './Filters.module.scss';
+import styles from './Filters.module.css';
 import { ORDERED_TAGS } from '../../../CONSTANTS';
 import { ProjectSummary } from '../../../types/types';
 

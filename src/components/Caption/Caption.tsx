@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Caption.module.scss';
+import styles from './Caption.module.css';
 import Markdown from '../Markdown/Markdown';
 
 type CaptionProps = {

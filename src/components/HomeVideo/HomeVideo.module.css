@@ -35,12 +35,12 @@
 }
 
 .featuredAuthor {
+  @mixin font-xxs;
   color: white;
   mix-blend-mode: difference;
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 16px;
   line-height: 1;
   padding: 16px 22px;
   text-align: right;
@@ -48,8 +48,7 @@
 }
 
 .creditsLogo {
-  font-family: 'Larish Neue', serif;
-  letter-spacing: -0.01em;
+  @mixin font-xxs;
 }
 
 @media (min-width: 576px) {
@@ -58,15 +57,8 @@
   }
 
   .logo {
+    top: 45px;
     left: 64px;
-
-    &.isCenter {
-      font-size: var(--font-logo-medium);
-    }
-
-    &.isTop {
-      top: 45px;
-    }
   }
 }
 
@@ -75,25 +67,13 @@
     right: 0;
     left: 0;
     max-width: 768px;
-
-    &.isCenter {
-      margin: 0 auto;
-      padding-left: 64px;
-    }
-
-    &.isTop {
-      margin: 0;
-      padding-left: 38px;
-    }
+    margin: 0;
+    padding-left: 38px;
   }
 }
 
 @media (min-width: 1152px) {
   .logo {
     max-width: 1152px;
-
-    &.isCenter {
-      font-size: var(--font-logo-large);
-    }
   }
 }

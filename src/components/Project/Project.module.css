@@ -1,8 +1,17 @@
 .title {
+  @mixin font-xxs;
   max-width: 17em;
-  line-height: 1.375;
   padding: 16px 22px 0;
   margin-left: 1.4rem;
+  color: var(--black);
+
+  @media (min-width: 480px) {
+    padding: 10px 0;
+  }
+
+  @media (min-width: 864px) {
+    @mixin font-small;
+  }
 
   @media (max-width: 450px) {
     br {
@@ -42,7 +51,6 @@
   }
 }
 
-// Force overwrite the inline programmeticly set styles for small screens/mobile
 @media (max-width: 480px) {
   .thumbnail {
     margin-top: 0 !important;
@@ -52,18 +60,5 @@
 
   .title {
     margin-left: 0 !important;
-  }
-}
-
-@media (min-width: 480px) {
-  .title {
-    padding: 10px 0;
-    font-size: var(--font-small);
-  }
-}
-
-@media (min-width: 1152px) {
-  .title {
-    font-size: 26px;
   }
 }

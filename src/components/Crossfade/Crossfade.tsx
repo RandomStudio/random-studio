@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
-import styles from './Crossfade.module.scss';
+import styles from './Crossfade.module.css';
 
 type CrossfadeProps = {
   children: ReactElement;

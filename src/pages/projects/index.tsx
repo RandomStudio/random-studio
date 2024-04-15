@@ -1,20 +1,20 @@
 import React from 'react';
 import Layout from '../../components/Layout/Layout';
-import Head from '../../components/Head/Head';
 import ProjectList from '../../components/ProjectList/ProjectList';
 import { PROJECTS_LIST_QUERY } from '../../api/QUERIES';
 import getDataFromBackend from '../../api/getDataFromBackend';
 import { ProjectSummary } from '../../types/types';
+import Container from '../../components/Layout/Container/Container';
 
 type ProjectsProps = {
   projects: ProjectSummary[];
 };
 
 const Projects = ({ projects }: ProjectsProps) => (
-  <Layout>
-    <Head title="Projects" />
-
-    <ProjectList hasFilters projects={projects} />
+  <Layout title="Projects">
+    <Container hasHorizontalConstraint={false}>
+      <ProjectList hasFilters projects={projects} />
+    </Container>
   </Layout>
 );
 
