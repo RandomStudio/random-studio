@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import styles from './Navigation.module.css';
-import Logo from '../Logo/Logo';
+import React from "react";
+import Link from "next/link";
+import styles from "./Navigation.module.css";
+import Logo from "../Logo/Logo";
 
 type NavigationProps = {
   isLogoCentred: boolean;
@@ -13,11 +13,15 @@ const Navigation = ({ isLogoCentred }: NavigationProps) => (
 
     <div className={styles.links}>
       <Link className={styles.link} href="/projects">
-        {'Projects'}
+        {"Projects"}
       </Link>
 
       <Link className={styles.link} href="/studio">
-        {'Studio'}
+        {"Studio"}
+      </Link>
+
+      <Link className={styles.link} href="/newbusiness">
+        {"Commission"}
       </Link>
     </div>
   </nav>
