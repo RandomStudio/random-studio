@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const socket = new WebSocket(
-  'ws://ec2-16-171-7-233.eu-north-1.compute.amazonaws.com:8080',
-);
+const socket = new WebSocket('wss://ha.random.studio');
 
 let state: { [key: string]: [] } = {};
 
