@@ -26,7 +26,7 @@ export const createBlurredImage = async (thumbnailUrl: string) => {
   );
 
   return {
-    thumbnail: thumbnailString,
+    thumbnail: thumbnailString ?? null,
     dominantColor: dominantColorString,
   };
 };
