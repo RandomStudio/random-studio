@@ -28,25 +28,30 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 
-  &.isOpen {
-    opacity: 1;
-  }
-
   .copy {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     height: 100%;
     width: 100%;
     overflow-y: auto;
-    pointer-events: auto;
   }
 
   p {
     @mixin body-2;
+    @mixin ff-text-styles;
     margin-bottom: 1em;
 
     @media (min-height: 1080px) {
       @mixin logo;
+      @mixin ff-text-styles;
+    }
+  }
+
+  &.isOpen {
+    opacity: 1;
+
+    p {
+      pointer-events: all;
     }
   }
 }

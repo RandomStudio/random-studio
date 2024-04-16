@@ -11,6 +11,11 @@
   src: url("/fonts/LarishNeueSemiboldRegSubsetted.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Simula Book";
+  src: url("/fonts/Simula_Book.woff") format("woff");
+}
+
 html,
 body {
   min-height: 100%;

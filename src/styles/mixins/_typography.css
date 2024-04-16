@@ -6,6 +6,13 @@
   text-align: left;
 }
 
+@define-mixin ff-text-styles {
+  font-family: 'Simula Book', 'Random Regular', 'Random', serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
 @define-mixin base-text-styles {
   font-family: 'Random Regular', 'Random', serif;
   font-weight: 400;

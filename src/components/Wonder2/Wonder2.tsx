@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { Canvas } from '@react-three/fiber';
 import classNames from 'classnames';
-import { Perf } from 'r3f-perf';
+// import { Perf } from 'r3f-perf';
 import { Float } from '@react-three/drei';
 import styles from './Wonder2.module.css';
 import OuterWorld from './components/OuterWorld/OuterWorld';
@@ -35,7 +35,6 @@ const Wonder2 = ({
 
   const handleCanvasClick = () => {
     setIsWonderFocused(isCurrentlyFocused => !isCurrentlyFocused);
-    // setIsWonderFocused(true);
   };
 
   useEffect(() => {

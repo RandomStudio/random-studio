@@ -19,7 +19,7 @@ const Overlay = ({ hasOpenedUi }: OverlayProps) => (
 
       <p>
         {
-          'Together they build to an opaque, emergent system that absurdly mirrors our world.Check back for seasonal updates in the future.'
+          'Together they build to an opaque, emergent system that absurdly mirrors our world. Check back for seasonal updates in the future.'
         }
       </p>
     </div>

@@ -2,8 +2,9 @@ import { useSpring } from '@react-spring/web';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useRef, useState } from 'react';
-import type { PerspectiveCamera as PerspectiveCameraType } from 'three';
+import { type PerspectiveCamera as PerspectiveCameraType } from 'three';
 import type { OrbitControls as OrbitControlsType } from 'three-stdlib';
+import UICameraPositionAnimator from './UICameraPositionAnimator/UICameraPositionAnimator';
 
 type CameraProps = {
   hasOpenedUi: boolean;
@@ -62,21 +63,28 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
         near={0.1}
         position={[-0.067, 3, -14.281]}
         ref={cameraRef}
-        rotation={[Math.PI / -1.07, 0.009, -3.14]}
+        rotation={[Math.PI / -0.5, 0.009, -3.14]}
       />
 
-      <OrbitControls
-        autoRotate={!hasOpenedUi}
-        autoRotateSpeed={1}
-        enableDamping
-        enablePan={false}
-        enableZoom={false}
-        maxAzimuthAngle={Math.PI + Math.PI / 4}
-        maxPolarAngle={Math.PI / 2.2}
-        minAzimuthAngle={Math.PI - Math.PI / 4}
-        minPolarAngle={Math.PI / 2.2}
-        ref={controlsRef}
+      <UICameraPositionAnimator
+        cameraRef={cameraRef}
+        hasOpenedUi={hasOpenedUi}
       />
+
+      {!hasOpenedUi && (
+        <OrbitControls
+          autoRotate={!hasOpenedUi}
+          autoRotateSpeed={1}
+          enableDamping
+          enablePan={false}
+          enableZoom={false}
+          maxAzimuthAngle={Math.PI + Math.PI / 4}
+          maxPolarAngle={Math.PI / 2.2}
+          minAzimuthAngle={Math.PI - Math.PI / 4}
+          minPolarAngle={Math.PI / 2.2}
+          ref={controlsRef}
+        />
+      )}
     </>
   );
 };
