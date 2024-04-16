@@ -18,19 +18,6 @@ export const simulateSunPosition = (elapsedSeconds: number) => {
   };
 };
 
-export const getSunPositionFromElevationAndAzimuth = (
-  elevation: number,
-  azimuth: number,
-) => {
-  const phi = Math.PI * (0.5 - elevation / 180);
-  const theta = Math.PI * (azimuth / 180 - 0.5);
-  const x = Math.cos(phi) * Math.sin(theta);
-  const y = Math.sin(phi);
-  const z = Math.cos(phi) * Math.cos(theta);
-
-  return [x, y, z];
-};
-
 export const findStages = (elevation: number) => {
   const sortedStages = [...DAY_NIGHT_CYCLE_STAGES].sort(
     (a, b) => a.elevation - b.elevation,

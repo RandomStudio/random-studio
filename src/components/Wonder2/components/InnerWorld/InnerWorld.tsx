@@ -1,4 +1,4 @@
-import { Box, OrbitControls } from '@react-three/drei';
+import { Box } from '@react-three/drei';
 import Mainspace from '../../../../models/Mainspace';
 import Sky from './Sky/Sky';
 import CO2Plant from './CO2Plant/CO2Plant';
@@ -21,31 +21,35 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
         visible={false}
       />
 
-      <Sky />
+      <Sky hasOpenedUi={hasOpenedUi} />
 
       <Camera hasOpenedUi={hasOpenedUi} isExpanded={isExpanded} />
 
       <Mainspace position={[0, 1, 4]} rotation={[0, 0, 0]} />
 
       <CO2Plant
+        hasOpenedUi={hasOpenedUi}
         plant={0}
         position={[1, -1.2, -2.4]}
         roomId="sensor.knx_co2_main_space_2"
       />
 
       <CO2Plant
+        hasOpenedUi={hasOpenedUi}
         plant={1}
         position={[-1.5, -1.2, -0.1]}
         roomId="sensor.knx_co2_lab"
       />
 
       <CO2Plant
+        hasOpenedUi={hasOpenedUi}
         plant={2}
         position={[0.7, -1.4, 2]}
         roomId="sensor.knx_co2_kitchen"
       />
 
       <CO2Plant
+        hasOpenedUi={hasOpenedUi}
         plant={3}
         position={[-0.7, -1.2, 4.4]}
         roomId="sensor.knx_co2_upstairs"
@@ -56,6 +60,7 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
       }
 
       <CO2Plant
+        hasOpenedUi={hasOpenedUi}
         plant={1}
         position={[1, -1.2, 6.5]}
         roomId="sensor.knx_co2_meeting_view"
@@ -64,6 +69,7 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
       />
 
       <CO2Plant
+        hasOpenedUi={hasOpenedUi}
         plant={3}
         position={[5.8, -1.2, 9.8]}
         roomId="sensor.knx_co2_meeting_red"
@@ -71,6 +77,7 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
       />
 
       <CO2Plant
+        hasOpenedUi={hasOpenedUi}
         plant={3}
         position={[-5.6, -1.2, 10.2]}
         roomId="sensor.knx_co2_meeting_stairs"
@@ -83,7 +90,7 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
         <Desk position={[-5, 0, 0]} rotation={[0, Math.PI / 2, 0]} />
       </DeskInstances>
 
-      <MotionChairs />
+      <MotionChairs hasOpenedUi={hasOpenedUi} />
 
       <LunchPlates />
     </>

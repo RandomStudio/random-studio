@@ -1,15 +1,20 @@
 import { Sky as DreiSky } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { MathUtils, Mesh, ShaderMaterial, Vector3 } from 'three';
 import Sun from './Sun/Sun';
 import useHomeAssistant from '../../../hooks/useHomeAssistant';
-import { findStages } from '../../../utils/skyUtils';
+import { findStages, simulateSunPosition } from '../../../utils/skyUtils';
 import { lerp } from '../../../utils/animationUtils';
 
-const centrePointVector = new Vector3(0, 0, -5);
+const sunPositionVector = new Vector3();
+const centrePointVector = new Vector3(0, 0, 5);
 
-const Sky = () => {
+type SkyProps = {
+  hasOpenedUi: boolean;
+};
+
+const Sky = ({ hasOpenedUi }: SkyProps) => {
   const latestState = useHomeAssistant<
     string,
     { elevation: number; azimuth: number }
@@ -17,25 +22,47 @@ const Sky = () => {
 
   const skyRef = useRef<Mesh & { material: ShaderMaterial }>(null);
 
+  const [sunPosition, setSunPosition] = useState(new Vector3());
+
+  const calculationSunPosition = useCallback(
+    ({ azimuth, elevation }: { azimuth: number; elevation: number }) => {
+      const phi = MathUtils.degToRad(90 - elevation);
+      const theta = MathUtils.degToRad(azimuth);
+
+      const position = sunPositionVector.setFromSphericalCoords(10, phi, theta);
+      position.add(centrePointVector);
+
+      return position;
+    },
+    [],
+  );
+
   const { azimuth, elevation } = latestState?.attributes || {};
 
-  const sunPosition = useMemo(() => {
-    const phi = MathUtils.degToRad(90 - elevation);
-    const theta = MathUtils.degToRad(azimuth);
+  useEffect(() => {
+    if (hasOpenedUi) {
+      return;
+    }
 
-    const position = new Vector3().setFromSphericalCoords(7, phi, theta);
-    position.add(centrePointVector);
+    const position = calculationSunPosition({
+      azimuth,
+      elevation,
+    });
 
-    return position;
-  }, [elevation, azimuth]);
+    setSunPosition(position);
+  }, [calculationSunPosition, azimuth, elevation, hasOpenedUi]);
 
-  useFrame(() => {
+  useFrame(({ clock }) => {
     // Adjust sky properties for a smooth transition
     if (!skyRef.current || !elevation) {
       return;
     }
 
-    skyRef.current.material.uniforms.sunPosition.value.set(...sunPosition);
+    const position = hasOpenedUi
+      ? calculationSunPosition(simulateSunPosition(clock.elapsedTime))
+      : sunPosition;
+
+    skyRef.current.material.uniforms.sunPosition.value.set(...position);
 
     const { currentStage, nextStage } = findStages(elevation);
     const elevationRange = nextStage.elevation - currentStage.elevation;

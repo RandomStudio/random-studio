@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Group, Mesh, MeshStandardMaterial, Plane, Vector3 } from 'three';
-import { useThree } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import Plants from '../../../../../models/Plants';
 import useHomeAssistant, {
   ENTITY_ID_WHITELIST,
@@ -8,26 +8,45 @@ import useHomeAssistant, {
 import useBoundingBox from '../../../hooks/useBoundingBox';
 
 type CO2Plant = JSX.IntrinsicElements['group'] & {
+  hasOpenedUi: boolean;
   roomId: (typeof ENTITY_ID_WHITELIST)[number];
   plant: 0 | 1 | 2 | 3;
 };
 
-const CO2Plant = ({ roomId, plant, ...props }: CO2Plant) => {
+const CO2Plant = ({ hasOpenedUi, roomId, plant, ...props }: CO2Plant) => {
   const gl = useThree(three => three.gl);
 
   const { value } = useHomeAssistant<number>(roomId);
 
-  const unhealthiness = useMemo(() => {
+  const [unhealthiness, setUnhealthiness] = useState(0);
+
+  useEffect(() => {
+    if (hasOpenedUi) {
+      return;
+    }
+
     if (value < 400) {
-      return 0;
+      setUnhealthiness(0);
+
+      return;
     }
 
     if (value > 1000) {
-      return 1;
+      setUnhealthiness(1);
+
+      return;
     }
 
-    return (value - 400) / (1000 - 400);
-  }, [value]);
+    setUnhealthiness((value - 400) / (1000 - 400));
+  }, [hasOpenedUi, value]);
+
+  useFrame(({ clock }) => {
+    if (!hasOpenedUi) {
+      return;
+    }
+
+    setUnhealthiness(Math.sin(clock.elapsedTime));
+  });
 
   const plantRef = useRef<Group>(null);
 
