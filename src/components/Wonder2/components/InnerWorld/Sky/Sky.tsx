@@ -1,6 +1,6 @@
 import { Sky as DreiSky } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { MathUtils, Mesh, ShaderMaterial, Vector3 } from 'three';
 import Sun from './Sun/Sun';
 import useHomeAssistant from '../../../hooks/useHomeAssistant';
