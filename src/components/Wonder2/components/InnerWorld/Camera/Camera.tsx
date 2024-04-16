@@ -21,16 +21,12 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
     [isExpanded],
   );
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     if (!cameraRef.current) {
       return;
     }
 
     cameraRef.current.fov = spring.fov.get();
-
-    if (!isExpanded) {
-      cameraRef.current.fov += Math.sin(clock.elapsedTime);
-    }
 
     cameraRef.current.updateProjectionMatrix();
   });
@@ -73,7 +69,7 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
 
       {!hasOpenedUi && (
         <OrbitControls
-          autoRotate={!hasOpenedUi}
+          autoRotate={isExpanded}
           autoRotateSpeed={1}
           enableDamping
           enablePan={false}
