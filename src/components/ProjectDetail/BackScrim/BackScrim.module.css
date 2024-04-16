@@ -1,12 +1,15 @@
 .backScrim {
+  @mixin font-xxs;
   position: absolute;
-  bottom: 0;
-  height: 243px;
+  bottom: -100px;
   width: 100%;
-  font-size: 16px;
   pointer-events: none;
   opacity: 0;
   transition: opacity 300ms ease-out;
+
+  @media (min-width: 576px) {
+    bottom: -160px;
+  }
 }
 
 .isVisible {
@@ -22,23 +25,15 @@
   padding: 10px 19px;
   pointer-events: all;
   text-decoration: none;
+
+  @media (min-width: 576px) {
+    bottom: 32px;
+    left: 32px;
+  }
 }
 
 .intersectionLine {
   position: absolute;
   height: 1px;
   width: 100%;
-}
-
-@media (min-width: 576px) {
-  .backButton {
-    bottom: 32px;
-    left: 32px;
-  }
-}
-
-@media (min-width: 768px) {
-  .backScrim {
-    height: 384px;
-  }
 }

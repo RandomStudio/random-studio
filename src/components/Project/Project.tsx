@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Markdown from '../Markdown/Markdown';
-import styles from './Project.module.scss';
+import styles from './Project.module.css';
 import Video from '../Video/Video';
 import Image from '../Image/Image';
 import {
@@ -59,8 +59,8 @@ const Project = ({
         !left || left < 1
           ? {}
           : {
-              marginLeft: '0',
-            }
+            marginLeft: '0',
+          }
       }
     >
       <Markdown markdown={title} />

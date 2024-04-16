@@ -1,9 +1,8 @@
-import '../styles/global.scss';
+import '../styles/global.css';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import React, { useRef, useState } from 'react';
-import classNames from 'classnames';
-import styles from './App.module.scss';
+import styles from './App.module.css';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 const Wonder2 = dynamic(() => import('../components/Wonder2/Wonder2'), {

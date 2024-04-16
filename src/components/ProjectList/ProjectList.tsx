@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
-import styles from './ProjectList.module.scss';
+import styles from './ProjectList.module.css';
 import Filters from './Filters/Filters';
 import Project from '../Project/Project';
 import { HOMEPAGE_POSTS_LIMIT, LAYOUT, ORDERED_TAGS } from '../../CONSTANTS';

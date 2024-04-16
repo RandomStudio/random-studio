@@ -9,7 +9,7 @@ import React, {
   useState,
 } from 'react';
 import classNames from 'classnames';
-import styles from './Video.module.scss';
+import styles from './Video.module.css';
 import LazyLoad from '../LazyLoad/LazyLoad';
 import Controls from './Controls/Controls';
 import { VideoData } from '../../types/types';

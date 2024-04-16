@@ -1,8 +1,6 @@
 import React from 'react';
-
+import styles from './Credits.module.css';
 import { CreditsType } from '../../../types/types';
-
-import styles from './Credits.module.scss';
 
 type CreditsProps = {
   credits: CreditsType[];

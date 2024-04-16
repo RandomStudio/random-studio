@@ -8,7 +8,18 @@ const getImage = async (url: string) => {
 };
 
 export const createBlurredImage = async (thumbnailUrl: string) => {
-  const image = await getImage(thumbnailUrl);
+  let image;
+
+  try {
+    image = await getImage(thumbnailUrl);
+  } catch (error) {
+    console.error('Failed on URL', thumbnailUrl);
+
+    return {
+      thumbnail: undefined,
+      dominantColor: undefined,
+    };
+  }
 
   const blurredSharpImage = await sharp(image)
     .raw()

@@ -3,13 +3,9 @@ import Link from 'next/link';
 import styles from './Navigation.module.css';
 import Logo from '../Logo/Logo';
 
-type NavigationProps = {
-  isLogoCentred: boolean;
-};
-
-const Navigation = ({ isLogoCentred }: NavigationProps) => (
+const Navigation = () => (
   <nav aria-label="Site navigation" className={styles.nav} role="navigation">
-    <Logo isCentred={isLogoCentred} />
+    <Logo />
 
     <div className={styles.links}>
       <Link className={styles.link} href="/projects">

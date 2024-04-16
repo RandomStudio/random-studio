@@ -35,5 +35,9 @@
 
 .caption {
   @mixin body-4;
-  padding: 12px 0 0 60px;
+  padding: 16px 0 0 60px;
+
+  @media (--tablet) {
+    padding-top: 24px;
+  }
 }

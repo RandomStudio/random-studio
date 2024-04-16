@@ -1,0 +1,50 @@
+.project {
+  background: var(--page-background-color);
+  width: 100%;
+  position: relative;
+}
+
+.title,
+.intro {
+  @mixin font-small;
+  margin: 0 0 10vw;
+  padding: 0 22px;
+
+  @media (min-width: 576px) {
+    @mixin font-med;
+    margin: 0 0 8vw;
+    padding: 0 64px;
+  }
+
+  @media (min-width: 864px) {
+    @mixin font-med;
+    max-width: 768px;
+  }
+
+  @media (min-width: 1152px) {
+    @mixin font-large;
+    max-width: 1024px;
+  }
+}
+
+
+.title {
+  margin-bottom: 1em;
+
+  @media (min-width: 864px) {
+    margin: 0 auto 2em;
+  }
+}
+
+.intro {
+  margin-top: 1.2931578947em;
+
+  @media (min-width: 864px) {
+    margin: 1em auto 8vw auto;
+  }
+
+  :global(a) {
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.05em;
+  }
+}

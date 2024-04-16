@@ -17,7 +17,7 @@ const HomeVideo = ({
   <div className={styles.video}>
     <Video
       className={styles.videoWrapper}
-      hasAudio
+      hasAudio={false}
       hasControls={false}
       isAutoplaying
       isLooping
