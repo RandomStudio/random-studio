@@ -1,6 +1,11 @@
 import styles from './UI.module.css';
 
-const Button = ({ hasOpenedUi, setHasOpenedUi }) => {
+type ButtonProps = {
+  hasOpenedUi: boolean;
+  setHasOpenedUi: (value: boolean) => void;
+};
+
+const Button = ({ hasOpenedUi, setHasOpenedUi }: ButtonProps) => {
   return (
     <button
       className={`${styles.button} ${hasOpenedUi ? styles.isOpen : ''}`}
