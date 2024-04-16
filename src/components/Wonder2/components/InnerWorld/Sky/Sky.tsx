@@ -39,9 +39,12 @@ const Sky = ({ hasOpenedUi }: SkyProps) => {
 
   const { azimuth, elevation } = latestState?.attributes || {};
 
+  // By logging the elapsed time when we open the UI, we can ensure the sun starts on a white BG
+  const initialUiClockTimeRef = useRef<number>(0);
+
   useEffect(() => {
     if (hasOpenedUi) {
-      return;
+      return undefined;
     }
 
     const position = calculationSunPosition({
@@ -50,6 +53,10 @@ const Sky = ({ hasOpenedUi }: SkyProps) => {
     });
 
     setSunPosition(position);
+
+    return () => {
+      initialUiClockTimeRef.current = 0;
+    };
   }, [calculationSunPosition, azimuth, elevation, hasOpenedUi]);
 
   useFrame(({ clock }) => {
@@ -58,8 +65,16 @@ const Sky = ({ hasOpenedUi }: SkyProps) => {
       return;
     }
 
+    const { elapsedTime } = clock;
+
+    if (hasOpenedUi && initialUiClockTimeRef.current === 0) {
+      initialUiClockTimeRef.current = elapsedTime;
+    }
+
+    const adjustedTime = elapsedTime - (initialUiClockTimeRef.current - 3);
+
     const position = hasOpenedUi
-      ? calculationSunPosition(simulateSunPosition(clock.elapsedTime))
+      ? calculationSunPosition(simulateSunPosition(adjustedTime))
       : sunPosition;
 
     skyRef.current.material.uniforms.sunPosition.value.set(...position);
