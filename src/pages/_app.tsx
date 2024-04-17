@@ -30,10 +30,8 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
   return (
     <ErrorBoundary>
       <div ref={containerRef}>
-        <div className={styles.page}>
-          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Component {...pageProps} />
-        </div>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} />
 
         {hasWonder && (
           <Wonder2
