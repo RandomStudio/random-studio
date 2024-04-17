@@ -17,12 +17,16 @@ const sphereRadius = 17.5;
 
 type UICameraPositionAnimatorProps = {
   cameraRef: RefObject<PerspectiveCamera>;
+  hasClosedUi: boolean;
   hasOpenedUi: boolean;
+  setHasClosedUi: (hasClosedUi: boolean) => void;
 };
 
 const UICameraPositionAnimator = ({
   cameraRef,
+  hasClosedUi,
   hasOpenedUi,
+  setHasClosedUi,
 }: UICameraPositionAnimatorProps) => {
   const size = useThree(state => state.size);
   const sphereRef = useRef<Mesh<SphereGeometry, MeshBasicMaterial>>(null);
@@ -93,6 +97,10 @@ const UICameraPositionAnimator = ({
       if (startPosition) {
         setStartPosition(undefined);
         setStartRotation(undefined);
+      }
+
+      if (!hasClosedUi) {
+        setHasClosedUi(true);
       }
 
       return;

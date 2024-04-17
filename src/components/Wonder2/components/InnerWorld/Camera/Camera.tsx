@@ -1,7 +1,7 @@
 import { useSpring } from '@react-spring/web';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { type PerspectiveCamera as PerspectiveCameraType } from 'three';
 import type { OrbitControls as OrbitControlsType } from 'three-stdlib';
 import UICameraPositionAnimator from './UICameraPositionAnimator/UICameraPositionAnimator';
@@ -14,6 +14,14 @@ type CameraProps = {
 const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
   const cameraRef = useRef<PerspectiveCameraType>(null);
   const controlsRef = useRef<OrbitControlsType>(null);
+
+  const [hasClosedUi, setHasClosedUi] = useState(false);
+
+  useEffect(() => {
+    if (hasOpenedUi) {
+      setHasClosedUi(false);
+    }
+  }, [hasOpenedUi]);
 
   const [spring] = useSpring(
     {
@@ -74,10 +82,12 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
 
       <UICameraPositionAnimator
         cameraRef={cameraRef}
+        hasClosedUi={hasClosedUi}
         hasOpenedUi={hasOpenedUi}
+        setHasClosedUi={setHasClosedUi}
       />
 
-      {!hasOpenedUi && (
+      {!hasOpenedUi && hasClosedUi && (
         <OrbitControls
           autoRotate={false}
           autoRotateSpeed={1}
