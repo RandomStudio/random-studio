@@ -16,8 +16,8 @@ export const createBlurredImage = async (thumbnailUrl: string) => {
     console.error('Failed on URL', thumbnailUrl);
 
     return {
-      thumbnail: undefined,
-      dominantColor: undefined,
+      thumbnail: null,
+      dominantColor: null,
     };
   }
 
@@ -37,7 +37,7 @@ export const createBlurredImage = async (thumbnailUrl: string) => {
   );
 
   return {
-    thumbnail: thumbnailString,
+    thumbnail: thumbnailString ?? null,
     dominantColor: dominantColorString,
   };
 };
