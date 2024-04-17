@@ -6,13 +6,13 @@ const LunchPlates = () => {
 
   return (
     <PlateInstances visible={value === 'on'}>
-      <Plate />
+      <Plate position={[0, 0, -0.25]} />
 
-      <Plate position={[1.3, 0, 0]} />
+      <Plate position={[1.3, 0, -0.25]} />
 
-      <Plate position={[1.3, 0, -0.7]} />
+      <Plate position={[1.3, 0, -0.9]} />
 
-      <Plate position={[0.4, 0, -0.7]} />
+      <Plate position={[0.4, 0, -0.9]} />
     </PlateInstances>
   );
 };
