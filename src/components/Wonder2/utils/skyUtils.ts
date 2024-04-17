@@ -18,34 +18,29 @@ export const simulateSunPosition = (elapsedSeconds: number) => {
   };
 };
 
-export const findStages = (elevation: number) => {
-  const sortedStages = [...DAY_NIGHT_CYCLE_STAGES].sort(
-    (a, b) => a.elevation - b.elevation,
-  );
+export const findStages = (elevation: number, azimuth: number) => {
+  let normalizedElevation = (elevation + 90) / 180;
 
-  let currentStageIndex =
-    sortedStages.findIndex(stage => stage.elevation >= elevation) - 1;
-
-  currentStageIndex = Math.max(currentStageIndex, 0);
-
-  if (
-    currentStageIndex === -1 ||
-    elevation > sortedStages[sortedStages.length - 1].elevation
-  ) {
-    currentStageIndex = sortedStages.length - 1;
+  if (azimuth > 180) {
+    normalizedElevation = 1 + (1 - normalizedElevation);
   }
 
-  const currentStage = sortedStages[currentStageIndex];
-
-  const nextStageIndex = Math.min(
-    currentStageIndex + 1,
-    sortedStages.length - 1,
+  const currentStageIndex = DAY_NIGHT_CYCLE_STAGES.findIndex(
+    (stage, index, array) =>
+      normalizedElevation >= stage.normalizedElevation &&
+      (index === array.length - 1
+        ? normalizedElevation < 2
+        : normalizedElevation < array[index + 1].normalizedElevation),
   );
 
-  const nextStage = sortedStages[nextStageIndex];
+  // Handle wrapping and next stage logic
+  const nextStageIndex =
+    currentStageIndex === DAY_NIGHT_CYCLE_STAGES.length - 1
+      ? 0
+      : currentStageIndex + 1;
 
   return {
-    currentStage,
-    nextStage,
+    currentStage: DAY_NIGHT_CYCLE_STAGES[currentStageIndex],
+    nextStage: DAY_NIGHT_CYCLE_STAGES[nextStageIndex],
   };
 };

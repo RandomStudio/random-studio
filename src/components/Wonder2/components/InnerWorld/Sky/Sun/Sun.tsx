@@ -1,6 +1,6 @@
 import { Sphere } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useRef } from 'react';
 import {
   AmbientLight,
   DirectionalLight,
@@ -29,7 +29,7 @@ const Sun = ({
   const hemisphereLightRef = useRef<HemisphereLight>(null);
 
   useFrame(() => {
-    const { elevation } = sunStateRef.current ?? {};
+    const { azimuth, elevation } = sunStateRef.current ?? {};
 
     if (
       !lightRef.current ||
@@ -38,7 +38,8 @@ const Sun = ({
       !hemisphereLightRef.current ||
       !targetRef.current ||
       !sunPositionRef.current ||
-      !elevation
+      !elevation ||
+      !azimuth
     ) {
       return;
     }
@@ -51,7 +52,7 @@ const Sun = ({
 
     sphereRef.current.position.copy(lightRef.current.position);
 
-    const { currentStage, nextStage } = findStages(elevation);
+    const { currentStage, nextStage } = findStages(elevation, azimuth);
 
     // Determine the transition progress between the current and next stage
     const elevationRange = nextStage.elevation - currentStage.elevation;
@@ -84,7 +85,6 @@ const Sun = ({
       0.1,
     );
 
-    console.log(ambientLightRef.current.intensity);
     hemisphereLightRef.current.intensity = 0.5 * interpolatedIntensity;
     hemisphereLightRef.current.color.set(lightRef.current.color);
 
