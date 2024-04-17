@@ -36,7 +36,7 @@ const MotionChair = ({
       return;
     }
 
-    spring.scale.set(value === 'on' ? 1 : 0);
+    spring.scale.start(value === 'on' ? 1 : 0);
   }, [hasOpenedUi, spring.scale, value]);
 
   useEffect(() => {
