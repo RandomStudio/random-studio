@@ -11,7 +11,7 @@ const Overlay = ({ hasOpenedUi }: OverlayProps) => (
 
       <p>
         {
-          'Bringing together realtime data from sensors, devices and Slack messages from across our Amsterdam office, we produce an emergent system that absurdly mirrors our world. How are people travelling through the space? How is the air they are breathing? Is it lunch?'
+          'Bringing together realtime data from sensors, devices and activity from across our Amsterdam office, we produce an emergent system that absurdly mirrors our world. How are people travelling through the space? How is the air they are breathing? Are they eating lunch?'
         }
       </p>
 
