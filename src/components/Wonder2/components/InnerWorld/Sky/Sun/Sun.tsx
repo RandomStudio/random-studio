@@ -1,6 +1,6 @@
 import { Sphere } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import {
   AmbientLight,
   DirectionalLight,
@@ -12,13 +12,14 @@ import {
 import { lerp } from 'three/src/math/MathUtils';
 import { findStages } from '../../../../utils/skyUtils';
 import { lerpColor } from '../../../../utils/animationUtils';
+import type { SunState } from '../Sky';
 
 const Sun = ({
-  elevation,
-  sunPosition,
+  sunStateRef,
+  sunPositionRef,
 }: {
-  elevation: number;
-  sunPosition: Vector3;
+  sunStateRef: RefObject<SunState>;
+  sunPositionRef: RefObject<Vector3>;
 }) => {
   const sphereRef = useRef<Mesh>(null);
   const targetRef = useRef<Mesh>(null);
@@ -27,36 +28,27 @@ const Sun = ({
   const ambientLightRef = useRef<AmbientLight>(null);
   const hemisphereLightRef = useRef<HemisphereLight>(null);
 
-  const [hasSetup, setHasSetup] = useState(false);
-
-  useEffect(() => {
-    if (!lightRef.current || hasSetup) {
-      return;
-    }
-
-    const { currentStage } = findStages(elevation);
-    const { lightColor, intensity } = currentStage;
-
-    lightRef.current.color.copy(lightColor);
-    lightRef.current.intensity = intensity;
-    setHasSetup(true);
-  }, [elevation, hasSetup]);
-
   useFrame(() => {
+    const { elevation } = sunStateRef.current ?? {};
+
     if (
       !lightRef.current ||
       !sphereRef.current ||
       !ambientLightRef.current ||
       !hemisphereLightRef.current ||
       !targetRef.current ||
+      !sunPositionRef.current ||
       !elevation
     ) {
       return;
     }
 
+    const sunPosition = sunPositionRef.current;
     lightRef.current.position.set(sunPosition.x, sunPosition.y, sunPosition.z);
-    targetRef.current.position.set(0, 0, 8);
-    lightRef.current.lookAt(0, 0, 8);
+
+    lightRef.current.lookAt(targetRef.current.position);
+    hemisphereLightRef.current.lookAt(targetRef.current.position);
+
     sphereRef.current.position.copy(lightRef.current.position);
 
     const { currentStage, nextStage } = findStages(elevation);
@@ -67,7 +59,10 @@ const Sun = ({
     const elevationProgress =
       (elevation - currentStage.elevation) / elevationRange;
 
-    const delta = Number.isNaN(elevationProgress) ? 0 : elevationProgress;
+    const delta =
+      Number.isNaN(elevationProgress) || !Number.isFinite(elevationProgress)
+        ? 0
+        : elevationProgress;
 
     const interpolatedColor = lerpColor(
       currentStage.lightColor,
@@ -85,10 +80,11 @@ const Sun = ({
     lightRef.current.intensity = interpolatedIntensity;
 
     ambientLightRef.current.intensity = Math.max(
-      0.3 * interpolatedIntensity,
+      interpolatedIntensity / 4,
       0.1,
     );
 
+    console.log(ambientLightRef.current.intensity);
     hemisphereLightRef.current.intensity = 0.5 * interpolatedIntensity;
     hemisphereLightRef.current.color.set(lightRef.current.color);
 
@@ -110,7 +106,12 @@ const Sun = ({
         <meshBasicMaterial />
       </Sphere>
 
-      <Sphere args={[1, 32, 32]} ref={targetRef} visible={false}>
+      <Sphere
+        args={[1, 32, 32]}
+        position={[0, 0, 4]}
+        ref={targetRef}
+        visible={false}
+      >
         <meshBasicMaterial color="blue" />
       </Sphere>
     </>

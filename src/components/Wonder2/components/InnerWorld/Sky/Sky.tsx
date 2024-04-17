@@ -8,36 +8,44 @@ import { findStages, simulateSunPosition } from '../../../utils/skyUtils';
 import { lerp } from '../../../utils/animationUtils';
 
 const sunPositionVector = new Vector3();
-const centrePointVector = new Vector3(0, 0, 5);
+const centrePointVector = new Vector3(0, 0, -2);
+
+export type SunState = {
+  azimuth: number;
+  elevation: number;
+};
 
 type SkyProps = {
   hasOpenedUi: boolean;
 };
 
-const Sky = ({ hasOpenedUi }: SkyProps) => {
-  const latestState = useHomeAssistant<
-    string,
-    { elevation: number; azimuth: number }
-  >('sun.sun');
+const Sky = ({ hasOpenedUi2 }: SkyProps) => {
+  const latestState = useHomeAssistant<string, SunState>('sun.sun');
 
+  const hasOpenedUi = true;
   const skyRef = useRef<Mesh & { material: ShaderMaterial }>(null);
 
-  const [sunPosition, setSunPosition] = useState(new Vector3());
+  const sunPositionRef = useRef(new Vector3());
 
-  const calculationSunPosition = useCallback(
-    ({ azimuth, elevation }: { azimuth: number; elevation: number }) => {
-      const phi = MathUtils.degToRad(90 - elevation);
-      const theta = MathUtils.degToRad(azimuth);
+  const sunStateRef = useRef<SunState>({
+    azimuth: 0,
+    elevation: 0,
+  });
 
-      const position = sunPositionVector.setFromSphericalCoords(10, phi, theta);
-      position.add(centrePointVector);
+  const updateSunPosition = useCallback(({ azimuth, elevation }: SunState) => {
+    const phi = MathUtils.degToRad(90 - elevation);
+    const theta = MathUtils.degToRad(azimuth);
 
-      return position;
-    },
-    [],
-  );
+    const position = sunPositionVector.setFromSphericalCoords(10, phi, theta);
+    position.add(centrePointVector);
 
-  const { azimuth, elevation } = latestState?.attributes || {};
+    sunPositionRef.current = position;
+
+    sunStateRef.current = {
+      azimuth,
+      elevation,
+    };
+  }, []);
 
   // By logging the elapsed time when we open the UI, we can ensure the sun starts on a white BG
   const initialUiClockTimeRef = useRef<number>(0);
@@ -47,21 +55,21 @@ const Sky = ({ hasOpenedUi }: SkyProps) => {
       return undefined;
     }
 
-    const position = calculationSunPosition({
+    const { azimuth, elevation } = latestState?.attributes || {};
+
+    updateSunPosition({
       azimuth,
       elevation,
     });
 
-    setSunPosition(position);
-
     return () => {
       initialUiClockTimeRef.current = 0;
     };
-  }, [calculationSunPosition, azimuth, elevation, hasOpenedUi]);
+  }, [latestState, hasOpenedUi, updateSunPosition]);
 
   useFrame(({ clock }) => {
     // Adjust sky properties for a smooth transition
-    if (!skyRef.current || !elevation) {
+    if (!skyRef.current) {
       return;
     }
 
@@ -73,9 +81,12 @@ const Sky = ({ hasOpenedUi }: SkyProps) => {
 
     const adjustedTime = elapsedTime - (initialUiClockTimeRef.current - 3);
 
-    const position = hasOpenedUi
-      ? calculationSunPosition(simulateSunPosition(adjustedTime))
-      : sunPosition;
+    if (hasOpenedUi) {
+      updateSunPosition(simulateSunPosition(adjustedTime));
+    }
+
+    const position = sunPositionRef.current;
+    const { elevation } = sunStateRef.current;
 
     skyRef.current.material.uniforms.sunPosition.value.set(...position);
 
@@ -112,10 +123,10 @@ const Sky = ({ hasOpenedUi }: SkyProps) => {
         distance={450000}
         mieDirectionalG={0.8}
         ref={skyRef}
-        sunPosition={sunPosition}
+        sunPosition={sunPositionRef.current}
       />
 
-      <Sun elevation={elevation} sunPosition={sunPosition} />
+      <Sun sunPositionRef={sunPositionRef} sunStateRef={sunStateRef} />
     </>
   );
 };
