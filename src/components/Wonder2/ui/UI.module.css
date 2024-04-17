@@ -1,0 +1,57 @@
+.button {
+  appearance: none;
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  border-radius: 40px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  background-color: transparent;
+
+  &.isOpen {
+    border-color: transparent;
+  }
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: auto 40% 84px;
+  grid-template-rows: 139px auto 139px;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  .copy {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  p {
+    @mixin body-2;
+    @mixin ff-text-styles;
+    margin-bottom: 1em;
+
+    @media (min-height: 1080px) {
+      @mixin logo;
+      @mixin ff-text-styles;
+    }
+  }
+
+  &.isOpen {
+    opacity: 1;
+
+    p {
+      pointer-events: all;
+    }
+  }
+}

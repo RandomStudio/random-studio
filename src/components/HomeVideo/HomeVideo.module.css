@@ -40,10 +40,10 @@
   mix-blend-mode: difference;
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   line-height: 1;
   padding: 16px 22px;
-  text-align: right;
+  text-align: left;
   z-index: 1;
 }
 
@@ -52,10 +52,6 @@
 }
 
 @media (min-width: 576px) {
-  .featuredAuthor {
-    text-align: right;
-  }
-
   .logo {
     top: 45px;
     left: 64px;

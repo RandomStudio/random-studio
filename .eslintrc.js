@@ -11,6 +11,7 @@ module.exports = {
     'plugin:@next/next/recommended',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@react-three/recommended',
   ],
   globals: {
     CSSUnitValue: 'readonly',
@@ -28,7 +29,13 @@ module.exports = {
   },
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'prettier',
+    '@react-three',
+  ],
   rules: {
     '@next/next/no-img-element': 0,
     // Clashes with next.js/link
@@ -57,7 +64,7 @@ module.exports = {
         forbidDefaultForRequired: true,
       },
     ],
-    'no-console': [2, { allow: ['warn', 'error'] }],
+    'no-console': 0,
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'object-property-newline': [
       2,
@@ -169,6 +176,7 @@ module.exports = {
     'react/iframe-missing-sandbox': 2,
     'react/no-access-state-in-setstate': 2,
     'react/no-adjacent-inline-elements': 2,
+
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': [
       2,
@@ -197,7 +205,8 @@ module.exports = {
     'react/no-this-in-sfc': 2,
     'react/no-typos': 2,
     'react/no-unescaped-entities': 2,
-    'react/no-unknown-property': 2,
+    // Handled by Typescript, avoids conflicts with R3F
+    'react/no-unknown-property': ['off', { ignore: ['JSX'] }],
     'react/no-unsafe': 2,
     'react/no-unstable-nested-components': 2,
     'react/no-unused-class-component-methods': 2,
@@ -244,7 +253,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 2,
     'react/jsx-pascal-case': 2,
     'react/jsx-props-no-multi-spaces': 2,
-    'react/jsx-props-no-spreading': 2,
+    'react/jsx-props-no-spreading': 0,
     'react/jsx-tag-spacing': 2,
     'react/jsx-wrap-multilines': 2,
   },

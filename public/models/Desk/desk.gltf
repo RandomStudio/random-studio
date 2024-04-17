@@ -1,0 +1,192 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v3.10.1",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 822
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 376,
+      "max": [
+        0.8462724685668945,
+        0.018499916419386864,
+        1.5876274108886719
+      ],
+      "min": [
+        -0.5797090530395508,
+        -0.733491063117981,
+        -0.9803400039672852
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 376
+    },
+    {
+      "type": "VEC2",
+      "componentType": 5126,
+      "count": 376
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1935
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "textures": [
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 2,
+      "sampler": 0
+    }
+  ],
+  "images": [
+    {
+      "name": "qkflyop_4K_Normal",
+      "mimeType": "image/jpeg",
+      "uri": "qkflyop_4K_Normal.jpg"
+    },
+    {
+      "name": "qkflyop_4K_Albedo",
+      "mimeType": "image/jpeg",
+      "uri": "qkflyop_4K_Albedo.jpg"
+    },
+    {
+      "name": "qkflyop_4K_Roughness",
+      "mimeType": "image/png",
+      "uri": "qkflyop_4K_Roughness.png"
+    }
+  ],
+  "buffers": [
+    {
+      "name": "desk-transformed",
+      "uri": "desk-transformed.bin",
+      "byteLength": 1935
+    }
+  ],
+  "materials": [
+    {
+      "name": "MDF Gray",
+      "extras": {
+        "flip_fluid_material_library": {}
+      },
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      },
+      "normalTexture": {
+        "index": 1,
+        "scale": 0.20000000298023224
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "GILLIS.070",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2,
+            "TEXCOORD_0": 3
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1,
+                "TEXCOORD_0": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Desk_Studio.007",
+      "extras": {
+        "flip_fluid": {}
+      },
+      "translation": [
+        -0.3036437155967211,
+        0.35749557334929705,
+        0.13328163796762382
+      ],
+      "rotation": [
+        0,
+        0.7071067094802856,
+        0,
+        0.7071068286895752
+      ],
+      "mesh": 0
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "extras": {
+        "vr_landmarks": [
+          {
+            "type": 0,
+            "base_scale": 1
+          }
+        ],
+        "SimpleBake_Props": {},
+        "sun_pos_properties": {
+          "day_of_year": 53,
+          "sun_object": {},
+          "object_collection": {}
+        },
+        "uuid": "66259735-8665-4e9b-b5d0-8dec6f6dbcd1",
+        "assets reported": {},
+        "send2ue": {}
+      },
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": [
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ]
+}

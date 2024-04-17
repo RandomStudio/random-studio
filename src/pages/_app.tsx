@@ -1,8 +1,13 @@
 import '../styles/global.css';
 import { useRouter } from 'next/router';
-import React from 'react';
+import dynamic from 'next/dynamic';
+import React, { useRef, useState } from 'react';
 import styles from './App.module.css';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
+
+const Wonder2 = dynamic(() => import('../components/Wonder2/Wonder2'), {
+  ssr: false,
+});
 
 type AppProps = {
   Component: React.FC;
@@ -16,12 +21,27 @@ type AppProps = {
 
 const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
   const router = useRouter();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const [isWonderFocused, setIsWonderFocused] = useState(false);
+
+  const hasWonder = typeof window !== 'undefined' && window.innerWidth > 768;
 
   return (
     <ErrorBoundary>
-      <>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
+      <div ref={containerRef}>
+        <div className={styles.page}>
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+        </div>
+
+        {hasWonder && (
+          <Wonder2
+            containerRef={containerRef}
+            isWonderFocused={isWonderFocused}
+            setIsWonderFocused={setIsWonderFocused}
+          />
+        )}
 
         {isPreview && (
           <div className={styles.preview}>
@@ -34,7 +54,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
             </a>
           </div>
         )}
-      </>
+      </div>
     </ErrorBoundary>
   );
 };

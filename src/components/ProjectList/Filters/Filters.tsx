@@ -32,19 +32,14 @@ const Filters = ({
       .flat()
       .map(tag => tag.toLowerCase());
 
-    // @ts-expect-error Need to look in to Set
     return [...new Set(projectFiltersWithDupes)];
   }, [projects]);
 
   useEffect(() => {
-    const requestedFilter = router.query.filter;
+    const requestedFilter = router.query.filter as string;
 
     if (requestedFilter && projectFilters.includes(requestedFilter)) {
-      setActiveTag(
-        typeof requestedFilter === 'string'
-          ? requestedFilter
-          : requestedFilter[0],
-      );
+      setActiveTag(requestedFilter);
     }
   }, [projectFilters, router.query.filter, setActiveTag]);
 

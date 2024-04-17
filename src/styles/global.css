@@ -37,6 +37,11 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Simula Book";
+  src: url("/fonts/Simula_Book.woff") format("woff");
+}
+
 :root {
   --black: lab(0.07 0.35 0.12);
   --dark-grey: lab(43.19 0 0);
