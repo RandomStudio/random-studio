@@ -18,9 +18,9 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
   const [spring] = useSpring(
     {
       fov: isExpanded ? 39.598 : 3,
-      x: !hasOpenedUi && isExpanded ? Math.PI : 0,
+      x: Math.PI,
     },
-    [hasOpenedUi, isExpanded],
+    [isExpanded],
   );
 
   useFrame(() => {
@@ -57,6 +57,7 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
 
     return () => {
       window.removeEventListener('mousemove', handler);
+      spring.x.start(Math.PI);
     };
   }, [hasOpenedUi, isExpanded, spring.x]);
 
