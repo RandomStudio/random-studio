@@ -18,8 +18,6 @@ const handleMessage = (event: MessageEvent) => {
       ...state,
       ...payload,
     };
-
-    console.log('Received message from Home Assistant', payload);
   } catch (e) {
     console.error('Failed to parse message from Home Assistant', e);
   }
