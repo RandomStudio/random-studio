@@ -1,7 +1,7 @@
 import { useSpring } from '@react-spring/web';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { type PerspectiveCamera as PerspectiveCameraType } from 'three';
 import type { OrbitControls as OrbitControlsType } from 'three-stdlib';
 import UICameraPositionAnimator from './UICameraPositionAnimator/UICameraPositionAnimator';
@@ -34,6 +34,8 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
   const controlsRef = useRef<OrbitControlsType>(null);
   const [rotateDirection, setRotateDirection] = useState(1); // 1 for clockwise, -1 for counter-clockwise
 
+  const mouseXRef = useRef(0);
+
   useFrame(() => {
     if (!controlsRef.current || hasOpenedUi) {
       return;
@@ -46,10 +48,26 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
       setRotateDirection(-1 * rotateDirection);
     }
 
+    controlsRef.current.setAzimuthalAngle(
+      Math.PI + (Math.PI / 4) * mouseXRef.current,
+    );
+
     // Update the azimuth angle to make the rotation go back and forth
     controlsRef.current.autoRotateSpeed = 0.1 * rotateDirection;
     controlsRef.current.update();
   });
+
+  useEffect(() => {
+    const handler = (event: MouseEvent) => {
+      mouseXRef.current = (event.clientX / window.innerWidth) * 2 - 1;
+    };
+
+    window.addEventListener('mousemove', handler);
+
+    return () => {
+      window.removeEventListener('mousemove', handler);
+    };
+  }, []);
 
   return (
     <>
@@ -69,10 +87,11 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
 
       {!hasOpenedUi && (
         <OrbitControls
-          autoRotate={isExpanded}
+          autoRotate={false}
           autoRotateSpeed={1}
           enableDamping
           enablePan={false}
+          enableRotate={false}
           enableZoom={false}
           maxAzimuthAngle={Math.PI + Math.PI / 4}
           maxPolarAngle={Math.PI / 2.2}
