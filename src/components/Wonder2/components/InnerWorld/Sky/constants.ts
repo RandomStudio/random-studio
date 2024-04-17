@@ -22,8 +22,8 @@ export const DAY_NIGHT_CYCLE_STAGES = [
     turbidity: 2,
     rayleigh: 0.2,
     mieCoefficient: 0.005,
-    topSkyColor: new Color(0x50597b), // Darker shade of original top sky color
-    bottomSkyColor: new Color(0x50597b), // Darker shade of original bottom sky color
+    topSkyColor: new Color(0x16181b),
+    bottomSkyColor: new Color(0x293d5a),
 
     normalizedElevation: 0.0,
   },
