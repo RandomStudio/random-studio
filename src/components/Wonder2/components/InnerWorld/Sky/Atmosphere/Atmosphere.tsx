@@ -58,8 +58,6 @@ const Atmosphere = ({ sunStateRef }: AtmosphereProps) => {
     const { azimuth, elevation } = sunStateRef.current;
     const { currentStage, nextStage } = findStages(elevation, azimuth);
 
-    console.log(currentStage, nextStage, elevation, azimuth);
-
     const ratio =
       (elevation - currentStage.elevation) /
       (nextStage.elevation - currentStage.elevation);

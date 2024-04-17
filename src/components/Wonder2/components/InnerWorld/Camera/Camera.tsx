@@ -13,12 +13,14 @@ type CameraProps = {
 
 const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
   const cameraRef = useRef<PerspectiveCameraType>(null);
+  const controlsRef = useRef<OrbitControlsType>(null);
 
   const [spring] = useSpring(
     {
       fov: isExpanded ? 39.598 : 3,
+      x: !hasOpenedUi && isExpanded ? Math.PI : 0,
     },
-    [isExpanded],
+    [hasOpenedUi, isExpanded],
   );
 
   useFrame(() => {
@@ -31,18 +33,12 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
     cameraRef.current.updateProjectionMatrix();
   });
 
-  const controlsRef = useRef<OrbitControlsType>(null);
-
-  const mouseXRef = useRef(0);
-
   useFrame(() => {
     if (!controlsRef.current || hasOpenedUi) {
       return;
     }
 
-    controlsRef.current.setAzimuthalAngle(
-      Math.PI - (Math.PI / 8) * mouseXRef.current,
-    );
+    controlsRef.current.setAzimuthalAngle(spring.x.get());
 
     controlsRef.current.update();
   });
@@ -53,16 +49,16 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
     }
 
     const handler = (event: MouseEvent) => {
-      mouseXRef.current = (event.clientX / window.innerWidth) * 2 - 1;
+      const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      spring.x.start(Math.PI - (Math.PI / 8) * mouseX);
     };
 
     window.addEventListener('mousemove', handler);
 
     return () => {
       window.removeEventListener('mousemove', handler);
-      mouseXRef.current = 0;
     };
-  }, [hasOpenedUi, isExpanded]);
+  }, [hasOpenedUi, isExpanded, spring.x]);
 
   return (
     <>

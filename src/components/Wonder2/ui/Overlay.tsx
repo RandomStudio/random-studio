@@ -7,19 +7,17 @@ type OverlayProps = {
 const Overlay = ({ hasOpenedUi }: OverlayProps) => (
   <div className={`${styles.overlay} ${hasOpenedUi && styles.isOpen}`}>
     <div className={styles.copy}>
-      <p>
-        {'How can we contextualise and represent a space in the digital realm?'}
-      </p>
+      <p>{'How can we represent a living space in the digital realm?'}</p>
 
       <p>
         {
-          'Here, a pastiche of Amsterdam office is represented in an interconnected system. The 3D models are directly linked to live updating data-points from the real world office: How many people are present? What are the co2 levels? Is it time for lunch?'
+          'Bringing together realtime data from sensors, devices and Slack messages from across our Amsterdam office, we produce an emergent system that absurdly mirrors our world. How are people travelling through the space? How is the air they are breathing? Is it lunch?'
         }
       </p>
 
       <p>
         {
-          'Together they build to an opaque, emergent system that absurdly mirrors our world. Check back for seasonal updates in the future.'
+          'A 3D pastiche of our office catwalk reflects this information, producing a window in to how the space changes over time. Check back for seasonal updates in the future.'
         }
       </p>
     </div>
