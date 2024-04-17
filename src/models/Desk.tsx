@@ -54,5 +54,5 @@ const Desk = (props: JSX.IntrinsicElements['group']) => {
   );
 };
 
-useGLTF.preload('/desk-transformed.glb');
+useGLTF.preload('/models/Desk/Desk.gltf');
 export default Desk;

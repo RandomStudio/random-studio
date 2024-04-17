@@ -58,6 +58,10 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
   });
 
   useEffect(() => {
+    if (!isExpanded) {
+      return undefined;
+    }
+
     const handler = (event: MouseEvent) => {
       mouseXRef.current = (event.clientX / window.innerWidth) * 2 - 1;
     };
@@ -66,8 +70,9 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
 
     return () => {
       window.removeEventListener('mousemove', handler);
+      mouseXRef.current = 0;
     };
-  }, []);
+  }, [isExpanded]);
 
   return (
     <>

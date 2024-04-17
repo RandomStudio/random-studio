@@ -51,12 +51,14 @@ const Atmosphere = ({ sunStateRef }: AtmosphereProps) => {
   const skyRef = useRef<Mesh<SphereGeometry, ShaderMaterial>>(null);
 
   useFrame(() => {
-    if (!sunStateRef.current || !skyRef.current) {
+    if (!sunStateRef.current?.elevation || !skyRef.current) {
       return;
     }
 
     const { azimuth, elevation } = sunStateRef.current;
     const { currentStage, nextStage } = findStages(elevation, azimuth);
+
+    console.log(currentStage, nextStage, elevation, azimuth);
 
     const ratio =
       (elevation - currentStage.elevation) /
