@@ -1,7 +1,7 @@
 import { useSpring } from '@react-spring/web';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { type PerspectiveCamera as PerspectiveCameraType } from 'three';
 import type { OrbitControls as OrbitControlsType } from 'three-stdlib';
 import UICameraPositionAnimator from './UICameraPositionAnimator/UICameraPositionAnimator';
@@ -32,7 +32,6 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
   });
 
   const controlsRef = useRef<OrbitControlsType>(null);
-  const [rotateDirection, setRotateDirection] = useState(1); // 1 for clockwise, -1 for counter-clockwise
 
   const mouseXRef = useRef(0);
 
@@ -41,19 +40,10 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
       return;
     }
 
-    const azimuthalAngle = controlsRef.current.getAzimuthalAngle();
-
-    // Check and reverse direction at boundaries
-    if (azimuthalAngle === rotateDirection * (Math.PI - Math.PI / 4)) {
-      setRotateDirection(-1 * rotateDirection);
-    }
-
     controlsRef.current.setAzimuthalAngle(
-      Math.PI + (Math.PI / 4) * mouseXRef.current,
+      Math.PI - (Math.PI / 8) * mouseXRef.current,
     );
 
-    // Update the azimuth angle to make the rotation go back and forth
-    controlsRef.current.autoRotateSpeed = 0.1 * rotateDirection;
     controlsRef.current.update();
   });
 
