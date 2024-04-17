@@ -13,7 +13,8 @@ export const createBlurredImage = async (thumbnailUrl: string) => {
   try {
     image = await getImage(thumbnailUrl);
   } catch (error) {
-    console.error('Failed on URL', thumbnailUrl);
+    // eslint-disable-next-line no-console
+    console.log('Failed on URL', thumbnailUrl);
 
     return {
       thumbnail: null,
