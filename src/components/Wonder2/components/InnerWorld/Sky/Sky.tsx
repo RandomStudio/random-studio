@@ -19,10 +19,9 @@ type SkyProps = {
   hasOpenedUi: boolean;
 };
 
-const Sky = ({ hasOpenedUi2 }: SkyProps) => {
+const Sky = ({ hasOpenedUi }: SkyProps) => {
   const latestState = useHomeAssistant<string, SunState>('sun.sun');
 
-  const hasOpenedUi = true;
   const skyRef = useRef<Mesh & { material: ShaderMaterial }>(null);
 
   const sunPositionRef = useRef(new Vector3());
@@ -85,8 +84,9 @@ const Sky = ({ hasOpenedUi2 }: SkyProps) => {
       updateSunPosition(simulateSunPosition(adjustedTime));
     }
 
-    const position = sunPositionRef.current;
     const { elevation } = sunStateRef.current;
+
+    const position = sunPositionRef.current;
 
     skyRef.current.material.uniforms.sunPosition.value.set(...position);
 
