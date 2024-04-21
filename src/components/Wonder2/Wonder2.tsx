@@ -53,11 +53,31 @@ const Wonder2 = ({
     containerRef.current?.style.setProperty('--wonder-scale', `${wonderScale}`);
   }, [containerRef]);
 
+  const [isIdle, setIsIdle] = useState(false);
+
+  useEffect(() => {
+    if (isWonderFocused) {
+      setIsIdle(false);
+
+      return undefined;
+    }
+
+    const idleTimeout = setTimeout(() => {
+      setIsIdle(true);
+    }, 15000);
+
+    return () => {
+      clearTimeout(idleTimeout);
+    };
+  }, [isWonderFocused]);
+
+  const frameLoop = isWonderFocused || !isIdle ? 'always' : 'demand';
+
   return (
     <Suspense fallback={null}>
       <div className={canvasClassNames}>
         <ErrorBoundary>
-          <Canvas onClick={handleCanvasClick}>
+          <Canvas frameloop={frameLoop} onClick={handleCanvasClick}>
             <R3FErrorBoundary>
               <Float
                 floatIntensity={isWonderFocused ? 0 : 1}
