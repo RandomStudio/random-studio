@@ -1,5 +1,5 @@
 import { Box } from '@react-three/drei';
-import { Suspense } from 'react';
+import { Suspense, useCallback, useEffect } from 'react';
 import Mainspace from '../../../../models/Mainspace';
 import Sky from './Sky/Sky';
 import CO2Plant from './CO2Plant/CO2Plant';
@@ -16,19 +16,28 @@ type InnerWorldProps = {
   setHasRenderedWorld: (hasRenderedWorld: boolean) => void;
 };
 
+let hasLoadedOnce = false;
+
 const InnerWorld = ({
   hasRenderedWorld,
   hasOpenedUi,
   isExpanded,
   setHasRenderedWorld,
 }: InnerWorldProps) => {
-  const handleRenderScene = () => {
+  const handleRenderScene = useCallback(() => {
     if (hasRenderedWorld) {
       return;
     }
 
+    hasLoadedOnce = true;
     setHasRenderedWorld(true);
-  };
+  }, [hasRenderedWorld, setHasRenderedWorld]);
+
+  useEffect(() => {
+    if (hasLoadedOnce && !hasRenderedWorld) {
+      handleRenderScene();
+    }
+  }, [handleRenderScene, hasRenderedWorld]);
 
   return (
     <Suspense fallback={<Loader onLoad={handleRenderScene} />}>

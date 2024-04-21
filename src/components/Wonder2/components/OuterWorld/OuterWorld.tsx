@@ -1,6 +1,6 @@
 import { animated, useSpring } from '@react-spring/three';
 import { RenderTexture } from '@react-three/drei';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MorphingGeometry from './MorphingGeometry/MorphingGeometry';
 import InnerWorld from '../InnerWorld/InnerWorld';
 import useWindowSize from '../../hooks/useWindowSize';
@@ -22,6 +22,12 @@ const OuterWorld = ({ hasOpenedUi, isExpanded }: OuterWorldProps) => {
     },
     [hasRenderedWorld],
   );
+
+  useEffect(() => {
+    return () => {
+      setHasRenderedWorld(false);
+    };
+  }, []);
 
   return (
     <MorphingGeometry

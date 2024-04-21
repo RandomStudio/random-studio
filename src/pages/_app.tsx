@@ -25,7 +25,10 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
 
   const [isWonderFocused, setIsWonderFocused] = useState(false);
 
-  const hasWonder = typeof window !== 'undefined' && window.innerWidth > 768;
+  const hasWonder =
+    typeof window !== 'undefined' &&
+    window.innerWidth > 768 &&
+    !router.route.startsWith('/video/');
 
   return (
     <ErrorBoundary>

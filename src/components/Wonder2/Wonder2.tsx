@@ -36,7 +36,6 @@ const Wonder2 = ({
 
   const handleCanvasClick = () => {
     setIsWonderFocused(isCurrentlyFocused => !isCurrentlyFocused);
-    //    setIsWonderFocused(true);
   };
 
   useEffect(() => {
@@ -73,6 +72,7 @@ const Wonder2 = ({
   }, [isHovered, isWonderFocused]);
 
   const frameLoop = isWonderFocused || !isIdle ? 'always' : 'demand';
+  console.log(frameLoop);
 
   return (
     <Suspense fallback={null}>
