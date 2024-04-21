@@ -23,9 +23,7 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [isWonderFocused, setIsWonderFocused] = useState(
-    router.query.connectedSpace === 'true',
-  );
+  const [isWonderFocused, setIsWonderFocused] = useState(false);
 
   const hasWonder =
     typeof window !== 'undefined' &&
