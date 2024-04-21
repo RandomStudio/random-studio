@@ -54,9 +54,10 @@ const Wonder2 = ({
   }, [containerRef]);
 
   const [isIdle, setIsIdle] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    if (isWonderFocused) {
+    if (isWonderFocused || isHovered) {
       setIsIdle(false);
 
       return undefined;
@@ -69,7 +70,7 @@ const Wonder2 = ({
     return () => {
       clearTimeout(idleTimeout);
     };
-  }, [isWonderFocused]);
+  }, [isHovered, isWonderFocused]);
 
   const frameLoop = isWonderFocused || !isIdle ? 'always' : 'demand';
 
@@ -77,7 +78,12 @@ const Wonder2 = ({
     <Suspense fallback={null}>
       <div className={canvasClassNames}>
         <ErrorBoundary>
-          <Canvas frameloop={frameLoop} onClick={handleCanvasClick}>
+          <Canvas
+            frameloop={frameLoop}
+            onClick={handleCanvasClick}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             <R3FErrorBoundary>
               <Float
                 floatIntensity={isWonderFocused ? 0 : 1}
