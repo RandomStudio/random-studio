@@ -75,7 +75,7 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
         far={1000}
         makeDefault
         near={0.1}
-        position={[-0.067, 3, -14.281]}
+        position={[-0.067, 3, -13.281]}
         ref={cameraRef}
         rotation={[Math.PI / -0.5, 0.009, -3.14]}
       />

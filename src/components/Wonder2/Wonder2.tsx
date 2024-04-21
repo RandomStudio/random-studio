@@ -2,6 +2,7 @@ import {
   Dispatch,
   RefObject,
   SetStateAction,
+  Suspense,
   useEffect,
   useState,
 } from 'react';
@@ -53,35 +54,33 @@ const Wonder2 = ({
   }, [containerRef]);
 
   return (
-    <div className={canvasClassNames}>
-      <ErrorBoundary>
-        <Canvas onClick={handleCanvasClick}>
-          <R3FErrorBoundary>
-            {
-              // isWonderFocused && <Perf deepAnalyze overClock />
-            }
+    <Suspense fallback={null}>
+      <div className={canvasClassNames}>
+        <ErrorBoundary>
+          <Canvas onClick={handleCanvasClick}>
+            <R3FErrorBoundary>
+              <Float
+                floatIntensity={isWonderFocused ? 0 : 1}
+                floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
+                rotationIntensity={0}
+                speed={isWonderFocused ? 10 : 1.5}
+              >
+                <OuterWorld
+                  hasOpenedUi={hasOpenedUi}
+                  isExpanded={isWonderFocused}
+                />
+              </Float>
+            </R3FErrorBoundary>
+          </Canvas>
+        </ErrorBoundary>
 
-            <Float
-              floatIntensity={isWonderFocused ? 0 : 1}
-              floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
-              rotationIntensity={0}
-              speed={isWonderFocused ? 10 : 1.5}
-            >
-              <OuterWorld
-                hasOpenedUi={hasOpenedUi}
-                isExpanded={isWonderFocused}
-              />
-            </Float>
-          </R3FErrorBoundary>
-        </Canvas>
-      </ErrorBoundary>
+        {isWonderFocused && (
+          <Button hasOpenedUi={hasOpenedUi} setHasOpenedUi={setHasOpenedUi} />
+        )}
 
-      {isWonderFocused && (
-        <Button hasOpenedUi={hasOpenedUi} setHasOpenedUi={setHasOpenedUi} />
-      )}
-
-      <Overlay hasOpenedUi={hasOpenedUi} />
-    </div>
+        <Overlay hasOpenedUi={hasOpenedUi} />
+      </div>
+    </Suspense>
   );
 };
 
