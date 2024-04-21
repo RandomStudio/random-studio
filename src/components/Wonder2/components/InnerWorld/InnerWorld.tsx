@@ -45,7 +45,6 @@ const InnerWorld = ({
       <Mainspace
         onAfterRender={handleRenderScene}
         onBeforeRender={handleRenderScene}
-        onLo
         position={[0, 1, 4]}
         rotation={[0, 0, 0]}
       />
