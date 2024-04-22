@@ -64,7 +64,7 @@ const Wonder2 = ({
 
     const idleTimeout = setTimeout(() => {
       setIsIdle(true);
-    }, 15000);
+    }, 1000 * 60 * 2);
 
     return () => {
       clearTimeout(idleTimeout);
@@ -72,7 +72,6 @@ const Wonder2 = ({
   }, [isHovered, isWonderFocused]);
 
   const frameLoop = isWonderFocused || !isIdle ? 'always' : 'demand';
-  console.log(frameLoop);
 
   return (
     <Suspense fallback={null}>
@@ -89,7 +88,7 @@ const Wonder2 = ({
                 floatIntensity={isWonderFocused ? 0 : 1}
                 floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
                 rotationIntensity={0}
-                speed={isWonderFocused ? 10 : 1.5}
+                speed={5}
               >
                 <OuterWorld
                   hasOpenedUi={hasOpenedUi}
