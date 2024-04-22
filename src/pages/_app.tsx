@@ -28,7 +28,8 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
   const hasWonder =
     typeof window !== 'undefined' &&
     window.innerWidth > 768 &&
-    !router.route.startsWith('/video/');
+    !router.route.startsWith('/video/') &&
+    !router.route.startsWith('/projects/');
 
   return (
     <ErrorBoundary>
