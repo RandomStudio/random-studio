@@ -21,7 +21,7 @@
   left: 0;
   display: grid;
   grid-template-columns: auto 40% min(84px, 4vw);
-  grid-template-rows: 139px auto 139px;
+  grid-template-rows: 80px auto 80px;
   height: 100%;
   width: 100%;
   pointer-events: none;
