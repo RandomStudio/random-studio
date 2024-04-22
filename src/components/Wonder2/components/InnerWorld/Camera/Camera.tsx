@@ -46,6 +46,16 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
     cameraRef.current.updateProjectionMatrix();
   });
 
+  useFrame(() => {
+    if (!controlsRef.current || hasOpenedUi) {
+      return;
+    }
+
+    controlsRef.current.setAzimuthalAngle(spring.x.get());
+
+    controlsRef.current.update();
+  });
+
   useEffect(() => {
     if (!isExpanded || hasOpenedUi) {
       return undefined;
