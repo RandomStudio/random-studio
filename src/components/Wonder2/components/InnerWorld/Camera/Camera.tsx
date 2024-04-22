@@ -27,28 +27,23 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
     {
       fov: isExpanded ? 39.598 : 3,
       x: Math.PI,
+      y: Math.PI / 2.2,
     },
     [isExpanded],
   );
 
-  useFrame(() => {
+  useFrame(({ clock }) => {
     if (!cameraRef.current) {
       return;
+    }
+
+    if (!isExpanded) {
+      spring.fov.start(3 + Math.cos(clock.getElapsedTime()));
     }
 
     cameraRef.current.fov = spring.fov.get();
 
     cameraRef.current.updateProjectionMatrix();
-  });
-
-  useFrame(() => {
-    if (!controlsRef.current || hasOpenedUi) {
-      return;
-    }
-
-    controlsRef.current.setAzimuthalAngle(spring.x.get());
-
-    controlsRef.current.update();
   });
 
   useEffect(() => {
