@@ -1,13 +1,13 @@
 import '../styles/global.css';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-import React, { useRef, useState } from 'react';
+// import dynamic from 'next/dynamic';
+import React, { useRef } from 'react';
 import styles from './App.module.css';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
-const Wonder2 = dynamic(() => import('../components/Wonder2/Wonder2'), {
-  ssr: false,
-});
+// const Wonder2 = dynamic(() => import('../components/Wonder2/Wonder2'), {
+//   ssr: false,
+// });
 
 type AppProps = {
   Component: React.FC;
@@ -23,13 +23,13 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [isWonderFocused, setIsWonderFocused] = useState(false);
+  // const [isWonderFocused, setIsWonderFocused] = useState(false);
 
-  const hasWonder =
-    typeof window !== 'undefined' &&
-    window.innerWidth > 768 &&
-    !router.route.startsWith('/video/') &&
-    !router.route.startsWith('/projects/');
+  // const hasWonder =
+  //   typeof window !== 'undefined' &&
+  //   window.innerWidth > 768 &&
+  //   !router.route.startsWith('/video/') &&
+  //   !router.route.startsWith('/projects/');
 
   return (
     <ErrorBoundary>
@@ -37,13 +37,13 @@ const App = ({ Component, pageProps, __N_PREVIEW: isPreview }: AppProps) => {
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
 
-        {hasWonder && (
+        {/* {hasWonder && (
           <Wonder2
             containerRef={containerRef}
             isWonderFocused={isWonderFocused}
             setIsWonderFocused={setIsWonderFocused}
           />
-        )}
+        )} */}
 
         {isPreview && (
           <div className={styles.preview}>
