@@ -27,13 +27,18 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
     {
       fov: isExpanded ? 39.598 : 3,
       x: Math.PI,
+      y: Math.PI / 2.2,
     },
     [isExpanded],
   );
 
-  useFrame(() => {
+  useFrame(({ clock }) => {
     if (!cameraRef.current) {
       return;
+    }
+
+    if (!isExpanded) {
+      spring.fov.start(3 + Math.cos(clock.getElapsedTime()));
     }
 
     cameraRef.current.fov = spring.fov.get();
@@ -75,7 +80,7 @@ const Camera = ({ hasOpenedUi, isExpanded }: CameraProps) => {
         far={1000}
         makeDefault
         near={0.1}
-        position={[-0.067, 3, -14.281]}
+        position={[-0.067, 3, -13.281]}
         ref={cameraRef}
         rotation={[Math.PI / -0.5, 0.009, -3.14]}
       />

@@ -8,11 +8,12 @@
   bottom: 0;
   right: 0;
   pointer-events: all;
+  z-index: 9999;
   width: calc(100vw * var(--wonder-scale));
   height: calc(100vh * var(--wonder-scale));
 
   transform-origin: bottom right;
-  transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s, transform 0.3s;
   contain: strict;
 
   &.isFocused {
@@ -23,5 +24,9 @@
   canvas {
     width: 100% !important;
     height: 100% !important;
+  }
+
+  &:hover:not(.isFocused) {
+    transform: scale(1.2);
   }
 }

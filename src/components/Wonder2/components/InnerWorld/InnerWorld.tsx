@@ -1,4 +1,5 @@
 import { Box } from '@react-three/drei';
+import { Suspense, useCallback, useEffect } from 'react';
 import Mainspace from '../../../../models/Mainspace';
 import Sky from './Sky/Sky';
 import CO2Plant from './CO2Plant/CO2Plant';
@@ -6,15 +7,40 @@ import LunchPlates from './LunchPlates/LunchPlates';
 import MotionChairs from './MotionChairs/MotionChairs';
 import Camera from './Camera/Camera';
 import Desk, { DeskInstances } from '../../../../models/Desk';
+import Loader from './Loader/Loader';
 
 type InnerWorldProps = {
+  hasRenderedWorld: boolean;
   hasOpenedUi: boolean;
   isExpanded: boolean;
+  setHasRenderedWorld: (hasRenderedWorld: boolean) => void;
 };
 
-const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
+let hasLoadedOnce = false;
+
+const InnerWorld = ({
+  hasRenderedWorld,
+  hasOpenedUi,
+  isExpanded,
+  setHasRenderedWorld,
+}: InnerWorldProps) => {
+  const handleRenderScene = useCallback(() => {
+    if (hasRenderedWorld) {
+      return;
+    }
+
+    hasLoadedOnce = true;
+    setHasRenderedWorld(true);
+  }, [hasRenderedWorld, setHasRenderedWorld]);
+
+  useEffect(() => {
+    if (hasLoadedOnce && !hasRenderedWorld) {
+      handleRenderScene();
+    }
+  }, [handleRenderScene, hasRenderedWorld]);
+
   return (
-    <>
+    <Suspense fallback={<Loader onLoad={handleRenderScene} />}>
       <Box
         args={[1, 1, 1]}
         position={isExpanded ? [0, 0.5, 0] : [0, -0.75, 1]}
@@ -25,7 +51,12 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
 
       <Camera hasOpenedUi={hasOpenedUi} isExpanded={isExpanded} />
 
-      <Mainspace position={[0, 1, 4]} rotation={[0, 0, 0]} />
+      <Mainspace
+        onAfterRender={handleRenderScene}
+        onBeforeRender={handleRenderScene}
+        position={[0, 1, 4]}
+        rotation={[0, 0, 0]}
+      />
 
       <CO2Plant
         hasOpenedUi={hasOpenedUi}
@@ -54,10 +85,6 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
         position={[-0.7, -1.2, 4.4]}
         roomId="sensor.knx_co2_upstairs"
       />
-
-      {
-        //
-      }
 
       <CO2Plant
         hasOpenedUi={hasOpenedUi}
@@ -93,7 +120,7 @@ const InnerWorld = ({ hasOpenedUi, isExpanded }: InnerWorldProps) => {
       <MotionChairs hasOpenedUi={hasOpenedUi} />
 
       <LunchPlates />
-    </>
+    </Suspense>
   );
 };
 

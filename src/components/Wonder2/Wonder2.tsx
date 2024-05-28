@@ -2,6 +2,7 @@ import {
   Dispatch,
   RefObject,
   SetStateAction,
+  Suspense,
   useEffect,
   useState,
 } from 'react';
@@ -35,7 +36,6 @@ const Wonder2 = ({
 
   const handleCanvasClick = () => {
     setIsWonderFocused(isCurrentlyFocused => !isCurrentlyFocused);
-    //    setIsWonderFocused(true);
   };
 
   useEffect(() => {
@@ -52,36 +52,60 @@ const Wonder2 = ({
     containerRef.current?.style.setProperty('--wonder-scale', `${wonderScale}`);
   }, [containerRef]);
 
+  const [isIdle, setIsIdle] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (isWonderFocused || isHovered) {
+      setIsIdle(false);
+
+      return undefined;
+    }
+
+    const idleTimeout = setTimeout(() => {
+      setIsIdle(true);
+    }, 1000 * 60 * 2);
+
+    return () => {
+      clearTimeout(idleTimeout);
+    };
+  }, [isHovered, isWonderFocused]);
+
+  const frameLoop = isWonderFocused || !isIdle ? 'always' : 'demand';
+
   return (
-    <div className={canvasClassNames}>
-      <ErrorBoundary>
-        <Canvas onClick={handleCanvasClick}>
-          <R3FErrorBoundary>
-            {
-              // isWonderFocused && <Perf deepAnalyze overClock />
-            }
+    <Suspense fallback={null}>
+      <div className={canvasClassNames}>
+        <ErrorBoundary>
+          <Canvas
+            frameloop={frameLoop}
+            onClick={handleCanvasClick}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <R3FErrorBoundary>
+              <Float
+                floatIntensity={isWonderFocused ? 0 : 1}
+                floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
+                rotationIntensity={0}
+                speed={5}
+              >
+                <OuterWorld
+                  hasOpenedUi={hasOpenedUi}
+                  isExpanded={isWonderFocused}
+                />
+              </Float>
+            </R3FErrorBoundary>
+          </Canvas>
+        </ErrorBoundary>
 
-            <Float
-              floatIntensity={isWonderFocused ? 0 : 1}
-              floatingRange={isWonderFocused ? [0, 0] : [-0.5, 0.5]}
-              rotationIntensity={0}
-              speed={isWonderFocused ? 10 : 1.5}
-            >
-              <OuterWorld
-                hasOpenedUi={hasOpenedUi}
-                isExpanded={isWonderFocused}
-              />
-            </Float>
-          </R3FErrorBoundary>
-        </Canvas>
-      </ErrorBoundary>
+        {isWonderFocused && (
+          <Button hasOpenedUi={hasOpenedUi} setHasOpenedUi={setHasOpenedUi} />
+        )}
 
-      {isWonderFocused && (
-        <Button hasOpenedUi={hasOpenedUi} setHasOpenedUi={setHasOpenedUi} />
-      )}
-
-      <Overlay hasOpenedUi={hasOpenedUi} />
-    </div>
+        <Overlay hasOpenedUi={hasOpenedUi} />
+      </div>
+    </Suspense>
   );
 };
 
