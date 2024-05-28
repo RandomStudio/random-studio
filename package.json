@@ -2,7 +2,7 @@
   "name": "random.studio",
   "private": true,
   "description": "The Random Studio company website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "dev": "next dev -- --hostname=0.0.0.0",
