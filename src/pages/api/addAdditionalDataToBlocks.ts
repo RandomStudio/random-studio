@@ -18,7 +18,8 @@ const iterateOverValue = async (key: string, value: string) => {
   }
 
   if (Array.isArray(value)) {
-    return Promise.all(value.map(async item => iterateOverValue(key, item)));
+// @ts-expect-error This file needs refactoring
+return Promise.all(value.map(async item => iterateOverValue(key, item)));
   }
 
   if (typeof value === 'object') {
@@ -33,6 +34,7 @@ const iterateOverValue = async (key: string, value: string) => {
 const addAdditionalInfoToBlocks = async (data: { [key: string]: string }) => {
   // @ts-expect-error This file needs refactoring
   const updatedData = await Promise.all(
+    // @ts-expect-error This file needs refactoring
     Object.entries(data).map(async ([key, value]) => [
       key,
       await iterateOverValue(key, value),
