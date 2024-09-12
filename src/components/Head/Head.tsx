@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NextHead from 'next/head';
 import { usePathname } from 'next/navigation';
 import { Image } from '../../types/types';
