@@ -141,6 +141,14 @@ const Head = ({
         defer
         src="https://plausible.io/js/plausible.tagged-events.outbound-links.js"
       />
+      
+      <script defer>
+          !function(s,n,i,t,c,h){s.SnitchObject=i;s[i]||(s[i]=function(){
+          (s[i].q=s[i].q||[]).push(arguments)});s[i].l=+new Date;c=n.createElement(t);
+          h=n.getElementsByTagName(t)[0];c.src=‘https://snid.snitcher.com/8427924.js’;
+          h.parentNode.insertBefore(c,h)}(window,document,‘snid’,‘script’);
+          snid(‘verify’, ‘8427924’);
+      </script>
     </NextHead>
   );
 };
