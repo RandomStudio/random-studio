@@ -23,8 +23,7 @@ const ProjectList = ({
 }: ProjectListProps) => {
   const [activeTag, setActiveTag] = useState<string | undefined>(undefined);
 
-  const activeTagIndex =
-    ORDERED_TAGS.findIndex(tag => tag === activeTag) + 1 ?? 0;
+  const activeTagIndex = ORDERED_TAGS.findIndex(tag => tag === activeTag) + 1;
 
   const visibleProjects = useMemo(
     () =>
