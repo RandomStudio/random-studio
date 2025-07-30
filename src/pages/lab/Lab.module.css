@@ -200,6 +200,9 @@
   gap: 24px;
   overflow-x: auto;
   padding-right: 20px;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
 
   &::-webkit-scrollbar {
     display: none;
