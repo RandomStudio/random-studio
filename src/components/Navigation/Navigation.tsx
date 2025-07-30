@@ -11,6 +11,9 @@ const Navigation = () => (
       <Link className={styles.link} href="/projects">
         {'Projects'}
       </Link>
+      <Link className={styles.link} href="/lab">
+        {'Living Lab'}
+      </Link>
 
       <Link className={styles.link} href="/studio">
         {'Studio'}

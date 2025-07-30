@@ -1,0 +1,45 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+  border-radius: 16px;
+}
+
+.image {
+  margin: 0;
+}
+.title {
+  @mixin body-3;
+  margin: 0;
+}
+
+.tags {
+  @mixin body-4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+
+  .tag {
+    padding: 6px;
+    border-radius: 3px;
+    line-height: 1;
+    color: rgba(102, 102, 102, 1);
+    background: rgb(247, 247, 247);
+  }
+}
+
+.summary {
+  @mixin body-4;
+  margin: 0;
+  color: black;
+}
+
+.link {
+  @mixin body-4;
+  margin: 0;
+  color: black !important;
+}

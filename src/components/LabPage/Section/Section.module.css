@@ -1,0 +1,12 @@
+.section {
+  background-color: rgb(238, 238, 238);
+  padding: 60px 20px;
+
+  @media (--desktop) {
+    padding: 120px 40px;
+  }
+
+  &:nth-of-type(odd) {
+    background-color: white;
+  }
+}

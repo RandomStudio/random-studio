@@ -59,8 +59,7 @@ const addBlockQuery = ({
   hasImage = false,
   hasCarousel = false,
 }) => `
-${
-  hasVideo
+${hasVideo
     ? `... on VideoBlockRecord {
           autoplay
           caption
@@ -72,18 +71,16 @@ ${
 }
 `
     : ''
-}
-${
-  hasText
+  }
+${hasText
     ? `... on TextBlockRecord {
   text
   ${sharedValues}
 }
 `
     : ''
-}
-${
-  hasImage
+  }
+${hasImage
     ? `... on ImageBlockRecord {
   caption
   image {
@@ -93,9 +90,8 @@ ${
 }
 `
     : ''
-}
-${
-  hasCarousel
+  }
+${hasCarousel
     ? `... on CarouselBlockRecord {
   slides {
     id
@@ -108,7 +104,7 @@ ${
 }
 `
     : ''
-}
+  }
 `;
 
 export const SINGLE_PROJECT_QUERY = `
@@ -147,21 +143,21 @@ export const SINGLE_PROJECT_QUERY = `
       content {
         __typename
         ${addBlockQuery({
-          hasVideo: true,
-          hasImage: true,
-          hasCarousel: true,
-          hasText: true,
-        })}
+  hasVideo: true,
+  hasImage: true,
+  hasCarousel: true,
+  hasText: true,
+})}
         ... on HorizontalRowRecord {
           id
           __typename
           blocks {
             __typename
             ${addBlockQuery({
-              hasVideo: true,
-              hasImage: true,
-              hasText: true,
-            })}
+  hasVideo: true,
+  hasImage: true,
+  hasText: true,
+})}
           }
         }
       }
@@ -212,6 +208,53 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
       image {
         ...ImageDataObject
       }
+    }
+  }
+}`;
+
+export const LAB_PAGE_QUERY = `
+${IMAGE_DATA_OBJECT_FRAGMENT}
+{
+  page: labPage {
+    title
+    intro(markdown: true)
+    featuredVideo
+    researchTracks {
+      id
+      title
+      summary
+      image {
+        ...ImageDataObject
+      }
+      copy
+      relatedProjects {
+        featuredImage {
+          ...ImageDataObject
+        }
+        featuredVideo
+        title
+        summary
+        link
+        tags
+      }
+    }
+    partnerships {
+      client
+      project
+      year
+      partnershipStatus
+      link {
+        slug
+      }
+    }
+    links {
+      image {
+        ...ImageDataObject
+      }
+      title
+      description
+      link
+      linkText
     }
   }
 }`;
