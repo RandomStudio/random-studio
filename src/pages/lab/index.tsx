@@ -37,7 +37,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnerships 
         <p className={styles.subtitle}>different research tracks are currently explored in our Living Lab:</p>
         <div className={styles.cards}>
           {researchTracks.map((track, index) => (
-            <a href="#track-1" className={styles.researchCardLink} key={track.id}>
+            <a href={`#track-${index + 1}`} className={styles.researchCardLink} key={track.id}>
               <div key={track.id} className={styles.researchCard}>
                 <p className={styles.trackNumber}>Track 0{index + 1}</p>
                 <p className={styles.title}>{track.title}</p>
