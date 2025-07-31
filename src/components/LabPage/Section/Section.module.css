@@ -8,6 +8,10 @@
     padding: 120px var(--side-padding);
   }
 
+  @media(--desktop) {
+    --side-padding: 40px;
+  }
+
   @media (min-width: 1440px) {
     --content-width: 1360px;
     --side-padding-raw: ((100vw - var(--content-width)) / 2);
