@@ -235,6 +235,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
         title
         summary
         link
+        inProgress
         tags
       }
     }

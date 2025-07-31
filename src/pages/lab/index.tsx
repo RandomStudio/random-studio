@@ -8,6 +8,7 @@ import { ImageData, LabLink, LabPartnership, ResearchTrack, VideoData } from '..
 import Section from '../../components/LabPage/Section/Section';
 import Image from '../../components/Image/Image';
 import RelatedProject from '../../components/LabPage/RelatedProject/RelatedProject';
+import Link from 'next/link';
 
 type LabProps = {
   title: string;
@@ -79,7 +80,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
       <Section anchor="partnerships" className={styles.partnerships}>
         <h2 className={styles.title}>Applied Innovation Partnerships</h2>
         <p className={styles.intro}>Partnerships help push our ideas further, while opening up unexpected perspectives on yours.</p>
-        <a href="" className={styles.readMore}>Let’s explore what we can build together</a>
+        <Link href="" className={styles.readMore}>Let’s explore what we can build together</Link>
         <Image className={styles.image} data={partnershipsImage.imageData} />
         <div className={styles.table}>
           <div className={styles.header}>
@@ -96,7 +97,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
               <div className={styles.cell}>{partnership.year}</div>
               <div className={styles.cell}>{partnership.partnershipStatus}</div>
               <div className={styles.cell}>
-                {partnership.link ? <a href={partnership.link} className={styles.linkButton}>View Project</a> : 'Confidential'}
+                {partnership.link ? <Link href={partnership.link} className={styles.linkButton}>View Project</Link> : 'Confidential'}
               </div>
             </div>
           ))}
@@ -109,11 +110,15 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
         </div>
         <div className={styles.scrollContainer}>
           {links.map((link, index) => (
-            <article key={index} className={styles.link}>
-              <Image data={link.image.imageData} />
-              <h3>{link.title}</h3>
+            <article className={styles.link} key={index}>
+              <Link href={link.link} className={`${styles.linkContainer} ${styles.image}`}>
+                <Image data={link.image.imageData} />
+              </Link>
+              <Link href={link.link} className={`${styles.linkContainer} ${styles.title}`}>
+                <h3>{link.title}</h3>
+              </Link>
               <p>{link.description}</p>
-              <a href={link.link} className={styles.linkButton}>{link.linkText}</a>
+              <Link href={link.link} className={styles.linkButton}>{link.linkText}</Link>
             </article>
           ))}
         </div>

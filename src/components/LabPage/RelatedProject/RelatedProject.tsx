@@ -1,6 +1,7 @@
 import styles from "./RelatedProject.module.css";
 import Image from "../../Image/Image";
 import { LabRelatedProject } from "../../../types/types";
+import Link from "next/link";
 
 type RelatedProjectProps = {
   className?: string;
@@ -10,8 +11,17 @@ type RelatedProjectProps = {
 const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
   return (
     <article className={`${styles.project} ${className}`}>
-      {relatedProject.featuredImage && <Image alt={relatedProject.title} className={styles.image} data={relatedProject.featuredImage.imageData} />}
-      <h3 className={styles.title}>{relatedProject.title}</h3>
+      {relatedProject.featuredImage && (
+        <Link href={relatedProject.link} className={styles.linkContainer}>
+          <Image alt={relatedProject.title} className={styles.image} data={relatedProject.featuredImage.imageData} />
+        </Link>
+      )}
+      <Link href={relatedProject.link} className={styles.title}>
+        <h3>{relatedProject.title}</h3>
+        {relatedProject.inProgress && (
+          <span className={styles.inProgress}>In Progress</span>
+        )}
+      </Link>
       {relatedProject.tags && relatedProject.tags.length > 0 && (
         <div className={styles.tags}>
           {relatedProject.tags.map((tag, tagIndex) => (
@@ -20,9 +30,9 @@ const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
         </div>
       )}
       <p className={styles.summary}>{relatedProject.summary}</p>
-      <a href={relatedProject.link} className={styles.link} target="_blank" rel="noopener noreferrer">
+      <Link href={relatedProject.link} className={styles.link}>
         View Project
-      </a>
+      </Link>
     </article>
   )
 }

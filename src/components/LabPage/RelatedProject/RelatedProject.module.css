@@ -9,14 +9,42 @@
 .image {
   margin: 0;
 }
+
 .title {
-  @mixin body-3;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
   margin: 0;
 
-  @media (--tablet) {
-    @mixin body-2;
+  h3 {
+    @mixin body-3;
+    @media (--tablet) {
+      @mixin body-2;
+    }
   }
 }
+
+.inProgress {
+  @mixin body-4;
+  position: relative;
+  padding-left: 1.5em;
+  color: rgba(102, 102, 102, 1);
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.75em;
+    width: 0.75em;
+    background-color: rgba(102, 102, 102, 1);
+    border-radius: 50%;
+    content: '';
+  }
+}
+
 
 .tags {
   @mixin body-4;
@@ -50,4 +78,8 @@
   @mixin body-4;
   margin: 0;
   color: black !important;
+}
+
+.linkContainer {
+  display: contents;
 }

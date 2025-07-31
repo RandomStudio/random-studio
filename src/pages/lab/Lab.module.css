@@ -328,6 +328,17 @@
     max-width: 328px;
     padding: 16px 16px 32px;
 
+    .linkContainer {
+      display: contents;
+      text-decoration: none;
+    }
+
+    .title {
+      display: block;
+      margin-top: 1em;
+      text-decoration: none;
+    }
+
     h3 {
       @mixin body-3;
 

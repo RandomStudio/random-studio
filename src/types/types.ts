@@ -199,6 +199,7 @@ export type LabRelatedProject = {
   };
   featuredVideo: string;
   title: string;
+  inProgress: boolean;
   summary: string;
   link: string;
   tags: string[];
