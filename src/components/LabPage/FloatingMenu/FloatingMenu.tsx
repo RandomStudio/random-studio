@@ -37,6 +37,7 @@ const FloatingMenu = () => {
       setIsExpanded(false); // Collapse the menu on scroll
     }
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
