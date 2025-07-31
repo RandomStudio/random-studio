@@ -63,7 +63,11 @@ const FloatingMenu = () => {
   }
 
   return (
-    <nav className={`${styles.floatingMenu} ${isExpanded ? styles.isExpanded : ''}`} onClick={() => setIsExpanded(!isExpanded)}>
+    <nav
+      className={`${styles.floatingMenu} ${isExpanded ? styles.isExpanded : ''}`}
+      onPointerEnter={() => setIsExpanded(true)}
+      onPointerLeave={() => setIsExpanded(false)}
+    >
       {menuOptions.map(option => (
         <li
           key={option.id}
