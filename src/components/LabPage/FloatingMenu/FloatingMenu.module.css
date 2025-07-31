@@ -4,7 +4,7 @@
   bottom: 20px;
   left: 20px;
   width: max-content;
-  padding: 16px 0;
+  padding: 0;
   background: rgba(243, 243, 243, 0.9);
   border-radius: 24px;
   z-index: 1000;
@@ -14,14 +14,15 @@
 
   max-height: 3em;
   transition: max-height 250ms ease-in-out 60ms;
-    cursor: pointer;
+  cursor: pointer;
+  overflow: hidden;
 
   @media(--tablet) {
     left: 40px;
   }
 
   li {
-    padding: 12px 20px;
+    padding: 24px 20px;
     text-decoration: none;
     list-style: none;
     color: rgba(170, 170, 170, 1);
@@ -29,6 +30,10 @@
     cursor: pointer;
     transition: opacity 500ms ease-in-out;
     pointer-events: none;
+
+    @media(--tablet) {
+      padding: 12px 20px;
+    }
 
     &:hover {
       color: rgba(102, 102, 102, 1);
