@@ -194,11 +194,15 @@
   display: flex;
   flex-direction: column;
 
-  @media (--tablet) {
+  @media (--desktop) {
     display: grid;
-    grid-template-columns: 3fr 2fr 5fr;
+    grid-template-columns: 3fr 1fr 5fr;
     grid-template-rows: auto auto auto auto;
     gap: 0;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 3fr 2fr 5fr;
   }
 
   .title {
@@ -209,7 +213,10 @@
 
     @media (--tablet) {
       @mixin body-1;
-      margin-bottom: 1.5em;
+    }
+
+    @media (--desktop) {
+      margin-bottom: 1em;
     }
   }
 
@@ -230,7 +237,7 @@
     margin-bottom: 2.5em;
     grid-column: 1;
 
-    @media (--tablet) {
+    @media (--desktop) {
       @mixin body-3;
     }
   }

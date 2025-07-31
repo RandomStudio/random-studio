@@ -1,7 +1,7 @@
 .project {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   padding: 0;
   border-radius: 16px;
 }
