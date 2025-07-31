@@ -13,7 +13,7 @@
   flex-direction: column;
 
   max-height: 3em;
-  transition: max-height 250ms ease-in-out 60ms;
+  transition: max-height 250ms linear 60ms;
   cursor: pointer;
   overflow: hidden;
 
@@ -43,15 +43,15 @@
 
   .activeOption {
     position: absolute;
-    top: 50%;
+    bottom: 14px;
     left: 20px;
-    transition: opacity 60ms ease-in-out 60ms;
+    transition: opacity 60ms ease-in-out 250ms;
     pointer-events: none;
-    transform: translateY(-50%);
+    color: rgba(102, 102, 102, 1);
   }
 
   &.isExpanded {
-    max-height: 1000px;
+    max-height: 400px;
 
     .activeOption {
       opacity: 0;
