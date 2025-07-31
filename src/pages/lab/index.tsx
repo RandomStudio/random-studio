@@ -10,6 +10,7 @@ import Image from '../../components/Image/Image';
 import RelatedProject from '../../components/LabPage/RelatedProject/RelatedProject';
 import Link from 'next/link';
 import { MouseEvent, PointerEvent, useEffect } from 'react';
+import FloatingMenu from '../../components/LabPage/FloatingMenu/FloatingMenu';
 
 type LabProps = {
   title: string;
@@ -63,7 +64,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
         hasControls={false}
         video={featuredVideo}
       />
-      <Section anchor="tracks" className={styles.researchTracks}>
+      <Section anchor="tracks" anchorLabel="Intro" className={styles.researchTracks}>
         <div className={styles.number}>{researchTracks.length}</div>
         <p className={styles.subtitle}>different research tracks are currently explored in our Living Lab:</p>
         <div className={styles.cards}>
@@ -79,7 +80,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
         </div>
       </Section>
       {researchTracks.map((track, index) => (
-        <Section anchor={`track-${index + 1}`} key={track.id} className={styles.track} isNarrow>
+        <Section anchor={`track-${index + 1}`} anchorLabel={`0${index + 1}  ${track.title}`} key={track.id} className={styles.track} isNarrow>
           <div className={styles.heading}>
             <span className={styles.trackNumber}>Track {index + 1}</span>
             <h2 className={styles.title}>{track.title}</h2>
@@ -104,7 +105,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
           )}
         </Section>
       ))}
-      <Section anchor="partnerships" className={styles.partnerships}>
+      <Section anchor="partnerships" anchorLabel="Partnerships" className={styles.partnerships}>
         <h2 className={styles.title}>Applied Innovation Partnerships</h2>
         <p className={styles.intro}>Partnerships help push our ideas further, while opening up unexpected perspectives on yours.</p>
         <Link href="" className={styles.readMore}>Let’s explore what we can build together</Link>
@@ -130,7 +131,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
           ))}
         </div>
       </Section>
-      <Section anchor="links" className={styles.links}>
+      <Section anchor="links" anchorLabel="Connect with us" className={styles.links}>
         <div className={styles.heading}>
           Do you want to know more?
           <h2>Connect with us</h2>
@@ -150,6 +151,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
           ))}
         </div>
       </Section>
+      <FloatingMenu />
     </Layout >
   )
 }
