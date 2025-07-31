@@ -9,6 +9,7 @@ import Section from '../../components/LabPage/Section/Section';
 import Image from '../../components/Image/Image';
 import RelatedProject from '../../components/LabPage/RelatedProject/RelatedProject';
 import Link from 'next/link';
+import { MouseEvent, PointerEvent, useEffect } from 'react';
 
 type LabProps = {
   title: string;
@@ -23,6 +24,32 @@ type LabProps = {
 };
 
 const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsImage, partnerships }: LabProps) => {
+  useEffect(() => {
+    const handleSmoothScroll = (event: Event) => {
+      event.preventDefault();
+      const link = event.currentTarget as HTMLAnchorElement;
+      const anchor = link.getAttribute('href')?.replace('#', '');
+      if (!anchor) {
+        return;
+      }
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    const researchCardLinks = document.querySelectorAll(`.${styles.researchCardLink}`);
+    researchCardLinks.forEach(link => {
+      link.addEventListener('click', handleSmoothScroll);
+    });
+
+    return () => {
+      researchCardLinks.forEach(link => {
+        link.removeEventListener('click', handleSmoothScroll);
+      });
+    }
+  }, []);
+
   return (
     <Layout>
       <Container className={styles.containerConstraint} hasHorizontalConstraint={false}>
