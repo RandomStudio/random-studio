@@ -12,6 +12,10 @@
 .title {
   @mixin body-3;
   margin: 0;
+
+  @media (--tablet) {
+    @mixin body-2;
+  }
 }
 
 .tags {
@@ -22,6 +26,10 @@
   gap: 4px;
   margin: 0;
   padding: 0;
+
+  @media (--tablet) {
+    max-width: 66%;
+  }
 
   .tag {
     padding: 6px;

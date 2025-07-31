@@ -1,9 +1,23 @@
 .section {
+  --side-padding-raw: 20px;
+  --side-padding: calc(var(--side-padding-raw));
   background-color: rgb(238, 238, 238);
   padding: 60px 20px;
 
-  @media (--desktop) {
-    padding: 120px 40px;
+  @media (--tablet) {
+    padding: 120px var(--side-padding);
+  }
+
+  @media (min-width: 1440px) {
+    --content-width: 1360px;
+    --side-padding-raw: ((100vw - var(--content-width)) / 2);
+  }
+
+  &.isNarrow {
+    @media (min-width: 904px) {
+      --content-width: 864px;
+      --side-padding-raw: ((100vw - var(--content-width)) / 2);
+    }
   }
 
   &:nth-of-type(odd) {

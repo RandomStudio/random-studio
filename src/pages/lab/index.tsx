@@ -15,10 +15,13 @@ type LabProps = {
   featuredVideo: VideoData;
   researchTracks: ResearchTrack[];
   links: LabLink[];
+  partnershipsImage: {
+    imageData: ImageData;
+  }
   partnerships: LabPartnership[];
 };
 
-const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnerships }: LabProps) => {
+const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsImage, partnerships }: LabProps) => {
   return (
     <Layout>
       <Container className={styles.containerConstraint} hasHorizontalConstraint={false}>
@@ -48,7 +51,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnerships 
         </div>
       </Section>
       {researchTracks.map((track, index) => (
-        <Section anchor={`track-${index + 1}`} key={track.id} className={styles.track}>
+        <Section anchor={`track-${index + 1}`} key={track.id} className={styles.track} isNarrow>
           <div className={styles.heading}>
             <span className={styles.trackNumber}>Track {index + 1}</span>
             <h2 className={styles.title}>{track.title}</h2>
@@ -59,17 +62,25 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnerships 
             />
           </div>
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: track.copy }} />
-          <div className={styles.scrollContainer}>
-            {track.relatedProjects.map((project) => (
-              <RelatedProject className={styles.relatedProject} key={JSON.stringify(project.title)} relatedProject={project} />
-            ))}
-          </div>
+          {track.relatedProjects.length > 0 && (
+            <>
+              <div className={styles.scrollContainer}>
+                <p className={styles.relatedTitle}>Explore the projects</p>
+              </div>
+              <div className={styles.scrollContainer}>
+                {track.relatedProjects.map((project) => (
+                  <RelatedProject className={styles.relatedProject} key={JSON.stringify(project.title)} relatedProject={project} />
+                ))}
+              </div>
+            </>
+          )}
         </Section>
       ))}
       <Section anchor="partnerships" className={styles.partnerships}>
         <h2 className={styles.title}>Applied Innovation Partnerships</h2>
         <p className={styles.intro}>Partnerships help push our ideas further, while opening up unexpected perspectives on yours.</p>
         <a href="" className={styles.readMore}>Let’s explore what we can build together</a>
+        <Image className={styles.image} data={partnershipsImage.imageData} />
         <div className={styles.table}>
           <div className={styles.header}>
             <div className={styles.cell}>Client</div>
@@ -107,7 +118,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnerships 
           ))}
         </div>
       </Section>
-    </Layout>
+    </Layout >
   )
 }
 

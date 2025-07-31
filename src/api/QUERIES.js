@@ -238,6 +238,9 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
         tags
       }
     }
+    partnershipsImage {
+      ...ImageDataObject
+    }
     partnerships {
       client
       project
