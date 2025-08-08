@@ -9,10 +9,8 @@ import Section from '../../components/LabPage/Section/Section';
 import Image from '../../components/Image/Image';
 import RelatedProject from '../../components/LabPage/RelatedProject/RelatedProject';
 import Link from 'next/link';
-import { MouseEvent, PointerEvent, useEffect } from 'react';
+import { useEffect } from 'react';
 import FloatingMenu from '../../components/LabPage/FloatingMenu/FloatingMenu';
-import ScrollContainer from '../../components/LabPage/ScrollContainer/ScrollContainer';
-import ReactMarkdown from 'react-markdown';
 
 type LabProps = {
   title: string;
