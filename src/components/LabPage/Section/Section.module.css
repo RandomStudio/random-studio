@@ -14,12 +14,14 @@
 
   @media (min-width: 1440px) {
     --content-width: 1360px;
+    --content-width-wide: var(--content-width);
     --side-padding-raw: ((100vw - var(--content-width)) / 2);
   }
 
   &.isNarrow {
     @media (min-width: 904px) {
       --content-width: 864px;
+      --content-width-wide: 1360px;
       --side-padding-raw: ((100vw - var(--content-width)) / 2);
     }
   }

@@ -95,7 +95,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         </div>
       </Section>
       {researchTracks.map((track, index) => (
-        <Section anchor={`track-${index + 1}`} anchorLabel={`${index + 1}  ${track.title}`} key={track.id} className={styles.track} isNarrow>
+        <Section anchor={`track-${index + 1}`} anchorLabel={`${index + 1}. ${track.title}`} key={track.id} className={styles.track} isNarrow>
           <div className={styles.heading}>
             <span className={styles.trackNumber}>Track {index + 1}</span>
             <h2 className={styles.title}>{track.title}</h2>
@@ -119,7 +119,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         <div className={styles.heading}>
           <h2 className={styles.title}>{partnershipsTitle}</h2>
           <div className={styles.intro} dangerouslySetInnerHTML={{ __html: formatText(partnershipsCopy) }} />
-          <Link href="https://random.studio/studio#contact" className={styles.readMore}>Let’s start a research track together</Link>
+          <Link href="#footer" className={styles.readMore}>Let’s start a research track together</Link>
           <Image className={styles.video} data={partnershipsImage.imageData} />
         </div>
         <p className={styles.selected}>Selected Partnerships</p>
@@ -151,7 +151,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         </div>
         <div className={`${styles.scrollContainer} items-${links.length}`}>
           {links.map((link, index) => (
-            <article className={styles.link} key={index} onClick={() => window.open(link.link)}>
+            <article className={styles.link} key={index} onClick={() => window.location.href = link.link}>
               <Image data={link.image.imageData} className={styles.image} />
               <h3 className={styles.title}>{link.title}</h3>
               <p>{link.description}</p>

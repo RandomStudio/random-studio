@@ -5,7 +5,7 @@ import Email from './Email/Email';
 import Newsletter from './Newsletter/Newsletter';
 
 const Footer = () => (
-  <footer className={styles.footer}>
+  <footer className={styles.footer} id="footer">
     <div className={styles.studio}>
       <Address
         address={[

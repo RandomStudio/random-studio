@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: max-content;
+  width: 100%;
   padding: 0;
   background: rgba(243, 243, 243, 0.9);
   border-radius: 24px;
@@ -16,13 +16,16 @@
   transition: max-height 250ms linear 60ms;
   cursor: pointer;
   overflow: hidden;
+  backdrop-filter: blur(2px);
 
   @media(--tablet) {
+    width: max-content;
     left: 40px;
+    bottom: 40px;
   }
 
   li {
-    padding: 24px 20px;
+    padding: 12px 20px;
     text-decoration: none;
     list-style: none;
     color: rgba(170, 170, 170, 1);
@@ -30,10 +33,6 @@
     cursor: pointer;
     transition: opacity 500ms ease-in-out;
     pointer-events: none;
-
-    @media(--tablet) {
-      padding: 12px 20px;
-    }
 
     &:hover {
       color: rgba(102, 102, 102, 1);
