@@ -23,10 +23,12 @@ type LabProps = {
   partnershipsImage: {
     imageData: ImageData;
   }
+  partnershipsTitle: string;
+  partnershipsCopy: string;
   partnerships: LabPartnership[];
 };
 
-const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsImage, partnerships }: LabProps) => {
+const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsCopy, partnershipsTitle, partnershipsImage, partnerships }: LabProps) => {
   useEffect(() => {
     const handleSmoothScroll = (event: Event) => {
       event.preventDefault();
@@ -116,10 +118,13 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
         </Section>
       ))}
       <Section anchor="partnerships" anchorLabel="Partnerships" className={styles.partnerships}>
-        <h2 className={styles.title}>Applied Innovation Partnerships</h2>
-        <p className={styles.intro}>Partnerships help push our ideas further, while opening up unexpected perspectives on yours.</p>
-        <Link href="" className={styles.readMore}>Let’s explore what we can build together</Link>
-        <Image className={styles.image} data={partnershipsImage.imageData} />
+        <div className={styles.heading}>
+          <h2 className={styles.title}>{partnershipsTitle}</h2>
+          <div className={styles.intro} dangerouslySetInnerHTML={{ __html: formatText(partnershipsCopy) }} />
+          <Link href="https://random.studio/studio#contact" className={styles.readMore}>Let’s start a research track together</Link>
+          <Image className={styles.video} data={partnershipsImage.imageData} />
+        </div>
+        <p className={styles.selected}>Selected Partnerships</p>
         <div className={styles.table}>
           <div className={styles.header}>
             <div className={styles.cell}>Client</div>

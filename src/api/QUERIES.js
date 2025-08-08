@@ -240,6 +240,8 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
     partnershipsImage {
       ...ImageDataObject
     }
+    partnershipsTitle
+    partnershipsCopy(markdown: true)
     partnerships {
       client
       project
