@@ -4,7 +4,7 @@ import { LAB_PAGE_QUERY } from "../../api/QUERIES";
 import Container from "../../components/Layout/Container/Container"
 import Layout from "../../components/Layout/Layout"
 import Video from '../../components/Video/Video';
-import { ImageData, LabLink, LabPartnership, ResearchTrack, VideoData } from '../../types/types';
+import { ImageData, LabLink, LabPartnership, OpenGraph, ResearchTrack, VideoData } from '../../types/types';
 import Section from '../../components/LabPage/Section/Section';
 import Image from '../../components/Image/Image';
 import RelatedProject from '../../components/LabPage/RelatedProject/RelatedProject';
@@ -25,9 +25,10 @@ type LabProps = {
   partnershipsCopy: string;
   partnershipsVideo?: VideoData;
   partnerships: LabPartnership[];
+  seo: OpenGraph
 };
 
-const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsCopy, partnershipsTitle, partnershipsVideo, partnershipsImage, partnerships }: LabProps) => {
+const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsCopy, partnershipsTitle, partnershipsVideo, partnershipsImage, partnerships, seo }: LabProps) => {
   useEffect(() => {
     const handleSmoothScroll = (event: Event) => {
       event.preventDefault();
@@ -68,7 +69,13 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
   };
 
   return (
-    <Layout>
+    <Layout
+      description={intro}
+      image={seo.image}
+      socialDescription={seo.description}
+      socialTitle={seo.title}
+      title={seo.title}
+    >
       <Container className={styles.containerConstraint} hasHorizontalConstraint={false}>
         <p className={styles.title}>{title}</p>
         <div className={styles.intro} dangerouslySetInnerHTML={{ __html: intro }} />

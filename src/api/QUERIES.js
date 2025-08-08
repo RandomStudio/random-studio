@@ -214,6 +214,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
 
 export const LAB_PAGE_QUERY = `
 ${IMAGE_DATA_OBJECT_FRAGMENT}
+  ${IMAGE_DATA_OBJECT_FRAGMENT_FUNC('OpenGraphImageDataObject', 1200, 630)}
 {
   page: labPage {
     title
@@ -260,6 +261,14 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
       description
       link
       bottomText(markdown: true)
+    }
+    seo {
+      description
+      title
+      twitterCard
+      image {
+        ...OpenGraphImageDataObject
+      }
     }
   }
 }`;
