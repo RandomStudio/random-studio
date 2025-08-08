@@ -223,9 +223,6 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
       id
       title
       summary
-      image {
-        ...ImageDataObject
-      }
       copy
       relatedProjects {
         featuredImage {
@@ -233,6 +230,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
         }
         featuredVideo
         title
+        secondLine
         summary
         link
         inProgress
@@ -258,7 +256,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
       title
       description
       link
-      linkText
+      bottomText(markdown: true)
     }
   }
 }`;

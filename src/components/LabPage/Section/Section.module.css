@@ -9,7 +9,7 @@
   }
 
   @media(--desktop) {
-    --side-padding: 40px;
+    --side-padding-raw: 40px;
   }
 
   @media (min-width: 1440px) {

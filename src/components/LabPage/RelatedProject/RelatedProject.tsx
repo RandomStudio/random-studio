@@ -18,6 +18,7 @@ const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
       )}
       <Link href={relatedProject.link} className={styles.title}>
         <h3>{relatedProject.title}</h3>
+        <p className={styles.secondLine}>{relatedProject.secondLine}</p>
         {relatedProject.inProgress && (
           <span className={styles.inProgress}>In Progress</span>
         )}
@@ -30,9 +31,11 @@ const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
         </div>
       )}
       <p className={styles.summary}>{relatedProject.summary}</p>
-      <Link href={relatedProject.link} className={styles.link}>
-        View Project
-      </Link>
+      {relatedProject.link && relatedProject.link !== '' && (
+        <Link href={relatedProject.link} className={styles.link}>
+          View Project
+        </Link>
+      )}
     </article>
   )
 }

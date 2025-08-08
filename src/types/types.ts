@@ -199,6 +199,7 @@ export type LabRelatedProject = {
   };
   featuredVideo: string;
   title: string;
+  secondLine: string;
   inProgress: boolean;
   summary: string;
   link: string;
@@ -217,7 +218,7 @@ export type LabLink = {
   title: string;
   description: string;
   link: string;
-  linkText: string;
+  bottomText: string;
   image: {
     imageData: ImageData;
   }
@@ -227,9 +228,6 @@ export type ResearchTrack = {
   id: string;
   title: string;
   summary: string;
-  image: {
-    imageData: ImageData;
-  }
   copy: string;
   relatedProjects: LabRelatedProject[];
 }

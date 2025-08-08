@@ -11,6 +11,8 @@ import RelatedProject from '../../components/LabPage/RelatedProject/RelatedProje
 import Link from 'next/link';
 import { MouseEvent, PointerEvent, useEffect } from 'react';
 import FloatingMenu from '../../components/LabPage/FloatingMenu/FloatingMenu';
+import ScrollContainer from '../../components/LabPage/ScrollContainer/ScrollContainer';
+import ReactMarkdown from 'react-markdown';
 
 type LabProps = {
   title: string;
@@ -51,6 +53,19 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
     }
   }, []);
 
+  const formatText = (text: string) => {
+    let cleanText = text.trim();
+    if (cleanText.startsWith('<p>')) {
+      cleanText = cleanText.slice(3);
+    }
+    if (cleanText.endsWith('</p>')) {
+      console.log('ends with </p>', cleanText);
+      cleanText = cleanText.slice(0, -4);
+    }
+    cleanText = cleanText.replace('<p></p>', '');
+    return cleanText;
+  };
+
   return (
     <Layout>
       <Container className={styles.containerConstraint} hasHorizontalConstraint={false}>
@@ -71,7 +86,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
           {researchTracks.map((track, index) => (
             <a href={`#track-${index + 1}`} className={styles.researchCardLink} key={track.id}>
               <div key={track.id} className={styles.researchCard}>
-                <p className={styles.trackNumber}>Track 0{index + 1}</p>
+                <p className={styles.trackNumber}>Track {index + 1}</p>
                 <p className={styles.title}>{track.title}</p>
                 <p className={styles.summary}>{track.summary}</p>
               </div>
@@ -80,15 +95,10 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
         </div>
       </Section>
       {researchTracks.map((track, index) => (
-        <Section anchor={`track-${index + 1}`} anchorLabel={`0${index + 1}  ${track.title}`} key={track.id} className={styles.track} isNarrow>
+        <Section anchor={`track-${index + 1}`} anchorLabel={`${index + 1}  ${track.title}`} key={track.id} className={styles.track} isNarrow>
           <div className={styles.heading}>
             <span className={styles.trackNumber}>Track {index + 1}</span>
             <h2 className={styles.title}>{track.title}</h2>
-          </div>
-          <div className={styles.image}>
-            <Image
-              data={track.image.imageData}
-            />
           </div>
           <div className={styles.content} dangerouslySetInnerHTML={{ __html: track.copy }} />
           {track.relatedProjects.length > 0 && (
@@ -96,11 +106,11 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
               <div className={styles.scrollContainer}>
                 <p className={styles.relatedTitle}>Explore the projects</p>
               </div>
-              <div className={styles.scrollContainer}>
+              <ScrollContainer className={styles.scrollContainer}>
                 {track.relatedProjects.map((project) => (
                   <RelatedProject className={styles.relatedProject} key={JSON.stringify(project.title)} relatedProject={project} />
                 ))}
-              </div>
+              </ScrollContainer>
             </>
           )}
         </Section>
@@ -136,20 +146,16 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
           Do you want to know more?
           <h2>Connect with us</h2>
         </div>
-        <div className={styles.scrollContainer}>
+        <ScrollContainer className={styles.scrollContainer}>
           {links.map((link, index) => (
-            <article className={styles.link} key={index}>
-              <Link href={link.link} className={`${styles.linkContainer} ${styles.image}`}>
-                <Image data={link.image.imageData} />
-              </Link>
-              <Link href={link.link} className={`${styles.linkContainer} ${styles.title}`}>
-                <h3>{link.title}</h3>
-              </Link>
+            <article className={styles.link} key={index} onClick={() => window.open(link.link)}>
+              <Image data={link.image.imageData} className={styles.image} />
+              <h3 className={styles.title}>{link.title}</h3>
               <p>{link.description}</p>
-              <Link href={link.link} className={styles.linkButton}>{link.linkText}</Link>
+              <div className={styles.bottomText} dangerouslySetInnerHTML={{ __html: formatText(link.bottomText) }} />
             </article>
           ))}
-        </div>
+        </ScrollContainer>
       </Section>
       <FloatingMenu />
     </Layout >
