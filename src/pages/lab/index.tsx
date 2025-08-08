@@ -23,10 +23,11 @@ type LabProps = {
   }
   partnershipsTitle: string;
   partnershipsCopy: string;
+  partnershipsVideo?: VideoData;
   partnerships: LabPartnership[];
 };
 
-const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsCopy, partnershipsTitle, partnershipsImage, partnerships }: LabProps) => {
+const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsCopy, partnershipsTitle, partnershipsVideo, partnershipsImage, partnerships }: LabProps) => {
   useEffect(() => {
     const handleSmoothScroll = (event: Event) => {
       event.preventDefault();
@@ -120,7 +121,17 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
           <h2 className={styles.title}>{partnershipsTitle}</h2>
           <div className={styles.intro} dangerouslySetInnerHTML={{ __html: formatText(partnershipsCopy) }} />
           <Link href="#footer" className={styles.readMore}>Let’s start a research track together</Link>
-          <Image className={styles.video} data={partnershipsImage.imageData} />
+          <div className={styles.media}>
+            {partnershipsVideo ? (
+              <Video hasControls={false} video={partnershipsVideo} />
+            ) : (
+              <Image
+                alt="" // Keeps the screen reader focused on project list
+                data={partnershipsImage.imageData}
+                sizes={`(max-width: 576px) 100vw, 50vw`}
+              />
+            )}
+          </div>
         </div>
         <p className={styles.selected}>Selected Partnerships</p>
         <div className={styles.table}>

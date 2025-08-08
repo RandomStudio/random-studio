@@ -249,11 +249,14 @@
     }
   }
 
-  .video {
+  .media {
     order: 5;
     grid-column: 3;
     grid-row: 2 / 4;
-    max-width: 100% !important;
+
+    & > div {
+      max-width: none !important;
+    }
   }
 
   .readMore {

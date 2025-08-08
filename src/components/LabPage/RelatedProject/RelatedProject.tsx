@@ -2,6 +2,7 @@ import styles from "./RelatedProject.module.css";
 import Image from "../../Image/Image";
 import { LabRelatedProject } from "../../../types/types";
 import Link from "next/link";
+import Video from "../../Video/Video";
 
 type RelatedProjectProps = {
   className?: string;
@@ -13,7 +14,17 @@ const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
     <article className={`${styles.project} ${className}`}>
       {relatedProject.featuredImage && (
         <Link href={relatedProject.link} className={styles.linkContainer}>
-          <Image alt={relatedProject.title} className={styles.image} data={relatedProject.featuredImage.imageData} />
+          <div className={styles.media}>
+            {relatedProject.featuredVideo ? (
+              <Video hasControls={false} video={relatedProject.featuredVideo} />
+            ) : (
+              <Image
+                alt="" // Keeps the screen reader focused on project list
+                data={relatedProject.featuredImage.imageData}
+                sizes={`(max-width: 576px) 100vw, 50vw`}
+              />
+            )}
+          </div>
         </Link>
       )}
       <Link href={relatedProject.link} className={styles.title}>

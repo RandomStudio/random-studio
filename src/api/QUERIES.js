@@ -242,6 +242,7 @@ ${IMAGE_DATA_OBJECT_FRAGMENT}
     }
     partnershipsTitle
     partnershipsCopy(markdown: true)
+    partnershipsVideo
     partnerships {
       client
       project

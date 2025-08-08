@@ -197,7 +197,7 @@ export type LabRelatedProject = {
   featuredImage: {
     imageData: ImageData;
   };
-  featuredVideo: string;
+  featuredVideo: VideoData;
   title: string;
   secondLine: string;
   inProgress: boolean;
