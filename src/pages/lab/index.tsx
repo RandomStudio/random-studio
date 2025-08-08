@@ -61,7 +61,6 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
       cleanText = cleanText.slice(3);
     }
     if (cleanText.endsWith('</p>')) {
-      console.log('ends with </p>', cleanText);
       cleanText = cleanText.slice(0, -4);
     }
     cleanText = cleanText.replace('<p></p>', '');
