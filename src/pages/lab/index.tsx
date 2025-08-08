@@ -106,11 +106,11 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
               <div className={styles.scrollContainer}>
                 <p className={styles.relatedTitle}>Explore the projects</p>
               </div>
-              <ScrollContainer className={styles.scrollContainer}>
+              <div className={styles.scrollContainer}>
                 {track.relatedProjects.map((project) => (
                   <RelatedProject className={styles.relatedProject} key={JSON.stringify(project.title)} relatedProject={project} />
                 ))}
-              </ScrollContainer>
+              </div>
             </>
           )}
         </Section>
@@ -146,7 +146,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
           Do you want to know more?
           <h2>Connect with us</h2>
         </div>
-        <ScrollContainer className={styles.scrollContainer}>
+        <div className={`${styles.scrollContainer} items-${links.length}`}>
           {links.map((link, index) => (
             <article className={styles.link} key={index} onClick={() => window.open(link.link)}>
               <Image data={link.image.imageData} className={styles.image} />
@@ -155,7 +155,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsI
               <div className={styles.bottomText} dangerouslySetInnerHTML={{ __html: formatText(link.bottomText) }} />
             </article>
           ))}
-        </ScrollContainer>
+        </div>
       </Section>
       <FloatingMenu />
     </Layout >
