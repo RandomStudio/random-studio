@@ -94,7 +94,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
             <a href={`#track-${index + 1}`} className={styles.researchCardLink} key={track.id}>
               <div key={track.id} className={styles.researchCard}>
                 <p className={styles.trackNumber}>Track {index + 1}</p>
-                <p className={styles.title}>{track.title}</p>
+                <p className={styles.title}>{track.title.split(' ')[0]}<br />{track.title.split(' ').slice(1).join(' ')}</p>
                 <p className={styles.summary}>{track.summary}</p>
               </div>
             </a>

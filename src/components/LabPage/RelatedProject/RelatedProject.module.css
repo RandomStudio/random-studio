@@ -4,6 +4,20 @@
   gap: 16px;
   padding: 0;
   border-radius: 16px;
+  opacity: 1;
+
+  &.hasLink {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+      transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+  }
 }
 
 
@@ -132,9 +146,11 @@
 .link {
   @mixin body-4;
   margin: 0;
-  color: black !important;
+  color: rgb(102 102 102);
+  text-decoration: underline;
 }
 
 .linkContainer {
   display: contents;
+  cursor: default;
 }

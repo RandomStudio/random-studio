@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 100%;
+  right: 20px;
   padding: 0;
   background: rgba(243, 243, 243, 0.9);
   border-radius: 24px;
@@ -21,6 +21,7 @@
   @media(--tablet) {
     width: max-content;
     left: 40px;
+    right: initial;
     bottom: 40px;
   }
 

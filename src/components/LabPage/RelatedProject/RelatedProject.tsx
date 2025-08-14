@@ -10,30 +10,32 @@ type RelatedProjectProps = {
 }
 
 const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
-  return (
-    <article className={`${styles.project} ${className}`}>
+  const articleJsx = (
+    <article className={`${styles.project} ${className} ${relatedProject.link && styles.hasLink}`} onClick={() => {
+      if (relatedProject.link) {
+        window.location.href = relatedProject.link
+      }
+    }}>
       {relatedProject.featuredImage && (
-        <Link href={relatedProject.link} className={styles.linkContainer}>
-          <div className={styles.media}>
-            {relatedProject.featuredVideo ? (
-              <Video hasControls={false} video={relatedProject.featuredVideo} />
-            ) : (
-              <Image
-                alt="" // Keeps the screen reader focused on project list
-                data={relatedProject.featuredImage.imageData}
-                sizes={`(max-width: 576px) 100vw, 50vw`}
-              />
-            )}
-          </div>
-        </Link>
+        <div className={styles.media}>
+          {relatedProject.featuredVideo ? (
+            <Video hasControls={false} video={relatedProject.featuredVideo} />
+          ) : (
+            <Image
+              alt="" // Keeps the screen reader focused on project list
+              data={relatedProject.featuredImage.imageData}
+              sizes={`(max-width: 576px) 100vw, 50vw`}
+            />
+          )}
+        </div>
       )}
-      <Link href={relatedProject.link} className={styles.title}>
+      <div className={styles.title}>
         <h3>{relatedProject.title}</h3>
         <p className={styles.secondLine}>{relatedProject.secondLine}</p>
         {relatedProject.inProgress && (
           <span className={styles.inProgress}>In Progress</span>
         )}
-      </Link>
+      </div>
       {relatedProject.tags && relatedProject.tags.length > 0 && (
         <div className={styles.tags}>
           {relatedProject.tags.map((tag, tagIndex) => (
@@ -43,12 +45,21 @@ const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
       )}
       <p className={styles.summary}>{relatedProject.summary}</p>
       {relatedProject.link && relatedProject.link !== '' && (
-        <Link href={relatedProject.link} className={styles.link}>
+        <span className={styles.link}>
           View Project
-        </Link>
+        </span>
       )}
     </article>
-  )
+  );
+
+  if (relatedProject.link) {
+    return (
+      <Link href={relatedProject.link} className={styles.linkContainer}>
+        {articleJsx}
+      </Link>
+    );
+  }
+  return articleJsx
 }
 
 export default RelatedProject;
