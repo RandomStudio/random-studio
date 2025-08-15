@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './FloatingMenu.module.css';
 
 type MenuOption = {
@@ -44,7 +44,22 @@ const FloatingMenu = () => {
     }
   }, []);
 
-  const handleOptionClick = (option: MenuOption) => {
+  useEffect(() => {
+    if (isExpanded) {
+      const handleClickOutside = (event: MouseEvent) => {
+        const target = event.target as HTMLElement;
+        if (!target.closest(`.${styles.floatingMenu}`)) {
+          setIsExpanded(false);
+        }
+      };
+      window.addEventListener('click', handleClickOutside);
+      return () => {
+        window.removeEventListener('click', handleClickOutside);
+      };
+    }
+  }, [isExpanded]);
+
+  const handleOptionClick = useCallback((option: MenuOption) => {
     setActiveOption(option);
     setIsExpanded(false);
     isNavigatingToClickedLinkRef.current = true;
@@ -55,8 +70,19 @@ const FloatingMenu = () => {
     setTimeout(() => {
       isNavigatingToClickedLinkRef.current = false;
     }, 1000);
-  }
+  }, []);
 
+  const handleHoverToggleOpen = useCallback((isNowExpanded: boolean) => {
+    if (window.matchMedia('(pointer: fine)').matches) {
+      setIsExpanded(isNowExpanded);
+    }
+  }, []);
+
+  const handleClickToggleOpen = useCallback(() => {
+    if (!window.matchMedia('(pointer: fine)').matches && !isExpanded) {
+      setIsExpanded(true);
+    }
+  }, [isExpanded]);
 
   if (!menuOptions.length) {
     return null;
@@ -65,8 +91,9 @@ const FloatingMenu = () => {
   return (
     <nav
       className={`${styles.floatingMenu} ${isExpanded ? styles.isExpanded : ''}`}
-      onPointerEnter={() => setIsExpanded(true)}
-      onPointerLeave={() => setIsExpanded(false)}
+      onPointerEnter={() => handleHoverToggleOpen(true)}
+      onPointerLeave={() => handleHoverToggleOpen(false)}
+      onClick={handleClickToggleOpen}
     >
       {menuOptions.map(option => (
         <li
