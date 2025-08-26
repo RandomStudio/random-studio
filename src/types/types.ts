@@ -191,3 +191,43 @@ export type Vacancy = {
   id: string;
   _publishedAt: string;
 };
+
+
+export type LabRelatedProject = {
+  featuredImage: {
+    imageData: ImageData;
+  };
+  featuredVideo: VideoData;
+  title: string;
+  secondLine: string;
+  inProgress: boolean;
+  summary: string;
+  link: string;
+  tags: string[];
+}
+
+export type LabPartnership = {
+  client: string;
+  project: string;
+  year: number;
+  partnershipStatus: string;
+  link: string;
+}
+
+export type LabLink = {
+  title: string;
+  description: string;
+  link: string;
+  bottomText: string;
+  image: {
+    imageData: ImageData;
+  }
+}
+
+export type ResearchTrack = {
+  id: string;
+  title: string;
+  summary: string;
+  copy: string;
+  relatedProjects: LabRelatedProject[];
+}

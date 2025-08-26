@@ -94,6 +94,7 @@
 }
 
 .links {
+  position: relative;
   display: grid;
   column-gap: 32px;
   grid-template-columns: repeat(2, 1fr);
@@ -137,4 +138,9 @@
 .vacancies {
   grid-column: 2 / 3;
   grid-row: 1 / 4;
+}
+
+.anchor {
+  position: absolute;
+  top: -200px;
 }

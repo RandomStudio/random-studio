@@ -25,14 +25,19 @@
 }
 
 .links {
-  @mixin body-3;
+  @mixin body-4;
   display: flex;
   flex-direction: row;
   justify-content: start;
-  column-gap: 32px;
+  column-gap: 20px;
   padding: 0;
   margin: 0;
   pointer-events: auto;
+
+  @media(--tablet) {
+    @mixin body-3;
+    column-gap: 32px;
+  }
 
   @media (--desktop) {
     @mixin body-2;
