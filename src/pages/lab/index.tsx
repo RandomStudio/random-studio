@@ -126,7 +126,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         <div className={styles.heading}>
           <h2 className={styles.title}>{partnershipsTitle}</h2>
           <div className={styles.intro} dangerouslySetInnerHTML={{ __html: formatText(partnershipsCopy) }} />
-          <Link href="#footer" className={styles.readMore}>Let’s start a research track together</Link>
+          <Link href="/studio#contact" className={styles.readMore}>Let’s start a research track together</Link>
           <div className={styles.media}>
             {partnershipsVideo ? (
               <Video hasControls={false} video={partnershipsVideo} />
