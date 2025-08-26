@@ -85,7 +85,7 @@ const Studio = ({
       ))}
 
       <div className={styles.links}>
-        <a id="contact" className={styles.anchor}></a>
+        <div id="contact" className={styles.anchor}></div>
         <div className={styles.list}>
           <h3 className={styles.heading}>{'Start a conversation'}</h3>
 
