@@ -88,7 +88,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
       />
       <Section anchor="tracks" anchorLabel="Intro" className={styles.researchTracks}>
         <div className={styles.number}>{researchTracks.length}</div>
-        <p className={styles.subtitle}>different research tracks are currently explored in our Living Lab:</p>
+        <p className={styles.subtitle}>research tracks drive the Living Lab</p>
         <div className={styles.cards}>
           {researchTracks.map((track, index) => (
             <a href={`#track-${index + 1}`} className={styles.researchCardLink} key={track.id}>
@@ -164,7 +164,6 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
       <Section anchor="links" anchorLabel="Connect with us" className={styles.links}>
         <div className={styles.heading}>
           Do you want to know more?
-          <h2>Connect with us</h2>
         </div>
         <div className={`${styles.scrollContainer} items-${links.length}`}>
           {links.map((link, index) => (
