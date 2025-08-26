@@ -162,9 +162,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         </div>
       </Section>
       <Section anchor="links" anchorLabel="Connect with us" className={styles.links}>
-        <div className={styles.heading}>
-          Do you want to know more?
-        </div>
+        <div className={styles.heading}>Connect with us</div>
         <div className={`${styles.scrollContainer} items-${links.length}`}>
           {links.map((link, index) => (
             <article className={styles.link} key={index} onClick={() => window.location.href = link.link}>
