@@ -3,6 +3,7 @@
   --side-padding: calc(var(--side-padding-raw));
   background-color: rgb(238, 238, 238);
   padding: 60px 20px;
+  position: relative;
 
   @media (--tablet) {
     padding: 120px var(--side-padding);
@@ -28,5 +29,17 @@
 
   &:nth-of-type(odd) {
     background-color: white;
+  }
+
+  .anchor {
+    position: absolute;
+    top: -150px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+
+    @media (--desktop) {
+      top: -100px;
+    }
   }
 }

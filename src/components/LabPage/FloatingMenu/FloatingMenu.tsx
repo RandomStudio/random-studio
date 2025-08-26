@@ -14,7 +14,7 @@ const FloatingMenu = () => {
 
   const isNavigatingToClickedLinkRef = useRef(false);
   useEffect(() => {
-    const sectionAnchorsOnPage = Array.from(document.querySelectorAll('section[id]'));
+    const sectionAnchorsOnPage = Array.from(document.querySelectorAll('section .anchor[id]'));
     const newMenuOptions = sectionAnchorsOnPage.map(section => ({
       label: section.getAttribute('aria-label') || section.id,
       id: section.id,
