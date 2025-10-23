@@ -105,6 +105,12 @@ const Studio = ({
         </div>
 
         <div className={styles.list}>
+          <h3 className={styles.heading}>{'Vendors & Suppliers'}</h3>
+
+          <a href="mailto:vendors@random.studio">{'vendors@random.studio'}</a>
+        </div>
+
+        <div className={styles.list}>
           <h3 className={styles.heading}>{'Follow us'}</h3>
 
           <div className={styles.social}>
