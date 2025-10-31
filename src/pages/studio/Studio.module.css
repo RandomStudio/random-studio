@@ -7,6 +7,7 @@
   @mixin body-3;
   width: 100%;
   margin-bottom: 80px;
+  padding: 0 20px;
 
   @media (--tablet) {
     @mixin body-1;
@@ -100,6 +101,7 @@
   grid-template-columns: repeat(2, 1fr);
 
   margin-bottom: 104px;
+  padding: 0 20px;
 
   @media (--desktop) {
     margin-bottom: 128px;
@@ -143,4 +145,9 @@
 .anchor {
   position: absolute;
   top: -200px;
+}
+
+.block {
+
+  padding: 0 20px;
 }
