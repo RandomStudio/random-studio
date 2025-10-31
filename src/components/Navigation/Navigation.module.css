@@ -1,14 +1,19 @@
 .nav {
   display: flex;
-  flex-direction: column-reverse;
-  row-gap: 32px;
+  flex-direction: column;
+  row-gap: 16px;
   position: fixed;
-  top: 40px;
+  top: 24px;
   left: 20px;
   right: 20px;
   pointer-events: none;
   z-index: 5;
   mix-blend-mode: difference;
+
+  @media(--tablet) {
+    row-gap: 32px;
+    top: 40px;
+  }
 
   @media (--desktop) {
     flex-direction: row;

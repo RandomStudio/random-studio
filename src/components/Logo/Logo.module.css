@@ -1,11 +1,12 @@
 .logo {
-  @mixin logo;
+  @mixin logo-small;
   margin: 0;
   z-index: 1;
   text-align: left;
   top: 65px;
 
   @media (--tablet) {
+    @mixin logo;
     top: 78px;
     left: 45px;
   }
@@ -18,5 +19,14 @@
     display: inline-block;
     pointer-events: auto;
     text-decoration: none;
+  }
+
+  .break {
+    display: none;
+
+    @media (--tablet) {
+      display: block;
+      width: 100%;
+    }
   }
 }

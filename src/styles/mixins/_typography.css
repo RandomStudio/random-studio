@@ -24,6 +24,10 @@
   line-height: 52px;
   letter-spacing: -0.9px;
 }
+@define-mixin logo-small {
+  @mixin body-3;
+  @mixin logo-text-styles;
+}
 
 @define-mixin body-1 {
   /* Text Style Body-1 */

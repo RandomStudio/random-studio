@@ -8,7 +8,7 @@ const Logo = () => {
       <Link href="/">
         {'Random '}
 
-        <br aria-hidden />
+        <span className={styles.break} aria-hidden />
 
         {'Studio'}
       </Link>
