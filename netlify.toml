@@ -21,9 +21,3 @@ status = 301
 from = "/projects/house-of-victoria-beckham-pop-up-in-london-s-selfridges-corner-shop"
 to = "/projects/house-of-victoria-beckham-pop-up-in-londons-selfridges-corner-shop"
 status = 301
-
-
-[[redirects]]
-from = "/connectedspace/*"
-to = "https://connectedspace.local:8123/:splat"
-status = 200
