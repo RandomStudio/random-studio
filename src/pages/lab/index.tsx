@@ -155,7 +155,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
               <div className={styles.cell}>{partnership.year}</div>
               <div className={styles.cell}>{partnership.partnershipStatus}</div>
               <div className={styles.cell}>
-                {partnership.link ? <Link href={partnership.link} className={styles.linkButton}>View Project</Link> : 'Confidential'}
+                {partnership.link ? <Link href={`/projects/${partnership.link.slug}`} className={styles.linkButton}>View Project</Link> : 'Confidential'}
               </div>
             </div>
           ))}

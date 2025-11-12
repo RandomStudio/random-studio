@@ -211,7 +211,9 @@ export type LabPartnership = {
   project: string;
   year: number;
   partnershipStatus: string;
-  link: string;
+  link: {
+    slug: string;
+  };
 }
 
 export type LabLink = {
