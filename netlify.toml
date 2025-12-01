@@ -18,6 +18,12 @@ status = 301
 
 
 [[redirects]]
+from = "/nice-to-meet-you/*"
+to = "/?met=:splat"
+status = 301
+
+
+[[redirects]]
 from = "/projects/house-of-victoria-beckham-pop-up-in-london-s-selfridges-corner-shop"
 to = "/projects/house-of-victoria-beckham-pop-up-in-londons-selfridges-corner-shop"
 status = 301
