@@ -18,7 +18,7 @@ status = 301
 
 
 [[redirects]]
-from = "/nice-to-meet-you/*"
+from = "/nicetomeetyou/*"
 to = "/?met=:splat"
 status = 301
 
