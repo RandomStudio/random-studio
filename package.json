@@ -14,15 +14,16 @@
     "astro": "5.16.6",
     "preact": "10.28.0"
   },
-  "overrides": {
-    "react": "npm:@preact/compat@latest",
-    "react-dom": "npm:@preact/compat@latest"
-  },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "5.15.3",
     "@typescript-eslint/parser": "8.50.0",
     "eslint": "9.39.2",
     "eslint-plugin-astro": "1.5.0",
     "eslint-plugin-jsx-a11y": "6.10.2"
+  },
+  "overrides": {
+    "react": "npm:@preact/compat@latest",
+    "react-dom": "npm:@preact/compat@latest"
   },
   "browserslist": "last 2 versions, iOS > 15",
   "engines": {
