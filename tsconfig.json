@@ -25,11 +25,15 @@
   "include": [
     ".astro/types.d.ts",
     "src/**/*",
+    "src/lib/**/*.ts",
     "netlify/functions/*.tsx",
     "netlify/functions/**/*.tsx",
-    "src/types/index.d.ts"
+    "src/types/index.d.ts",
+    "src/env.d.ts",
+    "src/lib"
   ],
   "exclude": [
     "node_modules",
-    "dist"]
+    "dist"
+  ]
 }

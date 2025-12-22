@@ -1,0 +1,11 @@
+---
+import { executeQuery } from "../lib/datocms";
+import { PROJECT_LIST_QUERY } from "../api/QUERIES";
+
+const data = await executeQuery(PROJECT_LIST_QUERY);
+---
+
+<article>
+  <h1>Project data:</h1>
+  <p>{JSON.stringify(data)}</p>
+</article>
