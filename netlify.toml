@@ -5,6 +5,7 @@ included_files = ["node_modules/sharp/**/*"]
 
 [build]
 command = "npm run build"
+publish = "dist"
 
 [[redirects]]
 from = "/future-forest"
