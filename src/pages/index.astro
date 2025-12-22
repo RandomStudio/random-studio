@@ -1,4 +1,7 @@
 ---
+import "../styles/variables.css";
+import "../styles/global.css";
+
 import AstroStatic from "../components/AstroStatic.astro";
 import Projects from "../components/Projects.astro";
 import ReactComponent from "../components/ReactComponent";
@@ -25,3 +28,15 @@ import ReactComponent from "../components/ReactComponent";
     <Projects />
   </body>
 </html>
+<style is:global>
+  /* Unscoped, delivered as-is to the browser.
+     Applies to all <h1> tags on your site. */
+  h1 {
+    color: blue;
+  }
+</style>
+<style>
+  body {
+    @mixin base;
+  }
+</style>

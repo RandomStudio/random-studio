@@ -19,7 +19,10 @@
     "@typescript-eslint/parser": "8.50.0",
     "eslint": "9.39.2",
     "eslint-plugin-astro": "1.5.0",
-    "eslint-plugin-jsx-a11y": "6.10.2"
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "postcss-mixins": "12.1.2",
+    "postcss-nested": "7.0.2",
+    "postcss-preset-env": "10.5.0"
   },
   "overrides": {
     "react": "npm:@preact/compat@latest",

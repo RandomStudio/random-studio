@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 
 ___old
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,3 @@
+@define-mixin base {
+  color: var(--color-text);
+}
