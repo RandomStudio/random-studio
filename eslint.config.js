@@ -11,7 +11,6 @@ export default [
       'airbnb',
       'plugin:react/recommended',
       'plugin:prettier/recommended',
-      'plugin:@next/next/recommended',
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
       'plugin:@react-three/recommended',
@@ -40,9 +39,6 @@ export default [
       '@react-three',
     ],
     rules: {
-      '@next/next/no-img-element': 0,
-      // Clashes with next.js/link
-      'jsx-a11y/anchor-is-valid': 0,
       'jsx-a11y/click-events-have-key-events': 0,
       'jsx-a11y/no-static-element-interactions': 0,
       'jsx-a11y/media-has-caption': 0,
