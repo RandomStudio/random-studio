@@ -12,7 +12,7 @@ const Navigation = () => (
         {'Projects'}
       </Link>
       <Link className={styles.link} href="/lab">
-        {'Living Lab'}
+        {'Lab'}
       </Link>
 
       <Link className={styles.link} href="/studio">

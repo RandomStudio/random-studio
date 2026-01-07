@@ -88,7 +88,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
       />
       <Section anchor="tracks" anchorLabel="Intro" className={styles.researchTracks}>
         <div className={styles.number}>{researchTracks.length}</div>
-        <p className={styles.subtitle}>research tracks drive the Living Lab</p>
+        <p className={styles.subtitle}>research tracks drive the Lab</p>
         <div className={styles.cards}>
           {researchTracks.map((track, index) => (
             <a href={`#track-${index + 1}`} className={styles.researchCardLink} key={track.id}>
