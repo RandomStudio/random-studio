@@ -35,16 +35,6 @@ module.exports = withBundleAnalyzer({
         destination: '/',
         permanent: false,
       },
-      {
-        source: '/projects/NikeLab-ACG',
-        destination: '/projects/nikelab-acg',
-        permanent: false,
-      },
-      {
-        source: '/projects/NikeLab-Tech-Pack',
-        destination: '/projects/nikelab-tech-pack',
-        permanent: false,
-      },
     ];
   },
 });
