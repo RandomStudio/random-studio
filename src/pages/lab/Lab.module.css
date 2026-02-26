@@ -382,6 +382,7 @@
 }
 
 .links {
+  background-color: #eee !important;
   padding-right: 0 !important;
 
   .heading {
