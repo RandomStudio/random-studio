@@ -67,6 +67,8 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
     return cleanText;
   };
 
+  const researchTrackProjects = researchTracks.map(track => track.relatedProjects).flat();
+
   return (
     <Layout
       description={intro}
@@ -86,42 +88,6 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         hasControls={false}
         video={featuredVideo}
       />
-      <Section anchor="tracks" anchorLabel="Intro" className={styles.researchTracks}>
-        <div className={styles.number}>{researchTracks.length}</div>
-        <p className={styles.subtitle}>research tracks drive the Lab</p>
-        <div className={styles.cards}>
-          {researchTracks.map((track, index) => (
-            <a href={`#track-${index + 1}`} className={styles.researchCardLink} key={track.id}>
-              <div key={track.id} className={styles.researchCard}>
-                <p className={styles.trackNumber}>Track {index + 1}</p>
-                <p className={styles.title}>{track.title.split(' ')[0]}<br />{track.title.split(' ').slice(1).join(' ')}</p>
-                <p className={styles.summary}>{track.summary}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </Section>
-      {researchTracks.map((track, index) => (
-        <Section anchor={`track-${index + 1}`} anchorLabel={`${index + 1}. ${track.title}`} key={track.id} className={styles.track} isNarrow>
-          <div className={styles.heading}>
-            <span className={styles.trackNumber}>Track {index + 1}</span>
-            <h2 className={styles.title}>{track.title}</h2>
-          </div>
-          <div className={styles.content} dangerouslySetInnerHTML={{ __html: track.copy }} />
-          {track.relatedProjects.length > 0 && (
-            <>
-              <div className={styles.scrollContainer}>
-                <p className={styles.relatedTitle}>Explore the projects</p>
-              </div>
-              <div className={styles.scrollContainer}>
-                {track.relatedProjects.map((project) => (
-                  <RelatedProject className={styles.relatedProject} key={JSON.stringify(project.title)} relatedProject={project} />
-                ))}
-              </div>
-            </>
-          )}
-        </Section>
-      ))}
       <Section anchor="partnerships" anchorLabel="Partnerships" className={styles.partnerships}>
         <div className={styles.heading}>
           <h2 className={styles.title}>{partnershipsTitle}</h2>
@@ -161,6 +127,20 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
           ))}
         </div>
       </Section>
+      <Section className={styles.track} isNarrow>
+        {researchTrackProjects.length > 0 && (
+          <>
+            <div className={styles.scrollContainer}>
+              <p className={styles.relatedTitle}>Recent Experiments</p>
+            </div>
+            <div className={styles.scrollContainer}>
+              {researchTrackProjects.map((project) => (
+                <RelatedProject className={styles.relatedProject} key={JSON.stringify(project.title)} relatedProject={project} />
+              ))}
+            </div>
+          </>
+        )}
+      </Section>
       <Section anchor="links" anchorLabel="Connect with us" className={styles.links}>
         <div className={styles.heading}>Connect with us</div>
         <div className={`${styles.scrollContainer} items-${links.length}`}>
@@ -174,7 +154,6 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
           ))}
         </div>
       </Section>
-      <FloatingMenu />
     </Layout >
   )
 }

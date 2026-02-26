@@ -196,7 +196,7 @@
     flex-shrink: 0;
 
     @media (--tablet) {
-      max-width: 624px;
+      max-width: 512px;
     }
   }
 }

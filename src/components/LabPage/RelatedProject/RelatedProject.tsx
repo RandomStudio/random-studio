@@ -32,17 +32,7 @@ const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
       <div className={styles.title}>
         <h3>{relatedProject.title}</h3>
         <p className={styles.secondLine}>{relatedProject.secondLine}</p>
-        {relatedProject.inProgress && (
-          <span className={styles.inProgress}>In Progress</span>
-        )}
       </div>
-      {relatedProject.tags && relatedProject.tags.length > 0 && (
-        <div className={styles.tags}>
-          {relatedProject.tags.map((tag, tagIndex) => (
-            <span key={tagIndex} className={styles.tag}>{tag}</span>
-          ))}
-        </div>
-      )}
       <p className={styles.summary}>{relatedProject.summary}</p>
       {relatedProject.link && relatedProject.link !== '' && (
         <span className={styles.link}>
