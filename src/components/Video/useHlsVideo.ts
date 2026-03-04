@@ -26,32 +26,27 @@ const useHlsVideo = ({
 
     const onPlayCallback = onPlayRef.current;
     const onReadyCallback = onReadyRef.current;
-
     const videoEl = videoRef.current;
     let hls: Hls;
 
     videoEl.addEventListener('loadedmetadata', onReadyCallback);
 
-    // if HLS is natively supported, we don't have to do anything
     if (videoEl.canPlayType('application/vnd.apple.mpegurl')) {
+      videoEl.src = src;
       if (isAutoplaying) {
         onPlayCallback();
       }
     } else {
       hls = new Hls({
         startLevel: window.innerWidth > 1280 ? 4 : 2,
+        abrEwmaDefaultEstimate: 10_000_000,
       });
-
+      hls.loadSource(src);
       hls.attachMedia(videoEl);
-
-      hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-        hls.loadSource(src);
-
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          if (isAutoplaying) {
-            onPlayCallback();
-          }
-        });
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        if (isAutoplaying) {
+          onPlayCallback();
+        }
       });
     }
 
