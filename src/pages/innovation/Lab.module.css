@@ -466,12 +466,13 @@
       @mixin body-4;
       margin: auto 0 0;
       display: flex;
-      flex-direction: column;
-      justify-content: end;
+      flex-direction: row;
+      justify-content: start;
+      gap: 8px;
 
       img {
         width: 44px;
-        margin-bottom: 1em;
+        margin-bottom: 0;
       }
     }
   }
