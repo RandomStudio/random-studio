@@ -30,7 +30,6 @@ const RelatedProject = ({ className, relatedProject }: RelatedProjectProps) => {
         </div>
       )}
       <div className={styles.title}>
-        <h3>{relatedProject.title}</h3>
         <p className={styles.secondLine}>{relatedProject.secondLine}</p>
       </div>
       <p className={styles.summary}>{relatedProject.summary}</p>

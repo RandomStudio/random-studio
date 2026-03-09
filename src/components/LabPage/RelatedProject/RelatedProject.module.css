@@ -5,19 +5,7 @@
   padding: 0;
   border-radius: 16px;
   opacity: 1;
-
-  &.hasLink {
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.5;
-      transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    }
-
-    a:hover {
-      opacity: 1;
-    }
-  }
+  pointer-events: none;
 }
 
 
@@ -27,9 +15,17 @@
   aspect-ratio: 16 / 9;
   height: auto;
   background: var(--off-white);
+  pointer-events: none;
 
   :global(div) {
     max-width: none !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  & image,
+  & video {
+    object-fit: cover;
+    object-position: 0% 20%;
+    aspect-ratio: 16 / 9;
   }
 
   & video {
@@ -41,7 +37,6 @@
 }
 
 .image {
-  aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -55,6 +50,7 @@
   position: relative;
   text-decoration: none;
   margin: 0;
+  pointer-events: none;
 
   h3 {
     @mixin body-3;
@@ -141,16 +137,19 @@
   @mixin body-4;
   margin: 0;
   color: black;
+  pointer-events: none;
 }
 
 .link {
   @mixin body-4;
   margin: 0;
   color: rgb(102 102 102);
+  pointer-events: auto;
   text-decoration: underline;
 }
 
 .linkContainer {
   display: contents;
   cursor: default;
+  pointer-events: none;
 }

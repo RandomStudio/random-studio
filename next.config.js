@@ -35,6 +35,11 @@ module.exports = withBundleAnalyzer({
         destination: '/',
         permanent: false,
       },
+      {
+        source: '/lab',
+        destination: '/innovation',
+        permanent: false,
+      },
     ];
   },
 });

@@ -425,17 +425,11 @@
     flex-shrink: 0;
     width: 66%;
     padding: 16px 16px 32px;
-    cursor: pointer;
 
     @media(--tablet) {
       width: 68vw;
     }
 
-
-    &:hover {
-      opacity: 0.5;
-      transition: opacity 0s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    }
 
     .title {
       display: block;
@@ -462,6 +456,10 @@
       width: 100%;
       height: auto;
       object-fit: cover;
+
+      img {
+        object-fit: cover;
+      }
     }
 
     .bottomText {

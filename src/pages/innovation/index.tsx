@@ -88,11 +88,23 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         hasControls={false}
         video={featuredVideo}
       />
+      <Section anchor="tracks" anchorLabel="Intro" className={styles.researchTracks}>
+        <div className={styles.cards}>
+          {researchTracks.map((track, index) => (
+            <a href={`#track-${index + 1}`} className={styles.researchCardLink} key={track.id}>
+              <div key={track.id} className={styles.researchCard}>
+                <p className={styles.title}>{track.title.split(' ')[0]}<br />{track.title.split(' ').slice(1).join(' ')}</p>
+                <p className={styles.summary}>{track.summary}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </Section>
       <Section anchor="partnerships" anchorLabel="Partnerships" className={styles.partnerships}>
         <div className={styles.heading}>
           <h2 className={styles.title}>{partnershipsTitle}</h2>
           <div className={styles.intro} dangerouslySetInnerHTML={{ __html: formatText(partnershipsCopy) }} />
-          <Link href="/studio#contact" className={styles.readMore}>Let’s start a research track together</Link>
+          <Link href="/studio#contact" className={styles.readMore}>Ready to explore opportunities? Get in touch.</Link>
           <div className={styles.media}>
             {partnershipsVideo ? (
               <Video hasControls={false} video={partnershipsVideo} />
@@ -145,7 +157,7 @@ const Lab = ({ title, intro, featuredVideo, researchTracks, links, partnershipsC
         <div className={styles.heading}>Connect with us</div>
         <div className={`${styles.scrollContainer} items-${links.length}`}>
           {links.map((link, index) => (
-            <article className={styles.link} key={index} onClick={() => window.location.href = link.link}>
+            <article className={styles.link} key={index}>
               <Image data={link.image.imageData} className={styles.image} />
               <h3 className={styles.title}>{link.title}</h3>
               <p>{link.description}</p>
