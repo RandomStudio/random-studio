@@ -31,12 +31,6 @@ const useHlsVideo = ({
 
     videoEl.addEventListener('loadedmetadata', onReadyCallback);
 
-    if (videoEl.canPlayType('application/vnd.apple.mpegurl')) {
-      videoEl.src = src;
-      if (isAutoplaying) {
-        onPlayCallback();
-      }
-    } else {
       hls = new Hls({
         startLevel: window.innerWidth > 1280 ? 4 : 2,
         abrEwmaDefaultEstimate: 10_000_000,
@@ -48,7 +42,6 @@ const useHlsVideo = ({
           onPlayCallback();
         }
       });
-    }
 
     return () => {
       videoEl.removeEventListener('loadedmetadata', onReadyCallback);
