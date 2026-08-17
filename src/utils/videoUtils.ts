@@ -66,12 +66,67 @@ export const getVideosListWithCache = async () => {
   return items;
 };
 
-export const sanitiseVideoId = (id: string) =>
-  id.includes('http') ? id.replace('/original', '').split('/').at(-1) : id;
+// Bunny video IDs are UUIDs (8-4-4-4-12 hex characters), so we can pick the ID
+// out of a URL wherever it sits in the path rather than relying on position
+const GUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+// Segments that sit alongside the ID in the URL shapes the CMS has held over the
+// years: /{id}/original, /{id}/playlist.m3u8, /embed/{libraryId}/{id}
+const NON_ID_SEGMENTS = ['embed', 'iframe', 'original', 'play'];
+
+const getPathSegments = (url: string) => {
+  try {
+    return new URL(url).pathname.split('/').filter(Boolean);
+  } catch {
+    // Not parseable as a URL, so treat the whole thing as a path
+    return url.split('/').filter(Boolean);
+  }
+};
+
+export const sanitiseVideoId = (id: string): string | null => {
+  if (!id) {
+    return null;
+  }
+
+  // Drop any query string or fragment, e.g. the ?autoplay=true that Bunny puts
+  // on the embed URLs you get from the "share" button
+  const [withoutQuery] = id.split(/[?#]/);
+
+  if (!/^(https?:)?\/\//i.test(withoutQuery)) {
+    return withoutQuery || null;
+  }
+
+  const segments = getPathSegments(withoutQuery);
+
+  const guid = segments.find(segment => GUID_PATTERN.test(segment));
+
+  if (guid) {
+    return guid;
+  }
+
+  // For anything not UUID-shaped, take the last segment that isn't a filename,
+  // a numeric library ID, or one of the known wrapper segments
+  const candidates = segments.filter(
+    segment =>
+      !segment.includes('.') &&
+      !/^\d+$/.test(segment) &&
+      !NON_ID_SEGMENTS.includes(segment.toLowerCase()),
+  );
+
+  return candidates.at(-1) ?? null;
+};
 
 export const getVideoDetailsById = async (id: string) => {
-  const items = await getVideosListWithCache();
   const sanitisedId = sanitiseVideoId(id);
+
+  if (!sanitisedId) {
+    console.warn(`WARN: Unable to parse a video ID out of ${id}`);
+
+    return null;
+  }
+
+  const items = await getVideosListWithCache();
 
   const details = items.find(
     (video: BunnyVideoDetails) => video.guid === sanitisedId,
