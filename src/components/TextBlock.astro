@@ -1,9 +1,44 @@
 ---
 type Props = {
-	title: string;
-	copy: string;
-	moreInfo?: string;
+  colSpan: number;
+  colStart: number;
+  title: string;
+  moreInfo?: string;
 };
 
-const { title, copy, moreInfo } = Astro.props;
+const { title, moreInfo } = Astro.props;
 ---
+
+<div
+  class="outer"
+  style={{
+    gridColumn: `${Astro.props.colStart} / span ${Astro.props.colSpan}`,
+  }}
+>
+  <div class="title">{title}</div>
+  <div class="copy"><slot /></div>
+  {moreInfo && <div class="more-info">{moreInfo}</div>}
+</div>
+
+<style>
+  .outer {
+    @mixin h3;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .title {
+    grid-column: 1 / span 3;
+  }
+  .copy {
+    grid-column: 7 / span 8;
+
+    :global(p:not(:last-child)) {
+      margin-bottom: 1em;
+    }
+  }
+  .more-info {
+    grid-column: 18 / span 4;
+  }
+</style>

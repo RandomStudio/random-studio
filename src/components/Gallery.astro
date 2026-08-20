@@ -1,0 +1,81 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+type Props = {
+  images: { default: ImageMetadata }[];
+  info?: {
+    title: string;
+    text: string[];
+  };
+};
+
+const { info, images } = Astro.props;
+---
+
+<div class:list={["gallery", info && "hasInfo"]}>
+  <div class="images">
+    {
+      images.map((image) => (
+        <Image class="image" src={image.default} alt="gallery image" />
+      ))
+    }
+  </div>
+  {
+    info && (
+      <div class="info">
+        <p class="heading">More Info</p>
+        <p class="title">{info.title}</p>
+        {info.text.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-column: 1 / span 20;
+    gap: 15px;
+    margin-block: 30px;
+  }
+  .images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    grid-column: 1 / span 20;
+    gap: 15px;
+    height: max-content;
+  }
+  .image {
+    --single-image: calc((100% - 4 * 15px) / 5);
+    width: var(--single-image);
+    object-fit: contain;
+  }
+  .hasInfo {
+    .images {
+      grid-column: 1 / span 15;
+    }
+    .image {
+      --single-image: calc((100% - 3 * 15px) / 4);
+    }
+  }
+  .info {
+    grid-column: 17 / span 4;
+    @mixin body;
+
+    :global(p:not(:last-child)) {
+      margin-bottom: 1em;
+    }
+
+    .heading {
+      @mixin h3;
+      color: #bec0c5;
+      margin-bottom: 0.5em;
+    }
+  }
+</style>

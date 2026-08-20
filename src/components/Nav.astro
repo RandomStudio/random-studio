@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import Constraint from "./Constraint.astro";
+
+import DownloadIcon from "../icons/download.svg";
+---
+
+<Constraint class="outer">
+  <div class="mode">
+    Mode
+    <ul>
+      <li class="isActive">Full</li>
+      <li>Text</li>
+      <li>Image</li>
+    </ul>
+  </div>
+  <div class="title">Past and Future fabrics exhibition for Zara</div>
+  <div class="presskit">
+    Presskit [23,35mb] <DownloadIcon />
+  </div>
+</Constraint>
+
+<style>
+  .outer {
+    @mixin h3;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: calc((100vw - 1440px) / 2);
+    padding: 1em 0;
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: 1fr;
+
+    svg {
+      display: inline-block;
+      height: 1cap;
+      width: auto;
+    }
+  }
+  .mode {
+    grid-column: 1 / span 5;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6em;
+
+    ul {
+      display: contents;
+    }
+
+    li {
+      position: relative;
+      color: #bec0c5;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+        height: fit-content;
+        content: url("../icons/box.svg");
+      }
+    }
+
+    li.isActive {
+      color: black;
+
+      &::before {
+        content: url("../icons/bullet.svg");
+      }
+    }
+  }
+  .title {
+    grid-column: 6 / span 10;
+    text-align: center;
+  }
+  .presskit {
+    grid-column: 16 / span 5;
+    text-align: right;
+    cursor: pointer;
+  }
+</style>

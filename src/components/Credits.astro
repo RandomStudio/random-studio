@@ -1,0 +1,68 @@
+---
+import Constraint from "./Constraint.astro";
+
+type Props = {
+  credits: string[][];
+  collaborators: string[][];
+};
+
+const { credits, collaborators } = Astro.props;
+---
+
+<Constraint class="colophon">
+  <div class="credits">
+    <p class="heading">Credits</p>
+    <dl>
+      {
+        credits.map(([name, value]) => (
+          <>
+            <dt>{name}</dt>
+            <dd>{value}</dd>
+          </>
+        ))
+      }
+    </dl>
+  </div>
+  <div class="collaborators">
+    <p class="heading">Collaborators</p>
+    <dl>
+      {
+        collaborators.map(([name, value]) => (
+          <>
+            <dt>{name}</dt>
+            <dd>{value}</dd>
+          </>
+        ))
+      }
+    </dl>
+  </div>
+</Constraint>
+
+<style>
+  .colophon {
+    @mixin h3;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    padding: 80px 0;
+
+    .heading {
+      margin-bottom: 1em;
+    }
+  }
+  dl {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  dt,
+  dd {
+    width: 50%;
+    margin-bottom: 0.3em;
+  }
+  .credits {
+    grid-column: 1 / span 4;
+  }
+  .collaborators {
+    grid-column: 7 / span 8;
+  }
+</style>

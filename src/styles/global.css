@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-Thin.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-ThinItalic.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-Light.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-LightItalic.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-Regular.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-Italic.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-Medium.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-MediumItalic.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-Bold.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oracle";
+  src: url("/fonts/Oracle/ABCOracle-BoldItalic.woff2") format("woff2"),
+    url("/fonts/Oracle/ABCOracle-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+
+  --max-width: 1440px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+img,picture,video {
+  width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
