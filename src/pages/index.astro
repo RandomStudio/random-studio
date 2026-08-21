@@ -1,222 +1,26 @@
 ---
-import { Image } from "astro:assets";
-import Constraint from "../components/Constraint.astro";
-import TextBlock from "../components/TextBlock.astro";
-import ProjectImage from "../components/ProjectImage.astro";
-import Menu from "../components/Menu.astro";
-import Nav from "../components/Nav.astro";
-
-import headerImage from "../assets/header.jpg";
-
 import "../styles/global.css";
-import Gallery from "../components/Gallery.astro";
-import Credits from "../components/Credits.astro";
 
-type ContentBlock = {
-  colSpan: number;
-  colStart: number;
-  isFullWidth?: boolean;
-} & (
-  | {
-      image: { default: ImageMetadata };
-      type: "image";
-    }
-  | {
-      image: { default: string };
-      type: "video";
-    }
-  | {
-      type: "text";
-      title: string;
-      copy: string[];
-      moreInfo?: unknown;
-    }
-  | {
-      type: "gallery";
-      images: { default: ImageMetadata }[];
-      info?: unknown;
-    }
-);
+import Constraint from "../components/layout/Constraint.astro";
+import Menu from "../components/layout/Menu.astro";
+import Nav from "../components/layout/Nav.astro";
+import Footer from "../components/layout/Footer.astro";
 
-const content: ContentBlock[] = [
-  {
-    colSpan: 20,
-    colStart: 1,
-    type: "text",
-    title: "Past and Future fabrics exhibition for Zara",
-    copy: [
-      "Our second project for Zara’s headquarters in Galicia, Spain is a fabrics exhibition; an in-house exhibition that inspires and educates staff on the creative potential of recycled fabrics.",
-      "We translated information about three different families of fabric into a tactile, spatial experience, inviting visitors to step out of their everyday work routine, slow down, discover the touch of each sample and learn about how it is sourced.",
-    ],
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    isFullWidth: true,
-    type: "image",
-    image: await import("../assets/0.jpg"),
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    type: "text",
-    title: "Spatial Design Inspired by Temple Architecture",
-    copy: [
-      "To demarcate the space in the HQ's grand foyer and immerse visitors in a contemplative atmosphere, we drew on the architectural style of a hypostyle temple. An airy hall propped up by multiple columns creates a calm space with its own shifting rhythms. Transparent curtains filter out the outside while an interplay of a sound and a central light sphere, that changes in intensity and tone throughout the day, animate the space making each visit unique.",
-    ],
-  },
-  {
-    colSpan: 7,
-    colStart: 1,
-    type: "image",
-    image: await import("../assets/1.png"),
-  },
-  {
-    colStart: 11,
-    colSpan: 10,
-    type: "image",
-    image: await import("../assets/2.jpg"),
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    isFullWidth: true,
-    type: "image",
-    image: await import("../assets/3.png"),
-  },
-  {
-    colSpan: 10,
-    colStart: 1,
-    type: "image",
-    image: await import("../assets/4.png"),
-  },
-  {
-    colSpan: 7,
-    colStart: 12,
-    type: "image",
-    image: await import("../assets/5.jpg"),
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    type: "text",
-    title: "Materiality and Touch at the Centre",
-    copy: [
-      "Drawing attention to materiality, the hall itself is fashioned out of recycled textiles – even the colonnades are enveloped in a soft material that invites visitors to experience the space through touch. Each of the fabrics on display can be encountered through several layers: mannequins that sport 22 full looks are dotted throughout the forest of columns, and behind each, a totem displays samples of the fabric the garments are made from that visitors are encouraged to feel and read about through a tag outlining information about each sample.",
-    ],
-  },
-  {
-    colSpan: 7,
-    colStart: 1,
-    type: "image",
-    image: await import("../assets/6.jpg"),
-  },
-  {
-    colSpan: 7,
-    colStart: 1,
-    type: "image",
-    image: await import("../assets/7.png"),
-  },
-  {
-    colSpan: 13,
-    colStart: 8,
-    type: "video",
-    image: await import("../assets/8.mp4"),
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    type: "image",
-    image: await import("../assets/9.png"),
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    type: "text",
-    title: "A Manifesto of Materials",
-    copy: [
-      "At the core of the 200 square meter space, visitors can read a printed manifesto that conveys a detailed breakdown of the composition and sourcing of the materials on view.",
-    ],
-  },
-  {
-    colSpan: 6,
-    colStart: 5,
-    type: "image",
-    image: await import("../assets/10.png"),
-  },
-  {
-    colSpan: 10,
-    colStart: 11,
-    type: "image",
-    image: await import("../assets/11.png"),
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    type: "gallery",
-    images: [
-      await import("../assets/1.png"),
-      await import("../assets/2.png"),
-      await import("../assets/3.png"),
-      await import("../assets/4.png"),
-      await import("../assets/5.jpg"),
-      await import("../assets/6.jpg"),
-      await import("../assets/7.png"),
-    ],
-    info: {
-      title: "Working onsite in Galicia with Acierta.",
-      text: [
-        "A key part of our process is the design guardianship throughout the production phase, including onsite development. Working closely in tandem with our partners has long ensured our project outcomes.",
-      ],
-    },
-  },
-  {
-    colSpan: 20,
-    colStart: 1,
-    isFullWidth: true,
-    type: "image",
-    image: await import("../assets/12.png"),
-  },
-];
-
-const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
-  const contentSplitByConstraint: {
-    blocks: ContentBlock[];
-    constraintType: "full" | "constrained";
-  }[] = [];
-
-  content.forEach((block) => {
-    if (block.isFullWidth) {
-      contentSplitByConstraint.push({
-        blocks: [block],
-        constraintType: "full",
-      });
-
-      return;
-    }
-
-    const lastConstraint =
-      contentSplitByConstraint[contentSplitByConstraint.length - 1];
-
-    if (!lastConstraint || lastConstraint.constraintType === "full") {
-      contentSplitByConstraint.push({
-        blocks: [block],
-        constraintType: "constrained",
-      });
-
-      return;
-    }
-
-    lastConstraint.blocks.push(block);
-  });
-
-  return contentSplitByConstraint;
-};
+import Credits from "../components/project/Credits.astro";
+import Content from "../components/project/Content.astro";
+import Related from "../components/project/Related.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="preload"
+      href="/fonts/Oracle/ABCOracle-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
@@ -227,60 +31,11 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
     <Nav />
     <Menu />
     <Constraint type="full" class="header">
-      <Image src={headerImage} alt="Header image" />
+      <img src="/project/header.png" alt="Header image" />
       <h1>Past and Future fabrics exhibition for Zara</h1>
     </Constraint>
-    {
-      splitContentBlocksByConstraint(content).map((constraint) => (
-        <Constraint
-          type={constraint.constraintType}
-          class={constraint.constraintType === "constrained" ? "grid" : ""}
-        >
-          {constraint.blocks.map((block) => {
-            if (block.type === "image") {
-              return (
-                <ProjectImage
-                  image={block.image.default}
-                  alt=""
-                  colSpan={block.colSpan}
-                  colStart={block.colStart}
-                />
-              );
-            }
-
-            if (block.type === "video") {
-              return (
-                <video
-                  src={block.image.default}
-                  controls
-                  playsinline
-                  muted
-                  loop
-                  autoplay
-                />
-              );
-            }
-
-            if (block.type === "text") {
-              return (
-                <TextBlock
-                  title={block.title}
-                  colSpan={block.colSpan}
-                  colStart={block.colStart}
-                >
-                  {block.copy.map((paragraph) => (
-                    <p>{paragraph}</p>
-                  ))}
-                </TextBlock>
-              );
-            }
-            if (block.type === "gallery") {
-              return <Gallery images={block.images} info={block.info} />;
-            }
-          })}
-        </Constraint>
-      ))
-    }
+    <Content />
+    <Related />
     <Credits
       credits={[
         ["For", "Zara"],
@@ -294,33 +49,46 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
         ["Photography", "DSL Studio"],
       ]}
     />
+    <Footer />
   </body>
 
   <style>
     .header {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 100%;
       position: relative;
       height: 98vh;
 
       h1 {
         @mixin h3;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        grid-column: 1;
+        grid-row: 1;
+        place-self: center;
+        z-index: 1;
+        color: white;
+        mix-blend-mode: difference;
       }
 
       > :global(img) {
+        grid-column: 1;
+        grid-row: 1;
         height: 100%;
         object-fit: cover;
         width: 100%;
       }
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(20, 1fr);
-      grid-template-rows: auto;
-      gap: 0;
+    .mode--text-only {
+      .header {
+        height: 10vh;
+      }
+      :global(video) {
+        display: none !important;
+      }
+      :global(img) {
+        display: none !important;
+      }
     }
   </style>
 </html>

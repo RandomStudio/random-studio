@@ -1,0 +1,65 @@
+---
+type Props = {
+  colSpan: number;
+  colStart: number;
+  title: string;
+  moreInfo?: string;
+};
+
+const { title, moreInfo } = Astro.props;
+---
+
+<div
+  class="outer"
+  style={{
+    gridColumn: `${Astro.props.colStart} / span ${Astro.props.colSpan}`,
+  }}
+>
+  <div class="title">{title}</div>
+  <div class="copy"><slot /></div>
+  {moreInfo && <div class="more-info">{moreInfo}</div>}
+</div>
+
+<style>
+  .outer {
+    @mixin h3;
+    display: grid;
+    grid-template-columns: 3fr 3fr 8fr 4fr;
+    grid-template-areas: "title spacer copy moreinfo";
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .title {
+    grid-area: title;
+  }
+  .copy {
+    grid-area: copy;
+    text-justify: distribute;
+
+    :global(p:not(:last-child)) {
+      margin-bottom: 1em;
+    }
+  }
+  .more-info {
+    grid-area: moreinfo;
+  }
+
+  :global(.mode--text-only) {
+    .outer {
+      grid-template-columns: 6fr 10fr 6fr;
+      grid-template-areas:
+        "spacer title spacer2"
+        "spacer copy spacer2"
+        "spacer moreinfo spacer2";
+      margin-top: 0;
+    }
+    .title {
+      margin-bottom: 1em;
+    }
+  }
+  :global(.mode--image-only) {
+    .outer {
+      display: none;
+    }
+  }
+</style>

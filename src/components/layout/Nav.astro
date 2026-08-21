@@ -1,0 +1,139 @@
+---
+import Constraint from "./Constraint.astro";
+
+import DownloadIcon from "../../icons/download.svg";
+---
+
+<Constraint class="outer">
+  <div class="mode">
+    Mode
+    <ul id="mode-toggle">
+      <li data-mode="normal" class="isActive">Full</li>
+      <li data-mode="text">Text</li>
+      <li data-mode="image">Image</li>
+    </ul>
+  </div>
+  <div class="title">Past and Future fabrics exhibition for Zara</div>
+  <div class="presskit">
+    <a href="#">Presskit [23,35mb]</a><DownloadIcon />
+    <div class="unknown">00-06</div>
+  </div>
+</Constraint>
+<script>
+  type Mode = "normal" | "text" | "image";
+
+  const MODE_CLASSES: Record<Mode, string | null> = {
+    normal: null,
+    text: "mode--text-only",
+    image: "mode--image-only",
+  };
+
+  const toggle = document.getElementById("mode-toggle");
+
+  toggle?.addEventListener("click", (event: MouseEvent) => {
+    const item = (event.target as HTMLElement).closest<HTMLLIElement>(
+      "li[data-mode]",
+    );
+
+    if (!item) {
+      return;
+    }
+
+    const mode = item.dataset.mode as Mode;
+
+    if (!(mode in MODE_CLASSES)) {
+      return;
+    }
+
+    for (const className of Object.values(MODE_CLASSES)) {
+      if (className) {
+        document.body.classList.remove(className);
+      }
+    }
+
+    const activeClass = MODE_CLASSES[mode];
+
+    if (activeClass) {
+      document.body.classList.add(activeClass);
+    }
+
+    for (const li of toggle.querySelectorAll("li[data-mode]")) {
+      li.classList.toggle("isActive", li === item);
+    }
+  });
+</script>
+<style>
+  .outer {
+    @mixin h3;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: calc((100vw - 1440px) / 2);
+    padding: 1em 0;
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: 1fr;
+
+    svg {
+      display: inline-block;
+      height: 1cap;
+      width: auto;
+    }
+  }
+  .mode {
+    grid-column: 1 / span 5;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+    }
+
+    li {
+      position: relative;
+      color: #bec0c5;
+      cursor: pointer;
+
+      &::before {
+        margin-right: 0.25em;
+        content: url("../../icons/box.svg");
+      }
+    }
+
+    li.isActive {
+      color: black;
+
+      &::before {
+        content: url("../../icons/bullet.svg");
+      }
+    }
+  }
+  .title {
+    grid-column: 6 / span 10;
+    text-align: center;
+  }
+  .presskit {
+    grid-column: 16 / span 5;
+    text-align: right;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      color: #bec0c5;
+      margin-right: 0.5em;
+    }
+
+    .unknown {
+      margin-left: 0.5em;
+    }
+  }
+</style>

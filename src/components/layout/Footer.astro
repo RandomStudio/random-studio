@@ -1,0 +1,208 @@
+---
+import Constraint from "./Constraint.astro";
+import Marquee from "./Marquee.astro";
+
+import Logo from "../../assets/logo.svg";
+import { Image } from "astro:assets";
+
+import allWorkCategoryImage from "../../assets/categories/allwork.png";
+import labCategoryImage from "../../assets/categories/lab.png";
+import aboutCategoryImage from "../../assets/categories/about.png";
+import experientialCategoryImage from "../../assets/categories/experiential.png";
+import exhibitionCategoryImage from "../../assets/categories/exhibition.png";
+import innovationCategoryImage from "../../assets/categories/innovation.png";
+---
+
+<div class="footer">
+  <Constraint type="full">
+    <Marquee
+      class="marquee"
+      href="#"
+      text="Inside Retail's AI-Enhanced Future. Read more"
+    />
+  </Constraint>
+  <Constraint class="categories">
+    <ul>
+      <li>
+        <a href="#">
+          <Image alt="All Work" src={allWorkCategoryImage} />
+          All Work
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <Image alt="Experiential Retail" src={experientialCategoryImage} />
+          Experiential Retail
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <Image alt="Applied Innovation" src={innovationCategoryImage} />
+          Applied Innovation
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <Image alt="Exhibition" src={exhibitionCategoryImage} />
+          Exhibition
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <Image alt="Lab" src={labCategoryImage} />
+          Lab
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <Image alt="About" src={aboutCategoryImage} />
+          About
+        </a>
+      </li>
+    </ul>
+  </Constraint>
+  <Constraint class="logo">
+    <Logo class="image" />
+  </Constraint>
+  <Constraint class="details">
+    <div class="block newsletter">
+      <p class="heading">Newsletter</p>
+      <div class="content">
+        Stay up to date with irregular updates and news about our Work and
+        activities.
+      </div>
+    </div>
+    <div class="block links">
+      <p class="heading">Connect</p>
+      <div class="content">
+        <a href="#newsletter">Newsletter</a>
+        <a href="#newsletter">Instagram</a>
+        <a href="#newsletter">LinkedIn</a>
+        <a href="#newsletter">Medium</a>
+      </div>
+    </div>
+    <div class="block emails">
+      <p class="heading">Emails</p>
+      <div class="content">
+        <a href="#">hello@random.studio</a>
+        <a href="#">business@random.studio</a>
+        <a href="#">press@random.studio</a>
+        <a href="#">vendors@random.studio</a>
+      </div>
+    </div>
+    <div class="block amsterdam">
+      <p class="heading">Amsterdam</p>
+      <div class="content">
+        Gillis van Ledenberchstraat 112<br />
+        1052 VK Amsterdam<br />
+        The Netherlands<br />
+        +31 20 779 7735
+        <a href="#">Directions</a>
+      </div>
+    </div>
+    <div class="block paris">
+      <p class="heading">Paris</p>
+      <div class="content">
+        174 Quai de Jemmapes<br />
+        75010 Paris<br />
+        France<br />
+        +33 1 40 36 41 44
+        <a href="#">Directions</a>
+      </div>
+    </div>
+  </Constraint>
+  <Constraint class="copyright">©2026 All right reserved</Constraint>
+</div>
+<style>
+  .footer {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 60px;
+  }
+  .marquee {
+    @mixin h3;
+  }
+  .categories {
+    @mixin body;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    column-gap: 15px;
+
+    ul {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 5 / span 12;
+    }
+    li {
+      grid-column: span 2;
+    }
+    img {
+      border-radius: 6px;
+      margin-bottom: 0.5em;
+    }
+  }
+  .logo {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    margin-block: 60px;
+
+    .image {
+      grid-column: 8 / span 6;
+      width: 100%;
+    }
+  }
+  .details {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: max-content max-content;
+    row-gap: 1em;
+
+    a {
+      color: #bec0c5;
+
+      &::after {
+        margin-left: 0.25em;
+        content: "↗";
+      }
+    }
+  }
+  .block {
+    display: grid;
+    grid-template-columns: subgrid;
+
+    .heading {
+      @mixin h3;
+      grid-column: 1 / span 2;
+    }
+    .content {
+      @mixin body;
+      grid-column: 3 / -1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .newsletter {
+    grid-column: 1 / span 8;
+    grid-row: 1 / 2;
+  }
+  .links {
+    grid-column: 11 / span 5;
+    grid-row: 1;
+  }
+  .emails {
+    grid-column: 11 / span 5;
+    grid-row: 2;
+  }
+  .amsterdam {
+    grid-column: 16 / span 5;
+    grid-row: 1;
+  }
+  .paris {
+    grid-column: 16 / span 5;
+    grid-row: 2;
+  }
+  .copyright {
+    @mixin body;
+    margin-bottom: 2em;
+  }
+</style>

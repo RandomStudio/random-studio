@@ -1,0 +1,26 @@
+---
+import Constraint from "./Constraint.astro";
+---
+
+<Constraint class="outer">
+  <div class="inner">Random Studio</div>
+</Constraint>
+
+<style>
+  .outer {
+    position: fixed;
+    z-index: 1000;
+    bottom: calc(2vh + 56px);
+    left: calc((100vw - 1440px) / 2);
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+  }
+  .inner {
+    @mixin h3;
+    text-align: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    grid-column: 9 / span 4;
+  }
+</style>

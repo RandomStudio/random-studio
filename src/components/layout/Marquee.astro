@@ -1,0 +1,181 @@
+---
+type Props = {
+  class?: string;
+  href?: string;
+  text: string;
+};
+
+const { class: className, href, text, ...rest } = Astro.props;
+
+const STATIC_REPEATS = 5;
+
+const Element = href ? "a" : "div";
+---
+
+<random-marquee class:list={[className, "marquee"]} {...rest}>
+  <Element class="track" data-marquee-track="" href={href}>
+    {
+      Array.from({ length: STATIC_REPEATS }, (_, index) => (
+        <span
+          class="item"
+          data-marquee-item=""
+          aria-hidden={index === 0 ? undefined : "true"}
+        >
+          {text}
+        </span>
+      ))
+    }
+  </Element>
+</random-marquee>
+
+<script>
+  const DEFAULT_SPEED = 60;
+  const MINIMUM_ITEMS = 2;
+
+  const toNumber = (value: string, fallback: number) => {
+    const parsed = Number.parseFloat(value);
+
+    return Number.isFinite(parsed) ? parsed : fallback;
+  };
+
+  const getItems = (track: HTMLElement) =>
+    Array.from(track.querySelectorAll<HTMLElement>("[data-marquee-item]"));
+
+  const setItemCount = (track: HTMLElement, count: number) => {
+    const items = getItems(track);
+    const [template] = items;
+
+    if (!template) {
+      return;
+    }
+
+    items.slice(count).forEach((item) => item.remove());
+
+    track.append(
+      ...Array.from({ length: count - items.length }, () => {
+        const clone = template.cloneNode(true) as HTMLElement;
+        clone.setAttribute("aria-hidden", "true");
+
+        return clone;
+      }),
+    );
+  };
+
+  const update = (host: HTMLElement, track: HTMLElement) => {
+    const [template] = getItems(track);
+
+    if (!template) {
+      return;
+    }
+
+    const gap = toNumber(getComputedStyle(track).columnGap, 0);
+    const shift = template.getBoundingClientRect().width + gap;
+    const hostWidth = host.getBoundingClientRect().width;
+
+    if (shift <= 0 || hostWidth <= 0) {
+      return;
+    }
+
+    // Fill the host and then one copy more, so translating by exactly one copy
+    // lands back on an identical layout and the loop is seamless.
+    const count = Math.ceil((hostWidth + shift + gap) / shift);
+
+    setItemCount(track, Math.max(MINIMUM_ITEMS, count));
+
+    const speed = Math.max(
+      toNumber(
+        getComputedStyle(host).getPropertyValue("--marquee-speed"),
+        DEFAULT_SPEED,
+      ),
+      1,
+    );
+
+    host.style.setProperty("--marquee-shift", `${shift}px`);
+    host.style.setProperty("--marquee-duration", `${shift / speed}s`);
+    host.dataset.ready = "";
+  };
+
+  class Marquee extends HTMLElement {
+    #disconnect: (() => void) | undefined;
+
+    connectedCallback() {
+      const track = this.querySelector<HTMLElement>("[data-marquee-track]");
+
+      if (!track) {
+        return;
+      }
+
+      const render = () => update(this, track);
+
+      render();
+      document.fonts.ready.then(render);
+
+      const observer = new ResizeObserver(render);
+      observer.observe(this);
+
+      this.#disconnect = () => observer.disconnect();
+    }
+
+    disconnectedCallback() {
+      this.#disconnect?.();
+      this.#disconnect = undefined;
+    }
+  }
+
+  if (!customElements.get("random-marquee")) {
+    customElements.define("random-marquee", Marquee);
+  }
+</script>
+
+<style>
+  .marquee {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    a {
+      color: #bec0c5;
+
+      span::after {
+        margin-left: 0.25em;
+        content: "↗";
+      }
+    }
+
+    &[data-ready] {
+      justify-content: flex-start;
+
+      .track {
+        animation: scroll var(--marquee-duration, 10s) linear infinite;
+      }
+    }
+  }
+
+  .track {
+    column-gap: var(--marquee-gap, 1em);
+    display: flex;
+    flex: 0 0 auto;
+    will-change: transform;
+  }
+
+  .item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(var(--marquee-shift, 0px) * -1));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee[data-ready] .track {
+      animation-name: none;
+    }
+  }
+</style>

@@ -1,0 +1,126 @@
+---
+import Constraint from "../layout/Constraint.astro";
+---
+
+<Constraint class="related">
+  <p class="heading">Exhibitions</p>
+  <div class="description">
+    <p>
+      Bringing stories, ideas and cultural heritage to life through experiences
+      people can enter and explore. Creating new ways to encounter a subject
+      through space, interaction and atmosphere, inviting audiences to discover
+      it for themselves and leave with something that stays with them.
+    </p>
+  </div>
+  <article class="project">
+    <p class="category">Exhibition</p>
+    <p class="id">AI-0344</p>
+    <h1 class="title">A Brand Exhibition for Nike at Centre Pompidou</h1>
+    <ol class="sections">
+      <li>
+        <div class="images">
+          <img src="/related/next_01.png" />
+        </div>
+        <span>1</span>
+        <h2>Summer of Sport '24</h2>
+      </li>
+      <li>
+        <div class="images">
+          <img src="/related/next_02_a.png" />
+          <img src="/related/next_02_b.png" />
+          <img src="/related/next_02_c.png" />
+        </div>
+        <span>2</span>
+        <h2>40 years of Air</h2>
+      </li>
+      <li>
+        <div class="images">
+          <img src="/related/next_03_a.png" />
+          <video autoplay muted loop src="/related/next_03_b.mp4"></video>
+        </div>
+        <span>3</span>
+        <h2>A Sonic Entrance</h2>
+      </li>
+    </ol>
+  </article>
+</Constraint>
+
+<style>
+  .related {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    row-gap: 2em;
+    margin-top: 60px;
+
+    .heading {
+      @mixin h3;
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
+    .description {
+      @mixin h3;
+      grid-column: 7 / span 8;
+      grid-row: 1;
+    }
+    .project {
+      grid-column: 1 / span 20;
+      grid-row: 2;
+    }
+  }
+
+  .project {
+    @mixin h3;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: 1em;
+
+    .category {
+      grid-column: span 2;
+    }
+    .id {
+      grid-column: span 2;
+    }
+    .title {
+      @mixin h3;
+      grid-column: span 20;
+    }
+    .sections {
+      grid-column: span 20;
+    }
+  }
+  .sections {
+    @mixin body;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    cursor: pointer;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    li {
+      color: #bec0c5;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    .images {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
+      height: 13em;
+      margin-bottom: 1em;
+    }
+
+    h2 {
+      @mixin body;
+    }
+  }
+</style>

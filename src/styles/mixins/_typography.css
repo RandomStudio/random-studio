@@ -1,15 +1,15 @@
 @define-mixin h3 {
-  font-family: "Oracle";
+  font-family: "Oracle", -apple-system, "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 110%; /* 13.2px */
+  line-height: 1.1; /* 17.6px */
 }
 
 @define-mixin body {
-  font-family: "Oracle";
+  font-family: "Oracle", -apple-system, "Helvetica Neue", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 110%; /* 11px */
+  line-height: 1.1; /* 13.2px */
 }

@@ -1,0 +1,25 @@
+---
+type Props = {
+  image: string;
+  alt?: string;
+  colSpan?: number;
+  colStart?: number;
+};
+
+const { image, alt, colSpan, colStart } = Astro.props;
+---
+
+<img
+  class="image"
+  src={image}
+  alt={alt ?? ""}
+  style={{ gridColumn: `${colStart} / span ${colSpan}` }}
+/>
+
+<style>
+  :global(.mode--image-only) {
+    .image {
+      grid-column: 1 / span 20 !important;
+    }
+  }
+</style>
