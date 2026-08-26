@@ -51,7 +51,7 @@ import Constraint from "../layout/Constraint.astro";
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(2, max-content);
     row-gap: 2em;
-    margin-top: 60px;
+    margin-top: var(--spacing-60);
 
     .heading {
       @mixin h3;
@@ -103,7 +103,7 @@ import Constraint from "../layout/Constraint.astro";
     }
 
     li {
-      color: #bec0c5;
+      color: var(--color-link);
 
       &:hover {
         color: black;

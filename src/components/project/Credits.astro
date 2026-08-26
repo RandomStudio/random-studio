@@ -44,7 +44,7 @@ const { credits, collaborators } = Astro.props;
     display: grid;
     grid-template-columns: 4fr 3fr 8fr 5fr;
     grid-template-areas: "credits spacer collaborators spacer2";
-    padding: 80px 0;
+    padding: var(--spacing-80) 0;
 
     .heading {
       margin-bottom: 1em;

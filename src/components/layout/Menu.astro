@@ -11,7 +11,7 @@ import Constraint from "./Constraint.astro";
     position: fixed;
     z-index: 1000;
     bottom: calc(2vh + 56px);
-    left: calc((100vw - 1440px) / 2);
+    left: calc((100vw - var(--max-width)) / 2);
 
     display: grid;
     grid-template-columns: repeat(20, 1fr);
@@ -19,8 +19,8 @@ import Constraint from "./Constraint.astro";
   .inner {
     @mixin h3;
     text-align: center;
-    padding: 15px;
-    background-color: #f7f7f7;
+    padding: var(--spacing-15) var(--gutter);
+    background-color: var(--color-foreground);
     grid-column: 9 / span 4;
   }
 </style>

@@ -3,14 +3,6 @@ import Constraint from "./Constraint.astro";
 import Marquee from "./Marquee.astro";
 
 import Logo from "../../assets/logo.svg";
-import { Image } from "astro:assets";
-
-import allWorkCategoryImage from "../../assets/categories/allwork.png";
-import labCategoryImage from "../../assets/categories/lab.png";
-import aboutCategoryImage from "../../assets/categories/about.png";
-import experientialCategoryImage from "../../assets/categories/experiential.png";
-import exhibitionCategoryImage from "../../assets/categories/exhibition.png";
-import innovationCategoryImage from "../../assets/categories/innovation.png";
 ---
 
 <div class="footer">
@@ -117,7 +109,7 @@ import innovationCategoryImage from "../../assets/categories/innovation.png";
   .footer {
     display: grid;
     grid-template-columns: 100%;
-    row-gap: 60px;
+    row-gap: var(--spacing-60);
   }
   .marquee {
     @mixin h3;
@@ -126,7 +118,7 @@ import innovationCategoryImage from "../../assets/categories/innovation.png";
     @mixin body;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
-    column-gap: 15px;
+    column-gap: var(--gutter);
 
     ul {
       display: grid;
@@ -144,7 +136,7 @@ import innovationCategoryImage from "../../assets/categories/innovation.png";
   .logo {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
-    margin-block: 60px;
+    padding-block: var(--spacing-60);
 
     .image {
       grid-column: 8 / span 6;
@@ -155,11 +147,9 @@ import innovationCategoryImage from "../../assets/categories/innovation.png";
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: max-content max-content;
-    row-gap: 1em;
+    row-gap: 1lh;
 
     a {
-      color: #bec0c5;
-
       &::after {
         margin-left: 0.25em;
         content: "↗";

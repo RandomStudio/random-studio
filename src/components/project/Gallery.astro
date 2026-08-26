@@ -39,8 +39,8 @@ const { info, images } = Astro.props;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-column: 1 / span 20;
-    gap: 15px;
-    margin-block: 30px;
+    gap: var(--spacing-15) var(--gutter);
+    margin-block: var(--spacing-30);
   }
   .images {
     display: flex;
@@ -48,11 +48,11 @@ const { info, images } = Astro.props;
     flex-wrap: wrap;
     align-items: flex-start;
     grid-column: 1 / span 20;
-    gap: 15px;
+    gap: var(--spacing-15) var(--gutter);
     height: max-content;
   }
   .image {
-    --single-image: calc((100% - 4 * 15px) / 5);
+    --single-image: calc((100% - 4 * var(--gutter)) / 5);
     width: var(--single-image);
     object-fit: contain;
   }
@@ -61,7 +61,7 @@ const { info, images } = Astro.props;
       grid-column: 1 / span 15;
     }
     .image {
-      --single-image: calc((100% - 3 * 15px) / 4);
+      --single-image: calc((100% - 3 * var(--gutter)) / 4);
     }
   }
   .info {
@@ -74,7 +74,7 @@ const { info, images } = Astro.props;
 
     .heading {
       @mixin h3;
-      color: #bec0c5;
+      color: var(--color-link);
       margin-bottom: 0.5em;
     }
   }

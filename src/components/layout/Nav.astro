@@ -68,7 +68,7 @@ import DownloadIcon from "../../icons/download.svg";
     position: fixed;
     z-index: 1000;
     top: 0;
-    left: calc((100vw - 1440px) / 2);
+    left: calc((100vw - var(--max-width)) / 2);
     padding: 1em 0;
 
     display: grid;
@@ -97,7 +97,7 @@ import DownloadIcon from "../../icons/download.svg";
 
     li {
       position: relative;
-      color: #bec0c5;
+      color: var(--color-link);
       cursor: pointer;
 
       &::before {
@@ -128,7 +128,6 @@ import DownloadIcon from "../../icons/download.svg";
     align-items: center;
 
     a {
-      color: #bec0c5;
       margin-right: 0.5em;
     }
 

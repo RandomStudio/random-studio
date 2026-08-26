@@ -88,19 +88,7 @@
   font-style: italic;
 }
 
-:root {
-  --color-background: #ffffff;
-  --color-foreground: #000000;
-
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
-
-  --max-width: 1440px;
-}
-
+/* Reset */
 *,
 *::before,
 *::after {
@@ -135,9 +123,8 @@ ol {
 }
 
 body {
-  @mixin body;
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
+  min-height: 100svh;
   overscroll-behavior: none;
 }
 
@@ -167,6 +154,7 @@ textarea {
   font: inherit;
   letter-spacing: inherit;
 }
+/* End reset */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -177,4 +165,35 @@ textarea {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #F7F7F7;
+  --color-link: #BEC0C5;
+
+  --spacing-5: 0.3125rem;
+  --spacing-10: 0.625rem;
+  --spacing-15: 0.9375rem;
+  --spacing-30: 1.875rem;
+  --spacing-40: 2.5rem;
+  --spacing-50: 3.125rem;
+  --spacing-60: 3.75rem;
+  --spacing-80: 5rem;
+
+  --gutter: 15px;
+
+  --max-width: 1440px;
+}
+
+body {
+  @mixin body;
+}
+
+a {
+  color: var(--color-link);
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  text-box: trim-both cap alphabetic;
 }
