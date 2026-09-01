@@ -28,14 +28,15 @@ import Related from "../components/project/Related.astro";
     <title>Random Studio New Website mockup</title>
   </head>
   <body>
-    <Nav />
-    <Menu />
-    <Constraint type="full" class="header">
+    <Nav client:load />
+    <Menu client:load />
+    <Constraint client:load type="full" class="header">
       <img src="/project/header.png" alt="Header image" />
     </Constraint>
-    <Content />
-    <Related />
+    <Content client:idle={{ timeout: 1000 }} />
+    <Related client:idle={{ timeout: 1000 }} />
     <Credits
+      client:idle={{ timeout: 1000 }}
       credits={[
         ["For", "Zara"],
         ["Year", "2025"],
@@ -48,7 +49,7 @@ import Related from "../components/project/Related.astro";
         ["Photography", "DSL Studio"],
       ]}
     />
-    <Footer />
+    <Footer client:visible />
   </body>
 
   <style>
