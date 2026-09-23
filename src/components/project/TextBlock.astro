@@ -26,8 +26,9 @@ const { title, moreInfo, alignSelf } = Astro.props;
   .outer {
     @mixin h3;
     display: grid;
-    grid-template-columns: 3fr 3fr 8fr 4fr;
-    grid-template-areas: "title spacer copy moreinfo";
+    grid-template-columns: 4fr 2fr 8fr 2fr 4fr;
+    grid-template-areas: "title spacer copy spacer2 moreinfo";
+    gap: 16px;
     margin-top: var(--spacing-30);
     margin-bottom: var(--spacing-40);
   }

@@ -38,6 +38,7 @@ const content: ContentBlock[] = [
     colStart: 1,
     type: "text",
     title: "Past and Future fabrics exhibition for Zara",
+    isFullWidth: false,
     copy: [
       "Our second project for Zara’s headquarters in Galicia, Spain is a fabrics exhibition; an in-house exhibition that inspires and educates staff on the creative potential of recycled fabrics.",
       "We translated information about three different families of fabric into a tactile, spatial experience, inviting visitors to step out of their everyday work routine, slow down, discover the touch of each sample and learn about how it is sourced.",
@@ -46,7 +47,6 @@ const content: ContentBlock[] = [
   {
     colSpan: 20,
     colStart: 1,
-    isFullWidth: true,
     type: "image",
     image: "/project/01_a.png",
   },
@@ -55,6 +55,7 @@ const content: ContentBlock[] = [
     colStart: 1,
     type: "text",
     title: "Spatial Design Inspired by Temple Architecture",
+    isFullWidth: false,
     copy: [
       "To demarcate the space in the HQ's grand foyer and immerse visitors in a contemplative atmosphere, we drew on the architectural style of a hypostyle temple. An airy hall propped up by multiple columns creates a calm space with its own shifting rhythms. Transparent curtains filter out the outside while an interplay of a sound and a central light sphere, that changes in intensity and tone throughout the day, animate the space making each visit unique.",
     ],
@@ -74,7 +75,6 @@ const content: ContentBlock[] = [
   {
     colSpan: 20,
     colStart: 1,
-    isFullWidth: true,
     type: "video",
     image: "/project/04.mp4",
   },
@@ -96,6 +96,7 @@ const content: ContentBlock[] = [
     colStart: 1,
     type: "text",
     title: "Materiality and Touch at the Centre",
+    isFullWidth: false,
     copy: [
       "Drawing attention to materiality, the hall itself is fashioned out of recycled textiles – even the colonnades are enveloped in a soft material that invites visitors to experience the space through touch. Each of the fabrics on display can be encountered through several layers: mannequins that sport 22 full looks are dotted throughout the forest of columns, and behind each, a totem displays samples of the fabric the garments are made from that visitors are encouraged to feel and read about through a tag outlining information about each sample.",
     ],
@@ -169,7 +170,6 @@ const content: ContentBlock[] = [
   {
     colSpan: 20,
     colStart: 1,
-    isFullWidth: true,
     type: "image",
     image: "/project/13.png",
   },
@@ -182,10 +182,10 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
   }[] = [];
 
   content.forEach((block) => {
-    if (block.isFullWidth) {
+    if (block.isFullWidth === false) {
       contentSplitByConstraint.push({
         blocks: [block],
-        constraintType: "full",
+        constraintType: "constrained",
       });
 
       return;
@@ -194,10 +194,10 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
     const lastConstraint =
       contentSplitByConstraint[contentSplitByConstraint.length - 1];
 
-    if (!lastConstraint || lastConstraint.constraintType === "full") {
+    if (!lastConstraint || lastConstraint.constraintType === "constrained") {
       contentSplitByConstraint.push({
         blocks: [block],
-        constraintType: "constrained",
+        constraintType: "full",
       });
 
       return;
@@ -212,10 +212,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
 
 {
   splitContentBlocksByConstraint(content).map((constraint) => (
-    <Constraint
-      type={constraint.constraintType}
-      class={constraint.constraintType === "constrained" ? "grid" : ""}
-    >
+    <Constraint type={constraint.constraintType} class="grid">
       {constraint.blocks.map((block) => {
         if (block.type === "image") {
           return (
