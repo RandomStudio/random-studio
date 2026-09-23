@@ -4,16 +4,17 @@ type Props = {
   alt?: string;
   colSpan?: number;
   colStart?: number;
+  alignSelf?: "start" | "center" | "end";
 };
 
-const { image, alt, colSpan, colStart } = Astro.props;
+const { image, alt, colSpan, colStart, alignSelf } = Astro.props;
 ---
 
 <img
   class="image"
   src={image}
   alt={alt ?? ""}
-  style={{ gridColumn: `${colStart} / span ${colSpan}` }}
+  style={{ gridColumn: `${colStart} / span ${colSpan}`, alignSelf }}
 />
 
 <style>

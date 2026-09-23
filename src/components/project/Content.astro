@@ -9,6 +9,7 @@ type ContentBlock = {
   colSpan: number;
   colStart: number;
   isFullWidth?: boolean;
+  alignment?: "start" | "center" | "end";
 } & (
   | {
       image: string;
@@ -74,8 +75,8 @@ const content: ContentBlock[] = [
     colSpan: 20,
     colStart: 1,
     isFullWidth: true,
-    type: "image",
-    image: "/project/04.png",
+    type: "video",
+    image: "/project/04.mp4",
   },
   {
     colSpan: 10,
@@ -88,6 +89,7 @@ const content: ContentBlock[] = [
     colStart: 13,
     type: "image",
     image: "/project/06.png",
+    alignment: "center",
   },
   {
     colSpan: 20,
@@ -222,6 +224,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
               alt=""
               colSpan={block.colSpan}
               colStart={block.colStart}
+              alignSelf={block.alignment}
             />
           );
         }
@@ -237,6 +240,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
               autoplay
               style={{
                 gridColumn: `${block.colStart} / span ${block.colSpan}`,
+                alignSelf: block.alignment ?? "center",
               }}
             />
           );
@@ -248,6 +252,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
               title={block.title}
               colSpan={block.colSpan}
               colStart={block.colStart}
+              alignSelf={block.alignment}
             >
               {block.copy.map((paragraph) => (
                 <p>{paragraph}</p>

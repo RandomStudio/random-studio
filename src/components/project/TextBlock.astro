@@ -4,15 +4,17 @@ type Props = {
   colStart: number;
   title: string;
   moreInfo?: string;
+  alignSelf?: "start" | "center" | "end";
 };
 
-const { title, moreInfo } = Astro.props;
+const { title, moreInfo, alignSelf } = Astro.props;
 ---
 
 <div
   class="outer"
   style={{
     gridColumn: `${Astro.props.colStart} / span ${Astro.props.colSpan}`,
+    alignSelf,
   }}
 >
   <div class="title">{title}</div>

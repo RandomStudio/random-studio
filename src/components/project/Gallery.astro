@@ -24,7 +24,6 @@ const { info, images } = Astro.props;
   {
     info && (
       <div class="info">
-        <p class="heading">More Info</p>
         <p class="title">{info.title}</p>
         {info.text.map((paragraph) => (
           <p>{paragraph}</p>
@@ -55,6 +54,7 @@ const { info, images } = Astro.props;
     --single-image: calc((100% - 4 * var(--gutter)) / 5);
     width: var(--single-image);
     object-fit: contain;
+    border-radius: 5px;
   }
   .hasInfo {
     .images {
