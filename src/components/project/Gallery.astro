@@ -13,7 +13,7 @@ type Props = {
 const { info, images } = Astro.props;
 ---
 
-<div class:list={["gallery", info && "hasInfo"]}>
+<project-gallery class:list={["gallery", info && "hasInfo"]}>
   <div class="images">
     {
       images.map((image) => (
@@ -31,7 +31,67 @@ const { info, images } = Astro.props;
       </div>
     )
   }
-</div>
+  <div class="overlay" hidden>
+    <div class="selection"></div>
+  </div>
+</project-gallery>
+
+<script>
+  class ProjectGallery extends HTMLElement {
+    #overlay!: HTMLElement;
+    #selection!: HTMLElement;
+    #hovered: HTMLImageElement | null = null;
+    #controller?: AbortController;
+
+    connectedCallback() {
+      const images = this.querySelector(".images")!;
+      this.#overlay = this.querySelector(".overlay")!;
+      this.#selection = this.querySelector(".selection")!;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      images.addEventListener("mouseover", this.#onMouseOver, { signal });
+      images.addEventListener("mouseleave", this.#onMouseLeave, { signal });
+      window.addEventListener("scroll", this.#positionSelection, {
+        signal,
+        passive: true,
+      });
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+    }
+
+    #onMouseOver = ({ target }: Event) => {
+      if (!(target instanceof HTMLImageElement)) return;
+
+      this.#hovered = target;
+      this.#overlay.style.backgroundImage = `url("${target.currentSrc}")`;
+      this.#overlay.hidden = false;
+      this.#positionSelection();
+    };
+
+    #onMouseLeave = () => {
+      this.#hovered = null;
+      this.#overlay.hidden = true;
+    };
+
+    #positionSelection = () => {
+      if (!this.#hovered) return;
+
+      const { top, left, width, height } = this.#hovered.getBoundingClientRect();
+      Object.assign(this.#selection.style, {
+        top: `${top}px`,
+        left: `${left}px`,
+        width: `${width}px`,
+        height: `${height}px`,
+      });
+    };
+  }
+
+  customElements.define("project-gallery", ProjectGallery);
+</script>
 
 <style>
   .gallery {
@@ -40,6 +100,7 @@ const { info, images } = Astro.props;
     grid-column: 1 / span 20;
     gap: var(--spacing-15) var(--gutter);
     margin-block: var(--spacing-30);
+    position: relative;
   }
   .images {
     display: flex;
@@ -76,6 +137,23 @@ const { info, images } = Astro.props;
       @mixin h3;
       color: var(--color-link);
       margin-bottom: 0.5em;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-background);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    pointer-events: none;
+    z-index: 9999;
+
+    .selection {
+      position: absolute;
+      border: 1px solid var(--color-link);
+      border-radius: 5px;
     }
   }
 
