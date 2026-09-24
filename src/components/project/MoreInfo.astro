@@ -173,7 +173,6 @@ const { title, content } = Astro.props;
   }
 
   .dialog {
-    /* Ease-out quint: quick start, long soft settle, never overshoots */
     --panel-transition: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     position: fixed;
     inset: 0;
@@ -185,8 +184,6 @@ const { title, content } = Astro.props;
     padding: 0;
     border: 0;
     background: none;
-    /* clip rather than hidden: hidden still lets focus scroll the dialog
-       sideways to reach the off-screen panel, which then jumps back */
     overflow: clip;
 
     &::backdrop {
