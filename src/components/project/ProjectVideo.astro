@@ -21,14 +21,14 @@ const { src, colSpan, colStart, alignSelf } = Astro.props;
   <video src={src} controls={false} playsinline muted loop autoplay></video>
   <div class="controls">
     <p class="time">00:00:00</p>
-    <button class="control" data-action="fullscreen" aria-label="Fullscreen">
+    <button class="control link" data-action="fullscreen" aria-label="Fullscreen">
       <FullscreenIcon />
     </button>
-    <button class="control toggle" data-action="play" data-on>
+    <button class="control link toggle" data-action="play" data-on>
       <span>Pause</span>
       <span>Play</span>
     </button>
-    <button class="control toggle" data-action="sound">
+    <button class="control link toggle" data-action="sound">
       <span>Sound On</span>
       <span>Sound Off</span>
     </button>
@@ -155,11 +155,11 @@ const { src, colSpan, colStart, alignSelf } = Astro.props;
   .time,
   .control {
     @mixin h3;
-    color: #a3a3a3;
     white-space: nowrap;
   }
 
   .time {
+    color: #a3a3a3;
     font-variant-numeric: tabular-nums;
   }
 
@@ -169,7 +169,6 @@ const { src, colSpan, colStart, alignSelf } = Astro.props;
     padding: 0;
     border: 0;
     background: none;
-    cursor: pointer;
   }
 
   .toggle {

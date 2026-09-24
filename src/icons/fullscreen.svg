@@ -1,5 +1,5 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Icons">
-<path id="Vector" d="M3 0V1H1V3H0V0M5 1V0H8V3H7V1M7 5V7H5V8H8V5M1 5V7H3V8H0V5" fill="#A3A3A3"/>
+<path id="Vector" d="M3 0V1H1V3H0V0M5 1V0H8V3H7V1M7 5V7H5V8H8V5M1 5V7H3V8H0V5" fill="currentColor"/>
 </g>
 </svg>

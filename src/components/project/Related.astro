@@ -51,7 +51,7 @@ import Constraint from "../layout/Constraint.astro";
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(2, max-content);
     row-gap: 2em;
-    margin-top: var(--spacing-60);
+    padding: var(--spacing-80) 0;
 
     .heading {
       @mixin h3;
@@ -96,6 +96,7 @@ import Constraint from "../layout/Constraint.astro";
     gap: 0.5em;
     cursor: pointer;
     overflow-x: scroll;
+    overflow-y: hidden;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {

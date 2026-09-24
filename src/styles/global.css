@@ -131,10 +131,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-
-  &:hover {
-    color: black;
-  }
 }
 
 img,
@@ -194,8 +190,16 @@ body {
   @mixin body;
 }
 
-a {
+a,
+.link {
   color: var(--color-link);
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: black;
+  }
 }
 
 h1,h2,h3,h4,h5,h6,p {
