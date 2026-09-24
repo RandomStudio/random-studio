@@ -31,7 +31,6 @@ import Related from "../components/project/Related.astro";
     <Nav client:load />
     <Menu client:load />
     <Constraint client:load type="full" class="header">
-      <img src="/project/header.png" alt="Header image" />
       <p>Past and Future fabrics exhibition for Zara</p>
     </Constraint>
     <Content />
@@ -55,19 +54,17 @@ import Related from "../components/project/Related.astro";
   <style>
     .header {
       position: relative;
-      height: 98svh;
+      height: 88svh;
       /* Unlike overflow: hidden, clip-path also clips fixed-position children */
       clip-path: inset(0);
 
       p {
+        @mixin h3;
         position: fixed;
         top: 50%;
         left: 50%;
         translate: -50% -50%;
         margin: 0;
-        @mixin h3;
-        color: white;
-        mix-blend-mode: difference;
       }
 
       > :global(img) {

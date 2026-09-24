@@ -1,26 +1,39 @@
 ---
-import Constraint from "./Constraint.astro";
+import RIcon from "../../icons/r.svg";
 ---
 
-<Constraint class="outer">
-  <div class="inner">Random Studio</div>
-</Constraint>
+<div class="menu">
+  <div class="logo"><RIcon /></div>
+  <div class="label">Menu</div>
+</div>
 
 <style>
-  .outer {
+  .menu {
     position: fixed;
     z-index: 1000;
     bottom: calc(2vh + 56px);
-    left: calc((100vw - var(--max-width)) / 2);
+    left: 50%;
+    transform: translateX(-50%);
 
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
   }
-  .inner {
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    background-color: black;
+  }
+  .label {
     @mixin h3;
-    text-align: center;
-    padding: var(--spacing-15) var(--gutter);
+    display: flex;
+    align-items: center;
+    width: 270px;
+    height: 38px;
+    padding-left: 25px;
     background-color: var(--color-foreground);
-    grid-column: 9 / span 4;
   }
 </style>
