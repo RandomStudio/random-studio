@@ -1,5 +1,6 @@
 ---
 type Props = {
+  id?: string;
   colSpan: number;
   colStart: number;
   title: string;
@@ -7,10 +8,11 @@ type Props = {
   alignSelf?: "start" | "center" | "end";
 };
 
-const { title, moreInfo, alignSelf } = Astro.props;
+const { id, title, moreInfo, alignSelf } = Astro.props;
 ---
 
 <div
+  id={id}
   class="outer"
   style={{
     gridColumn: `${Astro.props.colStart} / span ${Astro.props.colSpan}`,
@@ -31,6 +33,8 @@ const { title, moreInfo, alignSelf } = Astro.props;
     gap: 16px;
     margin-top: var(--spacing-30);
     margin-bottom: var(--spacing-40);
+    /* Keeps the heading clear of the fixed section nav when jumped to */
+    scroll-margin-top: 140px;
   }
   .title {
     grid-area: title;

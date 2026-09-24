@@ -9,6 +9,7 @@ import Footer from "../components/layout/Footer.astro";
 import Credits from "../components/project/Credits.astro";
 import Content from "../components/project/Content.astro";
 import Related from "../components/project/Related.astro";
+import SectionNav from "../components/project/SectionNav.astro";
 ---
 
 <html lang="en">
@@ -30,6 +31,7 @@ import Related from "../components/project/Related.astro";
   <body>
     <Nav client:load />
     <Menu client:load />
+    <SectionNav />
     <Constraint client:load type="full" class="header">
       <p>Past and Future fabrics exhibition for Zara</p>
     </Constraint>
@@ -50,6 +52,40 @@ import Related from "../components/project/Related.astro";
     <Related />
     <Footer />
   </body>
+
+  <script>
+    // Flags the body once content has scrolled fully over the header title,
+    // which the nav title and section nav use to switch state together
+    const HIDDEN_CLASS = "isProjectTitleHidden";
+
+    const header = document.querySelector<HTMLElement>(".header");
+    const title = header?.querySelector<HTMLElement>("p");
+
+    if (header && title) {
+      let frame: number | undefined;
+
+      const update = () => {
+        frame = undefined;
+        // The title is fixed and clipped by the header, so it is hidden once
+        // the header's bottom edge passes above the title's top edge
+        const isHidden =
+          header.getBoundingClientRect().bottom <=
+          title.getBoundingClientRect().top;
+
+        document.body.classList.toggle(HIDDEN_CLASS, isHidden);
+      };
+
+      const scheduleUpdate = () => {
+        frame ??= requestAnimationFrame(update);
+      };
+
+      window.addEventListener("scroll", scheduleUpdate, { passive: true });
+      window.addEventListener("resize", scheduleUpdate);
+      update();
+    } else {
+      document.body.classList.add(HIDDEN_CLASS);
+    }
+  </script>
 
   <style>
     .header {

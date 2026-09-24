@@ -1,0 +1,243 @@
+---
+import { content, getSections } from "../../data/project";
+
+const sections = getSections(content);
+---
+
+<section-nav class="section-nav">
+  <nav class="expanded" aria-label="Sections">
+    {
+      sections.map((section) => (
+        <a class="anchor" href={`#${section.id}`}>
+          <div class="images">
+            {section.images.map((image) => (
+              <img src={image} alt="" />
+            ))}
+          </div>
+          <div class="text">
+            <p>{section.number}</p>
+            <p>{section.title}</p>
+          </div>
+        </a>
+      ))
+    }
+  </nav>
+  <nav class="compact" aria-label="Sections">
+    {
+      sections.map((section) => (
+        <a
+          class="anchor"
+          href={`#${section.id}`}
+          data-section={section.id}
+          title={section.title}
+        >
+          <div class="images">
+            {section.images.map((image) => (
+              <img src={image} alt="" />
+            ))}
+          </div>
+        </a>
+      ))
+    }
+  </nav>
+</section-nav>
+
+<script>
+  // A section becomes active once its heading passes this viewport fraction
+  const ACTIVE_LINE = 0.5;
+
+  class SectionNav extends HTMLElement {
+    #anchors: HTMLAnchorElement[] = [];
+    #targets: HTMLElement[] = [];
+    #controller?: AbortController;
+    #frame?: number;
+
+    connectedCallback() {
+      this.#anchors = [
+        ...this.querySelectorAll<HTMLAnchorElement>(".compact [data-section]"),
+      ];
+      this.#targets = this.#anchors
+        .map((anchor) => document.getElementById(anchor.dataset.section!))
+        .filter((target): target is HTMLElement => target !== null);
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      window.addEventListener("scroll", this.#scheduleUpdate, {
+        signal,
+        passive: true,
+      });
+      window.addEventListener("resize", this.#scheduleUpdate, { signal });
+
+      this.#update();
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+      if (this.#frame) cancelAnimationFrame(this.#frame);
+    }
+
+    #scheduleUpdate = () => {
+      if (this.#frame) return;
+
+      this.#frame = requestAnimationFrame(() => {
+        this.#frame = undefined;
+        this.#update();
+      });
+    };
+
+    #update = () => {
+      const { innerHeight } = window;
+
+      // Last section whose heading has passed the active line; the first
+      // section stays active above its heading since it owns the header image
+      const line = innerHeight * ACTIVE_LINE;
+      let activeIndex = 0;
+
+      this.#targets.forEach((target, index) => {
+        if (target.getBoundingClientRect().top <= line) {
+          activeIndex = index;
+        }
+      });
+
+      const activeId = this.#targets[activeIndex]?.id;
+
+      for (const anchor of this.#anchors) {
+        anchor.classList.toggle(
+          "isActive",
+          anchor.dataset.section === activeId,
+        );
+      }
+    };
+  }
+
+  customElements.define("section-nav", SectionNav);
+</script>
+
+<style>
+  .section-nav {
+    position: fixed;
+    z-index: 999;
+    top: var(--spacing-40);
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  nav {
+    transition: opacity 0.3s;
+  }
+
+  .expanded {
+    display: flex;
+    gap: var(--spacing-5);
+    padding: var(--spacing-15);
+    overflow-x: auto;
+    scrollbar-width: none;
+    opacity: 0;
+
+    .anchor {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-10);
+      flex-shrink: 0;
+    }
+
+    .images {
+      display: flex;
+      height: 159px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      max-width: none;
+      object-fit: cover;
+    }
+
+    .text {
+      @mixin body;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-5);
+      color: var(--color-link);
+      max-width: 70%;
+      white-space: nowrap;
+    }
+
+    .anchor:hover .text {
+      color: black;
+    }
+  }
+
+  .compact {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-5);
+
+    .images {
+      display: flex;
+      width: 28.5px;
+      height: 35.5px;
+      border-radius: 5px;
+      overflow: hidden;
+      /* Lets width animate to and from auto where supported */
+      interpolate-size: allow-keywords;
+      transition:
+        width 0.3s,
+        height 0.3s;
+    }
+
+    img {
+      flex-shrink: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Idle anchors show just the first image, cropped */
+    .anchor:not(.isActive) img:not(:first-child) {
+      display: none;
+    }
+
+    .anchor.isActive {
+      .images {
+        width: auto;
+        height: 71px;
+      }
+
+      img {
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+
+  /* Expanded until the page flags the header title as scrolled over */
+  .expanded {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .compact {
+    opacity: 0;
+  }
+
+  :global(.isProjectTitleHidden) {
+    .expanded {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .compact {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+</style>

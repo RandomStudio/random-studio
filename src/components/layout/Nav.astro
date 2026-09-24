@@ -59,19 +59,6 @@ import DownloadIcon from "../../icons/download.svg";
       li.classList.toggle("isActive", li === item);
     }
   });
-
-  const title = document.querySelector<HTMLElement>(".title");
-  const header = document.querySelector(".header");
-
-  if (title && header) {
-    const observer = new IntersectionObserver(([entry]) => {
-      title.classList.toggle("isVisible", !entry.isIntersecting);
-    });
-
-    observer.observe(header);
-  } else {
-    title?.classList.add("isVisible");
-  }
 </script>
 
 <style>
@@ -134,10 +121,10 @@ import DownloadIcon from "../../icons/download.svg";
     text-align: center;
     opacity: 0;
     transition: opacity 0.2s;
-
-    &.isVisible {
-      opacity: 1;
-    }
+  }
+  /* Set on body by the page once the header title is scrolled over */
+  :global(.isProjectTitleHidden) .title {
+    opacity: 1;
   }
   .presskit {
     grid-column: 16 / span 5;
@@ -147,9 +134,20 @@ import DownloadIcon from "../../icons/download.svg";
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    color: black;
+
+    &:hover {
+      color: var(--color-link);
+    }
 
     a {
       margin-right: 0.5em;
+      color: inherit;
+    }
+
+    svg {
+      fill: currentColor;
+      stroke: currentColor;
     }
 
     .unknown {
