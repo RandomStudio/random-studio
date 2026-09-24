@@ -37,11 +37,14 @@ const { info, images } = Astro.props;
 </project-gallery>
 
 <script>
+  const EXIT_DELAY = 500;
+
   class ProjectGallery extends HTMLElement {
     #overlay!: HTMLElement;
     #selection!: HTMLElement;
     #hovered: HTMLImageElement | null = null;
     #controller?: AbortController;
+    #timer?: ReturnType<typeof setTimeout>;
 
     connectedCallback() {
       const images = this.querySelector(".images")!;
@@ -52,7 +55,7 @@ const { info, images } = Astro.props;
       const { signal } = this.#controller;
 
       images.addEventListener("mouseover", this.#onMouseOver, { signal });
-      images.addEventListener("mouseleave", this.#onMouseLeave, { signal });
+      images.addEventListener("mouseout", this.#onMouseOut, { signal });
       window.addEventListener("scroll", this.#positionSelection, {
         signal,
         passive: true,
@@ -61,26 +64,35 @@ const { info, images } = Astro.props;
 
     disconnectedCallback() {
       this.#controller?.abort();
+      clearTimeout(this.#timer);
     }
 
     #onMouseOver = ({ target }: Event) => {
       if (!(target instanceof HTMLImageElement)) return;
 
+      clearTimeout(this.#timer);
       this.#hovered = target;
       this.#overlay.style.backgroundImage = `url("${target.currentSrc}")`;
       this.#overlay.hidden = false;
       this.#positionSelection();
     };
 
-    #onMouseLeave = () => {
+    #onMouseOut = ({ target }: Event) => {
+      if (!(target instanceof HTMLImageElement)) return;
+
       this.#hovered = null;
+      this.#timer = setTimeout(this.#hide, EXIT_DELAY);
+    };
+
+    #hide = () => {
       this.#overlay.hidden = true;
     };
 
     #positionSelection = () => {
       if (!this.#hovered) return;
 
-      const { top, left, width, height } = this.#hovered.getBoundingClientRect();
+      const { top, left, width, height } =
+        this.#hovered.getBoundingClientRect();
       Object.assign(this.#selection.style, {
         top: `${top}px`,
         left: `${left}px`,
@@ -154,6 +166,7 @@ const { info, images } = Astro.props;
       position: absolute;
       border: 1px solid var(--color-link);
       border-radius: 5px;
+      box-shadow: 0 0 12px var(--color-link);
     }
   }
 
