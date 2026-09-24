@@ -1,0 +1,194 @@
+---
+import FullscreenIcon from "../../icons/fullscreen.svg";
+
+type Props = {
+  src: string;
+  colSpan?: number;
+  colStart?: number;
+  alignSelf?: "start" | "center" | "end";
+};
+
+const { src, colSpan, colStart, alignSelf } = Astro.props;
+---
+
+<project-video
+  class="video"
+  style={{
+    gridColumn: `${colStart} / span ${colSpan}`,
+    alignSelf: alignSelf ?? "center",
+  }}
+>
+  <video src={src} controls={false} playsinline muted loop autoplay></video>
+  <div class="controls">
+    <p class="time">00:00:00</p>
+    <button class="control" data-action="fullscreen" aria-label="Fullscreen">
+      <FullscreenIcon />
+    </button>
+    <button class="control toggle" data-action="play" data-on>
+      <span>Pause</span>
+      <span>Play</span>
+    </button>
+    <button class="control toggle" data-action="sound">
+      <span>Sound On</span>
+      <span>Sound Off</span>
+    </button>
+  </div>
+</project-video>
+
+<script>
+  const pad = (value: number) => String(value).padStart(2, "0");
+
+  const formatTime = (seconds: number) => {
+    const total = Math.floor(seconds);
+    const hours = Math.floor(total / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    return `${pad(hours)}:${pad(minutes)}:${pad(total % 60)}`;
+  };
+
+  class ProjectVideo extends HTMLElement {
+    #video!: HTMLVideoElement;
+    #time!: HTMLElement;
+    #play!: HTMLButtonElement;
+    #sound!: HTMLButtonElement;
+    #controller?: AbortController;
+
+    connectedCallback() {
+      this.#video = this.querySelector("video")!;
+      this.#time = this.querySelector(".time")!;
+      this.#play = this.querySelector('[data-action="play"]')!;
+      this.#sound = this.querySelector('[data-action="sound"]')!;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      this.#video.addEventListener("timeupdate", this.#updateTime, { signal });
+      this.#video.addEventListener("play", this.#updatePlay, { signal });
+      this.#video.addEventListener("pause", this.#updatePlay, { signal });
+      this.#video.addEventListener("volumechange", this.#updateSound, {
+        signal,
+      });
+      this.querySelector(".controls")!.addEventListener(
+        "click",
+        this.#onClick,
+        {
+          signal,
+        },
+      );
+
+      this.#updateTime();
+      this.#updatePlay();
+      this.#updateSound();
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+    }
+
+    #onClick = ({ target }: Event) => {
+      const button = (target as Element).closest<HTMLButtonElement>(
+        "[data-action]",
+      );
+      if (!button) return;
+
+      switch (button.dataset.action) {
+        case "fullscreen":
+          this.#enterFullscreen();
+          break;
+        case "play":
+          this.#video.paused ? this.#video.play() : this.#video.pause();
+          break;
+        case "sound":
+          this.#video.muted = !this.#video.muted;
+          break;
+      }
+    };
+
+    #enterFullscreen = () => {
+      const video = this.#video as HTMLVideoElement & {
+        webkitEnterFullscreen?: () => void;
+      };
+
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else {
+        // iOS Safari only supports fullscreen on the video element itself
+        video.webkitEnterFullscreen?.();
+      }
+    };
+
+    #updateTime = () => {
+      this.#time.textContent = formatTime(this.#video.currentTime);
+    };
+
+    #updatePlay = () => {
+      this.#play.toggleAttribute("data-on", !this.#video.paused);
+    };
+
+    #updateSound = () => {
+      this.#sound.toggleAttribute("data-on", !this.#video.muted);
+    };
+  }
+
+  customElements.define("project-video", ProjectVideo);
+</script>
+
+<style>
+  .video {
+    display: block;
+    position: relative;
+  }
+
+  .controls {
+    position: absolute;
+    bottom: var(--spacing-15);
+    left: var(--spacing-15);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-15);
+    visibility: hidden;
+  }
+
+  .video:hover .controls {
+    visibility: visible;
+  }
+
+  .time,
+  .control {
+    @mixin h3;
+    color: #a3a3a3;
+    white-space: nowrap;
+  }
+
+  .time {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .control {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  .toggle {
+    display: grid;
+    justify-items: start;
+
+    > span {
+      grid-area: 1 / 1;
+    }
+
+    &[data-on] > :last-child,
+    &:not([data-on]) > :first-child {
+      visibility: hidden;
+    }
+  }
+
+  :global(.mode--text-only) {
+    .video {
+      display: none;
+    }
+  }
+</style>

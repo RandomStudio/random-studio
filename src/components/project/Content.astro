@@ -4,6 +4,7 @@ import Constraint from "../../components/layout/Constraint.astro";
 import Gallery from "./Gallery.astro";
 import TextBlock from "./TextBlock.astro";
 import ProjectImage from "./ProjectImage.astro";
+import ProjectVideo from "./ProjectVideo.astro";
 
 type ContentBlock = {
   colSpan: number;
@@ -130,6 +131,7 @@ const content: ContentBlock[] = [
     colStart: 1,
     type: "text",
     title: "A Manifesto of Materials",
+    isFullWidth: false,
     copy: [
       "At the core of the 200 square meter space, visitors can read a printed manifesto that conveys a detailed breakdown of the composition and sourcing of the materials on view.",
     ],
@@ -228,17 +230,11 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
 
         if (block.type === "video") {
           return (
-            <video
+            <ProjectVideo
               src={block.image}
-              controls={false}
-              playsinline
-              muted
-              loop
-              autoplay
-              style={{
-                gridColumn: `${block.colStart} / span ${block.colSpan}`,
-                alignSelf: block.alignment ?? "center",
-              }}
+              colSpan={block.colSpan}
+              colStart={block.colStart}
+              alignSelf={block.alignment}
             />
           );
         }

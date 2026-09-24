@@ -54,7 +54,9 @@ const { info, images } = Astro.props;
       this.#controller = new AbortController();
       const { signal } = this.#controller;
 
-      images.addEventListener("mouseover", this.#onMouseOver, { signal });
+      // mousemove rather than mouseover: scrolling an image under a still
+      // pointer fires mouseover, but only real pointer movement fires mousemove
+      images.addEventListener("mousemove", this.#onMouseMove, { signal });
       images.addEventListener("mouseout", this.#onMouseOut, { signal });
       window.addEventListener("scroll", this.#positionSelection, {
         signal,
@@ -67,8 +69,10 @@ const { info, images } = Astro.props;
       clearTimeout(this.#timer);
     }
 
-    #onMouseOver = ({ target }: Event) => {
-      if (!(target instanceof HTMLImageElement)) return;
+    #onMouseMove = ({ target }: Event) => {
+      if (!(target instanceof HTMLImageElement) || target === this.#hovered) {
+        return;
+      }
 
       clearTimeout(this.#timer);
       this.#hovered = target;
