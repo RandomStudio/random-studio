@@ -1,0 +1,287 @@
+---
+import MoreInfoIcon from "../../icons/more-info.svg";
+
+import type { MoreInfo } from "../../data/project";
+
+type Props = MoreInfo;
+
+const { title, content } = Astro.props;
+---
+
+<more-info class="more-info">
+  <button class="trigger" type="button" data-action="open">
+    <span class="label">
+      More Info
+      <MoreInfoIcon />
+    </span>
+    <span class="teaser">{title}</span>
+  </button>
+
+  <dialog class="dialog" aria-label={title}>
+    <div class="backdrop" data-action="close"></div>
+    <p class="cursor" aria-hidden="true">Close</p>
+    <div class="panel" tabindex="-1" autofocus>
+      <p class="title">{title}</p>
+      <div class="content">
+        {
+          content.map((block) => {
+            if (block.type === "text") {
+              return (
+                <div class="copy">
+                  {block.copy.map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              );
+            }
+
+            return (
+              <img
+                src={block.image}
+                alt=""
+                style={{ width: `${block.width}%` }}
+              />
+            );
+          })
+        }
+      </div>
+      <button class="close" type="button" data-action="close">Close</button>
+    </div>
+  </dialog>
+</more-info>
+
+<script>
+  class MoreInfoPanel extends HTMLElement {
+    #dialog!: HTMLDialogElement;
+    #panel!: HTMLElement;
+    #cursor!: HTMLElement;
+    #controller?: AbortController;
+
+    connectedCallback() {
+      this.#dialog = this.querySelector("dialog")!;
+      this.#panel = this.querySelector(".panel")!;
+      this.#cursor = this.querySelector(".cursor")!;
+      const backdrop = this.querySelector(".backdrop")!;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      this.addEventListener("click", this.#onClick, { signal });
+      // Escape closes through close() so it animates out like a click does
+      this.#dialog.addEventListener(
+        "cancel",
+        (event) => {
+          event.preventDefault();
+          this.#close();
+        },
+        { signal },
+      );
+      backdrop.addEventListener("pointermove", this.#moveCursor, { signal });
+      backdrop.addEventListener("pointerleave", this.#hideCursor, { signal });
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+    }
+
+    #onClick = ({ target }: Event) => {
+      const button = (target as Element).closest<HTMLElement>("[data-action]");
+      if (!button) return;
+
+      switch (button.dataset.action) {
+        case "open":
+          this.#open();
+          break;
+        case "close":
+          this.#close();
+          break;
+      }
+    };
+
+    #open = () => {
+      this.#panel.scrollTop = 0;
+      this.#dialog.showModal();
+      // Force a style flush so the panel transitions in from off-screen
+      this.#dialog.getBoundingClientRect();
+      this.#dialog.toggleAttribute("data-visible", true);
+    };
+
+    #close = () => {
+      if (!this.#dialog.hasAttribute("data-visible")) return;
+
+      this.#dialog.toggleAttribute("data-visible", false);
+      this.#hideCursor();
+      this.#panel.addEventListener(
+        "transitionend",
+        () => {
+          if (!this.#dialog.hasAttribute("data-visible")) {
+            this.#dialog.close();
+          }
+        },
+        { once: true },
+      );
+    };
+
+    #moveCursor = ({ clientX, clientY, pointerType }: PointerEvent) => {
+      if (pointerType !== "mouse") return;
+
+      this.#cursor.style.translate = `${clientX}px ${clientY}px`;
+      this.#cursor.toggleAttribute("data-visible", true);
+    };
+
+    #hideCursor = () => {
+      this.#cursor.toggleAttribute("data-visible", false);
+    };
+  }
+
+  customElements.define("more-info", MoreInfoPanel);
+</script>
+
+<style>
+  .more-info {
+    display: block;
+  }
+
+  .trigger {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-10);
+    width: calc(100% + 2 * var(--spacing-10));
+    margin: calc(-1 * var(--spacing-10));
+    padding: var(--spacing-10);
+    border: 0;
+    background: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--color-foreground);
+
+      .label {
+        color: black;
+      }
+    }
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-link);
+  }
+
+  .dialog {
+    /* Ease-out quint: quick start, long soft settle, never overshoots */
+    --panel-transition: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    /* clip rather than hidden: hidden still lets focus scroll the dialog
+       sideways to reach the off-screen panel, which then jumps back */
+    overflow: clip;
+
+    &::backdrop {
+      background: none;
+    }
+  }
+
+  .backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(255 255 255 / 0.6);
+    opacity: 0;
+    transition: opacity var(--panel-transition);
+
+    @media (hover: hover) and (pointer: fine) {
+      cursor: none;
+    }
+  }
+
+  .cursor {
+    @mixin h3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    visibility: hidden;
+
+    &[data-visible] {
+      visibility: visible;
+    }
+  }
+
+  .panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40vw;
+    padding: 200px var(--spacing-60) var(--spacing-80);
+    background-color: rgb(255 255 255 / 0.97);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    outline: none;
+    translate: 100% 0;
+    transition: translate var(--panel-transition);
+  }
+
+  .dialog[data-visible] {
+    .backdrop {
+      opacity: 1;
+    }
+    .panel {
+      translate: 0 0;
+    }
+  }
+
+  .title,
+  .close {
+    @mixin h3;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .title {
+    margin-bottom: 200px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-50);
+  }
+
+  .copy {
+    @mixin h3;
+    width: 100%;
+
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+
+  .close {
+    margin-top: var(--spacing-80);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: black;
+    cursor: pointer;
+  }
+
+  :global(html:has(dialog[open])) {
+    overflow: hidden;
+  }
+</style>

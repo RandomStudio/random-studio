@@ -81,6 +81,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
             <TextBlock
               id={getSectionId(++sectionNumber)}
               title={block.title}
+              moreInfo={block.moreInfo}
               colSpan={block.colSpan}
               colStart={block.colStart}
               alignSelf={block.alignment}

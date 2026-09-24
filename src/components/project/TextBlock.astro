@@ -1,10 +1,14 @@
 ---
+import MoreInfo from "./MoreInfo.astro";
+
+import type { MoreInfo as MoreInfoData } from "../../data/project";
+
 type Props = {
   id?: string;
   colSpan: number;
   colStart: number;
   title: string;
-  moreInfo?: string;
+  moreInfo?: MoreInfoData;
   alignSelf?: "start" | "center" | "end";
 };
 
@@ -21,7 +25,13 @@ const { id, title, moreInfo, alignSelf } = Astro.props;
 >
   <div class="title">{title}</div>
   <div class="copy"><slot /></div>
-  {moreInfo && <div class="more-info">{moreInfo}</div>}
+  {
+    moreInfo && (
+      <div class="more-info">
+        <MoreInfo {...moreInfo} />
+      </div>
+    )
+  }
 </div>
 
 <style>
@@ -33,8 +43,8 @@ const { id, title, moreInfo, alignSelf } = Astro.props;
     gap: 16px;
     margin-top: var(--spacing-30);
     margin-bottom: var(--spacing-40);
-    /* Keeps the heading clear of the fixed section nav when jumped to */
-    scroll-margin-top: 140px;
+    /* Where a section nav jump lands, relative to the heading */
+    scroll-margin-top: 20vh;
   }
   .title {
     grid-area: title;
