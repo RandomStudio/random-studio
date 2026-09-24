@@ -3,9 +3,6 @@ import Constraint from "./Constraint.astro";
 import DownloadIcon from "../../icons/download.svg";
 ---
 
-<Constraint class="title-grid" type="full">
-  <h1 class="title">Past and Future fabrics exhibition for Zara</h1>
-</Constraint>
 <Constraint class="outer" type="full">
   <div class="mode">
     Mode
@@ -15,6 +12,7 @@ import DownloadIcon from "../../icons/download.svg";
       <li data-mode="image">Image</li>
     </ul>
   </div>
+  <h1 class="title">Past and Future fabrics exhibition for Zara</h1>
   <div class="presskit">
     <a href="#">Presskit [23,35mb]</a><DownloadIcon />
   </div>
@@ -116,6 +114,12 @@ import DownloadIcon from "../../icons/download.svg";
       }
     }
   }
+  .title {
+    grid-column: 6 / span 10;
+    margin: 0;
+    font: inherit;
+    text-align: center;
+  }
   .presskit {
     grid-column: 16 / span 5;
     text-align: right;
@@ -132,26 +136,5 @@ import DownloadIcon from "../../icons/download.svg";
     .unknown {
       margin-left: 0.5em;
     }
-  }
-
-  .title-grid {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    margin-top: 50vh;
-    margin-bottom: -50vh;
-    max-width: var(--max-width);
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    align-items: start;
-    height: 0px;
-  }
-
-  .title {
-    @mixin h3;
-    grid-column: 6 / span 10;
-    margin: 0;
-    padding: 1em 0;
-    text-align: center;
   }
 </style>

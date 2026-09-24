@@ -131,6 +131,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
 }
 
 img,
@@ -183,7 +187,7 @@ textarea {
 
   --gutter: 15px;
 
-  --max-width: 1440px;
+  --max-width: 1888px;
 }
 
 body {

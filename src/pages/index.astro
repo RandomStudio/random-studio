@@ -32,11 +32,11 @@ import Related from "../components/project/Related.astro";
     <Menu client:load />
     <Constraint client:load type="full" class="header">
       <img src="/project/header.png" alt="Header image" />
+      <p>Past and Future fabrics exhibition for Zara</p>
     </Constraint>
-    <Content client:idle={{ timeout: 1000 }} />
-    <Related client:idle={{ timeout: 1000 }} />
+    <Content />
+    <Related />
     <Credits
-      client:idle={{ timeout: 1000 }}
       credits={[
         ["For", "Zara"],
         ["Year", "2025"],
@@ -54,18 +54,18 @@ import Related from "../components/project/Related.astro";
 
   <style>
     .header {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 100%;
       position: relative;
       height: 98svh;
+      /* Unlike overflow: hidden, clip-path also clips fixed-position children */
+      clip-path: inset(0);
 
-      h1 {
+      p {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        margin: 0;
         @mixin h3;
-        grid-column: 1;
-        grid-row: 1;
-        place-self: center;
-        z-index: 1;
         color: white;
         mix-blend-mode: difference;
       }
