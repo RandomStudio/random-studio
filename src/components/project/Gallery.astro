@@ -1,13 +1,9 @@
 ---
-import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
+import type { GalleryInfo } from "../../data/project";
 
 type Props = {
   images: string[];
-  info?: {
-    title: string;
-    text: string[];
-  };
+  info?: GalleryInfo;
 };
 
 const { info, images } = Astro.props;
@@ -15,22 +11,18 @@ const { info, images } = Astro.props;
 
 <project-gallery class:list={["gallery", info && "hasInfo"]}>
   <div class="images">
-    {
-      images.map((image) => (
-        <img class="image" src={image} alt="gallery image" />
-      ))
-    }
+    {images.map((image) => (
+      <img class="image" src={image} alt="gallery image" />
+    ))}
   </div>
-  {
-    info && (
-      <div class="info">
-        <p class="title">{info.title}</p>
-        {info.text.map((paragraph) => (
-          <p>{paragraph}</p>
-        ))}
-      </div>
-    )
-  }
+  {info && (
+    <div class="info">
+      <p class="title">{info.title}</p>
+      {info.text.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+  )}
   <div class="overlay" hidden>
     <div class="selection"></div>
   </div>

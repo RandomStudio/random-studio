@@ -10,7 +10,9 @@ import Search from "./Search/Search.astro";
 ---
 
 <random-menu class="menu">
-  <div class="logo"><RIcon /></div>
+  <div class="logo">
+    <RIcon />
+  </div>
   <div class="panel">
     <Collapsible name="menu">
       <Collapsible name="preview">
@@ -52,7 +54,9 @@ import Search from "./Search/Search.astro";
     openedAt !== undefined && now - openedAt < HOVER_GRACE_DURATION;
 
   const getOpenCollapsibles = (isOpen: boolean, view: View) =>
-    isOpen ? ["menu", ...COLLAPSIBLES_BY_VIEW[view]] : COLLAPSIBLES_BY_VIEW[view];
+    isOpen
+      ? ["menu", ...COLLAPSIBLES_BY_VIEW[view]]
+      : COLLAPSIBLES_BY_VIEW[view];
 
   const getLabelAction = (isOpen: boolean, view: View): LabelAction => {
     if (!isOpen) {
@@ -244,8 +248,9 @@ import Search from "./Search/Search.astro";
     position: fixed;
     z-index: 1000;
     bottom: calc(2vh + 56px);
-    left: 50%;
-    transform: translateX(-50%);
+    inset-inline: 0;
+    width: fit-content;
+    margin-inline: auto;
     display: flex;
     flex-direction: row;
     align-items: flex-end;

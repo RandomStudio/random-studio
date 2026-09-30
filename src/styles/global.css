@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-Thin.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-Thin.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-Thin.woff") format("woff");
   font-display: swap;
   font-weight: 100;
@@ -9,7 +10,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-ThinItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-ThinItalic.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-ThinItalic.woff") format("woff");
   font-display: swap;
   font-weight: 100;
@@ -18,7 +20,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-Light.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-Light.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-Light.woff") format("woff");
   font-display: swap;
   font-weight: 300;
@@ -27,7 +30,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-LightItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-LightItalic.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-LightItalic.woff") format("woff");
   font-display: swap;
   font-weight: 300;
@@ -36,7 +40,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-Regular.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-Regular.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-Regular.woff") format("woff");
   font-display: swap;
   font-weight: 400;
@@ -45,7 +50,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-RegularItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-RegularItalic.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-RegularItalic.woff") format("woff");
   font-display: swap;
   font-weight: 400;
@@ -54,7 +60,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-Medium.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-Medium.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-Medium.woff") format("woff");
   font-display: swap;
   font-weight: 500;
@@ -63,7 +70,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-MediumItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-MediumItalic.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-MediumItalic.woff") format("woff");
   font-display: swap;
   font-weight: 500;
@@ -72,7 +80,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-Bold.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-Bold.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-Bold.woff") format("woff");
   font-display: swap;
   font-weight: 700;
@@ -81,7 +90,8 @@
 
 @font-face {
   font-family: "Oracle";
-  src: url("/fonts/Oracle/ABCOracle-BoldItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/Oracle/ABCOracle-BoldItalic.woff2") format("woff2"),
     url("/fonts/Oracle/ABCOracle-BoldItalic.woff") format("woff");
   font-display: swap;
   font-weight: 700;
@@ -143,7 +153,9 @@ svg {
   max-width: 100%;
 }
 
-img,picture,video {
+img,
+picture,
+video {
   width: 100%;
 }
 
@@ -169,8 +181,8 @@ textarea {
 
 :root {
   --color-background: #ffffff;
-  --color-foreground: #F7F7F7;
-  --color-link: #BEC0C5;
+  --color-foreground: #f7f7f7;
+  --color-link: #bec0c5;
 
   --spacing-5: 0.3125rem;
   --spacing-10: 0.625rem;
@@ -202,6 +214,12 @@ a,
   }
 }
 
-h1,h2,h3,h4,h5,h6,p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   text-box: trim-both cap alphabetic;
 }

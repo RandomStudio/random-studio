@@ -6,11 +6,7 @@ import TextBlock from "./TextBlock.astro";
 import ProjectImage from "./ProjectImage.astro";
 import ProjectVideo from "./ProjectVideo.astro";
 
-import {
-  content,
-  getSectionId,
-  type ContentBlock,
-} from "../../data/project";
+import { content, getSectionId, type ContentBlock } from "../../data/project";
 
 let sectionNumber = 0;
 
@@ -49,56 +45,54 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
 };
 ---
 
-{
-  splitContentBlocksByConstraint(content).map((constraint) => (
-    <Constraint type={constraint.constraintType} class="grid">
-      {constraint.blocks.map((block) => {
-        if (block.type === "image") {
-          return (
-            <ProjectImage
-              image={block.image}
-              alt=""
-              colSpan={block.colSpan}
-              colStart={block.colStart}
-              alignSelf={block.alignment}
-            />
-          );
-        }
+{splitContentBlocksByConstraint(content).map((constraint) => (
+  <Constraint type={constraint.constraintType} class="grid">
+    {constraint.blocks.map((block) => {
+      if (block.type === "image") {
+        return (
+          <ProjectImage
+            image={block.image}
+            alt=""
+            colSpan={block.colSpan}
+            colStart={block.colStart}
+            alignSelf={block.alignment}
+          />
+        );
+      }
 
-        if (block.type === "video") {
-          return (
-            <ProjectVideo
-              src={block.image}
-              colSpan={block.colSpan}
-              colStart={block.colStart}
-              alignSelf={block.alignment}
-            />
-          );
-        }
+      if (block.type === "video") {
+        return (
+          <ProjectVideo
+            src={block.image}
+            colSpan={block.colSpan}
+            colStart={block.colStart}
+            alignSelf={block.alignment}
+          />
+        );
+      }
 
-        if (block.type === "text") {
-          return (
-            <TextBlock
-              id={getSectionId(++sectionNumber)}
-              title={block.title}
-              moreInfo={block.moreInfo}
-              colSpan={block.colSpan}
-              colStart={block.colStart}
-              alignSelf={block.alignment}
-            >
-              {block.copy.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-            </TextBlock>
-          );
-        }
-        if (block.type === "gallery") {
-          return <Gallery images={block.images} info={block.info} />;
-        }
-      })}
-    </Constraint>
-  ))
-}
+      if (block.type === "text") {
+        return (
+          <TextBlock
+            id={getSectionId(++sectionNumber)}
+            title={block.title}
+            moreInfo={block.moreInfo}
+            colSpan={block.colSpan}
+            colStart={block.colStart}
+            alignSelf={block.alignment}
+          >
+            {block.copy.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </TextBlock>
+        );
+      }
+      if (block.type === "gallery") {
+        return <Gallery images={block.images} info={block.info} />;
+      }
+    })}
+  </Constraint>
+))}
 
 <style>
   .grid {

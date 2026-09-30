@@ -6,39 +6,35 @@ const sections = getSections(content);
 
 <section-nav class="section-nav">
   <nav class="expanded" aria-label="Sections">
-    {
-      sections.map((section) => (
-        <a class="anchor" href={`#${section.id}`}>
-          <div class="images">
-            {section.images.map((image) => (
-              <img src={image} alt="" />
-            ))}
-          </div>
-          <div class="text">
-            <p>{section.number}</p>
-            <p>{section.title}</p>
-          </div>
-        </a>
-      ))
-    }
+    {sections.map((section) => (
+      <a class="anchor" href={`#${section.id}`}>
+        <div class="images">
+          {section.images.map((image) => (
+            <img src={image} alt="" />
+          ))}
+        </div>
+        <div class="text">
+          <p>{section.number}</p>
+          <p>{section.title}</p>
+        </div>
+      </a>
+    ))}
   </nav>
   <nav class="compact" aria-label="Sections">
-    {
-      sections.map((section) => (
-        <a
-          class="anchor"
-          href={`#${section.id}`}
-          data-section={section.id}
-          title={section.title}
-        >
-          <div class="images">
-            {section.images.map((image) => (
-              <img src={image} alt="" />
-            ))}
-          </div>
-        </a>
-      ))
-    }
+    {sections.map((section) => (
+      <a
+        class="anchor"
+        href={`#${section.id}`}
+        data-section={section.id}
+        title={section.title}
+      >
+        <div class="images">
+          {section.images.map((image) => (
+            <img src={image} alt="" />
+          ))}
+        </div>
+      </a>
+    ))}
   </nav>
 </section-nav>
 

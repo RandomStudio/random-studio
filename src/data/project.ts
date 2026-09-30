@@ -10,6 +10,11 @@ export type MoreInfoBlock =
       width: number;
     };
 
+export type GalleryInfo = {
+  title: string;
+  text: string[];
+};
+
 export type MoreInfo = {
   title: string;
   content: MoreInfoBlock[];
@@ -40,7 +45,7 @@ export type ContentBlock = {
   | {
       type: "gallery";
       images: string[];
-      info?: unknown;
+      info?: GalleryInfo;
     }
 );
 

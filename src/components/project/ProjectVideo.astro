@@ -21,7 +21,11 @@ const { src, colSpan, colStart, alignSelf } = Astro.props;
   <video src={src} controls={false} playsinline muted loop autoplay></video>
   <div class="controls">
     <p class="time">00:00:00</p>
-    <button class="control link" data-action="fullscreen" aria-label="Fullscreen">
+    <button
+      class="control link"
+      data-action="fullscreen"
+      aria-label="Fullscreen"
+    >
       <FullscreenIcon />
     </button>
     <button class="control link toggle" data-action="play" data-on>
@@ -95,7 +99,11 @@ const { src, colSpan, colStart, alignSelf } = Astro.props;
           this.#enterFullscreen();
           break;
         case "play":
-          this.#video.paused ? this.#video.play() : this.#video.pause();
+          if (this.#video.paused) {
+            this.#video.play();
+          } else {
+            this.#video.pause();
+          }
           break;
         case "sound":
           this.#video.muted = !this.#video.muted;

@@ -4,43 +4,39 @@ import { linkGroups, offices } from "../menuData";
 
 <div class="contact">
   <div class="group">
-    {
-      linkGroups.map(({ heading, links }) => (
-        <div class="block">
-          <p>{heading}</p>
-          <div class="content">
-            {links.map((link) => (
-              <a class="external" href="#">
-                {link}
-              </a>
-            ))}
-          </div>
+    {linkGroups.map(({ heading, links }) => (
+      <div class="block">
+        <p>{heading}</p>
+        <div class="content">
+          {links.map((link) => (
+            <a class="external" href="#">
+              {link}
+            </a>
+          ))}
         </div>
-      ))
-    }
+      </div>
+    ))}
   </div>
   <div class="group">
-    {
-      offices.map((office) => (
-        <div class="block">
-          <p>{office.city}</p>
-          <div class="content">
-            <p>
-              {office.address.map((line) => (
-                <>
-                  {line}
-                  <br />
-                </>
-              ))}
-              {office.phone}
-            </p>
-            <a class="external" href="#">
-              Map
-            </a>
-          </div>
+    {offices.map((office) => (
+      <div class="block">
+        <p>{office.city}</p>
+        <div class="content">
+          <p>
+            {office.address.map((line) => (
+              <>
+                {line}
+                <br />
+              </>
+            ))}
+            {office.phone}
+          </p>
+          <a class="external" href="#">
+            Map
+          </a>
         </div>
-      ))
-    }
+      </div>
+    ))}
   </div>
 </div>
 

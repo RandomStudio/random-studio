@@ -10,7 +10,10 @@
   },
   "eslint.validate": [
     "javascript",
-    "javascriptreact"
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact",
   ],
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "[javascript]": {

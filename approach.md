@@ -2,18 +2,18 @@
 
 ## Units
 
-| Use | Unit | Why |
-|---|---|---|
-| Root font size | **don't set it** | `1rem` must mean the reader's base size. Setting px on `html` discards their preference. |
-| Type | **rem** | Only unit that responds when a user changes their default font size. GOV.UK Frontend does this. |
-| Vertical spacing | **rem** | If text grows and the space between blocks doesn't, the text tightens and readability drops. |
-| Horizontal padding | **px** | A reader with larger text needs *more* line width. Scaling horizontal padding squeezes the column exactly when it needs room. |
-| Breakpoints | **px** | `rem`/`em` in media queries resolve against the browser default, not our root — so `40rem` means 640px regardless. px avoids the trap. |
-| Borders, hairlines, shadows | **px** | Shouldn't scale with type. |
-| One line of space | **lh** | `1lh` = the element's computed line-height. 93.5% support. |
-| Full-height sections | **svh** | Plain `vh` equals `lvh`, so content hides behind mobile browser UI. Our header is `98vh`. |
+| Use                         | Unit             | Why                                                                                                                                    |
+| --------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Root font size              | **don't set it** | `1rem` must mean the reader's base size. Setting px on `html` discards their preference.                                               |
+| Type                        | **rem**          | Only unit that responds when a user changes their default font size. GOV.UK Frontend does this.                                        |
+| Vertical spacing            | **rem**          | If text grows and the space between blocks doesn't, the text tightens and readability drops.                                           |
+| Horizontal padding          | **px**           | A reader with larger text needs _more_ line width. Scaling horizontal padding squeezes the column exactly when it needs room.          |
+| Breakpoints                 | **px**           | `rem`/`em` in media queries resolve against the browser default, not our root — so `40rem` means 640px regardless. px avoids the trap. |
+| Borders, hairlines, shadows | **px**           | Shouldn't scale with type.                                                                                                             |
+| One line of space           | **lh**           | `1lh` = the element's computed line-height. 93.5% support.                                                                             |
+| Full-height sections        | **svh**          | Plain `vh` equals `lvh`, so content hides behind mobile browser UI. Our header is `98vh`.                                              |
 
-**Never use `%` for vertical margin or padding.** It resolves against the containing block's *width*, and grid/flex behaviour differs between engines.
+**Never use `%` for vertical margin or padding.** It resolves against the containing block's _width_, and grid/flex behaviour differs between engines.
 
 **Never use `em` on a container with no `font-size`.** It resolves against whatever was inherited. This is why `Related.astro`'s `row-gap: 2em` renders 24px, not the intended 32px.
 
@@ -29,7 +29,9 @@
 - **Layout owns the space between components.** A flow/stack utility, or `gap` where the parent is already flex/grid.
 
 ```css
-.flow > * + * { margin-block-start: var(--flow-space, 1rem); }
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1rem);
+}
 ```
 
 `* + *` skips the first child, so there's never a leading gap to fight. Children override `--flow-space` locally.
@@ -53,7 +55,12 @@
 `text-box-trim` reached Baseline in August 2026 (Chrome/Edge 133, Safari 18.2, Firefox 154):
 
 ```css
-h1, h2, h3, p { text-box: trim-both cap alphabetic; }
+h1,
+h2,
+h3,
+p {
+  text-box: trim-both cap alphabetic;
+}
 ```
 
 Trims the half-leading — the invisible space CSS puts above and below every line — so the space we specify is the space that appears. Without it, a heading at `line-height: 1.1` and body at `1.6` carry different hidden padding, which is why hand-tuned spacing never transfers between contexts. Only affects the first and last line of a block, not the gaps between wrapped lines. Degrades gracefully.

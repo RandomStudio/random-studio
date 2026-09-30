@@ -1,3 +1,7 @@
+---
+import Results from "./Results/Results.astro";
+---
+
 <search-form>
   <form class="search" role="search">
     <input
@@ -8,23 +12,36 @@
       placeholder="Type Here"
       type="text"
     />
-    <button class="submit" disabled type="submit">Search</button>
+    <button class="submit" disabled type="submit">
+      Search
+    </button>
   </form>
+  <Results />
 </search-form>
 
 <script>
+  import { createResultGroupElements } from "./Results/renderResults";
+  import { loadSearchIndex, searchProjects } from "./searchIndex";
+  import type { LoadedSearchIndex } from "./searchIndex";
+
   class SearchForm extends HTMLElement {
     #input!: HTMLInputElement;
     #submit!: HTMLButtonElement;
+    #results!: HTMLElement;
     #controller?: AbortController;
+    #searchIndex?: Promise<LoadedSearchIndex>;
 
     connectedCallback() {
       this.#input = this.querySelector(".input")!;
       this.#submit = this.querySelector(".submit")!;
+      this.#results = this.querySelector(".results")!;
 
       this.#controller = new AbortController();
       const { signal } = this.#controller;
 
+      this.#input.addEventListener("focus", this.#handleInputFocus, {
+        signal,
+      });
       this.#input.addEventListener("input", this.#handleInput, { signal });
       this.addEventListener("submit", this.#handleSubmit, { signal });
     }
@@ -33,8 +50,22 @@
       this.#controller?.abort();
     }
 
-    #handleInput = () => {
+    #getSearchIndex = () => (this.#searchIndex ??= loadSearchIndex());
+
+    #handleInputFocus = () => {
+      this.#getSearchIndex();
+    };
+
+    #handleInput = async () => {
       this.#submit.disabled = this.#input.value.trim() === "";
+
+      const searchIndex = await this.#getSearchIndex();
+
+      this.#results.replaceChildren(
+        ...createResultGroupElements(
+          searchProjects(searchIndex, this.#input.value),
+        ),
+      );
     };
 
     #handleSubmit = (event: Event) => {
@@ -46,6 +77,10 @@
 </script>
 
 <style>
+  search-form:has(.input:placeholder-shown) :global(.results) {
+    display: none;
+  }
+
   .search {
     display: flex;
     align-items: center;

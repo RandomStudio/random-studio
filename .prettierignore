@@ -2,3 +2,9 @@
 package.json
 package-lock.json
 public
+dist
+.astro
+.netlify
+cms
+src/data/searchData.json
+.vscode

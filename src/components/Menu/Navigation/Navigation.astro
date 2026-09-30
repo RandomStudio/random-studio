@@ -4,34 +4,44 @@ import { categories, defaultCategoryId } from "../menuData";
 
 <nav aria-label="Menu" class="navigation">
   <div class="row">
-    <button class="item" data-action="search" type="button">Search</button>
-    <button class="item" data-action="contact" type="button">Contact</button>
+    <button class="item" data-action="search" type="button">
+      Search
+    </button>
+    <button class="item" data-action="contact" type="button">
+      Contact
+    </button>
   </div>
   <div class="columns">
     <ul class="list">
       <li>
-        <button class="item" data-action="work" type="button">Work</button>
+        <button class="item" data-action="work" type="button">
+          Work
+        </button>
       </li>
-      <li><span class="item">News</span></li>
-      <li><a class="item" href="#">About</a></li>
+      <li>
+        <span class="item">News</span>
+      </li>
+      <li>
+        <a class="item" href="#">
+          About
+        </a>
+      </li>
     </ul>
     <ul class="list categories">
-      {
-        categories.map((category) => (
-          <li>
-            <a
-              class:list={[
-                "item",
-                { isActive: category.id === defaultCategoryId },
-              ]}
-              data-category={category.id}
-              href="#"
-            >
-              {category.name}
-            </a>
-          </li>
-        ))
-      }
+      {categories.map((category) => (
+        <li>
+          <a
+            class:list={[
+              "item",
+              { isActive: category.id === defaultCategoryId },
+            ]}
+            data-category={category.id}
+            href="#"
+          >
+            {category.name}
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
 </nav>

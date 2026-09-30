@@ -24,14 +24,14 @@ const { id, title, moreInfo, alignSelf } = Astro.props;
   }}
 >
   <div class="title">{title}</div>
-  <div class="copy"><slot /></div>
-  {
-    moreInfo && (
-      <div class="more-info">
-        <MoreInfo {...moreInfo} />
-      </div>
-    )
-  }
+  <div class="copy">
+    <slot />
+  </div>
+  {moreInfo && (
+    <div class="more-info">
+      <MoreInfo {...moreInfo} />
+    </div>
+  )}
 </div>
 
 <style>

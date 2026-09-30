@@ -19,33 +19,35 @@ const { title, content } = Astro.props;
 
   <dialog class="dialog" aria-label={title}>
     <div class="backdrop" data-action="close"></div>
-    <p class="cursor" aria-hidden="true">Close</p>
+    <p class="cursor" aria-hidden="true">
+      Close
+    </p>
     <div class="panel" tabindex="-1" autofocus>
       <p class="title">{title}</p>
       <div class="content">
-        {
-          content.map((block) => {
-            if (block.type === "text") {
-              return (
-                <div class="copy">
-                  {block.copy.map((paragraph) => (
-                    <p>{paragraph}</p>
-                  ))}
-                </div>
-              );
-            }
-
+        {content.map((block) => {
+          if (block.type === "text") {
             return (
-              <img
-                src={block.image}
-                alt=""
-                style={{ width: `${block.width}%` }}
-              />
+              <div class="copy">
+                {block.copy.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
             );
-          })
-        }
+          }
+
+          return (
+            <img
+              src={block.image}
+              alt=""
+              style={{ width: `${block.width}%` }}
+            />
+          );
+        })}
       </div>
-      <button class="close" type="button" data-action="close">Close</button>
+      <button class="close" type="button" data-action="close">
+        Close
+      </button>
     </div>
   </dialog>
 </more-info>
@@ -61,7 +63,7 @@ const { title, content } = Astro.props;
       this.#dialog = this.querySelector("dialog")!;
       this.#panel = this.querySelector(".panel")!;
       this.#cursor = this.querySelector(".cursor")!;
-      const backdrop = this.querySelector(".backdrop")!;
+      const backdrop = this.querySelector<HTMLElement>(".backdrop")!;
 
       this.#controller = new AbortController();
       const { signal } = this.#controller;

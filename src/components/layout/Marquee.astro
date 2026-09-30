@@ -14,17 +14,15 @@ const Element = href ? "a" : "div";
 
 <random-marquee class:list={[className, "marquee"]} {...rest}>
   <Element class="track" data-marquee-track="" href={href}>
-    {
-      Array.from({ length: STATIC_REPEATS }, (_, index) => (
-        <span
-          class="item"
-          data-marquee-item=""
-          aria-hidden={index === 0 ? undefined : "true"}
-        >
-          {text}
-        </span>
-      ))
-    }
+    {Array.from({ length: STATIC_REPEATS }, (_, index) => (
+      <span
+        class="item"
+        data-marquee-item=""
+        aria-hidden={index === 0 ? undefined : "true"}
+      >
+        {text}
+      </span>
+    ))}
   </Element>
 </random-marquee>
 

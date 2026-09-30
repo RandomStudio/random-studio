@@ -13,27 +13,23 @@ const { credits, collaborators } = Astro.props;
   <div class="credits">
     <p class="heading">Credits</p>
     <dl>
-      {
-        credits.map(([name, value]) => (
-          <>
-            <dt>{name}</dt>
-            <dd>{value}</dd>
-          </>
-        ))
-      }
+      {credits.map(([name, value]) => (
+        <>
+          <dt>{name}</dt>
+          <dd>{value}</dd>
+        </>
+      ))}
     </dl>
   </div>
   <div class="collaborators">
     <p class="heading">Collaborators</p>
     <dl>
-      {
-        collaborators.map(([name, value]) => (
-          <>
-            <dt>{name}</dt>
-            <dd>{value}</dd>
-          </>
-        ))
-      }
+      {collaborators.map(([name, value]) => (
+        <>
+          <dt>{name}</dt>
+          <dd>{value}</dd>
+        </>
+      ))}
     </dl>
   </div>
 </Constraint>
