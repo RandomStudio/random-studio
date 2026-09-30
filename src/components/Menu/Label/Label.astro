@@ -1,0 +1,38 @@
+<button class="label" data-action="open" type="button">
+  <span class="text" data-for="open">Menu</span>
+  <span class="text" data-for="close">Close</span>
+  <span class="text" data-for="back">Back</span>
+</button>
+
+<style>
+  .label {
+    @mixin button-reset;
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    width: 100%;
+    padding: var(--spacing-15) 15px;
+    color: black;
+    transition: color var(--menu-transition);
+
+    &:not([data-action="open"]) {
+      color: var(--color-link);
+    }
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .text {
+    @mixin fade-hidden var(--menu-transition);
+    grid-area: 1 / 1;
+    text-box: trim-both cap alphabetic;
+  }
+
+  .label[data-action="open"] [data-for="open"],
+  .label[data-action="close"] [data-for="close"],
+  .label[data-action="back"] [data-for="back"] {
+    @mixin fade-visible var(--menu-transition);
+  }
+</style>

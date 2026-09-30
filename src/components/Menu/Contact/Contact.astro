@@ -1,0 +1,80 @@
+---
+import { linkGroups, offices } from "../menuData";
+---
+
+<div class="contact">
+  <div class="group">
+    {
+      linkGroups.map(({ heading, links }) => (
+        <div class="block">
+          <p>{heading}</p>
+          <div class="content">
+            {links.map((link) => (
+              <a class="external" href="#">
+                {link}
+              </a>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="group">
+    {
+      offices.map((office) => (
+        <div class="block">
+          <p>{office.city}</p>
+          <div class="content">
+            <p>
+              {office.address.map((line) => (
+                <>
+                  {line}
+                  <br />
+                </>
+              ))}
+              {office.phone}
+            </p>
+            <a class="external" href="#">
+              Map
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gutter);
+    row-gap: var(--spacing-30);
+    padding: var(--spacing-15) 15px;
+  }
+
+  .group,
+  .block {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+  }
+
+  .group {
+    row-gap: var(--spacing-15);
+  }
+
+  .content {
+    text-box: trim-both cap alphabetic;
+
+    p {
+      text-box: none;
+    }
+  }
+
+  .external {
+    @mixin external-arrow;
+    display: block;
+    transition: color var(--menu-transition);
+  }
+</style>

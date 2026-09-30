@@ -1,0 +1,35 @@
+---
+type Props = {
+  name: string;
+};
+
+const { name } = Astro.props;
+---
+
+<div class="collapsible" data-collapsible={name}>
+  <div class="content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .collapsible {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--menu-transition);
+
+    &[data-open] {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .content {
+    @mixin fade-hidden var(--menu-transition);
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .collapsible[data-open] > .content {
+    @mixin fade-visible var(--menu-transition);
+  }
+</style>

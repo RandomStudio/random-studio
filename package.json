@@ -15,6 +15,7 @@
     "astro": "^7.2.4"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@csstools/postcss-global-data": "^4.0.0",
     "@types/node": "^26.2.0",
     "postcss": "^8.5.26",

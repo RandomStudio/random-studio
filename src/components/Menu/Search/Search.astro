@@ -1,0 +1,84 @@
+<search-form>
+  <form class="search" role="search">
+    <input
+      aria-label="Search"
+      autocomplete="off"
+      class="input"
+      name="q"
+      placeholder="Type Here"
+      type="text"
+    />
+    <button class="submit" disabled type="submit">Search</button>
+  </form>
+</search-form>
+
+<script>
+  class SearchForm extends HTMLElement {
+    #input!: HTMLInputElement;
+    #submit!: HTMLButtonElement;
+    #controller?: AbortController;
+
+    connectedCallback() {
+      this.#input = this.querySelector(".input")!;
+      this.#submit = this.querySelector(".submit")!;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      this.#input.addEventListener("input", this.#handleInput, { signal });
+      this.addEventListener("submit", this.#handleSubmit, { signal });
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+    }
+
+    #handleInput = () => {
+      this.#submit.disabled = this.#input.value.trim() === "";
+    };
+
+    #handleSubmit = (event: Event) => {
+      event.preventDefault();
+    };
+  }
+
+  customElements.define("search-form", SearchForm);
+</script>
+
+<style>
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gutter);
+    padding: var(--spacing-15) 15px;
+  }
+
+  .input {
+    flex: 1;
+    min-width: 0;
+    height: 1lh;
+    margin-block: calc((1cap - 1lh) / 2);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: black;
+    outline: none;
+
+    &::placeholder {
+      color: black;
+    }
+  }
+
+  .submit {
+    @mixin button-reset;
+    color: black;
+    text-box: trim-both cap alphabetic;
+    transition: color var(--menu-transition);
+
+    &:disabled {
+      color: var(--color-link);
+      cursor: default;
+    }
+  }
+</style>

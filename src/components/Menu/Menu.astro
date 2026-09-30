@@ -1,0 +1,269 @@
+---
+import RIcon from "../../icons/r.svg";
+
+import Collapsible from "./Collapsible/Collapsible.astro";
+import Contact from "./Contact/Contact.astro";
+import Label from "./Label/Label.astro";
+import Navigation from "./Navigation/Navigation.astro";
+import Preview from "./Preview/Preview.astro";
+import Search from "./Search/Search.astro";
+---
+
+<random-menu class="menu">
+  <div class="logo"><RIcon /></div>
+  <div class="panel">
+    <Collapsible name="menu">
+      <Collapsible name="preview">
+        <Preview />
+      </Collapsible>
+      <Collapsible name="navigation">
+        <Navigation />
+      </Collapsible>
+      <Collapsible name="search">
+        <Search />
+      </Collapsible>
+      <Collapsible name="contact">
+        <Contact />
+      </Collapsible>
+    </Collapsible>
+    <Label />
+  </div>
+</random-menu>
+
+<script>
+  import { defaultCategoryId } from "./menuData";
+
+  type View = "navigation" | "work" | "search" | "contact";
+
+  type LabelAction = "open" | "close" | "back";
+
+  const COLLAPSIBLES_BY_VIEW: Record<View, string[]> = {
+    navigation: ["navigation"],
+    work: ["navigation", "preview"],
+    search: ["search"],
+    contact: ["contact"],
+  };
+
+  const VIEWS_WITH_BACK: View[] = ["search", "contact"];
+
+  const HOVER_GRACE_DURATION = 500;
+
+  const isWithinHoverGrace = (openedAt: number | undefined, now: number) =>
+    openedAt !== undefined && now - openedAt < HOVER_GRACE_DURATION;
+
+  const getOpenCollapsibles = (isOpen: boolean, view: View) =>
+    isOpen ? ["menu", ...COLLAPSIBLES_BY_VIEW[view]] : COLLAPSIBLES_BY_VIEW[view];
+
+  const getLabelAction = (isOpen: boolean, view: View): LabelAction => {
+    if (!isOpen) {
+      return "open";
+    }
+
+    return VIEWS_WITH_BACK.includes(view) ? "back" : "close";
+  };
+
+  class Menu extends HTMLElement {
+    #collapsibles: HTMLElement[] = [];
+    #navigation!: HTMLElement;
+    #label!: HTMLElement;
+    #searchInput!: HTMLInputElement;
+    #controller?: AbortController;
+    #isOpen = false;
+    #view: View = "navigation";
+    #hoverOpenedAt?: number;
+
+    connectedCallback() {
+      this.#collapsibles = [
+        ...this.querySelectorAll<HTMLElement>("[data-collapsible]"),
+      ];
+      this.#navigation = this.querySelector(".navigation")!;
+      this.#label = this.querySelector(".label")!;
+      this.#searchInput = this.querySelector('input[name="q"]')!;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      this.addEventListener("pointerenter", this.#handlePointerEnter, {
+        signal,
+      });
+      this.addEventListener("pointerleave", this.#handlePointerLeave, {
+        signal,
+      });
+      this.addEventListener("focusin", this.#handleKeyboardFocus, { signal });
+      this.addEventListener("click", this.#handleClick, { signal });
+      this.addEventListener("keydown", this.#handleKeyDown, { signal });
+      this.addEventListener("pointerover", this.#handleCategoryHover, {
+        signal,
+      });
+      document.addEventListener("click", this.#handleDocumentClick, {
+        signal,
+      });
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+    }
+
+    #handlePointerEnter = ({ pointerType }: PointerEvent) => {
+      if (pointerType !== "mouse" || this.#isOpen) {
+        return;
+      }
+
+      this.#hoverOpenedAt = performance.now();
+      this.#open();
+    };
+
+    #handlePointerLeave = ({ pointerType }: PointerEvent) => {
+      if (
+        pointerType === "mouse" &&
+        isWithinHoverGrace(this.#hoverOpenedAt, performance.now())
+      ) {
+        this.#close();
+      }
+    };
+
+    #handleKeyboardFocus = ({ target }: FocusEvent) => {
+      if ((target as Element).matches(":focus-visible")) {
+        this.#open();
+      }
+    };
+
+    #handleClick = ({ target }: Event) => {
+      const action = (target as Element).closest<HTMLElement>("[data-action]")
+        ?.dataset.action;
+
+      switch (action) {
+        case "open":
+          this.#open();
+          break;
+        case "close":
+          this.#close();
+          break;
+        case "back":
+          this.#show("navigation");
+          break;
+        case "work":
+          this.#show(action);
+          this.#highlightCategory(defaultCategoryId);
+          break;
+        case "contact":
+          this.#show(action);
+          break;
+        case "search":
+          this.#show(action);
+          this.#searchInput.focus();
+          break;
+      }
+    };
+
+    #handleKeyDown = ({ key }: KeyboardEvent) => {
+      if (key === "Escape") {
+        this.#close();
+      }
+    };
+
+    #handleDocumentClick = ({ target }: Event) => {
+      if (!this.contains(target as Node)) {
+        this.#close();
+      }
+    };
+
+    #handleCategoryHover = ({ target }: Event) => {
+      const categoryId = (target as Element).closest<HTMLElement>(
+        "a[data-category]",
+      )?.dataset.category;
+
+      if (categoryId) {
+        this.#highlightCategory(categoryId);
+      }
+    };
+
+    #highlightCategory = (categoryId: string) => {
+      for (const element of this.querySelectorAll<HTMLElement>(
+        "[data-category]",
+      )) {
+        element.classList.toggle(
+          "isActive",
+          element.dataset.category === categoryId,
+        );
+      }
+    };
+
+    #open = () => {
+      if (this.#isOpen) {
+        return;
+      }
+
+      this.#isOpen = true;
+      this.#view = "navigation";
+      this.#render();
+    };
+
+    #close = () => {
+      this.#isOpen = false;
+      this.#render();
+    };
+
+    #show = (view: View) => {
+      this.#view = view;
+      this.#render();
+    };
+
+    #render = () => {
+      this.#renderCollapsibles();
+      this.#renderNavigation();
+      this.#renderLabel();
+    };
+
+    #renderCollapsibles = () => {
+      const openCollapsibles = getOpenCollapsibles(this.#isOpen, this.#view);
+
+      for (const collapsible of this.#collapsibles) {
+        collapsible.toggleAttribute(
+          "data-open",
+          openCollapsibles.includes(collapsible.dataset.collapsible ?? ""),
+        );
+      }
+    };
+
+    #renderNavigation = () => {
+      this.#navigation.toggleAttribute("data-work", this.#view === "work");
+    };
+
+    #renderLabel = () => {
+      this.#label.dataset.action = getLabelAction(this.#isOpen, this.#view);
+    };
+  }
+
+  customElements.define("random-menu", Menu);
+</script>
+
+<style>
+  .menu {
+    --menu-transition: 0.3s ease;
+    position: fixed;
+    z-index: 1000;
+    bottom: calc(2vh + 56px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    background-color: black;
+  }
+
+  .panel {
+    @mixin h3;
+    font-size: 0.75rem;
+    width: 270px;
+    background-color: var(--color-foreground);
+  }
+</style>

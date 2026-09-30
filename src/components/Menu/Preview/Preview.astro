@@ -1,0 +1,35 @@
+---
+import { categories, defaultCategoryId } from "../menuData";
+---
+
+<div class="preview">
+  {
+    categories.map((category) => (
+      <img
+        alt=""
+        class:list={[{ isActive: category.id === defaultCategoryId }]}
+        data-category={category.id}
+        src={category.image}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .preview {
+    display: grid;
+    aspect-ratio: 270 / 191;
+  }
+
+  img {
+    grid-area: 1 / 1;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--menu-transition);
+
+    &.isActive {
+      opacity: 1;
+    }
+  }
+</style>

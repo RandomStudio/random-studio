@@ -1,0 +1,15 @@
+@define-mixin fade-hidden $timing {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity $timing,
+    visibility 0s $timing;
+}
+
+@define-mixin fade-visible $timing {
+  opacity: 1;
+  visibility: inherit;
+  transition:
+    opacity $timing,
+    visibility 0s;
+}
