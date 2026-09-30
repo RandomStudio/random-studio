@@ -183,6 +183,10 @@ textarea {
 
   --gutter: 15px;
 
+  /* Shared by size changes and fades so they move together */
+  --transition-duration: 0.3s;
+  --transition-easing: ease;
+
   --max-width: 1888px;
 }
 
