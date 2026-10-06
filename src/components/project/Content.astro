@@ -5,6 +5,7 @@ import Gallery from "./Gallery.astro";
 import TextBlock from "./TextBlock.astro";
 import ProjectImage from "./ProjectImage.astro";
 import ProjectVideo from "./ProjectVideo.astro";
+import AutoSlideshow from "./AutoSlideshow/AutoSlideshow.astro";
 
 import { content, getSectionId, type ContentBlock } from "../../data/project";
 
@@ -89,6 +90,16 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
       }
       if (block.type === "gallery") {
         return <Gallery images={block.images} info={block.info} />;
+      }
+
+      if (block.type === "slideshow") {
+        return (
+          <AutoSlideshow
+            slides={block.slides}
+            colSpan={block.colSpan}
+            colStart={block.colStart}
+          />
+        );
       }
     })}
   </Constraint>

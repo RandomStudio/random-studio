@@ -20,6 +20,11 @@ export type MoreInfo = {
   content: MoreInfoBlock[];
 };
 
+export type SlideshowSlide = {
+  images: string[];
+  alt?: string;
+};
+
 export type ContentBlock = {
   colSpan: number;
   colStart: number;
@@ -48,6 +53,10 @@ export type ContentBlock = {
       type: "gallery";
       images: string[];
       info?: GalleryInfo;
+    }
+  | {
+      type: "slideshow";
+      slides: SlideshowSlide[];
     }
 );
 
@@ -89,8 +98,12 @@ export const content: ContentBlock[] = [
   {
     colSpan: 20,
     colStart: 1,
-    type: "image",
-    image: "/project/01_a.png",
+    type: "slideshow",
+    slides: [
+      { images: ["/project/01_a.png"] },
+      { images: ["/project/01_c.png"] },
+      { images: ["/project/01_d.jpg", "/project/01_e.jpg"] },
+    ],
   },
   {
     colSpan: 20,
@@ -276,6 +289,16 @@ export const getSlides = (blocks: ContentBlock[]): Slide[] =>
       }));
     }
 
+    if (block.type === "slideshow") {
+      return block.slides.flatMap((slide) =>
+        slide.images.map((image) => ({
+          type: "image",
+          src: image,
+          alt: slide.alt ?? "",
+        })),
+      );
+    }
+
     return [];
   });
 
@@ -305,7 +328,9 @@ export const getSections = (blocks: ContentBlock[]): Section[] => {
         ? [block.image]
         : block.type === "gallery"
           ? block.images
-          : [];
+          : block.type === "slideshow"
+            ? block.slides.flatMap((slide) => slide.images)
+            : [];
 
     const current = sections[sections.length - 1];
 

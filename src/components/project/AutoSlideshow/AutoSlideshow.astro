@@ -1,0 +1,215 @@
+---
+import type { SlideshowSlide } from "../../../data/project";
+import { getImageAspectRatio } from "./getImageAspectRatio";
+
+type Props = {
+  slides: SlideshowSlide[];
+  colSpan: number;
+  colStart: number;
+};
+
+const { slides, colSpan, colStart } = Astro.props;
+const aspectRatio = await getImageAspectRatio(slides[0].images[0]);
+---
+
+<auto-slideshow
+  class="slideshow"
+  style={`grid-column: ${colStart} / span ${colSpan}; --slideshow-aspect-ratio: ${aspectRatio}`}
+>
+  {slides.map((slide, index) => (
+    <div class:list={["slide", "images", index === 0 && "isActive"]}>
+      {slide.images.map((image) => (
+        <img
+          class="image"
+          src={image}
+          alt={slide.alt ?? ""}
+          data-slideshow-src={image}
+        />
+      ))}
+    </div>
+  ))}
+  {slides.length > 1 && (
+    <div class="selector">
+      {slides.map((slide, index) => (
+        <button
+          class="thumbnail images"
+          type="button"
+          aria-label={`Show slide ${index + 1}`}
+          aria-current={index === 0}
+        >
+          {slide.images.map((image) => (
+            <img class="image" src={image} alt="" />
+          ))}
+        </button>
+      ))}
+    </div>
+  )}
+</auto-slideshow>
+
+<script>
+  const AUTO_ADVANCE_INTERVAL = 4000;
+
+  class AutoSlideshow extends HTMLElement {
+    #slides: HTMLElement[] = [];
+    #thumbnails: HTMLButtonElement[] = [];
+    #activeIndex = 0;
+    #isHovered = false;
+    #timer?: ReturnType<typeof setTimeout>;
+    #controller?: AbortController;
+
+    connectedCallback() {
+      this.#slides = [...this.querySelectorAll<HTMLElement>(".slide")];
+      this.#thumbnails = [
+        ...this.querySelectorAll<HTMLButtonElement>(".thumbnail"),
+      ];
+
+      if (this.#slides.length < 2) return;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      this.#thumbnails.forEach((thumbnail, index) => {
+        const handleThumbnailSelect = () => this.#selectSlide(index);
+        thumbnail.addEventListener("pointerenter", handleThumbnailSelect, {
+          signal,
+        });
+        thumbnail.addEventListener("focus", handleThumbnailSelect, { signal });
+      });
+
+      this.addEventListener("pointerenter", this.#handlePointerEnter, {
+        signal,
+      });
+      this.addEventListener("pointerleave", this.#handlePointerLeave, {
+        signal,
+      });
+
+      this.#scheduleAdvance();
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+      clearTimeout(this.#timer);
+    }
+
+    #handlePointerEnter = () => {
+      this.#isHovered = true;
+      this.#scheduleAdvance();
+    };
+
+    #handlePointerLeave = () => {
+      this.#isHovered = false;
+      this.#scheduleAdvance();
+    };
+
+    #selectSlide = (index: number) => {
+      this.classList.add("isInstant");
+      this.#showSlide(index);
+      this.#scheduleAdvance();
+    };
+
+    #handleAdvanceTimeout = () => {
+      this.classList.remove("isInstant");
+      this.#showSlide((this.#activeIndex + 1) % this.#slides.length);
+      this.#scheduleAdvance();
+    };
+
+    #scheduleAdvance = () => {
+      clearTimeout(this.#timer);
+
+      if (this.#isHovered) return;
+
+      this.#timer = setTimeout(
+        this.#handleAdvanceTimeout,
+        AUTO_ADVANCE_INTERVAL,
+      );
+    };
+
+    #showSlide = (index: number) => {
+      this.#activeIndex = index;
+
+      this.#slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("isActive", slideIndex === index);
+      });
+
+      this.#thumbnails.forEach((thumbnail, thumbnailIndex) => {
+        thumbnail.ariaCurrent = String(thumbnailIndex === index);
+      });
+    };
+  }
+
+  customElements.define("auto-slideshow", AutoSlideshow);
+</script>
+
+<style>
+  .slideshow {
+    --slide-fade-duration: 1s;
+    --thumbnail-fade-duration: 0.2s;
+    --selector-inset: 8px;
+    --thumbnail-width: 67px;
+    position: relative;
+    display: block;
+    aspect-ratio: var(--slideshow-aspect-ratio);
+    overflow: hidden;
+  }
+
+  .images {
+    display: flex;
+  }
+
+  .image {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    /* The outgoing slide stays opaque until the incoming one has faded in over it */
+    transition: opacity 0s var(--slide-fade-duration);
+
+    &.isActive {
+      z-index: 1;
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity var(--slide-fade-duration);
+    }
+  }
+
+  .isInstant .slide {
+    transition: none;
+  }
+
+  .selector {
+    position: absolute;
+    bottom: var(--selector-inset);
+    left: var(--selector-inset);
+    z-index: 2;
+    display: flex;
+    gap: var(--selector-inset);
+  }
+
+  .thumbnail {
+    width: var(--thumbnail-width);
+    aspect-ratio: var(--slideshow-aspect-ratio);
+    padding: 0;
+    border: 0;
+    background-color: var(--color-background);
+
+    .image {
+      opacity: 0.5;
+      transition: opacity var(--thumbnail-fade-duration);
+    }
+
+    &[aria-current="true"] .image {
+      opacity: 1;
+    }
+  }
+
+  :global(.mode--text-only) .slideshow {
+    display: none;
+  }
+</style>
