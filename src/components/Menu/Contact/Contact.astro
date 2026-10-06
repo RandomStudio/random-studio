@@ -43,7 +43,7 @@ import { linkGroups, offices } from "../menuData";
 <style>
   .contact {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 60%;
     column-gap: var(--gutter);
     row-gap: var(--spacing-30);
     padding: var(--spacing-15) 15px;
@@ -64,7 +64,8 @@ import { linkGroups, offices } from "../menuData";
     text-box: trim-both cap alphabetic;
 
     p {
-      text-box: none;
+      text-box: trim-both cap alphabetic;
+      margin-bottom: 0.25em;
     }
   }
 

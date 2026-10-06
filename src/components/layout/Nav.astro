@@ -10,17 +10,19 @@ import DownloadIcon from "../../icons/download.svg";
       <li data-mode="normal" class="isActive">
         Full
       </li>
+      <li data-mode="image">Images</li>
       <li data-mode="text">Text</li>
-      <li data-mode="image">Image</li>
     </ul>
   </div>
   <h1 class="title">Past and Future fabrics exhibition for Zara</h1>
   <div class="presskit">
-    <a href="#">Presskit [23,35mb]</a>
+    <a href="#">Assets [23,35mb]</a>
     <DownloadIcon />
   </div>
 </Constraint>
 <script>
+  import { SECTION_NAV_SHRINK_TYPE } from "../project/sectionNavTransitionTypes";
+
   type Mode = "normal" | "text" | "image";
 
   const MODE_CLASSES: Record<Mode, string | null> = {
@@ -29,39 +31,82 @@ import DownloadIcon from "../../icons/download.svg";
     image: "mode--image-only",
   };
 
+  const PAGE_HIDDEN_CLASS = "isPageHidden";
+  const NAV_GROW_START_FRACTION = 0.75;
+
+  const pageFadeDuration = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--page-fade-duration",
+    ),
+  );
+  const navGrowDelay = pageFadeDuration * NAV_GROW_START_FRACTION;
+
   const toggle = document.getElementById("mode-toggle");
 
-  toggle?.addEventListener("click", (event: MouseEvent) => {
+  let pendingStep: ReturnType<typeof setTimeout> | undefined;
+
+  const getActiveMode = () =>
+    toggle?.querySelector<HTMLLIElement>("li.isActive")?.dataset.mode as
+      Mode | undefined;
+
+  const applyModeClass = (mode: Mode) => {
+    for (const [classMode, className] of Object.entries(MODE_CLASSES)) {
+      if (className) {
+        document.body.classList.toggle(className, classMode === mode);
+      }
+    }
+  };
+
+  const setIsPageHidden = (isHidden: boolean) => {
+    document.body.classList.toggle(PAGE_HIDDEN_CLASS, isHidden);
+  };
+
+  const enterImageMode = () => {
+    setIsPageHidden(true);
+    pendingStep = setTimeout(() => {
+      document.startViewTransition(() => applyModeClass("image"));
+    }, navGrowDelay);
+  };
+
+  const leaveImageMode = (mode: Mode) => {
+    document.startViewTransition({
+      update: () => applyModeClass(mode),
+      types: [SECTION_NAV_SHRINK_TYPE],
+    });
+    pendingStep = setTimeout(() => setIsPageHidden(false), navGrowDelay);
+  };
+
+  const transitionToMode = (mode: Mode, previousMode?: Mode) => {
+    clearTimeout(pendingStep);
+
+    if (mode === "image") {
+      enterImageMode();
+    } else if (previousMode === "image") {
+      leaveImageMode(mode);
+    } else {
+      document.startViewTransition(() => applyModeClass(mode));
+    }
+  };
+
+  const handleModeClick = (event: MouseEvent) => {
     const item = (event.target as HTMLElement).closest<HTMLLIElement>(
       "li[data-mode]",
     );
+    const mode = item?.dataset.mode as Mode | undefined;
+    const activeMode = getActiveMode();
 
-    if (!item) {
+    if (!item || !mode || !(mode in MODE_CLASSES) || mode === activeMode) {
       return;
     }
 
-    const mode = item.dataset.mode as Mode;
+    transitionToMode(mode, activeMode);
 
-    if (!(mode in MODE_CLASSES)) {
-      return;
-    }
-
-    for (const className of Object.values(MODE_CLASSES)) {
-      if (className) {
-        document.body.classList.remove(className);
-      }
-    }
-
-    const activeClass = MODE_CLASSES[mode];
-
-    if (activeClass) {
-      document.body.classList.add(activeClass);
-    }
-
-    for (const li of toggle.querySelectorAll("li[data-mode]")) {
+    for (const li of toggle!.querySelectorAll("li[data-mode]")) {
       li.classList.toggle("isActive", li === item);
     }
-  });
+  };
+
+  toggle?.addEventListener("click", handleModeClick);
 </script>
 
 <style>
@@ -126,7 +171,8 @@ import DownloadIcon from "../../icons/download.svg";
     transition: opacity 0.2s;
   }
   /* Set on body by the page once the header title is scrolled over */
-  :global(.isProjectTitleHidden) .title {
+  :global(.isProjectTitleHidden) .title,
+  :global(.mode--image-only) .title {
     opacity: 1;
   }
   .presskit {
@@ -144,17 +190,8 @@ import DownloadIcon from "../../icons/download.svg";
     }
 
     a {
-      margin-right: 0.5em;
+      margin-right: 0.3em;
       color: inherit;
-    }
-
-    svg {
-      fill: currentColor;
-      stroke: currentColor;
-    }
-
-    .unknown {
-      margin-left: 0.5em;
     }
   }
 </style>

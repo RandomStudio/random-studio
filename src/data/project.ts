@@ -56,7 +56,7 @@ export type Section = {
   images: string[];
 };
 
-const MAX_SECTION_IMAGES = 3;
+export const MAX_SECTION_PREVIEW_IMAGES = 3;
 
 export const content: ContentBlock[] = [
   {
@@ -289,8 +289,5 @@ export const getSections = (blocks: ContentBlock[]): Section[] => {
     }
   });
 
-  return sections.map((section) => ({
-    ...section,
-    images: section.images.slice(0, MAX_SECTION_IMAGES),
-  }));
+  return sections;
 };

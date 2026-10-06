@@ -16,11 +16,3 @@ const { image, alt, colSpan, colStart, alignSelf } = Astro.props;
   alt={alt ?? ""}
   style={{ gridColumn: `${colStart} / span ${colSpan}`, alignSelf }}
 />
-
-<style>
-  :global(.mode--image-only) {
-    .image {
-      grid-column: 1 / span 20 !important;
-    }
-  }
-</style>

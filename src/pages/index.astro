@@ -32,28 +32,32 @@ import SectionNav from "../components/project/SectionNav.astro";
     <Nav client:load />
     <Menu client:load />
     <SectionNav />
-    <Constraint client:load type="full" class="header">
-      <p>Past and Future fabrics exhibition for Zara</p>
-    </Constraint>
-    <Content />
-    <Credits
-      credits={[
-        ["For", "Zara"],
-        ["Year", "2025"],
-        ["Size", "100M2"],
-        ["Location", "Galicia, ES"],
-        ["Sector", "Fashion"],
-      ]}
-      collaborators={[
-        ["Production", "Acierta"],
-        ["Photography", "DSL Studio"],
-      ]}
-    />
-    <Related />
-    <Footer />
+    <main class="page">
+      <Constraint client:load type="full" class="header">
+        <p>Past and Future fabrics exhibition for Zara</p>
+      </Constraint>
+      <Content />
+      <Credits
+        credits={[
+          ["For", "Zara"],
+          ["Year", "2025"],
+          ["Size", "100M2"],
+          ["Location", "Galicia, ES"],
+          ["Sector", "Fashion"],
+        ]}
+        collaborators={[
+          ["Production", "Acierta"],
+          ["Photography", "DSL Studio"],
+        ]}
+      />
+      <Related />
+      <Footer />
+    </main>
   </body>
 
   <script>
+    import { SECTION_NAV_SHRINK_TYPE } from "../components/project/sectionNavTransitionTypes";
+
     // Flags the body once content has scrolled fully over the header title,
     // which the nav title and section nav use to switch state together
     const HIDDEN_CLASS = "isProjectTitleHidden";
@@ -64,15 +68,25 @@ import SectionNav from "../components/project/SectionNav.astro";
     if (header && title) {
       let frame: number | undefined;
 
+      // The fixed title is clipped by the header, so hidden once the header ends above it
+      const getIsHidden = () =>
+        header.getBoundingClientRect().bottom <=
+        title.getBoundingClientRect().top;
+
+      const setIsHidden = (isHidden: boolean) => {
+        document.body.classList.toggle(HIDDEN_CLASS, isHidden);
+      };
+
       const update = () => {
         frame = undefined;
-        // The title is fixed and clipped by the header, so it is hidden once
-        // the header's bottom edge passes above the title's top edge
-        const isHidden =
-          header.getBoundingClientRect().bottom <=
-          title.getBoundingClientRect().top;
+        const isHidden = getIsHidden();
 
-        document.body.classList.toggle(HIDDEN_CLASS, isHidden);
+        if (isHidden === document.body.classList.contains(HIDDEN_CLASS)) return;
+
+        document.startViewTransition({
+          update: () => setIsHidden(isHidden),
+          types: isHidden ? [SECTION_NAV_SHRINK_TYPE] : [],
+        });
       };
 
       const scheduleUpdate = () => {
@@ -81,12 +95,34 @@ import SectionNav from "../components/project/SectionNav.astro";
 
       window.addEventListener("scroll", scheduleUpdate, { passive: true });
       window.addEventListener("resize", scheduleUpdate);
-      update();
+      setIsHidden(getIsHidden());
     } else {
       document.body.classList.add(HIDDEN_CLASS);
     }
   </script>
   <style>
+    /* Keeps the page live during view transitions rather than a frozen snapshot */
+    :global(:root) {
+      view-transition-name: none;
+    }
+
+    :global(::view-transition) {
+      pointer-events: none;
+    }
+
+    .page {
+      transition: opacity var(--page-fade-duration);
+    }
+
+    :global(.isPageHidden) .page {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    :global(.mode--image-only) {
+      overflow: hidden;
+    }
+
     .header {
       position: relative;
       height: 88svh;

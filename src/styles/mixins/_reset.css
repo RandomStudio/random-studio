@@ -1,8 +1,10 @@
 @define-mixin button-reset {
+  appearance: none;
   padding: 0;
   border: 0;
   background: none;
   font: inherit;
+  line-height: inherit;
   text-align: left;
   cursor: pointer;
 }

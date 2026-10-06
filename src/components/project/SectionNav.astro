@@ -1,5 +1,9 @@
 ---
-import { content, getSections } from "../../data/project";
+import {
+  content,
+  getSections,
+  MAX_SECTION_PREVIEW_IMAGES,
+} from "../../data/project";
 
 const sections = getSections(content);
 ---
@@ -7,14 +11,23 @@ const sections = getSections(content);
 <section-nav class="section-nav">
   <nav class="expanded" aria-label="Sections">
     {sections.map((section) => (
-      <a class="anchor" href={`#${section.id}`}>
+      <a
+        class="anchor"
+        href={`#${section.id}`}
+        style={`--images-transition-name: ${section.id}-images; --text-transition-name: ${section.id}-text`}
+      >
         <div class="images">
-          {section.images.map((image) => (
-            <img src={image} alt="" />
+          {section.images.map((image, index) => (
+            <img
+              class:list={[
+                index >= MAX_SECTION_PREVIEW_IMAGES && "isImageModeOnly",
+              ]}
+              src={image}
+              alt=""
+            />
           ))}
         </div>
         <div class="text">
-          <p>{section.number}</p>
           <p>{section.title}</p>
         </div>
       </a>
@@ -27,9 +40,10 @@ const sections = getSections(content);
         href={`#${section.id}`}
         data-section={section.id}
         title={section.title}
+        style={`--images-transition-name: ${section.id}-images`}
       >
         <div class="images">
-          {section.images.map((image) => (
+          {section.images.slice(0, MAX_SECTION_PREVIEW_IMAGES).map((image) => (
             <img src={image} alt="" />
           ))}
         </div>
@@ -41,14 +55,18 @@ const sections = getSections(content);
 <script>
   // A section becomes active once its heading passes this viewport fraction
   const ACTIVE_LINE = 0.5;
+  const IMAGE_MODE_CLASS = "mode--image-only";
 
   class SectionNav extends HTMLElement {
     #anchors: HTMLAnchorElement[] = [];
     #targets: HTMLElement[] = [];
+    #expanded?: HTMLElement;
     #controller?: AbortController;
     #frame?: number;
 
     connectedCallback() {
+      this.#expanded =
+        this.querySelector<HTMLElement>(".expanded") ?? undefined;
       this.#anchors = [
         ...this.querySelectorAll<HTMLAnchorElement>(".compact [data-section]"),
       ];
@@ -64,9 +82,23 @@ const sections = getSections(content);
         passive: true,
       });
       window.addEventListener("resize", this.#scheduleUpdate, { signal });
+      window.addEventListener("wheel", this.#handleWheel, {
+        signal,
+        passive: false,
+      });
 
       this.#update();
     }
+
+    #handleWheel = (event: WheelEvent) => {
+      const isImageMode = document.body.classList.contains(IMAGE_MODE_CLASS);
+      const isVerticalWheel = Math.abs(event.deltaY) > Math.abs(event.deltaX);
+
+      if (!this.#expanded || !isImageMode || !isVerticalWheel) return;
+
+      event.preventDefault();
+      this.#expanded.scrollLeft += event.deltaY;
+    };
 
     disconnectedCallback() {
       this.#controller?.abort();
@@ -120,8 +152,9 @@ const sections = getSections(content);
     pointer-events: none;
   }
 
-  nav {
-    transition: opacity 0.3s;
+  .images,
+  .text {
+    view-transition-class: section-nav;
   }
 
   .expanded {
@@ -130,7 +163,7 @@ const sections = getSections(content);
     padding: var(--spacing-15);
     overflow-x: auto;
     scrollbar-width: none;
-    opacity: 0;
+    pointer-events: auto;
 
     .anchor {
       display: flex;
@@ -144,6 +177,7 @@ const sections = getSections(content);
       height: 159px;
       border-radius: 5px;
       overflow: hidden;
+      view-transition-name: var(--images-transition-name);
     }
 
     img {
@@ -151,6 +185,10 @@ const sections = getSections(content);
       width: auto;
       max-width: none;
       object-fit: cover;
+    }
+
+    .isImageModeOnly {
+      display: none;
     }
 
     .text {
@@ -161,6 +199,7 @@ const sections = getSections(content);
       color: var(--color-link);
       max-width: 70%;
       white-space: nowrap;
+      view-transition-name: var(--text-transition-name);
     }
 
     .anchor:hover .text {
@@ -176,6 +215,7 @@ const sections = getSections(content);
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-5);
+    visibility: hidden;
 
     .images {
       display: flex;
@@ -215,25 +255,92 @@ const sections = getSections(content);
     }
   }
 
-  /* Expanded until the page flags the header title as scrolled over */
-  .expanded {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .compact {
-    opacity: 0;
-  }
-
+  /* Names live only on the nav in use, so both navs can stay laid out */
   :global(.isProjectTitleHidden) {
     .expanded {
-      opacity: 0;
+      visibility: hidden;
       pointer-events: none;
+
+      .images,
+      .text {
+        view-transition-name: none;
+      }
     }
 
     .compact {
-      opacity: 1;
+      visibility: visible;
       pointer-events: auto;
+
+      .images {
+        view-transition-name: var(--images-transition-name);
+      }
     }
+  }
+
+  :global(.mode--image-only) {
+    --image-mode-text-height: calc(2 * 1.1rem + var(--spacing-5));
+
+    .expanded {
+      visibility: visible;
+      pointer-events: auto;
+      gap: var(--spacing-15);
+
+      .images {
+        height: calc(
+          100svh - var(--spacing-40) - 2 * var(--spacing-15) -
+            var(--spacing-10) - var(--image-mode-text-height)
+        );
+        view-transition-name: var(--images-transition-name);
+      }
+
+      .text {
+        color: black;
+        view-transition-name: var(--text-transition-name);
+      }
+
+      .isImageModeOnly {
+        display: block;
+      }
+    }
+
+    .compact {
+      visibility: hidden;
+      pointer-events: none;
+
+      .images {
+        view-transition-name: none;
+      }
+    }
+  }
+
+  :global(::view-transition-group(*.section-nav)) {
+    animation-duration: 0.3s;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  /* Shows only the larger snapshot, cropped from the left so the first images line up, instead of cross-fading */
+  :global(::view-transition-old(*.section-nav)),
+  :global(::view-transition-new(*.section-nav)) {
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  :global(::view-transition-old(*.section-nav)),
+  :global(
+    :root:active-view-transition-type(section-nav-shrink)
+      ::view-transition-new(*.section-nav)
+  ) {
+    opacity: 0;
+  }
+
+  :global(
+    :root:active-view-transition-type(section-nav-shrink)
+      ::view-transition-old(*.section-nav)
+  ) {
+    opacity: 1;
   }
 </style>

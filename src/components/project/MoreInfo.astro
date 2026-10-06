@@ -224,13 +224,16 @@ const { title, content } = Astro.props;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 40vw;
+    max-width: 570px;
+    width: 100%;
     padding: 200px var(--spacing-60) var(--spacing-80);
-    background-color: rgb(255 255 255 / 0.97);
+    background-color: rgb(255 255 255 / 0.9);
     overflow-y: auto;
     overscroll-behavior: contain;
     outline: none;
     translate: 100% 0;
+    box-shadow: -4px 0px 40px 0px #00000015;
+
     transition: translate var(--panel-transition);
   }
 

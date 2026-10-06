@@ -196,6 +196,8 @@ textarea {
   --gutter: 15px;
 
   --max-width: 1888px;
+
+  --page-fade-duration: 300ms;
 }
 
 body {
