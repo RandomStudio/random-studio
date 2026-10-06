@@ -5,16 +5,16 @@ import type { MoreInfo } from "../../data/project";
 
 type Props = MoreInfo;
 
-const { title, content } = Astro.props;
+const { title, teaser, content } = Astro.props;
 ---
 
 <more-info class="more-info">
   <button class="trigger" type="button" data-action="open">
     <span class="label">
-      More Info
-      <MoreInfoIcon />
+      <span class="label-text">{title}</span>
+      <MoreInfoIcon class="icon" />
     </span>
-    <span class="teaser">{title}</span>
+    <span class="teaser">{teaser}</span>
   </button>
 
   <dialog class="dialog" aria-label={title}>
@@ -23,7 +23,7 @@ const { title, content } = Astro.props;
       Close
     </p>
     <div class="panel" tabindex="-1" autofocus>
-      <p class="title">{title}</p>
+      <p class="title">{teaser}</p>
       <div class="content">
         {content.map((block) => {
           if (block.type === "text") {
@@ -145,12 +145,18 @@ const { title, content } = Astro.props;
   }
 
   .trigger {
+    --trigger-padding-top: 12px;
+    --trigger-padding-inline: var(--spacing-10);
+    --trigger-padding-bottom: 17px;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-10);
-    width: calc(100% + 2 * var(--spacing-10));
-    margin: calc(-1 * var(--spacing-10));
-    padding: var(--spacing-10);
+    width: calc(100% + 2 * var(--trigger-padding-inline));
+    margin: calc(-1 * var(--trigger-padding-top))
+      calc(-1 * var(--trigger-padding-inline))
+      calc(-1 * var(--trigger-padding-bottom));
+    padding: var(--trigger-padding-top) var(--trigger-padding-inline)
+      var(--trigger-padding-bottom);
     border: 0;
     background: none;
     color: inherit;
@@ -160,10 +166,6 @@ const { title, content } = Astro.props;
     &:hover,
     &:focus-visible {
       background-color: var(--color-foreground);
-
-      .label {
-        color: black;
-      }
     }
   }
 
@@ -171,7 +173,19 @@ const { title, content } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--spacing-10);
     color: var(--color-link);
+
+    svg {
+      height: 1cap;
+      width: auto;
+    }
+  }
+
+  .label-text,
+  .teaser {
+    display: block;
+    text-box: trim-both cap alphabetic;
   }
 
   .dialog {
@@ -219,6 +233,9 @@ const { title, content } = Astro.props;
     }
   }
 
+  .icon {
+    margin-right: 6px;
+  }
   .panel {
     position: absolute;
     top: 0;
@@ -226,7 +243,7 @@ const { title, content } = Astro.props;
     bottom: 0;
     max-width: 570px;
     width: 100%;
-    padding: 200px var(--spacing-60) var(--spacing-80);
+    padding: 200px var(--spacing-60) 0;
     background-color: rgb(255 255 255 / 0.9);
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -275,8 +292,7 @@ const { title, content } = Astro.props;
   }
 
   .close {
-    margin-top: var(--spacing-80);
-    padding: 0;
+    padding: var(--spacing-80) 0;
     border: 0;
     background: none;
     color: black;

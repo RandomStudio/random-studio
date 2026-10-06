@@ -168,14 +168,15 @@ const sections = getSections(content);
       display: flex;
       flex-direction: column;
       gap: var(--spacing-5);
-      color: var(--color-link);
+      color: black;
       max-width: 70%;
       white-space: nowrap;
       view-transition-name: var(--text-transition-name);
+      transition: opacity 0.2s;
     }
 
-    .anchor:hover .text {
-      color: black;
+    &:has(.anchor:hover) .anchor:not(:hover) .text {
+      opacity: 0.3;
     }
   }
 

@@ -17,6 +17,7 @@ export type GalleryInfo = {
 
 export type MoreInfo = {
   title: string;
+  teaser: string;
   content: MoreInfoBlock[];
 };
 
@@ -116,7 +117,8 @@ export const content: ContentBlock[] = [
       "To demarcate the space in the HQ's grand foyer and immerse visitors in a contemplative atmosphere, we drew on the architectural style of a hypostyle temple. An airy hall propped up by multiple columns creates a calm space with its own shifting rhythms. Transparent curtains filter out the outside while an interplay of a sound and a central light sphere, that changes in intensity and tone throughout the day, animate the space making each visit unique.",
     ],
     moreInfo: {
-      title: "Juxtaposing classical forms against contemporary materiality",
+      title: "Hypostyle Forms",
+      teaser: "Juxtaposing classical forms against contemporary materiality",
       content: [
         {
           type: "text",
