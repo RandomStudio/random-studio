@@ -1,0 +1,299 @@
+---
+import SlideVideo from "./SlideVideo/SlideVideo.astro";
+import { content, getSlides } from "../../../data/project";
+
+const slides = getSlides(content);
+---
+
+<project-slideshow>
+  <div class="overlay" role="dialog" aria-label="Images">
+    <button class="step previous" data-step="-1" aria-label="Previous"></button>
+    <button class="step next" data-step="1" aria-label="Next"></button>
+    {slides.map((slide, index) => (
+      <figure class="slide" data-src={slide.src} hidden={index !== 0}>
+        {slide.type === "image" ? (
+          <img class="image" src={slide.src} alt={slide.alt} decoding="sync" />
+        ) : (
+          <SlideVideo src={slide.src} />
+        )}
+        <figcaption class="caption">{slide.alt}</figcaption>
+      </figure>
+    ))}
+  </div>
+  <p class="cursor-label" aria-hidden="true" hidden></p>
+</project-slideshow>
+
+<script>
+  import {
+    IMAGE_MODE_CLOSE_EVENT,
+    IMAGE_MODE_OPEN_EVENT,
+    MODE_CHANGE_EVENT,
+    type Mode,
+  } from "../../modeEvents";
+
+  const KEY_STEPS: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1 };
+  const VIEW_LABEL = "View";
+
+  type PointerPosition = { x: number; y: number };
+
+  const formatSlideNumber = (number: number) => String(number).padStart(2, "0");
+
+  class ProjectSlideshow extends HTMLElement {
+    #slides: HTMLElement[] = [];
+    #cursorLabel!: HTMLElement;
+    #activeIndex = 0;
+    #requestedIndex = 0;
+    #isOpen = false;
+    #pointer?: PointerPosition;
+    #controller?: AbortController;
+
+    connectedCallback() {
+      this.#slides = [...this.querySelectorAll<HTMLElement>(".slide")];
+      this.#cursorLabel = this.querySelector(".cursor-label")!;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      document.addEventListener("click", this.#handleOpenerClick, { signal });
+      document.addEventListener("click", this.#renderCursorLabel, { signal });
+      document.addEventListener("keydown", this.#handleKeydown, { signal });
+      document.addEventListener("pointermove", this.#handlePointerMove, {
+        signal,
+      });
+      document.addEventListener("pointerout", this.#handlePointerOut, {
+        signal,
+      });
+      document.addEventListener(MODE_CHANGE_EVENT, this.#handleModeChange, {
+        signal,
+      });
+      window.addEventListener("scroll", this.#renderCursorLabel, {
+        signal,
+        passive: true,
+      });
+
+      for (const button of this.querySelectorAll<HTMLButtonElement>(".step")) {
+        button.addEventListener("click", this.#handleStepClick, { signal });
+      }
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+    }
+
+    #handleOpenerClick = ({ target }: Event) => {
+      const index = this.#getOpenerIndex(target as Element);
+      if (index === -1) return;
+
+      this.#requestedIndex = index;
+      document.dispatchEvent(new Event(IMAGE_MODE_OPEN_EVENT));
+    };
+
+    #handleModeChange = (event: Event) => {
+      this.#isOpen = (event as CustomEvent<Mode>).detail === "image";
+
+      if (this.#isOpen) {
+        this.#showSlide(this.#requestedIndex);
+        this.#requestedIndex = 0;
+      } else {
+        this.#getActiveVideo()?.pause();
+      }
+    };
+
+    #handleKeydown = (event: KeyboardEvent) => {
+      if (!this.#isOpen) return;
+
+      if (event.key === "Escape") {
+        document.dispatchEvent(new Event(IMAGE_MODE_CLOSE_EVENT));
+      } else if (event.key in KEY_STEPS) {
+        this.#step(KEY_STEPS[event.key]);
+      }
+    };
+
+    #handleStepClick = (event: MouseEvent) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      this.#step(Number(button.dataset.step));
+    };
+
+    #handlePointerMove = ({ clientX, clientY }: PointerEvent) => {
+      this.#pointer = { x: clientX, y: clientY };
+      this.#renderCursorLabel();
+    };
+
+    #handlePointerOut = ({ relatedTarget }: PointerEvent) => {
+      if (relatedTarget) return;
+
+      this.#pointer = undefined;
+      this.#renderCursorLabel();
+    };
+
+    #renderCursorLabel = () => {
+      const text = this.#pointer && this.#getCursorLabelText(this.#pointer);
+      this.#cursorLabel.hidden = !text;
+
+      if (!text || !this.#pointer) return;
+
+      this.#cursorLabel.textContent = text;
+      this.#cursorLabel.style.setProperty(
+        "--pointer-x",
+        `${this.#pointer.x}px`,
+      );
+      this.#cursorLabel.style.setProperty(
+        "--pointer-y",
+        `${this.#pointer.y}px`,
+      );
+    };
+
+    #getCursorLabelText = ({ x, y }: PointerPosition) => {
+      const element = document.elementFromPoint(x, y);
+      const step = element?.closest<HTMLButtonElement>(
+        "project-slideshow .step",
+      );
+
+      if (step?.ariaLabel) {
+        return this.#formatCursorLabel(step.ariaLabel, this.#activeIndex);
+      }
+
+      const openerIndex = this.#getOpenerIndex(element);
+
+      if (openerIndex !== -1) {
+        return this.#formatCursorLabel(VIEW_LABEL, openerIndex);
+      }
+    };
+
+    #formatCursorLabel = (action: string, index: number) => {
+      const slideNumber = formatSlideNumber(index + 1);
+      const slideCount = formatSlideNumber(this.#slides.length);
+      return `${action} [${slideNumber}/${slideCount}]`;
+    };
+
+    #getOpenerIndex = (element: Element | null) => {
+      const src = element?.closest<HTMLElement>("[data-slideshow-src]")?.dataset
+        .slideshowSrc;
+      if (!src) return -1;
+
+      return this.#slides.findIndex((slide) => slide.dataset.src === src);
+    };
+
+    #step = (offset: number) => {
+      const count = this.#slides.length;
+      this.#showSlide((this.#activeIndex + offset + count) % count);
+    };
+
+    #showSlide = (index: number) => {
+      this.#getActiveVideo()?.pause();
+      this.#activeIndex = index;
+
+      this.#slides.forEach((slide, slideIndex) => {
+        slide.hidden = slideIndex !== index;
+      });
+
+      if (this.#isOpen) {
+        this.#resumeActiveVideoFromPage();
+      }
+
+      this.#renderCursorLabel();
+    };
+
+    #resumeActiveVideoFromPage = () => {
+      const video = this.#getActiveVideo();
+      if (!video) return;
+
+      const pageVideo = this.#getPageVideo(video.getAttribute("src"));
+
+      if (pageVideo) {
+        video.currentTime = pageVideo.currentTime;
+      }
+
+      video.play();
+    };
+
+    #getActiveVideo = () =>
+      this.#slides[this.#activeIndex]?.querySelector("video");
+
+    #getPageVideo = (src: string | null) =>
+      [
+        ...document.querySelectorAll<HTMLVideoElement>(
+          "video[data-slideshow-src]",
+        ),
+      ].find((pageVideo) => pageVideo.dataset.slideshowSrc === src);
+  }
+
+  customElements.define("project-slideshow", ProjectSlideshow);
+</script>
+
+<style>
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background-color: var(--color-background);
+    visibility: hidden;
+  }
+
+  :global(.mode--image-only) .overlay {
+    visibility: visible;
+  }
+
+  .step {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    padding: 0;
+    border: 0;
+    background: none;
+    outline: none;
+  }
+
+  .previous {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+    padding: var(--spacing-50) 50px;
+    pointer-events: none;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .image {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .caption {
+    @mixin h3;
+    position: absolute;
+    right: 0;
+    bottom: var(--spacing-15);
+    left: 0;
+    text-align: center;
+  }
+
+  .cursor-label {
+    @mixin h3;
+    --cursor-offset-x: 16px;
+    --cursor-offset-y: 25px;
+    position: fixed;
+    /* Above the gallery's full-screen hover preview (z-index 9999) */
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    translate: calc(var(--pointer-x) + var(--cursor-offset-x))
+      calc(var(--pointer-y) + var(--cursor-offset-y));
+    color: white;
+    mix-blend-mode: difference;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+</style>

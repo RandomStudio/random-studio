@@ -19,11 +19,17 @@ import DownloadIcon from "../../icons/download.svg";
     <a href="#">Assets [23,35mb]</a>
     <DownloadIcon />
   </div>
+  <button class="close" id="image-mode-close" type="button">
+    Close
+  </button>
 </Constraint>
 <script>
-  import { SECTION_NAV_SHRINK_TYPE } from "../project/sectionNavTransitionTypes";
-
-  type Mode = "normal" | "text" | "image";
+  import {
+    IMAGE_MODE_CLOSE_EVENT,
+    IMAGE_MODE_OPEN_EVENT,
+    MODE_CHANGE_EVENT,
+    type Mode,
+  } from "../modeEvents";
 
   const MODE_CLASSES: Record<Mode, string | null> = {
     normal: null,
@@ -31,19 +37,10 @@ import DownloadIcon from "../../icons/download.svg";
     image: "mode--image-only",
   };
 
-  const PAGE_HIDDEN_CLASS = "isPageHidden";
-  const NAV_GROW_START_FRACTION = 0.75;
-
-  const pageFadeDuration = parseFloat(
-    getComputedStyle(document.documentElement).getPropertyValue(
-      "--page-fade-duration",
-    ),
-  );
-  const navGrowDelay = pageFadeDuration * NAV_GROW_START_FRACTION;
-
   const toggle = document.getElementById("mode-toggle");
+  const closeButton = document.getElementById("image-mode-close");
 
-  let pendingStep: ReturnType<typeof setTimeout> | undefined;
+  let modeBeforeImage: Mode = "normal";
 
   const getActiveMode = () =>
     toggle?.querySelector<HTMLLIElement>("li.isActive")?.dataset.mode as
@@ -57,56 +54,60 @@ import DownloadIcon from "../../icons/download.svg";
     }
   };
 
-  const setIsPageHidden = (isHidden: boolean) => {
-    document.body.classList.toggle(PAGE_HIDDEN_CLASS, isHidden);
+  const announceMode = (mode: Mode) => {
+    document.dispatchEvent(
+      new CustomEvent(MODE_CHANGE_EVENT, { detail: mode }),
+    );
   };
 
-  const enterImageMode = () => {
-    setIsPageHidden(true);
-    pendingStep = setTimeout(() => {
-      document.startViewTransition(() => applyModeClass("image"));
-    }, navGrowDelay);
+  const updateMode = (mode: Mode) => {
+    applyModeClass(mode);
+    announceMode(mode);
   };
 
-  const leaveImageMode = (mode: Mode) => {
-    document.startViewTransition({
-      update: () => applyModeClass(mode),
-      types: [SECTION_NAV_SHRINK_TYPE],
-    });
-    pendingStep = setTimeout(() => setIsPageHidden(false), navGrowDelay);
+  const markActiveToggleItem = (mode: Mode) => {
+    for (const item of toggle?.querySelectorAll<HTMLLIElement>(
+      "li[data-mode]",
+    ) ?? []) {
+      item.classList.toggle("isActive", item.dataset.mode === mode);
+    }
   };
 
-  const transitionToMode = (mode: Mode, previousMode?: Mode) => {
-    clearTimeout(pendingStep);
+  const selectMode = (mode: Mode) => {
+    const activeMode = getActiveMode();
+    if (mode === activeMode) return;
 
-    if (mode === "image") {
-      enterImageMode();
-    } else if (previousMode === "image") {
-      leaveImageMode(mode);
+    if (mode === "image" && activeMode) {
+      modeBeforeImage = activeMode;
+    }
+
+    markActiveToggleItem(mode);
+
+    if (mode === "image" || activeMode === "image") {
+      updateMode(mode);
     } else {
-      document.startViewTransition(() => applyModeClass(mode));
+      document.startViewTransition(() => updateMode(mode));
     }
   };
 
   const handleModeClick = (event: MouseEvent) => {
-    const item = (event.target as HTMLElement).closest<HTMLLIElement>(
+    const mode = (event.target as HTMLElement).closest<HTMLLIElement>(
       "li[data-mode]",
-    );
-    const mode = item?.dataset.mode as Mode | undefined;
-    const activeMode = getActiveMode();
+    )?.dataset.mode;
 
-    if (!item || !mode || !(mode in MODE_CLASSES) || mode === activeMode) {
-      return;
-    }
-
-    transitionToMode(mode, activeMode);
-
-    for (const li of toggle!.querySelectorAll("li[data-mode]")) {
-      li.classList.toggle("isActive", li === item);
+    if (mode && mode in MODE_CLASSES) {
+      selectMode(mode as Mode);
     }
   };
 
+  const handleImageModeOpen = () => selectMode("image");
+
+  const handleImageModeClose = () => selectMode(modeBeforeImage);
+
   toggle?.addEventListener("click", handleModeClick);
+  closeButton?.addEventListener("click", handleImageModeClose);
+  document.addEventListener(IMAGE_MODE_OPEN_EVENT, handleImageModeOpen);
+  document.addEventListener(IMAGE_MODE_CLOSE_EVENT, handleImageModeClose);
 </script>
 
 <style>
@@ -115,10 +116,10 @@ import DownloadIcon from "../../icons/download.svg";
     position: fixed;
     z-index: 1000;
     top: 0;
-    left: calc((100vw - var(--max-width)) / 2);
-    width: var(--max-width);
-    max-width: var(--max-width);
-    padding: 1em 0;
+    left: 50%;
+    translate: -50% 0;
+    width: min(100%, var(--max-width));
+    padding: var(--spacing-15) var(--gutter);
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     align-items: start;
@@ -175,8 +176,33 @@ import DownloadIcon from "../../icons/download.svg";
   :global(.mode--image-only) .title {
     opacity: 1;
   }
-  .presskit {
+  .presskit,
+  .close {
     grid-column: 16 / span 5;
+    grid-row: 1;
+  }
+  .close {
+    display: none;
+    justify-self: end;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-link);
+    }
+  }
+  :global(.mode--image-only) {
+    .presskit {
+      display: none;
+    }
+    .close {
+      display: block;
+    }
+  }
+  .presskit {
     text-align: right;
     cursor: pointer;
     display: flex;

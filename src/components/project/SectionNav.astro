@@ -17,14 +17,8 @@ const sections = getSections(content);
         style={`--images-transition-name: ${section.id}-images; --text-transition-name: ${section.id}-text`}
       >
         <div class="images">
-          {section.images.map((image, index) => (
-            <img
-              class:list={[
-                index >= MAX_SECTION_PREVIEW_IMAGES && "isImageModeOnly",
-              ]}
-              src={image}
-              alt=""
-            />
+          {section.images.slice(0, MAX_SECTION_PREVIEW_IMAGES).map((image) => (
+            <img src={image} alt="" />
           ))}
         </div>
         <div class="text">
@@ -55,18 +49,14 @@ const sections = getSections(content);
 <script>
   // A section becomes active once its heading passes this viewport fraction
   const ACTIVE_LINE = 0.5;
-  const IMAGE_MODE_CLASS = "mode--image-only";
 
   class SectionNav extends HTMLElement {
     #anchors: HTMLAnchorElement[] = [];
     #targets: HTMLElement[] = [];
-    #expanded?: HTMLElement;
     #controller?: AbortController;
     #frame?: number;
 
     connectedCallback() {
-      this.#expanded =
-        this.querySelector<HTMLElement>(".expanded") ?? undefined;
       this.#anchors = [
         ...this.querySelectorAll<HTMLAnchorElement>(".compact [data-section]"),
       ];
@@ -82,23 +72,9 @@ const sections = getSections(content);
         passive: true,
       });
       window.addEventListener("resize", this.#scheduleUpdate, { signal });
-      window.addEventListener("wheel", this.#handleWheel, {
-        signal,
-        passive: false,
-      });
 
       this.#update();
     }
-
-    #handleWheel = (event: WheelEvent) => {
-      const isImageMode = document.body.classList.contains(IMAGE_MODE_CLASS);
-      const isVerticalWheel = Math.abs(event.deltaY) > Math.abs(event.deltaX);
-
-      if (!this.#expanded || !isImageMode || !isVerticalWheel) return;
-
-      event.preventDefault();
-      this.#expanded.scrollLeft += event.deltaY;
-    };
 
     disconnectedCallback() {
       this.#controller?.abort();
@@ -187,10 +163,6 @@ const sections = getSections(content);
       object-fit: cover;
     }
 
-    .isImageModeOnly {
-      display: none;
-    }
-
     .text {
       @mixin body;
       display: flex;
@@ -273,42 +245,6 @@ const sections = getSections(content);
 
       .images {
         view-transition-name: var(--images-transition-name);
-      }
-    }
-  }
-
-  :global(.mode--image-only) {
-    --image-mode-text-height: calc(2 * 1.1rem + var(--spacing-5));
-
-    .expanded {
-      visibility: visible;
-      pointer-events: auto;
-      gap: var(--spacing-15);
-
-      .images {
-        height: calc(
-          100svh - var(--spacing-40) - 2 * var(--spacing-15) -
-            var(--spacing-10) - var(--image-mode-text-height)
-        );
-        view-transition-name: var(--images-transition-name);
-      }
-
-      .text {
-        color: black;
-        view-transition-name: var(--text-transition-name);
-      }
-
-      .isImageModeOnly {
-        display: block;
-      }
-    }
-
-    .compact {
-      visibility: hidden;
-      pointer-events: none;
-
-      .images {
-        view-transition-name: none;
       }
     }
   }

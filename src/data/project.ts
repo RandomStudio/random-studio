@@ -28,10 +28,12 @@ export type ContentBlock = {
 } & (
   | {
       image: string;
+      alt?: string;
       type: "image";
     }
   | {
       image: string;
+      alt?: string;
       type: "video";
     }
   | {
@@ -49,6 +51,12 @@ export type ContentBlock = {
     }
 );
 
+export type Slide = {
+  type: "image" | "video";
+  src: string;
+  alt: string;
+};
+
 export type Section = {
   id: string;
   number: number;
@@ -64,6 +72,7 @@ export const content: ContentBlock[] = [
     colStart: 1,
     type: "image",
     image: "/project/header.png",
+    alt: "Exhibition Exterior, Daytime",
   },
   {
     colSpan: 20,
@@ -191,6 +200,7 @@ export const content: ContentBlock[] = [
     colStart: 1,
     type: "video",
     image: "/project/8.mp4",
+    alt: "Fabric Totems - Interaction Animation",
   },
   {
     colSpan: 6,
@@ -251,6 +261,23 @@ export const content: ContentBlock[] = [
 ];
 
 export const getSectionId = (number: number) => `section-${number}`;
+
+export const getSlides = (blocks: ContentBlock[]): Slide[] =>
+  blocks.flatMap((block): Slide[] => {
+    if (block.type === "image" || block.type === "video") {
+      return [{ type: block.type, src: block.image, alt: block.alt ?? "" }];
+    }
+
+    if (block.type === "gallery") {
+      return block.images.map((image) => ({
+        type: "image",
+        src: image,
+        alt: "",
+      }));
+    }
+
+    return [];
+  });
 
 // Each text block starts a section. Images before the first text block belong
 // to the first section.

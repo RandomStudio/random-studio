@@ -1,0 +1,195 @@
+---
+import DownloadIcon from "../../../../icons/download.svg";
+import FullscreenIcon from "../../../../icons/fullscreen.svg";
+
+type Props = {
+  src: string;
+};
+
+const { src } = Astro.props;
+---
+
+<slide-video class="slide-video">
+  <video src={src} playsinline muted loop preload="metadata"></video>
+  <div class="controls">
+    <p class="time">00:00:00</p>
+    <button class="control" data-action="fullscreen" aria-label="Fullscreen">
+      <FullscreenIcon />
+    </button>
+    <button class="control toggle" data-action="play" data-on>
+      <span>Pause</span>
+      <span>Play</span>
+    </button>
+    <button class="control toggle" data-action="sound">
+      <span>Sound On</span>
+      <span>Sound Off</span>
+    </button>
+    <a class="control download" href={src} download>
+      Download
+      <DownloadIcon />
+    </a>
+  </div>
+</slide-video>
+
+<script>
+  const pad = (value: number) => String(value).padStart(2, "0");
+
+  const formatTime = (seconds: number) => {
+    const total = Math.floor(seconds);
+    const hours = Math.floor(total / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    return `${pad(hours)}:${pad(minutes)}:${pad(total % 60)}`;
+  };
+
+  class SlideVideo extends HTMLElement {
+    #video!: HTMLVideoElement;
+    #time!: HTMLElement;
+    #play!: HTMLButtonElement;
+    #sound!: HTMLButtonElement;
+    #controller?: AbortController;
+
+    connectedCallback() {
+      this.#video = this.querySelector("video")!;
+      this.#time = this.querySelector(".time")!;
+      this.#play = this.querySelector('[data-action="play"]')!;
+      this.#sound = this.querySelector('[data-action="sound"]')!;
+
+      this.#controller = new AbortController();
+      const { signal } = this.#controller;
+
+      this.#video.addEventListener("timeupdate", this.#updateTime, { signal });
+      this.#video.addEventListener("play", this.#updatePlay, { signal });
+      this.#video.addEventListener("pause", this.#updatePlay, { signal });
+      this.#video.addEventListener("volumechange", this.#updateSound, {
+        signal,
+      });
+      this.querySelector(".controls")!.addEventListener(
+        "click",
+        this.#handleControlsClick,
+        { signal },
+      );
+
+      this.#updateTime();
+      this.#updatePlay();
+      this.#updateSound();
+    }
+
+    disconnectedCallback() {
+      this.#controller?.abort();
+    }
+
+    #handleControlsClick = ({ target }: Event) => {
+      const button = (target as Element).closest<HTMLButtonElement>(
+        "[data-action]",
+      );
+      if (!button) return;
+
+      switch (button.dataset.action) {
+        case "fullscreen":
+          this.#enterFullscreen();
+          break;
+        case "play":
+          if (this.#video.paused) {
+            this.#video.play();
+          } else {
+            this.#video.pause();
+          }
+          break;
+        case "sound":
+          this.#video.muted = !this.#video.muted;
+          break;
+      }
+    };
+
+    #enterFullscreen = () => {
+      const video = this.#video as HTMLVideoElement & {
+        webkitEnterFullscreen?: () => void;
+      };
+
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else {
+        // iOS Safari only supports fullscreen on the video element itself
+        video.webkitEnterFullscreen?.();
+      }
+    };
+
+    #updateTime = () => {
+      this.#time.textContent = formatTime(this.#video.currentTime);
+    };
+
+    #updatePlay = () => {
+      this.#play.toggleAttribute("data-on", !this.#video.paused);
+    };
+
+    #updateSound = () => {
+      this.#sound.toggleAttribute("data-on", !this.#video.muted);
+    };
+  }
+
+  customElements.define("slide-video", SlideVideo);
+</script>
+
+<style>
+  .slide-video {
+    display: block;
+    min-height: 0;
+
+    video {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .controls {
+    position: absolute;
+    bottom: var(--spacing-15);
+    left: var(--gutter);
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+    pointer-events: auto;
+  }
+
+  .time,
+  .control {
+    @mixin h3;
+    color: black;
+    white-space: nowrap;
+  }
+
+  .time {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .control {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-link);
+    }
+  }
+
+  .download {
+    gap: 5px;
+  }
+
+  .toggle {
+    display: grid;
+    justify-items: start;
+
+    > span {
+      grid-area: 1 / 1;
+    }
+
+    &[data-on] > :last-child,
+    &:not([data-on]) > :first-child {
+      visibility: hidden;
+    }
+  }
+</style>

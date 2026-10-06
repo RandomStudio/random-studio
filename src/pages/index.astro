@@ -10,6 +10,7 @@ import Credits from "../components/project/Credits.astro";
 import Content from "../components/project/Content.astro";
 import Related from "../components/project/Related.astro";
 import SectionNav from "../components/project/SectionNav.astro";
+import Slideshow from "../components/project/Slideshow/Slideshow.astro";
 ---
 
 <html lang="en">
@@ -32,6 +33,7 @@ import SectionNav from "../components/project/SectionNav.astro";
     <Nav client:load />
     <Menu client:load />
     <SectionNav />
+    <Slideshow />
     <main class="page">
       <Constraint client:load type="full" class="header">
         <p>Past and Future fabrics exhibition for Zara</p>
@@ -107,15 +109,6 @@ import SectionNav from "../components/project/SectionNav.astro";
     }
 
     :global(::view-transition) {
-      pointer-events: none;
-    }
-
-    .page {
-      transition: opacity var(--page-fade-duration);
-    }
-
-    :global(.isPageHidden) .page {
-      opacity: 0;
       pointer-events: none;
     }
 

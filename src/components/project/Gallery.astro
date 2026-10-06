@@ -12,7 +12,12 @@ const { info, images } = Astro.props;
 <project-gallery class:list={["gallery", info && "hasInfo"]}>
   <div class="images">
     {images.map((image) => (
-      <img class="image" src={image} alt="gallery image" />
+      <img
+        class="image"
+        src={image}
+        alt="gallery image"
+        data-slideshow-src={image}
+      />
     ))}
   </div>
   {info && (

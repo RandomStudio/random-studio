@@ -14,5 +14,6 @@ const { image, alt, colSpan, colStart, alignSelf } = Astro.props;
   class="image"
   src={image}
   alt={alt ?? ""}
+  data-slideshow-src={image}
   style={{ gridColumn: `${colStart} / span ${colSpan}`, alignSelf }}
 />
