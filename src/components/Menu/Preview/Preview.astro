@@ -1,14 +1,19 @@
 ---
-import { categories, defaultCategoryId } from "../menuData";
+import PlaceholderImage from "../../PlaceholderImage/PlaceholderImage.astro";
+import { categories } from "../menuCategories";
+import { defaultCategoryId } from "../menuData";
+
+const PREVIEW_IMAGE_WIDTH = 540;
 ---
 
 <div class="preview">
   {categories.map((category) => (
-    <img
+    <PlaceholderImage
       alt=""
       class:list={[{ isActive: category.id === defaultCategoryId }]}
       data-category={category.id}
       src={category.image}
+      width={PREVIEW_IMAGE_WIDTH}
     />
   ))}
 </div>

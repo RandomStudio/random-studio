@@ -5,6 +5,8 @@ import Constraint from "../components/layout/Constraint.astro";
 import Menu from "../components/Menu/Menu.astro";
 import Nav from "../components/layout/Nav.astro";
 import Footer from "../components/layout/Footer.astro";
+import LoaderGate from "../components/layout/LoaderGate.astro";
+import LoadingTitle from "../components/layout/LoadingTitle.astro";
 
 import Credits from "../components/project/Credits.astro";
 import Content from "../components/project/Content.astro";
@@ -28,6 +30,7 @@ import Slideshow from "../components/project/Slideshow/Slideshow.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Random Studio New Website mockup</title>
+    <LoaderGate />
   </head>
   <body>
     <Nav client:load />
@@ -36,7 +39,7 @@ import Slideshow from "../components/project/Slideshow/Slideshow.astro";
     <Slideshow />
     <main class="page">
       <Constraint client:load type="full" class="header">
-        <p>Past and Future fabrics exhibition for Zara</p>
+        <LoadingTitle>Past and Future fabrics exhibition for Zara</LoadingTitle>
       </Constraint>
       <Content />
       <Credits
@@ -112,8 +115,20 @@ import Slideshow from "../components/project/Slideshow/Slideshow.astro";
       pointer-events: none;
     }
 
-    :global(.mode--image-only) {
+    :global(.mode--image-only),
+    :global(.isLoading) {
       overflow: hidden;
+    }
+
+    :global(.hasShownLoader body > :not(main)),
+    :global(.hasShownLoader) .page > :global(:not(.header)) {
+      transition: opacity 0.6s;
+    }
+
+    :global(.isLoading body > :not(main)),
+    :global(.isLoading) .page > :global(:not(.header)) {
+      opacity: 0;
+      will-change: opacity;
     }
 
     .header {

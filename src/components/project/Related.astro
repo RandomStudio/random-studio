@@ -1,5 +1,15 @@
 ---
+import { Image } from "astro:assets";
+
 import Constraint from "../layout/Constraint.astro";
+
+import nextImage01 from "../../assets/related/next_01.png";
+import nextImage02A from "../../assets/related/next_02_a.png";
+import nextImage02B from "../../assets/related/next_02_b.png";
+import nextImage02C from "../../assets/related/next_02_c.png";
+import nextImage03A from "../../assets/related/next_03_a.png";
+
+const RELATED_IMAGE_HEIGHT = 420;
 ---
 
 <Constraint class="related">
@@ -19,24 +29,31 @@ import Constraint from "../layout/Constraint.astro";
     <ol class="sections">
       <li>
         <div class="images">
-          <img src="/related/next_01.png" />
+          <Image src={nextImage01} alt="" height={RELATED_IMAGE_HEIGHT} />
         </div>
         <span>1</span>
         <h2>Summer of Sport '24</h2>
       </li>
       <li>
         <div class="images">
-          <img src="/related/next_02_a.png" />
-          <img src="/related/next_02_b.png" />
-          <img src="/related/next_02_c.png" />
+          <Image src={nextImage02A} alt="" height={RELATED_IMAGE_HEIGHT} />
+          <Image src={nextImage02B} alt="" height={RELATED_IMAGE_HEIGHT} />
+          <Image src={nextImage02C} alt="" height={RELATED_IMAGE_HEIGHT} />
         </div>
         <span>2</span>
         <h2>40 years of Air</h2>
       </li>
       <li>
         <div class="images">
-          <img src="/related/next_03_a.png" />
-          <video autoplay muted loop src="/related/next_03_b.mp4"></video>
+          <Image src={nextImage03A} alt="" height={RELATED_IMAGE_HEIGHT} />
+          <video
+            autoplay
+            muted
+            loop
+            src="/related/next_03_b.mp4"
+            width="1280"
+            height="720"
+          ></video>
         </div>
         <span>3</span>
         <h2>A Sonic Entrance</h2>

@@ -1,19 +1,37 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import PlaceholderImage from "../PlaceholderImage/PlaceholderImage.astro";
+
+import { getSlideIndex } from "../../data/project";
+import { getColumnSpanSizes } from "./getColumnSpanSizes";
+
 type Props = {
-  image: string;
+  image: ImageMetadata;
   alt?: string;
-  colSpan?: number;
-  colStart?: number;
+  colSpan: number;
+  colStart: number;
   alignSelf?: "start" | "center" | "end";
+  isAwaitedByLoader?: boolean;
 };
 
-const { image, alt, colSpan, colStart, alignSelf } = Astro.props;
+const { image, alt, colSpan, colStart, alignSelf, isAwaitedByLoader } =
+  Astro.props;
+
+// The loader swaps src for a prefetched copy, which a srcset would override
+const responsiveProps = isAwaitedByLoader
+  ? {}
+  : { layout: "full-width" as const, sizes: getColumnSpanSizes(colSpan) };
+const ImageComponent = isAwaitedByLoader ? Image : PlaceholderImage;
 ---
 
-<img
+<ImageComponent
   class="image"
   src={image}
   alt={alt ?? ""}
-  data-slideshow-src={image}
+  {...responsiveProps}
+  data-awaited-by-loader={isAwaitedByLoader || undefined}
+  data-slideshow-index={getSlideIndex(image)}
   style={{ gridColumn: `${colStart} / span ${colSpan}`, alignSelf }}
 />

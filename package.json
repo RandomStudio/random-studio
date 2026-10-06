@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "astro": "^7.2.4",
-    "minisearch": "^7.2.0"
+    "minisearch": "^7.2.0",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

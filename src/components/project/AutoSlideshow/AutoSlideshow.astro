@@ -1,6 +1,10 @@
 ---
-import type { SlideshowSlide } from "../../../data/project";
-import { getImageAspectRatio } from "./getImageAspectRatio";
+import { getImage, Image } from "astro:assets";
+
+import PlaceholderImage from "../../PlaceholderImage/PlaceholderImage.astro";
+
+import { getSlideIndex, type SlideshowSlide } from "../../../data/project";
+import { getColumnSpanSizes } from "../getColumnSpanSizes";
 
 type Props = {
   slides: SlideshowSlide[];
@@ -8,8 +12,16 @@ type Props = {
   colStart: number;
 };
 
+const THUMBNAIL_IMAGE_WIDTH = 134;
+
 const { slides, colSpan, colStart } = Astro.props;
-const aspectRatio = await getImageAspectRatio(slides[0].images[0]);
+const firstThumbnail = await getImage({
+  src: slides[0].images[0],
+  width: THUMBNAIL_IMAGE_WIDTH,
+});
+const aspectRatio =
+  Number(firstThumbnail.attributes.width) /
+  Number(firstThumbnail.attributes.height);
 ---
 
 <auto-slideshow
@@ -19,11 +31,13 @@ const aspectRatio = await getImageAspectRatio(slides[0].images[0]);
   {slides.map((slide, index) => (
     <div class:list={["slide", "images", index === 0 && "isActive"]}>
       {slide.images.map((image) => (
-        <img
+        <PlaceholderImage
           class="image"
           src={image}
           alt={slide.alt ?? ""}
-          data-slideshow-src={image}
+          layout="full-width"
+          sizes={getColumnSpanSizes(colSpan / slide.images.length)}
+          data-slideshow-index={getSlideIndex(image)}
         />
       ))}
     </div>
@@ -38,7 +52,12 @@ const aspectRatio = await getImageAspectRatio(slides[0].images[0]);
           aria-current={index === 0}
         >
           {slide.images.map((image) => (
-            <img class="image" src={image} alt="" />
+            <Image
+              class="image"
+              src={image}
+              alt=""
+              width={THUMBNAIL_IMAGE_WIDTH}
+            />
           ))}
         </button>
       ))}

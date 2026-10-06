@@ -1,8 +1,26 @@
 ---
 import Constraint from "./Constraint.astro";
 import Marquee from "./Marquee.astro";
+import PlaceholderImage from "../PlaceholderImage/PlaceholderImage.astro";
 
 import Logo from "../../assets/logo.svg";
+import navImage01 from "../../assets/project/nav_01.png";
+import navImage02 from "../../assets/project/nav_02.png";
+import navImage03 from "../../assets/project/nav_03.png";
+import navImage04 from "../../assets/project/nav_04.png";
+import navImage05 from "../../assets/project/nav_05.png";
+import navImage06 from "../../assets/project/nav_06.png";
+
+const CATEGORY_IMAGE_WIDTH = 400;
+
+const categoryLinks = [
+  { name: "All Work", image: navImage01 },
+  { name: "Experiential Retail", image: navImage02 },
+  { name: "Applied Innovation", image: navImage03 },
+  { name: "Exhibition", image: navImage04 },
+  { name: "Lab", image: navImage05 },
+  { name: "About", image: navImage06 },
+];
 ---
 
 <div class="footer">
@@ -15,42 +33,18 @@ import Logo from "../../assets/logo.svg";
   </Constraint>
   <Constraint class="categories">
     <ul>
-      <li>
-        <a href="#">
-          <img alt="All Work" src="/project/nav_01.png" />
-          All Work
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img alt="Experiential Retail" src="/project/nav_02.png" />
-          Experiential Retail
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img alt="Applied Innovation" src="/project/nav_03.png" />
-          Applied Innovation
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img alt="Exhibition" src="/project/nav_04.png" />
-          Exhibition
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img alt="Lab" src="/project/nav_05.png" />
-          Lab
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img alt="About" src="/project/nav_06.png" />
-          About
-        </a>
-      </li>
+      {categoryLinks.map(({ name, image }) => (
+        <li>
+          <a href="#">
+            <PlaceholderImage
+              alt={name}
+              src={image}
+              width={CATEGORY_IMAGE_WIDTH}
+            />
+            {name}
+          </a>
+        </li>
+      ))}
     </ul>
   </Constraint>
   <Constraint class="logo">

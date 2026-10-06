@@ -1,9 +1,3 @@
-export type Category = {
-  id: string;
-  name: string;
-  image: string;
-};
-
 export type LinkGroup = {
   heading: string;
   links: string[];
@@ -14,29 +8,6 @@ export type Office = {
   address: string[];
   phone: string;
 };
-
-export const categories: Category[] = [
-  {
-    id: "all",
-    name: "All",
-    image: "/project/nav_01.png",
-  },
-  {
-    id: "applied-innovation",
-    name: "Applied Innovation",
-    image: "/project/nav_03.png",
-  },
-  {
-    id: "experiential-retail",
-    name: "Experiential Retail",
-    image: "/project/nav_02.png",
-  },
-  {
-    id: "exhibition",
-    name: "Exhibition & Events",
-    image: "/project/nav_04.png",
-  },
-];
 
 export const defaultCategoryId = "all";
 

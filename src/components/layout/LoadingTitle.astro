@@ -1,0 +1,240 @@
+<p class="loading-title" {...Astro.props}>
+  <slot />
+</p>
+
+<script>
+  import {
+    LOADER_COMPLETE_EVENT,
+    LOADER_SHOWN_CLASS,
+    LOADING_CLASS,
+  } from "../loaderState";
+
+  const PROGRESS_PROPERTY = "--loading-progress";
+
+  const title = document.querySelector<HTMLElement>(".loading-title");
+  const awaitedImages = [
+    ...document.querySelectorAll<HTMLImageElement>(
+      "img[data-awaited-by-loader]",
+    ),
+  ];
+
+  const getIsLoading = () =>
+    document.documentElement.classList.contains(LOADING_CLASS);
+
+  const getUniqueSources = (images: HTMLImageElement[]) => [
+    ...new Set(images.map((image) => image.src)),
+  ];
+
+  const getIsCached = async (source: string) => {
+    try {
+      const response = await fetch(source, {
+        cache: "only-if-cached",
+        mode: "same-origin",
+      });
+      await response.body?.cancel();
+      return response.ok;
+    } catch {
+      return false;
+    }
+  };
+
+  const getIsEveryImageCached = async (sources: string[]) =>
+    (await Promise.all(sources.map(getIsCached))).every(Boolean);
+
+  const getContentLength = (response: Response) =>
+    Number(response.headers.get("Content-Length") ?? 0);
+
+  const getTotalByteCount = (responses: Response[]) => {
+    const contentLengths = responses.map(getContentLength);
+
+    return contentLengths.every((contentLength) => contentLength > 0)
+      ? contentLengths.reduce((sum, contentLength) => sum + contentLength, 0)
+      : 0;
+  };
+
+  const getProgressFraction = (
+    receivedByteCount: number,
+    totalByteCount: number,
+    completedCount: number,
+    totalCount: number,
+  ) =>
+    totalByteCount > 0
+      ? receivedByteCount / totalByteCount
+      : completedCount / totalCount;
+
+  const showProgress = (fraction: number) => {
+    title?.style.setProperty(
+      PROGRESS_PROPERTY,
+      `${Math.min(fraction, 1) * 100}%`,
+    );
+  };
+
+  const countBytes = (handleBytes: (byteCount: number) => void) =>
+    new TransformStream<Uint8Array, Uint8Array>({
+      transform: (chunk, controller) => {
+        handleBytes(chunk.byteLength);
+        controller.enqueue(chunk);
+      },
+    });
+
+  const readBodyAsBlob = (
+    response: Response,
+    handleBytes: (byteCount: number) => void,
+  ) => {
+    if (!response.ok) {
+      throw new Error(`Failed to load ${response.url}`);
+    }
+
+    const countedBody = response.body?.pipeThrough(countBytes(handleBytes));
+    return new Response(countedBody, { headers: response.headers }).blob();
+  };
+
+  const downloadImages = async (sources: string[]) => {
+    const responses = await Promise.all(
+      sources.map((source) => fetch(source, { priority: "high" })),
+    );
+    const totalByteCount = getTotalByteCount(responses);
+    let receivedByteCount = 0;
+    let completedCount = 0;
+
+    const updateProgress = () => {
+      showProgress(
+        getProgressFraction(
+          receivedByteCount,
+          totalByteCount,
+          completedCount,
+          responses.length,
+        ),
+      );
+    };
+
+    const handleBytes = (byteCount: number) => {
+      receivedByteCount += byteCount;
+      updateProgress();
+    };
+
+    const blobs = await Promise.all(
+      responses.map(async (response) => {
+        const blob = await readBodyAsBlob(response, handleBytes);
+        completedCount += 1;
+        updateProgress();
+        return blob;
+      }),
+    );
+
+    return new Map(
+      sources.map((source, index) => [
+        source,
+        URL.createObjectURL(blobs[index]),
+      ]),
+    );
+  };
+
+  const useDownloadedImages = (objectUrlsBySource: Map<string, string>) => {
+    for (const image of document.images) {
+      const objectUrl = objectUrlsBySource.get(image.src);
+
+      if (objectUrl) {
+        image.src = objectUrl;
+      }
+    }
+  };
+
+  const loadEagerly = (images: HTMLImageElement[]) => {
+    for (const image of images) {
+      image.loading = "eager";
+    }
+  };
+
+  const waitForDecode = (image: HTMLImageElement) =>
+    image.decode().catch(() => undefined);
+
+  const waitForPaint = () =>
+    new Promise((resolve) =>
+      requestAnimationFrame(() => requestAnimationFrame(resolve)),
+    );
+
+  const waitForFill = () =>
+    Promise.allSettled(
+      title?.getAnimations().map((animation) => animation.finished) ?? [],
+    );
+
+  const showLoader = () => {
+    document.documentElement.classList.add(LOADER_SHOWN_CLASS);
+  };
+
+  const revealPage = () => {
+    document.documentElement.classList.remove(LOADING_CLASS);
+  };
+
+  const announceLoaderComplete = () => {
+    document.dispatchEvent(new Event(LOADER_COMPLETE_EVENT));
+  };
+
+  const loadAwaitedImages = async () => {
+    const objectUrlsBySource = await downloadImages(
+      getUniqueSources(awaitedImages),
+    );
+    useDownloadedImages(objectUrlsBySource);
+    loadEagerly(awaitedImages);
+    await Promise.all(awaitedImages.map(waitForDecode));
+  };
+
+  const showLoadedPage = () => {
+    revealPage();
+    announceLoaderComplete();
+  };
+
+  const runLoader = async () => {
+    showLoader();
+    history.scrollRestoration = "manual";
+    await loadAwaitedImages().catch(console.error);
+    await waitForFill();
+    await waitForPaint();
+    showLoadedPage();
+  };
+
+  const startLoading = async () => {
+    const isEveryImageCached = await getIsEveryImageCached(
+      getUniqueSources(awaitedImages),
+    );
+
+    if (isEveryImageCached) {
+      showLoadedPage();
+    } else {
+      runLoader();
+    }
+  };
+
+  if (getIsLoading()) {
+    startLoading();
+  }
+</script>
+
+<style>
+  @property --loading-progress {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+  }
+
+  :global(.isLoading:not(.hasShownLoader)) .loading-title {
+    visibility: hidden;
+  }
+
+  :global(.isLoading.hasShownLoader) .loading-title {
+    background-image: linear-gradient(
+      to right,
+      black var(--loading-progress),
+      var(--color-link) var(--loading-progress)
+    );
+    background-clip: text;
+    color: transparent;
+    transition: --loading-progress 0.6s ease-out;
+  }
+
+  /* Hidden lazy images are never requested, so they wait for the loader's download */
+  :global(.isLoading img[data-awaited-by-loader]:not([src^="blob:"])) {
+    display: none;
+  }
+</style>

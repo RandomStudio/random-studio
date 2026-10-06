@@ -1,9 +1,13 @@
 ---
+import { Image } from "astro:assets";
+
 import {
   content,
   getSections,
   MAX_SECTION_PREVIEW_IMAGES,
 } from "../../data/project";
+
+const PREVIEW_IMAGE_HEIGHT = 318;
 
 const sections = getSections(content);
 ---
@@ -18,7 +22,12 @@ const sections = getSections(content);
       >
         <div class="images">
           {section.images.slice(0, MAX_SECTION_PREVIEW_IMAGES).map((image) => (
-            <img src={image} alt="" />
+            <Image
+              src={image}
+              alt=""
+              height={PREVIEW_IMAGE_HEIGHT}
+              data-awaited-by-loader
+            />
           ))}
         </div>
         <div class="text">
@@ -38,7 +47,12 @@ const sections = getSections(content);
       >
         <div class="images">
           {section.images.slice(0, MAX_SECTION_PREVIEW_IMAGES).map((image) => (
-            <img src={image} alt="" />
+            <Image
+              src={image}
+              alt=""
+              height={PREVIEW_IMAGE_HEIGHT}
+              data-awaited-by-loader
+            />
           ))}
         </div>
       </a>
@@ -49,14 +63,50 @@ const sections = getSections(content);
 <script>
   // A section becomes active once its heading passes this viewport fraction
   const ACTIVE_LINE = 0.5;
+  // Seconds for the compact sizes to close 63% of the gap to their target
+  const EASING_TIME_CONSTANT = 0.06;
+  const SETTLED_DISTANCE = 0.001;
+
+  type CompactSizes = {
+    smallWidth: number;
+    smallHeight: number;
+    largeHeight: number;
+    gap: number;
+  };
+
+  type AnchorMetrics = { largeWidth: number; firstImageAspect: number };
+
+  const readPixels = (element: Element, property: string) =>
+    parseFloat(getComputedStyle(element).getPropertyValue(property));
+
+  const readAspect = (image: HTMLImageElement) =>
+    Number(image.getAttribute("width")) / Number(image.getAttribute("height"));
+
+  const interpolate = (from: number, to: number, progress: number) =>
+    from + (to - from) * progress;
+
+  const easeTowards = (current: number, target: number, seconds: number) =>
+    target + (current - target) * Math.exp(-seconds / EASING_TIME_CONSTANT);
+
+  const prefersReducedMotion = () =>
+    matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   class SectionNav extends HTMLElement {
+    #strip?: HTMLElement;
     #anchors: HTMLAnchorElement[] = [];
     #targets: HTMLElement[] = [];
     #controller?: AbortController;
     #frame?: number;
+    #sizes?: CompactSizes;
+    #metrics: AnchorMetrics[] = [];
+    #activeIndex = 0;
+    #progresses: number[] = [];
+    #offset = 0;
+    #animationFrame?: number;
+    #lastFrameTime = 0;
 
     connectedCallback() {
+      this.#strip = this.querySelector<HTMLElement>(".compact") ?? undefined;
       this.#anchors = [
         ...this.querySelectorAll<HTMLAnchorElement>(".compact [data-section]"),
       ];
@@ -73,13 +123,142 @@ const sections = getSections(content);
       });
       window.addEventListener("resize", this.#scheduleUpdate, { signal });
 
+      this.#measure();
       this.#update();
+      this.#snapToTargets();
+      this.#showOnceDecoded();
     }
 
     disconnectedCallback() {
       this.#controller?.abort();
       if (this.#frame) cancelAnimationFrame(this.#frame);
+      if (this.#animationFrame) cancelAnimationFrame(this.#animationFrame);
     }
+
+    #measure = () => {
+      if (!this.#strip) return;
+
+      this.#sizes = {
+        smallWidth: readPixels(this.#strip, "--small-width"),
+        smallHeight: readPixels(this.#strip, "--small-height"),
+        largeHeight: readPixels(this.#strip, "--large-height"),
+        gap: parseFloat(getComputedStyle(this.#strip).columnGap),
+      };
+
+      const { largeHeight } = this.#sizes;
+
+      this.#metrics = this.#anchors.map((anchor) => {
+        const aspects = [...anchor.querySelectorAll("img")].map(readAspect);
+
+        return {
+          largeWidth: aspects.reduce(
+            (width, aspect) => width + aspect * largeHeight,
+            0,
+          ),
+          firstImageAspect: aspects[0] ?? 1,
+        };
+      });
+    };
+
+    #getTargetProgress = (index: number) =>
+      index === this.#activeIndex ? 1 : 0;
+
+    #getRestingOffset = () => {
+      const { smallWidth, gap } = this.#sizes!;
+      const activeWidth = this.#metrics[this.#activeIndex]?.largeWidth ?? 0;
+      const stripWidth =
+        this.#anchors.length * (smallWidth + gap) -
+        gap +
+        activeWidth -
+        smallWidth;
+
+      return (this.clientWidth - stripWidth) / 2;
+    };
+
+    #snapToTargets = () => {
+      if (!this.#sizes) return;
+
+      this.#progresses = this.#anchors.map((_, index) =>
+        this.#getTargetProgress(index),
+      );
+      this.#offset = this.#getRestingOffset();
+      this.#render();
+    };
+
+    #animate = () => {
+      if (!this.#sizes || this.#animationFrame) return;
+
+      this.#lastFrameTime = performance.now();
+      this.#animationFrame = requestAnimationFrame(this.#step);
+    };
+
+    #step = (time: number) => {
+      const seconds = prefersReducedMotion()
+        ? Infinity
+        : (time - this.#lastFrameTime) / 1000;
+      this.#lastFrameTime = time;
+
+      this.#progresses = this.#progresses.map((progress, index) =>
+        easeTowards(progress, this.#getTargetProgress(index), seconds),
+      );
+      this.#offset = easeTowards(
+        this.#offset,
+        this.#getRestingOffset(),
+        seconds,
+      );
+      this.#render();
+
+      const isSettled =
+        this.#progresses.every(
+          (progress, index) =>
+            Math.abs(progress - this.#getTargetProgress(index)) <
+            SETTLED_DISTANCE,
+        ) &&
+        Math.abs(this.#offset - this.#getRestingOffset()) < SETTLED_DISTANCE;
+
+      this.#animationFrame = isSettled
+        ? undefined
+        : requestAnimationFrame(this.#step);
+    };
+
+    #render = () => {
+      const { smallWidth, smallHeight, largeHeight } = this.#sizes!;
+
+      this.#strip?.style.setProperty("--strip-offset", `${this.#offset}px`);
+
+      this.#anchors.forEach((anchor, index) => {
+        const progress = this.#progresses[index] ?? 0;
+        const { largeWidth, firstImageAspect } = this.#metrics[index]!;
+        const centeringShift = Math.max(
+          0,
+          (firstImageAspect * smallHeight - smallWidth) / 2,
+        );
+
+        anchor.style.setProperty(
+          "--images-width",
+          `${interpolate(smallWidth, largeWidth, progress)}px`,
+        );
+        anchor.style.setProperty(
+          "--images-height",
+          `${interpolate(smallHeight, largeHeight, progress)}px`,
+        );
+        anchor.style.setProperty(
+          "--images-shift",
+          `${-interpolate(centeringShift, 0, progress)}px`,
+        );
+      });
+    };
+
+    #showOnceDecoded = async () => {
+      const images = [
+        ...this.querySelectorAll<HTMLImageElement>(".expanded img"),
+      ];
+
+      await Promise.all(
+        images.map((image) => image.decode().catch(() => undefined)),
+      );
+      this.classList.add("isDecoded");
+    };
 
     #scheduleUpdate = () => {
       if (this.#frame) return;
@@ -106,12 +285,13 @@ const sections = getSections(content);
 
       const activeId = this.#targets[activeIndex]?.id;
 
-      for (const anchor of this.#anchors) {
-        anchor.classList.toggle(
-          "isActive",
-          anchor.dataset.section === activeId,
-        );
-      }
+      this.#activeIndex = Math.max(
+        0,
+        this.#anchors.findIndex(
+          (anchor) => anchor.dataset.section === activeId,
+        ),
+      );
+      this.#animate();
     };
   }
 
@@ -126,6 +306,13 @@ const sections = getSections(content);
     left: 0;
     right: 0;
     pointer-events: none;
+    transition: opacity 0.6s;
+
+    @media (scripting: enabled) {
+      &:not(.isDecoded) {
+        opacity: 0;
+      }
+    }
   }
 
   .images,
@@ -180,11 +367,15 @@ const sections = getSections(content);
     }
   }
 
+  /* Sizes, offset and shift are eased by the script; these are the end states */
   .compact {
+    --small-width: 28.5px;
+    --small-height: 35.5px;
+    --large-height: 71px;
     position: absolute;
     top: 0;
-    left: 50%;
-    translate: -50% 0;
+    left: 0;
+    translate: var(--strip-offset, calc(50vw - 50%)) 0;
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-5);
@@ -192,40 +383,28 @@ const sections = getSections(content);
 
     .images {
       display: flex;
-      width: 28.5px;
-      height: 35.5px;
+      width: var(--images-width, var(--small-width));
+      height: var(--images-height, var(--small-height));
       border-radius: 5px;
       overflow: hidden;
-      /* Lets width animate to and from auto where supported */
-      interpolate-size: allow-keywords;
-      transition:
-        width 0.3s,
-        height 0.3s;
     }
 
     img {
       flex-shrink: 0;
       height: 100%;
-      width: 100%;
+      width: auto;
+      max-width: none;
+      translate: var(--images-shift, 0) 0;
+    }
+
+    img:first-child {
+      min-width: var(--small-width);
       object-fit: cover;
     }
+  }
 
-    /* Idle anchors show just the first image, cropped */
-    .anchor:not(.isActive) img:not(:first-child) {
-      display: none;
-    }
-
-    .anchor.isActive {
-      .images {
-        width: auto;
-        height: 71px;
-      }
-
-      img {
-        width: auto;
-        max-width: none;
-      }
-    }
+  :global(html:has(section-nav)) {
+    scroll-behavior: smooth;
   }
 
   /* Names live only on the nav in use, so both navs can stay laid out */

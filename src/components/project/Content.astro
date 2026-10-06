@@ -11,6 +11,8 @@ import { content, getSectionId, type ContentBlock } from "../../data/project";
 
 let sectionNumber = 0;
 
+const headerBlock = content.at(0);
+
 const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
   const contentSplitByConstraint: {
     blocks: ContentBlock[];
@@ -57,6 +59,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
             colSpan={block.colSpan}
             colStart={block.colStart}
             alignSelf={block.alignment}
+            isAwaitedByLoader={block === headerBlock}
           />
         );
       }
@@ -64,7 +67,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
       if (block.type === "video") {
         return (
           <ProjectVideo
-            src={block.image}
+            video={block.video}
             colSpan={block.colSpan}
             colStart={block.colStart}
             alignSelf={block.alignment}

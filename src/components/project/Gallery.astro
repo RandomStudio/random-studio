@@ -1,22 +1,38 @@
 ---
-import type { GalleryInfo } from "../../data/project";
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+
+import PlaceholderImage from "../PlaceholderImage/PlaceholderImage.astro";
+
+import { getSlideIndex, type GalleryInfo } from "../../data/project";
+import { getColumnSpanSizes } from "./getColumnSpanSizes";
 
 type Props = {
-  images: string[];
+  images: ImageMetadata[];
   info?: GalleryInfo;
 };
 
+const OVERLAY_IMAGE_WIDTH = 2560;
+const THUMBNAIL_COLUMN_SPAN = 4;
+
 const { info, images } = Astro.props;
+
+const overlayImages = await Promise.all(
+  images.map((image) => getImage({ src: image, width: OVERLAY_IMAGE_WIDTH })),
+);
 ---
 
 <project-gallery class:list={["gallery", info && "hasInfo"]}>
   <div class="images">
-    {images.map((image) => (
-      <img
+    {images.map((image, index) => (
+      <PlaceholderImage
         class="image"
         src={image}
         alt="gallery image"
-        data-slideshow-src={image}
+        layout="full-width"
+        sizes={getColumnSpanSizes(THUMBNAIL_COLUMN_SPAN)}
+        data-slideshow-index={getSlideIndex(image)}
+        data-overlay-src={overlayImages[index]?.src}
       />
     ))}
   </div>
@@ -73,7 +89,7 @@ const { info, images } = Astro.props;
 
       clearTimeout(this.#timer);
       this.#hovered = target;
-      this.#overlay.style.backgroundImage = `url("${target.currentSrc}")`;
+      this.#overlay.style.backgroundImage = `url("${target.dataset.overlaySrc}")`;
       this.#overlay.hidden = false;
       this.#positionSelection();
     };

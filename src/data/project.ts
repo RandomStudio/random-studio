@@ -1,3 +1,40 @@
+import type { ImageMetadata } from "astro";
+
+import image01A from "../assets/project/01_a.png";
+import image01C from "../assets/project/01_c.png";
+import image01D from "../assets/project/01_d.jpg";
+import image01E from "../assets/project/01_e.jpg";
+import image02 from "../assets/project/02.png";
+import image03 from "../assets/project/03.png";
+import image05 from "../assets/project/05.png";
+import image06 from "../assets/project/06.png";
+import image07A from "../assets/project/07_a.png";
+import image08 from "../assets/project/08.png";
+import image09 from "../assets/project/09.png";
+import image10 from "../assets/project/10.png";
+import image11 from "../assets/project/11.png";
+import image12A from "../assets/project/12_a.png";
+import image12B from "../assets/project/12_b.png";
+import image12C from "../assets/project/12_c.png";
+import image12D from "../assets/project/12_d.png";
+import image12E from "../assets/project/12_e.png";
+import image12F from "../assets/project/12_f.png";
+import image12G from "../assets/project/12_g.png";
+import image12H from "../assets/project/12_h.png";
+import image13 from "../assets/project/13.png";
+import headerImage from "../assets/project/header.png";
+import moreInfoImage01 from "../assets/project/more-info/01.png";
+import moreInfoPoster02 from "../assets/project/more-info/02.png";
+import moreInfoImage03 from "../assets/project/more-info/03.png";
+import moreInfoImage04 from "../assets/project/more-info/04.png";
+import moreInfoImage05 from "../assets/project/more-info/05.png";
+
+export type Video = {
+  src: string;
+  width: number;
+  height: number;
+};
+
 export type MoreInfoBlock =
   | {
       type: "text";
@@ -5,15 +42,14 @@ export type MoreInfoBlock =
     }
   | {
       type: "image";
-      image: string;
-      // Percentage of the panel's content width
-      width: number;
+      image: ImageMetadata;
+      panelWidthPercentage: number;
     }
   | {
       type: "video";
-      video: string;
-      poster: string;
-      width: number;
+      video: Video;
+      poster: ImageMetadata;
+      panelWidthPercentage: number;
     };
 
 export type GalleryInfo = {
@@ -28,7 +64,7 @@ export type MoreInfo = {
 };
 
 export type SlideshowSlide = {
-  images: string[];
+  images: ImageMetadata[];
   alt?: string;
 };
 
@@ -39,12 +75,12 @@ export type ContentBlock = {
   alignment?: "start" | "center" | "end";
 } & (
   | {
-      image: string;
+      image: ImageMetadata;
       alt?: string;
       type: "image";
     }
   | {
-      image: string;
+      video: Video;
       alt?: string;
       type: "video";
     }
@@ -58,7 +94,7 @@ export type ContentBlock = {
     }
   | {
       type: "gallery";
-      images: string[];
+      images: ImageMetadata[];
       info?: GalleryInfo;
     }
   | {
@@ -67,17 +103,15 @@ export type ContentBlock = {
     }
 );
 
-export type Slide = {
-  type: "image" | "video";
-  src: string;
-  alt: string;
-};
+export type Slide = { alt: string } & (
+  { type: "image"; image: ImageMetadata } | { type: "video"; video: Video }
+);
 
 export type Section = {
   id: string;
   number: number;
   title: string;
-  images: string[];
+  images: ImageMetadata[];
 };
 
 export const MAX_SECTION_PREVIEW_IMAGES = 3;
@@ -87,7 +121,7 @@ export const content: ContentBlock[] = [
     colSpan: 20,
     colStart: 1,
     type: "image",
-    image: "/project/header.png",
+    image: headerImage,
     alt: "Exhibition Exterior, Daytime",
   },
   {
@@ -107,9 +141,11 @@ export const content: ContentBlock[] = [
     colStart: 1,
     type: "slideshow",
     slides: [
-      { images: ["/project/01_a.png"] },
-      { images: ["/project/01_c.png"] },
-      { images: ["/project/01_d.jpg", "/project/01_e.jpg"] },
+      { images: [image01A] },
+      { images: [image01C] },
+      {
+        images: [image01D, image01E],
+      },
     ],
   },
   {
@@ -135,14 +171,18 @@ export const content: ContentBlock[] = [
         },
         {
           type: "image",
-          image: "/project/more-info/01.png",
-          width: 100,
+          image: moreInfoImage01,
+          panelWidthPercentage: 100,
         },
         {
           type: "video",
-          video: "/project/more-info/02.mp4",
-          poster: "/project/more-info/02.png",
-          width: 100,
+          video: {
+            src: "/project/more-info/02.mp4",
+            width: 1080,
+            height: 1080,
+          },
+          poster: moreInfoPoster02,
+          panelWidthPercentage: 100,
         },
         {
           type: "text",
@@ -152,18 +192,18 @@ export const content: ContentBlock[] = [
         },
         {
           type: "image",
-          image: "/project/more-info/03.png",
-          width: 78.5,
+          image: moreInfoImage03,
+          panelWidthPercentage: 78.5,
         },
         {
           type: "image",
-          image: "/project/more-info/04.png",
-          width: 75.3,
+          image: moreInfoImage04,
+          panelWidthPercentage: 75.3,
         },
         {
           type: "image",
-          image: "/project/more-info/05.png",
-          width: 87.8,
+          image: moreInfoImage05,
+          panelWidthPercentage: 87.8,
         },
       ],
     },
@@ -172,31 +212,31 @@ export const content: ContentBlock[] = [
     colSpan: 7,
     colStart: 1,
     type: "image",
-    image: "/project/02.png",
+    image: image02,
   },
   {
     colStart: 11,
     colSpan: 10,
     type: "image",
-    image: "/project/03.png",
+    image: image03,
   },
   {
     colSpan: 20,
     colStart: 1,
     type: "video",
-    image: "/project/04.mp4",
+    video: { src: "/project/04.mp4", width: 1920, height: 1000 },
   },
   {
     colSpan: 10,
     colStart: 1,
     type: "image",
-    image: "/project/05.png",
+    image: image05,
   },
   {
     colSpan: 7,
     colStart: 13,
     type: "image",
-    image: "/project/06.png",
+    image: image06,
     alignment: "center",
   },
   {
@@ -214,26 +254,26 @@ export const content: ContentBlock[] = [
     colSpan: 7,
     colStart: 1,
     type: "image",
-    image: "/project/07_a.png",
+    image: image07A,
   },
   {
     colSpan: 13,
     colStart: 8,
     type: "image",
-    image: "/project/08.png",
+    image: image08,
   },
   {
     colSpan: 14,
     colStart: 1,
     type: "video",
-    image: "/project/8.mp4",
+    video: { src: "/project/8.mp4", width: 1080, height: 1080 },
     alt: "Fabric Totems - Interaction Animation",
   },
   {
     colSpan: 6,
     colStart: 15,
     type: "image",
-    image: "/project/09.png",
+    image: image09,
   },
   {
     colSpan: 20,
@@ -250,27 +290,27 @@ export const content: ContentBlock[] = [
     colSpan: 6,
     colStart: 5,
     type: "image",
-    image: "/project/10.png",
+    image: image10,
   },
   {
     colSpan: 10,
     colStart: 11,
     type: "image",
-    image: "/project/11.png",
+    image: image11,
   },
   {
     colSpan: 20,
     colStart: 1,
     type: "gallery",
     images: [
-      "/project/12_a.png",
-      "/project/12_b.png",
-      "/project/12_c.png",
-      "/project/12_d.png",
-      "/project/12_e.png",
-      "/project/12_f.png",
-      "/project/12_g.png",
-      "/project/12_h.png",
+      image12A,
+      image12B,
+      image12C,
+      image12D,
+      image12E,
+      image12F,
+      image12G,
+      image12H,
     ],
     info: {
       title: "Working onsite in Galicia with Acierta.",
@@ -283,22 +323,29 @@ export const content: ContentBlock[] = [
     colSpan: 20,
     colStart: 1,
     type: "image",
-    image: "/project/13.png",
+    image: image13,
   },
 ];
 
 export const getSectionId = (number: number) => `section-${number}`;
 
+const getSlideMedia = (slide: Slide) =>
+  slide.type === "image" ? slide.image : slide.video;
+
 export const getSlides = (blocks: ContentBlock[]): Slide[] =>
   blocks.flatMap((block): Slide[] => {
-    if (block.type === "image" || block.type === "video") {
-      return [{ type: block.type, src: block.image, alt: block.alt ?? "" }];
+    if (block.type === "image") {
+      return [{ type: "image", image: block.image, alt: block.alt ?? "" }];
+    }
+
+    if (block.type === "video") {
+      return [{ type: "video", video: block.video, alt: block.alt ?? "" }];
     }
 
     if (block.type === "gallery") {
       return block.images.map((image) => ({
         type: "image",
-        src: image,
+        image,
         alt: "",
       }));
     }
@@ -307,7 +354,7 @@ export const getSlides = (blocks: ContentBlock[]): Slide[] =>
       return block.slides.flatMap((slide) =>
         slide.images.map((image) => ({
           type: "image",
-          src: image,
+          image,
           alt: slide.alt ?? "",
         })),
       );
@@ -316,11 +363,16 @@ export const getSlides = (blocks: ContentBlock[]): Slide[] =>
     return [];
   });
 
+export const slides = getSlides(content);
+
+export const getSlideIndex = (media: ImageMetadata | Video) =>
+  slides.findIndex((slide) => getSlideMedia(slide) === media);
+
 // Each text block starts a section. Images before the first text block belong
 // to the first section.
 export const getSections = (blocks: ContentBlock[]): Section[] => {
   const sections: Section[] = [];
-  let leadingImages: string[] = [];
+  let leadingImages: ImageMetadata[] = [];
 
   blocks.forEach((block) => {
     if (block.type === "text") {

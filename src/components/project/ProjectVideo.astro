@@ -1,22 +1,26 @@
 ---
+import { getSlideIndex, type Video } from "../../data/project";
+
 type Props = {
-  src: string;
+  video: Video;
   colSpan?: number;
   colStart?: number;
   alignSelf?: "start" | "center" | "end";
 };
 
-const { src, colSpan, colStart, alignSelf } = Astro.props;
+const { video, colSpan, colStart, alignSelf } = Astro.props;
 ---
 
 <video
   class="video"
-  src={src}
+  src={video.src}
+  width={video.width}
+  height={video.height}
   playsinline
   muted
   loop
   autoplay
-  data-slideshow-src={src}
+  data-slideshow-index={getSlideIndex(video)}
   style={{
     gridColumn: `${colStart} / span ${colSpan}`,
     alignSelf: alignSelf ?? "center",

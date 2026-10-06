@@ -1,8 +1,8 @@
 ---
-import SlideVideo from "./SlideVideo/SlideVideo.astro";
-import { content, getSlides } from "../../../data/project";
+import { Image } from "astro:assets";
 
-const slides = getSlides(content);
+import SlideVideo from "./SlideVideo/SlideVideo.astro";
+import { slides } from "../../../data/project";
 ---
 
 <project-slideshow>
@@ -10,11 +10,17 @@ const slides = getSlides(content);
     <button class="step previous" data-step="-1" aria-label="Previous"></button>
     <button class="step next" data-step="1" aria-label="Next"></button>
     {slides.map((slide, index) => (
-      <figure class="slide" data-src={slide.src} hidden={index !== 0}>
+      <figure class="slide" hidden={index !== 0}>
         {slide.type === "image" ? (
-          <img class="image" src={slide.src} alt={slide.alt} decoding="sync" />
+          <Image
+            class="image"
+            src={slide.image}
+            alt={slide.alt}
+            layout="full-width"
+            decoding="sync"
+          />
         ) : (
-          <SlideVideo src={slide.src} />
+          <SlideVideo video={slide.video} />
         )}
         <figcaption class="caption">{slide.alt}</figcaption>
       </figure>
@@ -30,11 +36,12 @@ const slides = getSlides(content);
     MODE_CHANGE_EVENT,
     type Mode,
   } from "../../modeEvents";
+  import { onLoaderComplete } from "../../loaderState";
   import { watchIdle } from "./watchIdle";
 
   const KEY_STEPS: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1 };
   const VIEW_LABEL = "View";
-  const SCREENSAVER_IDLE_TIMEOUT = 10000;
+  const SCREENSAVER_IDLE_TIMEOUT = 30000;
   const SCREENSAVER_IMAGE_DURATION = 5000;
 
   type PointerPosition = { x: number; y: number };
@@ -86,18 +93,22 @@ const slides = getSlides(content);
         capture: true,
       });
 
-      watchIdle({
-        timeout: SCREENSAVER_IDLE_TIMEOUT,
-        onIdle: this.#handleIdle,
-        onActive: this.#handleActive,
-        signal,
-      });
+      onLoaderComplete(() => this.#watchForScreensaver(signal), signal);
     }
 
     disconnectedCallback() {
       this.#controller?.abort();
       clearTimeout(this.#screensaverTimer);
     }
+
+    #watchForScreensaver = (signal: AbortSignal) => {
+      watchIdle({
+        timeout: SCREENSAVER_IDLE_TIMEOUT,
+        onIdle: this.#handleIdle,
+        onActive: this.#handleActive,
+        signal,
+      });
+    };
 
     #handleIdle = () => {
       this.#setScreensaver(true);
@@ -246,11 +257,10 @@ const slides = getSlides(content);
     };
 
     #getOpenerIndex = (element: Element | null) => {
-      const src = element?.closest<HTMLElement>("[data-slideshow-src]")?.dataset
-        .slideshowSrc;
-      if (!src) return -1;
+      const index = element?.closest<HTMLElement>("[data-slideshow-index]")
+        ?.dataset.slideshowIndex;
 
-      return this.#slides.findIndex((slide) => slide.dataset.src === src);
+      return index === undefined ? -1 : Number(index);
     };
 
     #step = (offset: number) => {
@@ -279,7 +289,7 @@ const slides = getSlides(content);
       const video = this.#getActiveVideo();
       if (!video) return;
 
-      const pageVideo = this.#getPageVideo(video.getAttribute("src"));
+      const pageVideo = this.#getPageVideo(this.#activeIndex);
 
       if (pageVideo) {
         video.currentTime = pageVideo.currentTime;
@@ -291,12 +301,10 @@ const slides = getSlides(content);
     #getActiveVideo = () =>
       this.#slides[this.#activeIndex]?.querySelector("video");
 
-    #getPageVideo = (src: string | null) =>
-      [
-        ...document.querySelectorAll<HTMLVideoElement>(
-          "video[data-slideshow-src]",
-        ),
-      ].find((pageVideo) => pageVideo.dataset.slideshowSrc === src);
+    #getPageVideo = (index: number) =>
+      document.querySelector<HTMLVideoElement>(
+        `video[data-slideshow-index="${index}"]`,
+      );
   }
 
   customElements.define("project-slideshow", ProjectSlideshow);

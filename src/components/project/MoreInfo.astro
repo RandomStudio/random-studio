@@ -1,11 +1,30 @@
 ---
+import { getImage } from "astro:assets";
+
 import MoreInfoIcon from "../../icons/more-info.svg";
+import PlaceholderImage from "../PlaceholderImage/PlaceholderImage.astro";
 
 import type { MoreInfo } from "../../data/project";
 
 type Props = MoreInfo;
 
+const PANEL_MAX_WIDTH = 570;
+
 const { title, teaser, content } = Astro.props;
+
+const posterSources = new Map(
+  await Promise.all(
+    content
+      .filter((block) => block.type === "video")
+      .map(
+        async (block) =>
+          [block.poster, (await getImage({ src: block.poster })).src] as const,
+      ),
+  ),
+);
+
+const getPanelImageSizes = (panelWidthPercentage: number) =>
+  `${Math.round((PANEL_MAX_WIDTH * panelWidthPercentage) / 100)}px`;
 ---
 
 <more-info class="more-info">
@@ -39,23 +58,26 @@ const { title, teaser, content } = Astro.props;
           if (block.type === "video") {
             return (
               <video
-                src={block.video}
-                poster={block.poster}
+                src={block.video.src}
+                width={block.video.width}
+                height={block.video.height}
+                poster={posterSources.get(block.poster)}
                 playsinline
                 muted
                 loop
                 autoplay
-                style={{ width: `${block.width}%` }}
+                style={{ width: `${block.panelWidthPercentage}%` }}
               />
             );
           }
 
           return (
-            <img
+            <PlaceholderImage
               src={block.image}
               alt=""
-              loading="lazy"
-              style={{ width: `${block.width}%` }}
+              layout="full-width"
+              sizes={getPanelImageSizes(block.panelWidthPercentage)}
+              style={{ width: `${block.panelWidthPercentage}%` }}
             />
           );
         })}

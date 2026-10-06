@@ -2,15 +2,25 @@
 import DownloadIcon from "../../../../icons/download.svg";
 import FullscreenIcon from "../../../../icons/fullscreen.svg";
 
+import type { Video } from "../../../../data/project";
+
 type Props = {
-  src: string;
+  video: Video;
 };
 
-const { src } = Astro.props;
+const { video } = Astro.props;
 ---
 
 <slide-video class="slide-video">
-  <video src={src} playsinline muted loop preload="metadata"></video>
+  <video
+    src={video.src}
+    width={video.width}
+    height={video.height}
+    playsinline
+    muted
+    loop
+    preload="metadata"
+  ></video>
   <div class="controls">
     <p class="time">00:00:00</p>
     <button class="control" data-action="fullscreen" aria-label="Fullscreen">
@@ -24,7 +34,7 @@ const { src } = Astro.props;
       <span>Sound On</span>
       <span>Sound Off</span>
     </button>
-    <a class="control download" href={src} download>
+    <a class="control download" href={video.src} download>
       Download
       <DownloadIcon />
     </a>
