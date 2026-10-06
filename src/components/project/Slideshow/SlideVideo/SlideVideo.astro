@@ -151,6 +151,10 @@ const { src } = Astro.props;
     pointer-events: auto;
   }
 
+  :global(.isScreensaver) .controls {
+    display: none;
+  }
+
   .time,
   .control {
     @mixin h3;

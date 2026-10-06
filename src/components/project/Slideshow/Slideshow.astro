@@ -30,9 +30,12 @@ const slides = getSlides(content);
     MODE_CHANGE_EVENT,
     type Mode,
   } from "../../modeEvents";
+  import { watchIdle } from "./watchIdle";
 
   const KEY_STEPS: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1 };
   const VIEW_LABEL = "View";
+  const SCREENSAVER_IDLE_TIMEOUT = 10000;
+  const SCREENSAVER_IMAGE_DURATION = 5000;
 
   type PointerPosition = { x: number; y: number };
 
@@ -44,6 +47,9 @@ const slides = getSlides(content);
     #activeIndex = 0;
     #requestedIndex = 0;
     #isOpen = false;
+    #isScreensaver = false;
+    #hasScreensaverOpenedImageMode = false;
+    #screensaverTimer?: ReturnType<typeof setTimeout>;
     #pointer?: PointerPosition;
     #controller?: AbortController;
 
@@ -74,11 +80,84 @@ const slides = getSlides(content);
       for (const button of this.querySelectorAll<HTMLButtonElement>(".step")) {
         button.addEventListener("click", this.#handleStepClick, { signal });
       }
+
+      this.addEventListener("ended", this.#handleVideoEnded, {
+        signal,
+        capture: true,
+      });
+
+      watchIdle({
+        timeout: SCREENSAVER_IDLE_TIMEOUT,
+        onIdle: this.#handleIdle,
+        onActive: this.#handleActive,
+        signal,
+      });
     }
 
     disconnectedCallback() {
       this.#controller?.abort();
+      clearTimeout(this.#screensaverTimer);
     }
+
+    #handleIdle = () => {
+      this.#setScreensaver(true);
+      this.#hasScreensaverOpenedImageMode = !this.#isOpen;
+
+      if (this.#isOpen) {
+        this.#continueScreensaverSlide();
+      } else {
+        this.#requestedIndex = this.#activeIndex;
+        document.dispatchEvent(new Event(IMAGE_MODE_OPEN_EVENT));
+      }
+    };
+
+    #handleActive = () => {
+      this.#setScreensaver(false);
+      clearTimeout(this.#screensaverTimer);
+
+      if (this.#hasScreensaverOpenedImageMode) {
+        document.dispatchEvent(new Event(IMAGE_MODE_CLOSE_EVENT));
+      }
+    };
+
+    #handleVideoEnded = () => {
+      if (this.#isScreensaver) {
+        this.#step(1);
+      }
+    };
+
+    #setScreensaver = (isScreensaver: boolean) => {
+      this.#isScreensaver = isScreensaver;
+      this.classList.toggle("isScreensaver", isScreensaver);
+
+      for (const video of this.querySelectorAll("video")) {
+        video.loop = !isScreensaver;
+      }
+    };
+
+    #startScreensaverSlide = () => {
+      const video = this.#getActiveVideo();
+
+      if (video) {
+        video.currentTime = 0;
+      }
+
+      this.#continueScreensaverSlide();
+    };
+
+    #continueScreensaverSlide = () => {
+      clearTimeout(this.#screensaverTimer);
+      const video = this.#getActiveVideo();
+
+      if (video) {
+        video.play();
+      } else {
+        this.#screensaverTimer = setTimeout(
+          () => this.#step(1),
+          SCREENSAVER_IMAGE_DURATION,
+        );
+      }
+    };
 
     #handleOpenerClick = ({ target }: Event) => {
       const index = this.#getOpenerIndex(target as Element);
@@ -187,7 +266,9 @@ const slides = getSlides(content);
         slide.hidden = slideIndex !== index;
       });
 
-      if (this.#isOpen) {
+      if (this.#isScreensaver) {
+        this.#startScreensaverSlide();
+      } else if (this.#isOpen) {
         this.#resumeActiveVideoFromPage();
       }
 
@@ -228,10 +309,30 @@ const slides = getSlides(content);
     z-index: 999;
     background-color: var(--color-background);
     visibility: hidden;
+    opacity: 0;
   }
 
   :global(.mode--image-only) .overlay {
     visibility: visible;
+    opacity: 1;
+  }
+
+  .isScreensaver {
+    .overlay {
+      /* Above the nav, menu and the gallery's hover preview */
+      z-index: 10001;
+      cursor: none;
+      transition: opacity 1s;
+    }
+
+    .slide {
+      padding: var(--spacing-40);
+    }
+
+    .caption,
+    .cursor-label {
+      display: none;
+    }
   }
 
   .step {
