@@ -36,10 +36,25 @@ const { title, teaser, content } = Astro.props;
             );
           }
 
+          if (block.type === "video") {
+            return (
+              <video
+                src={block.video}
+                poster={block.poster}
+                playsinline
+                muted
+                loop
+                autoplay
+                style={{ width: `${block.width}%` }}
+              />
+            );
+          }
+
           return (
             <img
               src={block.image}
               alt=""
+              loading="lazy"
               style={{ width: `${block.width}%` }}
             />
           );

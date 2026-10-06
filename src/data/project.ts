@@ -8,6 +8,12 @@ export type MoreInfoBlock =
       image: string;
       // Percentage of the panel's content width
       width: number;
+    }
+  | {
+      type: "video";
+      video: string;
+      poster: string;
+      width: number;
     };
 
 export type GalleryInfo = {
@@ -133,25 +139,31 @@ export const content: ContentBlock[] = [
           width: 100,
         },
         {
-          type: "image",
-          image: "/project/more-info/02.png",
-          width: 75.3,
-        },
-        {
-          type: "image",
-          image: "/project/more-info/03.png",
-          width: 87.8,
-        },
-        {
-          type: "image",
-          image: "/project/more-info/04.png",
-          width: 78.5,
+          type: "video",
+          video: "/project/more-info/02.mp4",
+          poster: "/project/more-info/02.png",
+          width: 100,
         },
         {
           type: "text",
           copy: [
             "Earlier designs more directly referenced a traditional temple like structure. In the end, this layout proved too ordered, imposing a hierarchy on the fabrics. This resulted in the final, more uniform layout, allowing the visitors to choose based on material family and construction.",
           ],
+        },
+        {
+          type: "image",
+          image: "/project/more-info/03.png",
+          width: 78.5,
+        },
+        {
+          type: "image",
+          image: "/project/more-info/04.png",
+          width: 75.3,
+        },
+        {
+          type: "image",
+          image: "/project/more-info/05.png",
+          width: 87.8,
         },
       ],
     },
