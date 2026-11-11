@@ -13,6 +13,8 @@ import Content from "../components/project/Content.astro";
 import Related from "../components/project/Related.astro";
 import SectionNav from "../components/project/SectionNav.astro";
 import Slideshow from "../components/project/Slideshow/Slideshow.astro";
+
+import { projectTitle } from "../data/project";
 ---
 
 <html lang="en">
@@ -39,7 +41,7 @@ import Slideshow from "../components/project/Slideshow/Slideshow.astro";
     <Slideshow />
     <main class="page">
       <Constraint client:load type="full" class="header">
-        <LoadingTitle>Past and Future fabrics exhibition for Zara</LoadingTitle>
+        <LoadingTitle>{projectTitle}</LoadingTitle>
       </Constraint>
       <Content />
       <Credits

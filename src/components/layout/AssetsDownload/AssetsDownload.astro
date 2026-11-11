@@ -1,0 +1,44 @@
+---
+import { projectTitle } from "../../../data/project";
+import DownloadIcon from "../../../icons/download.svg";
+import { assetsZip } from "./assetsZip";
+
+const BYTES_PER_MEGABYTE = 1_000_000;
+
+const toPascalCase = (text: string) =>
+  text
+    .split(/[^a-z0-9]+/i)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("");
+
+const sizeInMegabytes = Math.round(
+  (await assetsZip).byteLength / BYTES_PER_MEGABYTE,
+);
+
+const downloadFilename = `RandomStudio_${toPascalCase(projectTitle)}_Assets.zip`;
+---
+
+<a class="assetsDownload" href="/assets.zip" download={downloadFilename}>
+  Assets [{sizeInMegabytes}mb]
+  <DownloadIcon />
+</a>
+
+<style>
+  .assetsDownload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3em;
+    color: black;
+
+    &:hover {
+      color: var(--color-link);
+    }
+
+    svg {
+      display: inline-block;
+      height: 1cap;
+      width: auto;
+    }
+  }
+</style>

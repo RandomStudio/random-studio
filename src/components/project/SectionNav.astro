@@ -13,11 +13,13 @@ const sections = getSections(content);
 ---
 
 <section-nav class="section-nav">
-  <nav class="expanded" aria-label="Sections">
+  <nav class="strip" aria-label="Sections">
     {sections.map((section) => (
       <a
         class="anchor"
         href={`#${section.id}`}
+        data-section={section.id}
+        title={section.title}
         style={`--images-transition-name: ${section.id}-images; --text-transition-name: ${section.id}-text`}
       >
         <div class="images">
@@ -26,34 +28,13 @@ const sections = getSections(content);
               src={image}
               alt=""
               height={PREVIEW_IMAGE_HEIGHT}
+              loading="eager"
               data-awaited-by-loader
             />
           ))}
         </div>
         <div class="text">
           <p>{section.title}</p>
-        </div>
-      </a>
-    ))}
-  </nav>
-  <nav class="compact" aria-label="Sections">
-    {sections.map((section) => (
-      <a
-        class="anchor"
-        href={`#${section.id}`}
-        data-section={section.id}
-        title={section.title}
-        style={`--images-transition-name: ${section.id}-images`}
-      >
-        <div class="images">
-          {section.images.slice(0, MAX_SECTION_PREVIEW_IMAGES).map((image) => (
-            <Image
-              src={image}
-              alt=""
-              height={PREVIEW_IMAGE_HEIGHT}
-              data-awaited-by-loader
-            />
-          ))}
         </div>
       </a>
     ))}
@@ -106,9 +87,9 @@ const sections = getSections(content);
     #lastFrameTime = 0;
 
     connectedCallback() {
-      this.#strip = this.querySelector<HTMLElement>(".compact") ?? undefined;
+      this.#strip = this.querySelector<HTMLElement>(".strip") ?? undefined;
       this.#anchors = [
-        ...this.querySelectorAll<HTMLAnchorElement>(".compact [data-section]"),
+        ...this.querySelectorAll<HTMLAnchorElement>(".strip [data-section]"),
       ];
       this.#targets = this.#anchors
         .map((anchor) => document.getElementById(anchor.dataset.section!))
@@ -250,9 +231,7 @@ const sections = getSections(content);
     };
 
     #showOnceDecoded = async () => {
-      const images = [
-        ...this.querySelectorAll<HTMLImageElement>(".expanded img"),
-      ];
+      const images = [...this.querySelectorAll<HTMLImageElement>("img")];
 
       await Promise.all(
         images.map((image) => image.decode().catch(() => undefined)),
@@ -320,7 +299,11 @@ const sections = getSections(content);
     view-transition-class: section-nav;
   }
 
-  .expanded {
+  .strip {
+    /* Compact end states; the script eases sizes, offset and shift towards them */
+    --small-width: 28.5px;
+    --small-height: 35.5px;
+    --large-height: 71px;
     display: flex;
     gap: var(--spacing-5);
     padding: var(--spacing-15);
@@ -344,6 +327,7 @@ const sections = getSections(content);
     }
 
     img {
+      flex-shrink: 0;
       height: 100%;
       width: auto;
       max-width: none;
@@ -367,66 +351,35 @@ const sections = getSections(content);
     }
   }
 
-  /* Sizes, offset and shift are eased by the script; these are the end states */
-  .compact {
-    --small-width: 28.5px;
-    --small-height: 35.5px;
-    --large-height: 71px;
+  :global(.isProjectTitleHidden) .strip {
     position: absolute;
     top: 0;
     left: 0;
     translate: var(--strip-offset, calc(50vw - 50%)) 0;
-    display: flex;
     align-items: flex-start;
-    gap: var(--spacing-5);
-    visibility: hidden;
+    padding: 0;
+    overflow: visible;
 
     .images {
-      display: flex;
       width: var(--images-width, var(--small-width));
       height: var(--images-height, var(--small-height));
-      border-radius: 5px;
-      overflow: hidden;
     }
 
     img {
-      flex-shrink: 0;
-      height: 100%;
-      width: auto;
-      max-width: none;
       translate: var(--images-shift, 0) 0;
     }
 
     img:first-child {
       min-width: var(--small-width);
-      object-fit: cover;
+    }
+
+    .text {
+      display: none;
     }
   }
 
   :global(html:has(section-nav)) {
     scroll-behavior: smooth;
-  }
-
-  /* Names live only on the nav in use, so both navs can stay laid out */
-  :global(.isProjectTitleHidden) {
-    .expanded {
-      visibility: hidden;
-      pointer-events: none;
-
-      .images,
-      .text {
-        view-transition-name: none;
-      }
-    }
-
-    .compact {
-      visibility: visible;
-      pointer-events: auto;
-
-      .images {
-        view-transition-name: var(--images-transition-name);
-      }
-    }
   }
 
   :global(::view-transition-group(*.section-nav)) {

@@ -116,6 +116,8 @@ export type Section = {
 
 export const MAX_SECTION_PREVIEW_IMAGES = 3;
 
+export const projectTitle = "Past and Future fabrics exhibition for Zara";
+
 export const content: ContentBlock[] = [
   {
     colSpan: 20,
@@ -128,7 +130,7 @@ export const content: ContentBlock[] = [
     colSpan: 20,
     colStart: 1,
     type: "text",
-    title: "Past and Future fabrics exhibition for Zara",
+    title: projectTitle,
     navTitle: "Introduction",
     isFullWidth: false,
     copy: [

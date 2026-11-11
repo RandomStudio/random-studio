@@ -1,6 +1,7 @@
 ---
 import Constraint from "./Constraint.astro";
-import DownloadIcon from "../../icons/download.svg";
+import AssetsDownload from "./AssetsDownload/AssetsDownload.astro";
+import { projectTitle } from "../../data/project";
 ---
 
 <Constraint class="outer" type="full">
@@ -14,10 +15,9 @@ import DownloadIcon from "../../icons/download.svg";
       <li data-mode="text">Text</li>
     </ul>
   </div>
-  <h1 class="title">Past and Future fabrics exhibition for Zara</h1>
+  <h1 class="title">{projectTitle}</h1>
   <div class="presskit">
-    <a href="#">Assets [23,35mb]</a>
-    <DownloadIcon />
+    <AssetsDownload />
   </div>
   <button class="close" id="image-mode-close" type="button">
     Close
@@ -119,16 +119,10 @@ import DownloadIcon from "../../icons/download.svg";
     left: 50%;
     translate: -50% 0;
     width: min(100%, var(--max-width));
-    padding: var(--spacing-15) var(--gutter);
+    padding: var(--spacing-15) 0;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     align-items: start;
-
-    svg {
-      display: inline-block;
-      height: 1cap;
-      width: auto;
-    }
   }
   .mode {
     grid-column: 1 / span 5;
@@ -203,21 +197,7 @@ import DownloadIcon from "../../icons/download.svg";
     }
   }
   .presskit {
-    text-align: right;
-    cursor: pointer;
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
-    color: black;
-
-    &:hover {
-      color: var(--color-link);
-    }
-
-    a {
-      margin-right: 0.3em;
-      color: inherit;
-    }
   }
 </style>

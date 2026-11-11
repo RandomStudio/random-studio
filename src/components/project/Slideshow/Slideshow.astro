@@ -36,12 +36,11 @@ import { slides } from "../../../data/project";
     MODE_CHANGE_EVENT,
     type Mode,
   } from "../../modeEvents";
-  import { onLoaderComplete } from "../../loaderState";
   import { watchIdle } from "./watchIdle";
 
   const KEY_STEPS: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1 };
   const VIEW_LABEL = "View";
-  const SCREENSAVER_IDLE_TIMEOUT = 30000;
+  const SCREENSAVER_IDLE_TIMEOUT = 5000;
   const SCREENSAVER_IMAGE_DURATION = 5000;
 
   type PointerPosition = { x: number; y: number };
@@ -55,10 +54,10 @@ import { slides } from "../../../data/project";
     #requestedIndex = 0;
     #isOpen = false;
     #isScreensaver = false;
-    #hasScreensaverOpenedImageMode = false;
     #screensaverTimer?: ReturnType<typeof setTimeout>;
     #pointer?: PointerPosition;
     #controller?: AbortController;
+    #idleController?: AbortController;
 
     connectedCallback() {
       this.#slides = [...this.querySelectorAll<HTMLElement>(".slide")];
@@ -92,43 +91,38 @@ import { slides } from "../../../data/project";
         signal,
         capture: true,
       });
-
-      onLoaderComplete(() => this.#watchForScreensaver(signal), signal);
     }
 
     disconnectedCallback() {
       this.#controller?.abort();
-      clearTimeout(this.#screensaverTimer);
+      this.#stopWatchingForScreensaver();
     }
 
-    #watchForScreensaver = (signal: AbortSignal) => {
+    #watchForScreensaver = () => {
+      this.#idleController?.abort();
+      this.#idleController = new AbortController();
+
       watchIdle({
         timeout: SCREENSAVER_IDLE_TIMEOUT,
         onIdle: this.#handleIdle,
         onActive: this.#handleActive,
-        signal,
+        signal: this.#idleController.signal,
       });
+    };
+
+    #stopWatchingForScreensaver = () => {
+      this.#idleController?.abort();
+      this.#handleActive();
     };
 
     #handleIdle = () => {
       this.#setScreensaver(true);
-      this.#hasScreensaverOpenedImageMode = !this.#isOpen;
-
-      if (this.#isOpen) {
-        this.#continueScreensaverSlide();
-      } else {
-        this.#requestedIndex = this.#activeIndex;
-        document.dispatchEvent(new Event(IMAGE_MODE_OPEN_EVENT));
-      }
+      this.#continueScreensaverSlide();
     };
 
     #handleActive = () => {
       this.#setScreensaver(false);
       clearTimeout(this.#screensaverTimer);
-
-      if (this.#hasScreensaverOpenedImageMode) {
-        document.dispatchEvent(new Event(IMAGE_MODE_CLOSE_EVENT));
-      }
     };
 
     #handleVideoEnded = () => {
@@ -184,7 +178,9 @@ import { slides } from "../../../data/project";
       if (this.#isOpen) {
         this.#showSlide(this.#requestedIndex);
         this.#requestedIndex = 0;
+        this.#watchForScreensaver();
       } else {
+        this.#stopWatchingForScreensaver();
         this.#getActiveVideo()?.pause();
       }
     };
@@ -330,7 +326,6 @@ import { slides } from "../../../data/project";
       /* Above the nav, menu and the gallery's hover preview */
       z-index: 10001;
       cursor: none;
-      transition: opacity 1s;
     }
 
     .slide {
