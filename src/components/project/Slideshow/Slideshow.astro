@@ -26,7 +26,7 @@ import { slides } from "../../../data/project";
       </figure>
     ))}
   </div>
-  <p class="cursor-label" aria-hidden="true" hidden></p>
+  <p class="cursor-label" aria-hidden="true"></p>
 </project-slideshow>
 
 <script>
@@ -214,11 +214,13 @@ import { slides } from "../../../data/project";
 
     #renderCursorLabel = () => {
       const text = this.#pointer && this.#getCursorLabelText(this.#pointer);
-      this.#cursorLabel.hidden = !text;
+      this.#cursorLabel.classList.toggle("isVisible", Boolean(text));
 
       if (!text || !this.#pointer) return;
 
-      this.#cursorLabel.textContent = text;
+      if (this.#cursorLabel.textContent !== text) {
+        this.#cursorLabel.textContent = text;
+      }
       this.#cursorLabel.style.setProperty(
         "--pointer-x",
         `${this.#pointer.x}px`,
@@ -399,5 +401,12 @@ import { slides } from "../../../data/project";
     mix-blend-mode: difference;
     white-space: nowrap;
     pointer-events: none;
+    /* Hidden by visibility, not display, because adding or removing a blended layer repaints the whole page */
+    visibility: hidden;
+    will-change: translate;
+
+    &.isVisible {
+      visibility: visible;
+    }
   }
 </style>

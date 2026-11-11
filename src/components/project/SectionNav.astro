@@ -23,15 +23,19 @@ const sections = getSections(content);
         style={`--images-transition-name: ${section.id}-images; --text-transition-name: ${section.id}-text`}
       >
         <div class="images">
-          {section.images.slice(0, MAX_SECTION_PREVIEW_IMAGES).map((image) => (
-            <Image
-              src={image}
-              alt=""
-              height={PREVIEW_IMAGE_HEIGHT}
-              loading="eager"
-              data-awaited-by-loader
-            />
-          ))}
+          <div class="imageRow">
+            {section.images
+              .slice(0, MAX_SECTION_PREVIEW_IMAGES)
+              .map((image) => (
+                <Image
+                  src={image}
+                  alt=""
+                  height={PREVIEW_IMAGE_HEIGHT}
+                  loading="eager"
+                  data-awaited-by-loader
+                />
+              ))}
+          </div>
         </div>
         <div class="text">
           <p>{section.title}</p>
@@ -57,6 +61,13 @@ const sections = getSections(content);
 
   type AnchorMetrics = { largeWidth: number; firstImageAspect: number };
 
+  type AnchorGeometry = {
+    width: number;
+    height: number;
+    contentLeft: number;
+    contentHeight: number;
+  };
+
   const readPixels = (element: Element, property: string) =>
     parseFloat(getComputedStyle(element).getPropertyValue(property));
 
@@ -72,6 +83,80 @@ const sections = getSections(content);
   const prefersReducedMotion = () =>
     matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const getAnchorGeometry = (
+    { smallWidth, smallHeight, largeHeight }: CompactSizes,
+    { largeWidth, firstImageAspect }: AnchorMetrics,
+    progress: number,
+  ): AnchorGeometry => {
+    const height = interpolate(smallHeight, largeHeight, progress);
+    const centeringShift = Math.max(
+      0,
+      (firstImageAspect * smallHeight - smallWidth) / 2,
+    );
+
+    return {
+      width: interpolate(smallWidth, largeWidth, progress),
+      height,
+      contentLeft: -interpolate(centeringShift, 0, progress),
+      contentHeight: Math.max(height, smallWidth / firstImageAspect),
+    };
+  };
+
+  const getLeftEdges = (geometries: AnchorGeometry[], gap: number) =>
+    geometries.map((_, index) =>
+      geometries
+        .slice(0, index)
+        .reduce((left, { width }) => left + width + gap, 0),
+    );
+
+  // The row counter-scales the box's target-to-eased scale so images stay undistorted
+  const getAnchorStyle = (
+    eased: AnchorGeometry,
+    target: AnchorGeometry,
+    anchorOffset: number,
+  ) => {
+    const scaleX = eased.width / target.width;
+    const scaleY = eased.height / target.height;
+    const contentScale = eased.contentHeight / target.height;
+    const contentTop = (eased.height - eased.contentHeight) / 2;
+
+    return {
+      "--anchor-offset": `${anchorOffset}px`,
+      "--images-scale-x": `${scaleX}`,
+      "--images-scale-y": `${scaleY}`,
+      "--image-row-left": `${eased.contentLeft / scaleX}px`,
+      "--image-row-top": `${contentTop / scaleY}px`,
+      "--image-row-scale-x": `${contentScale / scaleX}`,
+      "--image-row-scale-y": `${contentScale / scaleY}`,
+    };
+  };
+
+  const getAnchorStyles = (
+    eased: AnchorGeometry[],
+    targets: AnchorGeometry[],
+    gap: number,
+  ) => {
+    const easedLefts = getLeftEdges(eased, gap);
+    const targetLefts = getLeftEdges(targets, gap);
+
+    return eased.map((geometry, index) =>
+      getAnchorStyle(
+        geometry,
+        targets[index]!,
+        easedLefts[index]! - targetLefts[index]!,
+      ),
+    );
+  };
+
+  const setStyleProperties = (
+    element: HTMLElement,
+    properties: Record<string, string>,
+  ) => {
+    Object.entries(properties).forEach(([name, value]) =>
+      element.style.setProperty(name, value),
+    );
+  };
+
   class SectionNav extends HTMLElement {
     #strip?: HTMLElement;
     #anchors: HTMLAnchorElement[] = [];
@@ -80,6 +165,7 @@ const sections = getSections(content);
     #frame?: number;
     #sizes?: CompactSizes;
     #metrics: AnchorMetrics[] = [];
+    #targetGeometries: AnchorGeometry[] = [];
     #activeIndex = 0;
     #progresses: number[] = [];
     #offset = 0;
@@ -163,6 +249,7 @@ const sections = getSections(content);
         this.#getTargetProgress(index),
       );
       this.#offset = this.#getRestingOffset();
+      this.#applyTargetLayout();
       this.#render();
     };
 
@@ -202,32 +289,40 @@ const sections = getSections(content);
         : requestAnimationFrame(this.#step);
     };
 
-    #render = () => {
-      const { smallWidth, smallHeight, largeHeight } = this.#sizes!;
+    #getGeometries = (getProgress: (index: number) => number) =>
+      this.#anchors.map((_, index) =>
+        getAnchorGeometry(
+          this.#sizes!,
+          this.#metrics[index]!,
+          getProgress(index),
+        ),
+      );
 
-      this.#strip?.style.setProperty("--strip-offset", `${this.#offset}px`);
+    #applyTargetLayout = () => {
+      this.#targetGeometries = this.#getGeometries(this.#getTargetProgress);
 
       this.#anchors.forEach((anchor, index) => {
-        const progress = this.#progresses[index] ?? 0;
-        const { largeWidth, firstImageAspect } = this.#metrics[index]!;
-        const centeringShift = Math.max(
-          0,
-          (firstImageAspect * smallHeight - smallWidth) / 2,
-        );
+        const { width, height } = this.#targetGeometries[index]!;
 
-        anchor.style.setProperty(
-          "--images-width",
-          `${interpolate(smallWidth, largeWidth, progress)}px`,
-        );
-        anchor.style.setProperty(
-          "--images-height",
-          `${interpolate(smallHeight, largeHeight, progress)}px`,
-        );
-        anchor.style.setProperty(
-          "--images-shift",
-          `${-interpolate(centeringShift, 0, progress)}px`,
-        );
+        anchor.style.setProperty("--images-width", `${width}px`);
+        anchor.style.setProperty("--images-height", `${height}px`);
       });
+    };
+
+    #render = () => {
+      const eased = this.#getGeometries(
+        (index) => this.#progresses[index] ?? 0,
+      );
+      const styles = getAnchorStyles(
+        eased,
+        this.#targetGeometries,
+        this.#sizes!.gap,
+      );
+
+      this.#strip?.style.setProperty("--strip-offset", `${this.#offset}px`);
+      this.#anchors.forEach((anchor, index) =>
+        setStyleProperties(anchor, styles[index]!),
+      );
     };
 
     #showOnceDecoded = async () => {
@@ -264,13 +359,23 @@ const sections = getSections(content);
 
       const activeId = this.#targets[activeIndex]?.id;
 
-      this.#activeIndex = Math.max(
-        0,
-        this.#anchors.findIndex(
-          (anchor) => anchor.dataset.section === activeId,
+      this.#setActiveIndex(
+        Math.max(
+          0,
+          this.#anchors.findIndex(
+            (anchor) => anchor.dataset.section === activeId,
+          ),
         ),
       );
       this.#animate();
+    };
+
+    #setActiveIndex = (index: number) => {
+      if (index === this.#activeIndex || !this.#sizes) return;
+
+      this.#activeIndex = index;
+      this.#applyTargetLayout();
+      this.#render();
     };
   }
 
@@ -300,10 +405,11 @@ const sections = getSections(content);
   }
 
   .strip {
-    /* Compact end states; the script eases sizes, offset and shift towards them */
+    /* Compact end states; layout snaps to them while the script eases transforms between them */
     --small-width: 28.5px;
     --small-height: 35.5px;
     --large-height: 71px;
+    --images-radius: 5px;
     display: flex;
     gap: var(--spacing-5);
     padding: var(--spacing-15);
@@ -319,11 +425,15 @@ const sections = getSections(content);
     }
 
     .images {
-      display: flex;
       height: 159px;
-      border-radius: 5px;
+      border-radius: var(--images-radius);
       overflow: hidden;
       view-transition-name: var(--images-transition-name);
+    }
+
+    .imageRow {
+      display: flex;
+      height: 100%;
     }
 
     img {
@@ -360,17 +470,23 @@ const sections = getSections(content);
     padding: 0;
     overflow: visible;
 
+    .anchor {
+      translate: var(--anchor-offset, 0) 0;
+    }
+
     .images {
       width: var(--images-width, var(--small-width));
       height: var(--images-height, var(--small-height));
+      transform-origin: 0 0;
+      scale: var(--images-scale-x, 1) var(--images-scale-y, 1);
+      border-radius: calc(var(--images-radius) / var(--images-scale-x, 1)) /
+        calc(var(--images-radius) / var(--images-scale-y, 1));
     }
 
-    img {
-      translate: var(--images-shift, 0) 0;
-    }
-
-    img:first-child {
-      min-width: var(--small-width);
+    .imageRow {
+      transform-origin: 0 0;
+      translate: var(--image-row-left, 0) var(--image-row-top, 0);
+      scale: var(--image-row-scale-x, 1) var(--image-row-scale-y, 1);
     }
 
     .text {

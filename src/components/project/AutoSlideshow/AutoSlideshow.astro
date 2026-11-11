@@ -73,8 +73,10 @@ const aspectRatio =
     #thumbnails: HTMLButtonElement[] = [];
     #activeIndex = 0;
     #isHovered = false;
+    #isInView = false;
     #timer?: ReturnType<typeof setTimeout>;
     #controller?: AbortController;
+    #visibilityObserver?: IntersectionObserver;
 
     connectedCallback() {
       this.#slides = [...this.querySelectorAll<HTMLElement>(".slide")];
@@ -102,11 +104,15 @@ const aspectRatio =
         signal,
       });
 
-      this.#scheduleAdvance();
+      this.#visibilityObserver = new IntersectionObserver(
+        this.#handleIntersection,
+      );
+      this.#visibilityObserver.observe(this);
     }
 
     disconnectedCallback() {
       this.#controller?.abort();
+      this.#visibilityObserver?.disconnect();
       clearTimeout(this.#timer);
     }
 
@@ -117,6 +123,11 @@ const aspectRatio =
 
     #handlePointerLeave = () => {
       this.#isHovered = false;
+      this.#scheduleAdvance();
+    };
+
+    #handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      this.#isInView = entries.at(-1)?.isIntersecting ?? false;
       this.#scheduleAdvance();
     };
 
@@ -135,7 +146,7 @@ const aspectRatio =
     #scheduleAdvance = () => {
       clearTimeout(this.#timer);
 
-      if (this.#isHovered) return;
+      if (this.#isHovered || !this.#isInView) return;
 
       this.#timer = setTimeout(
         this.#handleAdvanceTimeout,

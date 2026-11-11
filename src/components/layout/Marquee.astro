@@ -108,10 +108,19 @@ const Element = href ? "a" : "div";
       render();
       document.fonts.ready.then(render);
 
-      const observer = new ResizeObserver(render);
-      observer.observe(this);
+      const resizeObserver = new ResizeObserver(render);
+      resizeObserver.observe(this);
 
-      this.#disconnect = () => observer.disconnect();
+      const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+        this.toggleAttribute("data-paused", !entries.at(-1)?.isIntersecting);
+      };
+      const visibilityObserver = new IntersectionObserver(handleIntersection);
+      visibilityObserver.observe(this);
+
+      this.#disconnect = () => {
+        resizeObserver.disconnect();
+        visibilityObserver.disconnect();
+      };
     }
 
     disconnectedCallback() {
@@ -143,6 +152,10 @@ const Element = href ? "a" : "div";
 
       .track {
         animation: scroll var(--marquee-duration, 10s) linear infinite;
+      }
+
+      &[data-paused] .track {
+        animation-play-state: paused;
       }
     }
   }

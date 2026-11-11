@@ -60,15 +60,13 @@ const overlayImages = await Promise.all(
     #timer?: ReturnType<typeof setTimeout>;
 
     connectedCallback() {
-      const images = this.querySelector(".images")!;
+      const images = this.querySelector<HTMLElement>(".images")!;
       this.#overlay = this.querySelector(".overlay")!;
       this.#selection = this.querySelector(".selection")!;
 
       this.#controller = new AbortController();
       const { signal } = this.#controller;
 
-      // mousemove rather than mouseover: scrolling an image under a still
-      // pointer fires mouseover, but only real pointer movement fires mousemove
       images.addEventListener("mousemove", this.#onMouseMove, { signal });
       images.addEventListener("mouseout", this.#onMouseOut, { signal });
       window.addEventListener("scroll", this.#positionSelection, {
@@ -82,7 +80,10 @@ const overlayImages = await Promise.all(
       clearTimeout(this.#timer);
     }
 
-    #onMouseMove = ({ target }: Event) => {
+    #onMouseMove = ({ target, movementX, movementY }: MouseEvent) => {
+      // Scrolling under a still pointer also dispatches mousemove, with no movement
+      if (movementX === 0 && movementY === 0) return;
+
       if (!(target instanceof HTMLImageElement) || target === this.#hovered) {
         return;
       }
