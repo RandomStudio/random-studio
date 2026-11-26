@@ -41,11 +41,10 @@ const { id, sectionNumber, isPageTitle, title, moreInfo, alignSelf } =
 <style>
   .outer {
     @mixin h3;
-    --block-gap: 16px;
     display: grid;
     grid-template-columns: 4fr 2fr 8fr 2fr 4fr;
     grid-template-areas: "title spacer copy spacer2 moreinfo";
-    gap: var(--block-gap);
+    gap: 16px;
     margin-top: var(--spacing-30);
     margin-bottom: var(--spacing-40);
     /* Where a section nav jump lands, relative to the heading */
@@ -70,19 +69,29 @@ const { id, sectionNumber, isPageTitle, title, moreInfo, alignSelf } =
     counter-reset: text-section;
 
     .outer {
-      grid-template-columns: 6fr 10fr 6fr;
+      grid-template-columns:
+        1fr
+        min(calc(412 * var(--type-scaled-pixel)), 100%)
+        1fr;
       grid-template-areas:
         "spacer title spacer2"
         "spacer copy spacer2"
         "spacer moreinfo spacer2";
-      margin-top: 0;
+      gap: 0;
+      margin-block: 0 calc(42 * var(--type-scaled-pixel));
     }
     .title {
-      margin-bottom: 1em;
+      padding-left: calc(30 * var(--type-scaled-pixel));
+      margin-bottom: calc(16 * var(--type-scaled-pixel));
+      text-box: trim-both cap alphabetic;
+    }
+    .copy :global(p:not(:last-child)) {
+      margin-bottom: calc(18.4 * var(--type-scaled-pixel));
     }
     .hasPageTitle .title {
       grid-column: 1 / -1;
-      margin-bottom: var(--spacing-60);
+      padding-left: 0;
+      margin-bottom: calc(59.5 * var(--type-scaled-pixel));
       text-align: center;
     }
     .outer:not(.hasPageTitle) .title,
@@ -93,7 +102,7 @@ const { id, sectionNumber, isPageTitle, title, moreInfo, alignSelf } =
       &::before {
         content: counter(text-section, lower-roman);
         position: absolute;
-        left: calc(-1 * var(--spacing-40));
+        left: calc(-30 * var(--type-scaled-pixel));
       }
     }
     .hasPageTitle .copy::before {
@@ -101,7 +110,7 @@ const { id, sectionNumber, isPageTitle, title, moreInfo, alignSelf } =
     }
     .more-info {
       justify-self: center;
-      margin-top: calc(var(--spacing-40) - var(--block-gap));
+      margin-top: calc(42 * var(--type-scaled-pixel));
     }
 
     @media (prefers-reduced-motion: no-preference) {

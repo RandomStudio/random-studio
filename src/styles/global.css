@@ -193,6 +193,8 @@ textarea {
   --spacing-60: 3.75rem;
   --spacing-80: 5rem;
 
+  --type-scaled-pixel: calc(1rem / 12);
+
   --gutter: 15px;
 
   --max-width: 1888px;

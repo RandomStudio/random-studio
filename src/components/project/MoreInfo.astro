@@ -338,8 +338,11 @@ const getPanelImageSizes = (panelWidthPercentage: number) =>
 
   :global(.mode--text-only) {
     .trigger {
-      --teaser-width: 21.75em;
-      width: calc(var(--teaser-width) + 2 * var(--trigger-padding-inline));
+      --trigger-padding-top: calc(12 * var(--type-scaled-pixel));
+      --trigger-padding-inline: calc(10 * var(--type-scaled-pixel));
+      --trigger-padding-bottom: calc(17 * var(--type-scaled-pixel));
+      gap: calc(10 * var(--type-scaled-pixel));
+      width: calc(281 * var(--type-scaled-pixel));
       margin: 0;
       background-color: var(--color-foreground);
     }
