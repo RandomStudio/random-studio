@@ -7,7 +7,12 @@ import ProjectImage from "./ProjectImage.astro";
 import ProjectVideo from "./ProjectVideo.astro";
 import AutoSlideshow from "./AutoSlideshow/AutoSlideshow.astro";
 
-import { content, getSectionId, type ContentBlock } from "../../data/project";
+import {
+  content,
+  getSectionId,
+  projectTitle,
+  type ContentBlock,
+} from "../../data/project";
 
 let sectionNumber = 0;
 
@@ -68,6 +73,7 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
         return (
           <ProjectVideo
             video={block.video}
+            alt={block.alt}
             colSpan={block.colSpan}
             colStart={block.colStart}
             alignSelf={block.alignment}
@@ -76,9 +82,13 @@ const splitContentBlocksByConstraint = (content: ContentBlock[]) => {
       }
 
       if (block.type === "text") {
+        sectionNumber += 1;
+
         return (
           <TextBlock
-            id={getSectionId(++sectionNumber)}
+            id={getSectionId(sectionNumber)}
+            sectionNumber={sectionNumber}
+            isPageTitle={block.title === projectTitle}
             title={block.title}
             moreInfo={block.moreInfo}
             colSpan={block.colSpan}

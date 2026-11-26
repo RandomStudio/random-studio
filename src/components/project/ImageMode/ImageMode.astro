@@ -1,0 +1,101 @@
+---
+import type { ImageMetadata } from "astro";
+
+import PlaceholderImage from "../../PlaceholderImage/PlaceholderImage.astro";
+
+import { slides } from "../../../data/project";
+
+const TILE_HEIGHT_VW = 14.6;
+
+const getTileSizes = ({ width, height }: ImageMetadata) =>
+  `${Math.ceil((TILE_HEIGHT_VW * width) / height)}vw`;
+
+const getTileStyle = (index: number) => ({ "--tile-index": String(index) });
+---
+
+<div
+  class="imageMode"
+  id="image-mode"
+  style={{
+    "--tile-height": `${TILE_HEIGHT_VW}vw`,
+    "--tile-count": String(slides.length),
+  }}
+>
+  <div class="tiles">
+    {slides.map((slide, index) =>
+      slide.type === "image" ? (
+        <PlaceholderImage
+          class="tile"
+          src={slide.image}
+          alt={slide.alt}
+          layout="full-width"
+          sizes={getTileSizes(slide.image)}
+          data-slideshow-index={index}
+          style={getTileStyle(index)}
+        />
+      ) : (
+        <video
+          class="tile"
+          src={slide.video.src}
+          width={slide.video.width}
+          height={slide.video.height}
+          aria-label={slide.alt}
+          playsinline
+          muted
+          loop
+          autoplay
+          data-slideshow-index={index}
+          style={getTileStyle(index)}
+        />
+      ),
+    )}
+  </div>
+</div>
+
+<style>
+  .imageMode {
+    --tile-gap: 3.2vw;
+    --sequence-duration: 1s;
+    --tile-fade-duration: 0.4s;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: none;
+    overflow-y: auto;
+    padding: max(4.8vw, var(--spacing-60)) 5.6vw
+      calc(var(--tile-height) + var(--tile-gap));
+    background-color: var(--color-background);
+  }
+
+  :global(.mode--image-only) .imageMode {
+    display: block;
+  }
+
+  .tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--tile-gap);
+  }
+
+  .tile {
+    width: auto;
+    height: var(--tile-height);
+    cursor: pointer;
+    animation: image-mode-tile-fade-in var(--tile-fade-duration) both;
+    animation-delay: calc(
+      var(--tile-index) / var(--tile-count) *
+        (var(--sequence-duration) - var(--tile-fade-duration))
+    );
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  @keyframes image-mode-tile-fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+</style>

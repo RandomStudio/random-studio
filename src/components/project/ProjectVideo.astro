@@ -3,12 +3,13 @@ import { getSlideIndex, type Video } from "../../data/project";
 
 type Props = {
   video: Video;
+  alt: string;
   colSpan?: number;
   colStart?: number;
   alignSelf?: "start" | "center" | "end";
 };
 
-const { video, colSpan, colStart, alignSelf } = Astro.props;
+const { video, alt, colSpan, colStart, alignSelf } = Astro.props;
 ---
 
 <video
@@ -16,6 +17,7 @@ const { video, colSpan, colStart, alignSelf } = Astro.props;
   src={video.src}
   width={video.width}
   height={video.height}
+  aria-label={alt}
   playsinline
   muted
   loop

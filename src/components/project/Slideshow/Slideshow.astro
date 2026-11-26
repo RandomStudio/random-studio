@@ -20,7 +20,7 @@ import { slides } from "../../../data/project";
             decoding="sync"
           />
         ) : (
-          <SlideVideo video={slide.video} />
+          <SlideVideo video={slide.video} alt={slide.alt} />
         )}
         <figcaption class="caption">{slide.alt}</figcaption>
       </figure>
@@ -30,12 +30,11 @@ import { slides } from "../../../data/project";
 </project-slideshow>
 
 <script>
+  import { MODE_CHANGE_EVENT } from "../../modeEvents";
   import {
-    IMAGE_MODE_CLOSE_EVENT,
-    IMAGE_MODE_OPEN_EVENT,
-    MODE_CHANGE_EVENT,
-    type Mode,
-  } from "../../modeEvents";
+    SLIDESHOW_CLOSE_EVENT,
+    SLIDESHOW_OPEN_CLASS,
+  } from "../../slideshowState";
   import { watchIdle } from "./watchIdle";
 
   const KEY_STEPS: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1 };
@@ -51,7 +50,6 @@ import { slides } from "../../../data/project";
     #slides: HTMLElement[] = [];
     #cursorLabel!: HTMLElement;
     #activeIndex = 0;
-    #requestedIndex = 0;
     #isOpen = false;
     #isScreensaver = false;
     #screensaverTimer?: ReturnType<typeof setTimeout>;
@@ -75,7 +73,10 @@ import { slides } from "../../../data/project";
       document.addEventListener("pointerout", this.#handlePointerOut, {
         signal,
       });
-      document.addEventListener(MODE_CHANGE_EVENT, this.#handleModeChange, {
+      document.addEventListener(MODE_CHANGE_EVENT, this.#handleClose, {
+        signal,
+      });
+      document.addEventListener(SLIDESHOW_CLOSE_EVENT, this.#handleClose, {
         signal,
       });
       window.addEventListener("scroll", this.#renderCursorLabel, {
@@ -166,30 +167,35 @@ import { slides } from "../../../data/project";
 
     #handleOpenerClick = ({ target }: Event) => {
       const index = this.#getOpenerIndex(target as Element);
-      if (index === -1) return;
+      if (index === -1 || this.#isOpen) return;
 
-      this.#requestedIndex = index;
-      document.dispatchEvent(new Event(IMAGE_MODE_OPEN_EVENT));
+      this.#open(index);
     };
 
-    #handleModeChange = (event: Event) => {
-      this.#isOpen = (event as CustomEvent<Mode>).detail === "image";
+    #setIsOpen = (isOpen: boolean) => {
+      this.#isOpen = isOpen;
+      document.body.classList.toggle(SLIDESHOW_OPEN_CLASS, isOpen);
+    };
 
-      if (this.#isOpen) {
-        this.#showSlide(this.#requestedIndex);
-        this.#requestedIndex = 0;
-        this.#watchForScreensaver();
-      } else {
-        this.#stopWatchingForScreensaver();
-        this.#getActiveVideo()?.pause();
-      }
+    #open = (index: number) => {
+      this.#setIsOpen(true);
+      this.#showSlide(index);
+      this.#watchForScreensaver();
+    };
+
+    #handleClose = () => {
+      if (!this.#isOpen) return;
+
+      this.#setIsOpen(false);
+      this.#stopWatchingForScreensaver();
+      this.#getActiveVideo()?.pause();
     };
 
     #handleKeydown = (event: KeyboardEvent) => {
       if (!this.#isOpen) return;
 
       if (event.key === "Escape") {
-        document.dispatchEvent(new Event(IMAGE_MODE_CLOSE_EVENT));
+        this.#handleClose();
       } else if (event.key in KEY_STEPS) {
         this.#step(KEY_STEPS[event.key]);
       }
@@ -300,9 +306,11 @@ import { slides } from "../../../data/project";
       this.#slides[this.#activeIndex]?.querySelector("video");
 
     #getPageVideo = (index: number) =>
-      document.querySelector<HTMLVideoElement>(
-        `video[data-slideshow-index="${index}"]`,
-      );
+      [
+        ...document.querySelectorAll<HTMLVideoElement>(
+          `video[data-slideshow-index="${index}"]`,
+        ),
+      ].find((video) => video.checkVisibility());
   }
 
   customElements.define("project-slideshow", ProjectSlideshow);
@@ -318,7 +326,7 @@ import { slides } from "../../../data/project";
     opacity: 0;
   }
 
-  :global(.mode--image-only) .overlay {
+  :global(.isSlideshowOpen) .overlay {
     visibility: visible;
     opacity: 1;
   }

@@ -336,6 +336,18 @@ const getPanelImageSizes = (panelWidthPercentage: number) =>
     cursor: pointer;
   }
 
+  :global(.mode--text-only) {
+    .trigger {
+      --teaser-width: 21.75em;
+      width: calc(var(--teaser-width) + 2 * var(--trigger-padding-inline));
+      margin: 0;
+      background-color: var(--color-foreground);
+    }
+    .teaser::after {
+      content: "...";
+    }
+  }
+
   :global(html:has(dialog[open])) {
     overflow: hidden;
   }

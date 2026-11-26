@@ -6,9 +6,10 @@ import type { Video } from "../../../../data/project";
 
 type Props = {
   video: Video;
+  alt: string;
 };
 
-const { video } = Astro.props;
+const { video, alt } = Astro.props;
 ---
 
 <slide-video class="slide-video">
@@ -16,6 +17,7 @@ const { video } = Astro.props;
     src={video.src}
     width={video.width}
     height={video.height}
+    aria-label={alt}
     playsinline
     muted
     loop

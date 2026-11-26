@@ -12,6 +12,7 @@ import Credits from "../components/project/Credits.astro";
 import Content from "../components/project/Content.astro";
 import Related from "../components/project/Related.astro";
 import SectionNav from "../components/project/SectionNav.astro";
+import ImageMode from "../components/project/ImageMode/ImageMode.astro";
 import Slideshow from "../components/project/Slideshow/Slideshow.astro";
 
 import { projectTitle } from "../data/project";
@@ -38,6 +39,7 @@ import { projectTitle } from "../data/project";
     <Nav client:load />
     <Menu client:load />
     <SectionNav />
+    <ImageMode />
     <Slideshow />
     <main class="page">
       <Constraint client:load type="full" class="header">
@@ -64,6 +66,7 @@ import { projectTitle } from "../data/project";
 
   <script>
     import { SECTION_NAV_SHRINK_TYPE } from "../components/project/sectionNavTransitionTypes";
+    import { MODE_CHANGE_EVENT } from "../components/modeEvents";
 
     // Flags the body once content has scrolled fully over the header title,
     // which the nav title and section nav use to switch state together
@@ -102,7 +105,13 @@ import { projectTitle } from "../data/project";
 
       window.addEventListener("scroll", scheduleUpdate, { passive: true });
       window.addEventListener("resize", scheduleUpdate);
-      setIsHidden(getIsHidden());
+      const syncIsHiddenWithoutTransition = () => setIsHidden(getIsHidden());
+
+      document.addEventListener(
+        MODE_CHANGE_EVENT,
+        syncIsHiddenWithoutTransition,
+      );
+      syncIsHiddenWithoutTransition();
     } else {
       document.body.classList.add(HIDDEN_CLASS);
     }
@@ -118,6 +127,7 @@ import { projectTitle } from "../data/project";
     }
 
     :global(.mode--image-only),
+    :global(.isSlideshowOpen),
     :global(.isLoading) {
       overflow: hidden;
     }
@@ -158,6 +168,13 @@ import { projectTitle } from "../data/project";
     }
 
     .mode--text-only {
+      .page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100svh;
+        padding-bottom: 20svh;
+      }
       .header {
         height: 10svh;
       }

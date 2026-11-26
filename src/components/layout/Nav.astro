@@ -15,21 +15,21 @@ import { projectTitle } from "../../data/project";
       <li data-mode="text">Text</li>
     </ul>
   </div>
-  <h1 class="title">{projectTitle}</h1>
+  <h1 class="title">
+    <button id="scroll-to-top" type="button">
+      {projectTitle}
+    </button>
+  </h1>
   <div class="presskit">
     <AssetsDownload />
   </div>
-  <button class="close" id="image-mode-close" type="button">
+  <button class="close" id="slideshow-close" type="button">
     Close
   </button>
 </Constraint>
 <script>
-  import {
-    IMAGE_MODE_CLOSE_EVENT,
-    IMAGE_MODE_OPEN_EVENT,
-    MODE_CHANGE_EVENT,
-    type Mode,
-  } from "../modeEvents";
+  import { MODE_CHANGE_EVENT, type Mode } from "../modeEvents";
+  import { SLIDESHOW_CLOSE_EVENT } from "../slideshowState";
 
   const MODE_CLASSES: Record<Mode, string | null> = {
     normal: null,
@@ -38,9 +38,8 @@ import { projectTitle } from "../../data/project";
   };
 
   const toggle = document.getElementById("mode-toggle");
-  const closeButton = document.getElementById("image-mode-close");
-
-  let modeBeforeImage: Mode = "normal";
+  const closeButton = document.getElementById("slideshow-close");
+  const scrollToTopButton = document.getElementById("scroll-to-top");
 
   const getActiveMode = () =>
     toggle?.querySelector<HTMLLIElement>("li.isActive")?.dataset.mode as
@@ -77,10 +76,6 @@ import { projectTitle } from "../../data/project";
     const activeMode = getActiveMode();
     if (mode === activeMode) return;
 
-    if (mode === "image" && activeMode) {
-      modeBeforeImage = activeMode;
-    }
-
     markActiveToggleItem(mode);
 
     if (mode === "image" || activeMode === "image") {
@@ -100,14 +95,26 @@ import { projectTitle } from "../../data/project";
     }
   };
 
-  const handleImageModeOpen = () => selectMode("image");
+  const handleCloseClick = () => {
+    document.dispatchEvent(new Event(SLIDESHOW_CLOSE_EVENT));
+  };
 
-  const handleImageModeClose = () => selectMode(modeBeforeImage);
+  const getScrollBehavior = (): ScrollBehavior =>
+    matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+
+  const getScrollContainer = (mode: Mode | undefined) =>
+    mode === "image" ? document.getElementById("image-mode") : window;
+
+  const handleScrollToTopClick = () => {
+    getScrollContainer(getActiveMode())?.scrollTo({
+      top: 0,
+      behavior: getScrollBehavior(),
+    });
+  };
 
   toggle?.addEventListener("click", handleModeClick);
-  closeButton?.addEventListener("click", handleImageModeClose);
-  document.addEventListener(IMAGE_MODE_OPEN_EVENT, handleImageModeOpen);
-  document.addEventListener(IMAGE_MODE_CLOSE_EVENT, handleImageModeClose);
+  closeButton?.addEventListener("click", handleCloseClick);
+  scrollToTopButton?.addEventListener("click", handleScrollToTopClick);
 </script>
 
 <style>
@@ -163,12 +170,30 @@ import { projectTitle } from "../../data/project";
     font: inherit;
     text-align: center;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.2s;
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: inherit;
+      cursor: pointer;
+    }
   }
   /* Set on body by the page once the header title is scrolled over */
   :global(.isProjectTitleHidden) .title,
-  :global(.mode--image-only) .title {
+  :global(.mode--image-only) .title,
+  :global(.isSlideshowOpen) .title {
     opacity: 1;
+    pointer-events: auto;
+  }
+  :global(.mode--text-only) .title {
+    opacity: 0;
+    pointer-events: none;
   }
   .presskit,
   .close {
@@ -188,7 +213,7 @@ import { projectTitle } from "../../data/project";
       color: var(--color-link);
     }
   }
-  :global(.mode--image-only) {
+  :global(.isSlideshowOpen) {
     .presskit {
       display: none;
     }

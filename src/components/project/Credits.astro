@@ -63,10 +63,7 @@ const { credits, collaborators } = Astro.props;
     grid-area: collaborators;
   }
 
-  :global(.mode--text-only) {
-    .colophon {
-      grid-template-columns: 5fr 4fr 2fr 4fr 5fr;
-      grid-template-areas: "spacer3 credits spacer collaborators spacer2";
-    }
+  :global(.mode--text-only) .colophon {
+    display: none;
   }
 </style>

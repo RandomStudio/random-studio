@@ -46,6 +46,8 @@ const sections = getSections(content);
 </section-nav>
 
 <script>
+  import { MODE_CHANGE_EVENT } from "../modeEvents";
+
   // A section becomes active once its heading passes this viewport fraction
   const ACTIVE_LINE = 0.5;
   // Seconds for the compact sizes to close 63% of the gap to their target
@@ -189,10 +191,11 @@ const sections = getSections(content);
         passive: true,
       });
       window.addEventListener("resize", this.#scheduleUpdate, { signal });
+      document.addEventListener(MODE_CHANGE_EVENT, this.#syncToPage, {
+        signal,
+      });
 
-      this.#measure();
-      this.#update();
-      this.#snapToTargets();
+      this.#syncToPage();
       this.#showOnceDecoded();
     }
 
@@ -201,6 +204,12 @@ const sections = getSections(content);
       if (this.#frame) cancelAnimationFrame(this.#frame);
       if (this.#animationFrame) cancelAnimationFrame(this.#animationFrame);
     }
+
+    #syncToPage = () => {
+      this.#measure();
+      this.#update();
+      this.#snapToTargets();
+    };
 
     #measure = () => {
       if (!this.#strip) return;
@@ -492,6 +501,10 @@ const sections = getSections(content);
     .text {
       display: none;
     }
+  }
+
+  :global(.mode--text-only) .section-nav {
+    display: none;
   }
 
   :global(html:has(section-nav)) {

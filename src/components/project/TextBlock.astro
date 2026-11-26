@@ -5,6 +5,8 @@ import type { MoreInfo as MoreInfoData } from "../../data/project";
 
 type Props = {
   id?: string;
+  sectionNumber: number;
+  isPageTitle?: boolean;
   colSpan: number;
   colStart: number;
   title: string;
@@ -12,15 +14,17 @@ type Props = {
   alignSelf?: "start" | "center" | "end";
 };
 
-const { id, title, moreInfo, alignSelf } = Astro.props;
+const { id, sectionNumber, isPageTitle, title, moreInfo, alignSelf } =
+  Astro.props;
 ---
 
 <div
   id={id}
-  class="outer"
+  class:list={["outer", { hasPageTitle: isPageTitle }]}
   style={{
     gridColumn: `${Astro.props.colStart} / span ${Astro.props.colSpan}`,
     alignSelf,
+    "--section-number": sectionNumber,
   }}
 >
   <div class="title">{title}</div>
@@ -37,10 +41,11 @@ const { id, title, moreInfo, alignSelf } = Astro.props;
 <style>
   .outer {
     @mixin h3;
+    --block-gap: 16px;
     display: grid;
     grid-template-columns: 4fr 2fr 8fr 2fr 4fr;
     grid-template-areas: "title spacer copy spacer2 moreinfo";
-    gap: 16px;
+    gap: var(--block-gap);
     margin-top: var(--spacing-30);
     margin-bottom: var(--spacing-40);
     /* Where a section nav jump lands, relative to the heading */
@@ -62,6 +67,8 @@ const { id, title, moreInfo, alignSelf } = Astro.props;
   }
 
   :global(.mode--text-only) {
+    counter-reset: text-section;
+
     .outer {
       grid-template-columns: 6fr 10fr 6fr;
       grid-template-areas:
@@ -72,6 +79,52 @@ const { id, title, moreInfo, alignSelf } = Astro.props;
     }
     .title {
       margin-bottom: 1em;
+    }
+    .hasPageTitle .title {
+      grid-column: 1 / -1;
+      margin-bottom: var(--spacing-60);
+      text-align: center;
+    }
+    .outer:not(.hasPageTitle) .title,
+    .hasPageTitle .copy {
+      position: relative;
+      counter-increment: text-section;
+
+      &::before {
+        content: counter(text-section, lower-roman);
+        position: absolute;
+        left: calc(-1 * var(--spacing-40));
+      }
+    }
+    .hasPageTitle .copy::before {
+      text-box: trim-both cap alphabetic;
+    }
+    .more-info {
+      justify-self: center;
+      margin-top: calc(var(--spacing-40) - var(--block-gap));
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .title,
+      .copy,
+      .more-info {
+        animation: text-mode-reveal 0.2s ease-out backwards;
+        animation-delay: calc(
+          (var(--section-number) - 1) * 0.08s + var(--reveal-offset, 0s)
+        );
+      }
+      .copy {
+        --reveal-offset: 0.04s;
+      }
+      .more-info {
+        --reveal-offset: 0.08s;
+      }
+    }
+  }
+
+  @keyframes text-mode-reveal {
+    from {
+      opacity: 0;
     }
   }
 </style>
