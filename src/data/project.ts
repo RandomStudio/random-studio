@@ -66,9 +66,13 @@ export type MoreInfo = {
   content: MoreInfoBlock[];
 };
 
+export type DescribedImage = {
+  image: ImageMetadata;
+  alt: string;
+};
+
 export type SlideshowSlide = {
-  images: ImageMetadata[];
-  alt?: string;
+  images: DescribedImage[];
 };
 
 export type ContentBlock = {
@@ -79,12 +83,12 @@ export type ContentBlock = {
 } & (
   | {
       image: ImageMetadata;
-      alt?: string;
+      alt: string;
       type: "image";
     }
   | {
       video: Video;
-      alt?: string;
+      alt: string;
       type: "video";
     }
   | {
@@ -97,7 +101,7 @@ export type ContentBlock = {
     }
   | {
       type: "gallery";
-      images: ImageMetadata[];
+      images: DescribedImage[];
       info?: GalleryInfo;
     }
   | {
@@ -146,10 +150,13 @@ export const content: ContentBlock[] = [
     colStart: 1,
     type: "slideshow",
     slides: [
-      { images: [image01A] },
-      { images: [image01C] },
+      { images: [{ image: image01A, alt: "Main Space, Overview" }] },
+      { images: [{ image: image01C, alt: "Main Space, Oblique View" }] },
       {
-        images: [image01D, image01E],
+        images: [
+          { image: image01D, alt: "Fabric Totem, Close-Up" },
+          { image: image01E, alt: "Fabric Print, Detail" },
+        ],
       },
     ],
   },
@@ -218,27 +225,30 @@ export const content: ContentBlock[] = [
     colStart: 1,
     type: "image",
     image: image02,
+    alt: "Main Space, Axial View",
   },
   {
     colStart: 11,
     colSpan: 10,
     type: "image",
     image: image03,
+    alt: "Fabric Totem, Spatial Detail",
   },
   {
     colSpan: 20,
     colStart: 1,
     type: "video",
     video: { src: "/project/04.mp4", width: 1920, height: 1000 },
+    alt: "Exhibition Space, Axonometric Animation",
   },
   {
     colSpan: 10,
     colStart: 1,
     type: "slideshow",
     slides: [
-      { images: [image05A] },
-      { images: [image05B] },
-      { images: [image05C] },
+      { images: [{ image: image05A, alt: "Lighting, Axonometric Render" }] },
+      { images: [{ image: image05B, alt: "Lighting, Spatial Detail" }] },
+      { images: [{ image: image05C, alt: "Lighting, Spatial Detail" }] },
     ],
   },
   {
@@ -246,6 +256,7 @@ export const content: ContentBlock[] = [
     colStart: 13,
     type: "image",
     image: image06,
+    alt: "Lighting, Detail",
     alignment: "center",
   },
   {
@@ -264,25 +275,30 @@ export const content: ContentBlock[] = [
     colStart: 1,
     type: "image",
     image: image07A,
+    alt: "Fabric Totem, Finish Detail",
   },
   {
     colSpan: 13,
     colStart: 8,
     type: "slideshow",
-    slides: [{ images: [image08A] }, { images: [image08B] }],
+    slides: [
+      { images: [{ image: image08A, alt: "Fabric Totem, Frontal View" }] },
+      { images: [{ image: image08B, alt: "Fabric Totem, Detail" }] },
+    ],
   },
   {
     colSpan: 14,
     colStart: 1,
     type: "video",
     video: { src: "/project/8.mp4", width: 1080, height: 1080 },
-    alt: "Fabric Totems - Interaction Animation",
+    alt: "Fabric, CGI Animation",
   },
   {
     colSpan: 6,
     colStart: 15,
     type: "image",
     image: image09,
+    alt: "Fabric, Material Study",
   },
   {
     colSpan: 20,
@@ -300,26 +316,28 @@ export const content: ContentBlock[] = [
     colStart: 5,
     type: "image",
     image: image10,
+    alt: "Printed Label, Material Detail",
   },
   {
     colSpan: 10,
     colStart: 11,
     type: "image",
     image: image11,
+    alt: "Entrance Signage, Overview",
   },
   {
     colSpan: 20,
     colStart: 1,
     type: "gallery",
     images: [
-      image12A,
-      image12B,
-      image12C,
-      image12D,
-      image12E,
-      image12F,
-      image12G,
-      image12H,
+      { image: image12A, alt: "Exhibition Construction, Assembly" },
+      { image: image12B, alt: "Exhibition Construction, Assembly" },
+      { image: image12C, alt: "Hero Element, Installation" },
+      { image: image12D, alt: "Light Fixture, Detail" },
+      { image: image12E, alt: "Exhibition Construction, Assembly" },
+      { image: image12F, alt: "Exhibition Construction, Assembly" },
+      { image: image12G, alt: "Exhibition Construction, Assembly" },
+      { image: image12H, alt: "Fabric Totem, Structural Detail" },
     ],
     info: {
       title: "Working onsite in Galicia with Acierta.",
@@ -333,6 +351,7 @@ export const content: ContentBlock[] = [
     colStart: 1,
     type: "image",
     image: image13,
+    alt: "Exhibition Exterior, Evening",
   },
 ];
 
@@ -344,27 +363,27 @@ const getSlideMedia = (slide: Slide) =>
 export const getSlides = (blocks: ContentBlock[]): Slide[] =>
   blocks.flatMap((block): Slide[] => {
     if (block.type === "image") {
-      return [{ type: "image", image: block.image, alt: block.alt ?? "" }];
+      return [{ type: "image", image: block.image, alt: block.alt }];
     }
 
     if (block.type === "video") {
-      return [{ type: "video", video: block.video, alt: block.alt ?? "" }];
+      return [{ type: "video", video: block.video, alt: block.alt }];
     }
 
     if (block.type === "gallery") {
-      return block.images.map((image) => ({
+      return block.images.map(({ image, alt }) => ({
         type: "image",
         image,
-        alt: "",
+        alt,
       }));
     }
 
     if (block.type === "slideshow") {
       return block.slides.flatMap((slide) =>
-        slide.images.map((image) => ({
+        slide.images.map(({ image, alt }) => ({
           type: "image",
           image,
-          alt: slide.alt ?? "",
+          alt,
         })),
       );
     }
@@ -373,6 +392,21 @@ export const getSlides = (blocks: ContentBlock[]): Slide[] =>
   });
 
 export const slides = getSlides(content);
+
+export const getBlockImages = (block: ContentBlock): ImageMetadata[] => {
+  switch (block.type) {
+    case "image":
+      return [block.image];
+    case "gallery":
+      return block.images.map(({ image }) => image);
+    case "slideshow":
+      return block.slides.flatMap((slide) =>
+        slide.images.map(({ image }) => image),
+      );
+    default:
+      return [];
+  }
+};
 
 export const getSlideIndex = (media: ImageMetadata | Video) =>
   slides.findIndex((slide) => getSlideMedia(slide) === media);
@@ -398,15 +432,7 @@ export const getSections = (blocks: ContentBlock[]): Section[] => {
       return;
     }
 
-    const images =
-      block.type === "image"
-        ? [block.image]
-        : block.type === "gallery"
-          ? block.images
-          : block.type === "slideshow"
-            ? block.slides.flatMap((slide) => slide.images)
-            : [];
-
+    const images = getBlockImages(block);
     const current = sections[sections.length - 1];
 
     if (current) {

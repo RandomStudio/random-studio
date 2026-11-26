@@ -16,7 +16,7 @@ const THUMBNAIL_IMAGE_WIDTH = 134;
 
 const { slides, colSpan, colStart } = Astro.props;
 const firstThumbnail = await getImage({
-  src: slides[0].images[0],
+  src: slides[0].images[0].image,
   width: THUMBNAIL_IMAGE_WIDTH,
 });
 const aspectRatio =
@@ -30,11 +30,11 @@ const aspectRatio =
 >
   {slides.map((slide, index) => (
     <div class:list={["slide", "images", index === 0 && "isActive"]}>
-      {slide.images.map((image) => (
+      {slide.images.map(({ image, alt }) => (
         <PlaceholderImage
           class="image"
           src={image}
-          alt={slide.alt ?? ""}
+          alt={alt}
           layout="full-width"
           sizes={getColumnSpanSizes(colSpan / slide.images.length)}
           data-slideshow-index={getSlideIndex(image)}
@@ -51,7 +51,7 @@ const aspectRatio =
           aria-label={`Show slide ${index + 1}`}
           aria-current={index === 0}
         >
-          {slide.images.map((image) => (
+          {slide.images.map(({ image }) => (
             <Image
               class="image"
               src={image}

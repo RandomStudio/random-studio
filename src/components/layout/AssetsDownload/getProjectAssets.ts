@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 import {
   content,
+  getBlockImages,
   type ContentBlock,
   type MoreInfoBlock,
   type Video,
@@ -53,13 +54,11 @@ const getMoreInfoBlockAssets = (block: MoreInfoBlock): ProjectAsset[] => {
 const getContentBlockAssets = (block: ContentBlock): ProjectAsset[] => {
   switch (block.type) {
     case "image":
-      return [getImageAsset(block.image)];
+    case "gallery":
+    case "slideshow":
+      return getBlockImages(block).map(getImageAsset);
     case "video":
       return [getVideoAsset(block.video)];
-    case "gallery":
-      return block.images.map(getImageAsset);
-    case "slideshow":
-      return block.slides.flatMap((slide) => slide.images.map(getImageAsset));
     case "text":
       return block.moreInfo?.content.flatMap(getMoreInfoBlockAssets) ?? [];
   }
