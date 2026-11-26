@@ -6,10 +6,13 @@ import image01D from "../assets/project/01_d.jpg";
 import image01E from "../assets/project/01_e.jpg";
 import image02 from "../assets/project/02.png";
 import image03 from "../assets/project/03.png";
-import image05 from "../assets/project/05.png";
+import image05A from "../assets/project/05_a.png";
+import image05B from "../assets/project/05_b.png";
+import image05C from "../assets/project/05_c.jpg";
 import image06 from "../assets/project/06.png";
 import image07A from "../assets/project/07_a.png";
-import image08 from "../assets/project/08.png";
+import image08A from "../assets/project/08_a.png";
+import image08B from "../assets/project/08_b.jpg";
 import image09 from "../assets/project/09.png";
 import image10 from "../assets/project/10.png";
 import image11 from "../assets/project/11.png";
@@ -231,8 +234,12 @@ export const content: ContentBlock[] = [
   {
     colSpan: 10,
     colStart: 1,
-    type: "image",
-    image: image05,
+    type: "slideshow",
+    slides: [
+      { images: [image05A] },
+      { images: [image05B] },
+      { images: [image05C] },
+    ],
   },
   {
     colSpan: 7,
@@ -261,8 +268,8 @@ export const content: ContentBlock[] = [
   {
     colSpan: 13,
     colStart: 8,
-    type: "image",
-    image: image08,
+    type: "slideshow",
+    slides: [{ images: [image08A] }, { images: [image08B] }],
   },
   {
     colSpan: 14,
